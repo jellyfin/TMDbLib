@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Xml;
 using TMDbLib.Client;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 
 namespace TestApplication
 {
@@ -64,7 +66,9 @@ namespace TestApplication
             client.GetMovieLists(47964);
             //client.GetMovieChanges(47964);
 
-            //client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
+            client.GetMovieLatest();
+
+            client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
 
             Console.WriteLine("Done.");
             Console.ReadLine();

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Movies
@@ -22,7 +23,7 @@ namespace TMDbLib.Objects.Movies
         public List<BelongsToCollection> BelongsToCollection { get; set; }
         public List<Genre> Genres { get; set; }
 
-        public string ReleaseDate { get; set; }     // TODO: Datetype
+        public DateTime ReleaseDate { get; set; }
         public int Revenue { get; set; }
         public int Runtime { get; set; }
         public int Budget { get; set; }
