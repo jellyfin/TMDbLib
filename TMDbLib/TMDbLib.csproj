@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0006F17-212A-474F-983E-7DA2F91E0233}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMDbLib</RootNamespace>
+    <AssemblyName>TMDbLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Objects\Collections\CollectionMethods.cs" />
+    <Compile Include="Objects\Collections\Part.cs" />
+    <Compile Include="Objects\Collections\Collection.cs" />
+    <Compile Include="Objects\General\Images.cs" />
+    <Compile Include="Objects\Movies\MovieListContainer.cs" />
+    <Compile Include="Objects\Movies\MovieListType.cs" />
+    <Compile Include="Client\TMDbClientChanges.cs" />
+    <Compile Include="Client\TMDbClientKeywords.cs" />
+    <Compile Include="Client\TMDbClientSearch.cs" />
+    <Compile Include="Client\TMDbClientGenres.cs" />
+    <Compile Include="Client\TMDbClientCompanies.cs" />
+    <Compile Include="Client\TMDbClientLists.cs" />
+    <Compile Include="Client\TMDbClientPeople.cs" />
+    <Compile Include="Client\TMDbClientCollections.cs" />
+    <Compile Include="Client\TMDbClientMovies.cs" />
+    <Compile Include="Objects\Movies\AlternativeTitles.cs" />
+    <Compile Include="Objects\Movies\AlternativeTitle.cs" />
+    <Compile Include="Objects\General\Backdrop.cs" />
+    <Compile Include="Objects\Movies\BelongsToCollection.cs" />
+    <Compile Include="Objects\Movies\Cast.cs" />
+    <Compile Include="Objects\Movies\Casts.cs" />
+    <Compile Include="Objects\Movies\Change.cs" />
+    <Compile Include="Objects\Movies\ChangesContainer.cs" />
+    <Compile Include="Objects\Movies\Keyword.cs" />
+    <Compile Include="Objects\Movies\ListResult.cs" />
+    <Compile Include="Objects\Movies\ProductionCompany.cs" />
+    <Compile Include="Objects\Movies\Country.cs" />
+    <Compile Include="Objects\Movies\Crew.cs" />
+    <Compile Include="Objects\Movies\Genre.cs" />
+    <Compile Include="Objects\General\ImagesWithId.cs" />
+    <Compile Include="Objects\Movies\ChangeItem.cs" />
+    <Compile Include="Objects\Movies\Keywords.cs" />
+    <Compile Include="Objects\Movies\Lists.cs" />
+    <Compile Include="Objects\Movies\Movie.cs" />
+    <Compile Include="Objects\Movies\MovieMethods.cs" />
+    <Compile Include="Objects\General\ConfigImageTypes.cs" />
+    <Compile Include="Objects\General\Poster.cs" />
+    <Compile Include="Objects\Movies\ProductionCountry.cs" />
+    <Compile Include="Objects\Movies\Releases.cs" />
+    <Compile Include="Objects\Movies\MovieResult.cs" />
+    <Compile Include="Objects\Movies\SimilarMovies.cs" />
+    <Compile Include="Objects\Movies\SpokenLanguage.cs" />
+    <Compile Include="Objects\Movies\Trailers.cs" />
+    <Compile Include="Objects\Movies\Translation.cs" />
+    <Compile Include="Objects\Movies\TranslationsContainer.cs" />
+    <Compile Include="Objects\Movies\Youtube.cs" />
+    <Compile Include="Serializer.cs" />
+    <Compile Include="Client\TMDbClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Objects\General\TMDbConfig.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
