@@ -2,7 +2,6 @@
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Collections;
-using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
 
 namespace TMDbLib.Client
