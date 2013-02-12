@@ -27,7 +27,6 @@ namespace TMDbLib.Objects.Movies
         public int Runtime { get; set; }
         public int Budget { get; set; }
 
-
         public double Popularity { get; set; }
         public double VoteAverage { get; set; }
         public int VoteCount { get; set; }
@@ -43,7 +42,7 @@ namespace TMDbLib.Objects.Movies
         public Keywords Keywords { get; set; }
         public Trailers Trailers { get; set; }
         public TranslationsContainer Translations { get; set; }
-        public SimilarMovies SimilarMovies { get; set; }
+        public MovieResultContainer SimilarMovies { get; set; }
         public Lists Lists { get; set; }
         public List<Change> Changes { get; set; }
     }

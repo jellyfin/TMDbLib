@@ -54,6 +54,9 @@ namespace TMDbLib.Client
             if (resp.Data.Translations != null)
                 resp.Data.Translations.Id = resp.Data.Id;
 
+            if (resp.Data.SimilarMovies != null)
+                resp.Data.SimilarMovies.Id = resp.Data.Id;
+
             return resp.Data;
         }
 
@@ -119,9 +122,11 @@ namespace TMDbLib.Client
             return GetMovieMethod<TranslationsContainer>(id, MovieMethods.Translations);
         }
 
-        public SimilarMovies GetMovieSimilarMovies(int id, int page = -1, string language = null)
+        public MovieResultContainer GetMovieSimilarMovies(int id, int page = -1, string language = null)
         {
-            return GetMovieMethod<SimilarMovies>(id, MovieMethods.SimilarMovies, page: page, language: language, dateFormat: "yyyy-MM-dd");
+            MovieResultContainer container = GetMovieMethod<MovieResultContainer>(id, MovieMethods.SimilarMovies, page: page, language: language, dateFormat: "yyyy-MM-dd");
+            container.Id = id;      // Patch up
+            return container;
         }
 
         public Lists GetMovieLists(int id, int page = -1, string language = null)
@@ -144,7 +149,7 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public MovieListContainer GetMovieList(MovieListType type, int page = -1, string language = null)
+        public MovieResultContainer GetMovieList(MovieListType type, int page = -1, string language = null)
         {
             RestRequest req;
             switch (type)
@@ -169,7 +174,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<MovieListContainer> resp = _client.Get<MovieListContainer>(req);
+            IRestResponse<MovieResultContainer> resp = _client.Get<MovieResultContainer>(req);
 
             return resp.Data;
         }

@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using TMDbLib.Client;
-using TMDbLib.Objects.Collections;
+using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
 
 namespace TestApplication
@@ -37,13 +37,18 @@ namespace TestApplication
             }
 
             // 
+            client.GetCompany(177, CompanyMethods.Movies);
+            client.GetCompanyMovies(177);
+            //Movie movie = client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
+
             //client.GetCollection(1570, extraMethods: CollectionMethods.Images);
             //client.GetCollectionImages(1570);
 
-            client.GetPerson(62, extraMethods: PersonMethods.Images | PersonMethods.Credits | PersonMethods.Changes);
+            //client.GetList(movie.Lists.Results.First().Id);
+            //client.GetPerson(62, extraMethods: PersonMethods.Images | PersonMethods.Credits | PersonMethods.Changes);
             //client.GetPersonChanges(62);
             //client.GetPersonCredits(62);
-            client.GetPersonImages(62);
+            //client.GetPersonImages(62);
 
             //client.GetMovieList(MovieListType.NowPlaying);
             //client.GetMovieList(MovieListType.Popular);
@@ -55,8 +60,8 @@ namespace TestApplication
             //client.GetMovieReleases(47964);
             //client.GetMovieTrailers(47964);
             //client.GetMovieTranslations(47964);
-            //client.GetMovieSimilarMovies(47964);
-            //client.GetMovieLists(47964);
+            client.GetMovieSimilarMovies(47964);
+            client.GetMovieLists(47964);
             //client.GetMovieChanges(47964);
 
             //client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
