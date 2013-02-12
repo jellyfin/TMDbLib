@@ -3,6 +3,7 @@ using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.People;
 
 namespace TMDbLib.Client
 {
@@ -52,11 +53,9 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public Images GetCollectionImages(int id, string language = null)
+        public ProfileImages GetCollectionImages(int id, string language = null)
         {
-            return GetCollectionMethod<Images>(id, CollectionMethods.Images, language: language);
+            return GetCollectionMethod<ProfileImages>(id, CollectionMethods.Images, language: language);
         }
-
     }
-
 }

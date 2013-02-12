@@ -58,8 +58,7 @@ namespace TMDbLib.Client
         }
 
         private T GetMovieMethod<T>(int id, MovieMethods movieMethod, string dateFormat = null, string country = null,
-                                    string language = null, int page = -1, DateTime? startDate = null,
-                                    DateTime? endDate = null) where T : new()
+                                    string language = null, int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
             RestRequest req = new RestRequest("movie/{id}/{method}");
             req.AddUrlSegment("id", id.ToString());
@@ -122,8 +121,7 @@ namespace TMDbLib.Client
 
         public SimilarMovies GetMovieSimilarMovies(int id, int page = -1, string language = null)
         {
-            return GetMovieMethod<SimilarMovies>(id, MovieMethods.SimilarMovies, page: page, language: language,
-                                                 dateFormat: "yyyy-MM-dd");
+            return GetMovieMethod<SimilarMovies>(id, MovieMethods.SimilarMovies, page: page, language: language, dateFormat: "yyyy-MM-dd");
         }
 
         public Lists GetMovieLists(int id, int page = -1, string language = null)
@@ -133,8 +131,7 @@ namespace TMDbLib.Client
 
         public List<Change> GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
         {
-            ChangesContainer changes = GetMovieMethod<ChangesContainer>(id, MovieMethods.Changes, startDate: startDate,
-                                                                        endDate: endDate);
+            ChangesContainer changes = GetMovieMethod<ChangesContainer>(id, MovieMethods.Changes, startDate: startDate, endDate: endDate);
 
             return changes.Changes;
         }

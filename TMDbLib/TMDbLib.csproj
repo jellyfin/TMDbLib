@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\General\Profile.cs" />
     <Compile Include="Objects\Collections\CollectionMethods.cs" />
     <Compile Include="Objects\Collections\Part.cs" />
     <Compile Include="Objects\Collections\Collection.cs" />
@@ -89,6 +90,12 @@
     <Compile Include="Objects\Movies\TranslationsContainer.cs" />
     <Compile Include="Objects\Movies\Youtube.cs" />
     <Compile Include="Client\TMDbClient.cs" />
+    <Compile Include="Objects\People\Credits.cs" />
+    <Compile Include="Objects\People\MovieJob.cs" />
+    <Compile Include="Objects\People\MovieRole.cs" />
+    <Compile Include="Objects\People\Person.cs" />
+    <Compile Include="Objects\People\PersonMethods.cs" />
+    <Compile Include="Objects\People\ProfileImages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\General\TMDbConfig.cs" />
     <Compile Include="Utils.cs" />

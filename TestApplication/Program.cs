@@ -37,8 +37,13 @@ namespace TestApplication
             }
 
             // 
-            client.GetCollection(1570, extraMethods: CollectionMethods.Images);
-            client.GetCollectionImages(1570);
+            //client.GetCollection(1570, extraMethods: CollectionMethods.Images);
+            //client.GetCollectionImages(1570);
+
+            client.GetPerson(62, extraMethods: PersonMethods.Images | PersonMethods.Credits | PersonMethods.Changes);
+            //client.GetPersonChanges(62);
+            //client.GetPersonCredits(62);
+            client.GetPersonImages(62);
 
             //client.GetMovieList(MovieListType.NowPlaying);
             //client.GetMovieList(MovieListType.Popular);
