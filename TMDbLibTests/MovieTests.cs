@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.Movies;
 using System.Linq;
 
