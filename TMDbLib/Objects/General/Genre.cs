@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.Movies
+﻿namespace TMDbLib.Objects.General
 {
     public class Genre
     {

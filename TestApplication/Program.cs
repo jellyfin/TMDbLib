@@ -82,10 +82,13 @@ namespace TestApplication
             //client.GetChangesMovies();
             //client.GetChangesPeople();
 
-            int kId = movie.Keywords.Keywords.First().Id;
+            //int kId = movie.Keywords.Keywords.First().Id;
 
-            client.GetKeyword(kId);
-            client.GetKeywordMovies(kId);
+            //client.GetKeyword(kId);
+            //client.GetKeywordMovies(kId);
+
+            //client.GetGenres();
+            //client.GetGenreMovies(28);
 
             Console.WriteLine("Done.");
             Console.ReadLine();
