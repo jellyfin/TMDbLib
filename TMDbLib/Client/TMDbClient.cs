@@ -40,8 +40,8 @@ namespace TMDbLib.Client
 
         public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl)
         {
-            DefaultLanguage = "en";
-            DefaultCountry = "us";
+            DefaultLanguage = null;
+            DefaultCountry = null;
 
             Initialize(baseUrl, useSsl, apiKey);
         }

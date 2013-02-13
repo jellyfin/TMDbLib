@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Companies;
@@ -57,37 +56,14 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public MovieResultContainer GetCompanyMovies(int id, int page = -1, string language = null)
+        public MovieResultContainer GetCompanyMovies(int id, int page = -1)
+        {
+            return GetCompanyMovies(id, DefaultLanguage, page);
+        }
+
+        public MovieResultContainer GetCompanyMovies(int id, string language, int page = -1)
         {
             return GetCollectionMethod<MovieResultContainer>(id, CompanyMethods.Movies, page: page, language: language);
         }
-    }
-
-    public class CompanyMovies
-    {
-        public int id { get; set; }
-        public int page { get; set; }
-        public List<MovieResult> results { get; set; }
-        public int total_pages { get; set; }
-        public int total_results { get; set; }
-    }
-
-    public class ParentCompany
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public string LogoPath { get; set; }
-    }
-
-    public class Company
-    {
-        public string Description { get; set; }
-        public string Headquarters { get; set; }
-        public string Homepage { get; set; }
-        public int Id { get; set; }
-        public string LogoPath { get; set; }
-        public string Name { get; set; }
-        public ParentCompany ParentCompany { get; set; }
-        public MovieResultContainer Movies { get; set; }
     }
 }

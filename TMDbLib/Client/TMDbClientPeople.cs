@@ -8,7 +8,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Person GetPerson(int id, string language = null, PersonMethods extraMethods = PersonMethods.Undefined)
+        public Person GetPerson(int id, PersonMethods extraMethods = PersonMethods.Undefined)
+        {
+            return GetPerson(id, DefaultLanguage, extraMethods);
+        }
+
+        public Person GetPerson(int id, string language, PersonMethods extraMethods = PersonMethods.Undefined)
         {
             RestRequest req = new RestRequest("person/{id}");
             req.AddUrlSegment("id", id.ToString());
@@ -67,12 +72,17 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public Credits GetPersonCredits(int id, string language = null)
+        public Credits GetPersonCredits(int id)
+        {
+            return GetPersonCredits(id, DefaultLanguage);
+        }
+
+        public Credits GetPersonCredits(int id, string language)
         {
             return GetPersonMethod<Credits>(id, PersonMethods.Credits, language: language);
         }
 
-        public ProfileImages GetPersonImages(int id, string language = null)
+        public ProfileImages GetPersonImages(int id)
         {
             return GetPersonMethod<ProfileImages>(id, PersonMethods.Images);
         }
