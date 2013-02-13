@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
-using System.Linq;
 using TMDbLib.Objects.Movies;
 
 namespace TMDbLibTests

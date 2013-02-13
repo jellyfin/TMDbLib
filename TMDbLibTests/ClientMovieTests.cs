@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
+using System.Linq;
 using System.Net;
-using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
-using System.Linq;
+using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
 {
@@ -100,10 +99,10 @@ namespace TMDbLibTests
         {
             //GetMovieAlternativeTitles(int id, string country)
             {
-                var respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
+                AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
                 Assert.IsNotNull(respUs);
 
-                var respGerman = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "DE");
+                AlternativeTitles respGerman = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "DE");
                 Assert.IsNotNull(respGerman);
 
                 Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Stirb Langsam 5"));
@@ -115,46 +114,46 @@ namespace TMDbLibTests
 
             //GetMovieCasts(int id)
             {
-                var resp = _config.Client.GetMovieCasts(AGoodDayToDieHard);
+                Casts resp = _config.Client.GetMovieCasts(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
 
             //GetMovieImages(int id, string language)
             {
-                var resp = _config.Client.GetMovieImages(AGoodDayToDieHard);
+                ImagesWithId resp = _config.Client.GetMovieImages(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
 
             //GetMovieKeywords(int id)
             {
-                var resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
+                KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
 
             //GetMovieReleases(int id)
             {
-                var resp = _config.Client.GetMovieReleases(AGoodDayToDieHard);
+                Releases resp = _config.Client.GetMovieReleases(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
 
             //GetMovieTrailers(int id)
             {
-                var resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
+                Trailers resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
 
             //GetMovieTranslations(int id)
             {
-                var resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard);
+                TranslationsContainer resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
 
             //GetMovieSimilarMovies(int id, string language, int page = -1)
             {
-                var resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
+                SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
 
-                var respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de");
+                SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de");
                 Assert.IsNotNull(respGerman);
 
                 Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
@@ -164,10 +163,10 @@ namespace TMDbLibTests
 
             //GetMovieLists(int id, string language, int page = -1)
             {
-                var resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
+                SearchContainer<ListResult> resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
 
-                var respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2);
+                SearchContainer<ListResult> respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2);
                 Assert.IsNotNull(respPage2);
 
                 Assert.AreEqual(1, resp.Page);
@@ -183,7 +182,7 @@ namespace TMDbLibTests
                 // Fetch changelog
                 DateTime lower = DateTime.UtcNow.AddDays(-14);
                 DateTime higher = DateTime.UtcNow;
-                var respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
+                List<Change> respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
                 
                 Assert.IsNotNull(respRange);
                 Assert.IsTrue(respRange.Count > 0);
@@ -217,8 +216,8 @@ namespace TMDbLibTests
             Assert.IsTrue(images.Backdrops.Count > 0);
             Assert.IsTrue(images.Posters.Count > 0);
 
-            var backdropSizes = _config.Client.Config.Images.BackdropSizes;
-            var posterSizes = _config.Client.Config.Images.PosterSizes;
+            List<string> backdropSizes = _config.Client.Config.Images.BackdropSizes;
+            List<string> posterSizes = _config.Client.Config.Images.PosterSizes;
 
             foreach (ImageData imageData in images.Backdrops)
             {
@@ -227,8 +226,8 @@ namespace TMDbLibTests
                     Uri url = _config.Client.GetImageUrl(size, imageData.FilePath);
                     Uri urlSecure = _config.Client.GetImageUrl(size, imageData.FilePath, true);
 
-                    Assert.IsTrue(InternetUriExists(url));
-                    Assert.IsTrue(InternetUriExists(urlSecure));
+                    Assert.IsTrue(TestHelpers.InternetUriExists(url));
+                    Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
                 }
             }
 
@@ -239,27 +238,9 @@ namespace TMDbLibTests
                     Uri url = _config.Client.GetImageUrl(size, imageData.FilePath);
                     Uri urlSecure = _config.Client.GetImageUrl(size, imageData.FilePath, true);
 
-                    Assert.IsTrue(InternetUriExists(url));
-                    Assert.IsTrue(InternetUriExists(urlSecure));
+                    Assert.IsTrue(TestHelpers.InternetUriExists(url));
+                    Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
                 }
-            }
-        }
-
-        private bool InternetUriExists(Uri uri)
-        {
-            HttpWebRequest req = HttpWebRequest.Create(uri) as HttpWebRequest;
-            req.Method = "HEAD";
-
-            try
-            {
-                req.GetResponse();
-                // It exists
-                return true;
-            }
-            catch (WebException ex)
-            {
-                Debug.WriteLine(((HttpWebResponse)ex.Response).StatusCode + ": " + uri);
-                return false;
             }
         }
     }
