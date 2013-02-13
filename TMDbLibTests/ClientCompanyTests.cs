@@ -53,7 +53,7 @@ namespace TMDbLibTests
         //    foreach (CompanyMethods method in _methods.Keys)
         //    {
         //        // Prepare the combination exlcuding the one (method).
-        //        CompanyMethods combo = _methods.Keys.Except(new[] { method }).Aggregate((movieMethod, accumulator) => movieMethod | accumulator);
+        //        CompanyMethods combo = _methods.Keys.Except(new[] { method }).Aggregate((companyMethod, accumulator) => companyMethod | accumulator);
 
         //        // Fetch data
         //        Company company = _config.Client.GetCompany(TwentiethCenturyFox, combo);

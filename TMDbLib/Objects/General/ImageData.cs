@@ -1,6 +1,5 @@
 ﻿namespace TMDbLib.Objects.General
 {
-    // TODO: Join Poster & Backdrop
     public class ImageData
     {
         public string FilePath { get; set; }
