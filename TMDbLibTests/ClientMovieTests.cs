@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Net;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -98,8 +100,17 @@ namespace TMDbLibTests
         {
             //GetMovieAlternativeTitles(int id, string country)
             {
-                var resp = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
+                var respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
+                Assert.IsNotNull(respUs);
+
+                var respGerman = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "DE");
+                Assert.IsNotNull(respGerman);
+
+                Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Stirb Langsam 5"));
+                Assert.IsTrue(respGerman.Titles.Any(s => s.Title == "Stirb Langsam 5"));
+
+                Assert.IsTrue(respUs.Titles.All(s => s.Iso_3166_1 == "US"));
+                Assert.IsTrue(respGerman.Titles.All(s => s.Iso_3166_1 == "DE"));
             }
 
             //GetMovieCasts(int id)
@@ -142,19 +153,51 @@ namespace TMDbLibTests
             {
                 var resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
+
+                var respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de");
+                Assert.IsNotNull(respGerman);
+
+                Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
+                Assert.AreEqual(resp.Results.First().Id, respGerman.Results.First().Id);
+                Assert.AreNotEqual(resp.Results.First().Title, respGerman.Results.First().Title);
             }
 
             //GetMovieLists(int id, string language, int page = -1)
             {
                 var resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
+
+                var respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2);
+                Assert.IsNotNull(respPage2);
+
+                Assert.AreEqual(1, resp.Page);
+                Assert.AreEqual(2, respPage2.Page);
+                Assert.AreEqual(resp.TotalResults, resp.TotalResults);
             }
 
             //GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
             {
                 var resp = _config.Client.GetMovieChanges(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
+
+                DateTime lower = DateTime.UtcNow.AddDays(-14);
+                DateTime higher = DateTime.UtcNow;
+                var respRange = _config.Client.GetMovieChanges(AGoodDayToDieHard, lower, higher);
+                Assert.IsNotNull(respRange);
+
+                // As TMDb works in days, we need to adjust our values also
+                lower = lower.AddDays(-1);
+                higher = higher.AddDays(1);
+
+                foreach (Change change in respRange)
+                    foreach (ChangeItem changeItem in change.Items)
+                    {
+                        DateTime date = changeItem.TimeParsed;
+                        Assert.IsTrue(lower <= date);
+                        Assert.IsTrue(date <= higher);
+                    }
             }
+
 
         }
 

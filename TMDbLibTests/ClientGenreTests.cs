@@ -45,7 +45,7 @@ namespace TMDbLibTests
 
             // Get movies
             SearchContainerWithId<MovieResult> movies = _config.Client.GetGenreMovies(genre.Id);
-            SearchContainerWithId<MovieResult> moviesPage2 = _config.Client.GetGenreMovies(genre.Id, 2);
+            SearchContainerWithId<MovieResult> moviesPage2 = _config.Client.GetGenreMovies(genre.Id, "it", 2, includeAllMovies: false);
             SearchContainerWithId<MovieResult> moviesAll = _config.Client.GetGenreMovies(genre.Id, includeAllMovies: true);
 
             Assert.AreEqual(1, movies.Page);
@@ -60,7 +60,7 @@ namespace TMDbLibTests
             Assert.IsTrue(moviesPage2.Results.All(s => s != null));
             Assert.IsTrue(moviesAll.Results.All(s => s != null));
 
-            Assert.AreEqual(movies.TotalResults, moviesPage2.TotalResults);
+            Assert.AreEqual(movies.TotalResults, moviesPage2.TotalResults);     // Should be the same, despite the use of 'includeAllMovies' and Italian
             Assert.IsTrue(moviesAll.TotalResults > movies.TotalResults);
         }
     }
