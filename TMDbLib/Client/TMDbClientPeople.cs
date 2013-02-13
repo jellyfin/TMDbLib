@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Movies;
@@ -87,9 +88,10 @@ namespace TMDbLib.Client
             return GetPersonMethod<ProfileImages>(id, PersonMethods.Images);
         }
 
-        public ChangesContainer GetPersonChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
+        public List<Change> GetPersonChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return GetPersonMethod<ChangesContainer>(id, PersonMethods.Changes, startDate: startDate, endDate: endDate);
+            ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(id, PersonMethods.Changes, startDate: startDate, endDate: endDate);
+            return changesContainer.Changes;
         }
     }
 }
