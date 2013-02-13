@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 
-namespace TMDbLib.Objects.Search
+namespace TMDbLib.Objects.General
 {
-    // TODO: Join this with SearchContainer, Lists, MovieResultContainer, ChangesListContainer
     public class SearchContainer<T>
     {
         public int Page { get; set; }

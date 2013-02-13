@@ -1,6 +1,6 @@
 namespace TMDbLib.Objects.Search
 {
-    public class SearhcResultList
+    public class SearchList
     {
         public string Id { get; set; }
         public string Description { get; set; }

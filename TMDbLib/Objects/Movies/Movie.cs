@@ -39,12 +39,12 @@ namespace TMDbLib.Objects.Movies
         public AlternativeTitles AlternativeTitles { get; set; }
         public Releases Releases { get; set; }
         public Casts Casts { get; set; }
-        public ImagesWithId Images { get; set; }
+        public Images Images { get; set; }
         public Keywords Keywords { get; set; }
         public Trailers Trailers { get; set; }
         public TranslationsContainer Translations { get; set; }
-        public MovieResultContainer SimilarMovies { get; set; }
-        public Lists Lists { get; set; }
+        public SearchContainer<MovieResult> SimilarMovies { get; set; }
+        public SearchContainer<ListResult> Lists { get; set; }
         public List<Change> Changes { get; set; }
     }
 }

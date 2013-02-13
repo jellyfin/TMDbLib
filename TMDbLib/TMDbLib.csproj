@@ -35,16 +35,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Objects\Changes\ChangesListContainer.cs" />
     <Compile Include="Objects\Changes\ChangesListItem.cs" />
-    <Compile Include="Objects\Search\SearchContainer.cs" />
     <Compile Include="Objects\Companies\Company.cs" />
     <Compile Include="Objects\Companies\CompanyMovies.cs" />
     <Compile Include="Objects\Companies\CompanyMethods.cs" />
@@ -54,8 +47,9 @@
     <Compile Include="Objects\Collections\Part.cs" />
     <Compile Include="Objects\Collections\Collection.cs" />
     <Compile Include="Objects\General\Images.cs" />
+    <Compile Include="Objects\General\SearchContainerWithId.cs" />
     <Compile Include="Objects\Lists\List.cs" />
-    <Compile Include="Objects\General\MovieResultContainer.cs" />
+    <Compile Include="Objects\General\SearchContainer.cs" />
     <Compile Include="Objects\Movies\MovieListType.cs" />
     <Compile Include="Client\TMDbClientChanges.cs" />
     <Compile Include="Client\TMDbClientKeywords.cs" />
@@ -83,7 +77,6 @@
     <Compile Include="Objects\General\ImagesWithId.cs" />
     <Compile Include="Objects\Movies\ChangeItem.cs" />
     <Compile Include="Objects\Movies\Keywords.cs" />
-    <Compile Include="Objects\Movies\Lists.cs" />
     <Compile Include="Objects\Movies\Movie.cs" />
     <Compile Include="Objects\Movies\MovieMethods.cs" />
     <Compile Include="Objects\General\ConfigImageTypes.cs" />
@@ -103,11 +96,11 @@
     <Compile Include="Objects\Person\PersonMethods.cs" />
     <Compile Include="Objects\Person\ProfileImages.cs" />
     <Compile Include="Objects\Search\SearchResultCollection.cs" />
-    <Compile Include="Objects\Search\SearchResultMovie.cs" />
-    <Compile Include="Objects\Search\SearhcResultCompany.cs" />
-    <Compile Include="Objects\Search\SearhcResultKeyword.cs" />
-    <Compile Include="Objects\Search\SearhcResultList.cs" />
-    <Compile Include="Objects\Search\SearhcResultPerson.cs" />
+    <Compile Include="Objects\Search\SearchMovie.cs" />
+    <Compile Include="Objects\Search\SearchCompany.cs" />
+    <Compile Include="Objects\Search\SearchKeyword.cs" />
+    <Compile Include="Objects\Search\SearchList.cs" />
+    <Compile Include="Objects\Search\SearchPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\General\TMDbConfig.cs" />
     <Compile Include="Utils.cs" />

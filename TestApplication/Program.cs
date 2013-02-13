@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using TMDbLib.Client;
+using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Person;
 
 namespace TestApplication
 {
@@ -80,8 +82,8 @@ namespace TestApplication
             //client.SearchCompany("Disney");
             //client.SearchPerson("Bruce");
 
-            client.GetChangesMovies();
-            client.GetChangesPeople();
+            //client.GetChangesMovies();
+            //client.GetChangesPeople();
 
             Console.WriteLine("Done.");
             Console.ReadLine();

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TMDbLib.Objects.People
+namespace TMDbLib.Objects.Person
 {
     public class Credits
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace TMDbLib.Objects.People
+namespace TMDbLib.Objects.Person
 {
     [Flags]
     public enum PersonMethods

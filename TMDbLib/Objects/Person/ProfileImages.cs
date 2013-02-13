@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMDbLib.Objects.General;
 
-namespace TMDbLib.Objects.People
+namespace TMDbLib.Objects.Person
 {
     public class ProfileImages
     {

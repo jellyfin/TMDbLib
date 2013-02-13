@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Client
@@ -29,14 +30,14 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public SearchContainer<SearchResultMovie> SearchMovie(string query, int page = -1, bool includeAdult = false, int year = -1)
+        public SearchContainer<SearchMovie> SearchMovie(string query, int page = -1, bool includeAdult = false, int year = -1)
         {
             return SearchMovie(query, DefaultLanguage, page, includeAdult, year);
         }
 
-        public SearchContainer<SearchResultMovie> SearchMovie(string query, string language, int page = -1, bool includeAdult = false, int year = -1)
+        public SearchContainer<SearchMovie> SearchMovie(string query, string language, int page = -1, bool includeAdult = false, int year = -1)
         {
-            return SearchMethod<SearchContainer<SearchResultMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd");
+            return SearchMethod<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd");
         }
 
         public SearchContainer<SearchResultCollection> SearchCollection(string query, int page = -1)
@@ -49,24 +50,24 @@ namespace TMDbLib.Client
             return SearchMethod<SearchContainer<SearchResultCollection>>("collection", query, page, language);
         }
 
-        public SearchContainer<SearhcResultPerson> SearchPerson(string query, int page = -1, bool includeAdult = false)
+        public SearchContainer<SearchPerson> SearchPerson(string query, int page = -1, bool includeAdult = false)
         {
-            return SearchMethod<SearchContainer<SearhcResultPerson>>("person", query, page, includeAdult: includeAdult);
+            return SearchMethod<SearchContainer<SearchPerson>>("person", query, page, includeAdult: includeAdult);
         }
 
-        public SearchContainer<SearhcResultList> SearchList(string query, int page = -1, bool includeAdult = false)
+        public SearchContainer<SearchList> SearchList(string query, int page = -1, bool includeAdult = false)
         {
-            return SearchMethod<SearchContainer<SearhcResultList>>("list", query, page, includeAdult: includeAdult);
+            return SearchMethod<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult);
         }
 
-        public SearchContainer<SearhcResultCompany> SearchCompany(string query, int page = -1)
+        public SearchContainer<SearchCompany> SearchCompany(string query, int page = -1)
         {
-            return SearchMethod<SearchContainer<SearhcResultCompany>>("company", query, page);
+            return SearchMethod<SearchContainer<SearchCompany>>("company", query, page);
         }
 
-        public SearchContainer<SearhcResultKeyword> SearchKeyword(string query, int page = -1)
+        public SearchContainer<SearchKeyword> SearchKeyword(string query, int page = -1)
         {
-            return SearchMethod<SearchContainer<SearhcResultKeyword>>("keyword", query, page);
+            return SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page);
         }
     }
 }

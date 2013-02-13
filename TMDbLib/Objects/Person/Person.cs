@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMDbLib.Objects.Movies;
 
-namespace TMDbLib.Objects.People
+namespace TMDbLib.Objects.Person
 {
     public class Person
     {

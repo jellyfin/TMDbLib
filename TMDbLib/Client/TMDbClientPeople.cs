@@ -2,7 +2,7 @@
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Movies;
-using TMDbLib.Objects.People;
+using TMDbLib.Objects.Person;
 
 namespace TMDbLib.Client
 {

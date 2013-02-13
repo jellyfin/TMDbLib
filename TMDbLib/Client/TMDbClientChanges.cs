@@ -1,6 +1,7 @@
 ﻿using System;
 using RestSharp;
 using TMDbLib.Objects.Changes;
+using TMDbLib.Objects.General;
 
 namespace TMDbLib.Client
 {
@@ -23,14 +24,14 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public ChangesListContainer GetChangesMovies(int page = -1, DateTime? startDate = null, DateTime? endDate = null)
+        public SearchContainer<ChangesListItem> GetChangesMovies(int page = -1, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return GetChanges<ChangesListContainer>("movie", page, startDate, endDate);
+            return GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate);
         }
 
-        public ChangesListContainer GetChangesPeople(int page = -1, DateTime? startDate = null, DateTime? endDate = null)
+        public SearchContainer<ChangesListItem> GetChangesPeople(int page = -1, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return GetChanges<ChangesListContainer>("person", page, startDate, endDate);
+            return GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
         }
 
     }

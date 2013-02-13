@@ -11,6 +11,6 @@ namespace TMDbLib.Objects.Companies
         public string LogoPath { get; set; }
         public string Name { get; set; }
         public ParentCompany ParentCompany { get; set; }
-        public MovieResultContainer Movies { get; set; }
+        public SearchContainer<MovieResult> Movies { get; set; }
     }
 }

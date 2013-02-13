@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using RestSharp;
+using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -28,10 +29,6 @@ namespace TMDbLib.Client
 
             IRestResponse<Company> resp = _client.Get<Company>(req);
 
-            // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (resp.Data.Movies != null)
-                resp.Data.Movies.Id = resp.Data.Id;
-
             return resp.Data;
         }
 
@@ -56,14 +53,14 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public MovieResultContainer GetCompanyMovies(int id, int page = -1)
+        public SearchContainerWithId<MovieResult> GetCompanyMovies(int id, int page = -1)
         {
             return GetCompanyMovies(id, DefaultLanguage, page);
         }
 
-        public MovieResultContainer GetCompanyMovies(int id, string language, int page = -1)
+        public SearchContainerWithId<MovieResult> GetCompanyMovies(int id, string language, int page = -1)
         {
-            return GetCollectionMethod<MovieResultContainer>(id, CompanyMethods.Movies, page: page, language: language);
+            return GetCollectionMethod<SearchContainerWithId<MovieResult>>(id, CompanyMethods.Movies, page: page, language: language);
         }
     }
 }

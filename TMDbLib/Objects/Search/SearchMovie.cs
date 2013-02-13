@@ -2,7 +2,7 @@ using System;
 
 namespace TMDbLib.Objects.Search
 {
-    public class SearchResultMovie
+    public class SearchMovie
     {
         public int Id { get; set; }
         public bool Adult { get; set; }

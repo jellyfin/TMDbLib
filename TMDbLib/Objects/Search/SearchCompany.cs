@@ -1,6 +1,6 @@
 namespace TMDbLib.Objects.Search
 {
-    public class SearhcResultCompany
+    public class SearchCompany
     {
         public int Id { get; set; }
         public string LogoPath { get; set; }
