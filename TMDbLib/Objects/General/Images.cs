@@ -4,7 +4,7 @@ namespace TMDbLib.Objects.General
 {
     public class Images
     {
-        public List<Backdrop> Backdrops { get; set; }
-        public List<Poster> Posters { get; set; }
+        public List<ImageData> Backdrops { get; set; }
+        public List<ImageData> Posters { get; set; }
     }
 }
