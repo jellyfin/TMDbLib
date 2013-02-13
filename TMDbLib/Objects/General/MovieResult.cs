@@ -4,8 +4,8 @@ namespace TMDbLib.Objects.General
 {
     public class MovieResult
     {
-        public string BackdropPath { get; set; }
         public int Id { get; set; }
+        public string BackdropPath { get; set; }
         public string OriginalTitle { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string PosterPath { get; set; }

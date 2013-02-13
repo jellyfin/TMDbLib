@@ -41,12 +41,9 @@ namespace TestApplication
             }
 
             // 
-
-
-
             //client.GetCompany(177, CompanyMethods.Movies);
             //client.GetCompanyMovies(177);
-            //Movie movie = client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
+            Movie movie = client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
 
             //client.GetCollection(1570, extraMethods: CollectionMethods.Images);
             //client.GetCollectionImages(1570);
@@ -84,6 +81,11 @@ namespace TestApplication
 
             //client.GetChangesMovies();
             //client.GetChangesPeople();
+
+            int kId = movie.Keywords.Keywords.First().Id;
+
+            client.GetKeyword(kId);
+            client.GetKeywordMovies(kId);
 
             Console.WriteLine("Done.");
             Console.ReadLine();
