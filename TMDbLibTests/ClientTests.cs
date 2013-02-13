@@ -5,7 +5,7 @@ using TMDbLib.Objects.General;
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ConfigTests
+    public class ClientTests
     {
         private TestConfig _config;
 

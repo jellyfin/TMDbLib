@@ -10,7 +10,7 @@ using System.Linq;
 namespace TMDbLibTests
 {
     [TestClass]
-    public class MovieTests
+    public class ClientMovieTests
     {
         private const int AGoodDayToDieHard = 47964;
 
