@@ -177,13 +177,16 @@ namespace TMDbLibTests
 
             //GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
             {
-                var resp = _config.Client.GetMovieChanges(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
+                // Find latest changed title
+                int latestChanged = _config.Client.GetMovieLatest().Id;
 
+                // Fetch changelog
                 DateTime lower = DateTime.UtcNow.AddDays(-14);
                 DateTime higher = DateTime.UtcNow;
-                var respRange = _config.Client.GetMovieChanges(AGoodDayToDieHard, lower, higher);
+                var respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
+                
                 Assert.IsNotNull(respRange);
+                Assert.IsTrue(respRange.Count > 0);
 
                 // As TMDb works in days, we need to adjust our values also
                 lower = lower.AddDays(-1);
