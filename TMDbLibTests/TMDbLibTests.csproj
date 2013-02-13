@@ -51,8 +51,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="MovieTests.cs" />
-    <Compile Include="GeneralConfig.cs" />
+    <Compile Include="TestConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConfigTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMDbLib\TMDbLib.csproj">

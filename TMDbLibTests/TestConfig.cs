@@ -2,11 +2,11 @@
 
 namespace TMDbLibTests
 {
-    public static class GeneralConfig
+    public class TestConfig
     {
-        public static TMDbClient Client { get; set; }
+        public TMDbClient Client { get; set; }
 
-        static GeneralConfig()
+        public TestConfig()
         {
             Client = new TMDbClient("APIKEY");
         }

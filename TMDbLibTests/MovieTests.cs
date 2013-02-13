@@ -12,10 +12,13 @@ namespace TMDbLibTests
         private const int AGoodDayToDieHard = 47964;
 
         private Dictionary<MovieMethods, Func<Movie, object>> _methods;
+        private TestConfig _config;
 
         [TestInitialize]
         public void Initiator()
         {
+            _config = new TestConfig();
+
             _methods = new Dictionary<MovieMethods, Func<Movie, object>>();
             _methods[MovieMethods.AlternativeTitles] = movie => movie.AlternativeTitles;
             _methods[MovieMethods.Casts] = movie => movie.Casts;
@@ -32,7 +35,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestExtrasNone()
         {
-            Movie movie = GeneralConfig.Client.GetMovie(AGoodDayToDieHard);
+            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard);
 
             Assert.IsNotNull(movie);
 
@@ -56,7 +59,7 @@ namespace TMDbLibTests
                 MovieMethods combo = _methods.Keys.Except(new[] { method }).Aggregate((movieMethod, accumulator) => movieMethod | accumulator);
 
                 // Fetch data
-                Movie movie = GeneralConfig.Client.GetMovie(AGoodDayToDieHard, extraMethods: combo);
+                Movie movie = _config.Client.GetMovie(AGoodDayToDieHard, extraMethods: combo);
 
                 // Ensure we have all pieces
                 foreach (MovieMethods expectedMethod in _methods.Keys.Except(new[] { method }))
