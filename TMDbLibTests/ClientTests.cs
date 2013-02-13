@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 
@@ -23,6 +24,26 @@ namespace TMDbLibTests
             Assert.IsTrue(_config.Client.HasConfig);
 
             Assert.IsNotNull(_config.Client.Config);
+        }
+
+        [TestMethod]
+        public void GetConfigSslTest()
+        {
+            _config = new TestConfig(true);
+
+            Assert.IsFalse(_config.Client.HasConfig);
+            _config.Client.GetConfig();
+            Assert.IsTrue(_config.Client.HasConfig);
+
+            Assert.IsNotNull(_config.Client.Config);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException), AllowDerivedTypes = false)]
+        public void GetConfigFailTest()
+        {
+            TMDbConfig config = _config.Client.Config;
+            Assert.Fail();  // Should never reach here
         }
 
         [TestMethod]

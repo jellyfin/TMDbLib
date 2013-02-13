@@ -6,7 +6,7 @@ namespace TMDbLibTests
     {
         public TMDbClient Client { get; set; }
 
-        public TestConfig()
+        public TestConfig(bool useSsl = false)
         {
             Client = new TMDbClient("APIKEY");
         }

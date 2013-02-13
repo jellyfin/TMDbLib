@@ -30,19 +30,14 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetCollectionMethod<T>(int id, CompanyMethods companyMethod, int page = -1, string dateFormat = null, string country = null, string language = null) where T : new()
+        private T GetCompanyMethod<T>(int id, CompanyMethods companyMethod, int page = -1, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("company/{id}/{method}");
             req.AddUrlSegment("id", id.ToString());
             req.AddUrlSegment("method", companyMethod.GetDescription());
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
-
             if (page >= 1)
                 req.AddParameter("page", page);
-            if (country != null)
-                req.AddParameter("country", country);
             if (language != null)
                 req.AddParameter("language", language);
 
@@ -58,7 +53,7 @@ namespace TMDbLib.Client
 
         public SearchContainerWithId<MovieResult> GetCompanyMovies(int id, string language, int page = -1)
         {
-            return GetCollectionMethod<SearchContainerWithId<MovieResult>>(id, CompanyMethods.Movies, page: page, language: language);
+            return GetCompanyMethod<SearchContainerWithId<MovieResult>>(id, CompanyMethods.Movies, page, language);
         }
     }
 }
