@@ -2,9 +2,9 @@
 
 namespace TMDbLib.Objects.Movies
 {
-    public class Keywords
+    public class KeywordsContainer
     {
         public int Id { get; set; }
-        public List<Keyword> keywords { get; set; }
+        public List<Keyword> Keywords { get; set; }
     }
 }

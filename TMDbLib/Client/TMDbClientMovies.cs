@@ -108,9 +108,9 @@ namespace TMDbLib.Client
             return GetMovieMethod<ImagesWithId>(id, MovieMethods.Images, language: language);
         }
 
-        public Keywords GetMovieKeywords(int id)
+        public KeywordsContainer GetMovieKeywords(int id)
         {
-            return GetMovieMethod<Keywords>(id, MovieMethods.Keywords);
+            return GetMovieMethod<KeywordsContainer>(id, MovieMethods.Keywords);
         }
 
         public Releases GetMovieReleases(int id)

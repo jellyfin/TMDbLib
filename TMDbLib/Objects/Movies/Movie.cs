@@ -40,7 +40,7 @@ namespace TMDbLib.Objects.Movies
         public Releases Releases { get; set; }
         public Casts Casts { get; set; }
         public Images Images { get; set; }
-        public Keywords Keywords { get; set; }
+        public KeywordsContainer Keywords { get; set; }
         public Trailers Trailers { get; set; }
         public TranslationsContainer Translations { get; set; }
         public SearchContainer<MovieResult> SimilarMovies { get; set; }
