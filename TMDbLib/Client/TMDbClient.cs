@@ -78,9 +78,10 @@ namespace TMDbLib.Client
             HasConfig = true;
         }
 
-        public Uri GetImageUrl(string filePath)
+        public Uri GetImageUrl(string size, string filePath, bool useSsl = false)
         {
-            return new Uri(Path.Combine(Config.Images.BaseUrl, "original", filePath));
+            string baseUrl = useSsl ? Config.Images.SecureBaseUrl : Config.Images.BaseUrl;
+            return new Uri(baseUrl + size + filePath);
         }
     }
 }

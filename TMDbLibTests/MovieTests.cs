@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using System.Linq;
 
@@ -33,7 +36,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestExtrasNone()
+        public void TestMoviesExtrasNone()
         {
             Movie movie = _config.Client.GetMovie(AGoodDayToDieHard);
 
@@ -50,7 +53,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestExtrasExclusive()
+        public void TestMoviesExtrasExclusive()
         {
             // Test combinations of extra methods, fetch everything but each one, ensure all but the one exist
             foreach (MovieMethods method in _methods.Keys)
@@ -67,6 +70,65 @@ namespace TMDbLibTests
 
                 // .. except the method we're testing.
                 Assert.IsNull(_methods[method](movie));
+            }
+        }
+
+        [TestMethod]
+        public void TestMoviesImages()
+        {
+            // Get config
+            _config.Client.GetConfig();
+
+            // Test image url generator
+            ImagesWithId images = _config.Client.GetMovieImages(AGoodDayToDieHard);
+
+            Assert.AreEqual(AGoodDayToDieHard, images.Id);
+            Assert.IsTrue(images.Backdrops.Count > 0);
+            Assert.IsTrue(images.Posters.Count > 0);
+
+            var backdropSizes = _config.Client.Config.Images.BackdropSizes;
+            var posterSizes = _config.Client.Config.Images.PosterSizes;
+
+            foreach (ImageData imageData in images.Backdrops)
+            {
+                foreach (string size in backdropSizes)
+                {
+                    Uri url = _config.Client.GetImageUrl(size, imageData.FilePath);
+                    Uri urlSecure = _config.Client.GetImageUrl(size, imageData.FilePath, true);
+
+                    Assert.IsTrue(InternetUriExists(url));
+                    Assert.IsTrue(InternetUriExists(urlSecure));
+                }
+            }
+
+            foreach (ImageData imageData in images.Posters)
+            {
+                foreach (string size in posterSizes)
+                {
+                    Uri url = _config.Client.GetImageUrl(size, imageData.FilePath);
+                    Uri urlSecure = _config.Client.GetImageUrl(size, imageData.FilePath, true);
+
+                    Assert.IsTrue(InternetUriExists(url));
+                    Assert.IsTrue(InternetUriExists(urlSecure));
+                }
+            }
+        }
+
+        private bool InternetUriExists(Uri uri)
+        {
+            HttpWebRequest req = HttpWebRequest.Create(uri) as HttpWebRequest;
+            req.Method = "HEAD";
+
+            try
+            {
+                req.GetResponse();
+                // It exists
+                return true;
+            }
+            catch (WebException ex)
+            {
+                Debug.WriteLine(((HttpWebResponse) ex.Response).StatusCode + ": " + uri);
+                return false;
             }
         }
     }
