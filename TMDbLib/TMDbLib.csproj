@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\Search\SearchContainer.cs" />
     <Compile Include="Objects\Companies\Company.cs" />
     <Compile Include="Objects\Companies\CompanyMovies.cs" />
     <Compile Include="Objects\Companies\CompanyMethods.cs" />
@@ -99,6 +100,12 @@
     <Compile Include="Objects\Person\Person.cs" />
     <Compile Include="Objects\Person\PersonMethods.cs" />
     <Compile Include="Objects\Person\ProfileImages.cs" />
+    <Compile Include="Objects\Search\SearchResultCollection.cs" />
+    <Compile Include="Objects\Search\SearchResultMovie.cs" />
+    <Compile Include="Objects\Search\SearhcResultCompany.cs" />
+    <Compile Include="Objects\Search\SearhcResultKeyword.cs" />
+    <Compile Include="Objects\Search\SearhcResultList.cs" />
+    <Compile Include="Objects\Search\SearhcResultPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\General\TMDbConfig.cs" />
     <Compile Include="Utils.cs" />
