@@ -19,7 +19,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("id", id.ToString());
 
             if (language != null)
-                req.AddUrlSegment("language", language);
+                req.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(PersonMethods))

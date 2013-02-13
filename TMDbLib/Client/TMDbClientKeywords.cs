@@ -6,21 +6,10 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Keyword GetKeyword(int id, int page = -1)
-        {
-            return GetKeyword(id, DefaultLanguage, page);
-        }
-
-        public Keyword GetKeyword(int id, string language, int page = -1)
+        public Keyword GetKeyword(int id)
         {
             RestRequest req = new RestRequest("keyword/{id}");
             req.AddUrlSegment("id", id.ToString());
-
-            if (language != null)
-                req.AddParameter("language", language);
-
-            if (page >= 1)
-                req.AddParameter("page", page);
 
             IRestResponse<Keyword> resp = _client.Get<Keyword>(req);
 
