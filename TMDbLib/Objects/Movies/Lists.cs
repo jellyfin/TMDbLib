@@ -2,6 +2,7 @@
 
 namespace TMDbLib.Objects.Movies
 {
+    // TODO: Join this with SearchContainer, Lists, MovieResultContainer, ChangesListContainer
     public class Lists
     {
         public int Id { get; set; }

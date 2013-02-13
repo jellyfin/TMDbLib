@@ -39,8 +39,11 @@ namespace TestApplication
             }
 
             // 
-            client.GetCompany(177, CompanyMethods.Movies);
-            client.GetCompanyMovies(177);
+
+
+
+            //client.GetCompany(177, CompanyMethods.Movies);
+            //client.GetCompanyMovies(177);
             //Movie movie = client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
 
             //client.GetCollection(1570, extraMethods: CollectionMethods.Images);
@@ -62,13 +65,23 @@ namespace TestApplication
             //client.GetMovieReleases(47964);
             //client.GetMovieTrailers(47964);
             //client.GetMovieTranslations(47964);
-            client.GetMovieSimilarMovies(47964);
-            client.GetMovieLists(47964);
+            //client.GetMovieSimilarMovies(47964);
+            //client.GetMovieLists(47964);
             //client.GetMovieChanges(47964);
 
-            client.GetMovieLatest();
+            //client.GetMovieLatest();
 
-            client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
+            //client.GetMovie(47964, extraMethods: Enum.GetValues(typeof(MovieMethods)).OfType<MovieMethods>().Aggregate((methods, movieMethods) => movieMethods | methods));
+
+            //client.SearchMovie("A good day to die");
+            //client.SearchCollection("Die h");
+            //client.SearchKeyword("Action");
+            //client.SearchList("to watch");
+            //client.SearchCompany("Disney");
+            //client.SearchPerson("Bruce");
+
+            client.GetChangesMovies();
+            client.GetChangesPeople();
 
             Console.WriteLine("Done.");
             Console.ReadLine();
