@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
 using RestSharp;
-using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 
 namespace TMDbLib.Client
 {
