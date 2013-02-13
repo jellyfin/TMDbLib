@@ -83,9 +83,9 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page);
             if (startDate.HasValue)
-                req.AddParameter("startDate", startDate.Value.ToString("yyyy-MM-dd"));
+                req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
-                req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
+                req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
             IRestResponse<T> resp = _client.Get<T>(req);
 
