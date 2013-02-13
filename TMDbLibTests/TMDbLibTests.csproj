@@ -52,10 +52,13 @@
   <ItemGroup>
     <Compile Include="ClientMovieTests.cs" />
     <Compile Include="ClientKeywordTests.cs" />
+    <Compile Include="TestClasses\EnumTestEnum.cs" />
     <Compile Include="TestConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClientTests.cs" />
     <Compile Include="ClientGenreTests.cs" />
+    <Compile Include="TestClasses\EnumTestStruct.cs" />
+    <Compile Include="UtilsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMDbLib\TMDbLib.csproj">
