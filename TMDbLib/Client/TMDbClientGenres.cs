@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System.Collections.Generic;
+using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
 
@@ -6,12 +7,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public GenreContainer GetGenres()
+        public List<Genre> GetGenres()
         {
             return GetGenres(DefaultLanguage);
         }
 
-        public GenreContainer GetGenres(string language)
+        public List<Genre> GetGenres(string language)
         {
             RestRequest req = new RestRequest("genre/list");
 
@@ -20,7 +21,10 @@ namespace TMDbLib.Client
 
             IRestResponse<GenreContainer> resp = _client.Get<GenreContainer>(req);
 
-            return resp.Data;
+            if (resp.Data == null)
+                return null;
+
+            return resp.Data.Genres;
         }
 
         public SearchContainerWithId<MovieResult> GetGenreMovies(int id, int page = -1, bool? includeAllMovies = null)

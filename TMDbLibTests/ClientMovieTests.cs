@@ -53,6 +53,26 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestMoviesLanguage()
+        {
+            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard);
+            Movie movieItalian = _config.Client.GetMovie(AGoodDayToDieHard, "it");
+
+            Assert.IsNotNull(movie);
+            Assert.IsNotNull(movieItalian);
+
+            Assert.AreEqual("A Good Day to Die Hard", movie.Title);
+            Assert.AreNotEqual(movie.Title, movieItalian.Title);
+
+            // Test all extras, ensure none of them exist
+            foreach (Func<Movie, object> selector in _methods.Values)
+            {
+                Assert.IsNull(selector(movie));
+                Assert.IsNull(selector(movieItalian));
+            }
+        }
+
+        [TestMethod]
         public void TestMoviesExtrasExclusive()
         {
             // Test combinations of extra methods, fetch everything but each one, ensure all but the one exist
@@ -71,6 +91,71 @@ namespace TMDbLibTests
                 // .. except the method we're testing.
                 Assert.IsNull(_methods[method](movie));
             }
+        }
+
+        [TestMethod]
+        public void TestMoviesGetters()
+        {
+            //GetMovieAlternativeTitles(int id, string country)
+            {
+                var resp = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieCasts(int id)
+            {
+                var resp = _config.Client.GetMovieCasts(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieImages(int id, string language)
+            {
+                var resp = _config.Client.GetMovieImages(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieKeywords(int id)
+            {
+                var resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieReleases(int id)
+            {
+                var resp = _config.Client.GetMovieReleases(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieTrailers(int id)
+            {
+                var resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieTranslations(int id)
+            {
+                var resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieSimilarMovies(int id, string language, int page = -1)
+            {
+                var resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieLists(int id, string language, int page = -1)
+            {
+                var resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
+            //GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
+            {
+                var resp = _config.Client.GetMovieChanges(AGoodDayToDieHard);
+                Assert.IsNotNull(resp);
+            }
+
         }
 
         [TestMethod]
@@ -127,7 +212,7 @@ namespace TMDbLibTests
             }
             catch (WebException ex)
             {
-                Debug.WriteLine(((HttpWebResponse) ex.Response).StatusCode + ": " + uri);
+                Debug.WriteLine(((HttpWebResponse)ex.Response).StatusCode + ": " + uri);
                 return false;
             }
         }
