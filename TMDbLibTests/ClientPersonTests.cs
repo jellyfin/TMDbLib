@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Person;
@@ -95,10 +94,10 @@ namespace TMDbLibTests
         {
             //GetPersonCredits(int id, string language)
             {
-                var resp = _config.Client.GetPersonCredits(BruceWillis);
+                Credits resp = _config.Client.GetPersonCredits(BruceWillis);
                 Assert.IsNotNull(resp);
 
-                var respItalian = _config.Client.GetPersonCredits(BruceWillis, "it");
+                Credits respItalian = _config.Client.GetPersonCredits(BruceWillis, "it");
                 Assert.IsNotNull(respItalian);
 
                 Assert.AreEqual(resp.Cast.Count, respItalian.Cast.Count);

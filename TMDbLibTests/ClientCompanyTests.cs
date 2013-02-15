@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
@@ -72,9 +68,9 @@ namespace TMDbLibTests
         {
             //GetCompanyMovies(int id, string language, int page = -1)
             {
-                var resp = _config.Client.GetCompanyMovies(TwentiethCenturyFox);
-                var respPage2 = _config.Client.GetCompanyMovies(TwentiethCenturyFox,2);
-                var respItalian = _config.Client.GetCompanyMovies(TwentiethCenturyFox, "it");
+                SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMovies(TwentiethCenturyFox);
+                SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMovies(TwentiethCenturyFox,2);
+                SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMovies(TwentiethCenturyFox, "it");
 
                 Assert.IsNotNull(resp);
                 Assert.IsNotNull(respPage2);

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using RestSharp;
 using RestSharp.Deserializers;
 using TMDbLib.Objects.General;
