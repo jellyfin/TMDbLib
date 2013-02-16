@@ -1,7 +1,7 @@
 TMDbLib
 =======
 
-A near-complete wrapper for TMDb's API (TheMovieDb - https://www.themoviedb.org/).
+A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themoviedb.org/).
 
 Nuget
 -----
