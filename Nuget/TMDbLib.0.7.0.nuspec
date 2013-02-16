@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>TMDbLib</id>
+        <version>0.7.0</version>
+        <title>TMDb Library</title>
+        <authors>LordMike</authors>
+        <owners />
+        <projectUrl>https://github.com/LordMike/TMDbLib</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>TMDb Library wrapper for The Movie Database's API.</description>
+        <dependencies>
+            <dependency id="RestSharp" version="104.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="lib\TMDbLib.dll" target="lib\TMDbLib.dll" />
+        <file src="lib\TMDbLib.pdb" target="lib\TMDbLib.pdb" />
+    </files>
+</package>
