@@ -204,8 +204,8 @@ namespace TMDbLibTests
             int latestChanged = _config.Client.GetMovieLatest().Id;
 
             // Fetch changelog
-            DateTime lower = DateTime.UtcNow.AddDays(-14);
-            DateTime higher = DateTime.UtcNow;
+            DateTime lower = DateTime.UtcNow.AddDays(-13);
+            DateTime higher = DateTime.UtcNow.AddDays(1);
             List<Change> respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
 
             Assert.IsNotNull(respRange);
