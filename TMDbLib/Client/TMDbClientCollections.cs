@@ -38,17 +38,12 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetCollectionMethod<T>(int id, CollectionMethods collectionMethod, string dateFormat = null, string country = null, string language = null) where T : new()
+        private T GetCollectionMethod<T>(int id, CollectionMethods collectionMethod, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("collection/{id}/{method}");
             req.AddUrlSegment("id", id.ToString());
             req.AddUrlSegment("method", collectionMethod.GetDescription());
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
-
-            if (country != null)
-                req.AddParameter("country", country);
             if (language != null)
                 req.AddParameter("language", language);
 
@@ -59,7 +54,7 @@ namespace TMDbLib.Client
 
         public ImagesWithId GetCollectionImages(int id, string language = null)
         {
-            return GetCollectionMethod<ImagesWithId>(id, CollectionMethods.Images, language: language);
+            return GetCollectionMethod<ImagesWithId>(id, CollectionMethods.Images, language);
         }
     }
 }

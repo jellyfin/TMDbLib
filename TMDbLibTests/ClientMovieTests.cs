@@ -104,6 +104,21 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestMoviesGetMovieAlternativeTitlesCountry()
+        {
+            //GetMovieAlternativeTitles(int id, string country)
+            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
+            Assert.IsNotNull(respUs);
+
+            _config.Client.DefaultCountry = "US";
+
+            AlternativeTitles respUs2 = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard);
+            Assert.IsNotNull(respUs2);
+
+            Assert.AreEqual(respUs.Titles.Count, respUs2.Titles.Count);
+        }
+
+        [TestMethod]
         public void TestMoviesGetMovieCasts()
         {
             //GetMovieCasts(int id)
@@ -220,6 +235,37 @@ namespace TMDbLibTests
 
             Assert.AreEqual(AGoodDayToDieHard, images.Id);
             TestImagesHelpers.TestImages(_config, images);
+        }
+
+        [TestMethod]
+        public void TestMoviesList()
+        {
+            //GetMovieList(MovieListType type, string language, int page = -1)
+            foreach (MovieListType type in Enum.GetValues(typeof(MovieListType)).OfType<MovieListType>())
+            {
+                SearchContainer<MovieResult> list = _config.Client.GetMovieList(MovieListType.NowPlaying);
+
+                Assert.IsNotNull(list);
+                Assert.IsTrue(list.Results.Count > 0);
+                Assert.AreEqual(1, list.Page);
+
+                SearchContainer<MovieResult> listPage2 = _config.Client.GetMovieList(MovieListType.NowPlaying, 2);
+
+                Assert.IsNotNull(listPage2);
+                Assert.IsTrue(listPage2.Results.Count > 0);
+                Assert.AreEqual(2, listPage2.Page);
+
+                Assert.AreEqual(list.TotalResults, listPage2.TotalResults);
+
+                SearchContainer<MovieResult> listDe = _config.Client.GetMovieList(MovieListType.NowPlaying, "de");
+
+                Assert.IsNotNull(listDe);
+                Assert.IsTrue(listDe.Results.Count > 0);
+                Assert.AreEqual(1, listDe.Page);
+
+                // At least one title should differ
+                Assert.IsTrue(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+            }
         }
     }
 }
