@@ -61,30 +61,28 @@ namespace TMDbLibTests
         public void TestCompaniesGetters()
         {
             //GetCompanyMovies(int id, string language, int page = -1)
+            SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMovies(TwentiethCenturyFox);
+            SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMovies(TwentiethCenturyFox, 2);
+            SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMovies(TwentiethCenturyFox, "it");
+
+            Assert.IsNotNull(resp);
+            Assert.IsNotNull(respPage2);
+            Assert.IsNotNull(respItalian);
+
+            Assert.IsTrue(resp.Results.Count > 0);
+            Assert.IsTrue(respPage2.Results.Count > 0);
+            Assert.IsTrue(respItalian.Results.Count > 0);
+
+            bool allTitlesIdentical = true;
+            for (int index = 0; index < resp.Results.Count; index++)
             {
-                SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMovies(TwentiethCenturyFox);
-                SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMovies(TwentiethCenturyFox,2);
-                SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMovies(TwentiethCenturyFox, "it");
+                Assert.AreEqual(resp.Results[index].Id, respItalian.Results[index].Id);
 
-                Assert.IsNotNull(resp);
-                Assert.IsNotNull(respPage2);
-                Assert.IsNotNull(respItalian);
-
-                Assert.IsTrue(resp.Results.Count > 0);
-                Assert.IsTrue(respPage2.Results.Count > 0);
-                Assert.IsTrue(respItalian.Results.Count > 0);
-
-                bool allTitlesIdentical = true;
-                for (int index = 0; index < resp.Results.Count; index++)
-                {
-                    Assert.AreEqual(resp.Results[index].Id, respItalian.Results[index].Id);
-
-                    if (resp.Results[index].Title != respItalian.Results[index].Title)
-                        allTitlesIdentical = false;
-                }
-
-                Assert.IsFalse(allTitlesIdentical);
+                if (resp.Results[index].Title != respItalian.Results[index].Title)
+                    allTitlesIdentical = false;
             }
+
+            Assert.IsFalse(allTitlesIdentical);
         }
 
         [TestMethod]

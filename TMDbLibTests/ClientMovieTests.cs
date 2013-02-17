@@ -90,143 +90,123 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieAlternativeTitles()
         {
             //GetMovieAlternativeTitles(int id, string country)
-            {
-                AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
-                Assert.IsNotNull(respUs);
+            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
+            Assert.IsNotNull(respUs);
 
-                AlternativeTitles respGerman = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "DE");
-                Assert.IsNotNull(respGerman);
+            AlternativeTitles respGerman = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "DE");
+            Assert.IsNotNull(respGerman);
 
-                Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Stirb Langsam 5"));
-                Assert.IsTrue(respGerman.Titles.Any(s => s.Title == "Stirb Langsam 5"));
+            Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Stirb Langsam 5"));
+            Assert.IsTrue(respGerman.Titles.Any(s => s.Title == "Stirb Langsam 5"));
 
-                Assert.IsTrue(respUs.Titles.All(s => s.Iso_3166_1 == "US"));
-                Assert.IsTrue(respGerman.Titles.All(s => s.Iso_3166_1 == "DE"));
-            }
+            Assert.IsTrue(respUs.Titles.All(s => s.Iso_3166_1 == "US"));
+            Assert.IsTrue(respGerman.Titles.All(s => s.Iso_3166_1 == "DE"));
         }
 
         [TestMethod]
         public void TestMoviesGetMovieCasts()
         {
             //GetMovieCasts(int id)
-            {
-                Casts resp = _config.Client.GetMovieCasts(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
-            }
+            Casts resp = _config.Client.GetMovieCasts(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieImages()
         {
             //GetMovieImages(int id, string language)
-            {
-                ImagesWithId resp = _config.Client.GetMovieImages(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
-            }
+            ImagesWithId resp = _config.Client.GetMovieImages(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieKeywords()
         {
             //GetMovieKeywords(int id)
-            {
-                KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
-            }
+            KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieReleases()
         {
             //GetMovieReleases(int id)
-            {
-                Releases resp = _config.Client.GetMovieReleases(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
-            }
+            Releases resp = _config.Client.GetMovieReleases(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieTrailers()
         {
             //GetMovieTrailers(int id)
-            {
-                Trailers resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
-            }
+            Trailers resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieTranslations()
         {
             //GetMovieTranslations(int id)
-            {
-                TranslationsContainer resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
-            }
+            TranslationsContainer resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieSimilarMovies()
         {
             //GetMovieSimilarMovies(int id, string language, int page = -1)
-            {
-                SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
+            SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
 
-                SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de");
-                Assert.IsNotNull(respGerman);
+            SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de");
+            Assert.IsNotNull(respGerman);
 
-                Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
-                Assert.AreEqual(resp.Results.First().Id, respGerman.Results.First().Id);
-                Assert.AreNotEqual(resp.Results.First().Title, respGerman.Results.First().Title);
-            }
+            Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
+            Assert.AreEqual(resp.Results.First().Id, respGerman.Results.First().Id);
+            Assert.AreNotEqual(resp.Results.First().Title, respGerman.Results.First().Title);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieLists()
         {
             //GetMovieLists(int id, string language, int page = -1)
-            {
-                SearchContainer<ListResult> resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
-                Assert.IsNotNull(resp);
+            SearchContainer<ListResult> resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
+            Assert.IsNotNull(resp);
 
-                SearchContainer<ListResult> respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2);
-                Assert.IsNotNull(respPage2);
+            SearchContainer<ListResult> respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2);
+            Assert.IsNotNull(respPage2);
 
-                Assert.AreEqual(1, resp.Page);
-                Assert.AreEqual(2, respPage2.Page);
-                Assert.AreEqual(resp.TotalResults, resp.TotalResults);
-            }
+            Assert.AreEqual(1, resp.Page);
+            Assert.AreEqual(2, respPage2.Page);
+            Assert.AreEqual(resp.TotalResults, resp.TotalResults);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieChanges()
         {
             //GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
-            {
-                // Find latest changed title
-                int latestChanged = _config.Client.GetMovieLatest().Id;
+            // Find latest changed title
+            int latestChanged = _config.Client.GetMovieLatest().Id;
 
-                // Fetch changelog
-                DateTime lower = DateTime.UtcNow.AddDays(-14);
-                DateTime higher = DateTime.UtcNow;
-                List<Change> respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
+            // Fetch changelog
+            DateTime lower = DateTime.UtcNow.AddDays(-14);
+            DateTime higher = DateTime.UtcNow;
+            List<Change> respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
 
-                Assert.IsNotNull(respRange);
-                Assert.IsTrue(respRange.Count > 0);
+            Assert.IsNotNull(respRange);
+            Assert.IsTrue(respRange.Count > 0);
 
-                // As TMDb works in days, we need to adjust our values also
-                lower = lower.AddDays(-1);
-                higher = higher.AddDays(1);
+            // As TMDb works in days, we need to adjust our values also
+            lower = lower.AddDays(-1);
+            higher = higher.AddDays(1);
 
-                foreach (Change change in respRange)
-                    foreach (ChangeItem changeItem in change.Items)
-                    {
-                        DateTime date = changeItem.TimeParsed;
-                        Assert.IsTrue(lower <= date);
-                        Assert.IsTrue(date <= higher);
-                    }
-            }
+            foreach (Change change in respRange)
+                foreach (ChangeItem changeItem in change.Items)
+                {
+                    DateTime date = changeItem.TimeParsed;
+                    Assert.IsTrue(lower <= date);
+                    Assert.IsTrue(date <= higher);
+                }
         }
 
         [TestMethod]

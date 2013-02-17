@@ -87,69 +87,65 @@ namespace TMDbLibTests
         public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
+            Credits resp = _config.Client.GetPersonCredits(BruceWillis);
+            Assert.IsNotNull(resp);
+
+            Credits respItalian = _config.Client.GetPersonCredits(BruceWillis, "it");
+            Assert.IsNotNull(respItalian);
+
+            Assert.AreEqual(resp.Cast.Count, respItalian.Cast.Count);
+            Assert.AreEqual(resp.Crew.Count, respItalian.Crew.Count);
+            Assert.AreEqual(resp.Id, respItalian.Id);
+
+            // There must be at least one movie with a different title
+            bool allTitlesIdentical = true;
+            for (int index = 0; index < resp.Cast.Count; index++)
             {
-                Credits resp = _config.Client.GetPersonCredits(BruceWillis);
-                Assert.IsNotNull(resp);
+                Assert.AreEqual(resp.Cast[index].Id, respItalian.Cast[index].Id);
+                Assert.AreEqual(resp.Cast[index].OriginalTitle, respItalian.Cast[index].OriginalTitle);
 
-                Credits respItalian = _config.Client.GetPersonCredits(BruceWillis, "it");
-                Assert.IsNotNull(respItalian);
-
-                Assert.AreEqual(resp.Cast.Count, respItalian.Cast.Count);
-                Assert.AreEqual(resp.Crew.Count, respItalian.Crew.Count);
-                Assert.AreEqual(resp.Id, respItalian.Id);
-
-                // There must be at least one movie with a different title
-                bool allTitlesIdentical = true;
-                for (int index = 0; index < resp.Cast.Count; index++)
-                {
-                    Assert.AreEqual(resp.Cast[index].Id, respItalian.Cast[index].Id);
-                    Assert.AreEqual(resp.Cast[index].OriginalTitle, respItalian.Cast[index].OriginalTitle);
-
-                    if (resp.Cast[index].Title != respItalian.Cast[index].Title)
-                        allTitlesIdentical = false;
-                }
-
-                for (int index = 0; index < resp.Crew.Count; index++)
-                {
-                    Assert.AreEqual(resp.Crew[index].Id, respItalian.Crew[index].Id);
-                    Assert.AreEqual(resp.Crew[index].OriginalTitle, respItalian.Crew[index].OriginalTitle);
-
-                    if (resp.Crew[index].Title != respItalian.Crew[index].Title)
-                        allTitlesIdentical = false;
-                }
-
-                Assert.IsFalse(allTitlesIdentical);
+                if (resp.Cast[index].Title != respItalian.Cast[index].Title)
+                    allTitlesIdentical = false;
             }
+
+            for (int index = 0; index < resp.Crew.Count; index++)
+            {
+                Assert.AreEqual(resp.Crew[index].Id, respItalian.Crew[index].Id);
+                Assert.AreEqual(resp.Crew[index].OriginalTitle, respItalian.Crew[index].OriginalTitle);
+
+                if (resp.Crew[index].Title != respItalian.Crew[index].Title)
+                    allTitlesIdentical = false;
+            }
+
+            Assert.IsFalse(allTitlesIdentical);
         }
 
         [TestMethod]
         public void TestPersonsGetPersonChanges()
         {
             //GetPersonChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
-            {
-                // Find latest changed person
-                int latestChanged = _config.Client.GetChangesPeople().Results.First().Id;
+            // Find latest changed person
+            int latestChanged = _config.Client.GetChangesPeople().Results.First().Id;
 
-                // Fetch changelog
-                DateTime lower = DateTime.UtcNow.AddDays(-14);
-                DateTime higher = DateTime.UtcNow;
-                List<Change> respRange = _config.Client.GetPersonChanges(latestChanged, lower, higher);
+            // Fetch changelog
+            DateTime lower = DateTime.UtcNow.AddDays(-14);
+            DateTime higher = DateTime.UtcNow;
+            List<Change> respRange = _config.Client.GetPersonChanges(latestChanged, lower, higher);
 
-                Assert.IsNotNull(respRange);
-                Assert.IsTrue(respRange.Count > 0);
+            Assert.IsNotNull(respRange);
+            Assert.IsTrue(respRange.Count > 0);
 
-                // As TMDb works in days, we need to adjust our values also
-                lower = lower.AddDays(-1);
-                higher = higher.AddDays(1);
+            // As TMDb works in days, we need to adjust our values also
+            lower = lower.AddDays(-1);
+            higher = higher.AddDays(1);
 
-                foreach (Change change in respRange)
-                    foreach (ChangeItem changeItem in change.Items)
-                    {
-                        DateTime date = changeItem.TimeParsed;
-                        Assert.IsTrue(lower <= date);
-                        Assert.IsTrue(date <= higher);
-                    }
-            }
+            foreach (Change change in respRange)
+                foreach (ChangeItem changeItem in change.Items)
+                {
+                    DateTime date = changeItem.TimeParsed;
+                    Assert.IsTrue(lower <= date);
+                    Assert.IsTrue(date <= higher);
+                }
         }
 
         [TestMethod]
