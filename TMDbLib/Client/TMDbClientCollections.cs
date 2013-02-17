@@ -8,7 +8,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Collection GetCollection(int id, string language = null, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        public Collection GetCollection(int id, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        {
+            return GetCollection(id, null, extraMethods);
+        }
+
+        public Collection GetCollection(int id, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
             RestRequest req = new RestRequest("collection/{id}");
             req.AddUrlSegment("id", id.ToString());

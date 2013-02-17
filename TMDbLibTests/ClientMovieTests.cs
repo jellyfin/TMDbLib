@@ -52,6 +52,21 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestMoviesExtrasExclusive()
+        {
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovie(id, extras), AGoodDayToDieHard);
+        }
+
+        [TestMethod]
+        public void TestMoviesExtrasAll()
+        {
+            MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
+            Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum);
+
+            TestMethodsHelper.TestGetAll(_methods, item);
+        }
+
+        [TestMethod]
         public void TestMoviesLanguage()
         {
             Movie movie = _config.Client.GetMovie(AGoodDayToDieHard);
@@ -71,26 +86,6 @@ namespace TMDbLibTests
             }
         }
 
-        [TestMethod]
-        public void TestMoviesExtrasExclusive()
-        {
-            // Test combinations of extra methods, fetch everything but each one, ensure all but the one exist
-            foreach (MovieMethods method in _methods.Keys)
-            {
-                // Prepare the combination exlcuding the one (method).
-                MovieMethods combo = _methods.Keys.Except(new[] { method }).Aggregate((movieMethod, accumulator) => movieMethod | accumulator);
-
-                // Fetch data
-                Movie movie = _config.Client.GetMovie(AGoodDayToDieHard, extraMethods: combo);
-
-                // Ensure we have all pieces
-                foreach (MovieMethods expectedMethod in _methods.Keys.Except(new[] { method }))
-                    Assert.IsNotNull(_methods[expectedMethod](movie));
-
-                // .. except the method we're testing.
-                Assert.IsNull(_methods[method](movie));
-            }
-        }
         [TestMethod]
         public void TestMoviesGetMovieAlternativeTitles()
         {
@@ -244,35 +239,7 @@ namespace TMDbLibTests
             ImagesWithId images = _config.Client.GetMovieImages(AGoodDayToDieHard);
 
             Assert.AreEqual(AGoodDayToDieHard, images.Id);
-            Assert.IsTrue(images.Backdrops.Count > 0);
-            Assert.IsTrue(images.Posters.Count > 0);
-
-            List<string> backdropSizes = _config.Client.Config.Images.BackdropSizes;
-            List<string> posterSizes = _config.Client.Config.Images.PosterSizes;
-
-            foreach (ImageData imageData in images.Backdrops)
-            {
-                foreach (string size in backdropSizes)
-                {
-                    Uri url = _config.Client.GetImageUrl(size, imageData.FilePath);
-                    Uri urlSecure = _config.Client.GetImageUrl(size, imageData.FilePath, true);
-
-                    Assert.IsTrue(TestHelpers.InternetUriExists(url));
-                    Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
-                }
-            }
-
-            foreach (ImageData imageData in images.Posters)
-            {
-                foreach (string size in posterSizes)
-                {
-                    Uri url = _config.Client.GetImageUrl(size, imageData.FilePath);
-                    Uri urlSecure = _config.Client.GetImageUrl(size, imageData.FilePath, true);
-
-                    Assert.IsTrue(TestHelpers.InternetUriExists(url));
-                    Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
-                }
-            }
+            TestImagesHelpers.TestImages(_config, images);
         }
     }
 }

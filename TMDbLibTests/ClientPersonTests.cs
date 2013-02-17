@@ -46,6 +46,21 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestPersonsExtrasExclusive()
+        {
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetPerson(id, extras), BruceWillis);
+        }
+
+        [TestMethod]
+        public void TestPersonsExtrasAll()
+        {
+            PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
+            Person item = _config.Client.GetPerson(BruceWillis, combinedEnum);
+
+            TestMethodsHelper.TestGetAll(_methods, item);
+        }
+
+        [TestMethod]
         public void TestPersonsLanguage()
         {
             Person person = _config.Client.GetPerson(BruceWillis);
@@ -66,27 +81,6 @@ namespace TMDbLibTests
 
             // Todo: Check language-specific items
             // Requires a person with alternate names.
-        }
-
-        [TestMethod]
-        public void TestPersonsExtrasExclusive()
-        {
-            // Test combinations of extra methods, fetch everything but each one, ensure all but the one exist
-            foreach (PersonMethods method in _methods.Keys)
-            {
-                // Prepare the combination exlcuding the one (method).
-                PersonMethods combo = _methods.Keys.Except(new[] { method }).Aggregate((personMethod, accumulator) => personMethod | accumulator);
-
-                // Fetch data
-                Person person = _config.Client.GetPerson(BruceWillis, combo);
-
-                // Ensure we have all pieces
-                foreach (PersonMethods expectedMethod in _methods.Keys.Except(new[] { method }))
-                    Assert.IsNotNull(_methods[expectedMethod](person));
-
-                // .. except the method we're testing.
-                Assert.IsNull(_methods[method](person));
-            }
         }
 
         [TestMethod]

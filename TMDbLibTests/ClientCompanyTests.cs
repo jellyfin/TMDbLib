@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
@@ -41,27 +42,20 @@ namespace TMDbLibTests
             }
         }
 
-        // This is relevant when (and if) Companies get more methods
-        //[TestMethod]
-        //public void TestCompaniesExtrasExclusive()
-        //{
-        //    // Test combinations of extra methods, fetch everything but each one, ensure all but the one exist
-        //    foreach (CompanyMethods method in _methods.Keys)
-        //    {
-        //        // Prepare the combination exlcuding the one (method).
-        //        CompanyMethods combo = _methods.Keys.Except(new[] { method }).Aggregate((companyMethod, accumulator) => companyMethod | accumulator);
+        [TestMethod]
+        public void TestCompaniesExtrasExclusive()
+        {
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompany(id, extras), TwentiethCenturyFox);
+        }
 
-        //        // Fetch data
-        //        Company company = _config.Client.GetCompany(TwentiethCenturyFox, combo);
+        [TestMethod]
+        public void TestCompaniesExtrasAll()
+        {
+            CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
+            Company item = _config.Client.GetCompany(TwentiethCenturyFox, combinedEnum);
 
-        //        // Ensure we have all pieces
-        //        foreach (CompanyMethods expectedMethod in _methods.Keys.Except(new[] { method }))
-        //            Assert.IsNotNull(_methods[expectedMethod](company));
-
-        //        // .. except the method we're testing.
-        //        Assert.IsNull(_methods[method](company));
-        //    }
-        //}
+            TestMethodsHelper.TestGetAll(_methods, item);
+        }
 
         [TestMethod]
         public void TestCompaniesGetters()
