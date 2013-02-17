@@ -91,9 +91,8 @@ namespace TMDbLibTests
                 Assert.IsNull(_methods[method](movie));
             }
         }
-
         [TestMethod]
-        public void TestMoviesGetters()
+        public void TestMoviesGetMovieAlternativeTitles()
         {
             //GetMovieAlternativeTitles(int id, string country)
             {
@@ -109,43 +108,71 @@ namespace TMDbLibTests
                 Assert.IsTrue(respUs.Titles.All(s => s.Iso_3166_1 == "US"));
                 Assert.IsTrue(respGerman.Titles.All(s => s.Iso_3166_1 == "DE"));
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieCasts()
+        {
             //GetMovieCasts(int id)
             {
                 Casts resp = _config.Client.GetMovieCasts(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieImages()
+        {
             //GetMovieImages(int id, string language)
             {
                 ImagesWithId resp = _config.Client.GetMovieImages(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieKeywords()
+        {
             //GetMovieKeywords(int id)
             {
                 KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieReleases()
+        {
             //GetMovieReleases(int id)
             {
                 Releases resp = _config.Client.GetMovieReleases(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieTrailers()
+        {
             //GetMovieTrailers(int id)
             {
                 Trailers resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieTranslations()
+        {
             //GetMovieTranslations(int id)
             {
                 TranslationsContainer resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard);
                 Assert.IsNotNull(resp);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieSimilarMovies()
+        {
             //GetMovieSimilarMovies(int id, string language, int page = -1)
             {
                 SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
@@ -158,7 +185,11 @@ namespace TMDbLibTests
                 Assert.AreEqual(resp.Results.First().Id, respGerman.Results.First().Id);
                 Assert.AreNotEqual(resp.Results.First().Title, respGerman.Results.First().Title);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieLists()
+        {
             //GetMovieLists(int id, string language, int page = -1)
             {
                 SearchContainer<ListResult> resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
@@ -171,7 +202,11 @@ namespace TMDbLibTests
                 Assert.AreEqual(2, respPage2.Page);
                 Assert.AreEqual(resp.TotalResults, resp.TotalResults);
             }
+        }
 
+        [TestMethod]
+        public void TestMoviesGetMovieChanges()
+        {
             //GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
             {
                 // Find latest changed title
@@ -181,7 +216,7 @@ namespace TMDbLibTests
                 DateTime lower = DateTime.UtcNow.AddDays(-14);
                 DateTime higher = DateTime.UtcNow;
                 List<Change> respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
-                
+
                 Assert.IsNotNull(respRange);
                 Assert.IsTrue(respRange.Count > 0);
 
@@ -197,8 +232,6 @@ namespace TMDbLibTests
                         Assert.IsTrue(date <= higher);
                     }
             }
-
-
         }
 
         [TestMethod]

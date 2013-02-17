@@ -90,7 +90,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestPersonsGetters()
+        public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
             {
@@ -126,7 +126,11 @@ namespace TMDbLibTests
 
                 Assert.IsFalse(allTitlesIdentical);
             }
+        }
 
+        [TestMethod]
+        public void TestPersonsGetPersonChanges()
+        {
             //GetPersonChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
             {
                 // Find latest changed person
