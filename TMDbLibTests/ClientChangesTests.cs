@@ -49,10 +49,6 @@ namespace TMDbLibTests
             Assert.IsNotNull(changesLowDate);
             Assert.AreEqual(1, changesLowDate.Page);
             Assert.AreNotEqual(changesPage1.TotalResults, changesLowDate.TotalResults);
-
-            // None of the id's in changesLowDate should exist in changesMaxDate, and vice versa
-            Assert.IsTrue(changesLowDate.Results.All(lowItem => changesMaxDate.Results.All(maxItem => maxItem.Id != lowItem.Id)));
-            Assert.IsTrue(changesMaxDate.Results.All(maxItem => changesLowDate.Results.All(lowItem => maxItem.Id != lowItem.Id)));
         }
 
         [TestMethod]

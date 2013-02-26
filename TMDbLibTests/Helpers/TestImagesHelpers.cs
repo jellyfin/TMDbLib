@@ -1,33 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMDbLib.Objects.General;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using TMDbLib.Objects.Person;
 
 namespace TMDbLibTests.Helpers
 {
     public static class TestImagesHelpers
     {
+        public static void TestImages(TestConfig config, ProfileImages images)
+        {
+            Assert.IsTrue(images.Profiles.Count > 0);
+
+            string profileSize = config.Client.Config.Images.ProfileSizes.First();
+
+            TestImagesInternal(config, images.Profiles.Select(s => s.FilePath), profileSize);
+        }
+
         public static void TestImages(TestConfig config, Images images)
         {
             Assert.IsTrue(images.Backdrops.Count > 0);
             Assert.IsTrue(images.Posters.Count > 0);
 
-            string backdropSizes = config.Client.Config.Images.BackdropSizes.First();
-            string posterSizes = config.Client.Config.Images.PosterSizes.First();
+            string backdropSize = config.Client.Config.Images.BackdropSizes.First();
+            string posterSize = config.Client.Config.Images.PosterSizes.First();
 
-            foreach (ImageData imageData in images.Backdrops)
+            TestImagesInternal(config, images.Backdrops.Select(s => s.FilePath), backdropSize);
+
+            TestImagesInternal(config, images.Posters.Select(s => s.FilePath), posterSize);
+        }
+
+        private static void TestImagesInternal(TestConfig config, IEnumerable<string> images, string posterSize)
+        {
+            foreach (string imageData in images)
             {
-                Uri url = config.Client.GetImageUrl(backdropSizes, imageData.FilePath);
-                Uri urlSecure = config.Client.GetImageUrl(backdropSizes, imageData.FilePath, true);
-
-                Assert.IsTrue(TestHelpers.InternetUriExists(url));
-                Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
-            }
-
-            foreach (ImageData imageData in images.Posters)
-            {
-                Uri url = config.Client.GetImageUrl(posterSizes, imageData.FilePath);
-                Uri urlSecure = config.Client.GetImageUrl(posterSizes, imageData.FilePath, true);
+                Uri url = config.Client.GetImageUrl(posterSize, imageData);
+                Uri urlSecure = config.Client.GetImageUrl(posterSize, imageData, true);
 
                 Assert.IsTrue(TestHelpers.InternetUriExists(url));
                 Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));

@@ -12,6 +12,7 @@ namespace TMDbLibTests
     public class ClientMovieTests
     {
         private const int AGoodDayToDieHard = 47964;
+        private const int Avatar = 19995;
 
         private Dictionary<MovieMethods, Func<Movie, object>> _methods;
         private TestConfig _config;
@@ -64,6 +65,14 @@ namespace TMDbLibTests
             Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum);
 
             TestMethodsHelper.TestGetAll(_methods, item);
+        }
+
+        [TestMethod]
+        public void TestMoviesNull()
+        {
+            Movie item = _config.Client.GetMovie(Avatar, "fr");
+
+            Assert.IsNull(item);
         }
 
         [TestMethod]

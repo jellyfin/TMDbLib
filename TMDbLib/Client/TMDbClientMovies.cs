@@ -35,23 +35,26 @@ namespace TMDbLib.Client
             IRestResponse<Movie> resp = _client.Get<Movie>(req);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (resp.Data.Trailers != null)
-                resp.Data.Trailers.Id = resp.Data.Id;
+            if (resp.Data != null)
+            {
+                if (resp.Data.Trailers != null)
+                    resp.Data.Trailers.Id = resp.Data.Id;
 
-            if (resp.Data.AlternativeTitles != null)
-                resp.Data.AlternativeTitles.Id = resp.Data.Id;
+                if (resp.Data.AlternativeTitles != null)
+                    resp.Data.AlternativeTitles.Id = resp.Data.Id;
 
-            if (resp.Data.Casts != null)
-                resp.Data.Casts.Id = resp.Data.Id;
+                if (resp.Data.Casts != null)
+                    resp.Data.Casts.Id = resp.Data.Id;
 
-            if (resp.Data.Releases != null)
-                resp.Data.Releases.Id = resp.Data.Id;
+                if (resp.Data.Releases != null)
+                    resp.Data.Releases.Id = resp.Data.Id;
 
-            if (resp.Data.Keywords != null)
-                resp.Data.Keywords.Id = resp.Data.Id;
+                if (resp.Data.Keywords != null)
+                    resp.Data.Keywords.Id = resp.Data.Id;
 
-            if (resp.Data.Translations != null)
-                resp.Data.Translations.Id = resp.Data.Id;
+                if (resp.Data.Translations != null)
+                    resp.Data.Translations.Id = resp.Data.Id;
+            }
 
             return resp.Data;
         }

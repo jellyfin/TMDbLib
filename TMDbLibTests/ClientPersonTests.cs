@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
@@ -58,29 +59,6 @@ namespace TMDbLibTests
             Person item = _config.Client.GetPerson(BruceWillis, combinedEnum);
 
             TestMethodsHelper.TestGetAll(_methods, item);
-        }
-
-        [TestMethod]
-        public void TestPersonsLanguage()
-        {
-            Person person = _config.Client.GetPerson(BruceWillis);
-            Person personItalian = _config.Client.GetPerson(BruceWillis, "it");
-
-            Assert.IsNotNull(person);
-            Assert.IsNotNull(personItalian);
-
-            Assert.AreEqual("Bruce Willis", person.Name);
-            Assert.AreEqual("Bruce Willis", personItalian.Name);
-
-            // Test all extras, ensure none of them exist
-            foreach (Func<Person, object> selector in _methods.Values)
-            {
-                Assert.IsNull(selector(person));
-                Assert.IsNull(selector(personItalian));
-            }
-
-            // Todo: Check language-specific items
-            // Requires a person with alternate names.
         }
 
         [TestMethod]
@@ -160,19 +138,7 @@ namespace TMDbLibTests
             Assert.AreEqual(BruceWillis, images.Id);
             Assert.IsTrue(images.Profiles.Count > 0);
 
-            List<string> profileSizes = _config.Client.Config.Images.ProfileSizes;
-
-            foreach (Profile profile in images.Profiles)
-            {
-                foreach (string size in profileSizes)
-                {
-                    Uri url = _config.Client.GetImageUrl(size, profile.FilePath);
-                    Uri urlSecure = _config.Client.GetImageUrl(size, profile.FilePath, true);
-
-                    Assert.IsTrue(TestHelpers.InternetUriExists(url));
-                    Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
-                }
-            }
+            TestImagesHelpers.TestImages(_config, images);
         }
     }
 }

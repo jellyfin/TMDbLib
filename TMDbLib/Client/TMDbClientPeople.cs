@@ -11,16 +11,8 @@ namespace TMDbLib.Client
     {
         public Person GetPerson(int id, PersonMethods extraMethods = PersonMethods.Undefined)
         {
-            return GetPerson(id, DefaultLanguage, extraMethods);
-        }
-
-        public Person GetPerson(int id, string language, PersonMethods extraMethods = PersonMethods.Undefined)
-        {
             RestRequest req = new RestRequest("person/{id}");
             req.AddUrlSegment("id", id.ToString());
-
-            if (language != null)
-                req.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(PersonMethods))
@@ -37,11 +29,14 @@ namespace TMDbLib.Client
             IRestResponse<Person> resp = _client.Get<Person>(req);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (resp.Data.Images != null)
-                resp.Data.Images.Id = resp.Data.Id;
+            if (resp.Data != null)
+            {
+                if (resp.Data.Images != null)
+                    resp.Data.Images.Id = resp.Data.Id;
 
-            if (resp.Data.Credits != null)
-                resp.Data.Credits.Id = resp.Data.Id;
+                if (resp.Data.Credits != null)
+                    resp.Data.Credits.Id = resp.Data.Id;
+            }
 
             return resp.Data;
         }
