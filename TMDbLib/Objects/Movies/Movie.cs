@@ -24,9 +24,9 @@ namespace TMDbLib.Objects.Movies
         public List<Genre> Genres { get; set; }
 
         public DateTime ReleaseDate { get; set; }
-        public int Revenue { get; set; }
+        public long Revenue { get; set; }
+        public long Budget { get; set; }
         public int Runtime { get; set; }
-        public int Budget { get; set; }
 
         public double Popularity { get; set; }
         public double VoteAverage { get; set; }
