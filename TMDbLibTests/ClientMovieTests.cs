@@ -68,14 +68,6 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestMoviesNull()
-        {
-            Movie item = _config.Client.GetMovie(Avatar, "fr");
-
-            Assert.IsNull(item);
-        }
-
-        [TestMethod]
         public void TestMoviesLanguage()
         {
             Movie movie = _config.Client.GetMovie(AGoodDayToDieHard);
