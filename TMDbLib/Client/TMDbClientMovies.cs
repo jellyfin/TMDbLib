@@ -13,11 +13,16 @@ namespace TMDbLib.Client
         {
             return GetMovie(id, DefaultLanguage, extraMethods);
         }
-
+        
         public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
+            return GetMovie(id.ToString(), language, extraMethods);
+        }
+
+        public Movie GetMovie(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        {
             RestRequest req = new RestRequest("movie/{id}");
-            req.AddUrlSegment("id", id.ToString());
+            req.AddUrlSegment("id", imdbId);
 
             if (language != null)
                 req.AddParameter("language", language);
