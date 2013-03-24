@@ -14,7 +14,12 @@ namespace TMDbLib.Client
             return GetMovie(id, DefaultLanguage, extraMethods);
         }
 
-        public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        public Movie GetMovie(string id, MovieMethods extraMethods = MovieMethods.Undefined)
+        {
+            return GetMovie(id, DefaultLanguage, extraMethods);
+        }
+
+        public Movie GetMovie(string id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
             RestRequest req = new RestRequest("movie/{id}");
             req.AddUrlSegment("id", id.ToString());
@@ -59,11 +64,16 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetMovieMethod<T>(int id, MovieMethods movieMethod, string dateFormat = null, string country = null,
+        public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        {
+            return GetMovie(id.ToString(), language, extraMethods);
+        }
+
+        private T GetMovieMethod<T>(string id, MovieMethods movieMethod, string dateFormat = null, string country = null,
                                     string language = null, int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
             RestRequest req = new RestRequest("movie/{id}/{method}");
-            req.AddUrlSegment("id", id.ToString());
+            req.AddUrlSegment("id", id);
             req.AddUrlSegment("method", movieMethod.GetDescription());
 
             if (dateFormat != null)
@@ -84,6 +94,12 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
+        }
+
+        private T GetMovieMethod<T>(int id, MovieMethods movieMethod, string dateFormat = null, string country = null,
+                                    string language = null, int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
+        {
+            return GetMovieMethod<T>(id.ToString(), movieMethod, dateFormat, country, language, page, startDate, endDate);
         }
 
         public AlternativeTitles GetMovieAlternativeTitles(int id)

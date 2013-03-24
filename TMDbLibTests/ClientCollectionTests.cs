@@ -43,13 +43,13 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestCompaniesExtrasExclusive()
+        public void TestCollectionsExtrasExclusive()
         {
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCollection(id, extras), JamesBondCollection);
         }
 
         [TestMethod]
-        public void TestCompaniesExtrasAll()
+        public void TestCollectionsExtrasAll()
         {
             CollectionMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Collection item = _config.Client.GetCollection(JamesBondCollection, combinedEnum);

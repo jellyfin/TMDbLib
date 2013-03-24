@@ -12,6 +12,7 @@ namespace TMDbLibTests
     public class ClientMovieTests
     {
         private const int AGoodDayToDieHard = 47964;
+        private const string AGoodDayToDieHardImdb = "tt1606378";
         private const int Avatar = 19995;
 
         private Dictionary<MovieMethods, Func<Movie, object>> _methods;
@@ -56,6 +57,15 @@ namespace TMDbLibTests
         public void TestMoviesExtrasExclusive()
         {
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovie(id, extras), AGoodDayToDieHard);
+        }
+
+        [TestMethod]
+        public void TestMoviesImdbExtrasAll()
+        {
+            MovieMethods combinedEnum = _methods.Keys.Where(s => s != MovieMethods.Changes).Aggregate((methods, movieMethods) => methods | movieMethods);
+            Movie item = _config.Client.GetMovie(AGoodDayToDieHardImdb, combinedEnum);
+
+            TestMethodsHelper.TestGetAll(_methods, item);
         }
 
         [TestMethod]
