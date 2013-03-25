@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib;
+using TMDbLib.Utilitiess;
 using TMDbLibTests.TestClasses;
 
 namespace TMDbLibTests

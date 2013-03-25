@@ -3,6 +3,7 @@ using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilitiess;
 
 namespace TMDbLib.Client
 {

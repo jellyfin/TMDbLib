@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace TMDbLib
+namespace TMDbLib.Utilitiess
 {
-    public static class Utils
+    public static class EnumExtensions
     {
         public static string GetDescription<T>(this T enumerationValue) where T : struct
         {

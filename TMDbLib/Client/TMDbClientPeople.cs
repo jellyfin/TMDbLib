@@ -4,6 +4,7 @@ using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Person;
+using TMDbLib.Utilitiess;
 
 namespace TMDbLib.Client
 {
