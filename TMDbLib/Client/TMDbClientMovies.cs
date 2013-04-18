@@ -13,7 +13,12 @@ namespace TMDbLib.Client
         {
             return GetMovie(id, DefaultLanguage, extraMethods);
         }
-        
+
+        public Movie GetMovie(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined)
+        {
+            return GetMovie(imdbId, DefaultLanguage, extraMethods);
+        }
+
         public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
             return GetMovie(id.ToString(), language, extraMethods);
