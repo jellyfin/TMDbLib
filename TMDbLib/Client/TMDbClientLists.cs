@@ -13,6 +13,8 @@ namespace TMDbLib.Client
             req.DateFormat = "yyyy-MM-dd";
 
             IRestResponse<List> resp = _client.Get<List>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }

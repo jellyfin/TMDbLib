@@ -26,6 +26,8 @@ namespace TMDbLib.Client
             req.DateFormat = "yyyy-MM-dd";
 
             IRestResponse<Company> resp = _client.Get<Company>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }
@@ -42,6 +44,8 @@ namespace TMDbLib.Client
                 req.AddParameter("language", language);
 
             IRestResponse<T> resp = _client.Get<T>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }

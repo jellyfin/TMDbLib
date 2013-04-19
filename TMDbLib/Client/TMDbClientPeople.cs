@@ -27,6 +27,8 @@ namespace TMDbLib.Client
             req.DateFormat = "yyyy-MM-dd";
 
             IRestResponse<Person> resp = _client.Get<Person>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (resp.Data != null)
@@ -64,6 +66,8 @@ namespace TMDbLib.Client
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
             IRestResponse<T> resp = _client.Get<T>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }

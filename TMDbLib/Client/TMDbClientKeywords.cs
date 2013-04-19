@@ -12,6 +12,8 @@ namespace TMDbLib.Client
             req.AddUrlSegment("id", id.ToString());
 
             IRestResponse<Keyword> resp = _client.Get<Keyword>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }
@@ -33,6 +35,8 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page);
 
             IRestResponse<SearchContainer<MovieResult>> resp = _client.Get<SearchContainer<MovieResult>>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }

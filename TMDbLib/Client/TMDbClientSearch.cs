@@ -26,6 +26,8 @@ namespace TMDbLib.Client
                 req.DateFormat = dateFormat;
             
             IRestResponse<T> resp = _client.Get<T>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }

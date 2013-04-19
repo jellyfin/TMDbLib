@@ -62,8 +62,12 @@ namespace TMDbLib.Client
             RestRequest req = new RestRequest("configuration");
             IRestResponse<TMDbConfig> resp = _client.Get<TMDbConfig>(req);
 
-            if (resp.ResponseStatus != ResponseStatus.Completed)
-                throw new Exception("Error");
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
+
+            // TODO Create specific Exception type
+            if (resp.ResponseStatus != ResponseStatus.Completed || resp.Data == null)
+                throw new Exception("Unable to retrieve configuration");
 
             // Store config
             Config = resp.Data;

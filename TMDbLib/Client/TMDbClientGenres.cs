@@ -20,6 +20,8 @@ namespace TMDbLib.Client
                 req.AddParameter("language", language);
 
             IRestResponse<GenreContainer> resp = _client.Get<GenreContainer>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             if (resp.Data == null)
                 return null;
@@ -46,6 +48,8 @@ namespace TMDbLib.Client
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
             IRestResponse<SearchContainerWithId<MovieResult>> resp = _client.Get<SearchContainerWithId<MovieResult>>(req);
+            if (resp.ErrorException != null)
+                throw resp.ErrorException;
 
             return resp.Data;
         }
