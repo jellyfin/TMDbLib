@@ -1,3 +1,10 @@
+FORK NOTES
+----------
+To build this version of the lib you currently need my fork of the RestSharp library.
+There is a little bug in the current master build, link: https://github.com/Naliath/RestSharp
+
+I'll update this and submit a pull request to the core lib as soon as a nuget package is available including a fix.
+
 TMDbLib
 =======
 
