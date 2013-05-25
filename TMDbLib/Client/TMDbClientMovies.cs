@@ -163,7 +163,7 @@ namespace TMDbLib.Client
 
         public List<Change> GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
         {
-            ChangesContainer changes = GetMovieMethod<ChangesContainer>(id, MovieMethods.Changes, startDate: startDate, endDate: endDate);
+			ChangesContainer changes = GetMovieMethod<ChangesContainer>(id, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
 
             return changes.Changes;
         }
