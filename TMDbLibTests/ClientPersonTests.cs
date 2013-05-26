@@ -120,7 +120,7 @@ namespace TMDbLibTests
             foreach (Change change in respRange)
                 foreach (ChangeItem changeItem in change.Items)
                 {
-                    DateTime date = changeItem.TimeParsed;
+                    DateTime date = changeItem.Time;
                     Assert.IsTrue(lower <= date);
                     Assert.IsTrue(date <= higher);
                 }
