@@ -1,9 +1,8 @@
 FORK NOTES
 ----------
-To build this version of the lib you currently need my fork of the RestSharp library.
-There is a little bug in the current master build, link: https://github.com/Naliath/RestSharp
+Due to inactivity on the main repo here a slightly updated version with things I found to be broken.
 
-I'll update this and submit a pull request to the core lib as soon as a nuget package is available including a fix.
+All credit goes to the original author LordMike
 
 TMDbLib
 =======
@@ -13,8 +12,7 @@ A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themovied
 Nuget
 -----
 
-Install from Nuget using the command: **Install-Package TMDbLib**
-View more about that here: http://nuget.org/packages/TMDbLib/
+Updated nuget package of my fork of this project can be found at: https://www.nuget.org/packages/Naliath.TMDbLib/
 
 Changelog
 ---------
