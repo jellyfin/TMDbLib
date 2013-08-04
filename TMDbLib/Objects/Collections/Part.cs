@@ -6,7 +6,7 @@ namespace TMDbLib.Objects.Collections
     {
         public string Title { get; set; }
         public int Id { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         public string PosterPath { get; set; }
         public string BackdropPath { get; set; }
     }

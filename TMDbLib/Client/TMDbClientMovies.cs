@@ -4,7 +4,7 @@ using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
-using TMDbLib.Utilitiess;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -15,15 +15,20 @@ namespace TMDbLib.Client
             return GetMovie(id, DefaultLanguage, extraMethods);
         }
 
-        public Movie GetMovie(string id, MovieMethods extraMethods = MovieMethods.Undefined)
+        public Movie GetMovie(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            return GetMovie(id, DefaultLanguage, extraMethods);
+            return GetMovie(imdbId, DefaultLanguage, extraMethods);
         }
 
-        public Movie GetMovie(string id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            RestRequest req = new RestRequest("movie/{id}");
-            req.AddUrlSegment("id", id.ToString());
+            return GetMovie(id.ToString(), language, extraMethods);
+        }
+
+        public Movie GetMovie(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        {
+            var req = new RestRequest("movie/{id}");
+            req.AddUrlSegment("id", imdbId);
 
             if (language != null)
                 req.AddParameter("language", language);
@@ -65,16 +70,11 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
-        {
-            return GetMovie(id.ToString(), language, extraMethods);
-        }
-
-        private T GetMovieMethod<T>(string id, MovieMethods movieMethod, string dateFormat = null, string country = null,
+        private T GetMovieMethod<T>(int id, MovieMethods movieMethod, string dateFormat = null, string country = null,
                                     string language = null, int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = new RestRequest("movie/{id}/{method}");
-            req.AddUrlSegment("id", id);
+            var req = new RestRequest("movie/{id}/{method}");
+            req.AddUrlSegment("id", id.ToString());
             req.AddUrlSegment("method", movieMethod.GetDescription());
 
             if (dateFormat != null)
@@ -95,12 +95,6 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
-        }
-
-        private T GetMovieMethod<T>(int id, MovieMethods movieMethod, string dateFormat = null, string country = null,
-                                    string language = null, int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
-        {
-            return GetMovieMethod<T>(id.ToString(), movieMethod, dateFormat, country, language, page, startDate, endDate);
         }
 
         public AlternativeTitles GetMovieAlternativeTitles(int id)
@@ -170,14 +164,12 @@ namespace TMDbLib.Client
 
         public List<Change> GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
         {
-            ChangesContainer changes = GetMovieMethod<ChangesContainer>(id, MovieMethods.Changes, startDate: startDate, endDate: endDate);
-
-            return changes.Changes;
+            return GetMovieMethod<ChangesContainer>(id, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").Changes;
         }
 
         public Movie GetMovieLatest()
         {
-            RestRequest req = new RestRequest("movie/latest");
+            var req = new RestRequest("movie/latest");
             IRestResponse<Movie> resp = _client.Get<Movie>(req);
 
             return resp.Data;
