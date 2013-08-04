@@ -9,6 +9,9 @@ Nuget
 Install from Nuget using the command: **Install-Package TMDbLib**
 View more about that here: http://nuget.org/packages/TMDbLib/
 
+- NOTE: Nuget package is currently out of date and can not be updated until the owner of the repo gets back from leave.
+- If you really want to use a nuget package you can use https://www.nuget.org/packages/Naliath.TMDbLib/, this will however no longer be supported as soon as the main lib is republished
+
 Changelog
 ---------
 
