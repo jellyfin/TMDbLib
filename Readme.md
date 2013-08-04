@@ -1,3 +1,9 @@
+FORK NOTES
+----------
+Due to inactivity on the main repo here a slightly updated version with things I found to be broken.
+
+All credit goes to the original author LordMike
+
 TMDbLib
 =======
 
@@ -6,8 +12,7 @@ A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themovied
 Nuget
 -----
 
-Install from Nuget using the command: **Install-Package TMDbLib**
-View more about that here: http://nuget.org/packages/TMDbLib/
+Updated nuget package of my fork of this project can be found at: https://www.nuget.org/packages/Naliath.TMDbLib/
 
 Changelog
 ---------

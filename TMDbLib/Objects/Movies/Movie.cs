@@ -23,10 +23,10 @@ namespace TMDbLib.Objects.Movies
         public List<BelongsToCollection> BelongsToCollection { get; set; }
         public List<Genre> Genres { get; set; }
 
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         public long Revenue { get; set; }
         public long Budget { get; set; }
-        public int Runtime { get; set; }
+        public int? Runtime { get; set; }
 
         public double Popularity { get; set; }
         public double VoteAverage { get; set; }

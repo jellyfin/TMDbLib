@@ -7,17 +7,8 @@ namespace TMDbLib.Objects.Movies
     {
         public string Id { get; set; }
         public string Action { get; set; }
-        public string Time { get; set; }        // TODO: Datetype
+        public DateTime Time { get; set; }
         public string Iso_639_1 { get; set; }
         public string Value { get; set; }
-
-        public DateTime TimeParsed
-        {
-            get
-            {
-                // Parse the Time, it's always in UTC format
-                return DateTime.Parse(Time.Replace(" UTC", ""), CultureInfo.GetCultureInfo("en-US"), DateTimeStyles.AssumeUniversal);
-            }
-        }
     }
 }

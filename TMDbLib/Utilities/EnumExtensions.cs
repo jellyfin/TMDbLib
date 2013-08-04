@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace TMDbLib.Utilitiess
+namespace TMDbLib.Utilities
 {
     public static class EnumExtensions
     {
