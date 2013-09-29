@@ -267,21 +267,19 @@ namespace TMDbLibTests
             //GetMovieList(MovieListType type, string language, int page = -1)
             foreach (MovieListType type in Enum.GetValues(typeof(MovieListType)).OfType<MovieListType>())
             {
-                SearchContainer<MovieResult> list = _config.Client.GetMovieList(MovieListType.NowPlaying);
+                SearchContainer<MovieResult> list = _config.Client.GetMovieList(type);
 
                 Assert.IsNotNull(list);
                 Assert.IsTrue(list.Results.Count > 0);
                 Assert.AreEqual(1, list.Page);
 
-                SearchContainer<MovieResult> listPage2 = _config.Client.GetMovieList(MovieListType.NowPlaying, 2);
+                SearchContainer<MovieResult> listPage2 = _config.Client.GetMovieList(type, 2);
 
                 Assert.IsNotNull(listPage2);
                 Assert.IsTrue(listPage2.Results.Count > 0);
                 Assert.AreEqual(2, listPage2.Page);
 
-                Assert.AreEqual(list.TotalResults, listPage2.TotalResults);
-
-                SearchContainer<MovieResult> listDe = _config.Client.GetMovieList(MovieListType.NowPlaying, "de");
+                SearchContainer<MovieResult> listDe = _config.Client.GetMovieList(type, "de");
 
                 Assert.IsNotNull(listDe);
                 Assert.IsTrue(listDe.Results.Count > 0);
