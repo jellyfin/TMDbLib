@@ -79,7 +79,7 @@ namespace TMDbLibTests
         {
             // SearchPerson(string query, int page = -1, bool includeAdult = false)
 
-            SearchPages(i => _config.Client.SearchPerson("Bruce Willis", i));
+            SearchPages(i => _config.Client.SearchPerson("Bruce", i));
 
             // TODO: Extend
             Assert.Inconclusive();

@@ -26,7 +26,7 @@ namespace TMDbLibTests.Helpers
             }
         }
 
-        public static void TestGetAll<T, TResult>(Dictionary<T, Func<TResult, object>> methodSelectors, TResult item) where T : struct
+        public static void TestAllNotNull<T, TResult>(Dictionary<T, Func<TResult, object>> methodSelectors, TResult item) where T : struct
         {
             Assert.IsTrue(typeof(T).IsEnum);
 

@@ -86,7 +86,7 @@ namespace TMDbLib.Client
 
         public List<Change> GetPersonChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
         {
-            ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(id, PersonMethods.Changes, startDate: startDate, endDate: endDate);
+            ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(id, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
             return changesContainer.Changes;
         }
     }

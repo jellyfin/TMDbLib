@@ -54,7 +54,7 @@ namespace TMDbLibTests
             CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Company item = _config.Client.GetCompany(TwentiethCenturyFox, combinedEnum);
 
-            TestMethodsHelper.TestGetAll(_methods, item);
+            TestMethodsHelper.TestAllNotNull(_methods, item);
         }
 
         [TestMethod]

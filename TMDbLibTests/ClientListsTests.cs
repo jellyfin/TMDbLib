@@ -10,7 +10,7 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientListsTests
     {
-        private const int AGoodDayToDieHard = 47964;
+        private const int Avatar = 19995;
         private TestConfig _config;
 
         [TestInitialize]
@@ -23,7 +23,7 @@ namespace TMDbLibTests
         public void TestList()
         {
             // Get a list Id
-            string listId = _config.Client.GetMovieLists(AGoodDayToDieHard).Results.First().Id;
+            string listId = _config.Client.GetMovieLists(Avatar).Results.First().Id;
 
             // Get list
             List list = _config.Client.GetList(listId);

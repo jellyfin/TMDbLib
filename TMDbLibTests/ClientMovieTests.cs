@@ -62,10 +62,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesImdbExtrasAll()
         {
-            MovieMethods combinedEnum = _methods.Keys.Where(s => s != MovieMethods.Changes).Aggregate((methods, movieMethods) => methods | movieMethods);
+            Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
+            tmpMethods.Remove(MovieMethods.Changes);
+            tmpMethods.Remove(MovieMethods.SimilarMovies);      // See https://github.com/LordMike/TMDbLib/issues/19
+
+            MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = _config.Client.GetMovie(AGoodDayToDieHardImdb, combinedEnum);
 
-            TestMethodsHelper.TestGetAll(_methods, item);
+            TestMethodsHelper.TestAllNotNull(tmpMethods, item);
         }
 
         [TestMethod]
@@ -74,7 +78,7 @@ namespace TMDbLibTests
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum);
 
-            TestMethodsHelper.TestGetAll(_methods, item);
+            TestMethodsHelper.TestAllNotNull(_methods, item);
         }
 
         [TestMethod]
@@ -188,8 +192,17 @@ namespace TMDbLibTests
             Assert.IsNotNull(respGerman);
 
             Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
-            Assert.AreEqual(resp.Results.First().Id, respGerman.Results.First().Id);
-            Assert.AreNotEqual(resp.Results.First().Title, respGerman.Results.First().Title);
+
+            int differentTitles = 0;
+            for (int i = 0; i < resp.Results.Count; i++)
+            {
+                Assert.AreEqual(resp.Results[i].Id, respGerman.Results[i].Id);
+
+                // At least one title should be different, as German is a big language and they dub all their titles.
+                differentTitles++;
+            }
+
+            Assert.IsTrue(differentTitles > 0);
         }
 
         [TestMethod]

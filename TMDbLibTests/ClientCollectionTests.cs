@@ -54,7 +54,7 @@ namespace TMDbLibTests
             CollectionMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Collection item = _config.Client.GetCollection(JamesBondCollection, combinedEnum);
 
-            TestMethodsHelper.TestGetAll(_methods, item);
+            TestMethodsHelper.TestAllNotNull(_methods, item);
         }
 
         [TestMethod]

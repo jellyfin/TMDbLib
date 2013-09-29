@@ -58,7 +58,7 @@ namespace TMDbLibTests
             PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Person item = _config.Client.GetPerson(BruceWillis, combinedEnum);
 
-            TestMethodsHelper.TestGetAll(_methods, item);
+            TestMethodsHelper.TestAllNotNull(_methods, item);
         }
 
         [TestMethod]
