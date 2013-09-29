@@ -9,7 +9,7 @@ namespace TMDbLib.Objects.Person
         public string Character { get; set; }
         public string OriginalTitle { get; set; }
         public string PosterPath { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         public bool Adult { get; set; }
     }
 }
