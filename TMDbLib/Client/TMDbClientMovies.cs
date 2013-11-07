@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.General;
@@ -22,7 +23,7 @@ namespace TMDbLib.Client
 
         public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            return GetMovie(id.ToString(), language, extraMethods);
+            return GetMovie(id.ToString(CultureInfo.InvariantCulture), language, extraMethods);
         }
 
         public Movie GetMovie(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
@@ -54,8 +55,8 @@ namespace TMDbLib.Client
                 if (resp.Data.AlternativeTitles != null)
                     resp.Data.AlternativeTitles.Id = resp.Data.Id;
 
-                if (resp.Data.Casts != null)
-                    resp.Data.Casts.Id = resp.Data.Id;
+                if (resp.Data.Credits != null)
+                    resp.Data.Credits.Id = resp.Data.Id;
 
                 if (resp.Data.Releases != null)
                     resp.Data.Releases.Id = resp.Data.Id;
@@ -107,9 +108,9 @@ namespace TMDbLib.Client
             return GetMovieMethod<AlternativeTitles>(id, MovieMethods.AlternativeTitles, country: country);
         }
 
-        public Casts GetMovieCasts(int id)
+        public Credits GetMovieCredits(int id)
         {
-            return GetMovieMethod<Casts>(id, MovieMethods.Casts);
+            return GetMovieMethod<Credits>(id, MovieMethods.Credits);
         }
 
         public ImagesWithId GetMovieImages(int id)

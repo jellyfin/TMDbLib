@@ -10,8 +10,8 @@ namespace TMDbLib.Objects.Movies
         Undefined = 0,
         [Description("alternative_titles")]
         AlternativeTitles = 1,
-        [Description("casts")]
-        Casts = 2,
+        [Description("credits")]
+        Credits = 2,
         [Description("images")]
         Images = 4,
         [Description("keywords")]

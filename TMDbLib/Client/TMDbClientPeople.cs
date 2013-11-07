@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Movies;
-using TMDbLib.Objects.Person;
+using TMDbLib.Objects.People;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.People.Credits;
 
 namespace TMDbLib.Client
 {

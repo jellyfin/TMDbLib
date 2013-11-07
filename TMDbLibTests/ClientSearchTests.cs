@@ -117,5 +117,16 @@ namespace TMDbLibTests
             // TODO: Extend
             Assert.Inconclusive();
         }
+
+        [TestMethod]
+        public void TestSearchTvShow()
+        {
+            // SearchKeyword(string query, int page = -1)
+
+            //SearchPages(i => _config.Client.SearchTvShow("Breaking Bad", i));
+
+            // TODO: Implement
+            Assert.Inconclusive();
+        }
     }
 }

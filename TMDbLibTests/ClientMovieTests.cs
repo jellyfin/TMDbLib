@@ -25,7 +25,7 @@ namespace TMDbLibTests
 
             _methods = new Dictionary<MovieMethods, Func<Movie, object>>();
             _methods[MovieMethods.AlternativeTitles] = movie => movie.AlternativeTitles;
-            _methods[MovieMethods.Casts] = movie => movie.Casts;
+            _methods[MovieMethods.Credits] = movie => movie.Credits;
             _methods[MovieMethods.Images] = movie => movie.Images;
             _methods[MovieMethods.Keywords] = movie => movie.Keywords;
             _methods[MovieMethods.Releases] = movie => movie.Releases;
@@ -137,7 +137,7 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieCasts()
         {
             //GetMovieCasts(int id)
-            Casts resp = _config.Client.GetMovieCasts(AGoodDayToDieHard);
+            Credits resp = _config.Client.GetMovieCredits(AGoodDayToDieHard);
             Assert.IsNotNull(resp);
         }
 

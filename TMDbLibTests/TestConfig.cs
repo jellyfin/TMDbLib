@@ -8,7 +8,7 @@ namespace TMDbLibTests
 
         public TestConfig(bool useSsl = false)
         {
-            Client = new TMDbClient("APIKEY");
+            Client = new TMDbClient("3df9b05bb90365ddca3edfffd009d6c1");
         }
     }
 }

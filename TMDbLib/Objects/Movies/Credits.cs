@@ -2,7 +2,7 @@
 
 namespace TMDbLib.Objects.Movies
 {
-    public class Casts
+    public class Credits
     {
         public int Id { get; set; }
         public List<Cast> Cast { get; set; }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace TMDbLib.Objects.Person
+namespace TMDbLib.Objects.TvShows
 {
     [Flags]
-    public enum PersonMethods
+    public enum TvSeasonMethods
     {
         [Description("Undefined")]
         Undefined = 0,
@@ -12,7 +12,7 @@ namespace TMDbLib.Objects.Person
         Credits = 1,
         [Description("images")]
         Images = 2,
-        [Description("changes")]
-        Changes = 4
+        [Description("external_ids")]
+        ExternalIds = 4,
     }
 }

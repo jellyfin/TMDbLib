@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMDbLib.Objects.General;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using TMDbLib.Objects.Person;
+using TMDbLib.Objects.People;
 
 namespace TMDbLibTests.Helpers
 {

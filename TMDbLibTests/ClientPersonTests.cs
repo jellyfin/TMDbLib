@@ -5,8 +5,9 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
-using TMDbLib.Objects.Person;
+using TMDbLib.Objects.People;
 using TMDbLibTests.Helpers;
+using Credits = TMDbLib.Objects.People.Credits;
 
 namespace TMDbLibTests
 {

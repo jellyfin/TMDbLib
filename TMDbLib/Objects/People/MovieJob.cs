@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TMDbLib.Objects.Person
+namespace TMDbLib.Objects.People
 {
     public class MovieJob
     {

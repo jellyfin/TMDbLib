@@ -38,7 +38,7 @@ namespace TMDbLib.Objects.Movies
 
         public AlternativeTitles AlternativeTitles { get; set; }
         public Releases Releases { get; set; }
-        public Casts Casts { get; set; }
+        public Credits Credits { get; set; }
         public Images Images { get; set; }
         public KeywordsContainer Keywords { get; set; }
         public Trailers Trailers { get; set; }

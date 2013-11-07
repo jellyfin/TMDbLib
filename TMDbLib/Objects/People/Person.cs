@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TMDbLib.Objects.Movies;
 
-namespace TMDbLib.Objects.Person
+namespace TMDbLib.Objects.People
 {
     public class Person
     {
