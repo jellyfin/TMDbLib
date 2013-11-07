@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.TvShows
+﻿namespace TMDbLib.Objects.General
 {
     public class Crew
     {      
