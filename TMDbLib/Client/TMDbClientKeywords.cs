@@ -6,25 +6,25 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Keyword GetKeyword(int id)
+        public Keyword GetKeyword(int keywordId)
         {
-            RestRequest req = new RestRequest("keyword/{id}");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("keyword/{keywordId}");
+            req.AddUrlSegment("keywordId", keywordId.ToString());
 
             IRestResponse<Keyword> resp = _client.Get<Keyword>(req);
 
             return resp.Data;
         }
 
-        public SearchContainer<MovieResult> GetKeywordMovies(int id, int page = -1)
+        public SearchContainer<MovieResult> GetKeywordMovies(int keywordId, int page = 0)
         {
-            return GetKeywordMovies(id, DefaultLanguage, page);
+            return GetKeywordMovies(keywordId, DefaultLanguage, page);
         }
 
-        public SearchContainer<MovieResult> GetKeywordMovies(int id, string language, int page = -1)
+        public SearchContainer<MovieResult> GetKeywordMovies(int keywordId, string language, int page = 0)
         {
-            RestRequest req = new RestRequest("keyword/{id}/movies");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("keyword/{keywordId}/movies");
+            req.AddUrlSegment("keywordId", keywordId.ToString());
 
             if (language != null)
                 req.AddParameter("language", language);

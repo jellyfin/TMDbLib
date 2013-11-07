@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
+using System.Linq;
 
 namespace TMDbLibTests
 {
@@ -47,75 +49,71 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchMovie()
         {
-            // SearchMovie(string query, int page = -1, bool includeAdult = false, int year = -1)
-            // SearchMovie(string query, string language, int page = -1, bool includeAdult = false, int year = -1)
-
             SearchPages(i => _config.Client.SearchMovie("007", i));
 
             // Search pr. Year
             // 1962: First James Bond movie, "Dr. No"
-            SearchContainer<SearchMovie> resultYear = _config.Client.SearchMovie("007", year: 1962);
+            SearchContainer<SearchMovie> result = _config.Client.SearchMovie("007", year: 1962);
 
-            Assert.IsNotNull(resultYear);
-            Assert.AreEqual(1, resultYear.Page);
-            Assert.AreEqual(1, resultYear.Results.Count);
-            Assert.AreEqual(1, resultYear.TotalResults);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Page);
+            Assert.AreEqual(1, result.Results.Count);
+            Assert.AreEqual(1, result.TotalResults);
         }
 
         [TestMethod]
         public void TestSearchCollection()
         {
-            // SearchCollection(string query, int page = -1)
-            // SearchCollection(string query, string language, int page = -1)
-
             SearchPages(i => _config.Client.SearchCollection("007", i));
 
-            // TODO: Extend
-            Assert.Inconclusive();
+            SearchContainer<SearchResultCollection> result = _config.Client.SearchCollection("James Bond");
+
+            Debug.Assert(result.Results.Any(s => s.Id == 645));
+            Debug.Assert(result.Results.Any(s => s.Name == "James Bond Collection"));
         }
 
         [TestMethod]
         public void TestSearchPerson()
         {
-            // SearchPerson(string query, int page = -1, bool includeAdult = false)
-
             SearchPages(i => _config.Client.SearchPerson("Bruce", i));
 
-            // TODO: Extend
-            Assert.Inconclusive();
+            SearchContainer<SearchPerson> result = _config.Client.SearchPerson("Bruce");
+
+            Debug.Assert(result.Results.Any(s => s.Id == 62));
+            Debug.Assert(result.Results.Any(s => s.Name == "Bruce Willis"));
         }
 
         [TestMethod]
         public void TestSearchList()
         {
-            // SearchList(string query, int page = -1, bool includeAdult = false)
-
             SearchPages(i => _config.Client.SearchList("to watch", i));
 
-            // TODO: Extend
-            Assert.Inconclusive();
+            SearchContainer<SearchList> result = _config.Client.SearchList("2013");
+
+            Debug.Assert(result.Results.Any(s => s.Id == "50cbe90b19c2956de8047b4f"));
+            Debug.Assert(result.Results.Any(s => s.Name == "Sci-Fi films to see in 2013"));
         }
 
         [TestMethod]
         public void TestSearchCompany()
         {
-            // SearchCompany(string query, int page = -1)
-
             SearchPages(i => _config.Client.SearchCompany("20th", i));
 
-            // TODO: Extend
-            Assert.Inconclusive();
+            SearchContainer<SearchCompany> result = _config.Client.SearchCompany("20th");
+
+            Debug.Assert(result.Results.Any(s => s.Id == 25));
+            Debug.Assert(result.Results.Any(s => s.Name == "20th Century Fox"));
         }
 
         [TestMethod]
         public void TestSearchKeyword()
         {
-            // SearchKeyword(string query, int page = -1)
-
             SearchPages(i => _config.Client.SearchKeyword("plot", i));
 
-            // TODO: Extend
-            Assert.Inconclusive();
+            SearchContainer<SearchKeyword> result = _config.Client.SearchKeyword("plot");
+
+            Debug.Assert(result.Results.Any(s => s.Id == 11422));
+            Debug.Assert(result.Results.Any(s => s.Name == "plot twist"));
         }
 
         [TestMethod]

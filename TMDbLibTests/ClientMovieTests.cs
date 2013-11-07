@@ -184,7 +184,6 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieSimilarMovies()
         {
-            //GetMovieSimilarMovies(int id, string language, int page = -1)
             SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
             Assert.IsNotNull(resp);
 

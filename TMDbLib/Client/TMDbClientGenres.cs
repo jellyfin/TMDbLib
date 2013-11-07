@@ -27,15 +27,15 @@ namespace TMDbLib.Client
             return resp.Data.Genres;
         }
 
-        public SearchContainerWithId<MovieResult> GetGenreMovies(int id, int page = -1, bool? includeAllMovies = null)
+        public SearchContainerWithId<MovieResult> GetGenreMovies(int genreId, int page = 0, bool? includeAllMovies = null)
         {
-            return GetGenreMovies(id, DefaultLanguage, page, includeAllMovies);
+            return GetGenreMovies(genreId, DefaultLanguage, page, includeAllMovies);
         }
 
-        public SearchContainerWithId<MovieResult> GetGenreMovies(int id, string language, int page = -1, bool? includeAllMovies = null)
+        public SearchContainerWithId<MovieResult> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)
         {
-            RestRequest req = new RestRequest("genre/{id}/movies");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("genre/{genreId}/movies");
+            req.AddUrlSegment("genreId", genreId.ToString());
 
             if (language != null)
                 req.AddParameter("language", language);

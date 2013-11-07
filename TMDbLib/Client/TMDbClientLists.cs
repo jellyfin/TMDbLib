@@ -5,10 +5,10 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public List GetList(string id)
+        public List GetList(string listId)
         {
-            RestRequest req = new RestRequest("list/{id}");
-            req.AddUrlSegment("id", id);
+            RestRequest req = new RestRequest("list/{listId}");
+            req.AddUrlSegment("listId", listId);
 
             req.DateFormat = "yyyy-MM-dd";
 
