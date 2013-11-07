@@ -7,7 +7,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private T GetChanges<T>(string type, int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
+        private T GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
             RestRequest req = new RestRequest("{type}/changes");
             req.AddUrlSegment("type", type);
@@ -24,12 +24,12 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public SearchContainer<ChangesListItem> GetChangesMovies(int page = -1, DateTime? startDate = null, DateTime? endDate = null)
+        public SearchContainer<ChangesListItem> GetChangesMovies(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
             return GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate);
         }
 
-        public SearchContainer<ChangesListItem> GetChangesPeople(int page = -1, DateTime? startDate = null, DateTime? endDate = null)
+        public SearchContainer<ChangesListItem> GetChangesPeople(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
             return GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
         }

@@ -9,10 +9,10 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Company GetCompany(int id, CompanyMethods extraMethods = CompanyMethods.Undefined)
+        public Company GetCompany(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
         {
-            RestRequest req = new RestRequest("company/{id}");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("company/{companyId}");
+            req.AddUrlSegment("companyId", companyId.ToString());
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(CompanyMethods))
@@ -31,10 +31,10 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetCompanyMethod<T>(int id, CompanyMethods companyMethod, int page = -1, string language = null) where T : new()
+        private T GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("company/{id}/{method}");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("company/{companyId}/{method}");
+            req.AddUrlSegment("companyId", companyId.ToString());
             req.AddUrlSegment("method", companyMethod.GetDescription());
 
             if (page >= 1)
@@ -47,14 +47,14 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public SearchContainerWithId<MovieResult> GetCompanyMovies(int id, int page = -1)
+        public SearchContainerWithId<MovieResult> GetCompanyMovies(int companyId, int page = 0)
         {
-            return GetCompanyMovies(id, DefaultLanguage, page);
+            return GetCompanyMovies(companyId, DefaultLanguage, page);
         }
 
-        public SearchContainerWithId<MovieResult> GetCompanyMovies(int id, string language, int page = -1)
+        public SearchContainerWithId<MovieResult> GetCompanyMovies(int companyId, string language, int page = 0)
         {
-            return GetCompanyMethod<SearchContainerWithId<MovieResult>>(id, CompanyMethods.Movies, page, language);
+            return GetCompanyMethod<SearchContainerWithId<MovieResult>>(companyId, CompanyMethods.Movies, page, language);
         }
     }
 }

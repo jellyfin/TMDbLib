@@ -10,10 +10,10 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Person GetPerson(int id, PersonMethods extraMethods = PersonMethods.Undefined)
+        public Person GetPerson(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
         {
-            RestRequest req = new RestRequest("person/{id}");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("person/{personId}");
+            req.AddUrlSegment("personId", personId.ToString());
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(PersonMethods))
@@ -42,11 +42,11 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetPersonMethod<T>(int id, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
-                                        int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
+        private T GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
+                                        int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = new RestRequest("person/{id}/{method}");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("person/{personId}/{method}");
+            req.AddUrlSegment("personId", personId.ToString());
             req.AddUrlSegment("method", personMethod.GetDescription());
 
             if (dateFormat != null)
@@ -69,24 +69,24 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public Credits GetPersonCredits(int id)
+        public Credits GetPersonCredits(int personId)
         {
-            return GetPersonCredits(id, DefaultLanguage);
+            return GetPersonCredits(personId, DefaultLanguage);
         }
 
-        public Credits GetPersonCredits(int id, string language)
+        public Credits GetPersonCredits(int personId, string language)
         {
-            return GetPersonMethod<Credits>(id, PersonMethods.Credits, language: language);
+            return GetPersonMethod<Credits>(personId, PersonMethods.Credits, language: language);
         }
 
-        public ProfileImages GetPersonImages(int id)
+        public ProfileImages GetPersonImages(int personId)
         {
-            return GetPersonMethod<ProfileImages>(id, PersonMethods.Images);
+            return GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
         }
 
-        public List<Change> GetPersonChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
+        public List<Change> GetPersonChanges(int personId, DateTime? startDate = null, DateTime? endDate = null)
         {
-            ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(id, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
+            ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
             return changesContainer.Changes;
         }
     }

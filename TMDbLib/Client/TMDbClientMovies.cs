@@ -10,9 +10,9 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Movie GetMovie(int id, MovieMethods extraMethods = MovieMethods.Undefined)
+        public Movie GetMovie(int movieId, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            return GetMovie(id, DefaultLanguage, extraMethods);
+            return GetMovie(movieId, DefaultLanguage, extraMethods);
         }
 
         public Movie GetMovie(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined)
@@ -20,15 +20,15 @@ namespace TMDbLib.Client
             return GetMovie(imdbId, DefaultLanguage, extraMethods);
         }
 
-        public Movie GetMovie(int id, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        public Movie GetMovie(int movieId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            return GetMovie(id.ToString(), language, extraMethods);
+            return GetMovie(movieId.ToString(), language, extraMethods);
         }
 
         public Movie GetMovie(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            var req = new RestRequest("movie/{id}");
-            req.AddUrlSegment("id", imdbId);
+            var req = new RestRequest("movie/{movieId}");
+            req.AddUrlSegment("movieId", imdbId);
 
             if (language != null)
                 req.AddParameter("language", language);
@@ -70,11 +70,11 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetMovieMethod<T>(int id, MovieMethods movieMethod, string dateFormat = null, string country = null,
-                                    string language = null, int page = -1, DateTime? startDate = null, DateTime? endDate = null) where T : new()
+        private T GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null, string country = null,
+                                    string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            var req = new RestRequest("movie/{id}/{method}");
-            req.AddUrlSegment("id", id.ToString());
+            var req = new RestRequest("movie/{movieId}/{method}");
+            req.AddUrlSegment("movieId", movieId.ToString());
             req.AddUrlSegment("method", movieMethod.GetDescription());
 
             if (dateFormat != null)
@@ -97,74 +97,74 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public AlternativeTitles GetMovieAlternativeTitles(int id)
+        public AlternativeTitles GetMovieAlternativeTitles(int movieId)
         {
-            return GetMovieAlternativeTitles(id, DefaultCountry);
+            return GetMovieAlternativeTitles(movieId, DefaultCountry);
         }
 
-        public AlternativeTitles GetMovieAlternativeTitles(int id, string country)
+        public AlternativeTitles GetMovieAlternativeTitles(int movieId, string country)
         {
-            return GetMovieMethod<AlternativeTitles>(id, MovieMethods.AlternativeTitles, country: country);
+            return GetMovieMethod<AlternativeTitles>(movieId, MovieMethods.AlternativeTitles, country: country);
         }
 
-        public Casts GetMovieCasts(int id)
+        public Casts GetMovieCasts(int movieId)
         {
-            return GetMovieMethod<Casts>(id, MovieMethods.Casts);
+            return GetMovieMethod<Casts>(movieId, MovieMethods.Casts);
         }
 
-        public ImagesWithId GetMovieImages(int id)
+        public ImagesWithId GetMovieImages(int movieId)
         {
-            return GetMovieImages(id, DefaultLanguage);
+            return GetMovieImages(movieId, DefaultLanguage);
         }
 
-        public ImagesWithId GetMovieImages(int id, string language)
+        public ImagesWithId GetMovieImages(int movieId, string language)
         {
-            return GetMovieMethod<ImagesWithId>(id, MovieMethods.Images, language: language);
+            return GetMovieMethod<ImagesWithId>(movieId, MovieMethods.Images, language: language);
         }
 
-        public KeywordsContainer GetMovieKeywords(int id)
+        public KeywordsContainer GetMovieKeywords(int movieId)
         {
-            return GetMovieMethod<KeywordsContainer>(id, MovieMethods.Keywords);
+            return GetMovieMethod<KeywordsContainer>(movieId, MovieMethods.Keywords);
         }
 
-        public Releases GetMovieReleases(int id)
+        public Releases GetMovieReleases(int movieId)
         {
-            return GetMovieMethod<Releases>(id, MovieMethods.Releases, dateFormat: "yyyy-MM-dd");
+            return GetMovieMethod<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd");
         }
 
-        public Trailers GetMovieTrailers(int id)
+        public Trailers GetMovieTrailers(int movieId)
         {
-            return GetMovieMethod<Trailers>(id, MovieMethods.Trailers);
+            return GetMovieMethod<Trailers>(movieId, MovieMethods.Trailers);
         }
 
-        public TranslationsContainer GetMovieTranslations(int id)
+        public TranslationsContainer GetMovieTranslations(int movieId)
         {
-            return GetMovieMethod<TranslationsContainer>(id, MovieMethods.Translations);
+            return GetMovieMethod<TranslationsContainer>(movieId, MovieMethods.Translations);
         }
 
-        public SearchContainer<MovieResult> GetMovieSimilarMovies(int id, int page = -1)
+        public SearchContainer<MovieResult> GetMovieSimilarMovies(int movieId, int page = 0)
         {
-            return GetMovieSimilarMovies(id, DefaultLanguage, page);
+            return GetMovieSimilarMovies(movieId, DefaultLanguage, page);
         }
 
-        public SearchContainer<MovieResult> GetMovieSimilarMovies(int id, string language, int page = -1)
+        public SearchContainer<MovieResult> GetMovieSimilarMovies(int movieId, string language, int page = 0)
         {
-            return GetMovieMethod<SearchContainer<MovieResult>>(id, MovieMethods.SimilarMovies, page: page, language: language, dateFormat: "yyyy-MM-dd");
+            return GetMovieMethod<SearchContainer<MovieResult>>(movieId, MovieMethods.SimilarMovies, page: page, language: language, dateFormat: "yyyy-MM-dd");
         }
 
-        public SearchContainer<ListResult> GetMovieLists(int id, int page = -1)
+        public SearchContainer<ListResult> GetMovieLists(int movieId, int page = 0)
         {
-            return GetMovieLists(id, DefaultLanguage, page);
+            return GetMovieLists(movieId, DefaultLanguage, page);
         }
 
-        public SearchContainer<ListResult> GetMovieLists(int id, string language, int page = -1)
+        public SearchContainer<ListResult> GetMovieLists(int movieId, string language, int page = 0)
         {
-            return GetMovieMethod<SearchContainer<ListResult>>(id, MovieMethods.Lists, page: page, language: language);
+            return GetMovieMethod<SearchContainer<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language);
         }
 
-        public List<Change> GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
+        public List<Change> GetMovieChanges(int movieId, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return GetMovieMethod<ChangesContainer>(id, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").Changes;
+            return GetMovieMethod<ChangesContainer>(movieId, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").Changes;
         }
 
         public Movie GetMovieLatest()
@@ -175,12 +175,12 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public SearchContainer<MovieResult> GetMovieList(MovieListType type, int page = -1)
+        public SearchContainer<MovieResult> GetMovieList(MovieListType type, int page = 0)
         {
             return GetMovieList(type, DefaultLanguage, page);
         }
 
-        public SearchContainer<MovieResult> GetMovieList(MovieListType type, string language, int page = -1)
+        public SearchContainer<MovieResult> GetMovieList(MovieListType type, string language, int page = 0)
         {
             RestRequest req;
             switch (type)

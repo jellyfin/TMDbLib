@@ -9,15 +9,15 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Collection GetCollection(int id, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        public Collection GetCollection(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            return GetCollection(id, null, extraMethods);
+            return GetCollection(collectionId, null, extraMethods);
         }
 
-        public Collection GetCollection(int id, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        public Collection GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            RestRequest req = new RestRequest("collection/{id}");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("collection/{collectionId}");
+            req.AddUrlSegment("collectionId", collectionId.ToString());
 
             if (language != null)
                 req.AddParameter("language", language);
@@ -39,10 +39,10 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetCollectionMethod<T>(int id, CollectionMethods collectionMethod, string language = null) where T : new()
+        private T GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("collection/{id}/{method}");
-            req.AddUrlSegment("id", id.ToString());
+            RestRequest req = new RestRequest("collection/{collectionId}/{method}");
+            req.AddUrlSegment("collectionId", collectionId.ToString());
             req.AddUrlSegment("method", collectionMethod.GetDescription());
 
             if (language != null)
@@ -53,9 +53,9 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public ImagesWithId GetCollectionImages(int id, string language = null)
+        public ImagesWithId GetCollectionImages(int collectionId, string language = null)
         {
-            return GetCollectionMethod<ImagesWithId>(id, CollectionMethods.Images, language);
+            return GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language);
         }
     }
 }
