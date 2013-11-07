@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
+using TMDbLib.Objects.TvShows;
 
 namespace TMDbLib.Client
 {
@@ -68,6 +69,11 @@ namespace TMDbLib.Client
         public SearchContainer<SearchKeyword> SearchKeyword(string query, int page = 0)
         {
             return SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page);
+        }
+
+        public SearchContainer<TvShowBase> SearchTvShow(string query, int page = 0)
+        {
+            return SearchMethod<SearchContainer<TvShowBase>>("tv", query, page);
         }
     }
 }

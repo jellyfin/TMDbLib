@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using System.Linq;
+using TMDbLib.Objects.TvShows;
 
 namespace TMDbLibTests
 {
@@ -119,12 +120,12 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchTvShow()
         {
-            // SearchKeyword(string query, int page = -1)
+            SearchPages(i => _config.Client.SearchTvShow("Breaking Bad", i));
 
-            //SearchPages(i => _config.Client.SearchTvShow("Breaking Bad", i));
+            SearchContainer<TvShowBase> result = _config.Client.SearchTvShow("Breaking Bad");
 
-            // TODO: Implement
-            Assert.Inconclusive();
+            Debug.Assert(result.Results.Any(s => s.Id == 1396));
+            Debug.Assert(result.Results.Any(s => s.Name == "Breaking Bad"));
         }
     }
 }

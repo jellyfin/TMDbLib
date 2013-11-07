@@ -110,13 +110,16 @@
     <Compile Include="Objects\Search\SearchList.cs" />
     <Compile Include="Objects\Search\SearchPerson.cs" />
     <Compile Include="Objects\TvShows\Cast.cs" />
-    <Compile Include="Objects\TvShows\Credits.cs" />
+    <Compile Include="Objects\TvShows\Credits.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Objects\TvShows\Crew.cs" />
     <Compile Include="Objects\TvShows\ExternalIds.cs" />
     <Compile Include="Objects\TvShows\Network.cs" />
     <Compile Include="Objects\TvShows\TvEpisode.cs" />
     <Compile Include="Objects\TvShows\TvSeason.cs" />
     <Compile Include="Objects\TvShows\TvEpisodeMethods.cs" />
+    <Compile Include="Objects\TvShows\TvShowBase.cs" />
     <Compile Include="Objects\TvShows\TvShow.cs" />
     <Compile Include="Objects\TvShows\TvSeasonMethods.cs" />
     <Compile Include="Objects\TvShows\TvShowMethods.cs" />

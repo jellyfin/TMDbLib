@@ -45,10 +45,10 @@ namespace TMDbLib.Client
         /// Get the list of popular TV shows. This list refreshes every day.
         /// </summary>
         /// <returns>
-        /// Returns a list of tv shows with the following fields populated: Id, Name, OriginalName, FirstAirDate, PosterPath, BackDropPath, Popularity, VoteAverage, VoteCount.
+        /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter.
         /// </returns>
-        public List<TvShow> GetPopularTvShows(int page = -1, string language = null)
+        public List<TvShowBase> GetPopularTvShows(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "popular");
         }
@@ -57,15 +57,15 @@ namespace TMDbLib.Client
         /// Get the list of top rated TV shows. By default, this list will only include TV shows that have 2 or more votes. This list refreshes every day.
         /// </summary>
         /// <returns>
-        /// Returns a list of tv shows with the following fields populated: Id, Name, OriginalName, FirstAirDate, PosterPath, BackDropPath, Popularity, VoteAverage, VoteCount.
+        /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter
         /// </returns>
-        public List<TvShow> GetTopRatedTvShows(int page = -1, string language = null)
+        public List<TvShowBase> GetTopRatedTvShows(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "top_rated");
         }
 
-        private List<TvShow> GetTvShowList(int page, string language, string tvShowListType)
+        private List<TvShowBase> GetTvShowList(int page, string language, string tvShowListType)
         {
             var req = new RestRequest("tv/" + tvShowListType);
 
@@ -75,7 +75,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page);
 
-            IRestResponse<List<TvShow>> response = _client.Get<List<TvShow>>(req);
+            IRestResponse<List<TvShowBase>> response = _client.Get<List<TvShowBase>>(req);
 
             return response.Data;
         }

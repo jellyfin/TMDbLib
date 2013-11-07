@@ -5,16 +5,12 @@ using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.TvShows
 {
-    public class TvShow
+    public class TvShow : TvShowBase
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string OriginalName { get; set; }
         public string Overview { get; set; }
         public List<int> EpisodeRunTime { get; set; }
         public string Homepage { get; set; }
 
-        public DateTime? FirstAirDate { get; set; }
         public DateTime? LastAirDate { get; set; }
 
         public int NumberOfSeasons { get; set; }
@@ -23,9 +19,6 @@ namespace TMDbLib.Objects.TvShows
 
         public bool InProduction { get; set; }
         public TvShowStatus? Status { get; set; }
-
-        public string BackdropPath { get; set; }
-        public string PosterPath { get; set; }
 
         public List<Person> CreatedBy { get; set; }
         public List<Genre> Genres { get; set; }
@@ -38,10 +31,6 @@ namespace TMDbLib.Objects.TvShows
         /// Country ISO code ex. US
         /// </summary>
         public List<string> OriginCountry { get; set; }
-
-        public double Popularity { get; set; }
-        public double VoteAverage { get; set; }
-        public int VoteCount { get; set; }
 
         public Images Images { get; set; }
         public Credits Credits { get; set; }
