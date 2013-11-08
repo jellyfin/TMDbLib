@@ -19,27 +19,27 @@ namespace TMDbLib.Client
         /// </summary>
         public string DefaultCountry { get; set; }
 
-		/// <summary>
-		/// The maximum number of times a call to TMDb will be retied
-		/// </summary>
-		/// <remarks>Default is 0</remarks>
-		public int MaxRetryCount 
-		{ 
-			get { return _client.MaxRetryCount; } 
-			set { _client.MaxRetryCount = value; } 
-		}
+        /// <summary>
+        /// The maximum number of times a call to TMDb will be retied
+        /// </summary>
+        /// <remarks>Default is 0</remarks>
+        public int MaxRetryCount
+        {
+            get { return _client.MaxRetryCount; }
+            set { _client.MaxRetryCount = value; }
+        }
 
-		/// <summary>
-		/// The base number of seconds that will be waited between retry attempts.
-		/// Each retry will take progressively longer to give the service a chance to recover from what ever the problem is.
-		/// Formula: RetryAttempt * RetryWaitTimeInSeconds, this is the amount of time in seconds the application will wait before retrying
-		/// </summary>
-		/// <remarks>Default is 10</remarks>
-		public int RetryWaitTimeInSeconds
-		{
-			get { return _client.RetryWaitTimeInSeconds; }
-			set { _client.RetryWaitTimeInSeconds = value; }
-		}
+        /// <summary>
+        /// The base number of seconds that will be waited between retry attempts.
+        /// Each retry will take progressively longer to give the service a chance to recover from what ever the problem is.
+        /// Formula: RetryAttempt * RetryWaitTimeInSeconds, this is the amount of time in seconds the application will wait before retrying
+        /// </summary>
+        /// <remarks>Default is 10</remarks>
+        public int RetryWaitTimeInSeconds
+        {
+            get { return _client.RetryWaitTimeInSeconds; }
+            set { _client.RetryWaitTimeInSeconds = value; }
+        }
 
         public TMDbConfig Config
         {
@@ -56,7 +56,7 @@ namespace TMDbLib.Client
 
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
-		private TMDbRestClient _client;
+        private TMDbRestClient _client;
         private TMDbConfig _config;
 
         public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl)
@@ -72,11 +72,11 @@ namespace TMDbLib.Client
             ApiKey = apiKey;
 
             string httpScheme = useSsl ? "https" : "http";
-			_client = new TMDbRestClient(String.Format("{0}://{1}/{2}/",httpScheme, baseUrl, ApiVersion));
+            _client = new TMDbRestClient(String.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion));
             _client.AddDefaultParameter("api_key", apiKey);
 
             _client.ClearHandlers();
-			_client.AddHandler("application/json", new JsonDeserializer());
+            _client.AddHandler("application/json", new JsonDeserializer());
         }
 
         public void GetConfig()

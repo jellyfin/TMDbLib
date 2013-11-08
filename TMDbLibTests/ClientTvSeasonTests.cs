@@ -26,7 +26,6 @@ namespace TMDbLibTests
             _methods[TvSeasonMethods.Credits] = tvSeason => tvSeason.Credits;
             _methods[TvSeasonMethods.Images] = tvSeason => tvSeason.Images;
             _methods[TvSeasonMethods.ExternalIds] = tvSeason => tvSeason.ExternalIds;
-
         }
 
         [TestMethod]
@@ -66,11 +65,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonSeparateExtrasImages()
         {
-            Images images = _config.Client.GetTvSeasonImages(BreakingBad,1);
+            PosterImages images = _config.Client.GetTvSeasonImages(BreakingBad, 1);
             Assert.IsNotNull(images);
-            Assert.IsNull(images.Backdrops);
             Assert.IsNotNull(images.Posters);
-            Assert.IsNull(images.Stills);
         }
 
         [TestMethod]
@@ -101,7 +98,7 @@ namespace TMDbLibTests
         private void TestBreakingBadBaseProperties(TvSeason tvSeason)
         {
             Assert.IsNotNull(tvSeason);
-            Assert.IsNotNull(tvSeason.Id); 
+            Assert.IsNotNull(tvSeason.Id);
             Assert.AreEqual(1, tvSeason.SeasonNumber);
             Assert.AreEqual("Season 1", tvSeason.Name);
             Assert.IsNotNull(tvSeason.AirDate);

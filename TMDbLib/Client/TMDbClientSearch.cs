@@ -25,7 +25,7 @@ namespace TMDbLib.Client
 
             if (dateFormat != null)
                 req.DateFormat = dateFormat;
-            
+
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;

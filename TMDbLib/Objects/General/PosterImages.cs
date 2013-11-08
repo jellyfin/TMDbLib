@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace TMDbLib.Objects.General
 {
-    public class Images
+    public class PosterImages
     {
-        public List<ImageData> Backdrops { get; set; }
+        public int Id { get; set; }
         public List<ImageData> Posters { get; set; }
     }
 }

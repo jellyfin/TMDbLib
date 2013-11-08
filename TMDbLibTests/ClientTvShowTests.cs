@@ -66,11 +66,10 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasImages()
         {
-            Images images = _config.Client.GetTvShowImages(BreakingBad);
+            ImagesWithId images = _config.Client.GetTvShowImages(BreakingBad);
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Backdrops);
             Assert.IsNotNull(images.Posters);
-            Assert.IsNull(images.Stills);
         }
 
         [TestMethod]

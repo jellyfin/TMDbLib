@@ -65,9 +65,9 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
-        public Images GetTvEpisodeImages(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
+        public StillImages GetTvEpisodeImages(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
         {
-            return GetTvEpisodeMethod<Images>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language);
+            return GetTvEpisodeMethod<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
-            
+
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
             if (dateFormat != null)

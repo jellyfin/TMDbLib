@@ -33,7 +33,7 @@ namespace TMDbLib.Client
                 req.AddParameter("append_to_response", appends);
 
             req.DateFormat = "yyyy-MM-dd";
-            
+
             IRestResponse<Collection> resp = _client.Get<Collection>(req);
 
             return resp.Data;

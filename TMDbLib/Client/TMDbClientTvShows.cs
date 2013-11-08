@@ -98,9 +98,9 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
-        public Images GetTvShowImages(int id, string language = null)
+        public ImagesWithId GetTvShowImages(int id, string language = null)
         {
-            return GetTvShowMethod<Images>(id, TvShowMethods.Images, language: language);
+            return GetTvShowMethod<ImagesWithId>(id, TvShowMethods.Images, language: language);
         }
 
         /// <summary>
