@@ -25,8 +25,7 @@ namespace TMDbLibTests
             _config = new TestConfig();
 
             _methods = new Dictionary<PersonMethods, Func<Person, object>>();
-            _methods[PersonMethods.TvCredits] = person => person.Credits;
-            _methods[PersonMethods.MovieCredits] = person => person.Credits;
+            _methods[PersonMethods.Credits] = person => person.Credits;
             _methods[PersonMethods.Changes] = person => person.Changes;
             _methods[PersonMethods.Images] = person => person.Images;
         }
