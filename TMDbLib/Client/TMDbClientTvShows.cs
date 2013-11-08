@@ -48,7 +48,7 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter.
         /// </returns>
-        public List<TvShowBase> GetPopularTvShows(int page = -1, string language = null)
+        public SearchContainer<TvShowBase> GetTvShowsPopular(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "popular");
         }
@@ -60,12 +60,12 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter
         /// </returns>
-        public List<TvShowBase> GetTopRatedTvShows(int page = -1, string language = null)
+        public SearchContainer<TvShowBase> GetTvShowsTopRated(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "top_rated");
         }
 
-        private List<TvShowBase> GetTvShowList(int page, string language, string tvShowListType)
+        private SearchContainer<TvShowBase> GetTvShowList(int page, string language, string tvShowListType)
         {
             var req = new RestRequest("tv/" + tvShowListType);
 
@@ -75,7 +75,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page);
 
-            IRestResponse<List<TvShowBase>> response = _client.Get<List<TvShowBase>>(req);
+            IRestResponse<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(req);
 
             return response.Data;
         }

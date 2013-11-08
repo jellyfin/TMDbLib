@@ -148,6 +148,34 @@ namespace TMDbLibTests
             Assert.AreNotEqual(0, tvShow.VoteAverage);
         }
 
+        [TestMethod]
+        public void TestTvShowPopular()
+        {
+            TestHelpers.SearchPages(i => _config.Client.GetTvShowsPopular(i));
+
+            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsPopular();
+            Assert.IsNotNull(result.Results[0].Id);
+            Assert.IsNotNull(result.Results[0].Name);
+            Assert.IsNotNull(result.Results[0].OriginalName);
+            Assert.IsNotNull(result.Results[0].FirstAirDate);
+            Assert.IsNotNull(result.Results[0].PosterPath);
+            Assert.IsNotNull(result.Results[0].BackdropPath);
+        }
+
+        [TestMethod]
+        public void TestTvShowTopRated()
+        {
+            TestHelpers.SearchPages(i => _config.Client.GetTvShowsTopRated(i));
+
+            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsTopRated();
+            Assert.IsNotNull(result.Results[0].Id);
+            Assert.IsNotNull(result.Results[0].Name);
+            Assert.IsNotNull(result.Results[0].OriginalName);
+            Assert.IsNotNull(result.Results[0].FirstAirDate);
+            Assert.IsNotNull(result.Results[0].PosterPath);
+            Assert.IsNotNull(result.Results[0].BackdropPath);
+        }
+
         //[TestMethod]
         //public void TestMoviesLanguage()
         //{
