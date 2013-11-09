@@ -41,11 +41,15 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\TMDbClientAuthentication.cs" />
     <Compile Include="Client\TMDbClientNetworks.cs" />
     <Compile Include="Client\TMDbClientTvEpisodes.cs" />
     <Compile Include="Client\TMDbClientTvSeasons.cs" />
     <Compile Include="Client\TMDbClientDiscover.cs" />
     <Compile Include="Client\TMDbClientTvShows.cs" />
+    <Compile Include="Objects\Authentication\GuestSession.cs" />
+    <Compile Include="Objects\Authentication\Token.cs" />
+    <Compile Include="Objects\Authentication\UserSession.cs" />
     <Compile Include="Objects\Discover\DiscoverMovieSortBy.cs" />
     <Compile Include="Objects\Discover\DiscoverTvShowSortBy.cs" />
     <Compile Include="Objects\General\PosterImages.cs" />
