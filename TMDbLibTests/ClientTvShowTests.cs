@@ -165,6 +165,13 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowTopRated()
         {
+            // This test might fail with inconsistent information from the pages due to a caching problem in the API.
+            // Comment from the Developer of the API
+            // That would be caused from different pages getting cached at different times. 
+            // Since top rated only pulls TV shows with 2 or more votes right now this will be something that happens until we have a lot more ratings. 
+            // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data. 
+            // And as we get more ratings I increase that limit so we get more accurate results. 
+            // With so few ratings for TV shows right now it's set really low.
             TestHelpers.SearchPages(i => _config.Client.GetTvShowsTopRated(i));
 
             SearchContainer<TvShowBase> result = _config.Client.GetTvShowsTopRated();
