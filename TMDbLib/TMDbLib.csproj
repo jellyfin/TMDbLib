@@ -39,14 +39,17 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\TMDbClientAccount.cs" />
     <Compile Include="Client\TMDbClientAuthentication.cs" />
     <Compile Include="Client\TMDbClientNetworks.cs" />
     <Compile Include="Client\TMDbClientTvEpisodes.cs" />
     <Compile Include="Client\TMDbClientTvSeasons.cs" />
     <Compile Include="Client\TMDbClientDiscover.cs" />
     <Compile Include="Client\TMDbClientTvShows.cs" />
+    <Compile Include="Objects\Account\AccountDetails.cs" />
     <Compile Include="Objects\Authentication\GuestSession.cs" />
     <Compile Include="Objects\Authentication\Token.cs" />
     <Compile Include="Objects\Authentication\UserSession.cs" />

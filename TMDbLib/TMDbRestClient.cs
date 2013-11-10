@@ -37,6 +37,7 @@ namespace TMDbLib
 		/// <typeparam name="T">Target deserialization type</typeparam>
 		/// <param name="request">Request to execute</param>
 		/// <returns>RestResponse[[T]] with deserialized data in Data property</returns>
+        /// <exception cref="UnauthorizedAccessException">Can be thrown if either to provided API key is invalid or when relavant the provided session id does not grant to required access</exception>
 		public override IRestResponse<T> Execute<T>(IRestRequest request)
 		{
 			IRestResponse<T> response = base.Execute<T>(request);

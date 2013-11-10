@@ -26,17 +26,17 @@ namespace TMDbLibTests
             Assert.IsNotNull(token.RequestToken);
         }
 
-        /// <remarks>
-        /// This requires manual intervention, as such it can not be included with the regular test set
-        /// To be able to execute this test request a token using the AuthenticationRequestAutenticationToken method.
-        /// Subsequently naviate to the AuthenticationCallback url specified on the returned object.
-        /// Log-in to a TMDb account and grant access when requested.
-        /// Use the RequestToken string previously provided as value for this test
-        /// </remarks>
+         //<remarks>
+         //This requires manual intervention, as such it can not be included with the regular test set
+         //To be able to execute this test request a token using the AuthenticationRequestAutenticationToken method.
+         //Subsequently naviate to the AuthenticationCallback url specified on the returned object.
+         //Log-in to a TMDb account and grant access when requested.
+         //Use the RequestToken string previously provided as value for this test
+         //</remarks>
         //[TestMethod]
         //public void TestAuthenticationUserAuthenticatedSessionSuccess()
         //{
-        //    const string requestToken = "5f3a62c0d7977319e3d14adf1a2064c0c0938bcf";
+        //    const string requestToken = "98496c38a85ccb1ae14ca8f8fe81cfb150718bfe";
         //    var session = _config.Client.AuthenticationGetUserSession(requestToken);
 
         //    Assert.IsNotNull(session);
