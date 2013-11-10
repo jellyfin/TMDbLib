@@ -73,7 +73,7 @@ namespace TMDbLib.Client
 
             string httpScheme = useSsl ? "https" : "http";
             _client = new TMDbRestClient(String.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion));
-            _client.AddDefaultParameter("api_key", apiKey);
+            _client.AddDefaultParameter("api_key", apiKey, ParameterType.QueryString);
 
             _client.ClearHandlers();
             _client.AddHandler("application/json", new JsonDeserializer());

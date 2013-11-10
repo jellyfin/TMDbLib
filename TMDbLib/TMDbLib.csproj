@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RestSharp, Version=104.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="RestSharp, Version=104.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RestSharp.104.2.0\lib\net4\RestSharp.dll</HintPath>
+      <HintPath>..\packages\RestSharp.104.3.3\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,6 +71,8 @@
     <Compile Include="Objects\General\SearchContainerWithId.cs" />
     <Compile Include="Objects\Lists\List.cs" />
     <Compile Include="Objects\General\SearchContainer.cs" />
+    <Compile Include="Objects\Lists\ListPostReply.cs" />
+    <Compile Include="Objects\Lists\ListStatus.cs" />
     <Compile Include="Objects\Movies\MovieListType.cs" />
     <Compile Include="Client\TMDbClientChanges.cs" />
     <Compile Include="Client\TMDbClientKeywords.cs" />
@@ -144,7 +146,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

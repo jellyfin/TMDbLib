@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
@@ -11,6 +12,9 @@ namespace TMDbLibTests
     public class ClientListsTests
     {
         private const int Avatar = 19995;
+        private const int Terminator = 218;
+        private const int EvanAlmighty = 2698;
+        private const string TestListId = "527fa7f3760ee361f70c8b14";
         private TestConfig _config;
 
         [TestInitialize]
@@ -22,14 +26,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestList()
         {
-            // Get a list Id
-            string listId = _config.Client.GetMovieLists(Avatar).Results.First().Id;
-
             // Get list
-            List list = _config.Client.GetList(listId);
+            List list = _config.Client.GetList(TestListId);
 
             Assert.IsNotNull(list);
-            Assert.AreEqual(listId, list.Id);
+            Assert.AreEqual(TestListId, list.Id);
             Assert.AreEqual(list.ItemCount, list.Items.Count);
 
             foreach (MovieResult movieResult in list.Items)
@@ -37,9 +38,84 @@ namespace TMDbLibTests
                 Assert.IsNotNull(movieResult);
 
                 // Ensure all movies point to this list
-                List<ListResult> movieLists = _config.Client.GetMovieLists(movieResult.Id).Results;
-                Assert.IsTrue(movieLists.Any(s => s.Id == listId));
+                int page = 1;
+                SearchContainer<ListResult> movieLists = _config.Client.GetMovieLists(movieResult.Id);
+                while (movieLists != null)
+                {
+                    // Check if the current result page contains the relevant list
+                    if (movieLists.Results.Any(s => s.Id == TestListId))
+                    {
+                        movieLists = null;
+                        continue;
+                    }
+
+                    // See if there is an other page we could try, if not the test fails
+                    if (movieLists.Page < movieLists.TotalPages)
+                        movieLists = _config.Client.GetMovieLists(movieResult.Id, ++page);
+                    else
+                       Assert.Fail("Movie '{0}' was not linked to the test list", movieResult.Title);
+                }
             }
+        }
+
+        [TestMethod]
+        public void TestListIsMoviePresentSuccess()
+        {
+            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, Avatar));
+        }
+
+        [TestMethod]
+        public void TestListIsMoviePresentFailure()
+        {
+            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, Terminator));
+        }
+
+        [TestMethod]
+        public void TestListCreateAndDelete()
+        {
+            const string listName = "Test List 123";
+
+            string newListId = _config.Client.ListCreate(_config.UserSessionId, listName);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(newListId));
+
+            var newlyAddedList = _config.Client.GetList(newListId);
+            Assert.IsNotNull(newlyAddedList);
+            Assert.AreEqual(listName, newlyAddedList.Name);
+            Assert.AreEqual("", newlyAddedList.Description); // "" is the default value
+            Assert.AreEqual("en", newlyAddedList.Iso_639_1); // en is the default value
+            Assert.AreEqual(0, newlyAddedList.ItemCount);
+            Assert.AreEqual(0, newlyAddedList.Items.Count);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
+
+            Assert.IsTrue(_config.Client.ListDelete(_config.UserSessionId, newListId));
+        }
+
+        [TestMethod]
+        public void TestListDeleteFailure()
+        {
+            // Try removing a list with an incorrect id
+            Assert.IsFalse(_config.Client.ListDelete(_config.UserSessionId, "bla"));
+        }
+
+        [TestMethod]
+        public void TestListAddAndRemoveMovie()
+        {
+            // Add a new movie to the list
+            Assert.IsTrue(_config.Client.ListAddMovie(_config.UserSessionId,TestListId, EvanAlmighty));
+
+            // Try again, this time it should fail since the list already contains this movie
+            Assert.IsFalse(_config.Client.ListAddMovie(_config.UserSessionId, TestListId, EvanAlmighty));
+
+            // Get list and check if the item was added
+            var listAfterAdd = _config.Client.GetList(TestListId);
+            Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == EvanAlmighty));
+
+            // Remove the previously added movie from the list
+            Assert.IsTrue(_config.Client.ListRemoveMovie(_config.UserSessionId, TestListId, EvanAlmighty));
+
+            // Get list and check if the item was removed
+            var listAfterRemove = _config.Client.GetList(TestListId);
+            Assert.IsFalse(listAfterRemove.Items.Any(m => m.Id == EvanAlmighty));
         }
     }
 }
