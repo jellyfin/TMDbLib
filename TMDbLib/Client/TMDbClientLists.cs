@@ -6,6 +6,10 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        /// <summary>
+        /// Retrieve a list by it's id
+        /// </summary>
+        /// <param name="listId">The id of the list you want to retrieve</param>
         public List GetList(string listId)
         {
             if (string.IsNullOrWhiteSpace(listId))
@@ -21,6 +25,12 @@ namespace TMDbLib.Client
             return response.Data;
         }
 
+        /// <summary>
+        /// Will check if the provided movie id is present in the specified list
+        /// </summary>
+        /// <param name="listId">Id of the list to check in</param>
+        /// <param name="movieId">Id of the movie to check for in the list</param>
+        /// <returns></returns>
         public bool GetListIsMoviePresent(string listId, int movieId)
         {
             if (string.IsNullOrWhiteSpace(listId))
@@ -38,6 +48,14 @@ namespace TMDbLib.Client
             return response.Data.ItemPresent;
         }
 
+        /// <summary>
+        /// Creates a new list for the user associated with the provided session
+        /// </summary>
+        /// <param name="sessionId">A user session id, a guest session is not sufficient</param>
+        /// <param name="name">The name of the new list</param>
+        /// <param name="description">Optional description for the list</param>
+        /// <param name="language">Optional language that might indicate the language of the content in the list</param>
+        /// <returns></returns>
         public string ListCreate(string sessionId, string name, string description = "", string language = null)
         {
             if (string.IsNullOrWhiteSpace(sessionId))
@@ -66,6 +84,12 @@ namespace TMDbLib.Client
             return response.Data == null ? null : response.Data.ListId;
         }
 
+        /// <summary>
+        /// Deletes the specified list that is owned by the user
+        /// </summary>
+        /// <param name="sessionId">A user session id, a guest session is not sufficient</param>
+        /// <param name="listId">A list id that is owned by the user associated with the session id</param>
+        /// <returns></returns>
         public bool ListDelete(string sessionId, string listId)
         {
             if (string.IsNullOrWhiteSpace(sessionId))
@@ -84,11 +108,25 @@ namespace TMDbLib.Client
             return response.Data != null && response.Data.StatusCode == 13;
         }
 
+        /// <summary>
+        /// Adds a movie to a specified list
+        /// </summary>
+        /// <param name="sessionId">A user session id, a guest session is not sufficient</param>
+        /// <param name="listId">The id of the list to add the movie to</param>
+        /// <param name="movieId">The id of the movie to add</param>
+        /// <returns>True if the method was able to add the movie to the list, will retrun false in case of an issue or when the movie was already added to the list</returns>
         public bool ListAddMovie(string sessionId, string listId, int movieId)
         {
             return ManipulateMediaList(sessionId, listId, movieId, "add_item");
         }
 
+        /// <summary>
+        /// Removes a movie from the specified list
+        /// </summary>
+        /// <param name="sessionId">A user session id, a guest session is not sufficient</param>
+        /// <param name="listId">The id of the list to add the movie to</param>
+        /// <param name="movieId">The id of the movie to add</param>
+        /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
         public bool ListRemoveMovie(string sessionId, string listId, int movieId)
         {
             return ManipulateMediaList(sessionId, listId, movieId, "remove_item");
