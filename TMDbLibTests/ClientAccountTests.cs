@@ -14,10 +14,11 @@ namespace TMDbLibTests
         [TestInitialize]
         public void Initiator()
         {
+            _config = new TestConfig();
+
             if (string.IsNullOrWhiteSpace(_config.UserSessionId))
                 throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");
 
-            _config = new TestConfig();
         }
 
         [TestMethod]
