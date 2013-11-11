@@ -51,6 +51,9 @@
     <Compile Include="Client\TMDbClientTvShows.cs" />
     <Compile Include="Objects\Account\AccountDetails.cs" />
     <Compile Include="Objects\Authentication\GuestSession.cs" />
+    <Compile Include="Objects\Authentication\UserSessionRequiredException.cs" />
+    <Compile Include="Objects\Authentication\GuestSessionRequiredException.cs" />
+    <Compile Include="Objects\Authentication\SessionType.cs" />
     <Compile Include="Objects\Authentication\Token.cs" />
     <Compile Include="Objects\Authentication\UserSession.cs" />
     <Compile Include="Objects\Discover\DiscoverMovieSortBy.cs" />

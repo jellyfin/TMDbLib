@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Authentication;
 using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
@@ -8,8 +9,7 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientAccountTests
     {
-        private TestConfig _config;
-        private const string GuestTestSessionId = "0c81565c80905bbfd685782a907ee73d";
+        private TestConfig _config;  
 
         [TestInitialize]
         public void Initiator()
@@ -22,16 +22,20 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(UnauthorizedAccessException))]
+        [ExpectedException(typeof(UserSessionRequiredException))]
         public void TestAccountGetDetailsGuestAccount()
         {
-            var account = _config.Client.AccountGetDetails(GuestTestSessionId);
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+            var account = _config.Client.AccountGetDetails();
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
         public void TestAccountGetDetailsUserAccount()
         {
-            var account = _config.Client.AccountGetDetails(_config.UserSessionId);
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            var account = _config.Client.AccountGetDetails();
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Naturally the specified account must have these values populated for the test to pass
             Assert.IsNotNull(account);

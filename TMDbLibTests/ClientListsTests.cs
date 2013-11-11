@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
@@ -73,7 +74,8 @@ namespace TMDbLibTests
         {
             const string listName = "Test List 123";
 
-            string newListId = _config.Client.ListCreate(_config.UserSessionId, listName);
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            string newListId = _config.Client.ListCreate(listName);
             Assert.IsFalse(string.IsNullOrWhiteSpace(newListId));
 
             var newlyAddedList = _config.Client.GetList(newListId);
@@ -85,35 +87,40 @@ namespace TMDbLibTests
             Assert.AreEqual(0, newlyAddedList.Items.Count);
             Assert.IsFalse(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
 
-            Assert.IsTrue(_config.Client.ListDelete(_config.UserSessionId, newListId));
+            Assert.IsTrue(_config.Client.ListDelete(newListId));
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
         public void TestListDeleteFailure()
         {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             // Try removing a list with an incorrect id
-            Assert.IsFalse(_config.Client.ListDelete(_config.UserSessionId, "bla"));
+            Assert.IsFalse(_config.Client.ListDelete("bla"));
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
         public void TestListAddAndRemoveMovie()
         {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             // Add a new movie to the list
-            Assert.IsTrue(_config.Client.ListAddMovie(_config.UserSessionId,TestListId, EvanAlmighty));
+            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, EvanAlmighty));
 
             // Try again, this time it should fail since the list already contains this movie
-            Assert.IsFalse(_config.Client.ListAddMovie(_config.UserSessionId, TestListId, EvanAlmighty));
+            Assert.IsFalse(_config.Client.ListAddMovie(TestListId, EvanAlmighty));
 
             // Get list and check if the item was added
             var listAfterAdd = _config.Client.GetList(TestListId);
             Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == EvanAlmighty));
 
             // Remove the previously added movie from the list
-            Assert.IsTrue(_config.Client.ListRemoveMovie(_config.UserSessionId, TestListId, EvanAlmighty));
+            Assert.IsTrue(_config.Client.ListRemoveMovie(TestListId, EvanAlmighty));
 
             // Get list and check if the item was removed
             var listAfterRemove = _config.Client.GetList(TestListId);
             Assert.IsFalse(listAfterRemove.Items.Any(m => m.Id == EvanAlmighty));
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
     }
 }

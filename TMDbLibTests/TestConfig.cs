@@ -9,6 +9,8 @@ namespace TMDbLibTests
         // Required to be able to successfully run all the account tests
         public readonly string UserSessionId = "";
 
+        public readonly string GuestTestSessionId = "0c81565c80905bbfd685782a907ee73d";
+
         public TMDbClient Client { get; set; }
 
         public TestConfig(bool useSsl = false)

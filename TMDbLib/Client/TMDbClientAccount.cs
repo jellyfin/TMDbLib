@@ -2,6 +2,7 @@
 using System.Globalization;
 using RestSharp;
 using TMDbLib.Objects.Account;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 
@@ -10,17 +11,16 @@ namespace TMDbLib.Client
     public partial class TMDbClient
     {
         /// <summary>
-        /// Will retrieve the details of the account associated with the provided session id
+        /// Will retrieve the details of the account associated with the current session id
         /// </summary>
-        /// <param name="userSessionId">The user session id used to authenticate. A guest session id is NOT valid for this value.</param>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         /// <exception cref="UnauthorizedAccessException">Can be thrown if either to provided API key is invalid or if the provided session id does not grant to required access</exception>
-        public AccountDetails AccountGetDetails(string userSessionId)
+        public AccountDetails AccountGetDetails()
         {
-            if(string.IsNullOrWhiteSpace(userSessionId))
-                throw new ArgumentNullException("userSessionId");
+           RequireSessionId(SessionType.UserSession);
 
             var request = new RestRequest("account");
-            request.AddParameter("session_id", userSessionId);
+            request.AddParameter("session_id", SessionId);
 
             IRestResponse<AccountDetails> response = _client.Get<AccountDetails>(request);
 

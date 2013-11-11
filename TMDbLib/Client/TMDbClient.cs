@@ -1,6 +1,7 @@
 ﻿using System;
 using RestSharp;
 using RestSharp.Deserializers;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Client
@@ -10,12 +11,24 @@ namespace TMDbLib.Client
         public string ApiKey { get; private set; }
 
         /// <summary>
-        ///     ISO 639-1 code.
+        /// The session id that will be used when TMDb requires authentication
+        /// </summary>
+        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
+        public string SessionId { get; private set; }
+
+        /// <summary>
+        /// The type of the session id, this will determine the level of access that is granted on the API
+        /// </summary>
+        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
+        public SessionType SessionType { get; private set; }
+
+        /// <summary>
+        /// ISO 639-1 code. Ex en
         /// </summary>
         public string DefaultLanguage { get; set; }
 
         /// <summary>
-        ///     ISO 3166-1 code.
+        /// ISO 3166-1 code. Ex. US
         /// </summary>
         public string DefaultCountry { get; set; }
 
@@ -103,6 +116,48 @@ namespace TMDbLib.Client
         {
             string baseUrl = useSsl ? Config.Images.SecureBaseUrl : Config.Images.BaseUrl;
             return new Uri(baseUrl + size + filePath);
+        }
+
+        /// <summary>
+        /// Use this method to set the current client's authentication information.
+        /// The session id assigned here will be used by the client when ever TMDb requires it.
+        /// </summary>
+        /// <param name="sessionId">The session id to use when making calls that require authentication</param>
+        /// <param name="sessionType">The type of session id</param>
+        /// <remarks>
+        /// - Use the 'AuthenticationGetUserSession' and 'AuthenticationCreateGuestSession' methods to optain the respective session ids.
+        /// - User sessions have access to far for methods than guest sessions, these can currently only be used to rate media.
+        /// </remarks>
+        public void SetSessionInformation(string sessionId, SessionType sessionType)
+        {
+            SessionId = sessionId;
+            if (!string.IsNullOrWhiteSpace(sessionId) && sessionType == SessionType.Unassigned)
+            {
+                throw new ArgumentException("When setting the session id it must always be either a guest or user session");
+            }
+
+            SessionType = string.IsNullOrWhiteSpace(sessionId) ? SessionType.Unassigned : sessionType;
+            
+        }
+
+        /// <summary>
+        /// Used internally to determine if the current client has the required session set, if not an appropriate exception will be thrown
+        /// </summary>
+        /// <param name="sessionType">The type of session that is required by the calling method</param>
+        /// <exception cref="UserSessionRequiredException">Thrown if the calling method requires a user session and one isn't set on the client object</exception>
+        /// <exception cref="GuestSessionRequiredException">Thrown if the calling method requires a guest session and no session is set on the client object. (neither user or client type session)</exception>
+        private void RequireSessionId(SessionType sessionType)
+        {
+            if (string.IsNullOrWhiteSpace(SessionId))
+            {
+                if (sessionType == SessionType.GuestSession)
+                    throw new UserSessionRequiredException();
+                else
+                    throw new GuestSessionRequiredException();
+            }
+
+            if (sessionType == SessionType.UserSession && SessionType == SessionType.GuestSession)
+                throw new UserSessionRequiredException();
         }
     }
 }
