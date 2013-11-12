@@ -1,6 +1,7 @@
 ﻿using System;
 using RestSharp;
 using RestSharp.Deserializers;
+using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 
@@ -21,6 +22,12 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
         public SessionType SessionType { get; private set; }
+
+        /// <summary>
+        /// The account details of the user account associated with the current user session
+        /// </summary>
+        /// <remarks>This value is automaticly populated when setting a user session</remarks>
+        public AccountDetails ActiveAccount { get; private set; }
 
         /// <summary>
         /// ISO 639-1 code. Ex en
@@ -130,6 +137,7 @@ namespace TMDbLib.Client
         /// </remarks>
         public void SetSessionInformation(string sessionId, SessionType sessionType)
         {
+            ActiveAccount = null;
             SessionId = sessionId;
             if (!string.IsNullOrWhiteSpace(sessionId) && sessionType == SessionType.Unassigned)
             {
@@ -137,7 +145,23 @@ namespace TMDbLib.Client
             }
 
             SessionType = string.IsNullOrWhiteSpace(sessionId) ? SessionType.Unassigned : sessionType;
-            
+
+            // Populate the related account information
+            if (sessionType == SessionType.UserSession)
+            {
+                try
+                {
+                    ActiveAccount = AccountGetDetails();
+                }
+                catch (Exception)
+                {
+                    // Unable to complete the full process so reset all values and throw the exception
+                    ActiveAccount = null;
+                    SessionId = null;
+                    SessionType = SessionType.Unassigned;
+                    throw;
+                }
+            }
         }
 
         /// <summary>

@@ -17,5 +17,6 @@ namespace TMDbLib.Objects.Lists
         public string Iso_639_1 { get; set; }
         public string Name { get; set; }
         public string PosterPath { get; set; }
+        public ContentType ListType { get; set; }
     }
 }

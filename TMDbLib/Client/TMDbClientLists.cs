@@ -1,5 +1,6 @@
 ﻿using System;
 using RestSharp;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Authentication;
 
@@ -78,7 +79,7 @@ namespace TMDbLib.Client
                 request.AddBody(new { name = name, description = description, language = language });
             }
 
-            IRestResponse<ListPostReply> response = _client.Post<ListPostReply>(request);
+            IRestResponse<ListCreateReply> response = _client.Post<ListCreateReply>(request);
 
             return response.Data == null ? null : response.Data.ListId;
         }
@@ -100,7 +101,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("listId", listId);
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
 
-            IRestResponse<ListPostReply> response = _client.Delete<ListPostReply>(request);
+            IRestResponse<PostReply> response = _client.Delete<PostReply>(request);
 
             // Status code 13 = success
             return response.Data != null && response.Data.StatusCode == 13;
@@ -149,7 +150,7 @@ namespace TMDbLib.Client
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { media_id = movieId });
 
-            IRestResponse<ListPostReply> response = _client.Post<ListPostReply>(request);
+            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
 
             // Status code 8 = "Duplicate entry - The data you tried to submit already exists"
             // Status code 12 = "The item/record was updated successfully"

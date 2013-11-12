@@ -1,6 +1,6 @@
 ﻿namespace TMDbLib.Objects.Lists
 {
-    internal class ListPostReply
+    internal class ListCreateReply
     {
         public int StatusCode { get; set; }
         public string StatusMessage { get; set; }

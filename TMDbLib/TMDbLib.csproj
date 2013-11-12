@@ -50,6 +50,11 @@
     <Compile Include="Client\TMDbClientDiscover.cs" />
     <Compile Include="Client\TMDbClientTvShows.cs" />
     <Compile Include="Objects\Account\AccountDetails.cs" />
+    <Compile Include="Objects\General\PostReply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objects\General\SortOrder.cs" />
+    <Compile Include="Objects\Account\AccountMovieSortBy.cs" />
     <Compile Include="Objects\Authentication\GuestSession.cs" />
     <Compile Include="Objects\Authentication\UserSessionRequiredException.cs" />
     <Compile Include="Objects\Authentication\GuestSessionRequiredException.cs" />
@@ -74,8 +79,9 @@
     <Compile Include="Objects\General\SearchContainerWithId.cs" />
     <Compile Include="Objects\Lists\List.cs" />
     <Compile Include="Objects\General\SearchContainer.cs" />
-    <Compile Include="Objects\Lists\ListPostReply.cs" />
+    <Compile Include="Objects\Lists\ListCreateReply.cs" />
     <Compile Include="Objects\Lists\ListStatus.cs" />
+    <Compile Include="Objects\General\ContentType.cs" />
     <Compile Include="Objects\Movies\MovieListType.cs" />
     <Compile Include="Client\TMDbClientChanges.cs" />
     <Compile Include="Client\TMDbClientKeywords.cs" />
