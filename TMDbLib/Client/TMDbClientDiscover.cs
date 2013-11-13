@@ -36,7 +36,7 @@ namespace TMDbLib.Client
             DateTime? firstAirDateGreaterThan = null,
             DateTime? firstAirDateLessThan = null)
         {
-            var request = new RestRequest("discover/tv");
+            RestRequest request = new RestRequest("discover/tv");
 
             if (page != 1 && page > 1)
                 request.AddParameter("page", page);
@@ -108,7 +108,7 @@ namespace TMDbLib.Client
             string withCompanies = null
             )
         {
-            var request = new RestRequest("discover/movie");
+            RestRequest request = new RestRequest("discover/movie");
 
             if (page != 1 && page > 1)
                 request.AddParameter("page", page);

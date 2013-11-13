@@ -52,7 +52,7 @@ namespace TMDbLibTests
                     if (movieLists.Page < movieLists.TotalPages)
                         movieLists = _config.Client.GetMovieLists(movieResult.Id, ++page);
                     else
-                       Assert.Fail("Movie '{0}' was not linked to the test list", movieResult.Title);
+                        Assert.Fail("Movie '{0}' was not linked to the test list", movieResult.Title);
                 }
             }
         }
@@ -78,7 +78,7 @@ namespace TMDbLibTests
             string newListId = _config.Client.ListCreate(listName);
             Assert.IsFalse(string.IsNullOrWhiteSpace(newListId));
 
-            var newlyAddedList = _config.Client.GetList(newListId);
+            List newlyAddedList = _config.Client.GetList(newListId);
             Assert.IsNotNull(newlyAddedList);
             Assert.AreEqual(listName, newlyAddedList.Name);
             Assert.AreEqual("", newlyAddedList.Description); // "" is the default value
@@ -111,14 +111,14 @@ namespace TMDbLibTests
             Assert.IsFalse(_config.Client.ListAddMovie(TestListId, EvanAlmighty));
 
             // Get list and check if the item was added
-            var listAfterAdd = _config.Client.GetList(TestListId);
+            List listAfterAdd = _config.Client.GetList(TestListId);
             Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == EvanAlmighty));
 
             // Remove the previously added movie from the list
             Assert.IsTrue(_config.Client.ListRemoveMovie(TestListId, EvanAlmighty));
 
             // Get list and check if the item was removed
-            var listAfterRemove = _config.Client.GetList(TestListId);
+            List listAfterRemove = _config.Client.GetList(TestListId);
             Assert.IsFalse(listAfterRemove.Items.Any(m => m.Id == EvanAlmighty));
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }

@@ -14,6 +14,9 @@ namespace TMDbLibTests
         {
             EnumTestStruct strct = new EnumTestStruct();
             strct.GetDescription();
+
+            // Should always throw exception
+            Assert.Fail();
         }
 
         [TestMethod]

@@ -20,7 +20,7 @@ namespace TMDbLib.Client
         /// <returns>The requested season for the specified tv show</returns>
         public TvSeason GetTvSeason(int tvShowId, int seasonNumber, TvSeasonMethods extraMethods = TvSeasonMethods.Undefined, string language = null)
         {
-            var req = new RestRequest("tv/{id}/season/{season_number}");
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
 
@@ -79,7 +79,7 @@ namespace TMDbLib.Client
 
         private T GetTvSeasonMethod<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            var req = new RestRequest("tv/{id}/season/{season_number}/{method}");
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", tvShowMethod.GetDescription());

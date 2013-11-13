@@ -46,7 +46,7 @@ namespace TMDbLib
 			{
 				if (MaxRetryCount >= request.Attempts && response.ErrorException.GetType() == typeof(WebException))
 				{
-					var webException = (WebException)response.ErrorException;
+					WebException webException = (WebException)response.ErrorException;
 					// Retry the call after waiting the configured ammount of time, it gets progressively longer every retry
 					Thread.Sleep(request.Attempts * RetryWaitTimeInSeconds * 1000);
 					return this.Execute<T>(request);

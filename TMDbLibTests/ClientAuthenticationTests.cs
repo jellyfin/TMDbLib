@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Authentication;
 
 namespace TMDbLibTests
 {
@@ -17,7 +18,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestAuthenticationRequestNewToken()
         {
-            var token = _config.Client.AuthenticationRequestAutenticationToken();
+            Token token = _config.Client.AuthenticationRequestAutenticationToken();
 
             Assert.IsNotNull(token);
             Assert.IsTrue(token.Success);
@@ -50,6 +51,9 @@ namespace TMDbLibTests
         {
             const string requestToken = "bla";
             _config.Client.AuthenticationGetUserSession(requestToken);
+
+            // Should always throw exception
+            Assert.Fail();
         }
 
         [TestMethod]
@@ -58,12 +62,15 @@ namespace TMDbLibTests
         {
             const string requestToken = "5f3a62c0d7977319e3d14adf1a2064c0c0938bcf";
             _config.Client.AuthenticationGetUserSession(requestToken);
+
+            // Should always throw exception
+            Assert.Fail();
         }
 
         [TestMethod]
         public void TestAuthenticationCreateGuestSession()
         {
-            var guestSession = _config.Client.AuthenticationCreateGuestSession();
+            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSession();
 
             Assert.IsNotNull(guestSession);
             Assert.IsTrue(guestSession.Success);

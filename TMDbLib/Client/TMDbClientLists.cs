@@ -17,7 +17,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            var request = new RestRequest("list/{listId}");
+            RestRequest request = new RestRequest("list/{listId}");
             request.AddUrlSegment("listId", listId);
 
             request.DateFormat = "yyyy-MM-dd";
@@ -40,7 +40,7 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            var request = new RestRequest("list/{listId}/item_status");
+            RestRequest request = new RestRequest("list/{listId}/item_status");
             request.AddUrlSegment("listId", listId);
             request.AddParameter("movie_id", movieId);
 
@@ -68,7 +68,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(description))
                 description = "";
 
-            var request = new RestRequest("list") { RequestFormat = DataFormat.Json };
+            RestRequest request = new RestRequest("list") { RequestFormat = DataFormat.Json };
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             if (string.IsNullOrWhiteSpace(language))
             {
@@ -97,7 +97,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            var request = new RestRequest("list/{listId}");
+            RestRequest request = new RestRequest("list/{listId}");
             request.AddUrlSegment("listId", listId);
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
 
@@ -144,7 +144,7 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            var request = new RestRequest("list/{listId}/{method}") { RequestFormat = DataFormat.Json };
+            RestRequest request = new RestRequest("list/{listId}/{method}") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("listId", listId);
             request.AddUrlSegment("method", method);
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);

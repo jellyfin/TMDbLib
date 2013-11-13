@@ -297,7 +297,7 @@ namespace TMDbLibTests
         public void TestMovieAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            var accountState = _config.Client.GetMovieAccountState(Avatar);
+            MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar);
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist
@@ -311,7 +311,7 @@ namespace TMDbLibTests
         public void TestMovieAccountStateRatingNotSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            var accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
+            MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist

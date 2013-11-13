@@ -12,7 +12,7 @@ namespace TMDbLib.Client
         /// <param name="networkId">The id of the network object to retrieve</param>
         public Network GetNetwork(int networkId)
         {
-            var request = new RestRequest("network/{networkId}");
+            RestRequest request = new RestRequest("network/{networkId}");
             request.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
             IRestResponse<Network> response = _client.Get<Network>(request);

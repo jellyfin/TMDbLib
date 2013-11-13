@@ -12,6 +12,7 @@ namespace TMDbLib.Objects.Authentication
     {
         public string GuestSessionId { get; set; }
         public bool Success { get; set; }
+
         /// <summary>
         /// The date / time before which the session must be used for the first time else it will expire. Time is expressed as local time.
         /// </summary>

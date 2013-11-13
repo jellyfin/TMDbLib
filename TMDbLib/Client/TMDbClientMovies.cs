@@ -42,7 +42,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            var request = new RestRequest("movie/{movieId}");
+            RestRequest request = new RestRequest("movie/{movieId}");
             request.AddUrlSegment("movieId", imdbId);
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 request.AddParameter("session_id", SessionId);
@@ -98,7 +98,7 @@ namespace TMDbLib.Client
             string country = null,
             string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            var request = new RestRequest("movie/{movieId}/{method}");
+            RestRequest request = new RestRequest("movie/{movieId}/{method}");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", movieMethod.GetDescription());
 
@@ -202,7 +202,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            var request = new RestRequest("movie/{movieId}/{method}");
+            RestRequest request = new RestRequest("movie/{movieId}/{method}");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             request.AddParameter("session_id", SessionId);
@@ -220,7 +220,7 @@ namespace TMDbLib.Client
 
         public Movie GetMovieLatest()
         {
-            var req = new RestRequest("movie/latest");
+            RestRequest req = new RestRequest("movie/latest");
             IRestResponse<Movie> resp = _client.Get<Movie>(req);
 
             return resp.Data;
@@ -264,8 +264,8 @@ namespace TMDbLib.Client
         private static void DeserializeAccountStatesRating(MovieAccountState accountState, string responseContent)
         {
             const string selector = @"""rated"":{""value"":(?<value>\d+(?:\.\d{1,2}))}";
-            var regex = new Regex(selector, RegexOptions.IgnoreCase);
-            var match = regex.Match(responseContent);
+            Regex regex = new Regex(selector, RegexOptions.IgnoreCase);
+            Match match = regex.Match(responseContent);
             if (match.Success)
             {
                 accountState.Rating = Double.Parse(match.Groups["value"].Value,

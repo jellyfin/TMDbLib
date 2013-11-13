@@ -2,8 +2,10 @@
 using System.Configuration;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 
@@ -29,14 +31,17 @@ namespace TMDbLibTests
         public void TestAccountGetDetailsGuestAccount()
         {
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
-            var account = _config.Client.AccountGetDetails();
+            AccountDetails account = _config.Client.AccountGetDetails();
+
+            // Should always throw exception
+            Assert.Fail();
         }
 
         [TestMethod]
         public void TestAccountGetDetailsUserAccount()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            var account = _config.Client.AccountGetDetails();
+            AccountDetails account = _config.Client.AccountGetDetails();
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Naturally the specified account must have these values populated for the test to pass
@@ -53,7 +58,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetLists(i));
-            var list = _config.Client.AccountGetLists().Results[0];
+            List list = _config.Client.AccountGetLists().Results[0];
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             Assert.IsNotNull(list.Id);
@@ -71,7 +76,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
-            var movie = _config.Client.AccountGetFavoriteMovies().Results[0];
+            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Requires that you have marked at least one movie as favorite else this test will fail
@@ -91,7 +96,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
-            var movie = _config.Client.AccountGetFavoriteMovies().Results[0];
+            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
@@ -111,7 +116,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
-            var movie = _config.Client.AccountGetFavoriteMovies().Results[0];
+            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
             _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Requires that you have rated at least one movie else this test will fail
@@ -185,7 +190,7 @@ namespace TMDbLibTests
         private bool DoesListContainSpecificMovie(int movieId, Func<int, SearchContainer<SearchMovie>> listGetter)
         {
             int page = 1;
-            var originalList = listGetter(1);
+            SearchContainer<SearchMovie> originalList = listGetter(1);
             while (originalList != null && originalList.Results != null && originalList.Results.Any())
             {
                 // Check if the current result page contains the relevant movie

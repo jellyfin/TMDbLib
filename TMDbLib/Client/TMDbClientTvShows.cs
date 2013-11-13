@@ -20,7 +20,7 @@ namespace TMDbLib.Client
         /// <returns>The requested Tv Show</returns>
         public TvShow GetTvShow(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
         {
-            var req = new RestRequest("tv/{id}");
+            RestRequest req = new RestRequest("tv/{id}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
 
             if (language != null)
@@ -67,7 +67,7 @@ namespace TMDbLib.Client
 
         private SearchContainer<TvShowBase> GetTvShowList(int page, string language, string tvShowListType)
         {
-            var req = new RestRequest("tv/" + tvShowListType);
+            RestRequest req = new RestRequest("tv/" + tvShowListType);
 
             if (language != null)
                 req.AddParameter("language", language);
@@ -114,7 +114,7 @@ namespace TMDbLib.Client
 
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            var req = new RestRequest("tv/{id}/{method}");
+            RestRequest req = new RestRequest("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 

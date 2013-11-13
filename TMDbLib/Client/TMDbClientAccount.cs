@@ -20,9 +20,9 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public AccountDetails AccountGetDetails()
         {
-           RequireSessionId(SessionType.UserSession);
+            RequireSessionId(SessionType.UserSession);
 
-            var request = new RestRequest("account");
+            RestRequest request = new RestRequest("account");
             request.AddParameter("session_id", SessionId);
 
             IRestResponse<AccountDetails> response = _client.Get<AccountDetails>(request);
@@ -39,7 +39,8 @@ namespace TMDbLib.Client
         public SearchContainer<List> AccountGetLists(int page = 1, string language = null)
         {
             RequireSessionId(SessionType.UserSession);
-            var request = new RestRequest("account/{accountId}/lists");
+
+            RestRequest request = new RestRequest("account/{accountId}/lists");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddParameter("session_id", SessionId);
 
@@ -65,10 +66,11 @@ namespace TMDbLib.Client
         public bool AccountChangeMovieFavoriteStatus(int movieId, bool isFavorite)
         {
             RequireSessionId(SessionType.UserSession);
-            var request = new RestRequest("account/{accountId}/favorite") {RequestFormat = DataFormat.Json};
+
+            RestRequest request = new RestRequest("account/{accountId}/favorite") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            request.AddBody(new { movie_id = movieId, favorite = isFavorite });    
+            request.AddBody(new { movie_id = movieId, favorite = isFavorite });
 
             IRestResponse<PostReply> response = _client.Post<PostReply>(request);
 
@@ -89,7 +91,8 @@ namespace TMDbLib.Client
         public bool AccountChangeMovieWatchlistStatus(int movieId, bool isOnWatchlist)
         {
             RequireSessionId(SessionType.UserSession);
-            var request = new RestRequest("account/{accountId}/movie_watchlist") {RequestFormat = DataFormat.Json};
+
+            RestRequest request = new RestRequest("account/{accountId}/movie_watchlist") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { movie_id = movieId, movie_watchlist = isOnWatchlist });
@@ -108,7 +111,7 @@ namespace TMDbLib.Client
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchMovie> AccountGetFavoriteMovies(
-            int page = 1, 
+            int page = 1,
             AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
@@ -147,7 +150,8 @@ namespace TMDbLib.Client
         private SearchContainer<SearchMovie> GetAccountList(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
         {
             RequireSessionId(SessionType.UserSession);
-            var request = new RestRequest("account/{accountId}/{method}");
+
+            RestRequest request = new RestRequest("account/{accountId}/{method}");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", method.GetDescription());
             request.AddParameter("session_id", SessionId);

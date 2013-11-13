@@ -43,7 +43,9 @@ namespace TMDbLibTests
         public void GetConfigFailTest()
         {
             TMDbConfig config = _config.Client.Config;
-            Assert.Fail();  // Should never reach here
+
+            // Should always throw exception
+            Assert.Fail();
         }
 
         [TestMethod]
