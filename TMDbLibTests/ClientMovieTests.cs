@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLibTests.Helpers;
@@ -34,6 +35,7 @@ namespace TMDbLibTests
             _methods[MovieMethods.SimilarMovies] = movie => movie.SimilarMovies;
             _methods[MovieMethods.Lists] = movie => movie.Lists;
             _methods[MovieMethods.Changes] = movie => movie.Changes;
+            _methods[MovieMethods.AccountStates] = movie => movie.AccountStates;
         }
 
         [TestMethod]
@@ -75,8 +77,10 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesExtrasAll()
         {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum);
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -287,6 +291,34 @@ namespace TMDbLibTests
                 // At least one title should differ
                 Assert.IsTrue(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
             }
+        }
+
+        [TestMethod]
+        public void TestMovieAccountStateRatingSet()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            var accountState = _config.Client.GetMovieAccountState(Avatar);
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
+
+            // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist
+            Assert.AreEqual(Avatar, accountState.Id);
+            Assert.IsNotNull(accountState.Rating);
+            Assert.IsTrue(accountState.Favorite);
+            Assert.IsTrue(accountState.Watchlist);
+        }
+
+        [TestMethod]
+        public void TestMovieAccountStateRatingNotSet()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            var accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
+
+            // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist
+            Assert.AreEqual(AGoodDayToDieHard, accountState.Id);
+            Assert.IsNull(accountState.Rating);
+            Assert.IsTrue(accountState.Favorite);
+            Assert.IsTrue(accountState.Watchlist);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace TMDbLibTests
         private const int Avatar = 19995;
         private const int Terminator = 218;
         private const int EvanAlmighty = 2698;
-        private const string TestListId = "527fa7f3760ee361f70c8b14";
+        private const string TestListId = "528349d419c2954bd21ca0a8";
         private TestConfig _config;
 
         [TestInitialize]

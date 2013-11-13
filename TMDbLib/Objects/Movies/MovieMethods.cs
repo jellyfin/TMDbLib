@@ -27,6 +27,11 @@ namespace TMDbLib.Objects.Movies
         [Description("lists")]
         Lists = 256,
         [Description("changes")]
-        Changes = 512
+        Changes = 512,
+        /// <summary>
+        /// Requires a valid user session to be set on the client object
+        /// </summary>
+        [Description("account_states")]
+        AccountStates = 1024
     }
 }

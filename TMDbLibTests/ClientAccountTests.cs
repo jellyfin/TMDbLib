@@ -42,10 +42,10 @@ namespace TMDbLibTests
             // Naturally the specified account must have these values populated for the test to pass
             Assert.IsNotNull(account);
             Assert.IsTrue(account.Id > 1);
-            Assert.IsNotNull(account.Name);
-            Assert.IsNotNull(account.Username);
-            Assert.IsNotNull(account.Iso_3166_1);
-            Assert.IsNotNull(account.Iso_639_1);
+            Assert.AreEqual("Test Name", account.Name);
+            Assert.AreEqual("TMDbTestAccount", account.Username);
+            Assert.AreEqual("BE", account.Iso_3166_1);
+            Assert.AreEqual("en", account.Iso_639_1);
         }
 
         [TestMethod]

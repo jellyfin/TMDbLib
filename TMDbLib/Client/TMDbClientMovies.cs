@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Utilities;
@@ -26,13 +28,27 @@ namespace TMDbLib.Client
             return GetMovie(movieId.ToString(CultureInfo.InvariantCulture), language, extraMethods);
         }
 
+        /// <summary>
+        /// Retrieves a movie by it's imdb Id
+        /// </summary>
+        /// <param name="imdbId">The Imdb id of the movie OR the TMDb id as string</param>
+        /// <param name="language">Language to localize the results in.</param>
+        /// <param name="extraMethods">A list of additional methods to execute for this request as enum flags</param>
+        /// <returns>The requested movie or null if it could not be found</returns>
+        /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned, see remarks.</exception>
         public Movie GetMovie(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            var req = new RestRequest("movie/{movieId}");
-            req.AddUrlSegment("movieId", imdbId);
+            if (extraMethods.HasFlag(MovieMethods.AccountStates))
+                RequireSessionId(SessionType.UserSession);
+
+            var request = new RestRequest("movie/{movieId}");
+            request.AddUrlSegment("movieId", imdbId);
+            if (extraMethods.HasFlag(MovieMethods.AccountStates))
+                request.AddParameter("session_id", SessionId);
 
             if (language != null)
-                req.AddParameter("language", language);
+                request.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(MovieMethods))
@@ -42,60 +58,68 @@ namespace TMDbLib.Client
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
-                req.AddParameter("append_to_response", appends);
+                request.AddParameter("append_to_response", appends);
 
-            IRestResponse<Movie> resp = _client.Get<Movie>(req);
+            IRestResponse<Movie> response = _client.Get<Movie>(request);
+            
+            // No data to patch up so return
+            if (response.Data == null) return null;
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (resp.Data != null)
+            if (response.Data.Trailers != null)
+                response.Data.Trailers.Id = response.Data.Id;
+
+            if (response.Data.AlternativeTitles != null)
+                response.Data.AlternativeTitles.Id = response.Data.Id;
+
+            if (response.Data.Credits != null)
+                response.Data.Credits.Id = response.Data.Id;
+
+            if (response.Data.Releases != null)
+                response.Data.Releases.Id = response.Data.Id;
+
+            if (response.Data.Keywords != null)
+                response.Data.Keywords.Id = response.Data.Id;
+
+            if (response.Data.Translations != null)
+                response.Data.Translations.Id = response.Data.Id;
+
+            if (response.Data.AccountStates != null)
             {
-                if (resp.Data.Trailers != null)
-                    resp.Data.Trailers.Id = resp.Data.Id;
-
-                if (resp.Data.AlternativeTitles != null)
-                    resp.Data.AlternativeTitles.Id = resp.Data.Id;
-
-                if (resp.Data.Credits != null)
-                    resp.Data.Credits.Id = resp.Data.Id;
-
-                if (resp.Data.Releases != null)
-                    resp.Data.Releases.Id = resp.Data.Id;
-
-                if (resp.Data.Keywords != null)
-                    resp.Data.Keywords.Id = resp.Data.Id;
-
-                if (resp.Data.Translations != null)
-                    resp.Data.Translations.Id = resp.Data.Id;
+                response.Data.AccountStates.Id = response.Data.Id;
+                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+                DeserializeAccountStatesRating( response.Data.AccountStates, response.Content);
             }
 
-            return resp.Data;
+            return response.Data;
         }
 
-        private T GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null, string country = null,
-                                    string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
+        private T GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
+            string country = null,
+            string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            var req = new RestRequest("movie/{movieId}/{method}");
-            req.AddUrlSegment("movieId", movieId.ToString());
-            req.AddUrlSegment("method", movieMethod.GetDescription());
+            var request = new RestRequest("movie/{movieId}/{method}");
+            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("method", movieMethod.GetDescription());
 
             if (dateFormat != null)
-                req.DateFormat = dateFormat;
+                request.DateFormat = dateFormat;
 
             if (country != null)
-                req.AddParameter("country", country);
+                request.AddParameter("country", country);
             if (language != null)
-                req.AddParameter("language", language);
+                request.AddParameter("language", language);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                request.AddParameter("page", page);
             if (startDate.HasValue)
-                req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
+                request.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
-                req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
+                request.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            IRestResponse<T> response = _client.Get<T>(request);
 
-            return resp.Data;
+            return response.Data;
         }
 
         public AlternativeTitles GetMovieAlternativeTitles(int movieId)
@@ -168,6 +192,32 @@ namespace TMDbLib.Client
             return GetMovieMethod<ChangesContainer>(movieId, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").Changes;
         }
 
+        /// <summary>
+        /// Retrieves all information for a specific movie in relation to the current user account
+        /// </summary>
+        /// <param name="movieId">The id of the movie to get the account states for</param>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public MovieAccountState GetMovieAccountState(int movieId)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            var request = new RestRequest("movie/{movieId}/{method}");
+            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
+            request.AddParameter("session_id", SessionId);
+
+            IRestResponse<MovieAccountState> response = _client.Get<MovieAccountState>(request);
+
+            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+            if (response.Data != null)
+            {
+                DeserializeAccountStatesRating(response.Data, response.Content);
+            }
+
+            return response.Data;
+        }
+
         public Movie GetMovieLatest()
         {
             var req = new RestRequest("movie/latest");
@@ -209,6 +259,18 @@ namespace TMDbLib.Client
             IRestResponse<SearchContainer<MovieResult>> resp = _client.Get<SearchContainer<MovieResult>>(req);
 
             return resp.Data;
+        }
+
+        private static void DeserializeAccountStatesRating(MovieAccountState accountState, string responseContent)
+        {
+            const string selector = @"""rated"":{""value"":(?<value>\d+(?:\.\d{1,2}))}";
+            var regex = new Regex(selector, RegexOptions.IgnoreCase);
+            var match = regex.Match(responseContent);
+            if (match.Success)
+            {
+                accountState.Rating = Double.Parse(match.Groups["value"].Value,
+                    CultureInfo.InvariantCulture.NumberFormat);
+            }
         }
     }
 }

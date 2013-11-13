@@ -36,7 +36,7 @@ namespace TMDbLibTests
         //[TestMethod]
         //public void TestAuthenticationUserAuthenticatedSessionSuccess()
         //{
-        //    const string requestToken = "98496c38a85ccb1ae14ca8f8fe81cfb150718bfe";
+        //    const string requestToken = "cb49e29af0473e78a4a489c91c6a8259407a343b";
         //    var session = _config.Client.AuthenticationGetUserSession(requestToken);
 
         //    Assert.IsNotNull(session);
