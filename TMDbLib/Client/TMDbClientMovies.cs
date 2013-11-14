@@ -61,7 +61,7 @@ namespace TMDbLib.Client
                 request.AddParameter("append_to_response", appends);
 
             IRestResponse<Movie> response = _client.Get<Movie>(request);
-            
+
             // No data to patch up so return
             if (response.Data == null) return null;
 
@@ -88,7 +88,7 @@ namespace TMDbLib.Client
             {
                 response.Data.AccountStates.Id = response.Data.Id;
                 // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                DeserializeAccountStatesRating( response.Data.AccountStates, response.Content);
+                DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
             }
 
             return response.Data;
@@ -216,6 +216,34 @@ namespace TMDbLib.Client
             }
 
             return response.Data;
+        }
+
+        /// <summary>
+        /// Change the rating of a specified movie.
+        /// </summary>
+        /// <param name="movieId">The id of the movie to rate</param>
+        /// <param name="rating">The rating you wish to assign to the specified movie. Value needs to be between 0.5 and 10 and must use increments of 0.5. Ex. using 7.1 will not work and return false.</param>
+        /// <returns>True if the the movie's rating was successfully updated, false if not</returns>
+        /// <remarks>Requires a valid guest or user session</remarks>
+        /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>
+        public bool MovieSetRating(int movieId, double rating)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest request = new RestRequest("movie/{movieId}/rating") { RequestFormat = DataFormat.Json };
+            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+            if (SessionType == SessionType.UserSession)
+                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            request.AddBody(new { value = rating });
+
+            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+
+            // status code 1 = "Success"
+            // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
+            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
         }
 
         public Movie GetMovieLatest()

@@ -10,7 +10,7 @@ namespace TMDbLibTests
         // Required to be able to successfully run all authenticated tests
         public readonly string UserSessionId = "c413282cdadad9af972c06d9b13096a8b13ab1c1";
 
-        public readonly string GuestTestSessionId = "0c81565c80905bbfd685782a907ee73d";
+        public readonly string GuestTestSessionId = "d425468da2781d6799ba14c05f7327e7";
 
         public TMDbClient Client { get; set; }
 

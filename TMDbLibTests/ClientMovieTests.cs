@@ -294,7 +294,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestMovieAccountStateRatingSet()
+        public void TestMoviesAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar);
@@ -308,7 +308,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestMovieAccountStateRatingNotSet()
+        public void TestMoviesAccountStateRatingNotSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
@@ -319,6 +319,69 @@ namespace TMDbLibTests
             Assert.IsNull(accountState.Rating);
             Assert.IsTrue(accountState.Favorite);
             Assert.IsTrue(accountState.Watchlist);
+        }
+
+
+        [TestMethod]
+        public void TestMoviesSetRatingBadRating()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 7.1));
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
+        }
+
+        [TestMethod]
+        public void TestMoviesSetRatingRatingOutOfBounds()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 10.5));
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
+        }
+
+        [TestMethod]
+        public void TestMoviesSetRatingRatingLowerBoundsTest()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 0));
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
+        }
+
+        [TestMethod]
+        public void TestMoviesSetRatingUserSession()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            // Ensure that the test movie has a different rating than our test rating
+            var rating = _config.Client.GetMovieAccountState(Avatar).Rating;
+            Assert.IsNotNull(rating);
+            double originalRating = rating.Value;
+            Assert.AreNotEqual(7.5, originalRating);
+
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 7.5));
+
+            // Check if it worked
+            Assert.AreEqual(7.5, _config.Client.GetMovieAccountState(Avatar).Rating);
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, originalRating));
+
+            // Check if it worked
+            Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(Avatar).Rating);
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
+        }
+
+        [TestMethod]
+        public void TestMoviesSetRatingGuestSession()
+        {
+            // There is no way to validate the change besides the success return of the api call since the guest session doesn't have access to anything else
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 7.5));
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 8));
+
+            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
     }
 }

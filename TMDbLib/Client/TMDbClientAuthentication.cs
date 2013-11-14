@@ -40,7 +40,6 @@ namespace TMDbLib.Client
             };
 
             IRestResponse<GuestSession> response = _client.Get<GuestSession>(request);
-            GuestSession guestSession = response.Data;
 
             return response.Data;
         }
