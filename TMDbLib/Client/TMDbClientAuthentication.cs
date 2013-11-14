@@ -17,7 +17,6 @@ namespace TMDbLib.Client
             IRestResponse<Token> response = _client.Get<Token>(request);
             Token token = response.Data;
 
-            token.ExpiresAt = token.ExpiresAt.ToLocalTime();
             token.AuthenticationCallback = response.Headers.First(h => h.Name.Equals("Authentication-Callback")).Value.ToString();
 
             return token;
@@ -42,8 +41,6 @@ namespace TMDbLib.Client
 
             IRestResponse<GuestSession> response = _client.Get<GuestSession>(request);
             GuestSession guestSession = response.Data;
-
-            guestSession.ExpiresAt = guestSession.ExpiresAt.ToLocalTime();
 
             return response.Data;
         }
