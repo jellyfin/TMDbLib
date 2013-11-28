@@ -195,6 +195,9 @@ namespace TMDbLib.Client
                 case MovieListType.TopRated:
                     req = new RestRequest("movie/top_rated");
                     break;
+                case MovieListType.Upcoming:
+                    req = new RestRequest("movie/upcoming");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("type");
             }
@@ -212,3 +215,4 @@ namespace TMDbLib.Client
         }
     }
 }
+
