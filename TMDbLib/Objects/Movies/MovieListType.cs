@@ -4,6 +4,7 @@
     {
         NowPlaying,
         Popular,
-        TopRated
+        TopRated,
+        Upcoming
     }
 }
