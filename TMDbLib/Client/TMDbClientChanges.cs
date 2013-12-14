@@ -33,6 +33,5 @@ namespace TMDbLib.Client
         {
             return GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
         }
-
     }
 }

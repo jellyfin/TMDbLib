@@ -42,6 +42,8 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\Find\FindContainer.cs" />
+    <Compile Include="Client\TMDbClientFind.cs" />
     <Compile Include="Client\TMDbClientAccount.cs" />
     <Compile Include="Client\TMDbClientAuthentication.cs" />
     <Compile Include="Client\TMDbClientNetworks.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="Client\TMDbClientDiscover.cs" />
     <Compile Include="Client\TMDbClientTvShows.cs" />
     <Compile Include="Objects\Account\AccountDetails.cs" />
+    <Compile Include="Objects\Find\FindExternalSource.cs" />
     <Compile Include="Objects\General\PostReply.cs">
       <SubType>Code</SubType>
     </Compile>
