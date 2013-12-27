@@ -9,6 +9,6 @@ namespace TMDbLib.Objects.Find
     {
         public List<MovieResult> MovieResults { get; set; }
         public List<Person> PersonResults { get; set; }     // Unconfirmed type
-        public List<TvShow> TvResults { get; set; }         // Unconfirmed type
+        public List<TvShowBase> TvResults { get; set; }
     }
 }
