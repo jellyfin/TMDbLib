@@ -18,7 +18,7 @@ namespace TMDbLib.Objects.TvShows
         public List<TvSeason> Seasons { get; set; }
 
         public bool InProduction { get; set; }
-        public TvShowStatus? Status { get; set; }
+        public string Status { get; set; }
 
         public List<Person> CreatedBy { get; set; }
         public List<Genre> Genres { get; set; }
