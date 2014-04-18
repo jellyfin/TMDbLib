@@ -20,7 +20,12 @@ namespace TMDbLib.Client
         public FindContainer Find(FindExternalSource source, string id)
         {
             RestRequest req = new RestRequest("find/{id}");
-            req.AddUrlSegment("id", HttpUtility.UrlEncode(id));
+
+            if (source == FindExternalSource.FreeBaseId || source == FindExternalSource.FreeBaseMid)
+                // No url encoding for freebase Id's (they include /-slashes)
+                req.AddUrlSegment("id", id);
+            else
+                req.AddUrlSegment("id", HttpUtility.UrlEncode(id));
 
             req.AddParameter("external_source", source.GetDescription());
 

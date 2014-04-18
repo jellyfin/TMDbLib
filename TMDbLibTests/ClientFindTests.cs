@@ -13,8 +13,8 @@ namespace TMDbLibTests
         private const string tvdbBreakingBadId = "81189";
         private const string imdbBreakingBadId = "tt0903747";
         private const string tvRageBreakingBadId = "18164";
-        private const string freebaseBreakingBadId = "/en/breaking_bad";
-        private const string freebaseMidBreakingBadId = "/m/03d34x8";
+        private const string freebaseBreakingBadId = "en/breaking_bad";
+        private const string freebaseMidBreakingBadId = "m/03d34x8";
 
         [TestInitialize]
         public void Initiator()
