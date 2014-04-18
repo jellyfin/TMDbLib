@@ -50,12 +50,14 @@ namespace TMDbLibTests
             Assert.IsNotNull(credits.Cast[0].ProfilePath);
             Assert.AreEqual(0, credits.Cast[0].Order);
 
-            Assert.IsNotNull(credits.Crew);
-            Assert.AreEqual("Production", credits.Crew[0].Department);
-            Assert.AreEqual(1223202, credits.Crew[0].Id);
-            Assert.AreEqual("Diane Mercer", credits.Crew[0].Name);
-            Assert.AreEqual("Producer", credits.Crew[0].Job);
-            Assert.IsNull(credits.Crew[0].ProfilePath);
+            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1223202);
+            Assert.IsNotNull(crewPersonId);
+
+            Assert.AreEqual(1223202, crewPersonId.Id);
+            Assert.AreEqual("Production", crewPersonId.Department);
+            Assert.AreEqual("Diane Mercer", crewPersonId.Name);
+            Assert.AreEqual("Producer", crewPersonId.Job);
+            Assert.IsNull(crewPersonId.ProfilePath);
         }
 
         [TestMethod]
@@ -107,7 +109,7 @@ namespace TMDbLibTests
         private void TestBreakingBadSeasonOneEpisodeOneBaseProperties(TvEpisode tvEpisode)
         {
             Assert.AreEqual(62085, tvEpisode.Id);
-            Assert.AreEqual("2008-01-20", tvEpisode.AirDate.ToString("yyyy-MM-dd"));
+            Assert.AreEqual(new DateTime(2008,1,19), tvEpisode.AirDate.Date);
             Assert.AreEqual(1, tvEpisode.EpisodeNumber);
             Assert.AreEqual("Pilot", tvEpisode.Name);
             Assert.IsNotNull(tvEpisode.Overview);

@@ -51,11 +51,15 @@ namespace TMDbLibTests
             Assert.AreEqual(0, credits.Cast[0].Order);
 
             Assert.IsNotNull(credits.Crew);
-            Assert.AreEqual("Production", credits.Crew[0].Department);
-            Assert.AreEqual(29779, credits.Crew[0].Id);
-            Assert.AreEqual("Michelle MacLaren", credits.Crew[0].Name);
-            Assert.AreEqual("Executive Producer", credits.Crew[0].Job);
-            Assert.IsNull(credits.Crew[0].ProfilePath);
+
+            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 29779);
+            Assert.IsNotNull(crewPersonId);
+
+            Assert.AreEqual(29779, crewPersonId.Id);
+            Assert.AreEqual("Production", crewPersonId.Department);
+            Assert.AreEqual("Michelle MacLaren", crewPersonId.Name);
+            Assert.AreEqual("Executive Producer", crewPersonId.Job);
+            Assert.IsNull(crewPersonId.ProfilePath);
         }
 
         [TestMethod]

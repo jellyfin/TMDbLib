@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -68,6 +69,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesExtrasExclusive()
         {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovie(id, extras), AGoodDayToDieHard);
         }
 
@@ -77,6 +79,8 @@ namespace TMDbLibTests
             Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
             tmpMethods.Remove(MovieMethods.Changes);
             tmpMethods.Remove(MovieMethods.SimilarMovies);      // See https://github.com/LordMike/TMDbLib/issues/19
+
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = _config.Client.GetMovie(AGoodDayToDieHardImdb, combinedEnum);
@@ -125,7 +129,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(respGerman);
 
             Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Stirb Langsam 5"));
-            Assert.IsTrue(respGerman.Titles.Any(s => s.Title == "Stirb Langsam 5"));
+            Assert.IsTrue(respGerman.Titles.Any(s => s.Title == "Stirb langsam - Ein guter Tag zum Sterben"));
 
             Assert.IsTrue(respUs.Titles.All(s => s.Iso_3166_1 == "US"));
             Assert.IsTrue(respGerman.Titles.All(s => s.Iso_3166_1 == "DE"));
@@ -308,11 +312,11 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar);
 
-            // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist
+            // For this test to pass the movie Avatar need to be rated, added to the favorite list and watchlist
             Assert.AreEqual(Avatar, accountState.Id);
             Assert.IsNotNull(accountState.Rating);
-            Assert.IsTrue(accountState.Favorite);
-            Assert.IsTrue(accountState.Watchlist);
+            Assert.IsTrue(accountState.Favorite, "Please add Avatar to the users favourites list");
+            Assert.IsTrue(accountState.Watchlist, "Please add Avatar to the users watchlist");
         }
 
         [TestMethod]
@@ -321,11 +325,11 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
 
-            // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist
+            // For this test to pass the movie A Good Day To Die Hard need to be NOT rated, and REMOVED to the favorite list and watchlist
             Assert.AreEqual(AGoodDayToDieHard, accountState.Id);
             Assert.IsNull(accountState.Rating);
-            Assert.IsTrue(accountState.Favorite);
-            Assert.IsTrue(accountState.Watchlist);
+            Assert.IsFalse(accountState.Favorite, "Please remove A Good Day To Die Hard from the users favourites list");
+            Assert.IsFalse(accountState.Watchlist, "Please remove A Good Day To Die Hard from the users watchlist");
         }
 
 
@@ -354,20 +358,28 @@ namespace TMDbLibTests
         public void TestMoviesSetRatingUserSession()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
             // Ensure that the test movie has a different rating than our test rating
             var rating = _config.Client.GetMovieAccountState(Avatar).Rating;
             Assert.IsNotNull(rating);
+
             double originalRating = rating.Value;
-            Assert.AreNotEqual(7.5, originalRating);
+            double newRating = Math.Abs(originalRating - 7.5) < double.Epsilon ? 2.5 : 7.5;
 
             // Try changing the rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 7.5));
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, newRating));
+
+            // Allow TMDb to not cache our data
+            Thread.Sleep(1000);
 
             // Check if it worked
-            Assert.AreEqual(7.5, _config.Client.GetMovieAccountState(Avatar).Rating);
+            Assert.AreEqual(newRating, _config.Client.GetMovieAccountState(Avatar).Rating);
 
             // Try changing it back to the previous rating
             Assert.IsTrue(_config.Client.MovieSetRating(Avatar, originalRating));
+
+            // Allow TMDb to not cache our data
+            Thread.Sleep(1000);
 
             // Check if it worked
             Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(Avatar).Rating);
