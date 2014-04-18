@@ -16,14 +16,24 @@ namespace TMDbLibTests
         private const string AGoodDayToDieHardImdb = "tt1606378";
         private const int Avatar = 19995;
 
-        private Dictionary<MovieMethods, Func<Movie, object>> _methods;
+        private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {
             _config = new TestConfig();
+        }
 
+        /// <summary>
+        /// Run once, on test class initialization
+        /// </summary>
+        [ClassInitialize]
+        public static void InitialInitiator(TestContext context)
+        {
             _methods = new Dictionary<MovieMethods, Func<Movie, object>>();
             _methods[MovieMethods.AlternativeTitles] = movie => movie.AlternativeTitles;
             _methods[MovieMethods.Credits] = movie => movie.Credits;

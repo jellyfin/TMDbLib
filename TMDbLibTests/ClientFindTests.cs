@@ -16,6 +16,9 @@ namespace TMDbLibTests
         private const string freebaseBreakingBadId = "en/breaking_bad";
         private const string freebaseMidBreakingBadId = "m/03d34x8";
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {

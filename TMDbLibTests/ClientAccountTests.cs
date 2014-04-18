@@ -17,6 +17,9 @@ namespace TMDbLibTests
         private TestConfig _config;
         private const int Terminator = 218;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {

@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using System.Linq;
 using TMDbLib.Objects.Search;
@@ -13,6 +12,9 @@ namespace TMDbLibTests
     {
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {

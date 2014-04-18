@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLibTests.Helpers;
@@ -16,14 +14,24 @@ namespace TMDbLibTests
     {
         private const int BruceWillis = 62;
 
-        private Dictionary<PersonMethods, Func<Person, object>> _methods;
+        private static Dictionary<PersonMethods, Func<Person, object>> _methods;
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {
             _config = new TestConfig();
+        }
 
+        /// <summary>
+        /// Run once, on test class initialization
+        /// </summary>
+        [ClassInitialize]
+        public static void InitialInitiator(TestContext context)
+        {
             _methods = new Dictionary<PersonMethods, Func<Person, object>>();
             _methods[PersonMethods.Credits] = person => person.Credits;
             _methods[PersonMethods.Changes] = person => person.Changes;

@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace TMDbLib.Objects.Account
+﻿namespace TMDbLib.Objects.Account
 {
     public class AccountDetails
     {

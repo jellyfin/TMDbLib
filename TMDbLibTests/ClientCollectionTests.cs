@@ -12,14 +12,24 @@ namespace TMDbLibTests
     public class ClientCollectionTests
     {
         private const int JamesBondCollection = 645;
-        private Dictionary<CollectionMethods, Func<Collection, object>> _methods;
+        private static Dictionary<CollectionMethods, Func<Collection, object>> _methods;
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
-        public void InitTest()
+        public void Initiator()
         {
             _config = new TestConfig();
+        }
 
+        /// <summary>
+        /// Run once, on test class initialization
+        /// </summary>
+        [ClassInitialize]
+        public static void InitialInitiator(TestContext context)
+        {
             _methods = new Dictionary<CollectionMethods, Func<Collection, object>>();
             _methods[CollectionMethods.Images] = collection => collection.Images;
         }

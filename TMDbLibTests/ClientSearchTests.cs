@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
@@ -14,6 +13,9 @@ namespace TMDbLibTests
     {
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {
@@ -42,8 +44,8 @@ namespace TMDbLibTests
 
             SearchContainer<SearchResultCollection> result = _config.Client.SearchCollection("James Bond");
 
-            Debug.Assert(result.Results.Any(s => s.Id == 645));
-            Debug.Assert(result.Results.Any(s => s.Name == "James Bond Collection"));
+            Assert.IsTrue(result.Results.Any(s => s.Id == 645));
+            Assert.IsTrue(result.Results.Any(s => s.Name == "James Bond Collection"));
         }
 
         [TestMethod]
@@ -53,8 +55,8 @@ namespace TMDbLibTests
 
             SearchContainer<SearchPerson> result = _config.Client.SearchPerson("Bruce");
 
-            Debug.Assert(result.Results.Any(s => s.Id == 62));
-            Debug.Assert(result.Results.Any(s => s.Name == "Bruce Willis"));
+            Assert.IsTrue(result.Results.Any(s => s.Id == 62));
+            Assert.IsTrue(result.Results.Any(s => s.Name == "Bruce Willis"));
         }
 
         [TestMethod]
@@ -64,8 +66,8 @@ namespace TMDbLibTests
 
             SearchContainer<SearchList> result = _config.Client.SearchList("2013");
 
-            Debug.Assert(result.Results.Any(s => s.Id == "50cbe90b19c2956de8047b4f"));
-            Debug.Assert(result.Results.Any(s => s.Name == "Sci-Fi films to see in 2013"));
+            Assert.IsTrue(result.Results.Any(s => s.Id == "50cbe90b19c2956de8047b4f"));
+            Assert.IsTrue(result.Results.Any(s => s.Name == "Sci-Fi films to see in 2013"));
         }
 
         [TestMethod]
@@ -75,8 +77,8 @@ namespace TMDbLibTests
 
             SearchContainer<SearchCompany> result = _config.Client.SearchCompany("20th");
 
-            Debug.Assert(result.Results.Any(s => s.Id == 25));
-            Debug.Assert(result.Results.Any(s => s.Name == "20th Century Fox"));
+            Assert.IsTrue(result.Results.Any(s => s.Id == 25));
+            Assert.IsTrue(result.Results.Any(s => s.Name == "20th Century Fox"));
         }
 
         [TestMethod]
@@ -86,8 +88,8 @@ namespace TMDbLibTests
 
             SearchContainer<SearchKeyword> result = _config.Client.SearchKeyword("plot");
 
-            Debug.Assert(result.Results.Any(s => s.Id == 11422));
-            Debug.Assert(result.Results.Any(s => s.Name == "plot twist"));
+            Assert.IsTrue(result.Results.Any(s => s.Id == 11422));
+            Assert.IsTrue(result.Results.Any(s => s.Name == "plot twist"));
         }
 
         [TestMethod]
@@ -97,8 +99,8 @@ namespace TMDbLibTests
 
             SearchContainer<TvShowBase> result = _config.Client.SearchTvShow("Breaking Bad");
 
-            Debug.Assert(result.Results.Any(s => s.Id == 1396));
-            Debug.Assert(result.Results.Any(s => s.Name == "Breaking Bad"));
+            Assert.IsTrue(result.Results.Any(s => s.Id == 1396));
+            Assert.IsTrue(result.Results.Any(s => s.Name == "Breaking Bad"));
         }
     }
 }

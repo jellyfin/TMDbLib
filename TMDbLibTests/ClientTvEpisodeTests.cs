@@ -11,22 +11,30 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientTvEpisodeTests
     {
-        private const int Dexter = 1405;
         private const int BreakingBad = 1396;
 
-        private Dictionary<TvEpisodeMethods, Func<TvEpisode, object>> _methods;
+        private static Dictionary<TvEpisodeMethods, Func<TvEpisode, object>> _methods;
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {
             _config = new TestConfig();
+        }
 
+        /// <summary>
+        /// Run once, on test class initialization
+        /// </summary>
+        [ClassInitialize]
+        public static void InitialInitiator(TestContext context)
+        {
             _methods = new Dictionary<TvEpisodeMethods, Func<TvEpisode, object>>();
             _methods[TvEpisodeMethods.Credits] = tvEpisode => tvEpisode.Credits;
             _methods[TvEpisodeMethods.Images] = tvEpisode => tvEpisode.Images;
             _methods[TvEpisodeMethods.ExternalIds] = tvEpisode => tvEpisode.ExternalIds;
-
         }
 
         [TestMethod]

@@ -16,8 +16,11 @@ namespace TMDbLibTests
         private const string TestListId = "528349d419c2954bd21ca0a8";
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
-        public void InitTest()
+        public void Initiator()
         {
             _config = new TestConfig();
         }

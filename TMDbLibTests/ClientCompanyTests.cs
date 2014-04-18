@@ -13,14 +13,24 @@ namespace TMDbLibTests
     {
         private const int TwentiethCenturyFox = 25;
 
-        private Dictionary<CompanyMethods, Func<Company, object>> _methods;
+        private static Dictionary<CompanyMethods, Func<Company, object>> _methods;
         private TestConfig _config;
 
+        /// <summary>
+        /// Run once, on every test
+        /// </summary>
         [TestInitialize]
         public void Initiator()
         {
             _config = new TestConfig();
+        }
 
+        /// <summary>
+        /// Run once, on test class initialization
+        /// </summary>
+        [ClassInitialize]
+        public static void InitialInitiator(TestContext context)
+        {
             _methods = new Dictionary<CompanyMethods, Func<Company, object>>();
             _methods[CompanyMethods.Movies] = company => company.Movies;
         }
