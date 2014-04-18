@@ -51,9 +51,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchPerson()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchPerson("Bruce", i));
+            TestHelpers.SearchPages(i => _config.Client.SearchPerson("Willis", i));
 
-            SearchContainer<SearchPerson> result = _config.Client.SearchPerson("Bruce");
+            SearchContainer<SearchPerson> result = _config.Client.SearchPerson("Willis");
 
             Assert.IsTrue(result.Results.Any(s => s.Id == 62));
             Assert.IsTrue(result.Results.Any(s => s.Name == "Bruce Willis"));
