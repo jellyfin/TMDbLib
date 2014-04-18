@@ -80,7 +80,6 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum);
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -298,7 +297,6 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar);
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist
             Assert.AreEqual(Avatar, accountState.Id);
@@ -312,7 +310,6 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // For this test to pass the movie avatar need to be rated, added to the favorite list and watchlist
             Assert.AreEqual(AGoodDayToDieHard, accountState.Id);
@@ -327,7 +324,6 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 7.1));
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
@@ -335,7 +331,6 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 10.5));
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
@@ -343,7 +338,6 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 0));
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
@@ -367,7 +361,6 @@ namespace TMDbLibTests
 
             // Check if it worked
             Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(Avatar).Rating);
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
@@ -380,8 +373,6 @@ namespace TMDbLibTests
 
             // Try changing it back to the previous rating
             Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 8));
-
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
     }
 }

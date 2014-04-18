@@ -88,7 +88,6 @@ namespace TMDbLibTests
             Assert.IsFalse(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
 
             Assert.IsTrue(_config.Client.ListDelete(newListId));
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
@@ -97,7 +96,6 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             // Try removing a list with an incorrect id
             Assert.IsFalse(_config.Client.ListDelete("bla"));
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
@@ -120,7 +118,6 @@ namespace TMDbLibTests
             // Get list and check if the item was removed
             List listAfterRemove = _config.Client.GetList(TestListId);
             Assert.IsFalse(listAfterRemove.Items.Any(m => m.Id == EvanAlmighty));
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
     }
 }

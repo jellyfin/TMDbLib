@@ -42,7 +42,6 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             AccountDetails account = _config.Client.AccountGetDetails();
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Naturally the specified account must have these values populated for the test to pass
             Assert.IsNotNull(account);
@@ -59,7 +58,6 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetLists(i));
             List list = _config.Client.AccountGetLists().Results[0];
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             Assert.IsNotNull(list.Id);
             Assert.IsNotNull(list.Name);
@@ -77,7 +75,6 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
             SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Requires that you have marked at least one movie as favorite else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -97,7 +94,6 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
             SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -117,7 +113,6 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
             SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -150,8 +145,6 @@ namespace TMDbLibTests
 
             // Check if it worked
             Assert.IsFalse(DoesFavoriteListContainSpecificMovie(Terminator));
-
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         [TestMethod]
@@ -173,8 +166,6 @@ namespace TMDbLibTests
 
             // Check if it worked
             Assert.IsFalse(DoesWatchListContainSpecificMovie(Terminator));
-
-            _config.Client.SetSessionInformation(null, SessionType.Unassigned);
         }
 
         private bool DoesFavoriteListContainSpecificMovie(int movieId)
