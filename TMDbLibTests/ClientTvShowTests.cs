@@ -108,7 +108,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.FirstAirDate);
             Assert.AreEqual(false, tvShow.InProduction);
             Assert.IsNotNull(tvShow.LastAirDate);
-            Assert.AreEqual(TvShowStatus.Ended, tvShow.Status);
+            Assert.AreEqual("Ended", tvShow.Status);
 
             Assert.IsNotNull(tvShow.CreatedBy);
             Assert.AreEqual(1, tvShow.CreatedBy.Count);
