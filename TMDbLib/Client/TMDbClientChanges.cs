@@ -24,14 +24,43 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
+		/// <summary>
+		/// Get a list of movie ids that have been edited. 
+		/// By default we show the last 24 hours and only 100 items per page. 
+		/// The maximum number of days that can be returned in a single request is 14. 
+		/// You can then use the movie changes API to get the actual data that has been changed. (.GetMovieChanges)
+		/// </summary>
+		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show movies that have been edited since.</remarks>
         public SearchContainer<ChangesListItem> GetChangesMovies(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
             return GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate);
         }
 
+		/// <summary>
+		/// Get a list of people ids that have been edited. 
+		/// By default we show the last 24 hours and only 100 items per page. 
+		/// The maximum number of days that can be returned in a single request is 14. 
+		/// You can then use the person changes API to get the actual data that has been changed.(.GetPersonChanges)
+		/// </summary>
+		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show people that have been edited since.</remarks>
         public SearchContainer<ChangesListItem> GetChangesPeople(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
             return GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
         }
+
+		/// <summary>
+		/// Get a list of TV show ids that have been edited. 
+		/// By default we show the last 24 hours and only 100 items per page. 
+		/// The maximum number of days that can be returned in a single request is 14. 
+		/// You can then use the TV changes API to get the actual data that has been changed. (.GetTvShowChanges)
+		/// </summary>
+		/// <remarks>
+		/// the change log system to properly support TV was updated on May 13, 2014. 
+		/// You'll likely only find the edits made since then to be useful in the change log system.
+		/// </remarks>
+		public SearchContainer<ChangesListItem> GetChangesTv(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
+		{
+			return GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate);
+		}
     }
 }
