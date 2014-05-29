@@ -28,7 +28,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestFindImdbMovie()
         {
-            var result = _config.Client.Find(FindExternalSource.Imdb, imdbTerminatorId);
+            FindContainer result = _config.Client.Find(FindExternalSource.Imdb, imdbTerminatorId);
             Assert.AreEqual(1, result.MovieResults.Count);
             Assert.AreEqual(tmdbTerminatorId, result.MovieResults[0].Id);
         }
@@ -36,7 +36,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestFindTvdbTvShow()
         {
-            var result = _config.Client.Find(FindExternalSource.TvDb, tvdbBreakingBadId);
+            FindContainer result = _config.Client.Find(FindExternalSource.TvDb, tvdbBreakingBadId);
             Assert.AreEqual(1, result.TvResults.Count);
             Assert.AreEqual(tmdbBreakingBadId, result.TvResults[0].Id);
         }
@@ -44,7 +44,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestFindImdbTvShow()
         {
-            var result = _config.Client.Find(FindExternalSource.Imdb, imdbBreakingBadId);
+            FindContainer result = _config.Client.Find(FindExternalSource.Imdb, imdbBreakingBadId);
             Assert.AreEqual(1, result.TvResults.Count);
             Assert.AreEqual(tmdbBreakingBadId, result.TvResults[0].Id);
         }
@@ -52,7 +52,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestFindTvRageTvShow()
         {
-            var result = _config.Client.Find(FindExternalSource.TvRage, tvRageBreakingBadId);
+            FindContainer result = _config.Client.Find(FindExternalSource.TvRage, tvRageBreakingBadId);
             Assert.AreEqual(1, result.TvResults.Count);
             Assert.AreEqual(tmdbBreakingBadId, result.TvResults[0].Id);
         }
@@ -60,7 +60,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestFindFreebaseTvShow()
         {
-            var result = _config.Client.Find(FindExternalSource.FreeBaseId, freebaseBreakingBadId);
+            FindContainer result = _config.Client.Find(FindExternalSource.FreeBaseId, freebaseBreakingBadId);
             Assert.AreEqual(1, result.TvResults.Count);
             Assert.AreEqual(tmdbBreakingBadId, result.TvResults[0].Id);
         }
@@ -68,7 +68,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestFindFreebaseMidTvShow()
         {
-            var result = _config.Client.Find(FindExternalSource.FreeBaseMid, freebaseMidBreakingBadId);
+            FindContainer result = _config.Client.Find(FindExternalSource.FreeBaseMid, freebaseMidBreakingBadId);
             Assert.AreEqual(1, result.TvResults.Count);
             Assert.AreEqual(tmdbBreakingBadId, result.TvResults[0].Id);
         }

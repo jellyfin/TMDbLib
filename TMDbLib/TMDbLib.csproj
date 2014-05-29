@@ -48,6 +48,7 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\DateTimeConverterYearMonthDay.cs" />
     <Compile Include="Objects\Find\FindContainer.cs" />
     <Compile Include="Client\TMDbClientFind.cs" />
     <Compile Include="Client\TMDbClientAccount.cs" />

@@ -7,6 +7,7 @@ using System.Xml;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.People;
 using TMDbLib.Objects.Search;
 
 namespace TestApplication

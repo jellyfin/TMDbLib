@@ -30,6 +30,8 @@ namespace TMDbLib.Utilities
 
             if (_nvc.Count > 0)
             {
+                urlBuilder.Append('?');
+
                 NameObjectCollectionBase.KeysCollection keys = _nvc.Keys;
 
                 for (int i = 0; i < keys.Count; i++)

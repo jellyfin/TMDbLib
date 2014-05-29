@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
@@ -27,7 +30,7 @@ namespace TMDbLib
 
         private void InitializeDefaults()
         {
-            MaxRetryCount = 0;
+            MaxRetryCount = 3;
             RetryWaitTimeInSeconds = 10;
         }
 
@@ -121,7 +124,11 @@ namespace TMDbLib
             {
                 try
                 {
-                    HttpResponseMessage xy = _client.PostAsync(uri, new StringContent(body)).Result;
+                    HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, uri);
+                    req.Content = new StringContent(body, Encoding.UTF8, "application/json");
+                    req.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    HttpResponseMessage xy = _client.SendAsync(req).Result;
 
                     if (xy.StatusCode == HttpStatusCode.Unauthorized)
                         throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");

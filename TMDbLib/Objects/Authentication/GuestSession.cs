@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using TMDbLib.Converters;
 
 namespace TMDbLib.Objects.Authentication
 {
@@ -10,12 +12,16 @@ namespace TMDbLib.Objects.Authentication
     /// </summary>
     public class GuestSession
     {
+        [JsonProperty("guest_session_id")]
         public string GuestSessionId { get; set; }
+        [JsonProperty("success")]
         public bool Success { get; set; }
 
         /// <summary>
         /// The date / time before which the session must be used for the first time else it will expire. Time is expressed as local time.
         /// </summary>
+        [JsonProperty("expires_at")]
+        [JsonConverter(typeof(DateTimeConverterYearMonthDayHourMinuteSecondUtc))]
         public DateTime ExpiresAt { get; set; }
     }
 }

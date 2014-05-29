@@ -303,8 +303,7 @@ namespace TMDbLib.Client
 
             if (match.Success)
             {
-                accountState.Rating = Double.Parse(match.Groups["value"].Value,
-                    CultureInfo.InvariantCulture.NumberFormat);
+                accountState.Rating = Double.Parse(match.Groups["value"].Value,CultureInfo.InvariantCulture.NumberFormat);
             }
         }
     }
