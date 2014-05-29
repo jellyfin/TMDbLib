@@ -325,7 +325,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
 
-            // For this test to pass the movie A Good Day To Die Hard need to be NOT rated, and REMOVED to the favorite list and watchlist
+            // For this test to pass the movie A Good Day To Die Hard need to be NOT rated, and REMOVED from the favorite list and watchlist
             Assert.AreEqual(AGoodDayToDieHard, accountState.Id);
             Assert.IsNull(accountState.Rating);
             Assert.IsFalse(accountState.Favorite, "Please remove A Good Day To Die Hard from the users favourites list");
