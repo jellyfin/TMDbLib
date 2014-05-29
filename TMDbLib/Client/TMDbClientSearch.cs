@@ -1,7 +1,7 @@
-﻿using RestSharp;
-using TMDbLib.Objects.General;
+﻿using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -9,7 +9,7 @@ namespace TMDbLib.Client
     {
         private T SearchMethod<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null) where T : new()
         {
-            RestRequest req = new RestRequest("search/{method}");
+            RestQueryBuilder req = new RestQueryBuilder("search/{method}");
             req.AddUrlSegment("method", method);
             req.AddParameter("query", query);
 
@@ -17,16 +17,19 @@ namespace TMDbLib.Client
                 req.AddParameter("language", language);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
+
             if (year >= 1)
-                req.AddParameter("year", year);
+                req.AddParameter("year", year.ToString());
+
             if (includeAdult.HasValue)
                 req.AddParameter("include_adult", includeAdult.Value ? "true" : "false");
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
+            // TODO: Dateformat
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            ResponseContainer<T> resp = _client.Get<T>(req);
 
             return resp.Data;
         }

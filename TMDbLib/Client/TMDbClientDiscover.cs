@@ -1,5 +1,4 @@
 ﻿using System;
-using RestSharp;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
@@ -36,10 +35,10 @@ namespace TMDbLib.Client
             DateTime? firstAirDateGreaterThan = null,
             DateTime? firstAirDateLessThan = null)
         {
-            RestRequest request = new RestRequest("discover/tv");
+            RestQueryBuilder request = new RestQueryBuilder("discover/tv");
 
             if (page != 1 && page > 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
 
             if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
@@ -48,13 +47,13 @@ namespace TMDbLib.Client
                 request.AddParameter("sort_by", sortBy.GetDescription());
 
             if (firstAirDateYear.HasValue)
-                request.AddParameter("first_air_date_year", firstAirDateYear);
+                request.AddParameter("first_air_date_year", firstAirDateYear.ToString());
 
             if (voteCountGreaterThan.HasValue)
-                request.AddParameter("vote_count.gte", voteCountGreaterThan);
+                request.AddParameter("vote_count.gte", voteCountGreaterThan.ToString());
 
             if (voteAverageGreaterThan.HasValue)
-                request.AddParameter("vote_average.gte", voteAverageGreaterThan);
+                request.AddParameter("vote_average.gte", voteAverageGreaterThan.ToString());
 
             if (!String.IsNullOrWhiteSpace(withGenres))
                 request.AddParameter("with_genres", withGenres);
@@ -68,7 +67,7 @@ namespace TMDbLib.Client
             if (firstAirDateLessThan.HasValue)
                 request.AddParameter("first_air_date.lte", firstAirDateLessThan.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(request);
+            ResponseContainer<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(request);
 
             return response.Data;
         }
@@ -108,10 +107,10 @@ namespace TMDbLib.Client
             string withCompanies = null
             )
         {
-            RestRequest request = new RestRequest("discover/movie");
+            RestQueryBuilder request = new RestQueryBuilder("discover/movie");
 
             if (page != 1 && page > 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
 
             if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
@@ -120,19 +119,19 @@ namespace TMDbLib.Client
                 request.AddParameter("sort_by", sortBy.GetDescription());
 
             if (includeAdult)
-                request.AddParameter("include_adult", includeAdult);
+                request.AddParameter("include_adult", includeAdult.ToString());
 
             if (year.HasValue)
-                request.AddParameter("year", year);
+                request.AddParameter("year", year.ToString());
 
             if (primaryReleaseYear.HasValue)
-                request.AddParameter("primary_release_year", primaryReleaseYear);
+                request.AddParameter("primary_release_year", primaryReleaseYear.ToString());
 
             if (voteCountGreaterThan.HasValue)
-                request.AddParameter("vote_count.gte", voteCountGreaterThan);
+                request.AddParameter("vote_count.gte", voteCountGreaterThan.ToString());
 
             if (voteAverageGreaterThan.HasValue)
-                request.AddParameter("vote_average.gte", voteAverageGreaterThan);
+                request.AddParameter("vote_average.gte", voteAverageGreaterThan.ToString());
 
             if (!String.IsNullOrWhiteSpace(withGenres))
                 request.AddParameter("with_genres", withGenres);
@@ -159,7 +158,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(withCompanies))
                 request.AddParameter("with_companies", withCompanies);
 
-            IRestResponse<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
+            ResponseContainer<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
 
             return response.Data;
         }

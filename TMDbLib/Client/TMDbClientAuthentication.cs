@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using RestSharp;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -8,37 +8,37 @@ namespace TMDbLib.Client
     {
         public Token AuthenticationRequestAutenticationToken()
         {
-            RestRequest request = new RestRequest("authentication/token/new")
-            {
-                DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
-            };
+            RestQueryBuilder request = new RestQueryBuilder("authentication/token/new");
+            //{
+            //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
+            //};
 
-            IRestResponse<Token> response = _client.Get<Token>(request);
+            ResponseContainer<Token> response = _client.Get<Token>(request);
             Token token = response.Data;
 
-            token.AuthenticationCallback = response.Headers.First(h => h.Name.Equals("Authentication-Callback")).Value.ToString();
+            token.AuthenticationCallback = response.Headers.First(h => h.Key.Equals("Authentication-Callback")).Value.ToString();
 
             return token;
         }
 
         public UserSession AuthenticationGetUserSession(string initialRequestToken)
         {
-            RestRequest request = new RestRequest("authentication/session/new");
+            RestQueryBuilder request = new RestQueryBuilder("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
 
-            IRestResponse<UserSession> response = _client.Get<UserSession>(request);
+            ResponseContainer<UserSession> response = _client.Get<UserSession>(request);
 
             return response.Data;
         }
 
         public GuestSession AuthenticationCreateGuestSession()
         {
-            RestRequest request = new RestRequest("authentication/guest_session/new")
-            {
-                DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
-            };
+            RestQueryBuilder request = new RestQueryBuilder("authentication/guest_session/new");
+            //{
+            //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
+            //};
 
-            IRestResponse<GuestSession> response = _client.Get<GuestSession>(request);
+            ResponseContainer<GuestSession> response = _client.Get<GuestSession>(request);
 
             return response.Data;
         }

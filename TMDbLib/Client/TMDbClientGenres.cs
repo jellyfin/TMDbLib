@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -14,12 +14,12 @@ namespace TMDbLib.Client
 
         public List<Genre> GetGenres(string language)
         {
-            RestRequest req = new RestRequest("genre/list");
+            RestQueryBuilder req = new RestQueryBuilder("genre/list");
 
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<GenreContainer> resp = _client.Get<GenreContainer>(req);
+            ResponseContainer<GenreContainer> resp = _client.Get<GenreContainer>(req);
 
             if (resp.Data == null)
                 return null;
@@ -34,18 +34,19 @@ namespace TMDbLib.Client
 
         public SearchContainerWithId<MovieResult> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)
         {
-            RestRequest req = new RestRequest("genre/{genreId}/movies");
+            RestQueryBuilder req = new RestQueryBuilder("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
 
             if (language != null)
                 req.AddParameter("language", language);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
+
             if (includeAllMovies.HasValue)
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
-            IRestResponse<SearchContainerWithId<MovieResult>> resp = _client.Get<SearchContainerWithId<MovieResult>>(req);
+            ResponseContainer<SearchContainerWithId<MovieResult>> resp = _client.Get<SearchContainerWithId<MovieResult>>(req);
 
             return resp.Data;
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using RestSharp;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Utilities;
@@ -13,7 +12,7 @@ namespace TMDbLib.Client
     {
         public Person GetPerson(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
         {
-            RestRequest req = new RestRequest("person/{personId}");
+            RestQueryBuilder req = new RestQueryBuilder("person/{personId}");
             req.AddUrlSegment("personId", personId.ToString());
 
             string appends = string.Join(",",
@@ -26,9 +25,10 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            req.DateFormat = "yyyy-MM-dd";
+            // TODO: Dateformat
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Person> resp = _client.Get<Person>(req);
+            ResponseContainer<Person> resp = _client.Get<Person>(req);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (resp.Data != null)
@@ -46,12 +46,13 @@ namespace TMDbLib.Client
         private T GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
                                         int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = new RestRequest("person/{personId}/{method}");
+            RestQueryBuilder req = new RestQueryBuilder("person/{personId}/{method}");
             req.AddUrlSegment("personId", personId.ToString());
             req.AddUrlSegment("method", personMethod.GetDescription());
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
+            // TODO: Dateformat
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
 
             if (country != null)
                 req.AddParameter("country", country);
@@ -59,13 +60,13 @@ namespace TMDbLib.Client
                 req.AddParameter("language", language);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 req.AddParameter("startDate", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            ResponseContainer<T> resp = _client.Get<T>(req);
 
             return resp.Data;
         }

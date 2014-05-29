@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-using RestSharp;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -42,7 +41,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("movie/{movieId}");
+            RestQueryBuilder request = new RestQueryBuilder("movie/{movieId}");
             request.AddUrlSegment("movieId", imdbId);
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 request.AddParameter("session_id", SessionId);
@@ -60,7 +59,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 request.AddParameter("append_to_response", appends);
 
-            IRestResponse<Movie> response = _client.Get<Movie>(request);
+            ResponseContainer<Movie> response = _client.Get<Movie>(request);
 
             // No data to patch up so return
             if (response.Data == null) return null;
@@ -87,6 +86,7 @@ namespace TMDbLib.Client
             if (response.Data.AccountStates != null)
             {
                 response.Data.AccountStates.Id = response.Data.Id;
+
                 // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
                 DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
             }
@@ -98,12 +98,13 @@ namespace TMDbLib.Client
             string country = null,
             string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest request = new RestRequest("movie/{movieId}/{method}");
+            RestQueryBuilder request = new RestQueryBuilder("movie/{movieId}/{method}");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", movieMethod.GetDescription());
 
-            if (dateFormat != null)
-                request.DateFormat = dateFormat;
+            // TODO: Dateformat
+            //if (dateFormat != null)
+            //    request.DateFormat = dateFormat;
 
             if (country != null)
                 request.AddParameter("country", country);
@@ -111,13 +112,13 @@ namespace TMDbLib.Client
                 request.AddParameter("language", language);
 
             if (page >= 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 request.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
                 request.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> response = _client.Get<T>(request);
+            ResponseContainer<T> response = _client.Get<T>(request);
 
             return response.Data;
         }
@@ -202,12 +203,12 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("movie/{movieId}/{method}");
+            RestQueryBuilder request = new RestQueryBuilder("movie/{movieId}/{method}");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             request.AddParameter("session_id", SessionId);
 
-            IRestResponse<MovieAccountState> response = _client.Get<MovieAccountState>(request);
+            ResponseContainer<MovieAccountState> response = _client.Get<MovieAccountState>(request);
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (response.Data != null)
@@ -230,16 +231,17 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = new RestRequest("movie/{movieId}/rating") { RequestFormat = DataFormat.Json };
+            RestQueryBuilder request = new RestQueryBuilder("movie/{movieId}/rating");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+
             if (SessionType == SessionType.UserSession)
-                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+                request.AddParameter("session_id", SessionId);
             else
-                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+                request.AddParameter("guest_session_id", SessionId);
 
-            request.AddBody(new { value = rating });
+            var body = new { value = rating };
 
-            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+            ResponseContainer<PostReply> response = _client.Post<PostReply>(request, body);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
@@ -248,8 +250,8 @@ namespace TMDbLib.Client
 
         public Movie GetMovieLatest()
         {
-            RestRequest req = new RestRequest("movie/latest");
-            IRestResponse<Movie> resp = _client.Get<Movie>(req);
+            RestQueryBuilder req = new RestQueryBuilder("movie/latest");
+            ResponseContainer<Movie> resp = _client.Get<Movie>(req);
 
             return resp.Data;
         }
@@ -261,20 +263,20 @@ namespace TMDbLib.Client
 
         public SearchContainer<MovieResult> GetMovieList(MovieListType type, string language, int page = 0)
         {
-            RestRequest req;
+            RestQueryBuilder req;
             switch (type)
             {
                 case MovieListType.NowPlaying:
-                    req = new RestRequest("movie/now_playing");
+                    req = new RestQueryBuilder("movie/now_playing");
                     break;
                 case MovieListType.Popular:
-                    req = new RestRequest("movie/popular");
+                    req = new RestQueryBuilder("movie/popular");
                     break;
                 case MovieListType.TopRated:
-                    req = new RestRequest("movie/top_rated");
+                    req = new RestQueryBuilder("movie/top_rated");
                     break;
                 case MovieListType.Upcoming:
-                    req = new RestRequest("movie/upcoming");
+                    req = new RestQueryBuilder("movie/upcoming");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("type");
@@ -285,9 +287,10 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            req.DateFormat = "yyyy-MM-dd";
+            // TODO: Dateformat
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<SearchContainer<MovieResult>> resp = _client.Get<SearchContainer<MovieResult>>(req);
+            ResponseContainer<SearchContainer<MovieResult>> resp = _client.Get<SearchContainer<MovieResult>>(req);
 
             return resp.Data;
         }
@@ -297,6 +300,7 @@ namespace TMDbLib.Client
             const string selector = @"""rated"":{""value"":(?<value>\d+(?:\.\d{1,2}))}";
             Regex regex = new Regex(selector, RegexOptions.IgnoreCase);
             Match match = regex.Match(responseContent);
+
             if (match.Success)
             {
                 accountState.Rating = Double.Parse(match.Groups["value"].Value,

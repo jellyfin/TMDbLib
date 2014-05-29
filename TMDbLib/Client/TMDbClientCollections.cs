@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using RestSharp;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
 using TMDbLib.Utilities;
@@ -16,7 +15,7 @@ namespace TMDbLib.Client
 
         public Collection GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            RestRequest req = new RestRequest("collection/{collectionId}");
+            RestQueryBuilder req = new RestQueryBuilder("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
 
             if (language != null)
@@ -32,23 +31,23 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            req.DateFormat = "yyyy-MM-dd";
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Collection> resp = _client.Get<Collection>(req);
+            ResponseContainer<Collection> resp = _client.Get<Collection>(req);
 
             return resp.Data;
         }
 
         private T GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("collection/{collectionId}/{method}");
+            RestQueryBuilder req = new RestQueryBuilder("collection/{collectionId}/{method}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
             req.AddUrlSegment("method", collectionMethod.GetDescription());
 
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            ResponseContainer<T> resp = _client.Get<T>(req);
 
             return resp.Data;
         }

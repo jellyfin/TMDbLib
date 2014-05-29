@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using RestSharp;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
 using TMDbLib.Utilities;
@@ -11,7 +10,7 @@ namespace TMDbLib.Client
     {
         public Company GetCompany(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
         {
-            RestRequest req = new RestRequest("company/{companyId}");
+            RestQueryBuilder req = new RestQueryBuilder("company/{companyId}");
             req.AddUrlSegment("companyId", companyId.ToString());
 
             string appends = string.Join(",",
@@ -24,25 +23,26 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            req.DateFormat = "yyyy-MM-dd";
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Company> resp = _client.Get<Company>(req);
+            ResponseContainer<Company> resp = _client.Get<Company>(req);
 
             return resp.Data;
         }
 
         private T GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("company/{companyId}/{method}");
+            RestQueryBuilder req = new RestQueryBuilder("company/{companyId}/{method}");
             req.AddUrlSegment("companyId", companyId.ToString());
             req.AddUrlSegment("method", companyMethod.GetDescription());
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
+
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            ResponseContainer<T> resp = _client.Get<T>(req);
 
             return resp.Data;
         }

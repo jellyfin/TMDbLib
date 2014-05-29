@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Globalization;
-using RestSharp;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -21,10 +20,10 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account");
+            RestQueryBuilder request = new RestQueryBuilder("account");
             request.AddParameter("session_id", SessionId);
 
-            IRestResponse<AccountDetails> response = _client.Get<AccountDetails>(request);
+            ResponseContainer<AccountDetails> response = _client.Get<AccountDetails>(request);
 
             return response.Data;
         }
@@ -39,17 +38,17 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/lists");
+            RestQueryBuilder request = new RestQueryBuilder("account/{accountId}/lists");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddParameter("session_id", SessionId);
 
             if (page > 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
 
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<List>> response = _client.Get<SearchContainer<List>>(request);
+            ResponseContainer<SearchContainer<List>> response = _client.Get<SearchContainer<List>>(request);
 
             return response.Data;
         }
@@ -66,12 +65,13 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/favorite") { RequestFormat = DataFormat.Json };
+            RestQueryBuilder request = new RestQueryBuilder("account/{accountId}/favorite") ;
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            request.AddBody(new { movie_id = movieId, favorite = isFavorite });
+            request.AddParameter("session_id", SessionId);
+            
+            var body = new {movie_id = movieId, favorite = isFavorite};
 
-            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+            ResponseContainer<PostReply> response = _client.Post<PostReply>(request, body);
 
             // status code 1 = "Success" - Returned when adding a movie as favorite for the first time
             // status code 13 = "The item/record was deleted successfully" - When removing an item as favorite, no matter if it exists or not
@@ -91,12 +91,13 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/movie_watchlist") { RequestFormat = DataFormat.Json };
+            RestQueryBuilder request = new RestQueryBuilder("account/{accountId}/movie_watchlist");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            request.AddBody(new { movie_id = movieId, movie_watchlist = isOnWatchlist });
+            request.AddParameter("session_id", SessionId);
 
-            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+             var body = new { movie_id = movieId, movie_watchlist = isOnWatchlist };
+
+            ResponseContainer<PostReply> response = _client.Post<PostReply>(request,body);
 
             // status code 1 = "Success"
             // status code 13 = "The item/record was deleted successfully" - When removing an item from the watchlist, no matter if it exists or not
@@ -150,13 +151,13 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/{method}");
+            RestQueryBuilder request = new RestQueryBuilder("account/{accountId}/{method}");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", method.GetDescription());
             request.AddParameter("session_id", SessionId);
 
             if (page > 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
 
             if (sortBy != AccountMovieSortBy.Undefined)
                 request.AddParameter("sort_by", sortBy.GetDescription());
@@ -167,7 +168,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
+            ResponseContainer<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
 
             return response.Data;
         }

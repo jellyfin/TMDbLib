@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
-using RestSharp;
 using TMDbLib.Objects.TvShows;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -12,10 +12,10 @@ namespace TMDbLib.Client
         /// <param name="networkId">The id of the network object to retrieve</param>
         public Network GetNetwork(int networkId)
         {
-            RestRequest request = new RestRequest("network/{networkId}");
+            RestQueryBuilder request = new RestQueryBuilder("network/{networkId}");
             request.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
-            IRestResponse<Network> response = _client.Get<Network>(request);
+            ResponseContainer<Network> response = _client.Get<Network>(request);
 
             return response.Data;
         }

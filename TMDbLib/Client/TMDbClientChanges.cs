@@ -1,7 +1,7 @@
 ﻿using System;
-using RestSharp;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -9,17 +9,17 @@ namespace TMDbLib.Client
     {
         private T GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = new RestRequest("{type}/changes");
+            RestQueryBuilder req = new RestQueryBuilder("{type}/changes");
             req.AddUrlSegment("type", type);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            ResponseContainer<T> resp = _client.Get<T>(req);
 
             return resp.Data;
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
@@ -20,7 +19,7 @@ namespace TMDbLib.Client
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         public TvEpisode GetTvEpisode(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null)
         {
-            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}");
+            RestQueryBuilder req = new RestQueryBuilder("tv/{id}/season/{season_number}/episode/{episode_number}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -38,7 +37,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvEpisode> response = _client.Get<TvEpisode>(req);
+            ResponseContainer<TvEpisode> response = _client.Get<TvEpisode>(req);
 
             return response.Data;
         }
@@ -83,20 +82,21 @@ namespace TMDbLib.Client
 
         private T GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
+            RestQueryBuilder req = new RestQueryBuilder("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
 
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
+            // TODO: Dateformat
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
 
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            ResponseContainer<T> resp = _client.Get<T>(req);
 
             return resp.Data;
         }

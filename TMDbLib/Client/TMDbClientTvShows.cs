@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
@@ -19,7 +18,7 @@ namespace TMDbLib.Client
         /// <returns>The requested Tv Show</returns>
         public TvShow GetTvShow(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
         {
-            RestRequest req = new RestRequest("tv/{id}");
+            RestQueryBuilder req = new RestQueryBuilder("tv/{id}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
 
             if (language != null)
@@ -35,7 +34,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvShow> response = _client.Get<TvShow>(req);
+            ResponseContainer<TvShow> response = _client.Get<TvShow>(req);
 
             return response.Data;
         }
@@ -66,15 +65,15 @@ namespace TMDbLib.Client
 
         private SearchContainer<TvShowBase> GetTvShowList(int page, string language, string tvShowListType)
         {
-            RestRequest req = new RestRequest("tv/" + tvShowListType);
+            RestQueryBuilder req = new RestQueryBuilder("tv/" + tvShowListType);
 
             if (language != null)
                 req.AddParameter("language", language);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
 
-            IRestResponse<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(req);
+            ResponseContainer<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(req);
 
             return response.Data;
         }
@@ -113,17 +112,18 @@ namespace TMDbLib.Client
 
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("tv/{id}/{method}");
+            RestQueryBuilder req = new RestQueryBuilder("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
+            // TODO: Dateformat
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
 
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            ResponseContainer<T> resp = _client.Get<T>(req);
 
             return resp.Data;
         }

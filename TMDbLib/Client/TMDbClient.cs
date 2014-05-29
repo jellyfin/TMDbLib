@@ -1,9 +1,8 @@
 ﻿using System;
-using RestSharp;
-using RestSharp.Deserializers;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -92,17 +91,13 @@ namespace TMDbLib.Client
             ApiKey = apiKey;
 
             string httpScheme = useSsl ? "https" : "http";
-            _client = new TMDbRestClient(String.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion));
-            _client.AddDefaultParameter("api_key", apiKey, ParameterType.QueryString);
-
-            _client.ClearHandlers();
-            _client.AddHandler("application/json", new JsonDeserializer());
+            _client = new TMDbRestClient(String.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion), apiKey);
         }
 
         public void GetConfig()
         {
-            RestRequest req = new RestRequest("configuration");
-            IRestResponse<TMDbConfig> resp = _client.Get<TMDbConfig>(req);
+            RestQueryBuilder req = new RestQueryBuilder("configuration");
+            ResponseContainer<TMDbConfig> resp = _client.Get<TMDbConfig>(req);
 
             if (resp.Data == null)
                 throw new Exception("Unable to retrieve configuration");

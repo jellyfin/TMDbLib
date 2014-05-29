@@ -1,6 +1,4 @@
-﻿using RestSharp;
-using RestSharp.Contrib;
-using TMDbLib.Objects.Find;
+﻿using TMDbLib.Objects.Find;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
@@ -19,17 +17,19 @@ namespace TMDbLib.Client
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         public FindContainer Find(FindExternalSource source, string id)
         {
-            RestRequest req = new RestRequest("find/{id}");
+            RestQueryBuilder req = new RestQueryBuilder("find/{id}");
 
             if (source == FindExternalSource.FreeBaseId || source == FindExternalSource.FreeBaseMid)
                 // No url encoding for freebase Id's (they include /-slashes)
                 req.AddUrlSegment("id", id);
             else
-                req.AddUrlSegment("id", HttpUtility.UrlEncode(id));
+                // TOOD: Url-encode
+                //req.AddUrlSegment("id", HttpUtility.UrlEncode(id));
+                req.AddUrlSegment("id", id);
 
             req.AddParameter("external_source", source.GetDescription());
 
-            IRestResponse<FindContainer> resp = _client.Get<FindContainer>(req);
+            ResponseContainer<FindContainer> resp = _client.Get<FindContainer>(req);
 
             return resp.Data;
         }

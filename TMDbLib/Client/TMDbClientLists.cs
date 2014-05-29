@@ -1,8 +1,8 @@
 ﻿using System;
-using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -17,12 +17,12 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            RestRequest request = new RestRequest("list/{listId}");
+            RestQueryBuilder request = new RestQueryBuilder("list/{listId}");
             request.AddUrlSegment("listId", listId);
 
-            request.DateFormat = "yyyy-MM-dd";
+            //request.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<List> response = _client.Get<List>(request);
+            ResponseContainer<List> response = _client.Get<List>(request);
 
             return response.Data;
         }
@@ -40,11 +40,11 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            RestRequest request = new RestRequest("list/{listId}/item_status");
+            RestQueryBuilder request = new RestQueryBuilder("list/{listId}/item_status");
             request.AddUrlSegment("listId", listId);
-            request.AddParameter("movie_id", movieId);
+            request.AddParameter("movie_id", movieId.ToString());
 
-            IRestResponse<ListStatus> response = _client.Get<ListStatus>(request);
+            ResponseContainer<ListStatus> response = _client.Get<ListStatus>(request);
 
             return response.Data.ItemPresent;
         }
@@ -68,18 +68,20 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(description))
                 description = "";
 
-            RestRequest request = new RestRequest("list") { RequestFormat = DataFormat.Json };
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            RestQueryBuilder request = new RestQueryBuilder("list");
+            request.AddParameter("session_id", SessionId);
+
+            ResponseContainer<ListCreateReply> response;
             if (string.IsNullOrWhiteSpace(language))
             {
-                request.AddBody(new { name = name, description = description });
+                var body = new { name = name, description = description };
+                response = _client.Post<ListCreateReply>(request, body);
             }
             else
             {
-                request.AddBody(new { name = name, description = description, language = language });
+                var body = new { name = name, description = description, language = language };
+                response = _client.Post<ListCreateReply>(request, body);
             }
-
-            IRestResponse<ListCreateReply> response = _client.Post<ListCreateReply>(request);
 
             return response.Data == null ? null : response.Data.ListId;
         }
@@ -97,11 +99,11 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            RestRequest request = new RestRequest("list/{listId}");
+            RestQueryBuilder request = new RestQueryBuilder("list/{listId}");
             request.AddUrlSegment("listId", listId);
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            request.AddParameter("session_id", SessionId);
 
-            IRestResponse<PostReply> response = _client.Delete<PostReply>(request);
+            ResponseContainer<PostReply> response = _client.Delete<PostReply>(request);
 
             // Status code 13 = success
             return response.Data != null && response.Data.StatusCode == 13;
@@ -144,13 +146,14 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            RestRequest request = new RestRequest("list/{listId}/{method}") { RequestFormat = DataFormat.Json };
+            RestQueryBuilder request = new RestQueryBuilder("list/{listId}/{method}");
             request.AddUrlSegment("listId", listId);
             request.AddUrlSegment("method", method);
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            request.AddBody(new { media_id = movieId });
+            request.AddParameter("session_id", SessionId);
 
-            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+            var body = new { media_id = movieId };
+
+            ResponseContainer<PostReply> response = _client.Post<PostReply>(request, body);
 
             // Status code 8 = "Duplicate entry - The data you tried to submit already exists"
             // Status code 12 = "The item/record was updated successfully"
