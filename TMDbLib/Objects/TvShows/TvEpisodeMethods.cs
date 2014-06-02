@@ -6,13 +6,13 @@ namespace TMDbLib.Objects.TvShows
     [Flags]
     public enum TvEpisodeMethods
     {
-        [Description("Undefined")]
+        //[Description("Undefined")]
         Undefined = 0,
-        [Description("credits")]
+        //[Description("credits")]
         Credits = 1,
-        [Description("images")]
+        //[Description("images")]
         Images = 2,
-        [Description("external_ids")]
+        //[Description("external_ids")]
         ExternalIds = 4,
     }
 }

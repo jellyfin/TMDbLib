@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Formatting;
+//[DJ] using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
@@ -68,7 +68,8 @@ namespace TMDbLib
                 catch (WebException)
                 {
                     // Retry the call after waiting the configured ammount of time, it gets progressively longer every retry
-                    Thread.Sleep((i + 1) * RetryWaitTimeInSeconds * 1000);
+                    // [DJ]: Threading not supported?
+                    //Thread.Sleep((i + 1) * RetryWaitTimeInSeconds * 1000);
 
                     // Retry
                 }
@@ -104,7 +105,8 @@ namespace TMDbLib
                 catch (WebException)
                 {
                     // Retry the call after waiting the configured ammount of time, it gets progressively longer every retry
-                    Thread.Sleep((i + 1) * RetryWaitTimeInSeconds * 1000);
+                    // [DJ]: Threading not supported?
+                    //Thread.Sleep((i + 1) * RetryWaitTimeInSeconds * 1000);
 
                     // Retry
                 }
@@ -146,7 +148,8 @@ namespace TMDbLib
                 catch (WebException)
                 {
                     // Retry the call after waiting the configured ammount of time, it gets progressively longer every retry
-                    Thread.Sleep((i + 1) * RetryWaitTimeInSeconds * 1000);
+                    // [DJ]: Threading not supported?
+                    //Thread.Sleep((i + 1) * RetryWaitTimeInSeconds * 1000);
 
                     // Retry
                 }

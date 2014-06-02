@@ -6,9 +6,9 @@ namespace TMDbLib.Objects.Collections
     [Flags]
     public enum CollectionMethods
     {
-        [Description("Undefined")]
+        //[Description("Undefined")]
         Undefined = 0,
-        [Description("images")]
+        //[Description("images")]
         Images = 1
     }
 }

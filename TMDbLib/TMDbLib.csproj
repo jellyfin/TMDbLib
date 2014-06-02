@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C0006F17-212A-474F-983E-7DA2F91E0233}</ProjectGuid>
+    <ProjectGuid>{C81A4E5C-FCC9-476B-A95C-82D204F7B700}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TMDbLib</RootNamespace>
     <AssemblyName>TMDbLib</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +24,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,145 +32,130 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Converters\DateTimeConverterYearMonthDay.cs" />
-    <Compile Include="Objects\Find\FindContainer.cs" />
-    <Compile Include="Client\TMDbClientFind.cs" />
+    <Compile Include="Client\TMDbClient.cs" />
     <Compile Include="Client\TMDbClientAccount.cs" />
     <Compile Include="Client\TMDbClientAuthentication.cs" />
+    <Compile Include="Client\TMDbClientChanges.cs" />
+    <Compile Include="Client\TMDbClientCollections.cs" />
+    <Compile Include="Client\TMDbClientCompanies.cs" />
+    <Compile Include="Client\TMDbClientDiscover.cs" />
+    <Compile Include="Client\TMDbClientFind.cs" />
+    <Compile Include="Client\TMDbClientGenres.cs" />
+    <Compile Include="Client\TMDbClientKeywords.cs" />
+    <Compile Include="Client\TMDbClientLists.cs" />
+    <Compile Include="Client\TMDbClientMovies.cs" />
     <Compile Include="Client\TMDbClientNetworks.cs" />
+    <Compile Include="Client\TMDbClientPeople.cs" />
+    <Compile Include="Client\TMDbClientSearch.cs" />
     <Compile Include="Client\TMDbClientTvEpisodes.cs" />
     <Compile Include="Client\TMDbClientTvSeasons.cs" />
-    <Compile Include="Client\TMDbClientDiscover.cs" />
     <Compile Include="Client\TMDbClientTvShows.cs" />
+    <Compile Include="Converters\DateTimeConverterYearMonthDay.cs" />
     <Compile Include="Objects\Account\AccountDetails.cs" />
-    <Compile Include="Objects\Find\FindExternalSource.cs" />
-    <Compile Include="Objects\General\PostReply.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Objects\General\SortOrder.cs" />
+    <Compile Include="Objects\Account\AccountListsMethods.cs" />
     <Compile Include="Objects\Account\AccountMovieSortBy.cs" />
     <Compile Include="Objects\Authentication\GuestSession.cs" />
-    <Compile Include="Objects\Authentication\UserSessionRequiredException.cs" />
     <Compile Include="Objects\Authentication\GuestSessionRequiredException.cs" />
     <Compile Include="Objects\Authentication\SessionType.cs" />
     <Compile Include="Objects\Authentication\Token.cs" />
     <Compile Include="Objects\Authentication\UserSession.cs" />
-    <Compile Include="Objects\Discover\DiscoverMovieSortBy.cs" />
-    <Compile Include="Objects\Discover\DiscoverTvShowSortBy.cs" />
-    <Compile Include="Objects\General\PosterImages.cs" />
-    <Compile Include="Objects\General\StillImages.cs" />
-    <Compile Include="Objects\Genres\GenreContainer.cs" />
+    <Compile Include="Objects\Authentication\UserSessionRequiredException.cs" />
     <Compile Include="Objects\Changes\ChangesListItem.cs" />
-    <Compile Include="Objects\Companies\Company.cs" />
-    <Compile Include="Objects\Companies\CompanyMovies.cs" />
-    <Compile Include="Objects\Companies\CompanyMethods.cs" />
-    <Compile Include="Objects\Companies\ParentCompany.cs" />
-    <Compile Include="Objects\General\Profile.cs" />
+    <Compile Include="Objects\Collections\Collection.cs" />
     <Compile Include="Objects\Collections\CollectionMethods.cs" />
     <Compile Include="Objects\Collections\Part.cs" />
-    <Compile Include="Objects\Collections\Collection.cs" />
+    <Compile Include="Objects\Companies\Company.cs" />
+    <Compile Include="Objects\Companies\CompanyMethods.cs" />
+    <Compile Include="Objects\Companies\CompanyMovies.cs" />
+    <Compile Include="Objects\Companies\ParentCompany.cs" />
+    <Compile Include="Objects\Discover\DiscoverMovieSortBy.cs" />
+    <Compile Include="Objects\Discover\DiscoverTvShowSortBy.cs" />
+    <Compile Include="Objects\Find\FindContainer.cs" />
+    <Compile Include="Objects\Find\FindExternalSource.cs" />
+    <Compile Include="Objects\General\ConfigImageTypes.cs" />
+    <Compile Include="Objects\General\ContentType.cs" />
+    <Compile Include="Objects\General\Crew.cs" />
+    <Compile Include="Objects\General\Genre.cs" />
+    <Compile Include="Objects\General\ImageData.cs" />
     <Compile Include="Objects\General\Images.cs" />
-    <Compile Include="Objects\General\SearchContainerWithId.cs" />
-    <Compile Include="Objects\Lists\List.cs" />
+    <Compile Include="Objects\General\ImagesWithId.cs" />
+    <Compile Include="Objects\General\MovieResult.cs" />
+    <Compile Include="Objects\General\PosterImages.cs" />
+    <Compile Include="Objects\General\PostReply.cs" />
+    <Compile Include="Objects\General\Profile.cs" />
     <Compile Include="Objects\General\SearchContainer.cs" />
+    <Compile Include="Objects\General\SearchContainerWithId.cs" />
+    <Compile Include="Objects\General\SortOrder.cs" />
+    <Compile Include="Objects\General\StillImages.cs" />
+    <Compile Include="Objects\General\TMDbConfig.cs" />
+    <Compile Include="Objects\Genres\GenreContainer.cs" />
+    <Compile Include="Objects\Lists\List.cs" />
     <Compile Include="Objects\Lists\ListCreateReply.cs" />
     <Compile Include="Objects\Lists\ListStatus.cs" />
-    <Compile Include="Objects\General\ContentType.cs" />
-    <Compile Include="Objects\Movies\MovieAccountState.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Objects\Movies\MovieListType.cs" />
-    <Compile Include="Client\TMDbClientChanges.cs" />
-    <Compile Include="Client\TMDbClientKeywords.cs" />
-    <Compile Include="Client\TMDbClientSearch.cs" />
-    <Compile Include="Client\TMDbClientGenres.cs" />
-    <Compile Include="Client\TMDbClientCompanies.cs" />
-    <Compile Include="Client\TMDbClientLists.cs" />
-    <Compile Include="Client\TMDbClientPeople.cs" />
-    <Compile Include="Client\TMDbClientCollections.cs" />
-    <Compile Include="Client\TMDbClientMovies.cs" />
-    <Compile Include="Objects\Movies\AlternativeTitles.cs" />
     <Compile Include="Objects\Movies\AlternativeTitle.cs" />
-    <Compile Include="Objects\General\ImageData.cs" />
+    <Compile Include="Objects\Movies\AlternativeTitles.cs" />
     <Compile Include="Objects\Movies\BelongsToCollection.cs" />
     <Compile Include="Objects\Movies\Cast.cs" />
-    <Compile Include="Objects\Movies\Credits.cs" />
     <Compile Include="Objects\Movies\Change.cs" />
-    <Compile Include="Objects\Movies\ChangesContainer.cs" />
-    <Compile Include="Objects\Movies\Keyword.cs" />
-    <Compile Include="Objects\Movies\ListResult.cs" />
-    <Compile Include="Objects\Movies\ProductionCompany.cs" />
-    <Compile Include="Objects\Movies\Country.cs" />
-    <Compile Include="Objects\General\Genre.cs" />
-    <Compile Include="Objects\General\ImagesWithId.cs" />
     <Compile Include="Objects\Movies\ChangeItem.cs" />
+    <Compile Include="Objects\Movies\ChangesContainer.cs" />
+    <Compile Include="Objects\Movies\Country.cs" />
+    <Compile Include="Objects\Movies\Credits.cs" />
+    <Compile Include="Objects\Movies\Keyword.cs" />
     <Compile Include="Objects\Movies\KeywordsContainer.cs" />
+    <Compile Include="Objects\Movies\ListResult.cs" />
     <Compile Include="Objects\Movies\Movie.cs" />
+    <Compile Include="Objects\Movies\MovieAccountState.cs" />
+    <Compile Include="Objects\Movies\MovieListType.cs" />
     <Compile Include="Objects\Movies\MovieMethods.cs" />
-    <Compile Include="Objects\General\ConfigImageTypes.cs" />
+    <Compile Include="Objects\Movies\ProductionCompany.cs" />
     <Compile Include="Objects\Movies\ProductionCountry.cs" />
     <Compile Include="Objects\Movies\Releases.cs" />
-    <Compile Include="Objects\General\MovieResult.cs" />
     <Compile Include="Objects\Movies\SpokenLanguage.cs" />
     <Compile Include="Objects\Movies\Trailers.cs" />
     <Compile Include="Objects\Movies\Translation.cs" />
     <Compile Include="Objects\Movies\TranslationsContainer.cs" />
     <Compile Include="Objects\Movies\Youtube.cs" />
-    <Compile Include="Client\TMDbClient.cs" />
     <Compile Include="Objects\People\Credits.cs" />
     <Compile Include="Objects\People\MovieJob.cs" />
     <Compile Include="Objects\People\MovieRole.cs" />
     <Compile Include="Objects\People\Person.cs" />
     <Compile Include="Objects\People\PersonMethods.cs" />
     <Compile Include="Objects\People\ProfileImages.cs" />
-    <Compile Include="Objects\Search\SearchResultCollection.cs" />
-    <Compile Include="Objects\Search\SearchMovie.cs" />
     <Compile Include="Objects\Search\SearchCompany.cs" />
     <Compile Include="Objects\Search\SearchKeyword.cs" />
     <Compile Include="Objects\Search\SearchList.cs" />
+    <Compile Include="Objects\Search\SearchMovie.cs" />
     <Compile Include="Objects\Search\SearchPerson.cs" />
+    <Compile Include="Objects\Search\SearchResultCollection.cs" />
     <Compile Include="Objects\TvShows\Cast.cs" />
-    <Compile Include="Objects\TvShows\Credits.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Objects\General\Crew.cs" />
+    <Compile Include="Objects\TvShows\Credits.cs" />
     <Compile Include="Objects\TvShows\ExternalIds.cs" />
     <Compile Include="Objects\TvShows\Network.cs" />
     <Compile Include="Objects\TvShows\TvEpisode.cs" />
-    <Compile Include="Objects\TvShows\TvSeason.cs" />
     <Compile Include="Objects\TvShows\TvEpisodeMethods.cs" />
-    <Compile Include="Objects\TvShows\TvShowBase.cs" />
-    <Compile Include="Objects\TvShows\TvShow.cs" />
+    <Compile Include="Objects\TvShows\TvSeason.cs" />
     <Compile Include="Objects\TvShows\TvSeasonMethods.cs" />
+    <Compile Include="Objects\TvShows\TvShow.cs" />
+    <Compile Include="Objects\TvShows\TvShowBase.cs" />
     <Compile Include="Objects\TvShows\TvShowMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Objects\General\TMDbConfig.cs" />
     <Compile Include="TMDbRestClient.cs" />
     <Compile Include="Utilities\EnumExtensions.cs" />
     <Compile Include="Utilities\ResponseContainer.cs" />
     <Compile Include="Utilities\RestqueryBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -6,13 +6,13 @@ namespace TMDbLib.Objects.People
     [Flags]
     public enum PersonMethods
     {
-        [Description("Undefined")]
+        //[Description("Undefined")]
         Undefined = 0,
-        [Description("credits")]
+        //[Description("credits")]
         Credits = 1,
-        [Description("images")]
+        //[Description("images")]
         Images = 2,
-        [Description("changes")]
+        //[Description("changes")]
         Changes = 4
     }
 }

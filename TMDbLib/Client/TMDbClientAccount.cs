@@ -173,14 +173,16 @@ namespace TMDbLib.Client
             return response.Data;
         }
 
-        private enum AccountListsMethods
+        /* [DJ] MOVED to seperate class
+        public enum AccountListsMethods
         {
-            [Description("favorite_movies")]
+            //[Description("favorite_movies")]
             FavoriteMovies,
-            [Description("rated_movies")]
+            //[Description("rated_movies")]
             RatedMovies,
-            [Description("movie_watchlist")]
+            //[Description("movie_watchlist")]
             MovieWatchlist,
         }
+        */
     }
 }

@@ -1,20 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMDbLib", "TMDbLib\TMDbLib.csproj", "{C0006F17-212A-474F-983E-7DA2F91E0233}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMDbLib", "TMDbLib\TMDbLib.csproj", "{C81A4E5C-FCC9-476B-A95C-82D204F7B700}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMDbLibTests", "TMDbLibTests\TMDbLibTests.csproj", "{00AB08ED-9484-4AAE-9C8C-D19E40325E16}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{545A7CAB-316A-4C5E-AB6B-BF10A0C3EDA9}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0006F17-212A-474F-983E-7DA2F91E0233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0006F17-212A-474F-983E-7DA2F91E0233}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0006F17-212A-474F-983E-7DA2F91E0233}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0006F17-212A-474F-983E-7DA2F91E0233}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81A4E5C-FCC9-476B-A95C-82D204F7B700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81A4E5C-FCC9-476B-A95C-82D204F7B700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81A4E5C-FCC9-476B-A95C-82D204F7B700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81A4E5C-FCC9-476B-A95C-82D204F7B700}.Release|Any CPU.Build.0 = Release|Any CPU
 		{00AB08ED-9484-4AAE-9C8C-D19E40325E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00AB08ED-9484-4AAE-9C8C-D19E40325E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00AB08ED-9484-4AAE-9C8C-D19E40325E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00AB08ED-9484-4AAE-9C8C-D19E40325E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2324DA0-C17D-42B1-BABF-7699E40DFEFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

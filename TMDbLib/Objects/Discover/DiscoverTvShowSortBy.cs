@@ -5,17 +5,17 @@ namespace TMDbLib.Objects.Discover
     public enum DiscoverTvShowSortBy
     {
         Undefined = 0,
-        [Description("vote_average.desc")]
+        //[Description("vote_average.desc")]
         VoteAverageDescending = 1,
-        [Description("vote_average.asc")]
+       //[Description("vote_average.asc")]
         VoteAverageAscending = 2,
-        [Description("first_air_date.desc")]
+        //[Description("first_air_date.desc")]
         FirstAirDateDescending = 3,
-        [Description("first_air_date.asc")]
+        //[Description("first_air_date.asc")]
         FirstAirDateAscending = 4,
-        [Description("popularity.desc")]
+        //[Description("popularity.desc")]
         PopularityDescending = 5,
-        [Description("popularity.asc")]
+        //[Description("popularity.asc")]
         PopularityAscending = 6
     }
 }

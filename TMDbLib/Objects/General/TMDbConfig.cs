@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.General
 {
-    [Serializable]
+    //[DJ] [Serializable]
     public class TMDbConfig
     {
         [JsonProperty("images")]

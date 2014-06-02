@@ -6,9 +6,9 @@ namespace TMDbLib.Objects.Companies
     [Flags]
     public enum CompanyMethods
     {
-        [Description("Undefined")]
+        //[Description("Undefined")]
         Undefined = 0,
-        [Description("movies")]
+        //[Description("movies")]
         Movies = 1
     }
 }

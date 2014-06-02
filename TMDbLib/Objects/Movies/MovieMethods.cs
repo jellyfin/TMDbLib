@@ -6,32 +6,32 @@ namespace TMDbLib.Objects.Movies
     [Flags]
     public enum MovieMethods
     {
-        [Description("Undefined")]
+        //[Description("Undefined")]
         Undefined = 0,
-        [Description("alternative_titles")]
+        //[Description("alternative_titles")]
         AlternativeTitles = 1,
-        [Description("credits")]
+        //[Description("credits")]
         Credits = 2,
-        [Description("images")]
+        //[Description("images")]
         Images = 4,
-        [Description("keywords")]
+        //[Description("keywords")]
         Keywords = 8,
-        [Description("releases")]
+        //[Description("releases")]
         Releases = 16,
-        [Description("trailers")]
+        //[Description("trailers")]
         Trailers = 32,
-        [Description("translations")]
+        //[Description("translations")]
         Translations = 64,
-        [Description("similar_movies")]
+        //[Description("similar_movies")]
         SimilarMovies = 128,
-        [Description("lists")]
+        //[Description("lists")]
         Lists = 256,
-        [Description("changes")]
+        //[Description("changes")]
         Changes = 512,
         /// <summary>
         /// Requires a valid user session to be set on the client object
         /// </summary>
-        [Description("account_states")]
+        //[Description("account_states")]
         AccountStates = 1024
     }
 }
