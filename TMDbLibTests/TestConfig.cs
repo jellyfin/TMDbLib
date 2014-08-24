@@ -7,10 +7,10 @@ namespace TMDbLibTests
     public class TestConfig
     {
         // This API key should only be used to test the library, for further use please request a dedicated key from the TMDb
-        private const string APIKey = "c6b31d1cdad6a56a23f0c913e2482a31";
+        public const string APIKey = "c6b31d1cdad6a56a23f0c913e2482a31";
+
         // Required to be able to successfully run all authenticated tests
         public readonly string UserSessionId = "c413282cdadad9af972c06d9b13096a8b13ab1c1";
-
         public readonly string GuestTestSessionId = "d425468da2781d6799ba14c05f7327e7";
 
         public TMDbClient Client { get; set; }

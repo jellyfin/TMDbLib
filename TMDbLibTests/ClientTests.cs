@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Client;
 using TMDbLib.Objects.General;
 
 namespace TMDbLibTests
@@ -65,6 +66,22 @@ namespace TMDbLibTests
             Assert.IsTrue(_config.Client.HasConfig);
 
             Assert.AreSame(config, _config.Client.Config);
+        }
+
+        [TestMethod]
+        public void ClientConstructorUrlTest()
+        {
+            TMDbClient clientA = new TMDbClient(TestConfig.APIKey, false, "http://api.themoviedb.org");
+            clientA.GetConfig();
+
+            TMDbClient clientB = new TMDbClient(TestConfig.APIKey, true, "http://api.themoviedb.org");
+            clientB.GetConfig();
+
+            TMDbClient clientC = new TMDbClient(TestConfig.APIKey, false, "https://api.themoviedb.org");
+            clientC.GetConfig();
+
+            TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org");
+            clientD.GetConfig();
         }
     }
 }

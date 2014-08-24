@@ -98,7 +98,10 @@ namespace TMDbLib.Client
             ApiKey = apiKey;
 
             // Cleanup the provided url so that we don't get any issues when we are configuring the client
-            baseUrl = baseUrl.ToLower().Replace("http://", "").Replace("https://", "");
+            if (baseUrl.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase))
+                baseUrl = baseUrl.Substring("http://".Length);
+            else if (baseUrl.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase))
+                baseUrl = baseUrl.Substring("https://".Length);
 
             string httpScheme = useSsl ? "https" : "http";
             _client = new TMDbRestClient(String.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion));
