@@ -22,20 +22,20 @@ namespace TMDbLib.Client
             return token;
         }
 
-		public void AuthenticationValidateUserToken(string initialRequestToken, string username, string password)
-		{
-			RestRequest request = new RestRequest("authentication/token/validate_with_login");
-			request.AddParameter("request_token", initialRequestToken);
-			request.AddParameter("username", username);
-			request.AddParameter("password", password);
+        public void AuthenticationValidateUserToken(string initialRequestToken, string username, string password)
+        {
+	        RestRequest request = new RestRequest("authentication/token/validate_with_login");
+	        request.AddParameter("request_token", initialRequestToken);
+	        request.AddParameter("username", username);
+	        request.AddParameter("password", password);
 
-			IRestResponse response = _client.Get(request);
+	        IRestResponse response = _client.Get(request);
 
-			if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-			{
-				throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
-			}
-		}
+	        if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+	        {
+		        throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
+	        }
+        }
 
         public UserSession AuthenticationGetUserSession(string initialRequestToken)
         {
@@ -47,17 +47,17 @@ namespace TMDbLib.Client
             return response.Data;
         }
 
-		/// <summary>
-		/// Conveniance method combining 'AuthenticationRequestAutenticationToken', 'AuthenticationValidateUserToken' and 'AuthenticationGetUserSession'
-		/// </summary>
-		/// <param name="username">A valid TMDb username</param>
-		/// <param name="password">The passoword for the provided login</param>
-		public UserSession AuthenticationGetUserSession(string username, string password)
-		{
-			Token token = AuthenticationRequestAutenticationToken();
-			AuthenticationValidateUserToken(token.RequestToken, username, password);
-			return AuthenticationGetUserSession(token.RequestToken);
-		}
+        /// <summary>
+        /// Conveniance method combining 'AuthenticationRequestAutenticationToken', 'AuthenticationValidateUserToken' and 'AuthenticationGetUserSession'
+        /// </summary>
+        /// <param name="username">A valid TMDb username</param>
+        /// <param name="password">The passoword for the provided login</param>
+        public UserSession AuthenticationGetUserSession(string username, string password)
+        {
+	        Token token = AuthenticationRequestAutenticationToken();
+	        AuthenticationValidateUserToken(token.RequestToken, username, password);
+	        return AuthenticationGetUserSession(token.RequestToken);
+        }
 
         public GuestSession AuthenticationCreateGuestSession()
         {
