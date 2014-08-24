@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using TMDbLib.Client;
 
 namespace TMDbLibTests
@@ -13,6 +14,10 @@ namespace TMDbLibTests
         public readonly string GuestTestSessionId = "d425468da2781d6799ba14c05f7327e7";
 
         public TMDbClient Client { get; set; }
+
+		public string Username = "";
+
+		public string Password = "";
 
         public TestConfig(bool useSsl = false)
         {
