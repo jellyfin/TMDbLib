@@ -4,6 +4,7 @@ using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
+using TMDbLib.Objects.General;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.People.Credits;
 
@@ -89,6 +90,35 @@ namespace TMDbLib.Client
         {
             ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
             return changesContainer.Changes;
+        }
+
+        public SearchContainer<PersonResult> GetPersonList(PersonListType type, int page = 0)
+        {
+            return GetPersonList(type, DefaultLanguage, page);
+        }
+
+        public SearchContainer<PersonResult> GetPersonList(PersonListType type, string language, int page = 0)
+        {
+            RestRequest req;
+            switch (type)
+            {
+                case PersonListType.Popular:
+                    req = new RestRequest("person/popular");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("type");
+            }
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
+
+            req.DateFormat = "yyyy-MM-dd";
+
+            IRestResponse<SearchContainer<PersonResult>> resp = _client.Get<SearchContainer<PersonResult>>(req);
+
+            return resp.Data;
         }
     }
 }
