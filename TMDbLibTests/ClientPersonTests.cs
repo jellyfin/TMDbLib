@@ -178,5 +178,16 @@ namespace TMDbLibTests
                 Assert.IsTrue(list.Results.Any(s => list2.Results.Any(x => x.Name != s.Name)));
             }
         }
+
+        [TestMethod]
+        public void TestPersonItem()
+        {
+            foreach (PersonItemType type in Enum.GetValues(typeof(PersonItemType)).OfType<PersonItemType>())
+            {
+                Person item = _config.Client.GetPersonItem(type);
+
+                Assert.IsNotNull(item);
+            }
+        }
     }
 }

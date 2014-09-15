@@ -113,5 +113,24 @@ namespace TMDbLib.Client
 
             return resp.Data;
         }
+
+        public Person GetPersonItem(PersonItemType type)
+        {
+            RestRequest req;
+            switch (type)
+            {
+                case PersonItemType.Latest:
+                    req = new RestRequest("person/latest");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("type");
+            }
+
+            req.DateFormat = "yyyy-MM-dd";
+
+            IRestResponse<Person> resp = _client.Get<Person>(req);
+
+            return resp.Data;
+        }
     }
 }
