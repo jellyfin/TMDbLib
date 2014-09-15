@@ -94,11 +94,6 @@ namespace TMDbLib.Client
 
         public SearchContainer<PersonResult> GetPersonList(PersonListType type, int page = 0)
         {
-            return GetPersonList(type, DefaultLanguage, page);
-        }
-
-        public SearchContainer<PersonResult> GetPersonList(PersonListType type, string language, int page = 0)
-        {
             RestRequest req;
             switch (type)
             {
@@ -111,8 +106,6 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
-            if (language != null)
-                req.AddParameter("language", language);
 
             req.DateFormat = "yyyy-MM-dd";
 

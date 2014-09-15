@@ -168,14 +168,14 @@ namespace TMDbLibTests
                 Assert.IsTrue(listPage2.Results.Count > 0);
                 Assert.AreEqual(2, listPage2.Page);
 
-                SearchContainer<PersonResult> listDe = _config.Client.GetPersonList(type, "de");
+                SearchContainer<PersonResult> list2 = _config.Client.GetPersonList(type);
 
-                Assert.IsNotNull(listDe);
-                Assert.IsTrue(listDe.Results.Count > 0);
-                Assert.AreEqual(1, listDe.Page);
+                Assert.IsNotNull(list2);
+                Assert.IsTrue(list2.Results.Count > 0);
+                Assert.AreEqual(1, list2.Page);
 
                 // At least one person should differ
-                Assert.IsTrue(list.Results.Any(s => listDe.Results.Any(x => x.Name != s.Name)));
+                Assert.IsTrue(list.Results.Any(s => list2.Results.Any(x => x.Name != s.Name)));
             }
         }
     }
