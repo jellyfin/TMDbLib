@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
+using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
 using Credits = TMDbLib.Objects.People.Credits;
 
@@ -148,6 +149,34 @@ namespace TMDbLibTests
             Assert.IsTrue(images.Profiles.Count > 0);
 
             TestImagesHelpers.TestImages(_config, images);
+        }
+
+        [TestMethod]
+        public void TestPersonList()
+        {
+            foreach (PersonListType type in Enum.GetValues(typeof(PersonListType)).OfType<PersonListType>())
+            {
+                SearchContainer<PersonResult> list = _config.Client.GetPersonList(type);
+
+                Assert.IsNotNull(list);
+                Assert.IsTrue(list.Results.Count > 0);
+                Assert.AreEqual(1, list.Page);
+
+                SearchContainer<PersonResult> listPage2 = _config.Client.GetPersonList(type, 2);
+
+                Assert.IsNotNull(listPage2);
+                Assert.IsTrue(listPage2.Results.Count > 0);
+                Assert.AreEqual(2, listPage2.Page);
+
+                SearchContainer<PersonResult> listDe = _config.Client.GetPersonList(type, "de");
+
+                Assert.IsNotNull(listDe);
+                Assert.IsTrue(listDe.Results.Count > 0);
+                Assert.AreEqual(1, listDe.Page);
+
+                // At least one person should differ
+                Assert.IsTrue(list.Results.Any(s => listDe.Results.Any(x => x.Name != s.Name)));
+            }
         }
     }
 }
