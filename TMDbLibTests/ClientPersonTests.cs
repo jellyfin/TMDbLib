@@ -152,7 +152,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestPersonList()
+        public void TestPersonsList()
         {
             foreach (PersonListType type in Enum.GetValues(typeof(PersonListType)).OfType<PersonListType>())
             {
@@ -180,7 +180,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestPersonItem()
+        public void TestPersonsItem()
         {
             foreach (PersonItemType type in Enum.GetValues(typeof(PersonItemType)).OfType<PersonItemType>())
             {
