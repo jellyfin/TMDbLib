@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Reviews;
 
 namespace TMDbLib.Objects.Movies
 {
@@ -44,6 +45,7 @@ namespace TMDbLib.Objects.Movies
         public Trailers Trailers { get; set; }
         public TranslationsContainer Translations { get; set; }
         public SearchContainer<MovieResult> SimilarMovies { get; set; }
+        public SearchContainer<Review> Reviews { get; set; }
         public SearchContainer<ListResult> Lists { get; set; }
         public List<Change> Changes { get; set; }
         public MovieAccountState AccountStates { get; set; }

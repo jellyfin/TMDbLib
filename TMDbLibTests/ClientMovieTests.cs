@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Reviews;
 using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
@@ -14,7 +15,9 @@ namespace TMDbLibTests
     public class ClientMovieTests
     {
         private const int AGoodDayToDieHard = 47964;
+        private const int TheDarkKnightRises = 49026;       
         private const string AGoodDayToDieHardImdb = "tt1606378";
+        private const string TheDarkKnightRisesImdb = "tt1345836";
         private const int Avatar = 19995;
 
         private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
@@ -44,6 +47,7 @@ namespace TMDbLibTests
             _methods[MovieMethods.Trailers] = movie => movie.Trailers;
             _methods[MovieMethods.Translations] = movie => movie.Translations;
             _methods[MovieMethods.SimilarMovies] = movie => movie.SimilarMovies;
+            _methods[MovieMethods.Reviews] = movie => movie.Reviews;
             _methods[MovieMethods.Lists] = movie => movie.Lists;
             _methods[MovieMethods.Changes] = movie => movie.Changes;
             _methods[MovieMethods.AccountStates] = movie => movie.AccountStates;
@@ -83,7 +87,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = _config.Client.GetMovie(AGoodDayToDieHardImdb, combinedEnum);
+            Movie item = _config.Client.GetMovie(TheDarkKnightRisesImdb, combinedEnum);
 
             TestMethodsHelper.TestAllNotNull(tmpMethods, item);
         }
@@ -219,6 +223,16 @@ namespace TMDbLibTests
             }
 
             Assert.IsTrue(differentTitles > 0);
+        }
+
+        [TestMethod]
+        public void TestMoviesGetMovieReviews()
+        {
+            SearchContainer<Review> resp = _config.Client.GetMovieReviews(TheDarkKnightRises);
+            Assert.IsNotNull(resp);
+
+            Assert.AreNotEqual(0, resp.Results.Count);
+            Assert.IsNotNull(resp.Results[0].Content);
         }
 
         [TestMethod]
