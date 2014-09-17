@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Reviews
 {
@@ -13,7 +14,7 @@ namespace TMDbLib.Objects.Reviews
 
         public int MediaId { get; set; }
         public string MediaTitle { get; set; }
-        public string MediaType { get; set; }
+        public MediaType MediaType { get; set; }
 
         public string Url { get; set; }
     }
