@@ -65,7 +65,7 @@ namespace TMDbLibTests
         {
             ExternalIds externalIds = _config.Client.GetTvEpisodeExternalIds(BreakingBad, 1, 1);
             Assert.IsNotNull(externalIds);
-            Assert.IsNull(externalIds.FreebaseId);
+            Assert.IsNotNull(externalIds.FreebaseId);
             Assert.AreEqual(62085, externalIds.Id);
             Assert.AreEqual("/m/03mb620", externalIds.FreebaseMid);
             Assert.AreEqual("tt0959621", externalIds.ImdbId);

@@ -118,7 +118,7 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(tvSeason.Episodes);
             Assert.AreEqual(7, tvSeason.Episodes.Count);
-            Assert.IsNull(tvSeason.Episodes[0].Id);
+            Assert.IsNotNull(tvSeason.Episodes[0].Id);
             Assert.AreEqual(1, tvSeason.Episodes[0].EpisodeNumber);
             Assert.AreEqual("Pilot", tvSeason.Episodes[0].Name);
             Assert.IsNotNull(tvSeason.Episodes[0].Overview);

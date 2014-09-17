@@ -59,7 +59,7 @@ namespace TMDbLibTests
             Assert.AreEqual("Production", crewPersonId.Department);
             Assert.AreEqual("Michelle MacLaren", crewPersonId.Name);
             Assert.AreEqual("Executive Producer", crewPersonId.Job);
-            Assert.IsNull(crewPersonId.ProfilePath);
+            Assert.IsNotNull(crewPersonId.ProfilePath);
         }
 
         [TestMethod]
