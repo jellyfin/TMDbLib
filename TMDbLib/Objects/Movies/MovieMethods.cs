@@ -24,14 +24,16 @@ namespace TMDbLib.Objects.Movies
         Translations = 64,
         [Description("similar_movies")]
         SimilarMovies = 128,
+        [Description("reviews")]
+        Reviews = 256,
         [Description("lists")]
-        Lists = 256,
+        Lists = 512,
         [Description("changes")]
-        Changes = 512,
+        Changes = 1024,
         /// <summary>
         /// Requires a valid user session to be set on the client object
         /// </summary>
         [Description("account_states")]
-        AccountStates = 1024
+        AccountStates = 2048
     }
 }
