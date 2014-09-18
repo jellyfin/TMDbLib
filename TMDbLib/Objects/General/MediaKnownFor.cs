@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TMDbLib.Objects.General
+﻿namespace TMDbLib.Objects.General
 {
     public class MediaKnownFor
     {

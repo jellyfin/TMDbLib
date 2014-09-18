@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using System.Linq;

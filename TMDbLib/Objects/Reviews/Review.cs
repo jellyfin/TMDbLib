@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TMDbLib.Objects.General;
+﻿using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Reviews
 {
