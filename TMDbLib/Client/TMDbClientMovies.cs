@@ -7,6 +7,7 @@ using RestSharp;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Reviews;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
@@ -175,6 +176,16 @@ namespace TMDbLib.Client
         public SearchContainer<MovieResult> GetMovieSimilarMovies(int movieId, string language, int page = 0)
         {
             return GetMovieMethod<SearchContainer<MovieResult>>(movieId, MovieMethods.SimilarMovies, page: page, language: language, dateFormat: "yyyy-MM-dd");
+        }
+
+        public SearchContainer<Review> GetMovieReviews(int movieId, int page = 0)
+        {
+            return GetMovieReviews(movieId, DefaultLanguage, page);
+        }
+
+        public SearchContainer<Review> GetMovieReviews(int movieId, string language, int page = 0)
+        {
+            return GetMovieMethod<SearchContainer<Review>>(movieId, MovieMethods.Reviews, page: page, language: language);
         }
 
         public SearchContainer<ListResult> GetMovieLists(int movieId, int page = 0)
