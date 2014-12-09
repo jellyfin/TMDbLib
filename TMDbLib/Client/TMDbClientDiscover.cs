@@ -94,7 +94,7 @@ namespace TMDbLib.Client
         public SearchContainer<SearchMovie> DiscoverMovies(
             int? page = null,
             string language = null,
-            DiscoverTvShowSortBy sortBy = DiscoverTvShowSortBy.Undefined,
+            DiscoverMovieSortBy sortBy = DiscoverMovieSortBy.Undefined,
             bool includeAdult = false,
             int? year = null,
             int? primaryReleaseYear = null,
@@ -116,7 +116,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            if (sortBy != DiscoverTvShowSortBy.Undefined)
+            if (sortBy != DiscoverMovieSortBy.Undefined)
                 request.AddParameter("sort_by", sortBy.GetDescription());
 
             if (includeAdult)
