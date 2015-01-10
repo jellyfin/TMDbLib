@@ -35,5 +35,8 @@ namespace TMDbLib.Objects.TvShows
         public Images Images { get; set; }
         public Credits Credits { get; set; }
         public ExternalIds ExternalIds { get; set; }
+        public ResultContainer<ContentRating> ContentRatings { get; set; }
+        public ResultContainer<AlternativeTitle> AlternativeTitles { get; set; }
+        public ResultContainer<Keyword> Keywords { get; set; }
     }
 }

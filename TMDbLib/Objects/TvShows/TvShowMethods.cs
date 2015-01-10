@@ -14,5 +14,11 @@ namespace TMDbLib.Objects.TvShows
         Images = 2,
         [Description("external_ids")]
         ExternalIds = 4,
+        [Description("content_ratings")]
+        ContentRatings = 8,
+        [Description("alternative_titles")]
+        AlternativeTitles = 16,
+        [Description("keywords")]
+        Keywords = 32,
     }
 }

@@ -111,6 +111,21 @@ namespace TMDbLib.Client
             return GetTvShowMethod<ExternalIds>(id, TvShowMethods.ExternalIds);
         }
 
+        public ResultContainer<ContentRating> GetTvShowContentRatings(int id)
+        {
+            return GetTvShowMethod<ResultContainer<ContentRating>>(id, TvShowMethods.ContentRatings);
+        }
+
+        public ResultContainer<AlternativeTitle> GetTvShowAlternativeTitles(int id)
+        {
+            return GetTvShowMethod<ResultContainer<AlternativeTitle>>(id, TvShowMethods.AlternativeTitles);
+        }
+
+        public ResultContainer<Keyword> GetTvShowKeywords(int id)
+        {
+            return GetTvShowMethod<ResultContainer<Keyword>>(id, TvShowMethods.Keywords);
+        }
+
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/{method}");

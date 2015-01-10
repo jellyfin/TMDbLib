@@ -129,14 +129,14 @@ namespace TMDbLibTests
             AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
             Assert.IsNotNull(respUs);
 
-            AlternativeTitles respGerman = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "DE");
-            Assert.IsNotNull(respGerman);
+            AlternativeTitles respFrench = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "FR");
+            Assert.IsNotNull(respFrench);
 
-            Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Stirb Langsam 5"));
-            Assert.IsTrue(respGerman.Titles.Any(s => s.Title == "Stirb langsam - Ein guter Tag zum Sterben"));
+            Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Duro de matar 5"));
+            Assert.IsTrue(respFrench.Titles.Any(s => s.Title == "Die Hard 5 - Belle Journée Pour mourir"));
 
             Assert.IsTrue(respUs.Titles.All(s => s.Iso_3166_1 == "US"));
-            Assert.IsTrue(respGerman.Titles.All(s => s.Iso_3166_1 == "DE"));
+            Assert.IsTrue(respFrench.Titles.All(s => s.Iso_3166_1 == "FR"));
         }
 
         [TestMethod]

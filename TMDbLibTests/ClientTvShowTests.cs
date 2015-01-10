@@ -35,6 +35,9 @@ namespace TMDbLibTests
             _methods[TvShowMethods.Credits] = tvShow => tvShow.Credits;
             _methods[TvShowMethods.Images] = tvShow => tvShow.Images;
             _methods[TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds;
+            _methods[TvShowMethods.ContentRatings] = tvShow => tvShow.ContentRatings;
+            _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
+            _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
         }
 
         [TestMethod]
@@ -52,14 +55,14 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(credits.Crew);
 
-            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 29779);
-            Assert.IsNotNull(crewPersonId);
+            Crew crewPerson = credits.Crew.FirstOrDefault(s => s.Id == 66633);
+            Assert.IsNotNull(crewPerson);
 
-            Assert.AreEqual(29779, crewPersonId.Id);
-            Assert.AreEqual("Production", crewPersonId.Department);
-            Assert.AreEqual("Michelle MacLaren", crewPersonId.Name);
-            Assert.AreEqual("Executive Producer", crewPersonId.Job);
-            Assert.IsNotNull(crewPersonId.ProfilePath);
+            Assert.AreEqual(66633, crewPerson.Id);
+            Assert.AreEqual("Production", crewPerson.Department);
+            Assert.AreEqual("Vince Gilligan", crewPerson.Name);
+            Assert.AreEqual("Executive Producer", crewPerson.Job);
+            Assert.IsNotNull(crewPerson.ProfilePath);
         }
 
         [TestMethod]
@@ -73,6 +76,40 @@ namespace TMDbLibTests
             Assert.AreEqual("tt0903747", externalIds.ImdbId);
             Assert.AreEqual(18164, externalIds.TvrageId);
             Assert.AreEqual(81189, externalIds.TvdbId);
+        }
+
+
+        [TestMethod]
+        public void TestTvShowSeparateExtrasContentRatings()
+        {
+            var contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad);
+            Assert.IsNotNull(contentRatings);
+            Assert.AreEqual(BreakingBad, contentRatings.Id);
+            ContentRating contentRating = contentRatings.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("US"));
+            Assert.IsNotNull(contentRating);
+            Assert.AreEqual("TV-MA", contentRating.Rating);
+        }
+
+        [TestMethod]
+        public void TestTvShowSeparateExtrasAlternativeTitles()
+        {
+            var alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad);
+            Assert.IsNotNull(alternativeTitles);
+            Assert.AreEqual(BreakingBad, alternativeTitles.Id);
+            AlternativeTitle alternativeTitle = alternativeTitles.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
+            Assert.IsNotNull(alternativeTitle);
+            Assert.AreEqual("Totál szívás", alternativeTitle.Title);
+        }
+
+        [TestMethod]
+        public void TestTvShowSeparateExtrasKeywords()
+        {
+            var keywords = _config.Client.GetTvShowKeywords(BreakingBad);
+            Assert.IsNotNull(keywords);
+            Assert.AreEqual(BreakingBad, keywords.Id);
+            Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id==41525);
+            Assert.IsNotNull(keyword);
+            Assert.AreEqual("high school teacher", keyword.Name);
         }
 
         [TestMethod]
