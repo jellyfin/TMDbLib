@@ -92,14 +92,23 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestSearchTvShow()
-        {
+        public void TestSearchTvShow() {
             TestHelpers.SearchPages(i => _config.Client.SearchTvShow("Breaking Bad", i));
 
             SearchContainer<TvShowBase> result = _config.Client.SearchTvShow("Breaking Bad");
 
             Assert.IsTrue(result.Results.Any(s => s.Id == 1396));
             Assert.IsTrue(result.Results.Any(s => s.Name == "Breaking Bad"));
+        }
+
+        [TestMethod]
+        public void TestSearchMulti()
+        {
+            TestHelpers.SearchPages(i => _config.Client.SearchMulti("Arrow", i));
+
+            SearchContainer<SearchMulti> result = _config.Client.SearchMulti("Arrow");
+            Assert.IsTrue(result.Results.Any(s => s.Type == MediaType.TVShow && s.Name == "Arrow"));
+            Assert.IsTrue(result.Results.Any(s => s.Type == MediaType.Movie && s.Name == "Broken Arrow"));
         }
     }
 }
