@@ -40,7 +40,13 @@ namespace TMDbLib.Client
         {
             return SearchMethod<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd");
         }
+        public SearchContainer<SearchMulti> SearchMulti(string query, int page = 0, bool includeAdult = false, int year = 0) {
+            return SearchMulti(query, DefaultLanguage, page, includeAdult, year);
+        }
 
+        public SearchContainer<SearchMulti> SearchMulti(string query, string language, int page = 0, bool includeAdult = false, int year = 0) {
+            return SearchMethod<SearchContainer<SearchMulti>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd");
+        }
         public SearchContainer<SearchResultCollection> SearchCollection(string query, int page = 0)
         {
             return SearchCollection(query, DefaultLanguage, page);
