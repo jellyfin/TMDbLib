@@ -1,16 +1,15 @@
 ﻿using System;
 using TMDbLib.Objects.General;
 
-namespace TMDbLib.Objects.Search {
-    public class SearchMulti {
-        private string _name;
-        private string _originalName;
-        private MediaType _type;
+namespace TMDbLib.Objects.Search
+{
+    public class SearchMulti
+    {
         public int Id { get; set; }
-        public string Title { set { _name = value; } }
-        public string Name { get { return _name; } set { _name = value; } }
-        public string OriginalName { get { return _originalName; } set { _originalName = value; } }
-        public string OriginalTitle { set { _originalName = value; } }
+        public string Title { set { Name = value; } }
+        public string Name { get; set; }
+        public string OriginalName { get; set; }
+        public string OriginalTitle { set { OriginalName = value; } }
         public DateTime? FirstAirDate { get; set; }
         public string BackdropPath { get; set; }
         public string PosterPath { get; set; }
@@ -19,23 +18,25 @@ namespace TMDbLib.Objects.Search {
         public int VoteCount { get; set; }
         public bool Adult { get; set; }
         public DateTime? ReleaseDate { get; set; }
+        public MediaType Type { get; set; }
 
-        public string MediaType {
-            set {
-                switch (value) {
+        public string MediaType
+        {
+            set
+            {
+                switch (value)
+                {
                     case "tv":
-                        _type = General.MediaType.TVShow;
+                        Type = General.MediaType.TVShow;
                         break;
                     case "movie":
-                        _type = General.MediaType.Movie;
+                        Type = General.MediaType.Movie;
                         break;
                     default:
-                        _type = General.MediaType.Unknown;
+                        Type = General.MediaType.Unknown;
                         break;
                 }
             }
         }
-
-        public MediaType Type { get { return _type; } set { _type = value; } }
     }
 }

@@ -92,7 +92,8 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestSearchTvShow() {
+        public void TestSearchTvShow()
+        {
             TestHelpers.SearchPages(i => _config.Client.SearchTvShow("Breaking Bad", i));
 
             SearchContainer<TvShowBase> result = _config.Client.SearchTvShow("Breaking Bad");
