@@ -109,13 +109,16 @@ namespace TMDbLibTests
         private void TestBreakingBadSeasonOneEpisodeOneBaseProperties(TvEpisode tvEpisode)
         {
             Assert.AreEqual(62085, tvEpisode.Id);
-            Assert.AreEqual(new DateTime(2008,1,19), tvEpisode.AirDate.Date);
+            Assert.AreEqual(new DateTime(2008, 1, 19), tvEpisode.AirDate.Date);
             Assert.AreEqual(1, tvEpisode.EpisodeNumber);
             Assert.AreEqual("Pilot", tvEpisode.Name);
             Assert.IsNotNull(tvEpisode.Overview);
             Assert.IsNull(tvEpisode.ProductionCode);
             Assert.AreEqual(1, tvEpisode.SeasonNumber);
             Assert.IsNotNull(tvEpisode.StillPath);
+            Assert.IsNotNull(tvEpisode.Images);
+            Assert.IsNotNull(tvEpisode.Images.Stills);
+            Assert.IsTrue(tvEpisode.Images.Stills.Count > 0);
         }
 
         //[TestMethod]

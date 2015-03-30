@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.TvShows
@@ -24,6 +25,6 @@ namespace TMDbLib.Objects.TvShows
 
         public Credits Credits { get; set; }
         public ExternalIds ExternalIds { get; set; }
-        public Images Images { get; set; }
+        public StillImages Images { get; set; }
     }
 }
