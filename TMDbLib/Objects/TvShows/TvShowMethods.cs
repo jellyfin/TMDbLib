@@ -20,5 +20,9 @@ namespace TMDbLib.Objects.TvShows
         AlternativeTitles = 16,
         [Description("keywords")]
         Keywords = 32,
+        [Description("similar")]
+        Similar = 64,
+        [Description("videos")]
+        Videos = 128,
     }
 }
