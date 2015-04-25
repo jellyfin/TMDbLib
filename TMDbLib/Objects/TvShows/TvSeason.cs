@@ -15,6 +15,7 @@ namespace TMDbLib.Objects.TvShows
         public string Overview { get; set; }
         public DateTime? AirDate { get; set; }
         public string PosterPath { get; set; }
+        public int EpisodeCount { get; set; }
 
         public List<TvEpisode> Episodes { get; set; }
         public Images Images { get; set; }

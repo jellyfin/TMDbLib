@@ -212,6 +212,12 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvShowSeasonCount() {
+            TvShow tvShow = _config.Client.GetTvShow(1668);
+            Assert.AreEqual(tvShow.Seasons[1].EpisodeCount,  24);
+        }
+
+        [TestMethod]
         public void TestTvShowTopRated()
         {
             // This test might fail with inconsistent information from the pages due to a caching problem in the API.
