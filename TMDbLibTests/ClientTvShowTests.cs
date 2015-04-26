@@ -107,7 +107,7 @@ namespace TMDbLibTests
             var keywords = _config.Client.GetTvShowKeywords(BreakingBad);
             Assert.IsNotNull(keywords);
             Assert.AreEqual(BreakingBad, keywords.Id);
-            Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id==41525);
+            Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id == 41525);
             Assert.IsNotNull(keyword);
             Assert.AreEqual("high school teacher", keyword.Name);
         }
@@ -212,13 +212,15 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestTvShowSeasonCount() {
+        public void TestTvShowSeasonCount()
+        {
             TvShow tvShow = _config.Client.GetTvShow(1668);
-            Assert.AreEqual(tvShow.Seasons[1].EpisodeCount,  24);
+            Assert.AreEqual(tvShow.Seasons[1].EpisodeCount, 24);
         }
 
         [TestMethod]
-        public void TestTvShowVideos() {
+        public void TestTvShowVideos()
+        {
             TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Videos);
             Assert.IsNotNull(tvShow.Videos);
             Assert.IsNotNull(tvShow.Videos.Results);
@@ -228,13 +230,15 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestTvShowSimilars() {
+        public void TestTvShowSimilars()
+        {
             TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Similar);
             Assert.IsNotNull(tvShow.Similar);
             Assert.IsNotNull(tvShow.Similar.Results);
             Assert.IsNotNull(tvShow.Similar.Results[0]);
             Assert.IsNotNull(tvShow.Similar.Results[0].Name); //Is How I Met Your Mother for now :), but will not test it 
         }
+
         [TestMethod]
         public void TestTvShowTopRated()
         {
