@@ -40,7 +40,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonSeparateExtrasCredits()
         {
-            Credits credits = _config.Client.GetTvSeasonCredits(BreakingBad, 1);
+            Credits credits = _config.Client.GetTvSeasonCredits(BreakingBad, 1).Result;
             Assert.IsNotNull(credits);
             Assert.IsNotNull(credits.Cast);
             Assert.AreEqual("Walter White", credits.Cast[0].Character);
@@ -63,7 +63,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = _config.Client.GetTvSeasonExternalIds(BreakingBad, 1);
+            ExternalIds externalIds = _config.Client.GetTvSeasonExternalIds(BreakingBad, 1).Result;
             Assert.IsNotNull(externalIds);
             Assert.AreEqual(3572, externalIds.Id);
             Assert.AreEqual("/en/breaking_bad_season_1", externalIds.FreebaseId);
@@ -76,7 +76,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonSeparateExtrasImages()
         {
-            PosterImages images = _config.Client.GetTvSeasonImages(BreakingBad, 1);
+            PosterImages images = _config.Client.GetTvSeasonImages(BreakingBad, 1).Result;
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Posters);
         }
@@ -84,7 +84,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonExtrasNone()
         {
-            TvSeason tvSeason = _config.Client.GetTvSeason(BreakingBad, 1);
+            TvSeason tvSeason = _config.Client.GetTvSeason(BreakingBad, 1).Result;
 
             TestBreakingBadBaseProperties(tvSeason);
 
@@ -99,7 +99,7 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasAll()
         {
             TvSeasonMethods combinedEnum = _methods.Keys.Aggregate((methods, tvSeasonMethods) => methods | tvSeasonMethods);
-            TvSeason tvSeason = _config.Client.GetTvSeason(BreakingBad, 1, combinedEnum);
+            TvSeason tvSeason = _config.Client.GetTvSeason(BreakingBad, 1, combinedEnum).Result;
 
             TestBreakingBadBaseProperties(tvSeason);
 
