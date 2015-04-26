@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Jobs;

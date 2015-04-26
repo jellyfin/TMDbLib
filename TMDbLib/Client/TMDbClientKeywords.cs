@@ -1,6 +1,5 @@
 ﻿using RestSharp;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 
 namespace TMDbLib.Client
 {
