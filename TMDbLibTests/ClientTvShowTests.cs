@@ -212,6 +212,30 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvShowSeasonCount() {
+            TvShow tvShow = _config.Client.GetTvShow(1668);
+            Assert.AreEqual(tvShow.Seasons[1].EpisodeCount,  24);
+        }
+
+        [TestMethod]
+        public void TestTvShowVideos() {
+            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Videos);
+            Assert.IsNotNull(tvShow.Videos);
+            Assert.IsNotNull(tvShow.Videos.Results);
+            Assert.IsNotNull(tvShow.Videos.Results[0]);
+            Assert.IsNotNull(tvShow.Videos.Results[0].Name);
+            Assert.AreEqual(tvShow.Videos.Results[0].Name, "Friends - Opening");
+        }
+
+        [TestMethod]
+        public void TestTvShowSimilars() {
+            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Similar);
+            Assert.IsNotNull(tvShow.Similar);
+            Assert.IsNotNull(tvShow.Similar.Results);
+            Assert.IsNotNull(tvShow.Similar.Results[0]);
+            Assert.IsNotNull(tvShow.Similar.Results[0].Name); //Is How I Met Your Mother for now :), but will not test it 
+        }
+        [TestMethod]
         public void TestTvShowTopRated()
         {
             // This test might fail with inconsistent information from the pages due to a caching problem in the API.
