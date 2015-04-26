@@ -40,7 +40,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvEpisodeSeparateExtrasCredits()
         {
-            Credits credits = _config.Client.GetTvSeasonCredits(BreakingBad, 1);
+            Credits credits = _config.Client.GetTvEpisodeCredits(BreakingBad, 1, 1);
             Assert.IsNotNull(credits);
             Assert.IsNotNull(credits.Cast);
             Assert.AreEqual("Walter White", credits.Cast[0].Character);
@@ -50,13 +50,13 @@ namespace TMDbLibTests
             Assert.IsNotNull(credits.Cast[0].ProfilePath);
             Assert.AreEqual(0, credits.Cast[0].Order);
 
-            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1223202);
+            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1280071);
             Assert.IsNotNull(crewPersonId);
 
-            Assert.AreEqual(1223202, crewPersonId.Id);
-            Assert.AreEqual("Production", crewPersonId.Department);
-            Assert.AreEqual("Diane Mercer", crewPersonId.Name);
-            Assert.AreEqual("Producer", crewPersonId.Job);
+            Assert.AreEqual(1280071, crewPersonId.Id);
+            Assert.AreEqual("Editing", crewPersonId.Department);
+            Assert.AreEqual("Lynne Willingham", crewPersonId.Name);
+            Assert.AreEqual("Editor", crewPersonId.Job);
             Assert.IsNull(crewPersonId.ProfilePath);
         }
 
