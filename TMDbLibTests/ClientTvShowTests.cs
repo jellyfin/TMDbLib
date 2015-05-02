@@ -43,7 +43,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasCredits()
         {
-            Credits credits = _config.Client.GetTvShowCredits(BreakingBad);
+            Credits credits = _config.Client.GetTvShowCredits(BreakingBad).Result;
             Assert.IsNotNull(credits);
             Assert.IsNotNull(credits.Cast);
             Assert.AreEqual("Walter White", credits.Cast[0].Character);
@@ -68,7 +68,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = _config.Client.GetTvShowExternalIds(BreakingBad);
+            ExternalIds externalIds = _config.Client.GetTvShowExternalIds(BreakingBad).Result;
             Assert.IsNotNull(externalIds);
             Assert.AreEqual(1396, externalIds.Id);
             Assert.AreEqual("/en/breaking_bad", externalIds.FreebaseId);
@@ -85,7 +85,7 @@ namespace TMDbLibTests
             var contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad);
             Assert.IsNotNull(contentRatings);
             Assert.AreEqual(BreakingBad, contentRatings.Id);
-            ContentRating contentRating = contentRatings.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("US"));
+            ContentRating contentRating = contentRatings.Result.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("US"));
             Assert.IsNotNull(contentRating);
             Assert.AreEqual("TV-MA", contentRating.Rating);
         }
@@ -96,7 +96,7 @@ namespace TMDbLibTests
             var alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad);
             Assert.IsNotNull(alternativeTitles);
             Assert.AreEqual(BreakingBad, alternativeTitles.Id);
-            AlternativeTitle alternativeTitle = alternativeTitles.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
+            AlternativeTitle alternativeTitle = alternativeTitles.Result.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
             Assert.IsNotNull(alternativeTitle);
             Assert.AreEqual("Totál szívás", alternativeTitle.Title);
         }
@@ -107,7 +107,7 @@ namespace TMDbLibTests
             var keywords = _config.Client.GetTvShowKeywords(BreakingBad);
             Assert.IsNotNull(keywords);
             Assert.AreEqual(BreakingBad, keywords.Id);
-            Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id == 41525);
+            Keyword keyword = keywords.Result.Results.FirstOrDefault(r => r.Id == 41525);
             Assert.IsNotNull(keyword);
             Assert.AreEqual("high school teacher", keyword.Name);
         }
@@ -115,7 +115,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasImages()
         {
-            ImagesWithId images = _config.Client.GetTvShowImages(BreakingBad);
+            ImagesWithId images = _config.Client.GetTvShowImages(BreakingBad).Result;
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Backdrops);
             Assert.IsNotNull(images.Posters);
@@ -124,7 +124,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowExtrasNone()
         {
-            TvShow tvShow = _config.Client.GetTvShow(BreakingBad);
+            TvShow tvShow = _config.Client.GetTvShow(BreakingBad).Result;
 
             TestBreakingBadBaseProperties(tvShow);
 
@@ -139,7 +139,7 @@ namespace TMDbLibTests
         public void TestTvShowExtrasAll()
         {
             TvShowMethods combinedEnum = _methods.Keys.Aggregate((methods, tvShowMethods) => methods | tvShowMethods);
-            TvShow tvShow = _config.Client.GetTvShow(BreakingBad, combinedEnum);
+            TvShow tvShow = _config.Client.GetTvShow(BreakingBad, combinedEnum).Result;
 
             TestBreakingBadBaseProperties(tvShow);
 
@@ -200,9 +200,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowPopular()
         {
-            TestHelpers.SearchPages(i => _config.Client.GetTvShowsPopular(i));
+            TestHelpers.SearchPages(i => _config.Client.GetTvShowsPopular(i).Result);
 
-            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsPopular();
+            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsPopular().Result;
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);
@@ -214,14 +214,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeasonCount()
         {
-            TvShow tvShow = _config.Client.GetTvShow(1668);
+            TvShow tvShow = _config.Client.GetTvShow(1668).Result;
             Assert.AreEqual(tvShow.Seasons[1].EpisodeCount, 24);
         }
 
         [TestMethod]
         public void TestTvShowVideos()
         {
-            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Videos);
+            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Videos).Result;
             Assert.IsNotNull(tvShow.Videos);
             Assert.IsNotNull(tvShow.Videos.Results);
             Assert.IsNotNull(tvShow.Videos.Results[0]);
@@ -232,7 +232,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSimilars()
         {
-            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Similar);
+            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Similar).Result;
             Assert.IsNotNull(tvShow.Similar);
             Assert.IsNotNull(tvShow.Similar.Results);
             Assert.IsNotNull(tvShow.Similar.Results[0]);
@@ -249,9 +249,9 @@ namespace TMDbLibTests
             // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data. 
             // And as we get more ratings I increase that limit so we get more accurate results. 
             // With so few ratings for TV shows right now it's set really low.
-            TestHelpers.SearchPages(i => _config.Client.GetTvShowsTopRated(i));
+            TestHelpers.SearchPages(i => _config.Client.GetTvShowsTopRated(i).Result);
 
-            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsTopRated();
+            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsTopRated().Result;
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);

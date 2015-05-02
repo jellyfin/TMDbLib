@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
@@ -18,7 +19,7 @@ namespace TMDbLib.Client
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve.</param>
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        public TvEpisode GetTvEpisode(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null)
+        public async Task<TvEpisode> GetTvEpisode(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null)
         {
             RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
@@ -38,7 +39,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvEpisode> response = _client.Get<TvEpisode>(req);
+            IRestResponse<TvEpisode> response = await _client.ExecuteGetTaskAsync<TvEpisode>(req);
 
             return response.Data;
         }
@@ -50,9 +51,9 @@ namespace TMDbLib.Client
         /// <param name="seasonNumber">The season number of the season the episode belongs to. Note use 0 for specials.</param>
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve information for.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        public Credits GetTvEpisodeCredits(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
+        public async Task<Credits> GetTvEpisodeCredits(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
         {
-            return GetTvEpisodeMethod<Credits>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language);
+            return await GetTvEpisodeMethod<Credits>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language);
         }
 
         /// <summary>
@@ -65,9 +66,9 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
-        public StillImages GetTvEpisodeImages(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
+        public async Task<StillImages> GetTvEpisodeImages(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
         {
-            return GetTvEpisodeMethod<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language);
+            return await GetTvEpisodeMethod<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language);
         }
 
         /// <summary>
@@ -76,12 +77,12 @@ namespace TMDbLib.Client
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season the episode belongs to. Note use 0 for specials.</param>
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve information for.</param>
-        public ExternalIds GetTvEpisodeExternalIds(int tvShowId, int seasonNumber, int episodeNumber)
+        public async Task<ExternalIds> GetTvEpisodeExternalIds(int tvShowId, int seasonNumber, int episodeNumber)
         {
-            return GetTvEpisodeMethod<ExternalIds>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds);
+            return await GetTvEpisodeMethod<ExternalIds>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds);
         }
 
-        private T GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
+        private async Task<T> GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
@@ -96,7 +97,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
 
             return resp.Data;
         }

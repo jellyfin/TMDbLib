@@ -23,7 +23,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestKeywordGet()
         {
-            KeywordsContainer keywords = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
+            KeywordsContainer keywords = _config.Client.GetMovieKeywords(AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(keywords);
             Assert.IsNotNull(keywords.Keywords);
@@ -32,7 +32,7 @@ namespace TMDbLibTests
             // Try to get all keywords
             foreach (Keyword testKeyword in keywords.Keywords)
             {
-                Keyword getKeyword = _config.Client.GetKeyword(testKeyword.Id);
+                Keyword getKeyword = _config.Client.GetKeyword(testKeyword.Id).Result;
 
                 Assert.IsNotNull(getKeyword);
 
@@ -44,7 +44,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestKeywordMovies()
         {
-            KeywordsContainer keywords = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
+            KeywordsContainer keywords = _config.Client.GetMovieKeywords(AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(keywords);
             Assert.IsNotNull(keywords.Keywords);
@@ -54,9 +54,9 @@ namespace TMDbLibTests
             Keyword testKeyword = keywords.Keywords.First();
 
             // Get movies
-            SearchContainer<MovieResult> movies = _config.Client.GetKeywordMovies(testKeyword.Id);
-            SearchContainer<MovieResult> moviesItalian = _config.Client.GetKeywordMovies(testKeyword.Id, "it");
-            SearchContainer<MovieResult> moviesPage2 = _config.Client.GetKeywordMovies(testKeyword.Id, 2);
+            SearchContainer<MovieResult> movies = _config.Client.GetKeywordMovies(testKeyword.Id).Result;
+            SearchContainer<MovieResult> moviesItalian = _config.Client.GetKeywordMovies(testKeyword.Id, "it").Result;
+            SearchContainer<MovieResult> moviesPage2 = _config.Client.GetKeywordMovies(testKeyword.Id, 2).Result;
 
             Assert.IsNotNull(movies);
             Assert.IsNotNull(moviesItalian);

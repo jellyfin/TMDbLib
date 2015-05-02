@@ -23,13 +23,13 @@ namespace TMDbLibTests
         public void TestGenreList()
         {
             // Default language
-            List<Genre> genres = _config.Client.GetGenres();
+            List<Genre> genres = _config.Client.GetGenres().Result;
 
             Assert.IsNotNull(genres);
             Assert.IsTrue(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = _config.Client.GetGenres("da");
+            List<Genre> genresDanish = _config.Client.GetGenres("da").Result;
 
             Assert.IsNotNull(genresDanish);
             Assert.IsTrue(genresDanish.Count > 0);
@@ -44,12 +44,12 @@ namespace TMDbLibTests
         public void TestGenreMovies()
         {
             // Get first genre
-            Genre genre = _config.Client.GetGenres().First();
+            Genre genre = _config.Client.GetGenres().Result.First();
 
             // Get movies
-            SearchContainerWithId<MovieResult> movies = _config.Client.GetGenreMovies(genre.Id);
-            SearchContainerWithId<MovieResult> moviesPage2 = _config.Client.GetGenreMovies(genre.Id, "it", 2, includeAllMovies: false);
-            SearchContainerWithId<MovieResult> moviesAll = _config.Client.GetGenreMovies(genre.Id, includeAllMovies: true);
+            SearchContainerWithId<MovieResult> movies = _config.Client.GetGenreMovies(genre.Id).Result;
+            SearchContainerWithId<MovieResult> moviesPage2 = _config.Client.GetGenreMovies(genre.Id, "it", 2, includeAllMovies: false).Result;
+            SearchContainerWithId<MovieResult> moviesAll = _config.Client.GetGenreMovies(genre.Id, includeAllMovies: true).Result;
 
             Assert.AreEqual(1, movies.Page);
             Assert.AreEqual(2, moviesPage2.Page);
@@ -64,7 +64,7 @@ namespace TMDbLibTests
             Assert.IsTrue(moviesAll.Results.All(s => s != null));
 
             Assert.AreEqual(movies.TotalResults, moviesPage2.TotalResults);     // Should be the same, despite the use of 'includeAllMovies' and Italian
-            Assert.IsTrue(moviesAll.TotalResults > movies.TotalResults);
+            Assert.IsTrue(moviesAll.TotalResults >= movies.TotalResults);
         }
     }
 }

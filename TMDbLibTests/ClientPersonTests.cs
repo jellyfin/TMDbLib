@@ -42,7 +42,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsExtrasNone()
         {
-            Person person = _config.Client.GetPerson(BruceWillis);
+            Person person = _config.Client.GetPerson(BruceWillis).Result;
 
             Assert.IsNotNull(person);
 
@@ -59,14 +59,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetPerson(id, extras), BruceWillis);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetPerson(id, extras).Result, BruceWillis);
         }
 
         [TestMethod]
         public void TestPersonsExtrasAll()
         {
             PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Person item = _config.Client.GetPerson(BruceWillis, combinedEnum);
+            Person item = _config.Client.GetPerson(BruceWillis, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -75,10 +75,10 @@ namespace TMDbLibTests
         public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
-            Credits resp = _config.Client.GetPersonCredits(BruceWillis);
+            Credits resp = _config.Client.GetPersonCredits(BruceWillis).Result;
             Assert.IsNotNull(resp);
 
-            Credits respItalian = _config.Client.GetPersonCredits(BruceWillis, "it");
+            Credits respItalian = _config.Client.GetPersonCredits(BruceWillis, "it").Result;
             Assert.IsNotNull(respItalian);
 
             Assert.AreEqual(resp.Cast.Count, respItalian.Cast.Count);
@@ -113,12 +113,12 @@ namespace TMDbLibTests
         {
             //GetPersonChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
             // Find latest changed person
-            int latestChanged = _config.Client.GetChangesPeople().Results.First().Id;
+            int latestChanged = _config.Client.GetChangesPeople().Result.Results.First().Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-14);
             DateTime higher = DateTime.UtcNow;
-            List<Change> respRange = _config.Client.GetPersonChanges(latestChanged, lower, higher);
+            List<Change> respRange = _config.Client.GetPersonChanges(latestChanged, lower, higher).Result;
 
             Assert.IsNotNull(respRange);
             Assert.IsTrue(respRange.Count > 0);
@@ -143,7 +143,7 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Test image url generator
-            ProfileImages images = _config.Client.GetPersonImages(BruceWillis);
+            ProfileImages images = _config.Client.GetPersonImages(BruceWillis).Result;
 
             Assert.AreEqual(BruceWillis, images.Id);
             Assert.IsTrue(images.Profiles.Count > 0);
@@ -156,19 +156,19 @@ namespace TMDbLibTests
         {
             foreach (PersonListType type in Enum.GetValues(typeof(PersonListType)).OfType<PersonListType>())
             {
-                SearchContainer<PersonResult> list = _config.Client.GetPersonList(type);
+                SearchContainer<PersonResult> list = _config.Client.GetPersonList(type).Result;
 
                 Assert.IsNotNull(list);
                 Assert.IsTrue(list.Results.Count > 0);
                 Assert.AreEqual(1, list.Page);
 
-                SearchContainer<PersonResult> listPage2 = _config.Client.GetPersonList(type, 2);
+                SearchContainer<PersonResult> listPage2 = _config.Client.GetPersonList(type, 2).Result;
 
                 Assert.IsNotNull(listPage2);
                 Assert.IsTrue(listPage2.Results.Count > 0);
                 Assert.AreEqual(2, listPage2.Page);
 
-                SearchContainer<PersonResult> list2 = _config.Client.GetPersonList(type);
+                SearchContainer<PersonResult> list2 = _config.Client.GetPersonList(type).Result;
 
                 Assert.IsNotNull(list2);
                 Assert.IsTrue(list2.Results.Count > 0);
@@ -184,7 +184,7 @@ namespace TMDbLibTests
         {
             foreach (PersonItemType type in Enum.GetValues(typeof(PersonItemType)).OfType<PersonItemType>())
             {
-                Person item = _config.Client.GetPersonItem(type);
+                Person item = _config.Client.GetPersonItem(type).Result;
 
                 Assert.IsNotNull(item);
             }

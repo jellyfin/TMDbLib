@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
@@ -12,7 +13,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Person GetPerson(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
+        public async Task<Person> GetPerson(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
         {
             RestRequest req = new RestRequest("person/{personId}");
             req.AddUrlSegment("personId", personId.ToString());
@@ -29,7 +30,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Person> resp = _client.Get<Person>(req);
+            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (resp.Data != null)
@@ -44,7 +45,7 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private T GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
+        private async Task<T> GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
                                         int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
             RestRequest req = new RestRequest("person/{personId}/{method}");
@@ -66,33 +67,33 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
 
             return resp.Data;
         }
 
-        public Credits GetPersonCredits(int personId)
+        public async Task<Credits> GetPersonCredits(int personId)
         {
-            return GetPersonCredits(personId, DefaultLanguage);
+            return await GetPersonCredits(personId, DefaultLanguage);
         }
 
-        public Credits GetPersonCredits(int personId, string language)
+        public async Task<Credits> GetPersonCredits(int personId, string language)
         {
-            return GetPersonMethod<Credits>(personId, PersonMethods.Credits, language: language);
+            return await GetPersonMethod<Credits>(personId, PersonMethods.Credits, language: language);
         }
 
-        public ProfileImages GetPersonImages(int personId)
+        public async Task<ProfileImages> GetPersonImages(int personId)
         {
-            return GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
+            return await GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
         }
 
-        public List<Change> GetPersonChanges(int personId, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<List<Change>> GetPersonChanges(int personId, DateTime? startDate = null, DateTime? endDate = null)
         {
-            ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
+            ChangesContainer changesContainer = await GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
             return changesContainer.Changes;
         }
 
-        public SearchContainer<PersonResult> GetPersonList(PersonListType type, int page = 0)
+        public async Task<SearchContainer<PersonResult>> GetPersonList(PersonListType type, int page = 0)
         {
             RestRequest req;
             switch (type)
@@ -109,12 +110,12 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<SearchContainer<PersonResult>> resp = _client.Get<SearchContainer<PersonResult>>(req);
+            IRestResponse<SearchContainer<PersonResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<PersonResult>>(req);
 
             return resp.Data;
         }
 
-        public Person GetPersonItem(PersonItemType type)
+        public async Task<Person> GetPersonItem(PersonItemType type)
         {
             RestRequest req;
             switch (type)
@@ -128,7 +129,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Person> resp = _client.Get<Person>(req);
+            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req);
 
             return resp.Data;
         }

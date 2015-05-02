@@ -38,7 +38,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCompaniesExtrasNone()
         {
-            Company company = _config.Client.GetCompany(TwentiethCenturyFox);
+            Company company = _config.Client.GetCompany(TwentiethCenturyFox).Result;
 
             Assert.IsNotNull(company);
 
@@ -55,14 +55,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCompaniesExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompany(id, extras), TwentiethCenturyFox);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompany(id, extras).Result, TwentiethCenturyFox);
         }
 
         [TestMethod]
         public void TestCompaniesExtrasAll()
         {
             CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Company item = _config.Client.GetCompany(TwentiethCenturyFox, combinedEnum);
+            Company item = _config.Client.GetCompany(TwentiethCenturyFox, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -71,9 +71,9 @@ namespace TMDbLibTests
         public void TestCompaniesGetters()
         {
             //GetCompanyMovies(int id, string language, int page = -1)
-            SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMovies(TwentiethCenturyFox);
-            SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMovies(TwentiethCenturyFox, 2);
-            SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMovies(TwentiethCenturyFox, "it");
+            SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMovies(TwentiethCenturyFox).Result;
+            SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMovies(TwentiethCenturyFox, 2).Result;
+            SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMovies(TwentiethCenturyFox, "it").Result;
 
             Assert.IsNotNull(resp);
             Assert.IsNotNull(respPage2);
@@ -102,7 +102,7 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Test image url generator
-            Company company = _config.Client.GetCompany(TwentiethCenturyFox);
+            Company company = _config.Client.GetCompany(TwentiethCenturyFox).Result;
 
             Uri url = _config.Client.GetImageUrl("original", company.LogoPath);
             Uri urlSecure = _config.Client.GetImageUrl("original", company.LogoPath, true);

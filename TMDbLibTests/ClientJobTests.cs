@@ -22,7 +22,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestJobList()
         {
-            List<Job> jobs = _config.Client.GetJobs();
+            List<Job> jobs = _config.Client.GetJobs().Result;
 
             Assert.IsNotNull(jobs);
             Assert.IsTrue(jobs.Count > 0);

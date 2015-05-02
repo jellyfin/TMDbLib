@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System.Threading.Tasks;
+using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
@@ -7,7 +8,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private T SearchMethod<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null) where T : new()
+        private async Task<T> SearchMethod<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null) where T : new()
         {
             RestRequest req = new RestRequest("search/{method}");
             req.AddUrlSegment("method", method);
@@ -26,64 +27,64 @@ namespace TMDbLib.Client
             if (dateFormat != null)
                 req.DateFormat = dateFormat;
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
 
             return resp.Data;
         }
 
-        public SearchContainer<SearchMovie> SearchMovie(string query, int page = 0, bool includeAdult = false, int year = 0)
+        public async Task<SearchContainer<SearchMovie>> SearchMovie(string query, int page = 0, bool includeAdult = false, int year = 0)
         {
-            return SearchMovie(query, DefaultLanguage, page, includeAdult, year);
+            return await SearchMovie(query, DefaultLanguage, page, includeAdult, year);
         }
 
-        public SearchContainer<SearchMovie> SearchMovie(string query, string language, int page = 0, bool includeAdult = false, int year = 0)
+        public async Task<SearchContainer<SearchMovie>> SearchMovie(string query, string language, int page = 0, bool includeAdult = false, int year = 0)
         {
-            return SearchMethod<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd");
+            return await SearchMethod<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd");
         }
 
-        public SearchContainer<SearchMulti> SearchMulti(string query, int page = 0, bool includeAdult = false, int year = 0)
+        public async Task<SearchContainer<SearchMulti>> SearchMulti(string query, int page = 0, bool includeAdult = false, int year = 0)
         {
-            return SearchMulti(query, DefaultLanguage, page, includeAdult, year);
+            return await SearchMulti(query, DefaultLanguage, page, includeAdult, year);
         }
 
-        public SearchContainer<SearchMulti> SearchMulti(string query, string language, int page = 0, bool includeAdult = false, int year = 0)
+        public async Task<SearchContainer<SearchMulti>> SearchMulti(string query, string language, int page = 0, bool includeAdult = false, int year = 0)
         {
-            return SearchMethod<SearchContainer<SearchMulti>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd");
+            return await SearchMethod<SearchContainer<SearchMulti>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd");
         }
 
-        public SearchContainer<SearchResultCollection> SearchCollection(string query, int page = 0)
+        public async Task<SearchContainer<SearchResultCollection>> SearchCollection(string query, int page = 0)
         {
-            return SearchCollection(query, DefaultLanguage, page);
+            return await SearchCollection(query, DefaultLanguage, page);
         }
 
-        public SearchContainer<SearchResultCollection> SearchCollection(string query, string language, int page = 0)
+        public async Task<SearchContainer<SearchResultCollection>> SearchCollection(string query, string language, int page = 0)
         {
-            return SearchMethod<SearchContainer<SearchResultCollection>>("collection", query, page, language);
+            return await SearchMethod<SearchContainer<SearchResultCollection>>("collection", query, page, language);
         }
 
-        public SearchContainer<SearchPerson> SearchPerson(string query, int page = 0, bool includeAdult = false)
+        public async Task<SearchContainer<SearchPerson>> SearchPerson(string query, int page = 0, bool includeAdult = false)
         {
-            return SearchMethod<SearchContainer<SearchPerson>>("person", query, page, includeAdult: includeAdult);
+            return await SearchMethod<SearchContainer<SearchPerson>>("person", query, page, includeAdult: includeAdult);
         }
 
-        public SearchContainer<SearchList> SearchList(string query, int page = 0, bool includeAdult = false)
+        public async Task<SearchContainer<SearchList>> SearchList(string query, int page = 0, bool includeAdult = false)
         {
-            return SearchMethod<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult);
+            return await SearchMethod<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult);
         }
 
-        public SearchContainer<SearchCompany> SearchCompany(string query, int page = 0)
+        public async Task<SearchContainer<SearchCompany>> SearchCompany(string query, int page = 0)
         {
-            return SearchMethod<SearchContainer<SearchCompany>>("company", query, page);
+            return await SearchMethod<SearchContainer<SearchCompany>>("company", query, page);
         }
 
-        public SearchContainer<SearchKeyword> SearchKeyword(string query, int page = 0)
+        public async Task<SearchContainer<SearchKeyword>> SearchKeyword(string query, int page = 0)
         {
-            return SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page);
+            return await SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page);
         }
 
-        public SearchContainer<TvShowBase> SearchTvShow(string query, int page = 0)
+        public async Task<SearchContainer<TvShowBase>> SearchTvShow(string query, int page = 0)
         {
-            return SearchMethod<SearchContainer<TvShowBase>>("tv", query, page);
+            return await SearchMethod<SearchContainer<TvShowBase>>("tv", query, page);
         }
     }
 }

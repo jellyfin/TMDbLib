@@ -28,7 +28,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestAuthenticationRequestNewToken()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationToken();
+            Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
 
             Assert.IsNotNull(token);
             Assert.IsTrue(token.Success);
@@ -72,7 +72,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestAuthenticationGetUserSessionApiUserValidationSuccess()
         {
-	        Token token = _config.Client.AuthenticationRequestAutenticationToken();
+            Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
 
 	        _config.Client.AuthenticationValidateUserToken(token.RequestToken, _config.Username, _config.Password);
         }
@@ -81,7 +81,7 @@ namespace TMDbLibTests
         [ExpectedException(typeof(UnauthorizedAccessException))]
         public void TestAuthenticationGetUserSessionApiUserValidationInvalidLogin()
         {
-	        Token token = _config.Client.AuthenticationRequestAutenticationToken();
+            Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
 
 	        _config.Client.AuthenticationValidateUserToken(token.RequestToken, "bla", "bla");
 
@@ -95,7 +95,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void AuthenticationGetUserSessionWithLoginSuccess()
         {
-	        UserSession session =_config.Client.AuthenticationGetUserSession(_config.Username, _config.Password);
+            UserSession session = _config.Client.AuthenticationGetUserSession(_config.Username, _config.Password).Result;
 
 	        Assert.IsNotNull(session);
 	        Assert.IsTrue(session.Success);
@@ -116,7 +116,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestAuthenticationCreateGuestSession()
         {
-            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSession();
+            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSession().Result;
 
             Assert.IsNotNull(guestSession);
             Assert.IsTrue(guestSession.Success);

@@ -14,9 +14,9 @@ namespace TMDbLibTests
 
         public TMDbClient Client { get; set; }
 
-		public string Username = "";
+        public string Username = "TMDbTestAccount";
 
-		public string Password = "";
+        public string Password = "TJX6vP7bPC%!ZrJwAqtCU5FshHEKAwzr6YvR3%CU9s7BrjqUWmjC8AMuXju*eTEu524zsxDQK5ySY6EmjAC3e54B%WvkS9FNPE3K";
 
         public TestConfig(bool useSsl = false)
         {

@@ -40,7 +40,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvEpisodeSeparateExtrasCredits()
         {
-            Credits credits = _config.Client.GetTvEpisodeCredits(BreakingBad, 1, 1);
+            Credits credits = _config.Client.GetTvEpisodeCredits(BreakingBad, 1, 1).Result;
             Assert.IsNotNull(credits);
             Assert.IsNotNull(credits.Cast);
             Assert.AreEqual("Walter White", credits.Cast[0].Character);
@@ -63,7 +63,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvEpisodeSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = _config.Client.GetTvEpisodeExternalIds(BreakingBad, 1, 1);
+            ExternalIds externalIds = _config.Client.GetTvEpisodeExternalIds(BreakingBad, 1, 1).Result;
             Assert.IsNotNull(externalIds);
             Assert.IsTrue(string.IsNullOrEmpty(externalIds.FreebaseId));
             Assert.AreEqual(62085, externalIds.Id);
@@ -76,7 +76,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvEpisodeSeparateExtrasImages()
         {
-            StillImages images = _config.Client.GetTvEpisodeImages(BreakingBad, 1, 1);
+            StillImages images = _config.Client.GetTvEpisodeImages(BreakingBad, 1, 1).Result;
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Stills);
         }
@@ -84,7 +84,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvEpisodeExtrasNone()
         {
-            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1);
+            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1).Result;
 
             TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
 
@@ -99,7 +99,7 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasAll()
         {
             TvEpisodeMethods combinedEnum = _methods.Keys.Aggregate((methods, tvEpisodeMethods) => methods | tvEpisodeMethods);
-            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1, combinedEnum);
+            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1, combinedEnum).Result;
 
             TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
 

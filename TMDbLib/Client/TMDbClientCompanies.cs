@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
@@ -9,7 +10,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public Company GetCompany(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
+        public async Task<Company> GetCompany(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
         {
             RestRequest req = new RestRequest("company/{companyId}");
             req.AddUrlSegment("companyId", companyId.ToString());
@@ -26,12 +27,12 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Company> resp = _client.Get<Company>(req);
+            IRestResponse<Company> resp = await _client.ExecuteGetTaskAsync<Company>(req);
 
             return resp.Data;
         }
 
-        private T GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null) where T : new()
+        private async Task<T> GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("company/{companyId}/{method}");
             req.AddUrlSegment("companyId", companyId.ToString());
@@ -42,19 +43,19 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
 
             return resp.Data;
         }
 
-        public SearchContainerWithId<MovieResult> GetCompanyMovies(int companyId, int page = 0)
+        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMovies(int companyId, int page = 0)
         {
-            return GetCompanyMovies(companyId, DefaultLanguage, page);
+            return await GetCompanyMovies(companyId, DefaultLanguage, page);
         }
 
-        public SearchContainerWithId<MovieResult> GetCompanyMovies(int companyId, string language, int page = 0)
+        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMovies(int companyId, string language, int page = 0)
         {
-            return GetCompanyMethod<SearchContainerWithId<MovieResult>>(companyId, CompanyMethods.Movies, page, language);
+            return await GetCompanyMethod<SearchContainerWithId<MovieResult>>(companyId, CompanyMethods.Movies, page, language);
         }
     }
 }

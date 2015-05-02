@@ -163,7 +163,7 @@ namespace TMDbLib.Client
             {
                 try
                 {
-                    ActiveAccount = AccountGetDetails();
+                    ActiveAccount = AccountGetDetails().Result;
                 }
                 catch (Exception)
                 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
@@ -24,7 +25,7 @@ namespace TMDbLib.Client
         /// <param name="firstAirDateGreaterThan">The minimum airdate of tv shows to include.</param>
         /// <param name="firstAirDateLessThan">The maximum airdate of tv shows to include.</param>
         /// <returns>Will return a list of tv shows that corespond to the provided parameters</returns>
-        public SearchContainer<TvShowBase> DiscoverTvShows(
+        public async Task<SearchContainer<TvShowBase>> DiscoverTvShows(
             int page = 1,
             string language = null,
             DiscoverTvShowSortBy sortBy = DiscoverTvShowSortBy.Undefined,
@@ -68,7 +69,7 @@ namespace TMDbLib.Client
             if (firstAirDateLessThan.HasValue)
                 request.AddParameter("first_air_date.lte", firstAirDateLessThan.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(request);
+            IRestResponse<SearchContainer<TvShowBase>> response = await _client.ExecuteGetTaskAsync<SearchContainer<TvShowBase>>(request);
 
             return response.Data;
         }
@@ -91,7 +92,7 @@ namespace TMDbLib.Client
         /// <param name="releaseDateLessThan">The maximum release date of movies to include.</param>
         /// <param name="withCompanies">Filter movies based on the company that created them. Expected value is an integer (the id of a company). Multiple values can be specified. Comma separated indicates an 'AND' query, while a pipe (|) separated value indicates an 'OR'.</param>
         /// <returns>Will return a list of movies that corespond to the provided parameters</returns>
-        public SearchContainer<SearchMovie> DiscoverMovies(
+        public async Task<SearchContainer<SearchMovie>> DiscoverMovies(
             int? page = null,
             string language = null,
             DiscoverMovieSortBy sortBy = DiscoverMovieSortBy.Undefined,
@@ -159,7 +160,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(withCompanies))
                 request.AddParameter("with_companies", withCompanies);
 
-            IRestResponse<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
+            IRestResponse<SearchContainer<SearchMovie>> response = await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request);
 
             return response.Data;
         }

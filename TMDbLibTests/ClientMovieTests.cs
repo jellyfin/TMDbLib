@@ -56,7 +56,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesExtrasNone()
         {
-            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard);
+            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(movie);
 
@@ -74,7 +74,7 @@ namespace TMDbLibTests
         public void TestMoviesExtrasExclusive()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovie(id, extras), AGoodDayToDieHard);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovie(id, extras).Result, AGoodDayToDieHard);
         }
 
         [TestMethod]
@@ -87,7 +87,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = _config.Client.GetMovie(TheDarkKnightRisesImdb, combinedEnum);
+            Movie item = _config.Client.GetMovie(TheDarkKnightRisesImdb, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(tmpMethods, item);
         }
@@ -97,7 +97,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum);
+            Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -105,8 +105,8 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesLanguage()
         {
-            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard);
-            Movie movieItalian = _config.Client.GetMovie(AGoodDayToDieHard, "it");
+            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard).Result;
+            Movie movieItalian = _config.Client.GetMovie(AGoodDayToDieHard, "it").Result;
 
             Assert.IsNotNull(movie);
             Assert.IsNotNull(movieItalian);
@@ -126,10 +126,10 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieAlternativeTitles()
         {
             //GetMovieAlternativeTitles(int id, string country)
-            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
+            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US").Result;
             Assert.IsNotNull(respUs);
 
-            AlternativeTitles respFrench = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "FR");
+            AlternativeTitles respFrench = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "FR").Result;
             Assert.IsNotNull(respFrench);
 
             Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Duro de matar 5"));
@@ -143,12 +143,12 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieAlternativeTitlesCountry()
         {
             //GetMovieAlternativeTitles(int id, string country)
-            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US");
+            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US").Result;
             Assert.IsNotNull(respUs);
 
             _config.Client.DefaultCountry = "US";
 
-            AlternativeTitles respUs2 = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard);
+            AlternativeTitles respUs2 = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard).Result;
             Assert.IsNotNull(respUs2);
 
             Assert.AreEqual(respUs.Titles.Count, respUs2.Titles.Count);
@@ -158,7 +158,7 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieCasts()
         {
             //GetMovieCasts(int id)
-            Credits resp = _config.Client.GetMovieCredits(AGoodDayToDieHard);
+            Credits resp = _config.Client.GetMovieCredits(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
         }
 
@@ -166,7 +166,7 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieImages()
         {
             //GetMovieImages(int id, string language)
-            ImagesWithId resp = _config.Client.GetMovieImages(AGoodDayToDieHard);
+            ImagesWithId resp = _config.Client.GetMovieImages(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
         }
 
@@ -174,7 +174,7 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieKeywords()
         {
             //GetMovieKeywords(int id)
-            KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard);
+            KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
         }
 
@@ -182,7 +182,7 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieReleases()
         {
             //GetMovieReleases(int id)
-            Releases resp = _config.Client.GetMovieReleases(AGoodDayToDieHard);
+            Releases resp = _config.Client.GetMovieReleases(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
         }
 
@@ -190,7 +190,7 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieTrailers()
         {
             //GetMovieTrailers(int id)
-            Trailers resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
+            Trailers resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
         }
 
@@ -198,17 +198,17 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieTranslations()
         {
             //GetMovieTranslations(int id)
-            TranslationsContainer resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard);
+            TranslationsContainer resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
         }
 
         [TestMethod]
         public void TestMoviesGetMovieSimilarMovies()
         {
-            SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
+            SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
-            SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de");
+            SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de").Result;
             Assert.IsNotNull(respGerman);
 
             Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
@@ -228,7 +228,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieReviews()
         {
-            SearchContainer<Review> resp = _config.Client.GetMovieReviews(TheDarkKnightRises);
+            SearchContainer<Review> resp = _config.Client.GetMovieReviews(TheDarkKnightRises).Result;
             Assert.IsNotNull(resp);
 
             Assert.AreNotEqual(0, resp.Results.Count);
@@ -239,10 +239,10 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieLists()
         {
             //GetMovieLists(int id, string language, int page = -1)
-            SearchContainer<ListResult> resp = _config.Client.GetMovieLists(AGoodDayToDieHard);
+            SearchContainer<ListResult> resp = _config.Client.GetMovieLists(AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
-            SearchContainer<ListResult> respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2);
+            SearchContainer<ListResult> respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2).Result;
             Assert.IsNotNull(respPage2);
 
             Assert.AreEqual(1, resp.Page);
@@ -260,7 +260,7 @@ namespace TMDbLibTests
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-13);
             DateTime higher = DateTime.UtcNow.AddDays(1);
-            List<Change> respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher);
+            List<Change> respRange = _config.Client.GetMovieChanges(latestChanged, lower, higher).Result;
 
             Assert.IsNotNull(respRange);
             Assert.IsTrue(respRange.Count > 0);
@@ -285,7 +285,7 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Test image url generator
-            ImagesWithId images = _config.Client.GetMovieImages(AGoodDayToDieHard);
+            ImagesWithId images = _config.Client.GetMovieImages(AGoodDayToDieHard).Result;
 
             Assert.AreEqual(AGoodDayToDieHard, images.Id);
             TestImagesHelpers.TestImages(_config, images);
@@ -297,19 +297,19 @@ namespace TMDbLibTests
             //GetMovieList(MovieListType type, string language, int page = -1)
             foreach (MovieListType type in Enum.GetValues(typeof(MovieListType)).OfType<MovieListType>())
             {
-                SearchContainer<MovieResult> list = _config.Client.GetMovieList(type);
+                SearchContainer<MovieResult> list = _config.Client.GetMovieList(type).Result;
 
                 Assert.IsNotNull(list);
                 Assert.IsTrue(list.Results.Count > 0);
                 Assert.AreEqual(1, list.Page);
 
-                SearchContainer<MovieResult> listPage2 = _config.Client.GetMovieList(type, 2);
+                SearchContainer<MovieResult> listPage2 = _config.Client.GetMovieList(type, 2).Result;
 
                 Assert.IsNotNull(listPage2);
                 Assert.IsTrue(listPage2.Results.Count > 0);
                 Assert.AreEqual(2, listPage2.Page);
 
-                SearchContainer<MovieResult> listDe = _config.Client.GetMovieList(type, "de");
+                SearchContainer<MovieResult> listDe = _config.Client.GetMovieList(type, "de").Result;
 
                 Assert.IsNotNull(listDe);
                 Assert.IsTrue(listDe.Results.Count > 0);
@@ -324,7 +324,7 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar);
+            MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar).Result;
 
             // For this test to pass the movie Avatar need to be rated, added to the favorite list and watchlist
             Assert.AreEqual(Avatar, accountState.Id);
@@ -337,7 +337,7 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateRatingNotSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
+            MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard).Result;
 
             // For this test to pass the movie A Good Day To Die Hard need to be NOT rated, and REMOVED from the favorite list and watchlist
             Assert.AreEqual(AGoodDayToDieHard, accountState.Id);
@@ -351,21 +351,21 @@ namespace TMDbLibTests
         public void TestMoviesSetRatingBadRating()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 7.1));
+            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 7.1).Result);
         }
 
         [TestMethod]
         public void TestMoviesSetRatingRatingOutOfBounds()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 10.5));
+            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 10.5).Result);
         }
 
         [TestMethod]
         public void TestMoviesSetRatingRatingLowerBoundsTest()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 0));
+            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 0).Result);
         }
 
         [TestMethod]
@@ -374,29 +374,29 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie has a different rating than our test rating
-            var rating = _config.Client.GetMovieAccountState(Avatar).Rating;
+            var rating = _config.Client.GetMovieAccountState(Avatar).Result.Rating;
             Assert.IsNotNull(rating);
 
             double originalRating = rating.Value;
             double newRating = Math.Abs(originalRating - 7.5) < double.Epsilon ? 2.5 : 7.5;
 
             // Try changing the rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, newRating));
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, newRating).Result);
 
             // Allow TMDb to not cache our data
             Thread.Sleep(1000);
 
             // Check if it worked
-            Assert.AreEqual(newRating, _config.Client.GetMovieAccountState(Avatar).Rating);
+            Assert.AreEqual(newRating, _config.Client.GetMovieAccountState(Avatar).Result.Rating);
 
             // Try changing it back to the previous rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, originalRating));
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, originalRating).Result);
 
             // Allow TMDb to not cache our data
             Thread.Sleep(1000);
 
             // Check if it worked
-            Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(Avatar).Rating);
+            Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(Avatar).Result.Rating);
         }
 
         [TestMethod]
@@ -405,16 +405,16 @@ namespace TMDbLibTests
             // There is no way to validate the change besides the success return of the api call since the guest session doesn't have access to anything else
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
             // Try changing the rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 7.5));
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 7.5).Result);
 
             // Try changing it back to the previous rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 8));
+            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 8).Result);
         }
 
         [TestMethod]
         public void TestMoviesGet()
         {
-            Movie item = _config.Client.GetMovie(AGoodDayToDieHard);
+            Movie item = _config.Client.GetMovie(AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(item);
             Assert.AreEqual(AGoodDayToDieHard, item.Id);

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
@@ -7,19 +8,19 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public List<Genre> GetGenres()
+        public async Task<List<Genre>> GetGenres()
         {
-            return GetGenres(DefaultLanguage);
+            return await GetGenres(DefaultLanguage);
         }
 
-        public List<Genre> GetGenres(string language)
+        public async Task<List<Genre>> GetGenres(string language)
         {
             RestRequest req = new RestRequest("genre/list");
 
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<GenreContainer> resp = _client.Get<GenreContainer>(req);
+            IRestResponse<GenreContainer> resp =await  _client.ExecuteGetTaskAsync<GenreContainer>(req);
 
             if (resp.Data == null)
                 return null;
@@ -27,12 +28,12 @@ namespace TMDbLib.Client
             return resp.Data.Genres;
         }
 
-        public SearchContainerWithId<MovieResult> GetGenreMovies(int genreId, int page = 0, bool? includeAllMovies = null)
+        public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, int page = 0, bool? includeAllMovies = null)
         {
-            return GetGenreMovies(genreId, DefaultLanguage, page, includeAllMovies);
+            return await GetGenreMovies(genreId, DefaultLanguage, page, includeAllMovies);
         }
 
-        public SearchContainerWithId<MovieResult> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)
+        public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)
         {
             RestRequest req = new RestRequest("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
@@ -45,7 +46,7 @@ namespace TMDbLib.Client
             if (includeAllMovies.HasValue)
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
-            IRestResponse<SearchContainerWithId<MovieResult>> resp = _client.Get<SearchContainerWithId<MovieResult>>(req);
+            IRestResponse<SearchContainerWithId<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainerWithId<MovieResult>>(req);
 
             return resp.Data;
         }

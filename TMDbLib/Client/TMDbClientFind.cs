@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System.Threading.Tasks;
+using RestSharp;
 using RestSharp.Contrib;
 using TMDbLib.Objects.Find;
 using TMDbLib.Utilities;
@@ -17,7 +18,7 @@ namespace TMDbLib.Client
         /// <param name="source">The source the specified id belongs to</param>
         /// <param name="id">The id of the object you wish to located</param>
         /// <returns>A list of all objects in TMDb that matched your id</returns>
-        public FindContainer Find(FindExternalSource source, string id)
+        public async Task<FindContainer> Find(FindExternalSource source, string id)
         {
             RestRequest req = new RestRequest("find/{id}");
 
@@ -29,7 +30,7 @@ namespace TMDbLib.Client
 
             req.AddParameter("external_source", source.GetDescription());
 
-            IRestResponse<FindContainer> resp = _client.Get<FindContainer>(req);
+            IRestResponse<FindContainer> resp = await _client.ExecuteGetTaskAsync<FindContainer>(req);
 
             return resp.Data;
         }

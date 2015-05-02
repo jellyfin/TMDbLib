@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Globalization;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
@@ -17,14 +18,14 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public AccountDetails AccountGetDetails()
+        public async Task<AccountDetails> AccountGetDetails()
         {
             RequireSessionId(SessionType.UserSession);
 
             RestRequest request = new RestRequest("account");
             request.AddParameter("session_id", SessionId);
 
-            IRestResponse<AccountDetails> response = _client.Get<AccountDetails>(request);
+            IRestResponse<AccountDetails> response = await _client.ExecuteGetTaskAsync<AccountDetails>(request);
 
             return response.Data;
         }
@@ -35,7 +36,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public SearchContainer<List> AccountGetLists(int page = 1, string language = null)
+        public async Task<SearchContainer<List>> AccountGetLists(int page = 1, string language = null)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -49,7 +50,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<List>> response = _client.Get<SearchContainer<List>>(request);
+            IRestResponse<SearchContainer<List>> response = await _client.ExecuteGetTaskAsync<SearchContainer<List>>(request);
 
             return response.Data;
         }
@@ -62,7 +63,7 @@ namespace TMDbLib.Client
         /// <returns>True if the the movie's favorite status was successfully updated, false if not</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public bool AccountChangeMovieFavoriteStatus(int movieId, bool isFavorite)
+        public async Task<bool> AccountChangeMovieFavoriteStatus(int movieId, bool isFavorite)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -71,7 +72,7 @@ namespace TMDbLib.Client
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { movie_id = movieId, favorite = isFavorite });
 
-            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request);
 
             // status code 1 = "Success" - Returned when adding a movie as favorite for the first time
             // status code 13 = "The item/record was deleted successfully" - When removing an item as favorite, no matter if it exists or not
@@ -87,7 +88,7 @@ namespace TMDbLib.Client
         /// <returns>True if the the movie's status on the watchlist was successfully updated, false if not</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public bool AccountChangeMovieWatchlistStatus(int movieId, bool isOnWatchlist)
+        public async Task<bool> AccountChangeMovieWatchlistStatus(int movieId, bool isOnWatchlist)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -96,7 +97,7 @@ namespace TMDbLib.Client
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { movie_id = movieId, movie_watchlist = isOnWatchlist });
 
-            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request);
 
             // status code 1 = "Success"
             // status code 13 = "The item/record was deleted successfully" - When removing an item from the watchlist, no matter if it exists or not
@@ -109,13 +110,13 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public SearchContainer<SearchMovie> AccountGetFavoriteMovies(
+        public async Task<SearchContainer<SearchMovie>> AccountGetFavoriteMovies(
             int page = 1,
             AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
+            return await GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
         }
 
         /// <summary>
@@ -123,13 +124,13 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public SearchContainer<SearchMovie> AccountGetMovieWatchlist(
+        public async Task<SearchContainer<SearchMovie>> AccountGetMovieWatchlist(
             int page = 1,
             AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
+            return await GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
         }
 
         /// <summary>
@@ -137,16 +138,16 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public SearchContainer<SearchMovie> AccountGetRatedMovies(
+        public async Task<SearchContainer<SearchMovie>> AccountGetRatedMovies(
             int page = 1,
             AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
+            return await GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
         }
 
-        private SearchContainer<SearchMovie> GetAccountList(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
+        private async Task<SearchContainer<SearchMovie>> GetAccountList(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -167,7 +168,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
+            IRestResponse<SearchContainer<SearchMovie>> response =  await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request);
 
             return response.Data;
         }

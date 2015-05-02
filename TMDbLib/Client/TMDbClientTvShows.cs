@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
@@ -17,7 +18,7 @@ namespace TMDbLib.Client
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         /// <returns>The requested Tv Show</returns>
-        public TvShow GetTvShow(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
+        public async Task<TvShow> GetTvShow(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
         {
             RestRequest req = new RestRequest("tv/{id}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
@@ -35,7 +36,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvShow> response = _client.Get<TvShow>(req);
+            IRestResponse<TvShow> response = await _client.ExecuteGetTaskAsync<TvShow>(req);
 
             return response.Data;
         }
@@ -47,9 +48,9 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter.
         /// </returns>
-        public SearchContainer<TvShowBase> GetTvShowsPopular(int page = -1, string language = null)
+        public async Task<SearchContainer<TvShowBase>> GetTvShowsPopular(int page = -1, string language = null)
         {
-            return GetTvShowList(page, language, "popular");
+            return await GetTvShowList(page, language, "popular");
         }
 
         /// <summary>
@@ -59,12 +60,12 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter
         /// </returns>
-        public SearchContainer<TvShowBase> GetTvShowsTopRated(int page = -1, string language = null)
+        public async Task<SearchContainer<TvShowBase>> GetTvShowsTopRated(int page = -1, string language = null)
         {
-            return GetTvShowList(page, language, "top_rated");
+            return await GetTvShowList(page, language, "top_rated");
         }
 
-        private SearchContainer<TvShowBase> GetTvShowList(int page, string language, string tvShowListType)
+        private async Task<SearchContainer<TvShowBase>> GetTvShowList(int page, string language, string tvShowListType)
         {
             RestRequest req = new RestRequest("tv/" + tvShowListType);
 
@@ -74,7 +75,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page);
 
-            IRestResponse<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(req);
+            IRestResponse<SearchContainer<TvShowBase>> response = await _client.ExecuteGetTaskAsync<SearchContainer<TvShowBase>>(req);
 
             return response.Data;
         }
@@ -84,9 +85,9 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="id">The TMDb id of the target tv show.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        public Credits GetTvShowCredits(int id, string language = null)
+        public async Task<Credits> GetTvShowCredits(int id, string language = null)
         {
-            return GetTvShowMethod<Credits>(id, TvShowMethods.Credits, dateFormat: "yyyy-MM-dd", language: language);
+            return await GetTvShowMethod<Credits>(id, TvShowMethods.Credits, dateFormat: "yyyy-MM-dd", language: language);
         }
 
         /// <summary>
@@ -97,36 +98,36 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
-        public ImagesWithId GetTvShowImages(int id, string language = null)
+        public async Task<ImagesWithId> GetTvShowImages(int id, string language = null)
         {
-            return GetTvShowMethod<ImagesWithId>(id, TvShowMethods.Images, language: language);
+            return await GetTvShowMethod<ImagesWithId>(id, TvShowMethods.Images, language: language);
         }
 
         /// <summary>
         /// Returns an object that contains all known exteral id's for the tv show related to the specified TMDB id.
         /// </summary>
         /// <param name="id">The TMDb id of the target tv show.</param>
-        public ExternalIds GetTvShowExternalIds(int id)
+        public async Task<ExternalIds> GetTvShowExternalIds(int id)
         {
-            return GetTvShowMethod<ExternalIds>(id, TvShowMethods.ExternalIds);
+            return await GetTvShowMethod<ExternalIds>(id, TvShowMethods.ExternalIds);
         }
 
-        public ResultContainer<ContentRating> GetTvShowContentRatings(int id)
+        public async Task<ResultContainer<ContentRating>> GetTvShowContentRatings(int id)
         {
-            return GetTvShowMethod<ResultContainer<ContentRating>>(id, TvShowMethods.ContentRatings);
+            return await GetTvShowMethod<ResultContainer<ContentRating>>(id, TvShowMethods.ContentRatings);
         }
 
-        public ResultContainer<AlternativeTitle> GetTvShowAlternativeTitles(int id)
+        public async Task<ResultContainer<AlternativeTitle>> GetTvShowAlternativeTitles(int id)
         {
-            return GetTvShowMethod<ResultContainer<AlternativeTitle>>(id, TvShowMethods.AlternativeTitles);
+            return await GetTvShowMethod<ResultContainer<AlternativeTitle>>(id, TvShowMethods.AlternativeTitles);
         }
 
-        public ResultContainer<Keyword> GetTvShowKeywords(int id)
+        public async Task<ResultContainer<Keyword>> GetTvShowKeywords(int id)
         {
-            return GetTvShowMethod<ResultContainer<Keyword>>(id, TvShowMethods.Keywords);
+            return await GetTvShowMethod<ResultContainer<Keyword>>(id, TvShowMethods.Keywords);
         }
 
-        private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
+        private async Task<T> GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
@@ -138,7 +139,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
 
             return resp.Data;
         }

@@ -38,7 +38,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            return await _client.GetTaskAsync<TvSeason>(req);
+            return (await _client.ExecuteGetTaskAsync<TvSeason>(req)).Data;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            return await _client.GetTaskAsync<T>(req);
+            return (await _client.ExecuteGetTaskAsync<T>(req)).Data;
         }
     }
 }

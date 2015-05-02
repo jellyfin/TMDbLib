@@ -80,7 +80,7 @@ namespace TestApplication
             // Note: Each method normally corresponds to a property on the resulting object. If you haven't requested the information, the property will most likely be null.
 
             // Also note, that while we could have used 'client.GetMovieImages()' - it was better to do it like this because we also wanted the Title of the movie.
-            Movie movie = client.GetMovie(movieId, MovieMethods.Images);
+            Movie movie = client.GetMovie(movieId, MovieMethods.Images).Result;
 
             Console.WriteLine("Fetching images for '" + movie.Title + "'");
 
@@ -125,7 +125,7 @@ namespace TestApplication
 
             // This example shows the fetching of a movie.
             // Say the user searches for "Thor" in order to find "Thor: The Dark World" or "Thor"
-            SearchContainer<SearchMovie> results = client.SearchMovie(query);
+            SearchContainer<SearchMovie> results = client.SearchMovie(query).Result;
 
             // The results is a list, currently on page 1 because we didn't specify any page.
             Console.WriteLine("Searched for movies: '" + query + "', found " + results.TotalResults + " results in " +

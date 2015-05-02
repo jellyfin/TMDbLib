@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
@@ -7,7 +8,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private T GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
+        private async Task<T> GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
             RestRequest req = new RestRequest("{type}/changes");
             req.AddUrlSegment("type", type);
@@ -19,7 +20,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = _client.Get<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
 
             return resp.Data;
         }
@@ -31,9 +32,9 @@ namespace TMDbLib.Client
 		/// You can then use the movie changes API to get the actual data that has been changed. (.GetMovieChanges)
 		/// </summary>
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show movies that have been edited since.</remarks>
-        public SearchContainer<ChangesListItem> GetChangesMovies(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<SearchContainer<ChangesListItem>> GetChangesMovies(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate);
         }
 
 		/// <summary>
@@ -43,9 +44,9 @@ namespace TMDbLib.Client
 		/// You can then use the person changes API to get the actual data that has been changed.(.GetPersonChanges)
 		/// </summary>
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show people that have been edited since.</remarks>
-        public SearchContainer<ChangesListItem> GetChangesPeople(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<SearchContainer<ChangesListItem>> GetChangesPeople(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
         }
 
 		/// <summary>
@@ -58,9 +59,9 @@ namespace TMDbLib.Client
 		/// the change log system to properly support TV was updated on May 13, 2014. 
 		/// You'll likely only find the edits made since then to be useful in the change log system.
 		/// </remarks>
-		public SearchContainer<ChangesListItem> GetChangesTv(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
+		public async Task<SearchContainer<ChangesListItem>> GetChangesTv(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
 		{
-			return GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate);
 		}
     }
 }
