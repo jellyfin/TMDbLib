@@ -15,7 +15,7 @@ namespace TMDbLibTests
     public class ClientMovieTests
     {
         private const int AGoodDayToDieHard = 47964;
-        private const int TheDarkKnightRises = 49026;       
+        private const int TheDarkKnightRises = 49026;
         private const string AGoodDayToDieHardImdb = "tt1606378";
         private const string TheDarkKnightRisesImdb = "tt1345836";
         private const int Avatar = 19995;
@@ -409,6 +409,49 @@ namespace TMDbLibTests
 
             // Try changing it back to the previous rating
             Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 8));
+        }
+
+        [TestMethod]
+        public void TestMoviesGet()
+        {
+            Movie item = _config.Client.GetMovie(AGoodDayToDieHard);
+
+            Assert.IsNotNull(item);
+            Assert.AreEqual(AGoodDayToDieHard, item.Id);
+            Assert.AreEqual(AGoodDayToDieHardImdb, item.ImdbId);
+
+            // Check all properties
+            Assert.AreEqual("A Good Day to Die Hard", item.Title);
+            Assert.AreEqual("A Good Day to Die Hard", item.OriginalTitle);
+            Assert.AreEqual("en", item.OriginalLanguage);
+
+            Assert.AreEqual("Released", item.Status);
+            Assert.AreEqual("Yippee Ki-Yay Mother Russia", item.Tagline);
+            Assert.AreEqual("Iconoclastic, take-no-prisoners cop John McClane, finds himself for the first time on foreign soil after traveling to Moscow to help his wayward son Jack - unaware that Jack is really a highly-trained CIA operative out to stop a nuclear weapons heist. With the Russian underworld in pursuit, and battling a countdown to war, the two McClanes discover that their opposing methods make them unstoppable heroes.", item.Overview);
+            Assert.AreEqual("http://www.diehardmovie.com/", item.Homepage);
+
+            Assert.AreEqual("/17zArExB7ztm6fjUXZwQWgGMC9f.jpg", item.BackdropPath);
+            Assert.AreEqual("/xO42aJxjWiVnvWaAliq9iWjMpHZ.jpg", item.PosterPath);
+
+            Assert.AreEqual(false, item.Adult);
+            Assert.AreEqual(false, item.Video);
+
+            Assert.AreEqual(1, item.BelongsToCollection.Count);
+            Assert.AreEqual(1570, item.BelongsToCollection[0].Id);
+            Assert.AreEqual("Die Hard Collection", item.BelongsToCollection[0].Name);
+            Assert.AreEqual("/5kHVblr87FUScuab1PVSsK692IL.jpg", item.BelongsToCollection[0].BackdropPath);
+            Assert.AreEqual("/nglknikAiEbsF9CW5xV9fC378JH.jpg", item.BelongsToCollection[0].PosterPath);
+
+            Assert.AreEqual(2, item.Genres.Count);
+            Assert.AreEqual(28, item.Genres[0].Id);
+            Assert.AreEqual("Action", item.Genres[0].Name);
+            Assert.AreEqual(53, item.Genres[1].Id);
+            Assert.AreEqual("Thriller", item.Genres[1].Name);
+
+            Assert.AreEqual(new DateTime(2013, 02, 14), item.ReleaseDate);
+            Assert.AreEqual(304654182, item.Revenue);
+            Assert.AreEqual(92000000, item.Budget);
+            Assert.AreEqual(98, item.Runtime);
         }
     }
 }

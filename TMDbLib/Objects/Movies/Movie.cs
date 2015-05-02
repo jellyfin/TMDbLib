@@ -11,6 +11,7 @@ namespace TMDbLib.Objects.Movies
         public string ImdbId { get; set; }
         public string Title { get; set; }
         public string OriginalTitle { get; set; }
+        public string OriginalLanguage { get; set; }
         public string Status { get; set; }
         public string Tagline { get; set; }
         public string Overview { get; set; }
@@ -20,6 +21,7 @@ namespace TMDbLib.Objects.Movies
         public string PosterPath { get; set; }
 
         public bool Adult { get; set; }
+        public bool Video { get; set; }
 
         public List<BelongsToCollection> BelongsToCollection { get; set; }
         public List<Genre> Genres { get; set; }
