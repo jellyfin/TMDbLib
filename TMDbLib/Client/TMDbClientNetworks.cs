@@ -16,7 +16,7 @@ namespace TMDbLib.Client
             RestRequest request = new RestRequest("network/{networkId}");
             request.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
-            IRestResponse<Network> response = await _client.ExecuteGetTaskAsync<Network>(request);
+            IRestResponse<Network> response = await _client.ExecuteGetTaskAsync<Network>(request).ConfigureAwait(false);
 
             return response.Data;
         }

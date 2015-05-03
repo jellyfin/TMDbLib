@@ -62,7 +62,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 request.AddParameter("append_to_response", appends);
 
-            IRestResponse<Movie> response = await _client.ExecuteGetTaskAsync<Movie>(request);
+            IRestResponse<Movie> response = await _client.ExecuteGetTaskAsync<Movie>(request).ConfigureAwait(false);
 
             // No data to patch up so return
             if (response.Data == null) return null;
@@ -119,7 +119,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 request.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> response = await _client.ExecuteGetTaskAsync<T>(request);
+            IRestResponse<T> response = await _client.ExecuteGetTaskAsync<T>(request).ConfigureAwait(false);
 
             return response.Data;
         }
@@ -219,7 +219,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             request.AddParameter("session_id", SessionId);
 
-            IRestResponse<MovieAccountState> response = await _client.ExecuteGetTaskAsync<MovieAccountState>(request);
+            IRestResponse<MovieAccountState> response = await _client.ExecuteGetTaskAsync<MovieAccountState>(request).ConfigureAwait(false);
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (response.Data != null)
@@ -251,7 +251,7 @@ namespace TMDbLib.Client
 
             request.AddBody(new { value = rating });
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
@@ -261,7 +261,7 @@ namespace TMDbLib.Client
         public async Task<Movie> GetMovieLatest()
         {
             RestRequest req = new RestRequest("movie/latest");
-            IRestResponse<Movie> resp = await _client.ExecuteGetTaskAsync<Movie>(req);
+            IRestResponse<Movie> resp = await _client.ExecuteGetTaskAsync<Movie>(req).ConfigureAwait(false);
 
             return resp.Data;
         }
@@ -299,7 +299,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<SearchContainer<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieResult>>(req);
+            IRestResponse<SearchContainer<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieResult>>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

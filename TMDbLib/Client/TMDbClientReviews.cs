@@ -13,7 +13,7 @@ namespace TMDbLib.Client
 
             request.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Review> resp = await _client.ExecuteGetTaskAsync<Review>(request);
+            IRestResponse<Review> resp = await _client.ExecuteGetTaskAsync<Review>(request).ConfigureAwait(false);
 
             return resp.Data;
         }

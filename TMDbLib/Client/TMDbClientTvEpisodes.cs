@@ -39,7 +39,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvEpisode> response = await _client.ExecuteGetTaskAsync<TvEpisode>(req);
+            IRestResponse<TvEpisode> response = await _client.ExecuteGetTaskAsync<TvEpisode>(req).ConfigureAwait(false);
 
             return response.Data;
         }
@@ -97,7 +97,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

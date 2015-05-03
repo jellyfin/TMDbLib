@@ -69,7 +69,7 @@ namespace TMDbLib.Client
             if (firstAirDateLessThan.HasValue)
                 request.AddParameter("first_air_date.lte", firstAirDateLessThan.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<SearchContainer<TvShowBase>> response = await _client.ExecuteGetTaskAsync<SearchContainer<TvShowBase>>(request);
+            IRestResponse<SearchContainer<TvShowBase>> response = await _client.ExecuteGetTaskAsync<SearchContainer<TvShowBase>>(request).ConfigureAwait(false);
 
             return response.Data;
         }
@@ -160,7 +160,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(withCompanies))
                 request.AddParameter("with_companies", withCompanies);
 
-            IRestResponse<SearchContainer<SearchMovie>> response = await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request);
+            IRestResponse<SearchContainer<SearchMovie>> response = await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request).ConfigureAwait(false);
 
             return response.Data;
         }

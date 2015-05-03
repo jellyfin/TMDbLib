@@ -27,7 +27,7 @@ namespace TMDbLib.Client
             if (dateFormat != null)
                 req.DateFormat = dateFormat;
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

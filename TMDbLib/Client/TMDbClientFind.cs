@@ -30,7 +30,7 @@ namespace TMDbLib.Client
 
             req.AddParameter("external_source", source.GetDescription());
 
-            IRestResponse<FindContainer> resp = await _client.ExecuteGetTaskAsync<FindContainer>(req);
+            IRestResponse<FindContainer> resp = await _client.ExecuteGetTaskAsync<FindContainer>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

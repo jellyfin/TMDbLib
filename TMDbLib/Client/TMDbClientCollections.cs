@@ -35,7 +35,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Collection> resp = await _client.ExecuteGetTaskAsync<Collection>(req);
+            IRestResponse<Collection> resp = await _client.ExecuteGetTaskAsync<Collection>(req).ConfigureAwait(false);
 
             return resp.Data;
         }
@@ -49,7 +49,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

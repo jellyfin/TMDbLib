@@ -25,7 +25,7 @@ namespace TMDbLib.Client
             RestRequest request = new RestRequest("account");
             request.AddParameter("session_id", SessionId);
 
-            IRestResponse<AccountDetails> response = await _client.ExecuteGetTaskAsync<AccountDetails>(request);
+            IRestResponse<AccountDetails> response = await _client.ExecuteGetTaskAsync<AccountDetails>(request).ConfigureAwait(false);
 
             return response.Data;
         }
@@ -50,7 +50,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<List>> response = await _client.ExecuteGetTaskAsync<SearchContainer<List>>(request);
+            IRestResponse<SearchContainer<List>> response = await _client.ExecuteGetTaskAsync<SearchContainer<List>>(request).ConfigureAwait(false);
 
             return response.Data;
         }
@@ -72,7 +72,7 @@ namespace TMDbLib.Client
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { movie_id = movieId, favorite = isFavorite });
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
 
             // status code 1 = "Success" - Returned when adding a movie as favorite for the first time
             // status code 13 = "The item/record was deleted successfully" - When removing an item as favorite, no matter if it exists or not
@@ -97,7 +97,7 @@ namespace TMDbLib.Client
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { movie_id = movieId, movie_watchlist = isOnWatchlist });
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 13 = "The item/record was deleted successfully" - When removing an item from the watchlist, no matter if it exists or not
@@ -168,7 +168,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<SearchMovie>> response =  await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request);
+            IRestResponse<SearchContainer<SearchMovie>> response = await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request).ConfigureAwait(false);
 
             return response.Data;
         }

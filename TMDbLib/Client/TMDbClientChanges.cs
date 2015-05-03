@@ -20,7 +20,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

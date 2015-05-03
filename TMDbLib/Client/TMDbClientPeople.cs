@@ -30,7 +30,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req);
+            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req).ConfigureAwait(false);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (resp.Data != null)
@@ -67,7 +67,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req);
+            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
 
             return resp.Data;
         }
@@ -110,7 +110,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<SearchContainer<PersonResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<PersonResult>>(req);
+            IRestResponse<SearchContainer<PersonResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<PersonResult>>(req).ConfigureAwait(false);
 
             return resp.Data;
         }
@@ -129,7 +129,7 @@ namespace TMDbLib.Client
 
             req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req);
+            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

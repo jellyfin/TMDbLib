@@ -15,7 +15,7 @@ namespace TMDbLib.Client
                 DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
             };
 
-            IRestResponse<Token> response = await _client.ExecuteGetTaskAsync<Token>(request);
+            IRestResponse<Token> response = await _client.ExecuteGetTaskAsync<Token>(request).ConfigureAwait(false);
             Token token = response.Data;
 
             token.AuthenticationCallback = response.Headers.First(h => h.Name.Equals("Authentication-Callback")).Value.ToString();
@@ -30,7 +30,7 @@ namespace TMDbLib.Client
             request.AddParameter("username", username);
             request.AddParameter("password", password);
 
-            IRestResponse response = await _client.ExecuteGetTaskAsync(request);
+            IRestResponse response = await _client.ExecuteGetTaskAsync(request).ConfigureAwait(false);
 
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
@@ -43,7 +43,7 @@ namespace TMDbLib.Client
             RestRequest request = new RestRequest("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
 
-            IRestResponse<UserSession> response = await _client.ExecuteGetTaskAsync<UserSession>(request);
+            IRestResponse<UserSession> response = await _client.ExecuteGetTaskAsync<UserSession>(request).ConfigureAwait(false);
 
             return response.Data;
         }
@@ -67,7 +67,7 @@ namespace TMDbLib.Client
                 DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
             };
 
-            IRestResponse<GuestSession> response = await _client.ExecuteGetTaskAsync<GuestSession>(request);
+            IRestResponse<GuestSession> response = await _client.ExecuteGetTaskAsync<GuestSession>(request).ConfigureAwait(false);
 
             return response.Data;
         }

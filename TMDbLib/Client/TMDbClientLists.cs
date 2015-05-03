@@ -24,7 +24,7 @@ namespace TMDbLib.Client
 
             request.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<List> response = await _client.ExecuteGetTaskAsync<List>(request);
+            IRestResponse<List> response = await _client.ExecuteGetTaskAsync<List>(request).ConfigureAwait(false);
 
             return response.Data;
         }
@@ -46,7 +46,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("listId", listId);
             request.AddParameter("movie_id", movieId);
 
-            IRestResponse<ListStatus> response = await _client.ExecuteGetTaskAsync<ListStatus>(request);
+            IRestResponse<ListStatus> response = await _client.ExecuteGetTaskAsync<ListStatus>(request).ConfigureAwait(false);
 
             return response.Data.ItemPresent;
         }
@@ -81,7 +81,7 @@ namespace TMDbLib.Client
                 request.AddBody(new { name = name, description = description, language = language });
             }
 
-            IRestResponse<ListCreateReply> response = await _client.ExecutePostTaskAsync<ListCreateReply>(request);
+            IRestResponse<ListCreateReply> response = await _client.ExecutePostTaskAsync<ListCreateReply>(request).ConfigureAwait(false);
 
             return response.Data == null ? null : response.Data.ListId;
         }
@@ -103,7 +103,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("listId", listId);
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
 
-            IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(request).ConfigureAwait(false);
 
             // Status code 13 = success
             return response.Data != null && response.Data.StatusCode == 13;
@@ -152,7 +152,7 @@ namespace TMDbLib.Client
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { media_id = movieId });
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
 
             // Status code 8 = "Duplicate entry - The data you tried to submit already exists"
             // Status code 12 = "The item/record was updated successfully"

@@ -11,7 +11,7 @@ namespace TMDbLib.Client
             RestRequest req = new RestRequest("keyword/{keywordId}");
             req.AddUrlSegment("keywordId", keywordId.ToString());
 
-            IRestResponse<Keyword> resp = await _client.ExecuteGetTaskAsync<Keyword>(req);
+            IRestResponse<Keyword> resp = await _client.ExecuteGetTaskAsync<Keyword>(req).ConfigureAwait(false);
 
             return resp.Data;
         }
@@ -32,7 +32,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page);
 
-            IRestResponse<SearchContainer<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieResult>>(req);
+            IRestResponse<SearchContainer<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieResult>>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

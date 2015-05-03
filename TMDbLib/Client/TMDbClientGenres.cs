@@ -20,7 +20,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<GenreContainer> resp =await  _client.ExecuteGetTaskAsync<GenreContainer>(req);
+            IRestResponse<GenreContainer> resp = await _client.ExecuteGetTaskAsync<GenreContainer>(req).ConfigureAwait(false);
 
             if (resp.Data == null)
                 return null;
@@ -46,7 +46,7 @@ namespace TMDbLib.Client
             if (includeAllMovies.HasValue)
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
-            IRestResponse<SearchContainerWithId<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainerWithId<MovieResult>>(req);
+            IRestResponse<SearchContainerWithId<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainerWithId<MovieResult>>(req).ConfigureAwait(false);
 
             return resp.Data;
         }

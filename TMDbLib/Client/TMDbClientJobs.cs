@@ -16,7 +16,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = new RestRequest("job/list");
 
-            IRestResponse<JobContainer> response = await _client.ExecuteGetTaskAsync<JobContainer>(req);
+            IRestResponse<JobContainer> response = await _client.ExecuteGetTaskAsync<JobContainer>(req).ConfigureAwait(false);
 
             if (response == null || response.Data == null)
             {
