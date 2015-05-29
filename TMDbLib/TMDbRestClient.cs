@@ -52,12 +52,26 @@ namespace TMDbLib
 				{
 					throw response.ErrorException;
 				}
-			}
+            }
 
 			if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
 			{
 				throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
-			}
+            }
+
+            if (response.StatusCode.ToString() == "429")
+            {
+                if (MaxRetryCount >= request.Attempts)
+                {
+                    // Retry the call after waiting the configured ammount of time, it gets progressively longer every retry
+                    Thread.Sleep(request.Attempts * RetryWaitTimeInSeconds * 1000);
+                    return this.Execute<T>(request);
+                }
+                else
+                {
+                    throw new UnauthorizedAccessException("Reached Request Rate Limit.");
+                }
+            }
 
 			return response;
 		}
