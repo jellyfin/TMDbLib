@@ -40,6 +40,18 @@ namespace TMDbLib.Client
         public string DefaultCountry { get; set; }
 
         /// <summary>
+        /// The TMDb only allows x amount of requests over a specific time span.
+        /// If you exceed this limit your request will be denied untill the timer resets.
+        /// By default the client will keep waiting for the time to expire and then try again.
+        /// For details about the allowed limits: https://www.themoviedb.org/talk/5317af69c3a3685c4a0003b1?page=1
+        /// </summary>
+        public bool ThrowErrorOnExeedingMaxCalls
+        {
+            get { return _client.ThrowErrorOnExeedingMaxCalls; }
+            set { _client.ThrowErrorOnExeedingMaxCalls = value; }
+        }
+
+        /// <summary>
         /// The maximum number of times a call to TMDb will be retied
         /// </summary>
         /// <remarks>Default is 0</remarks>
