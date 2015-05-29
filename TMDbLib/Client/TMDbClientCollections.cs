@@ -11,7 +11,7 @@ namespace TMDbLib.Client
     {
         public Collection GetCollection(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            return GetCollection(collectionId, null, extraMethods);
+            return GetCollection(collectionId, DefaultLanguage, extraMethods);
         }
 
         public Collection GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
