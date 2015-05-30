@@ -48,34 +48,32 @@ namespace TMDbLib
                 if (MaxRetryCount >= request.Attempts && response.ErrorException.GetType() == typeof(WebException))
                 {
                     WebException webException = (WebException)response.ErrorException;
+
                     // Retry the call after waiting the configured ammount of time, it gets progressively longer every retry
                     Thread.Sleep(request.Attempts * RetryWaitTimeInSeconds * 1000);
-                    return this.Execute<T>(request);
+                    return Execute<T>(request);
                 }
-                else
-                {
-                    throw response.ErrorException;
-                }
+
+                throw response.ErrorException;
             }
 
-            if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
                 throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
             }
 
-            if (response.StatusCode.ToString().Equals("429"))
+            if (response.StatusCode == (HttpStatusCode) 429)
             {
                 if (!ThrowErrorOnExeedingMaxCalls)
                 {
-                    Parameter retryAfterParam =
-                        response.Headers.FirstOrDefault(header => header.Name.Equals("retry-after", StringComparison.OrdinalIgnoreCase));
+                    Parameter retryAfterParam = response.Headers.FirstOrDefault(header => header.Name.Equals("retry-after", StringComparison.OrdinalIgnoreCase));
                     if (retryAfterParam != null)
                     {
                         int retryAfter;
                         if (Int32.TryParse(retryAfterParam.Value.ToString().Trim(), out retryAfter))
                         {
                             Thread.Sleep(retryAfter * 1000);
-                            return this.Execute<T>(request);
+                            return Execute<T>(request);
                         }
                     }
                 }
