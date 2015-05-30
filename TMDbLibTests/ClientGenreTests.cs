@@ -64,7 +64,7 @@ namespace TMDbLibTests
             Assert.IsTrue(moviesAll.Results.All(s => s != null));
 
             Assert.AreEqual(movies.TotalResults, moviesPage2.TotalResults);     // Should be the same, despite the use of 'includeAllMovies' and Italian
-            Assert.IsTrue(moviesAll.TotalResults > movies.TotalResults);
+            Assert.IsTrue(moviesAll.TotalResults >= movies.TotalResults);
         }
     }
 }

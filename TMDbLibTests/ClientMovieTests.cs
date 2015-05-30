@@ -440,7 +440,7 @@ namespace TMDbLibTests
             Assert.AreEqual(1570, item.BelongsToCollection[0].Id);
             Assert.AreEqual("Die Hard Collection", item.BelongsToCollection[0].Name);
             Assert.AreEqual("/5kHVblr87FUScuab1PVSsK692IL.jpg", item.BelongsToCollection[0].BackdropPath);
-            Assert.AreEqual("/nglknikAiEbsF9CW5xV9fC378JH.jpg", item.BelongsToCollection[0].PosterPath);
+            Assert.AreEqual("/dQP1lu4tBtCiAMeCRcuTFpJiM7y.jpg", item.BelongsToCollection[0].PosterPath);
 
             Assert.AreEqual(2, item.Genres.Count);
             Assert.AreEqual(28, item.Genres[0].Id);
