@@ -90,12 +90,13 @@ namespace TMDbLibTests
         public void ClientRateLimitTest()
         {
             const int tomorrowLand = 158852;
+
             TMDbClient client = new TMDbClient(TestConfig.APIKey);
             client.ThrowErrorOnExeedingMaxCalls = true;
 
             for (int i = 0; i < 100; i++)
             {
-                client.GetMovie(tomorrowLand);
+                client.GetMovie(tomorrowLand).Wait();
             }
 
             Assert.Fail();

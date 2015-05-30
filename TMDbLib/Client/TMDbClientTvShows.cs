@@ -23,7 +23,8 @@ namespace TMDbLib.Client
             RestRequest req = new RestRequest("tv/{id}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",
@@ -69,7 +70,8 @@ namespace TMDbLib.Client
         {
             RestRequest req = new RestRequest("tv/" + tvShowListType);
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)
@@ -136,7 +138,8 @@ namespace TMDbLib.Client
             if (dateFormat != null)
                 req.DateFormat = dateFormat;
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);

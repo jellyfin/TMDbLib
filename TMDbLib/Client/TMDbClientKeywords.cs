@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+﻿using System;
 using RestSharp;
 using TMDbLib.Objects.General;
 
@@ -26,7 +27,8 @@ namespace TMDbLib.Client
             RestRequest req = new RestRequest("keyword/{keywordId}/movies");
             req.AddUrlSegment("keywordId", keywordId.ToString());
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)

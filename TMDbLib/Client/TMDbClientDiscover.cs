@@ -42,6 +42,7 @@ namespace TMDbLib.Client
             if (page != 1 && page > 1)
                 request.AddParameter("page", page);
 
+            language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
@@ -114,6 +115,7 @@ namespace TMDbLib.Client
             if (page != 1 && page > 1)
                 request.AddParameter("page", page);
 
+            language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 

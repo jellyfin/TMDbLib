@@ -103,6 +103,10 @@ namespace TMDbLibTests
 
             TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
 
+            Assert.IsNotNull(tvEpisode.Images);
+            Assert.IsNotNull(tvEpisode.Images.Stills);
+            Assert.IsTrue(tvEpisode.Images.Stills.Count > 0);
+
             TestMethodsHelper.TestAllNotNull(_methods, tvEpisode);
         }
 
@@ -116,9 +120,6 @@ namespace TMDbLibTests
             Assert.IsNull(tvEpisode.ProductionCode);
             Assert.AreEqual(1, tvEpisode.SeasonNumber);
             Assert.IsNotNull(tvEpisode.StillPath);
-            Assert.IsNotNull(tvEpisode.Images);
-            Assert.IsNotNull(tvEpisode.Images.Stills);
-            Assert.IsTrue(tvEpisode.Images.Stills.Count > 0);
         }
 
         //[TestMethod]

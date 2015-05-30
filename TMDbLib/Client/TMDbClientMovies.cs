@@ -109,7 +109,8 @@ namespace TMDbLib.Client
 
             if (country != null)
                 request.AddParameter("country", country);
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
             if (page >= 1)

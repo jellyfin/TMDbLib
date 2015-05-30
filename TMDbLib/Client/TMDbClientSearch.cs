@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
+﻿using System;
 using RestSharp;
-using TMDbLib.Objects.General;
+﻿using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 
@@ -14,7 +15,8 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", method);
             req.AddParameter("query", query);
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)
