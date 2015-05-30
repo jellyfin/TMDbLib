@@ -12,7 +12,7 @@ namespace TMDbLib.Client
     {
         public async Task<Collection> GetCollection(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            return await GetCollection(collectionId, null, extraMethods);
+            return await GetCollection(collectionId, DefaultLanguage, extraMethods);
         }
 
         public async Task<Collection> GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)

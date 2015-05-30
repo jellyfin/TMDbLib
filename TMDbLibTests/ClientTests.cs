@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Client;
+using TMDbLib.Objects.Exceptions;
 using TMDbLib.Objects.General;
 
 namespace TMDbLibTests
@@ -82,6 +83,22 @@ namespace TMDbLibTests
 
             TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org");
             clientD.GetConfig();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(RequestLimitExceededException))]
+        public void ClientRateLimitTest()
+        {
+            const int tomorrowLand = 158852;
+            TMDbClient client = new TMDbClient(TestConfig.APIKey);
+            client.ThrowErrorOnExeedingMaxCalls = true;
+
+            for (int i = 0; i < 100; i++)
+            {
+                client.GetMovie(tomorrowLand);
+            }
+
+            Assert.Fail();
         }
     }
 }
