@@ -19,7 +19,8 @@ namespace TMDbLib.Client
             RestRequest req = new RestRequest("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",

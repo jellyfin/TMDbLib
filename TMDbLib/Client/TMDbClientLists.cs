@@ -70,13 +70,15 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("list") { RequestFormat = DataFormat.Json };
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            if (string.IsNullOrWhiteSpace(language))
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
             {
-                request.AddBody(new { name = name, description = description });
+                request.AddBody(new { name = name, description = description, language = language });
+                
             }
             else
             {
-                request.AddBody(new { name = name, description = description, language = language });
+                request.AddBody(new { name = name, description = description });
             }
 
             IRestResponse<ListCreateReply> response = _client.Post<ListCreateReply>(request);
