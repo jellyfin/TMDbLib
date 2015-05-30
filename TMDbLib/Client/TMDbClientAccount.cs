@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using RestSharp;
 using TMDbLib.Objects.Account;
@@ -46,7 +47,8 @@ namespace TMDbLib.Client
             if (page > 1)
                 request.AddParameter("page", page);
 
-            if (!string.IsNullOrWhiteSpace(language))
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
             IRestResponse<SearchContainer<List>> response = _client.Get<SearchContainer<List>>(request);
@@ -164,7 +166,8 @@ namespace TMDbLib.Client
             if (sortOrder != SortOrder.Undefined)
                 request.AddParameter("sort_order", sortOrder.GetDescription());
 
-            if (!string.IsNullOrWhiteSpace(language))
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
             IRestResponse<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);

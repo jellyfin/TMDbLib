@@ -24,7 +24,8 @@ namespace TMDbLib.Client
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",
@@ -87,7 +88,8 @@ namespace TMDbLib.Client
             if (dateFormat != null)
                 req.DateFormat = dateFormat;
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             IRestResponse<T> resp = _client.Get<T>(req);

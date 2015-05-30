@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
@@ -16,7 +17,8 @@ namespace TMDbLib.Client
         {
             RestRequest req = new RestRequest("genre/list");
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             IRestResponse<GenreContainer> resp = _client.Get<GenreContainer>(req);
@@ -37,7 +39,8 @@ namespace TMDbLib.Client
             RestRequest req = new RestRequest("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
 
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)

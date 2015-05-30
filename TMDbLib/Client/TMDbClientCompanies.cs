@@ -39,7 +39,8 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page);
-            if (language != null)
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             IRestResponse<T> resp = _client.Get<T>(req);
