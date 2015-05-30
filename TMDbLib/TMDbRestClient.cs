@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System.Threading.Tasks;
+using RestSharp;
 using System;
 using System.Linq;
 using System.Net;
@@ -62,7 +63,7 @@ namespace TMDbLib
                 throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
             }
 
-            if (response.StatusCode == (HttpStatusCode) 429)
+            if (response.StatusCode == (HttpStatusCode)429)
             {
                 if (!ThrowErrorOnExeedingMaxCalls)
                 {
@@ -84,5 +85,12 @@ namespace TMDbLib
 
             return response;
         }
+
+        public override Task<IRestResponse<T>> ExecuteTaskAsync<T>(IRestRequest request, CancellationToken token)
+        {
+            // TODO: Implement error handling and retry-logic.
+            return base.ExecuteTaskAsync<T>(request, token);
+        }
+
     }
 }
