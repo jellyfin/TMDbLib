@@ -326,26 +326,36 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar);
 
-            // For this test to pass the movie Avatar need to be rated, added to the favorite list and watchlist
+            // Remove the rating, favourite and watchlist
+            if (accountState.Rating.HasValue)
+                // TODO: Enable this method to delete ratings when https://www.themoviedb.org/talk/556b130992514173e0003647 is completed
+                _config.Client.MovieSetRating(Avatar, 0);
+
+            if (accountState.Watchlist)
+                _config.Client.AccountChangeMovieWatchlistStatus(Avatar, false);
+
+            if (accountState.Favorite)
+                _config.Client.AccountChangeMovieFavoriteStatus(Avatar, false);
+
+            // Test that the movie is NOT rated, favourited or on watchlist
+            accountState = _config.Client.GetMovieAccountState(Avatar);
             Assert.AreEqual(Avatar, accountState.Id);
-            Assert.IsNotNull(accountState.Rating);
-            Assert.IsTrue(accountState.Favorite, "Please add Avatar to the users favourites list");
-            Assert.IsTrue(accountState.Watchlist, "Please add Avatar to the users watchlist");
-        }
-
-        [TestMethod]
-        public void TestMoviesAccountStateRatingNotSet()
-        {
-            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            MovieAccountState accountState = _config.Client.GetMovieAccountState(AGoodDayToDieHard);
-
-            // For this test to pass the movie A Good Day To Die Hard need to be NOT rated, and REMOVED from the favorite list and watchlist
-            Assert.AreEqual(AGoodDayToDieHard, accountState.Id);
             Assert.IsNull(accountState.Rating);
-            Assert.IsFalse(accountState.Favorite, "Please remove A Good Day To Die Hard from the users favourites list");
-            Assert.IsFalse(accountState.Watchlist, "Please remove A Good Day To Die Hard from the users watchlist");
-        }
+            Assert.IsFalse(accountState.Watchlist);
+            Assert.IsFalse(accountState.Favorite);
 
+            // Rate, favourite and add the movie to the watchlist
+            _config.Client.MovieSetRating(Avatar, 5);
+            _config.Client.AccountChangeMovieWatchlistStatus(Avatar, true);
+            _config.Client.AccountChangeMovieFavoriteStatus(Avatar, true);
+
+            // Test that the movie IS rated, favourited or on watchlist
+            accountState = _config.Client.GetMovieAccountState(Avatar);
+            Assert.AreEqual(Avatar, accountState.Id);
+            Assert.AreEqual(5, accountState.Rating);
+            Assert.IsTrue(accountState.Watchlist);
+            Assert.IsTrue(accountState.Favorite);
+        }
 
         [TestMethod]
         public void TestMoviesSetRatingBadRating()
