@@ -14,11 +14,12 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientMovieTests
     {
+        private const int Avatar = 19995;
         private const int AGoodDayToDieHard = 47964;
         private const int TheDarkKnightRises = 49026;
+        private const int MadMaxFuryRoad = 76341;
         private const string AGoodDayToDieHardImdb = "tt1606378";
         private const string TheDarkKnightRisesImdb = "tt1345836";
-        private const int Avatar = 19995;
 
         private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
         private TestConfig _config;
@@ -324,34 +325,40 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            MovieAccountState accountState = _config.Client.GetMovieAccountState(Avatar).Result;
+            MovieAccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
 
             // Remove the rating, favourite and watchlist
             if (accountState.Rating.HasValue)
                 // TODO: Enable this method to delete ratings when https://www.themoviedb.org/talk/556b130992514173e0003647 is completed
-                _config.Client.MovieSetRating(Avatar, 0).Wait();
+                _config.Client.MovieSetRating(MadMaxFuryRoad, 0).Wait();
 
             if (accountState.Watchlist)
-                _config.Client.AccountChangeMovieWatchlistStatus(Avatar, false).Wait();
+                _config.Client.AccountChangeMovieWatchlistStatus(MadMaxFuryRoad, false).Wait();
 
             if (accountState.Favorite)
-                _config.Client.AccountChangeMovieFavoriteStatus(Avatar, false).Wait();
+                _config.Client.AccountChangeMovieFavoriteStatus(MadMaxFuryRoad, false).Wait();
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
 
             // Test that the movie is NOT rated, favourited or on watchlist
-            accountState = _config.Client.GetMovieAccountState(Avatar).Result;
-            Assert.AreEqual(Avatar, accountState.Id);
+            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
             Assert.IsNull(accountState.Rating);
             Assert.IsFalse(accountState.Watchlist);
             Assert.IsFalse(accountState.Favorite);
 
             // Rate, favourite and add the movie to the watchlist
-            _config.Client.MovieSetRating(Avatar, 5).Wait();
-            _config.Client.AccountChangeMovieWatchlistStatus(Avatar, true).Wait();
-            _config.Client.AccountChangeMovieFavoriteStatus(Avatar, true).Wait();
+            _config.Client.MovieSetRating(MadMaxFuryRoad, 5).Wait();
+            _config.Client.AccountChangeMovieWatchlistStatus(MadMaxFuryRoad, true).Wait();
+            _config.Client.AccountChangeMovieFavoriteStatus(MadMaxFuryRoad, true).Wait();
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
 
             // Test that the movie IS rated, favourited or on watchlist
-            accountState = _config.Client.GetMovieAccountState(Avatar).Result;
-            Assert.AreEqual(Avatar, accountState.Id);
+            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
             Assert.AreEqual(5, accountState.Rating);
             Assert.IsTrue(accountState.Watchlist);
             Assert.IsTrue(accountState.Favorite);
