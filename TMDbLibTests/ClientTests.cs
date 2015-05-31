@@ -96,7 +96,15 @@ namespace TMDbLibTests
 
             for (int i = 0; i < 100; i++)
             {
-                client.GetMovie(tomorrowLand).Wait();
+                try
+                {
+                    client.GetMovie(tomorrowLand).Wait();
+                }
+                catch (AggregateException ex)
+                {
+                    // Unpack the InnerException
+                    throw ex.InnerException;
+                }
             }
 
             Assert.Fail();
