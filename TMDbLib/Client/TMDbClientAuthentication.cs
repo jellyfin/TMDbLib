@@ -23,14 +23,22 @@ namespace TMDbLib.Client
             return token;
         }
 
-        public async void AuthenticationValidateUserToken(string initialRequestToken, string username, string password)
+        public async Task AuthenticationValidateUserToken(string initialRequestToken, string username, string password)
         {
             RestRequest request = new RestRequest("authentication/token/validate_with_login");
             request.AddParameter("request_token", initialRequestToken);
             request.AddParameter("username", username);
             request.AddParameter("password", password);
 
-            IRestResponse response = await _client.ExecuteGetTaskAsync(request).ConfigureAwait(false);
+            IRestResponse response;
+            try
+            {
+                response = await _client.ExecuteGetTaskAsync(request).ConfigureAwait(false);
+            }
+            catch (AggregateException ex)
+            {
+                throw ex.InnerException;
+            }
 
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {

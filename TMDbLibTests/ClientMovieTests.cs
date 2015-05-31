@@ -401,7 +401,7 @@ namespace TMDbLibTests
             Assert.IsTrue(_config.Client.MovieSetRating(Avatar, newRating).Result);
 
             // Allow TMDb to not cache our data
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             // Check if it worked
             Assert.AreEqual(newRating, _config.Client.GetMovieAccountState(Avatar).Result.Rating);
@@ -410,7 +410,7 @@ namespace TMDbLibTests
             Assert.IsTrue(_config.Client.MovieSetRating(Avatar, originalRating).Result);
 
             // Allow TMDb to not cache our data
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             // Check if it worked
             Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(Avatar).Result.Rating);

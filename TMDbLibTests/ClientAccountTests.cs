@@ -34,7 +34,14 @@ namespace TMDbLibTests
         public void TestAccountGetDetailsGuestAccount()
         {
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
-            AccountDetails account = _config.Client.AccountGetDetails().Result;
+            try
+            {
+                _config.Client.AccountGetDetails().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                throw ex.InnerException;
+            }
 
             // Should always throw exception
             Assert.Fail();

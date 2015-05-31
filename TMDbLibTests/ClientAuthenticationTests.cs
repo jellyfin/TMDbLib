@@ -5,9 +5,9 @@ using TMDbLib.Objects.Authentication;
 
 namespace TMDbLibTests
 {
-	/// <summary>
-	/// https://www.themoviedb.org/documentation/api/sessions
-	/// </summary>
+    /// <summary>
+    /// https://www.themoviedb.org/documentation/api/sessions
+    /// </summary>
     [TestClass]
     public class ClientAuthenticationTests
     {
@@ -21,8 +21,8 @@ namespace TMDbLibTests
         {
             _config = new TestConfig();
 
-	        if (String.IsNullOrWhiteSpace(_config.Username) || String.IsNullOrWhiteSpace(_config.Password))
-		        throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
+            if (String.IsNullOrWhiteSpace(_config.Username) || String.IsNullOrWhiteSpace(_config.Password))
+                throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
         }
 
         [TestMethod]
@@ -59,11 +59,19 @@ namespace TMDbLibTests
         [ExpectedException(typeof(UnauthorizedAccessException))]
         public void TestAuthenticationUserAuthenticatedSessionInvalidToken()
         {
-	        const string requestToken = "bla";
-	        _config.Client.AuthenticationGetUserSession(requestToken);
+            const string requestToken = "bla";
 
-	        // Should always throw exception
-	        Assert.Fail();
+            try
+            {
+                _config.Client.AuthenticationGetUserSession(requestToken).Wait();
+            }
+            catch (AggregateException ex)
+            {
+                throw ex.InnerException;
+            }
+
+            // Should always throw exception
+            Assert.Fail();
         }
 
         /// <remarks>
@@ -74,7 +82,7 @@ namespace TMDbLibTests
         {
             Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
 
-	        _config.Client.AuthenticationValidateUserToken(token.RequestToken, _config.Username, _config.Password);
+            _config.Client.AuthenticationValidateUserToken(token.RequestToken, _config.Username, _config.Password);
         }
 
         [TestMethod]
@@ -83,10 +91,17 @@ namespace TMDbLibTests
         {
             Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
 
-	        _config.Client.AuthenticationValidateUserToken(token.RequestToken, "bla", "bla");
+            try
+            {
+                _config.Client.AuthenticationValidateUserToken(token.RequestToken, "bla", "bla").Wait();
+            }
+            catch (AggregateException ex)
+            {
+                throw ex.InnerException;
+            }
 
-	        // Should always throw exception
-	        Assert.Fail();
+            // Should always throw exception
+            Assert.Fail();
         }
 
         /// <remarks>
@@ -97,9 +112,9 @@ namespace TMDbLibTests
         {
             UserSession session = _config.Client.AuthenticationGetUserSession(_config.Username, _config.Password).Result;
 
-	        Assert.IsNotNull(session);
-	        Assert.IsTrue(session.Success);
-	        Assert.IsNotNull(session.SessionId);
+            Assert.IsNotNull(session);
+            Assert.IsTrue(session.Success);
+            Assert.IsNotNull(session.SessionId);
         }
 
         [TestMethod]
@@ -107,7 +122,14 @@ namespace TMDbLibTests
         public void TestAuthenticationUserAuthenticatedSessionOldToken()
         {
             const string requestToken = "5f3a62c0d7977319e3d14adf1a2064c0c0938bcf";
-            _config.Client.AuthenticationGetUserSession(requestToken);
+            try
+            {
+                _config.Client.AuthenticationGetUserSession(requestToken).Wait();
+            }
+            catch (AggregateException ex)
+            {
+                throw ex.InnerException;
+            }
 
             // Should always throw exception
             Assert.Fail();
