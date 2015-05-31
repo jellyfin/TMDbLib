@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
@@ -82,10 +83,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasContentRatings()
         {
-            var contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad);
+            ResultContainer<ContentRating> contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad).Result;
             Assert.IsNotNull(contentRatings);
             Assert.AreEqual(BreakingBad, contentRatings.Id);
-            ContentRating contentRating = contentRatings.Result.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("US"));
+
+            ContentRating contentRating = contentRatings.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("US"));
             Assert.IsNotNull(contentRating);
             Assert.AreEqual("TV-MA", contentRating.Rating);
         }
@@ -93,10 +95,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasAlternativeTitles()
         {
-            var alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad);
+            ResultContainer<AlternativeTitle> alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad).Result;
             Assert.IsNotNull(alternativeTitles);
             Assert.AreEqual(BreakingBad, alternativeTitles.Id);
-            AlternativeTitle alternativeTitle = alternativeTitles.Result.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
+
+            AlternativeTitle alternativeTitle = alternativeTitles.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
             Assert.IsNotNull(alternativeTitle);
             Assert.AreEqual("Totál szívás", alternativeTitle.Title);
         }
@@ -104,10 +107,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasKeywords()
         {
-            var keywords = _config.Client.GetTvShowKeywords(BreakingBad);
+            ResultContainer<Keyword> keywords = _config.Client.GetTvShowKeywords(BreakingBad).Result;
             Assert.IsNotNull(keywords);
             Assert.AreEqual(BreakingBad, keywords.Id);
-            Keyword keyword = keywords.Result.Results.FirstOrDefault(r => r.Id == 41525);
+
+            Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id == 41525);
             Assert.IsNotNull(keyword);
             Assert.AreEqual("high school teacher", keyword.Name);
         }
