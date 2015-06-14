@@ -225,8 +225,14 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.Videos);
             Assert.IsNotNull(tvShow.Videos.Results);
             Assert.IsNotNull(tvShow.Videos.Results[0]);
-            Assert.IsNotNull(tvShow.Videos.Results[0].Name);
+
+            Assert.AreEqual(tvShow.Videos.Results[0].Id, "552e1b53c3a3686c4e00207b");
+            Assert.AreEqual(tvShow.Videos.Results[0].Iso_639_1, "en");
+            Assert.AreEqual(tvShow.Videos.Results[0].Key, "lGTOru7pwL8");
             Assert.AreEqual(tvShow.Videos.Results[0].Name, "Friends - Opening");
+            Assert.AreEqual(tvShow.Videos.Results[0].Site, "YouTube");
+            Assert.AreEqual(tvShow.Videos.Results[0].Size, 360);
+            Assert.AreEqual(tvShow.Videos.Results[0].Type, "Opening Credits");
         }
 
         [TestMethod]
