@@ -113,6 +113,25 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvShowSeparateExtrasVideos()
+        {
+            ResultContainer<Video> videos = _config.Client.GetTvShowVideos(BreakingBad);
+            Assert.IsNotNull(videos);
+            Assert.AreEqual(BreakingBad, videos.Id);
+
+            Video video = videos.Results.FirstOrDefault(r => r.Id == "5335e299c3a368265000001d");
+            Assert.IsNotNull(video);
+
+            Assert.AreEqual("5335e299c3a368265000001d", video.Id);
+            Assert.AreEqual("en", video.Iso_639_1);
+            Assert.AreEqual("6OdIbPMU720", video.Key);
+            Assert.AreEqual("Opening Credits (Short)", video.Name);
+            Assert.AreEqual("YouTube", video.Site);
+            Assert.AreEqual(480, video.Size);
+            Assert.AreEqual("Opening Credits", video.Type);
+        }
+
+        [TestMethod]
         public void TestTvShowSeparateExtrasImages()
         {
             ImagesWithId images = _config.Client.GetTvShowImages(BreakingBad);
