@@ -115,6 +115,20 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvShowSeparateExtrasTranslations()
+        {
+            TranslationsContainer translations = _config.Client.GetTvShowTranslations(BreakingBad);
+            Assert.IsNotNull(translations);
+            Assert.AreEqual(BreakingBad, translations.Id);
+
+            Translation translation = translations.Translations.FirstOrDefault(r => r.Iso_639_1 == "hr");
+            Assert.IsNotNull(translation);
+            Assert.AreEqual("Croatian", translation.EnglishName);
+            Assert.AreEqual("hr", translation.Iso_639_1);
+            Assert.AreEqual("Hrvatski", translation.Name);
+        }
+
+        [TestMethod]
         public void TestTvShowSeparateExtrasImages()
         {
             ImagesWithId images = _config.Client.GetTvShowImages(BreakingBad);

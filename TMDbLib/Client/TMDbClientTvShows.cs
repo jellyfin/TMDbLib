@@ -137,9 +137,9 @@ namespace TMDbLib.Client
             return GetTvShowMethod<ResultContainer<Keyword>>(id, TvShowMethods.Keywords);
         }
 
-        public ResultContainer<Translation> GetTvShowTranslations(int id)
+        public TranslationsContainer GetTvShowTranslations(int id)
         {
-            return GetTvShowMethod<ResultContainer<Translation>>(id, TvShowMethods.Translations);
+            return GetTvShowMethod<TranslationsContainer>(id, TvShowMethods.Translations);
         }
 
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
