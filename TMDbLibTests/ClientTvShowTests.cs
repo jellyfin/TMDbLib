@@ -113,6 +113,25 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvShowSeparateExtrasVideos()
+        {
+            ResultContainer<Video> videos = _config.Client.GetTvShowVideos(BreakingBad);
+            Assert.IsNotNull(videos);
+            Assert.AreEqual(BreakingBad, videos.Id);
+
+            Video video = videos.Results.FirstOrDefault(r => r.Id == "5335e299c3a368265000001d");
+            Assert.IsNotNull(video);
+
+            Assert.AreEqual("5335e299c3a368265000001d", video.Id);
+            Assert.AreEqual("en", video.Iso_639_1);
+            Assert.AreEqual("6OdIbPMU720", video.Key);
+            Assert.AreEqual("Opening Credits (Short)", video.Name);
+            Assert.AreEqual("YouTube", video.Site);
+            Assert.AreEqual(480, video.Size);
+            Assert.AreEqual("Opening Credits", video.Type);
+        }
+
+        [TestMethod]
         public void TestTvShowSeparateExtrasImages()
         {
             ImagesWithId images = _config.Client.GetTvShowImages(BreakingBad);
@@ -225,8 +244,14 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.Videos);
             Assert.IsNotNull(tvShow.Videos.Results);
             Assert.IsNotNull(tvShow.Videos.Results[0]);
-            Assert.IsNotNull(tvShow.Videos.Results[0].Name);
-            Assert.AreEqual(tvShow.Videos.Results[0].Name, "Friends - Opening");
+
+            Assert.AreEqual("552e1b53c3a3686c4e00207b", tvShow.Videos.Results[0].Id);
+            Assert.AreEqual("en", tvShow.Videos.Results[0].Iso_639_1);
+            Assert.AreEqual("lGTOru7pwL8", tvShow.Videos.Results[0].Key);
+            Assert.AreEqual("Friends - Opening", tvShow.Videos.Results[0].Name);
+            Assert.AreEqual("YouTube", tvShow.Videos.Results[0].Site);
+            Assert.AreEqual(360, tvShow.Videos.Results[0].Size);
+            Assert.AreEqual("Opening Credits", tvShow.Videos.Results[0].Type);
         }
 
         [TestMethod]
