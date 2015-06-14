@@ -3,8 +3,10 @@ using System.Globalization;
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLib.Client
 {
@@ -126,6 +128,11 @@ namespace TMDbLib.Client
         public ResultContainer<Keyword> GetTvShowKeywords(int id)
         {
             return GetTvShowMethod<ResultContainer<Keyword>>(id, TvShowMethods.Keywords);
+        }
+
+        public ResultContainer<Translation> GetTvShowTranslations(int id)
+        {
+            return GetTvShowMethod<ResultContainer<Translation>>(id, TvShowMethods.Translations);
         }
 
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
