@@ -40,6 +40,13 @@ namespace TMDbLib.Client
 
             IRestResponse<TvShow> response = _client.Get<TvShow>(req);
 
+            // Patch up response with id's
+            if (response.Data != null)
+            {
+                if (response.Data.Translations != null)
+                    response.Data.Translations.Id = id;
+            }
+
             return response.Data;
         }
 

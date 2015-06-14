@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
 {
@@ -232,19 +234,18 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowTranslations()
         {
-            // TODO:
-            //TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Translations);
-            //Assert.IsNotNull(tvShow.Videos);
-            //Assert.IsNotNull(tvShow.Videos.Results);
-            //Assert.IsNotNull(tvShow.Videos.Results[0]);
+            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Translations);
 
-            //Assert.AreEqual("552e1b53c3a3686c4e00207b", tvShow.Videos.Results[0].Id);
-            //Assert.AreEqual("en", tvShow.Videos.Results[0].Iso_639_1);
-            //Assert.AreEqual("lGTOru7pwL8", tvShow.Videos.Results[0].Key);
-            //Assert.AreEqual("Friends - Opening", tvShow.Videos.Results[0].Name);
-            //Assert.AreEqual("YouTube", tvShow.Videos.Results[0].Site);
-            //Assert.AreEqual(360, tvShow.Videos.Results[0].Size);
-            //Assert.AreEqual("Opening Credits", tvShow.Videos.Results[0].Type);
+            Assert.AreEqual(1668, tvShow.Translations.Id);
+            Assert.IsNotNull(tvShow.Translations);
+            Assert.IsNotNull(tvShow.Translations.Translations);
+
+            Translation translation = tvShow.Translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
+            Assert.IsNotNull(translation);
+
+            Assert.AreEqual("Croatian", translation.EnglishName);
+            Assert.AreEqual("hr", translation.Iso_639_1);
+            Assert.AreEqual("Hrvatski", translation.Name);
         }
 
         [TestMethod]
