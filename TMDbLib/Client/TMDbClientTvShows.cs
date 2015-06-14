@@ -3,8 +3,10 @@ using System.Globalization;
 using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLib.Client
 {
@@ -37,6 +39,14 @@ namespace TMDbLib.Client
                 req.AddParameter("append_to_response", appends);
 
             IRestResponse<TvShow> response = _client.Get<TvShow>(req);
+
+            // No data to patch up so return
+            if (response.Data == null)
+                return null;
+
+            // Patch up data, so that the end user won't notice that we share objects between request-types.
+            if (response.Data.Translations != null)
+                response.Data.Translations.Id = id;
 
             return response.Data;
         }
@@ -131,6 +141,11 @@ namespace TMDbLib.Client
         public ResultContainer<Video> GetTvShowVideos(int id)
         {
             return GetTvShowMethod<ResultContainer<Video>>(id, TvShowMethods.Videos);
+        }
+
+        public TranslationsContainer GetTvShowTranslations(int id)
+        {
+            return GetTvShowMethod<TranslationsContainer>(id, TvShowMethods.Translations);
         }
 
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()

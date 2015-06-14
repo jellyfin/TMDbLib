@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
 {
@@ -110,6 +112,20 @@ namespace TMDbLibTests
             Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id == 41525);
             Assert.IsNotNull(keyword);
             Assert.AreEqual("high school teacher", keyword.Name);
+        }
+
+        [TestMethod]
+        public void TestTvShowSeparateExtrasTranslations()
+        {
+            TranslationsContainer translations = _config.Client.GetTvShowTranslations(BreakingBad);
+            Assert.IsNotNull(translations);
+            Assert.AreEqual(BreakingBad, translations.Id);
+
+            Translation translation = translations.Translations.FirstOrDefault(r => r.Iso_639_1 == "hr");
+            Assert.IsNotNull(translation);
+            Assert.AreEqual("Croatian", translation.EnglishName);
+            Assert.AreEqual("hr", translation.Iso_639_1);
+            Assert.AreEqual("Hrvatski", translation.Name);
         }
 
         [TestMethod]
@@ -252,6 +268,23 @@ namespace TMDbLibTests
             Assert.AreEqual("YouTube", tvShow.Videos.Results[0].Site);
             Assert.AreEqual(360, tvShow.Videos.Results[0].Size);
             Assert.AreEqual("Opening Credits", tvShow.Videos.Results[0].Type);
+        }
+
+        [TestMethod]
+        public void TestTvShowTranslations()
+        {
+            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Translations);
+
+            Assert.AreEqual(1668, tvShow.Translations.Id);
+            Assert.IsNotNull(tvShow.Translations);
+            Assert.IsNotNull(tvShow.Translations.Translations);
+
+            Translation translation = tvShow.Translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
+            Assert.IsNotNull(translation);
+
+            Assert.AreEqual("Croatian", translation.EnglishName);
+            Assert.AreEqual("hr", translation.Iso_639_1);
+            Assert.AreEqual("Hrvatski", translation.Name);
         }
 
         [TestMethod]

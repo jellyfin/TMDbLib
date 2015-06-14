@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.TvShows
@@ -40,5 +41,6 @@ namespace TMDbLib.Objects.TvShows
         public ResultContainer<AlternativeTitle> AlternativeTitles { get; set; }
         public ResultContainer<Keyword> Keywords { get; set; }
         public ResultContainer<TvShow> Similar { get; set; }
+        public TranslationsContainer Translations { get; set; }
     }
 }

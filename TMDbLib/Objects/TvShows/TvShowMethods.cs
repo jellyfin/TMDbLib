@@ -24,5 +24,7 @@ namespace TMDbLib.Objects.TvShows
         Similar = 64,
         [Description("videos")]
         Videos = 128,
+        [Description("translations")]
+        Translations = 256,
     }
 }
