@@ -13,6 +13,7 @@ namespace TMDbLibTests
         private const int Avatar = 19995;
         private const int Terminator = 218;
         private const int EvanAlmighty = 2698;
+        private const int MadMaxFuryRoad = 76341;
         private const string TestListId = "528349d419c2954bd21ca0a8";
         private TestConfig _config;
 
@@ -61,15 +62,21 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestListIsMoviePresentSuccess()
+        public void TestListIsMoviePresent()
         {
-            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, Avatar));
-        }
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
-        [TestMethod]
-        public void TestListIsMoviePresentFailure()
-        {
-            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, Terminator));
+            // Clear list
+            Assert.IsTrue(_config.Client.ListClear(TestListId));
+
+            // Verify Avatar is not present
+            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, Avatar));
+
+            // Add Avatar
+            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, Avatar));
+
+            // Verify Avatar is present
+            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, Avatar));
         }
 
         [TestMethod]
@@ -78,6 +85,7 @@ namespace TMDbLibTests
             const string listName = "Test List 123";
 
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
             string newListId = _config.Client.ListCreate(listName);
             Assert.IsFalse(string.IsNullOrWhiteSpace(newListId));
 
@@ -97,6 +105,7 @@ namespace TMDbLibTests
         public void TestListDeleteFailure()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
             // Try removing a list with an incorrect id
             Assert.IsFalse(_config.Client.ListDelete("bla"));
         }
@@ -105,6 +114,7 @@ namespace TMDbLibTests
         public void TestListAddAndRemoveMovie()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
             // Add a new movie to the list
             Assert.IsTrue(_config.Client.ListAddMovie(TestListId, EvanAlmighty));
 
@@ -121,6 +131,26 @@ namespace TMDbLibTests
             // Get list and check if the item was removed
             List listAfterRemove = _config.Client.GetList(TestListId);
             Assert.IsFalse(listAfterRemove.Items.Any(m => m.Id == EvanAlmighty));
+        }
+
+        [TestMethod]
+        public void TestListClear()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Add a new movie to the list
+            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, MadMaxFuryRoad));
+
+            // Get list and check if the item was added
+            List listAfterAdd = _config.Client.GetList(TestListId);
+            Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == MadMaxFuryRoad));
+
+            // Clear the list
+            Assert.IsTrue(_config.Client.ListClear(TestListId));
+
+            // Get list and check that all items were removed
+            List listAfterRemove = _config.Client.GetList(TestListId);
+            Assert.IsFalse(listAfterRemove.Items.Any());
         }
     }
 }
