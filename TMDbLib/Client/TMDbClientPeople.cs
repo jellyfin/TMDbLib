@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using RestSharp;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
-using TMDbLib.Objects.General;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.People.Credits;
 

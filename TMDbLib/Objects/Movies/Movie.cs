@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Reviews;
-using TMDbLib.Objects.TvShows;
 
 namespace TMDbLib.Objects.Movies
 {

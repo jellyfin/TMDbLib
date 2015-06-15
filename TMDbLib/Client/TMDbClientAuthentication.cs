@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using RestSharp;
 using TMDbLib.Objects.Authentication;
 
@@ -31,7 +32,7 @@ namespace TMDbLib.Client
 
 	        IRestResponse response = _client.Get(request);
 
-	        if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+	        if (response.StatusCode == HttpStatusCode.Unauthorized)
 	        {
 		        throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
 	        }

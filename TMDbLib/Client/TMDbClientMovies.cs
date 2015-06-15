@@ -8,7 +8,6 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
-using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.Movies.Credits;
 
