@@ -193,6 +193,26 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestAccountGetRatedTvEpisodes()
+        {
+            // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowEpisodes(i));
+            SearchTvEpisode tvEpisode = _config.Client.AccountGetRatedTvShowEpisodes().Results[0];
+            
+            // Requires that you have rated at least one movie else this test will fail
+            Assert.IsTrue(tvEpisode.Id > 0);
+            Assert.IsTrue(tvEpisode.ShowId > 0);
+            Assert.IsTrue(tvEpisode.EpisodeNumber > 0);
+            Assert.IsTrue(tvEpisode.SeasonNumber > 0);
+            Assert.IsNotNull(tvEpisode.AirDate);
+            Assert.IsNotNull(tvEpisode.StillPath);
+            Assert.IsTrue(tvEpisode.VoteCount > 0);
+            Assert.IsTrue(tvEpisode.VoteAverage > 0);
+            Assert.IsTrue(tvEpisode.Rating > 0);
+        }
+
+        [TestMethod]
         public void TestAccountChangeTvFavoriteStatus()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);

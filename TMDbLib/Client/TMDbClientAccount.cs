@@ -192,6 +192,20 @@ namespace TMDbLib.Client
             return GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv);
         }
 
+        /// <summary>
+        /// Get a list of all the tv show episodes rated by the current user
+        /// </summary>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public SearchContainer<SearchTvEpisode> AccountGetRatedTvShowEpisodes(
+            int page = 1,
+            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            SortOrder sortOrder = SortOrder.Undefined,
+            string language = null)
+        {
+            return GetAccountList<SearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes);
+        }
+
         private SearchContainer<T> GetAccountList<T>(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
         {
             RequireSessionId(SessionType.UserSession);
@@ -229,6 +243,8 @@ namespace TMDbLib.Client
             RatedMovies,
             [Description("rated/tv")]
             RatedTv,
+            [Description("rated/tv/episodes")]
+            RatedTvEpisodes,
             [Description("watchlist/movies")]
             MovieWatchlist,
             [Description("watchlist/tv")]
