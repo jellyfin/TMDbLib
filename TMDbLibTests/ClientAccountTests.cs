@@ -53,6 +53,10 @@ namespace TMDbLibTests
             Assert.AreEqual("TMDbTestAccount", account.Username);
             Assert.AreEqual("BE", account.Iso_3166_1);
             Assert.AreEqual("en", account.Iso_639_1);
+
+            Assert.IsNotNull(account.Avatar);
+            Assert.IsNotNull(account.Avatar.Gravatar);
+            Assert.AreEqual("7cf5357dbc2014cbd616257c358ea0a1", account.Avatar.Gravatar.Hash);
         }
 
         [TestMethod]
