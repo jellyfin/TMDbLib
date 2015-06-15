@@ -62,15 +62,21 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestListIsMoviePresentSuccess()
+        public void TestListIsMoviePresent()
         {
-            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, Avatar));
-        }
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
-        [TestMethod]
-        public void TestListIsMoviePresentFailure()
-        {
-            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, Terminator));
+            // Clear list
+            Assert.IsTrue(_config.Client.ListClear(TestListId));
+
+            // Verify Avatar is not present
+            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, Avatar));
+
+            // Add Avatar
+            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, Avatar));
+
+            // Verify Avatar is present
+            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, Avatar));
         }
 
         [TestMethod]
@@ -79,6 +85,7 @@ namespace TMDbLibTests
             const string listName = "Test List 123";
 
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
             string newListId = _config.Client.ListCreate(listName);
             Assert.IsFalse(string.IsNullOrWhiteSpace(newListId));
 
