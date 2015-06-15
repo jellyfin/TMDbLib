@@ -46,7 +46,7 @@ namespace TMDbLib.Objects.Movies
         public KeywordsContainer Keywords { get; set; }
         public Trailers Trailers { get; set; }
         public TranslationsContainer Translations { get; set; }
-        public SearchContainer<MovieResult> SimilarMovies { get; set; }
+        public SearchContainer<MovieResult> Similar { get; set; }
         public SearchContainer<Review> Reviews { get; set; }
         public SearchContainer<ListResult> Lists { get; set; }
         public List<Change> Changes { get; set; }

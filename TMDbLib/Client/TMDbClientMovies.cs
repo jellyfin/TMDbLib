@@ -169,14 +169,26 @@ namespace TMDbLib.Client
             return GetMovieMethod<TranslationsContainer>(movieId, MovieMethods.Translations);
         }
 
+        [Obsolete]
         public SearchContainer<MovieResult> GetMovieSimilarMovies(int movieId, int page = 0)
         {
-            return GetMovieSimilarMovies(movieId, DefaultLanguage, page);
+            return GetMovieSimilar(movieId, DefaultLanguage, page);
         }
 
+        [Obsolete]
         public SearchContainer<MovieResult> GetMovieSimilarMovies(int movieId, string language, int page = 0)
         {
-            return GetMovieMethod<SearchContainer<MovieResult>>(movieId, MovieMethods.SimilarMovies, page: page, language: language, dateFormat: "yyyy-MM-dd");
+            return GetMovieSimilar(movieId, language, page);
+        }
+
+        public SearchContainer<MovieResult> GetMovieSimilar(int movieId, int page = 0)
+        {
+            return GetMovieSimilar(movieId, DefaultLanguage, page);
+        }
+
+        public SearchContainer<MovieResult> GetMovieSimilar(int movieId, string language, int page = 0)
+        {
+            return GetMovieMethod<SearchContainer<MovieResult>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd");
         }
 
         public SearchContainer<Review> GetMovieReviews(int movieId, int page = 0)

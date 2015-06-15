@@ -22,8 +22,8 @@ namespace TMDbLib.Objects.Movies
         Trailers = 32,
         [Description("translations")]
         Translations = 64,
-        [Description("similar_movies")]
-        SimilarMovies = 128,
+        [Description("similar")]
+        Similar = 128,
         [Description("reviews")]
         Reviews = 256,
         [Description("lists")]

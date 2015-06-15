@@ -47,7 +47,7 @@ namespace TMDbLibTests
             _methods[MovieMethods.Releases] = movie => movie.Releases;
             _methods[MovieMethods.Trailers] = movie => movie.Trailers;
             _methods[MovieMethods.Translations] = movie => movie.Translations;
-            _methods[MovieMethods.SimilarMovies] = movie => movie.SimilarMovies;
+            _methods[MovieMethods.Similar] = movie => movie.Similar;
             _methods[MovieMethods.Reviews] = movie => movie.Reviews;
             _methods[MovieMethods.Lists] = movie => movie.Lists;
             _methods[MovieMethods.Changes] = movie => movie.Changes;
@@ -83,7 +83,7 @@ namespace TMDbLibTests
         {
             Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
             tmpMethods.Remove(MovieMethods.Changes);
-            tmpMethods.Remove(MovieMethods.SimilarMovies);      // See https://github.com/LordMike/TMDbLib/issues/19
+            tmpMethods.Remove(MovieMethods.Similar);      // See https://github.com/LordMike/TMDbLib/issues/19
 
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
@@ -206,10 +206,10 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieSimilarMovies()
         {
-            SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard);
+            SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilar(AGoodDayToDieHard);
             Assert.IsNotNull(resp);
 
-            SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilarMovies(AGoodDayToDieHard, language: "de");
+            SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilar(AGoodDayToDieHard, language: "de");
             Assert.IsNotNull(respGerman);
 
             Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
