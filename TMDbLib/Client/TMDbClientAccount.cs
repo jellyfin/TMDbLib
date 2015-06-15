@@ -117,7 +117,21 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
+            return GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
+        }
+
+        /// <summary>
+        /// Get a list of all the tv shows marked as favorite by the current user
+        /// </summary>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public SearchContainer<SearchTv> AccountGetFavoriteTv(
+            int page = 1,
+            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            SortOrder sortOrder = SortOrder.Undefined,
+            string language = null)
+        {
+            return GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv);
         }
 
         /// <summary>
@@ -131,7 +145,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
+            return GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
         }
 
         /// <summary>
@@ -145,10 +159,10 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
+            return GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
         }
 
-        private SearchContainer<SearchMovie> GetAccountList(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
+        private SearchContainer<T> GetAccountList<T>(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -170,15 +184,17 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
+            IRestResponse<SearchContainer<T>> response = _client.Get<SearchContainer<T>>(request);
 
             return response.Data;
         }
 
         private enum AccountListsMethods
         {
-            [Description("favorite_movies")]
+            [Description("favorite/movies")]
             FavoriteMovies,
+            [Description("favorite/tv")]
+            FavoriteTv,
             [Description("rated_movies")]
             RatedMovies,
             [Description("movie_watchlist")]

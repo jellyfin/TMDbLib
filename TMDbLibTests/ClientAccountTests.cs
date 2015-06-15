@@ -96,6 +96,25 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestAccountGetFavoriteTv()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteTv(i));
+            SearchTv movie = _config.Client.AccountGetFavoriteTv().Results[0];
+
+            // Requires that you have marked at least one movie as favorite else this test will fail
+            Assert.IsTrue(movie.Id > 0);
+            Assert.IsNotNull(movie.Name);
+            Assert.IsNotNull(movie.PosterPath);
+            Assert.IsNotNull(movie.BackdropPath);
+            Assert.IsNotNull(movie.OriginalName);
+            Assert.IsNotNull(movie.FirstAirDate);
+            Assert.IsTrue(movie.VoteCount > 0);
+            Assert.IsTrue(movie.VoteAverage > 0);
+            Assert.IsTrue(movie.Popularity > 0);
+        }
+
+        [TestMethod]
         public void TestAccountGetMovieWatchlist()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
