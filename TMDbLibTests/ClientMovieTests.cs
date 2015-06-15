@@ -7,7 +7,9 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using Credits = TMDbLib.Objects.Movies.Credits;
 
 namespace TMDbLibTests
 {
@@ -45,7 +47,7 @@ namespace TMDbLibTests
             _methods[MovieMethods.Images] = movie => movie.Images;
             _methods[MovieMethods.Keywords] = movie => movie.Keywords;
             _methods[MovieMethods.Releases] = movie => movie.Releases;
-            _methods[MovieMethods.Trailers] = movie => movie.Trailers;
+            _methods[MovieMethods.Videos] = movie => movie.Videos;
             _methods[MovieMethods.Translations] = movie => movie.Translations;
             _methods[MovieMethods.SimilarMovies] = movie => movie.SimilarMovies;
             _methods[MovieMethods.Reviews] = movie => movie.Reviews;
@@ -188,11 +190,24 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestMoviesGetMovieTrailers()
+        public void TestMoviesGetMovieVideos()
         {
-            //GetMovieTrailers(int id)
-            Trailers resp = _config.Client.GetMovieTrailers(AGoodDayToDieHard);
+            ResultContainer<Video> resp = _config.Client.GetMovieVideos(AGoodDayToDieHard);
             Assert.IsNotNull(resp);
+
+            Assert.IsNotNull(resp);
+            Assert.IsNotNull(resp.Results);
+
+            Video video = resp.Results[0];
+            Assert.IsNotNull(video);
+
+            Assert.AreEqual("533ec6a7c3a368544800556f", video.Id);
+            Assert.AreEqual("en", video.Iso_639_1);
+            Assert.AreEqual("7EgVRvG2mM0", video.Key);
+            Assert.AreEqual("A Good Day To Die Hard Official Trailer", video.Name);
+            Assert.AreEqual("YouTube", video.Site);
+            Assert.AreEqual(720, video.Size);
+            Assert.AreEqual("Trailer", video.Type);
         }
 
         [TestMethod]

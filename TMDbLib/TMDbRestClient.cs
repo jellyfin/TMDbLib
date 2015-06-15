@@ -1,8 +1,8 @@
-﻿using RestSharp;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using RestSharp;
 using TMDbLib.Objects.Exceptions;
 
 namespace TMDbLib

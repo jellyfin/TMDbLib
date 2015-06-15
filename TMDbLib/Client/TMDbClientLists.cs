@@ -1,8 +1,8 @@
 ﻿using System;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
-using TMDbLib.Objects.Authentication;
 
 namespace TMDbLib.Client
 {
