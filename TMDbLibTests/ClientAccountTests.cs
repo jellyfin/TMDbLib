@@ -102,26 +102,26 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteTv(i));
-            SearchTv movie = _config.Client.AccountGetFavoriteTv().Results[0];
+            SearchTv tvShow = _config.Client.AccountGetFavoriteTv().Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
-            Assert.IsTrue(movie.Id > 0);
-            Assert.IsNotNull(movie.Name);
-            Assert.IsNotNull(movie.PosterPath);
-            Assert.IsNotNull(movie.BackdropPath);
-            Assert.IsNotNull(movie.OriginalName);
-            Assert.IsNotNull(movie.FirstAirDate);
-            Assert.IsTrue(movie.VoteCount > 0);
-            Assert.IsTrue(movie.VoteAverage > 0);
-            Assert.IsTrue(movie.Popularity > 0);
+            Assert.IsTrue(tvShow.Id > 0);
+            Assert.IsNotNull(tvShow.Name);
+            Assert.IsNotNull(tvShow.PosterPath);
+            Assert.IsNotNull(tvShow.BackdropPath);
+            Assert.IsNotNull(tvShow.OriginalName);
+            Assert.IsNotNull(tvShow.FirstAirDate);
+            Assert.IsTrue(tvShow.VoteCount > 0);
+            Assert.IsTrue(tvShow.VoteAverage > 0);
+            Assert.IsTrue(tvShow.Popularity > 0);
         }
 
         [TestMethod]
         public void TestAccountGetMovieWatchlist()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
-            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetMovieWatchlist(i));
+            SearchMovie movie = _config.Client.AccountGetMovieWatchlist().Results[0];
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -136,11 +136,30 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestAccountGetTvWatchlist()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            TestHelpers.SearchPages(i => _config.Client.AccountGetTvWatchlist(i));
+            SearchTv tvShow = _config.Client.AccountGetTvWatchlist().Results[0];
+
+            // Requires that you have added at least one movie to your watchlist else this test will fail
+            Assert.IsTrue(tvShow.Id > 0);
+            Assert.IsNotNull(tvShow.Name);
+            Assert.IsNotNull(tvShow.PosterPath);
+            Assert.IsNotNull(tvShow.BackdropPath);
+            Assert.IsNotNull(tvShow.OriginalName);
+            Assert.IsNotNull(tvShow.FirstAirDate);
+            Assert.IsTrue(tvShow.VoteCount > 0);
+            Assert.IsTrue(tvShow.VoteAverage > 0);
+            Assert.IsTrue(tvShow.Popularity > 0);
+        }
+
+        [TestMethod]
         public void TestAccountGetRatedMovies()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i));
-            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetRatedMovies(i));
+            SearchMovie movie = _config.Client.AccountGetRatedMovies().Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -152,6 +171,25 @@ namespace TMDbLibTests
             Assert.IsTrue(movie.VoteCount > 0);
             Assert.IsTrue(movie.VoteAverage > 0);
             Assert.IsTrue(movie.Popularity > 0);
+        }
+
+        [TestMethod]
+        public void TestAccountGetRatedTv()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShows(i));
+            SearchTv tvShow = _config.Client.AccountGetRatedTvShows().Results[0];
+
+            // Requires that you have rated at least one movie else this test will fail
+            Assert.IsTrue(tvShow.Id > 0);
+            Assert.IsNotNull(tvShow.Name);
+            Assert.IsNotNull(tvShow.PosterPath);
+            Assert.IsNotNull(tvShow.BackdropPath);
+            Assert.IsNotNull(tvShow.OriginalName);
+            Assert.IsNotNull(tvShow.FirstAirDate);
+            Assert.IsTrue(tvShow.VoteCount > 0);
+            Assert.IsTrue(tvShow.VoteAverage > 0);
+            Assert.IsTrue(tvShow.Popularity > 0);
         }
 
         [TestMethod]
@@ -230,7 +268,7 @@ namespace TMDbLibTests
                 Assert.Fail("Test movie '{0}' was already on watchlist. Unable to perform test correctly", Terminator);
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie,  Terminator, true));
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, Terminator, true));
 
             // Check if it worked
             Assert.IsTrue(DoesWatchListContainSpecificMovie(Terminator));
