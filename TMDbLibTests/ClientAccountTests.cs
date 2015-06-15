@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -16,6 +17,7 @@ namespace TMDbLibTests
     {
         private TestConfig _config;
         private const int Terminator = 218;
+        private const int DoctorWho = 121;
 
         /// <summary>
         /// Run once, on every test
@@ -153,69 +155,125 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestAccountChangeTvFavoriteStatus()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Ensure that the test movie is not marked as favorite before we start the test
+            if (DoesFavoriteListContainSpecificTvShow(DoctorWho))
+                Assert.Fail("Test tv show '{0}' was already marked as favorite. Unable to perform test correctly", DoctorWho);
+
+            // Try to mark is as a favorite
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, DoctorWho, true));
+
+            // Check if it worked
+            Assert.IsTrue(DoesFavoriteListContainSpecificTvShow(DoctorWho));
+
+            // Try to un-mark is as a favorite
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, DoctorWho, false));
+
+            // Check if it worked
+            Assert.IsFalse(DoesFavoriteListContainSpecificTvShow(DoctorWho));
+        }
+
+        [TestMethod]
         public void TestAccountChangeMovieFavoriteStatus()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesFavoriteListContainSpecificMovie(Terminator))
-                Assert.Fail("Test movie '{0}' was already marked as favorite unable to perform test correctly", Terminator);
+                Assert.Fail("Test movie '{0}' was already marked as favorite. Unable to perform test correctly", Terminator);
 
             // Try to mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeMovieFavoriteStatus(Terminator, true));
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, Terminator, true));
 
             // Check if it worked
             Assert.IsTrue(DoesFavoriteListContainSpecificMovie(Terminator));
 
             // Try to un-mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeMovieFavoriteStatus(Terminator, false));
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, Terminator, false));
 
             // Check if it worked
             Assert.IsFalse(DoesFavoriteListContainSpecificMovie(Terminator));
         }
 
         [TestMethod]
+        public void TestAccountChangeTvWatchlistStatus()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Ensure that the test movie is not marked as favorite before we start the test
+            if (DoesWatchListContainSpecificTvShow(DoctorWho))
+                Assert.Fail("Test tv show '{0}' was already on watchlist. Unable to perform test correctly", DoctorWho);
+
+            // Try to add an item to the watchlist
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, DoctorWho, true));
+
+            // Check if it worked
+            Assert.IsTrue(DoesWatchListContainSpecificTvShow(DoctorWho));
+
+            // Try to remove item from watchlist
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, DoctorWho, false));
+
+            // Check if it worked
+            Assert.IsFalse(DoesWatchListContainSpecificTvShow(DoctorWho));
+        }
+
+        [TestMethod]
         public void TestAccountChangeMovieWatchlistStatus()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesWatchListContainSpecificMovie(Terminator))
-                Assert.Fail("Test movie '{0}' was already on watchlist unable to perform test correctly", Terminator);
+                Assert.Fail("Test movie '{0}' was already on watchlist. Unable to perform test correctly", Terminator);
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeMovieWatchlistStatus(Terminator, true));
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie,  Terminator, true));
 
             // Check if it worked
             Assert.IsTrue(DoesWatchListContainSpecificMovie(Terminator));
 
             // Try to remove item from watchlist
-            Assert.IsTrue(_config.Client.AccountChangeMovieWatchlistStatus(Terminator, false));
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, Terminator, false));
 
             // Check if it worked
             Assert.IsFalse(DoesWatchListContainSpecificMovie(Terminator));
         }
 
+        private bool DoesFavoriteListContainSpecificTvShow(int tvId)
+        {
+            return DoesListContainSpecificMovie(tvId, page => _config.Client.AccountGetFavoriteTv(page).Results.Select(s => s.Id));
+        }
+
+        private bool DoesWatchListContainSpecificTvShow(int tvId)
+        {
+            return DoesListContainSpecificMovie(tvId, page => _config.Client.AccountGetTvWatchlist(page).Results.Select(s => s.Id));
+        }
+
         private bool DoesFavoriteListContainSpecificMovie(int movieId)
         {
-            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetFavoriteMovies(page));
+            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetFavoriteMovies(page).Results.Select(s => s.Id));
         }
 
         private bool DoesWatchListContainSpecificMovie(int movieId)
         {
-            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetMovieWatchlist(page));
+            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetMovieWatchlist(page).Results.Select(s => s.Id));
         }
 
-        private bool DoesListContainSpecificMovie(int movieId, Func<int, SearchContainer<SearchMovie>> listGetter)
+        private bool DoesListContainSpecificMovie(int movieId, Func<int, IEnumerable<int>> listGetter)
         {
             int page = 1;
-            SearchContainer<SearchMovie> originalList = listGetter(1);
-            while (originalList != null && originalList.Results != null && originalList.Results.Any())
+            List<int> originalList = listGetter(1).ToList();
+            while (originalList != null && originalList.Any())
             {
                 // Check if the current result page contains the relevant movie
-                if (originalList.Results.Any(m => m.Id == movieId))
+                if (originalList.Contains(movieId))
                     return true;
 
                 // See if there is an other page we could try, if not the test passes
-                originalList = originalList.Page < originalList.TotalPages ? listGetter(++page) : null;
+                originalList = originalList.Any() ? listGetter(++page).ToList() : null;
             }
             return false;
         }
