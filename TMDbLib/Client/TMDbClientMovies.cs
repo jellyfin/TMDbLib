@@ -8,7 +8,9 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.Movies.Credits;
 
 namespace TMDbLib.Client
 {
@@ -67,8 +69,8 @@ namespace TMDbLib.Client
             if (response.Data == null) return null;
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (response.Data.Trailers != null)
-                response.Data.Trailers.Id = response.Data.Id;
+            if (response.Data.Videos != null)
+                response.Data.Videos.Id = response.Data.Id;
 
             if (response.Data.AlternativeTitles != null)
                 response.Data.AlternativeTitles.Id = response.Data.Id;
@@ -159,9 +161,9 @@ namespace TMDbLib.Client
             return GetMovieMethod<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd");
         }
 
-        public Trailers GetMovieTrailers(int movieId)
+        public ResultContainer<Video> GetMovieVideos(int movieId)
         {
-            return GetMovieMethod<Trailers>(movieId, MovieMethods.Trailers);
+            return GetMovieMethod<ResultContainer<Video>>(movieId, MovieMethods.Videos);
         }
 
         public TranslationsContainer GetMovieTranslations(int movieId)

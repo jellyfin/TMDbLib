@@ -18,8 +18,8 @@ namespace TMDbLib.Objects.Movies
         Keywords = 8,
         [Description("releases")]
         Releases = 16,
-        [Description("trailers")]
-        Trailers = 32,
+        [Description("videos")]
+        Videos = 32,
         [Description("translations")]
         Translations = 64,
         [Description("similar_movies")]
