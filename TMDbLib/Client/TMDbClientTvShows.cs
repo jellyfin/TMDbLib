@@ -4,6 +4,7 @@ using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.TvShows.Credits;
@@ -58,7 +59,7 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter.
         /// </returns>
-        public SearchContainer<TvShowBase> GetTvShowsPopular(int page = -1, string language = null)
+        public SearchContainer<SearchTv> GetTvShowsPopular(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "popular");
         }
@@ -70,12 +71,12 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter
         /// </returns>
-        public SearchContainer<TvShowBase> GetTvShowsTopRated(int page = -1, string language = null)
+        public SearchContainer<SearchTv> GetTvShowsTopRated(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "top_rated");
         }
 
-        private SearchContainer<TvShowBase> GetTvShowList(int page, string language, string tvShowListType)
+        private SearchContainer<SearchTv> GetTvShowList(int page, string language, string tvShowListType)
         {
             RestRequest req = new RestRequest("tv/" + tvShowListType);
 
@@ -86,7 +87,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page);
 
-            IRestResponse<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(req);
+            IRestResponse<SearchContainer<SearchTv>> response = _client.Get<SearchContainer<SearchTv>>(req);
 
             return response.Data;
         }

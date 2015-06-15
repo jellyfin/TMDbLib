@@ -24,7 +24,7 @@ namespace TMDbLib.Client
         /// <param name="firstAirDateGreaterThan">The minimum airdate of tv shows to include.</param>
         /// <param name="firstAirDateLessThan">The maximum airdate of tv shows to include.</param>
         /// <returns>Will return a list of tv shows that corespond to the provided parameters</returns>
-        public SearchContainer<TvShowBase> DiscoverTvShows(
+        public SearchContainer<SearchTv> DiscoverTvShows(
             int page = 1,
             string language = null,
             DiscoverTvShowSortBy sortBy = DiscoverTvShowSortBy.Undefined,
@@ -69,7 +69,7 @@ namespace TMDbLib.Client
             if (firstAirDateLessThan.HasValue)
                 request.AddParameter("first_air_date.lte", firstAirDateLessThan.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<SearchContainer<TvShowBase>> response = _client.Get<SearchContainer<TvShowBase>>(request);
+            IRestResponse<SearchContainer<SearchTv>> response = _client.Get<SearchContainer<SearchTv>>(request);
 
             return response.Data;
         }
