@@ -86,8 +86,7 @@ namespace TMDbLibTests
         public void TestMoviesImdbExtrasAll()
         {
             Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
-            tmpMethods.Remove(MovieMethods.Changes);
-            tmpMethods.Remove(MovieMethods.Similar);      // See https://github.com/LordMike/TMDbLib/issues/19
+            tmpMethods.Remove(MovieMethods.Videos);
 
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
