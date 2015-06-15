@@ -448,7 +448,7 @@ namespace TMDbLibTests
             Assert.AreEqual("http://www.diehardmovie.com/", item.Homepage);
 
             Assert.AreEqual("/17zArExB7ztm6fjUXZwQWgGMC9f.jpg", item.BackdropPath);
-            Assert.AreEqual("/xO42aJxjWiVnvWaAliq9iWjMpHZ.jpg", item.PosterPath);
+            Assert.AreEqual("/c2SQMd00CCGTiDxGXVqA2J9lmzF.jpg", item.PosterPath);
 
             Assert.AreEqual(false, item.Adult);
             Assert.AreEqual(false, item.Video);
