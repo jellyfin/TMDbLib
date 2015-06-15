@@ -43,6 +43,9 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\Certifications\CertificationItem.cs" />
+    <Compile Include="Objects\Certifications\CertificationsContainer.cs" />
+    <Compile Include="Client\TMDbClientCertifications.cs" />
     <Compile Include="Client\TMDbClientTimezones.cs" />
     <Compile Include="Objects\Timezones\Timezones.cs" />
     <Compile Include="Client\TMDbClientJobs.cs" />
