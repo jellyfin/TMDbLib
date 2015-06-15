@@ -41,6 +41,48 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestGenreTvList()
+        {
+            // Default language
+            List<Genre> genres = _config.Client.GetTvGenres();
+
+            Assert.IsNotNull(genres);
+            Assert.IsTrue(genres.Count > 0);
+
+            // Another language
+            List<Genre> genresDanish = _config.Client.GetTvGenres("da");
+
+            Assert.IsNotNull(genresDanish);
+            Assert.IsTrue(genresDanish.Count > 0);
+
+            Assert.AreEqual(genres.Count, genresDanish.Count);
+
+            // At least one should be different
+            Assert.IsTrue(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
+        }
+
+        [TestMethod]
+        public void TestGenreMovieList()
+        {
+            // Default language
+            List<Genre> genres = _config.Client.GetMovieGenres();
+
+            Assert.IsNotNull(genres);
+            Assert.IsTrue(genres.Count > 0);
+
+            // Another language
+            List<Genre> genresDanish = _config.Client.GetMovieGenres("da");
+
+            Assert.IsNotNull(genresDanish);
+            Assert.IsTrue(genresDanish.Count > 0);
+
+            Assert.AreEqual(genres.Count, genresDanish.Count);
+
+            // At least one should be different
+            Assert.IsTrue(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
+        }
+
+        [TestMethod]
         public void TestGenreMovies()
         {
             // Get first genre
