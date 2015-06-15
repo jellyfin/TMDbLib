@@ -115,7 +115,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchMovie> AccountGetFavoriteMovies(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
@@ -129,7 +129,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchTv> AccountGetFavoriteTv(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
@@ -143,7 +143,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchMovie> AccountGetMovieWatchlist(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
@@ -157,7 +157,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchTv> AccountGetTvWatchlist(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
@@ -171,7 +171,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchMovie> AccountGetRatedMovies(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
@@ -185,7 +185,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchTv> AccountGetRatedTvShows(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
@@ -199,14 +199,14 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchTvEpisode> AccountGetRatedTvShowEpisodes(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
             return GetAccountList<SearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes);
         }
 
-        private SearchContainer<T> GetAccountList<T>(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
+        private SearchContainer<T> GetAccountList<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -218,7 +218,7 @@ namespace TMDbLib.Client
             if (page > 1)
                 request.AddParameter("page", page);
 
-            if (sortBy != AccountMovieSortBy.Undefined)
+            if (sortBy != AccountSortBy.Undefined)
                 request.AddParameter("sort_by", sortBy.GetDescription());
 
             if (sortOrder != SortOrder.Undefined)
