@@ -74,7 +74,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
             {
                 request.AddBody(new { name = name, description = description, language = language });
-                
+
             }
             else
             {
@@ -135,6 +135,31 @@ namespace TMDbLib.Client
             return ManipulateMediaList(listId, movieId, "remove_item");
         }
 
+        /// <summary>
+        /// Clears a list, without confirmation.
+        /// </summary>
+        /// <param name="listId">The id of the list to clear</param>
+        /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public bool ListClear(string listId)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            if (string.IsNullOrWhiteSpace(listId))
+                throw new ArgumentNullException("listId");
+
+            RestRequest request = new RestRequest("list/{listId}/clear") { RequestFormat = DataFormat.Json };
+            request.AddUrlSegment("listId", listId);
+            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            request.AddParameter("confirm", "true");
+
+            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+
+            // Status code 12 = "The item/record was updated successfully"
+            return response.Data != null && response.Data.StatusCode == 12;
+        }
+
         private bool ManipulateMediaList(string listId, int movieId, string method)
         {
             RequireSessionId(SessionType.UserSession);
@@ -142,7 +167,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            // Description is expected by the API and can not be null
+            // Movie Id is expected by the API and can not be null
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
@@ -154,7 +179,6 @@ namespace TMDbLib.Client
 
             IRestResponse<PostReply> response = _client.Post<PostReply>(request);
 
-            // Status code 8 = "Duplicate entry - The data you tried to submit already exists"
             // Status code 12 = "The item/record was updated successfully"
             // Status code 13 = "The item/record was deleted successfully"
             return response.Data != null && (response.Data.StatusCode == 12 || response.Data.StatusCode == 13);
