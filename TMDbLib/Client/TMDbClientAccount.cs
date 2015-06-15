@@ -59,19 +59,20 @@ namespace TMDbLib.Client
         /// <summary>
         /// Change the favorite status of a specific movie. Either make the movie a favorite or remove that status depending on the supplied boolean value.
         /// </summary>
-        /// <param name="movieId">The id of the movie to influence</param>
+        /// <param name="mediaType">The type of media to influence</param>
+        /// <param name="mediaId">The id of the movie/tv show to influence</param>
         /// <param name="isFavorite">True if you want the specified movie to be marked as favorite, false if not</param>
         /// <returns>True if the the movie's favorite status was successfully updated, false if not</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public bool AccountChangeMovieFavoriteStatus(int movieId, bool isFavorite)
+        public bool AccountChangeFavoriteStatus(MediaType mediaType, int mediaId, bool isFavorite)
         {
             RequireSessionId(SessionType.UserSession);
 
             RestRequest request = new RestRequest("account/{accountId}/favorite") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            request.AddBody(new { movie_id = movieId, favorite = isFavorite });
+            request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
 
             IRestResponse<PostReply> response = _client.Post<PostReply>(request);
 
@@ -84,19 +85,20 @@ namespace TMDbLib.Client
         /// <summary>
         /// Change the state of a specific movie on the users watchlist. Either add the movie to the list or remove it, depending on the specified boolean value.
         /// </summary>
-        /// <param name="movieId">The id of the movie to influence</param>
+        /// <param name="mediaType">The type of media to influence</param>
+        /// <param name="mediaId">The id of the movie/tv show to influence</param>
         /// <param name="isOnWatchlist">True if you want the specified movie to be part of the watchlist, false if not</param>
         /// <returns>True if the the movie's status on the watchlist was successfully updated, false if not</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public bool AccountChangeMovieWatchlistStatus(int movieId, bool isOnWatchlist)
+        public bool AccountChangeWatchlistStatus(MediaType mediaType, int mediaId, bool isOnWatchlist)
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/movie_watchlist") { RequestFormat = DataFormat.Json };
+            RestRequest request = new RestRequest("account/{accountId}/watchlist") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            request.AddBody(new { movie_id = movieId, movie_watchlist = isOnWatchlist });
+            request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
 
             IRestResponse<PostReply> response = _client.Post<PostReply>(request);
 
@@ -113,11 +115,25 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchMovie> AccountGetFavoriteMovies(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
+            return GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
+        }
+
+        /// <summary>
+        /// Get a list of all the tv shows marked as favorite by the current user
+        /// </summary>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public SearchContainer<SearchTv> AccountGetFavoriteTv(
+            int page = 1,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
+            SortOrder sortOrder = SortOrder.Undefined,
+            string language = null)
+        {
+            return GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv);
         }
 
         /// <summary>
@@ -127,11 +143,25 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchMovie> AccountGetMovieWatchlist(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
+            return GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
+        }
+
+        /// <summary>
+        /// Get a list of all the tv shows on the current users match list
+        /// </summary>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public SearchContainer<SearchTv> AccountGetTvWatchlist(
+            int page = 1,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
+            SortOrder sortOrder = SortOrder.Undefined,
+            string language = null)
+        {
+            return GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist);
         }
 
         /// <summary>
@@ -141,14 +171,42 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchMovie> AccountGetRatedMovies(
             int page = 1,
-            AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return GetAccountList(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
+            return GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
         }
 
-        private SearchContainer<SearchMovie> GetAccountList(int page, AccountMovieSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
+        /// <summary>
+        /// Get a list of all the tv shows rated by the current user
+        /// </summary>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public SearchContainer<SearchTv> AccountGetRatedTvShows(
+            int page = 1,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
+            SortOrder sortOrder = SortOrder.Undefined,
+            string language = null)
+        {
+            return GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv);
+        }
+
+        /// <summary>
+        /// Get a list of all the tv show episodes rated by the current user
+        /// </summary>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public SearchContainer<SearchTvEpisode> AccountGetRatedTvShowEpisodes(
+            int page = 1,
+            AccountSortBy sortBy = AccountSortBy.Undefined,
+            SortOrder sortOrder = SortOrder.Undefined,
+            string language = null)
+        {
+            return GetAccountList<SearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes);
+        }
+
+        private SearchContainer<T> GetAccountList<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -160,7 +218,7 @@ namespace TMDbLib.Client
             if (page > 1)
                 request.AddParameter("page", page);
 
-            if (sortBy != AccountMovieSortBy.Undefined)
+            if (sortBy != AccountSortBy.Undefined)
                 request.AddParameter("sort_by", sortBy.GetDescription());
 
             if (sortOrder != SortOrder.Undefined)
@@ -170,19 +228,27 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<SearchMovie>> response = _client.Get<SearchContainer<SearchMovie>>(request);
+            IRestResponse<SearchContainer<T>> response = _client.Get<SearchContainer<T>>(request);
 
             return response.Data;
         }
 
         private enum AccountListsMethods
         {
-            [Description("favorite_movies")]
+            [Description("favorite/movies")]
             FavoriteMovies,
-            [Description("rated_movies")]
+            [Description("favorite/tv")]
+            FavoriteTv,
+            [Description("rated/movies")]
             RatedMovies,
-            [Description("movie_watchlist")]
+            [Description("rated/tv")]
+            RatedTv,
+            [Description("rated/tv/episodes")]
+            RatedTvEpisodes,
+            [Description("watchlist/movies")]
             MovieWatchlist,
+            [Description("watchlist/tv")]
+            TvWatchlist,
         }
     }
 }
