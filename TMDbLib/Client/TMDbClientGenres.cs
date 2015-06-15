@@ -8,11 +8,15 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        // TODO: This method no longer appears in Apiary
+        [Obsolete]
         public List<Genre> GetGenres()
         {
             return GetGenres(DefaultLanguage);
         }
 
+        // TODO: This method no longer appears in Apiary
+        [Obsolete]
         public List<Genre> GetGenres(string language)
         {
             RestRequest req = new RestRequest("genre/list");
