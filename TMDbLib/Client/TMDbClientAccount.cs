@@ -150,6 +150,11 @@ namespace TMDbLib.Client
             return GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
         }
 
+        /// <summary>
+        /// Get a list of all the tv shows on the current users match list
+        /// </summary>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public SearchContainer<SearchTv> AccountGetTvWatchlist(
             int page = 1,
             AccountMovieSortBy sortBy = AccountMovieSortBy.Undefined,
