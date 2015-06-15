@@ -170,18 +170,6 @@ namespace TMDbLib.Client
             return GetMovieMethod<TranslationsContainer>(movieId, MovieMethods.Translations);
         }
 
-        [Obsolete]
-        public SearchContainer<MovieResult> GetMovieSimilarMovies(int movieId, int page = 0)
-        {
-            return GetMovieSimilar(movieId, DefaultLanguage, page);
-        }
-
-        [Obsolete]
-        public SearchContainer<MovieResult> GetMovieSimilarMovies(int movieId, string language, int page = 0)
-        {
-            return GetMovieSimilar(movieId, language, page);
-        }
-
         public SearchContainer<MovieResult> GetMovieSimilar(int movieId, int page = 0)
         {
             return GetMovieSimilar(movieId, DefaultLanguage, page);
