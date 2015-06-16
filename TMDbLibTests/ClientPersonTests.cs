@@ -95,7 +95,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestPersonsGetTvCredits()
+        public void TestPersonsGetPersonTvCredits()
         {
             TvCredits item = _config.Client.GetPersonTvCredits(BruceWillis);
 
@@ -130,7 +130,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestPersonsGetMovieCredits()
+        public void TestPersonsGetPersonMovieCredits()
         {
             MovieCredits item = _config.Client.GetPersonMovieCredits(BruceWillis);
 
