@@ -33,9 +33,12 @@ namespace TMDbLibTests
         public static void InitialInitiator(TestContext context)
         {
             _methods = new Dictionary<PersonMethods, Func<Person, object>>();
-            _methods[PersonMethods.TvCredits] = person => person.Credits;
-            _methods[PersonMethods.Changes] = person => person.Changes;
+            _methods[PersonMethods.MovieCredits] = person => person.MovieCredits;
+            _methods[PersonMethods.TvCredits] = person => person.TvCredits;
+            _methods[PersonMethods.ExternalIds] = person => person.ExternalIds;
             _methods[PersonMethods.Images] = person => person.Images;
+            _methods[PersonMethods.TaggedImages] = person => person.TaggedImages;
+            _methods[PersonMethods.Changes] = person => person.Changes;
         }
 
         [TestMethod]
