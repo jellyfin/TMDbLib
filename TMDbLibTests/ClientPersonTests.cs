@@ -46,7 +46,6 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(person);
 
-            // TODO: Test all properties
             Assert.AreEqual("Bruce Willis", person.Name);
 
             // Test all extras, ensure none of them exist
@@ -69,6 +68,31 @@ namespace TMDbLibTests
             Person item = _config.Client.GetPerson(BruceWillis, combinedEnum);
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
+        }
+
+        [TestMethod]
+        public void TestPersonsGet()
+        {
+            Person item = _config.Client.GetPerson(BruceWillis);
+
+            Assert.IsNotNull(item);
+            Assert.AreEqual(false, item.Adult);
+            Assert.IsNotNull(item.Biography);
+            Assert.AreEqual(new DateTime(1955,3,19), item.Birthday);
+            Assert.IsFalse(item.Deathday.HasValue);
+            Assert.AreEqual("http://www.b-willis.com/", item.Homepage);
+            Assert.AreEqual(62, item.Id);
+            Assert.AreEqual("nm0000246", item.ImdbId);
+            Assert.AreEqual("Bruce Willis", item.Name);
+            Assert.AreEqual("Idar-Oberstein, Germany", item.PlaceOfBirth);
+            Assert.IsTrue(item.Popularity > 0);
+            Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", item.ProfilePath);
+
+            Assert.IsNotNull(item.AlsoKnownAs);
+            Assert.AreEqual(3, item.AlsoKnownAs.Count);
+            Assert.IsTrue(item.AlsoKnownAs.Contains("Брюс Уиллис"));
+            Assert.IsTrue(item.AlsoKnownAs.Contains("W.B. Willis"));
+            Assert.IsTrue(item.AlsoKnownAs.Contains("Walter Bruce Willis"));
         }
 
         [TestMethod]
