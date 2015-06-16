@@ -43,10 +43,16 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\TMDbClientCredit.cs" />
     <Compile Include="Objects\Certifications\CertificationItem.cs" />
     <Compile Include="Objects\Certifications\CertificationsContainer.cs" />
     <Compile Include="Client\TMDbClientCertifications.cs" />
     <Compile Include="Client\TMDbClientTimezones.cs" />
+    <Compile Include="Objects\Credit\CreditEpisode.cs" />
+    <Compile Include="Objects\Credit\Credit.cs" />
+    <Compile Include="Objects\Credit\CreditMedia.cs" />
+    <Compile Include="Objects\Credit\CreditPerson.cs" />
+    <Compile Include="Objects\Credit\CreditSeason.cs" />
     <Compile Include="Objects\Timezones\Timezones.cs" />
     <Compile Include="Client\TMDbClientJobs.cs" />
     <Compile Include="Client\TMDbClientReviews.cs" />
