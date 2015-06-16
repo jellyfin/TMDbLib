@@ -6,7 +6,6 @@ using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
-using Credits = TMDbLib.Objects.People.Credits;
 
 namespace TMDbLibTests
 {
@@ -34,7 +33,7 @@ namespace TMDbLibTests
         public static void InitialInitiator(TestContext context)
         {
             _methods = new Dictionary<PersonMethods, Func<Person, object>>();
-            _methods[PersonMethods.Credits] = person => person.Credits;
+            _methods[PersonMethods.TvCredits] = person => person.Credits;
             _methods[PersonMethods.Changes] = person => person.Changes;
             _methods[PersonMethods.Images] = person => person.Images;
         }
@@ -78,7 +77,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(item);
             Assert.AreEqual(false, item.Adult);
             Assert.IsNotNull(item.Biography);
-            Assert.AreEqual(new DateTime(1955,3,19), item.Birthday);
+            Assert.AreEqual(new DateTime(1955, 3, 19), item.Birthday);
             Assert.IsFalse(item.Deathday.HasValue);
             Assert.AreEqual("http://www.b-willis.com/", item.Homepage);
             Assert.AreEqual(62, item.Id);
@@ -96,13 +95,83 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestPersonsGetTvCredits()
+        {
+            TvCredits item = _config.Client.GetPersonTvCredits(BruceWillis);
+
+            Assert.IsNotNull(item);
+            Assert.IsNotNull(item.Cast);
+            Assert.IsNotNull(item.Crew);
+
+            Assert.AreEqual(BruceWillis, item.Id);
+
+            TvRole cast = item.Cast.SingleOrDefault(s => s.Character == "David Addison Jr.");
+            Assert.IsNotNull(cast);
+            Assert.AreEqual("David Addison Jr.", cast.Character);
+            Assert.AreEqual("52571e7f19c2957114107d48", cast.CreditId);
+            Assert.AreEqual(69, cast.EpisodeCount);
+            Assert.AreEqual(new DateTime(1985, 3, 3), cast.FirstAirDate);
+            Assert.AreEqual(1998, cast.Id);
+            Assert.AreEqual("Moonlighting", cast.Name);
+            Assert.AreEqual("Moonlighting", cast.OriginalName);
+            Assert.AreEqual("/kGsJf8k6a069WsaAWu7pHlOohg5.jpg", cast.PosterPath);
+
+            TvJob job = item.Crew.SingleOrDefault(s => s.CreditId == "525826eb760ee36aaa81b23b");
+            Assert.IsNotNull(job);
+            Assert.AreEqual("525826eb760ee36aaa81b23b", job.CreditId);
+            Assert.AreEqual("Production", job.Department);
+            Assert.AreEqual(37, job.EpisodeCount);
+            Assert.AreEqual(new DateTime(1996, 9, 23), job.FirstAirDate);
+            Assert.AreEqual(13297, job.Id);
+            Assert.AreEqual("Producer", job.Job);
+            Assert.AreEqual("Bruno the Kid", job.Name);
+            Assert.AreEqual("Bruno the Kid", job.OriginalName);
+            Assert.AreEqual("/5HkZHG7FkHhay6UlmQ4NyeqpbKR.jpg", job.PosterPath);
+        }
+
+        [TestMethod]
+        public void TestPersonsGetMovieCredits()
+        {
+            MovieCredits item = _config.Client.GetPersonMovieCredits(BruceWillis);
+
+            Assert.IsNotNull(item);
+            Assert.IsNotNull(item.Cast);
+            Assert.IsNotNull(item.Crew);
+
+            Assert.AreEqual(BruceWillis, item.Id);
+
+            MovieRole cast = item.Cast.SingleOrDefault(s => s.CreditId == "52fe4329c3a36847f803f193");
+            Assert.IsNotNull(cast);
+            Assert.AreEqual(false, cast.Adult);
+            Assert.AreEqual("Lieutenant Muldoon", cast.Character);
+            Assert.AreEqual("52fe4329c3a36847f803f193", cast.CreditId);
+            Assert.AreEqual(1992, cast.Id);
+            Assert.AreEqual("Planet Terror", cast.OriginalTitle);
+            Assert.AreEqual("/7Yjzttt0VfPphSsUg8vFUO9WaEt.jpg", cast.PosterPath);
+            Assert.AreEqual(new DateTime(2007, 4, 6), cast.ReleaseDate);
+            Assert.AreEqual("Planet Terror", cast.Title);
+
+            MovieJob job = item.Crew.SingleOrDefault(s => s.CreditId == "52fe42fec3a36847f8032887");
+            Assert.IsNotNull(job);
+            Assert.AreEqual(false, job.Adult);
+            Assert.AreEqual("52fe42fec3a36847f8032887", job.CreditId);
+            Assert.AreEqual("Production", job.Department);
+            Assert.AreEqual(1571, job.Id);
+            Assert.AreEqual("Producer", job.Job);
+            Assert.AreEqual(new DateTime(2007, 6, 21), job.ReleaseDate);
+            Assert.AreEqual("/8czarUCdvqPnulkLX8mdXyrLk2D.jpg", job.PosterPath);
+            Assert.AreEqual("Live Free or Die Hard", job.Title);
+            Assert.AreEqual("Live Free or Die Hard", job.OriginalTitle);
+        }
+
+        [TestMethod]
         public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
-            Credits resp = _config.Client.GetPersonCredits(BruceWillis);
+            MovieCredits resp = _config.Client.GetPersonMovieCredits(BruceWillis);
             Assert.IsNotNull(resp);
 
-            Credits respItalian = _config.Client.GetPersonCredits(BruceWillis, "it");
+            MovieCredits respItalian = _config.Client.GetPersonMovieCredits(BruceWillis, "it");
             Assert.IsNotNull(respItalian);
 
             Assert.AreEqual(resp.Cast.Count, respItalian.Cast.Count);

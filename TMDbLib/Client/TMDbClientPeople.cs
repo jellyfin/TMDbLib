@@ -6,7 +6,6 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Utilities;
-using Credits = TMDbLib.Objects.People.Credits;
 
 namespace TMDbLib.Client
 {
@@ -72,19 +71,39 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public Credits GetPersonCredits(int personId)
+        public MovieCredits GetPersonMovieCredits(int personId)
         {
-            return GetPersonCredits(personId, DefaultLanguage);
+            return GetPersonMovieCredits(personId, DefaultLanguage);
         }
 
-        public Credits GetPersonCredits(int personId, string language)
+        public MovieCredits GetPersonMovieCredits(int personId, string language)
         {
-            return GetPersonMethod<Credits>(personId, PersonMethods.Credits, language: language);
+            return GetPersonMethod<MovieCredits>(personId, PersonMethods.MovieCredits, language: language);
+        }
+
+        public TvCredits GetPersonTvCredits(int personId)
+        {
+            return GetPersonTvCredits(personId, DefaultLanguage);
+        }
+
+        public TvCredits GetPersonTvCredits(int personId, string language)
+        {
+            return GetPersonMethod<TvCredits>(personId, PersonMethods.TvCredits, language: language);
         }
 
         public ProfileImages GetPersonImages(int personId)
         {
             return GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
+        }
+
+        public ResultContainer<ImageData> GetPersonTaggedImages(int personId, int page)
+        {
+            return GetPersonTaggedImages(personId, DefaultLanguage, page);
+        }
+
+        public ResultContainer<ImageData> GetPersonTaggedImages(int personId, string language, int page)
+        {
+            return GetPersonMethod<ResultContainer<ImageData>>(personId, PersonMethods.TaggedImages);
         }
 
         public ExternalIds GetPersonExternalIds(int personId)

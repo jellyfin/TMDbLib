@@ -8,6 +8,7 @@ namespace TMDbLib.Objects.People
         public string Title { get; set; }
         public string OriginalTitle { get; set; }
         public string Department { get; set; }
+        public string CreditId { get; set; }
         public string Job { get; set; }
         public string PosterPath { get; set; }
 		public DateTime? ReleaseDate { get; set; }

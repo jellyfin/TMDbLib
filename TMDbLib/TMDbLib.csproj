@@ -47,6 +47,9 @@
     <Compile Include="Objects\Certifications\CertificationsContainer.cs" />
     <Compile Include="Client\TMDbClientCertifications.cs" />
     <Compile Include="Client\TMDbClientTimezones.cs" />
+    <Compile Include="Objects\People\TvCredits.cs" />
+    <Compile Include="Objects\People\TvJob.cs" />
+    <Compile Include="Objects\People\TvRole.cs" />
     <Compile Include="Objects\Timezones\Timezones.cs" />
     <Compile Include="Client\TMDbClientJobs.cs" />
     <Compile Include="Client\TMDbClientReviews.cs" />
@@ -140,10 +143,9 @@
     <Compile Include="Objects\Movies\TranslationsContainer.cs" />
     <Compile Include="Client\TMDbClient.cs" />
     <Compile Include="Objects\Search\SearchMulti.cs" />
-    <Compile Include="Objects\People\Credits.cs" />
+    <Compile Include="Objects\People\MovieCredits.cs" />
     <Compile Include="Objects\People\MovieJob.cs" />
     <Compile Include="Objects\People\MovieRole.cs" />
-    <Compile Include="Objects\People\PersonItemType.cs" />
     <Compile Include="Objects\People\PersonListType.cs" />
     <Compile Include="Objects\People\Person.cs" />
     <Compile Include="Objects\People\PersonMethods.cs" />

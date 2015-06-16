@@ -16,7 +16,7 @@ namespace TMDbLib.Objects.People
         public string Name { get; set; }
         public string PlaceOfBirth { get; set; }
         public string ProfilePath { get; set; }
-        public Credits Credits { get; set; }
+        public MovieCredits Credits { get; set; }
         public ProfileImages Images { get; set; }
         public ChangesContainer Changes { get; set; }
         public string ImdbId { get; set; }
