@@ -165,6 +165,21 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestPersonsGetPersonExternalIds()
+        {
+            ExternalIds item = _config.Client.GetPersonExternalIds(BruceWillis);
+
+            Assert.IsNotNull(item);
+
+            Assert.AreEqual(BruceWillis, item.Id);
+            Assert.AreEqual("nm0000246", item.ImdbId);
+            Assert.AreEqual("/m/0h7pj", item.FreebaseMid);
+            Assert.AreEqual("/en/bruce_willis", item.FreebaseId);
+            Assert.IsFalse(item.TvdbId.HasValue);
+            Assert.AreEqual(10183, item.TvrageId);
+        }
+
+        [TestMethod]
         public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
