@@ -189,26 +189,36 @@ namespace TMDbLibTests
             Assert.AreEqual("Breaking Bad", tvShow.OriginalName);
             Assert.IsNotNull(tvShow.Overview);
             Assert.IsNotNull(tvShow.Homepage);
-            Assert.IsNotNull(tvShow.FirstAirDate);
+            Assert.AreEqual(new DateTime(2008, 01, 19), tvShow.FirstAirDate);
+            Assert.AreEqual(new DateTime(2013, 09, 29), tvShow.LastAirDate);
             Assert.AreEqual(false, tvShow.InProduction);
-            Assert.IsNotNull(tvShow.LastAirDate);
             Assert.AreEqual("Ended", tvShow.Status);
+            Assert.AreEqual("Scripted", tvShow.Type);
+            Assert.AreEqual("en", tvShow.OriginalLanguage);
+
+            Assert.IsNotNull(tvShow.ProductionCompanies);
+            Assert.AreEqual(3, tvShow.ProductionCompanies.Count);
+            Assert.AreEqual(2605, tvShow.ProductionCompanies[0].Id);
+            Assert.AreEqual("Gran Via Productions", tvShow.ProductionCompanies[0].Name);
 
             Assert.IsNotNull(tvShow.CreatedBy);
             Assert.AreEqual(1, tvShow.CreatedBy.Count);
             Assert.AreEqual(66633, tvShow.CreatedBy[0].Id);
+            Assert.AreEqual("Vince Gilligan", tvShow.CreatedBy[0].Name);
 
             Assert.IsNotNull(tvShow.EpisodeRunTime);
             Assert.AreEqual(2, tvShow.EpisodeRunTime.Count);
 
             Assert.IsNotNull(tvShow.Genres);
             Assert.AreEqual(18, tvShow.Genres[0].Id);
+            Assert.AreEqual("Drama", tvShow.Genres[0].Name);
 
             Assert.IsNotNull(tvShow.Languages);
             Assert.AreEqual("en", tvShow.Languages[0]);
 
             Assert.IsNotNull(tvShow.Networks);
             Assert.AreEqual(1, tvShow.Networks.Count);
+            Assert.AreEqual(174, tvShow.Networks[0].Id);
             Assert.AreEqual("AMC", tvShow.Networks[0].Name);
 
             Assert.IsNotNull(tvShow.OriginCountry);
