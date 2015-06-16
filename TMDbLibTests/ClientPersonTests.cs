@@ -204,14 +204,10 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestPersonsItem()
+        public void TestGetLatestPerson()
         {
-            foreach (PersonItemType type in Enum.GetValues(typeof(PersonItemType)).OfType<PersonItemType>())
-            {
-                Person item = _config.Client.GetPersonItem(type);
-
-                Assert.IsNotNull(item);
-            }
+            Person item = _config.Client.GetLatestPerson();
+            Assert.IsNotNull(item);
         }
     }
 }
