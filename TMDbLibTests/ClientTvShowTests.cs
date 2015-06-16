@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using Cast = TMDbLib.Objects.TvShows.Cast;
@@ -41,6 +42,9 @@ namespace TMDbLibTests
             _methods[TvShowMethods.ContentRatings] = tvShow => tvShow.ContentRatings;
             _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
             _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
+            _methods[TvShowMethods.AccountStates] = tvShow => tvShow.Keywords;
+            _methods[TvShowMethods.Changes] = tvShow => tvShow.Keywords;
+            _methods[TvShowMethods.Rating] = tvShow => tvShow.Keywords;
         }
 
         [TestMethod]
@@ -90,7 +94,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasContentRatings()
         {
-            var contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad);
+            ResultContainer<ContentRating> contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad);
             Assert.IsNotNull(contentRatings);
             Assert.AreEqual(BreakingBad, contentRatings.Id);
             ContentRating contentRating = contentRatings.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("US"));
@@ -101,7 +105,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasAlternativeTitles()
         {
-            var alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad);
+            ResultContainer<AlternativeTitle> alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad);
             Assert.IsNotNull(alternativeTitles);
             Assert.AreEqual(BreakingBad, alternativeTitles.Id);
             AlternativeTitle alternativeTitle = alternativeTitles.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
@@ -112,7 +116,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasKeywords()
         {
-            var keywords = _config.Client.GetTvShowKeywords(BreakingBad);
+            ResultContainer<Keyword> keywords = _config.Client.GetTvShowKeywords(BreakingBad);
             Assert.IsNotNull(keywords);
             Assert.AreEqual(BreakingBad, keywords.Id);
             Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id == 41525);
@@ -171,9 +175,7 @@ namespace TMDbLibTests
 
             // Test all extras, ensure none of them are populated
             foreach (Func<TvShow, object> selector in _methods.Values)
-            {
                 Assert.IsNull(selector(tvShow));
-            }
         }
 
         [TestMethod]
@@ -306,11 +308,27 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSimilars()
         {
-            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Similar);
-            Assert.IsNotNull(tvShow.Similar);
-            Assert.IsNotNull(tvShow.Similar.Results);
-            Assert.IsNotNull(tvShow.Similar.Results[0]);
-            Assert.IsNotNull(tvShow.Similar.Results[0].Name); //Is How I Met Your Mother for now :), but will not test it 
+            SearchContainer<SearchTv> tvShow = _config.Client.GetTvShowSimilar(1668);
+
+            Assert.IsNotNull(tvShow);
+            Assert.IsNotNull(tvShow.Results);
+
+            SearchTv item = tvShow.Results.SingleOrDefault(s => s.Id == 1100);
+            Assert.IsNotNull(item);
+
+            Assert.AreEqual("/wfe7Xf7tc0zmnkoNyN3xor0xR8m.jpg", item.BackdropPath);
+            Assert.AreEqual(1100, item.Id);
+            Assert.AreEqual("How I Met Your Mother", item.OriginalName);
+            Assert.AreEqual(new DateTime(2005 , 09 , 19), item.FirstAirDate);
+            Assert.AreEqual("/izncB6dCLV7LBQ5MsOPyMx9mUDa.jpg", item.PosterPath);
+            Assert.IsTrue(item.Popularity > 0);
+            Assert.AreEqual("How I Met Your Mother", item.Name);
+            Assert.IsTrue(item.VoteAverage > 0);
+            Assert.IsTrue(item.VoteCount > 0);
+
+            Assert.IsNotNull(item.OriginCountry);
+            Assert.AreEqual(1, item.OriginCountry.Count);
+            Assert.IsTrue(item.OriginCountry .Contains("US"));
         }
 
         [TestMethod]

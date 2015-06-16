@@ -26,5 +26,11 @@ namespace TMDbLib.Objects.TvShows
         Videos = 128,
         [Description("translations")]
         Translations = 256,
+        [Description("account_states")]
+        AccountStates = 512,
+        [Description("changes")]
+        Changes = 1024,
+        [Description("rating")]
+        Rating = 2048,
     }
 }

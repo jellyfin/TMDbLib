@@ -4,6 +4,7 @@ using System.Linq;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.TvShows.Credits;
@@ -123,6 +124,16 @@ namespace TMDbLib.Client
             return GetTvShowMethod<ExternalIds>(id, TvShowMethods.ExternalIds);
         }
 
+        public SearchContainer<SearchTv> GetTvShowSimilar(int id, int page = 0)
+        {
+            return GetTvShowSimilar(id, DefaultLanguage, page);
+        }
+
+        public SearchContainer<SearchTv> GetTvShowSimilar(int id, string language, int page)
+        {
+            return GetTvShowMethod<SearchContainer<SearchTv>>(id, TvShowMethods.Similar, language: language, page: page);
+        }
+
         public ResultContainer<ContentRating> GetTvShowContentRatings(int id)
         {
             return GetTvShowMethod<ResultContainer<ContentRating>>(id, TvShowMethods.ContentRatings);
@@ -148,7 +159,7 @@ namespace TMDbLib.Client
             return GetTvShowMethod<TranslationsContainer>(id, TvShowMethods.Translations);
         }
 
-        private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
+        private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
@@ -156,6 +167,9 @@ namespace TMDbLib.Client
 
             if (dateFormat != null)
                 req.DateFormat = dateFormat;
+
+            if (page > 0)
+                req.AddParameter("page", page);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
