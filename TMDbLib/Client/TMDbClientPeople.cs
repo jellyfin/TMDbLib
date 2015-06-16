@@ -87,6 +87,11 @@ namespace TMDbLib.Client
             return GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
         }
 
+        public ExternalIds GetPersonExternalIds(int personId)
+        {
+            return GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds);
+        }
+
         public List<Change> GetPersonChanges(int personId, DateTime? startDate = null, DateTime? endDate = null)
         {
             ChangesContainer changesContainer = GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
