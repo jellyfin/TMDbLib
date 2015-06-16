@@ -250,13 +250,14 @@ namespace TMDbLibTests
             // Get config
             _config.Client.GetConfig();
 
-            // Test image url generator
+            // Get images
             ProfileImages images = _config.Client.GetPersonImages(BruceWillis);
 
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Profiles);
             Assert.AreEqual(BruceWillis, images.Id);
 
+            // Test image url generator
             TestImagesHelpers.TestImages(_config, images);
 
             ProfileImage image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
@@ -270,6 +271,56 @@ namespace TMDbLibTests
             Assert.AreEqual(1000, image.Width);
             Assert.IsTrue(image.VoteAverage > 0);
             Assert.IsTrue(image.VoteCount > 0);
+        }
+
+        [TestMethod]
+        public void TestPersonsTaggedImages()
+        {
+            // Get config
+            _config.Client.GetConfig();
+
+            // Get images
+            TestHelpers.SearchPages(i => _config.Client.GetPersonTaggedImages(BruceWillis, i));
+
+            SearchContainer<TaggedImage> images = _config.Client.GetPersonTaggedImages(BruceWillis, 1);
+
+            Assert.IsNotNull(images);
+            Assert.IsNotNull(images.Results);
+
+            TaggedImage image = images.Results.SingleOrDefault(s => s.FilePath == "/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg");
+
+            Assert.IsNotNull(image);
+            Assert.IsTrue(Math.Abs(1.77777777777778 - image.AspectRatio) < double.Epsilon);
+            Assert.AreEqual("/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg", image.FilePath);
+            Assert.AreEqual(1080, image.Height);
+            Assert.AreEqual("4ea5d0792c058837cb000431", image.Id);
+            Assert.IsNull(image.Iso_639_1);
+            Assert.IsTrue(image.VoteAverage > 0);
+            Assert.IsTrue(image.VoteCount > 0);
+            Assert.AreEqual(1920, image.Width);
+            Assert.AreEqual("backdrop", image.ImageType);
+            Assert.AreEqual(MediaType.Movie, image.MediaType);
+
+            Assert.IsNotNull(image.Media);
+            Assert.AreEqual(false, image.Media.Adult);
+            Assert.AreEqual("/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg", image.Media.BackdropPath);
+            Assert.AreEqual(187, image.Media.Id);
+            Assert.AreEqual("en", image.Media.OriginalLanguage);
+            Assert.AreEqual("Sin City", image.Media.OriginalTitle);
+            Assert.AreEqual("Sin City is a neo-noir crime thriller based on Frank Miller's graphic novel series of the same name.The film is primarily based on three of Miller's works: The Hard Goodbye, about a man who embarks on a brutal rampage in search of his one-time sweetheart's killer; The Big Fat Kill, which focuses on a street war between a group of prostitutes and a group of mercenaries; and That Yellow Bastard, which follows an aging police officer who protects a young woman from a grotesquely disfigured serial killer.", image.Media.Overview);
+            Assert.AreEqual(new DateTime(2005, 3, 31), image.Media.ReleaseDate);
+            Assert.AreEqual("/eCJkepVJslq1nEtqURLaC1zLPAL.jpg", image.Media.PosterPath);
+            Assert.IsTrue(image.Media.Popularity > 0);
+            Assert.AreEqual("Sin City", image.Media.Title);
+            Assert.AreEqual(false, image.Media.Video);
+            Assert.IsTrue(image.Media.VoteAverage > 0);
+            Assert.IsTrue(image.Media.VoteCount > 0);
+
+            Assert.IsNotNull(image.Media.GenreIds);
+            Assert.AreEqual(3, image.Media.GenreIds.Count);
+            Assert.IsTrue(image.Media.GenreIds.Contains(28));
+            Assert.IsTrue(image.Media.GenreIds.Contains(53));
+            Assert.IsTrue(image.Media.GenreIds.Contains(80));
         }
 
         [TestMethod]

@@ -96,14 +96,14 @@ namespace TMDbLib.Client
             return GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
         }
 
-        public ResultContainer<ImageData> GetPersonTaggedImages(int personId, int page)
+        public SearchContainer<TaggedImage> GetPersonTaggedImages(int personId, int page)
         {
             return GetPersonTaggedImages(personId, DefaultLanguage, page);
         }
 
-        public ResultContainer<ImageData> GetPersonTaggedImages(int personId, string language, int page)
+        public SearchContainer<TaggedImage> GetPersonTaggedImages(int personId, string language, int page)
         {
-            return GetPersonMethod<ResultContainer<ImageData>>(personId, PersonMethods.TaggedImages);
+            return GetPersonMethod<SearchContainer<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page);
         }
 
         public ExternalIds GetPersonExternalIds(int personId)
