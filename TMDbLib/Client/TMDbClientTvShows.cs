@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Timers;
 using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -162,6 +163,55 @@ namespace TMDbLib.Client
         public ChangesContainer GetTvShowChanges(int id)
         {
             return GetTvShowMethod<ChangesContainer>(id, TvShowMethods.Changes);
+        }
+
+        public TvShow GetLatestTvShow()
+        {
+            RestRequest req = new RestRequest("tv/latest");
+
+            IRestResponse<TvShow> resp = _client.Get<TvShow>(req);
+
+            return resp.Data;
+        }
+
+        /// <summary>
+        /// Fetches a dynamic list of TV Shows
+        /// </summary>
+        /// <param name="list">Type of list to fetch</param>
+        /// <param name="page">Page</param>
+        /// <param name="timezone">Only relevant for list type AiringToday</param>
+        /// <returns></returns>
+        public SearchContainer<TvShow> GetTvShowList(TvShowListType list, int page = 0, string timezone = null)
+        {
+            return GetTvShowList(list, DefaultLanguage, page, timezone);
+        }
+
+        /// <summary>
+        /// Fetches a dynamic list of TV Shows
+        /// </summary>
+        /// <param name="list">Type of list to fetch</param>
+        /// <param name="language">Language</param>
+        /// <param name="page">Page</param>
+        /// <param name="timezone">Only relevant for list type AiringToday</param>
+        /// <returns></returns>
+        public SearchContainer<TvShow> GetTvShowList(TvShowListType list, string language, int page = 0, string timezone = null)
+        {
+            RestRequest req = new RestRequest("tv/{method}");
+            req.AddUrlSegment("method", list.GetDescription());
+
+            if (page > 0)
+                req.AddParameter("page", page);
+
+            if (!string.IsNullOrEmpty(timezone))
+                req.AddParameter("timezone", timezone);
+
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
+                req.AddParameter("language", language);
+
+            IRestResponse<SearchContainer<TvShow>> resp = _client.Get<SearchContainer<TvShow>>(req);
+
+            return resp.Data;
         }
 
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0) where T : new()
