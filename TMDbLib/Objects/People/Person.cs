@@ -19,5 +19,7 @@ namespace TMDbLib.Objects.People
         public Credits Credits { get; set; }
         public ProfileImages Images { get; set; }
         public ChangesContainer Changes { get; set; }
+        public string ImdbId { get; set; }
+        public double Popularity { get; set; }
     }
 }
