@@ -253,10 +253,23 @@ namespace TMDbLibTests
             // Test image url generator
             ProfileImages images = _config.Client.GetPersonImages(BruceWillis);
 
+            Assert.IsNotNull(images);
+            Assert.IsNotNull(images.Profiles);
             Assert.AreEqual(BruceWillis, images.Id);
-            Assert.IsTrue(images.Profiles.Count > 0);
 
             TestImagesHelpers.TestImages(_config, images);
+
+            ProfileImage image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
+
+            Assert.IsNotNull(image);
+            Assert.IsTrue(Math.Abs(0.666666666666667 - image.AspectRatio) < double.Epsilon);
+            Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", image.FilePath);
+            Assert.AreEqual(1500, image.Height);
+            Assert.AreEqual("51ee69f8760ee336455679c5", image.Id);
+            Assert.IsNull(image.Iso_639_1);
+            Assert.AreEqual(1000, image.Width);
+            Assert.IsTrue(image.VoteAverage > 0);
+            Assert.IsTrue(image.VoteCount > 0);
         }
 
         [TestMethod]
