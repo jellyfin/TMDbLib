@@ -6,6 +6,7 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using Cast = TMDbLib.Objects.TvShows.Cast;
 using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
@@ -46,14 +47,18 @@ namespace TMDbLibTests
         public void TestTvShowSeparateExtrasCredits()
         {
             Credits credits = _config.Client.GetTvShowCredits(BreakingBad);
+
             Assert.IsNotNull(credits);
             Assert.IsNotNull(credits.Cast);
-            Assert.AreEqual("Walter White", credits.Cast[0].Character);
-            Assert.AreEqual("52542282760ee313280017f9", credits.Cast[0].CreditId);
-            Assert.AreEqual(17419, credits.Cast[0].Id);
-            Assert.AreEqual("Bryan Cranston", credits.Cast[0].Name);
-            Assert.IsNotNull(credits.Cast[0].ProfilePath);
-            Assert.AreEqual(0, credits.Cast[0].Order);
+            Assert.AreEqual(BreakingBad, credits.Id);
+
+            Cast castPerson = credits.Cast[0];
+            Assert.AreEqual("Walter White", castPerson.Character);
+            Assert.AreEqual("52542282760ee313280017f9", castPerson.CreditId);
+            Assert.AreEqual(17419, castPerson.Id);
+            Assert.AreEqual("Bryan Cranston", castPerson.Name);
+            Assert.IsNotNull(castPerson.ProfilePath);
+            Assert.AreEqual(0, castPerson.Order);
 
             Assert.IsNotNull(credits.Crew);
 
@@ -61,6 +66,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(crewPerson);
 
             Assert.AreEqual(66633, crewPerson.Id);
+            Assert.AreEqual("52542287760ee31328001af1", crewPerson.CreditId);
             Assert.AreEqual("Production", crewPerson.Department);
             Assert.AreEqual("Vince Gilligan", crewPerson.Name);
             Assert.AreEqual("Executive Producer", crewPerson.Job);
