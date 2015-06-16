@@ -45,6 +45,7 @@ namespace TMDbLib.Objects.TvShows
         public ResultContainer<AlternativeTitle> AlternativeTitles { get; set; }
         public ResultContainer<Keyword> Keywords { get; set; }
         public ResultContainer<TvShow> Similar { get; set; }
+        public ChangesContainer Changes { get; set; }
         public TranslationsContainer Translations { get; set; }
     }
 }

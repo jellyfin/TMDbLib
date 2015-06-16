@@ -159,6 +159,11 @@ namespace TMDbLib.Client
             return GetTvShowMethod<TranslationsContainer>(id, TvShowMethods.Translations);
         }
 
+        public ChangesContainer GetTvShowChanges(int id)
+        {
+            return GetTvShowMethod<ChangesContainer>(id, TvShowMethods.Changes);
+        }
+
         private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/{method}");

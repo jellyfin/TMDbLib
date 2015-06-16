@@ -42,9 +42,10 @@ namespace TMDbLibTests
             _methods[TvShowMethods.ContentRatings] = tvShow => tvShow.ContentRatings;
             _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
             _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
-            _methods[TvShowMethods.AccountStates] = tvShow => tvShow.Keywords;
-            _methods[TvShowMethods.Changes] = tvShow => tvShow.Keywords;
-            _methods[TvShowMethods.Rating] = tvShow => tvShow.Keywords;
+            _methods[TvShowMethods.Changes] = tvShow => tvShow.Changes;
+            // TODO:
+            //_methods[TvShowMethods.AccountStates] = tvShow => tvShow.Keywords;
+            //_methods[TvShowMethods.Rating] = tvShow => tvShow.Keywords;
         }
 
         [TestMethod]
@@ -291,13 +292,10 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowTranslations()
         {
-            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Translations);
+            TranslationsContainer translations = _config.Client.GetTvShowTranslations(1668);
 
-            Assert.AreEqual(1668, tvShow.Translations.Id);
-            Assert.IsNotNull(tvShow.Translations);
-            Assert.IsNotNull(tvShow.Translations.Translations);
-
-            Translation translation = tvShow.Translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
+            Assert.AreEqual(1668, translations.Id);
+            Translation translation = translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
             Assert.IsNotNull(translation);
 
             Assert.AreEqual("Croatian", translation.EnglishName);
