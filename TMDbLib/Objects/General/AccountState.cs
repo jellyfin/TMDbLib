@@ -1,6 +1,6 @@
-﻿namespace TMDbLib.Objects.Movies
+﻿namespace TMDbLib.Objects.General
 {
-    public class MovieAccountState
+    public class AccountState
     {
         /// <summary>
         /// The TMDb if for the related movie

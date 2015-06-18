@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Timers;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
@@ -124,6 +126,16 @@ namespace TMDbLib.Client
             return GetTvShowMethod<ExternalIds>(id, TvShowMethods.ExternalIds);
         }
 
+        public SearchContainer<SearchTv> GetTvShowSimilar(int id, int page = 0)
+        {
+            return GetTvShowSimilar(id, DefaultLanguage, page);
+        }
+
+        public SearchContainer<SearchTv> GetTvShowSimilar(int id, string language, int page)
+        {
+            return GetTvShowMethod<SearchContainer<SearchTv>>(id, TvShowMethods.Similar, language: language, page: page);
+        }
+
         public ResultContainer<ContentRating> GetTvShowContentRatings(int id)
         {
             return GetTvShowMethod<ResultContainer<ContentRating>>(id, TvShowMethods.ContentRatings);
@@ -149,7 +161,61 @@ namespace TMDbLib.Client
             return GetTvShowMethod<TranslationsContainer>(id, TvShowMethods.Translations);
         }
 
-        private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
+        public ChangesContainer GetTvShowChanges(int id)
+        {
+            return GetTvShowMethod<ChangesContainer>(id, TvShowMethods.Changes);
+        }
+
+        public TvShow GetLatestTvShow()
+        {
+            RestRequest req = new RestRequest("tv/latest");
+
+            IRestResponse<TvShow> resp = _client.Get<TvShow>(req);
+
+            return resp.Data;
+        }
+
+        /// <summary>
+        /// Fetches a dynamic list of TV Shows
+        /// </summary>
+        /// <param name="list">Type of list to fetch</param>
+        /// <param name="page">Page</param>
+        /// <param name="timezone">Only relevant for list type AiringToday</param>
+        /// <returns></returns>
+        public SearchContainer<TvShow> GetTvShowList(TvShowListType list, int page = 0, string timezone = null)
+        {
+            return GetTvShowList(list, DefaultLanguage, page, timezone);
+        }
+
+        /// <summary>
+        /// Fetches a dynamic list of TV Shows
+        /// </summary>
+        /// <param name="list">Type of list to fetch</param>
+        /// <param name="language">Language</param>
+        /// <param name="page">Page</param>
+        /// <param name="timezone">Only relevant for list type AiringToday</param>
+        /// <returns></returns>
+        public SearchContainer<TvShow> GetTvShowList(TvShowListType list, string language, int page = 0, string timezone = null)
+        {
+            RestRequest req = new RestRequest("tv/{method}");
+            req.AddUrlSegment("method", list.GetDescription());
+
+            if (page > 0)
+                req.AddParameter("page", page);
+
+            if (!string.IsNullOrEmpty(timezone))
+                req.AddParameter("timezone", timezone);
+
+            language = language ?? DefaultLanguage;
+            if (!String.IsNullOrWhiteSpace(language))
+                req.AddParameter("language", language);
+
+            IRestResponse<SearchContainer<TvShow>> resp = _client.Get<SearchContainer<TvShow>>(req);
+
+            return resp.Data;
+        }
+
+        private T GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
@@ -158,6 +224,9 @@ namespace TMDbLib.Client
             if (dateFormat != null)
                 req.DateFormat = dateFormat;
 
+            if (page > 0)
+                req.AddParameter("page", page);
+
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
@@ -165,6 +234,60 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
+        }
+
+        /// <summary>
+        /// Retrieves all information for a specific tv show in relation to the current user account
+        /// </summary>
+        /// <param name="tvShowId">The id of the tv show to get the account states for</param>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public AccountState GetTvShowAccountState(int tvShowId)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            RestRequest request = new RestRequest("tv/{tvShowId}/{method}");
+            request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("method", TvShowMethods.AccountStates.GetDescription());
+            request.AddParameter("session_id", SessionId);
+
+            IRestResponse<AccountState> response = _client.Get<AccountState>(request);
+
+            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+            if (response.Data != null)
+            {
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
+            }
+
+            return response.Data;
+        }
+
+        /// <summary>
+        /// Change the rating of a specified tv show.
+        /// </summary>
+        /// <param name="tvShowId">The id of the tv show to rate</param>
+        /// <param name="rating">The rating you wish to assign to the specified tv show. Value needs to be between 0.5 and 10 and must use increments of 0.5. Ex. using 7.1 will not work and return false.</param>
+        /// <returns>True if the the tv show's rating was successfully updated, false if not</returns>
+        /// <remarks>Requires a valid guest or user session</remarks>
+        /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>
+        public bool TvShowSetRating(int tvShowId, double rating)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest request = new RestRequest("tv/{tvShowId}/rating") { RequestFormat = DataFormat.Json };
+            request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
+            if (SessionType == SessionType.UserSession)
+                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            request.AddBody(new { value = rating });
+
+            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+
+            // status code 1 = "Success"
+            // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
+            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
         }
     }
 }
