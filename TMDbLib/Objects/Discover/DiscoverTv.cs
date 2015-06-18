@@ -103,7 +103,7 @@ namespace TMDbLib.Objects.Discover
         /// <summary>
         /// Only include TV shows that are equal to, or have a higher average rating than this value. Expected value is a float.
         /// </summary>
-        public DiscoverTv WhereVoteAverageIsGreaterThan(double score)
+        public DiscoverTv WhereVoteAverageIsAtLeast(double score)
         {
             // TODO: Apply culture to the ToString
             Parameters["vote_average.gte"] = score.ToString();
@@ -113,7 +113,7 @@ namespace TMDbLib.Objects.Discover
         /// <summary>
         /// Only include TV shows that are equal to, or have a vote count higher than this value. Expected value is an integer.
         /// </summary>
-        public DiscoverTv WhereVoteCountIsGreaterThan(int count)
+        public DiscoverTv WhereVoteCountIsAtLeast(int count)
         {
             Parameters["vote_count.gte"] = count.ToString();
             return this;

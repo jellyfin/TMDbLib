@@ -168,7 +168,7 @@ namespace TMDbLib.Objects.Discover
         /// <summary>
         /// Filter movies by their vote count and only include movies that have a vote count that is equal to or lower than the specified value. Expected value is an integer.
         /// </summary>
-        public DiscoverMovie WhereVoteCountIsAtMovie(int count)
+        public DiscoverMovie WhereVoteCountIsAtMost(int count)
         {
             ClearVoteCount();
 
@@ -191,7 +191,7 @@ namespace TMDbLib.Objects.Discover
         /// <summary>
         /// Filter movies by their vote average and only include those that have an average rating that is equal to or lower than the specified value. Expected value is a float.
         /// </summary>
-        public DiscoverMovie WhereVoteAverageIsAtMovie(double score)
+        public DiscoverMovie WhereVoteAverageIsAtMost(double score)
         {
             ClearVoteAverage();
 
