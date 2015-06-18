@@ -43,10 +43,12 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\TMDbClientGuestSessions.cs" />
     <Compile Include="Objects\Certifications\CertificationItem.cs" />
     <Compile Include="Objects\Certifications\CertificationsContainer.cs" />
     <Compile Include="Client\TMDbClientCertifications.cs" />
     <Compile Include="Client\TMDbClientTimezones.cs" />
+    <Compile Include="Objects\Movies\MovieWithRating.cs" />
     <Compile Include="Objects\Timezones\Timezones.cs" />
     <Compile Include="Client\TMDbClientJobs.cs" />
     <Compile Include="Client\TMDbClientReviews.cs" />
