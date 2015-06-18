@@ -431,7 +431,7 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateWatchlistSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            MovieAccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
+            AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
 
             // Remove the watchlist
             if (accountState.Watchlist)
@@ -462,7 +462,9 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            MovieAccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
+            AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
+
+            Assert.Inconclusive("Alter when TMDb has the option to remove ratings");
 
             // Remove the rating
             if (accountState.Rating.HasValue)
