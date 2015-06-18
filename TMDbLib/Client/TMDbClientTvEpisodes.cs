@@ -119,7 +119,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             req.AddParameter("session_id", SessionId);
 
-            IRestResponse<TvEpisodeAccountState> response = _client.Get<TvEpisodeAccountState>(req); // GetTvEpisodeMethod<MovieAccountState>(tvShowId,seasonNumber,episodeNumber, TvEpisodeMethods.AccountStates);
+            IRestResponse<TvEpisodeAccountState> response = _client.Get<TvEpisodeAccountState>(req);
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (response.Data != null)
@@ -151,6 +151,16 @@ namespace TMDbLib.Client
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
             return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
+        }
+
+        public ChangesContainer GetTvEpisodeChanges(int episodeId)
+        {
+            RestRequest req = new RestRequest("tv/episode/{id}/changes");
+            req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
+
+            IRestResponse<ChangesContainer> response = _client.Get<ChangesContainer>(req);
+
+            return response.Data;
         }
 
         private T GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()

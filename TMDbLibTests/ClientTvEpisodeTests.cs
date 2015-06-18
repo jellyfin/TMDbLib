@@ -6,8 +6,10 @@ using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using Cast = TMDbLib.Objects.TvShows.Cast;
 using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
@@ -164,6 +166,15 @@ namespace TMDbLibTests
             Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, -1));
             Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 0));
             Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 10.5));
+        }
+
+        [TestMethod]
+        public void TestTvEpisodeGetChanges()
+        {
+            ChangesContainer changes = _config.Client.GetTvEpisodeChanges(62085);
+
+            Assert.IsNotNull(changes);
+            Assert.IsNotNull(changes.Changes);
         }
 
         private void TestBreakingBadSeasonOneEpisodeOneBaseProperties(TvEpisode tvEpisode)
