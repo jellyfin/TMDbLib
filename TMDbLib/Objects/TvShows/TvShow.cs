@@ -47,5 +47,6 @@ namespace TMDbLib.Objects.TvShows
         public ResultContainer<TvShow> Similar { get; set; }
         public ChangesContainer Changes { get; set; }
         public TranslationsContainer Translations { get; set; }
+        public AccountState AccountStates { get; set; }
     }
 }

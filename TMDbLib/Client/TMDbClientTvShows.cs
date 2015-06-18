@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Timers;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
@@ -49,6 +50,12 @@ namespace TMDbLib.Client
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (response.Data.Translations != null)
                 response.Data.Translations.Id = id;
+            if (response.Data.AccountStates != null)
+            {
+                response.Data.AccountStates.Id = response.Data.Id;
+                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
+            }
 
             return response.Data;
         }
@@ -233,6 +240,60 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
+        }
+
+        /// <summary>
+        /// Retrieves all information for a specific tv show in relation to the current user account
+        /// </summary>
+        /// <param name="tvShowId">The id of the tv show to get the account states for</param>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public AccountState GetTvShowAccountState(int tvShowId)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            RestRequest request = new RestRequest("tv/{tvShowId}/{method}");
+            request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("method", TvShowMethods.AccountStates.GetDescription());
+            request.AddParameter("session_id", SessionId);
+
+            IRestResponse<AccountState> response = _client.Get<AccountState>(request);
+
+            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+            if (response.Data != null)
+            {
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
+            }
+
+            return response.Data;
+        }
+
+        /// <summary>
+        /// Change the rating of a specified tv show.
+        /// </summary>
+        /// <param name="tvShowId">The id of the tv show to rate</param>
+        /// <param name="rating">The rating you wish to assign to the specified tv show. Value needs to be between 0.5 and 10 and must use increments of 0.5. Ex. using 7.1 will not work and return false.</param>
+        /// <returns>True if the the tv show's rating was successfully updated, false if not</returns>
+        /// <remarks>Requires a valid guest or user session</remarks>
+        /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>
+        public bool TvShowSetRating(int tvShowId, double rating)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest request = new RestRequest("tv/{tvShowId}/rating") { RequestFormat = DataFormat.Json };
+            request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
+            if (SessionType == SessionType.UserSession)
+                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            request.AddBody(new { value = rating });
+
+            IRestResponse<PostReply> response = _client.Post<PostReply>(request);
+
+            // status code 1 = "Success"
+            // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
+            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
         }
     }
 }

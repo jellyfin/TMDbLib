@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Account;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
@@ -365,6 +368,113 @@ namespace TMDbLibTests
             {
                 TestHelpers.SearchPages(i => _config.Client.GetTvShowList(type, i));
             }
+        }
+
+        [TestMethod]
+        public void TestTvShowAccountStateRatingSet()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+
+            // Remove the rating, favourite and watchlist
+            // TODO:if (accountState.Rating.HasValue)
+            // TODO:    // TODO: Enable this method to delete ratings when https://www.themoviedb.org/talk/556b130992514173e0003647 is completed
+            // TODO:    _config.Client.TvShowSetRating(BreakingBad, 0);
+
+            if (accountState.Watchlist)
+                _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, false);
+
+            if (accountState.Favorite)
+                _config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, BreakingBad, false);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the tv show is NOT rated, favourited or on watchlist
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            // TODO: Assert.IsNull(accountState.Rating);
+            Assert.IsFalse(accountState.Watchlist);
+            Assert.IsFalse(accountState.Favorite);
+
+            // Rate, favourite and add the tv show to the watchlist
+            _config.Client.TvShowSetRating(BreakingBad, 5);
+            _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, true);
+            _config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, BreakingBad, true);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the tv show IS rated, favourited or on watchlist
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            // TODO: Assert.AreEqual(5, accountState.Rating);
+            Assert.IsTrue(accountState.Watchlist);
+            Assert.IsTrue(accountState.Favorite);
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingBadRating()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.TvShowSetRating(BreakingBad, 7.1));
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingRatingOutOfBounds()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.TvShowSetRating(BreakingBad, 10.5));
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingRatingLowerBoundsTest()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.TvShowSetRating(BreakingBad, 0));
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingUserSession()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Ensure that the test tv show has a different rating than our test rating
+            var rating = _config.Client.GetTvShowAccountState(BreakingBad).Rating;
+            Assert.IsNotNull(rating);
+
+            double originalRating = rating.Value;
+            double newRating = Math.Abs(originalRating - 7.5) < double.Epsilon ? 2.5 : 7.5;
+
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, newRating));
+
+            // Allow TMDb to not cache our data
+            Thread.Sleep(1000);
+
+            // Check if it worked
+            Assert.AreEqual(newRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, originalRating));
+
+            // Allow TMDb to not cache our data
+            Thread.Sleep(1000);
+
+            // Check if it worked
+            Assert.AreEqual(originalRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingGuestSession()
+        {
+            // There is no way to validate the change besides the success return of the api call since the guest session doesn't have access to anything else
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 7.5));
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 8));
         }
 
         //[TestMethod]
