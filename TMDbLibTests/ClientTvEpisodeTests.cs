@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
@@ -142,7 +143,7 @@ namespace TMDbLibTests
 
             // Allow TMDb to not cache the value
             Thread.Sleep(1500);
-            
+
             Assert.IsTrue(Math.Abs(newVal - (_config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0)) < double.Epsilon);
 
             // Set back to another value
@@ -151,7 +152,7 @@ namespace TMDbLibTests
 
             // Allow TMDb to not cache the value
             Thread.Sleep(1500);
-            
+
             Assert.IsTrue(Math.Abs(newVal - (_config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0)) < double.Epsilon);
         }
 
@@ -175,6 +176,29 @@ namespace TMDbLibTests
             Assert.IsNull(tvEpisode.ProductionCode);
             Assert.AreEqual(1, tvEpisode.SeasonNumber);
             Assert.IsNotNull(tvEpisode.StillPath);
+
+            Assert.IsNotNull(tvEpisode.Crew);
+            Crew crew = tvEpisode.Crew.SingleOrDefault(s => s.CreditId == "52542275760ee313280006ce");
+            Assert.IsNotNull(crew);
+
+            Assert.AreEqual(66633, crew.Id);
+            Assert.AreEqual("52542275760ee313280006ce", crew.CreditId);
+            Assert.AreEqual("Vince Gilligan", crew.Name);
+            Assert.AreEqual("Writing", crew.Department);
+            Assert.AreEqual("Writer", crew.Job);
+            Assert.AreEqual("/rLSUjr725ez1cK7SKVxC9udO03Y.jpg", crew.ProfilePath);
+
+            Assert.IsNotNull(tvEpisode.GuestStars);
+            Cast star = tvEpisode.GuestStars.SingleOrDefault(s => s.CreditId == "52542273760ee3132800068e");
+            Assert.IsNotNull(star);
+
+            Assert.AreEqual(92495, star.Id);
+            Assert.AreEqual("John Koyama", star.Name);
+            Assert.AreEqual("52542273760ee3132800068e", star.CreditId);
+            Assert.AreEqual("Emilio Koyama", star.Character);
+            Assert.AreEqual(1, star.Order);
+            Assert.AreEqual("/uh4g85qbQGZZ0HH6IQI9fM9VUGS.jpg", star.ProfilePath);
+
         }
 
         //[TestMethod]

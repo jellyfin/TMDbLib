@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Lists;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -21,6 +23,9 @@ namespace TMDbLib.Objects.TvShows
         public string ProductionCode { get; set; } // TODO check type, was null in the apiary
         public double VoteAverage { get; set; }
         public int VoteCount { get; set; }
+
+        public List<Crew> Crew { get; set; }
+        public List<Cast> GuestStars { get; set; }
 
         public Credits Credits { get; set; }
         public ExternalIds ExternalIds { get; set; }
