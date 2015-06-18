@@ -50,6 +50,6 @@ namespace TMDbLib.Objects.Movies
         public SearchContainer<Review> Reviews { get; set; }
         public SearchContainer<ListResult> Lists { get; set; }
         public List<Change> Changes { get; set; }
-        public MovieAccountState AccountStates { get; set; }
+        public AccountState AccountStates { get; set; }
     }
 }

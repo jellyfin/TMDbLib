@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using Cast = TMDbLib.Objects.TvShows.Cast;
 using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
@@ -40,20 +44,25 @@ namespace TMDbLibTests
             _methods[TvShowMethods.ContentRatings] = tvShow => tvShow.ContentRatings;
             _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
             _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
+            _methods[TvShowMethods.Changes] = tvShow => tvShow.Changes;
         }
 
         [TestMethod]
         public void TestTvShowSeparateExtrasCredits()
         {
             Credits credits = _config.Client.GetTvShowCredits(BreakingBad);
+
             Assert.IsNotNull(credits);
             Assert.IsNotNull(credits.Cast);
-            Assert.AreEqual("Walter White", credits.Cast[0].Character);
-            Assert.AreEqual("52542282760ee313280017f9", credits.Cast[0].CreditId);
-            Assert.AreEqual(17419, credits.Cast[0].Id);
-            Assert.AreEqual("Bryan Cranston", credits.Cast[0].Name);
-            Assert.IsNotNull(credits.Cast[0].ProfilePath);
-            Assert.AreEqual(0, credits.Cast[0].Order);
+            Assert.AreEqual(BreakingBad, credits.Id);
+
+            Cast castPerson = credits.Cast[0];
+            Assert.AreEqual("Walter White", castPerson.Character);
+            Assert.AreEqual("52542282760ee313280017f9", castPerson.CreditId);
+            Assert.AreEqual(17419, castPerson.Id);
+            Assert.AreEqual("Bryan Cranston", castPerson.Name);
+            Assert.IsNotNull(castPerson.ProfilePath);
+            Assert.AreEqual(0, castPerson.Order);
 
             Assert.IsNotNull(credits.Crew);
 
@@ -61,6 +70,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(crewPerson);
 
             Assert.AreEqual(66633, crewPerson.Id);
+            Assert.AreEqual("52542287760ee31328001af1", crewPerson.CreditId);
             Assert.AreEqual("Production", crewPerson.Department);
             Assert.AreEqual("Vince Gilligan", crewPerson.Name);
             Assert.AreEqual("Executive Producer", crewPerson.Job);
@@ -84,7 +94,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasContentRatings()
         {
-            var contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad);
+            ResultContainer<ContentRating> contentRatings = _config.Client.GetTvShowContentRatings(BreakingBad);
             Assert.IsNotNull(contentRatings);
             Assert.AreEqual(BreakingBad, contentRatings.Id);
             ContentRating contentRating = contentRatings.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("US"));
@@ -95,7 +105,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasAlternativeTitles()
         {
-            var alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad);
+            ResultContainer<AlternativeTitle> alternativeTitles = _config.Client.GetTvShowAlternativeTitles(BreakingBad);
             Assert.IsNotNull(alternativeTitles);
             Assert.AreEqual(BreakingBad, alternativeTitles.Id);
             AlternativeTitle alternativeTitle = alternativeTitles.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
@@ -106,7 +116,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSeparateExtrasKeywords()
         {
-            var keywords = _config.Client.GetTvShowKeywords(BreakingBad);
+            ResultContainer<Keyword> keywords = _config.Client.GetTvShowKeywords(BreakingBad);
             Assert.IsNotNull(keywords);
             Assert.AreEqual(BreakingBad, keywords.Id);
             Keyword keyword = keywords.Results.FirstOrDefault(r => r.Id == 41525);
@@ -165,9 +175,7 @@ namespace TMDbLibTests
 
             // Test all extras, ensure none of them are populated
             foreach (Func<TvShow, object> selector in _methods.Values)
-            {
                 Assert.IsNull(selector(tvShow));
-            }
         }
 
         [TestMethod]
@@ -189,26 +197,36 @@ namespace TMDbLibTests
             Assert.AreEqual("Breaking Bad", tvShow.OriginalName);
             Assert.IsNotNull(tvShow.Overview);
             Assert.IsNotNull(tvShow.Homepage);
-            Assert.IsNotNull(tvShow.FirstAirDate);
+            Assert.AreEqual(new DateTime(2008, 01, 19), tvShow.FirstAirDate);
+            Assert.AreEqual(new DateTime(2013, 09, 29), tvShow.LastAirDate);
             Assert.AreEqual(false, tvShow.InProduction);
-            Assert.IsNotNull(tvShow.LastAirDate);
             Assert.AreEqual("Ended", tvShow.Status);
+            Assert.AreEqual("Scripted", tvShow.Type);
+            Assert.AreEqual("en", tvShow.OriginalLanguage);
+
+            Assert.IsNotNull(tvShow.ProductionCompanies);
+            Assert.AreEqual(3, tvShow.ProductionCompanies.Count);
+            Assert.AreEqual(2605, tvShow.ProductionCompanies[0].Id);
+            Assert.AreEqual("Gran Via Productions", tvShow.ProductionCompanies[0].Name);
 
             Assert.IsNotNull(tvShow.CreatedBy);
             Assert.AreEqual(1, tvShow.CreatedBy.Count);
             Assert.AreEqual(66633, tvShow.CreatedBy[0].Id);
+            Assert.AreEqual("Vince Gilligan", tvShow.CreatedBy[0].Name);
 
             Assert.IsNotNull(tvShow.EpisodeRunTime);
             Assert.AreEqual(2, tvShow.EpisodeRunTime.Count);
 
             Assert.IsNotNull(tvShow.Genres);
             Assert.AreEqual(18, tvShow.Genres[0].Id);
+            Assert.AreEqual("Drama", tvShow.Genres[0].Name);
 
             Assert.IsNotNull(tvShow.Languages);
             Assert.AreEqual("en", tvShow.Languages[0]);
 
             Assert.IsNotNull(tvShow.Networks);
             Assert.AreEqual(1, tvShow.Networks.Count);
+            Assert.AreEqual(174, tvShow.Networks[0].Id);
             Assert.AreEqual("AMC", tvShow.Networks[0].Name);
 
             Assert.IsNotNull(tvShow.OriginCountry);
@@ -273,13 +291,10 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowTranslations()
         {
-            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Translations);
+            TranslationsContainer translations = _config.Client.GetTvShowTranslations(1668);
 
-            Assert.AreEqual(1668, tvShow.Translations.Id);
-            Assert.IsNotNull(tvShow.Translations);
-            Assert.IsNotNull(tvShow.Translations.Translations);
-
-            Translation translation = tvShow.Translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
+            Assert.AreEqual(1668, translations.Id);
+            Translation translation = translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
             Assert.IsNotNull(translation);
 
             Assert.AreEqual("Croatian", translation.EnglishName);
@@ -290,11 +305,27 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowSimilars()
         {
-            TvShow tvShow = _config.Client.GetTvShow(1668, TvShowMethods.Similar);
-            Assert.IsNotNull(tvShow.Similar);
-            Assert.IsNotNull(tvShow.Similar.Results);
-            Assert.IsNotNull(tvShow.Similar.Results[0]);
-            Assert.IsNotNull(tvShow.Similar.Results[0].Name); //Is How I Met Your Mother for now :), but will not test it 
+            SearchContainer<SearchTv> tvShow = _config.Client.GetTvShowSimilar(1668);
+
+            Assert.IsNotNull(tvShow);
+            Assert.IsNotNull(tvShow.Results);
+
+            SearchTv item = tvShow.Results.SingleOrDefault(s => s.Id == 1100);
+            Assert.IsNotNull(item);
+
+            Assert.AreEqual("/wfe7Xf7tc0zmnkoNyN3xor0xR8m.jpg", item.BackdropPath);
+            Assert.AreEqual(1100, item.Id);
+            Assert.AreEqual("How I Met Your Mother", item.OriginalName);
+            Assert.AreEqual(new DateTime(2005, 09, 19), item.FirstAirDate);
+            Assert.AreEqual("/izncB6dCLV7LBQ5MsOPyMx9mUDa.jpg", item.PosterPath);
+            Assert.IsTrue(item.Popularity > 0);
+            Assert.AreEqual("How I Met Your Mother", item.Name);
+            Assert.IsTrue(item.VoteAverage > 0);
+            Assert.IsTrue(item.VoteCount > 0);
+
+            Assert.IsNotNull(item.OriginCountry);
+            Assert.AreEqual(1, item.OriginCountry.Count);
+            Assert.IsTrue(item.OriginCountry.Contains("US"));
         }
 
         [TestMethod]
@@ -316,6 +347,130 @@ namespace TMDbLibTests
             Assert.IsNotNull(result.Results[0].FirstAirDate);
             Assert.IsNotNull(result.Results[0].PosterPath);
             Assert.IsNotNull(result.Results[0].BackdropPath);
+        }
+
+        [TestMethod]
+        public void TestTvShowLatest()
+        {
+            TvShow tvShow = _config.Client.GetLatestTvShow();
+
+            Assert.IsNotNull(tvShow);
+        }
+
+        [TestMethod]
+        public void TestTvShowLists()
+        {
+            foreach (TvShowListType type in Enum.GetValues(typeof(TvShowListType)).OfType<TvShowListType>())
+            {
+                TestHelpers.SearchPages(i => _config.Client.GetTvShowList(type, i));
+            }
+        }
+
+        [TestMethod]
+        public void TestTvShowAccountStateRatingSet()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+
+            // Remove the rating, favourite and watchlist
+            // TODO:if (accountState.Rating.HasValue)
+            // TODO:    // TODO: Enable this method to delete ratings when https://www.themoviedb.org/talk/556b130992514173e0003647 is completed
+            // TODO:    _config.Client.TvShowSetRating(BreakingBad, 0);
+
+            if (accountState.Watchlist)
+                _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, false);
+
+            if (accountState.Favorite)
+                _config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, BreakingBad, false);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the tv show is NOT rated, favourited or on watchlist
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            // TODO: Assert.IsNull(accountState.Rating);
+            Assert.IsFalse(accountState.Watchlist);
+            Assert.IsFalse(accountState.Favorite);
+
+            // Rate, favourite and add the tv show to the watchlist
+            _config.Client.TvShowSetRating(BreakingBad, 5);
+            _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, true);
+            _config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, BreakingBad, true);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the tv show IS rated, favourited or on watchlist
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            // TODO: Assert.AreEqual(5, accountState.Rating);
+            Assert.IsTrue(accountState.Watchlist);
+            Assert.IsTrue(accountState.Favorite);
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingBadRating()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.TvShowSetRating(BreakingBad, 7.1));
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingRatingOutOfBounds()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.TvShowSetRating(BreakingBad, 10.5));
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingRatingLowerBoundsTest()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Assert.IsFalse(_config.Client.TvShowSetRating(BreakingBad, 0));
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingUserSession()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Ensure that the test tv show has a different rating than our test rating
+            var rating = _config.Client.GetTvShowAccountState(BreakingBad).Rating;
+            Assert.IsNotNull(rating);
+
+            double originalRating = rating.Value;
+            double newRating = Math.Abs(originalRating - 7.5) < double.Epsilon ? 2.5 : 7.5;
+
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, newRating));
+
+            // Allow TMDb to not cache our data
+            Thread.Sleep(2000);
+
+            // Check if it worked
+            Assert.AreEqual(newRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, originalRating));
+
+            // Allow TMDb to not cache our data
+            Thread.Sleep(2000);
+
+            // Check if it worked
+            Assert.AreEqual(originalRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
+        }
+
+        [TestMethod]
+        public void TestTvShowSetRatingGuestSession()
+        {
+            // There is no way to validate the change besides the success return of the api call since the guest session doesn't have access to anything else
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 7.5));
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 8));
         }
 
         //[TestMethod]
