@@ -21,5 +21,6 @@ namespace TMDbLib.Objects.TvShows
         public Images Images { get; set; }
         public Credits Credits { get; set; }
         public ExternalIds ExternalIds { get; set; }
+        public ResultContainer<Video> Videos { get; set; }
     }
 }

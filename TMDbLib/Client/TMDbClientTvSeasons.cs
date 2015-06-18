@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLib.Client
 {
@@ -40,6 +44,19 @@ namespace TMDbLib.Client
 
             IRestResponse<TvSeason> response = _client.Get<TvSeason>(req);
 
+            // Nothing to patch up
+            if (response.Data == null)
+                return null;
+
+            if (response.Data.Episodes != null)
+                response.Data.EpisodeCount = response.Data.Episodes.Count;
+
+            if (response.Data.Credits != null)
+                response.Data.Credits.Id = response.Data.Id ?? 0;
+
+            if (response.Data.ExternalIds != null)
+                response.Data.ExternalIds.Id = response.Data.Id ?? 0;
+
             return response.Data;
         }
 
@@ -68,6 +85,11 @@ namespace TMDbLib.Client
             return GetTvSeasonMethod<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language);
         }
 
+        public ResultContainer<Video> GetTvSeasonVideos(int tvShowId, int seasonNumber, string language = null)
+        {
+            return GetTvSeasonMethod<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language);
+        }
+
         /// <summary>
         /// Returns an object that contains all known exteral id's for the season of the tv show related to the specified TMDB id.
         /// </summary>
@@ -76,6 +98,37 @@ namespace TMDbLib.Client
         public ExternalIds GetTvSeasonExternalIds(int tvShowId, int seasonNumber)
         {
             return GetTvSeasonMethod<ExternalIds>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds);
+        }
+
+        public ResultContainer<TvEpisodeAccountState> GetTvSeasonAccountState(int tvShowId, int seasonNumber)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/account_states");
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
+            req.AddParameter("session_id", SessionId);
+
+            IRestResponse<ResultContainer<TvEpisodeAccountState>> response = _client.Get<ResultContainer<TvEpisodeAccountState>>(req);
+
+            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+            if (response.Data != null)
+            {
+                DeserializeAccountStatesRating(response.Data, response.Content);
+            }
+
+            return response.Data;
+        }
+
+        public ChangesContainer GetTvSeasonChanges(int seasonId)
+        {
+            RestRequest req = new RestRequest("tv/season/{id}/changes");
+            req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));
+
+            IRestResponse<ChangesContainer> response = _client.Get<ChangesContainer>(req);
+
+            return response.Data;
         }
 
         private T GetTvSeasonMethod<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
@@ -95,6 +148,30 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
+        }
+
+        private static void DeserializeAccountStatesRating(ResultContainer<TvEpisodeAccountState> accountState, string responseContent)
+        {
+            // Match both below, capture either "false" or "3.0" (numbers)
+            // "rated":{"value":3.0}
+            // "rated":false
+            const string rgx = "\"rated\":(?:(?<value>false)|\\{\"value\":(?<value>\\d+(?:\\.\\d{1,2}))\\})";
+
+            Regex regex = new Regex(rgx, RegexOptions.IgnoreCase);
+            MatchCollection matches = regex.Matches(responseContent);
+
+            for (int i = 0; i < matches.Count; i++)
+            {
+                Match match = matches[i];
+
+                string value = match.Groups["value"].Value;
+
+                if (value == "false")
+                    accountState.Results[i].Rating = null;
+                else
+                    accountState.Results[i].Rating = Double.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
+
+            }
         }
     }
 }
