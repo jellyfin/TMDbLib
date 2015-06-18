@@ -29,7 +29,7 @@ namespace TMDbLibTests
             TestHelpers.SearchPages(i => _config.Client.GetGuestSessionRatedMovies(i));
 
             // Fetch ratings
-            SearchContainer<Movie> result = _config.Client.GetGuestSessionRatedMovies();
+            SearchContainer<MovieWithRating> result = _config.Client.GetGuestSessionRatedMovies();
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Results);

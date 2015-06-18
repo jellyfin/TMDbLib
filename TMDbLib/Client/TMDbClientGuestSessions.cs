@@ -7,12 +7,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public SearchContainer<Movie> GetGuestSessionRatedMovies(int page = 0)
+        public SearchContainer<MovieWithRating> GetGuestSessionRatedMovies(int page = 0)
         {
             return GetGuestSessionRatedMovies(DefaultLanguage, page);
         }
 
-        public SearchContainer<Movie> GetGuestSessionRatedMovies(string language, int page = 0)
+        public SearchContainer<MovieWithRating> GetGuestSessionRatedMovies(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -31,7 +31,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("guest_session_id", SessionId);
 
 
-            IRestResponse<SearchContainer<Movie>> resp = _client.Post<SearchContainer<Movie>>(request);
+            IRestResponse<SearchContainer<MovieWithRating>> resp = _client.Get<SearchContainer<MovieWithRating>>(request);
 
             return resp.Data;
         }
