@@ -41,6 +41,23 @@ namespace TMDbLib.Client
 
             IRestResponse<TvEpisode> response = _client.Get<TvEpisode>(req);
 
+            // No data to patch up so return
+            if (response.Data == null) 
+                return null;
+
+            // Patch up data, so that the end user won't notice that we share objects between request-types.
+            if (response.Data.Videos != null)
+                response.Data.Videos.Id = response.Data.Id ?? 0;
+
+            if (response.Data.Credits != null)
+                response.Data.Credits.Id = response.Data.Id ?? 0;
+
+            if (response.Data.Images != null)
+                response.Data.Images.Id = response.Data.Id ?? 0;
+
+            if (response.Data.ExternalIds != null)
+                response.Data.ExternalIds.Id = response.Data.Id ?? 0;
+
             return response.Data;
         }
 
@@ -80,6 +97,11 @@ namespace TMDbLib.Client
         public ExternalIds GetTvEpisodeExternalIds(int tvShowId, int seasonNumber, int episodeNumber)
         {
             return GetTvEpisodeMethod<ExternalIds>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds);
+        }
+
+        public ResultContainer<Video> GetTvEpisodeVideos(int tvShowId, int seasonNumber, int episodeNumber)
+        {
+            return GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos);
         }
 
         private T GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()

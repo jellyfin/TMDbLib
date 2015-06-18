@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
@@ -35,6 +36,43 @@ namespace TMDbLibTests
             _methods[TvEpisodeMethods.Credits] = tvEpisode => tvEpisode.Credits;
             _methods[TvEpisodeMethods.Images] = tvEpisode => tvEpisode.Images;
             _methods[TvEpisodeMethods.ExternalIds] = tvEpisode => tvEpisode.ExternalIds;
+            _methods[TvEpisodeMethods.Videos] = tvEpisode => tvEpisode.Videos;
+        }
+
+        [TestMethod]
+        public void TestTvEpisodeExtrasNone()
+        {
+            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1);
+
+            TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
+
+            // Test all extras, ensure none of them are populated
+            foreach (Func<TvEpisode, object> selector in _methods.Values)
+            {
+                Assert.IsNull(selector(tvEpisode));
+            }
+        }
+
+        [TestMethod]
+        public void TestTvEpisodeExtrasAll()
+        {
+            TvEpisodeMethods combinedEnum = _methods.Keys.Aggregate((methods, tvEpisodeMethods) => methods | tvEpisodeMethods);
+            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1, combinedEnum);
+
+            TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
+
+            Assert.IsNotNull(tvEpisode.Images);
+            Assert.IsNotNull(tvEpisode.Images.Stills);
+            Assert.IsTrue(tvEpisode.Images.Stills.Count > 0);
+
+            TestMethodsHelper.TestAllNotNull(_methods, tvEpisode);
+        }
+
+        [TestMethod]
+        public void TestTvEpisodeExtrasExclusive()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetTvEpisode(id, 1, 1, extras), BreakingBad);
         }
 
         [TestMethod]
@@ -82,32 +120,11 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestTvEpisodeExtrasNone()
+        public void TestTvEpisodeSeparateExtrasVideos()
         {
-            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1);
-
-            TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
-
-            // Test all extras, ensure none of them are populated
-            foreach (Func<TvEpisode, object> selector in _methods.Values)
-            {
-                Assert.IsNull(selector(tvEpisode));
-            }
-        }
-
-        [TestMethod]
-        public void TestTvSeasonExtrasAll()
-        {
-            TvEpisodeMethods combinedEnum = _methods.Keys.Aggregate((methods, tvEpisodeMethods) => methods | tvEpisodeMethods);
-            TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1, combinedEnum);
-
-            TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
-
-            Assert.IsNotNull(tvEpisode.Images);
-            Assert.IsNotNull(tvEpisode.Images.Stills);
-            Assert.IsTrue(tvEpisode.Images.Stills.Count > 0);
-
-            TestMethodsHelper.TestAllNotNull(_methods, tvEpisode);
+            ResultContainer<Video> images = _config.Client.GetTvEpisodeVideos(BreakingBad, 1, 1);
+            Assert.IsNotNull(images);
+            Assert.IsNotNull(images.Results);
         }
 
         private void TestBreakingBadSeasonOneEpisodeOneBaseProperties(TvEpisode tvEpisode)
