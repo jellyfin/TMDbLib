@@ -101,7 +101,7 @@
     <Compile Include="Objects\Lists\ListCreateReply.cs" />
     <Compile Include="Objects\Lists\ListStatus.cs" />
     <Compile Include="Objects\General\ContentType.cs" />
-    <Compile Include="Objects\Movies\MovieAccountState.cs">
+    <Compile Include="Objects\General\AccountState.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Objects\General\MediaKnownFor.cs" />
@@ -168,6 +168,7 @@
     <Compile Include="Objects\General\Crew.cs" />
     <Compile Include="Objects\TvShows\ExternalIds.cs" />
     <Compile Include="Objects\General\Video.cs" />
+    <Compile Include="Objects\TvShows\TvShowListType.cs" />
     <Compile Include="Objects\TvShows\Network.cs" />
     <Compile Include="Objects\TvShows\TvEpisode.cs" />
     <Compile Include="Objects\TvShows\TvSeason.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Objects\General\TMDbConfig.cs" />
     <Compile Include="Objects\Exceptions\RequestLimitExceededException.cs" />
     <Compile Include="TMDbRestClient.cs" />
+    <Compile Include="Utilities\CustomDeserialization.cs" />
     <Compile Include="Utilities\EnumExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

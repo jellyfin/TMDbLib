@@ -14,6 +14,6 @@ namespace TMDbLib.Objects.Search
         public string Name { get; set; }
         public double VoteAverage { get; set; }
         public int VoteCount { get; set; }
-        public List<string> OrigionCountry { get; set; }
+        public List<string> OriginCountry { get; set; }
     }
 }
