@@ -15,10 +15,6 @@ namespace TMDbLib.Objects.TvShows
         [Description("external_ids")]
         ExternalIds = 4,
         [Description("videos")]
-        Videos = 8,
-        [Description("rating")]
-        Rating = 16,
-        [Description("account_states")]
-        AccountStates = 32,
+        Videos = 8
     }
 }
