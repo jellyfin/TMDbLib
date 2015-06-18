@@ -124,7 +124,7 @@ namespace TMDbLib.Client
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (response.Data != null)
             {
-                DeserializeAccountStatesRating(response.Data, response.Content);
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
             }
 
             return response.Data;
@@ -182,18 +182,6 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
-        }
-
-        private static void DeserializeAccountStatesRating(TvEpisodeAccountState accountState, string responseContent)
-        {
-            const string selector = @"""rated"":{""value"":(?<value>\d+(?:\.\d{1,2}))}";
-            Regex regex = new Regex(selector, RegexOptions.IgnoreCase);
-            Match match = regex.Match(responseContent);
-            if (match.Success)
-            {
-                accountState.Rating = Double.Parse(match.Groups["value"].Value,
-                    CultureInfo.InvariantCulture.NumberFormat);
-            }
         }
     }
 }

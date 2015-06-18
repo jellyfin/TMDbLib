@@ -115,7 +115,7 @@ namespace TMDbLib.Client
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (response.Data != null)
             {
-                DeserializeAccountStatesRating(response.Data, response.Content);
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
             }
 
             return response.Data;
@@ -148,30 +148,6 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
-        }
-
-        private static void DeserializeAccountStatesRating(ResultContainer<TvEpisodeAccountState> accountState, string responseContent)
-        {
-            // Match both below, capture either "false" or "3.0" (numbers)
-            // "rated":{"value":3.0}
-            // "rated":false
-            const string rgx = "\"rated\":(?:(?<value>false)|\\{\"value\":(?<value>\\d+(?:\\.\\d{1,2}))\\})";
-
-            Regex regex = new Regex(rgx, RegexOptions.IgnoreCase);
-            MatchCollection matches = regex.Matches(responseContent);
-
-            for (int i = 0; i < matches.Count; i++)
-            {
-                Match match = matches[i];
-
-                string value = match.Groups["value"].Value;
-
-                if (value == "false")
-                    accountState.Results[i].Rating = null;
-                else
-                    accountState.Results[i].Rating = Double.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
-
-            }
         }
     }
 }
