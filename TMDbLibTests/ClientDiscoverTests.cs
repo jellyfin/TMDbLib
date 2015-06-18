@@ -24,7 +24,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverTvShowsNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(i));
+            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(page: i));
 
             SearchContainer<TvShowBase> result = _config.Client.DiscoverTvShows();
 
@@ -37,7 +37,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverMoviesNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(i));
+            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(page: i));
 
             SearchContainer<SearchMovie> result = _config.Client.DiscoverMovies();
 

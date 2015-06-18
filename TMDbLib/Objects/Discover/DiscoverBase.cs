@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TMDbLib.Objects.Discover
 {
@@ -9,6 +10,11 @@ namespace TMDbLib.Objects.Discover
         public DiscoverBase()
         {
             Parameters = new Dictionary<string, string>();
+        }
+
+        internal List<KeyValuePair<string, string>> GetAllParameters()
+        {
+            return Parameters.ToList();
         }
     }
 }
