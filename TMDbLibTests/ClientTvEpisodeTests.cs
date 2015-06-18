@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
 {
@@ -125,6 +127,42 @@ namespace TMDbLibTests
             ResultContainer<Video> images = _config.Client.GetTvEpisodeVideos(BreakingBad, 1, 1);
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Results);
+        }
+
+        [TestMethod]
+        public void TestTvEpisodeRate()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            double prevVal = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0;
+            double newVal = prevVal < 5 ? 7 : 3;
+
+            // Set to one value
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, newVal));
+
+            // Allow TMDb to not cache the value
+            Thread.Sleep(1500);
+            
+            Assert.IsTrue(Math.Abs(newVal - (_config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0)) < double.Epsilon);
+
+            // Set back to another value
+            newVal = prevVal;
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, newVal));
+
+            // Allow TMDb to not cache the value
+            Thread.Sleep(1500);
+            
+            Assert.IsTrue(Math.Abs(newVal - (_config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0)) < double.Epsilon);
+        }
+
+        [TestMethod]
+        public void TestTvEpisodeRateBad()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, -1));
+            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 0));
+            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 10.5));
         }
 
         private void TestBreakingBadSeasonOneEpisodeOneBaseProperties(TvEpisode tvEpisode)

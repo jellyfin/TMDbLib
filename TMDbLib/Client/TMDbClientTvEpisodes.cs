@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLib.Client
 {
@@ -42,7 +46,7 @@ namespace TMDbLib.Client
             IRestResponse<TvEpisode> response = _client.Get<TvEpisode>(req);
 
             // No data to patch up so return
-            if (response.Data == null) 
+            if (response.Data == null)
                 return null;
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
@@ -104,6 +108,51 @@ namespace TMDbLib.Client
             return GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos);
         }
 
+        public TvEpisodeAccountState GetTvEpisodeAccountState(int tvShowId, int seasonNumber, int episodeNumber)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/account_states");
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
+            req.AddParameter("session_id", SessionId);
+
+            IRestResponse<TvEpisodeAccountState> response = _client.Get<TvEpisodeAccountState>(req); // GetTvEpisodeMethod<MovieAccountState>(tvShowId,seasonNumber,episodeNumber, TvEpisodeMethods.AccountStates);
+
+            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+            if (response.Data != null)
+            {
+                DeserializeAccountStatesRating(response.Data, response.Content);
+            }
+
+            return response.Data;
+        }
+
+        public bool TvEpisodeSetRating(int tvShowId, int seasonNumber, int episodeNumber, double rating)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/rating") { RequestFormat = DataFormat.Json };
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
+
+            if (SessionType == SessionType.UserSession)
+                req.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            req.AddBody(new { value = rating });
+
+            IRestResponse<PostReply> response = _client.Post<PostReply>(req);
+
+            // status code 1 = "Success"
+            // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
+            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
+        }
+
         private T GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
@@ -123,6 +172,18 @@ namespace TMDbLib.Client
             IRestResponse<T> resp = _client.Get<T>(req);
 
             return resp.Data;
+        }
+
+        private static void DeserializeAccountStatesRating(TvEpisodeAccountState accountState, string responseContent)
+        {
+            const string selector = @"""rated"":{""value"":(?<value>\d+(?:\.\d{1,2}))}";
+            Regex regex = new Regex(selector, RegexOptions.IgnoreCase);
+            Match match = regex.Match(responseContent);
+            if (match.Success)
+            {
+                accountState.Rating = Double.Parse(match.Groups["value"].Value,
+                    CultureInfo.InvariantCulture.NumberFormat);
+            }
         }
     }
 }
