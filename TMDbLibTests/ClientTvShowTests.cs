@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -46,9 +45,7 @@ namespace TMDbLibTests
             _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
             _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
             _methods[TvShowMethods.Changes] = tvShow => tvShow.Changes;
-            // TODO:
-            //_methods[TvShowMethods.AccountStates] = tvShow => tvShow.Keywords;
-            //_methods[TvShowMethods.Rating] = tvShow => tvShow.Keywords;
+            _methods[TvShowMethods.AccountStates] = tvShow => tvShow.Keywords;
         }
 
         [TestMethod]
@@ -252,6 +249,8 @@ namespace TMDbLibTests
             Assert.AreNotEqual(0, tvShow.Popularity);
             Assert.AreNotEqual(0, tvShow.VoteAverage);
             Assert.AreNotEqual(0, tvShow.VoteAverage);
+
+            Assert.IsNotNull(tvShow.AccountStates);
         }
 
         [TestMethod]
