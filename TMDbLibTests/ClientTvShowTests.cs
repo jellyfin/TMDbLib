@@ -45,7 +45,6 @@ namespace TMDbLibTests
             _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
             _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
             _methods[TvShowMethods.Changes] = tvShow => tvShow.Changes;
-            _methods[TvShowMethods.AccountStates] = tvShow => tvShow.Keywords;
         }
 
         [TestMethod]
@@ -249,8 +248,6 @@ namespace TMDbLibTests
             Assert.AreNotEqual(0, tvShow.Popularity);
             Assert.AreNotEqual(0, tvShow.VoteAverage);
             Assert.AreNotEqual(0, tvShow.VoteAverage);
-
-            Assert.IsNotNull(tvShow.AccountStates);
         }
 
         [TestMethod]

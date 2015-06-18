@@ -50,12 +50,6 @@ namespace TMDbLib.Client
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (response.Data.Translations != null)
                 response.Data.Translations.Id = id;
-            if (response.Data.AccountStates != null)
-            {
-                response.Data.AccountStates.Id = response.Data.Id;
-                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
-            }
 
             return response.Data;
         }

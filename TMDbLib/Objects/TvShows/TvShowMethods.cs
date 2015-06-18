@@ -29,8 +29,6 @@ namespace TMDbLib.Objects.TvShows
         [Description("account_states")]
         AccountStates = 512,
         [Description("changes")]
-        Changes = 1024,
-        [Description("rating")]
-        Rating = 2048,
+        Changes = 1024
     }
 }
