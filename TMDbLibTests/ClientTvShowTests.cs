@@ -446,7 +446,7 @@ namespace TMDbLibTests
             Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, newRating));
 
             // Allow TMDb to not cache our data
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             // Check if it worked
             Assert.AreEqual(newRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
@@ -455,7 +455,7 @@ namespace TMDbLibTests
             Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, originalRating));
 
             // Allow TMDb to not cache our data
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             // Check if it worked
             Assert.AreEqual(originalRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
