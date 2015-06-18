@@ -43,6 +43,9 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\Discover\DiscoverBase.cs" />
+    <Compile Include="Objects\Discover\DiscoverMovie.cs" />
+    <Compile Include="Objects\Discover\DiscoverTv.cs" />
     <Compile Include="Client\TMDbClientGuestSessions.cs" />
     <Compile Include="Objects\Certifications\CertificationItem.cs" />
     <Compile Include="Objects\Certifications\CertificationsContainer.cs" />

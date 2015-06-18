@@ -10,6 +10,26 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        public SearchContainer<TvShowBase> DiscoverTv(DiscoverTv discover, int page = 0)
+        {
+            return DiscoverTv(discover, DefaultLanguage, page);
+        }
+
+        public SearchContainer<TvShowBase> DiscoverTv(DiscoverTv discover, string language, int page = 0)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SearchContainer<SearchMovie> DiscoverMovie(DiscoverMovie discover, int page = 0)
+        {
+            return DiscoverMovie(discover, DefaultLanguage, page);
+        }
+
+        public SearchContainer<SearchMovie> DiscoverMovie(DiscoverMovie discover, string language, int page = 0)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Can be used to discover new tv shows matching certain criteria
         /// </summary>
