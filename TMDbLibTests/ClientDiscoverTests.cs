@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using System.Linq;
 using TMDbLib.Objects.Search;
@@ -35,6 +36,16 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestDiscoverTvShows()
+        {
+            DiscoverTv query = new DiscoverTv()
+                    .WhereVoteCountIsAtLeast(100)
+                    .WhereVoteAverageIsAtLeast(2);
+
+            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(query, page: i));
+        }
+
+        [TestMethod]
         public void TestDiscoverMoviesNoParams()
         {
             TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(page: i));
@@ -45,6 +56,16 @@ namespace TMDbLibTests
             Assert.AreEqual(1, result.Page);
             Assert.IsNotNull(result.Results);
             Assert.IsTrue(result.Results.Any());
+        }
+
+        [TestMethod]
+        public void TestDiscoverMovies()
+        {
+            DiscoverMovie query = new DiscoverMovie()
+                    .WhereVoteCountIsAtLeast(1000)
+                    .WhereVoteAverageIsAtLeast(2);
+
+            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(query, page: i));
         }
     }
 }
