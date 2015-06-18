@@ -18,6 +18,7 @@ namespace TMDbLibTests
     public class ClientTvEpisodeTests
     {
         private const int BreakingBad = 1396;
+        private const int BreakingBadSeason1Episode1Id = 62085;
 
         private static Dictionary<TvEpisodeMethods, Func<TvEpisode, object>> _methods;
         private TestConfig _config;
@@ -171,7 +172,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvEpisodeGetChanges()
         {
-            ChangesContainer changes = _config.Client.GetTvEpisodeChanges(62085);
+            ChangesContainer changes = _config.Client.GetTvEpisodeChanges(BreakingBadSeason1Episode1Id);
 
             Assert.IsNotNull(changes);
             Assert.IsNotNull(changes.Changes);
