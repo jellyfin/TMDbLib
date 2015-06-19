@@ -83,9 +83,9 @@ namespace TMDbLib.Client
             return SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page);
         }
 
-        public SearchContainer<TvShowBase> SearchTvShow(string query, int page = 0)
+        public SearchContainer<SearchTv> SearchTvShow(string query, int page = 0)
         {
-            return SearchMethod<SearchContainer<TvShowBase>>("tv", query, page);
+            return SearchMethod<SearchContainer<SearchTv>>("tv", query, page);
         }
     }
 }
