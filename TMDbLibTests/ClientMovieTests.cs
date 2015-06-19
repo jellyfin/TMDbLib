@@ -202,13 +202,12 @@ namespace TMDbLibTests
             Assert.IsTrue(backdrop.VoteCount > 0);
             Assert.AreEqual(1920, backdrop.Width);
 
-            ImageDataWithId poster = resp.Posters.SingleOrDefault(s => s.FilePath == "/c2SQMd00CCGTiDxGXVqA2J9lmzF.jpg");
+            ImageData poster = resp.Posters.SingleOrDefault(s => s.FilePath == "/c2SQMd00CCGTiDxGXVqA2J9lmzF.jpg");
             Assert.IsNotNull(poster);
 
             Assert.IsTrue(Math.Abs(0.666666666666667 - poster.AspectRatio) < double.Epsilon);
             Assert.AreEqual("/c2SQMd00CCGTiDxGXVqA2J9lmzF.jpg", poster.FilePath);
             Assert.AreEqual(1500, poster.Height);
-            Assert.AreEqual("517036f519c29569c20768cf", poster.Id);
             Assert.AreEqual("en", poster.Iso_639_1);
             Assert.IsTrue(poster.VoteAverage > 0);
             Assert.IsTrue(poster.VoteCount > 0);
