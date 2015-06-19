@@ -255,7 +255,7 @@ namespace TMDbLibTests
         {
             TestHelpers.SearchPages(i => _config.Client.GetTvShowsPopular(i));
 
-            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsPopular();
+            SearchContainer<SearchTv> result = _config.Client.GetTvShowsPopular();
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);
@@ -340,7 +340,7 @@ namespace TMDbLibTests
             // With so few ratings for TV shows right now it's set really low.
             TestHelpers.SearchPages(i => _config.Client.GetTvShowsTopRated(i));
 
-            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsTopRated();
+            SearchContainer<SearchTv> result = _config.Client.GetTvShowsTopRated();
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);

@@ -26,7 +26,7 @@ namespace TMDbLibTests
         {
             TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(i));
 
-            SearchContainer<TvShowBase> result = _config.Client.DiscoverTvShows();
+            SearchContainer<SearchTv> result = _config.Client.DiscoverTvShows();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Page);

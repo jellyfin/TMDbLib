@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Search
@@ -19,6 +20,7 @@ namespace TMDbLib.Objects.Search
         public bool Adult { get; set; }
         public DateTime? ReleaseDate { get; set; }
         public MediaType Type { get; set; }
+        public List<string> OriginCountry { get; set; }
 
         public string MediaType
         {
