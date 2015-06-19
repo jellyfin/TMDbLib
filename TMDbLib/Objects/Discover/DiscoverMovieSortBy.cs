@@ -1,9 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace TMDbLib.Objects.Discover
 {
     public enum DiscoverMovieSortBy
     {
+        [Obsolete]
+        Undefined,
         [Description("popularity.asc")]
         Popularity,
         [Description("popularity.desc")]

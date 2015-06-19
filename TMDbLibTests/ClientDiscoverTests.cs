@@ -25,9 +25,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverTvShowsNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(page: i));
+            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(null, page: i));
 
-            SearchContainer<TvShowBase> result = _config.Client.DiscoverTvShows();
+            SearchContainer<SearchTv> result = _config.Client.DiscoverTvShows(null);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Page);
@@ -48,9 +48,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverMoviesNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(page: i));
+            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(null, page: i));
 
-            SearchContainer<SearchMovie> result = _config.Client.DiscoverMovies();
+            SearchContainer<SearchMovie> result = _config.Client.DiscoverMovies(discover: null);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Page);

@@ -95,7 +95,7 @@ namespace TMDbLib.Objects.Discover
         /// <summary>
         /// Filter the results so that only the primary release date year has this value. Expected value is a year.
         /// </summary>
-        public DiscoverMovie WhereFirstAirDateIsInYear(int year)
+        public DiscoverMovie WherePrimaryReleaseIsInYear(int year)
         {
             Parameters["primary_release_year"] = year.ToString("0000");
             return this;

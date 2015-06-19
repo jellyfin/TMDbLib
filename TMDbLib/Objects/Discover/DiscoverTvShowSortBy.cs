@@ -1,9 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace TMDbLib.Objects.Discover
 {
     public enum DiscoverTvShowSortBy
     {
+        [Obsolete]
+        Undefined,
         [Description("vote_average.asc")]
         VoteAverage,
         [Description("vote_average.desc")]
