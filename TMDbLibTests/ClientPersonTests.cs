@@ -269,7 +269,6 @@ namespace TMDbLibTests
             Assert.IsTrue(Math.Abs(0.666666666666667 - image.AspectRatio) < double.Epsilon);
             Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", image.FilePath);
             Assert.AreEqual(1500, image.Height);
-            Assert.AreEqual("51ee69f8760ee336455679c5", image.Id);
             Assert.IsNull(image.Iso_639_1);
             Assert.AreEqual(1000, image.Width);
             Assert.IsTrue(image.VoteAverage > 0);

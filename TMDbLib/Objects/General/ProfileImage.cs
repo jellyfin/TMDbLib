@@ -9,6 +9,5 @@
         public double AspectRatio { get; set; }
         public int VoteCount { get; set; }
         public double VoteAverage { get; set; }
-        public string Id { get; set; }
     }
 }
