@@ -6,7 +6,6 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Utilities;
-using Credits = TMDbLib.Objects.People.Credits;
 
 namespace TMDbLib.Client
 {
@@ -72,19 +71,44 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public Credits GetPersonCredits(int personId)
+        public MovieCredits GetPersonMovieCredits(int personId)
         {
-            return GetPersonCredits(personId, DefaultLanguage);
+            return GetPersonMovieCredits(personId, DefaultLanguage);
         }
 
-        public Credits GetPersonCredits(int personId, string language)
+        public MovieCredits GetPersonMovieCredits(int personId, string language)
         {
-            return GetPersonMethod<Credits>(personId, PersonMethods.Credits, language: language);
+            return GetPersonMethod<MovieCredits>(personId, PersonMethods.MovieCredits, language: language);
+        }
+
+        public TvCredits GetPersonTvCredits(int personId)
+        {
+            return GetPersonTvCredits(personId, DefaultLanguage);
+        }
+
+        public TvCredits GetPersonTvCredits(int personId, string language)
+        {
+            return GetPersonMethod<TvCredits>(personId, PersonMethods.TvCredits, language: language);
         }
 
         public ProfileImages GetPersonImages(int personId)
         {
             return GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
+        }
+
+        public SearchContainer<TaggedImage> GetPersonTaggedImages(int personId, int page)
+        {
+            return GetPersonTaggedImages(personId, DefaultLanguage, page);
+        }
+
+        public SearchContainer<TaggedImage> GetPersonTaggedImages(int personId, string language, int page)
+        {
+            return GetPersonMethod<SearchContainer<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page);
+        }
+
+        public ExternalIds GetPersonExternalIds(int personId)
+        {
+            return GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds);
         }
 
         public List<Change> GetPersonChanges(int personId, DateTime? startDate = null, DateTime? endDate = null)
@@ -115,17 +139,9 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public Person GetPersonItem(PersonItemType type)
+        public Person GetLatestPerson()
         {
-            RestRequest req;
-            switch (type)
-            {
-                case PersonItemType.Latest:
-                    req = new RestRequest("person/latest");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("type");
-            }
+            RestRequest req = new RestRequest("person/latest");
 
             req.DateFormat = "yyyy-MM-dd";
 

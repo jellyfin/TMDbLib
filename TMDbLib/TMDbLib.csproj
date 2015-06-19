@@ -49,6 +49,11 @@
     <Compile Include="Objects\Certifications\CertificationsContainer.cs" />
     <Compile Include="Client\TMDbClientCertifications.cs" />
     <Compile Include="Client\TMDbClientTimezones.cs" />
+    <Compile Include="Objects\General\Media.cs" />
+    <Compile Include="Objects\People\TaggedImage.cs" />
+    <Compile Include="Objects\People\TvCredits.cs" />
+    <Compile Include="Objects\People\TvJob.cs" />
+    <Compile Include="Objects\People\TvRole.cs" />
     <Compile Include="Objects\Credit\CreditEpisode.cs" />
     <Compile Include="Objects\Credit\Credit.cs" />
     <Compile Include="Objects\Credit\CreditMedia.cs" />
@@ -94,7 +99,7 @@
     <Compile Include="Objects\Companies\CompanyMovies.cs" />
     <Compile Include="Objects\Companies\CompanyMethods.cs" />
     <Compile Include="Objects\Companies\ParentCompany.cs" />
-    <Compile Include="Objects\General\Profile.cs" />
+    <Compile Include="Objects\General\ProfileImage.cs" />
     <Compile Include="Objects\Collections\CollectionMethods.cs" />
     <Compile Include="Objects\Collections\Part.cs" />
     <Compile Include="Objects\Collections\Collection.cs" />
@@ -148,10 +153,9 @@
     <Compile Include="Objects\Movies\TranslationsContainer.cs" />
     <Compile Include="Client\TMDbClient.cs" />
     <Compile Include="Objects\Search\SearchMulti.cs" />
-    <Compile Include="Objects\People\Credits.cs" />
+    <Compile Include="Objects\People\MovieCredits.cs" />
     <Compile Include="Objects\People\MovieJob.cs" />
     <Compile Include="Objects\People\MovieRole.cs" />
-    <Compile Include="Objects\People\PersonItemType.cs" />
     <Compile Include="Objects\People\PersonListType.cs" />
     <Compile Include="Objects\People\Person.cs" />
     <Compile Include="Objects\People\PersonMethods.cs" />
@@ -172,7 +176,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Objects\General\Crew.cs" />
-    <Compile Include="Objects\TvShows\ExternalIds.cs" />
+    <Compile Include="Objects\General\ExternalIds.cs" />
     <Compile Include="Objects\General\Video.cs" />
     <Compile Include="Objects\TvShows\TvShowListType.cs" />
     <Compile Include="Objects\TvShows\Network.cs" />
