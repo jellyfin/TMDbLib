@@ -138,7 +138,7 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestTvSeasonRating()
+        public void TestTvSeasonAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 

@@ -134,29 +134,36 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestTvEpisodeRate()
+        public void TestTvEpisodeAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            TvEpisodeAccountState accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
 
-            double prevVal = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0;
-            double newVal = prevVal < 5 ? 7 : 3;
+            int id = accountState.Id;
 
-            // Set to one value
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, newVal));
+            // Remove the rating
+            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 2);
 
-            // Allow TMDb to not cache the value
-            Thread.Sleep(1500);
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
 
-            Assert.IsTrue(Math.Abs(newVal - (_config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0)) < double.Epsilon);
+            // Test that the movie is rated correctly
+            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
 
-            // Set back to another value
-            newVal = prevVal;
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, newVal));
+            Assert.AreEqual(id, accountState.Id);
+            Assert.IsTrue(accountState.Rating.HasValue);
+            Assert.IsTrue(Math.Abs(2 - accountState.Rating.Value) < double.Epsilon);
 
-            // Allow TMDb to not cache the value
-            Thread.Sleep(1500);
+            // Rate the movie
+            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 7);
 
-            Assert.IsTrue(Math.Abs(newVal - (_config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Rating ?? 0)) < double.Epsilon);
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the movie is rated correctly
+            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
+            Assert.IsTrue(accountState.Rating.HasValue);
+            Assert.IsTrue(Math.Abs(7 - accountState.Rating.Value) < double.Epsilon);
         }
 
         [TestMethod]
