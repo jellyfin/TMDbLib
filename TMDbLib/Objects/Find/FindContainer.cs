@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
-using TMDbLib.Objects.TvShows;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Find
 {
@@ -9,6 +9,6 @@ namespace TMDbLib.Objects.Find
     {
         public List<MovieResult> MovieResults { get; set; }
         public List<Person> PersonResults { get; set; }     // Unconfirmed type
-        public List<TvShowBase> TvResults { get; set; }
+        public List<SearchTv> TvResults { get; set; }
     }
 }

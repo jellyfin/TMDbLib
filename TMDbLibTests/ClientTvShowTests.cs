@@ -255,7 +255,7 @@ namespace TMDbLibTests
         {
             TestHelpers.SearchPages(i => _config.Client.GetTvShowsPopular(i));
 
-            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsPopular();
+            SearchContainer<SearchTv> result = _config.Client.GetTvShowsPopular();
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);
@@ -340,7 +340,7 @@ namespace TMDbLibTests
             // With so few ratings for TV shows right now it's set really low.
             TestHelpers.SearchPages(i => _config.Client.GetTvShowsTopRated(i));
 
-            SearchContainer<TvShowBase> result = _config.Client.GetTvShowsTopRated();
+            SearchContainer<SearchTv> result = _config.Client.GetTvShowsTopRated();
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);
@@ -367,46 +367,99 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestTvShowAccountStateRatingSet()
+        public void TestTvShowAccountStateFavoriteSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad);
 
-            // Remove the rating, favourite and watchlist
-            // TODO:if (accountState.Rating.HasValue)
-            // TODO:    // TODO: Enable this method to delete ratings when https://www.themoviedb.org/talk/556b130992514173e0003647 is completed
-            // TODO:    _config.Client.TvShowSetRating(BreakingBad, 0);
-
-            if (accountState.Watchlist)
-                _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, false);
-
+            // Remove the favourite
             if (accountState.Favorite)
                 _config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, BreakingBad, false);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            // Test that the tv show is NOT rated, favourited or on watchlist
+            // Test that the movie is NOT favourited
             accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+
             Assert.AreEqual(BreakingBad, accountState.Id);
-            // TODO: Assert.IsNull(accountState.Rating);
-            Assert.IsFalse(accountState.Watchlist);
             Assert.IsFalse(accountState.Favorite);
 
-            // Rate, favourite and add the tv show to the watchlist
-            _config.Client.TvShowSetRating(BreakingBad, 5);
-            _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, true);
+            // Favourite the movie
             _config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, BreakingBad, true);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            // Test that the tv show IS rated, favourited or on watchlist
+            // Test that the movie IS favourited
             accountState = _config.Client.GetTvShowAccountState(BreakingBad);
             Assert.AreEqual(BreakingBad, accountState.Id);
-            // TODO: Assert.AreEqual(5, accountState.Rating);
-            Assert.IsTrue(accountState.Watchlist);
             Assert.IsTrue(accountState.Favorite);
+        }
+
+        [TestMethod]
+        public void TestTvShowAccountStateWatchlistSet()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+
+            // Remove the watchlist
+            if (accountState.Watchlist)
+                _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, false);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the movie is NOT watchlisted
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsFalse(accountState.Watchlist);
+
+            // Watchlist the movie
+            _config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, BreakingBad, true);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the movie IS watchlisted
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsTrue(accountState.Watchlist);
+        }
+
+        [TestMethod]
+        public void TestTvShowAccountStateRatingSet()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+
+            Assert.Inconclusive("Alter when TMDb has the option to remove ratings");
+
+            // Remove the rating
+            if (accountState.Rating.HasValue)
+                // TODO: Alter when TMDb has the option to remove ratings
+                _config.Client.TvShowSetRating(BreakingBad, 0);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the movie is NOT rated
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsFalse(accountState.Rating.HasValue);
+
+            // Rate the movie
+            _config.Client.TvShowSetRating(BreakingBad, 5);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the movie IS rated
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsTrue(accountState.Rating.HasValue);
         }
 
         [TestMethod]
