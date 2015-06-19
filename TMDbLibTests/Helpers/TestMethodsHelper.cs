@@ -33,7 +33,7 @@ namespace TMDbLibTests.Helpers
             // Ensure we have all the pieces
             foreach (T method in methodSelectors.Keys)
             {
-                Assert.IsNotNull(methodSelectors[method](item));
+                Assert.IsNotNull(methodSelectors[method](item), "Tested item was missing " + method);
             }
         }
     }
