@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using System.Linq;
 using TMDbLib.Objects.Search;
@@ -24,9 +25,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverTvShowsNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(i));
+            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(null, page: i));
 
-            SearchContainer<SearchTv> result = _config.Client.DiscoverTvShows();
+            SearchContainer<SearchTv> result = _config.Client.DiscoverTvShows(null);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Page);
@@ -35,16 +36,36 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestDiscoverTvShows()
+        {
+            DiscoverTv query = new DiscoverTv()
+                    .WhereVoteCountIsAtLeast(100)
+                    .WhereVoteAverageIsAtLeast(2);
+
+            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows(query, page: i));
+        }
+
+        [TestMethod]
         public void TestDiscoverMoviesNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(i));
+            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(null, page: i));
 
-            SearchContainer<SearchMovie> result = _config.Client.DiscoverMovies();
+            SearchContainer<SearchMovie> result = _config.Client.DiscoverMovies(discover: null);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Page);
             Assert.IsNotNull(result.Results);
             Assert.IsTrue(result.Results.Any());
+        }
+
+        [TestMethod]
+        public void TestDiscoverMovies()
+        {
+            DiscoverMovie query = new DiscoverMovie()
+                    .WhereVoteCountIsAtLeast(1000)
+                    .WhereVoteAverageIsAtLeast(2);
+
+            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies(query, page: i));
         }
     }
 }

@@ -1,21 +1,39 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace TMDbLib.Objects.Discover
 {
     public enum DiscoverMovieSortBy
     {
-        Undefined = 0,
-        [Description("vote_average.desc")]
-        VoteAverageDescending = 1,
-        [Description("vote_average.asc")]
-        VoteAverageAscending = 2,
-        [Description("release_date.desc")]
-        ReleaseDateDescending = 3,
-        [Description("release_date.asc")]
-        ReleaseDateAscending = 4,
-        [Description("popularity.desc")]
-        PopularityDescending = 5,
+        [Obsolete]
+        Undefined,
         [Description("popularity.asc")]
-        PopularityAscending = 6
+        Popularity,
+        [Description("popularity.desc")]
+        PopularityDesc,
+        [Description("release_date.asc")]
+        ReleaseDate,
+        [Description("release_date.desc")]
+        ReleaseDateDesc,
+        [Description("revenue.asc")]
+        Revenue,
+        [Description("revenue.desc")]
+        RevenueDesc,
+        [Description("primary_release_date.asc")]
+        PrimaryReleaseDate,
+        [Description("primary_release_date.desc")]
+        PrimaryReleaseDateDesc,
+        [Description("original_title.asc")]
+        OriginalTitle,
+        [Description("original_title.desc")]
+        OriginalTitleDesc,
+        [Description("vote_average.asc")]
+        VoteAverage,
+        [Description("vote_average.desc")]
+        VoteAverageDesc,
+        [Description("vote_count.asc")]
+        VoteCount,
+        [Description("vote_count.desc")]
+        VoteCountDesc
     }
 }
