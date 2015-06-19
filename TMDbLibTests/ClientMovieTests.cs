@@ -7,7 +7,6 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
-using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using Credits = TMDbLib.Objects.Movies.Credits;
 
@@ -340,7 +339,7 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            MovieAccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
+            AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
 
             // Remove the rating, favourite and watchlist
             // TODO:if (accountState.Rating.HasValue)
