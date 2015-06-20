@@ -61,9 +61,15 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter.
         /// </returns>
-        public SearchContainer<SearchTv> GetTvShowsPopular(int page = -1, string language = null)
+        public SearchContainer<SearchTv> GetTvShowPopular(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "popular");
+        }
+
+        [Obsolete("Use GetTvShowPopular")]
+        public SearchContainer<SearchTv> GetTvShowsPopular(int page = -1, string language = null)
+        {
+            return GetTvShowPopular(page, language);
         }
 
         /// <summary>
@@ -73,9 +79,15 @@ namespace TMDbLib.Client
         /// Returns the basic information about a tv show.
         /// For additional data use the main GetTvShow method using the tv show id as parameter
         /// </returns>
-        public SearchContainer<SearchTv> GetTvShowsTopRated(int page = -1, string language = null)
+        public SearchContainer<SearchTv> GetTvShowTopRated(int page = -1, string language = null)
         {
             return GetTvShowList(page, language, "top_rated");
+        }
+
+        [Obsolete("Use GetTvShowTopRated")]
+        public SearchContainer<SearchTv> GetTvShowsTopRated(int page = -1, string language = null)
+        {
+            return GetTvShowTopRated(page, language);
         }
 
         private SearchContainer<SearchTv> GetTvShowList(int page, string language, string tvShowListType)

@@ -253,9 +253,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowPopular()
         {
-            TestHelpers.SearchPages(i => _config.Client.GetTvShowsPopular(i));
+            TestHelpers.SearchPages(i => _config.Client.GetTvShowPopular(i));
 
-            SearchContainer<SearchTv> result = _config.Client.GetTvShowsPopular();
+            SearchContainer<SearchTv> result = _config.Client.GetTvShowPopular();
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);
@@ -338,9 +338,9 @@ namespace TMDbLibTests
             // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data. 
             // And as we get more ratings I increase that limit so we get more accurate results. 
             // With so few ratings for TV shows right now it's set really low.
-            TestHelpers.SearchPages(i => _config.Client.GetTvShowsTopRated(i));
+            TestHelpers.SearchPages(i => _config.Client.GetTvShowTopRated(i));
 
-            SearchContainer<SearchTv> result = _config.Client.GetTvShowsTopRated();
+            SearchContainer<SearchTv> result = _config.Client.GetTvShowTopRated();
             Assert.IsNotNull(result.Results[0].Id);
             Assert.IsNotNull(result.Results[0].Name);
             Assert.IsNotNull(result.Results[0].OriginalName);
