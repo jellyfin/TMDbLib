@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLib.Client
 {
@@ -40,6 +44,23 @@ namespace TMDbLib.Client
                 req.AddParameter("append_to_response", appends);
 
             IRestResponse<TvEpisode> response = _client.Get<TvEpisode>(req);
+
+            // No data to patch up so return
+            if (response.Data == null)
+                return null;
+
+            // Patch up data, so that the end user won't notice that we share objects between request-types.
+            if (response.Data.Videos != null)
+                response.Data.Videos.Id = response.Data.Id ?? 0;
+
+            if (response.Data.Credits != null)
+                response.Data.Credits.Id = response.Data.Id ?? 0;
+
+            if (response.Data.Images != null)
+                response.Data.Images.Id = response.Data.Id ?? 0;
+
+            if (response.Data.ExternalIds != null)
+                response.Data.ExternalIds.Id = response.Data.Id ?? 0;
 
             return response.Data;
         }
@@ -80,6 +101,66 @@ namespace TMDbLib.Client
         public ExternalIds GetTvEpisodeExternalIds(int tvShowId, int seasonNumber, int episodeNumber)
         {
             return GetTvEpisodeMethod<ExternalIds>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds);
+        }
+
+        public ResultContainer<Video> GetTvEpisodeVideos(int tvShowId, int seasonNumber, int episodeNumber)
+        {
+            return GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos);
+        }
+
+        public TvEpisodeAccountState GetTvEpisodeAccountState(int tvShowId, int seasonNumber, int episodeNumber)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/account_states");
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
+            req.AddParameter("session_id", SessionId);
+
+            IRestResponse<TvEpisodeAccountState> response = _client.Get<TvEpisodeAccountState>(req);
+
+            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+            if (response.Data != null)
+            {
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
+            }
+
+            return response.Data;
+        }
+
+        public bool TvEpisodeSetRating(int tvShowId, int seasonNumber, int episodeNumber, double rating)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/rating") { RequestFormat = DataFormat.Json };
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
+
+            if (SessionType == SessionType.UserSession)
+                req.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            req.AddBody(new { value = rating });
+
+            IRestResponse<PostReply> response = _client.Post<PostReply>(req);
+
+            // status code 1 = "Success"
+            // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
+            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
+        }
+
+        public ChangesContainer GetTvEpisodeChanges(int episodeId)
+        {
+            RestRequest req = new RestRequest("tv/episode/{id}/changes");
+            req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
+
+            IRestResponse<ChangesContainer> response = _client.Get<ChangesContainer>(req);
+
+            return response.Data;
         }
 
         private T GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
