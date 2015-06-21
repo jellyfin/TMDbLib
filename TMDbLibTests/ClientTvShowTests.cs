@@ -18,6 +18,7 @@ namespace TMDbLibTests
     public class ClientTvShowTests
     {
         private const int BreakingBad = 1396;
+        private const int House = 1408;
 
         private static Dictionary<TvShowMethods, Func<TvShow, object>> _methods;
         private TestConfig _config;
@@ -434,12 +435,14 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad);
 
-            Assert.Inconclusive("Alter when TMDb has the option to remove ratings");
-
             // Remove the rating
             if (accountState.Rating.HasValue)
-                // TODO: Alter when TMDb has the option to remove ratings
-                _config.Client.TvShowSetRating(BreakingBad, 0);
+            {
+                Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
+
+                // Allow TMDb to cache our changes
+                Thread.Sleep(2000);
+            }
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
@@ -460,6 +463,9 @@ namespace TMDbLibTests
             accountState = _config.Client.GetTvShowAccountState(BreakingBad);
             Assert.AreEqual(BreakingBad, accountState.Id);
             Assert.IsTrue(accountState.Rating.HasValue);
+
+            // Remove the rating
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
         }
 
         [TestMethod]
@@ -487,31 +493,36 @@ namespace TMDbLibTests
         public void TestTvShowSetRatingUserSession()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad);
 
-            // Ensure that the test tv show has a different rating than our test rating
-            var rating = _config.Client.GetTvShowAccountState(BreakingBad).Rating;
-            Assert.IsNotNull(rating);
+            // Remove the rating
+            if (accountState.Rating.HasValue)
+            {
+                Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
 
-            double originalRating = rating.Value;
-            double newRating = Math.Abs(originalRating - 7.5) < double.Epsilon ? 2.5 : 7.5;
+                // Allow TMDb to cache our changes
+                Thread.Sleep(2000);
+            }
 
-            // Try changing the rating
-            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, newRating));
+            // Test that the movie is NOT rated
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
 
-            // Allow TMDb to not cache our data
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsFalse(accountState.Rating.HasValue);
+
+            // Rate the movie
+            _config.Client.TvShowSetRating(BreakingBad, 5);
+
+            // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            // Check if it worked
-            Assert.AreEqual(newRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
+            // Test that the movie IS rated
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad);
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsTrue(accountState.Rating.HasValue);
 
-            // Try changing it back to the previous rating
-            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, originalRating));
-
-            // Allow TMDb to not cache our data
-            Thread.Sleep(2000);
-
-            // Check if it worked
-            Assert.AreEqual(originalRating, _config.Client.GetTvShowAccountState(BreakingBad).Rating);
+            // Remove the rating
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
         }
 
         [TestMethod]
@@ -519,6 +530,7 @@ namespace TMDbLibTests
         {
             // There is no way to validate the change besides the success return of the api call since the guest session doesn't have access to anything else
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+
             // Try changing the rating
             Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 7.5));
 

@@ -463,15 +463,14 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
 
-            Assert.Inconclusive("Alter when TMDb has the option to remove ratings");
-
             // Remove the rating
             if (accountState.Rating.HasValue)
-                // TODO: Alter when TMDb has the option to remove ratings
-                _config.Client.MovieSetRating(MadMaxFuryRoad, 0);
+            {
+                Assert.IsTrue( _config.Client.MovieRemoveRating(MadMaxFuryRoad));
 
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+                // Allow TMDb to cache our changes
+                Thread.Sleep(2000);
+            }
 
             // Test that the movie is NOT rated
             accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
@@ -489,6 +488,9 @@ namespace TMDbLibTests
             accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad);
             Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
             Assert.IsTrue(accountState.Rating.HasValue);
+
+            // Remove the rating
+            Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad));
         }
 
         [TestMethod]
