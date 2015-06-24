@@ -492,7 +492,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test tv show has a different rating than our test rating
-            var rating = _config.Client.GetTvShowAccountState(BreakingBad).Result.Rating;
+            double? rating = _config.Client.GetTvShowAccountState(BreakingBad).Result.Rating;
             Assert.IsNotNull(rating);
 
             double originalRating = rating.Value;
