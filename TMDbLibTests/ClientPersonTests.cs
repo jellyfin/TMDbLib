@@ -6,7 +6,6 @@ using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
-using Credits = TMDbLib.Objects.People.Credits;
 
 namespace TMDbLibTests
 {
@@ -34,9 +33,12 @@ namespace TMDbLibTests
         public static void InitialInitiator(TestContext context)
         {
             _methods = new Dictionary<PersonMethods, Func<Person, object>>();
-            _methods[PersonMethods.Credits] = person => person.Credits;
-            _methods[PersonMethods.Changes] = person => person.Changes;
+            _methods[PersonMethods.MovieCredits] = person => person.MovieCredits;
+            _methods[PersonMethods.TvCredits] = person => person.TvCredits;
+            _methods[PersonMethods.ExternalIds] = person => person.ExternalIds;
             _methods[PersonMethods.Images] = person => person.Images;
+            _methods[PersonMethods.TaggedImages] = person => person.TaggedImages;
+            _methods[PersonMethods.Changes] = person => person.Changes;
         }
 
         [TestMethod]
@@ -46,7 +48,6 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(person);
 
-            // TODO: Test all properties
             Assert.AreEqual("Bruce Willis", person.Name);
 
             // Test all extras, ensure none of them exist
@@ -72,13 +73,123 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestPersonsGet()
+        {
+            Person item = _config.Client.GetPerson(BruceWillis).Result;
+
+            Assert.IsNotNull(item);
+            Assert.AreEqual(false, item.Adult);
+            Assert.IsNotNull(item.Biography);
+            Assert.AreEqual(new DateTime(1955, 3, 19), item.Birthday);
+            Assert.IsFalse(item.Deathday.HasValue);
+            Assert.AreEqual("http://www.b-willis.com/", item.Homepage);
+            Assert.AreEqual(62, item.Id);
+            Assert.AreEqual("nm0000246", item.ImdbId);
+            Assert.AreEqual("Bruce Willis", item.Name);
+            Assert.AreEqual("Idar-Oberstein, Germany", item.PlaceOfBirth);
+            Assert.IsTrue(item.Popularity > 0);
+            Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", item.ProfilePath);
+
+            Assert.IsNotNull(item.AlsoKnownAs);
+            Assert.AreEqual(3, item.AlsoKnownAs.Count);
+            Assert.IsTrue(item.AlsoKnownAs.Contains("Брюс Уиллис"));
+            Assert.IsTrue(item.AlsoKnownAs.Contains("W.B. Willis"));
+            Assert.IsTrue(item.AlsoKnownAs.Contains("Walter Bruce Willis"));
+        }
+
+        [TestMethod]
+        public void TestPersonsGetPersonTvCredits()
+        {
+            TvCredits item = _config.Client.GetPersonTvCredits(BruceWillis).Result;
+
+            Assert.IsNotNull(item);
+            Assert.IsNotNull(item.Cast);
+            Assert.IsNotNull(item.Crew);
+
+            Assert.AreEqual(BruceWillis, item.Id);
+
+            TvRole cast = item.Cast.SingleOrDefault(s => s.Character == "David Addison Jr.");
+            Assert.IsNotNull(cast);
+            Assert.AreEqual("David Addison Jr.", cast.Character);
+            Assert.AreEqual("52571e7f19c2957114107d48", cast.CreditId);
+            Assert.AreEqual(69, cast.EpisodeCount);
+            Assert.AreEqual(new DateTime(1985, 3, 3), cast.FirstAirDate);
+            Assert.AreEqual(1998, cast.Id);
+            Assert.AreEqual("Moonlighting", cast.Name);
+            Assert.AreEqual("Moonlighting", cast.OriginalName);
+            Assert.AreEqual("/kGsJf8k6a069WsaAWu7pHlOohg5.jpg", cast.PosterPath);
+
+            TvJob job = item.Crew.SingleOrDefault(s => s.CreditId == "525826eb760ee36aaa81b23b");
+            Assert.IsNotNull(job);
+            Assert.AreEqual("525826eb760ee36aaa81b23b", job.CreditId);
+            Assert.AreEqual("Production", job.Department);
+            Assert.AreEqual(37, job.EpisodeCount);
+            Assert.AreEqual(new DateTime(1996, 9, 23), job.FirstAirDate);
+            Assert.AreEqual(13297, job.Id);
+            Assert.AreEqual("Producer", job.Job);
+            Assert.AreEqual("Bruno the Kid", job.Name);
+            Assert.AreEqual("Bruno the Kid", job.OriginalName);
+            Assert.AreEqual("/5HkZHG7FkHhay6UlmQ4NyeqpbKR.jpg", job.PosterPath);
+        }
+
+        [TestMethod]
+        public void TestPersonsGetPersonMovieCredits()
+        {
+            MovieCredits item = _config.Client.GetPersonMovieCredits(BruceWillis).Result;
+
+            Assert.IsNotNull(item);
+            Assert.IsNotNull(item.Cast);
+            Assert.IsNotNull(item.Crew);
+
+            Assert.AreEqual(BruceWillis, item.Id);
+
+            MovieRole cast = item.Cast.SingleOrDefault(s => s.CreditId == "52fe4329c3a36847f803f193");
+            Assert.IsNotNull(cast);
+            Assert.AreEqual(false, cast.Adult);
+            Assert.AreEqual("Lieutenant Muldoon", cast.Character);
+            Assert.AreEqual("52fe4329c3a36847f803f193", cast.CreditId);
+            Assert.AreEqual(1992, cast.Id);
+            Assert.AreEqual("Planet Terror", cast.OriginalTitle);
+            Assert.AreEqual("/7Yjzttt0VfPphSsUg8vFUO9WaEt.jpg", cast.PosterPath);
+            Assert.AreEqual(new DateTime(2007, 4, 6), cast.ReleaseDate);
+            Assert.AreEqual("Planet Terror", cast.Title);
+
+            MovieJob job = item.Crew.SingleOrDefault(s => s.CreditId == "52fe42fec3a36847f8032887");
+            Assert.IsNotNull(job);
+            Assert.AreEqual(false, job.Adult);
+            Assert.AreEqual("52fe42fec3a36847f8032887", job.CreditId);
+            Assert.AreEqual("Production", job.Department);
+            Assert.AreEqual(1571, job.Id);
+            Assert.AreEqual("Producer", job.Job);
+            Assert.AreEqual(new DateTime(2007, 6, 21), job.ReleaseDate);
+            Assert.AreEqual("/8czarUCdvqPnulkLX8mdXyrLk2D.jpg", job.PosterPath);
+            Assert.AreEqual("Live Free or Die Hard", job.Title);
+            Assert.AreEqual("Live Free or Die Hard", job.OriginalTitle);
+        }
+
+        [TestMethod]
+        public void TestPersonsGetPersonExternalIds()
+        {
+            ExternalIds item = _config.Client.GetPersonExternalIds(BruceWillis).Result;
+
+            Assert.IsNotNull(item);
+
+            Assert.AreEqual(BruceWillis, item.Id);
+            Assert.AreEqual("nm0000246", item.ImdbId);
+            Assert.AreEqual("/m/0h7pj", item.FreebaseMid);
+            Assert.AreEqual("/en/bruce_willis", item.FreebaseId);
+            Assert.IsFalse(item.TvdbId.HasValue);
+            Assert.AreEqual(10183, item.TvrageId);
+        }
+
+        [TestMethod]
         public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
-            Credits resp = _config.Client.GetPersonCredits(BruceWillis).Result;
+            MovieCredits resp = _config.Client.GetPersonMovieCredits(BruceWillis).Result;
             Assert.IsNotNull(resp);
 
-            Credits respItalian = _config.Client.GetPersonCredits(BruceWillis, "it").Result;
+            MovieCredits respItalian = _config.Client.GetPersonMovieCredits(BruceWillis, "it").Result;
             Assert.IsNotNull(respItalian);
 
             Assert.AreEqual(resp.Cast.Count, respItalian.Cast.Count);
@@ -142,13 +253,76 @@ namespace TMDbLibTests
             // Get config
             _config.Client.GetConfig();
 
-            // Test image url generator
+            // Get images
             ProfileImages images = _config.Client.GetPersonImages(BruceWillis).Result;
 
+            Assert.IsNotNull(images);
+            Assert.IsNotNull(images.Profiles);
             Assert.AreEqual(BruceWillis, images.Id);
-            Assert.IsTrue(images.Profiles.Count > 0);
 
+            // Test image url generator
             TestImagesHelpers.TestImages(_config, images);
+
+            ProfileImage image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
+
+            Assert.IsNotNull(image);
+            Assert.IsTrue(Math.Abs(0.666666666666667 - image.AspectRatio) < double.Epsilon);
+            Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", image.FilePath);
+            Assert.AreEqual(1500, image.Height);
+            Assert.IsNull(image.Iso_639_1);
+            Assert.AreEqual(1000, image.Width);
+            Assert.IsTrue(image.VoteAverage > 0);
+            Assert.IsTrue(image.VoteCount > 0);
+        }
+
+        [TestMethod]
+        public void TestPersonsTaggedImages()
+        {
+            // Get config
+            _config.Client.GetConfig();
+
+            // Get images
+            TestHelpers.SearchPages(i => _config.Client.GetPersonTaggedImages(BruceWillis, i).Result);
+
+            SearchContainer<TaggedImage> images = _config.Client.GetPersonTaggedImages(BruceWillis, 1).Result;
+
+            Assert.IsNotNull(images);
+            Assert.IsNotNull(images.Results);
+
+            TaggedImage image = images.Results.SingleOrDefault(s => s.FilePath == "/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg");
+
+            Assert.IsNotNull(image);
+            Assert.IsTrue(Math.Abs(1.77777777777778 - image.AspectRatio) < double.Epsilon);
+            Assert.AreEqual("/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg", image.FilePath);
+            Assert.AreEqual(1080, image.Height);
+            Assert.AreEqual("4ea5d0792c058837cb000431", image.Id);
+            Assert.IsNull(image.Iso_639_1);
+            Assert.IsTrue(image.VoteAverage > 0);
+            Assert.IsTrue(image.VoteCount > 0);
+            Assert.AreEqual(1920, image.Width);
+            Assert.AreEqual("backdrop", image.ImageType);
+            Assert.AreEqual(MediaType.Movie, image.MediaType);
+
+            Assert.IsNotNull(image.Media);
+            Assert.AreEqual(false, image.Media.Adult);
+            Assert.AreEqual("/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg", image.Media.BackdropPath);
+            Assert.AreEqual(187, image.Media.Id);
+            Assert.AreEqual("en", image.Media.OriginalLanguage);
+            Assert.AreEqual("Sin City", image.Media.OriginalTitle);
+            Assert.AreEqual("Sin City is a neo-noir crime thriller based on Frank Miller's graphic novel series of the same name.The film is primarily based on three of Miller's works: The Hard Goodbye, about a man who embarks on a brutal rampage in search of his one-time sweetheart's killer; The Big Fat Kill, which focuses on a street war between a group of prostitutes and a group of mercenaries; and That Yellow Bastard, which follows an aging police officer who protects a young woman from a grotesquely disfigured serial killer.", image.Media.Overview);
+            Assert.AreEqual(new DateTime(2005, 3, 31), image.Media.ReleaseDate);
+            Assert.AreEqual("/eCJkepVJslq1nEtqURLaC1zLPAL.jpg", image.Media.PosterPath);
+            Assert.IsTrue(image.Media.Popularity > 0);
+            Assert.AreEqual("Sin City", image.Media.Title);
+            Assert.AreEqual(false, image.Media.Video);
+            Assert.IsTrue(image.Media.VoteAverage > 0);
+            Assert.IsTrue(image.Media.VoteCount > 0);
+
+            Assert.IsNotNull(image.Media.GenreIds);
+            Assert.AreEqual(3, image.Media.GenreIds.Count);
+            Assert.IsTrue(image.Media.GenreIds.Contains(28));
+            Assert.IsTrue(image.Media.GenreIds.Contains(53));
+            Assert.IsTrue(image.Media.GenreIds.Contains(80));
         }
 
         [TestMethod]
@@ -180,14 +354,10 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestPersonsItem()
+        public void TestGetLatestPerson()
         {
-            foreach (PersonItemType type in Enum.GetValues(typeof(PersonItemType)).OfType<PersonItemType>())
-            {
-                Person item = _config.Client.GetPersonItem(type).Result;
-
-                Assert.IsNotNull(item);
-            }
+            Person item = _config.Client.GetLatestPerson().Result;
+            Assert.IsNotNull(item);
         }
     }
 }

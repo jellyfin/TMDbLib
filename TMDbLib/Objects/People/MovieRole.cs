@@ -11,5 +11,6 @@ namespace TMDbLib.Objects.People
         public string PosterPath { get; set; }
         public DateTime? ReleaseDate { get; set; }
         public bool Adult { get; set; }
+        public string CreditId { get; set; }
     }
 }

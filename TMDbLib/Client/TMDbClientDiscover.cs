@@ -1,16 +1,57 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using RestSharp;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
-using TMDbLib.Objects.TvShows;
-using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        /// <summary>
+        /// Can be used to discover new tv shows matching certain criteria
+        /// </summary>
+        public async Task<SearchContainer<SearchTv>> DiscoverTvShows(DiscoverTv discover = null, string language = null, int page = 0)
+        {
+            RestRequest request = new RestRequest("discover/tv");
+
+            if (page != 1 && page > 1)
+                request.AddParameter("page", page);
+
+            if (!string.IsNullOrWhiteSpace(language))
+                request.AddParameter("language", language);
+
+            if (discover != null)
+                foreach (KeyValuePair<string, string> parameter in discover.GetAllParameters())
+                    request.AddParameter(parameter.Key, parameter.Value);
+
+            IRestResponse<SearchContainer<SearchTv>> response = await _client.ExecuteGetTaskAsync<SearchContainer<SearchTv>>(request).ConfigureAwait(false);
+            return response.Data;
+        }
+
+        /// <summary>
+        /// Can be used to discover movies matching certain criteria
+        /// </summary>
+        public async Task<SearchContainer<SearchMovie>> DiscoverMovies(DiscoverMovie discover = null, string language = null, int page = 0)
+        {
+            RestRequest request = new RestRequest("discover/movie");
+
+            if (page != 1 && page > 1)
+                request.AddParameter("page", page);
+
+            if (!string.IsNullOrWhiteSpace(language))
+                request.AddParameter("language", language);
+
+            if (discover != null)
+                foreach (KeyValuePair<string, string> parameter in discover.GetAllParameters())
+                    request.AddParameter(parameter.Key, parameter.Value);
+
+            IRestResponse<SearchContainer<SearchMovie>> response = await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request).ConfigureAwait(false);
+            return response.Data;
+        }
+
         /// <summary>
         /// Can be used to discover new tv shows matching certain criteria
         /// </summary>
@@ -25,7 +66,8 @@ namespace TMDbLib.Client
         /// <param name="firstAirDateGreaterThan">The minimum airdate of tv shows to include.</param>
         /// <param name="firstAirDateLessThan">The maximum airdate of tv shows to include.</param>
         /// <returns>Will return a list of tv shows that corespond to the provided parameters</returns>
-        public async Task<SearchContainer<TvShowBase>> DiscoverTvShows(
+        [Obsolete]
+        public async Task<SearchContainer<SearchTv>> DiscoverTvShows(
             int page = 1,
             string language = null,
             DiscoverTvShowSortBy sortBy = DiscoverTvShowSortBy.Undefined,
@@ -37,42 +79,27 @@ namespace TMDbLib.Client
             DateTime? firstAirDateGreaterThan = null,
             DateTime? firstAirDateLessThan = null)
         {
-            RestRequest request = new RestRequest("discover/tv");
-
-            if (page != 1 && page > 1)
-                request.AddParameter("page", page);
-
-            language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
-                request.AddParameter("language", language);
+            DiscoverTv query = new DiscoverTv();
 
             if (sortBy != DiscoverTvShowSortBy.Undefined)
-                request.AddParameter("sort_by", sortBy.GetDescription());
+                query.OrderBy(sortBy);
 
             if (firstAirDateYear.HasValue)
-                request.AddParameter("first_air_date_year", firstAirDateYear);
-
-            if (voteCountGreaterThan.HasValue)
-                request.AddParameter("vote_count.gte", voteCountGreaterThan);
+                query.WhereFirstAirDateIsInYear(firstAirDateYear.Value);
 
             if (voteAverageGreaterThan.HasValue)
-                request.AddParameter("vote_average.gte", voteAverageGreaterThan);
+                query.WhereVoteAverageIsAtLeast(voteAverageGreaterThan.Value);
 
-            if (!String.IsNullOrWhiteSpace(withGenres))
-                request.AddParameter("with_genres", withGenres);
-
-            if (!String.IsNullOrWhiteSpace(withNetworks))
-                request.AddParameter("with_networks", withNetworks);
+            if (voteCountGreaterThan.HasValue)
+                query.WhereVoteCountIsAtLeast(voteCountGreaterThan.Value);
 
             if (firstAirDateGreaterThan.HasValue)
-                request.AddParameter("first_air_date.gte", firstAirDateGreaterThan.Value.ToString("yyyy-MM-dd"));
+                query.WhereFirstAirDateIsAfter(firstAirDateGreaterThan.Value);
 
             if (firstAirDateLessThan.HasValue)
-                request.AddParameter("first_air_date.lte", firstAirDateLessThan.Value.ToString("yyyy-MM-dd"));
+                query.WhereFirstAirDateIsBefore(firstAirDateLessThan.Value);
 
-            IRestResponse<SearchContainer<TvShowBase>> response = await _client.ExecuteGetTaskAsync<SearchContainer<TvShowBase>>(request).ConfigureAwait(false);
-
-            return response.Data;
+            return await  DiscoverTvShows(query, language, page );
         }
 
         /// <summary>
@@ -93,6 +120,7 @@ namespace TMDbLib.Client
         /// <param name="releaseDateLessThan">The maximum release date of movies to include.</param>
         /// <param name="withCompanies">Filter movies based on the company that created them. Expected value is an integer (the id of a company). Multiple values can be specified. Comma separated indicates an 'AND' query, while a pipe (|) separated value indicates an 'OR'.</param>
         /// <returns>Will return a list of movies that corespond to the provided parameters</returns>
+        [Obsolete]
         public async Task<SearchContainer<SearchMovie>> DiscoverMovies(
             int? page = null,
             string language = null,
@@ -110,61 +138,36 @@ namespace TMDbLib.Client
             string withCompanies = null
             )
         {
-            RestRequest request = new RestRequest("discover/movie");
-
-            if (page != 1 && page > 1)
-                request.AddParameter("page", page);
-
-            language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
-                request.AddParameter("language", language);
+            DiscoverMovie query = new DiscoverMovie();
 
             if (sortBy != DiscoverMovieSortBy.Undefined)
-                request.AddParameter("sort_by", sortBy.GetDescription());
+                query.OrderBy(sortBy);
 
             if (includeAdult)
-                request.AddParameter("include_adult", includeAdult);
+                query.IncludeAdultMovies();
 
             if (year.HasValue)
-                request.AddParameter("year", year);
+                query.WhereAnyReleaseDateIsInYear(year.Value);
 
             if (primaryReleaseYear.HasValue)
-                request.AddParameter("primary_release_year", primaryReleaseYear);
-
-            if (voteCountGreaterThan.HasValue)
-                request.AddParameter("vote_count.gte", voteCountGreaterThan);
+                query.WherePrimaryReleaseIsInYear(year.Value);
 
             if (voteAverageGreaterThan.HasValue)
-                request.AddParameter("vote_average.gte", voteAverageGreaterThan);
+                query.WhereVoteAverageIsAtLeast(voteAverageGreaterThan.Value);
 
-            if (!String.IsNullOrWhiteSpace(withGenres))
-                request.AddParameter("with_genres", withGenres);
+            if (voteCountGreaterThan.HasValue)
+                query.WhereVoteCountIsAtLeast(voteCountGreaterThan.Value);
 
             if (releaseDateGreaterThan.HasValue)
-                request.AddParameter("release_date.gte", releaseDateGreaterThan.Value.ToString("yyyy-MM-dd"));
+                query.WhereReleaseDateIsAfter(releaseDateGreaterThan.Value);
 
             if (releaseDateLessThan.HasValue)
-                request.AddParameter("release_date.lte", releaseDateLessThan.Value.ToString("yyyy-MM-dd"));
+                query.WhereReleaseDateIsBefore(releaseDateLessThan.Value);
 
-            if (!String.IsNullOrWhiteSpace(certificationCountry))
-            {
-                if (String.IsNullOrWhiteSpace(certificationLessThan))
-                    throw new ArgumentNullException("certificationLessThan", "The parameter 'certificationLessThan' must be populated when specifying a 'certificationCountry'.");
+            if (!string.IsNullOrEmpty(certificationCountry) && !string.IsNullOrEmpty(certificationLessThan))
+                query.WhereCertificationIsAtMost(certificationCountry, certificationLessThan);
 
-                request.AddParameter("certification_country", certificationCountry);
-                request.AddParameter("certification.lte", certificationLessThan);
-            }
-            else if (!String.IsNullOrWhiteSpace(certificationLessThan))
-            {
-                throw new ArgumentNullException("certificationCountry", "The parameter 'certificationCountry' must be populated when specifying a 'certificationLessThan'.");
-            }
-
-            if (!String.IsNullOrWhiteSpace(withCompanies))
-                request.AddParameter("with_companies", withCompanies);
-
-            IRestResponse<SearchContainer<SearchMovie>> response = await _client.ExecuteGetTaskAsync<SearchContainer<SearchMovie>>(request).ConfigureAwait(false);
-
-            return response.Data;
+            return await DiscoverMovies(query, language, page ?? 0);
         }
     }
 }

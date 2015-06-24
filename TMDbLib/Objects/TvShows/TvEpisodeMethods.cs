@@ -14,5 +14,7 @@ namespace TMDbLib.Objects.TvShows
         Images = 2,
         [Description("external_ids")]
         ExternalIds = 4,
+        [Description("videos")]
+        Videos = 8
     }
 }

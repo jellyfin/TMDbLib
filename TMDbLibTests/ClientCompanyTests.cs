@@ -12,6 +12,7 @@ namespace TMDbLibTests
     public class ClientCompanyTests
     {
         private const int TwentiethCenturyFox = 25;
+        private const int ColumbiaPictures = 5;
 
         private static Dictionary<CompanyMethods, Func<Company, object>> _methods;
         private TestConfig _config;
@@ -109,6 +110,26 @@ namespace TMDbLibTests
 
             Assert.IsTrue(TestHelpers.InternetUriExists(url));
             Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
+        }
+
+        [TestMethod]
+        public void TestCompaniesFull()
+        {
+            Company company = _config.Client.GetCompany(ColumbiaPictures).Result;
+
+            Assert.IsNotNull(company);
+
+            Assert.AreEqual(ColumbiaPictures, company.Id);
+            Assert.AreEqual("Columbia Pictures Industries, Inc. (CPII) is an American film production and distribution company. Columbia Pictures now forms part of the Columbia TriStar Motion Picture Group, owned by Sony Pictures Entertainment, a subsidiary of the Japanese conglomerate Sony. It is one of the leading film companies in the world, a member of the so-called Big Six. It was one of the so-called Little Three among the eight major film studios of Hollywood's Golden Age.", company.Description);
+            Assert.AreEqual("Culver City, California", company.Headquarters);
+            Assert.AreEqual("http://www.sonypictures.com/", company.Homepage);
+            Assert.AreEqual("/mjUSfXXUhMiLAA1Zq1TfStNSoLR.png", company.LogoPath);
+            Assert.AreEqual("Columbia Pictures", company.Name);
+
+            Assert.IsNotNull(company.ParentCompany);
+            Assert.AreEqual(5752, company.ParentCompany.Id);
+            Assert.AreEqual("/sFg00KK0vVq3oqvkCxRQWApYB83.png", company.ParentCompany.LogoPath);
+            Assert.AreEqual("Sony Pictures Entertainment", company.ParentCompany.Name);
         }
     }
 }

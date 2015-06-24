@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
 using RestSharp;
 using TMDbLib.Objects.Authentication;
 
@@ -40,10 +41,10 @@ namespace TMDbLib.Client
                 throw ex.InnerException;
             }
 
-            if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-            {
-                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
-            }
+	        if (response.StatusCode == HttpStatusCode.Unauthorized)
+	        {
+		        throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
+	        }
         }
 
         public async Task<UserSession> AuthenticationGetUserSession(string initialRequestToken)

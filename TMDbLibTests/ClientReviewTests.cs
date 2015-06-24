@@ -29,6 +29,9 @@ namespace TMDbLibTests
             Assert.AreEqual(TheDarkKnightRisesReviewId, review.Id);
             Assert.AreEqual(49026, review.MediaId);
             Assert.AreEqual("The Dark Knight Rises", review.MediaTitle);
+            Assert.AreEqual("Travis Bell", review.Author);
+            Assert.AreEqual("en", review.Iso_639_1);
+            Assert.AreEqual("http://j.mp/QSjAK2", review.Url);
             Assert.AreEqual(MediaType.Movie, review.MediaType);
         }
     }

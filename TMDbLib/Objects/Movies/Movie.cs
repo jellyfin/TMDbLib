@@ -44,12 +44,12 @@ namespace TMDbLib.Objects.Movies
         public Credits Credits { get; set; }
         public Images Images { get; set; }
         public KeywordsContainer Keywords { get; set; }
-        public Trailers Trailers { get; set; }
+        public ResultContainer<Video> Videos { get; set; }
         public TranslationsContainer Translations { get; set; }
-        public SearchContainer<MovieResult> SimilarMovies { get; set; }
+        public SearchContainer<MovieResult> Similar { get; set; }
         public SearchContainer<Review> Reviews { get; set; }
         public SearchContainer<ListResult> Lists { get; set; }
         public List<Change> Changes { get; set; }
-        public MovieAccountState AccountStates { get; set; }
+        public AccountState AccountStates { get; set; }
     }
 }

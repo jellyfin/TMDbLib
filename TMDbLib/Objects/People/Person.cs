@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 
 namespace TMDbLib.Objects.People
@@ -16,8 +17,14 @@ namespace TMDbLib.Objects.People
         public string Name { get; set; }
         public string PlaceOfBirth { get; set; }
         public string ProfilePath { get; set; }
-        public Credits Credits { get; set; }
+        public MovieCredits Credits { get; set; }
         public ProfileImages Images { get; set; }
         public ChangesContainer Changes { get; set; }
+        public string ImdbId { get; set; }
+        public double Popularity { get; set; }
+        public MovieCredits MovieCredits { get; set; }
+        public TvCredits TvCredits { get; set; }
+        public SearchContainer<TaggedImage> TaggedImages { get; set; }
+        public ExternalIds ExternalIds { get; set; }
     }
 }

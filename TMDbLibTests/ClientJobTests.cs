@@ -27,6 +27,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(jobs);
             Assert.IsTrue(jobs.Count > 0);
 
+            Assert.IsTrue(jobs.All(job => !string.IsNullOrEmpty(job.Department)));
             Assert.IsTrue(jobs.All(job => job.JobList != null));
             Assert.IsTrue(jobs.All(job => job.JobList.Count > 0));
         }

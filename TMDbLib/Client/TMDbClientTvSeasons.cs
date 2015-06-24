@@ -2,10 +2,14 @@
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using RestSharp;
+using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLib.Client
 {
@@ -39,7 +43,22 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            return (await _client.ExecuteGetTaskAsync<TvSeason>(req).ConfigureAwait(false)).Data;
+            IRestResponse<TvSeason> response = await _client.ExecuteGetTaskAsync<TvSeason>(req).ConfigureAwait(false);
+
+            // Nothing to patch up
+            if (response.Data == null)
+                return null;
+
+            if (response.Data.Episodes != null)
+                response.Data.EpisodeCount = response.Data.Episodes.Count;
+
+            if (response.Data.Credits != null)
+                response.Data.Credits.Id = response.Data.Id ?? 0;
+
+            if (response.Data.ExternalIds != null)
+                response.Data.ExternalIds.Id = response.Data.Id ?? 0;
+
+            return response.Data;
         }
 
         /// <summary>
@@ -67,6 +86,11 @@ namespace TMDbLib.Client
             return await GetTvSeasonMethod<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language);
         }
 
+        public async Task<ResultContainer<Video>> GetTvSeasonVideos(int tvShowId, int seasonNumber, string language = null)
+        {
+            return await GetTvSeasonMethod<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language);
+        }
+
         /// <summary>
         /// Returns an object that contains all known exteral id's for the season of the tv show related to the specified TMDB id.
         /// </summary>
@@ -77,6 +101,37 @@ namespace TMDbLib.Client
             return await GetTvSeasonMethod<ExternalIds>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds);
         }
 
+        public ResultContainer<TvEpisodeAccountState> GetTvSeasonAccountState(int tvShowId, int seasonNumber)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/account_states");
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
+            req.AddParameter("session_id", SessionId);
+
+            IRestResponse<ResultContainer<TvEpisodeAccountState>> response = _client.Get<ResultContainer<TvEpisodeAccountState>>(req);
+
+            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+            if (response.Data != null)
+            {
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
+            }
+
+            return response.Data;
+        }
+
+        public ChangesContainer GetTvSeasonChanges(int seasonId)
+        {
+            RestRequest req = new RestRequest("tv/season/{id}/changes");
+            req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));
+
+            IRestResponse<ChangesContainer> response = _client.Get<ChangesContainer>(req);
+
+            return response.Data;
+        }
+        
         private async Task<T> GetTvSeasonMethod<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/season/{season_number}/{method}");

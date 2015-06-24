@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using RestSharp;
 using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Threading;
-using TMDbLib.Objects.Exceptions;
+﻿using TMDbLib.Objects.Exceptions;
 
 namespace TMDbLib
 {

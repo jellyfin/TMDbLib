@@ -2,7 +2,7 @@
 
 namespace TMDbLib.Objects.Account
 {
-    public enum AccountMovieSortBy
+    public enum AccountSortBy
     {
         Undefined = 0,
         [Description("created_at")]

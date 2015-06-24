@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RestSharp;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
-using TMDbLib.Objects.General;
 using TMDbLib.Utilities;
-using Credits = TMDbLib.Objects.People.Credits;
 
 namespace TMDbLib.Client
 {
@@ -73,14 +72,24 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public async Task<Credits> GetPersonCredits(int personId)
+        public async Task<MovieCredits> GetPersonMovieCredits(int personId)
         {
-            return await GetPersonCredits(personId, DefaultLanguage);
+            return await GetPersonMovieCredits(personId, DefaultLanguage);
         }
 
-        public async Task<Credits> GetPersonCredits(int personId, string language)
+        public async Task<MovieCredits> GetPersonMovieCredits(int personId, string language)
         {
-            return await GetPersonMethod<Credits>(personId, PersonMethods.Credits, language: language);
+            return await GetPersonMethod<MovieCredits>(personId, PersonMethods.MovieCredits, language: language);
+        }
+
+        public async Task<TvCredits> GetPersonTvCredits(int personId)
+        {
+            return await GetPersonTvCredits(personId, DefaultLanguage);
+        }
+
+        public async Task<TvCredits> GetPersonTvCredits(int personId, string language)
+        {
+            return await GetPersonMethod<TvCredits>(personId, PersonMethods.TvCredits, language: language);
         }
 
         public async Task<ProfileImages> GetPersonImages(int personId)
@@ -88,6 +97,21 @@ namespace TMDbLib.Client
             return await GetPersonMethod<ProfileImages>(personId, PersonMethods.Images);
         }
 
+        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImages(int personId, int page)
+        {
+            return await  GetPersonTaggedImages(personId, DefaultLanguage, page);
+        }
+
+        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImages(int personId, string language, int page)
+        {
+            return await GetPersonMethod<SearchContainer<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page);
+        }
+
+        public async Task<ExternalIds> GetPersonExternalIds(int personId)
+        {
+            return await GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds);
+        }
+        
         public async Task<List<Change>> GetPersonChanges(int personId, DateTime? startDate = null, DateTime? endDate = null)
         {
             ChangesContainer changesContainer = await GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC");
@@ -116,17 +140,9 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        public async Task<Person> GetPersonItem(PersonItemType type)
+        public async Task<Person> GetLatestPerson()
         {
-            RestRequest req;
-            switch (type)
-            {
-                case PersonItemType.Latest:
-                    req = new RestRequest("person/latest");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("type");
-            }
+            RestRequest req = new RestRequest("person/latest");
 
             req.DateFormat = "yyyy-MM-dd";
 

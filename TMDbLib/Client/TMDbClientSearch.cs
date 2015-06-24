@@ -84,9 +84,9 @@ namespace TMDbLib.Client
             return await SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page);
         }
 
-        public async Task<SearchContainer<TvShowBase>> SearchTvShow(string query, int page = 0)
+        public async Task<SearchContainer<SearchTv>> SearchTvShow(string query, int page = 0)
         {
-            return await SearchMethod<SearchContainer<TvShowBase>>("tv", query, page);
+            return await SearchMethod<SearchContainer<SearchTv>>("tv", query, page);
         }
     }
 }
