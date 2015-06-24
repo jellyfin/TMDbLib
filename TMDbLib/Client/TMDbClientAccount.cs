@@ -211,10 +211,13 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/{method}");
+            RestRequest request = new RestRequest("account/{accountId}/{method0}/{method1}");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddUrlSegment("method", method.GetDescription());
             request.AddParameter("session_id", SessionId);
+
+            string[] methodParts = method.GetDescription().Split('/');
+            request.AddUrlSegment("method0", methodParts[0]);
+            request.AddUrlSegment("method1", methodParts[1]);
 
             if (page > 1)
                 request.AddParameter("page", page);
