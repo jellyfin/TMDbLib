@@ -77,7 +77,7 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(list.Id);
             Assert.IsNotNull(list.Name);
-            Assert.IsNotNull(list.PosterPath);
+            Assert.IsNull(list.PosterPath);
             Assert.IsNotNull(list.Description);
             Assert.IsNotNull(list.ListType);
             Assert.IsNotNull(list.Iso_639_1);
