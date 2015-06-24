@@ -3,7 +3,6 @@ using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using System.Linq;
 using TMDbLib.Objects.Search;
-using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests

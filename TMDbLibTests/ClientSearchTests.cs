@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using System.Linq;
-using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
