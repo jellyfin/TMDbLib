@@ -3,7 +3,6 @@
 using RestSharp;
 ﻿using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
-using TMDbLib.Objects.TvShows;
 
 namespace TMDbLib.Client
 {

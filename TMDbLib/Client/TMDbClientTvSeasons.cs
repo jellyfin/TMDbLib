@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 using RestSharp;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
