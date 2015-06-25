@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Lists;
 
 namespace TMDbLib.Objects.TvShows
 {

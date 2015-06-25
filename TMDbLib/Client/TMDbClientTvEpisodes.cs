@@ -62,6 +62,23 @@ namespace TMDbLib.Client
             if (response.Data.ExternalIds != null)
                 response.Data.ExternalIds.Id = response.Data.Id ?? 0;
 
+            // No data to patch up so return
+            if (response.Data == null)
+                return null;
+
+            // Patch up data, so that the end user won't notice that we share objects between request-types.
+            if (response.Data.Videos != null)
+                response.Data.Videos.Id = response.Data.Id ?? 0;
+
+            if (response.Data.Credits != null)
+                response.Data.Credits.Id = response.Data.Id ?? 0;
+
+            if (response.Data.Images != null)
+                response.Data.Images.Id = response.Data.Id ?? 0;
+
+            if (response.Data.ExternalIds != null)
+                response.Data.ExternalIds.Id = response.Data.Id ?? 0;
+
             return response.Data;
         }
 

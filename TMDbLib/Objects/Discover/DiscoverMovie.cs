@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
+using TMDbLib.Client;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Discover
 {
-    public class DiscoverMovie : DiscoverBase
+    public class DiscoverMovie : DiscoverBase<SearchMovie>
     {
-        public DiscoverMovie()
+        public DiscoverMovie(TMDbClient client ) 
+            : base("discover/movie", client)
         {
 
         }

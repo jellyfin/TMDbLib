@@ -44,13 +44,13 @@ namespace TMDbLibTests
         public void TestGenreTvList()
         {
             // Default language
-            List<Genre> genres = _config.Client.GetTvGenres();
+            List<Genre> genres = _config.Client.GetTvGenres().Result;
 
             Assert.IsNotNull(genres);
             Assert.IsTrue(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = _config.Client.GetTvGenres("da");
+            List<Genre> genresDanish = _config.Client.GetTvGenres("da").Result;
 
             Assert.IsNotNull(genresDanish);
             Assert.IsTrue(genresDanish.Count > 0);
@@ -65,13 +65,13 @@ namespace TMDbLibTests
         public void TestGenreMovieList()
         {
             // Default language
-            List<Genre> genres = _config.Client.GetMovieGenres();
+            List<Genre> genres = _config.Client.GetMovieGenres().Result;
 
             Assert.IsNotNull(genres);
             Assert.IsTrue(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = _config.Client.GetMovieGenres("da");
+            List<Genre> genresDanish = _config.Client.GetMovieGenres("da").Result;
 
             Assert.IsNotNull(genresDanish);
             Assert.IsTrue(genresDanish.Count > 0);

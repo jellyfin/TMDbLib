@@ -57,6 +57,19 @@ namespace TMDbLib.Client
             if (response.Data.ExternalIds != null)
                 response.Data.ExternalIds.Id = response.Data.Id ?? 0;
 
+            // Nothing to patch up
+            if (response.Data == null)
+                return null;
+
+            if (response.Data.Episodes != null)
+                response.Data.EpisodeCount = response.Data.Episodes.Count;
+
+            if (response.Data.Credits != null)
+                response.Data.Credits.Id = response.Data.Id ?? 0;
+
+            if (response.Data.ExternalIds != null)
+                response.Data.ExternalIds.Id = response.Data.Id ?? 0;
+
             return response.Data;
         }
 

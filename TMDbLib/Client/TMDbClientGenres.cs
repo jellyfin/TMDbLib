@@ -15,7 +15,7 @@ namespace TMDbLib.Client
         {
             return await GetGenres(DefaultLanguage);
         }
-        
+
         // TODO: This method no longer appears in Apiary
         [Obsolete]
         public async Task<List<Genre>> GetGenres(string language)
@@ -34,12 +34,12 @@ namespace TMDbLib.Client
             return resp.Data.Genres;
         }
 
-        public List<Genre> GetMovieGenres()
+        public async Task<List<Genre>> GetMovieGenres()
         {
-            return GetMovieGenres(DefaultLanguage);
+            return await GetMovieGenres(DefaultLanguage);
         }
 
-        public List<Genre> GetMovieGenres(string language)
+        public async Task<List<Genre>> GetMovieGenres(string language)
         {
             RestRequest req = new RestRequest("genre/movie/list");
 
@@ -47,7 +47,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            IRestResponse<GenreContainer> resp = _client.Get<GenreContainer>(req);
+            IRestResponse<GenreContainer> resp = await _client.ExecuteGetTaskAsync<GenreContainer>(req);
 
             if (resp.Data == null)
                 return null;
@@ -55,12 +55,12 @@ namespace TMDbLib.Client
             return resp.Data.Genres;
         }
 
-        public List<Genre> GetTvGenres()
+        public async Task<List<Genre>> GetTvGenres()
         {
-            return GetTvGenres(DefaultLanguage);
+            return await GetTvGenres(DefaultLanguage);
         }
 
-        public List<Genre> GetTvGenres(string language)
+        public async Task<List<Genre>> GetTvGenres(string language)
         {
             RestRequest req = new RestRequest("genre/tv/list");
 
@@ -68,14 +68,14 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            IRestResponse<GenreContainer> resp = _client.Get<GenreContainer>(req);
+            IRestResponse<GenreContainer> resp = await _client.ExecuteGetTaskAsync<GenreContainer>(req);
 
             if (resp.Data == null)
                 return null;
 
             return resp.Data.Genres;
         }
-        
+
         public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, int page = 0, bool? includeAllMovies = null)
         {
             return await GetGenreMovies(genreId, DefaultLanguage, page, includeAllMovies);

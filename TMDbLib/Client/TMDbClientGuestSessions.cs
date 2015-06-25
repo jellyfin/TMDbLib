@@ -31,7 +31,6 @@ namespace TMDbLib.Client
             //else
             request.AddUrlSegment("guest_session_id", SessionId);
 
-
             IRestResponse<SearchContainer<MovieWithRating>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieWithRating>>(request).ConfigureAwait(false);
 
             return resp.Data;
