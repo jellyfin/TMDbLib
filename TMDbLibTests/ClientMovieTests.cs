@@ -89,8 +89,11 @@ namespace TMDbLibTests
 
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
+            // Account states will only show up if we've done something
+            _config.Client.MovieSetRating(TheDarkKnightRises, 5);
+
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = _config.Client.GetMovie(TheDarkKnightRisesImdb, combinedEnum).Result;
+            Movie item = _config.Client.GetMovie(TheDarkKnightRises, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(tmpMethods, item);
         }
@@ -463,15 +466,14 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
 
-            Assert.Inconclusive("Alter when TMDb has the option to remove ratings");
-
             // Remove the rating
             if (accountState.Rating.HasValue)
-                // TODO: Alter when TMDb has the option to remove ratings
-                _config.Client.MovieSetRating(MadMaxFuryRoad, 0).Wait();
+            {
+                Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad));
 
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+                // Allow TMDb to cache our changes
+                Thread.Sleep(2000);
+            }
 
             // Test that the movie is NOT rated
             accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
@@ -489,6 +491,9 @@ namespace TMDbLibTests
             accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
             Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
             Assert.IsTrue(accountState.Rating.HasValue);
+
+            // Remove the rating
+            Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad));
         }
 
         [TestMethod]
@@ -596,6 +601,28 @@ namespace TMDbLibTests
             Assert.AreEqual(304654182, item.Revenue);
             Assert.AreEqual(92000000, item.Budget);
             Assert.AreEqual(98, item.Runtime);
+        }
+
+        [TestMethod]
+        public void TestMoviesExtrasAccountState()
+        {
+            // Test the custom parsing code for Account State rating
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            Movie movie = _config.Client.GetMovie(TheDarkKnightRises, MovieMethods.AccountStates).Result;
+            if (movie.AccountStates == null || !movie.AccountStates.Rating.HasValue)
+            {
+                _config.Client.MovieSetRating(TheDarkKnightRises, 5);
+
+                // Allow TMDb to update cache
+                Thread.Sleep(2000);
+
+                movie = _config.Client.GetMovie(TheDarkKnightRises, MovieMethods.AccountStates).Result;
+            }
+
+            Assert.IsNotNull(movie.AccountStates);
+            Assert.IsTrue(movie.AccountStates.Rating.HasValue);
+            Assert.IsTrue(Math.Abs(movie.AccountStates.Rating.Value - 5) < double.Epsilon);
         }
     }
 }

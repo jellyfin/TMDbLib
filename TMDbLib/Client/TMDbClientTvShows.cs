@@ -24,12 +24,18 @@ namespace TMDbLib.Client
         /// <returns>The requested Tv Show</returns>
         public async Task<TvShow> GetTvShow(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
         {
-            RestRequest req = new RestRequest("tv/{id}");
-            req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
+            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
+                RequireSessionId(SessionType.UserSession);
+
+            RestRequest request = new RestRequest("tv/{id}");
+            request.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
+
+            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
+                request.AddParameter("session_id", SessionId);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
+                request.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(TvShowMethods))
@@ -39,17 +45,9 @@ namespace TMDbLib.Client
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
-                req.AddParameter("append_to_response", appends);
+                request.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvShow> response = await _client.ExecuteGetTaskAsync<TvShow>(req).ConfigureAwait(false);
-
-            // No data to patch up so return
-            if (response.Data == null)
-                return null;
-
-            // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (response.Data.Translations != null)
-                response.Data.Translations.Id = id;
+            IRestResponse<TvShow> response = await _client.ExecuteGetTaskAsync<TvShow>(request).ConfigureAwait(false);
 
             // No data to patch up so return
             if (response.Data == null)
@@ -58,6 +56,13 @@ namespace TMDbLib.Client
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (response.Data.Translations != null)
                 response.Data.Translations.Id = id;
+
+            if (response.Data.AccountStates != null)
+            {
+                response.Data.AccountStates.Id = response.Data.Id;
+                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
+            }
 
             return response.Data;
         }
@@ -308,6 +313,23 @@ namespace TMDbLib.Client
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
             return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
+        }
+
+        public bool TvShowRemoveRating(int tvShowId)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest request = new RestRequest("tv/{tvShowId}/rating");
+            request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
+            if (SessionType == SessionType.UserSession)
+                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            IRestResponse<PostReply> response = _client.Delete<PostReply>(request);
+
+            // status code 13 = "The item/record was deleted successfully."
+            return response.Data != null && response.Data.StatusCode == 13;
         }
     }
 }

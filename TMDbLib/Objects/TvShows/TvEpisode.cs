@@ -31,5 +31,6 @@ namespace TMDbLib.Objects.TvShows
         public ExternalIds ExternalIds { get; set; }
         public StillImages Images { get; set; }
         public ResultContainer<Video> Videos { get; set; }
+        public AccountState AccountStates { get; set; }
     }
 }

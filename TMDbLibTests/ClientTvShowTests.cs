@@ -18,6 +18,8 @@ namespace TMDbLibTests
     public class ClientTvShowTests
     {
         private const int BreakingBad = 1396;
+        private const int BigBangTheory = 1418;
+        private const int House = 1408;
 
         private static Dictionary<TvShowMethods, Func<TvShow, object>> _methods;
         private TestConfig _config;
@@ -45,6 +47,35 @@ namespace TMDbLibTests
             _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
             _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
             _methods[TvShowMethods.Changes] = tvShow => tvShow.Changes;
+            _methods[TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates;
+        }
+
+        [TestMethod]
+        public void TestTvShowExtrasNone()
+        {
+            TvShow tvShow = _config.Client.GetTvShow(BreakingBad).Result;
+
+            TestBreakingBadBaseProperties(tvShow);
+
+            // Test all extras, ensure none of them are populated
+            foreach (Func<TvShow, object> selector in _methods.Values)
+                Assert.IsNull(selector(tvShow));
+        }
+
+        [TestMethod]
+        public void TestTvShowExtrasAll()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Account states will only show up if we've done something
+            _config.Client.TvShowSetRating(BreakingBad, 5);
+
+            TvShowMethods combinedEnum = _methods.Keys.Aggregate((methods, tvShowMethods) => methods | tvShowMethods);
+            TvShow tvShow = _config.Client.GetTvShow(BreakingBad, combinedEnum).Result;
+
+            TestBreakingBadBaseProperties(tvShow);
+
+            TestMethodsHelper.TestAllNotNull(_methods, tvShow);
         }
 
         [TestMethod]
@@ -161,35 +192,34 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvShowSeparateExtrasAccountState()
+        {
+            // Test the custom parsing code for Account State rating
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            TvShow show = _config.Client.GetTvShow(BigBangTheory, TvShowMethods.AccountStates).Result;
+            if (show.AccountStates == null || !show.AccountStates.Rating.HasValue)
+            {
+                _config.Client.TvShowSetRating(BigBangTheory, 5);
+
+                // Allow TMDb to update cache
+                Thread.Sleep(2000);
+
+                show = _config.Client.GetTvShow(BigBangTheory, TvShowMethods.AccountStates).Result;
+            }
+
+            Assert.IsNotNull(show.AccountStates);
+            Assert.IsTrue(show.AccountStates.Rating.HasValue);
+            Assert.IsTrue(Math.Abs(show.AccountStates.Rating.Value - 5) < double.Epsilon);
+        }
+
+        [TestMethod]
         public void TestTvShowSeparateExtrasImages()
         {
             ImagesWithId images = _config.Client.GetTvShowImages(BreakingBad).Result;
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Backdrops);
             Assert.IsNotNull(images.Posters);
-        }
-
-        [TestMethod]
-        public void TestTvShowExtrasNone()
-        {
-            TvShow tvShow = _config.Client.GetTvShow(BreakingBad).Result;
-
-            TestBreakingBadBaseProperties(tvShow);
-
-            // Test all extras, ensure none of them are populated
-            foreach (Func<TvShow, object> selector in _methods.Values)
-                Assert.IsNull(selector(tvShow));
-        }
-
-        [TestMethod]
-        public void TestTvShowExtrasAll()
-        {
-            TvShowMethods combinedEnum = _methods.Keys.Aggregate((methods, tvShowMethods) => methods | tvShowMethods);
-            TvShow tvShow = _config.Client.GetTvShow(BreakingBad, combinedEnum).Result;
-
-            TestBreakingBadBaseProperties(tvShow);
-
-            TestMethodsHelper.TestAllNotNull(_methods, tvShow);
         }
 
         private void TestBreakingBadBaseProperties(TvShow tvShow)
@@ -436,12 +466,14 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
 
-            Assert.Inconclusive("Alter when TMDb has the option to remove ratings");
-
             // Remove the rating
             if (accountState.Rating.HasValue)
-                // TODO: Alter when TMDb has the option to remove ratings
-                _config.Client.TvShowSetRating(BreakingBad, 0).Wait();
+            {
+                Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
+
+                // Allow TMDb to cache our changes
+                Thread.Sleep(2000);
+            }
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
@@ -462,6 +494,9 @@ namespace TMDbLibTests
             accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
             Assert.AreEqual(BreakingBad, accountState.Id);
             Assert.IsTrue(accountState.Rating.HasValue);
+
+            // Remove the rating
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
         }
 
         [TestMethod]
@@ -489,6 +524,7 @@ namespace TMDbLibTests
         public void TestTvShowSetRatingUserSession()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
 
             // Ensure that the test tv show has a different rating than our test rating
             double? rating = _config.Client.GetTvShowAccountState(BreakingBad).Result.Rating;
@@ -500,20 +536,25 @@ namespace TMDbLibTests
             // Try changing the rating
             Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, newRating).Result);
 
-            // Allow TMDb to not cache our data
+            // Test that the movie is NOT rated
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
+
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsFalse(accountState.Rating.HasValue);
+
+            // Rate the movie
+            _config.Client.TvShowSetRating(BreakingBad, 5);
+
+            // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            // Check if it worked
-            Assert.AreEqual(newRating, _config.Client.GetTvShowAccountState(BreakingBad).Result.Rating);
+            // Test that the movie IS rated
+            accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
+            Assert.AreEqual(BreakingBad, accountState.Id);
+            Assert.IsTrue(accountState.Rating.HasValue);
 
-            // Try changing it back to the previous rating
-            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, originalRating).Result);
-
-            // Allow TMDb to not cache our data
-            Thread.Sleep(2000);
-
-            // Check if it worked
-            Assert.AreEqual(originalRating, _config.Client.GetTvShowAccountState(BreakingBad).Result.Rating);
+            // Remove the rating
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
         }
 
         [TestMethod]
@@ -521,6 +562,7 @@ namespace TMDbLibTests
         {
             // There is no way to validate the change besides the success return of the api call since the guest session doesn't have access to anything else
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+
             // Try changing the rating
             Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 7.5).Result);
 

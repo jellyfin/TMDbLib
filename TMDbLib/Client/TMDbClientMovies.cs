@@ -259,6 +259,24 @@ namespace TMDbLib.Client
             return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
         }
 
+        public bool MovieRemoveRating(int movieId)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest request = new RestRequest("movie/{movieId}/rating");
+            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+
+            if (SessionType == SessionType.UserSession)
+                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            IRestResponse<PostReply> response = _client.Delete<PostReply>(request);
+
+            // status code 13 = "The item/record was deleted successfully."
+            return response.Data != null && response.Data.StatusCode == 13;
+        }
+        
         public async Task<Movie> GetMovieLatest()
         {
             RestRequest req = new RestRequest("movie/latest");

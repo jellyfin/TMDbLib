@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
@@ -17,6 +18,7 @@ namespace TMDbLibTests
     {
         private const int BreakingBad = 1396;
         private const int BreakingBadSeason1Id = 3572;
+        private const int BigBangTheory = 1418;
 
         private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
         private TestConfig _config;
@@ -41,6 +43,8 @@ namespace TMDbLibTests
             _methods[TvSeasonMethods.Images] = tvSeason => tvSeason.Images;
             _methods[TvSeasonMethods.ExternalIds] = tvSeason => tvSeason.ExternalIds;
             _methods[TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos;
+            _methods[TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos;
+            _methods[TvSeasonMethods.AccountStates] = tvSeason => tvSeason.AccountStates;
         }
 
         [TestMethod]
@@ -58,8 +62,35 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvSeasonExtrasAccountState()
+        {
+            // Test the custom parsing code for Account State rating
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            TvSeason season = _config.Client.GetTvSeason(BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
+            if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
+            {
+                _config.Client.TvEpisodeSetRating(BigBangTheory, 1, 1, 5);
+
+                // Allow TMDb to update cache
+                Thread.Sleep(2000);
+
+                season = _config.Client.GetTvSeason(BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
+            }
+
+            Assert.IsNotNull(season.AccountStates);
+            Assert.IsTrue(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.HasValue);
+            Assert.IsTrue(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.Value - 5) < double.Epsilon);
+        }
+
+        [TestMethod]
         public void TestTvSeasonExtrasAll()
         {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Account states will only show up if we've done something
+            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5);
+
             TvSeasonMethods combinedEnum = _methods.Keys.Aggregate((methods, tvSeasonMethods) => methods | tvSeasonMethods);
             TvSeason tvSeason = _config.Client.GetTvSeason(BreakingBad, 1, combinedEnum).Result;
 
@@ -157,6 +188,21 @@ namespace TMDbLibTests
             Assert.IsTrue(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
             Assert.IsTrue(Math.Abs(7 - (state.Results.Single(s => s.EpisodeNumber == 2).Rating ?? 0)) < double.Epsilon);
             Assert.IsTrue(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
+
+            // Test deleting Ratings
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1));
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 2));
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 3));
+
+            // Wait for TMDb to un-cache our value
+            Thread.Sleep(2000);
+
+            state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1);
+            Assert.IsNotNull(state);
+
+            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
+            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 2).Rating);
+            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 3).Rating);
         }
 
         [TestMethod]

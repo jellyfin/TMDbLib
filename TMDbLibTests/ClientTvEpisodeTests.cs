@@ -18,6 +18,7 @@ namespace TMDbLibTests
     {
         private const int BreakingBad = 1396;
         private const int BreakingBadSeason1Episode1Id = 62085;
+        private const int BigBangTheory = 1418;
 
         private static Dictionary<TvEpisodeMethods, Func<TvEpisode, object>> _methods;
         private TestConfig _config;
@@ -42,6 +43,7 @@ namespace TMDbLibTests
             _methods[TvEpisodeMethods.Images] = tvEpisode => tvEpisode.Images;
             _methods[TvEpisodeMethods.ExternalIds] = tvEpisode => tvEpisode.ExternalIds;
             _methods[TvEpisodeMethods.Videos] = tvEpisode => tvEpisode.Videos;
+            _methods[TvEpisodeMethods.AccountStates] = tvEpisode => tvEpisode.AccountStates;
         }
 
         [TestMethod]
@@ -59,8 +61,35 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvEpisodeExtrasAccountState()
+        {
+            // Test the custom parsing code for Account State rating
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            TvEpisode episode = _config.Client.GetTvEpisode(BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates).Result;
+            if (episode.AccountStates == null || !episode.AccountStates.Rating.HasValue)
+            {
+                _config.Client.TvEpisodeSetRating(BigBangTheory, 1, 1, 5);
+
+                // Allow TMDb to update cache
+                Thread.Sleep(2000);
+
+                episode = _config.Client.GetTvEpisode(BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates).Result;
+            }
+
+            Assert.IsNotNull(episode.AccountStates);
+            Assert.IsTrue(episode.AccountStates.Rating.HasValue);
+            Assert.IsTrue(Math.Abs(episode.AccountStates.Rating.Value - 5) < double.Epsilon);
+        }
+
+        [TestMethod]
         public void TestTvEpisodeExtrasAll()
         {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Account states will only show up if we've done something
+            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5);
+
             TvEpisodeMethods combinedEnum = _methods.Keys.Aggregate((methods, tvEpisodeMethods) => methods | tvEpisodeMethods);
             TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1, combinedEnum).Result;
 
@@ -138,31 +167,34 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TvEpisodeAccountState accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
 
-            int id = accountState.Id;
+            // Remove the rating
+            if (accountState.Rating.HasValue)
+            {
+                Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1));
+
+                // Allow TMDb to cache our changes
+                Thread.Sleep(2000);
+            }
+
+            // Test that the episode is NOT rated
+            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
+
+            Assert.AreEqual(BreakingBadSeason1Episode1Id, accountState.Id);
+            Assert.IsFalse(accountState.Rating.HasValue);
+
+            // Rate the episode
+            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            // Test that the episode IS rated
+            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
+            Assert.AreEqual(BreakingBadSeason1Episode1Id, accountState.Id);
+            Assert.IsTrue(accountState.Rating.HasValue);
 
             // Remove the rating
-            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 2);
-
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
-
-            // Test that the movie is rated correctly
-            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
-
-            Assert.AreEqual(id, accountState.Id);
-            Assert.IsTrue(accountState.Rating.HasValue);
-            Assert.IsTrue(Math.Abs(2 - accountState.Rating.Value) < double.Epsilon);
-
-            // Rate the movie
-            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 7);
-
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
-
-            // Test that the movie is rated correctly
-            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
-            Assert.IsTrue(accountState.Rating.HasValue);
-            Assert.IsTrue(Math.Abs(7 - accountState.Rating.Value) < double.Epsilon);
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1));
         }
 
         [TestMethod]
