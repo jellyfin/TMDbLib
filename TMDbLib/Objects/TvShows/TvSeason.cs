@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -22,6 +23,6 @@ namespace TMDbLib.Objects.TvShows
         public Credits Credits { get; set; }
         public ExternalIds ExternalIds { get; set; }
         public ResultContainer<Video> Videos { get; set; }
-        public AccountState AccountStates { get; set; }
+        public ResultContainer<TvEpisodeAccountState> AccountStates { get; set; }
     }
 }

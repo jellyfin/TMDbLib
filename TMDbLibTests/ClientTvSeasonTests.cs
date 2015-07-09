@@ -18,6 +18,7 @@ namespace TMDbLibTests
     {
         private const int BreakingBad = 1396;
         private const int BreakingBadSeason1Id = 3572;
+        private const int BigBangTheory = 1418;
 
         private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
         private TestConfig _config;
@@ -58,6 +59,28 @@ namespace TMDbLibTests
             {
                 Assert.IsNull(selector(tvSeason));
             }
+        }
+
+        [TestMethod]
+        public void TestTvSeasonExtrasAccountState()
+        {
+            // Test the custom parsing code for Account State rating
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            TvSeason season = _config.Client.GetTvSeason(BigBangTheory, 1, TvSeasonMethods.AccountStates);
+            if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
+            {
+                _config.Client.TvEpisodeSetRating(BigBangTheory, 1, 1, 5);
+
+                // Allow TMDb to update cache
+                Thread.Sleep(2000);
+
+                season = _config.Client.GetTvSeason(BigBangTheory, 1, TvSeasonMethods.AccountStates);
+            }
+
+            Assert.IsNotNull(season.AccountStates);
+            Assert.IsTrue(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.HasValue);
+            Assert.IsTrue(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.Value - 5) < double.Epsilon);
         }
 
         [TestMethod]

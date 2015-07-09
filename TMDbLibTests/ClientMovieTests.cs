@@ -469,7 +469,7 @@ namespace TMDbLibTests
             // Remove the rating
             if (accountState.Rating.HasValue)
             {
-                Assert.IsTrue( _config.Client.MovieRemoveRating(MadMaxFuryRoad));
+                Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad));
 
                 // Allow TMDb to cache our changes
                 Thread.Sleep(2000);
@@ -482,7 +482,7 @@ namespace TMDbLibTests
             Assert.IsFalse(accountState.Rating.HasValue);
 
             // Rate the movie
-            _config.Client.MovieSetRating( MadMaxFuryRoad, 5);
+            _config.Client.MovieSetRating(MadMaxFuryRoad, 5);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
@@ -601,6 +601,28 @@ namespace TMDbLibTests
             Assert.AreEqual(304654182, item.Revenue);
             Assert.AreEqual(92000000, item.Budget);
             Assert.AreEqual(98, item.Runtime);
+        }
+
+        [TestMethod]
+        public void TestMoviesExtrasAccountState()
+        {
+            // Test the custom parsing code for Account State rating
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            Movie movie = _config.Client.GetMovie(TheDarkKnightRises, MovieMethods.AccountStates);
+            if (movie.AccountStates == null || !movie.AccountStates.Rating.HasValue)
+            {
+                _config.Client.MovieSetRating(TheDarkKnightRises, 5);
+
+                // Allow TMDb to update cache
+                Thread.Sleep(2000);
+
+                movie = _config.Client.GetMovie(TheDarkKnightRises, MovieMethods.AccountStates);
+            }
+
+            Assert.IsNotNull(movie.AccountStates);
+            Assert.IsTrue(movie.AccountStates.Rating.HasValue);
+            Assert.IsTrue(Math.Abs(movie.AccountStates.Rating.Value - 5) < double.Epsilon);
         }
     }
 }

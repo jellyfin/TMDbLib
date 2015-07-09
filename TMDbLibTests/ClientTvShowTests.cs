@@ -18,6 +18,7 @@ namespace TMDbLibTests
     public class ClientTvShowTests
     {
         private const int BreakingBad = 1396;
+        private const int BigBangTheory = 1418;
         private const int House = 1408;
 
         private static Dictionary<TvShowMethods, Func<TvShow, object>> _methods;
@@ -185,6 +186,28 @@ namespace TMDbLibTests
             Assert.AreEqual("YouTube", video.Site);
             Assert.AreEqual(480, video.Size);
             Assert.AreEqual("Opening Credits", video.Type);
+        }
+
+        [TestMethod]
+        public void TestTvShowSeparateExtrasAccountState()
+        {
+            // Test the custom parsing code for Account State rating
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            TvShow show = _config.Client.GetTvShow(BigBangTheory, TvShowMethods.AccountStates);
+            if (show.AccountStates == null || !show.AccountStates.Rating.HasValue)
+            {
+                _config.Client.TvShowSetRating(BigBangTheory, 5);
+
+                // Allow TMDb to update cache
+                Thread.Sleep(2000);
+
+                show = _config.Client.GetTvShow(BigBangTheory, TvShowMethods.AccountStates);
+            }
+
+            Assert.IsNotNull(show.AccountStates);
+            Assert.IsTrue(show.AccountStates.Rating.HasValue);
+            Assert.IsTrue(Math.Abs(show.AccountStates.Rating.Value - 5) < double.Epsilon);
         }
 
         [TestMethod]

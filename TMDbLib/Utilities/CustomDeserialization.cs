@@ -40,7 +40,6 @@ namespace TMDbLib.Utilities
                     accountState.Results[i].Rating = null;
                 else
                     accountState.Results[i].Rating = Double.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
-
             }
         }
 
