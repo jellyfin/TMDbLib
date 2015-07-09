@@ -1,15 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMDbLib.Client;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Discover
 {
-    public class DiscoverTv : DiscoverBase
+    public class DiscoverTv : DiscoverBase<SearchTv>
     {
-        public DiscoverTv()
+        public DiscoverTv(TMDbClient client)
+            : base("discover/tv", client)
         {
 
         }
