@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
@@ -157,6 +158,21 @@ namespace TMDbLibTests
             Assert.IsTrue(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
             Assert.IsTrue(Math.Abs(7 - (state.Results.Single(s => s.EpisodeNumber == 2).Rating ?? 0)) < double.Epsilon);
             Assert.IsTrue(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
+
+            // Test deleting Ratings
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1));
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 2));
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 3));
+
+            // Wait for TMDb to un-cache our value
+            Thread.Sleep(2000);
+
+            state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1);
+            Assert.IsNotNull(state);
+
+            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
+            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 2).Rating);
+            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 3).Rating);
         }
 
         [TestMethod]

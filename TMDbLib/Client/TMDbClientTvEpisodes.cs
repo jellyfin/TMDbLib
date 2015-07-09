@@ -153,6 +153,26 @@ namespace TMDbLib.Client
             return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
         }
 
+        public bool TvEpisodeRemoveRating(int tvShowId, int seasonNumber, int episodeNumber)
+        {
+            RequireSessionId(SessionType.GuestSession);
+
+            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
+            
+            if (SessionType == SessionType.UserSession)
+                req.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            else
+                req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+
+            IRestResponse<PostReply> response = _client.Delete<PostReply>(req);
+
+            // status code 13 = "The item/record was deleted successfully."
+            return response.Data != null && response.Data.StatusCode == 13;
+        }
+
         public ChangesContainer GetTvEpisodeChanges(int episodeId)
         {
             RestRequest req = new RestRequest("tv/episode/{id}/changes");
