@@ -259,7 +259,7 @@ namespace TMDbLib.Client
             return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
         }
 
-        public bool MovieRemoveRating(int movieId)
+        public async Task<bool> MovieRemoveRating(int movieId)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -271,7 +271,7 @@ namespace TMDbLib.Client
             else
                 request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
 
-            IRestResponse<PostReply> response = _client.Delete<PostReply>(request);
+            IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(request);
 
             // status code 13 = "The item/record was deleted successfully."
             return response.Data != null && response.Data.StatusCode == 13;

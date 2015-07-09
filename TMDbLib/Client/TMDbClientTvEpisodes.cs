@@ -121,7 +121,7 @@ namespace TMDbLib.Client
             return await GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos);
         }
 
-        public TvEpisodeAccountState GetTvEpisodeAccountState(int tvShowId, int seasonNumber, int episodeNumber)
+        public async Task<TvEpisodeAccountState> GetTvEpisodeAccountState(int tvShowId, int seasonNumber, int episodeNumber)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -132,7 +132,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             req.AddParameter("session_id", SessionId);
 
-            IRestResponse<TvEpisodeAccountState> response = _client.Get<TvEpisodeAccountState>(req);
+            IRestResponse<TvEpisodeAccountState> response = await _client.ExecuteGetTaskAsync<TvEpisodeAccountState>(req);
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (response.Data != null)
@@ -143,7 +143,7 @@ namespace TMDbLib.Client
             return response.Data;
         }
 
-        public bool TvEpisodeSetRating(int tvShowId, int seasonNumber, int episodeNumber, double rating)
+        public async Task<bool> TvEpisodeSetRating(int tvShowId, int seasonNumber, int episodeNumber, double rating)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -159,14 +159,14 @@ namespace TMDbLib.Client
 
             req.AddBody(new { value = rating });
 
-            IRestResponse<PostReply> response = _client.Post<PostReply>(req);
+            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(req);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
             return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
         }
 
-        public bool TvEpisodeRemoveRating(int tvShowId, int seasonNumber, int episodeNumber)
+        public async Task<bool> TvEpisodeRemoveRating(int tvShowId, int seasonNumber, int episodeNumber)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -180,18 +180,18 @@ namespace TMDbLib.Client
             else
                 req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
 
-            IRestResponse<PostReply> response = _client.Delete<PostReply>(req);
+            IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(req);
 
             // status code 13 = "The item/record was deleted successfully."
             return response.Data != null && response.Data.StatusCode == 13;
         }
 
-        public ChangesContainer GetTvEpisodeChanges(int episodeId)
+        public async Task<ChangesContainer> GetTvEpisodeChanges(int episodeId)
         {
             RestRequest req = new RestRequest("tv/episode/{id}/changes");
             req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
 
-            IRestResponse<ChangesContainer> response = _client.Get<ChangesContainer>(req);
+            IRestResponse<ChangesContainer> response = await _client.ExecuteGetTaskAsync<ChangesContainer>(req);
 
             return response.Data;
         }

@@ -469,7 +469,7 @@ namespace TMDbLibTests
             // Remove the rating
             if (accountState.Rating.HasValue)
             {
-                Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad));
+                Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad).Result);
 
                 // Allow TMDb to cache our changes
                 Thread.Sleep(2000);
@@ -493,7 +493,7 @@ namespace TMDbLibTests
             Assert.IsTrue(accountState.Rating.HasValue);
 
             // Remove the rating
-            Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad));
+            Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad).Result);
         }
 
         [TestMethod]

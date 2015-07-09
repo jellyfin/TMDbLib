@@ -469,7 +469,7 @@ namespace TMDbLibTests
             // Remove the rating
             if (accountState.Rating.HasValue)
             {
-                Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
+                Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad).Result);
 
                 // Allow TMDb to cache our changes
                 Thread.Sleep(2000);
@@ -496,7 +496,7 @@ namespace TMDbLibTests
             Assert.IsTrue(accountState.Rating.HasValue);
 
             // Remove the rating
-            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad).Result);
         }
 
         [TestMethod]
@@ -526,35 +526,34 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             AccountState accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
 
-            // Ensure that the test tv show has a different rating than our test rating
-            double? rating = _config.Client.GetTvShowAccountState(BreakingBad).Result.Rating;
-            Assert.IsNotNull(rating);
+            // Remove the rating
+            if (accountState.Rating.HasValue)
+            {
+                Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad).Result);
 
-            double originalRating = rating.Value;
-            double newRating = Math.Abs(originalRating - 7.5) < double.Epsilon ? 2.5 : 7.5;
+                // Allow TMDb to cache our changes
+                Thread.Sleep(2000);
+            }
 
-            // Try changing the rating
-            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, newRating).Result);
-
-            // Test that the movie is NOT rated
+            // Test that the episode is NOT rated
             accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
 
             Assert.AreEqual(BreakingBad, accountState.Id);
             Assert.IsFalse(accountState.Rating.HasValue);
 
-            // Rate the movie
-            _config.Client.TvShowSetRating(BreakingBad, 5);
+            // Rate the episode
+            _config.Client.TvShowSetRating(BreakingBad, 5).Wait();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            // Test that the movie IS rated
+            // Test that the episode IS rated
             accountState = _config.Client.GetTvShowAccountState(BreakingBad).Result;
             Assert.AreEqual(BreakingBad, accountState.Id);
             Assert.IsTrue(accountState.Rating.HasValue);
 
             // Remove the rating
-            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad));
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad).Result);
         }
 
         [TestMethod]
