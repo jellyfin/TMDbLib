@@ -113,7 +113,7 @@ namespace TMDbLib.Client
             return await GetTvSeasonMethod<ExternalIds>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds);
         }
 
-        public ResultContainer<TvEpisodeAccountState> GetTvSeasonAccountState(int tvShowId, int seasonNumber)
+        public async Task<ResultContainer<TvEpisodeAccountState>> GetTvSeasonAccountState(int tvShowId, int seasonNumber)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -123,7 +123,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             req.AddParameter("session_id", SessionId);
 
-            IRestResponse<ResultContainer<TvEpisodeAccountState>> response = _client.Get<ResultContainer<TvEpisodeAccountState>>(req);
+            IRestResponse<ResultContainer<TvEpisodeAccountState>> response = await _client.ExecuteGetTaskAsync<ResultContainer<TvEpisodeAccountState>>(req);
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (response.Data != null)
@@ -134,12 +134,12 @@ namespace TMDbLib.Client
             return response.Data;
         }
 
-        public ChangesContainer GetTvSeasonChanges(int seasonId)
+        public async Task<ChangesContainer> GetTvSeasonChanges(int seasonId)
         {
             RestRequest req = new RestRequest("tv/season/{id}/changes");
             req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));
 
-            IRestResponse<ChangesContainer> response = _client.Get<ChangesContainer>(req);
+            IRestResponse<ChangesContainer> response = await _client.ExecuteGetTaskAsync<ChangesContainer>(req);
 
             return response.Data;
         }

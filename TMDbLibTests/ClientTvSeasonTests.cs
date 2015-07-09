@@ -182,7 +182,7 @@ namespace TMDbLibTests
             Thread.Sleep(2000);
 
             // Fetch out the seasons state
-            ResultContainer<TvEpisodeAccountState> state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1);
+            ResultContainer<TvEpisodeAccountState> state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1).Result;
             Assert.IsNotNull(state);
 
             Assert.IsTrue(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
@@ -197,7 +197,7 @@ namespace TMDbLibTests
             // Wait for TMDb to un-cache our value
             Thread.Sleep(2000);
 
-            state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1);
+            state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1).Result;
             Assert.IsNotNull(state);
 
             Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
@@ -208,7 +208,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonGetChanges()
         {
-            ChangesContainer changes = _config.Client.GetTvSeasonChanges(BreakingBadSeason1Id);
+            ChangesContainer changes = _config.Client.GetTvSeasonChanges(BreakingBadSeason1Id).Result;
             Assert.IsNotNull(changes);
             Assert.IsNotNull(changes.Changes);
         }
