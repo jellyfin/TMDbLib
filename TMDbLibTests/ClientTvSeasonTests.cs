@@ -174,9 +174,9 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Rate episode 1, 2 and 3 of BreakingBad
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5));
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 2, 7));
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 3, 3));
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 2, 7).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 3, 3).Result);
 
             // Wait for TMDb to un-cache our value
             Thread.Sleep(2000);
@@ -190,9 +190,9 @@ namespace TMDbLibTests
             Assert.IsTrue(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
 
             // Test deleting Ratings
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1));
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 2));
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 3));
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 2).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 3).Result);
 
             // Wait for TMDb to un-cache our value
             Thread.Sleep(2000);

@@ -165,36 +165,36 @@ namespace TMDbLibTests
         public void TestTvEpisodeAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TvEpisodeAccountState accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
+            TvEpisodeAccountState accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Result;
 
             // Remove the rating
             if (accountState.Rating.HasValue)
             {
-                Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1));
+                Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1).Result);
 
                 // Allow TMDb to cache our changes
                 Thread.Sleep(2000);
             }
 
             // Test that the episode is NOT rated
-            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
+            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Result;
 
             Assert.AreEqual(BreakingBadSeason1Episode1Id, accountState.Id);
             Assert.IsFalse(accountState.Rating.HasValue);
 
             // Rate the episode
-            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5);
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the episode IS rated
-            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1);
+            accountState = _config.Client.GetTvEpisodeAccountState(BreakingBad, 1, 1).Result;
             Assert.AreEqual(BreakingBadSeason1Episode1Id, accountState.Id);
             Assert.IsTrue(accountState.Rating.HasValue);
 
             // Remove the rating
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1));
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1).Result);
         }
 
         [TestMethod]
@@ -202,15 +202,15 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
-            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, -1));
-            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 0));
-            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 10.5));
+            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, -1).Result);
+            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 0).Result);
+            Assert.IsFalse(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 10.5).Result);
         }
 
         [TestMethod]
         public void TestTvEpisodeGetChanges()
         {
-            ChangesContainer changes = _config.Client.GetTvEpisodeChanges(BreakingBadSeason1Episode1Id);
+            ChangesContainer changes = _config.Client.GetTvEpisodeChanges(BreakingBadSeason1Episode1Id).Result;
 
             Assert.IsNotNull(changes);
             Assert.IsNotNull(changes.Changes);
