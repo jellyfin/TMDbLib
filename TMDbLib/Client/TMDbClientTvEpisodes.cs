@@ -24,14 +24,20 @@ namespace TMDbLib.Client
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         public TvEpisode GetTvEpisode(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null)
         {
-            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}");
-            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
-            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
-            req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
+            if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
+                RequireSessionId(SessionType.UserSession);
+
+            RestRequest request = new RestRequest("tv/{id}/season/{season_number}/episode/{episode_number}");
+            request.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
+
+            if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
+                request.AddParameter("session_id", SessionId);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
+                request.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(TvEpisodeMethods))
@@ -41,9 +47,9 @@ namespace TMDbLib.Client
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
-                req.AddParameter("append_to_response", appends);
+                request.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvEpisode> response = _client.Get<TvEpisode>(req);
+            IRestResponse<TvEpisode> response = _client.Get<TvEpisode>(request);
 
             // No data to patch up so return
             if (response.Data == null)
@@ -61,6 +67,13 @@ namespace TMDbLib.Client
 
             if (response.Data.ExternalIds != null)
                 response.Data.ExternalIds.Id = response.Data.Id ?? 0;
+
+            if (response.Data.AccountStates != null)
+            {
+                response.Data.AccountStates.Id = response.Data.Id ?? 0;
+                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
+            }
 
             return response.Data;
         }
@@ -116,7 +129,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
-            req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
+            req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             req.AddParameter("session_id", SessionId);
 
             IRestResponse<TvEpisodeAccountState> response = _client.Get<TvEpisodeAccountState>(req);
@@ -161,7 +174,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
-            
+
             if (SessionType == SessionType.UserSession)
                 req.AddParameter("session_id", SessionId, ParameterType.QueryString);
             else

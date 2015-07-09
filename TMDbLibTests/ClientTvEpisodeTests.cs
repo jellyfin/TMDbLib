@@ -43,6 +43,7 @@ namespace TMDbLibTests
             _methods[TvEpisodeMethods.Images] = tvEpisode => tvEpisode.Images;
             _methods[TvEpisodeMethods.ExternalIds] = tvEpisode => tvEpisode.ExternalIds;
             _methods[TvEpisodeMethods.Videos] = tvEpisode => tvEpisode.Videos;
+            _methods[TvEpisodeMethods.AccountStates] = tvEpisode => tvEpisode.AccountStates;
         }
 
         [TestMethod]
@@ -62,6 +63,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvEpisodeExtrasAll()
         {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Account states will only show up if we've done something
+            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5);
+
             TvEpisodeMethods combinedEnum = _methods.Keys.Aggregate((methods, tvEpisodeMethods) => methods | tvEpisodeMethods);
             TvEpisode tvEpisode = _config.Client.GetTvEpisode(BreakingBad, 1, 1, combinedEnum);
 

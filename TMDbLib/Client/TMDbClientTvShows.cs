@@ -24,12 +24,18 @@ namespace TMDbLib.Client
         /// <returns>The requested Tv Show</returns>
         public TvShow GetTvShow(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
         {
-            RestRequest req = new RestRequest("tv/{id}");
-            req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
+            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
+                RequireSessionId(SessionType.UserSession);
+
+            RestRequest request = new RestRequest("tv/{id}");
+            request.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
+
+            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
+                request.AddParameter("session_id", SessionId);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
+                request.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(TvShowMethods))
@@ -39,9 +45,9 @@ namespace TMDbLib.Client
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
-                req.AddParameter("append_to_response", appends);
+                request.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvShow> response = _client.Get<TvShow>(req);
+            IRestResponse<TvShow> response = _client.Get<TvShow>(request);
 
             // No data to patch up so return
             if (response.Data == null)
@@ -50,6 +56,13 @@ namespace TMDbLib.Client
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (response.Data.Translations != null)
                 response.Data.Translations.Id = id;
+
+            if (response.Data.AccountStates != null)
+            {
+                response.Data.AccountStates.Id = response.Data.Id;
+                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
+                CustomDeserialization.DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
+            }
 
             return response.Data;
         }

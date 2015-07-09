@@ -46,6 +46,35 @@ namespace TMDbLibTests
             _methods[TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles;
             _methods[TvShowMethods.Keywords] = tvShow => tvShow.Keywords;
             _methods[TvShowMethods.Changes] = tvShow => tvShow.Changes;
+            _methods[TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates;
+        }
+
+        [TestMethod]
+        public void TestTvShowExtrasNone()
+        {
+            TvShow tvShow = _config.Client.GetTvShow(BreakingBad);
+
+            TestBreakingBadBaseProperties(tvShow);
+
+            // Test all extras, ensure none of them are populated
+            foreach (Func<TvShow, object> selector in _methods.Values)
+                Assert.IsNull(selector(tvShow));
+        }
+
+        [TestMethod]
+        public void TestTvShowExtrasAll()
+        {
+            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+
+            // Account states will only show up if we've done something
+            _config.Client.TvShowSetRating(BreakingBad, 5);
+
+            TvShowMethods combinedEnum = _methods.Keys.Aggregate((methods, tvShowMethods) => methods | tvShowMethods);
+            TvShow tvShow = _config.Client.GetTvShow(BreakingBad, combinedEnum);
+
+            TestBreakingBadBaseProperties(tvShow);
+
+            TestMethodsHelper.TestAllNotNull(_methods, tvShow);
         }
 
         [TestMethod]
@@ -165,29 +194,6 @@ namespace TMDbLibTests
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Backdrops);
             Assert.IsNotNull(images.Posters);
-        }
-
-        [TestMethod]
-        public void TestTvShowExtrasNone()
-        {
-            TvShow tvShow = _config.Client.GetTvShow(BreakingBad);
-
-            TestBreakingBadBaseProperties(tvShow);
-
-            // Test all extras, ensure none of them are populated
-            foreach (Func<TvShow, object> selector in _methods.Values)
-                Assert.IsNull(selector(tvShow));
-        }
-
-        [TestMethod]
-        public void TestTvShowExtrasAll()
-        {
-            TvShowMethods combinedEnum = _methods.Keys.Aggregate((methods, tvShowMethods) => methods | tvShowMethods);
-            TvShow tvShow = _config.Client.GetTvShow(BreakingBad, combinedEnum);
-
-            TestBreakingBadBaseProperties(tvShow);
-
-            TestMethodsHelper.TestAllNotNull(_methods, tvShow);
         }
 
         private void TestBreakingBadBaseProperties(TvShow tvShow)

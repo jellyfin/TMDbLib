@@ -89,8 +89,11 @@ namespace TMDbLibTests
 
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
+            // Account states will only show up if we've done something
+            _config.Client.MovieSetRating(TheDarkKnightRises, 5);
+
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = _config.Client.GetMovie(TheDarkKnightRisesImdb, combinedEnum);
+            Movie item = _config.Client.GetMovie(TheDarkKnightRises, combinedEnum);
 
             TestMethodsHelper.TestAllNotNull(tmpMethods, item);
         }
