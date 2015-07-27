@@ -12,6 +12,12 @@ View more about that here: http://nuget.org/packages/TMDbLib/
 Changelog
 ---------
 
+**0.8.3**
+
+ - Major update which brings the API up to date (minus a few features)
+ - Multiple breaking changes from 0.7, but mostly parameter changes or renames.
+ - Prepared for a 0.9 release with `Async` support.
+
 **0.7**
 
  - First release
