@@ -18,28 +18,7 @@ namespace TMDbLibTests
         {
             _config = new TestConfig();
         }
-
-        [TestMethod]
-        public void TestGenreList()
-        {
-            // Default language
-            List<Genre> genres = _config.Client.GetGenres().Result;
-
-            Assert.IsNotNull(genres);
-            Assert.IsTrue(genres.Count > 0);
-
-            // Another language
-            List<Genre> genresDanish = _config.Client.GetGenres("da").Result;
-
-            Assert.IsNotNull(genresDanish);
-            Assert.IsTrue(genresDanish.Count > 0);
-
-            Assert.AreEqual(genres.Count, genresDanish.Count);
-
-            // At least one should be different
-            Assert.IsTrue(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
-        }
-
+        
         [TestMethod]
         public void TestGenreTvList()
         {
@@ -86,7 +65,7 @@ namespace TMDbLibTests
         public void TestGenreMovies()
         {
             // Get first genre
-            Genre genre = _config.Client.GetGenres().Result.First();
+            Genre genre = _config.Client.GetMovieGenres().Result.First();
 
             // Get movies
             SearchContainerWithId<MovieResult> movies = _config.Client.GetGenreMovies(genre.Id).Result;
