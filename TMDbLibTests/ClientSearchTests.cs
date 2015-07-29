@@ -160,10 +160,17 @@ namespace TMDbLibTests
             Assert.AreEqual(new DateTime(2008, 1, 19), item.FirstAirDate);
             Assert.AreEqual("Breaking Bad", item.Name);
             Assert.AreEqual("Breaking Bad", item.OriginalName);
+            Assert.AreEqual("en", item.OriginalLanguage);
             Assert.AreEqual("/4yMXf3DW6oCL0lVPZaZM2GypgwE.jpg", item.PosterPath);
+            Assert.AreEqual("Breaking Bad is an American crime drama television series created and produced by Vince Gilligan. Set and produced in Albuquerque, New Mexico, Breaking Bad is the story of Walter White, a struggling high school chemistry teacher who is diagnosed with inoperable lung cancer at the beginning of the series. He turns to a life of crime, producing and selling methamphetamine, in order to secure his family's financial future before he dies, teaming with his former student, Jesse Pinkman. Heavily serialized, the series is known for positioning its characters in seemingly inextricable corners and has been labeled a contemporary western by its creator.", item.Overview);
             Assert.IsTrue(item.Popularity > 0);
             Assert.IsTrue(item.VoteAverage > 0);
             Assert.IsTrue(item.VoteCount > 0);
+
+            Assert.IsNotNull(item.GenreIds);
+            Assert.AreEqual(1, item.GenreIds.Count);
+            Assert.AreEqual(18, item.GenreIds[0]);
+
             Assert.IsNotNull(item.OriginCountry);
             Assert.AreEqual(1, item.OriginCountry.Count);
             Assert.AreEqual("US", item.OriginCountry[0]);

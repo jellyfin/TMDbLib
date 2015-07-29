@@ -98,10 +98,15 @@ namespace TMDbLibTests
             Assert.IsNotNull(movie.PosterPath);
             Assert.IsNotNull(movie.BackdropPath);
             Assert.IsNotNull(movie.OriginalTitle);
+            Assert.IsNotNull(movie.Overview);
+            Assert.IsNotNull(movie.OriginalLanguage);
             Assert.IsNotNull(movie.ReleaseDate);
             Assert.IsTrue(movie.VoteCount > 0);
             Assert.IsTrue(movie.VoteAverage > 0);
             Assert.IsTrue(movie.Popularity > 0);
+
+            Assert.IsNotNull(movie.GenreIds);
+            Assert.IsTrue(movie.GenreIds.Any());
         }
 
         [TestMethod]
@@ -117,10 +122,15 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.PosterPath);
             Assert.IsNotNull(tvShow.BackdropPath);
             Assert.IsNotNull(tvShow.OriginalName);
+            Assert.IsNotNull(tvShow.Overview);
+            Assert.IsNotNull(tvShow.OriginalLanguage);
             Assert.IsNotNull(tvShow.FirstAirDate);
             Assert.IsTrue(tvShow.VoteCount > 0);
             Assert.IsTrue(tvShow.VoteAverage > 0);
             Assert.IsTrue(tvShow.Popularity > 0);
+
+            Assert.IsNotNull(tvShow.GenreIds);
+            Assert.IsTrue(tvShow.GenreIds.Any());
         }
 
         [TestMethod]
@@ -136,10 +146,15 @@ namespace TMDbLibTests
             Assert.IsNotNull(movie.PosterPath);
             Assert.IsNotNull(movie.BackdropPath);
             Assert.IsNotNull(movie.OriginalTitle);
+            Assert.IsNotNull(movie.Overview);
+            Assert.IsNotNull(movie.OriginalLanguage);
             Assert.IsNotNull(movie.ReleaseDate);
             Assert.IsTrue(movie.VoteCount > 0);
             Assert.IsTrue(movie.VoteAverage > 0);
             Assert.IsTrue(movie.Popularity > 0);
+
+            Assert.IsNotNull(movie.GenreIds);
+            Assert.IsTrue(movie.GenreIds.Any());
         }
 
         [TestMethod]
@@ -155,10 +170,15 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.PosterPath);
             Assert.IsNotNull(tvShow.BackdropPath);
             Assert.IsNotNull(tvShow.OriginalName);
+            Assert.IsNotNull(tvShow.Overview);
+            Assert.IsNotNull(tvShow.OriginalLanguage);
             Assert.IsNotNull(tvShow.FirstAirDate);
             Assert.IsTrue(tvShow.VoteCount > 0);
             Assert.IsTrue(tvShow.VoteAverage > 0);
             Assert.IsTrue(tvShow.Popularity > 0);
+
+            Assert.IsNotNull(tvShow.GenreIds);
+            Assert.IsTrue(tvShow.GenreIds.Any());
         }
 
         [TestMethod]
@@ -174,10 +194,15 @@ namespace TMDbLibTests
             Assert.IsNotNull(movie.PosterPath);
             Assert.IsNotNull(movie.BackdropPath);
             Assert.IsNotNull(movie.OriginalTitle);
+            Assert.IsNotNull(movie.Overview);
+            Assert.IsNotNull(movie.OriginalLanguage);
             Assert.IsNotNull(movie.ReleaseDate);
             Assert.IsTrue(movie.VoteCount > 0);
             Assert.IsTrue(movie.VoteAverage > 0);
             Assert.IsTrue(movie.Popularity > 0);
+
+            Assert.IsNotNull(movie.GenreIds);
+            Assert.IsTrue(movie.GenreIds.Any());
         }
 
         [TestMethod]
@@ -193,10 +218,15 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.PosterPath);
             Assert.IsNotNull(tvShow.BackdropPath);
             Assert.IsNotNull(tvShow.OriginalName);
+            Assert.IsNotNull(tvShow.Overview);
+            Assert.IsNotNull(tvShow.OriginalLanguage);
             Assert.IsNotNull(tvShow.FirstAirDate);
             Assert.IsTrue(tvShow.VoteCount > 0);
             Assert.IsTrue(tvShow.VoteAverage > 0);
             Assert.IsTrue(tvShow.Popularity > 0);
+
+            Assert.IsNotNull(tvShow.GenreIds);
+            Assert.IsTrue(tvShow.GenreIds.Any());
         }
 
         [TestMethod]
