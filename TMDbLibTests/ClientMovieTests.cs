@@ -184,7 +184,7 @@ namespace TMDbLibTests
             Assert.AreEqual(7229, crew.Id);
             Assert.AreEqual("Music", crew.Job);
             Assert.AreEqual("Marco Beltrami", crew.Name);
-            Assert.AreEqual("/AvmWWykshwdR9sUWdbI8DaRLpRs.jpg", crew.ProfilePath);
+            Assert.AreEqual("/tTBQHKWVieP5ARRfJRMkbnLTW6C.jpg", crew.ProfilePath);
 
         }
 
