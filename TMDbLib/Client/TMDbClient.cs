@@ -207,5 +207,28 @@ namespace TMDbLib.Client
             if (sessionType == SessionType.UserSession && SessionType == SessionType.GuestSession)
                 throw new UserSessionRequiredException();
         }
+
+        /// <summary>
+        /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
+        /// </summary>
+        /// <param name="req">Request</param>
+        /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
+        private void AddSessionId(IRestRequest req, SessionType targetType = SessionType.Unassigned)
+        {
+            if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
+                (targetType == SessionType.GuestSession))
+            {
+                req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+            }
+
+            if ((targetType == SessionType.Unassigned && SessionType == SessionType.UserSession) ||
+               (targetType == SessionType.UserSession))
+            {
+                req.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            }
+
+            // TODO: Handle this case better
+            throw new InvalidOperationException("Bad combination of target type and actual session type");
+        }
     }
 }

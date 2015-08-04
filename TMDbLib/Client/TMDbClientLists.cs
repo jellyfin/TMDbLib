@@ -71,7 +71,8 @@ namespace TMDbLib.Client
                 description = "";
 
             RestRequest request = new RestRequest("list") { RequestFormat = DataFormat.Json };
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(request, SessionType.UserSession);
+
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
             {
@@ -103,7 +104,7 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("list/{listId}");
             request.AddUrlSegment("listId", listId);
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(request, SessionType.UserSession);
 
             IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(request).ConfigureAwait(false);
 
@@ -153,8 +154,8 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("list/{listId}/clear") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("listId", listId);
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddParameter("confirm", "true");
+            AddSessionId(request, SessionType.UserSession);
 
             IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request);
 
@@ -176,7 +177,8 @@ namespace TMDbLib.Client
             RestRequest request = new RestRequest("list/{listId}/{method}") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("listId", listId);
             request.AddUrlSegment("method", method);
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(request, SessionType.UserSession);
+
             request.AddBody(new { media_id = movieId });
 
             IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
