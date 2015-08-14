@@ -20,6 +20,7 @@ namespace TMDbLib.Objects.Search
         public bool Adult { get; set; }
         public DateTime? ReleaseDate { get; set; }
         public MediaType Type { get; set; }
+        public List<int> GenreIds { get; set; }
         public List<string> OriginCountry { get; set; }
 
         public string MediaType

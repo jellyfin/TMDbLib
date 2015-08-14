@@ -20,8 +20,16 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page);
-            if (year >= 1)
-                req.AddParameter("year", year);
+            if (year >= 1) {
+                switch (method) {
+                    case "tv":
+                        req.AddParameter("first_air_date_year", year);
+                        break;
+                    default:
+                        req.AddParameter("year", year);
+                        break;
+                }
+            }
             if (includeAdult.HasValue)
                 req.AddParameter("include_adult", includeAdult.Value ? "true" : "false");
 
@@ -83,9 +91,14 @@ namespace TMDbLib.Client
             return await SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page);
         }
 
-        public async Task<SearchContainer<SearchTv>> SearchTvShow(string query, int page = 0)
+        public async Task<SearchContainer<SearchTv>> SearchTvShow(string query, int page = 0, int year = 0)
         {
-            return await SearchMethod<SearchContainer<SearchTv>>("tv", query, page);
+            return await SearchMethod<SearchContainer<SearchTv>>("tv", query, page, year: year);
+        }
+
+        public async Task<SearchContainer<SearchTv>> SearchTvShow(string query, string language, int page = 0, int year = 0)
+        {
+            return await SearchMethod<SearchContainer<SearchTv>>("tv", query, page, language, year: year);
         }
     }
 }
