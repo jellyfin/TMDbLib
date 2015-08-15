@@ -218,6 +218,24 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestMoviesGetMovieImagesWithAdditionalLanguages()
+        {
+            // if a default language has been set - generic (non tagged) images won't be returned
+            // therefore the include_image_language exists
+            // see API: Image Languages
+            var orgLang = _config.Client.DefaultLanguage;
+            _config.Client.DefaultLanguage = "de";
+
+            ImagesWithId respDefault = _config.Client.GetMovieImages(MadMaxFuryRoad).Result;
+            ImagesWithId respInclude = _config.Client.GetMovieImages(MadMaxFuryRoad, true).Result;
+
+            Assert.IsNotNull(respDefault);
+            Assert.IsNotNull(respInclude);
+            // expect respInclude to contain more backdrops than respDefault
+            Assert.IsTrue(respInclude.Backdrops.Count() > respDefault.Backdrops.Count());
+        }
+
+        [TestMethod]
         public void TestMoviesGetMovieKeywords()
         {
             KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard).Result;

@@ -20,6 +20,7 @@ namespace TMDbLibTests
         private const int BreakingBad = 1396;
         private const int BigBangTheory = 1418;
         private const int House = 1408;
+        private const int GameOfThrones = 1399;
 
         private static Dictionary<TvShowMethods, Func<TvShow, object>> _methods;
         private TestConfig _config;
@@ -220,6 +221,24 @@ namespace TMDbLibTests
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Backdrops);
             Assert.IsNotNull(images.Posters);
+        }
+
+        [TestMethod]
+        public void TestTvShowSeparateExtrasImagesWithNoLanguage()
+        {
+            ImagesWithId imagesDefault = _config.Client.GetTvShowImages(GameOfThrones, "en").Result;
+            Assert.IsNotNull(imagesDefault);
+            Assert.IsNotNull(imagesDefault.Backdrops);
+            Assert.IsNotNull(imagesDefault.Posters);
+
+            // again with default
+            var imagesGeneric = _config.Client.GetTvShowImages(GameOfThrones, "en", true).Result;
+            Assert.IsNotNull(imagesGeneric);
+            Assert.IsNotNull(imagesGeneric.Backdrops);
+            Assert.IsNotNull(imagesGeneric.Posters);
+
+            // expect to be more with non-lanuage enabled
+            Assert.IsTrue(imagesGeneric.Backdrops.Count() > imagesDefault.Backdrops.Count());
         }
 
         private void TestBreakingBadBaseProperties(TvShow tvShow)

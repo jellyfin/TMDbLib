@@ -97,8 +97,8 @@ namespace TMDbLib.Client
         }
 
         private async Task<T> GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
-            string country = null,
-            string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
+            string country = null, string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null,
+            IEnumerable<KeyValuePair<string,string>> customParameters = null) where T : new()
         {
             RestRequest request = new RestRequest("movie/{movieId}/{method}");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
@@ -120,6 +120,12 @@ namespace TMDbLib.Client
             if (endDate != null)
                 request.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
+            // add custom args
+            if (customParameters != null) {
+                foreach (var p in customParameters)
+                    request.AddParameter(p.Key, p.Value);
+            }
+
             IRestResponse<T> response = await _client.ExecuteGetTaskAsync<T>(request).ConfigureAwait(false);
 
             return response.Data;
@@ -140,14 +146,28 @@ namespace TMDbLib.Client
             return await GetMovieMethod<Credits>(movieId, MovieMethods.Credits);
         }
 
-        public async Task<ImagesWithId> GetMovieImages(int movieId)
+        public async Task<ImagesWithId> GetMovieImages(int movieId, bool includeNonLanguageImages = false)
         {
-            return await GetMovieImages(movieId, DefaultLanguage);
+            // conventional way
+            if (includeNonLanguageImages == false)
+                return await GetMovieImages(movieId, DefaultLanguage);
+            // include generic images
+            return await GetMovieMethod<ImagesWithId>(movieId, MovieMethods.Images, 
+                customParameters: new Dictionary<string, string> {
+                    { "include_image_language" , string.Join(",", DefaultLanguage, "null" ) }
+                });
         }
 
-        public async Task<ImagesWithId> GetMovieImages(int movieId, string language)
+        public async Task<ImagesWithId> GetMovieImages(int movieId, string language, bool includeNonLanguageImages = false)
         {
-            return await GetMovieMethod<ImagesWithId>(movieId, MovieMethods.Images, language: language);
+            // conventional way
+            if(includeNonLanguageImages == false)
+                return await GetMovieMethod<ImagesWithId>(movieId, MovieMethods.Images, language: language);
+            // include generic images
+            return await GetMovieMethod<ImagesWithId>(movieId, MovieMethods.Images, language: language,
+                customParameters: new Dictionary<string, string> {
+                    { "include_image_language" , string.Join(",", language ?? DefaultLanguage, "null" ) }
+                });
         }
 
         public async Task<KeywordsContainer> GetMovieKeywords(int movieId)

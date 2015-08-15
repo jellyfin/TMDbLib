@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -137,9 +138,18 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
-        public async Task<ImagesWithId> GetTvShowImages(int id, string language = null)
+        /// <param name="includeNonLanguageImages">contains images that don't have been tagged with a specific language. usefull if a language is set as arg or on client as in most cases no backdrops will be returned</param>
+        public async Task<ImagesWithId> GetTvShowImages(int id, string language = null, bool includeNonLanguageImages = false)
         {
-            return await GetTvShowMethod<ImagesWithId>(id, TvShowMethods.Images, language: language);
+            // conventional way
+            if (includeNonLanguageImages == false)
+                return await GetTvShowMethod<ImagesWithId>(id, TvShowMethods.Images, language: language);
+
+            // include generic images
+            return await GetTvShowMethod<ImagesWithId>(id, TvShowMethods.Images, language: language,
+                customParameters: new Dictionary<string, string> {
+                    { "include_image_language" , string.Join(",", language ?? DefaultLanguage, "null" ) }
+                });
         }
 
         /// <summary>
@@ -240,7 +250,8 @@ namespace TMDbLib.Client
             return resp.Data;
         }
 
-        private async Task<T> GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0) where T : new()
+        private async Task<T> GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0,
+            IEnumerable<KeyValuePair<string, string>> customParameters = null) where T : new()
         {
             RestRequest req = new RestRequest("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
@@ -255,6 +266,12 @@ namespace TMDbLib.Client
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
+
+            // add custom args
+            if (customParameters != null) {
+                foreach (var p in customParameters)
+                    req.AddParameter(p.Key, p.Value);
+            }
 
             IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
 
