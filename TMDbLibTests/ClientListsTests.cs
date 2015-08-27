@@ -60,13 +60,7 @@ namespace TMDbLibTests
                 }
             }
         }
-
-        [TestMethod]
-        public void TestListIsMoviePresent()
-        {
-            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, Avatar).Result);
-        }
-
+        
         [TestMethod]
         public void TestListIsMoviePresentFailure()
         {

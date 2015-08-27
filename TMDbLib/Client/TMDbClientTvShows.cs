@@ -31,7 +31,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
 
             if (extraMethods.HasFlag(TvShowMethods.AccountStates))
-                request.AddParameter("session_id", SessionId);
+                AddSessionId(request, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
@@ -274,7 +274,7 @@ namespace TMDbLib.Client
             RestRequest request = new RestRequest("tv/{tvShowId}/{method}");
             request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", TvShowMethods.AccountStates.GetDescription());
-            request.AddParameter("session_id", SessionId);
+            AddSessionId(request, SessionType.UserSession);
 
             IRestResponse<AccountState> response = await _client.ExecuteGetTaskAsync<AccountState>(request);
 
@@ -301,10 +301,7 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("tv/{tvShowId}/rating") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
-            if (SessionType == SessionType.UserSession)
-                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            else
-                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(request);
 
             request.AddBody(new { value = rating });
 
@@ -321,10 +318,7 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("tv/{tvShowId}/rating");
             request.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
-            if (SessionType == SessionType.UserSession)
-                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            else
-                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(request);
 
             IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(request);
 

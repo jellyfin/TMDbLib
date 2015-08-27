@@ -24,7 +24,7 @@ namespace TMDbLib.Client
             RequireSessionId(SessionType.UserSession);
 
             RestRequest request = new RestRequest("account");
-            request.AddParameter("session_id", SessionId);
+            AddSessionId(request, SessionType.UserSession);
 
             IRestResponse<AccountDetails> response = await _client.ExecuteGetTaskAsync<AccountDetails>(request).ConfigureAwait(false);
 
@@ -43,7 +43,7 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("account/{accountId}/lists");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddParameter("session_id", SessionId);
+            AddSessionId(request, SessionType.UserSession);
 
             if (page > 1)
                 request.AddParameter("page", page);
@@ -72,8 +72,8 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("account/{accountId}/favorite") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
+            AddSessionId(request, SessionType.UserSession);
 
             IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
 
@@ -98,8 +98,8 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("account/{accountId}/watchlist") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
+            AddSessionId(request, SessionType.UserSession);
 
             IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
 
@@ -213,7 +213,7 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("account/{accountId}/" + method.GetDescription());
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddParameter("session_id", SessionId);
+            AddSessionId(request, SessionType.UserSession);
 
             if (page > 1)
                 request.AddParameter("page", page);
