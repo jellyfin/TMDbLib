@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TMDbLib.Objects.Movies
+namespace TMDbLib.Objects.Changes
 {
     public class Change
     {

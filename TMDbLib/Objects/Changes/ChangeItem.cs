@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TMDbLib.Objects.Movies
+namespace TMDbLib.Objects.Changes
 {
     public class ChangeItem
     {
