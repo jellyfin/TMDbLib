@@ -346,11 +346,11 @@ namespace TMDbLibTests
             SearchTv item = tvShow.Results.SingleOrDefault(s => s.Id == 1100);
             Assert.IsNotNull(item);
 
-            Assert.AreEqual("/wfe7Xf7tc0zmnkoNyN3xor0xR8m.jpg", item.BackdropPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
             Assert.AreEqual(1100, item.Id);
             Assert.AreEqual("How I Met Your Mother", item.OriginalName);
             Assert.AreEqual(new DateTime(2005, 09, 19), item.FirstAirDate);
-            Assert.AreEqual("/izncB6dCLV7LBQ5MsOPyMx9mUDa.jpg", item.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
             Assert.IsTrue(item.Popularity > 0);
             Assert.AreEqual("How I Met Your Mother", item.Name);
             Assert.IsTrue(item.VoteAverage > 0);

@@ -237,7 +237,7 @@ namespace TMDbLibTests
             Assert.AreEqual("Vince Gilligan", crew.Name);
             Assert.AreEqual("Writing", crew.Department);
             Assert.AreEqual("Writer", crew.Job);
-            Assert.AreEqual("/rLSUjr725ez1cK7SKVxC9udO03Y.jpg", crew.ProfilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(crew.ProfilePath), "crew.ProfilePath was not a valid image path, was: " + crew.ProfilePath);
 
             Assert.IsNotNull(tvEpisode.GuestStars);
             Cast star = tvEpisode.GuestStars.SingleOrDefault(s => s.CreditId == "52542273760ee3132800068e");
@@ -248,7 +248,7 @@ namespace TMDbLibTests
             Assert.AreEqual("52542273760ee3132800068e", star.CreditId);
             Assert.AreEqual("Emilio Koyama", star.Character);
             Assert.AreEqual(1, star.Order);
-            Assert.AreEqual("/uh4g85qbQGZZ0HH6IQI9fM9VUGS.jpg", star.ProfilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(star.ProfilePath), "star.ProfilePath was not a valid image path, was: " + star.ProfilePath);
 
         }
 

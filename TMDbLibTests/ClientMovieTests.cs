@@ -175,7 +175,7 @@ namespace TMDbLibTests
             Assert.AreEqual(62, cast.Id);
             Assert.AreEqual("Bruce Willis", cast.Name);
             Assert.AreEqual(0, cast.Order);
-            Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", cast.ProfilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(cast.ProfilePath), "cast.ProfilePath was not a valid image path, was: " + cast.ProfilePath);
 
             Crew crew = resp.Crew.SingleOrDefault(s => s.Name == "Marco Beltrami");
             Assert.IsNotNull(crew);
@@ -185,7 +185,7 @@ namespace TMDbLibTests
             Assert.AreEqual(7229, crew.Id);
             Assert.AreEqual("Music", crew.Job);
             Assert.AreEqual("Marco Beltrami", crew.Name);
-            Assert.AreEqual("/tTBQHKWVieP5ARRfJRMkbnLTW6C.jpg", crew.ProfilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(crew.ProfilePath), "crew.ProfilePath was not a valid image path, was: " + crew.ProfilePath);
 
         }
 
@@ -199,7 +199,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(backdrop);
 
             Assert.IsTrue(Math.Abs(1.77777777777778 - backdrop.AspectRatio) < double.Epsilon);
-            Assert.AreEqual("/17zArExB7ztm6fjUXZwQWgGMC9f.jpg", backdrop.FilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(backdrop.FilePath), "backdrop.FilePath was not a valid image path, was: " + backdrop.FilePath);
             Assert.AreEqual(1080, backdrop.Height);
             Assert.AreEqual("xx", backdrop.Iso_639_1);
             Assert.IsTrue(backdrop.VoteAverage > 0);
@@ -210,7 +210,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(poster);
 
             Assert.IsTrue(Math.Abs(0.666666666666667 - poster.AspectRatio) < double.Epsilon);
-            Assert.AreEqual("/c2SQMd00CCGTiDxGXVqA2J9lmzF.jpg", poster.FilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(poster.FilePath), "poster.FilePath was not a valid image path, was: " + poster.FilePath);
             Assert.AreEqual(1500, poster.Height);
             Assert.AreEqual("en", poster.Iso_639_1);
             Assert.IsTrue(poster.VoteAverage > 0);
@@ -580,8 +580,8 @@ namespace TMDbLibTests
             Assert.AreEqual("Iconoclastic, take-no-prisoners cop John McClane, finds himself for the first time on foreign soil after traveling to Moscow to help his wayward son Jack - unaware that Jack is really a highly-trained CIA operative out to stop a nuclear weapons heist. With the Russian underworld in pursuit, and battling a countdown to war, the two McClanes discover that their opposing methods make them unstoppable heroes.", item.Overview);
             Assert.AreEqual("http://www.diehardmovie.com/", item.Homepage);
 
-            Assert.AreEqual("/17zArExB7ztm6fjUXZwQWgGMC9f.jpg", item.BackdropPath);
-            Assert.AreEqual("/c2SQMd00CCGTiDxGXVqA2J9lmzF.jpg", item.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
 
             Assert.AreEqual(false, item.Adult);
             Assert.AreEqual(false, item.Video);
@@ -589,8 +589,8 @@ namespace TMDbLibTests
             Assert.AreEqual(1, item.BelongsToCollection.Count);
             Assert.AreEqual(1570, item.BelongsToCollection[0].Id);
             Assert.AreEqual("Die Hard Collection", item.BelongsToCollection[0].Name);
-            Assert.AreEqual("/5kHVblr87FUScuab1PVSsK692IL.jpg", item.BelongsToCollection[0].BackdropPath);
-            Assert.AreEqual("/dQP1lu4tBtCiAMeCRcuTFpJiM7y.jpg", item.BelongsToCollection[0].PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].BackdropPath), "item.BelongsToCollection[0].BackdropPath was not a valid image path, was: " + item.BelongsToCollection[0].BackdropPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].PosterPath), "item.BelongsToCollection[0].PosterPath was not a valid image path, was: " + item.BelongsToCollection[0].PosterPath);
 
             Assert.AreEqual(2, item.Genres.Count);
             Assert.AreEqual(28, item.Genres[0].Id);
