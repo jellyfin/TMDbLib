@@ -17,10 +17,6 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientTvSeasonTests
     {
-        private const int BreakingBad = 1396;
-        private const int BreakingBadSeason1Id = 3572;
-        private const int BigBangTheory = 1418;
-
         private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
         private TestConfig _config;
 
@@ -51,7 +47,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonExtrasNone()
         {
-            TvSeason tvSeason = _config.Client.GetTvSeason(BreakingBad, 1).Result;
+            TvSeason tvSeason = _config.Client.GetTvSeason(IdHelper.BreakingBad, 1).Result;
 
             TestBreakingBadBaseProperties(tvSeason);
 
@@ -68,15 +64,15 @@ namespace TMDbLibTests
             // Test the custom parsing code for Account State rating
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
-            TvSeason season = _config.Client.GetTvSeason(BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
+            TvSeason season = _config.Client.GetTvSeason(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
             if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
             {
-                _config.Client.TvEpisodeSetRating(BigBangTheory, 1, 1, 5);
+                _config.Client.TvEpisodeSetRating(IdHelper.BigBangTheory, 1, 1, 5);
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);
 
-                season = _config.Client.GetTvSeason(BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
+                season = _config.Client.GetTvSeason(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
             }
 
             Assert.IsNotNull(season.AccountStates);
@@ -90,10 +86,10 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5);
+            _config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 1, 5);
 
             TvSeasonMethods combinedEnum = _methods.Keys.Aggregate((methods, tvSeasonMethods) => methods | tvSeasonMethods);
-            TvSeason tvSeason = _config.Client.GetTvSeason(BreakingBad, 1, combinedEnum).Result;
+            TvSeason tvSeason = _config.Client.GetTvSeason(IdHelper.BreakingBad, 1, combinedEnum).Result;
 
             TestBreakingBadBaseProperties(tvSeason);
 
@@ -104,13 +100,13 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasExclusive()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetTvSeason(id, 1, extras).Result, BreakingBad);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetTvSeason(id, 1, extras).Result, IdHelper.BreakingBad);
         }
 
         [TestMethod]
         public void TestTvSeasonSeparateExtrasCredits()
         {
-            Credits credits = _config.Client.GetTvSeasonCredits(BreakingBad, 1).Result;
+            Credits credits = _config.Client.GetTvSeasonCredits(IdHelper.BreakingBad, 1).Result;
             Assert.IsNotNull(credits);
             Assert.IsNotNull(credits.Cast);
             Assert.AreEqual("Walter White", credits.Cast[0].Character);
@@ -133,7 +129,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = _config.Client.GetTvSeasonExternalIds(BreakingBad, 1).Result;
+            ExternalIds externalIds = _config.Client.GetTvSeasonExternalIds(IdHelper.BreakingBad, 1).Result;
             Assert.IsNotNull(externalIds);
             Assert.AreEqual(3572, externalIds.Id);
             Assert.AreEqual("/en/breaking_bad_season_1", externalIds.FreebaseId);
@@ -146,7 +142,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonSeparateExtrasImages()
         {
-            PosterImages images = _config.Client.GetTvSeasonImages(BreakingBad, 1).Result;
+            PosterImages images = _config.Client.GetTvSeasonImages(IdHelper.BreakingBad, 1).Result;
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Posters);
         }
@@ -154,7 +150,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonSeparateExtrasVideos()
         {
-            ResultContainer<Video> videos = _config.Client.GetTvSeasonVideos(BreakingBad, 1).Result;
+            ResultContainer<Video> videos = _config.Client.GetTvSeasonVideos(IdHelper.BreakingBad, 1).Result;
             Assert.IsNotNull(videos);
             Assert.IsNotNull(videos.Results);
         }
@@ -162,7 +158,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonEpisodeCount()
         {
-            TvSeason season = _config.Client.GetTvSeason(BreakingBad, 1).Result;
+            TvSeason season = _config.Client.GetTvSeason(IdHelper.BreakingBad, 1).Result;
             Assert.IsNotNull(season);
             Assert.IsNotNull(season.Episodes);
 
@@ -175,15 +171,15 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Rate episode 1, 2 and 3 of BreakingBad
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 5).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 2, 7).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 3, 3).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 1, 5).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 2, 7).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 3, 3).Result);
 
             // Wait for TMDb to un-cache our value
             Thread.Sleep(2000);
 
             // Fetch out the seasons state
-            ResultContainer<TvEpisodeAccountState> state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1).Result;
+            ResultContainer<TvEpisodeAccountState> state = _config.Client.GetTvSeasonAccountState(IdHelper.BreakingBad, 1).Result;
             Assert.IsNotNull(state);
 
             Assert.IsTrue(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
@@ -191,14 +187,14 @@ namespace TMDbLibTests
             Assert.IsTrue(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
 
             // Test deleting Ratings
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 2).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 3).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(IdHelper.BreakingBad, 1, 1).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(IdHelper.BreakingBad, 1, 2).Result);
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(IdHelper.BreakingBad, 1, 3).Result);
 
             // Wait for TMDb to un-cache our value
             Thread.Sleep(2000);
 
-            state = _config.Client.GetTvSeasonAccountState(BreakingBad, 1).Result;
+            state = _config.Client.GetTvSeasonAccountState(IdHelper.BreakingBad, 1).Result;
             Assert.IsNotNull(state);
 
             Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
@@ -209,7 +205,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonGetChanges()
         {
-            ChangesContainer changes = _config.Client.GetTvSeasonChanges(BreakingBadSeason1Id).Result;
+            ChangesContainer changes = _config.Client.GetTvSeasonChanges(IdHelper.BreakingBadSeason1Id).Result;
             Assert.IsNotNull(changes);
             Assert.IsNotNull(changes.Changes);
         }

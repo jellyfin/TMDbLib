@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.General;
+using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
 {
@@ -8,7 +9,6 @@ namespace TMDbLibTests
     public class ClientReviewTests
     {
         private TestConfig _config;
-        private const string TheDarkKnightRisesReviewId = "5010553819c2952d1b000451";
 
         /// <summary>
         /// Run once, on every test
@@ -22,11 +22,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestReviewFullDetails()
         {
-            Review review = _config.Client.GetReview(TheDarkKnightRisesReviewId).Result;
+            Review review = _config.Client.GetReview(IdHelper.TheDarkKnightRisesReviewId).Result;
 
             Assert.IsNotNull(review);
 
-            Assert.AreEqual(TheDarkKnightRisesReviewId, review.Id);
+            Assert.AreEqual(IdHelper.TheDarkKnightRisesReviewId, review.Id);
             Assert.AreEqual(49026, review.MediaId);
             Assert.AreEqual("The Dark Knight Rises", review.MediaTitle);
             Assert.AreEqual("Travis Bell", review.Author);

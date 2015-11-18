@@ -2,13 +2,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
     public class ClientKeywordTests
     {
-        private const int AGoodDayToDieHard = 47964;
         private TestConfig _config;
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestKeywordGet()
         {
-            KeywordsContainer keywords = _config.Client.GetMovieKeywords(AGoodDayToDieHard).Result;
+            KeywordsContainer keywords = _config.Client.GetMovieKeywords(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(keywords);
             Assert.IsNotNull(keywords.Keywords);
@@ -44,7 +44,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestKeywordMovies()
         {
-            KeywordsContainer keywords = _config.Client.GetMovieKeywords(AGoodDayToDieHard).Result;
+            KeywordsContainer keywords = _config.Client.GetMovieKeywords(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(keywords);
             Assert.IsNotNull(keywords.Keywords);

@@ -1,21 +1,19 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
+using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
     public class ClientListsTests
     {
-        private const int Avatar = 19995;
-        private const int Terminator = 218;
-        private const int EvanAlmighty = 2698;
-        private const int MadMaxFuryRoad = 76341;
-        private const string TestListId = "528349d419c2954bd21ca0a8";
         private TestConfig _config;
+        private const string TestListId = "528349d419c2954bd21ca0a8";
 
         /// <summary>
         /// Run once, on every test
@@ -64,20 +62,20 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestListIsMoviePresentFailure()
         {
-            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, Terminator).Result);
+            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, IdHelper.Terminator).Result);
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Clear list
             Assert.IsTrue(_config.Client.ListClear(TestListId).Result);
 
             // Verify Avatar is not present
-            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, Avatar).Result);
+            Assert.IsFalse(_config.Client.GetListIsMoviePresent(TestListId, IdHelper.Avatar).Result);
 
             // Add Avatar
-            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, Avatar).Result);
+            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, IdHelper.Avatar).Result);
 
             // Verify Avatar is present
-            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, Avatar).Result);
+            Assert.IsTrue(_config.Client.GetListIsMoviePresent(TestListId, IdHelper.Avatar).Result);
         }
 
         [TestMethod]
@@ -88,7 +86,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             string newListId = _config.Client.ListCreate(listName).Result;
 
-            Assert.IsFalse(string.IsNullOrWhiteSpace(newListId));
+            Assert.IsFalse(String.IsNullOrWhiteSpace(newListId));
 
             List newlyAddedList = _config.Client.GetList(newListId).Result;
             Assert.IsNotNull(newlyAddedList);
@@ -97,7 +95,7 @@ namespace TMDbLibTests
             Assert.AreEqual("en", newlyAddedList.Iso_639_1); // en is the default value
             Assert.AreEqual(0, newlyAddedList.ItemCount);
             Assert.AreEqual(0, newlyAddedList.Items.Count);
-            Assert.IsFalse(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
+            Assert.IsFalse(String.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
 
             Assert.IsTrue(_config.Client.ListDelete(newListId).Result);
         }
@@ -117,21 +115,21 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Add a new movie to the list
-            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, EvanAlmighty).Result);
+            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, IdHelper.EvanAlmighty).Result);
 
             // Try again, this time it should fail since the list already contains this movie
-            Assert.IsFalse(_config.Client.ListAddMovie(TestListId, EvanAlmighty).Result);
+            Assert.IsFalse(_config.Client.ListAddMovie(TestListId, IdHelper.EvanAlmighty).Result);
 
             // Get list and check if the item was added
             List listAfterAdd = _config.Client.GetList(TestListId).Result;
-            Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == EvanAlmighty));
+            Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == IdHelper.EvanAlmighty));
 
             // Remove the previously added movie from the list
-            Assert.IsTrue(_config.Client.ListRemoveMovie(TestListId, EvanAlmighty).Result);
+            Assert.IsTrue(_config.Client.ListRemoveMovie(TestListId, IdHelper.EvanAlmighty).Result);
 
             // Get list and check if the item was removed
             List listAfterRemove = _config.Client.GetList(TestListId).Result;
-            Assert.IsFalse(listAfterRemove.Items.Any(m => m.Id == EvanAlmighty));
+            Assert.IsFalse(listAfterRemove.Items.Any(m => m.Id == IdHelper.EvanAlmighty));
         }
 
         [TestMethod]
@@ -140,11 +138,11 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Add a new movie to the list
-            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, MadMaxFuryRoad).Result);
+            Assert.IsTrue(_config.Client.ListAddMovie(TestListId, IdHelper.MadMaxFuryRoad).Result);
 
             // Get list and check if the item was added
             List listAfterAdd = _config.Client.GetList(TestListId).Result;
-            Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == MadMaxFuryRoad));
+            Assert.IsTrue(listAfterAdd.Items.Any(m => m.Id == IdHelper.MadMaxFuryRoad));
 
             // Clear the list
             Assert.IsTrue(_config.Client.ListClear(TestListId).Result);

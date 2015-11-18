@@ -9,9 +9,6 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientCreditTests
     {
-        const string BruceWillisMiamiVice = "525719bb760ee3776a1835d3";
-        const string HughLaurieHouse = "5256ccf519c2956ff607ca00";
-
         private TestConfig _config;
 
         /// <summary>
@@ -26,14 +23,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestGetCreditBase()
         {
-            Credit result = _config.Client.GetCredits(BruceWillisMiamiVice).Result;
+            Credit result = _config.Client.GetCredits(IdHelper.BruceWillisMiamiVice).Result;
 
             Assert.IsNotNull(result);
             Assert.AreEqual("cast", result.CreditType);
             Assert.AreEqual("Actors", result.Department);
             Assert.AreEqual("Actor", result.Job);
             Assert.AreEqual("tv", result.MediaType);
-            Assert.AreEqual(BruceWillisMiamiVice, result.Id);
+            Assert.AreEqual(IdHelper.BruceWillisMiamiVice, result.Id);
 
             Assert.IsNotNull(result.Person);
             Assert.AreEqual("Bruce Willis", result.Person.Name);
@@ -49,7 +46,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestGetCreditEpisode()
         {
-            Credit result = _config.Client.GetCredits(BruceWillisMiamiVice).Result;
+            Credit result = _config.Client.GetCredits(IdHelper.BruceWillisMiamiVice).Result;
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Media);
@@ -69,7 +66,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestGetCreditSeasons()
         {
-            Credit result = _config.Client.GetCredits(HughLaurieHouse).Result;
+            Credit result = _config.Client.GetCredits(IdHelper.HughLaurieHouse).Result;
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Media);

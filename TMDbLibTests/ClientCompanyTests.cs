@@ -11,9 +11,6 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientCompanyTests
     {
-        private const int TwentiethCenturyFox = 25;
-        private const int ColumbiaPictures = 5;
-
         private static Dictionary<CompanyMethods, Func<Company, object>> _methods;
         private TestConfig _config;
 
@@ -39,7 +36,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCompaniesExtrasNone()
         {
-            Company company = _config.Client.GetCompany(TwentiethCenturyFox).Result;
+            Company company = _config.Client.GetCompany(IdHelper.TwentiethCenturyFox).Result;
 
             Assert.IsNotNull(company);
 
@@ -56,14 +53,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCompaniesExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompany(id, extras).Result, TwentiethCenturyFox);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompany(id, extras).Result, IdHelper.TwentiethCenturyFox);
         }
 
         [TestMethod]
         public void TestCompaniesExtrasAll()
         {
             CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Company item = _config.Client.GetCompany(TwentiethCenturyFox, combinedEnum).Result;
+            Company item = _config.Client.GetCompany(IdHelper.TwentiethCenturyFox, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -72,9 +69,9 @@ namespace TMDbLibTests
         public void TestCompaniesGetters()
         {
             //GetCompanyMovies(int id, string language, int page = -1)
-            SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMovies(TwentiethCenturyFox).Result;
-            SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMovies(TwentiethCenturyFox, 2).Result;
-            SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMovies(TwentiethCenturyFox, "it").Result;
+            SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMovies(IdHelper.TwentiethCenturyFox).Result;
+            SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMovies(IdHelper.TwentiethCenturyFox, 2).Result;
+            SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMovies(IdHelper.TwentiethCenturyFox, "it").Result;
 
             Assert.IsNotNull(resp);
             Assert.IsNotNull(respPage2);
@@ -103,7 +100,7 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Test image url generator
-            Company company = _config.Client.GetCompany(TwentiethCenturyFox).Result;
+            Company company = _config.Client.GetCompany(IdHelper.TwentiethCenturyFox).Result;
 
             Uri url = _config.Client.GetImageUrl("original", company.LogoPath);
             Uri urlSecure = _config.Client.GetImageUrl("original", company.LogoPath, true);
@@ -115,11 +112,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCompaniesFull()
         {
-            Company company = _config.Client.GetCompany(ColumbiaPictures).Result;
+            Company company = _config.Client.GetCompany(IdHelper.ColumbiaPictures).Result;
 
             Assert.IsNotNull(company);
 
-            Assert.AreEqual(ColumbiaPictures, company.Id);
+            Assert.AreEqual(IdHelper.ColumbiaPictures, company.Id);
             Assert.AreEqual("Columbia Pictures Industries, Inc. (CPII) is an American film production and distribution company. Columbia Pictures now forms part of the Columbia TriStar Motion Picture Group, owned by Sony Pictures Entertainment, a subsidiary of the Japanese conglomerate Sony. It is one of the leading film companies in the world, a member of the so-called Big Six. It was one of the so-called Little Three among the eight major film studios of Hollywood's Golden Age.", company.Description);
             Assert.AreEqual("Culver City, California", company.Headquarters);
             Assert.AreEqual("http://www.sonypictures.com/", company.Homepage);

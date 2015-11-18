@@ -13,8 +13,6 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientPersonTests
     {
-        private const int BruceWillis = 62;
-
         private static Dictionary<PersonMethods, Func<Person, object>> _methods;
         private TestConfig _config;
 
@@ -45,7 +43,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsExtrasNone()
         {
-            Person person = _config.Client.GetPerson(BruceWillis).Result;
+            Person person = _config.Client.GetPerson(IdHelper.BruceWillis).Result;
 
             Assert.IsNotNull(person);
 
@@ -61,14 +59,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetPerson(id, extras).Result, BruceWillis);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetPerson(id, extras).Result, IdHelper.BruceWillis);
         }
 
         [TestMethod]
         public void TestPersonsExtrasAll()
         {
             PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Person item = _config.Client.GetPerson(BruceWillis, combinedEnum).Result;
+            Person item = _config.Client.GetPerson(IdHelper.BruceWillis, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -76,7 +74,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsGet()
         {
-            Person item = _config.Client.GetPerson(BruceWillis).Result;
+            Person item = _config.Client.GetPerson(IdHelper.BruceWillis).Result;
 
             Assert.IsNotNull(item);
             Assert.AreEqual(false, item.Adult);
@@ -101,13 +99,13 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsGetPersonTvCredits()
         {
-            TvCredits item = _config.Client.GetPersonTvCredits(BruceWillis).Result;
+            TvCredits item = _config.Client.GetPersonTvCredits(IdHelper.BruceWillis).Result;
 
             Assert.IsNotNull(item);
             Assert.IsNotNull(item.Cast);
             Assert.IsNotNull(item.Crew);
 
-            Assert.AreEqual(BruceWillis, item.Id);
+            Assert.AreEqual(IdHelper.BruceWillis, item.Id);
 
             TvRole cast = item.Cast.SingleOrDefault(s => s.Character == "David Addison Jr.");
             Assert.IsNotNull(cast);
@@ -136,13 +134,13 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsGetPersonMovieCredits()
         {
-            MovieCredits item = _config.Client.GetPersonMovieCredits(BruceWillis).Result;
+            MovieCredits item = _config.Client.GetPersonMovieCredits(IdHelper.BruceWillis).Result;
 
             Assert.IsNotNull(item);
             Assert.IsNotNull(item.Cast);
             Assert.IsNotNull(item.Crew);
 
-            Assert.AreEqual(BruceWillis, item.Id);
+            Assert.AreEqual(IdHelper.BruceWillis, item.Id);
 
             MovieRole cast = item.Cast.SingleOrDefault(s => s.CreditId == "52fe4329c3a36847f803f193");
             Assert.IsNotNull(cast);
@@ -171,11 +169,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsGetPersonExternalIds()
         {
-            ExternalIds item = _config.Client.GetPersonExternalIds(BruceWillis).Result;
+            ExternalIds item = _config.Client.GetPersonExternalIds(IdHelper.BruceWillis).Result;
 
             Assert.IsNotNull(item);
 
-            Assert.AreEqual(BruceWillis, item.Id);
+            Assert.AreEqual(IdHelper.BruceWillis, item.Id);
             Assert.AreEqual("nm0000246", item.ImdbId);
             Assert.AreEqual("/m/0h7pj", item.FreebaseMid);
             Assert.AreEqual("/en/bruce_willis", item.FreebaseId);
@@ -187,10 +185,10 @@ namespace TMDbLibTests
         public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
-            MovieCredits resp = _config.Client.GetPersonMovieCredits(BruceWillis).Result;
+            MovieCredits resp = _config.Client.GetPersonMovieCredits(IdHelper.BruceWillis).Result;
             Assert.IsNotNull(resp);
 
-            MovieCredits respItalian = _config.Client.GetPersonMovieCredits(BruceWillis, "it").Result;
+            MovieCredits respItalian = _config.Client.GetPersonMovieCredits(IdHelper.BruceWillis, "it").Result;
             Assert.IsNotNull(respItalian);
 
             Assert.AreEqual(resp.Cast.Count, respItalian.Cast.Count);
@@ -255,11 +253,11 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Get images
-            ProfileImages images = _config.Client.GetPersonImages(BruceWillis).Result;
+            ProfileImages images = _config.Client.GetPersonImages(IdHelper.BruceWillis).Result;
 
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Profiles);
-            Assert.AreEqual(BruceWillis, images.Id);
+            Assert.AreEqual(IdHelper.BruceWillis, images.Id);
 
             // Test image url generator
             TestImagesHelpers.TestImages(_config, images);
@@ -283,9 +281,9 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Get images
-            TestHelpers.SearchPages(i => _config.Client.GetPersonTaggedImages(BruceWillis, i).Result);
+            TestHelpers.SearchPages(i => _config.Client.GetPersonTaggedImages(IdHelper.BruceWillis, i).Result);
 
-            SearchContainer<TaggedImage> images = _config.Client.GetPersonTaggedImages(BruceWillis, 1).Result;
+            SearchContainer<TaggedImage> images = _config.Client.GetPersonTaggedImages(IdHelper.BruceWillis, 1).Result;
 
             Assert.IsNotNull(images);
             Assert.IsNotNull(images.Results);

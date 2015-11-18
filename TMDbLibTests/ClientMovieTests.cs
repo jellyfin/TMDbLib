@@ -18,13 +18,6 @@ namespace TMDbLibTests
     [TestClass]
     public class ClientMovieTests
     {
-        private const int Avatar = 19995;
-        private const int AGoodDayToDieHard = 47964;
-        private const int TheDarkKnightRises = 49026;
-        private const int MadMaxFuryRoad = 76341;
-        private const string AGoodDayToDieHardImdb = "tt1606378";
-        private const string TheDarkKnightRisesImdb = "tt1345836";
-
         private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
         private TestConfig _config;
 
@@ -61,7 +54,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesExtrasNone()
         {
-            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard).Result;
+            Movie movie = _config.Client.GetMovie(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(movie);
 
@@ -79,7 +72,7 @@ namespace TMDbLibTests
         public void TestMoviesExtrasExclusive()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovie(id, extras).Result, AGoodDayToDieHard);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovie(id, extras).Result, IdHelper.AGoodDayToDieHard);
         }
 
         [TestMethod]
@@ -91,10 +84,10 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.MovieSetRating(TheDarkKnightRises, 5);
+            _config.Client.MovieSetRating(IdHelper.TheDarkKnightRises, 5);
 
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = _config.Client.GetMovie(TheDarkKnightRises, combinedEnum).Result;
+            Movie item = _config.Client.GetMovie(IdHelper.TheDarkKnightRises, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(tmpMethods, item);
         }
@@ -104,7 +97,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = _config.Client.GetMovie(AGoodDayToDieHard, combinedEnum).Result;
+            Movie item = _config.Client.GetMovie(IdHelper.AGoodDayToDieHard, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -112,8 +105,8 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesLanguage()
         {
-            Movie movie = _config.Client.GetMovie(AGoodDayToDieHard).Result;
-            Movie movieItalian = _config.Client.GetMovie(AGoodDayToDieHard, "it").Result;
+            Movie movie = _config.Client.GetMovie(IdHelper.AGoodDayToDieHard).Result;
+            Movie movieItalian = _config.Client.GetMovie(IdHelper.AGoodDayToDieHard, "it").Result;
 
             Assert.IsNotNull(movie);
             Assert.IsNotNull(movieItalian);
@@ -133,10 +126,10 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieAlternativeTitles()
         {
             //GetMovieAlternativeTitles(int id, string country)
-            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US").Result;
+            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(IdHelper.AGoodDayToDieHard, "US").Result;
             Assert.IsNotNull(respUs);
 
-            AlternativeTitles respFrench = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "FR").Result;
+            AlternativeTitles respFrench = _config.Client.GetMovieAlternativeTitles(IdHelper.AGoodDayToDieHard, "FR").Result;
             Assert.IsNotNull(respFrench);
 
             Assert.IsFalse(respUs.Titles.Any(s => s.Title == "Duro de matar 5"));
@@ -149,12 +142,12 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieAlternativeTitlesCountry()
         {
-            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard, "US").Result;
+            AlternativeTitles respUs = _config.Client.GetMovieAlternativeTitles(IdHelper.AGoodDayToDieHard, "US").Result;
             Assert.IsNotNull(respUs);
 
             _config.Client.DefaultCountry = "US";
 
-            AlternativeTitles respUs2 = _config.Client.GetMovieAlternativeTitles(AGoodDayToDieHard).Result;
+            AlternativeTitles respUs2 = _config.Client.GetMovieAlternativeTitles(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(respUs2);
 
             Assert.AreEqual(respUs.Titles.Count, respUs2.Titles.Count);
@@ -163,7 +156,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieCasts()
         {
-            Credits resp = _config.Client.GetMovieCredits(AGoodDayToDieHard).Result;
+            Credits resp = _config.Client.GetMovieCredits(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
             Cast cast = resp.Cast.SingleOrDefault(s => s.Name == "Bruce Willis");
@@ -192,7 +185,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieImages()
         {
-            ImagesWithId resp = _config.Client.GetMovieImages(AGoodDayToDieHard).Result;
+            ImagesWithId resp = _config.Client.GetMovieImages(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
             ImageData backdrop = resp.Backdrops.SingleOrDefault(s => s.FilePath == "/17zArExB7ztm6fjUXZwQWgGMC9f.jpg");
@@ -221,7 +214,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieKeywords()
         {
-            KeywordsContainer resp = _config.Client.GetMovieKeywords(AGoodDayToDieHard).Result;
+            KeywordsContainer resp = _config.Client.GetMovieKeywords(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
             Keyword keyword = resp.Keywords.SingleOrDefault(s => s.Id == 186447);
@@ -234,7 +227,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieReleases()
         {
-            Releases resp = _config.Client.GetMovieReleases(AGoodDayToDieHard).Result;
+            Releases resp = _config.Client.GetMovieReleases(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
             Country country = resp.Countries.SingleOrDefault(s => s.Iso_3166_1 == "US");
@@ -249,7 +242,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieVideos()
         {
-            ResultContainer<Video> resp = _config.Client.GetMovieVideos(AGoodDayToDieHard).Result;
+            ResultContainer<Video> resp = _config.Client.GetMovieVideos(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
             Assert.IsNotNull(resp);
@@ -270,7 +263,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieTranslations()
         {
-            TranslationsContainer resp = _config.Client.GetMovieTranslations(AGoodDayToDieHard).Result;
+            TranslationsContainer resp = _config.Client.GetMovieTranslations(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
             Translation translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
@@ -284,10 +277,10 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieSimilarMovies()
         {
-            SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilar(AGoodDayToDieHard).Result;
+            SearchContainer<MovieResult> resp = _config.Client.GetMovieSimilar(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
-            SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilar(AGoodDayToDieHard, language: "de").Result;
+            SearchContainer<MovieResult> respGerman = _config.Client.GetMovieSimilar(IdHelper.AGoodDayToDieHard, language: "de").Result;
             Assert.IsNotNull(respGerman);
 
             Assert.AreEqual(resp.Results.Count, respGerman.Results.Count);
@@ -307,7 +300,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesGetMovieReviews()
         {
-            SearchContainer<Review> resp = _config.Client.GetMovieReviews(TheDarkKnightRises).Result;
+            SearchContainer<Review> resp = _config.Client.GetMovieReviews(IdHelper.TheDarkKnightRises).Result;
             Assert.IsNotNull(resp);
 
             Assert.AreNotEqual(0, resp.Results.Count);
@@ -318,10 +311,10 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieLists()
         {
             //GetMovieLists(int id, string language, int page = -1)
-            SearchContainer<ListResult> resp = _config.Client.GetMovieLists(AGoodDayToDieHard).Result;
+            SearchContainer<ListResult> resp = _config.Client.GetMovieLists(IdHelper.AGoodDayToDieHard).Result;
             Assert.IsNotNull(resp);
 
-            SearchContainer<ListResult> respPage2 = _config.Client.GetMovieLists(AGoodDayToDieHard, 2).Result;
+            SearchContainer<ListResult> respPage2 = _config.Client.GetMovieLists(IdHelper.AGoodDayToDieHard, 2).Result;
             Assert.IsNotNull(respPage2);
 
             Assert.AreEqual(1, resp.Page);
@@ -364,9 +357,9 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Test image url generator
-            ImagesWithId images = _config.Client.GetMovieImages(AGoodDayToDieHard).Result;
+            ImagesWithId images = _config.Client.GetMovieImages(IdHelper.AGoodDayToDieHard).Result;
 
-            Assert.AreEqual(AGoodDayToDieHard, images.Id);
+            Assert.AreEqual(IdHelper.AGoodDayToDieHard, images.Id);
             TestImagesHelpers.TestImages(_config, images);
         }
 
@@ -403,30 +396,30 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateFavoriteSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            AccountState accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
 
             // Remove the favourite
             if (accountState.Favorite)
-                _config.Client.AccountChangeFavoriteStatus(MediaType.Movie, MadMaxFuryRoad, false).Wait();
+                _config.Client.AccountChangeFavoriteStatus(MediaType.Movie, IdHelper.MadMaxFuryRoad, false).Wait();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the movie is NOT favourited
-            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
 
-            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
+            Assert.AreEqual(IdHelper.MadMaxFuryRoad, accountState.Id);
             Assert.IsFalse(accountState.Favorite);
 
             // Favourite the movie
-            _config.Client.AccountChangeFavoriteStatus(MediaType.Movie, MadMaxFuryRoad, true).Wait();
+            _config.Client.AccountChangeFavoriteStatus(MediaType.Movie, IdHelper.MadMaxFuryRoad, true).Wait();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the movie IS favourited
-            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
-            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
+            accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
+            Assert.AreEqual(IdHelper.MadMaxFuryRoad, accountState.Id);
             Assert.IsTrue(accountState.Favorite);
         }
 
@@ -434,30 +427,30 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateWatchlistSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            AccountState accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
 
             // Remove the watchlist
             if (accountState.Watchlist)
-                 _config.Client.AccountChangeWatchlistStatus(MediaType.Movie, MadMaxFuryRoad, false).Wait();
+                 _config.Client.AccountChangeWatchlistStatus(MediaType.Movie, IdHelper.MadMaxFuryRoad, false).Wait();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the movie is NOT watchlisted
-            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
 
-            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
+            Assert.AreEqual(IdHelper.MadMaxFuryRoad, accountState.Id);
             Assert.IsFalse(accountState.Watchlist);
 
             // Watchlist the movie
-            _config.Client.AccountChangeWatchlistStatus(MediaType.Movie, MadMaxFuryRoad, true).Wait();
+            _config.Client.AccountChangeWatchlistStatus(MediaType.Movie, IdHelper.MadMaxFuryRoad, true).Wait();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the movie IS watchlisted
-            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
-            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
+            accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
+            Assert.AreEqual(IdHelper.MadMaxFuryRoad, accountState.Id);
             Assert.IsTrue(accountState.Watchlist);
         }
 
@@ -465,57 +458,57 @@ namespace TMDbLibTests
         public void TestMoviesAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            AccountState accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            AccountState accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
 
             // Remove the rating
             if (accountState.Rating.HasValue)
             {
-                Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad).Result);
+                Assert.IsTrue(_config.Client.MovieRemoveRating(IdHelper.MadMaxFuryRoad).Result);
 
                 // Allow TMDb to cache our changes
                 Thread.Sleep(2000);
             }
 
             // Test that the movie is NOT rated
-            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
+            accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
 
-            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
+            Assert.AreEqual(IdHelper.MadMaxFuryRoad, accountState.Id);
             Assert.IsFalse(accountState.Rating.HasValue);
 
             // Rate the movie
-            _config.Client.MovieSetRating(MadMaxFuryRoad, 5).Wait();
+            _config.Client.MovieSetRating(IdHelper.MadMaxFuryRoad, 5).Wait();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the movie IS rated
-            accountState = _config.Client.GetMovieAccountState(MadMaxFuryRoad).Result;
-            Assert.AreEqual(MadMaxFuryRoad, accountState.Id);
+            accountState = _config.Client.GetMovieAccountState(IdHelper.MadMaxFuryRoad).Result;
+            Assert.AreEqual(IdHelper.MadMaxFuryRoad, accountState.Id);
             Assert.IsTrue(accountState.Rating.HasValue);
 
             // Remove the rating
-            Assert.IsTrue(_config.Client.MovieRemoveRating(MadMaxFuryRoad).Result);
+            Assert.IsTrue(_config.Client.MovieRemoveRating(IdHelper.MadMaxFuryRoad).Result);
         }
 
         [TestMethod]
         public void TestMoviesSetRatingBadRating()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 7.1).Result);
+            Assert.IsFalse(_config.Client.MovieSetRating(IdHelper.Avatar, 7.1).Result);
         }
 
         [TestMethod]
         public void TestMoviesSetRatingRatingOutOfBounds()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 10.5).Result);
+            Assert.IsFalse(_config.Client.MovieSetRating(IdHelper.Avatar, 10.5).Result);
         }
 
         [TestMethod]
         public void TestMoviesSetRatingRatingLowerBoundsTest()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            Assert.IsFalse(_config.Client.MovieSetRating(Avatar, 0).Result);
+            Assert.IsFalse(_config.Client.MovieSetRating(IdHelper.Avatar, 0).Result);
         }
 
         [TestMethod]
@@ -524,39 +517,39 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie has a different rating than our test rating
-            var rating = _config.Client.GetMovieAccountState(Avatar).Result.Rating;
+            var rating = _config.Client.GetMovieAccountState(IdHelper.Avatar).Result.Rating;
             Assert.IsNotNull(rating);
 
             double originalRating = rating.Value;
             double newRating = Math.Abs(originalRating - 7.5) < double.Epsilon ? 2.5 : 7.5;
 
             // Try changing the rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, newRating).Result);
+            Assert.IsTrue(_config.Client.MovieSetRating(IdHelper.Avatar, newRating).Result);
 
             // Allow TMDb to not cache our data
             Thread.Sleep(2000);
 
             // Check if it worked
-            Assert.AreEqual(newRating, _config.Client.GetMovieAccountState(Avatar).Result.Rating);
+            Assert.AreEqual(newRating, _config.Client.GetMovieAccountState(IdHelper.Avatar).Result.Rating);
 
             // Try changing it back to the previous rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, originalRating).Result);
+            Assert.IsTrue(_config.Client.MovieSetRating(IdHelper.Avatar, originalRating).Result);
 
             // Allow TMDb to not cache our data
             Thread.Sleep(2000);
 
             // Check if it worked
-            Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(Avatar).Result.Rating);
+            Assert.AreEqual(originalRating, _config.Client.GetMovieAccountState(IdHelper.Avatar).Result.Rating);
         }
 
         [TestMethod]
         public void TestMoviesGet()
         {
-            Movie item = _config.Client.GetMovie(AGoodDayToDieHard).Result;
+            Movie item = _config.Client.GetMovie(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(item);
-            Assert.AreEqual(AGoodDayToDieHard, item.Id);
-            Assert.AreEqual(AGoodDayToDieHardImdb, item.ImdbId);
+            Assert.AreEqual(IdHelper.AGoodDayToDieHard, item.Id);
+            Assert.AreEqual(IdHelper.AGoodDayToDieHardImdb, item.ImdbId);
 
             // Check all properties
             Assert.AreEqual("A Good Day to Die Hard", item.Title);
@@ -598,15 +591,15 @@ namespace TMDbLibTests
             // Test the custom parsing code for Account State rating
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
-            Movie movie = _config.Client.GetMovie(TheDarkKnightRises, MovieMethods.AccountStates).Result;
+            Movie movie = _config.Client.GetMovie(IdHelper.TheDarkKnightRises, MovieMethods.AccountStates).Result;
             if (movie.AccountStates == null || !movie.AccountStates.Rating.HasValue)
             {
-                _config.Client.MovieSetRating(TheDarkKnightRises, 5);
+                _config.Client.MovieSetRating(IdHelper.TheDarkKnightRises, 5);
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);
 
-                movie = _config.Client.GetMovie(TheDarkKnightRises, MovieMethods.AccountStates).Result;
+                movie = _config.Client.GetMovie(IdHelper.TheDarkKnightRises, MovieMethods.AccountStates).Result;
             }
 
             Assert.IsNotNull(movie.AccountStates);

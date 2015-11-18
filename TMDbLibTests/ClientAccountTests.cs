@@ -16,8 +16,6 @@ namespace TMDbLibTests
     public class ClientAccountTests
     {
         private TestConfig _config;
-        private const int Terminator = 218;
-        private const int DoctorWho = 121;
 
         /// <summary>
         /// Run once, on every test
@@ -255,20 +253,20 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
-            if (DoesFavoriteListContainSpecificTvShow(DoctorWho))
-                Assert.Fail("Test tv show '{0}' was already marked as favorite. Unable to perform test correctly", DoctorWho);
+            if (DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
+                Assert.Fail("Test tv show '{0}' was already marked as favorite. Unable to perform test correctly", IdHelper.DoctorWho);
 
             // Try to mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, DoctorWho, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesFavoriteListContainSpecificTvShow(DoctorWho));
+            Assert.IsTrue(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to un-mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, DoctorWho, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesFavoriteListContainSpecificTvShow(DoctorWho));
+            Assert.IsFalse(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
         }
 
         [TestMethod]
@@ -277,20 +275,20 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
-            if (DoesFavoriteListContainSpecificMovie(Terminator))
-                Assert.Fail("Test movie '{0}' was already marked as favorite. Unable to perform test correctly", Terminator);
+            if (DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
+                Assert.Fail("Test movie '{0}' was already marked as favorite. Unable to perform test correctly", IdHelper.Terminator);
 
             // Try to mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, Terminator, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, IdHelper.Terminator, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesFavoriteListContainSpecificMovie(Terminator));
+            Assert.IsTrue(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to un-mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, Terminator, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, IdHelper.Terminator, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesFavoriteListContainSpecificMovie(Terminator));
+            Assert.IsFalse(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
         }
 
         [TestMethod]
@@ -299,20 +297,20 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
-            if (DoesWatchListContainSpecificTvShow(DoctorWho))
-                Assert.Fail("Test tv show '{0}' was already on watchlist. Unable to perform test correctly", DoctorWho);
+            if (DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
+                Assert.Fail("Test tv show '{0}' was already on watchlist. Unable to perform test correctly", IdHelper.DoctorWho);
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, DoctorWho, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesWatchListContainSpecificTvShow(DoctorWho));
+            Assert.IsTrue(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to remove item from watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, DoctorWho, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesWatchListContainSpecificTvShow(DoctorWho));
+            Assert.IsFalse(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
         }
 
         [TestMethod]
@@ -321,20 +319,20 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
-            if (DoesWatchListContainSpecificMovie(Terminator))
-                Assert.Fail("Test movie '{0}' was already on watchlist. Unable to perform test correctly", Terminator);
+            if (DoesWatchListContainSpecificMovie(IdHelper.Terminator))
+                Assert.Fail("Test movie '{0}' was already on watchlist. Unable to perform test correctly", IdHelper.Terminator);
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, Terminator, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, IdHelper.Terminator, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesWatchListContainSpecificMovie(Terminator));
+            Assert.IsTrue(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to remove item from watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, Terminator, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, IdHelper.Terminator, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesWatchListContainSpecificMovie(Terminator));
+            Assert.IsFalse(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
         }
 
         private bool DoesFavoriteListContainSpecificTvShow(int tvId)
