@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
@@ -13,6 +14,7 @@ namespace TMDbLibTests
     public class ClientGuestSessionTests
     {
         private const int Avatar = 19995;
+        private const int BreakingBad = 1396;
 
         private TestConfig _config;
 
@@ -26,6 +28,62 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestTvEpisodeSetRatingGuestSession()
+        {
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 7.5).Result);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            SearchContainer<TvEpisodeWithRating> ratings = _config.Client.GetGuestSessionRatedTvEpisodes().Result;
+
+            Assert.IsTrue(ratings.Results.Any(s => s.ShowId == BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            Assert.AreEqual(7.5, ratings.Results.Single(s => s.ShowId == BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating, float.Epsilon);
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BreakingBad, 1, 1, 8).Result);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            ratings = _config.Client.GetGuestSessionRatedTvEpisodes().Result;
+
+            Assert.IsTrue(ratings.Results.Any(s => s.ShowId == BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            Assert.AreEqual(8, ratings.Results.Single(s => s.ShowId == BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating, float.Epsilon);
+        }
+
+        [TestMethod]
+        public void TestTvSetRatingGuestSession()
+        {
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+
+            // Try changing the rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 7.5).Result);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            SearchContainer<TvShowWithRating> ratings = _config.Client.GetGuestSessionRatedTv().Result;
+
+            Assert.IsTrue(ratings.Results.Any(s => s.Id == BreakingBad));
+            Assert.AreEqual(7.5, ratings.Results.Single(s => s.Id == BreakingBad).Rating, float.Epsilon);
+
+            // Try changing it back to the previous rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BreakingBad, 8).Result);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            ratings = _config.Client.GetGuestSessionRatedTv().Result;
+
+            Assert.IsTrue(ratings.Results.Any(s => s.Id == BreakingBad));
+            Assert.AreEqual(8, ratings.Results.Single(s => s.Id == BreakingBad).Rating, float.Epsilon);
+        }
+
+        [TestMethod]
         public void TestMoviesSetRatingGuestSession()
         {
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
@@ -33,10 +91,10 @@ namespace TMDbLibTests
             // Try changing the rating
             Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 7.5).Result);
 
-            SearchContainer<MovieWithRating> ratings = _config.Client.GetGuestSessionRatedMovies().Result;
-
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
+
+            SearchContainer<MovieWithRating> ratings = _config.Client.GetGuestSessionRatedMovies().Result;
 
             Assert.IsTrue(ratings.Results.Any(s => s.Id == Avatar));
             Assert.AreEqual(7.5, ratings.Results.Single(s => s.Id == Avatar).Rating, float.Epsilon);
@@ -51,6 +109,21 @@ namespace TMDbLibTests
 
             Assert.IsTrue(ratings.Results.Any(s => s.Id == Avatar));
             Assert.AreEqual(8, ratings.Results.Single(s => s.Id == Avatar).Rating, float.Epsilon);
+        }
+
+        [TestMethod]
+        public void TestGuestSessionGetRatedTv()
+        {
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+
+            // Test paging
+            TestHelpers.SearchPages(i => _config.Client.GetGuestSessionRatedTv(i).Result);
+
+            // Fetch ratings
+            SearchContainer<TvShowWithRating> result = _config.Client.GetGuestSessionRatedTv().Result;
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Results);
         }
 
         [TestMethod]
