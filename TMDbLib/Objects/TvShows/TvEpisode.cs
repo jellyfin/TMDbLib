@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Lists;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -11,6 +10,9 @@ namespace TMDbLib.Objects.TvShows
         /// Object Id, will only be populated when explicitly getting episode details
         /// </summary>
         public int? Id { get; set; }
+
+        public int? ShowId { get; set; }
+
         /// <summary>
         /// Will only be populated when explicitly getting an episode
         /// </summary>
