@@ -176,7 +176,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return  await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
+            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
         }
 
         /// <summary>
