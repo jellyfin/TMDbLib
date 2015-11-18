@@ -213,7 +213,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="req">Request</param>
         /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
-        private void AddSessionId(IRestRequest req, SessionType targetType = SessionType.Unassigned)
+        private void AddSessionId(IRestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
         {
             if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
                 (targetType == SessionType.GuestSession))
@@ -221,7 +221,7 @@ namespace TMDbLib.Client
                 // Either
                 // - We needed ANY session ID and had a Guest session id
                 // - We needed a Guest session id and had it
-                req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+                req.AddParameter("guest_session_id", SessionId, parameterType);
                 return;
             }
 
@@ -231,7 +231,7 @@ namespace TMDbLib.Client
                 // Either
                 // - We needed ANY session ID and had a User session id
                 // - We needed a User session id and had it
-                req.AddParameter("session_id", SessionId, ParameterType.QueryString);
+                req.AddParameter("session_id", SessionId, parameterType);
                 return;
             }
 

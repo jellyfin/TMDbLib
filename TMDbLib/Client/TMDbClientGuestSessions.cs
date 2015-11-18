@@ -29,7 +29,7 @@ namespace TMDbLib.Client
             //if (SessionType == SessionType.UserSession)
             //    request.AddParameter("session_id", SessionId, ParameterType.QueryString);
             //else
-            AddSessionId(request, SessionType.GuestSession);
+            AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
             IRestResponse<SearchContainer<MovieWithRating>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieWithRating>>(request).ConfigureAwait(false);
 
