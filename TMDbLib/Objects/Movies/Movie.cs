@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Reviews;
 

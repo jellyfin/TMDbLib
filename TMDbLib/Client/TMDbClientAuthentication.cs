@@ -65,7 +65,7 @@ namespace TMDbLib.Client
         public async Task<UserSession> AuthenticationGetUserSession(string username, string password)
         {
             Token token = await AuthenticationRequestAutenticationToken();
-            AuthenticationValidateUserToken(token.RequestToken, username, password);
+            await AuthenticationValidateUserToken(token.RequestToken, username, password);
             return await AuthenticationGetUserSession(token.RequestToken);
         }
 

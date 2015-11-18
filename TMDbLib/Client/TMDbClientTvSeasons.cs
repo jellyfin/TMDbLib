@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
@@ -32,7 +33,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
 
             if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
-                request.AddParameter("session_id", SessionId);
+                AddSessionId(request, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
@@ -121,7 +122,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
-            req.AddParameter("session_id", SessionId);
+            AddSessionId(req, SessionType.UserSession);
 
             IRestResponse<ResultContainer<TvEpisodeAccountState>> response = await _client.ExecuteGetTaskAsync<ResultContainer<TvEpisodeAccountState>>(req);
 

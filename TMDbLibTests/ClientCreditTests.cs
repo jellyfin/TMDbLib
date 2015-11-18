@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Credit;
+using TMDbLibTests.Helpers;
 
 namespace TMDbLibTests
 {
@@ -62,7 +63,7 @@ namespace TMDbLibTests
             Assert.AreEqual("No Exit", item.Name);
             Assert.AreEqual("Crockett attempts to help an old flame free herself from a racketeer, then is framed for taking bribes. Martin Castillo becomes the squad's new Lieutenant.", item.Overview);
             Assert.AreEqual(1, item.SeasonNumber);
-            Assert.AreEqual("/zJZDnnNGO0ciOQ9SUdEGLLCE4r0.jpg", item.StillPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.StillPath), "item.StillPath was not a valid image path, was: " + item.StillPath);
         }
 
         [TestMethod]
@@ -78,7 +79,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(item);
 
             Assert.AreEqual(new DateTime(2004, 11, 16), item.AirDate);
-            Assert.AreEqual("/wEFbvNMRjG8swYuLsWXbqu8Qbec.jpg", item.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
             Assert.AreEqual(1, item.SeasonNumber);
         }
     }

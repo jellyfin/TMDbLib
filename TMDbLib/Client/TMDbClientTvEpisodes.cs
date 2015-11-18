@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
@@ -33,7 +34,7 @@ namespace TMDbLib.Client
             request.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
 
             if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
-                request.AddParameter("session_id", SessionId);
+                AddSessionId(request, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
@@ -130,7 +131,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
-            req.AddParameter("session_id", SessionId);
+            AddSessionId(req, SessionType.UserSession);
 
             IRestResponse<TvEpisodeAccountState> response = await _client.ExecuteGetTaskAsync<TvEpisodeAccountState>(req);
 
@@ -152,10 +153,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
 
-            if (SessionType == SessionType.UserSession)
-                req.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            else
-                req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(req);
 
             req.AddBody(new { value = rating });
 
@@ -175,10 +173,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
 
-            if (SessionType == SessionType.UserSession)
-                req.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            else
-                req.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(req);
 
             IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(req);
 

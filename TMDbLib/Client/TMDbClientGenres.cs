@@ -9,31 +9,6 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        // TODO: This method no longer appears in Apiary
-        [Obsolete]
-        public async Task<List<Genre>> GetGenres()
-        {
-            return await GetGenres(DefaultLanguage);
-        }
-
-        // TODO: This method no longer appears in Apiary
-        [Obsolete]
-        public async Task<List<Genre>> GetGenres(string language)
-        {
-            RestRequest req = new RestRequest("genre/list");
-
-            language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
-
-            IRestResponse<GenreContainer> resp = await _client.ExecuteGetTaskAsync<GenreContainer>(req).ConfigureAwait(false);
-
-            if (resp.Data == null)
-                return null;
-
-            return resp.Data.Genres;
-        }
-
         public async Task<List<Genre>> GetMovieGenres()
         {
             return await GetMovieGenres(DefaultLanguage);

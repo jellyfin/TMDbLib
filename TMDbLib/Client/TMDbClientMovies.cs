@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
@@ -47,7 +48,7 @@ namespace TMDbLib.Client
             RestRequest request = new RestRequest("movie/{movieId}");
             request.AddUrlSegment("movieId", imdbId);
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
-                request.AddParameter("session_id", SessionId);
+                AddSessionId(request, SessionType.UserSession);
 
             if (language != null)
                 request.AddParameter("language", language);
@@ -218,7 +219,7 @@ namespace TMDbLib.Client
             RestRequest request = new RestRequest("movie/{movieId}/{method}");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
-            request.AddParameter("session_id", SessionId);
+            AddSessionId(request, SessionType.UserSession);
 
             IRestResponse<AccountState> response = await _client.ExecuteGetTaskAsync<AccountState>(request).ConfigureAwait(false);
 
@@ -245,10 +246,7 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("movie/{movieId}/rating") { RequestFormat = DataFormat.Json };
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
-            if (SessionType == SessionType.UserSession)
-                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            else
-                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(request);
 
             request.AddBody(new { value = rating });
 
@@ -265,11 +263,7 @@ namespace TMDbLib.Client
 
             RestRequest request = new RestRequest("movie/{movieId}/rating");
             request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
-
-            if (SessionType == SessionType.UserSession)
-                request.AddParameter("session_id", SessionId, ParameterType.QueryString);
-            else
-                request.AddParameter("guest_session_id", SessionId, ParameterType.QueryString);
+            AddSessionId(request);
 
             IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(request);
 

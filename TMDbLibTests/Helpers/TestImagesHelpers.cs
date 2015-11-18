@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using TMDbLib.Objects.General;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using System.Text.RegularExpressions;
 using TMDbLib.Objects.People;
 
 namespace TMDbLibTests.Helpers
 {
     public static class TestImagesHelpers
     {
+        private static readonly Regex ImagePathRegex = new Regex(@"^/[a-zA-Z0-9]{27}\.jpg$", RegexOptions.Compiled);
+
         public static void TestImages(TestConfig config, ProfileImages images)
         {
             Assert.IsTrue(images.Profiles.Count > 0);
@@ -41,6 +44,11 @@ namespace TMDbLibTests.Helpers
                 Assert.IsTrue(TestHelpers.InternetUriExists(url));
                 Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
             }
+        }
+
+        public static bool TestImagePath(string path)
+        {
+            return ImagePathRegex.IsMatch(path);
         }
     }
 }

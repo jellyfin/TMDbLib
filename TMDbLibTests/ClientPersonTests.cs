@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.General;
@@ -88,7 +89,7 @@ namespace TMDbLibTests
             Assert.AreEqual("Bruce Willis", item.Name);
             Assert.AreEqual("Idar-Oberstein, Germany", item.PlaceOfBirth);
             Assert.IsTrue(item.Popularity > 0);
-            Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", item.ProfilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.ProfilePath), "item.ProfilePath was not a valid image path, was: " + item.ProfilePath);
 
             Assert.IsNotNull(item.AlsoKnownAs);
             Assert.AreEqual(3, item.AlsoKnownAs.Count);
@@ -117,7 +118,7 @@ namespace TMDbLibTests
             Assert.AreEqual(1998, cast.Id);
             Assert.AreEqual("Moonlighting", cast.Name);
             Assert.AreEqual("Moonlighting", cast.OriginalName);
-            Assert.AreEqual("/kGsJf8k6a069WsaAWu7pHlOohg5.jpg", cast.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(cast.PosterPath), "cast.PosterPath was not a valid image path, was: " + cast.PosterPath);
 
             TvJob job = item.Crew.SingleOrDefault(s => s.CreditId == "525826eb760ee36aaa81b23b");
             Assert.IsNotNull(job);
@@ -129,7 +130,7 @@ namespace TMDbLibTests
             Assert.AreEqual("Producer", job.Job);
             Assert.AreEqual("Bruno the Kid", job.Name);
             Assert.AreEqual("Bruno the Kid", job.OriginalName);
-            Assert.AreEqual("/5HkZHG7FkHhay6UlmQ4NyeqpbKR.jpg", job.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(job.PosterPath), "job.PosterPath was not a valid image path, was: " + job.PosterPath);
         }
 
         [TestMethod]
@@ -150,7 +151,7 @@ namespace TMDbLibTests
             Assert.AreEqual("52fe4329c3a36847f803f193", cast.CreditId);
             Assert.AreEqual(1992, cast.Id);
             Assert.AreEqual("Planet Terror", cast.OriginalTitle);
-            Assert.AreEqual("/7Yjzttt0VfPphSsUg8vFUO9WaEt.jpg", cast.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(cast.PosterPath), "cast.PosterPath was not a valid image path, was: " + cast.PosterPath);
             Assert.AreEqual(new DateTime(2007, 4, 6), cast.ReleaseDate);
             Assert.AreEqual("Planet Terror", cast.Title);
 
@@ -162,7 +163,7 @@ namespace TMDbLibTests
             Assert.AreEqual(1571, job.Id);
             Assert.AreEqual("Producer", job.Job);
             Assert.AreEqual(new DateTime(2007, 6, 21), job.ReleaseDate);
-            Assert.AreEqual("/8czarUCdvqPnulkLX8mdXyrLk2D.jpg", job.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(job.PosterPath), "job.PosterPath was not a valid image path, was: " + job.PosterPath);
             Assert.AreEqual("Live Free or Die Hard", job.Title);
             Assert.AreEqual("Live Free or Die Hard", job.OriginalTitle);
         }
@@ -267,7 +268,7 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(image);
             Assert.IsTrue(Math.Abs(0.666666666666667 - image.AspectRatio) < double.Epsilon);
-            Assert.AreEqual("/kI1OluWhLJk3pnR19VjOfABpnTY.jpg", image.FilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(image.FilePath), "image.FilePath was not a valid image path, was: " + image.FilePath);
             Assert.AreEqual(1500, image.Height);
             Assert.IsNull(image.Iso_639_1);
             Assert.AreEqual(1000, image.Width);
@@ -293,7 +294,7 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(image);
             Assert.IsTrue(Math.Abs(1.77777777777778 - image.AspectRatio) < double.Epsilon);
-            Assert.AreEqual("/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg", image.FilePath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(image.FilePath), "image.FilePath was not a valid image path, was: " + image.FilePath);
             Assert.AreEqual(1080, image.Height);
             Assert.AreEqual("4ea5d0792c058837cb000431", image.Id);
             Assert.IsNull(image.Iso_639_1);
@@ -305,13 +306,13 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(image.Media);
             Assert.AreEqual(false, image.Media.Adult);
-            Assert.AreEqual("/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg", image.Media.BackdropPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(image.Media.BackdropPath), "image.Media.BackdropPath was not a valid image path, was: " + image.Media.BackdropPath);
             Assert.AreEqual(187, image.Media.Id);
             Assert.AreEqual("en", image.Media.OriginalLanguage);
             Assert.AreEqual("Sin City", image.Media.OriginalTitle);
             Assert.AreEqual("Sin City is a neo-noir crime thriller based on Frank Miller's graphic novel series of the same name.The film is primarily based on three of Miller's works: The Hard Goodbye, about a man who embarks on a brutal rampage in search of his one-time sweetheart's killer; The Big Fat Kill, which focuses on a street war between a group of prostitutes and a group of mercenaries; and That Yellow Bastard, which follows an aging police officer who protects a young woman from a grotesquely disfigured serial killer.", image.Media.Overview);
             Assert.AreEqual(new DateTime(2005, 3, 31), image.Media.ReleaseDate);
-            Assert.AreEqual("/eCJkepVJslq1nEtqURLaC1zLPAL.jpg", image.Media.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(image.Media.PosterPath), "image.Media.PosterPath was not a valid image path, was: " + image.Media.PosterPath);
             Assert.IsTrue(image.Media.Popularity > 0);
             Assert.AreEqual("Sin City", image.Media.Title);
             Assert.AreEqual(false, image.Media.Video);
