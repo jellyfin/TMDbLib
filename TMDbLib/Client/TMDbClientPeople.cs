@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Utilities;
 
