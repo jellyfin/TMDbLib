@@ -14,6 +14,8 @@ namespace TMDbLibTests
     public class ClientGuestSessionTests
     {
         private const int Avatar = 19995;
+        private const int Terminator = 218;
+        private const int BigBangTheory = 1418;
         private const int BreakingBad = 1396;
 
         private TestConfig _config;
@@ -53,6 +55,16 @@ namespace TMDbLibTests
 
             Assert.IsTrue(ratings.Results.Any(s => s.ShowId == BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
             Assert.AreEqual(8, ratings.Results.Single(s => s.ShowId == BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating, float.Epsilon);
+
+            // Try removing the rating
+            Assert.IsTrue(_config.Client.TvEpisodeRemoveRating(BreakingBad, 1, 1).Result);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            ratings = _config.Client.GetGuestSessionRatedTvEpisodes().Result;
+
+            Assert.IsFalse(ratings.Results.Any(s => s.ShowId == BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
         }
 
         [TestMethod]
@@ -81,6 +93,16 @@ namespace TMDbLibTests
 
             Assert.IsTrue(ratings.Results.Any(s => s.Id == BreakingBad));
             Assert.AreEqual(8, ratings.Results.Single(s => s.Id == BreakingBad).Rating, float.Epsilon);
+
+            // Try removing the rating
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(BreakingBad).Result);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            ratings = _config.Client.GetGuestSessionRatedTv().Result;
+
+            Assert.IsFalse(ratings.Results.Any(s => s.Id == BreakingBad));
         }
 
         [TestMethod]
@@ -109,6 +131,34 @@ namespace TMDbLibTests
 
             Assert.IsTrue(ratings.Results.Any(s => s.Id == Avatar));
             Assert.AreEqual(8, ratings.Results.Single(s => s.Id == Avatar).Rating, float.Epsilon);
+
+            // Try removing the rating
+            Assert.IsTrue(_config.Client.MovieRemoveRating(Avatar).Result);
+
+            // Allow TMDb to cache our changes
+            Thread.Sleep(2000);
+
+            ratings = _config.Client.GetGuestSessionRatedMovies().Result;
+
+            Assert.IsFalse(ratings.Results.Any(s => s.Id == Avatar));
+        }
+
+        [TestMethod]
+        public void TestGuestSessionGetRatedTvEpisodes()
+        {
+            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
+
+            // Ensure we have a rating
+            Assert.IsTrue(_config.Client.TvEpisodeSetRating(BigBangTheory, 1, 1, 7.5).Result);
+            
+            // Test paging
+            TestHelpers.SearchPages(i => _config.Client.GetGuestSessionRatedTvEpisodes(i).Result);
+
+            // Fetch ratings
+            SearchContainer<TvEpisodeWithRating> result = _config.Client.GetGuestSessionRatedTvEpisodes().Result;
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Results);
         }
 
         [TestMethod]
@@ -116,6 +166,9 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
 
+            // Ensure we have a rating
+            Assert.IsTrue(_config.Client.TvShowSetRating(BigBangTheory, 7.5).Result);
+            
             // Test paging
             TestHelpers.SearchPages(i => _config.Client.GetGuestSessionRatedTv(i).Result);
 
@@ -131,6 +184,9 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
 
+            // Ensure we have a rating
+            Assert.IsTrue(_config.Client.MovieSetRating(Terminator, 7.5).Result);
+            
             // Test paging
             TestHelpers.SearchPages(i => _config.Client.GetGuestSessionRatedMovies(i).Result);
 
