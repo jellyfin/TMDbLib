@@ -17,7 +17,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = new RestRequest("guest_session/{guest_session_id}/rated_movies") { RequestFormat = DataFormat.Json };
+            RestRequest request = new RestRequest("guest_session/{guest_session_id}/rated/movies") { RequestFormat = DataFormat.Json };
 
             if (page > 0)
                 request.AddParameter("page", page, ParameterType.QueryString);

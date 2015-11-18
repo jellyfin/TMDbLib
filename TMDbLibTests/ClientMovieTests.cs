@@ -550,18 +550,6 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
-        public void TestMoviesSetRatingGuestSession()
-        {
-            // There is no way to validate the change besides the success return of the api call since the guest session doesn't have access to anything else
-            _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
-            // Try changing the rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 7.5).Result);
-
-            // Try changing it back to the previous rating
-            Assert.IsTrue(_config.Client.MovieSetRating(Avatar, 8).Result);
-        }
-
-        [TestMethod]
         public void TestMoviesGet()
         {
             Movie item = _config.Client.GetMovie(AGoodDayToDieHard).Result;
