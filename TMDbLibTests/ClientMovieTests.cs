@@ -326,7 +326,7 @@ namespace TMDbLibTests
         {
             //GetMovieChanges(int id, DateTime? startDate = null, DateTime? endDate = null)
             // Find latest changed title
-            int latestChanged = _config.Client.GetMovieLatest().Id;
+            int latestChanged = _config.Client.GetMovieLatest().Result.Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-13);
