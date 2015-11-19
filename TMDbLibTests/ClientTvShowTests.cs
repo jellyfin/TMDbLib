@@ -137,9 +137,9 @@ namespace TMDbLibTests
             Assert.IsNotNull(alternativeTitles);
             Assert.AreEqual(IdHelper.BreakingBad, alternativeTitles.Id);
 
-            AlternativeTitle alternativeTitle = alternativeTitles.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("HU"));
+            AlternativeTitle alternativeTitle = alternativeTitles.Results.FirstOrDefault(r => r.Iso_3166_1.Equals("BR"));
             Assert.IsNotNull(alternativeTitle);
-            Assert.AreEqual("Totál szívás", alternativeTitle.Title);
+            Assert.AreEqual("Breaking Bad: A Química do Mal", alternativeTitle.Title);
         }
 
         [TestMethod]
@@ -227,7 +227,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.Overview);
             Assert.IsNotNull(tvShow.Homepage);
             Assert.AreEqual(new DateTime(2008, 01, 19), tvShow.FirstAirDate);
-            Assert.AreEqual(new DateTime(2013, 09, 29), tvShow.LastAirDate);
+            Assert.AreEqual(new DateTime(2015, 11, 30), tvShow.LastAirDate);
             Assert.AreEqual(false, tvShow.InProduction);
             Assert.AreEqual("Ended", tvShow.Status);
             Assert.AreEqual("Scripted", tvShow.Type);

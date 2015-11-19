@@ -89,10 +89,8 @@ namespace TMDbLibTests
             Assert.IsTrue(TestImagesHelpers.TestImagePath(item.ProfilePath), "item.ProfilePath was not a valid image path, was: " + item.ProfilePath);
 
             Assert.IsNotNull(item.AlsoKnownAs);
-            Assert.AreEqual(3, item.AlsoKnownAs.Count);
+            Assert.AreEqual(1, item.AlsoKnownAs.Count);
             Assert.IsTrue(item.AlsoKnownAs.Contains("Брюс Уиллис"));
-            Assert.IsTrue(item.AlsoKnownAs.Contains("W.B. Willis"));
-            Assert.IsTrue(item.AlsoKnownAs.Contains("Walter Bruce Willis"));
         }
 
         [TestMethod]
@@ -110,7 +108,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(cast);
             Assert.AreEqual("David Addison Jr.", cast.Character);
             Assert.AreEqual("52571e7f19c2957114107d48", cast.CreditId);
-            Assert.AreEqual(69, cast.EpisodeCount);
+            Assert.AreEqual(71, cast.EpisodeCount);
             Assert.AreEqual(new DateTime(1985, 3, 3), cast.FirstAirDate);
             Assert.AreEqual(1998, cast.Id);
             Assert.AreEqual("Moonlighting", cast.Name);
