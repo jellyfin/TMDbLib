@@ -176,6 +176,12 @@ namespace TMDbLib.Utilities
             return new TmdbRestResponse(resp);
         }
 
+        public async Task<TmdbRestResponse<T>> ExecuteGetTaskAsync<T>()
+        {
+            // TODO: Inline this
+            return await ExecuteGet<T>();
+        }
+
         public async Task<TmdbRestResponse<T>> ExecuteGet<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Get);
