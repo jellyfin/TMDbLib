@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using RestSharp;
 using RestSharp.Contrib;
 using TMDbLib.Objects.Find;
 using TMDbLib.Utilities;
@@ -20,7 +19,7 @@ namespace TMDbLib.Client
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         public async Task<FindContainer> Find(FindExternalSource source, string id)
         {
-            RestRequest req = new RestRequest("find/{id}");
+            TmdbRestRequest req =_client2.Create("find/{id}");
 
             if (source == FindExternalSource.FreeBaseId || source == FindExternalSource.FreeBaseMid)
                 // No url encoding for freebase Id's (they include /-slashes)
@@ -30,9 +29,9 @@ namespace TMDbLib.Client
 
             req.AddParameter("external_source", source.GetDescription());
 
-            IRestResponse<FindContainer> resp = await _client.ExecuteGetTaskAsync<FindContainer>(req).ConfigureAwait(false);
+            TmdbRestResponse<FindContainer> resp = await req.ExecuteGetTaskAsync<FindContainer>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
     }
 }
