@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -26,10 +27,10 @@ namespace TMDbLib.Client
 
         internal async Task<SearchContainer<T>> DiscoverPerform<T>(string endpoint, string language, int page, NameValueCollection parameters)
         {
-            RestRequest request = new RestRequest(endpoint);
+            TmdbRestRequest request = _client2.Create(endpoint);
 
             if (page != 1 && page > 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
 
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
@@ -37,8 +38,8 @@ namespace TMDbLib.Client
             foreach (string key in parameters.Keys)
                 request.AddParameter(key, parameters[key]);
 
-            IRestResponse<SearchContainer<T>> response = await _client.ExecuteGetTaskAsync<SearchContainer<T>>(request);
-            return response.Data;
+            TmdbRestResponse<SearchContainer<T>> response = await request.ExecuteGetTaskAsync<SearchContainer<T>>();
+            return response;
         }
     }
 }
