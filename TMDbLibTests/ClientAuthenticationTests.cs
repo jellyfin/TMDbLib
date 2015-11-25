@@ -82,7 +82,7 @@ namespace TMDbLibTests
         {
             Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
 
-            _config.Client.AuthenticationValidateUserToken(token.RequestToken, _config.Username, _config.Password);
+            _config.Client.AuthenticationValidateUserToken(token.RequestToken, _config.Username, _config.Password).Wait();
         }
 
         [TestMethod]
