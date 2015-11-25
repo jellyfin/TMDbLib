@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Credit;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -13,16 +13,16 @@ namespace TMDbLib.Client
 
         public async Task<Credit> GetCredits(string id, string language)
         {
-            RestRequest req = new RestRequest("credit/{id}");
+            TmdbRestRequest req = _client2.Create("credit/{id}");
 
             if (!string.IsNullOrEmpty(language))
                 req.AddParameter("language", language);
 
             req.AddUrlSegment("id", id);
 
-            IRestResponse<Credit> resp = await _client.ExecuteGetTaskAsync<Credit>(req).ConfigureAwait(false);
+            TmdbRestResponse<Credit> resp = await req.ExecuteGetTaskAsync<Credit>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
     }
 }
