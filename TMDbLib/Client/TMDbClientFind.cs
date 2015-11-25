@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using RestSharp;
-using RestSharp.Extensions.MonoHttp;
+using RestSharp.Contrib;
 using TMDbLib.Objects.Find;
 using TMDbLib.Utilities;
 
