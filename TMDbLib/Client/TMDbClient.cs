@@ -1,9 +1,13 @@
 ﻿using System;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Deserializers;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities;
+using RestClient = TMDbLib.Utilities.RestClient;
 
 namespace TMDbLib.Client
 {
@@ -91,6 +95,8 @@ namespace TMDbLib.Client
         private TMDbRestClient _client;
         private TMDbConfig _config;
 
+        private RestClient _client2;
+
         public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl)
         {
             DefaultLanguage = null;
@@ -116,7 +122,10 @@ namespace TMDbLib.Client
                 baseUrl = baseUrl.Substring("https://".Length);
 
             string httpScheme = useSsl ? "https" : "http";
-            _client = new TMDbRestClient(String.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion));
+            _client2 = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)));
+            _client2.AddDefaultQueryString("api_key", apiKey);
+
+            _client = new TMDbRestClient(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion));
             _client.AddDefaultParameter("api_key", apiKey, ParameterType.QueryString);
 
             _client.ClearHandlers();
@@ -125,14 +134,13 @@ namespace TMDbLib.Client
 
         public void GetConfig()
         {
-            RestRequest req = new RestRequest("configuration");
-            IRestResponse<TMDbConfig> resp = _client.Get<TMDbConfig>(req);
-
-            if (resp.Data == null)
+            TMDbConfig config = _client2.Create("configuration").ExecuteGet<TMDbConfig>().Result;
+            
+            if (config == null)
                 throw new Exception("Unable to retrieve configuration");
 
             // Store config
-            Config = resp.Data;
+            Config = config;
             HasConfig = true;
         }
 
@@ -214,6 +222,37 @@ namespace TMDbLib.Client
         /// <param name="req">Request</param>
         /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
         private void AddSessionId(IRestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
+        {
+            if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
+                (targetType == SessionType.GuestSession))
+            {
+                // Either
+                // - We needed ANY session ID and had a Guest session id
+                // - We needed a Guest session id and had it
+                req.AddParameter("guest_session_id", SessionId, parameterType);
+                return;
+            }
+
+            if ((targetType == SessionType.Unassigned && SessionType == SessionType.UserSession) ||
+               (targetType == SessionType.UserSession))
+            {
+                // Either
+                // - We needed ANY session ID and had a User session id
+                // - We needed a User session id and had it
+                req.AddParameter("session_id", SessionId, parameterType);
+                return;
+            }
+
+            // We did not have the required session type ready
+            throw new UserSessionRequiredException();
+        }
+
+        /// <summary>
+        /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
+        /// </summary>
+        /// <param name="req">Request</param>
+        /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
+        private void AddSessionId(TmdbRestRequest req, SessionType targetType = SessionType.Unassigned, TmdbParameterType parameterType = TmdbParameterType.QueryString)
         {
             if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
                 (targetType == SessionType.GuestSession))

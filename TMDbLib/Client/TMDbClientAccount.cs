@@ -23,12 +23,12 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account");
+            TmdbRestRequest request = _client2.Create("account");
             AddSessionId(request, SessionType.UserSession);
 
-            IRestResponse<AccountDetails> response = await _client.ExecuteGetTaskAsync<AccountDetails>(request).ConfigureAwait(false);
+            AccountDetails response = await request.ExecuteGet<AccountDetails>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
 
         /// <summary>
@@ -41,20 +41,22 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/lists");
+            TmdbRestRequest request = _client2.Create("account/{accountId}/lists");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             AddSessionId(request, SessionType.UserSession);
 
             if (page > 1)
-                request.AddParameter("page", page);
+            {
+                request.AddQueryString("page", page.ToString());
+            }
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
-                request.AddParameter("language", language);
+                request.AddQueryString("language", language);
 
-            IRestResponse<SearchContainer<List>> response = await _client.ExecuteGetTaskAsync<SearchContainer<List>>(request).ConfigureAwait(false);
+            SearchContainer<List> response = await request.ExecuteGet<SearchContainer<List>>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
 
         /// <summary>
@@ -70,17 +72,17 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/favorite") { RequestFormat = DataFormat.Json };
+            TmdbRestRequest request =  _client2.Create("account/{accountId}/favorite") ;
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
+            request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
             AddSessionId(request, SessionType.UserSession);
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
+            PostReply response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // status code 1 = "Success" - Returned when adding a movie as favorite for the first time
             // status code 13 = "The item/record was deleted successfully" - When removing an item as favorite, no matter if it exists or not
             // status code 12 = "The item/record was updated successfully" - Used when an item is already marked as favorite and trying to do so doing again
-            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12 || response.Data.StatusCode == 13);
+            return response.StatusCode == 1 || response.StatusCode == 12 || response.StatusCode == 13;
         }
 
         /// <summary>
@@ -96,17 +98,17 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/watchlist") { RequestFormat = DataFormat.Json };
+            TmdbRestRequest request =  _client2.Create("account/{accountId}/watchlist");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
+            request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
             AddSessionId(request, SessionType.UserSession);
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
+            PostReply response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 13 = "The item/record was deleted successfully" - When removing an item from the watchlist, no matter if it exists or not
             // status code 12 = "The item/record was updated successfully" - Used when an item is already on the watchlist and trying to add it again
-            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12 || response.Data.StatusCode == 13);
+            return response.StatusCode == 1 || response.StatusCode == 12 || response.StatusCode == 13;
         }
 
         /// <summary>
@@ -211,12 +213,12 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/" + method.GetDescription());
+            TmdbRestRequest request =  _client2.Create("account/{accountId}/" + method.GetDescription());
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             AddSessionId(request, SessionType.UserSession);
 
             if (page > 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
 
             if (sortBy != AccountSortBy.Undefined)
                 request.AddParameter("sort_by", sortBy.GetDescription());
@@ -225,12 +227,12 @@ namespace TMDbLib.Client
                 request.AddParameter("sort_order", sortOrder.GetDescription());
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<T>> response = await _client.ExecuteGetTaskAsync<SearchContainer<T>>(request).ConfigureAwait(false);
+            SearchContainer<T> response = await request.ExecuteGet<SearchContainer<T>>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
 
         private enum AccountListsMethods

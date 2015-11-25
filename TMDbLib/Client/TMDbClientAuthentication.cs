@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
-using RestSharp;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -11,50 +10,53 @@ namespace TMDbLib.Client
     {
         public async Task<Token> AuthenticationRequestAutenticationToken()
         {
-            RestRequest request = new RestRequest("authentication/token/new")
-            {
-                DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
-            };
+            TmdbRestRequest request = _client2.Create("authentication/token/new");
+            //{
+            //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC";
+            //};
 
-            IRestResponse<Token> response = await _client.ExecuteGetTaskAsync<Token>(request).ConfigureAwait(false);
-            Token token = response.Data;
+            TmdbRestResponse<Token> response = await request.ExecuteGet<Token>().ConfigureAwait(false);
+            Token token = response;
 
-            token.AuthenticationCallback = response.Headers.First(h => h.Name.Equals("Authentication-Callback")).Value.ToString();
+            token.AuthenticationCallback = response.GetHeader("Authentication-Callback");
 
             return token;
         }
 
         public async Task AuthenticationValidateUserToken(string initialRequestToken, string username, string password)
         {
-            RestRequest request = new RestRequest("authentication/token/validate_with_login");
+            TmdbRestRequest request = _client2.Create("authentication/token/validate_with_login");
             request.AddParameter("request_token", initialRequestToken);
             request.AddParameter("username", username);
             request.AddParameter("password", password);
 
-            IRestResponse response;
+            TmdbRestResponse response;
             try
             {
-                response = await _client.ExecuteGetTaskAsync(request).ConfigureAwait(false);
+                response = await request.ExecuteGet().ConfigureAwait(false);
             }
             catch (AggregateException ex)
             {
                 throw ex.InnerException;
             }
 
-	        if (response.StatusCode == HttpStatusCode.Unauthorized)
-	        {
-		        throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
-	        }
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
+            }
         }
 
         public async Task<UserSession> AuthenticationGetUserSession(string initialRequestToken)
         {
-            RestRequest request = new RestRequest("authentication/session/new");
+            TmdbRestRequest request = _client2.Create("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
 
-            IRestResponse<UserSession> response = await _client.ExecuteGetTaskAsync<UserSession>(request).ConfigureAwait(false);
+            TmdbRestResponse<UserSession> response = await request.ExecuteGet<UserSession>().ConfigureAwait(false);
 
-            return response.Data;
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+                throw new UnauthorizedAccessException();
+
+            return response;
         }
 
         /// <summary>
@@ -71,14 +73,14 @@ namespace TMDbLib.Client
 
         public async Task<GuestSession> AuthenticationCreateGuestSession()
         {
-            RestRequest request = new RestRequest("authentication/guest_session/new")
-            {
-                DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
-            };
+            TmdbRestRequest request = _client2.Create("authentication/guest_session/new");
+            //{
+            //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
+            //};
 
-            IRestResponse<GuestSession> response = await _client.ExecuteGetTaskAsync<GuestSession>(request).ConfigureAwait(false);
+            TmdbRestResponse<GuestSession> response = await request.ExecuteGet<GuestSession>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
     }
 }

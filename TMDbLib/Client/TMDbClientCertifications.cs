@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Certifications;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -8,20 +8,19 @@ namespace TMDbLib.Client
     {
         public async Task<CertificationsContainer> GetMovieCertifications()
         {
-            RestRequest req = new RestRequest("certification/movie/list");
+            TmdbRestRequest req =  _client2.Create("certification/movie/list");
 
-            IRestResponse<CertificationsContainer> resp = await _client.ExecuteGetTaskAsync<CertificationsContainer>(req).ConfigureAwait(false);
+            TmdbRestResponse<CertificationsContainer> resp = await req.ExecuteGet<CertificationsContainer>().ConfigureAwait(false);
 
-            return resp.Data;
-        }
+            return resp;}
 
         public async Task<CertificationsContainer> GetTvCertifications()
         {
-            RestRequest req = new RestRequest("certification/tv/list");
+            TmdbRestRequest req =  _client2.Create("certification/tv/list");
 
-            IRestResponse<CertificationsContainer> resp = await _client.ExecuteGetTaskAsync<CertificationsContainer>(req).ConfigureAwait(false);
+            TmdbRestResponse<CertificationsContainer> resp = await req.ExecuteGet<CertificationsContainer>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
     }
 }
