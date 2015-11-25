@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Jobs;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -14,16 +14,11 @@ namespace TMDbLib.Client
         /// <returns>Valid jobs and their departments</returns>
         public async Task<List<Job>> GetJobs()
         {
-            RestRequest req = new RestRequest("job/list");
+            TmdbRestRequest req = _client2.Create("job/list");
 
-            IRestResponse<JobContainer> response = await _client.ExecuteGetTaskAsync<JobContainer>(req).ConfigureAwait(false);
+            TmdbRestResponse<JobContainer> response = await req.ExecuteGetTaskAsync<JobContainer>().ConfigureAwait(false);
 
-            if (response == null || response.Data == null)
-            {
-                return null;
-            }
-
-            return response.Data.Jobs;
+            return (await response.GetDataObject()).Jobs;
         }
     }
 }
