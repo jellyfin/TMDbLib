@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Authentication;
@@ -66,7 +67,8 @@ namespace TMDbLib.Client
             IRestResponse<Movie> response = await _client.ExecuteGetTaskAsync<Movie>(request).ConfigureAwait(false);
 
             // No data to patch up so return
-            if (response.Data == null) return null;
+            if (response.Data == null)
+                return null;
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (response.Data.Videos != null)
@@ -86,6 +88,9 @@ namespace TMDbLib.Client
 
             if (response.Data.Translations != null)
                 response.Data.Translations.Id = response.Data.Id;
+
+            // Overview is the only field that is HTML encoded from the source.
+            response.Data.Overview = WebUtility.HtmlDecode(response.Data.Overview);
 
             if (response.Data.AccountStates != null)
             {
@@ -270,11 +275,15 @@ namespace TMDbLib.Client
             // status code 13 = "The item/record was deleted successfully."
             return response.Data != null && response.Data.StatusCode == 13;
         }
-        
+
         public async Task<Movie> GetMovieLatest()
         {
             RestRequest req = new RestRequest("movie/latest");
             IRestResponse<Movie> resp = await _client.ExecuteGetTaskAsync<Movie>(req).ConfigureAwait(false);
+
+            // Overview is the only field that is HTML encoded from the source.
+            if (resp.Data != null)
+                resp.Data.Overview = WebUtility.HtmlDecode(resp.Data.Overview);
 
             return resp.Data;
         }

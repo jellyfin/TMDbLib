@@ -11,7 +11,7 @@
         public const string TheDarkKnightRisesImdb = "tt1345836";
         public const int Terminator = 218;
         public const int EvanAlmighty = 2698;
-
+        public const int Furious7 = 168259;
         public const string TheDarkKnightRisesReviewId = "5010553819c2952d1b000451";
 
         public const int tmdbTerminatorId = 218;

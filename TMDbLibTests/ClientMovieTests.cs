@@ -542,6 +542,16 @@ namespace TMDbLibTests
         }
 
         [TestMethod]
+        public void TestMoviesGetHtmlEncodedText()
+        {
+            Movie item = _config.Client.GetMovie(IdHelper.Furious7, "de").Result;
+
+            Assert.IsNotNull(item);
+
+            Assert.IsFalse(item.Overview.Contains("&amp;"));
+        }
+
+        [TestMethod]
         public void TestMoviesGet()
         {
             Movie item = _config.Client.GetMovie(IdHelper.AGoodDayToDieHard).Result;
