@@ -199,7 +199,10 @@
     <Compile Include="Utilities\RestSharpExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="nuget_pack.bat" />
+    <None Include="nuget_push.bat" />
     <None Include="packages.config" />
+    <None Include="TMDbLib.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

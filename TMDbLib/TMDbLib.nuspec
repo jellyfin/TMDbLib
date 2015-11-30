@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>TMDbLib</id>
+        <version>$version$</version>
+        <title>TMDbLib</title>
+        <authors>Daniel Nachtrub</authors>
+        <owners>Daniel Nachtrub</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>TMDbLib</description>
+        <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+        <copyright>Copyright 2015</copyright>
+        <tags>TMDbLib</tags>
+        <dependencies>
+            <dependency id="RestSharp" version="105.1.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\*\TMDbLib.dll" target="lib\net452\TMDbLib.dll" />
+        <file src="bin\*\TMDbLib.pdb" target="lib\net452\TMDbLib.pdb" />
+    </files>
+</package>
