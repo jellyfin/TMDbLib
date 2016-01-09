@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -8,14 +8,15 @@ namespace TMDbLib.Client
     {
         public async Task<Review> GetReview(string reviewId)
         {
-            RestRequest request = new RestRequest("review/{reviewId}");
+            TmdbRestRequest request  = _client2.Create("review/{reviewId}");
             request.AddUrlSegment("reviewId", reviewId);
 
-            request.DateFormat = "yyyy-MM-dd";
+            // TODO: Dateformat?
+            //request.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Review> resp = await _client.ExecuteGetTaskAsync<Review>(request).ConfigureAwait(false);
+            TmdbRestResponse<Review> resp = await request.ExecuteGet<Review>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
     }
 }

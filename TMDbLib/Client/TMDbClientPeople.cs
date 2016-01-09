@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Changes;
@@ -14,7 +15,7 @@ namespace TMDbLib.Client
     {
         public async Task<Person> GetPerson(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
         {
-            RestRequest req = new RestRequest("person/{personId}");
+            TmdbRestRequest req = _client2.Create("person/{personId}");
             req.AddUrlSegment("personId", personId.ToString());
 
             string appends = string.Join(",",
@@ -27,32 +28,36 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            req.DateFormat = "yyyy-MM-dd";
+            // TODO: Dateformat?
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req).ConfigureAwait(false);
+            TmdbRestResponse<Person> resp = await req.ExecuteGetTaskAsync<Person>().ConfigureAwait(false);
+
+            Person item = await resp.GetDataObject();
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (resp.Data != null)
+            if (item != null)
             {
-                if (resp.Data.Images != null)
-                    resp.Data.Images.Id = resp.Data.Id;
+                if (item.Images != null)
+                    item.Images.Id = item.Id;
 
-                if (resp.Data.Credits != null)
-                    resp.Data.Credits.Id = resp.Data.Id;
+                if (item.Credits != null)
+                    item.Credits.Id = item.Id;
             }
 
-            return resp.Data;
+            return item;
         }
 
         private async Task<T> GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
                                         int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = new RestRequest("person/{personId}/{method}");
+            TmdbRestRequest req =  _client2.Create("person/{personId}/{method}");
             req.AddUrlSegment("personId", personId.ToString());
             req.AddUrlSegment("method", personMethod.GetDescription());
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
+            // TODO: Dateformat?
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
 
             if (country != null)
                 req.AddParameter("country", country);
@@ -61,15 +66,15 @@ namespace TMDbLib.Client
                 req.AddParameter("language", language);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 req.AddParameter("startDate", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
+            TmdbRestResponse<T> resp = await req.ExecuteGetTaskAsync<T>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         public async Task<MovieCredits> GetPersonMovieCredits(int personId)
@@ -120,11 +125,11 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<PersonResult>> GetPersonList(PersonListType type, int page = 0)
         {
-            RestRequest req;
+            TmdbRestRequest req;
             switch (type)
             {
                 case PersonListType.Popular:
-                    req = new RestRequest("person/popular");
+                    req =  _client2.Create("person/popular");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("type");
@@ -133,22 +138,24 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
 
-            req.DateFormat = "yyyy-MM-dd";
+            // TODO: Dateformat?
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<SearchContainer<PersonResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<PersonResult>>(req).ConfigureAwait(false);
+            TmdbRestResponse<SearchContainer<PersonResult>> resp = await req.ExecuteGet<SearchContainer<PersonResult>>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         public async Task<Person> GetLatestPerson()
         {
-            RestRequest req = new RestRequest("person/latest");
+            TmdbRestRequest req =  _client2.Create("person/latest");
 
-            req.DateFormat = "yyyy-MM-dd";
+            // TODO: Dateformat?
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Person> resp = await _client.ExecuteGetTaskAsync<Person>(req).ConfigureAwait(false);
+            TmdbRestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
     }
 }

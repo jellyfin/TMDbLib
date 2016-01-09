@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using TMDbLib.Helpers;
 
 namespace TMDbLib.Objects.Changes
 {
@@ -12,12 +13,13 @@ namespace TMDbLib.Objects.Changes
         public string Action { get; set; }
 
         [JsonProperty("time")]
+        [JsonConverter(typeof(TmdbUtcTimeConverter))]
         public DateTime Time { get; set; }
 
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
 
         [JsonProperty("value")]
-        public string Value { get; set; }
+        public object Value { get; set; }
     }
 }

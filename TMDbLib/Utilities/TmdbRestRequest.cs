@@ -15,7 +15,7 @@ namespace TMDbLib.Utilities
             : base(response)
         {
         }
-
+        
         public async Task<T> GetDataObject()
         {
             string content = await _response.Content.ReadAsStringAsync();
@@ -176,12 +176,6 @@ namespace TMDbLib.Utilities
             return new TmdbRestResponse(resp);
         }
 
-        public async Task<TmdbRestResponse<T>> ExecuteGetTaskAsync<T>()
-        {
-            // TODO: Inline this
-            return await ExecuteGet<T>();
-        }
-
         public async Task<TmdbRestResponse<T>> ExecuteGet<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Get);
@@ -190,6 +184,12 @@ namespace TMDbLib.Utilities
             CheckResponse(resp);
 
             return new TmdbRestResponse<T>(resp);
+        }
+
+        public async Task<TmdbRestResponse<T>> ExecuteGetTaskAsync<T>()
+        {
+            // TODO: Inline this
+            return await ExecuteGet<T>();
         }
 
         public async Task<TmdbRestResponse> ExecutePost()
@@ -205,6 +205,26 @@ namespace TMDbLib.Utilities
         public async Task<TmdbRestResponse<T>> ExecutePost<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Post);
+            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+
+            CheckResponse(resp);
+
+            return new TmdbRestResponse<T>(resp);
+        }
+
+        public async Task<TmdbRestResponse> ExecuteDelete()
+        {
+            HttpRequestMessage req = PrepRequest(HttpMethod.Delete);
+            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+
+            CheckResponse(resp);
+
+            return new TmdbRestResponse(resp);
+        }
+
+        public async Task<TmdbRestResponse<T>> ExecuteDelete<T>()
+        {
+            HttpRequestMessage req = PrepRequest(HttpMethod.Delete);
             HttpResponseMessage resp = await new HttpClient().SendAsync(req);
 
             CheckResponse(resp);

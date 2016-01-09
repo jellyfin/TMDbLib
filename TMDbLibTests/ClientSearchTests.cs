@@ -68,7 +68,7 @@ namespace TMDbLibTests
             Assert.AreEqual(645, item.Id);
             Assert.AreEqual("James Bond Collection", item.Name);
             Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
-            Assert.AreEqual("/HORpg5CSkmeQlAolx3bKMrKgfi.jpg", item.PosterPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
         }
 
         [TestMethod]
@@ -125,7 +125,7 @@ namespace TMDbLibTests
 
             Assert.IsNotNull(item);
             Assert.AreEqual(25, item.Id);
-            Assert.AreEqual("/nM2MfoMqzJQRiSynsDabOtFKetD.png", item.LogoPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.LogoPath), "item.LogoPath was not a valid image path, was: " + item.LogoPath);
             Assert.AreEqual("20th Century Fox", item.Name);
         }
 

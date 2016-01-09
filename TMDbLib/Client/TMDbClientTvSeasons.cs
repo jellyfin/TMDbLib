@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
@@ -28,16 +27,16 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("tv/{id}/season/{season_number}");
-            request.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
-            request.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}");
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
 
             if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
-                AddSessionId(request, SessionType.UserSession);
+                AddSessionId(req, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
-                request.AddParameter("language", language);
+                req.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(TvSeasonMethods))
@@ -47,31 +46,33 @@ namespace TMDbLib.Client
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
-                request.AddParameter("append_to_response", appends);
+                req.AddParameter("append_to_response", appends);
 
-            IRestResponse<TvSeason> response = await _client.ExecuteGetTaskAsync<TvSeason>(request).ConfigureAwait(false);
+            TmdbRestResponse<TvSeason> response = await req.ExecuteGetTaskAsync<TvSeason>().ConfigureAwait(false);
+
+            TvSeason item = await response.GetDataObject();
 
             // Nothing to patch up
-            if (response.Data == null)
+            if (item == null)
                 return null;
 
-            if (response.Data.Episodes != null)
-                response.Data.EpisodeCount = response.Data.Episodes.Count;
+            if (item.Episodes != null)
+                item.EpisodeCount = item.Episodes.Count;
 
-            if (response.Data.Credits != null)
-                response.Data.Credits.Id = response.Data.Id ?? 0;
+            if (item.Credits != null)
+                item.Credits.Id = item.Id ?? 0;
 
-            if (response.Data.ExternalIds != null)
-                response.Data.ExternalIds.Id = response.Data.Id ?? 0;
+            if (item.ExternalIds != null)
+                item.ExternalIds.Id = item.Id ?? 0;
 
-            if (response.Data.AccountStates != null)
+            if (item.AccountStates != null)
             {
-                response.Data.AccountStates.Id = response.Data.Id ?? 0;
+                item.AccountStates.Id = item.Id ?? 0;
                 // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
+                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent());
             }
 
-            return response.Data;
+            return item;
         }
 
         /// <summary>
@@ -118,48 +119,53 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/account_states");
+            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}/account_states");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            IRestResponse<ResultContainer<TvEpisodeAccountState>> response = await _client.ExecuteGetTaskAsync<ResultContainer<TvEpisodeAccountState>>(req);
+            TmdbRestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGetTaskAsync<ResultContainer<TvEpisodeAccountState>>();
+
+            ResultContainer<TvEpisodeAccountState> item = await response.GetDataObject();
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-            if (response.Data != null)
+            if (item != null)
             {
-                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
+                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent());
             }
 
-            return response.Data;
+            return item;
         }
 
         public async Task<ChangesContainer> GetTvSeasonChanges(int seasonId)
         {
-            RestRequest req = new RestRequest("tv/season/{id}/changes");
+            TmdbRestRequest req = _client2.Create("tv/season/{id}/changes");
             req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));
 
-            IRestResponse<ChangesContainer> response = await _client.ExecuteGetTaskAsync<ChangesContainer>(req);
+            TmdbRestResponse<ChangesContainer> response = await req.ExecuteGetTaskAsync<ChangesContainer>();
 
-            return response.Data;
+            return response;
         }
         
         private async Task<T> GetTvSeasonMethod<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("tv/{id}/season/{season_number}/{method}");
+            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
+            // TODO: Dateformat?
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
 
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            return (await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false)).Data;
+            TmdbRestResponse<T> response = await req.ExecuteGetTaskAsync<T>().ConfigureAwait(false);
+
+            return response;
         }
     }
 }

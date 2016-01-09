@@ -85,7 +85,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 1, 5);
+            _config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 1, 5).Wait();
 
             TvSeasonMethods combinedEnum = _methods.Keys.Aggregate((methods, tvSeasonMethods) => methods | tvSeasonMethods);
             TvSeason tvSeason = _config.Client.GetTvSeason(IdHelper.BreakingBad, 1, combinedEnum).Result;

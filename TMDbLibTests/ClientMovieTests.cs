@@ -566,11 +566,17 @@ namespace TMDbLibTests
             Assert.AreEqual(false, item.Adult);
             Assert.AreEqual(false, item.Video);
 
-            Assert.AreEqual(1, item.BelongsToCollection.Count);
-            Assert.AreEqual(1570, item.BelongsToCollection[0].Id);
-            Assert.AreEqual("Die Hard Collection", item.BelongsToCollection[0].Name);
-            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].BackdropPath), "item.BelongsToCollection[0].BackdropPath was not a valid image path, was: " + item.BelongsToCollection[0].BackdropPath);
-            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].PosterPath), "item.BelongsToCollection[0].PosterPath was not a valid image path, was: " + item.BelongsToCollection[0].PosterPath);
+            Assert.IsNotNull(item.BelongsToCollection);
+            Assert.AreEqual(1570, item.BelongsToCollection.Id);
+            Assert.AreEqual("Die Hard Collection", item.BelongsToCollection.Name);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection.BackdropPath), "item.BelongsToCollection.BackdropPath was not a valid image path, was: " + item.BelongsToCollection.BackdropPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection.PosterPath), "item.BelongsToCollection.PosterPath was not a valid image path, was: " + item.BelongsToCollection.PosterPath);
+
+            //Assert.AreEqual(1, item.BelongsToCollection.Count);
+            //Assert.AreEqual(1570, item.BelongsToCollection[0].Id);
+            //Assert.AreEqual("Die Hard Collection", item.BelongsToCollection[0].Name);
+            //Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].BackdropPath), "item.BelongsToCollection[0].BackdropPath was not a valid image path, was: " + item.BelongsToCollection[0].BackdropPath);
+            //Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].PosterPath), "item.BelongsToCollection[0].PosterPath was not a valid image path, was: " + item.BelongsToCollection[0].PosterPath);
 
             Assert.AreEqual(2, item.Genres.Count);
             Assert.AreEqual(28, item.Genres[0].Id);

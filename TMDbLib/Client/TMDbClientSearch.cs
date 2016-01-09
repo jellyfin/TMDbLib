@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 ﻿using System;
-using RestSharp;
-﻿using TMDbLib.Objects.General;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {
@@ -10,7 +10,7 @@ namespace TMDbLib.Client
     {
         private async Task<T> SearchMethod<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null) where T : new()
         {
-            RestRequest req = new RestRequest("search/{method}");
+            TmdbRestRequest req = _client2.Create("search/{method}");
             req.AddUrlSegment("method", method);
             req.AddParameter("query", query);
 
@@ -19,18 +19,19 @@ namespace TMDbLib.Client
                 req.AddParameter("language", language);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
             if (year >= 1)
-                req.AddParameter("year", year);
+                req.AddParameter("year", year.ToString());
             if (includeAdult.HasValue)
                 req.AddParameter("include_adult", includeAdult.Value ? "true" : "false");
 
-            if (dateFormat != null)
-                req.DateFormat = dateFormat;
+            // TODO: Dateformat?
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
+            TmdbRestResponse<T> resp = await req.ExecuteGetTaskAsync<T>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         public async Task<SearchContainer<SearchMovie>> SearchMovie(string query, int page = 0, bool includeAdult = false, int year = 0)

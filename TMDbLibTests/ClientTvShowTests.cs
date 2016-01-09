@@ -64,7 +64,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.TvShowSetRating(IdHelper.BreakingBad, 5);
+            _config.Client.TvShowSetRating(IdHelper.BreakingBad, 5).Wait();
 
             TvShowMethods combinedEnum = _methods.Keys.Aggregate((methods, tvShowMethods) => methods | tvShowMethods);
             TvShow tvShow = _config.Client.GetTvShow(IdHelper.BreakingBad, combinedEnum).Result;
@@ -227,7 +227,7 @@ namespace TMDbLibTests
             Assert.IsNotNull(tvShow.Overview);
             Assert.IsNotNull(tvShow.Homepage);
             Assert.AreEqual(new DateTime(2008, 01, 19), tvShow.FirstAirDate);
-            Assert.AreEqual(new DateTime(2015, 11, 30), tvShow.LastAirDate);
+            Assert.AreEqual(new DateTime(2013, 9, 29), tvShow.LastAirDate);
             Assert.AreEqual(false, tvShow.InProduction);
             Assert.AreEqual("Ended", tvShow.Status);
             Assert.AreEqual("Scripted", tvShow.Type);

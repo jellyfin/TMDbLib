@@ -19,7 +19,7 @@ namespace TMDbLib.Objects.General
         /// <summary>
         /// Represents the presence of the related movie on the current user's watchlist.
         /// </summary>
-        [JsonProperty("watch_list")]
+        [JsonProperty("watchlist")]
         public bool Watchlist { get; set; }
         
         [JsonProperty("rating")]

@@ -36,8 +36,8 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="imdbId">The Imdb id of the movie OR the TMDb id as string</param>
         /// <param name="language">Language to localize the results in.</param>
-        /// <param name="extraMethods">A list of additional methods to execute for this request as enum flags</param>
-        /// <returns>The requested movie or null if it could not be found</returns>
+        /// <param name="extraMethods">A list of additional methods to execute for this req as enum flags</param>
+        /// <returns>The reqed movie or null if it could not be found</returns>
         /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned, see remarks.</exception>
         public async Task<Movie> GetMovie(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
@@ -45,13 +45,13 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("movie/{movieId}");
-            request.AddUrlSegment("movieId", imdbId);
+            TmdbRestRequest req = _client2.Create("movie/{movieId}");
+            req.AddUrlSegment("movieId", imdbId);
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
-                AddSessionId(request, SessionType.UserSession);
+                AddSessionId(req, SessionType.UserSession);
 
             if (language != null)
-                request.AddParameter("language", language);
+                req.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(MovieMethods))
@@ -61,69 +61,68 @@ namespace TMDbLib.Client
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
-                request.AddParameter("append_to_response", appends);
+                req.AddParameter("append_to_response", appends);
 
-            IRestResponse<Movie> response = await _client.ExecuteGetTaskAsync<Movie>(request).ConfigureAwait(false);
+            TmdbRestResponse<Movie> response = await req.ExecuteGet<Movie>().ConfigureAwait(false);
 
             // No data to patch up so return
-            if (response.Data == null) return null;
+            if (response == null) return null;
 
-            // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (response.Data.Videos != null)
-                response.Data.Videos.Id = response.Data.Id;
+            Movie item = await response.GetDataObject();
 
-            if (response.Data.AlternativeTitles != null)
-                response.Data.AlternativeTitles.Id = response.Data.Id;
+            // Patch up data, so that the end user won't notice that we share objects between req-types.
+            if (item.Videos != null)
+                item.Videos.Id = item.Id;
 
-            if (response.Data.Credits != null)
-                response.Data.Credits.Id = response.Data.Id;
+            if (item.AlternativeTitles != null)
+                item.AlternativeTitles.Id = item.Id;
 
-            if (response.Data.Releases != null)
-                response.Data.Releases.Id = response.Data.Id;
+            if (item.Credits != null)
+                item.Credits.Id = item.Id;
 
-            if (response.Data.Keywords != null)
-                response.Data.Keywords.Id = response.Data.Id;
+            if (item.Releases != null)
+                item.Releases.Id = item.Id;
 
-            if (response.Data.Translations != null)
-                response.Data.Translations.Id = response.Data.Id;
+            if (item.Keywords != null)
+                item.Keywords.Id = item.Id;
 
-            if (response.Data.AccountStates != null)
+            if (item.Translations != null)
+                item.Translations.Id = item.Id;
+
+            if (item.AccountStates != null)
             {
-                response.Data.AccountStates.Id = response.Data.Id;
+                item.AccountStates.Id = item.Id;
                 // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(response.Data.AccountStates, response.Content);
+                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent());
             }
 
-            return response.Data;
+            return item;
         }
 
         private async Task<T> GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
             string country = null,
             string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest request = new RestRequest("movie/{movieId}/{method}");
-            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
-            request.AddUrlSegment("method", movieMethod.GetDescription());
-
-            if (dateFormat != null)
-                request.DateFormat = dateFormat;
+            TmdbRestRequest req = _client2.Create("movie/{movieId}/{method}");
+            req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("method", movieMethod.GetDescription());
 
             if (country != null)
-                request.AddParameter("country", country);
+                req.AddParameter("country", country);
             language = language ?? DefaultLanguage;
             if (!String.IsNullOrWhiteSpace(language))
-                request.AddParameter("language", language);
+                req.AddParameter("language", language);
 
             if (page >= 1)
-                request.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
-                request.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
+                req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
-                request.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
+                req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> response = await _client.ExecuteGetTaskAsync<T>(request).ConfigureAwait(false);
-
-            return response.Data;
+            TmdbRestResponse<T> response = await req.ExecuteGet<T>().ConfigureAwait(false);
+            
+            return response;
         }
 
         public async Task<AlternativeTitles> GetMovieAlternativeTitles(int movieId)
@@ -216,20 +215,22 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("movie/{movieId}/{method}");
-            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
-            request.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
-            AddSessionId(request, SessionType.UserSession);
+            TmdbRestRequest req = _client2.Create("movie/{movieId}/{method}");
+            req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
+            AddSessionId(req, SessionType.UserSession);
 
-            IRestResponse<AccountState> response = await _client.ExecuteGetTaskAsync<AccountState>(request).ConfigureAwait(false);
+            TmdbRestResponse<AccountState> response = await req.ExecuteGet<AccountState>().ConfigureAwait(false);
+
+            AccountState item = await response.GetDataObject();
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-            if (response.Data != null)
+            if (item != null)
             {
-                CustomDeserialization.DeserializeAccountStatesRating(response.Data, response.Content);
+                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent());
             }
 
-            return response.Data;
+            return item;
         }
 
         /// <summary>
@@ -244,39 +245,45 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = new RestRequest("movie/{movieId}/rating") { RequestFormat = DataFormat.Json };
-            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
-            AddSessionId(request);
+            TmdbRestRequest req = _client2.Create("movie/{movieId}/rating");
+            req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+            AddSessionId(req);
 
-            request.AddBody(new { value = rating });
+            req.SetBody(new { value = rating });
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
+            TmdbRestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
-            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12);
+            PostReply item = await response.GetDataObject();
+
+            // TODO: Previous code checked for item=null
+            return item.StatusCode == 1 || item.StatusCode == 12;
         }
 
         public async Task<bool> MovieRemoveRating(int movieId)
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = new RestRequest("movie/{movieId}/rating");
-            request.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
-            AddSessionId(request);
+            TmdbRestRequest req = _client2.Create("movie/{movieId}/rating");
+            req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
+            AddSessionId(req);
 
-            IRestResponse<PostReply> response = await _client.ExecuteDeleteTaskAsync<PostReply>(request);
+            TmdbRestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
 
             // status code 13 = "The item/record was deleted successfully."
-            return response.Data != null && response.Data.StatusCode == 13;
+            PostReply item = await response.GetDataObject();
+
+            // TODO: Previous code checked for item=null
+            return item != null && item.StatusCode == 13;
         }
         
         public async Task<Movie> GetMovieLatest()
         {
-            RestRequest req = new RestRequest("movie/latest");
-            IRestResponse<Movie> resp = await _client.ExecuteGetTaskAsync<Movie>(req).ConfigureAwait(false);
+            TmdbRestRequest req = _client2.Create("movie/latest");
+            TmdbRestResponse<Movie> resp = await req.ExecuteGet<Movie>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         public async Task<SearchContainer<MovieResult>> GetMovieList(MovieListType type, int page = 0)
@@ -286,20 +293,20 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<MovieResult>> GetMovieList(MovieListType type, string language, int page = 0)
         {
-            RestRequest req;
+            TmdbRestRequest req;
             switch (type)
             {
                 case MovieListType.NowPlaying:
-                    req = new RestRequest("movie/now_playing");
+                    req = _client2.Create("movie/now_playing");
                     break;
                 case MovieListType.Popular:
-                    req = new RestRequest("movie/popular");
+                    req = _client2.Create("movie/popular");
                     break;
                 case MovieListType.TopRated:
-                    req = new RestRequest("movie/top_rated");
+                    req = _client2.Create("movie/top_rated");
                     break;
                 case MovieListType.Upcoming:
-                    req = new RestRequest("movie/upcoming");
+                    req = _client2.Create("movie/upcoming");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("type");
@@ -310,11 +317,12 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            req.DateFormat = "yyyy-MM-dd";
+            // TODO: Dateformat?
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<SearchContainer<MovieResult>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieResult>>(req).ConfigureAwait(false);
+            TmdbRestResponse<SearchContainer<MovieResult>> resp = await req.ExecuteGet<SearchContainer<MovieResult>>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
     }
 }
