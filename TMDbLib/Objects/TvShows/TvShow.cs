@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using TMDbLib.Helpers;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -26,9 +27,11 @@ namespace TMDbLib.Objects.TvShows
 
 
         [JsonProperty("number_of_seasons")]
+        [JsonConverter(typeof(TmdbNullIntAsZero))]
         public int NumberOfSeasons { get; set; }
 
         [JsonProperty("number_of_episodes")]
+        [JsonConverter(typeof(TmdbNullIntAsZero))]
         public int NumberOfEpisodes { get; set; }
 
         [JsonProperty("seasons")]

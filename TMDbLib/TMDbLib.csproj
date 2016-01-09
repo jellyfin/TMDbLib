@@ -49,6 +49,8 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\TmdbNullBoolAsFalse.cs" />
+    <Compile Include="Helpers\TmdbNullIntAsZero.cs" />
     <Compile Include="Helpers\TmdbUtcTimeConverter.cs" />
     <Compile Include="Utilities\CustomDatetimeFormatConverter.cs" />
     <Compile Include="Utilities\ObjectHelper.cs" />
