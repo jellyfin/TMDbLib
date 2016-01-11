@@ -1,10 +1,8 @@
 ﻿using System.Collections.Specialized;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using TMDbLib.Rest;
-using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {

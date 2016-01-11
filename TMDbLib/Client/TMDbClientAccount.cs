@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;

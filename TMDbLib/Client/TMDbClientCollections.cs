@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
 using TMDbLib.Rest;

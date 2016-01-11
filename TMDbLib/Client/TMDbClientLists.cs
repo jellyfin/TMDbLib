@@ -4,7 +4,6 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Rest;
-using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {

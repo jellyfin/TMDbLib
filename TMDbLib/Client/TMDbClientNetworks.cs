@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Rest;
-using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {

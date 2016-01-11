@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;

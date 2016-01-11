@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;

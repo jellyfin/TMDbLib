@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using TMDbLib.Objects.Credit;
 using TMDbLib.Rest;
-using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
 {

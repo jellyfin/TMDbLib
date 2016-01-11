@@ -1,13 +1,10 @@
 ﻿using System;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Deserializers;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Rest;
-using TMDbLib.Utilities;
 using RestClient = TMDbLib.Rest.RestClient;
 
 namespace TMDbLib.Client
