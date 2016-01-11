@@ -4,6 +4,7 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

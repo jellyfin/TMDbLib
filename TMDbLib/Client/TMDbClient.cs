@@ -6,8 +6,9 @@ using RestSharp.Deserializers;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
-using RestClient = TMDbLib.Utilities.RestClient;
+using RestClient = TMDbLib.Rest.RestClient;
 
 namespace TMDbLib.Client
 {

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

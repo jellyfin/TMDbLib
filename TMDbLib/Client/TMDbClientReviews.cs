@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

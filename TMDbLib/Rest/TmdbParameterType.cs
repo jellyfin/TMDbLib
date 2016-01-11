@@ -1,4 +1,4 @@
-namespace TMDbLib.Utilities
+namespace TMDbLib.Rest
 {
     internal enum TmdbParameterType
     {

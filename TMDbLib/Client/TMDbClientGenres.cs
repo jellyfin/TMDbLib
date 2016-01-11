@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

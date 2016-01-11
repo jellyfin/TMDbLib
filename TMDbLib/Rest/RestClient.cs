@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TMDbLib.Utilities
+namespace TMDbLib.Rest
 {
     internal class RestClient
     {

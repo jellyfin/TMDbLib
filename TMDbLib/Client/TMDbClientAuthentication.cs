@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Net;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace TMDbLib.Utilities
+namespace TMDbLib.Rest
 {
     // TODO: Rename to RestRequest
     internal class TmdbRestRequest

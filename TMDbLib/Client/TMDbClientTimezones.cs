@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RestSharp;
 using TMDbLib.Objects.Timezones;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

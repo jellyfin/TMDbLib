@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using RestSharp.Contrib;
 using TMDbLib.Objects.Find;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using TMDbLib.Objects.Certifications;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client

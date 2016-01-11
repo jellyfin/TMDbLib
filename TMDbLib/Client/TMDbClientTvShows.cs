@@ -8,6 +8,7 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.TvShows.Credits;
 
