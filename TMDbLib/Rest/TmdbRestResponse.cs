@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 namespace TMDbLib.Rest
 {
+    // TODO: Rename to RestResponse
     internal class TmdbRestResponse
     {
         protected readonly HttpResponseMessage _response;
@@ -29,6 +30,7 @@ namespace TMDbLib.Rest
         }
     }
 
+    // TODO: Rename to RestResponse
     internal class TmdbRestResponse<T> : TmdbRestResponse
     {
         public TmdbRestResponse(HttpResponseMessage response)
