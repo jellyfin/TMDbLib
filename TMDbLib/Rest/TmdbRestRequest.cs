@@ -9,34 +9,6 @@ using Newtonsoft.Json;
 
 namespace TMDbLib.Utilities
 {
-    internal class TmdbRestResponse<T> : TmdbRestResponse
-    {
-        public TmdbRestResponse(HttpResponseMessage response)
-            : base(response)
-        {
-        }
-        
-        public async Task<T> GetDataObject()
-        {
-            string content = await _response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<T>(content);
-        }
-
-        public static implicit operator T(TmdbRestResponse<T> response)
-        {
-            try
-            {
-
-                return response.GetDataObject().Result;
-            }
-            catch (AggregateException ex)
-            {
-                throw ex.InnerException;
-            }
-        }
-    }
-
     // TODO: Rename to RestRequest
     internal class TmdbRestRequest
     {

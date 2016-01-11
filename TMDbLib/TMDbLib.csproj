@@ -54,7 +54,7 @@
     <Compile Include="Helpers\TmdbUtcTimeConverter.cs" />
     <Compile Include="Utilities\CustomDatetimeFormatConverter.cs" />
     <Compile Include="Utilities\ObjectHelper.cs" />
-    <Compile Include="Utilities\RestClient.cs" />
+    <Compile Include="Rest\RestClient.cs" />
     <Compile Include="Objects\Discover\DiscoverBase.cs" />
     <Compile Include="Objects\Discover\DiscoverMovie.cs" />
     <Compile Include="Objects\Discover\DiscoverTv.cs" />
@@ -209,10 +209,9 @@
     <Compile Include="TMDbRestClient.cs" />
     <Compile Include="Utilities\CustomDeserialization.cs" />
     <Compile Include="Utilities\EnumExtensions.cs" />
-    <Compile Include="Utilities\RestSharpExtensions.cs" />
-    <Compile Include="Utilities\TmdbParameterType.cs" />
-    <Compile Include="Utilities\TmdbRestRequest.cs" />
-    <Compile Include="Utilities\TmdbRestResponse.cs" />
+    <Compile Include="Rest\TmdbParameterType.cs" />
+    <Compile Include="Rest\TmdbRestRequest.cs" />
+    <Compile Include="Rest\TmdbRestResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
