@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using RestSharp.Contrib;
+﻿using System.Net;
+using System.Threading.Tasks;
 using TMDbLib.Objects.Find;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
@@ -26,7 +26,7 @@ namespace TMDbLib.Client
                 // No url encoding for freebase Id's (they include /-slashes)
                 req.AddUrlSegment("id", id);
             else
-                req.AddUrlSegment("id", HttpUtility.UrlEncode(id));
+                req.AddUrlSegment("id", WebUtility.UrlEncode(id));
 
             req.AddParameter("external_source", source.GetDescription());
 
