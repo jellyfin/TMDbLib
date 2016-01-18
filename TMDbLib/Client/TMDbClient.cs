@@ -47,20 +47,21 @@ namespace TMDbLib.Client
         /// By default the client will keep waiting for the time to expire and then try again.
         /// For details about the allowed limits: https://www.themoviedb.org/talk/5317af69c3a3685c4a0003b1?page=1
         /// </summary>
+        [Obsolete("Setting this is identical to setting 'MaxRetryCount = 0'")]
         public bool ThrowErrorOnExeedingMaxCalls
         {
-            get { return _client.ThrowErrorOnExeedingMaxCalls; }
-            set { _client.ThrowErrorOnExeedingMaxCalls = value; }
+            get { return MaxRetryCount == 0; }
+            set { MaxRetryCount = value ? 0 : 5; }
         }
 
         /// <summary>
-        /// The maximum number of times a call to TMDb will be retied
+        /// The maximum number of times a call to TMDb will be retried
         /// </summary>
         /// <remarks>Default is 0</remarks>
         public int MaxRetryCount
         {
-            get { return _client.MaxRetryCount; }
-            set { _client.MaxRetryCount = value; }
+            get { return _client2.MaxRetryCount; }
+            set { _client2.MaxRetryCount = value; }
         }
 
         /// <summary>
@@ -69,10 +70,11 @@ namespace TMDbLib.Client
         /// Formula: RetryAttempt * RetryWaitTimeInSeconds, this is the amount of time in seconds the application will wait before retrying
         /// </summary>
         /// <remarks>Default is 10</remarks>
+        [Obsolete("Setting this has no effect, as TMDb informs us of how long to wait")]
         public int RetryWaitTimeInSeconds
         {
-            get { return _client.RetryWaitTimeInSeconds; }
-            set { _client.RetryWaitTimeInSeconds = value; }
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
         }
 
         public TMDbConfig Config
@@ -90,7 +92,6 @@ namespace TMDbLib.Client
 
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
-        private TMDbRestClient _client;
         private TMDbConfig _config;
 
         private RestClient _client2;
@@ -122,12 +123,6 @@ namespace TMDbLib.Client
             string httpScheme = useSsl ? "https" : "http";
             _client2 = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)));
             _client2.AddDefaultQueryString("api_key", apiKey);
-
-            _client = new TMDbRestClient(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion));
-            _client.AddDefaultParameter("api_key", apiKey, ParameterType.QueryString);
-
-            _client.ClearHandlers();
-            _client.AddHandler("application/json", new JsonDeserializer());
         }
 
         public void GetConfig()

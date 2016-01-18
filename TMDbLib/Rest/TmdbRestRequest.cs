@@ -4,8 +4,10 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using TMDbLib.Objects.Exceptions;
 
 namespace TMDbLib.Rest
 {
@@ -137,7 +139,7 @@ namespace TMDbLib.Rest
         public async Task<TmdbRestResponse> ExecuteGet()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Get);
-            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+            HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
@@ -147,7 +149,7 @@ namespace TMDbLib.Rest
         public async Task<TmdbRestResponse<T>> ExecuteGet<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Get);
-            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+            HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
@@ -157,7 +159,7 @@ namespace TMDbLib.Rest
         public async Task<TmdbRestResponse> ExecutePost()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Post);
-            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+            HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
@@ -167,7 +169,7 @@ namespace TMDbLib.Rest
         public async Task<TmdbRestResponse<T>> ExecutePost<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Post);
-            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+            HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
@@ -177,7 +179,7 @@ namespace TMDbLib.Rest
         public async Task<TmdbRestResponse> ExecuteDelete()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Delete);
-            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+            HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
@@ -187,11 +189,48 @@ namespace TMDbLib.Rest
         public async Task<TmdbRestResponse<T>> ExecuteDelete<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Delete);
-            HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+            HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
             return new TmdbRestResponse<T>(resp);
+        }
+
+        private async Task<HttpResponseMessage> SendInternal(HttpRequestMessage req)
+        {
+            HttpClient client = new HttpClient();
+
+            // Account for the following settings:
+            // - MaxRetryCount                          Max times to retry
+            // DEPRECATED RetryWaitTimeInSeconds        Time to wait between retries
+            // DEPRECATED ThrowErrorOnExeedingMaxCalls  Throw an exception if we hit a ratelimit
+
+            HttpResponseMessage resp = null;
+            for (int i = 0; i <= _client.MaxRetryCount; i++)
+            {
+                if (resp != null && resp.StatusCode == (HttpStatusCode)429)
+                {
+                    // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
+                    RetryConditionHeaderValue retryAfter = resp.Headers.RetryAfter;
+                    TimeSpan timeToWait = (retryAfter?.Delta.Value ?? (TimeSpan?)TimeSpan.FromSeconds(5)).Value;
+
+                    await Task.Delay(timeToWait);
+                }
+
+                resp = await client.SendAsync(req);
+
+                if (resp.IsSuccessStatusCode)
+                    // We have a success
+                    break;
+            }
+
+            if (resp == null || !resp.IsSuccessStatusCode)
+            {
+                // We never reached a success
+                throw new RequestLimitExceededException();
+            }
+
+            return resp;
         }
     }
 }
