@@ -9,7 +9,7 @@ namespace TMDbLib.Client
     {
         private async Task<T> SearchMethod<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null) where T : new()
         {
-            TmdbRestRequest req = _client2.Create("search/{method}");
+            RestRequest req = _client2.Create("search/{method}");
             req.AddUrlSegment("method", method);
             req.AddParameter("query", query);
 
@@ -28,7 +28,7 @@ namespace TMDbLib.Client
             //if (dateFormat != null)
             //    req.DateFormat = dateFormat;
 
-            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }

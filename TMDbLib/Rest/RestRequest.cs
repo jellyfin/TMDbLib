@@ -12,7 +12,7 @@ using TMDbLib.Objects.Exceptions;
 namespace TMDbLib.Rest
 {
     // TODO: Rename to RestRequest
-    internal class TmdbRestRequest
+    internal class RestRequest
     {
         private readonly RestClient _client;
         private readonly string _endpoint;
@@ -22,7 +22,7 @@ namespace TMDbLib.Rest
 
         private object _bodyObj;
 
-        public TmdbRestRequest(RestClient client, string endpoint)
+        public RestRequest(RestClient client, string endpoint)
         {
             _client = client;
             _endpoint = endpoint;
@@ -43,27 +43,27 @@ namespace TMDbLib.Rest
             AppendQueryString(sb, value.Key, value.Value);
         }
 
-        public TmdbRestRequest AddParameter(KeyValuePair<string, string> pair, TmdbParameterType type = TmdbParameterType.QueryString)
+        public RestRequest AddParameter(KeyValuePair<string, string> pair, ParameterType type = ParameterType.QueryString)
         {
             AddParameter(pair.Key, pair.Value, type);
 
             return this;
         }
 
-        public TmdbRestRequest AddParameter(string key, string value, TmdbParameterType type = TmdbParameterType.QueryString)
+        public RestRequest AddParameter(string key, string value, ParameterType type = ParameterType.QueryString)
         {
             switch (type)
             {
-                case TmdbParameterType.QueryString:
+                case ParameterType.QueryString:
                     return AddQueryString(key, value);
-                case TmdbParameterType.UrlSegment:
+                case ParameterType.UrlSegment:
                     return AddUrlSegment(key, value);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
         }
 
-        public TmdbRestRequest AddUrlSegment(string key, string value)
+        public RestRequest AddUrlSegment(string key, string value)
         {
             if (_urlSegment == null)
                 _urlSegment = new List<KeyValuePair<string, string>>();
@@ -73,7 +73,7 @@ namespace TMDbLib.Rest
             return this;
         }
 
-        public TmdbRestRequest AddQueryString(string key, string value)
+        public RestRequest AddQueryString(string key, string value)
         {
             if (_queryString == null)
                 _queryString = new List<KeyValuePair<string, string>>();
@@ -83,7 +83,7 @@ namespace TMDbLib.Rest
             return this;
         }
 
-        public TmdbRestRequest SetBody(object obj)
+        public RestRequest SetBody(object obj)
         {
             _bodyObj = obj;
 
@@ -136,64 +136,64 @@ namespace TMDbLib.Rest
                 throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
         }
 
-        public async Task<TmdbRestResponse> ExecuteGet()
+        public async Task<RestResponse> ExecuteGet()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Get);
             HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
-            return new TmdbRestResponse(resp);
+            return new RestResponse(resp);
         }
 
-        public async Task<TmdbRestResponse<T>> ExecuteGet<T>()
+        public async Task<RestResponse<T>> ExecuteGet<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Get);
             HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
-            return new TmdbRestResponse<T>(resp);
+            return new RestResponse<T>(resp);
         }
 
-        public async Task<TmdbRestResponse> ExecutePost()
+        public async Task<RestResponse> ExecutePost()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Post);
             HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
-            return new TmdbRestResponse(resp);
+            return new RestResponse(resp);
         }
 
-        public async Task<TmdbRestResponse<T>> ExecutePost<T>()
+        public async Task<RestResponse<T>> ExecutePost<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Post);
             HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
-            return new TmdbRestResponse<T>(resp);
+            return new RestResponse<T>(resp);
         }
 
-        public async Task<TmdbRestResponse> ExecuteDelete()
+        public async Task<RestResponse> ExecuteDelete()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Delete);
             HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
-            return new TmdbRestResponse(resp);
+            return new RestResponse(resp);
         }
 
-        public async Task<TmdbRestResponse<T>> ExecuteDelete<T>()
+        public async Task<RestResponse<T>> ExecuteDelete<T>()
         {
             HttpRequestMessage req = PrepRequest(HttpMethod.Delete);
             HttpResponseMessage resp = await SendInternal(req);
 
             CheckResponse(resp);
 
-            return new TmdbRestResponse<T>(resp);
+            return new RestResponse<T>(resp);
         }
 
         private async Task<HttpResponseMessage> SendInternal(HttpRequestMessage req)

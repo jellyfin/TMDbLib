@@ -14,7 +14,7 @@ namespace TMDbLib.Client
     {
         public async Task<Person> GetPerson(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
         {
-            TmdbRestRequest req = _client2.Create("person/{personId}");
+            RestRequest req = _client2.Create("person/{personId}");
             req.AddUrlSegment("personId", personId.ToString());
 
             string appends = string.Join(",",
@@ -30,7 +30,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
+            RestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
 
             Person item = await resp.GetDataObject();
 
@@ -50,7 +50,7 @@ namespace TMDbLib.Client
         private async Task<T> GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
                                         int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            TmdbRestRequest req =  _client2.Create("person/{personId}/{method}");
+            RestRequest req =  _client2.Create("person/{personId}/{method}");
             req.AddUrlSegment("personId", personId.ToString());
             req.AddUrlSegment("method", personMethod.GetDescription());
 
@@ -71,7 +71,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
-            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }
@@ -124,7 +124,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<PersonResult>> GetPersonList(PersonListType type, int page = 0)
         {
-            TmdbRestRequest req;
+            RestRequest req;
             switch (type)
             {
                 case PersonListType.Popular:
@@ -140,19 +140,19 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<SearchContainer<PersonResult>> resp = await req.ExecuteGet<SearchContainer<PersonResult>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<PersonResult>> resp = await req.ExecuteGet<SearchContainer<PersonResult>>().ConfigureAwait(false);
 
             return resp;
         }
 
         public async Task<Person> GetLatestPerson()
         {
-            TmdbRestRequest req =  _client2.Create("person/latest");
+            RestRequest req =  _client2.Create("person/latest");
 
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
+            RestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
 
             return resp;
         }

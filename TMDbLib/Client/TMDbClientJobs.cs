@@ -14,9 +14,9 @@ namespace TMDbLib.Client
         /// <returns>Valid jobs and their departments</returns>
         public async Task<List<Job>> GetJobs()
         {
-            TmdbRestRequest req = _client2.Create("job/list");
+            RestRequest req = _client2.Create("job/list");
 
-            TmdbRestResponse<JobContainer> response = await req.ExecuteGet<JobContainer>().ConfigureAwait(false);
+            RestResponse<JobContainer> response = await req.ExecuteGet<JobContainer>().ConfigureAwait(false);
 
             return (await response.GetDataObject()).Jobs;
         }

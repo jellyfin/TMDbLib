@@ -8,11 +8,11 @@ using Newtonsoft.Json;
 namespace TMDbLib.Rest
 {
     // TODO: Rename to RestResponse
-    internal class TmdbRestResponse
+    internal class RestResponse
     {
         protected readonly HttpResponseMessage _response;
 
-        public TmdbRestResponse(HttpResponseMessage response)
+        public RestResponse(HttpResponseMessage response)
         {
             _response = response;
         }
@@ -31,9 +31,9 @@ namespace TMDbLib.Rest
     }
 
     // TODO: Rename to RestResponse
-    internal class TmdbRestResponse<T> : TmdbRestResponse
+    internal class RestResponse<T> : RestResponse
     {
-        public TmdbRestResponse(HttpResponseMessage response)
+        public RestResponse(HttpResponseMessage response)
             : base(response)
         {
         }
@@ -45,7 +45,7 @@ namespace TMDbLib.Rest
             return JsonConvert.DeserializeObject<T>(content);
         }
 
-        public static implicit operator T(TmdbRestResponse<T> response)
+        public static implicit operator T(RestResponse<T> response)
         {
             try
             {

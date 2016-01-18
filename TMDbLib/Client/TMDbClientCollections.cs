@@ -17,7 +17,7 @@ namespace TMDbLib.Client
 
         public async Task<Collection> GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            TmdbRestRequest req = _client2.Create("collection/{collectionId}");
+            RestRequest req = _client2.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
 
             language = language ?? DefaultLanguage;
@@ -36,21 +36,21 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<Collection> resp = await req.ExecuteGet<Collection>().ConfigureAwait(false);
+            RestResponse<Collection> resp = await req.ExecuteGet<Collection>().ConfigureAwait(false);
 
             return resp;
         }
 
         private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null) where T : new()
         {
-            TmdbRestRequest req = _client2.Create("collection/{collectionId}/{method}");
+            RestRequest req = _client2.Create("collection/{collectionId}/{method}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
             req.AddUrlSegment("method", collectionMethod.GetDescription());
 
             if (language != null)
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }

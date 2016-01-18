@@ -34,9 +34,9 @@ namespace TMDbLib.Rest
             DefaultQueryString.Add(new KeyValuePair<string, string>(key, value));
         }
 
-        public TmdbRestRequest Create(string endpoint)
+        public RestRequest Create(string endpoint)
         {
-            return new TmdbRestRequest(this, endpoint);
+            return new RestRequest(this, endpoint);
         }
     }
 }

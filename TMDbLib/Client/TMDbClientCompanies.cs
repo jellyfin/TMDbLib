@@ -12,7 +12,7 @@ namespace TMDbLib.Client
     {
         public async Task<Company> GetCompany(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
         {
-            TmdbRestRequest req = _client2.Create("company/{companyId}");
+            RestRequest req = _client2.Create("company/{companyId}");
             req.AddUrlSegment("companyId", companyId.ToString());
 
             string appends = string.Join(",",
@@ -27,14 +27,14 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<Company> resp = await req.ExecuteGet<Company>().ConfigureAwait(false);
+            RestResponse<Company> resp = await req.ExecuteGet<Company>().ConfigureAwait(false);
 
             return resp;
         }
 
         private async Task<T> GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null) where T : new()
         {
-            TmdbRestRequest req = _client2.Create("company/{companyId}/{method}");
+            RestRequest req = _client2.Create("company/{companyId}/{method}");
             req.AddUrlSegment("companyId", companyId.ToString());
             req.AddUrlSegment("method", companyMethod.GetDescription());
 
@@ -44,7 +44,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }

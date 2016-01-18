@@ -18,10 +18,10 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            TmdbRestRequest req = _client2.Create("list/{listId}");
+            RestRequest req = _client2.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
 
-            TmdbRestResponse<List> resp = await req.ExecuteGet<List>().ConfigureAwait(false);
+            RestResponse<List> resp = await req.ExecuteGet<List>().ConfigureAwait(false);
 
             return resp;
         }
@@ -39,11 +39,11 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            TmdbRestRequest req = _client2.Create("list/{listId}/item_status");
+            RestRequest req = _client2.Create("list/{listId}/item_status");
             req.AddUrlSegment("listId", listId);
             req.AddParameter("movie_id", movieId.ToString());
 
-            TmdbRestResponse<ListStatus> response = await req.ExecuteGet<ListStatus>().ConfigureAwait(false);
+            RestResponse<ListStatus> response = await req.ExecuteGet<ListStatus>().ConfigureAwait(false);
 
             return (await response.GetDataObject()).ItemPresent;
         }
@@ -67,7 +67,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(description))
                 description = "";
 
-            TmdbRestRequest req = _client2.Create("list");
+            RestRequest req = _client2.Create("list");
             AddSessionId(req, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
@@ -81,7 +81,7 @@ namespace TMDbLib.Client
                 req.SetBody(new { name = name, description = description });
             }
 
-            TmdbRestResponse<ListCreateReply> response = await req.ExecutePost<ListCreateReply>().ConfigureAwait(false);
+            RestResponse<ListCreateReply> response = await req.ExecutePost<ListCreateReply>().ConfigureAwait(false);
 
             return (await response.GetDataObject()).ListId;
         }
@@ -99,11 +99,11 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            TmdbRestRequest req = _client2.Create("list/{listId}");
+            RestRequest req = _client2.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
             AddSessionId(req, SessionType.UserSession);
 
-            TmdbRestResponse<PostReply> response = await req.ExecuteDelete<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>().ConfigureAwait(false);
 
             // Status code 13 = success
             PostReply item = await response.GetDataObject();
@@ -152,12 +152,12 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            TmdbRestRequest request = _client2.Create("list/{listId}/clear");
+            RestRequest request = _client2.Create("list/{listId}/clear");
             request.AddUrlSegment("listId", listId);
             request.AddParameter("confirm", "true");
             AddSessionId(request, SessionType.UserSession);
 
-            TmdbRestResponse<PostReply> response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // Status code 12 = "The item/record was updated successfully"
             PostReply item = await response.GetDataObject();
@@ -177,14 +177,14 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            TmdbRestRequest req = _client2.Create("list/{listId}/{method}");
+            RestRequest req = _client2.Create("list/{listId}/{method}");
             req.AddUrlSegment("listId", listId);
             req.AddUrlSegment("method", method);
             AddSessionId(req, SessionType.UserSession);
 
             req.SetBody(new { media_id = movieId });
 
-            TmdbRestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // Status code 12 = "The item/record was updated successfully"
             // Status code 13 = "The item/record was deleted successfully"

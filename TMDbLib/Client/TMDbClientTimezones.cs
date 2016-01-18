@@ -20,9 +20,9 @@ namespace TMDbLib.Client
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         public async Task<Timezones> GetTimezones()
         {
-            TmdbRestRequest req = _client2.Create("timezones/list");
+            RestRequest req = _client2.Create("timezones/list");
 
-            TmdbRestResponse<List<Dictionary<string, List<string>>>> resp = await req.ExecuteGet<List<Dictionary<string, List<string>>>>().ConfigureAwait(false);
+            RestResponse<List<Dictionary<string, List<string>>>> resp = await req.ExecuteGet<List<Dictionary<string, List<string>>>>().ConfigureAwait(false);
 
             List<Dictionary<string, List<string>>> item = await resp.GetDataObject();
 

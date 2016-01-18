@@ -45,7 +45,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest req = _client2.Create("movie/{movieId}");
+            RestRequest req = _client2.Create("movie/{movieId}");
             req.AddUrlSegment("movieId", imdbId);
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 AddSessionId(req, SessionType.UserSession);
@@ -63,7 +63,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            TmdbRestResponse<Movie> response = await req.ExecuteGet<Movie>().ConfigureAwait(false);
+            RestResponse<Movie> response = await req.ExecuteGet<Movie>().ConfigureAwait(false);
 
             // No data to patch up so return
             if (response == null) return null;
@@ -103,7 +103,7 @@ namespace TMDbLib.Client
             string country = null,
             string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            TmdbRestRequest req = _client2.Create("movie/{movieId}/{method}");
+            RestRequest req = _client2.Create("movie/{movieId}/{method}");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", movieMethod.GetDescription());
 
@@ -120,7 +120,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            TmdbRestResponse<T> response = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> response = await req.ExecuteGet<T>().ConfigureAwait(false);
             
             return response;
         }
@@ -215,12 +215,12 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest req = _client2.Create("movie/{movieId}/{method}");
+            RestRequest req = _client2.Create("movie/{movieId}/{method}");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            TmdbRestResponse<AccountState> response = await req.ExecuteGet<AccountState>().ConfigureAwait(false);
+            RestResponse<AccountState> response = await req.ExecuteGet<AccountState>().ConfigureAwait(false);
 
             AccountState item = await response.GetDataObject();
 
@@ -245,13 +245,13 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest req = _client2.Create("movie/{movieId}/rating");
+            RestRequest req = _client2.Create("movie/{movieId}/rating");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
             req.SetBody(new { value = rating });
 
-            TmdbRestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
@@ -265,11 +265,11 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest req = _client2.Create("movie/{movieId}/rating");
+            RestRequest req = _client2.Create("movie/{movieId}/rating");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
-            TmdbRestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
+            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
 
             // status code 13 = "The item/record was deleted successfully."
             PostReply item = await response.GetDataObject();
@@ -280,8 +280,8 @@ namespace TMDbLib.Client
         
         public async Task<Movie> GetMovieLatest()
         {
-            TmdbRestRequest req = _client2.Create("movie/latest");
-            TmdbRestResponse<Movie> resp = await req.ExecuteGet<Movie>().ConfigureAwait(false);
+            RestRequest req = _client2.Create("movie/latest");
+            RestResponse<Movie> resp = await req.ExecuteGet<Movie>().ConfigureAwait(false);
 
             return resp;
         }
@@ -293,7 +293,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<MovieResult>> GetMovieList(MovieListType type, string language, int page = 0)
         {
-            TmdbRestRequest req;
+            RestRequest req;
             switch (type)
             {
                 case MovieListType.NowPlaying:
@@ -320,7 +320,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<SearchContainer<MovieResult>> resp = await req.ExecuteGet<SearchContainer<MovieResult>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<MovieResult>> resp = await req.ExecuteGet<SearchContainer<MovieResult>>().ConfigureAwait(false);
 
             return resp;
         }

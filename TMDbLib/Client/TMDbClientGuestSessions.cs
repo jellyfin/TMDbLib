@@ -18,7 +18,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/tv/episodes");
+            RestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/tv/episodes");
 
             if (page > 0)
                 request.AddParameter("page", page.ToString());
@@ -26,9 +26,9 @@ namespace TMDbLib.Client
             if (!string.IsNullOrEmpty(language))
                 request.AddParameter("language", language);
 
-            AddSessionId(request, SessionType.GuestSession, TmdbParameterType.UrlSegment);
+            AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            TmdbRestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGet<SearchContainer<TvEpisodeWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGet<SearchContainer<TvEpisodeWithRating>>().ConfigureAwait(false);
 
             return resp;
         }
@@ -42,7 +42,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/tv");
+            RestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/tv");
 
             if (page > 0)
                 request.AddParameter("page", page.ToString());
@@ -50,9 +50,9 @@ namespace TMDbLib.Client
             if (!string.IsNullOrEmpty(language))
                 request.AddParameter("language", language);
 
-            AddSessionId(request, SessionType.GuestSession, TmdbParameterType.UrlSegment);
+            AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            TmdbRestResponse<SearchContainer<TvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<TvShowWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<TvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<TvShowWithRating>>().ConfigureAwait(false);
 
             return resp;
         }
@@ -66,7 +66,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/movies");
+            RestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/movies");
 
             if (page > 0)
                 request.AddParameter("page", page.ToString());
@@ -74,9 +74,9 @@ namespace TMDbLib.Client
             if (!string.IsNullOrEmpty(language))
                 request.AddParameter("language", language);
 
-            AddSessionId(request, SessionType.GuestSession, TmdbParameterType.UrlSegment);
+            AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            TmdbRestResponse<SearchContainer<MovieWithRating>> resp = await request.ExecuteGet<SearchContainer<MovieWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<MovieWithRating>> resp = await request.ExecuteGet<SearchContainer<MovieWithRating>>().ConfigureAwait(false);
 
             return resp;
         }

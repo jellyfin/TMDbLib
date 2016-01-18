@@ -206,12 +206,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\General\TMDbConfig.cs" />
     <Compile Include="Objects\Exceptions\RequestLimitExceededException.cs" />
-    <Compile Include="TMDbRestClient.cs" />
     <Compile Include="Utilities\CustomDeserialization.cs" />
     <Compile Include="Utilities\EnumExtensions.cs" />
-    <Compile Include="Rest\TmdbParameterType.cs" />
-    <Compile Include="Rest\TmdbRestRequest.cs" />
-    <Compile Include="Rest\TmdbRestResponse.cs" />
+    <Compile Include="Rest\ParameterType.cs" />
+    <Compile Include="Rest\RestRequest.cs" />
+    <Compile Include="Rest\RestResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

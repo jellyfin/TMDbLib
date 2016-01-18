@@ -28,7 +28,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}");
+            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -50,7 +50,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            TmdbRestResponse<TvEpisode> resp = await req.ExecuteGet<TvEpisode>().ConfigureAwait(false);
+            RestResponse<TvEpisode> resp = await req.ExecuteGet<TvEpisode>().ConfigureAwait(false);
 
             var item = await resp.GetDataObject();
 
@@ -128,14 +128,14 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/account_states");
+            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/account_states");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            TmdbRestResponse<TvEpisodeAccountState> response = await req.ExecuteGet<TvEpisodeAccountState>();
+            RestResponse<TvEpisodeAccountState> response = await req.ExecuteGet<TvEpisodeAccountState>();
 
             TvEpisodeAccountState item = await response.GetDataObject();
 
@@ -152,7 +152,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
+            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -161,7 +161,7 @@ namespace TMDbLib.Client
 
             req.SetBody(new { value = rating });
 
-            TmdbRestResponse<PostReply> response = await req.ExecutePost<PostReply>();
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>();
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
@@ -175,14 +175,14 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
+            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
 
             AddSessionId(req);
 
-            TmdbRestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
+            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
 
             // status code 13 = "The item/record was deleted successfully."
             PostReply item = await response.GetDataObject();
@@ -193,17 +193,17 @@ namespace TMDbLib.Client
 
         public async Task<ChangesContainer> GetTvEpisodeChanges(int episodeId)
         {
-            TmdbRestRequest req = _client2.Create("tv/episode/{id}/changes");
+            RestRequest req = _client2.Create("tv/episode/{id}/changes");
             req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
 
-            TmdbRestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>();
+            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>();
 
             return response;
         }
         
         private async Task<T> GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            TmdbRestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
+            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -218,7 +218,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }

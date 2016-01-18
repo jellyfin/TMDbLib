@@ -22,7 +22,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest request = _client2.Create("account");
+            RestRequest request = _client2.Create("account");
             AddSessionId(request, SessionType.UserSession);
 
             AccountDetails response = await request.ExecuteGet<AccountDetails>().ConfigureAwait(false);
@@ -40,7 +40,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest request = _client2.Create("account/{accountId}/lists");
+            RestRequest request = _client2.Create("account/{accountId}/lists");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             AddSessionId(request, SessionType.UserSession);
 
@@ -71,7 +71,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest request =  _client2.Create("account/{accountId}/favorite") ;
+            RestRequest request =  _client2.Create("account/{accountId}/favorite") ;
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
             AddSessionId(request, SessionType.UserSession);
@@ -97,7 +97,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest request =  _client2.Create("account/{accountId}/watchlist");
+            RestRequest request =  _client2.Create("account/{accountId}/watchlist");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
             AddSessionId(request, SessionType.UserSession);
@@ -212,7 +212,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest request =  _client2.Create("account/{accountId}/" + method.GetDescription());
+            RestRequest request =  _client2.Create("account/{accountId}/" + method.GetDescription());
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             AddSessionId(request, SessionType.UserSession);
 

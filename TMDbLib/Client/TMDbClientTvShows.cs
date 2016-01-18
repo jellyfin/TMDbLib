@@ -28,7 +28,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvShowMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{id}");
+            RestRequest req = _client2.Create("tv/{id}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
 
             if (extraMethods.HasFlag(TvShowMethods.AccountStates))
@@ -48,7 +48,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            TmdbRestResponse<TvShow> response = await req.ExecuteGet<TvShow>().ConfigureAwait(false);
+            RestResponse<TvShow> response = await req.ExecuteGet<TvShow>().ConfigureAwait(false);
 
             TvShow item = await response.GetDataObject();
 
@@ -108,7 +108,7 @@ namespace TMDbLib.Client
 
         private async Task<SearchContainer<SearchTv>> GetTvShowList(int page, string language, string tvShowListType)
         {
-            TmdbRestRequest req = _client2.Create("tv/" + tvShowListType);
+            RestRequest req = _client2.Create("tv/" + tvShowListType);
 
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
@@ -117,7 +117,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
 
-            TmdbRestResponse<SearchContainer<SearchTv>> response = await req.ExecuteGet<SearchContainer<SearchTv>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchTv>> response = await req.ExecuteGet<SearchContainer<SearchTv>>().ConfigureAwait(false);
 
             return response;
         }
@@ -196,9 +196,9 @@ namespace TMDbLib.Client
 
         public async Task<TvShow> GetLatestTvShow()
         {
-            TmdbRestRequest req = _client2.Create("tv/latest");
+            RestRequest req = _client2.Create("tv/latest");
 
-            TmdbRestResponse<TvShow> resp = await req.ExecuteGet<TvShow>();
+            RestResponse<TvShow> resp = await req.ExecuteGet<TvShow>();
 
             return resp;
         }
@@ -225,7 +225,7 @@ namespace TMDbLib.Client
         /// <returns></returns>
         public async Task<SearchContainer<TvShow>> GetTvShowList(TvShowListType list, string language, int page = 0, string timezone = null)
         {
-            TmdbRestRequest req = _client2.Create("tv/{method}");
+            RestRequest req = _client2.Create("tv/{method}");
             req.AddUrlSegment("method", list.GetDescription());
 
             if (page > 0)
@@ -238,14 +238,14 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<SearchContainer<TvShow>> resp = await req.ExecuteGet<SearchContainer<TvShow>>();
+            RestResponse<SearchContainer<TvShow>> resp = await req.ExecuteGet<SearchContainer<TvShow>>();
 
             return resp;
         }
 
         private async Task<T> GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0) where T : new()
         {
-            TmdbRestRequest req = _client2.Create("tv/{id}/{method}");
+            RestRequest req = _client2.Create("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
@@ -260,7 +260,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }
@@ -275,12 +275,12 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{tvShowId}/{method}");
+            RestRequest req = _client2.Create("tv/{tvShowId}/{method}");
             req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", TvShowMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            TmdbRestResponse<AccountState> response = await req.ExecuteGet<AccountState>();
+            RestResponse<AccountState> response = await req.ExecuteGet<AccountState>();
 
             AccountState item = await response.GetDataObject();
 
@@ -305,13 +305,13 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{tvShowId}/rating");
+            RestRequest req = _client2.Create("tv/{tvShowId}/rating");
             req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
             req.SetBody(new { value = rating });
 
-            TmdbRestResponse<PostReply> response = await req.ExecutePost<PostReply>();
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>();
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
@@ -325,11 +325,11 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            TmdbRestRequest req = _client2.Create("tv/{tvShowId}/rating");
+            RestRequest req = _client2.Create("tv/{tvShowId}/rating");
             req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
-            TmdbRestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
+            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
 
             // status code 13 = "The item/record was deleted successfully."
             PostReply item = await response.GetDataObject();

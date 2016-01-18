@@ -8,13 +8,13 @@ namespace TMDbLib.Client
     {
         public async Task<Review> GetReview(string reviewId)
         {
-            TmdbRestRequest request  = _client2.Create("review/{reviewId}");
+            RestRequest request  = _client2.Create("review/{reviewId}");
             request.AddUrlSegment("reviewId", reviewId);
 
             // TODO: Dateformat?
             //request.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<Review> resp = await request.ExecuteGet<Review>().ConfigureAwait(false);
+            RestResponse<Review> resp = await request.ExecuteGet<Review>().ConfigureAwait(false);
 
             return resp;
         }

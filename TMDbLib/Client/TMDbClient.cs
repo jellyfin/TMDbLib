@@ -5,7 +5,9 @@ using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Rest;
+using ParameterType = TMDbLib.Rest.ParameterType;
 using RestClient = TMDbLib.Rest.RestClient;
+using RestRequest = TMDbLib.Rest.RestRequest;
 
 namespace TMDbLib.Client
 {
@@ -214,7 +216,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="req">Request</param>
         /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
-        private void AddSessionId(IRestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
+        private void AddSessionId(IRestRequest req, SessionType targetType = SessionType.Unassigned, RestSharp.ParameterType parameterType = RestSharp.ParameterType.QueryString)
         {
             if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
                 (targetType == SessionType.GuestSession))
@@ -245,7 +247,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="req">Request</param>
         /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
-        private void AddSessionId(TmdbRestRequest req, SessionType targetType = SessionType.Unassigned, TmdbParameterType parameterType = TmdbParameterType.QueryString)
+        private void AddSessionId(RestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
         {
             if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
                 (targetType == SessionType.GuestSession))

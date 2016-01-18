@@ -10,7 +10,7 @@ namespace TMDbLib.Client
     {
         private async Task<T> GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            TmdbRestRequest req = _client2.Create("{type}/changes");
+            RestRequest req = _client2.Create("{type}/changes");
             req.AddUrlSegment("type", type);
 
             if (page >= 1)
@@ -20,7 +20,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }

@@ -15,13 +15,13 @@ namespace TMDbLib.Client
 
         public async Task<List<Genre>> GetMovieGenres(string language)
         {
-            TmdbRestRequest req = _client2.Create("genre/movie/list");
+            RestRequest req = _client2.Create("genre/movie/list");
 
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
+            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
 
             return (await resp.GetDataObject()).Genres;
         }
@@ -33,13 +33,13 @@ namespace TMDbLib.Client
 
         public async Task<List<Genre>> GetTvGenres(string language)
         {
-            TmdbRestRequest req = _client2.Create("genre/tv/list");
+            RestRequest req = _client2.Create("genre/tv/list");
 
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
+            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
 
             return (await resp.GetDataObject()).Genres;
         }
@@ -51,7 +51,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)
         {
-            TmdbRestRequest req = _client2.Create("genre/{genreId}/movies");
+            RestRequest req = _client2.Create("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
 
             language = language ?? DefaultLanguage;
@@ -63,7 +63,7 @@ namespace TMDbLib.Client
             if (includeAllMovies.HasValue)
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
-            TmdbRestResponse<SearchContainerWithId<MovieResult>> resp = await req.ExecuteGet<SearchContainerWithId<MovieResult>>().ConfigureAwait(false);
+            RestResponse<SearchContainerWithId<MovieResult>> resp = await req.ExecuteGet<SearchContainerWithId<MovieResult>>().ConfigureAwait(false);
 
             return resp;
         }

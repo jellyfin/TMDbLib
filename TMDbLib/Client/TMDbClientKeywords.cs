@@ -8,10 +8,10 @@ namespace TMDbLib.Client
     {
         public async Task<Keyword> GetKeyword(int keywordId)
         {
-            TmdbRestRequest req = _client2.Create("keyword/{keywordId}");
+            RestRequest req = _client2.Create("keyword/{keywordId}");
             req.AddUrlSegment("keywordId", keywordId.ToString());
 
-            TmdbRestResponse<Keyword> resp = await req.ExecuteGet<Keyword>().ConfigureAwait(false);
+            RestResponse<Keyword> resp = await req.ExecuteGet<Keyword>().ConfigureAwait(false);
 
             return resp;
         }
@@ -23,7 +23,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<MovieResult>> GetKeywordMovies(int keywordId, string language, int page = 0)
         {
-            TmdbRestRequest req = _client2.Create("keyword/{keywordId}/movies");
+            RestRequest req = _client2.Create("keyword/{keywordId}/movies");
             req.AddUrlSegment("keywordId", keywordId.ToString());
 
             language = language ?? DefaultLanguage;
@@ -33,7 +33,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
 
-            TmdbRestResponse<SearchContainer<MovieResult>> resp = await req.ExecuteGet<SearchContainer<MovieResult>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<MovieResult>> resp = await req.ExecuteGet<SearchContainer<MovieResult>>().ConfigureAwait(false);
 
             return resp;
         }
