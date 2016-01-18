@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 
 namespace TMDbLib.Rest
 {
-    // TODO: Rename to RestResponse
     internal class RestResponse
     {
         protected readonly HttpResponseMessage _response;
@@ -29,8 +28,7 @@ namespace TMDbLib.Rest
             return await _response.Content.ReadAsStringAsync();
         }
     }
-
-    // TODO: Rename to RestResponse
+    
     internal class RestResponse<T> : RestResponse
     {
         public RestResponse(HttpResponseMessage response)
