@@ -37,7 +37,7 @@ namespace TMDbLib.Client
                 AddSessionId(req, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",
@@ -215,7 +215,7 @@ namespace TMDbLib.Client
             //    req.DateFormat = dateFormat;
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);

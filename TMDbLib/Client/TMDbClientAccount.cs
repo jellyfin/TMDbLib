@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Account;
@@ -51,7 +50,7 @@ namespace TMDbLib.Client
             }
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 request.AddQueryString("language", language);
 
             SearchContainer<List> response = await request.ExecuteGet<SearchContainer<List>>().ConfigureAwait(false);

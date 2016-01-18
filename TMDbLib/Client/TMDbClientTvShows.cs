@@ -35,7 +35,7 @@ namespace TMDbLib.Client
                 AddSessionId(req, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",
@@ -111,7 +111,7 @@ namespace TMDbLib.Client
             TmdbRestRequest req = _client2.Create("tv/" + tvShowListType);
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)
@@ -235,7 +235,7 @@ namespace TMDbLib.Client
                 req.AddParameter("timezone", timezone);
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             TmdbRestResponse<SearchContainer<TvShow>> resp = await req.ExecuteGet<SearchContainer<TvShow>>();
@@ -257,7 +257,7 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);

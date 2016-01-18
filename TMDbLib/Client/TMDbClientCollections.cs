@@ -21,7 +21,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("collectionId", collectionId.ToString());
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",

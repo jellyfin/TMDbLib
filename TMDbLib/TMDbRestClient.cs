@@ -71,7 +71,7 @@ namespace TMDbLib
                     if (retryAfterParam != null)
                     {
                         int retryAfter;
-                        if (Int32.TryParse(retryAfterParam.Value.ToString().Trim(), out retryAfter))
+                        if (int.TryParse(retryAfterParam.Value.ToString().Trim(), out retryAfter))
                         {
                             Thread.Sleep(retryAfter * 1000);
                             return Execute<T>(request);
@@ -117,7 +117,7 @@ namespace TMDbLib
                     if (retryAfterParam != null)
                     {
                         int retryAfter;
-                        if (Int32.TryParse(retryAfterParam.Value.ToString().Trim(), out retryAfter))
+                        if (int.TryParse(retryAfterParam.Value.ToString().Trim(), out retryAfter))
                         {
                             Thread.Sleep(retryAfter * 1000);
                             return await ExecuteTaskAsync<T>(request, token).ConfigureAwait(false);

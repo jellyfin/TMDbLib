@@ -71,7 +71,7 @@ namespace TMDbLib.Client
             AddSessionId(req, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
             {
                 req.SetBody(new { name = name, description = description, language = language });
 

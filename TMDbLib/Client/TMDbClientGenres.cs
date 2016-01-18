@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
 using TMDbLib.Rest;

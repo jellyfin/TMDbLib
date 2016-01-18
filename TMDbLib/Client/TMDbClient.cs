@@ -105,10 +105,10 @@ namespace TMDbLib.Client
 
         private void Initialize(string baseUrl, bool useSsl, string apiKey)
         {
-            if (String.IsNullOrWhiteSpace(baseUrl))
+            if (string.IsNullOrWhiteSpace(baseUrl))
                 throw new ArgumentException("baseUrl");
 
-            if (String.IsNullOrWhiteSpace(apiKey))
+            if (string.IsNullOrWhiteSpace(apiKey))
                 throw new ArgumentException("apiKey");
 
             ApiKey = apiKey;

@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-﻿using System;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
@@ -15,7 +14,7 @@ namespace TMDbLib.Client
             req.AddParameter("query", query);
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)

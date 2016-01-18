@@ -110,7 +110,7 @@ namespace TMDbLib.Client
             if (country != null)
                 req.AddParameter("country", country);
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Text.RegularExpressions;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -15,7 +14,7 @@ namespace TMDbLib.Utilities
             Match match = regex.Match(responseContent);
             if (match.Success)
             {
-                accountState.Rating = Double.Parse(match.Groups["value"].Value,
+                accountState.Rating = double.Parse(match.Groups["value"].Value,
                     CultureInfo.InvariantCulture.NumberFormat);
             }
         }
@@ -39,7 +38,7 @@ namespace TMDbLib.Utilities
                 if (value == "false")
                     accountState.Results[i].Rating = null;
                 else
-                    accountState.Results[i].Rating = Double.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
+                    accountState.Results[i].Rating = double.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
             }
         }
 
@@ -50,7 +49,7 @@ namespace TMDbLib.Utilities
             Match match = regex.Match(responseContent);
             if (match.Success)
             {
-                accountState.Rating = Double.Parse(match.Groups["value"].Value,
+                accountState.Rating = double.Parse(match.Groups["value"].Value,
                     CultureInfo.InvariantCulture.NumberFormat);
             }
         }
