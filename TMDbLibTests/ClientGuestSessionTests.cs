@@ -67,36 +67,36 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
 
             // Try changing the rating
-            Assert.IsTrue(_config.Client.TvShowSetRating(IdHelper.BreakingBad, 7.5).Result);
+            Assert.IsTrue(_config.Client.TvShowSetRating(IdHelper.House, 7.5).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             SearchContainer<TvShowWithRating> ratings = _config.Client.GetGuestSessionRatedTv().Result;
 
-            Assert.IsTrue(ratings.Results.Any(s => s.Id == IdHelper.BreakingBad));
-            Assert.AreEqual(7.5, ratings.Results.Single(s => s.Id == IdHelper.BreakingBad).Rating, float.Epsilon);
+            Assert.IsTrue(ratings.Results.Any(s => s.Id == IdHelper.House));
+            Assert.AreEqual(7.5, ratings.Results.Single(s => s.Id == IdHelper.House).Rating, float.Epsilon);
 
             // Try changing it back to the previous rating
-            Assert.IsTrue(_config.Client.TvShowSetRating(IdHelper.BreakingBad, 8).Result);
+            Assert.IsTrue(_config.Client.TvShowSetRating(IdHelper.House, 8).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             ratings = _config.Client.GetGuestSessionRatedTv().Result;
 
-            Assert.IsTrue(ratings.Results.Any(s => s.Id == IdHelper.BreakingBad));
-            Assert.AreEqual(8, ratings.Results.Single(s => s.Id == IdHelper.BreakingBad).Rating, float.Epsilon);
+            Assert.IsTrue(ratings.Results.Any(s => s.Id == IdHelper.House));
+            Assert.AreEqual(8, ratings.Results.Single(s => s.Id == IdHelper.House).Rating, float.Epsilon);
 
             // Try removing the rating
-            Assert.IsTrue(_config.Client.TvShowRemoveRating(IdHelper.BreakingBad).Result);
+            Assert.IsTrue(_config.Client.TvShowRemoveRating(IdHelper.House).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             ratings = _config.Client.GetGuestSessionRatedTv().Result;
 
-            Assert.IsFalse(ratings.Results.Any(s => s.Id == IdHelper.BreakingBad));
+            Assert.IsFalse(ratings.Results.Any(s => s.Id == IdHelper.House));
         }
 
         [TestMethod]

@@ -234,7 +234,7 @@ namespace TMDbLibTests
 
             Assert.AreEqual("R", country.Certification);
             Assert.AreEqual("US", country.Iso_3166_1);
-            Assert.AreEqual(true, country.Primary);
+            Assert.AreEqual(false, country.Primary);
             Assert.AreEqual(new DateTime(2013, 2, 14), country.ReleaseDate);
         }
 
