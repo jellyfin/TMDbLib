@@ -48,6 +48,7 @@ namespace TMDbLibTests
             _methods[MovieMethods.Lists] = movie => movie.Lists;
             _methods[MovieMethods.Changes] = movie => movie.Changes;
             _methods[MovieMethods.AccountStates] = movie => movie.AccountStates;
+            _methods[MovieMethods.ReleaseDates] = movie => movie.ReleaseDates;
         }
 
         [TestMethod]
@@ -136,6 +137,25 @@ namespace TMDbLibTests
 
             Assert.IsTrue(respUs.Titles.All(s => s.Iso_3166_1 == "US"));
             Assert.IsTrue(respFrench.Titles.All(s => s.Iso_3166_1 == "FR"));
+        }
+
+        [TestMethod]
+        public void TestMoviesGetMovieReleaseDates()
+        {
+            ResultContainer<ReleaseDatesContainer> resp = _config.Client.GetMovieReleaseDates(IdHelper.AGoodDayToDieHard).Result;
+            Assert.IsNotNull(resp);
+
+            ReleaseDatesContainer releasesUs = resp.Results.SingleOrDefault(s => s.Iso_3166_1 == "US");
+            Assert.IsNotNull(releasesUs);
+            Assert.AreEqual(1, releasesUs.ReleaseDates.Count);
+
+            ReleaseDateItem singleRelease = releasesUs.ReleaseDates.First();
+
+            Assert.AreEqual("R", singleRelease.Certification);
+            Assert.AreEqual(string.Empty, singleRelease.Iso_639_1);
+            Assert.AreEqual(string.Empty, singleRelease.Note);
+            Assert.AreEqual(DateTime.Parse("2013-02-14T00:00:00.000Z"), singleRelease.ReleaseDate);
+            Assert.AreEqual(ReleaseDateType.Theatrical, singleRelease.Type);
         }
 
         [TestMethod]

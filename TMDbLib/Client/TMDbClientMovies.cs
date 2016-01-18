@@ -131,6 +131,11 @@ namespace TMDbLib.Client
             return await GetMovieAlternativeTitles(movieId, DefaultCountry);
         }
 
+        public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDates(int movieId)
+        {
+            return await GetMovieMethod<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates);
+        }
+
         public async Task<AlternativeTitles> GetMovieAlternativeTitles(int movieId, string country)
         {
             return await GetMovieMethod<AlternativeTitles>(movieId, MovieMethods.AlternativeTitles, country: country);

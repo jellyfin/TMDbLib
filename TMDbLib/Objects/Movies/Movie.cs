@@ -52,5 +52,6 @@ namespace TMDbLib.Objects.Movies
         public SearchContainer<ListResult> Lists { get; set; }
         public List<Change> Changes { get; set; }
         public AccountState AccountStates { get; set; }
+        public ResultContainer<ReleaseDatesContainer> ReleaseDates { get; set; }
     }
 }
