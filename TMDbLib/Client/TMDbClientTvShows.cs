@@ -48,7 +48,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            TmdbRestResponse<TvShow> response = await req.ExecuteGetTaskAsync<TvShow>().ConfigureAwait(false);
+            TmdbRestResponse<TvShow> response = await req.ExecuteGet<TvShow>().ConfigureAwait(false);
 
             TvShow item = await response.GetDataObject();
 
@@ -117,7 +117,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
 
-            TmdbRestResponse<SearchContainer<SearchTv>> response = await req.ExecuteGetTaskAsync<SearchContainer<SearchTv>>().ConfigureAwait(false);
+            TmdbRestResponse<SearchContainer<SearchTv>> response = await req.ExecuteGet<SearchContainer<SearchTv>>().ConfigureAwait(false);
 
             return response;
         }
@@ -198,7 +198,7 @@ namespace TMDbLib.Client
         {
             TmdbRestRequest req = _client2.Create("tv/latest");
 
-            TmdbRestResponse<TvShow> resp = await req.ExecuteGetTaskAsync<TvShow>();
+            TmdbRestResponse<TvShow> resp = await req.ExecuteGet<TvShow>();
 
             return resp;
         }
@@ -238,7 +238,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<SearchContainer<TvShow>> resp = await req.ExecuteGetTaskAsync<SearchContainer<TvShow>>();
+            TmdbRestResponse<SearchContainer<TvShow>> resp = await req.ExecuteGet<SearchContainer<TvShow>>();
 
             return resp;
         }
@@ -260,7 +260,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<T> resp = await req.ExecuteGetTaskAsync<T>().ConfigureAwait(false);
+            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }
@@ -280,7 +280,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvShowMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            TmdbRestResponse<AccountState> response = await req.ExecuteGetTaskAsync<AccountState>();
+            TmdbRestResponse<AccountState> response = await req.ExecuteGet<AccountState>();
 
             AccountState item = await response.GetDataObject();
 

@@ -27,7 +27,7 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<Company> resp = await req.ExecuteGetTaskAsync<Company>().ConfigureAwait(false);
+            TmdbRestResponse<Company> resp = await req.ExecuteGet<Company>().ConfigureAwait(false);
 
             return resp;
         }

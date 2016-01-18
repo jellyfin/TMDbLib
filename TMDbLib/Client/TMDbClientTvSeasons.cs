@@ -49,7 +49,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            TmdbRestResponse<TvSeason> response = await req.ExecuteGetTaskAsync<TvSeason>().ConfigureAwait(false);
+            TmdbRestResponse<TvSeason> response = await req.ExecuteGet<TvSeason>().ConfigureAwait(false);
 
             TvSeason item = await response.GetDataObject();
 
@@ -126,7 +126,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            TmdbRestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGetTaskAsync<ResultContainer<TvEpisodeAccountState>>();
+            TmdbRestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountState>>();
 
             ResultContainer<TvEpisodeAccountState> item = await response.GetDataObject();
 
@@ -144,7 +144,7 @@ namespace TMDbLib.Client
             TmdbRestRequest req = _client2.Create("tv/season/{id}/changes");
             req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));
 
-            TmdbRestResponse<ChangesContainer> response = await req.ExecuteGetTaskAsync<ChangesContainer>();
+            TmdbRestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>();
 
             return response;
         }
@@ -164,7 +164,7 @@ namespace TMDbLib.Client
             if (!String.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<T> response = await req.ExecuteGetTaskAsync<T>().ConfigureAwait(false);
+            TmdbRestResponse<T> response = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return response;
         }

@@ -30,7 +30,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            TmdbRestResponse<Person> resp = await req.ExecuteGetTaskAsync<Person>().ConfigureAwait(false);
+            TmdbRestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
 
             Person item = await resp.GetDataObject();
 
@@ -71,7 +71,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
-            TmdbRestResponse<T> resp = await req.ExecuteGetTaskAsync<T>().ConfigureAwait(false);
+            TmdbRestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
         }

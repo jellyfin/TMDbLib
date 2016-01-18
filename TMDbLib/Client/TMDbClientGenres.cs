@@ -19,10 +19,10 @@ namespace TMDbLib.Client
             TmdbRestRequest req = _client2.Create("genre/movie/list");
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<GenreContainer> resp = await req.ExecuteGetTaskAsync<GenreContainer>();
+            TmdbRestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
 
             return (await resp.GetDataObject()).Genres;
         }
@@ -37,10 +37,10 @@ namespace TMDbLib.Client
             TmdbRestRequest req = _client2.Create("genre/tv/list");
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            TmdbRestResponse<GenreContainer> resp = await req.ExecuteGetTaskAsync<GenreContainer>();
+            TmdbRestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
 
             return (await resp.GetDataObject()).Genres;
         }
@@ -56,7 +56,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("genreId", genreId.ToString());
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             if (page >= 1)
@@ -64,7 +64,7 @@ namespace TMDbLib.Client
             if (includeAllMovies.HasValue)
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
-            TmdbRestResponse<SearchContainerWithId<MovieResult>> resp = await req.ExecuteGetTaskAsync<SearchContainerWithId<MovieResult>>().ConfigureAwait(false);
+            TmdbRestResponse<SearchContainerWithId<MovieResult>> resp = await req.ExecuteGet<SearchContainerWithId<MovieResult>>().ConfigureAwait(false);
 
             return resp;
         }

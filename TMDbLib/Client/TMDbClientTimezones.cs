@@ -22,7 +22,7 @@ namespace TMDbLib.Client
         {
             TmdbRestRequest req = _client2.Create("timezones/list");
 
-            TmdbRestResponse<List<Dictionary<string, List<string>>>> resp = await req.ExecuteGetTaskAsync<List<Dictionary<string, List<string>>>>().ConfigureAwait(false);
+            TmdbRestResponse<List<Dictionary<string, List<string>>>> resp = await req.ExecuteGet<List<Dictionary<string, List<string>>>>().ConfigureAwait(false);
 
             List<Dictionary<string, List<string>>> item = await resp.GetDataObject();
 

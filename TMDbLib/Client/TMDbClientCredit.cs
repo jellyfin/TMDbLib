@@ -20,7 +20,7 @@ namespace TMDbLib.Client
 
             req.AddUrlSegment("id", id);
 
-            TmdbRestResponse<Credit> resp = await req.ExecuteGetTaskAsync<Credit>().ConfigureAwait(false);
+            TmdbRestResponse<Credit> resp = await req.ExecuteGet<Credit>().ConfigureAwait(false);
 
             return resp;
         }

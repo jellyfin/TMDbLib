@@ -21,7 +21,7 @@ namespace TMDbLib.Client
             TmdbRestRequest req = _client2.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
 
-            TmdbRestResponse<List> resp = await req.ExecuteGetTaskAsync<List>().ConfigureAwait(false);
+            TmdbRestResponse<List> resp = await req.ExecuteGet<List>().ConfigureAwait(false);
 
             return resp;
         }
@@ -43,7 +43,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("listId", listId);
             req.AddParameter("movie_id", movieId.ToString());
 
-            TmdbRestResponse<ListStatus> response = await req.ExecuteGetTaskAsync<ListStatus>().ConfigureAwait(false);
+            TmdbRestResponse<ListStatus> response = await req.ExecuteGet<ListStatus>().ConfigureAwait(false);
 
             return (await response.GetDataObject()).ItemPresent;
         }

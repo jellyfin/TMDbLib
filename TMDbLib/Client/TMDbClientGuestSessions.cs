@@ -28,7 +28,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, TmdbParameterType.UrlSegment);
 
-            TmdbRestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGetTaskAsync<SearchContainer<TvEpisodeWithRating>>().ConfigureAwait(false);
+            TmdbRestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGet<SearchContainer<TvEpisodeWithRating>>().ConfigureAwait(false);
 
             return resp;
         }
@@ -52,7 +52,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, TmdbParameterType.UrlSegment);
 
-            TmdbRestResponse<SearchContainer<TvShowWithRating>> resp = await request.ExecuteGetTaskAsync<SearchContainer<TvShowWithRating>>().ConfigureAwait(false);
+            TmdbRestResponse<SearchContainer<TvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<TvShowWithRating>>().ConfigureAwait(false);
 
             return resp;
         }
@@ -76,7 +76,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, TmdbParameterType.UrlSegment);
 
-            TmdbRestResponse<SearchContainer<MovieWithRating>> resp = await request.ExecuteGetTaskAsync<SearchContainer<MovieWithRating>>().ConfigureAwait(false);
+            TmdbRestResponse<SearchContainer<MovieWithRating>> resp = await request.ExecuteGet<SearchContainer<MovieWithRating>>().ConfigureAwait(false);
 
             return resp;
         }

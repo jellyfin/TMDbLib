@@ -53,16 +53,12 @@ namespace TMDbLib.Rest
             switch (type)
             {
                 case TmdbParameterType.QueryString:
-                    AddQueryString(key, value);
-                    break;
+                    return AddQueryString(key, value);
                 case TmdbParameterType.UrlSegment:
-                    AddUrlSegment(key, value);
-                    break;
+                    return AddUrlSegment(key, value);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
-
-            return this;
         }
 
         public TmdbRestRequest AddUrlSegment(string key, string value)
@@ -156,12 +152,6 @@ namespace TMDbLib.Rest
             CheckResponse(resp);
 
             return new TmdbRestResponse<T>(resp);
-        }
-
-        public async Task<TmdbRestResponse<T>> ExecuteGetTaskAsync<T>()
-        {
-            // TODO: Inline this
-            return await ExecuteGet<T>();
         }
 
         public async Task<TmdbRestResponse> ExecutePost()

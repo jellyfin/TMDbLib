@@ -20,7 +20,7 @@ namespace TMDbLib.Client
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         public async Task<FindContainer> Find(FindExternalSource source, string id)
         {
-            TmdbRestRequest req =_client2.Create("find/{id}");
+            TmdbRestRequest req = _client2.Create("find/{id}");
 
             if (source == FindExternalSource.FreeBaseId || source == FindExternalSource.FreeBaseMid)
                 // No url encoding for freebase Id's (they include /-slashes)
@@ -30,7 +30,7 @@ namespace TMDbLib.Client
 
             req.AddParameter("external_source", source.GetDescription());
 
-            TmdbRestResponse<FindContainer> resp = await req.ExecuteGetTaskAsync<FindContainer>().ConfigureAwait(false);
+            TmdbRestResponse<FindContainer> resp = await req.ExecuteGet<FindContainer>().ConfigureAwait(false);
 
             return resp;
         }

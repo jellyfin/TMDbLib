@@ -16,7 +16,7 @@ namespace TMDbLib.Client
         {
             TmdbRestRequest req = _client2.Create("job/list");
 
-            TmdbRestResponse<JobContainer> response = await req.ExecuteGetTaskAsync<JobContainer>().ConfigureAwait(false);
+            TmdbRestResponse<JobContainer> response = await req.ExecuteGet<JobContainer>().ConfigureAwait(false);
 
             return (await response.GetDataObject()).Jobs;
         }
