@@ -10,7 +10,7 @@ namespace TMDbLib.Client
     {
         private async Task<T> GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = _client2.Create("{type}/changes");
+            RestRequest req = _client.Create("{type}/changes");
             req.AddUrlSegment("type", type);
 
             if (page >= 1)

@@ -28,7 +28,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvShowMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("tv/{id}");
+            RestRequest req = _client.Create("tv/{id}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
 
             if (extraMethods.HasFlag(TvShowMethods.AccountStates))
@@ -108,7 +108,7 @@ namespace TMDbLib.Client
 
         private async Task<SearchContainer<SearchTv>> GetTvShowList(int page, string language, string tvShowListType)
         {
-            RestRequest req = _client2.Create("tv/" + tvShowListType);
+            RestRequest req = _client.Create("tv/" + tvShowListType);
 
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
@@ -196,7 +196,7 @@ namespace TMDbLib.Client
 
         public async Task<TvShow> GetLatestTvShow()
         {
-            RestRequest req = _client2.Create("tv/latest");
+            RestRequest req = _client.Create("tv/latest");
 
             RestResponse<TvShow> resp = await req.ExecuteGet<TvShow>();
 
@@ -225,7 +225,7 @@ namespace TMDbLib.Client
         /// <returns></returns>
         public async Task<SearchContainer<TvShow>> GetTvShowList(TvShowListType list, string language, int page = 0, string timezone = null)
         {
-            RestRequest req = _client2.Create("tv/{method}");
+            RestRequest req = _client.Create("tv/{method}");
             req.AddUrlSegment("method", list.GetDescription());
 
             if (page > 0)
@@ -245,7 +245,7 @@ namespace TMDbLib.Client
 
         private async Task<T> GetTvShowMethod<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, int page = 0) where T : new()
         {
-            RestRequest req = _client2.Create("tv/{id}/{method}");
+            RestRequest req = _client.Create("tv/{id}/{method}");
             req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
@@ -275,7 +275,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("tv/{tvShowId}/{method}");
+            RestRequest req = _client.Create("tv/{tvShowId}/{method}");
             req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", TvShowMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
@@ -305,7 +305,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest req = _client2.Create("tv/{tvShowId}/rating");
+            RestRequest req = _client.Create("tv/{tvShowId}/rating");
             req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
@@ -325,7 +325,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest req = _client2.Create("tv/{tvShowId}/rating");
+            RestRequest req = _client.Create("tv/{tvShowId}/rating");
             req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 

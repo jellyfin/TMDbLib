@@ -10,7 +10,7 @@ namespace TMDbLib.Client
     {
         public async Task<Token> AuthenticationRequestAutenticationToken()
         {
-            RestRequest request = _client2.Create("authentication/token/new");
+            RestRequest request = _client.Create("authentication/token/new");
             //{
             //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC";
             //};
@@ -25,7 +25,7 @@ namespace TMDbLib.Client
 
         public async Task AuthenticationValidateUserToken(string initialRequestToken, string username, string password)
         {
-            RestRequest request = _client2.Create("authentication/token/validate_with_login");
+            RestRequest request = _client.Create("authentication/token/validate_with_login");
             request.AddParameter("request_token", initialRequestToken);
             request.AddParameter("username", username);
             request.AddParameter("password", password);
@@ -48,7 +48,7 @@ namespace TMDbLib.Client
 
         public async Task<UserSession> AuthenticationGetUserSession(string initialRequestToken)
         {
-            RestRequest request = _client2.Create("authentication/session/new");
+            RestRequest request = _client.Create("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
 
             RestResponse<UserSession> response = await request.ExecuteGet<UserSession>().ConfigureAwait(false);
@@ -73,7 +73,7 @@ namespace TMDbLib.Client
 
         public async Task<GuestSession> AuthenticationCreateGuestSession()
         {
-            RestRequest request = _client2.Create("authentication/guest_session/new");
+            RestRequest request = _client.Create("authentication/guest_session/new");
             //{
             //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
             //};

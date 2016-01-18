@@ -13,7 +13,7 @@ namespace TMDbLib.Client
         /// <param name="networkId">The id of the network object to retrieve</param>
         public async Task<Network> GetNetwork(int networkId)
         {
-            RestRequest req = _client2.Create("network/{networkId}");
+            RestRequest req = _client.Create("network/{networkId}");
             req.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
             RestResponse<Network> response = await req.ExecuteGet<Network>().ConfigureAwait(false);

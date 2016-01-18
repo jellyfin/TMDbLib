@@ -18,7 +18,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/tv/episodes");
+            RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/tv/episodes");
 
             if (page > 0)
                 request.AddParameter("page", page.ToString());
@@ -42,7 +42,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/tv");
+            RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/tv");
 
             if (page > 0)
                 request.AddParameter("page", page.ToString());
@@ -66,7 +66,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = _client2.Create("guest_session/{guest_session_id}/rated/movies");
+            RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/movies");
 
             if (page > 0)
                 request.AddParameter("page", page.ToString());

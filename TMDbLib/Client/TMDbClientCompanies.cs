@@ -12,7 +12,7 @@ namespace TMDbLib.Client
     {
         public async Task<Company> GetCompany(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
         {
-            RestRequest req = _client2.Create("company/{companyId}");
+            RestRequest req = _client.Create("company/{companyId}");
             req.AddUrlSegment("companyId", companyId.ToString());
 
             string appends = string.Join(",",
@@ -34,7 +34,7 @@ namespace TMDbLib.Client
 
         private async Task<T> GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null) where T : new()
         {
-            RestRequest req = _client2.Create("company/{companyId}/{method}");
+            RestRequest req = _client.Create("company/{companyId}/{method}");
             req.AddUrlSegment("companyId", companyId.ToString());
             req.AddUrlSegment("method", companyMethod.GetDescription());
 

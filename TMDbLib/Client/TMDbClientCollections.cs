@@ -17,7 +17,7 @@ namespace TMDbLib.Client
 
         public async Task<Collection> GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            RestRequest req = _client2.Create("collection/{collectionId}");
+            RestRequest req = _client.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
 
             language = language ?? DefaultLanguage;
@@ -43,7 +43,7 @@ namespace TMDbLib.Client
 
         private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null) where T : new()
         {
-            RestRequest req = _client2.Create("collection/{collectionId}/{method}");
+            RestRequest req = _client.Create("collection/{collectionId}/{method}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
             req.AddUrlSegment("method", collectionMethod.GetDescription());
 

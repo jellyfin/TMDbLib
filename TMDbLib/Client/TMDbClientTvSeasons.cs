@@ -28,7 +28,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
 
@@ -120,7 +120,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/account_states");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/account_states");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
@@ -141,7 +141,7 @@ namespace TMDbLib.Client
 
         public async Task<ChangesContainer> GetTvSeasonChanges(int seasonId)
         {
-            RestRequest req = _client2.Create("tv/season/{id}/changes");
+            RestRequest req = _client.Create("tv/season/{id}/changes");
             req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));
 
             RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>();
@@ -151,7 +151,7 @@ namespace TMDbLib.Client
         
         private async Task<T> GetTvSeasonMethod<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/{method}");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", tvShowMethod.GetDescription());

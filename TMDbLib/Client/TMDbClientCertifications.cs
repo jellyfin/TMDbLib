@@ -8,7 +8,7 @@ namespace TMDbLib.Client
     {
         public async Task<CertificationsContainer> GetMovieCertifications()
         {
-            RestRequest req =  _client2.Create("certification/movie/list");
+            RestRequest req =  _client.Create("certification/movie/list");
 
             RestResponse<CertificationsContainer> resp = await req.ExecuteGet<CertificationsContainer>().ConfigureAwait(false);
 
@@ -16,7 +16,7 @@ namespace TMDbLib.Client
 
         public async Task<CertificationsContainer> GetTvCertifications()
         {
-            RestRequest req =  _client2.Create("certification/tv/list");
+            RestRequest req =  _client.Create("certification/tv/list");
 
             RestResponse<CertificationsContainer> resp = await req.ExecuteGet<CertificationsContainer>().ConfigureAwait(false);
 

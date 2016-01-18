@@ -28,7 +28,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -128,7 +128,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/account_states");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}/account_states");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -152,7 +152,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -175,7 +175,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}/rating");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));
@@ -193,7 +193,7 @@ namespace TMDbLib.Client
 
         public async Task<ChangesContainer> GetTvEpisodeChanges(int episodeId)
         {
-            RestRequest req = _client2.Create("tv/episode/{id}/changes");
+            RestRequest req = _client.Create("tv/episode/{id}/changes");
             req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
 
             RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>();
@@ -203,7 +203,7 @@ namespace TMDbLib.Client
         
         private async Task<T> GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
         {
-            RestRequest req = _client2.Create("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("episode_number", episodeNumber.ToString(CultureInfo.InvariantCulture));

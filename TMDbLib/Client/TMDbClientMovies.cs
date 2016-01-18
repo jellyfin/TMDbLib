@@ -45,7 +45,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("movie/{movieId}");
+            RestRequest req = _client.Create("movie/{movieId}");
             req.AddUrlSegment("movieId", imdbId);
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 AddSessionId(req, SessionType.UserSession);
@@ -103,7 +103,7 @@ namespace TMDbLib.Client
             string country = null,
             string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = _client2.Create("movie/{movieId}/{method}");
+            RestRequest req = _client.Create("movie/{movieId}/{method}");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", movieMethod.GetDescription());
 
@@ -215,7 +215,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest req = _client2.Create("movie/{movieId}/{method}");
+            RestRequest req = _client.Create("movie/{movieId}/{method}");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
@@ -245,7 +245,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest req = _client2.Create("movie/{movieId}/rating");
+            RestRequest req = _client.Create("movie/{movieId}/rating");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
@@ -265,7 +265,7 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest req = _client2.Create("movie/{movieId}/rating");
+            RestRequest req = _client.Create("movie/{movieId}/rating");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
@@ -280,7 +280,7 @@ namespace TMDbLib.Client
         
         public async Task<Movie> GetMovieLatest()
         {
-            RestRequest req = _client2.Create("movie/latest");
+            RestRequest req = _client.Create("movie/latest");
             RestResponse<Movie> resp = await req.ExecuteGet<Movie>().ConfigureAwait(false);
 
             return resp;
@@ -297,16 +297,16 @@ namespace TMDbLib.Client
             switch (type)
             {
                 case MovieListType.NowPlaying:
-                    req = _client2.Create("movie/now_playing");
+                    req = _client.Create("movie/now_playing");
                     break;
                 case MovieListType.Popular:
-                    req = _client2.Create("movie/popular");
+                    req = _client.Create("movie/popular");
                     break;
                 case MovieListType.TopRated:
-                    req = _client2.Create("movie/top_rated");
+                    req = _client.Create("movie/top_rated");
                     break;
                 case MovieListType.Upcoming:
-                    req = _client2.Create("movie/upcoming");
+                    req = _client.Create("movie/upcoming");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("type");

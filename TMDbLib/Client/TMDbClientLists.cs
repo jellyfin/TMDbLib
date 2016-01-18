@@ -18,7 +18,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            RestRequest req = _client2.Create("list/{listId}");
+            RestRequest req = _client.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
 
             RestResponse<List> resp = await req.ExecuteGet<List>().ConfigureAwait(false);
@@ -39,7 +39,7 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            RestRequest req = _client2.Create("list/{listId}/item_status");
+            RestRequest req = _client.Create("list/{listId}/item_status");
             req.AddUrlSegment("listId", listId);
             req.AddParameter("movie_id", movieId.ToString());
 
@@ -67,7 +67,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(description))
                 description = "";
 
-            RestRequest req = _client2.Create("list");
+            RestRequest req = _client.Create("list");
             AddSessionId(req, SessionType.UserSession);
 
             language = language ?? DefaultLanguage;
@@ -99,7 +99,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            RestRequest req = _client2.Create("list/{listId}");
+            RestRequest req = _client.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
             AddSessionId(req, SessionType.UserSession);
 
@@ -152,7 +152,7 @@ namespace TMDbLib.Client
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
 
-            RestRequest request = _client2.Create("list/{listId}/clear");
+            RestRequest request = _client.Create("list/{listId}/clear");
             request.AddUrlSegment("listId", listId);
             request.AddParameter("confirm", "true");
             AddSessionId(request, SessionType.UserSession);
@@ -177,7 +177,7 @@ namespace TMDbLib.Client
             if (movieId <= 0)
                 throw new ArgumentOutOfRangeException("movieId");
 
-            RestRequest req = _client2.Create("list/{listId}/{method}");
+            RestRequest req = _client.Create("list/{listId}/{method}");
             req.AddUrlSegment("listId", listId);
             req.AddUrlSegment("method", method);
             AddSessionId(req, SessionType.UserSession);

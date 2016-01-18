@@ -13,7 +13,7 @@ namespace TMDbLib.Client
 
         public async Task<Credit> GetCredits(string id, string language)
         {
-            RestRequest req = _client2.Create("credit/{id}");
+            RestRequest req = _client.Create("credit/{id}");
 
             if (!string.IsNullOrEmpty(language))
                 req.AddParameter("language", language);

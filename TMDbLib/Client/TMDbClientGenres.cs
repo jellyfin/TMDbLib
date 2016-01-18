@@ -15,7 +15,7 @@ namespace TMDbLib.Client
 
         public async Task<List<Genre>> GetMovieGenres(string language)
         {
-            RestRequest req = _client2.Create("genre/movie/list");
+            RestRequest req = _client.Create("genre/movie/list");
 
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
@@ -33,7 +33,7 @@ namespace TMDbLib.Client
 
         public async Task<List<Genre>> GetTvGenres(string language)
         {
-            RestRequest req = _client2.Create("genre/tv/list");
+            RestRequest req = _client.Create("genre/tv/list");
 
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
@@ -51,7 +51,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)
         {
-            RestRequest req = _client2.Create("genre/{genreId}/movies");
+            RestRequest req = _client.Create("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
 
             language = language ?? DefaultLanguage;

@@ -60,8 +60,8 @@ namespace TMDbLib.Client
         /// <remarks>Default is 0</remarks>
         public int MaxRetryCount
         {
-            get { return _client2.MaxRetryCount; }
-            set { _client2.MaxRetryCount = value; }
+            get { return _client.MaxRetryCount; }
+            set { _client.MaxRetryCount = value; }
         }
 
         /// <summary>
@@ -93,8 +93,7 @@ namespace TMDbLib.Client
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
         private TMDbConfig _config;
-
-        private RestClient _client2;
+        private RestClient _client;
 
         public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl)
         {
@@ -121,13 +120,13 @@ namespace TMDbLib.Client
                 baseUrl = baseUrl.Substring("https://".Length);
 
             string httpScheme = useSsl ? "https" : "http";
-            _client2 = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)));
-            _client2.AddDefaultQueryString("api_key", apiKey);
+            _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)));
+            _client.AddDefaultQueryString("api_key", apiKey);
         }
 
         public void GetConfig()
         {
-            TMDbConfig config = _client2.Create("configuration").ExecuteGet<TMDbConfig>().Result;
+            TMDbConfig config = _client.Create("configuration").ExecuteGet<TMDbConfig>().Result;
             
             if (config == null)
                 throw new Exception("Unable to retrieve configuration");

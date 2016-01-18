@@ -26,7 +26,7 @@ namespace TMDbLib.Client
 
         internal async Task<SearchContainer<T>> DiscoverPerform<T>(string endpoint, string language, int page, NameValueCollection parameters)
         {
-            RestRequest request = _client2.Create(endpoint);
+            RestRequest request = _client.Create(endpoint);
 
             if (page != 1 && page > 1)
                 request.AddParameter("page", page.ToString());
