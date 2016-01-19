@@ -8,7 +8,7 @@ namespace TMDbLib.Client
     {
         public async Task<Credit> GetCredits(string id)
         {
-            return await GetCredits(id, DefaultLanguage);
+            return await GetCredits(id, DefaultLanguage).ConfigureAwait(false);
         }
 
         public async Task<Credit> GetCredits(string id, string language)

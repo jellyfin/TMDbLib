@@ -10,7 +10,7 @@ namespace TMDbLib.Client
     {
         public async Task<List<Genre>> GetMovieGenres()
         {
-            return await GetMovieGenres(DefaultLanguage);
+            return await GetMovieGenres(DefaultLanguage).ConfigureAwait(false);
         }
 
         public async Task<List<Genre>> GetMovieGenres(string language)
@@ -21,14 +21,14 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
+            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>().ConfigureAwait(false);
 
-            return (await resp.GetDataObject()).Genres;
+            return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }
 
         public async Task<List<Genre>> GetTvGenres()
         {
-            return await GetTvGenres(DefaultLanguage);
+            return await GetTvGenres(DefaultLanguage).ConfigureAwait(false);
         }
 
         public async Task<List<Genre>> GetTvGenres(string language)
@@ -39,14 +39,14 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>();
+            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>().ConfigureAwait(false);
 
-            return (await resp.GetDataObject()).Genres;
+            return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }
 
         public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, int page = 0, bool? includeAllMovies = null)
         {
-            return await GetGenreMovies(genreId, DefaultLanguage, page, includeAllMovies);
+            return await GetGenreMovies(genreId, DefaultLanguage, page, includeAllMovies).ConfigureAwait(false);
         }
 
         public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)

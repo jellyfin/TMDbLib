@@ -66,9 +66,9 @@ namespace TMDbLib.Client
         /// <param name="password">The passoword for the provided login</param>
         public async Task<UserSession> AuthenticationGetUserSession(string username, string password)
         {
-            Token token = await AuthenticationRequestAutenticationToken();
-            await AuthenticationValidateUserToken(token.RequestToken, username, password);
-            return await AuthenticationGetUserSession(token.RequestToken);
+            Token token = await AuthenticationRequestAutenticationToken().ConfigureAwait(false);
+            await AuthenticationValidateUserToken(token.RequestToken, username, password).ConfigureAwait(false);
+            return await AuthenticationGetUserSession(token.RequestToken).ConfigureAwait(false);
         }
 
         public async Task<GuestSession> AuthenticationCreateGuestSession()

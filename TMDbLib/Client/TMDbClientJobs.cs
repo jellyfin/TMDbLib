@@ -18,7 +18,7 @@ namespace TMDbLib.Client
 
             RestResponse<JobContainer> response = await req.ExecuteGet<JobContainer>().ConfigureAwait(false);
 
-            return (await response.GetDataObject()).Jobs;
+            return (await response.GetDataObject().ConfigureAwait(false)).Jobs;
         }
     }
 }

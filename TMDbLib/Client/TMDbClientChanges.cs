@@ -34,7 +34,7 @@ namespace TMDbLib.Client
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show movies that have been edited since.</remarks>
         public async Task<SearchContainer<ChangesListItem>> GetChangesMovies(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return await GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace TMDbLib.Client
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show people that have been edited since.</remarks>
         public async Task<SearchContainer<ChangesListItem>> GetChangesPeople(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return await GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -61,7 +61,7 @@ namespace TMDbLib.Client
 		/// </remarks>
 		public async Task<SearchContainer<ChangesListItem>> GetChangesTv(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
 		{
-            return await GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate).ConfigureAwait(false);
 		}
     }
 }

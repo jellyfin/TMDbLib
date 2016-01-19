@@ -11,7 +11,7 @@ namespace TMDbLib.Client
     {
         public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodes(int page = 0)
         {
-            return await GetGuestSessionRatedTvEpisodes(DefaultLanguage, page);
+            return await GetGuestSessionRatedTvEpisodes(DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodes(string language, int page = 0)
@@ -35,7 +35,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTv(int page = 0)
         {
-            return await GetGuestSessionRatedTv(DefaultLanguage, page);
+            return await GetGuestSessionRatedTv(DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTv(string language, int page = 0)
@@ -59,7 +59,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMovies(int page = 0)
         {
-            return await GetGuestSessionRatedMovies(DefaultLanguage, page);
+            return await GetGuestSessionRatedMovies(DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMovies(string language, int page = 0)

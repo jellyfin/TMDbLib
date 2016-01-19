@@ -37,7 +37,7 @@ namespace TMDbLib.Client
             foreach (string key in parameters.Keys)
                 request.AddParameter(key, parameters[key]);
 
-            RestResponse<SearchContainer<T>> response = await request.ExecuteGet<SearchContainer<T>>();
+            RestResponse<SearchContainer<T>> response = await request.ExecuteGet<SearchContainer<T>>().ConfigureAwait(false);
             return response;
         }
     }

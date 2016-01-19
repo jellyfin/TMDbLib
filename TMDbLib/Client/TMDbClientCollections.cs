@@ -12,7 +12,7 @@ namespace TMDbLib.Client
     {
         public async Task<Collection> GetCollection(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            return await GetCollection(collectionId, DefaultLanguage, extraMethods);
+            return await GetCollection(collectionId, DefaultLanguage, extraMethods).ConfigureAwait(false);
         }
 
         public async Task<Collection> GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
@@ -57,7 +57,7 @@ namespace TMDbLib.Client
 
         public async Task<ImagesWithId> GetCollectionImages(int collectionId, string language = null)
         {
-            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language);
+            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language).ConfigureAwait(false);
         }
     }
 }

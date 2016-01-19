@@ -18,7 +18,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<MovieResult>> GetKeywordMovies(int keywordId, int page = 0)
         {
-            return await GetKeywordMovies(keywordId, DefaultLanguage, page);
+            return await GetKeywordMovies(keywordId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<MovieResult>> GetKeywordMovies(int keywordId, string language, int page = 0)

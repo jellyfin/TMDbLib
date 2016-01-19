@@ -25,7 +25,7 @@ namespace TMDbLib.Rest
 
         public async Task<string> GetContent()
         {
-            return await _response.Content.ReadAsStringAsync();
+            return await _response.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
     }
     
@@ -38,7 +38,7 @@ namespace TMDbLib.Rest
 
         public async Task<T> GetDataObject()
         {
-            string content = await _response.Content.ReadAsStringAsync();
+            string content = await _response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return JsonConvert.DeserializeObject<T>(content);
         }

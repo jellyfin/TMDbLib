@@ -51,12 +51,12 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainerWithId<MovieResult>> GetCompanyMovies(int companyId, int page = 0)
         {
-            return await GetCompanyMovies(companyId, DefaultLanguage, page);
+            return await GetCompanyMovies(companyId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainerWithId<MovieResult>> GetCompanyMovies(int companyId, string language, int page = 0)
         {
-            return await GetCompanyMethod<SearchContainerWithId<MovieResult>>(companyId, CompanyMethods.Movies, page, language);
+            return await GetCompanyMethod<SearchContainerWithId<MovieResult>>(companyId, CompanyMethods.Movies, page, language).ConfigureAwait(false);
         }
     }
 }

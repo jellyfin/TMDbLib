@@ -51,7 +51,7 @@ namespace TMDbLib.Client
 
             RestResponse<TvSeason> response = await req.ExecuteGet<TvSeason>().ConfigureAwait(false);
 
-            TvSeason item = await response.GetDataObject();
+            TvSeason item = await response.GetDataObject().ConfigureAwait(false);
 
             // Nothing to patch up
             if (item == null)
@@ -70,7 +70,7 @@ namespace TMDbLib.Client
             {
                 item.AccountStates.Id = item.Id ?? 0;
                 // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent());
+                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent().ConfigureAwait(false));
             }
 
             return item;
@@ -84,7 +84,7 @@ namespace TMDbLib.Client
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         public async Task<Credits> GetTvSeasonCredits(int tvShowId, int seasonNumber, string language = null)
         {
-            return await GetTvSeasonMethod<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, dateFormat: "yyyy-MM-dd", language: language);
+            return await GetTvSeasonMethod<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, dateFormat: "yyyy-MM-dd", language: language).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -98,12 +98,12 @@ namespace TMDbLib.Client
         /// </param>
         public async Task<PosterImages> GetTvSeasonImages(int tvShowId, int seasonNumber, string language = null)
         {
-            return await GetTvSeasonMethod<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language);
+            return await GetTvSeasonMethod<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language).ConfigureAwait(false);
         }
 
         public async Task<ResultContainer<Video>> GetTvSeasonVideos(int tvShowId, int seasonNumber, string language = null)
         {
-            return await GetTvSeasonMethod<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language);
+            return await GetTvSeasonMethod<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace TMDbLib.Client
         /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
         public async Task<ExternalIds> GetTvSeasonExternalIds(int tvShowId, int seasonNumber)
         {
-            return await GetTvSeasonMethod<ExternalIds>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds);
+            return await GetTvSeasonMethod<ExternalIds>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds).ConfigureAwait(false);
         }
 
         public async Task<ResultContainer<TvEpisodeAccountState>> GetTvSeasonAccountState(int tvShowId, int seasonNumber)
@@ -126,14 +126,14 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountState>>();
+            RestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountState>>().ConfigureAwait(false);
 
-            ResultContainer<TvEpisodeAccountState> item = await response.GetDataObject();
+            ResultContainer<TvEpisodeAccountState> item = await response.GetDataObject().ConfigureAwait(false);
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (item != null)
             {
-                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent());
+                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent().ConfigureAwait(false));
             }
 
             return item;
@@ -144,7 +144,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("tv/season/{id}/changes");
             req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));
 
-            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>();
+            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>().ConfigureAwait(false);
 
             return response;
         }

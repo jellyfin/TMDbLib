@@ -24,7 +24,7 @@ namespace TMDbLib.Client
 
             RestResponse<List<Dictionary<string, List<string>>>> resp = await req.ExecuteGet<List<Dictionary<string, List<string>>>>().ConfigureAwait(false);
 
-            List<Dictionary<string, List<string>>> item = await resp.GetDataObject();
+            List<Dictionary<string, List<string>>> item = await resp.GetDataObject().ConfigureAwait(false);
 
             if (item == null)
                 return null;

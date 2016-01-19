@@ -45,7 +45,7 @@ namespace TMDbLib.Client
 
             RestResponse<ListStatus> response = await req.ExecuteGet<ListStatus>().ConfigureAwait(false);
 
-            return (await response.GetDataObject()).ItemPresent;
+            return (await response.GetDataObject().ConfigureAwait(false)).ItemPresent;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace TMDbLib.Client
 
             RestResponse<ListCreateReply> response = await req.ExecutePost<ListCreateReply>().ConfigureAwait(false);
 
-            return (await response.GetDataObject()).ListId;
+            return (await response.GetDataObject().ConfigureAwait(false)).ListId;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace TMDbLib.Client
             RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>().ConfigureAwait(false);
 
             // Status code 13 = success
-            PostReply item = await response.GetDataObject();
+            PostReply item = await response.GetDataObject().ConfigureAwait(false);
 
             // TODO: Previous code checked for item=null
             return item.StatusCode == 13;
@@ -122,7 +122,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public async Task<bool> ListAddMovie(string listId, int movieId)
         {
-            return await ManipulateMediaList(listId, movieId, "add_item");
+            return await ManipulateMediaList(listId, movieId, "add_item").ConfigureAwait(false);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public async Task<bool> ListRemoveMovie(string listId, int movieId)
         {
-            return await ManipulateMediaList(listId, movieId, "remove_item");
+            return await ManipulateMediaList(listId, movieId, "remove_item").ConfigureAwait(false);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace TMDbLib.Client
             RestResponse<PostReply> response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // Status code 12 = "The item/record was updated successfully"
-            PostReply item = await response.GetDataObject();
+            PostReply item = await response.GetDataObject().ConfigureAwait(false);
 
             // TODO: Previous code checked for item=null
             return item.StatusCode == 12;
@@ -188,7 +188,7 @@ namespace TMDbLib.Client
 
             // Status code 12 = "The item/record was updated successfully"
             // Status code 13 = "The item/record was deleted successfully"
-            PostReply item = await response.GetDataObject();
+            PostReply item = await response.GetDataObject().ConfigureAwait(false);
 
             // TODO: Previous code checked for item=null
             return item.StatusCode == 12 || item.StatusCode == 13;

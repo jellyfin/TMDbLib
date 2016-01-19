@@ -52,7 +52,7 @@ namespace TMDbLib.Client
 
             RestResponse<TvEpisode> resp = await req.ExecuteGet<TvEpisode>().ConfigureAwait(false);
 
-            var item = await resp.GetDataObject();
+            TvEpisode item = await resp.GetDataObject().ConfigureAwait(false);
 
             // No data to patch up so return
             if (item == null)
@@ -75,7 +75,7 @@ namespace TMDbLib.Client
             {
                 item.AccountStates.Id = item.Id ?? 0;
                 // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await resp.GetContent());
+                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await resp.GetContent().ConfigureAwait(false));
             }
 
             return item;
@@ -90,7 +90,7 @@ namespace TMDbLib.Client
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         public async Task<Credits> GetTvEpisodeCredits(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
         {
-            return await GetTvEpisodeMethod<Credits>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language);
+            return await GetTvEpisodeMethod<Credits>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace TMDbLib.Client
         /// </param>
         public async Task<StillImages> GetTvEpisodeImages(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
         {
-            return await GetTvEpisodeMethod<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language);
+            return await GetTvEpisodeMethod<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -116,12 +116,12 @@ namespace TMDbLib.Client
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve information for.</param>
         public async Task<ExternalIds> GetTvEpisodeExternalIds(int tvShowId, int seasonNumber, int episodeNumber)
         {
-            return await GetTvEpisodeMethod<ExternalIds>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds);
+            return await GetTvEpisodeMethod<ExternalIds>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds).ConfigureAwait(false);
         }
 
         public async Task<ResultContainer<Video>> GetTvEpisodeVideos(int tvShowId, int seasonNumber, int episodeNumber)
         {
-            return await GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos);
+            return await GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos).ConfigureAwait(false);
         }
 
         public async Task<TvEpisodeAccountState> GetTvEpisodeAccountState(int tvShowId, int seasonNumber, int episodeNumber)
@@ -135,14 +135,14 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<TvEpisodeAccountState> response = await req.ExecuteGet<TvEpisodeAccountState>();
+            RestResponse<TvEpisodeAccountState> response = await req.ExecuteGet<TvEpisodeAccountState>().ConfigureAwait(false);
 
-            TvEpisodeAccountState item = await response.GetDataObject();
+            TvEpisodeAccountState item = await response.GetDataObject().ConfigureAwait(false);
 
             // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
             if (item != null)
             {
-                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent());
+                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent().ConfigureAwait(false));
             }
 
             return item;
@@ -161,11 +161,11 @@ namespace TMDbLib.Client
 
             req.SetBody(new { value = rating });
 
-            RestResponse<PostReply> response = await req.ExecutePost<PostReply>();
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
-            PostReply item = await response.GetDataObject();
+            PostReply item = await response.GetDataObject().ConfigureAwait(false);
 
             // TODO: Original code had a check for item=null
             return item.StatusCode == 1 || item.StatusCode == 12;
@@ -182,10 +182,10 @@ namespace TMDbLib.Client
 
             AddSessionId(req);
 
-            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>();
+            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>().ConfigureAwait(false);
 
             // status code 13 = "The item/record was deleted successfully."
-            PostReply item = await response.GetDataObject();
+            PostReply item = await response.GetDataObject().ConfigureAwait(false);
 
             // TODO: Original code had a check for item=null
             return item.StatusCode == 13;
@@ -196,7 +196,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("tv/episode/{id}/changes");
             req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
 
-            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>();
+            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>().ConfigureAwait(false);
 
             return response;
         }

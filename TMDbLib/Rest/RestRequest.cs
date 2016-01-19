@@ -137,7 +137,7 @@ namespace TMDbLib.Rest
 
         public async Task<RestResponse> ExecuteGet()
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Get);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
 
             CheckResponse(resp);
 
@@ -146,7 +146,7 @@ namespace TMDbLib.Rest
 
         public async Task<RestResponse<T>> ExecuteGet<T>()
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Get);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
 
             CheckResponse(resp);
 
@@ -155,7 +155,7 @@ namespace TMDbLib.Rest
 
         public async Task<RestResponse> ExecutePost()
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Post);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
 
             CheckResponse(resp);
 
@@ -164,7 +164,7 @@ namespace TMDbLib.Rest
 
         public async Task<RestResponse<T>> ExecutePost<T>()
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Post);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
 
             CheckResponse(resp);
 
@@ -173,7 +173,7 @@ namespace TMDbLib.Rest
 
         public async Task<RestResponse> ExecuteDelete()
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
 
             CheckResponse(resp);
 
@@ -182,7 +182,7 @@ namespace TMDbLib.Rest
 
         public async Task<RestResponse<T>> ExecuteDelete<T>()
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
 
             CheckResponse(resp);
 
@@ -203,7 +203,7 @@ namespace TMDbLib.Rest
             do
             {
                 HttpRequestMessage req = PrepRequest(method);
-                HttpResponseMessage resp = await new HttpClient().SendAsync(req);
+                HttpResponseMessage resp = await new HttpClient().SendAsync(req).ConfigureAwait(false);
 
                 if (resp.StatusCode == (HttpStatusCode)429)
                 {
@@ -211,23 +211,19 @@ namespace TMDbLib.Rest
                     TimeSpan? retryAfter = resp.Headers.RetryAfter?.Delta.Value;
 
                     if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
-                        await Task.Delay(retryAfter.Value);
+                        await Task.Delay(retryAfter.Value).ConfigureAwait(false);
                     else
                         // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
-                        await Task.Delay(TimeSpan.FromSeconds(1));
+                        await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
                     
                     continue;
                 }
 
                 if (resp.IsSuccessStatusCode)
-                {
                     return resp;
-                }
 
                 if (!resp.IsSuccessStatusCode)
                     return resp;
-                //// We had a web exception - throw one
-                //throw new WebserverException(resp.StatusCode);
 
             } while (timesToTry-- > 0);
 

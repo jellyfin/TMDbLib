@@ -121,7 +121,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
+            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv);
+            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
+            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist);
+            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
+            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv);
+            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes);
+            return await GetAccountList<SearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes).ConfigureAwait(false);
         }
 
         private async Task<SearchContainer<T>> GetAccountList<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
