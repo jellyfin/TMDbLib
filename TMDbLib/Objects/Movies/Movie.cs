@@ -126,5 +126,8 @@ namespace TMDbLib.Objects.Movies
 
         [JsonProperty("account_states")]
         public AccountState AccountStates { get; set; }
+
+        [JsonProperty("release_dates")]
+        public ResultContainer<ReleaseDatesContainer> ReleaseDates { get; set; }
     }
 }

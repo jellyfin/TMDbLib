@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
@@ -89,6 +90,9 @@ namespace TMDbLib.Client
             if (item.Translations != null)
                 item.Translations.Id = item.Id;
 
+            // Overview is the only field that is HTML encoded from the source.
+            item.Overview = WebUtility.HtmlDecode(item.Overview);
+
             if (item.AccountStates != null)
             {
                 item.AccountStates.Id = item.Id;
@@ -121,13 +125,18 @@ namespace TMDbLib.Client
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
             RestResponse<T> response = await req.ExecuteGet<T>().ConfigureAwait(false);
-            
+
             return response;
         }
 
         public async Task<AlternativeTitles> GetMovieAlternativeTitles(int movieId)
         {
             return await GetMovieAlternativeTitles(movieId, DefaultCountry);
+        }
+
+        public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDates(int movieId)
+        {
+            return await GetMovieMethod<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates);
         }
 
         public async Task<AlternativeTitles> GetMovieAlternativeTitles(int movieId, string country)
@@ -277,13 +286,19 @@ namespace TMDbLib.Client
             // TODO: Previous code checked for item=null
             return item != null && item.StatusCode == 13;
         }
-        
+
         public async Task<Movie> GetMovieLatest()
         {
             RestRequest req = _client.Create("movie/latest");
             RestResponse<Movie> resp = await req.ExecuteGet<Movie>().ConfigureAwait(false);
 
-            return resp;
+            Movie item = await resp.GetDataObject();
+
+            // Overview is the only field that is HTML encoded from the source.
+            if (item != null)
+                item.Overview = WebUtility.HtmlDecode(item.Overview);
+
+            return item;
         }
 
         public async Task<SearchContainer<MovieResult>> GetMovieList(MovieListType type, int page = 0)
