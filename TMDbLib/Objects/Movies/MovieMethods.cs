@@ -34,6 +34,8 @@ namespace TMDbLib.Objects.Movies
         /// Requires a valid user session to be set on the client object
         /// </summary>
         [Description("account_states")]
-        AccountStates = 2048
+        AccountStates = 2048,
+        [Description("release_dates")]
+        ReleaseDates = 4096
     }
 }
