@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Timezones;
+using TMDbLib.Rest;
 
 namespace TMDbLib.Client
 {
@@ -20,17 +20,19 @@ namespace TMDbLib.Client
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         public async Task<Timezones> GetTimezones()
         {
-            RestRequest req = new RestRequest("timezones/list");
+            RestRequest req = _client.Create("timezones/list");
 
-            IRestResponse<List<Dictionary<string, List<string>>>> resp = await _client.ExecuteGetTaskAsync<List<Dictionary<string, List<string>>>>(req).ConfigureAwait(false);
+            RestResponse<List<Dictionary<string, List<string>>>> resp = await req.ExecuteGet<List<Dictionary<string, List<string>>>>().ConfigureAwait(false);
 
-            if (resp.Data == null)
+            List<Dictionary<string, List<string>>> item = await resp.GetDataObject().ConfigureAwait(false);
+
+            if (item == null)
                 return null;
 
             Timezones result = new Timezones();
             result.List = new Dictionary<string, List<string>>();
 
-            foreach (Dictionary<string, List<string>> dictionary in resp.Data)
+            foreach (Dictionary<string, List<string>> dictionary in item)
             {
                 KeyValuePair<string, List<string>> item1 = dictionary.First();
 

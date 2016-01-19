@@ -21,7 +21,7 @@ namespace TMDbLibTests
         {
             _config = new TestConfig();
 
-            if (String.IsNullOrWhiteSpace(_config.Username) || String.IsNullOrWhiteSpace(_config.Password))
+            if (string.IsNullOrWhiteSpace(_config.Username) || string.IsNullOrWhiteSpace(_config.Password))
                 throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
         }
 

@@ -1,13 +1,12 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Search;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
@@ -23,12 +22,12 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account");
+            RestRequest request = _client.Create("account");
             AddSessionId(request, SessionType.UserSession);
 
-            IRestResponse<AccountDetails> response = await _client.ExecuteGetTaskAsync<AccountDetails>(request).ConfigureAwait(false);
+            AccountDetails response = await request.ExecuteGet<AccountDetails>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
 
         /// <summary>
@@ -41,20 +40,22 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/lists");
+            RestRequest request = _client.Create("account/{accountId}/lists");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             AddSessionId(request, SessionType.UserSession);
 
             if (page > 1)
-                request.AddParameter("page", page);
+            {
+                request.AddQueryString("page", page.ToString());
+            }
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
-                request.AddParameter("language", language);
+            if (!string.IsNullOrWhiteSpace(language))
+                request.AddQueryString("language", language);
 
-            IRestResponse<SearchContainer<List>> response = await _client.ExecuteGetTaskAsync<SearchContainer<List>>(request).ConfigureAwait(false);
+            SearchContainer<List> response = await request.ExecuteGet<SearchContainer<List>>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
 
         /// <summary>
@@ -70,17 +71,17 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/favorite") { RequestFormat = DataFormat.Json };
+            RestRequest request =  _client.Create("account/{accountId}/favorite") ;
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
+            request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
             AddSessionId(request, SessionType.UserSession);
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
+            PostReply response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // status code 1 = "Success" - Returned when adding a movie as favorite for the first time
             // status code 13 = "The item/record was deleted successfully" - When removing an item as favorite, no matter if it exists or not
             // status code 12 = "The item/record was updated successfully" - Used when an item is already marked as favorite and trying to do so doing again
-            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12 || response.Data.StatusCode == 13);
+            return response.StatusCode == 1 || response.StatusCode == 12 || response.StatusCode == 13;
         }
 
         /// <summary>
@@ -96,17 +97,17 @@ namespace TMDbLib.Client
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/watchlist") { RequestFormat = DataFormat.Json };
+            RestRequest request =  _client.Create("account/{accountId}/watchlist");
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            request.AddBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
+            request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
             AddSessionId(request, SessionType.UserSession);
 
-            IRestResponse<PostReply> response = await _client.ExecutePostTaskAsync<PostReply>(request).ConfigureAwait(false);
+            PostReply response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 13 = "The item/record was deleted successfully" - When removing an item from the watchlist, no matter if it exists or not
             // status code 12 = "The item/record was updated successfully" - Used when an item is already on the watchlist and trying to add it again
-            return response.Data != null && (response.Data.StatusCode == 1 || response.Data.StatusCode == 12 || response.Data.StatusCode == 13);
+            return response.StatusCode == 1 || response.StatusCode == 12 || response.StatusCode == 13;
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies);
+            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv);
+            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist);
+            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -162,7 +163,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist);
+            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies);
+            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -190,7 +191,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv);
+            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -204,19 +205,19 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes);
+            return await GetAccountList<SearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes).ConfigureAwait(false);
         }
 
         private async Task<SearchContainer<T>> GetAccountList<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method)
         {
             RequireSessionId(SessionType.UserSession);
 
-            RestRequest request = new RestRequest("account/{accountId}/" + method.GetDescription());
+            RestRequest request =  _client.Create("account/{accountId}/" + method.GetDescription());
             request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
             AddSessionId(request, SessionType.UserSession);
 
             if (page > 1)
-                request.AddParameter("page", page);
+                request.AddParameter("page", page.ToString());
 
             if (sortBy != AccountSortBy.Undefined)
                 request.AddParameter("sort_by", sortBy.GetDescription());
@@ -225,12 +226,12 @@ namespace TMDbLib.Client
                 request.AddParameter("sort_order", sortOrder.GetDescription());
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            IRestResponse<SearchContainer<T>> response = await _client.ExecuteGetTaskAsync<SearchContainer<T>>(request).ConfigureAwait(false);
+            SearchContainer<T> response = await request.ExecuteGet<SearchContainer<T>>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
 
         private enum AccountListsMethods

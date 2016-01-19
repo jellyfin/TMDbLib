@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -86,7 +85,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             string newListId = _config.Client.ListCreate(listName).Result;
 
-            Assert.IsFalse(String.IsNullOrWhiteSpace(newListId));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(newListId));
 
             List newlyAddedList = _config.Client.GetList(newListId).Result;
             Assert.IsNotNull(newlyAddedList);
@@ -95,7 +94,7 @@ namespace TMDbLibTests
             Assert.AreEqual("en", newlyAddedList.Iso_639_1); // en is the default value
             Assert.AreEqual(0, newlyAddedList.ItemCount);
             Assert.AreEqual(0, newlyAddedList.Items.Count);
-            Assert.IsFalse(String.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
 
             Assert.IsTrue(_config.Client.ListDelete(newListId).Result);
         }

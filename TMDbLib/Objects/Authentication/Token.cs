@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Authentication
 {
@@ -12,9 +14,18 @@ namespace TMDbLib.Objects.Authentication
         /// <summary>
         /// The date / time before which the token must be used, else it will expire. Time is expressed as local time.
         /// </summary>
+        [JsonProperty("expires_at")]
+        [JsonConverter(typeof(CustomDatetimeFormatConverter))]
         public DateTime ExpiresAt { get; set; }
+
+        [JsonProperty("request_token")]
         public string RequestToken { get; set; }
+
+        [JsonProperty("success")]
         public bool Success { get; set; }
+
+        // This field is populated by custom code
+        [JsonIgnore]
         public string AuthenticationCallback { get; set; }
     }
 }

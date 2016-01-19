@@ -154,7 +154,7 @@ namespace TMDbLibTests
             Assert.AreEqual("R", singleRelease.Certification);
             Assert.AreEqual(string.Empty, singleRelease.Iso_639_1);
             Assert.AreEqual(string.Empty, singleRelease.Note);
-            Assert.AreEqual(DateTime.Parse("2013-02-14T00:00:00.000Z"), singleRelease.ReleaseDate);
+            Assert.AreEqual(DateTime.Parse("2013-02-14T00:00:00.000Z").ToUniversalTime(), singleRelease.ReleaseDate);
             Assert.AreEqual(ReleaseDateType.Theatrical, singleRelease.Type);
         }
 
@@ -254,7 +254,7 @@ namespace TMDbLibTests
 
             Assert.AreEqual("R", country.Certification);
             Assert.AreEqual("US", country.Iso_3166_1);
-            Assert.AreEqual(true, country.Primary);
+            Assert.AreEqual(false, country.Primary);
             Assert.AreEqual(new DateTime(2013, 2, 14), country.ReleaseDate);
         }
 
@@ -596,11 +596,17 @@ namespace TMDbLibTests
             Assert.AreEqual(false, item.Adult);
             Assert.AreEqual(false, item.Video);
 
-            Assert.AreEqual(1, item.BelongsToCollection.Count);
-            Assert.AreEqual(1570, item.BelongsToCollection[0].Id);
-            Assert.AreEqual("Die Hard Collection", item.BelongsToCollection[0].Name);
-            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].BackdropPath), "item.BelongsToCollection[0].BackdropPath was not a valid image path, was: " + item.BelongsToCollection[0].BackdropPath);
-            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].PosterPath), "item.BelongsToCollection[0].PosterPath was not a valid image path, was: " + item.BelongsToCollection[0].PosterPath);
+            Assert.IsNotNull(item.BelongsToCollection);
+            Assert.AreEqual(1570, item.BelongsToCollection.Id);
+            Assert.AreEqual("Die Hard Collection", item.BelongsToCollection.Name);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection.BackdropPath), "item.BelongsToCollection.BackdropPath was not a valid image path, was: " + item.BelongsToCollection.BackdropPath);
+            Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection.PosterPath), "item.BelongsToCollection.PosterPath was not a valid image path, was: " + item.BelongsToCollection.PosterPath);
+
+            //Assert.AreEqual(1, item.BelongsToCollection.Count);
+            //Assert.AreEqual(1570, item.BelongsToCollection[0].Id);
+            //Assert.AreEqual("Die Hard Collection", item.BelongsToCollection[0].Name);
+            //Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].BackdropPath), "item.BelongsToCollection[0].BackdropPath was not a valid image path, was: " + item.BelongsToCollection[0].BackdropPath);
+            //Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BelongsToCollection[0].PosterPath), "item.BelongsToCollection[0].PosterPath was not a valid image path, was: " + item.BelongsToCollection[0].PosterPath);
 
             Assert.AreEqual(2, item.Genres.Count);
             Assert.AreEqual(28, item.Genres[0].Id);

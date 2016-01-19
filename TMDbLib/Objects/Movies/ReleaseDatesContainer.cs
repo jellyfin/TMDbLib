@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.Movies
 {
     public class ReleaseDatesContainer
     {
-        // TODO: This could be made into an inherited class with Iso3166 as a base-clas property
+        [JsonProperty("iso_3166_1")]
         public string Iso_3166_1 { get; set; }
 
+        [JsonProperty("release_dates")]
         public List<ReleaseDateItem> ReleaseDates { get; set; }
     }
 }

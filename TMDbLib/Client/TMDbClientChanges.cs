@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
+using TMDbLib.Rest;
 
 namespace TMDbLib.Client
 {
@@ -10,19 +10,19 @@ namespace TMDbLib.Client
     {
         private async Task<T> GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req = new RestRequest("{type}/changes");
+            RestRequest req = _client.Create("{type}/changes");
             req.AddUrlSegment("type", type);
 
             if (page >= 1)
-                req.AddParameter("page", page);
+                req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace TMDbLib.Client
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show movies that have been edited since.</remarks>
         public async Task<SearchContainer<ChangesListItem>> GetChangesMovies(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return await GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace TMDbLib.Client
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show people that have been edited since.</remarks>
         public async Task<SearchContainer<ChangesListItem>> GetChangesPeople(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return await GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -61,7 +61,7 @@ namespace TMDbLib.Client
 		/// </remarks>
 		public async Task<SearchContainer<ChangesListItem>> GetChangesTv(int page = 0, DateTime? startDate = null, DateTime? endDate = null)
 		{
-            return await GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate);
+            return await GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate).ConfigureAwait(false);
 		}
     }
 }

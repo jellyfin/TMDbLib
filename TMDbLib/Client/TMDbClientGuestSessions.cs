@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
+using TMDbLib.Rest;
 
 namespace TMDbLib.Client
 {
@@ -11,74 +11,74 @@ namespace TMDbLib.Client
     {
         public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodes(int page = 0)
         {
-            return await GetGuestSessionRatedTvEpisodes(DefaultLanguage, page);
+            return await GetGuestSessionRatedTvEpisodes(DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodes(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = new RestRequest("guest_session/{guest_session_id}/rated/tv/episodes") { RequestFormat = DataFormat.Json };
+            RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/tv/episodes");
 
             if (page > 0)
-                request.AddParameter("page", page, ParameterType.QueryString);
+                request.AddParameter("page", page.ToString());
 
             if (!string.IsNullOrEmpty(language))
-                request.AddParameter("language", language, ParameterType.QueryString);
+                request.AddParameter("language", language);
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            IRestResponse<SearchContainer<TvEpisodeWithRating>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<TvEpisodeWithRating>>(request).ConfigureAwait(false);
+            RestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGet<SearchContainer<TvEpisodeWithRating>>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTv(int page = 0)
         {
-            return await GetGuestSessionRatedTv(DefaultLanguage, page);
+            return await GetGuestSessionRatedTv(DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTv(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = new RestRequest("guest_session/{guest_session_id}/rated/tv") { RequestFormat = DataFormat.Json };
+            RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/tv");
 
             if (page > 0)
-                request.AddParameter("page", page, ParameterType.QueryString);
+                request.AddParameter("page", page.ToString());
 
             if (!string.IsNullOrEmpty(language))
-                request.AddParameter("language", language, ParameterType.QueryString);
-            
+                request.AddParameter("language", language);
+
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            IRestResponse<SearchContainer<TvShowWithRating>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<TvShowWithRating>>(request).ConfigureAwait(false);
+            RestResponse<SearchContainer<TvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<TvShowWithRating>>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMovies(int page = 0)
         {
-            return await GetGuestSessionRatedMovies(DefaultLanguage, page);
+            return await GetGuestSessionRatedMovies(DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMovies(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
-            RestRequest request = new RestRequest("guest_session/{guest_session_id}/rated/movies") { RequestFormat = DataFormat.Json };
+            RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/movies");
 
             if (page > 0)
-                request.AddParameter("page", page, ParameterType.QueryString);
+                request.AddParameter("page", page.ToString());
 
             if (!string.IsNullOrEmpty(language))
-                request.AddParameter("language", language, ParameterType.QueryString);
-            
+                request.AddParameter("language", language);
+
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            IRestResponse<SearchContainer<MovieWithRating>> resp = await _client.ExecuteGetTaskAsync<SearchContainer<MovieWithRating>>(request).ConfigureAwait(false);
+            RestResponse<SearchContainer<MovieWithRating>> resp = await request.ExecuteGet<SearchContainer<MovieWithRating>>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
     }
 }

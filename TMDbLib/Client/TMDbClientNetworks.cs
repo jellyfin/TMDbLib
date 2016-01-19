@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.TvShows;
+using TMDbLib.Rest;
 
 namespace TMDbLib.Client
 {
@@ -13,12 +13,12 @@ namespace TMDbLib.Client
         /// <param name="networkId">The id of the network object to retrieve</param>
         public async Task<Network> GetNetwork(int networkId)
         {
-            RestRequest request = new RestRequest("network/{networkId}");
-            request.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
+            RestRequest req = _client.Create("network/{networkId}");
+            req.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
-            IRestResponse<Network> response = await _client.ExecuteGetTaskAsync<Network>(request).ConfigureAwait(false);
+            RestResponse<Network> response = await req.ExecuteGet<Network>().ConfigureAwait(false);
 
-            return response.Data;
+            return response;
         }
     }
 }

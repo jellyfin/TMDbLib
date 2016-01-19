@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using RestSharp;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
+using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Client
@@ -12,16 +12,16 @@ namespace TMDbLib.Client
     {
         public async Task<Collection> GetCollection(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            return await GetCollection(collectionId, DefaultLanguage, extraMethods);
+            return await GetCollection(collectionId, DefaultLanguage, extraMethods).ConfigureAwait(false);
         }
 
         public async Task<Collection> GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            RestRequest req = new RestRequest("collection/{collectionId}");
+            RestRequest req = _client.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
 
             language = language ?? DefaultLanguage;
-            if (!String.IsNullOrWhiteSpace(language))
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",
@@ -34,30 +34,30 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            req.DateFormat = "yyyy-MM-dd";
+            //req.DateFormat = "yyyy-MM-dd";
 
-            IRestResponse<Collection> resp = await _client.ExecuteGetTaskAsync<Collection>(req).ConfigureAwait(false);
+            RestResponse<Collection> resp = await req.ExecuteGet<Collection>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null) where T : new()
         {
-            RestRequest req = new RestRequest("collection/{collectionId}/{method}");
+            RestRequest req = _client.Create("collection/{collectionId}/{method}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
             req.AddUrlSegment("method", collectionMethod.GetDescription());
 
             if (language != null)
                 req.AddParameter("language", language);
 
-            IRestResponse<T> resp = await _client.ExecuteGetTaskAsync<T>(req).ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
-            return resp.Data;
+            return resp;
         }
 
         public async Task<ImagesWithId> GetCollectionImages(int collectionId, string language = null)
         {
-            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language);
+            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language).ConfigureAwait(false);
         }
     }
 }

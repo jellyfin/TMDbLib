@@ -24,6 +24,7 @@ namespace TMDbLibTests
                 throw new ConfigurationErrorsException("You need to configure the API Key before running any tests. Look at the TestConfig class.");
 
             Client = new TMDbClient(APIKey, useSsl);
+            Client.MaxRetryCount = 1;
         }
     }
 }
