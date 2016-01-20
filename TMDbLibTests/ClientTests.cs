@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Client;
 using TMDbLib.Objects.Exceptions;
@@ -106,17 +107,25 @@ namespace TMDbLibTests
             TMDbClient client = new TMDbClient(TestConfig.APIKey);
             client.MaxRetryCount = 0;
 
-            for (int i = 0; i < 100; i++)
+            try
             {
-                try
+                Parallel.For(0, 100, i =>
                 {
-                    client.GetMovie(id).Wait();
-                }
-                catch (AggregateException ex)
-                {
-                    // Unpack the InnerException
-                    throw ex.InnerException;
-                }
+                    try
+                    {
+                        client.GetMovie(id).Wait();
+                    }
+                    catch (AggregateException ex)
+                    {
+                        // Unpack the InnerException
+                        throw ex.InnerException;
+                    }
+                });
+            }
+            catch (AggregateException ex)
+            {
+                // Unpack the InnerException
+                throw ex.InnerException;
             }
 
             Assert.Fail();
