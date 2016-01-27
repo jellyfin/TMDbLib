@@ -1,41 +1,41 @@
 ﻿using System;
-using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace TMDbLib.Objects.Movies
 {
     [Flags]
     public enum MovieMethods
     {
-        [Description("Undefined")]
+        [Display(Description = "Undefined")]
         Undefined = 0,
-        [Description("alternative_titles")]
+        [Display(Description = "alternative_titles")]
         AlternativeTitles = 1,
-        [Description("credits")]
+        [Display(Description = "credits")]
         Credits = 2,
-        [Description("images")]
+        [Display(Description = "images")]
         Images = 4,
-        [Description("keywords")]
+        [Display(Description = "keywords")]
         Keywords = 8,
-        [Description("releases")]
+        [Display(Description = "releases")]
         Releases = 16,
-        [Description("videos")]
+        [Display(Description = "videos")]
         Videos = 32,
-        [Description("translations")]
+        [Display(Description = "translations")]
         Translations = 64,
-        [Description("similar")]
+        [Display(Description = "similar")]
         Similar = 128,
-        [Description("reviews")]
+        [Display(Description = "reviews")]
         Reviews = 256,
-        [Description("lists")]
+        [Display(Description = "lists")]
         Lists = 512,
-        [Description("changes")]
+        [Display(Description = "changes")]
         Changes = 1024,
         /// <summary>
         /// Requires a valid user session to be set on the client object
         /// </summary>
-        [Description("account_states")]
+        [Display(Description = "account_states")]
         AccountStates = 2048,
-        [Description("release_dates")]
+        [Display(Description = "release_dates")]
         ReleaseDates = 4096
     }
 }

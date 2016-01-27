@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Account;
@@ -236,19 +236,19 @@ namespace TMDbLib.Client
 
         private enum AccountListsMethods
         {
-            [Description("favorite/movies")]
+            [Display(Description = "favorite/movies")]
             FavoriteMovies,
-            [Description("favorite/tv")]
+            [Display(Description = "favorite/tv")]
             FavoriteTv,
-            [Description("rated/movies")]
+            [Display(Description = "rated/movies")]
             RatedMovies,
-            [Description("rated/tv")]
+            [Display(Description = "rated/tv")]
             RatedTv,
-            [Description("rated/tv/episodes")]
+            [Display(Description = "rated/tv/episodes")]
             RatedTvEpisodes,
-            [Description("watchlist/movies")]
+            [Display(Description = "watchlist/movies")]
             MovieWatchlist,
-            [Description("watchlist/tv")]
+            [Display(Description = "watchlist/tv")]
             TvWatchlist,
         }
     }

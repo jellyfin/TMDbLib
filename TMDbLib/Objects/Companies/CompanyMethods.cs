@@ -1,14 +1,14 @@
 ﻿using System;
-using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace TMDbLib.Objects.Companies
 {
     [Flags]
     public enum CompanyMethods
     {
-        [Description("Undefined")]
+        [Display(Description = "Undefined")]
         Undefined = 0,
-        [Description("movies")]
+        [Display(Description = "movies")]
         Movies = 1
     }
 }
