@@ -1,34 +1,34 @@
 ﻿using System;
-using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace TMDbLib.Objects.TvShows
 {
     [Flags]
     public enum TvShowMethods
     {
-        [Description("Undefined")]
+        [Display(Description = "Undefined")]
         Undefined = 0,
-        [Description("credits")]
+        [Display(Description = "credits")]
         Credits = 1,
-        [Description("images")]
+        [Display(Description = "images")]
         Images = 2,
-        [Description("external_ids")]
+        [Display(Description = "external_ids")]
         ExternalIds = 4,
-        [Description("content_ratings")]
+        [Display(Description = "content_ratings")]
         ContentRatings = 8,
-        [Description("alternative_titles")]
+        [Display(Description = "alternative_titles")]
         AlternativeTitles = 16,
-        [Description("keywords")]
+        [Display(Description = "keywords")]
         Keywords = 32,
-        [Description("similar")]
+        [Display(Description = "similar")]
         Similar = 64,
-        [Description("videos")]
+        [Display(Description = "videos")]
         Videos = 128,
-        [Description("translations")]
+        [Display(Description = "translations")]
         Translations = 256,
-        [Description("account_states")]
+        [Display(Description = "account_states")]
         AccountStates = 512,
-        [Description("changes")]
+        [Display(Description = "changes")]
         Changes = 1024
     }
 }

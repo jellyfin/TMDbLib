@@ -1,11 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TMDbLib.Objects.Account
 {
     public enum AccountSortBy
     {
         Undefined = 0,
-        [Description("created_at")]
+        [Display(Description = "created_at")]
         CreatedAt = 1,
     }
 }
