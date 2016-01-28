@@ -1,7 +1,7 @@
-﻿using System.Collections.Specialized;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Discover
 {
@@ -9,13 +9,13 @@ namespace TMDbLib.Objects.Discover
     {
         private readonly string _endpoint;
         private readonly TMDbClient _client;
-        protected NameValueCollection Parameters;
+        protected readonly SimpleNamedValueCollection Parameters;
 
         public DiscoverBase(string endpoint, TMDbClient client)
         {
             _endpoint = endpoint;
             _client = client;
-            Parameters = new NameValueCollection();
+            Parameters = new SimpleNamedValueCollection();
         }
 
         public async Task<SearchContainer<T>> Query(int page = 0)
