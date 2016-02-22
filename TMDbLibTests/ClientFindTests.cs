@@ -22,9 +22,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestFindImdbMovie()
         {
-            Task<FindContainer> result = _config.Client.Find(FindExternalSource.Imdb, IdHelper.imdbTerminatorId);
+            Task<FindContainer> result = _config.Client.Find(FindExternalSource.Imdb, IdHelper.ImdbTerminatorId);
             Assert.AreEqual(1, result.Result.MovieResults.Count);
-            Assert.AreEqual(IdHelper.tmdbTerminatorId, result.Result.MovieResults[0].Id);
+            Assert.AreEqual(IdHelper.TmdbTerminatorId, result.Result.MovieResults[0].Id);
         }
 
         [TestMethod]
