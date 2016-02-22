@@ -10,12 +10,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Collection> GetCollection(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
-            return await GetCollection(collectionId, DefaultLanguage, extraMethods).ConfigureAwait(false);
+            return await GetCollectionAsync(collectionId, DefaultLanguage, extraMethods).ConfigureAwait(false);
         }
 
-        public async Task<Collection> GetCollection(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        public async Task<Collection> GetCollectionAsync(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
         {
             RestRequest req = _client.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
@@ -55,7 +55,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<ImagesWithId> GetCollectionImages(int collectionId, string language = null)
+        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null)
         {
             return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language).ConfigureAwait(false);
         }

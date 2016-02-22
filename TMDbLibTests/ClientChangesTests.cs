@@ -24,7 +24,7 @@ namespace TMDbLibTests
         public void TestChangesMovies()
         {
             // Basic check
-            SearchContainer<ChangesListItem> changesPage1 = _config.Client.GetChangesMovies().Result;
+            SearchContainer<ChangesListItem> changesPage1 = _config.Client.GetChangesMoviesAsync().Result;
 
             Assert.IsNotNull(changesPage1);
             Assert.IsTrue(changesPage1.Results.Count > 0);
@@ -32,14 +32,14 @@ namespace TMDbLibTests
             Assert.AreEqual(1, changesPage1.Page);
 
             // Page 2
-            SearchContainer<ChangesListItem> changesPage2 = _config.Client.GetChangesMovies(2).Result;
+            SearchContainer<ChangesListItem> changesPage2 = _config.Client.GetChangesMoviesAsync(2).Result;
 
             Assert.IsNotNull(changesPage2);
             Assert.AreEqual(2, changesPage2.Page);
 
             // Check date range (max)
             DateTime higher = DateTime.UtcNow.AddDays(-7);
-            SearchContainer<ChangesListItem> changesMaxDate = _config.Client.GetChangesMovies(endDate: higher).Result;
+            SearchContainer<ChangesListItem> changesMaxDate = _config.Client.GetChangesMoviesAsync(endDate: higher).Result;
 
             Assert.IsNotNull(changesMaxDate);
             Assert.AreEqual(1, changesMaxDate.Page);
@@ -47,7 +47,7 @@ namespace TMDbLibTests
 
             // Check date range (lower)
             DateTime lower = DateTime.UtcNow.AddDays(-6);       // Use 6 days to avoid clashes with the 'higher'
-            SearchContainer<ChangesListItem> changesLowDate = _config.Client.GetChangesMovies(startDate: lower).Result;
+            SearchContainer<ChangesListItem> changesLowDate = _config.Client.GetChangesMoviesAsync(startDate: lower).Result;
 
             Assert.IsNotNull(changesLowDate);
             Assert.AreEqual(1, changesLowDate.Page);
@@ -58,7 +58,7 @@ namespace TMDbLibTests
         public void TestChangesPeople()
         {
             // Basic check
-            SearchContainer<ChangesListItem> changesPage1 = _config.Client.GetChangesPeople().Result;
+            SearchContainer<ChangesListItem> changesPage1 = _config.Client.GetChangesPeopleAsync().Result;
 
             Assert.IsNotNull(changesPage1);
             Assert.IsTrue(changesPage1.Results.Count > 0);
@@ -66,14 +66,14 @@ namespace TMDbLibTests
             Assert.AreEqual(1, changesPage1.Page);
 
             // Page 2
-            SearchContainer<ChangesListItem> changesPage2 = _config.Client.GetChangesPeople(2).Result;
+            SearchContainer<ChangesListItem> changesPage2 = _config.Client.GetChangesPeopleAsync(2).Result;
 
             Assert.IsNotNull(changesPage2);
             Assert.AreEqual(2, changesPage2.Page);
 
             // Check date range (max)
             DateTime higher = DateTime.UtcNow.AddDays(-7);
-            SearchContainer<ChangesListItem> changesMaxDate = _config.Client.GetChangesPeople(endDate: higher).Result;
+            SearchContainer<ChangesListItem> changesMaxDate = _config.Client.GetChangesPeopleAsync(endDate: higher).Result;
 
             Assert.IsNotNull(changesMaxDate);
             Assert.AreEqual(1, changesMaxDate.Page);
@@ -81,7 +81,7 @@ namespace TMDbLibTests
 
             // Check date range (lower)
             DateTime lower = DateTime.UtcNow.AddDays(-6);       // Use 6 days to avoid clashes with the 'higher'
-            SearchContainer<ChangesListItem> changesLowDate = _config.Client.GetChangesPeople(startDate: lower).Result;
+            SearchContainer<ChangesListItem> changesLowDate = _config.Client.GetChangesPeopleAsync(startDate: lower).Result;
 
             Assert.IsNotNull(changesLowDate);
             Assert.AreEqual(1, changesLowDate.Page);
@@ -97,7 +97,7 @@ namespace TMDbLibTests
         public void TestChangesTvShows()
         {
             // Basic check
-            SearchContainer<ChangesListItem> changesPage1 = _config.Client.GetChangesTv().Result;
+            SearchContainer<ChangesListItem> changesPage1 = _config.Client.GetChangesTvAsync().Result;
 
             Assert.IsNotNull(changesPage1);
             Assert.IsNotNull(changesPage1.Results);
@@ -109,7 +109,7 @@ namespace TMDbLibTests
             {
                 Assert.IsTrue(changesPage1.TotalResults > changesPage1.Results.Count);
                 // Page 2
-                SearchContainer<ChangesListItem> changesPage2 = _config.Client.GetChangesTv(2).Result;
+                SearchContainer<ChangesListItem> changesPage2 = _config.Client.GetChangesTvAsync(2).Result;
 
                 Assert.IsNotNull(changesPage2);
                 Assert.AreEqual(2, changesPage2.Page);
@@ -117,7 +117,7 @@ namespace TMDbLibTests
 
             // Check date range (max)
             DateTime higher = DateTime.UtcNow.AddDays(-8);
-            SearchContainer<ChangesListItem> changesMaxDate = _config.Client.GetChangesTv(endDate: higher).Result;
+            SearchContainer<ChangesListItem> changesMaxDate = _config.Client.GetChangesTvAsync(endDate: higher).Result;
 
             Assert.IsNotNull(changesMaxDate);
             Assert.AreEqual(1, changesMaxDate.Page);
@@ -125,7 +125,7 @@ namespace TMDbLibTests
 
             // Check date range (lower)
             DateTime lower = DateTime.UtcNow.AddDays(-6);       // Use 6 days to avoid clashes with the 'higher'
-            SearchContainer<ChangesListItem> changesLowDate = _config.Client.GetChangesTv(startDate: lower).Result;
+            SearchContainer<ChangesListItem> changesLowDate = _config.Client.GetChangesTvAsync(startDate: lower).Result;
 
             Assert.IsNotNull(changesLowDate);
             Assert.AreEqual(1, changesLowDate.Page);

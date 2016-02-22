@@ -10,7 +10,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Company> GetCompany(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
+        public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined)
         {
             RestRequest req = _client.Create("company/{companyId}");
             req.AddUrlSegment("companyId", companyId.ToString());
@@ -49,12 +49,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMovies(int companyId, int page = 0)
+        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMoviesAsync(int companyId, int page = 0)
         {
-            return await GetCompanyMovies(companyId, DefaultLanguage, page).ConfigureAwait(false);
+            return await GetCompanyMoviesAsync(companyId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMovies(int companyId, string language, int page = 0)
+        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMoviesAsync(int companyId, string language, int page = 0)
         {
             return await GetCompanyMethod<SearchContainerWithId<MovieResult>>(companyId, CompanyMethods.Movies, page, language).ConfigureAwait(false);
         }

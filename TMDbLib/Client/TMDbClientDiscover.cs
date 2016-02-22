@@ -12,7 +12,7 @@ namespace TMDbLib.Client
         /// <summary>
         /// Can be used to discover new tv shows matching certain criteria
         /// </summary>
-        public DiscoverTv DiscoverTvShows()
+        public DiscoverTv DiscoverTvShowsAsync()
         {
             return new DiscoverTv(this);
         }
@@ -20,12 +20,12 @@ namespace TMDbLib.Client
         /// <summary>
         /// Can be used to discover movies matching certain criteria
         /// </summary>
-        public DiscoverMovie DiscoverMovies()
+        public DiscoverMovie DiscoverMoviesAsync()
         {
             return new DiscoverMovie(this);
         }
 
-        internal async Task<SearchContainer<T>> DiscoverPerform<T>(string endpoint, string language, int page, SimpleNamedValueCollection parameters)
+        internal async Task<SearchContainer<T>> DiscoverPerformAsync<T>(string endpoint, string language, int page, SimpleNamedValueCollection parameters)
         {
             RestRequest request = _client.Create(endpoint);
 

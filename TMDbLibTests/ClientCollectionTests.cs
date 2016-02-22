@@ -36,7 +36,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCollectionsExtrasNone()
         {
-            Collection collection = _config.Client.GetCollection(IdHelper.JamesBondCollection).Result;
+            Collection collection = _config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
 
             // TODO: Test all properties
             Assert.IsNotNull(collection);
@@ -54,14 +54,14 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCollectionsExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCollection(id, extras).Result, IdHelper.JamesBondCollection);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCollectionAsync(id, extras).Result, IdHelper.JamesBondCollection);
         }
 
         [TestMethod]
         public void TestCollectionsExtrasAll()
         {
             CollectionMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Collection item = _config.Client.GetCollection(IdHelper.JamesBondCollection, combinedEnum).Result;
+            Collection item = _config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -73,7 +73,7 @@ namespace TMDbLibTests
             _config.Client.GetConfig();
 
             // Test image url generator
-            ImagesWithId images = _config.Client.GetCollectionImages(IdHelper.JamesBondCollection).Result;
+            ImagesWithId images = _config.Client.GetCollectionImagesAsync(IdHelper.JamesBondCollection).Result;
 
             Assert.AreEqual(IdHelper.JamesBondCollection, images.Id);
             TestImagesHelpers.TestImages(_config, images);

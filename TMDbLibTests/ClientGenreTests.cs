@@ -23,13 +23,13 @@ namespace TMDbLibTests
         public void TestGenreTvList()
         {
             // Default language
-            List<Genre> genres = _config.Client.GetTvGenres().Result;
+            List<Genre> genres = _config.Client.GetTvGenresAsync().Result;
 
             Assert.IsNotNull(genres);
             Assert.IsTrue(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = _config.Client.GetTvGenres("da").Result;
+            List<Genre> genresDanish = _config.Client.GetTvGenresAsync("da").Result;
 
             Assert.IsNotNull(genresDanish);
             Assert.IsTrue(genresDanish.Count > 0);
@@ -44,13 +44,13 @@ namespace TMDbLibTests
         public void TestGenreMovieList()
         {
             // Default language
-            List<Genre> genres = _config.Client.GetMovieGenres().Result;
+            List<Genre> genres = _config.Client.GetMovieGenresAsync().Result;
 
             Assert.IsNotNull(genres);
             Assert.IsTrue(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = _config.Client.GetMovieGenres("da").Result;
+            List<Genre> genresDanish = _config.Client.GetMovieGenresAsync("da").Result;
 
             Assert.IsNotNull(genresDanish);
             Assert.IsTrue(genresDanish.Count > 0);
@@ -65,12 +65,12 @@ namespace TMDbLibTests
         public void TestGenreMovies()
         {
             // Get first genre
-            Genre genre = _config.Client.GetMovieGenres().Result.First();
+            Genre genre = _config.Client.GetMovieGenresAsync().Result.First();
 
             // Get movies
-            SearchContainerWithId<MovieResult> movies = _config.Client.GetGenreMovies(genre.Id).Result;
-            SearchContainerWithId<MovieResult> moviesPage2 = _config.Client.GetGenreMovies(genre.Id, "it", 2, includeAllMovies: false).Result;
-            SearchContainerWithId<MovieResult> moviesAll = _config.Client.GetGenreMovies(genre.Id, includeAllMovies: true).Result;
+            SearchContainerWithId<MovieResult> movies = _config.Client.GetGenreMoviesAsync(genre.Id).Result;
+            SearchContainerWithId<MovieResult> moviesPage2 = _config.Client.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false).Result;
+            SearchContainerWithId<MovieResult> moviesAll = _config.Client.GetGenreMoviesAsync(genre.Id, includeAllMovies: true).Result;
 
             Assert.AreEqual(1, movies.Page);
             Assert.AreEqual(2, moviesPage2.Page);

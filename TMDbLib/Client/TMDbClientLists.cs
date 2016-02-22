@@ -13,7 +13,7 @@ namespace TMDbLib.Client
         /// Retrieve a list by it's id
         /// </summary>
         /// <param name="listId">The id of the list you want to retrieve</param>
-        public async Task<List> GetList(string listId)
+        public async Task<List> GetListAsync(string listId)
         {
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
@@ -31,7 +31,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="listId">Id of the list to check in</param>
         /// <param name="movieId">Id of the movie to check for in the list</param>
-        public async Task<bool> GetListIsMoviePresent(string listId, int movieId)
+        public async Task<bool> GetListIsMoviePresentAsync(string listId, int movieId)
         {
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
@@ -56,7 +56,7 @@ namespace TMDbLib.Client
         /// <param name="language">Optional language that might indicate the language of the content in the list</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<string> ListCreate(string name, string description = "", string language = null)
+        public async Task<string> ListCreateAsync(string name, string description = "", string language = null)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -92,7 +92,7 @@ namespace TMDbLib.Client
         /// <param name="listId">A list id that is owned by the user associated with the current session id</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListDelete(string listId)
+        public async Task<bool> ListDeleteAsync(string listId)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -120,9 +120,9 @@ namespace TMDbLib.Client
         /// <returns>True if the method was able to add the movie to the list, will retrun false in case of an issue or when the movie was already added to the list</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListAddMovie(string listId, int movieId)
+        public async Task<bool> ListAddMovieAsync(string listId, int movieId)
         {
-            return await ManipulateMediaList(listId, movieId, "add_item").ConfigureAwait(false);
+            return await ManipulateMediaListAsync(listId, movieId, "add_item").ConfigureAwait(false);
         }
 
         /// <summary>
@@ -133,9 +133,9 @@ namespace TMDbLib.Client
         /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListRemoveMovie(string listId, int movieId)
+        public async Task<bool> ListRemoveMovieAsync(string listId, int movieId)
         {
-            return await ManipulateMediaList(listId, movieId, "remove_item").ConfigureAwait(false);
+            return await ManipulateMediaListAsync(listId, movieId, "remove_item").ConfigureAwait(false);
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace TMDbLib.Client
         /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListClear(string listId)
+        public async Task<bool> ListClearAsync(string listId)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -166,7 +166,7 @@ namespace TMDbLib.Client
             return item.StatusCode == 12;
         }
 
-        private async Task<bool> ManipulateMediaList(string listId, int movieId, string method)
+        private async Task<bool> ManipulateMediaListAsync(string listId, int movieId, string method)
         {
             RequireSessionId(SessionType.UserSession);
 

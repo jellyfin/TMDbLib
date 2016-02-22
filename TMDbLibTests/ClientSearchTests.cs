@@ -24,11 +24,11 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchMovie()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchMovie("007", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchMovieAsync("007", i).Result);
 
             // Search pr. Year
             // 1962: First James Bond movie, "Dr. No"
-            SearchContainer<SearchMovie> result = _config.Client.SearchMovie("007", year: 1962).Result;
+            SearchContainer<SearchMovie> result = _config.Client.SearchMovieAsync("007", year: 1962).Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchMovie item = result.Results.SingleOrDefault(s => s.Id == 646);
@@ -57,9 +57,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchCollection()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchCollection("007", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchCollectionAsync("007", i).Result);
 
-            SearchContainer<SearchResultCollection> result = _config.Client.SearchCollection("James Bond").Result;
+            SearchContainer<SearchResultCollection> result = _config.Client.SearchCollectionAsync("James Bond").Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchResultCollection item = result.Results.SingleOrDefault(s => s.Id == 645);
@@ -74,9 +74,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchPerson()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchPerson("Willis", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchPersonAsync("Willis", i).Result);
 
-            SearchContainer<SearchPerson> result = _config.Client.SearchPerson("Willis").Result;
+            SearchContainer<SearchPerson> result = _config.Client.SearchPersonAsync("Willis").Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchPerson item = result.Results.SingleOrDefault(s => s.Id == 62);
@@ -95,9 +95,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchList()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchList("to watch", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchListAsync("to watch", i).Result);
 
-            SearchContainer<SearchList> result = _config.Client.SearchList("to watch").Result;
+            SearchContainer<SearchList> result = _config.Client.SearchListAsync("to watch").Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchList item = result.Results.SingleOrDefault(s => s.Id == "54a5c0ceaed56c28c300013a");
@@ -116,9 +116,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchCompany()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchCompany("20th", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchCompanyAsync("20th", i).Result);
 
-            SearchContainer<SearchCompany> result = _config.Client.SearchCompany("20th").Result;
+            SearchContainer<SearchCompany> result = _config.Client.SearchCompanyAsync("20th").Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchCompany item = result.Results.SingleOrDefault(s => s.Id == 25);
@@ -132,9 +132,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchKeyword()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchKeyword("plot", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchKeywordAsync("plot", i).Result);
 
-            SearchContainer<SearchKeyword> result = _config.Client.SearchKeyword("plot").Result;
+            SearchContainer<SearchKeyword> result = _config.Client.SearchKeywordAsync("plot").Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchKeyword item = result.Results.SingleOrDefault(s => s.Id == 11121);
@@ -147,9 +147,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchTvShow()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchTvShow("Breaking Bad", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchTvShowAsync("Breaking Bad", i).Result);
 
-            SearchContainer<SearchTv> result = _config.Client.SearchTvShow("Breaking Bad").Result;
+            SearchContainer<SearchTv> result = _config.Client.SearchTvShowAsync("Breaking Bad").Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchTv item = result.Results.SingleOrDefault(s => s.Id == 1396);
@@ -179,9 +179,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestSearchMulti()
         {
-            TestHelpers.SearchPages(i => _config.Client.SearchMulti("Arrow", i).Result);
+            TestHelpers.SearchPages(i => _config.Client.SearchMultiAsync("Arrow", i).Result);
 
-            SearchContainer<SearchMulti> result = _config.Client.SearchMulti("Arrow").Result;
+            SearchContainer<SearchMulti> result = _config.Client.SearchMultiAsync("Arrow").Result;
 
             Assert.IsTrue(result.Results.Any());
             SearchMulti item = result.Results.SingleOrDefault(s => s.Id == 1412);

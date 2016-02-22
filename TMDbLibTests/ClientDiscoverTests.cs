@@ -24,9 +24,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverTvShowsNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShows().Query(i).Result);
+            TestHelpers.SearchPages(i => _config.Client.DiscoverTvShowsAsync().Query(i).Result);
 
-            SearchContainer<SearchTv> result = _config.Client.DiscoverTvShows().Query().Result;
+            SearchContainer<SearchTv> result = _config.Client.DiscoverTvShowsAsync().Query().Result;
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Page);
@@ -37,7 +37,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverTvShows()
         {
-            DiscoverTv query = _config.Client.DiscoverTvShows()
+            DiscoverTv query = _config.Client.DiscoverTvShowsAsync()
                     .WhereVoteCountIsAtLeast(100)
                     .WhereVoteAverageIsAtLeast(2);
 
@@ -47,9 +47,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverMoviesNoParams()
         {
-            TestHelpers.SearchPages(i => _config.Client.DiscoverMovies().Query(i).Result);
+            TestHelpers.SearchPages(i => _config.Client.DiscoverMoviesAsync().Query(i).Result);
 
-            SearchContainer<SearchMovie> result = _config.Client.DiscoverMovies().Query().Result;
+            SearchContainer<SearchMovie> result = _config.Client.DiscoverMoviesAsync().Query().Result;
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Page);
@@ -60,7 +60,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestDiscoverMovies()
         {
-            DiscoverMovie query = _config.Client.DiscoverMovies()
+            DiscoverMovie query = _config.Client.DiscoverMoviesAsync()
                     .WhereVoteCountIsAtLeast(1000)
                     .WhereVoteAverageIsAtLeast(2);
 

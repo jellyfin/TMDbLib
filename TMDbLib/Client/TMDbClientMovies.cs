@@ -17,19 +17,19 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Movie> GetMovie(int movieId, MovieMethods extraMethods = MovieMethods.Undefined)
+        public async Task<Movie> GetMovieAsync(int movieId, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            return await GetMovie(movieId, DefaultLanguage, extraMethods).ConfigureAwait(false);
+            return await GetMovieAsync(movieId, DefaultLanguage, extraMethods).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovie(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined)
+        public async Task<Movie> GetMovieAsync(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            return await GetMovie(imdbId, DefaultLanguage, extraMethods).ConfigureAwait(false);
+            return await GetMovieAsync(imdbId, DefaultLanguage, extraMethods).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovie(int movieId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        public async Task<Movie> GetMovieAsync(int movieId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
-            return await GetMovie(movieId.ToString(CultureInfo.InvariantCulture), language, extraMethods).ConfigureAwait(false);
+            return await GetMovieAsync(movieId.ToString(CultureInfo.InvariantCulture), language, extraMethods).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace TMDbLib.Client
         /// <returns>The reqed movie or null if it could not be found</returns>
         /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned, see remarks.</exception>
-        public async Task<Movie> GetMovie(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
+        public async Task<Movie> GetMovieAsync(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined)
         {
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
@@ -129,87 +129,87 @@ namespace TMDbLib.Client
             return response;
         }
 
-        public async Task<AlternativeTitles> GetMovieAlternativeTitles(int movieId)
+        public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId)
         {
-            return await GetMovieAlternativeTitles(movieId, DefaultCountry).ConfigureAwait(false);
+            return await GetMovieAlternativeTitlesAsync(movieId, DefaultCountry).ConfigureAwait(false);
         }
 
-        public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDates(int movieId)
-        {
-            return await GetMovieMethod<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates).ConfigureAwait(false);
-        }
-
-        public async Task<AlternativeTitles> GetMovieAlternativeTitles(int movieId, string country)
+        public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId, string country)
         {
             return await GetMovieMethod<AlternativeTitles>(movieId, MovieMethods.AlternativeTitles, country: country).ConfigureAwait(false);
         }
 
-        public async Task<Credits> GetMovieCredits(int movieId)
+        public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDatesAsync(int movieId)
+        {
+            return await GetMovieMethod<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates).ConfigureAwait(false);
+        }
+
+        public async Task<Credits> GetMovieCreditsAsync(int movieId)
         {
             return await GetMovieMethod<Credits>(movieId, MovieMethods.Credits).ConfigureAwait(false);
         }
 
-        public async Task<ImagesWithId> GetMovieImages(int movieId)
+        public async Task<ImagesWithId> GetMovieImagesAsync(int movieId)
         {
-            return await GetMovieImages(movieId, DefaultLanguage).ConfigureAwait(false);
+            return await GetMovieImagesAsync(movieId, DefaultLanguage).ConfigureAwait(false);
         }
 
-        public async Task<ImagesWithId> GetMovieImages(int movieId, string language)
+        public async Task<ImagesWithId> GetMovieImagesAsync(int movieId, string language)
         {
             return await GetMovieMethod<ImagesWithId>(movieId, MovieMethods.Images, language: language).ConfigureAwait(false);
         }
 
-        public async Task<KeywordsContainer> GetMovieKeywords(int movieId)
+        public async Task<KeywordsContainer> GetMovieKeywordsAsync(int movieId)
         {
             return await GetMovieMethod<KeywordsContainer>(movieId, MovieMethods.Keywords).ConfigureAwait(false);
         }
 
-        public async Task<Releases> GetMovieReleases(int movieId)
+        public async Task<Releases> GetMovieReleasesAsync(int movieId)
         {
             return await GetMovieMethod<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
         }
 
-        public async Task<ResultContainer<Video>> GetMovieVideos(int movieId)
+        public async Task<ResultContainer<Video>> GetMovieVideosAsync(int movieId)
         {
             return await GetMovieMethod<ResultContainer<Video>>(movieId, MovieMethods.Videos).ConfigureAwait(false);
         }
 
-        public async Task<TranslationsContainer> GetMovieTranslations(int movieId)
+        public async Task<TranslationsContainer> GetMovieTranslationsAsync(int movieId)
         {
             return await GetMovieMethod<TranslationsContainer>(movieId, MovieMethods.Translations).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieSimilar(int movieId, int page = 0)
+        public async Task<SearchContainer<MovieResult>> GetMovieSimilarAsync(int movieId, int page = 0)
         {
-            return await GetMovieSimilar(movieId, DefaultLanguage, page).ConfigureAwait(false);
+            return await GetMovieSimilarAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieSimilar(int movieId, string language, int page = 0)
+        public async Task<SearchContainer<MovieResult>> GetMovieSimilarAsync(int movieId, string language, int page = 0)
         {
             return await GetMovieMethod<SearchContainer<MovieResult>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<Review>> GetMovieReviews(int movieId, int page = 0)
+        public async Task<SearchContainer<Review>> GetMovieReviewsAsync(int movieId, int page = 0)
         {
-            return await GetMovieReviews(movieId, DefaultLanguage, page).ConfigureAwait(false);
+            return await GetMovieReviewsAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<Review>> GetMovieReviews(int movieId, string language, int page = 0)
+        public async Task<SearchContainer<Review>> GetMovieReviewsAsync(int movieId, string language, int page = 0)
         {
             return await GetMovieMethod<SearchContainer<Review>>(movieId, MovieMethods.Reviews, page: page, language: language).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<ListResult>> GetMovieLists(int movieId, int page = 0)
+        public async Task<SearchContainer<ListResult>> GetMovieListsAsync(int movieId, int page = 0)
         {
-            return await GetMovieLists(movieId, DefaultLanguage, page).ConfigureAwait(false);
+            return await GetMovieListsAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<ListResult>> GetMovieLists(int movieId, string language, int page = 0)
+        public async Task<SearchContainer<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0)
         {
             return await GetMovieMethod<SearchContainer<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language).ConfigureAwait(false);
         }
 
-        public async Task<List<Change>> GetMovieChanges(int movieId, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<List<Change>> GetMovieChangesAsync(int movieId, DateTime? startDate = null, DateTime? endDate = null)
         {
             ChangesContainer changesContainer = await GetMovieMethod<ChangesContainer>(movieId, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").ConfigureAwait(false);
             return changesContainer.Changes;
@@ -221,7 +221,7 @@ namespace TMDbLib.Client
         /// <param name="movieId">The id of the movie to get the account states for</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<AccountState> GetMovieAccountState(int movieId)
+        public async Task<AccountState> GetMovieAccountStateAsync(int movieId)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -251,7 +251,7 @@ namespace TMDbLib.Client
         /// <returns>True if the the movie's rating was successfully updated, false if not</returns>
         /// <remarks>Requires a valid guest or user session</remarks>
         /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>
-        public async Task<bool> MovieSetRating(int movieId, double rating)
+        public async Task<bool> MovieSetRatingAsync(int movieId, double rating)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -271,7 +271,7 @@ namespace TMDbLib.Client
             return item.StatusCode == 1 || item.StatusCode == 12;
         }
 
-        public async Task<bool> MovieRemoveRating(int movieId)
+        public async Task<bool> MovieRemoveRatingAsync(int movieId)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -288,7 +288,7 @@ namespace TMDbLib.Client
             return item != null && item.StatusCode == 13;
         }
 
-        public async Task<Movie> GetMovieLatest()
+        public async Task<Movie> GetMovieLatestAsync()
         {
             RestRequest req = _client.Create("movie/latest");
             RestResponse<Movie> resp = await req.ExecuteGet<Movie>().ConfigureAwait(false);
@@ -302,12 +302,12 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieList(MovieListType type, int page = 0)
+        public async Task<SearchContainer<MovieResult>> GetMovieListAsync(MovieListType type, int page = 0)
         {
-            return await GetMovieList(type, DefaultLanguage, page).ConfigureAwait(false);
+            return await GetMovieListAsync(type, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieList(MovieListType type, string language, int page = 0)
+        public async Task<SearchContainer<MovieResult>> GetMovieListAsync(MovieListType type, string language, int page = 0)
         {
             RestRequest req;
             switch (type)

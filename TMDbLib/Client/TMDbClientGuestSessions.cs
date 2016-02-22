@@ -9,12 +9,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodes(int page = 0)
+        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(int page = 0)
         {
-            return await GetGuestSessionRatedTvEpisodes(DefaultLanguage, page).ConfigureAwait(false);
+            return await GetGuestSessionRatedTvEpisodesAsync(DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodes(string language, int page = 0)
+        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -33,12 +33,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTv(int page = 0)
+        public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTvAsync(int page = 0)
         {
-            return await GetGuestSessionRatedTv(DefaultLanguage, page).ConfigureAwait(false);
+            return await GetGuestSessionRatedTvAsync(DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTv(string language, int page = 0)
+        public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTvAsync(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -57,12 +57,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMovies(int page = 0)
+        public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMoviesAsync(int page = 0)
         {
-            return await GetGuestSessionRatedMovies(DefaultLanguage, page).ConfigureAwait(false);
+            return await GetGuestSessionRatedMoviesAsync(DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMovies(string language, int page = 0)
+        public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMoviesAsync(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
