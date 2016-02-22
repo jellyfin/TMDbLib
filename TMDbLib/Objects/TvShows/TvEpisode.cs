@@ -26,7 +26,7 @@ namespace TMDbLib.Objects.TvShows
         public int EpisodeNumber { get; set; }
 
         [JsonProperty("air_date")]
-        public DateTime AirDate { get; set; }
+        public DateTime? AirDate { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
