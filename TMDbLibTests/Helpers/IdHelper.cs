@@ -14,9 +14,9 @@
         public const int Furious7 = 168259;
         public const string TheDarkKnightRisesReviewId = "5010553819c2952d1b000451";
 
-        public const int tmdbTerminatorId = 218;
-        public const string imdbTerminatorId = "tt0088247";
-
+        public const int TmdbTerminatorId = 218;
+        public const string ImdbTerminatorId = "tt0088247";
+        
         // TV
         public const int BreakingBad = 1396;
         public const int BreakingBadSeason1Id = 3572;
@@ -27,13 +27,16 @@
 
         public const int TmdbBreakingBadId = 1396;
         public const string TvdbBreakingBadId = "81189";
+        public const string TvdbBreakingBadSeason1Id = "30272";
         public const string ImdbBreakingBadId = "tt0903747";
+        public const string ImdbBreakingBadSeason1Episode1Id = "tt0959621";
         public const string TvRageBreakingBadId = "18164";
         public const string FreebaseBreakingBadId = "en/breaking_bad";
         public const string FreebaseMidBreakingBadId = "m/03d34x8";
 
         // Persons
         public const int BruceWillis = 62;
+        public const string ImdbBruceWillis = "nm0000246";
 
         // Collections
         public const int JamesBondCollection = 645;

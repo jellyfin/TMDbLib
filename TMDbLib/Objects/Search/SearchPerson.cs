@@ -19,8 +19,7 @@ namespace TMDbLib.Objects.Search
 
         [JsonProperty("popularity")]
         public double Popularity { get; set; }
-
-
+        
         [JsonProperty("known_for")]
         public List<SearchMovie> KnownFor { get; set; }
     }
