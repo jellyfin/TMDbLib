@@ -84,7 +84,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.MovieSetRating(IdHelper.TheDarkKnightRises, 5);
+            _config.Client.MovieSetRating(IdHelper.TheDarkKnightRises, 5).Wait();
 
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = _config.Client.GetMovie(IdHelper.TheDarkKnightRises, combinedEnum).Result;
@@ -629,7 +629,7 @@ namespace TMDbLibTests
             Movie movie = _config.Client.GetMovie(IdHelper.TheDarkKnightRises, MovieMethods.AccountStates).Result;
             if (movie.AccountStates == null || !movie.AccountStates.Rating.HasValue)
             {
-                _config.Client.MovieSetRating(IdHelper.TheDarkKnightRises, 5);
+                _config.Client.MovieSetRating(IdHelper.TheDarkKnightRises, 5).Wait();
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);

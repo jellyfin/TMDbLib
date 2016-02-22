@@ -66,7 +66,7 @@ namespace TMDbLibTests
             TvEpisode episode = _config.Client.GetTvEpisode(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates).Result;
             if (episode.AccountStates == null || !episode.AccountStates.Rating.HasValue)
             {
-                _config.Client.TvEpisodeSetRating(IdHelper.BigBangTheory, 1, 1, 5);
+                _config.Client.TvEpisodeSetRating(IdHelper.BigBangTheory, 1, 1, 5).Wait();
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);
@@ -85,7 +85,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 1, 5);
+            _config.Client.TvEpisodeSetRating(IdHelper.BreakingBad, 1, 1, 5).Wait();
 
             TvEpisodeMethods combinedEnum = _methods.Keys.Aggregate((methods, tvEpisodeMethods) => methods | tvEpisodeMethods);
             TvEpisode tvEpisode = _config.Client.GetTvEpisode(IdHelper.BreakingBad, 1, 1, combinedEnum).Result;

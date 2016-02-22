@@ -66,7 +66,7 @@ namespace TMDbLibTests
             TvSeason season = _config.Client.GetTvSeason(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
             if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
             {
-                _config.Client.TvEpisodeSetRating(IdHelper.BigBangTheory, 1, 1, 5);
+                _config.Client.TvEpisodeSetRating(IdHelper.BigBangTheory, 1, 1, 5).Wait();
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);

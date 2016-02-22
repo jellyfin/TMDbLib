@@ -196,7 +196,7 @@ namespace TMDbLibTests
             TvShow show = _config.Client.GetTvShow(IdHelper.BigBangTheory, TvShowMethods.AccountStates).Result;
             if (show.AccountStates == null || !show.AccountStates.Rating.HasValue)
             {
-                _config.Client.TvShowSetRating(IdHelper.BigBangTheory, 5);
+                _config.Client.TvShowSetRating(IdHelper.BigBangTheory, 5).Wait();
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);
