@@ -216,7 +216,8 @@ namespace TMDbLibTests
         private void TestBreakingBadSeasonOneEpisodeOneBaseProperties(TvEpisode tvEpisode)
         {
             Assert.AreEqual(62085, tvEpisode.Id);
-            Assert.AreEqual(new DateTime(2008, 1, 19), tvEpisode.AirDate.Date);
+            Assert.IsTrue(tvEpisode.AirDate.HasValue);
+            Assert.AreEqual(new DateTime(2008, 1, 19), tvEpisode.AirDate.Value.Date);
             Assert.AreEqual(1, tvEpisode.EpisodeNumber);
             Assert.AreEqual("Pilot", tvEpisode.Name);
             Assert.IsNotNull(tvEpisode.Overview);
