@@ -40,8 +40,11 @@ namespace TMDbLib.Client
                 if (item.Images != null)
                     item.Images.Id = item.Id;
 
-                if (item.Credits != null)
-                    item.Credits.Id = item.Id;
+                if (item.TvCredits != null)
+                    item.TvCredits.Id = item.Id;
+
+                if (item.MovieCredits != null)
+                    item.MovieCredits.Id = item.Id;
             }
 
             return item;
