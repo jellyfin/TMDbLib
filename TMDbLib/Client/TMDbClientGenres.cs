@@ -8,12 +8,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<List<Genre>> GetMovieGenres()
+        public async Task<List<Genre>> GetMovieGenresAsync()
         {
-            return await GetMovieGenres(DefaultLanguage).ConfigureAwait(false);
+            return await GetMovieGenresAsync(DefaultLanguage).ConfigureAwait(false);
         }
 
-        public async Task<List<Genre>> GetMovieGenres(string language)
+        public async Task<List<Genre>> GetMovieGenresAsync(string language)
         {
             RestRequest req = _client.Create("genre/movie/list");
 
@@ -26,12 +26,12 @@ namespace TMDbLib.Client
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }
 
-        public async Task<List<Genre>> GetTvGenres()
+        public async Task<List<Genre>> GetTvGenresAsync()
         {
-            return await GetTvGenres(DefaultLanguage).ConfigureAwait(false);
+            return await GetTvGenresAsync(DefaultLanguage).ConfigureAwait(false);
         }
 
-        public async Task<List<Genre>> GetTvGenres(string language)
+        public async Task<List<Genre>> GetTvGenresAsync(string language)
         {
             RestRequest req = _client.Create("genre/tv/list");
 
@@ -44,12 +44,12 @@ namespace TMDbLib.Client
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }
 
-        public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, int page = 0, bool? includeAllMovies = null)
+        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null)
         {
-            return await GetGenreMovies(genreId, DefaultLanguage, page, includeAllMovies).ConfigureAwait(false);
+            return await GetGenreMoviesAsync(genreId, DefaultLanguage, page, includeAllMovies).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<MovieResult>> GetGenreMovies(int genreId, string language, int page = 0, bool? includeAllMovies = null)
+        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null)
         {
             RestRequest req = _client.Create("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());

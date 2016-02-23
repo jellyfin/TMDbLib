@@ -113,7 +113,7 @@ namespace TMDbLibTests
                 {
                     try
                     {
-                        client.GetMovie(id).Wait();
+                        client.GetMovieAsync(id).Wait();
                     }
                     catch (AggregateException ex)
                     {

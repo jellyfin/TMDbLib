@@ -28,7 +28,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestAuthenticationRequestNewToken()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
+            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Result;
 
             Assert.IsNotNull(token);
             Assert.IsTrue(token.Success);
@@ -39,7 +39,7 @@ namespace TMDbLibTests
 
         //<remarks>
         //This requires manual intervention, as such it can not be included with the regular test set
-        //To be able to execute this test request a token using the AuthenticationRequestAutenticationToken method.
+        //To be able to execute this test request a token using the AuthenticationRequestAutenticationTokenAsync method.
         //Subsequently naviate to the AuthenticationCallback url specified on the returned object.
         //Log-in to a TMDb account and grant access when requested.
         //Use the RequestToken string previously provided as value for this test
@@ -48,7 +48,7 @@ namespace TMDbLibTests
         //public void TestAuthenticationUserAuthenticatedSessionSuccess()
         //{
         //    const string requestToken = "cb49e29af0473e78a4a489c91c6a8259407a343b";
-        //    UserSession session = _config.Client.AuthenticationGetUserSession(requestToken);
+        //    UserSession session = _config.Client.AuthenticationGetUserSessionAsync(requestToken);
 
         //    Assert.IsNotNull(session);
         //    Assert.IsTrue(session.Success);
@@ -63,7 +63,7 @@ namespace TMDbLibTests
 
             try
             {
-                _config.Client.AuthenticationGetUserSession(requestToken).Wait();
+                _config.Client.AuthenticationGetUserSessionAsync(requestToken).Wait();
             }
             catch (AggregateException ex)
             {
@@ -80,20 +80,20 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestAuthenticationGetUserSessionApiUserValidationSuccess()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
+            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Result;
 
-            _config.Client.AuthenticationValidateUserToken(token.RequestToken, _config.Username, _config.Password).Wait();
+            _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, _config.Username, _config.Password).Wait();
         }
 
         [TestMethod]
         [ExpectedException(typeof(UnauthorizedAccessException))]
         public void TestAuthenticationGetUserSessionApiUserValidationInvalidLogin()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationToken().Result;
+            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Result;
 
             try
             {
-                _config.Client.AuthenticationValidateUserToken(token.RequestToken, "bla", "bla").Wait();
+                _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla").Wait();
             }
             catch (AggregateException ex)
             {
@@ -110,7 +110,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void AuthenticationGetUserSessionWithLoginSuccess()
         {
-            UserSession session = _config.Client.AuthenticationGetUserSession(_config.Username, _config.Password).Result;
+            UserSession session = _config.Client.AuthenticationGetUserSessionAsync(_config.Username, _config.Password).Result;
 
             Assert.IsNotNull(session);
             Assert.IsTrue(session.Success);
@@ -124,7 +124,7 @@ namespace TMDbLibTests
             const string requestToken = "5f3a62c0d7977319e3d14adf1a2064c0c0938bcf";
             try
             {
-                _config.Client.AuthenticationGetUserSession(requestToken).Wait();
+                _config.Client.AuthenticationGetUserSessionAsync(requestToken).Wait();
             }
             catch (AggregateException ex)
             {
@@ -138,7 +138,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestAuthenticationCreateGuestSession()
         {
-            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSession().Result;
+            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSessionAsync().Result;
 
             Assert.IsNotNull(guestSession);
             Assert.IsTrue(guestSession.Success);

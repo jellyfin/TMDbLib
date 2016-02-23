@@ -21,7 +21,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTimezonesList()
         {
-            Timezones result = _config.Client.GetTimezones().Result;
+            Timezones result = _config.Client.GetTimezonesAsync().Result;
             
             Assert.IsNotNull(result);
             Assert.IsTrue(result.List.Count > 200);

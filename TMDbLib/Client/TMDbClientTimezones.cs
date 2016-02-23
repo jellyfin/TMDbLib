@@ -9,7 +9,7 @@ namespace TMDbLib.Client
     public partial class TMDbClient
     {
         /// <summary>
-        /// Find movies, people and tv shows by an external id.
+        /// FindAsync movies, people and tv shows by an external id.
         /// The following trypes can be found based on the specified external id's
         /// - Movies: Imdb
         /// - People: Imdb, FreeBaseMid, FreeBaseId, TvRage
@@ -18,7 +18,7 @@ namespace TMDbLib.Client
         /// <param name="source">The source the specified id belongs to</param>
         /// <param name="id">The id of the object you wish to located</param>
         /// <returns>A list of all objects in TMDb that matched your id</returns>
-        public async Task<Timezones> GetTimezones()
+        public async Task<Timezones> GetTimezonesAsync()
         {
             RestRequest req = _client.Create("timezones/list");
 

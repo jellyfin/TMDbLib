@@ -12,7 +12,7 @@ namespace TMDbLib.Client
         /// Retrieves a list of departments and positions within
         /// </summary>
         /// <returns>Valid jobs and their departments</returns>
-        public async Task<List<Job>> GetJobs()
+        public async Task<List<Job>> GetJobsAsync()
         {
             RestRequest req = _client.Create("job/list");
 

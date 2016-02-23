@@ -23,7 +23,7 @@ namespace TMDbLib.Client
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         /// <returns>The requested season for the specified tv show</returns>
-        public async Task<TvSeason> GetTvSeason(int tvShowId, int seasonNumber, TvSeasonMethods extraMethods = TvSeasonMethods.Undefined, string language = null)
+        public async Task<TvSeason> GetTvSeasonAsync(int tvShowId, int seasonNumber, TvSeasonMethods extraMethods = TvSeasonMethods.Undefined, string language = null)
         {
             if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
@@ -82,7 +82,7 @@ namespace TMDbLib.Client
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        public async Task<Credits> GetTvSeasonCredits(int tvShowId, int seasonNumber, string language = null)
+        public async Task<Credits> GetTvSeasonCreditsAsync(int tvShowId, int seasonNumber, string language = null)
         {
             return await GetTvSeasonMethod<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, dateFormat: "yyyy-MM-dd", language: language).ConfigureAwait(false);
         }
@@ -96,12 +96,12 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
-        public async Task<PosterImages> GetTvSeasonImages(int tvShowId, int seasonNumber, string language = null)
+        public async Task<PosterImages> GetTvSeasonImagesAsync(int tvShowId, int seasonNumber, string language = null)
         {
             return await GetTvSeasonMethod<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language).ConfigureAwait(false);
         }
 
-        public async Task<ResultContainer<Video>> GetTvSeasonVideos(int tvShowId, int seasonNumber, string language = null)
+        public async Task<ResultContainer<Video>> GetTvSeasonVideosAsync(int tvShowId, int seasonNumber, string language = null)
         {
             return await GetTvSeasonMethod<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language).ConfigureAwait(false);
         }
@@ -111,12 +111,12 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-        public async Task<ExternalIds> GetTvSeasonExternalIds(int tvShowId, int seasonNumber)
+        public async Task<ExternalIds> GetTvSeasonExternalIdsAsync(int tvShowId, int seasonNumber)
         {
             return await GetTvSeasonMethod<ExternalIds>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds).ConfigureAwait(false);
         }
 
-        public async Task<ResultContainer<TvEpisodeAccountState>> GetTvSeasonAccountState(int tvShowId, int seasonNumber)
+        public async Task<ResultContainer<TvEpisodeAccountState>> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -139,7 +139,7 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<ChangesContainer> GetTvSeasonChanges(int seasonId)
+        public async Task<ChangesContainer> GetTvSeasonChangesAsync(int seasonId)
         {
             RestRequest req = _client.Create("tv/season/{id}/changes");
             req.AddUrlSegment("id", seasonId.ToString(CultureInfo.InvariantCulture));

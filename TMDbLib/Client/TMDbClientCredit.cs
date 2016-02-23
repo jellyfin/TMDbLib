@@ -6,12 +6,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Credit> GetCredits(string id)
+        public async Task<Credit> GetCreditsAsync(string id)
         {
-            return await GetCredits(id, DefaultLanguage).ConfigureAwait(false);
+            return await GetCreditsAsync(id, DefaultLanguage).ConfigureAwait(false);
         }
 
-        public async Task<Credit> GetCredits(string id, string language)
+        public async Task<Credit> GetCreditsAsync(string id, string language)
         {
             RestRequest req = _client.Create("credit/{id}");
 

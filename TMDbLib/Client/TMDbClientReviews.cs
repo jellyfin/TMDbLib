@@ -6,7 +6,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Review> GetReview(string reviewId)
+        public async Task<Review> GetReviewAsync(string reviewId)
         {
             RestRequest request  = _client.Create("review/{reviewId}");
             request.AddUrlSegment("reviewId", reviewId);
