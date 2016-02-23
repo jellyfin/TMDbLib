@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.People;
 using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Find
@@ -12,9 +11,15 @@ namespace TMDbLib.Objects.Find
         public List<MovieResult> MovieResults { get; set; }
 
         [JsonProperty("person_results")]
-        public List<Person> PersonResults { get; set; }     // Unconfirmed type
+        public List<SearchPerson> PersonResults { get; set; }     // Unconfirmed type
 
         [JsonProperty("tv_results")]
         public List<SearchTv> TvResults { get; set; }
+
+        [JsonProperty("tv_episode_results")]
+        public List<SearchTvEpisode> TvEpisode { get; set; }
+
+        [JsonProperty("tv_season_results")]
+        public List<SearchTvSeason> TvSeason { get; set; }
     }
 }
