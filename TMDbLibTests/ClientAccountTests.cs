@@ -36,7 +36,7 @@ namespace TMDbLibTests
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
             try
             {
-                _config.Client.AccountGetDetails().Wait();
+                _config.Client.AccountGetDetailsAsync().Wait();
             }
             catch (AggregateException ex)
             {
@@ -51,7 +51,7 @@ namespace TMDbLibTests
         public void TestAccountGetDetailsUserAccount()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            AccountDetails account = _config.Client.AccountGetDetails().Result;
+            AccountDetails account = _config.Client.AccountGetDetailsAsync().Result;
 
             // Naturally the specified account must have these values populated for the test to pass
             Assert.IsNotNull(account);
@@ -70,8 +70,8 @@ namespace TMDbLibTests
         public void TestAccountAccountGetLists()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetLists(i).Result);
-            List list = _config.Client.AccountGetLists().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetListsAsync(i).Result);
+            List list = _config.Client.AccountGetListsAsync().Result.Results[0];
 
             Assert.IsNotNull(list.Id);
             Assert.IsNotNull(list.Name);
@@ -87,8 +87,8 @@ namespace TMDbLibTests
         public void TestAccountGetFavoriteMovies()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i).Result);
-            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMoviesAsync(i).Result);
+            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Result.Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -111,8 +111,8 @@ namespace TMDbLibTests
         public void TestAccountGetFavoriteTv()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteTv(i).Result);
-            SearchTv tvShow = _config.Client.AccountGetFavoriteTv().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteTvAsync(i).Result);
+            SearchTv tvShow = _config.Client.AccountGetFavoriteTvAsync().Result.Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
             Assert.IsTrue(tvShow.Id > 0);
@@ -135,8 +135,8 @@ namespace TMDbLibTests
         public void TestAccountGetMovieWatchlist()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i).Result);
-            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMoviesAsync(i).Result);
+            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Result.Results[0];
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -159,8 +159,8 @@ namespace TMDbLibTests
         public void TestAccountGetTvWatchlist()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetTvWatchlist(i).Result);
-            SearchTv tvShow = _config.Client.AccountGetTvWatchlist().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetTvWatchlistAsync(i).Result);
+            SearchTv tvShow = _config.Client.AccountGetTvWatchlistAsync().Result.Results[0];
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
             Assert.IsTrue(tvShow.Id > 0);
@@ -183,8 +183,8 @@ namespace TMDbLibTests
         public void TestAccountGetRatedMovies()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMovies(i).Result);
-            SearchMovie movie = _config.Client.AccountGetFavoriteMovies().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMoviesAsync(i).Result);
+            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Result.Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.IsTrue(movie.Id > 0);
@@ -207,8 +207,8 @@ namespace TMDbLibTests
         public void TestAccountGetRatedTv()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShows(i).Result);
-            SearchTv tvShow = _config.Client.AccountGetRatedTvShows().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowsAsync(i).Result);
+            SearchTv tvShow = _config.Client.AccountGetRatedTvShowsAsync().Result.Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.IsTrue(tvShow.Id > 0);
@@ -232,8 +232,8 @@ namespace TMDbLibTests
         {
             // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowEpisodes(i).Result);
-            SearchTvEpisode tvEpisode = _config.Client.AccountGetRatedTvShowEpisodes().Result.Results[0];
+            TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowEpisodesAsync(i).Result);
+            SearchTvEpisode tvEpisode = _config.Client.AccountGetRatedTvShowEpisodesAsync().Result.Results[0];
             
             // Requires that you have rated at least one movie else this test will fail
             Assert.IsTrue(tvEpisode.Id > 0);
@@ -257,13 +257,13 @@ namespace TMDbLibTests
                 Assert.Fail("Test tv show '{0}' was already marked as favorite. Unable to perform test correctly", IdHelper.DoctorWho);
 
             // Try to mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
             Assert.IsTrue(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to un-mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
             Assert.IsFalse(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
@@ -279,13 +279,13 @@ namespace TMDbLibTests
                 Assert.Fail("Test movie '{0}' was already marked as favorite. Unable to perform test correctly", IdHelper.Terminator);
 
             // Try to mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, IdHelper.Terminator, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true).Result);
 
             // Check if it worked
             Assert.IsTrue(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to un-mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatus(MediaType.Movie, IdHelper.Terminator, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
 
             // Check if it worked
             Assert.IsFalse(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
@@ -301,13 +301,13 @@ namespace TMDbLibTests
                 Assert.Fail("Test tv show '{0}' was already on watchlist. Unable to perform test correctly", IdHelper.DoctorWho);
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
             Assert.IsTrue(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to remove item from watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
             Assert.IsFalse(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
@@ -323,13 +323,13 @@ namespace TMDbLibTests
                 Assert.Fail("Test movie '{0}' was already on watchlist. Unable to perform test correctly", IdHelper.Terminator);
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, IdHelper.Terminator, true).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true).Result);
 
             // Check if it worked
             Assert.IsTrue(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to remove item from watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatus(MediaType.Movie, IdHelper.Terminator, false).Result);
+            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
 
             // Check if it worked
             Assert.IsFalse(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
@@ -337,22 +337,22 @@ namespace TMDbLibTests
 
         private bool DoesFavoriteListContainSpecificTvShow(int tvId)
         {
-            return DoesListContainSpecificMovie(tvId, page => _config.Client.AccountGetFavoriteTv(page).Result.Results.Select(s => s.Id));
+            return DoesListContainSpecificMovie(tvId, page => _config.Client.AccountGetFavoriteTvAsync(page).Result.Results.Select(s => s.Id));
         }
 
         private bool DoesWatchListContainSpecificTvShow(int tvId)
         {
-            return DoesListContainSpecificMovie(tvId, page => _config.Client.AccountGetTvWatchlist(page).Result.Results.Select(s => s.Id));
+            return DoesListContainSpecificMovie(tvId, page => _config.Client.AccountGetTvWatchlistAsync(page).Result.Results.Select(s => s.Id));
         }
 
         private bool DoesFavoriteListContainSpecificMovie(int movieId)
         {
-            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetFavoriteMovies(page).Result.Results.Select(s => s.Id));
+            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetFavoriteMoviesAsync(page).Result.Results.Select(s => s.Id));
         }
 
         private bool DoesWatchListContainSpecificMovie(int movieId)
         {
-            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetMovieWatchlist(page).Result.Results.Select(s => s.Id));
+            return DoesListContainSpecificMovie(movieId, page => _config.Client.AccountGetMovieWatchlistAsync(page).Result.Results.Select(s => s.Id));
         }
 
         private bool DoesListContainSpecificMovie(int movieId, Func<int, IEnumerable<int>> listGetter)

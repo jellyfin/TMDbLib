@@ -12,7 +12,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Person> GetPerson(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
+        public async Task<Person> GetPersonAsync(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
         {
             RestRequest req = _client.Create("person/{personId}");
             req.AddUrlSegment("personId", personId.ToString());
@@ -40,8 +40,11 @@ namespace TMDbLib.Client
                 if (item.Images != null)
                     item.Images.Id = item.Id;
 
-                if (item.Credits != null)
-                    item.Credits.Id = item.Id;
+                if (item.TvCredits != null)
+                    item.TvCredits.Id = item.Id;
+
+                if (item.MovieCredits != null)
+                    item.MovieCredits.Id = item.Id;
             }
 
             return item;
@@ -76,53 +79,53 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<MovieCredits> GetPersonMovieCredits(int personId)
+        public async Task<MovieCredits> GetPersonMovieCreditsAsync(int personId)
         {
-            return await GetPersonMovieCredits(personId, DefaultLanguage).ConfigureAwait(false);
+            return await GetPersonMovieCreditsAsync(personId, DefaultLanguage).ConfigureAwait(false);
         }
 
-        public async Task<MovieCredits> GetPersonMovieCredits(int personId, string language)
+        public async Task<MovieCredits> GetPersonMovieCreditsAsync(int personId, string language)
         {
             return await GetPersonMethod<MovieCredits>(personId, PersonMethods.MovieCredits, language: language).ConfigureAwait(false);
         }
 
-        public async Task<TvCredits> GetPersonTvCredits(int personId)
+        public async Task<TvCredits> GetPersonTvCreditsAsync(int personId)
         {
-            return await GetPersonTvCredits(personId, DefaultLanguage).ConfigureAwait(false);
+            return await GetPersonTvCreditsAsync(personId, DefaultLanguage).ConfigureAwait(false);
         }
 
-        public async Task<TvCredits> GetPersonTvCredits(int personId, string language)
+        public async Task<TvCredits> GetPersonTvCreditsAsync(int personId, string language)
         {
             return await GetPersonMethod<TvCredits>(personId, PersonMethods.TvCredits, language: language).ConfigureAwait(false);
         }
 
-        public async Task<ProfileImages> GetPersonImages(int personId)
+        public async Task<ProfileImages> GetPersonImagesAsync(int personId)
         {
             return await GetPersonMethod<ProfileImages>(personId, PersonMethods.Images).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImages(int personId, int page)
+        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImagesAsync(int personId, int page)
         {
-            return await  GetPersonTaggedImages(personId, DefaultLanguage, page).ConfigureAwait(false);
+            return await  GetPersonTaggedImagesAsync(personId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImages(int personId, string language, int page)
+        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImagesAsync(int personId, string language, int page)
         {
             return await GetPersonMethod<SearchContainer<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page).ConfigureAwait(false);
         }
 
-        public async Task<ExternalIds> GetPersonExternalIds(int personId)
+        public async Task<ExternalIds> GetPersonExternalIdsAsync(int personId)
         {
             return await GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds).ConfigureAwait(false);
         }
         
-        public async Task<List<Change>> GetPersonChanges(int personId, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<List<Change>> GetPersonChangesAsync(int personId, DateTime? startDate = null, DateTime? endDate = null)
         {
             ChangesContainer changesContainer = await GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").ConfigureAwait(false);
             return changesContainer.Changes;
         }
 
-        public async Task<SearchContainer<PersonResult>> GetPersonList(PersonListType type, int page = 0)
+        public async Task<SearchContainer<PersonResult>> GetPersonListAsync(PersonListType type, int page = 0)
         {
             RestRequest req;
             switch (type)
@@ -145,7 +148,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<Person> GetLatestPerson()
+        public async Task<Person> GetLatestPersonAsync()
         {
             RestRequest req =  _client.Create("person/latest");
 

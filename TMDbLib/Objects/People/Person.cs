@@ -44,9 +44,6 @@ namespace TMDbLib.Objects.People
         [JsonProperty("popularity")]
         public double Popularity { get; set; }
         
-        [JsonProperty("credits")]
-        public MovieCredits Credits { get; set; }
-
         [JsonProperty("images")]
         public ProfileImages Images { get; set; }
 

@@ -25,7 +25,7 @@ namespace TMDbLib.Objects.Discover
 
         public async Task<SearchContainer<T>> Query(string language, int page = 0)
         {
-            return await _client.DiscoverPerform<T>(_endpoint, language, page, Parameters).ConfigureAwait(false);
+            return await _client.DiscoverPerformAsync<T>(_endpoint, language, page, Parameters).ConfigureAwait(false);
         }
     }
 }

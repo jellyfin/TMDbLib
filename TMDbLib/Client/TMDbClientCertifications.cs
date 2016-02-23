@@ -6,7 +6,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<CertificationsContainer> GetMovieCertifications()
+        public async Task<CertificationsContainer> GetMovieCertificationsAsync()
         {
             RestRequest req =  _client.Create("certification/movie/list");
 
@@ -14,7 +14,7 @@ namespace TMDbLib.Client
 
             return resp;}
 
-        public async Task<CertificationsContainer> GetTvCertifications()
+        public async Task<CertificationsContainer> GetTvCertificationsAsync()
         {
             RestRequest req =  _client.Create("certification/tv/list");
 

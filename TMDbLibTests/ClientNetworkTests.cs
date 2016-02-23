@@ -21,7 +21,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestNetworkGetById()
         {
-            Network network = _config.Client.GetNetwork(IdHelper.Hbo).Result;
+            Network network = _config.Client.GetNetworkAsync(IdHelper.Hbo).Result;
 
             Assert.IsNotNull(network);
             Assert.AreEqual("HBO", network.Name);

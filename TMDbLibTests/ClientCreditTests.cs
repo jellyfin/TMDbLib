@@ -23,7 +23,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestGetCreditBase()
         {
-            Credit result = _config.Client.GetCredits(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = _config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
 
             Assert.IsNotNull(result);
             Assert.AreEqual("cast", result.CreditType);
@@ -46,7 +46,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestGetCreditEpisode()
         {
-            Credit result = _config.Client.GetCredits(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = _config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Media);
@@ -66,7 +66,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestGetCreditSeasons()
         {
-            Credit result = _config.Client.GetCredits(IdHelper.HughLaurieHouse).Result;
+            Credit result = _config.Client.GetCreditsAsync(IdHelper.HughLaurieHouse).Result;
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Media);

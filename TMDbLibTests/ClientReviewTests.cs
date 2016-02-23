@@ -22,7 +22,7 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestReviewFullDetails()
         {
-            Review review = _config.Client.GetReview(IdHelper.TheDarkKnightRisesReviewId).Result;
+            Review review = _config.Client.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId).Result;
 
             Assert.IsNotNull(review);
 
