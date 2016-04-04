@@ -20,6 +20,6 @@ namespace TMDbLib.Objects.General
         public int? TvdbId { get; set; }
 
         [JsonProperty("tvrage_id")]
-        public int? TvrageId { get; set; }
+        public string TvrageId { get; set; }
     }
 }
