@@ -15,7 +15,13 @@ Changelog
 **0.9.0**
 Still pre-release
 
- - Brings the API up to date (minus a few features)
+ - Removed Restsharp in favour of HttpClient and Json.Net
+   - Fixes a lot of weirdness in Json parsing and gives flexibility
+   - Simplified retry logic
+ - Brings the API up to date
+   - Broke up Tv shows and Movie methods
+   - Refactorings in code
+   - Breaking changes, mostly renames and splitting methods
  - Async support
 
 **0.8.3**
