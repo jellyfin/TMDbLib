@@ -175,8 +175,8 @@ namespace TMDbLibTests
             Assert.AreEqual("nm0000246", item.ImdbId);
             Assert.AreEqual("/m/0h7pj", item.FreebaseMid);
             Assert.AreEqual("/en/bruce_willis", item.FreebaseId);
-            Assert.IsFalse(item.TvdbId.HasValue);
-            Assert.AreEqual(10183, item.TvrageId);
+            Assert.IsNull(item.TvdbId);
+            Assert.AreEqual("10183", item.TvrageId);
         }
 
         [TestMethod]

@@ -17,7 +17,7 @@ namespace TMDbLib.Objects.General
         public string FreebaseMid { get; set; }
 
         [JsonProperty("tvdb_id")]
-        public int? TvdbId { get; set; }
+        public string TvdbId { get; set; }
 
         [JsonProperty("tvrage_id")]
         public string TvrageId { get; set; }
