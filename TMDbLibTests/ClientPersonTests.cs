@@ -45,6 +45,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsExtrasNone()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             Person person = _config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
             Assert.IsNotNull(person);
@@ -61,6 +64,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestPersonsExtrasExclusive()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetPersonAsync(id, extras).Result, IdHelper.BruceWillis);
         }
 

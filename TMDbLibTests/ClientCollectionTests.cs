@@ -39,6 +39,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCollectionsExtrasNone()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             Collection collection = _config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
 
             // TODO: Test all properties
@@ -57,6 +60,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCollectionsExtrasExclusive()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCollectionAsync(id, extras).Result, IdHelper.JamesBondCollection);
         }
 

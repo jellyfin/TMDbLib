@@ -49,6 +49,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonExtrasNone()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             TvSeason tvSeason = _config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
 
             TestBreakingBadBaseProperties(tvSeason);
@@ -63,6 +66,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonExtrasAccountState()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             // Test the custom parsing code for Account State rating
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
@@ -101,6 +107,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvSeasonExtrasExclusive()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetTvSeasonAsync(id, 1, extras).Result, IdHelper.BreakingBad);
         }

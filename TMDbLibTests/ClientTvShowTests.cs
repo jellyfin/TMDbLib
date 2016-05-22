@@ -52,6 +52,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestTvShowExtrasNone()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             TvShow tvShow = _config.Client.GetTvShowAsync(IdHelper.BreakingBad).Result;
 
             TestBreakingBadBaseProperties(tvShow);

@@ -14,6 +14,16 @@ namespace TMDbLibTests.JsonHelpers
         private readonly List<ErrorEventArgs> _errors = new List<ErrorEventArgs>();
 
         /// <summary>
+        /// Ignores errors about missing C# properties (Where new or unknown JSON properties are present)
+        /// </summary>
+        protected bool IgnoreMissingProperties = false;
+
+        /// <summary>
+        /// Ignores errors about missing JSON properties (Where C# properties are not set)
+        /// </summary>
+        protected bool IgnoreMissingJson = false;
+
+        /// <summary>
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
@@ -63,13 +73,13 @@ namespace TMDbLibTests.JsonHelpers
                     if (errorMessage.StartsWith("Could not find member"))
                     {
                         // Field in JSON is missing in C#
-                        if (!missingFieldInCSharp.ContainsKey(key))
+                        if (!IgnoreMissingProperties && !missingFieldInCSharp.ContainsKey(key))
                             missingFieldInCSharp.Add(key, error);
                     }
                     else if (errorMessage.StartsWith("Required property"))
                     {
                         // Field in C# is missing in JSON
-                        if (!missingPropertyInJson.ContainsKey(key))
+                        if (!IgnoreMissingJson && !missingPropertyInJson.ContainsKey(key))
                             missingPropertyInJson.Add(key, error);
                     }
                     else
@@ -102,8 +112,9 @@ namespace TMDbLibTests.JsonHelpers
                     foreach (KeyValuePair<string, ErrorEventArgs> pair in other)
                         sb.AppendLine($"{pair.Key}: {pair.Value.ErrorContext.Error.Message}");
                 }
-                
-                Assert.Inconclusive(sb.ToString());
+
+                if (missingFieldInCSharp.Any() || missingPropertyInJson.Any() || other.Any())
+                    Assert.Inconclusive(sb.ToString());
             }
         }
     }

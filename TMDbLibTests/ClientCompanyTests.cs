@@ -39,6 +39,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCompaniesExtrasNone()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             Company company = _config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
 
             Assert.IsNotNull(company);
@@ -56,6 +59,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestCompaniesExtrasExclusive()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompanyAsync(id, extras).Result, IdHelper.TwentiethCenturyFox);
         }
 

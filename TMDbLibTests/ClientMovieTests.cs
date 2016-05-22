@@ -57,6 +57,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesExtrasNone()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             Movie movie = _config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.IsNotNull(movie);
@@ -74,6 +77,9 @@ namespace TMDbLibTests
         [TestMethod]
         public void TestMoviesExtrasExclusive()
         {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetMovieAsync(id, extras).Result, IdHelper.AGoodDayToDieHard);
         }
