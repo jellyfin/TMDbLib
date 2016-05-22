@@ -39,7 +39,7 @@ namespace TMDbLibTests
             Assert.IsTrue(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
             Assert.AreEqual("en", item.OriginalLanguage);
             Assert.AreEqual("Dr. No", item.OriginalTitle);
-            Assert.AreEqual("When Strangways, the British SIS Station Chief in Jamaica goes missing, MI6 send James Bond - Agent 007 to investigate. His investigation leads him to the mysterious Crab Key; the secret base of Dr No who he suspects is trying to sabotage the American space program using a radio beam. With the assistance of local fisherman Quarrel, who had been helping Strangways, Bond sneaks onto Crab Key where he meets the beautiful Honey Ryder. Can the three of them defeat an army of henchmen and a \"fire breathing dragon\" in order to stop Dr No, save the space program and get revenge for Strangways? Dr. No is the first film of legendary James Bond series starring Sean Connery in the role of Fleming's British super agent.", item.Overview);
+            Assert.AreEqual("In the film that launched the James Bond saga, Agent 007 (Sean Connery) battles mysterious Dr. No, a scientific genius bent on destroying the U.S. space program. As the countdown to disaster begins, Bond must go to Jamaica, where he encounters beautiful Honey Ryder (Ursula Andress), to confront a megalomaniacal villain in his massive island headquarters.", item.Overview);
             Assert.AreEqual(false, item.Video);
             Assert.IsTrue(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
             Assert.AreEqual(new DateTime(1962, 10, 4), item.ReleaseDate);

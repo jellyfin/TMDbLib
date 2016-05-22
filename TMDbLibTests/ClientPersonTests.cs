@@ -306,7 +306,7 @@ namespace TMDbLibTests
             Assert.AreEqual(187, image.Media.Id);
             Assert.AreEqual("en", image.Media.OriginalLanguage);
             Assert.AreEqual("Sin City", image.Media.OriginalTitle);
-            Assert.AreEqual("Sin City is a neo-noir crime thriller based on Frank Miller's graphic novel series of the same name.The film is primarily based on three of Miller's works: The Hard Goodbye, about a man who embarks on a brutal rampage in search of his one-time sweetheart's killer; The Big Fat Kill, which focuses on a street war between a group of prostitutes and a group of mercenaries; and That Yellow Bastard, which follows an aging police officer who protects a young woman from a grotesquely disfigured serial killer.", image.Media.Overview);
+            Assert.AreEqual("Welcome to Sin City. This town beckons to the tough, the corrupt, the brokenhearted. Some call it dark… Hard-boiled. Then there are those who call it home — Crooked cops, sexy dames, desperate vigilantes. Some are seeking revenge, others lust after redemption, and then there are those hoping for a little of both. A universe of unlikely and reluctant heroes still trying to do the right thing in a city that refuses to care.", image.Media.Overview);
             Assert.AreEqual(new DateTime(2005, 3, 31), image.Media.ReleaseDate);
             Assert.IsTrue(TestImagesHelpers.TestImagePath(image.Media.PosterPath), "image.Media.PosterPath was not a valid image path, was: " + image.Media.PosterPath);
             Assert.IsTrue(image.Media.Popularity > 0);
