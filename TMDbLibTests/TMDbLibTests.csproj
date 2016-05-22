@@ -38,6 +38,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -77,9 +81,11 @@
     <Compile Include="ClientCollectionTests.cs" />
     <Compile Include="ClientSearchTests.cs" />
     <Compile Include="ClientJobTests.cs" />
+    <Compile Include="JsonHelpers\FailingContractResolver.cs" />
     <Compile Include="Helpers\IdHelper.cs" />
     <Compile Include="Helpers\TestImagesHelpers.cs" />
     <Compile Include="Helpers\TestHelpers.cs" />
+    <Compile Include="JsonHelpers\TestBase.cs" />
     <Compile Include="TestClasses\EnumTestEnum.cs" />
     <Compile Include="TestConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +100,9 @@
       <Project>{c0006f17-212a-474f-983e-7da2f91e0233}</Project>
       <Name>TMDbLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

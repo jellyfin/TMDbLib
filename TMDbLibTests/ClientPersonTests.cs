@@ -6,11 +6,12 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientPersonTests
+    public class ClientPersonTests : TestBase
     {
         private static Dictionary<PersonMethods, Func<Person, object>> _methods;
         private TestConfig _config;
@@ -19,8 +20,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 

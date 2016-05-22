@@ -9,13 +9,14 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 using Cast = TMDbLib.Objects.Movies.Cast;
 using Credits = TMDbLib.Objects.Movies.Credits;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientMovieTests
+    public class ClientMovieTests : TestBase
     {
         private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
         private TestConfig _config;
@@ -24,8 +25,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 

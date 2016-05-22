@@ -2,6 +2,7 @@
 using System.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Authentication;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
@@ -9,7 +10,7 @@ namespace TMDbLibTests
     /// https://www.themoviedb.org/documentation/api/sessions
     /// </summary>
     [TestClass]
-    public class ClientAuthenticationTests
+    public class ClientAuthenticationTests : TestBase
     {
         private TestConfig _config;
 
@@ -17,8 +18,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
 
             if (string.IsNullOrWhiteSpace(_config.Username) || string.IsNullOrWhiteSpace(_config.Password))

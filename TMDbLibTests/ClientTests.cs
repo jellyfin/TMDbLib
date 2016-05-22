@@ -6,11 +6,12 @@ using TMDbLib.Client;
 using TMDbLib.Objects.Exceptions;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientTests
+    public class ClientTests : TestBase
     {
         private TestConfig _config;
 
@@ -18,8 +19,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 
@@ -90,11 +93,11 @@ namespace TMDbLibTests
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ClientSetBadMaxRetryValue()
-        { 
+        {
             TMDbClient client = new TMDbClient(TestConfig.APIKey);
 
             client.MaxRetryCount = -1;
-            
+
             Assert.Fail();
         }
 

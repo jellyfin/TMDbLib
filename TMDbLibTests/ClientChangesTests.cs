@@ -3,11 +3,12 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientChangesTests
+    public class ClientChangesTests : TestBase
     {
         private TestConfig _config;
 
@@ -15,8 +16,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 

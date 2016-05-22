@@ -9,12 +9,13 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientTvSeasonTests
+    public class ClientTvSeasonTests : TestBase
     {
         private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
         private TestConfig _config;
@@ -23,8 +24,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 

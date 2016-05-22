@@ -5,11 +5,12 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientListsTests
+    public class ClientListsTests : TestBase
     {
         private TestConfig _config;
         private const string TestListId = "528349d419c2954bd21ca0a8";
@@ -18,8 +19,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 

@@ -9,11 +9,12 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientAccountTests
+    public class ClientAccountTests : TestBase
     {
         private TestConfig _config;
 
@@ -21,8 +22,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
 
             if (string.IsNullOrWhiteSpace(_config.UserSessionId))

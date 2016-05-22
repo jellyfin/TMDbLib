@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Utilities;
+using TMDbLibTests.JsonHelpers;
 using TMDbLibTests.TestClasses;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class UtilsTest
+    public class UtilsTest : TestBase
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), AllowDerivedTypes = false)]

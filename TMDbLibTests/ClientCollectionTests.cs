@@ -5,11 +5,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientCollectionTests
+    public class ClientCollectionTests : TestBase
     {
         private static Dictionary<CollectionMethods, Func<Collection, object>> _methods;
         private TestConfig _config;
@@ -18,8 +19,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 

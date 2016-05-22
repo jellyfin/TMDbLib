@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.Timezones;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientTimezonesTests
+    public class ClientTimezonesTests : TestBase
     {
         private TestConfig _config;
 
@@ -13,8 +14,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 
@@ -22,7 +25,7 @@ namespace TMDbLibTests
         public void TestTimezonesList()
         {
             Timezones result = _config.Client.GetTimezonesAsync().Result;
-            
+
             Assert.IsNotNull(result);
             Assert.IsTrue(result.List.Count > 200);
 

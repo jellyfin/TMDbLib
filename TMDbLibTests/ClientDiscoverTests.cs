@@ -4,11 +4,12 @@ using TMDbLib.Objects.General;
 using System.Linq;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
+using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
     [TestClass]
-    public class ClientDiscoverTests
+    public class ClientDiscoverTests : TestBase
     {
         private TestConfig _config;
 
@@ -16,8 +17,10 @@ namespace TMDbLibTests
         /// Run once, on every test
         /// </summary>
         [TestInitialize]
-        public void Initiator()
+        public override void Initiator()
         {
+            base.Initiator();
+
             _config = new TestConfig();
         }
 
