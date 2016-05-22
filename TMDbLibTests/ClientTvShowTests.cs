@@ -113,8 +113,8 @@ namespace TMDbLibTests
             Assert.AreEqual("/en/breaking_bad", externalIds.FreebaseId);
             Assert.AreEqual("/m/03d34x8", externalIds.FreebaseMid);
             Assert.AreEqual("tt0903747", externalIds.ImdbId);
-            Assert.AreEqual(18164, externalIds.TvrageId);
-            Assert.AreEqual(81189, externalIds.TvdbId);
+            Assert.AreEqual("18164", externalIds.TvrageId);
+            Assert.AreEqual("81189", externalIds.TvdbId);
         }
 
 
