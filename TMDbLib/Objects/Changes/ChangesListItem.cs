@@ -9,7 +9,6 @@ namespace TMDbLib.Objects.Changes
         public int Id { get; set; }
 
         [JsonProperty("adult")]
-        [JsonConverter(typeof(TmdbNullBoolAsFalse))]
-        public bool Adult { get; set; }
+        public bool? Adult { get; set; }
     }
 }
