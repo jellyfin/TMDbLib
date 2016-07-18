@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
@@ -14,39 +14,27 @@ using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientTvSeasonTests : TestBase
     {
         private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
-        private TestConfig _config;
+        private readonly TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientTvSeasonTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
+
+            _methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>
+            {
+                [TvSeasonMethods.Credits] = tvSeason => tvSeason.Credits,
+                [TvSeasonMethods.Images] = tvSeason => tvSeason.Images,
+                [TvSeasonMethods.ExternalIds] = tvSeason => tvSeason.ExternalIds,
+                [TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos,
+                [TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos,
+                [TvSeasonMethods.AccountStates] = tvSeason => tvSeason.AccountStates
+            };
         }
 
-        /// <summary>
-        /// Run once, on test class initialization
-        /// </summary>
-        [ClassInitialize]
-        public static void InitialInitiator(TestContext context)
-        {
-            _methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>();
-            _methods[TvSeasonMethods.Credits] = tvSeason => tvSeason.Credits;
-            _methods[TvSeasonMethods.Images] = tvSeason => tvSeason.Images;
-            _methods[TvSeasonMethods.ExternalIds] = tvSeason => tvSeason.ExternalIds;
-            _methods[TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos;
-            _methods[TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos;
-            _methods[TvSeasonMethods.AccountStates] = tvSeason => tvSeason.AccountStates;
-        }
-
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
@@ -59,11 +47,11 @@ namespace TMDbLibTests
             // Test all extras, ensure none of them are populated
             foreach (Func<TvSeason, object> selector in _methods.Values)
             {
-                Assert.IsNull(selector(tvSeason));
+                Assert.Null(selector(tvSeason));
             }
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonExtrasAccountState()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
@@ -75,7 +63,7 @@ namespace TMDbLibTests
             TvSeason season = _config.Client.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
             if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
             {
-                _config.Client.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5).Wait();
+                _config.Client.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5).Sync();
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);
@@ -83,18 +71,18 @@ namespace TMDbLibTests
                 season = _config.Client.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
             }
 
-            Assert.IsNotNull(season.AccountStates);
-            Assert.IsTrue(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.HasValue);
-            Assert.IsTrue(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.Value - 5) < double.Epsilon);
+            Assert.NotNull(season.AccountStates);
+            Assert.True(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.HasValue);
+            Assert.True(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.Value - 5) < double.Epsilon);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonExtrasAll()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Wait();
+            _config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Sync();
 
             TvSeasonMethods combinedEnum = _methods.Keys.Aggregate((methods, tvSeasonMethods) => methods | tvSeasonMethods);
             TvSeason tvSeason = _config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1, combinedEnum).Result;
@@ -104,7 +92,7 @@ namespace TMDbLibTests
             TestMethodsHelper.TestAllNotNull(_methods, tvSeason);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
@@ -114,151 +102,151 @@ namespace TMDbLibTests
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetTvSeasonAsync(id, 1, extras).Result, IdHelper.BreakingBad);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonSeparateExtrasCredits()
         {
             Credits credits = _config.Client.GetTvSeasonCreditsAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.IsNotNull(credits);
-            Assert.IsNotNull(credits.Cast);
-            Assert.AreEqual("Walter White", credits.Cast[0].Character);
-            Assert.AreEqual("52542282760ee313280017f9", credits.Cast[0].CreditId);
-            Assert.AreEqual(17419, credits.Cast[0].Id);
-            Assert.AreEqual("Bryan Cranston", credits.Cast[0].Name);
-            Assert.IsNotNull(credits.Cast[0].ProfilePath);
-            Assert.AreEqual(0, credits.Cast[0].Order);
+            Assert.NotNull(credits);
+            Assert.NotNull(credits.Cast);
+            Assert.Equal("Walter White", credits.Cast[0].Character);
+            Assert.Equal("52542282760ee313280017f9", credits.Cast[0].CreditId);
+            Assert.Equal(17419, credits.Cast[0].Id);
+            Assert.Equal("Bryan Cranston", credits.Cast[0].Name);
+            Assert.NotNull(credits.Cast[0].ProfilePath);
+            Assert.Equal(0, credits.Cast[0].Order);
 
             Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1223202);
-            Assert.IsNotNull(crewPersonId);
+            Assert.NotNull(crewPersonId);
 
-            Assert.AreEqual(1223202, crewPersonId.Id);
-            Assert.AreEqual("Production", crewPersonId.Department);
-            Assert.AreEqual("Diane Mercer", crewPersonId.Name);
-            Assert.AreEqual("Producer", crewPersonId.Job);
-            Assert.IsNull(crewPersonId.ProfilePath);
+            Assert.Equal(1223202, crewPersonId.Id);
+            Assert.Equal("Production", crewPersonId.Department);
+            Assert.Equal("Diane Mercer", crewPersonId.Name);
+            Assert.Equal("Producer", crewPersonId.Job);
+            Assert.Null(crewPersonId.ProfilePath);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonSeparateExtrasExternalIds()
         {
             ExternalIds externalIds = _config.Client.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.IsNotNull(externalIds);
-            Assert.AreEqual(3572, externalIds.Id);
-            Assert.AreEqual("/en/breaking_bad_season_1", externalIds.FreebaseId);
-            Assert.AreEqual("/m/05yy27m", externalIds.FreebaseMid);
-            Assert.IsNull(externalIds.ImdbId);
-            Assert.IsNull(externalIds.TvrageId);
-            Assert.AreEqual("30272", externalIds.TvdbId);
+            Assert.NotNull(externalIds);
+            Assert.Equal(3572, externalIds.Id);
+            Assert.Equal("/en/breaking_bad_season_1", externalIds.FreebaseId);
+            Assert.Equal("/m/05yy27m", externalIds.FreebaseMid);
+            Assert.Null(externalIds.ImdbId);
+            Assert.Null(externalIds.TvrageId);
+            Assert.Equal("30272", externalIds.TvdbId);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonSeparateExtrasImages()
         {
             PosterImages images = _config.Client.GetTvSeasonImagesAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.IsNotNull(images);
-            Assert.IsNotNull(images.Posters);
+            Assert.NotNull(images);
+            Assert.NotNull(images.Posters);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonSeparateExtrasVideos()
         {
             ResultContainer<Video> videos = _config.Client.GetTvSeasonVideosAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.IsNotNull(videos);
-            Assert.IsNotNull(videos.Results);
+            Assert.NotNull(videos);
+            Assert.NotNull(videos.Results);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonEpisodeCount()
         {
             TvSeason season = _config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.IsNotNull(season);
-            Assert.IsNotNull(season.Episodes);
+            Assert.NotNull(season);
+            Assert.NotNull(season.Episodes);
 
-            Assert.AreEqual(season.Episodes.Count, season.EpisodeCount);
+            Assert.Equal(season.Episodes.Count, season.EpisodeCount);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonAccountStateRatingSet()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Rate episode 1, 2 and 3 of BreakingBad
-            Assert.IsTrue(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 2, 7).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 3, 3).Result);
+            Assert.True(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Result);
+            Assert.True(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 2, 7).Result);
+            Assert.True(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 3, 3).Result);
 
             // Wait for TMDb to un-cache our value
             Thread.Sleep(2000);
 
             // Fetch out the seasons state
             ResultContainer<TvEpisodeAccountState> state = _config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.IsNotNull(state);
+            Assert.NotNull(state);
 
-            Assert.IsTrue(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
-            Assert.IsTrue(Math.Abs(7 - (state.Results.Single(s => s.EpisodeNumber == 2).Rating ?? 0)) < double.Epsilon);
-            Assert.IsTrue(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
+            Assert.True(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
+            Assert.True(Math.Abs(7 - (state.Results.Single(s => s.EpisodeNumber == 2).Rating ?? 0)) < double.Epsilon);
+            Assert.True(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
 
             // Test deleting Ratings
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 2).Result);
-            Assert.IsTrue(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3).Result);
+            Assert.True(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
+            Assert.True(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 2).Result);
+            Assert.True(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3).Result);
 
             // Wait for TMDb to un-cache our value
             Thread.Sleep(2000);
 
             state = _config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.IsNotNull(state);
+            Assert.NotNull(state);
 
-            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
-            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 2).Rating);
-            Assert.IsNull(state.Results.Single(s => s.EpisodeNumber == 3).Rating);
+            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
+            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 2).Rating);
+            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 3).Rating);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTvSeasonGetChanges()
         {
             ChangesContainer changes = _config.Client.GetTvSeasonChangesAsync(IdHelper.BreakingBadSeason1Id).Result;
-            Assert.IsNotNull(changes);
-            Assert.IsNotNull(changes.Changes);
+            Assert.NotNull(changes);
+            Assert.NotNull(changes.Changes);
         }
 
         private void TestBreakingBadBaseProperties(TvSeason tvSeason)
         {
-            Assert.IsNotNull(tvSeason);
-            Assert.IsNotNull(tvSeason.Id);
-            Assert.AreEqual(1, tvSeason.SeasonNumber);
-            Assert.AreEqual("Season 1", tvSeason.Name);
-            Assert.IsNotNull(tvSeason.AirDate);
-            Assert.IsNotNull(tvSeason.Overview);
-            Assert.IsNotNull(tvSeason.PosterPath);
+            Assert.NotNull(tvSeason);
+            Assert.NotNull(tvSeason.Id);
+            Assert.Equal(1, tvSeason.SeasonNumber);
+            Assert.Equal("Season 1", tvSeason.Name);
+            Assert.NotNull(tvSeason.AirDate);
+            Assert.NotNull(tvSeason.Overview);
+            Assert.NotNull(tvSeason.PosterPath);
 
-            Assert.IsNotNull(tvSeason.Episodes);
-            Assert.AreEqual(7, tvSeason.Episodes.Count);
-            Assert.IsNotNull(tvSeason.Episodes[0].Id);
-            Assert.AreEqual(1, tvSeason.Episodes[0].EpisodeNumber);
-            Assert.AreEqual("Pilot", tvSeason.Episodes[0].Name);
-            Assert.IsNotNull(tvSeason.Episodes[0].Overview);
-            Assert.IsNull(tvSeason.Episodes[0].ProductionCode);
-            Assert.AreEqual(1, tvSeason.Episodes[0].SeasonNumber);
-            Assert.IsNotNull(tvSeason.Episodes[0].StillPath);
+            Assert.NotNull(tvSeason.Episodes);
+            Assert.Equal(7, tvSeason.Episodes.Count);
+            Assert.NotNull(tvSeason.Episodes[0].Id);
+            Assert.Equal(1, tvSeason.Episodes[0].EpisodeNumber);
+            Assert.Equal("Pilot", tvSeason.Episodes[0].Name);
+            Assert.NotNull(tvSeason.Episodes[0].Overview);
+            Assert.Null(tvSeason.Episodes[0].ProductionCode);
+            Assert.Equal(1, tvSeason.Episodes[0].SeasonNumber);
+            Assert.NotNull(tvSeason.Episodes[0].StillPath);
         }
 
-        //[TestMethod]
+        //[Fact]
         //public void TestMoviesLanguage()
         //{
         //    Movie movie = _config.Client.GetMovieAsync(AGoodDayToDieHard);
         //    Movie movieItalian = _config.Client.GetMovieAsync(AGoodDayToDieHard, "it");
 
-        //    Assert.IsNotNull(movie);
-        //    Assert.IsNotNull(movieItalian);
+        //    Assert.NotNull(movie);
+        //    Assert.NotNull(movieItalian);
 
-        //    Assert.AreEqual("A Good Day to Die Hard", movie.Title);
-        //    Assert.AreNotEqual(movie.Title, movieItalian.Title);
+        //    Assert.Equal("A Good Day to Die Hard", movie.Title);
+        //    Assert.NotEqual(movie.Title, movieItalian.Title);
 
         //    // Test all extras, ensure none of them exist
         //    foreach (Func<Movie, object> selector in _methods.Values)
         //    {
-        //        Assert.IsNull(selector(movie));
-        //        Assert.IsNull(selector(movieItalian));
+        //        Assert.Null(selector(movie));
+        //        Assert.Null(selector(movieItalian));
         //    }
         //}
     }

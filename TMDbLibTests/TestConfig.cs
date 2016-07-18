@@ -1,4 +1,4 @@
-﻿using System.Configuration;
+﻿using TMDbLibTests.Exceptions;
 using TMDbLib.Client;
 
 namespace TMDbLibTests

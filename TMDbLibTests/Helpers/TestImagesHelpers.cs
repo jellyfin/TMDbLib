@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMDbLib.Objects.General;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Text.RegularExpressions;
 using TMDbLib.Objects.People;
+using Xunit;
 
 namespace TMDbLibTests.Helpers
 {
@@ -14,7 +14,7 @@ namespace TMDbLibTests.Helpers
 
         public static void TestImages(TestConfig config, ProfileImages images)
         {
-            Assert.IsTrue(images.Profiles.Count > 0);
+            Assert.True(images.Profiles.Count > 0);
 
             string profileSize = config.Client.Config.Images.ProfileSizes.First();
 
@@ -23,8 +23,8 @@ namespace TMDbLibTests.Helpers
 
         public static void TestImages(TestConfig config, Images images)
         {
-            Assert.IsTrue(images.Backdrops.Count > 0);
-            Assert.IsTrue(images.Posters.Count > 0);
+            Assert.True(images.Backdrops.Count > 0);
+            Assert.True(images.Posters.Count > 0);
 
             string backdropSize = config.Client.Config.Images.BackdropSizes.First();
             string posterSize = config.Client.Config.Images.PosterSizes.First();
@@ -41,8 +41,8 @@ namespace TMDbLibTests.Helpers
                 Uri url = config.Client.GetImageUrl(posterSize, imageData);
                 Uri urlSecure = config.Client.GetImageUrl(posterSize, imageData, true);
 
-                Assert.IsTrue(TestHelpers.InternetUriExists(url));
-                Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
+                Assert.True(TestHelpers.InternetUriExists(url));
+                Assert.True(TestHelpers.InternetUriExists(urlSecure));
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
@@ -9,34 +9,22 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientCompanyTests : TestBase
     {
         private static Dictionary<CompanyMethods, Func<Company, object>> _methods;
-        private TestConfig _config;
+        private readonly TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientCompanyTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
+
+            _methods = new Dictionary<CompanyMethods, Func<Company, object>>
+            {
+                [CompanyMethods.Movies] = company => company.Movies
+            };
         }
 
-        /// <summary>
-        /// Run once, on test class initialization
-        /// </summary>
-        [ClassInitialize]
-        public static void InitialInitiator(TestContext context)
-        {
-            _methods = new Dictionary<CompanyMethods, Func<Company, object>>();
-            _methods[CompanyMethods.Movies] = company => company.Movies;
-        }
-
-        [TestMethod]
+        [Fact]
         public void TestCompaniesExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
@@ -44,19 +32,19 @@ namespace TMDbLibTests
 
             Company company = _config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
 
-            Assert.IsNotNull(company);
+            Assert.NotNull(company);
 
             // TODO: Test all properties
-            Assert.AreEqual("20th Century Fox", company.Name);
+            Assert.Equal("20th Century Fox", company.Name);
 
             // Test all extras, ensure none of them exist
             foreach (Func<Company, object> selector in _methods.Values)
             {
-                Assert.IsNull(selector(company));
+                Assert.Null(selector(company));
             }
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCompaniesExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
@@ -65,7 +53,7 @@ namespace TMDbLibTests
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompanyAsync(id, extras).Result, IdHelper.TwentiethCenturyFox);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCompaniesExtrasAll()
         {
             CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
@@ -74,7 +62,7 @@ namespace TMDbLibTests
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCompaniesGetters()
         {
             //GetCompanyMoviesAsync(int id, string language, int page = -1)
@@ -82,27 +70,27 @@ namespace TMDbLibTests
             SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2).Result;
             SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it").Result;
 
-            Assert.IsNotNull(resp);
-            Assert.IsNotNull(respPage2);
-            Assert.IsNotNull(respItalian);
+            Assert.NotNull(resp);
+            Assert.NotNull(respPage2);
+            Assert.NotNull(respItalian);
 
-            Assert.IsTrue(resp.Results.Count > 0);
-            Assert.IsTrue(respPage2.Results.Count > 0);
-            Assert.IsTrue(respItalian.Results.Count > 0);
+            Assert.True(resp.Results.Count > 0);
+            Assert.True(respPage2.Results.Count > 0);
+            Assert.True(respItalian.Results.Count > 0);
 
             bool allTitlesIdentical = true;
             for (int index = 0; index < resp.Results.Count; index++)
             {
-                Assert.AreEqual(resp.Results[index].Id, respItalian.Results[index].Id);
+                Assert.Equal(resp.Results[index].Id, respItalian.Results[index].Id);
 
                 if (resp.Results[index].Title != respItalian.Results[index].Title)
                     allTitlesIdentical = false;
             }
 
-            Assert.IsFalse(allTitlesIdentical);
+            Assert.False(allTitlesIdentical);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCompaniesImages()
         {
             // Get config
@@ -114,28 +102,28 @@ namespace TMDbLibTests
             Uri url = _config.Client.GetImageUrl("original", company.LogoPath);
             Uri urlSecure = _config.Client.GetImageUrl("original", company.LogoPath, true);
 
-            Assert.IsTrue(TestHelpers.InternetUriExists(url));
-            Assert.IsTrue(TestHelpers.InternetUriExists(urlSecure));
+            Assert.True(TestHelpers.InternetUriExists(url));
+            Assert.True(TestHelpers.InternetUriExists(urlSecure));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCompaniesFull()
         {
             Company company = _config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures).Result;
 
-            Assert.IsNotNull(company);
+            Assert.NotNull(company);
 
-            Assert.AreEqual(IdHelper.ColumbiaPictures, company.Id);
-            Assert.AreEqual("Columbia Pictures Industries, Inc. (CPII) is an American film production and distribution company. Columbia Pictures now forms part of the Columbia TriStar Motion Picture Group, owned by Sony Pictures Entertainment, a subsidiary of the Japanese conglomerate Sony. It is one of the leading film companies in the world, a member of the so-called Big Six. It was one of the so-called Little Three among the eight major film studios of Hollywood's Golden Age.", company.Description);
-            Assert.AreEqual("Culver City, California", company.Headquarters);
-            Assert.AreEqual("http://www.sonypictures.com/", company.Homepage);
-            Assert.AreEqual("/mjUSfXXUhMiLAA1Zq1TfStNSoLR.png", company.LogoPath);
-            Assert.AreEqual("Columbia Pictures", company.Name);
+            Assert.Equal(IdHelper.ColumbiaPictures, company.Id);
+            Assert.Equal("Columbia Pictures Industries, Inc. (CPII) is an American film production and distribution company. Columbia Pictures now forms part of the Columbia TriStar Motion Picture Group, owned by Sony Pictures Entertainment, a subsidiary of the Japanese conglomerate Sony. It is one of the leading film companies in the world, a member of the so-called Big Six. It was one of the so-called Little Three among the eight major film studios of Hollywood's Golden Age.", company.Description);
+            Assert.Equal("Culver City, California", company.Headquarters);
+            Assert.Equal("http://www.sonypictures.com/", company.Homepage);
+            Assert.Equal("/mjUSfXXUhMiLAA1Zq1TfStNSoLR.png", company.LogoPath);
+            Assert.Equal("Columbia Pictures", company.Name);
 
-            Assert.IsNotNull(company.ParentCompany);
-            Assert.AreEqual(5752, company.ParentCompany.Id);
-            Assert.AreEqual("/sFg00KK0vVq3oqvkCxRQWApYB83.png", company.ParentCompany.LogoPath);
-            Assert.AreEqual("Sony Pictures Entertainment", company.ParentCompany.Name);
+            Assert.NotNull(company.ParentCompany);
+            Assert.Equal(5752, company.ParentCompany.Id);
+            Assert.Equal("/sFg00KK0vVq3oqvkCxRQWApYB83.png", company.ParentCompany.LogoPath);
+            Assert.Equal("Sony Pictures Entertainment", company.ParentCompany.Name);
         }
     }
 }

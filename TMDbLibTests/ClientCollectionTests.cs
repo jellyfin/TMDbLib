@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
@@ -9,34 +9,22 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientCollectionTests : TestBase
     {
         private static Dictionary<CollectionMethods, Func<Collection, object>> _methods;
-        private TestConfig _config;
+        private readonly TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientCollectionTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
+
+            _methods = new Dictionary<CollectionMethods, Func<Collection, object>>
+            {
+                [CollectionMethods.Images] = collection => collection.Images
+            };
         }
 
-        /// <summary>
-        /// Run once, on test class initialization
-        /// </summary>
-        [ClassInitialize]
-        public static void InitialInitiator(TestContext context)
-        {
-            _methods = new Dictionary<CollectionMethods, Func<Collection, object>>();
-            _methods[CollectionMethods.Images] = collection => collection.Images;
-        }
-
-        [TestMethod]
+        [Fact]
         public void TestCollectionsExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
@@ -45,19 +33,19 @@ namespace TMDbLibTests
             Collection collection = _config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
 
             // TODO: Test all properties
-            Assert.IsNotNull(collection);
-            Assert.AreEqual("James Bond Collection", collection.Name);
-            Assert.IsNotNull(collection.Parts);
-            Assert.IsTrue(collection.Parts.Count > 0);
+            Assert.NotNull(collection);
+            Assert.Equal("James Bond Collection", collection.Name);
+            Assert.NotNull(collection.Parts);
+            Assert.True(collection.Parts.Count > 0);
 
             // Test all extras, ensure none of them exist
             foreach (Func<Collection, object> selector in _methods.Values)
             {
-                Assert.IsNull(selector(collection));
+                Assert.Null(selector(collection));
             }
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCollectionsExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
@@ -66,7 +54,7 @@ namespace TMDbLibTests
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCollectionAsync(id, extras).Result, IdHelper.JamesBondCollection);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCollectionsExtrasAll()
         {
             CollectionMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
@@ -75,7 +63,7 @@ namespace TMDbLibTests
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCollectionsImages()
         {
             // Get config
@@ -84,7 +72,7 @@ namespace TMDbLibTests
             // Test image url generator
             ImagesWithId images = _config.Client.GetCollectionImagesAsync(IdHelper.JamesBondCollection).Result;
 
-            Assert.AreEqual(IdHelper.JamesBondCollection, images.Id);
+            Assert.Equal(IdHelper.JamesBondCollection, images.Id);
             TestImagesHelpers.TestImages(_config, images);
         }
     }

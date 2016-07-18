@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Configuration;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TMDbLibTests.Exceptions;
+using Xunit;
 using TMDbLib.Objects.Authentication;
+using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
@@ -9,35 +10,28 @@ namespace TMDbLibTests
     /// <summary>
     /// https://www.themoviedb.org/documentation/api/sessions
     /// </summary>
-    [TestClass]
     public class ClientAuthenticationTests : TestBase
     {
-        private TestConfig _config;
+        private readonly TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientAuthenticationTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
 
             if (string.IsNullOrWhiteSpace(_config.Username) || string.IsNullOrWhiteSpace(_config.Password))
                 throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAuthenticationRequestNewToken()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Result;
+            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
 
-            Assert.IsNotNull(token);
-            Assert.IsTrue(token.Success);
-            Assert.IsNotNull(token.AuthenticationCallback);
-            Assert.IsNotNull(token.ExpiresAt);
-            Assert.IsNotNull(token.RequestToken);
+            Assert.NotNull(token);
+            Assert.True(token.Success);
+            Assert.NotNull(token.AuthenticationCallback);
+            Assert.NotNull(token.ExpiresAt);
+            Assert.NotNull(token.RequestToken);
         }
 
         //<remarks>
@@ -47,106 +41,74 @@ namespace TMDbLibTests
         //Log-in to a TMDb account and grant access when requested.
         //Use the RequestToken string previously provided as value for this test
         //</remarks>
-        //[TestMethod]
+        //[Fact]
         //public void TestAuthenticationUserAuthenticatedSessionSuccess()
         //{
         //    const string requestToken = "cb49e29af0473e78a4a489c91c6a8259407a343b";
         //    UserSession session = _config.Client.AuthenticationGetUserSessionAsync(requestToken);
 
-        //    Assert.IsNotNull(session);
-        //    Assert.IsTrue(session.Success);
-        //    Assert.IsNotNull(session.SessionId);
+        //    Assert.NotNull(session);
+        //    Assert.True(session.Success);
+        //    Assert.NotNull(session.SessionId);
         //}
 
-        [TestMethod]
-        [ExpectedException(typeof(UnauthorizedAccessException))]
+        [Fact]
         public void TestAuthenticationUserAuthenticatedSessionInvalidToken()
         {
             const string requestToken = "bla";
 
-            try
-            {
-                _config.Client.AuthenticationGetUserSessionAsync(requestToken).Wait();
-            }
-            catch (AggregateException ex)
-            {
-                throw ex.InnerException;
-            }
-
-            // Should always throw exception
-            Assert.Fail();
+            Assert.Throws<UnauthorizedAccessException>(() => _config.Client.AuthenticationGetUserSessionAsync(requestToken).Sync());
         }
 
         /// <remarks>
         /// Requires a valid test user to be assigned
         /// </remarks>
-        [TestMethod]
+        [Fact]
         public void TestAuthenticationGetUserSessionApiUserValidationSuccess()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Result;
+            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
 
-            _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, _config.Username, _config.Password).Wait();
+            _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, _config.Username, _config.Password).Sync();
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(UnauthorizedAccessException))]
+        [Fact]
         public void TestAuthenticationGetUserSessionApiUserValidationInvalidLogin()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Result;
+            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
 
-            try
-            {
-                _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla").Wait();
-            }
-            catch (AggregateException ex)
-            {
-                throw ex.InnerException;
-            }
-
-            // Should always throw exception
-            Assert.Fail();
+            Assert.Throws<UnauthorizedAccessException>(() => _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla").Sync());
         }
 
         /// <remarks>
         /// Requires a valid test user to be assigned
         /// </remarks>
-        [TestMethod]
+        [Fact]
         public void AuthenticationGetUserSessionWithLoginSuccess()
         {
             UserSession session = _config.Client.AuthenticationGetUserSessionAsync(_config.Username, _config.Password).Result;
 
-            Assert.IsNotNull(session);
-            Assert.IsTrue(session.Success);
-            Assert.IsNotNull(session.SessionId);
+            Assert.NotNull(session);
+            Assert.True(session.Success);
+            Assert.NotNull(session.SessionId);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(UnauthorizedAccessException))]
+        [Fact]
         public void TestAuthenticationUserAuthenticatedSessionOldToken()
         {
             const string requestToken = "5f3a62c0d7977319e3d14adf1a2064c0c0938bcf";
-            try
-            {
-                _config.Client.AuthenticationGetUserSessionAsync(requestToken).Wait();
-            }
-            catch (AggregateException ex)
-            {
-                throw ex.InnerException;
-            }
 
-            // Should always throw exception
-            Assert.Fail();
+            Assert.Throws<UnauthorizedAccessException>(() => _config.Client.AuthenticationGetUserSessionAsync(requestToken).Sync());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAuthenticationCreateGuestSession()
         {
-            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSessionAsync().Result;
+            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSessionAsync().Sync();
 
-            Assert.IsNotNull(guestSession);
-            Assert.IsTrue(guestSession.Success);
-            Assert.IsNotNull(guestSession.ExpiresAt);
-            Assert.IsNotNull(guestSession.GuestSessionId);
+            Assert.NotNull(guestSession);
+            Assert.True(guestSession.Success);
+            Assert.NotNull(guestSession.ExpiresAt);
+            Assert.NotNull(guestSession.GuestSessionId);
         }
     }
 }

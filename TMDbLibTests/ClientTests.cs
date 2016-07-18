@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Client;
 using TMDbLib.Objects.Exceptions;
 using TMDbLib.Objects.General;
@@ -10,55 +10,44 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientTests : TestBase
     {
         private TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
         }
 
-        [TestMethod]
+        [Fact]
         public void GetConfigTest()
         {
-            Assert.IsFalse(_config.Client.HasConfig);
+            Assert.False(_config.Client.HasConfig);
             _config.Client.GetConfig();
-            Assert.IsTrue(_config.Client.HasConfig);
+            Assert.True(_config.Client.HasConfig);
 
-            Assert.IsNotNull(_config.Client.Config);
+            Assert.NotNull(_config.Client.Config);
         }
 
-        [TestMethod]
+        [Fact]
         public void GetConfigSslTest()
         {
             _config = new TestConfig(true);
 
-            Assert.IsFalse(_config.Client.HasConfig);
+            Assert.False(_config.Client.HasConfig);
             _config.Client.GetConfig();
-            Assert.IsTrue(_config.Client.HasConfig);
+            Assert.True(_config.Client.HasConfig);
 
-            Assert.IsNotNull(_config.Client.Config);
+            Assert.NotNull(_config.Client.Config);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException), AllowDerivedTypes = false)]
+        [Fact]
         public void GetConfigFailTest()
         {
-            TMDbConfig config = _config.Client.Config;
-
-            // Should always throw exception
-            Assert.Fail();
+            Assert.Throws<InvalidOperationException>(() => _config.Client.Config);
         }
 
-        [TestMethod]
+        [Fact]
         public void SetConfigTest()
         {
             TMDbConfig config = new TMDbConfig();
@@ -67,14 +56,14 @@ namespace TMDbLibTests
             config.Images = new ConfigImageTypes();
             config.Images.BaseUrl = " ..";
 
-            Assert.IsFalse(_config.Client.HasConfig);
+            Assert.False(_config.Client.HasConfig);
             _config.Client.SetConfig(config);
-            Assert.IsTrue(_config.Client.HasConfig);
+            Assert.True(_config.Client.HasConfig);
 
-            Assert.AreSame(config, _config.Client.Config);
+            Assert.Same(config, _config.Client.Config);
         }
 
-        [TestMethod]
+        [Fact]
         public void ClientConstructorUrlTest()
         {
             TMDbClient clientA = new TMDbClient(TestConfig.APIKey, false, "http://api.themoviedb.org");
@@ -90,19 +79,15 @@ namespace TMDbLibTests
             clientD.GetConfig();
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [Fact]
         public void ClientSetBadMaxRetryValue()
         {
             TMDbClient client = new TMDbClient(TestConfig.APIKey);
 
-            client.MaxRetryCount = -1;
-
-            Assert.Fail();
+            Assert.Throws<ArgumentOutOfRangeException>(() => client.MaxRetryCount = -1);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(RequestLimitExceededException))]
+        [Fact]
         public void ClientRateLimitTest()
         {
             const int id = IdHelper.AGoodDayToDieHard;
@@ -110,28 +95,21 @@ namespace TMDbLibTests
             TMDbClient client = new TMDbClient(TestConfig.APIKey);
             client.MaxRetryCount = 0;
 
-            try
+            Assert.Throws<RequestLimitExceededException>(() =>
             {
-                Parallel.For(0, 100, i =>
+                try
                 {
-                    try
+                    Parallel.For(0, 100, i =>
                     {
-                        client.GetMovieAsync(id).Wait();
-                    }
-                    catch (AggregateException ex)
-                    {
-                        // Unpack the InnerException
-                        throw ex.InnerException;
-                    }
-                });
-            }
-            catch (AggregateException ex)
-            {
-                // Unpack the InnerException
-                throw ex.InnerException;
-            }
-
-            Assert.Fail();
+                        client.GetMovieAsync(id).Sync();
+                    });
+                }
+                catch (AggregateException ex)
+                {
+                    // Unpack the InnerException
+                    throw ex.InnerException;
+                }
+            });
         }
     }
 }

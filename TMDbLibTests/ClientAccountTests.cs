@@ -1,341 +1,324 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Search;
+using TMDbLibTests.Exceptions;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientAccountTests : TestBase
     {
         private TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientAccountTests() : base()
         {
-            base.Initiator();
-
             _config = new TestConfig();
 
             if (string.IsNullOrWhiteSpace(_config.UserSessionId))
                 throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(UserSessionRequiredException))]
+        [Fact]
         public void TestAccountGetDetailsGuestAccount()
         {
             _config.Client.SetSessionInformation(_config.GuestTestSessionId, SessionType.GuestSession);
-            try
-            {
-                _config.Client.AccountGetDetailsAsync().Wait();
-            }
-            catch (AggregateException ex)
-            {
-                throw ex.InnerException;
-            }
 
-            // Should always throw exception
-            Assert.Fail();
+            Assert.Throws<UserSessionRequiredException>(() => _config.Client.AccountGetDetailsAsync().Sync());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetDetailsUserAccount()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            AccountDetails account = _config.Client.AccountGetDetailsAsync().Result;
+            AccountDetails account = _config.Client.AccountGetDetailsAsync().Sync();
 
             // Naturally the specified account must have these values populated for the test to pass
-            Assert.IsNotNull(account);
-            Assert.IsTrue(account.Id > 1);
-            Assert.AreEqual("Test Name", account.Name);
-            Assert.AreEqual("TMDbTestAccount", account.Username);
-            Assert.AreEqual("BE", account.Iso_3166_1);
-            Assert.AreEqual("en", account.Iso_639_1);
+            Assert.NotNull(account);
+            Assert.True(account.Id > 1);
+            Assert.Equal("Test Name", account.Name);
+            Assert.Equal("TMDbTestAccount", account.Username);
+            Assert.Equal("BE", account.Iso_3166_1);
+            Assert.Equal("en", account.Iso_639_1);
 
-            Assert.IsNotNull(account.Avatar);
-            Assert.IsNotNull(account.Avatar.Gravatar);
-            Assert.AreEqual("7cf5357dbc2014cbd616257c358ea0a1", account.Avatar.Gravatar.Hash);
+            Assert.NotNull(account.Avatar);
+            Assert.NotNull(account.Avatar.Gravatar);
+            Assert.Equal("7cf5357dbc2014cbd616257c358ea0a1", account.Avatar.Gravatar.Hash);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountAccountGetLists()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetListsAsync(i).Result);
-            List list = _config.Client.AccountGetListsAsync().Result.Results[0];
+            List list = _config.Client.AccountGetListsAsync().Sync().Results[0];
 
-            Assert.IsNotNull(list.Id);
-            Assert.IsNotNull(list.Name);
-            Assert.IsNull(list.PosterPath);
-            Assert.IsNotNull(list.Description);
-            Assert.IsNotNull(list.ListType);
-            Assert.IsNotNull(list.Iso_639_1);
-            Assert.IsNull(list.Items);
-            Assert.IsNull(list.CreatedBy);
+            Assert.NotNull(list.Id);
+            Assert.NotNull(list.Name);
+            Assert.Null(list.PosterPath);
+            Assert.NotNull(list.Description);
+            Assert.NotNull(list.ListType);
+            Assert.NotNull(list.Iso_639_1);
+            Assert.Null(list.Items);
+            Assert.Null(list.CreatedBy);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetFavoriteMovies()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMoviesAsync(i).Result);
-            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Result.Results[0];
+            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Sync().Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
-            Assert.IsTrue(movie.Id > 0);
-            Assert.IsNotNull(movie.Title);
-            Assert.IsNotNull(movie.PosterPath);
-            Assert.IsNotNull(movie.BackdropPath);
-            Assert.IsNotNull(movie.OriginalTitle);
-            Assert.IsNotNull(movie.Overview);
-            Assert.IsNotNull(movie.OriginalLanguage);
-            Assert.IsNotNull(movie.ReleaseDate);
-            Assert.IsTrue(movie.VoteCount > 0);
-            Assert.IsTrue(movie.VoteAverage > 0);
-            Assert.IsTrue(movie.Popularity > 0);
+            Assert.True(movie.Id > 0);
+            Assert.NotNull(movie.Title);
+            Assert.NotNull(movie.PosterPath);
+            Assert.NotNull(movie.BackdropPath);
+            Assert.NotNull(movie.OriginalTitle);
+            Assert.NotNull(movie.Overview);
+            Assert.NotNull(movie.OriginalLanguage);
+            Assert.NotNull(movie.ReleaseDate);
+            Assert.True(movie.VoteCount > 0);
+            Assert.True(movie.VoteAverage > 0);
+            Assert.True(movie.Popularity > 0);
 
-            Assert.IsNotNull(movie.GenreIds);
-            Assert.IsTrue(movie.GenreIds.Any());
+            Assert.NotNull(movie.GenreIds);
+            Assert.True(movie.GenreIds.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetFavoriteTv()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteTvAsync(i).Result);
-            SearchTv tvShow = _config.Client.AccountGetFavoriteTvAsync().Result.Results[0];
+            SearchTv tvShow = _config.Client.AccountGetFavoriteTvAsync().Sync().Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
-            Assert.IsTrue(tvShow.Id > 0);
-            Assert.IsNotNull(tvShow.Name);
-            Assert.IsNotNull(tvShow.PosterPath);
-            Assert.IsNotNull(tvShow.BackdropPath);
-            Assert.IsNotNull(tvShow.OriginalName);
-            Assert.IsNotNull(tvShow.Overview);
-            Assert.IsNotNull(tvShow.OriginalLanguage);
-            Assert.IsNotNull(tvShow.FirstAirDate);
-            Assert.IsTrue(tvShow.VoteCount > 0);
-            Assert.IsTrue(tvShow.VoteAverage > 0);
-            Assert.IsTrue(tvShow.Popularity > 0);
+            Assert.True(tvShow.Id > 0);
+            Assert.NotNull(tvShow.Name);
+            Assert.NotNull(tvShow.PosterPath);
+            Assert.NotNull(tvShow.BackdropPath);
+            Assert.NotNull(tvShow.OriginalName);
+            Assert.NotNull(tvShow.Overview);
+            Assert.NotNull(tvShow.OriginalLanguage);
+            Assert.NotNull(tvShow.FirstAirDate);
+            Assert.True(tvShow.VoteCount > 0);
+            Assert.True(tvShow.VoteAverage > 0);
+            Assert.True(tvShow.Popularity > 0);
 
-            Assert.IsNotNull(tvShow.GenreIds);
-            Assert.IsTrue(tvShow.GenreIds.Any());
+            Assert.NotNull(tvShow.GenreIds);
+            Assert.True(tvShow.GenreIds.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetMovieWatchlist()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMoviesAsync(i).Result);
-            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Result.Results[0];
+            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Sync().Results[0];
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
-            Assert.IsTrue(movie.Id > 0);
-            Assert.IsNotNull(movie.Title);
-            Assert.IsNotNull(movie.PosterPath);
-            Assert.IsNotNull(movie.BackdropPath);
-            Assert.IsNotNull(movie.OriginalTitle);
-            Assert.IsNotNull(movie.Overview);
-            Assert.IsNotNull(movie.OriginalLanguage);
-            Assert.IsNotNull(movie.ReleaseDate);
-            Assert.IsTrue(movie.VoteCount > 0);
-            Assert.IsTrue(movie.VoteAverage > 0);
-            Assert.IsTrue(movie.Popularity > 0);
+            Assert.True(movie.Id > 0);
+            Assert.NotNull(movie.Title);
+            Assert.NotNull(movie.PosterPath);
+            Assert.NotNull(movie.BackdropPath);
+            Assert.NotNull(movie.OriginalTitle);
+            Assert.NotNull(movie.Overview);
+            Assert.NotNull(movie.OriginalLanguage);
+            Assert.NotNull(movie.ReleaseDate);
+            Assert.True(movie.VoteCount > 0);
+            Assert.True(movie.VoteAverage > 0);
+            Assert.True(movie.Popularity > 0);
 
-            Assert.IsNotNull(movie.GenreIds);
-            Assert.IsTrue(movie.GenreIds.Any());
+            Assert.NotNull(movie.GenreIds);
+            Assert.True(movie.GenreIds.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetTvWatchlist()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetTvWatchlistAsync(i).Result);
-            SearchTv tvShow = _config.Client.AccountGetTvWatchlistAsync().Result.Results[0];
+            SearchTv tvShow = _config.Client.AccountGetTvWatchlistAsync().Sync().Results[0];
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
-            Assert.IsTrue(tvShow.Id > 0);
-            Assert.IsNotNull(tvShow.Name);
-            Assert.IsNotNull(tvShow.PosterPath);
-            Assert.IsNotNull(tvShow.BackdropPath);
-            Assert.IsNotNull(tvShow.OriginalName);
-            Assert.IsNotNull(tvShow.Overview);
-            Assert.IsNotNull(tvShow.OriginalLanguage);
-            Assert.IsNotNull(tvShow.FirstAirDate);
-            Assert.IsTrue(tvShow.VoteCount > 0);
-            Assert.IsTrue(tvShow.VoteAverage > 0);
-            Assert.IsTrue(tvShow.Popularity > 0);
+            Assert.True(tvShow.Id > 0);
+            Assert.NotNull(tvShow.Name);
+            Assert.NotNull(tvShow.PosterPath);
+            Assert.NotNull(tvShow.BackdropPath);
+            Assert.NotNull(tvShow.OriginalName);
+            Assert.NotNull(tvShow.Overview);
+            Assert.NotNull(tvShow.OriginalLanguage);
+            Assert.NotNull(tvShow.FirstAirDate);
+            Assert.True(tvShow.VoteCount > 0);
+            Assert.True(tvShow.VoteAverage > 0);
+            Assert.True(tvShow.Popularity > 0);
 
-            Assert.IsNotNull(tvShow.GenreIds);
-            Assert.IsTrue(tvShow.GenreIds.Any());
+            Assert.NotNull(tvShow.GenreIds);
+            Assert.True(tvShow.GenreIds.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetRatedMovies()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetFavoriteMoviesAsync(i).Result);
-            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Result.Results[0];
+            SearchMovie movie = _config.Client.AccountGetFavoriteMoviesAsync().Sync().Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
-            Assert.IsTrue(movie.Id > 0);
-            Assert.IsNotNull(movie.Title);
-            Assert.IsNotNull(movie.PosterPath);
-            Assert.IsNotNull(movie.BackdropPath);
-            Assert.IsNotNull(movie.OriginalTitle);
-            Assert.IsNotNull(movie.Overview);
-            Assert.IsNotNull(movie.OriginalLanguage);
-            Assert.IsNotNull(movie.ReleaseDate);
-            Assert.IsTrue(movie.VoteCount > 0);
-            Assert.IsTrue(movie.VoteAverage > 0);
-            Assert.IsTrue(movie.Popularity > 0);
+            Assert.True(movie.Id > 0);
+            Assert.NotNull(movie.Title);
+            Assert.NotNull(movie.PosterPath);
+            Assert.NotNull(movie.BackdropPath);
+            Assert.NotNull(movie.OriginalTitle);
+            Assert.NotNull(movie.Overview);
+            Assert.NotNull(movie.OriginalLanguage);
+            Assert.NotNull(movie.ReleaseDate);
+            Assert.True(movie.VoteCount > 0);
+            Assert.True(movie.VoteAverage > 0);
+            Assert.True(movie.Popularity > 0);
 
-            Assert.IsNotNull(movie.GenreIds);
-            Assert.IsTrue(movie.GenreIds.Any());
+            Assert.NotNull(movie.GenreIds);
+            Assert.True(movie.GenreIds.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetRatedTv()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowsAsync(i).Result);
-            SearchTv tvShow = _config.Client.AccountGetRatedTvShowsAsync().Result.Results[0];
+            SearchTv tvShow = _config.Client.AccountGetRatedTvShowsAsync().Sync().Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
-            Assert.IsTrue(tvShow.Id > 0);
-            Assert.IsNotNull(tvShow.Name);
-            Assert.IsNotNull(tvShow.PosterPath);
-            Assert.IsNotNull(tvShow.BackdropPath);
-            Assert.IsNotNull(tvShow.OriginalName);
-            Assert.IsNotNull(tvShow.Overview);
-            Assert.IsNotNull(tvShow.OriginalLanguage);
-            Assert.IsNotNull(tvShow.FirstAirDate);
-            Assert.IsTrue(tvShow.VoteCount > 0);
-            Assert.IsTrue(tvShow.VoteAverage > 0);
-            Assert.IsTrue(tvShow.Popularity > 0);
+            Assert.True(tvShow.Id > 0);
+            Assert.NotNull(tvShow.Name);
+            Assert.NotNull(tvShow.PosterPath);
+            Assert.NotNull(tvShow.BackdropPath);
+            Assert.NotNull(tvShow.OriginalName);
+            Assert.NotNull(tvShow.Overview);
+            Assert.NotNull(tvShow.OriginalLanguage);
+            Assert.NotNull(tvShow.FirstAirDate);
+            Assert.True(tvShow.VoteCount > 0);
+            Assert.True(tvShow.VoteAverage > 0);
+            Assert.True(tvShow.Popularity > 0);
 
-            Assert.IsNotNull(tvShow.GenreIds);
-            Assert.IsTrue(tvShow.GenreIds.Any());
+            Assert.NotNull(tvShow.GenreIds);
+            Assert.True(tvShow.GenreIds.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountGetRatedTvEpisodes()
         {
             // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowEpisodesAsync(i).Result);
-            SearchTvEpisode tvEpisode = _config.Client.AccountGetRatedTvShowEpisodesAsync().Result.Results[0];
-            
+            SearchTvEpisode tvEpisode = _config.Client.AccountGetRatedTvShowEpisodesAsync().Sync().Results[0];
+
             // Requires that you have rated at least one movie else this test will fail
-            Assert.IsTrue(tvEpisode.Id > 0);
-            Assert.IsTrue(tvEpisode.ShowId > 0);
-            Assert.IsTrue(tvEpisode.EpisodeNumber > 0);
-            Assert.IsTrue(tvEpisode.SeasonNumber > 0);
-            Assert.IsNotNull(tvEpisode.AirDate);
-            Assert.IsNotNull(tvEpisode.StillPath);
-            Assert.IsTrue(tvEpisode.VoteCount > 0);
-            Assert.IsTrue(tvEpisode.VoteAverage > 0);
-            Assert.IsTrue(tvEpisode.Rating > 0);
+            Assert.True(tvEpisode.Id > 0);
+            Assert.True(tvEpisode.ShowId > 0);
+            Assert.True(tvEpisode.EpisodeNumber > 0);
+            Assert.True(tvEpisode.SeasonNumber > 0);
+            Assert.NotNull(tvEpisode.AirDate);
+            Assert.NotNull(tvEpisode.StillPath);
+            Assert.True(tvEpisode.VoteCount > 0);
+            Assert.True(tvEpisode.VoteAverage > 0);
+            Assert.True(tvEpisode.Rating > 0);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountChangeTvFavoriteStatus()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
-                Assert.Fail("Test tv show '{0}' was already marked as favorite. Unable to perform test correctly", IdHelper.DoctorWho);
+                throw new Exception("Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
 
             // Try to mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
+            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
+            Assert.True(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to un-mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
+            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
+            Assert.False(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountChangeMovieFavoriteStatus()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
-                Assert.Fail("Test movie '{0}' was already marked as favorite. Unable to perform test correctly", IdHelper.Terminator);
+                throw new Exception("Test movie '{IdHelper.Terminator}' was already marked as favorite. Unable to perform test correctly");
 
             // Try to mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true).Result);
+            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
+            Assert.True(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to un-mark is as a favorite
-            Assert.IsTrue(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
+            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
+            Assert.False(DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountChangeTvWatchlistStatus()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
-                Assert.Fail("Test tv show '{0}' was already on watchlist. Unable to perform test correctly", IdHelper.DoctorWho);
+                throw new Exception("Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
+            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
+            Assert.True(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to remove item from watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
+            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
+            Assert.False(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAccountChangeMovieWatchlistStatus()
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesWatchListContainSpecificMovie(IdHelper.Terminator))
-                Assert.Fail("Test movie '{0}' was already on watchlist. Unable to perform test correctly", IdHelper.Terminator);
+                throw new Exception("Test movie '{IdHelper.Terminator}' was already on watchlist. Unable to perform test correctly");
 
             // Try to add an item to the watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true).Result);
+            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true).Result);
 
             // Check if it worked
-            Assert.IsTrue(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
+            Assert.True(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to remove item from watchlist
-            Assert.IsTrue(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
+            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
 
             // Check if it worked
-            Assert.IsFalse(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
+            Assert.False(DoesWatchListContainSpecificMovie(IdHelper.Terminator));
         }
 
         private bool DoesFavoriteListContainSpecificTvShow(int tvId)

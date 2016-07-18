@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
@@ -6,36 +6,29 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientReviewTests : TestBase
     {
-        private TestConfig _config;
+        private readonly TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientReviewTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
         }
 
-        [TestMethod]
+        [Fact]
         public void TestReviewFullDetails()
         {
             Review review = _config.Client.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId).Result;
 
-            Assert.IsNotNull(review);
+            Assert.NotNull(review);
 
-            Assert.AreEqual(IdHelper.TheDarkKnightRisesReviewId, review.Id);
-            Assert.AreEqual(49026, review.MediaId);
-            Assert.AreEqual("The Dark Knight Rises", review.MediaTitle);
-            Assert.AreEqual("Travis Bell", review.Author);
-            Assert.AreEqual("en", review.Iso_639_1);
-            Assert.AreEqual("https://www.themoviedb.org/review/5010553819c2952d1b000451", review.Url);
-            Assert.AreEqual(MediaType.Movie, review.MediaType);
+            Assert.Equal(IdHelper.TheDarkKnightRisesReviewId, review.Id);
+            Assert.Equal(49026, review.MediaId);
+            Assert.Equal("The Dark Knight Rises", review.MediaTitle);
+            Assert.Equal("Travis Bell", review.Author);
+            Assert.Equal("en", review.Iso_639_1);
+            Assert.Equal("https://www.themoviedb.org/review/5010553819c2952d1b000451", review.Url);
+            Assert.Equal(MediaType.Movie, review.MediaType);
         }
     }
 }

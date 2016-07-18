@@ -1,94 +1,88 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Objects.General;
+using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientGenreTests : TestBase
     {
         private TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientGenreTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
         }
         
-        [TestMethod]
+        [Fact]
         public void TestGenreTvList()
         {
             // Default language
-            List<Genre> genres = _config.Client.GetTvGenresAsync().Result;
+            List<Genre> genres = _config.Client.GetTvGenresAsync().Sync();
 
-            Assert.IsNotNull(genres);
-            Assert.IsTrue(genres.Count > 0);
+            Assert.NotNull(genres);
+            Assert.True(genres.Count > 0);
 
             // Another language
             List<Genre> genresDanish = _config.Client.GetTvGenresAsync("da").Result;
 
-            Assert.IsNotNull(genresDanish);
-            Assert.IsTrue(genresDanish.Count > 0);
+            Assert.NotNull(genresDanish);
+            Assert.True(genresDanish.Count > 0);
 
-            Assert.AreEqual(genres.Count, genresDanish.Count);
+            Assert.Equal(genres.Count, genresDanish.Count);
 
             // At least one should be different
-            Assert.IsTrue(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
+            Assert.True(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestGenreMovieList()
         {
             // Default language
-            List<Genre> genres = _config.Client.GetMovieGenresAsync().Result;
+            List<Genre> genres = _config.Client.GetMovieGenresAsync().Sync();
 
-            Assert.IsNotNull(genres);
-            Assert.IsTrue(genres.Count > 0);
+            Assert.NotNull(genres);
+            Assert.True(genres.Count > 0);
 
             // Another language
             List<Genre> genresDanish = _config.Client.GetMovieGenresAsync("da").Result;
 
-            Assert.IsNotNull(genresDanish);
-            Assert.IsTrue(genresDanish.Count > 0);
+            Assert.NotNull(genresDanish);
+            Assert.True(genresDanish.Count > 0);
 
-            Assert.AreEqual(genres.Count, genresDanish.Count);
+            Assert.Equal(genres.Count, genresDanish.Count);
 
             // At least one should be different
-            Assert.IsTrue(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
+            Assert.True(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestGenreMovies()
         {
             // Get first genre
-            Genre genre = _config.Client.GetMovieGenresAsync().Result.First();
+            Genre genre = _config.Client.GetMovieGenresAsync().Sync().First();
 
             // Get movies
             SearchContainerWithId<MovieResult> movies = _config.Client.GetGenreMoviesAsync(genre.Id).Result;
             SearchContainerWithId<MovieResult> moviesPage2 = _config.Client.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false).Result;
             SearchContainerWithId<MovieResult> moviesAll = _config.Client.GetGenreMoviesAsync(genre.Id, includeAllMovies: true).Result;
 
-            Assert.AreEqual(1, movies.Page);
-            Assert.AreEqual(2, moviesPage2.Page);
-            Assert.AreEqual(1, moviesAll.Page);
+            Assert.Equal(1, movies.Page);
+            Assert.Equal(2, moviesPage2.Page);
+            Assert.Equal(1, moviesAll.Page);
 
-            Assert.IsTrue(movies.Results.Count > 0);
-            Assert.IsTrue(moviesPage2.Results.Count > 0);
-            Assert.IsTrue(moviesAll.Results.Count > 0);
+            Assert.True(movies.Results.Count > 0);
+            Assert.True(moviesPage2.Results.Count > 0);
+            Assert.True(moviesAll.Results.Count > 0);
 
-            Assert.IsTrue(movies.Results.All(s => s != null));
-            Assert.IsTrue(moviesPage2.Results.All(s => s != null));
-            Assert.IsTrue(moviesAll.Results.All(s => s != null));
+            Assert.True(movies.Results.All(s => s != null));
+            Assert.True(moviesPage2.Results.All(s => s != null));
+            Assert.True(moviesAll.Results.All(s => s != null));
 
-            Assert.AreEqual(movies.TotalResults, moviesPage2.TotalResults);     // Should be the same, despite the use of 'includeAllMovies' and Italian
-            Assert.IsTrue(moviesAll.TotalResults >= movies.TotalResults);
+            Assert.Equal(movies.TotalResults, moviesPage2.TotalResults);     // Should be the same, despite the use of 'includeAllMovies' and Italian
+            Assert.True(moviesAll.TotalResults >= movies.TotalResults);
         }
     }
 }

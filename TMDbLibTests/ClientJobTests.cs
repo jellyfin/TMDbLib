@@ -1,38 +1,32 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Objects.General;
+using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientJobTests : TestBase
     {
-        private TestConfig _config;
+        private readonly TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientJobTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
         }
 
-        [TestMethod]
+        [Fact]
         public void TestJobList()
         {
-            List<Job> jobs = _config.Client.GetJobsAsync().Result;
+            List<Job> jobs = _config.Client.GetJobsAsync().Sync();
 
-            Assert.IsNotNull(jobs);
-            Assert.IsTrue(jobs.Count > 0);
+            Assert.NotNull(jobs);
+            Assert.True(jobs.Count > 0);
 
-            Assert.IsTrue(jobs.All(job => !string.IsNullOrEmpty(job.Department)));
-            Assert.IsTrue(jobs.All(job => job.JobList != null));
-            Assert.IsTrue(jobs.All(job => job.JobList.Count > 0));
+            Assert.True(jobs.All(job => !string.IsNullOrEmpty(job.Department)));
+            Assert.True(jobs.All(job => job.JobList != null));
+            Assert.True(jobs.All(job => job.JobList.Count > 0));
         }
     }
 }

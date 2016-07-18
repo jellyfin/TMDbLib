@@ -1,38 +1,32 @@
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using TMDbLib.Objects.Timezones;
+using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    [TestClass]
     public class ClientTimezonesTests : TestBase
     {
-        private TestConfig _config;
+        private readonly TestConfig _config;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public override void Initiator()
+        public ClientTimezonesTests()
         {
-            base.Initiator();
-
             _config = new TestConfig();
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTimezonesList()
         {
-            Timezones result = _config.Client.GetTimezonesAsync().Result;
+            Timezones result = _config.Client.GetTimezonesAsync().Sync();
 
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.List.Count > 200);
+            Assert.NotNull(result);
+            Assert.True(result.List.Count > 200);
 
             List<string> item = result.List["DK"];
-            Assert.IsNotNull(item);
-            Assert.AreEqual(1, item.Count);
-            Assert.AreEqual("Europe/Copenhagen", item[0]);
+            Assert.NotNull(item);
+            Assert.Equal(1, item.Count);
+            Assert.Equal("Europe/Copenhagen", item[0]);
         }
     }
 }

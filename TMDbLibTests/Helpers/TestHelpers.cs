@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Net;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TMDbLib.Objects.General;
+using Xunit;
 
 namespace TMDbLibTests.Helpers
 {
@@ -10,12 +10,12 @@ namespace TMDbLibTests.Helpers
     {
         public static bool InternetUriExists(Uri uri)
         {
-            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(uri);
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
             req.Method = "HEAD";
 
             try
             {
-                using (req.GetResponse())
+                using (req.GetResponseAsync().Sync())
                 {
                     // It exists
                     return true;
@@ -37,28 +37,27 @@ namespace TMDbLibTests.Helpers
             // Check page 1
             SearchContainer<T> results = getter(1);
 
-            Assert.IsNotNull(results);
-            Assert.IsNotNull(results.Results);
-            Assert.AreEqual(1, results.Page);
-            Assert.IsTrue(results.Results.Count > 0);
-            Assert.IsTrue(results.TotalResults > 0);
-            Assert.IsTrue(results.TotalPages > 0);
+            Assert.NotNull(results);
+            Assert.NotNull(results.Results);
+            Assert.Equal(1, results.Page);
+            Assert.True(results.Results.Count > 0);
+            Assert.True(results.TotalResults > 0);
+            Assert.True(results.TotalPages > 0);
 
             // Check page 2
             SearchContainer<T> results2 = getter(2);
 
-            Assert.IsNotNull(results2);
-            Assert.IsNotNull(results2.Results);
-            Assert.AreEqual(2, results2.Page);
+            Assert.NotNull(results2);
+            Assert.NotNull(results2.Results);
+            Assert.Equal(2, results2.Page);
             // The page counts often don't match due to caching on the api
             //Assert.AreEqual(results.TotalResults, results2.TotalResults);
             //Assert.AreEqual(results.TotalPages, results2.TotalPages);
 
             if (results.Results.Count == results.TotalResults)
-                Assert.AreEqual(0, results2.Results.Count);
+                Assert.Equal(0, results2.Results.Count);
             else
-                Assert.AreNotEqual(0, results2.Results.Count);
-
+                Assert.NotEqual(0, results2.Results.Count);
         }
     }
 }

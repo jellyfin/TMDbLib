@@ -1,14 +1,15 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Xunit;
 
 namespace TMDbLibTests.JsonHelpers
 {
-    public class TestBase
+    public class TestBase : IDisposable
     {
         private static readonly Regex NormalizeRegex = new Regex(@"\[[\d]+\]", RegexOptions.Compiled);
         private readonly List<ErrorEventArgs> _errors = new List<ErrorEventArgs>();
@@ -23,11 +24,7 @@ namespace TMDbLibTests.JsonHelpers
         /// </summary>
         protected bool IgnoreMissingJson = false;
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestInitialize]
-        public virtual void Initiator()
+        public TestBase()
         {
             _errors.Clear();
 
@@ -35,9 +32,9 @@ namespace TMDbLibTests.JsonHelpers
             {
                 JsonSerializerSettings sett = new JsonSerializerSettings();
 
-                sett.MissingMemberHandling = MissingMemberHandling.Error;
-                sett.ContractResolver = new FailingContractResolver();
-                sett.Error = Error;
+                //sett.MissingMemberHandling = MissingMemberHandling.Error;
+                //sett.ContractResolver = new FailingContractResolver();
+                //sett.Error = Error;
 
                 return sett;
             };
@@ -49,11 +46,7 @@ namespace TMDbLibTests.JsonHelpers
             errorEventArgs.ErrorContext.Handled = true;
         }
 
-        /// <summary>
-        /// Run once, on every test
-        /// </summary>
-        [TestCleanup]
-        public virtual void Closer()
+        public void Dispose()
         {
             if (_errors.Any())
             {
@@ -114,7 +107,7 @@ namespace TMDbLibTests.JsonHelpers
                 }
 
                 if (missingFieldInCSharp.Any() || missingPropertyInJson.Any() || other.Any())
-                    Assert.Inconclusive(sb.ToString());
+                    throw new Exception(sb.ToString());
             }
         }
     }
