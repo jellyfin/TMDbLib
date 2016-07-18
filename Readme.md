@@ -12,6 +12,17 @@ View more about that here: http://nuget.org/packages/TMDbLib/
 Changelog
 ---------
 
+**0.9.1**
+Still pre-release
+
+Changes:
+ - Changed project to a .NET Core project (#188), changes required:
+   - Removed the [Display] attribute, replaced with custom attribute
+   - Changed StringComparison.InvariantCultureIgnoreCase to OrdinalIgnoreCase
+   - Removed [Serializable]
+   - Support net45 and netcoreapp1.0 (also added net451, net452 and net46)
+   - Removed ObjectHelper
+
 **0.9.0**
 Still pre-release
 
