@@ -13,12 +13,9 @@ namespace TMDbLibTests
     public class ClientPersonTests : TestBase
     {
         private static Dictionary<PersonMethods, Func<Person, object>> _methods;
-        private readonly TestConfig _config;
 
         public ClientPersonTests()
         {
-            _config = new TestConfig();
-
             _methods = new Dictionary<PersonMethods, Func<Person, object>>
             {
                 [PersonMethods.MovieCredits] = person => person.MovieCredits,
@@ -36,7 +33,7 @@ namespace TMDbLibTests
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson = true;
 
-            Person person = _config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
+            Person person = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(person);
 
@@ -55,14 +52,14 @@ namespace TMDbLibTests
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson = true;
 
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetPersonAsync(id, extras).Result, IdHelper.BruceWillis);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetPersonAsync(id, extras).Result, IdHelper.BruceWillis);
         }
 
         [Fact]
         public void TestPersonsExtrasAll()
         {
             PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Person item = _config.Client.GetPersonAsync(IdHelper.BruceWillis, combinedEnum).Result;
+            Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -70,7 +67,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGet()
         {
-            Person item = _config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
+            Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
             Assert.Equal(false, item.Adult);
@@ -94,7 +91,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetPersonTvCredits()
         {
-            TvCredits item = _config.Client.GetPersonTvCreditsAsync(IdHelper.BruceWillis).Result;
+            TvCredits item = Config.Client.GetPersonTvCreditsAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
             Assert.NotNull(item.Cast);
@@ -129,7 +126,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetPersonMovieCredits()
         {
-            MovieCredits item = _config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis).Result;
+            MovieCredits item = Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
             Assert.NotNull(item.Cast);
@@ -164,7 +161,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetPersonExternalIds()
         {
-            ExternalIds item = _config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis).Result;
+            ExternalIds item = Config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
 
@@ -180,10 +177,10 @@ namespace TMDbLibTests
         public void TestPersonsGetPersonCredits()
         {
             //GetPersonCredits(int id, string language)
-            MovieCredits resp = _config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis).Result;
+            MovieCredits resp = Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis).Result;
             Assert.NotNull(resp);
 
-            MovieCredits respItalian = _config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis, "it").Result;
+            MovieCredits respItalian = Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis, "it").Result;
             Assert.NotNull(respItalian);
 
             Assert.Equal(resp.Cast.Count, respItalian.Cast.Count);
@@ -218,12 +215,12 @@ namespace TMDbLibTests
         {
             //GetPersonChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
             // FindAsync latest changed person
-            int latestChanged = _config.Client.GetChangesPeopleAsync().Sync().Results.First().Id;
+            int latestChanged = Config.Client.GetChangesPeopleAsync().Sync().Results.First().Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-14);
             DateTime higher = DateTime.UtcNow;
-            List<Change> respRange = _config.Client.GetPersonChangesAsync(latestChanged, lower, higher).Result;
+            List<Change> respRange = Config.Client.GetPersonChangesAsync(latestChanged, lower, higher).Result;
 
             Assert.NotNull(respRange);
             Assert.True(respRange.Count > 0);
@@ -245,17 +242,17 @@ namespace TMDbLibTests
         public void TestPersonsImages()
         {
             // Get config
-            _config.Client.GetConfig();
+            Config.Client.GetConfig();
 
             // Get images
-            ProfileImages images = _config.Client.GetPersonImagesAsync(IdHelper.BruceWillis).Result;
+            ProfileImages images = Config.Client.GetPersonImagesAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(images);
             Assert.NotNull(images.Profiles);
             Assert.Equal(IdHelper.BruceWillis, images.Id);
 
             // Test image url generator
-            TestImagesHelpers.TestImages(_config, images);
+            TestImagesHelpers.TestImages(Config, images);
 
             ProfileImage image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
 
@@ -273,12 +270,12 @@ namespace TMDbLibTests
         public void TestPersonsTaggedImages()
         {
             // Get config
-            _config.Client.GetConfig();
+            Config.Client.GetConfig();
 
             // Get images
-            TestHelpers.SearchPages(i => _config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, i).Result);
+            TestHelpers.SearchPages(i => Config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, i).Result);
 
-            SearchContainer<TaggedImage> images = _config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, 1).Result;
+            SearchContainer<TaggedImage> images = Config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, 1).Result;
 
             Assert.NotNull(images);
             Assert.NotNull(images.Results);
@@ -324,19 +321,19 @@ namespace TMDbLibTests
         {
             foreach (PersonListType type in Enum.GetValues(typeof(PersonListType)).OfType<PersonListType>())
             {
-                SearchContainer<PersonResult> list = _config.Client.GetPersonListAsync(type).Result;
+                SearchContainer<PersonResult> list = Config.Client.GetPersonListAsync(type).Result;
 
                 Assert.NotNull(list);
                 Assert.True(list.Results.Count > 0);
                 Assert.Equal(1, list.Page);
 
-                SearchContainer<PersonResult> listPage2 = _config.Client.GetPersonListAsync(type, 2).Result;
+                SearchContainer<PersonResult> listPage2 = Config.Client.GetPersonListAsync(type, 2).Result;
 
                 Assert.NotNull(listPage2);
                 Assert.True(listPage2.Results.Count > 0);
                 Assert.Equal(2, listPage2.Page);
 
-                SearchContainer<PersonResult> list2 = _config.Client.GetPersonListAsync(type).Result;
+                SearchContainer<PersonResult> list2 = Config.Client.GetPersonListAsync(type).Result;
 
                 Assert.NotNull(list2);
                 Assert.True(list2.Results.Count > 0);
@@ -350,7 +347,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestGetLatestPerson()
         {
-            Person item = _config.Client.GetLatestPersonAsync().Sync();
+            Person item = Config.Client.GetLatestPersonAsync().Sync();
             Assert.NotNull(item);
         }
     }

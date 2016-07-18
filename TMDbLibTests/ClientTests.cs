@@ -12,39 +12,32 @@ namespace TMDbLibTests
 {
     public class ClientTests : TestBase
     {
-        private TestConfig _config;
-
-        public ClientTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
         public void GetConfigTest()
         {
-            Assert.False(_config.Client.HasConfig);
-            _config.Client.GetConfig();
-            Assert.True(_config.Client.HasConfig);
+            Assert.False(Config.Client.HasConfig);
+            Config.Client.GetConfig();
+            Assert.True(Config.Client.HasConfig);
 
-            Assert.NotNull(_config.Client.Config);
+            Assert.NotNull(Config.Client.Config);
         }
 
         [Fact]
         public void GetConfigSslTest()
         {
-            _config = new TestConfig(true);
+            Config = new TestConfig(true);
 
-            Assert.False(_config.Client.HasConfig);
-            _config.Client.GetConfig();
-            Assert.True(_config.Client.HasConfig);
+            Assert.False(Config.Client.HasConfig);
+            Config.Client.GetConfig();
+            Assert.True(Config.Client.HasConfig);
 
-            Assert.NotNull(_config.Client.Config);
+            Assert.NotNull(Config.Client.Config);
         }
 
         [Fact]
         public void GetConfigFailTest()
         {
-            Assert.Throws<InvalidOperationException>(() => _config.Client.Config);
+            Assert.Throws<InvalidOperationException>(() => Config.Client.Config);
         }
 
         [Fact]
@@ -56,11 +49,11 @@ namespace TMDbLibTests
             config.Images = new ConfigImageTypes();
             config.Images.BaseUrl = " ..";
 
-            Assert.False(_config.Client.HasConfig);
-            _config.Client.SetConfig(config);
-            Assert.True(_config.Client.HasConfig);
+            Assert.False(Config.Client.HasConfig);
+            Config.Client.SetConfig(config);
+            Assert.True(Config.Client.HasConfig);
 
-            Assert.Same(config, _config.Client.Config);
+            Assert.Same(config, Config.Client.Config);
         }
 
         [Fact]

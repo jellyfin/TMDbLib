@@ -18,12 +18,9 @@ namespace TMDbLibTests
     public class ClientTvEpisodeTests : TestBase
     {
         private static Dictionary<TvEpisodeMethods, Func<TvEpisode, object>> _methods;
-        private readonly TestConfig _config;
 
         public ClientTvEpisodeTests()
         {
-            _config = new TestConfig();
-
             _methods = new Dictionary<TvEpisodeMethods, Func<TvEpisode, object>>
             {
                 [TvEpisodeMethods.Credits] = tvEpisode => tvEpisode.Credits,
@@ -40,7 +37,7 @@ namespace TMDbLibTests
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson = true;
 
-            TvEpisode tvEpisode = _config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1).Result;
+            TvEpisode tvEpisode = Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1).Result;
 
             TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
 
@@ -58,17 +55,17 @@ namespace TMDbLibTests
             IgnoreMissingJson = true;
 
             // Test the custom parsing code for Account State rating
-            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
-            TvEpisode episode = _config.Client.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates).Result;
+            TvEpisode episode = Config.Client.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates).Result;
             if (episode.AccountStates == null || !episode.AccountStates.Rating.HasValue)
             {
-                _config.Client.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5).Sync();
+                Config.Client.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5).Sync();
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);
 
-                episode = _config.Client.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates).Result;
+                episode = Config.Client.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates).Result;
             }
 
             Assert.NotNull(episode.AccountStates);
@@ -79,13 +76,13 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasAll()
         {
-            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            _config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Sync();
+            Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Sync();
 
             TvEpisodeMethods combinedEnum = _methods.Keys.Aggregate((methods, tvEpisodeMethods) => methods | tvEpisodeMethods);
-            TvEpisode tvEpisode = _config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, combinedEnum).Result;
+            TvEpisode tvEpisode = Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, combinedEnum).Result;
 
             TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
 
@@ -99,14 +96,14 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasExclusive()
         {
-            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetTvEpisodeAsync(id, 1, 1, extras).Result, IdHelper.BreakingBad);
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvEpisodeAsync(id, 1, 1, extras).Result, IdHelper.BreakingBad);
         }
 
         [Fact]
         public void TestTvEpisodeSeparateExtrasCredits()
         {
-            Credits credits = _config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            Credits credits = Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.NotNull(credits);
             Assert.NotNull(credits.Cast);
             Assert.Equal("Walter White", credits.Cast[0].Character);
@@ -129,7 +126,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = _config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            ExternalIds externalIds = Config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.NotNull(externalIds);
             Assert.True(string.IsNullOrEmpty(externalIds.FreebaseId));
             Assert.Equal(62085, externalIds.Id);
@@ -142,7 +139,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeSeparateExtrasImages()
         {
-            StillImages images = _config.Client.GetTvEpisodeImagesAsync(IdHelper.BreakingBad, 1, 1).Result;
+            StillImages images = Config.Client.GetTvEpisodeImagesAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.NotNull(images);
             Assert.NotNull(images.Stills);
         }
@@ -150,7 +147,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeSeparateExtrasVideos()
         {
-            ResultContainer<Video> images = _config.Client.GetTvEpisodeVideosAsync(IdHelper.BreakingBad, 1, 1).Result;
+            ResultContainer<Video> images = Config.Client.GetTvEpisodeVideosAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.NotNull(images);
             Assert.NotNull(images.Results);
         }
@@ -158,53 +155,53 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeAccountStateRatingSet()
         {
-            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
-            TvEpisodeAccountState accountState = _config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1).Result;
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            TvEpisodeAccountState accountState = Config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1).Result;
 
             // Remove the rating
             if (accountState.Rating.HasValue)
             {
-                Assert.True(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
+                Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
 
                 // Allow TMDb to cache our changes
                 Thread.Sleep(2000);
             }
 
             // Test that the episode is NOT rated
-            accountState = _config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1).Result;
+            accountState = Config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1).Result;
 
             Assert.Equal(IdHelper.BreakingBadSeason1Episode1Id, accountState.Id);
             Assert.False(accountState.Rating.HasValue);
 
             // Rate the episode
-            Assert.True(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Result);
+            Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the episode IS rated
-            accountState = _config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1).Result;
+            accountState = Config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.Equal(IdHelper.BreakingBadSeason1Episode1Id, accountState.Id);
             Assert.True(accountState.Rating.HasValue);
 
             // Remove the rating
-            Assert.True(_config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
+            Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
         }
 
         [Fact]
         public void TestTvEpisodeRateBad()
         {
-            _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
-            Assert.False(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, -1).Result);
-            Assert.False(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 0).Result);
-            Assert.False(_config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 10.5).Result);
+            Assert.False(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, -1).Result);
+            Assert.False(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 0).Result);
+            Assert.False(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 10.5).Result);
         }
 
         [Fact]
         public void TestTvEpisodeGetChanges()
         {
-            ChangesContainer changes = _config.Client.GetTvEpisodeChangesAsync(IdHelper.BreakingBadSeason1Episode1Id).Result;
+            ChangesContainer changes = Config.Client.GetTvEpisodeChangesAsync(IdHelper.BreakingBadSeason1Episode1Id).Result;
 
             Assert.NotNull(changes);
             Assert.NotNull(changes.Changes);

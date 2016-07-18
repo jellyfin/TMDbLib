@@ -7,17 +7,10 @@ namespace TMDbLibTests
 {
     public class ClientNetworkTests : TestBase
     {
-        private TestConfig _config;
-
-        public ClientNetworkTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
         public void TestNetworkGetById()
         {
-            Network network = _config.Client.GetNetworkAsync(IdHelper.Hbo).Result;
+            Network network = Config.Client.GetNetworkAsync(IdHelper.Hbo).Result;
 
             Assert.NotNull(network);
             Assert.Equal("HBO", network.Name);

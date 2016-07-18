@@ -8,17 +8,10 @@ namespace TMDbLibTests
 {
     public class ClientTimezonesTests : TestBase
     {
-        private readonly TestConfig _config;
-
-        public ClientTimezonesTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
         public void TestTimezonesList()
         {
-            Timezones result = _config.Client.GetTimezonesAsync().Sync();
+            Timezones result = Config.Client.GetTimezonesAsync().Sync();
 
             Assert.NotNull(result);
             Assert.True(result.List.Count > 200);

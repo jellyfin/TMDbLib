@@ -8,17 +8,10 @@ namespace TMDbLibTests
 {
     public class ClientReviewTests : TestBase
     {
-        private readonly TestConfig _config;
-
-        public ClientReviewTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
         public void TestReviewFullDetails()
         {
-            Review review = _config.Client.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId).Result;
+            Review review = Config.Client.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId).Result;
 
             Assert.NotNull(review);
 

@@ -5,7 +5,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Xunit;
 
 namespace TMDbLibTests.JsonHelpers
 {
@@ -13,6 +12,8 @@ namespace TMDbLibTests.JsonHelpers
     {
         private static readonly Regex NormalizeRegex = new Regex(@"\[[\d]+\]", RegexOptions.Compiled);
         private readonly List<ErrorEventArgs> _errors = new List<ErrorEventArgs>();
+
+        protected readonly TestConfig Config;
 
         /// <summary>
         /// Ignores errors about missing C# properties (Where new or unknown JSON properties are present)
@@ -26,8 +27,8 @@ namespace TMDbLibTests.JsonHelpers
 
         public TestBase()
         {
-            _errors.Clear();
-
+            Config = new TestConfig();
+            
             JsonConvert.DefaultSettings = () =>
             {
                 JsonSerializerSettings sett = new JsonSerializerSettings();

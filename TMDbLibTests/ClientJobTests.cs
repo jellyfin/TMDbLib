@@ -9,17 +9,10 @@ namespace TMDbLibTests
 {
     public class ClientJobTests : TestBase
     {
-        private readonly TestConfig _config;
-
-        public ClientJobTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
         public void TestJobList()
         {
-            List<Job> jobs = _config.Client.GetJobsAsync().Sync();
+            List<Job> jobs = Config.Client.GetJobsAsync().Sync();
 
             Assert.NotNull(jobs);
             Assert.True(jobs.Count > 0);

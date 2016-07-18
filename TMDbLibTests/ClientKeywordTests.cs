@@ -9,17 +9,10 @@ namespace TMDbLibTests
 {
     public class ClientKeywordTests : TestBase
     {
-        private readonly TestConfig _config;
-
-        public ClientKeywordTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
         public void TestKeywordGet()
         {
-            KeywordsContainer keywords = _config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard).Result;
+            KeywordsContainer keywords = Config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(keywords);
             Assert.NotNull(keywords.Keywords);
@@ -28,7 +21,7 @@ namespace TMDbLibTests
             // Try to get all keywords
             foreach (Keyword testKeyword in keywords.Keywords)
             {
-                Keyword getKeyword = _config.Client.GetKeywordAsync(testKeyword.Id).Result;
+                Keyword getKeyword = Config.Client.GetKeywordAsync(testKeyword.Id).Result;
 
                 Assert.NotNull(getKeyword);
 
@@ -40,7 +33,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestKeywordMovies()
         {
-            KeywordsContainer keywords = _config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard).Result;
+            KeywordsContainer keywords = Config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(keywords);
             Assert.NotNull(keywords.Keywords);
@@ -50,9 +43,9 @@ namespace TMDbLibTests
             Keyword testKeyword = keywords.Keywords.First();
 
             // Get movies
-            SearchContainer<MovieResult> movies = _config.Client.GetKeywordMoviesAsync(testKeyword.Id).Result;
-            SearchContainer<MovieResult> moviesItalian = _config.Client.GetKeywordMoviesAsync(testKeyword.Id, "it").Result;
-            SearchContainer<MovieResult> moviesPage2 = _config.Client.GetKeywordMoviesAsync(testKeyword.Id, 2).Result;
+            SearchContainer<MovieResult> movies = Config.Client.GetKeywordMoviesAsync(testKeyword.Id).Result;
+            SearchContainer<MovieResult> moviesItalian = Config.Client.GetKeywordMoviesAsync(testKeyword.Id, "it").Result;
+            SearchContainer<MovieResult> moviesPage2 = Config.Client.GetKeywordMoviesAsync(testKeyword.Id, 2).Result;
 
             Assert.NotNull(movies);
             Assert.NotNull(moviesItalian);
