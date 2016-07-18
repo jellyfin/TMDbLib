@@ -20,8 +20,9 @@ Changes:
    - Removed the [Display] attribute, replaced with custom attribute
    - Changed StringComparison.InvariantCultureIgnoreCase to OrdinalIgnoreCase
    - Removed [Serializable]
-   - Support net45 and netcoreapp1.0 (also added net451, net452 and net46)
+   - Support `net45` and `netcoreapp1.0` (also added `net451`, `net452`, `net46` and `netstandard1.6`)
    - Removed ObjectHelper
+   - Upgraded to `Newtonsoft.Json 9.0.1` to support `netcoreapp1.0`
 
 **0.9.0**
 Still pre-release
