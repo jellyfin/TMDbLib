@@ -45,6 +45,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
+    <Reference Include="TMDbLib, Version=0.9.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TMDbLib\bin\Debug\net45\TMDbLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -94,12 +98,6 @@
     <Compile Include="TestClasses\EnumTestStruct.cs" />
     <Compile Include="Helpers\TestMethodsHelper.cs" />
     <Compile Include="UtilsTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TMDbLib\TMDbLib.xproj">
-      <Project>{c0006f17-212a-474f-983e-7da2f91e0233}</Project>
-      <Name>TMDbLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
