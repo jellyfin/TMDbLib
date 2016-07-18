@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Xml;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
@@ -37,19 +38,16 @@ namespace TestApplication
 
         private static void FetchConfig(TMDbClient client)
         {
-            FileInfo configXml = new FileInfo("config.xml");
+            FileInfo configJson = new FileInfo("config.json");
 
-            Console.WriteLine("Config file: " + configXml.FullName + ", Exists: " + configXml.Exists);
+            Console.WriteLine("Config file: " + configJson.FullName + ", Exists: " + configJson.Exists);
 
-            if (configXml.Exists && configXml.LastWriteTimeUtc >= DateTime.UtcNow.AddHours(-1))
+            if (configJson.Exists && configJson.LastWriteTimeUtc >= DateTime.UtcNow.AddHours(-1))
             {
                 Console.WriteLine("Using stored config");
-                string xml = File.ReadAllText(configXml.FullName, Encoding.Unicode);
-
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-
-                client.SetConfig(Serializer.Deserialize<TMDbConfig>(xmlDoc));
+                string json = File.ReadAllText(configJson.FullName, Encoding.UTF8);
+                
+                client.SetConfig(JsonConvert.DeserializeObject<TMDbConfig>(json));
             }
             else
             {
@@ -57,8 +55,8 @@ namespace TestApplication
                 client.GetConfig();
 
                 Console.WriteLine("Storing config");
-                XmlDocument xmlDoc = Serializer.Serialize(client.Config);
-                File.WriteAllText(configXml.FullName, xmlDoc.OuterXml, Encoding.Unicode);
+                string json = JsonConvert.SerializeObject(client.Config);
+                File.WriteAllText(configJson.FullName, json, Encoding.UTF8);
             }
 
             Spacer();
