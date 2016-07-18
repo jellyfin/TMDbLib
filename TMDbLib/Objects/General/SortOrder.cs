@@ -1,13 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.General
 {
     public enum SortOrder
     {
         Undefined = 0,
-        [Display(Description = "asc")]
+        [EnumValue("asc")]
         Ascending = 1,
-        [Display(Description = "desc")]
+        [EnumValue("desc")]
         Descending = 2
     }
 }

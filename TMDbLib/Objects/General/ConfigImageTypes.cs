@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.General
 {
-    [Serializable]
     public class ConfigImageTypes
     {
         [JsonProperty("base_url")]

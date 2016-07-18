@@ -1,0 +1,36 @@
+﻿{
+  "version": "0.9.1.0-alpha",
+
+  "dependencies": {
+    "Newtonsoft.Json": "7.0.1"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    },
+    "net45": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0"
+      }
+    },
+    "net451": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0"
+      }
+    },
+    "net452": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0"
+      }
+    },
+    "net46": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0"
+      }
+    }
+  }
+}

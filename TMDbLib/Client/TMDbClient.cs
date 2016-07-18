@@ -113,9 +113,9 @@ namespace TMDbLib.Client
             ApiKey = apiKey;
 
             // Cleanup the provided url so that we don't get any issues when we are configuring the client
-            if (baseUrl.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase))
+            if (baseUrl.StartsWith("http://", StringComparison.OrdinalIgnoreCase))
                 baseUrl = baseUrl.Substring("http://".Length);
-            else if (baseUrl.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase))
+            else if (baseUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
                 baseUrl = baseUrl.Substring("https://".Length);
 
             string httpScheme = useSsl ? "https" : "http";

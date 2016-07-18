@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Discover
 {
@@ -7,33 +7,33 @@ namespace TMDbLib.Objects.Discover
     {
         [Obsolete]
         Undefined,
-        [Display(Description = "popularity.asc")]
+        [EnumValue("popularity.asc")]
         Popularity,
-        [Display(Description = "popularity.desc")]
+        [EnumValue("popularity.desc")]
         PopularityDesc,
-        [Display(Description = "release_date.asc")]
+        [EnumValue("release_date.asc")]
         ReleaseDate,
-        [Display(Description = "release_date.desc")]
+        [EnumValue("release_date.desc")]
         ReleaseDateDesc,
-        [Display(Description = "revenue.asc")]
+        [EnumValue("revenue.asc")]
         Revenue,
-        [Display(Description = "revenue.desc")]
+        [EnumValue("revenue.desc")]
         RevenueDesc,
-        [Display(Description = "primary_release_date.asc")]
+        [EnumValue("primary_release_date.asc")]
         PrimaryReleaseDate,
-        [Display(Description = "primary_release_date.desc")]
+        [EnumValue("primary_release_date.desc")]
         PrimaryReleaseDateDesc,
-        [Display(Description = "original_title.asc")]
+        [EnumValue("original_title.asc")]
         OriginalTitle,
-        [Display(Description = "original_title.desc")]
+        [EnumValue("original_title.desc")]
         OriginalTitleDesc,
-        [Display(Description = "vote_average.asc")]
+        [EnumValue("vote_average.asc")]
         VoteAverage,
-        [Display(Description = "vote_average.desc")]
+        [EnumValue("vote_average.desc")]
         VoteAverageDesc,
-        [Display(Description = "vote_count.asc")]
+        [EnumValue("vote_count.asc")]
         VoteCount,
-        [Display(Description = "vote_count.desc")]
+        [EnumValue("vote_count.desc")]
         VoteCountDesc
     }
 }

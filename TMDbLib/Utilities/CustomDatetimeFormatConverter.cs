@@ -12,7 +12,7 @@ namespace TMDbLib.Utilities
 
         public CustomDatetimeFormatConverter()
         {
-            CultureInfo = CultureInfo.GetCultureInfo("en-US");
+            CultureInfo = new CultureInfo("en-US");
             DatetimeFormat = "yyyy-MM-dd HH:mm:ss UTC";
         }
 

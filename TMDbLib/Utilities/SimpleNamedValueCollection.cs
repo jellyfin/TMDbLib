@@ -24,7 +24,7 @@ namespace TMDbLib.Utilities
         {
             foreach (KeyValuePair<string, string> pair in _list)
             {
-                if (pair.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase))
+                if (pair.Key.Equals(key, StringComparison.OrdinalIgnoreCase))
                     return pair.Value;
             }
 
@@ -33,7 +33,7 @@ namespace TMDbLib.Utilities
 
         public bool Remove(string key)
         {
-            return _list.RemoveAll(s => s.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase)) > 0;
+            return _list.RemoveAll(s => s.Key.Equals(key, StringComparison.OrdinalIgnoreCase)) > 0;
         }
 
         public string this[string index]

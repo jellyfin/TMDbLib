@@ -1,14 +1,14 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Collections
 {
     [Flags]
     public enum CollectionMethods
     {
-        [Display(Description = "Undefined")]
+        [EnumValue("Undefined")]
         Undefined = 0,
-        [Display(Description = "images")]
+        [EnumValue("images")]
         Images = 1
     }
 }
