@@ -25,13 +25,13 @@ namespace TMDbLibTests
         [Fact]
         public void GetConfigSslTest()
         {
-            Config = new TestConfig(true);
+            TestConfig config = new TestConfig(true);
 
-            Assert.False(Config.Client.HasConfig);
-            Config.Client.GetConfig();
-            Assert.True(Config.Client.HasConfig);
+            Assert.False(config.Client.HasConfig);
+            config.Client.GetConfig();
+            Assert.True(config.Client.HasConfig);
 
-            Assert.NotNull(Config.Client.Config);
+            Assert.NotNull(config.Client.Config);
         }
 
         [Fact]
