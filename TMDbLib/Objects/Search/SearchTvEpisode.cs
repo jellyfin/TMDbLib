@@ -14,6 +14,9 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("episode_number")]
         public int EpisodeNumber { get; set; }
 
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
         [JsonProperty("season_number")]
         public int SeasonNumber { get; set; }
 

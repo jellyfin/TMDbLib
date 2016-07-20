@@ -226,6 +226,7 @@ namespace TMDbLibTests
             Assert.True(tvEpisode.ShowId > 0);
             Assert.True(tvEpisode.EpisodeNumber > 0);
             Assert.True(tvEpisode.SeasonNumber > 0);
+            Assert.NotNull(tvEpisode.Name);
             Assert.NotNull(tvEpisode.AirDate);
             Assert.NotNull(tvEpisode.StillPath);
             Assert.True(tvEpisode.VoteCount > 0);
