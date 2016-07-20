@@ -93,6 +93,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesImages()
         {
+            IgnoreMissingJson = true;
+
             // Get config
             _config.Client.GetConfig();
 
@@ -109,6 +111,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesFull()
         {
+            IgnoreMissingJson = true;
+
             Company company = _config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures).Result;
 
             Assert.NotNull(company);
