@@ -22,5 +22,8 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("logo_sizes")]
         public List<string> LogoSizes { get; set; }
+
+        [JsonProperty("still_sizes")]
+        public List<string> StillSizes { get; set; }
     }
 }
