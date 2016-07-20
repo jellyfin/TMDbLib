@@ -184,13 +184,13 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<SearchContainer<SearchTv>> AccountGetRatedTvShowsAsync(
+        public async Task<SearchContainer<AccountSearchTv>> AccountGetRatedTvShowsAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv).ConfigureAwait(false);
+            return await GetAccountList<AccountSearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv).ConfigureAwait(false);
         }
 
         /// <summary>

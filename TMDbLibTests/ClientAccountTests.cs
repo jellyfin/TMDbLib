@@ -192,7 +192,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowsAsync(i).Result);
-            SearchTv tvShow = _config.Client.AccountGetRatedTvShowsAsync().Sync().Results[0];
+            AccountSearchTv tvShow = _config.Client.AccountGetRatedTvShowsAsync().Sync().Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.True(tvShow.Id > 0);
