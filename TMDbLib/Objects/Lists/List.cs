@@ -1,14 +1,9 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
-using TMDbLib.Objects.General;
+﻿using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.Lists
 {
     public class List
     {
-        [JsonProperty("created_by")]
-        public string CreatedBy { get; set; }
-
         [JsonProperty("description")]
         public string Description { get; set; }
 
@@ -17,9 +12,6 @@ namespace TMDbLib.Objects.Lists
 
         [JsonProperty("id")]
         public string Id { get; set; }
-
-        [JsonProperty("items")]
-        public List<MovieResult> Items { get; set; }
 
         [JsonProperty("item_count")]
         public int ItemCount { get; set; }
@@ -35,8 +27,5 @@ namespace TMDbLib.Objects.Lists
 
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
-
-        [JsonProperty("list_type")]
-        public MediaType ListType { get; set; }
     }
 }

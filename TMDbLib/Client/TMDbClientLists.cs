@@ -13,7 +13,7 @@ namespace TMDbLib.Client
         /// Retrieve a list by it's id
         /// </summary>
         /// <param name="listId">The id of the list you want to retrieve</param>
-        public async Task<List> GetListAsync(string listId)
+        public async Task<GenericList> GetListAsync(string listId)
         {
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException("listId");
@@ -21,7 +21,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
 
-            RestResponse<List> resp = await req.ExecuteGet<List>().ConfigureAwait(false);
+            RestResponse<GenericList> resp = await req.ExecuteGet<GenericList>().ConfigureAwait(false);
 
             return resp;
         }

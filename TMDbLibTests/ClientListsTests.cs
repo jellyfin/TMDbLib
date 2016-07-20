@@ -18,7 +18,7 @@ namespace TMDbLibTests
         public void TestList()
         {
             // Get list
-            List list = Config.Client.GetListAsync(TestListId).Result;
+            GenericList list = Config.Client.GetListAsync(TestListId).Result;
 
             Assert.NotNull(list);
             Assert.Equal(TestListId, list.Id);
@@ -78,7 +78,7 @@ namespace TMDbLibTests
 
             Assert.False(string.IsNullOrWhiteSpace(newListId));
 
-            List newlyAddedList = Config.Client.GetListAsync(newListId).Result;
+            GenericList newlyAddedList = Config.Client.GetListAsync(newListId).Result;
             Assert.NotNull(newlyAddedList);
             Assert.Equal(listName, newlyAddedList.Name);
             Assert.Equal("", newlyAddedList.Description); // "" is the default value
@@ -111,14 +111,14 @@ namespace TMDbLibTests
             Assert.False(Config.Client.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty).Result);
 
             // Get list and check if the item was added
-            List listAfterAdd = Config.Client.GetListAsync(TestListId).Result;
+            GenericList listAfterAdd = Config.Client.GetListAsync(TestListId).Result;
             Assert.True(listAfterAdd.Items.Any(m => m.Id == IdHelper.EvanAlmighty));
 
             // Remove the previously added movie from the list
             Assert.True(Config.Client.ListRemoveMovieAsync(TestListId, IdHelper.EvanAlmighty).Result);
 
             // Get list and check if the item was removed
-            List listAfterRemove = Config.Client.GetListAsync(TestListId).Result;
+            GenericList listAfterRemove = Config.Client.GetListAsync(TestListId).Result;
             Assert.False(listAfterRemove.Items.Any(m => m.Id == IdHelper.EvanAlmighty));
         }
 
@@ -131,14 +131,14 @@ namespace TMDbLibTests
             Assert.True(Config.Client.ListAddMovieAsync(TestListId, IdHelper.MadMaxFuryRoad).Result);
 
             // Get list and check if the item was added
-            List listAfterAdd = Config.Client.GetListAsync(TestListId).Result;
+            GenericList listAfterAdd = Config.Client.GetListAsync(TestListId).Result;
             Assert.True(listAfterAdd.Items.Any(m => m.Id == IdHelper.MadMaxFuryRoad));
 
             // Clear the list
             Assert.True(Config.Client.ListClearAsync(TestListId).Result);
 
             // Get list and check that all items were removed
-            List listAfterRemove = Config.Client.GetListAsync(TestListId).Result;
+            GenericList listAfterRemove = Config.Client.GetListAsync(TestListId).Result;
             Assert.False(listAfterRemove.Items.Any());
         }
     }

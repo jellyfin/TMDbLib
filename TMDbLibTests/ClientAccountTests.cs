@@ -57,7 +57,7 @@ namespace TMDbLibTests
         {
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetListsAsync(i).Result);
-            List list = _config.Client.AccountGetListsAsync().Sync().Results[0];
+            AccountList list = _config.Client.AccountGetListsAsync().Sync().Results[0];
 
             Assert.NotNull(list.Id);
             Assert.NotNull(list.Name);
@@ -65,8 +65,6 @@ namespace TMDbLibTests
             Assert.NotNull(list.Description);
             Assert.NotNull(list.ListType);
             Assert.NotNull(list.Iso_639_1);
-            Assert.Null(list.Items);
-            Assert.Null(list.CreatedBy);
         }
 
         [Fact]

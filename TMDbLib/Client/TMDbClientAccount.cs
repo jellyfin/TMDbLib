@@ -35,7 +35,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<SearchContainer<List>> AccountGetListsAsync(int page = 1, string language = null)
+        public async Task<SearchContainer<AccountList>> AccountGetListsAsync(int page = 1, string language = null)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -52,7 +52,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddQueryString("language", language);
 
-            SearchContainer<List> response = await request.ExecuteGet<SearchContainer<List>>().ConfigureAwait(false);
+            SearchContainer<AccountList> response = await request.ExecuteGet<SearchContainer<AccountList>>().ConfigureAwait(false);
 
             return response;
         }
