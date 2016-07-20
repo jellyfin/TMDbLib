@@ -65,6 +65,16 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestPersonsGetWithPartialDate()
+        {
+            Person item = Config.Client.GetPersonAsync(IdHelper.PersonPartialDate).Result;
+
+            Assert.NotNull(item);
+            Assert.Null(item.Birthday);
+            Assert.Null(item.Deathday);
+        }
+
+        [Fact]
         public void TestPersonsGet()
         {
             Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;

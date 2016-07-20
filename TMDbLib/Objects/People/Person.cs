@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using TMDbLib.Helpers;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 
@@ -18,9 +19,11 @@ namespace TMDbLib.Objects.People
         public string Biography { get; set; }
 
         [JsonProperty("birthday")]
+        [JsonConverter(typeof(TmdbPartialDateConverter))]
         public DateTime? Birthday { get; set; }
 
         [JsonProperty("deathday")]
+        [JsonConverter(typeof(TmdbPartialDateConverter))]
         public DateTime? Deathday { get; set; }
 
         [JsonProperty("homepage")]

@@ -35,6 +35,7 @@
         public const string FreebaseMidBreakingBadId = "m/03d34x8";
 
         // Persons
+        public const int PersonPartialDate = 833;
         public const int BruceWillis = 62;
         public const string ImdbBruceWillis = "nm0000246";
 
