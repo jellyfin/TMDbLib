@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Search
 {
@@ -19,8 +20,8 @@ namespace TMDbLib.Objects.Search
 
         [JsonProperty("popularity")]
         public double Popularity { get; set; }
-        
+
         [JsonProperty("known_for")]
-        public List<SearchMovie> KnownFor { get; set; }
+        public List<KnownForBase> KnownFor { get; set; }
     }
 }
