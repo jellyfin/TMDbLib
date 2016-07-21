@@ -27,14 +27,14 @@ namespace TMDbLib.Objects.General
         [JsonProperty("overview")]
         public string Overview { get; set; }
 
-        [JsonProperty("release_date")]
-        public DateTime? ReleaseDate { get; set; }
+        [JsonProperty("popularity")]
+        public double Popularity { get; set; }
 
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
 
-        [JsonProperty("popularity")]
-        public double Popularity { get; set; }
+        [JsonProperty("release_date")]
+        public DateTime? ReleaseDate { get; set; }
 
         [JsonProperty("title")]
         public string Title { get; set; }

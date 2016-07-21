@@ -6,18 +6,18 @@ namespace TMDbLib.Objects.Changes
 {
     public class ChangeItem
     {
+        [JsonProperty("action")]
+        public string Action { get; set; }
+
         [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonProperty("action")]
-        public string Action { get; set; }
+        [JsonProperty("iso_639_1")]
+        public string Iso_639_1 { get; set; }
 
         [JsonProperty("time")]
         [JsonConverter(typeof(TmdbUtcTimeConverter))]
         public DateTime Time { get; set; }
-
-        [JsonProperty("iso_639_1")]
-        public string Iso_639_1 { get; set; }
 
         [JsonProperty("value")]
         public object Value { get; set; }

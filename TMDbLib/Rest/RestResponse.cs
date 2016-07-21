@@ -18,14 +18,14 @@ namespace TMDbLib.Rest
 
         public HttpStatusCode StatusCode => _response.StatusCode;
 
-        public string GetHeader(string name, string @default = null)
-        {
-            return _response.Headers.GetValues(name).FirstOrDefault() ?? @default;
-        }
-
         public async Task<string> GetContent()
         {
             return await _response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        }
+
+        public string GetHeader(string name, string @default = null)
+        {
+            return _response.Headers.GetValues(name).FirstOrDefault() ?? @default;
         }
     }
     

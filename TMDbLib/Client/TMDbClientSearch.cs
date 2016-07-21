@@ -7,6 +7,31 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, int page = 0)
+        {
+            return await SearchCollectionAsync(query, DefaultLanguage, page).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, string language, int page = 0)
+        {
+            return await SearchMethod<SearchContainer<SearchResultCollection>>("collection", query, page, language).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchCompany>> SearchCompanyAsync(string query, int page = 0)
+        {
+            return await SearchMethod<SearchContainer<SearchCompany>>("company", query, page).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchKeyword>> SearchKeywordAsync(string query, int page = 0)
+        {
+            return await SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchList>> SearchListAsync(string query, int page = 0, bool includeAdult = false)
+        {
+            return await SearchMethod<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult).ConfigureAwait(false);
+        }
+
         private async Task<T> SearchMethod<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null) where T : new()
         {
             RestRequest req = _client.Create("search/{method}");
@@ -53,34 +78,9 @@ namespace TMDbLib.Client
             return await SearchMethod<SearchContainer<SearchMulti>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd").ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, int page = 0)
-        {
-            return await SearchCollectionAsync(query, DefaultLanguage, page).ConfigureAwait(false);
-        }
-
-        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, string language, int page = 0)
-        {
-            return await SearchMethod<SearchContainer<SearchResultCollection>>("collection", query, page, language).ConfigureAwait(false);
-        }
-
         public async Task<SearchContainer<SearchPerson>> SearchPersonAsync(string query, int page = 0, bool includeAdult = false)
         {
             return await SearchMethod<SearchContainer<SearchPerson>>("person", query, page, includeAdult: includeAdult).ConfigureAwait(false);
-        }
-
-        public async Task<SearchContainer<SearchList>> SearchListAsync(string query, int page = 0, bool includeAdult = false)
-        {
-            return await SearchMethod<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult).ConfigureAwait(false);
-        }
-
-        public async Task<SearchContainer<SearchCompany>> SearchCompanyAsync(string query, int page = 0)
-        {
-            return await SearchMethod<SearchContainer<SearchCompany>>("company", query, page).ConfigureAwait(false);
-        }
-
-        public async Task<SearchContainer<SearchKeyword>> SearchKeywordAsync(string query, int page = 0)
-        {
-            return await SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchTv>> SearchTvShowAsync(string query, int page = 0)

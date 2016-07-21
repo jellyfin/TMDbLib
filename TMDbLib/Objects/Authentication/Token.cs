@@ -11,6 +11,10 @@ namespace TMDbLib.Objects.Authentication
     /// </summary>
     public class Token
     {
+        // This field is populated by custom code
+        [JsonIgnore]
+        public string AuthenticationCallback { get; set; }
+
         /// <summary>
         /// The date / time before which the token must be used, else it will expire. Time is expressed as local time.
         /// </summary>
@@ -23,9 +27,5 @@ namespace TMDbLib.Objects.Authentication
 
         [JsonProperty("success")]
         public bool Success { get; set; }
-
-        // This field is populated by custom code
-        [JsonIgnore]
-        public string AuthenticationCallback { get; set; }
     }
 }

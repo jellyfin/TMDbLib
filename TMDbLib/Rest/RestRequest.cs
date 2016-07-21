@@ -16,30 +16,15 @@ namespace TMDbLib.Rest
         private readonly RestClient _client;
         private readonly string _endpoint;
 
+        private object _bodyObj;
+
         private List<KeyValuePair<string, string>> _queryString;
         private List<KeyValuePair<string, string>> _urlSegment;
-
-        private object _bodyObj;
 
         public RestRequest(RestClient client, string endpoint)
         {
             _client = client;
             _endpoint = endpoint;
-        }
-
-        private void AppendQueryString(StringBuilder sb, string key, string value)
-        {
-            if (sb.Length > 0)
-                sb.Append("&");
-
-            sb.Append(key);
-            sb.Append("=");
-            sb.Append(WebUtility.UrlEncode(value));
-        }
-
-        private void AppendQueryString(StringBuilder sb, KeyValuePair<string, string> value)
-        {
-            AppendQueryString(sb, value.Key, value.Value);
         }
 
         public RestRequest AddParameter(KeyValuePair<string, string> pair, ParameterType type = ParameterType.QueryString)
@@ -62,16 +47,6 @@ namespace TMDbLib.Rest
             }
         }
 
-        public RestRequest AddUrlSegment(string key, string value)
-        {
-            if (_urlSegment == null)
-                _urlSegment = new List<KeyValuePair<string, string>>();
-
-            _urlSegment.Add(new KeyValuePair<string, string>(key, value));
-
-            return this;
-        }
-
         public RestRequest AddQueryString(string key, string value)
         {
             if (_queryString == null)
@@ -82,11 +57,89 @@ namespace TMDbLib.Rest
             return this;
         }
 
-        public RestRequest SetBody(object obj)
+        public RestRequest AddUrlSegment(string key, string value)
         {
-            _bodyObj = obj;
+            if (_urlSegment == null)
+                _urlSegment = new List<KeyValuePair<string, string>>();
+
+            _urlSegment.Add(new KeyValuePair<string, string>(key, value));
 
             return this;
+        }
+
+        private void AppendQueryString(StringBuilder sb, string key, string value)
+        {
+            if (sb.Length > 0)
+                sb.Append("&");
+
+            sb.Append(key);
+            sb.Append("=");
+            sb.Append(WebUtility.UrlEncode(value));
+        }
+
+        private void AppendQueryString(StringBuilder sb, KeyValuePair<string, string> value)
+        {
+            AppendQueryString(sb, value.Key, value.Value);
+        }
+
+        private void CheckResponse(HttpResponseMessage response)
+        {
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+        }
+
+        public async Task<RestResponse> ExecuteDelete()
+        {
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
+
+            CheckResponse(resp);
+
+            return new RestResponse(resp);
+        }
+
+        public async Task<RestResponse<T>> ExecuteDelete<T>()
+        {
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
+
+            CheckResponse(resp);
+
+            return new RestResponse<T>(resp);
+        }
+
+        public async Task<RestResponse> ExecuteGet()
+        {
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
+
+            CheckResponse(resp);
+
+            return new RestResponse(resp);
+        }
+
+        public async Task<RestResponse<T>> ExecuteGet<T>()
+        {
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
+
+            CheckResponse(resp);
+
+            return new RestResponse<T>(resp);
+        }
+
+        public async Task<RestResponse> ExecutePost()
+        {
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
+
+            CheckResponse(resp);
+
+            return new RestResponse(resp);
+        }
+
+        public async Task<RestResponse<T>> ExecutePost<T>()
+        {
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
+
+            CheckResponse(resp);
+
+            return new RestResponse<T>(resp);
         }
 
         private HttpRequestMessage PrepRequest(HttpMethod method)
@@ -129,66 +182,6 @@ namespace TMDbLib.Rest
             return req;
         }
 
-        private void CheckResponse(HttpResponseMessage response)
-        {
-            if (response.StatusCode == HttpStatusCode.Unauthorized)
-                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
-        }
-
-        public async Task<RestResponse> ExecuteGet()
-        {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
-
-            CheckResponse(resp);
-
-            return new RestResponse(resp);
-        }
-
-        public async Task<RestResponse<T>> ExecuteGet<T>()
-        {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
-
-            CheckResponse(resp);
-
-            return new RestResponse<T>(resp);
-        }
-
-        public async Task<RestResponse> ExecutePost()
-        {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
-
-            CheckResponse(resp);
-
-            return new RestResponse(resp);
-        }
-
-        public async Task<RestResponse<T>> ExecutePost<T>()
-        {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
-
-            CheckResponse(resp);
-
-            return new RestResponse<T>(resp);
-        }
-
-        public async Task<RestResponse> ExecuteDelete()
-        {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
-
-            CheckResponse(resp);
-
-            return new RestResponse(resp);
-        }
-
-        public async Task<RestResponse<T>> ExecuteDelete<T>()
-        {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
-
-            CheckResponse(resp);
-
-            return new RestResponse<T>(resp);
-        }
-
         private async Task<HttpResponseMessage> SendInternal(HttpMethod method)
         {
             // Account for the following settings:
@@ -229,6 +222,13 @@ namespace TMDbLib.Rest
 
             // We never reached a success
             throw new RequestLimitExceededException();
+        }
+
+        public RestRequest SetBody(object obj)
+        {
+            _bodyObj = obj;
+
+            return this;
         }
     }
 }

@@ -6,6 +6,15 @@ namespace TMDbLib.Rest
     internal class RestClient
     {
         private int _maxRetryCount;
+
+        public RestClient(Uri baseUrl)
+        {
+            BaseUrl = baseUrl;
+            DefaultQueryString = new List<KeyValuePair<string, string>>();
+
+            MaxRetryCount = 0;
+        }
+
         internal Uri BaseUrl { get; }
         internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
 
@@ -19,14 +28,6 @@ namespace TMDbLib.Rest
 
                 _maxRetryCount = value;
             }
-        }
-
-        public RestClient(Uri baseUrl)
-        {
-            BaseUrl = baseUrl;
-            DefaultQueryString = new List<KeyValuePair<string, string>>();
-
-            MaxRetryCount = 0;
         }
 
         public void AddDefaultQueryString(string key, string value)

@@ -5,14 +5,14 @@ namespace TMDbLib.Objects.Search
 {
     public class SearchTvEpisode
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
-        [JsonProperty("show_id")]
-        public int ShowId { get; set; }
+        [JsonProperty("air_date")]
+        public DateTime? AirDate { get; set; }
 
         [JsonProperty("episode_number")]
         public int EpisodeNumber { get; set; }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -20,8 +20,8 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("season_number")]
         public int SeasonNumber { get; set; }
 
-        [JsonProperty("air_date")]
-        public DateTime? AirDate { get; set; }
+        [JsonProperty("show_id")]
+        public int ShowId { get; set; }
 
         [JsonProperty("still_path")]
         public string StillPath { get; set; }

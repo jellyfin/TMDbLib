@@ -49,6 +49,47 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
+        /// Adds a movie to a specified list
+        /// </summary>
+        /// <param name="listId">The id of the list to add the movie to</param>
+        /// <param name="movieId">The id of the movie to add</param>
+        /// <returns>True if the method was able to add the movie to the list, will retrun false in case of an issue or when the movie was already added to the list</returns>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public async Task<bool> ListAddMovieAsync(string listId, int movieId)
+        {
+            return await ManipulateMediaListAsync(listId, movieId, "add_item").ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Clears a list, without confirmation.
+        /// </summary>
+        /// <param name="listId">The id of the list to clear</param>
+        /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
+        /// <remarks>Requires a valid user session</remarks>
+        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+        public async Task<bool> ListClearAsync(string listId)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            if (string.IsNullOrWhiteSpace(listId))
+                throw new ArgumentNullException(nameof(listId));
+
+            RestRequest request = _client.Create("list/{listId}/clear");
+            request.AddUrlSegment("listId", listId);
+            request.AddParameter("confirm", "true");
+            AddSessionId(request, SessionType.UserSession);
+
+            RestResponse<PostReply> response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
+
+            // Status code 12 = "The item/record was updated successfully"
+            PostReply item = await response.GetDataObject().ConfigureAwait(false);
+
+            // TODO: Previous code checked for item=null
+            return item.StatusCode == 12;
+        }
+
+        /// <summary>
         /// Creates a new list for the user associated with the current session
         /// </summary>
         /// <param name="name">The name of the new list</param>
@@ -113,19 +154,6 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// Adds a movie to a specified list
-        /// </summary>
-        /// <param name="listId">The id of the list to add the movie to</param>
-        /// <param name="movieId">The id of the movie to add</param>
-        /// <returns>True if the method was able to add the movie to the list, will retrun false in case of an issue or when the movie was already added to the list</returns>
-        /// <remarks>Requires a valid user session</remarks>
-        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListAddMovieAsync(string listId, int movieId)
-        {
-            return await ManipulateMediaListAsync(listId, movieId, "add_item").ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// Removes a movie from the specified list
         /// </summary>
         /// <param name="listId">The id of the list to add the movie to</param>
@@ -136,34 +164,6 @@ namespace TMDbLib.Client
         public async Task<bool> ListRemoveMovieAsync(string listId, int movieId)
         {
             return await ManipulateMediaListAsync(listId, movieId, "remove_item").ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Clears a list, without confirmation.
-        /// </summary>
-        /// <param name="listId">The id of the list to clear</param>
-        /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
-        /// <remarks>Requires a valid user session</remarks>
-        /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListClearAsync(string listId)
-        {
-            RequireSessionId(SessionType.UserSession);
-
-            if (string.IsNullOrWhiteSpace(listId))
-                throw new ArgumentNullException(nameof(listId));
-
-            RestRequest request = _client.Create("list/{listId}/clear");
-            request.AddUrlSegment("listId", listId);
-            request.AddParameter("confirm", "true");
-            AddSessionId(request, SessionType.UserSession);
-
-            RestResponse<PostReply> response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
-
-            // Status code 12 = "The item/record was updated successfully"
-            PostReply item = await response.GetDataObject().ConfigureAwait(false);
-
-            // TODO: Previous code checked for item=null
-            return item.StatusCode == 12;
         }
 
         private async Task<bool> ManipulateMediaListAsync(string listId, int movieId, string method)

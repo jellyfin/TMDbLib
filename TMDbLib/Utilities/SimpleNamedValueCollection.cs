@@ -13,6 +13,23 @@ namespace TMDbLib.Utilities
             _list = new List<KeyValuePair<string, string>>();
         }
 
+        public string this[string index]
+        {
+            get { return Get(index); }
+            set { Add(index, value); }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
+        {
+            foreach (KeyValuePair<string, string> pair in _list)
+                yield return pair;
+        }
+
         public void Add(string key, string value)
         {
             Remove(key);
@@ -34,24 +51,6 @@ namespace TMDbLib.Utilities
         public bool Remove(string key)
         {
             return _list.RemoveAll(s => s.Key.Equals(key, StringComparison.OrdinalIgnoreCase)) > 0;
-        }
-
-        public string this[string index]
-        {
-            get { return Get(index); }
-            set { Add(index, value); }
-        }
-
-
-        public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
-        {
-            foreach (KeyValuePair<string, string> pair in _list)
-                yield return pair;
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
         }
     }
 }

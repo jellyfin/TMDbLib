@@ -4,6 +4,9 @@ namespace TMDbLib.Objects.Movies
 {
     public class TvEpisodeAccountState
     {
+        [JsonProperty("episode_number")]
+        public int EpisodeNumber { get; set; }
+
         /// <summary>
         /// The TMDb if for the related movie
         /// </summary>
@@ -12,8 +15,5 @@ namespace TMDbLib.Objects.Movies
 
         [JsonProperty("rating")]
         public double? Rating { get; set; }
-
-        [JsonProperty("episode_number")]
-        public int EpisodeNumber { get; set; }
     }
 }

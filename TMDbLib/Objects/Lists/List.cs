@@ -13,14 +13,14 @@ namespace TMDbLib.Objects.Lists
         [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonProperty("item_count")]
-        public int ItemCount { get; set; }
-
         /// <summary>
         /// The Language iso code of a language the list is targeting. Ex en
         /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
+
+        [JsonProperty("item_count")]
+        public int ItemCount { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

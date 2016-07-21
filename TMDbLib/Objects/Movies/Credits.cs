@@ -6,13 +6,13 @@ namespace TMDbLib.Objects.Movies
 {
     public class Credits
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
         [JsonProperty("cast")]
         public List<Cast> Cast { get; set; }
 
         [JsonProperty("crew")]
         public List<Crew> Crew { get; set; }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
     }
 }

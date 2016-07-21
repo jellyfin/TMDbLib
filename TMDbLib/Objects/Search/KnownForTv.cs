@@ -6,6 +6,9 @@ namespace TMDbLib.Objects.Search
 {
     public class KnownForTv : KnownForBase
     {
+        [JsonProperty("first_air_date")]
+        public DateTime? FirstAirDate { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 
@@ -14,8 +17,5 @@ namespace TMDbLib.Objects.Search
 
         [JsonProperty("origin_country")]
         public List<string> OriginCountry { get; set; }
-
-        [JsonProperty("first_air_date")]
-        public DateTime? FirstAirDate { get; set; }
     }
 }

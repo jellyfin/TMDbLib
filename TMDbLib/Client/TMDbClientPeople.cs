@@ -12,6 +12,18 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        public async Task<Person> GetLatestPersonAsync()
+        {
+            RestRequest req =  _client.Create("person/latest");
+
+            // TODO: Dateformat?
+            //req.DateFormat = "yyyy-MM-dd";
+
+            RestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
+
+            return resp;
+        }
+
         public async Task<Person> GetPersonAsync(int personId, PersonMethods extraMethods = PersonMethods.Undefined)
         {
             RestRequest req = _client.Create("person/{personId}");
@@ -48,6 +60,45 @@ namespace TMDbLib.Client
             }
 
             return item;
+        }
+
+        public async Task<List<Change>> GetPersonChangesAsync(int personId, DateTime? startDate = null, DateTime? endDate = null)
+        {
+            ChangesContainer changesContainer = await GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").ConfigureAwait(false);
+            return changesContainer.Changes;
+        }
+
+        public async Task<ExternalIds> GetPersonExternalIdsAsync(int personId)
+        {
+            return await GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds).ConfigureAwait(false);
+        }
+
+        public async Task<ProfileImages> GetPersonImagesAsync(int personId)
+        {
+            return await GetPersonMethod<ProfileImages>(personId, PersonMethods.Images).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<PersonResult>> GetPersonListAsync(PersonListType type, int page = 0)
+        {
+            RestRequest req;
+            switch (type)
+            {
+                case PersonListType.Popular:
+                    req =  _client.Create("person/popular");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type));
+            }
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+
+            // TODO: Dateformat?
+            //req.DateFormat = "yyyy-MM-dd";
+
+            RestResponse<SearchContainer<PersonResult>> resp = await req.ExecuteGet<SearchContainer<PersonResult>>().ConfigureAwait(false);
+
+            return resp;
         }
 
         private async Task<T> GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
@@ -89,21 +140,6 @@ namespace TMDbLib.Client
             return await GetPersonMethod<MovieCredits>(personId, PersonMethods.MovieCredits, language: language).ConfigureAwait(false);
         }
 
-        public async Task<TvCredits> GetPersonTvCreditsAsync(int personId)
-        {
-            return await GetPersonTvCreditsAsync(personId, DefaultLanguage).ConfigureAwait(false);
-        }
-
-        public async Task<TvCredits> GetPersonTvCreditsAsync(int personId, string language)
-        {
-            return await GetPersonMethod<TvCredits>(personId, PersonMethods.TvCredits, language: language).ConfigureAwait(false);
-        }
-
-        public async Task<ProfileImages> GetPersonImagesAsync(int personId)
-        {
-            return await GetPersonMethod<ProfileImages>(personId, PersonMethods.Images).ConfigureAwait(false);
-        }
-
         public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImagesAsync(int personId, int page)
         {
             return await  GetPersonTaggedImagesAsync(personId, DefaultLanguage, page).ConfigureAwait(false);
@@ -114,50 +150,14 @@ namespace TMDbLib.Client
             return await GetPersonMethod<SearchContainer<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page).ConfigureAwait(false);
         }
 
-        public async Task<ExternalIds> GetPersonExternalIdsAsync(int personId)
+        public async Task<TvCredits> GetPersonTvCreditsAsync(int personId)
         {
-            return await GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds).ConfigureAwait(false);
-        }
-        
-        public async Task<List<Change>> GetPersonChangesAsync(int personId, DateTime? startDate = null, DateTime? endDate = null)
-        {
-            ChangesContainer changesContainer = await GetPersonMethod<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC").ConfigureAwait(false);
-            return changesContainer.Changes;
+            return await GetPersonTvCreditsAsync(personId, DefaultLanguage).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<PersonResult>> GetPersonListAsync(PersonListType type, int page = 0)
+        public async Task<TvCredits> GetPersonTvCreditsAsync(int personId, string language)
         {
-            RestRequest req;
-            switch (type)
-            {
-                case PersonListType.Popular:
-                    req =  _client.Create("person/popular");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(type));
-            }
-
-            if (page >= 1)
-                req.AddParameter("page", page.ToString());
-
-            // TODO: Dateformat?
-            //req.DateFormat = "yyyy-MM-dd";
-
-            RestResponse<SearchContainer<PersonResult>> resp = await req.ExecuteGet<SearchContainer<PersonResult>>().ConfigureAwait(false);
-
-            return resp;
-        }
-
-        public async Task<Person> GetLatestPersonAsync()
-        {
-            RestRequest req =  _client.Create("person/latest");
-
-            // TODO: Dateformat?
-            //req.DateFormat = "yyyy-MM-dd";
-
-            RestResponse<Person> resp = await req.ExecuteGet<Person>().ConfigureAwait(false);
-
-            return resp;
+            return await GetPersonMethod<TvCredits>(personId, PersonMethods.TvCredits, language: language).ConfigureAwait(false);
         }
     }
 }

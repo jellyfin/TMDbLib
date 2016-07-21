@@ -7,8 +7,8 @@ namespace TMDbLib.Objects.Discover
 {
     public abstract class DiscoverBase<T>
     {
-        private readonly string _endpoint;
         private readonly TMDbClient _client;
+        private readonly string _endpoint;
         protected readonly SimpleNamedValueCollection Parameters;
 
         public DiscoverBase(string endpoint, TMDbClient client)

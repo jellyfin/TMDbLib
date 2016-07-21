@@ -10,19 +10,18 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public string ApiKey { get; private set; }
+        private const string ApiVersion = "3";
+        private const string ProductionUrl = "api.themoviedb.org";
+        private RestClient _client;
+        private TMDbConfig _config;
 
-        /// <summary>
-        /// The session id that will be used when TMDb requires authentication
-        /// </summary>
-        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
-        public string SessionId { get; private set; }
+        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl)
+        {
+            DefaultLanguage = null;
+            DefaultCountry = null;
 
-        /// <summary>
-        /// The type of the session id, this will determine the level of access that is granted on the API
-        /// </summary>
-        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
-        public SessionType SessionType { get; private set; }
+            Initialize(baseUrl, useSsl, apiKey);
+        }
 
         /// <summary>
         /// The account details of the user account associated with the current user session
@@ -30,10 +29,18 @@ namespace TMDbLib.Client
         /// <remarks>This value is automaticly populated when setting a user session</remarks>
         public AccountDetails ActiveAccount { get; private set; }
 
-        /// <summary>
-        /// ISO 639-1 code. Ex en
-        /// </summary>
-        public string DefaultLanguage { get; set; }
+        public string ApiKey { get; private set; }
+
+        public TMDbConfig Config
+        {
+            get
+            {
+                if (!HasConfig)
+                    throw new InvalidOperationException("Call GetConfig() or SetConfig() first");
+                return _config;
+            }
+            private set { _config = value; }
+        }
 
         /// <summary>
         /// ISO 3166-1 code. Ex. US
@@ -41,17 +48,11 @@ namespace TMDbLib.Client
         public string DefaultCountry { get; set; }
 
         /// <summary>
-        /// The TMDb only allows x amount of requests over a specific time span.
-        /// If you exceed this limit your request will be denied untill the timer resets.
-        /// By default the client will keep waiting for the time to expire and then try again.
-        /// For details about the allowed limits: https://www.themoviedb.org/talk/5317af69c3a3685c4a0003b1?page=1
+        /// ISO 639-1 code. Ex en
         /// </summary>
-        [Obsolete("Setting this is identical to setting 'MaxRetryCount = 0'")]
-        public bool ThrowErrorOnExeedingMaxCalls
-        {
-            get { return MaxRetryCount == 0; }
-            set { MaxRetryCount = value ? 0 : 5; }
-        }
+        public string DefaultLanguage { get; set; }
+
+        public bool HasConfig { get; private set; }
 
         /// <summary>
         /// The maximum number of times a call to TMDb will be retried
@@ -76,30 +77,78 @@ namespace TMDbLib.Client
             set { throw new NotImplementedException(); }
         }
 
-        public TMDbConfig Config
+        /// <summary>
+        /// The session id that will be used when TMDb requires authentication
+        /// </summary>
+        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
+        public string SessionId { get; private set; }
+
+        /// <summary>
+        /// The type of the session id, this will determine the level of access that is granted on the API
+        /// </summary>
+        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
+        public SessionType SessionType { get; private set; }
+
+        /// <summary>
+        /// The TMDb only allows x amount of requests over a specific time span.
+        /// If you exceed this limit your request will be denied untill the timer resets.
+        /// By default the client will keep waiting for the time to expire and then try again.
+        /// For details about the allowed limits: https://www.themoviedb.org/talk/5317af69c3a3685c4a0003b1?page=1
+        /// </summary>
+        [Obsolete("Setting this is identical to setting 'MaxRetryCount = 0'")]
+        public bool ThrowErrorOnExeedingMaxCalls
         {
-            get
-            {
-                if (!HasConfig)
-                    throw new InvalidOperationException("Call GetConfig() or SetConfig() first");
-                return _config;
-            }
-            private set { _config = value; }
+            get { return MaxRetryCount == 0; }
+            set { MaxRetryCount = value ? 0 : 5; }
         }
 
-        public bool HasConfig { get; private set; }
-
-        private const string ApiVersion = "3";
-        private const string ProductionUrl = "api.themoviedb.org";
-        private TMDbConfig _config;
-        private RestClient _client;
-
-        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl)
+        /// <summary>
+        /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
+        /// </summary>
+        /// <param name="req">Request</param>
+        /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
+        private void AddSessionId(RestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
         {
-            DefaultLanguage = null;
-            DefaultCountry = null;
+            if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
+                (targetType == SessionType.GuestSession))
+            {
+                // Either
+                // - We needed ANY session ID and had a Guest session id
+                // - We needed a Guest session id and had it
+                req.AddParameter("guest_session_id", SessionId, parameterType);
+                return;
+            }
 
-            Initialize(baseUrl, useSsl, apiKey);
+            if ((targetType == SessionType.Unassigned && SessionType == SessionType.UserSession) ||
+               (targetType == SessionType.UserSession))
+            {
+                // Either
+                // - We needed ANY session ID and had a User session id
+                // - We needed a User session id and had it
+                req.AddParameter("session_id", SessionId, parameterType);
+                return;
+            }
+
+            // We did not have the required session type ready
+            throw new UserSessionRequiredException();
+        }
+
+        public void GetConfig()
+        {
+            TMDbConfig config = _client.Create("configuration").ExecuteGet<TMDbConfig>().Result;
+            
+            if (config == null)
+                throw new Exception("Unable to retrieve configuration");
+
+            // Store config
+            Config = config;
+            HasConfig = true;
+        }
+
+        public Uri GetImageUrl(string size, string filePath, bool useSsl = false)
+        {
+            string baseUrl = useSsl ? Config.Images.SecureBaseUrl : Config.Images.BaseUrl;
+            return new Uri(baseUrl + size + filePath);
         }
 
         private void Initialize(string baseUrl, bool useSsl, string apiKey)
@@ -123,16 +172,24 @@ namespace TMDbLib.Client
             _client.AddDefaultQueryString("api_key", apiKey);
         }
 
-        public void GetConfig()
+        /// <summary>
+        /// Used internally to determine if the current client has the required session set, if not an appropriate exception will be thrown
+        /// </summary>
+        /// <param name="sessionType">The type of session that is required by the calling method</param>
+        /// <exception cref="UserSessionRequiredException">Thrown if the calling method requires a user session and one isn't set on the client object</exception>
+        /// <exception cref="GuestSessionRequiredException">Thrown if the calling method requires a guest session and no session is set on the client object. (neither user or client type session)</exception>
+        private void RequireSessionId(SessionType sessionType)
         {
-            TMDbConfig config = _client.Create("configuration").ExecuteGet<TMDbConfig>().Result;
-            
-            if (config == null)
-                throw new Exception("Unable to retrieve configuration");
+            if (string.IsNullOrWhiteSpace(SessionId))
+            {
+                if (sessionType == SessionType.GuestSession)
+                    throw new UserSessionRequiredException();
+                else
+                    throw new GuestSessionRequiredException();
+            }
 
-            // Store config
-            Config = config;
-            HasConfig = true;
+            if (sessionType == SessionType.UserSession && SessionType == SessionType.GuestSession)
+                throw new UserSessionRequiredException();
         }
 
         public void SetConfig(TMDbConfig config)
@@ -140,12 +197,6 @@ namespace TMDbLib.Client
             // Store config
             Config = config;
             HasConfig = true;
-        }
-
-        public Uri GetImageUrl(string size, string filePath, bool useSsl = false)
-        {
-            string baseUrl = useSsl ? Config.Images.SecureBaseUrl : Config.Images.BaseUrl;
-            return new Uri(baseUrl + size + filePath);
         }
 
         /// <summary>
@@ -185,57 +236,6 @@ namespace TMDbLib.Client
                     throw;
                 }
             }
-        }
-
-        /// <summary>
-        /// Used internally to determine if the current client has the required session set, if not an appropriate exception will be thrown
-        /// </summary>
-        /// <param name="sessionType">The type of session that is required by the calling method</param>
-        /// <exception cref="UserSessionRequiredException">Thrown if the calling method requires a user session and one isn't set on the client object</exception>
-        /// <exception cref="GuestSessionRequiredException">Thrown if the calling method requires a guest session and no session is set on the client object. (neither user or client type session)</exception>
-        private void RequireSessionId(SessionType sessionType)
-        {
-            if (string.IsNullOrWhiteSpace(SessionId))
-            {
-                if (sessionType == SessionType.GuestSession)
-                    throw new UserSessionRequiredException();
-                else
-                    throw new GuestSessionRequiredException();
-            }
-
-            if (sessionType == SessionType.UserSession && SessionType == SessionType.GuestSession)
-                throw new UserSessionRequiredException();
-        }
-
-        /// <summary>
-        /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
-        /// </summary>
-        /// <param name="req">Request</param>
-        /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
-        private void AddSessionId(RestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
-        {
-            if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
-                (targetType == SessionType.GuestSession))
-            {
-                // Either
-                // - We needed ANY session ID and had a Guest session id
-                // - We needed a Guest session id and had it
-                req.AddParameter("guest_session_id", SessionId, parameterType);
-                return;
-            }
-
-            if ((targetType == SessionType.Unassigned && SessionType == SessionType.UserSession) ||
-               (targetType == SessionType.UserSession))
-            {
-                // Either
-                // - We needed ANY session ID and had a User session id
-                // - We needed a User session id and had it
-                req.AddParameter("session_id", SessionId, parameterType);
-                return;
-            }
-
-            // We did not have the required session type ready
-            throw new UserSessionRequiredException();
         }
     }
 }

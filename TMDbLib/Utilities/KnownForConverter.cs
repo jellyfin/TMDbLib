@@ -6,6 +6,11 @@ namespace TMDbLib.Utilities
 {
     internal class KnownForConverter : JsonCreationConverter<KnownForBase>
     {
+        public override bool CanConvert(Type objectType)
+        {
+            return objectType == typeof(KnownForBase);
+        }
+
         protected override KnownForBase GetInstance(JObject jObject)
         {
             string mediaType = jObject["media_type"].ToString();
@@ -19,11 +24,6 @@ namespace TMDbLib.Utilities
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }
-
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType == typeof(KnownForBase);
         }
     }
 }

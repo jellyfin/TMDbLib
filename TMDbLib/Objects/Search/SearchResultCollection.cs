@@ -4,11 +4,11 @@ namespace TMDbLib.Objects.Search
 {
     public class SearchResultCollection
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
         [JsonProperty("backdrop_path")]
         public string BackdropPath { get; set; }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

@@ -10,6 +10,9 @@ namespace TMDbLib.Objects.Credit
         [JsonProperty("department")]
         public string Department { get; set; }
 
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
         [JsonProperty("job")]
         public string Job { get; set; }
 
@@ -18,9 +21,6 @@ namespace TMDbLib.Objects.Credit
 
         [JsonProperty("media_type")]
         public string MediaType { get; set; }
-
-        [JsonProperty("id")]
-        public string Id { get; set; }
 
         [JsonProperty("person")]
         public CreditPerson Person { get; set; }

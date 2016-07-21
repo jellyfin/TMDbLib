@@ -5,6 +5,12 @@ namespace TMDbLib.Objects.Credit
 {
     public class CreditMedia
     {
+        [JsonProperty("character")]
+        public string Character { get; set; }
+
+        [JsonProperty("episodes")]
+        public List<CreditEpisode> Episodes { get; set; }
+
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -13,12 +19,6 @@ namespace TMDbLib.Objects.Credit
 
         [JsonProperty("original_name")]
         public string OriginalName { get; set; }
-
-        [JsonProperty("character")]
-        public string Character { get; set; }
-
-        [JsonProperty("episodes")]
-        public List<CreditEpisode> Episodes { get; set; }
 
         [JsonProperty("seasons")]
         public List<CreditSeason> Seasons { get; set; }

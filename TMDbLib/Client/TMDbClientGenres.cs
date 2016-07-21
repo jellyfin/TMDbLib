@@ -8,6 +8,30 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null)
+        {
+            return await GetGenreMoviesAsync(genreId, DefaultLanguage, page, includeAllMovies).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null)
+        {
+            RestRequest req = _client.Create("genre/{genreId}/movies");
+            req.AddUrlSegment("genreId", genreId.ToString());
+
+            language = language ?? DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+                req.AddParameter("language", language);
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (includeAllMovies.HasValue)
+                req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
+
+            RestResponse<SearchContainerWithId<MovieResult>> resp = await req.ExecuteGet<SearchContainerWithId<MovieResult>>().ConfigureAwait(false);
+
+            return resp;
+        }
+
         public async Task<List<Genre>> GetMovieGenresAsync()
         {
             return await GetMovieGenresAsync(DefaultLanguage).ConfigureAwait(false);
@@ -42,30 +66,6 @@ namespace TMDbLib.Client
             RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>().ConfigureAwait(false);
 
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
-        }
-
-        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null)
-        {
-            return await GetGenreMoviesAsync(genreId, DefaultLanguage, page, includeAllMovies).ConfigureAwait(false);
-        }
-
-        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null)
-        {
-            RestRequest req = _client.Create("genre/{genreId}/movies");
-            req.AddUrlSegment("genreId", genreId.ToString());
-
-            language = language ?? DefaultLanguage;
-            if (!string.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
-
-            if (page >= 1)
-                req.AddParameter("page", page.ToString());
-            if (includeAllMovies.HasValue)
-                req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
-
-            RestResponse<SearchContainerWithId<MovieResult>> resp = await req.ExecuteGet<SearchContainerWithId<MovieResult>>().ConfigureAwait(false);
-
-            return resp;
         }
     }
 }

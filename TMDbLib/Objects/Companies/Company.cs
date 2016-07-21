@@ -20,13 +20,13 @@ namespace TMDbLib.Objects.Companies
         [JsonProperty("logo_path")]
         public string LogoPath { get; set; }
 
+        [JsonProperty("movies")]
+        public SearchContainer<MovieResult> Movies { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("parent_company")]
         public ParentCompany ParentCompany { get; set; }
-
-        [JsonProperty("movies")]
-        public SearchContainer<MovieResult> Movies { get; set; }
     }
 }

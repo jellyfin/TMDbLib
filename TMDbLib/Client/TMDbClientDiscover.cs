@@ -10,14 +10,6 @@ namespace TMDbLib.Client
     public partial class TMDbClient
     {
         /// <summary>
-        /// Can be used to discover new tv shows matching certain criteria
-        /// </summary>
-        public DiscoverTv DiscoverTvShowsAsync()
-        {
-            return new DiscoverTv(this);
-        }
-
-        /// <summary>
         /// Can be used to discover movies matching certain criteria
         /// </summary>
         public DiscoverMovie DiscoverMoviesAsync()
@@ -40,6 +32,14 @@ namespace TMDbLib.Client
 
             RestResponse<SearchContainer<T>> response = await request.ExecuteGet<SearchContainer<T>>().ConfigureAwait(false);
             return response;
+        }
+
+        /// <summary>
+        /// Can be used to discover new tv shows matching certain criteria
+        /// </summary>
+        public DiscoverTv DiscoverTvShowsAsync()
+        {
+            return new DiscoverTv(this);
         }
     }
 }

@@ -8,6 +8,9 @@ namespace TMDbLib.Objects.General
         [JsonProperty("adult")]
         public bool Adult { get; set; }
 
+        [JsonProperty("bson_id")]
+        public string Bson_Id { get; set; }
+
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -16,9 +19,6 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("name")]
         public string Name { get; set; }
-
-        [JsonProperty("bson_id")]
-        public string Bson_Id { get; set; }
 
         [JsonProperty("profile-path")]
         public string ProfilePath { get; set; }

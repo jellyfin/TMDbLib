@@ -4,11 +4,11 @@ namespace TMDbLib.Objects.Account
 {
     public class AccountDetails
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
         [JsonProperty("avatar")]
         public Avatar Avatar { get; set; }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         [JsonProperty("include_adult")]
         public bool IncludeAdult { get; set; }

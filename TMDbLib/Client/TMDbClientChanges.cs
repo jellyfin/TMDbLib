@@ -25,7 +25,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-		/// <summary>
+        /// <summary>
 		/// Get a list of movie ids that have been edited. 
 		/// By default we show the last 24 hours and only 100 items per page. 
 		/// The maximum number of days that can be returned in a single request is 14. 
@@ -37,7 +37,7 @@ namespace TMDbLib.Client
             return await GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate).ConfigureAwait(false);
         }
 
-		/// <summary>
+        /// <summary>
 		/// Get a list of people ids that have been edited. 
 		/// By default we show the last 24 hours and only 100 items per page. 
 		/// The maximum number of days that can be returned in a single request is 14. 
@@ -49,7 +49,7 @@ namespace TMDbLib.Client
             return await GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate).ConfigureAwait(false);
         }
 
-		/// <summary>
+        /// <summary>
 		/// Get a list of TV show ids that have been edited. 
 		/// By default we show the last 24 hours and only 100 items per page. 
 		/// The maximum number of days that can be returned in a single request is 14. 

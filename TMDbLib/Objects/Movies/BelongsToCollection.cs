@@ -4,6 +4,9 @@ namespace TMDbLib.Objects.Movies
 {
     public class BelongsToCollection
     {
+        [JsonProperty("backdrop_path")]
+        public string BackdropPath { get; set; }
+
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -12,8 +15,5 @@ namespace TMDbLib.Objects.Movies
 
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
-
-        [JsonProperty("backdrop_path")]
-        public string BackdropPath { get; set; }
     }
 }

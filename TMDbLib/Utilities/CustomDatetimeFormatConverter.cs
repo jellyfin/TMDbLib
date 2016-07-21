@@ -7,14 +7,14 @@ namespace TMDbLib.Utilities
 {
     public class CustomDatetimeFormatConverter : DateTimeConverterBase
     {
-        public CultureInfo CultureInfo { get; set; }
-        public string DatetimeFormat { get; set; }
-
         public CustomDatetimeFormatConverter()
         {
             CultureInfo = new CultureInfo("en-US");
             DatetimeFormat = "yyyy-MM-dd HH:mm:ss UTC";
         }
+
+        public CultureInfo CultureInfo { get; set; }
+        public string DatetimeFormat { get; set; }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {

@@ -41,6 +41,11 @@ namespace TMDbLib.Client
             return resp;
         }
 
+        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null)
+        {
+            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language).ConfigureAwait(false);
+        }
+
         private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null) where T : new()
         {
             RestRequest req = _client.Create("collection/{collectionId}/{method}");
@@ -53,11 +58,6 @@ namespace TMDbLib.Client
             RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
 
             return resp;
-        }
-
-        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null)
-        {
-            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language).ConfigureAwait(false);
         }
     }
 }

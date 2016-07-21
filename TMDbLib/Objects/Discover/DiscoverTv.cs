@@ -31,6 +31,24 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
+        /// Available options are vote_average.desc, vote_average.asc, first_air_date.desc, first_air_date.asc, popularity.desc, popularity.asc
+        /// </summary>
+        public DiscoverTv OrderBy(DiscoverTvShowSortBy sortBy)
+        {
+            Parameters["sort_by"] = sortBy.GetDescription();
+            return this;
+        }
+
+        /// <summary>
+        /// Specify a timeone to calculate proper date offsets. A list of valid timezones can be found by using the timezones/list method.
+        /// </summary>
+        public DiscoverTv UseTimezone(string timezone)
+        {
+            Parameters["timezone"] = timezone;
+            return this;
+        }
+
+        /// <summary>
         /// The minimum episode air date to include. Expected format is YYYY-MM-DD. Can be used in conjunction with a specified timezone.
         /// </summary>
         public DiscoverTv WhereAirDateIsAfter(DateTime date)
@@ -86,43 +104,6 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Available options are vote_average.desc, vote_average.asc, first_air_date.desc, first_air_date.asc, popularity.desc, popularity.asc
-        /// </summary>
-        public DiscoverTv OrderBy(DiscoverTvShowSortBy sortBy)
-        {
-            Parameters["sort_by"] = sortBy.GetDescription();
-            return this;
-        }
-
-        /// <summary>
-        /// Specify a timeone to calculate proper date offsets. A list of valid timezones can be found by using the timezones/list method.
-        /// </summary>
-        public DiscoverTv UseTimezone(string timezone)
-        {
-            Parameters["timezone"] = timezone;
-            return this;
-        }
-
-        /// <summary>
-        /// Only include TV shows that are equal to, or have a higher average rating than this value. Expected value is a float.
-        /// </summary>
-        public DiscoverTv WhereVoteAverageIsAtLeast(double score)
-        {
-            // TODO: Apply culture to the ToString
-            Parameters["vote_average.gte"] = score.ToString();
-            return this;
-        }
-
-        /// <summary>
-        /// Only include TV shows that are equal to, or have a vote count higher than this value. Expected value is an integer.
-        /// </summary>
-        public DiscoverTv WhereVoteCountIsAtLeast(int count)
-        {
-            Parameters["vote_count.gte"] = count.ToString();
-            return this;
-        }
-
-        /// <summary>
         /// Only include TV shows with the specified genres. Expected value is an integer (the id of a genre). Multiple values can be specified. Comma separated indicates an 'AND' query, while a pipe (|) separated value indicates an 'OR'.
         /// </summary>
         public DiscoverTv WhereGenresInclude(IEnumerable<Genre> genres)
@@ -153,6 +134,25 @@ namespace TMDbLib.Objects.Discover
         public DiscoverTv WhereNetworksInclude(IEnumerable<int> networkIds)
         {
             Parameters["with_networks"] = string.Join(",", networkIds.Select(s => s.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Only include TV shows that are equal to, or have a higher average rating than this value. Expected value is a float.
+        /// </summary>
+        public DiscoverTv WhereVoteAverageIsAtLeast(double score)
+        {
+            // TODO: Apply culture to the ToString
+            Parameters["vote_average.gte"] = score.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Only include TV shows that are equal to, or have a vote count higher than this value. Expected value is an integer.
+        /// </summary>
+        public DiscoverTv WhereVoteCountIsAtLeast(int count)
+        {
+            Parameters["vote_count.gte"] = count.ToString();
             return this;
         }
     }

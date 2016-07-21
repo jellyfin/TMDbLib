@@ -11,13 +11,13 @@ namespace TMDbLib.Objects.Find
         public List<MovieResult> MovieResults { get; set; }
 
         [JsonProperty("person_results")]
-        public List<SearchPerson> PersonResults { get; set; }     // Unconfirmed type
-
-        [JsonProperty("tv_results")]
-        public List<SearchTv> TvResults { get; set; }
+        public List<SearchPerson> PersonResults { get; set; } // Unconfirmed type
 
         [JsonProperty("tv_episode_results")]
         public List<SearchTvEpisode> TvEpisode { get; set; }
+
+        [JsonProperty("tv_results")]
+        public List<SearchTv> TvResults { get; set; }
 
         [JsonProperty("tv_season_results")]
         public List<SearchTvSeason> TvSeason { get; set; }
