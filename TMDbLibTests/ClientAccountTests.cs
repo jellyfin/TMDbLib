@@ -217,7 +217,7 @@ namespace TMDbLibTests
             // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
             _config.Client.SetSessionInformation(_config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => _config.Client.AccountGetRatedTvShowEpisodesAsync(i).Result);
-            SearchTvEpisode tvEpisode = _config.Client.AccountGetRatedTvShowEpisodesAsync().Sync().Results[0];
+            AccountSearchTvEpisode tvEpisode = _config.Client.AccountGetRatedTvShowEpisodesAsync().Sync().Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.True(tvEpisode.Id > 0);

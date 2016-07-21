@@ -26,9 +26,6 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("still_path")]
         public string StillPath { get; set; }
 
-        [JsonProperty("rating")]
-        public double Rating { get; set; }
-
         [JsonProperty("vote_average")]
         public double VoteAverage { get; set; }
 
