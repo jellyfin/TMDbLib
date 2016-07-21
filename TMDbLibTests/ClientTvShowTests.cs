@@ -393,7 +393,7 @@ namespace TMDbLibTests
 
             // Remove the favourite
             if (accountState.Favorite)
-                Config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.BreakingBad, false).Sync();
+                Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.BreakingBad, false).Sync();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
@@ -405,7 +405,7 @@ namespace TMDbLibTests
             Assert.False(accountState.Favorite);
 
             // Favourite the movie
-            Config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.BreakingBad, true).Sync();
+            Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.BreakingBad, true).Sync();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
@@ -424,7 +424,7 @@ namespace TMDbLibTests
 
             // Remove the watchlist
             if (accountState.Watchlist)
-                Config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.BreakingBad, false).Sync();
+                Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.BreakingBad, false).Sync();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
@@ -436,7 +436,7 @@ namespace TMDbLibTests
             Assert.False(accountState.Watchlist);
 
             // Watchlist the movie
-            Config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.BreakingBad, true).Sync();
+            Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.BreakingBad, true).Sync();
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);

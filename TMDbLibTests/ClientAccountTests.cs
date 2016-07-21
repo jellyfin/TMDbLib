@@ -242,13 +242,13 @@ namespace TMDbLibTests
                 throw new Exception("Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
 
             // Try to mark is as a favorite
-            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
+            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
             Assert.True(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to un-mark is as a favorite
-            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
+            Assert.True(_config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
             Assert.False(DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
@@ -286,13 +286,13 @@ namespace TMDbLibTests
                 throw new Exception("Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
 
             // Try to add an item to the watchlist
-            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, true).Result);
+            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true).Result);
 
             // Check if it worked
             Assert.True(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to remove item from watchlist
-            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.TVShow, IdHelper.DoctorWho, false).Result);
+            Assert.True(_config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false).Result);
 
             // Check if it worked
             Assert.False(DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));

@@ -179,7 +179,7 @@ namespace TMDbLibTests
             Assert.Equal(1412, item.Id);
             Assert.True(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
             Assert.Equal(new DateTime(2012, 10, 10), item.FirstAirDate);
-            Assert.Equal(MediaType.TVShow, item.Type);
+            Assert.Equal(MediaType.Tv, item.Type);
             Assert.Equal("Arrow", item.Name);
             Assert.Equal("Arrow", item.OriginalName);
             Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);

@@ -7,9 +7,9 @@ namespace TMDbLib.Objects.General
         Unknown,
 
         [EnumValue("movie")]
-        Movie,
+        Movie = 1,
 
         [EnumValue("tv")]
-        TVShow
+        Tv = 2
     }
 }

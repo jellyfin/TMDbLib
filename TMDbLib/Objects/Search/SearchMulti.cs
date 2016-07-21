@@ -60,7 +60,7 @@ namespace TMDbLib.Objects.Search
                 switch (value)
                 {
                     case "tv":
-                        Type = General.MediaType.TVShow;
+                        Type = General.MediaType.Tv;
                         break;
                     case "movie":
                         Type = General.MediaType.Movie;
