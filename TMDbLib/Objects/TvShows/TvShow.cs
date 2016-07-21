@@ -12,9 +12,6 @@ namespace TMDbLib.Objects.TvShows
 {
     public class TvShow : SearchTv
     {
-        [JsonProperty("overview")]
-        public string Overview { get; set; }
-
         [JsonProperty("episode_run_time")]
         public List<int> EpisodeRunTime { get; set; }
 
@@ -65,17 +62,7 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("networks")]
         public List<Network> Networks { get; set; }
-
-        /// <summary>
-        /// Country ISO code ex. US
-        /// </summary>
-        [JsonProperty("origin_country")]
-        public List<string> OriginCountry { get; set; }
-
-        [JsonProperty("original_language")]
-        public string OriginalLanguage { get; set; }
-
-
+        
         [JsonProperty("images")]
         public Images Images { get; set; }
 

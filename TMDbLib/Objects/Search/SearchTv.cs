@@ -39,6 +39,9 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("vote_count")]
         public int VoteCount { get; set; }
 
+        /// <summary>
+        /// Country ISO code ex. US
+        /// </summary>
         [JsonProperty("origin_country")]
         public List<string> OriginCountry { get; set; }
 
