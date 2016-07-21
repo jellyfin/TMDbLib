@@ -134,7 +134,7 @@ namespace TMDbLib.Client
                     req =  _client.Create("person/popular");
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException("type");
+                    throw new ArgumentOutOfRangeException(nameof(type));
             }
 
             if (page >= 1)

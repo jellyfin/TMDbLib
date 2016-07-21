@@ -16,7 +16,7 @@ namespace TMDbLib.Client
         public async Task<GenericList> GetListAsync(string listId)
         {
             if (string.IsNullOrWhiteSpace(listId))
-                throw new ArgumentNullException("listId");
+                throw new ArgumentNullException(nameof(listId));
 
             RestRequest req = _client.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
@@ -34,10 +34,10 @@ namespace TMDbLib.Client
         public async Task<bool> GetListIsMoviePresentAsync(string listId, int movieId)
         {
             if (string.IsNullOrWhiteSpace(listId))
-                throw new ArgumentNullException("listId");
+                throw new ArgumentNullException(nameof(listId));
 
             if (movieId <= 0)
-                throw new ArgumentOutOfRangeException("movieId");
+                throw new ArgumentOutOfRangeException(nameof(movieId));
 
             RestRequest req = _client.Create("list/{listId}/item_status");
             req.AddUrlSegment("listId", listId);
@@ -61,7 +61,7 @@ namespace TMDbLib.Client
             RequireSessionId(SessionType.UserSession);
 
             if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentNullException("name");
+                throw new ArgumentNullException(nameof(name));
 
             // Description is expected by the API and can not be null
             if (string.IsNullOrWhiteSpace(description))
@@ -97,7 +97,7 @@ namespace TMDbLib.Client
             RequireSessionId(SessionType.UserSession);
 
             if (string.IsNullOrWhiteSpace(listId))
-                throw new ArgumentNullException("listId");
+                throw new ArgumentNullException(nameof(listId));
 
             RestRequest req = _client.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
@@ -150,7 +150,7 @@ namespace TMDbLib.Client
             RequireSessionId(SessionType.UserSession);
 
             if (string.IsNullOrWhiteSpace(listId))
-                throw new ArgumentNullException("listId");
+                throw new ArgumentNullException(nameof(listId));
 
             RestRequest request = _client.Create("list/{listId}/clear");
             request.AddUrlSegment("listId", listId);
@@ -171,11 +171,11 @@ namespace TMDbLib.Client
             RequireSessionId(SessionType.UserSession);
 
             if (string.IsNullOrWhiteSpace(listId))
-                throw new ArgumentNullException("listId");
+                throw new ArgumentNullException(nameof(listId));
 
             // Movie Id is expected by the API and can not be null
             if (movieId <= 0)
-                throw new ArgumentOutOfRangeException("movieId");
+                throw new ArgumentOutOfRangeException(nameof(movieId));
 
             RestRequest req = _client.Create("list/{listId}/{method}");
             req.AddUrlSegment("listId", listId);
