@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Collections
 {
@@ -22,7 +23,7 @@ namespace TMDbLib.Objects.Collections
         public string Overview { get; set; }
 
         [JsonProperty("parts")]
-        public List<Part> Parts { get; set; }
+        public List<SearchMovie> Parts { get; set; }
 
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }

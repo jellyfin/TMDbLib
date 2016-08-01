@@ -32,7 +32,6 @@ namespace TMDbLibTests
 
             Collection collection = _config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
 
-            // TODO: Test all properties
             Assert.NotNull(collection);
             Assert.Equal("James Bond Collection", collection.Name);
             Assert.NotNull(collection.Parts);
@@ -43,6 +42,24 @@ namespace TMDbLibTests
             {
                 Assert.Null(selector(collection));
             }
+        }
+
+        [Fact]
+        public void TestCollectionsParts()
+        {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson = true;
+
+            Collection collection = _config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
+
+            Assert.NotNull(collection);
+            Assert.Equal("James Bond Collection", collection.Name);
+
+            Assert.NotNull(collection.Parts);
+            Assert.True(collection.Parts.Count > 0);
+
+            Assert.Contains(collection.Parts, movie => movie.Title == "Live and Let Die");
+            Assert.Contains(collection.Parts, movie => movie.Title == "Dr. No");
         }
 
         [Fact]
