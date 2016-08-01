@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Credit
 {
     public class Credit
     {
         [JsonProperty("credit_type")]
-        public string CreditType { get; set; }
+        public CreditType CreditType { get; set; }
 
         [JsonProperty("department")]
         public string Department { get; set; }
@@ -20,7 +21,7 @@ namespace TMDbLib.Objects.Credit
         public CreditMedia Media { get; set; }
 
         [JsonProperty("media_type")]
-        public string MediaType { get; set; }
+        public MediaType MediaType { get; set; }
 
         [JsonProperty("person")]
         public CreditPerson Person { get; set; }

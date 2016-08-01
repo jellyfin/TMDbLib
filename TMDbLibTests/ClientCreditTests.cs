@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Xunit;
 using TMDbLib.Objects.Credit;
+using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -17,15 +18,15 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestGetCreditBase()
+        public void TestGetCreditTv()
         {
             Credit result = _config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
 
             Assert.NotNull(result);
-            Assert.Equal("cast", result.CreditType);
+            Assert.Equal(CreditType.Cast, result.CreditType);
             Assert.Equal("Actors", result.Department);
             Assert.Equal("Actor", result.Job);
-            Assert.Equal("tv", result.MediaType);
+            Assert.Equal(MediaType.Tv, result.MediaType);
             Assert.Equal(IdHelper.BruceWillisMiamiVice, result.Id);
 
             Assert.NotNull(result.Person);
