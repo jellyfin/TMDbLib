@@ -22,7 +22,7 @@ namespace TMDbLib.Objects.Companies
         public string LogoPath { get; set; }
 
         [JsonProperty("movies")]
-        public SearchContainer<MovieResult> Movies { get; set; }
+        public SearchContainer<SearchMovie> Movies { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

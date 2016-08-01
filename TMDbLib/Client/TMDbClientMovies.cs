@@ -9,6 +9,7 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.Movies.Credits;
@@ -181,12 +182,12 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieListAsync(MovieListType type, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMovieListAsync(MovieListType type, int page = 0)
         {
             return await GetMovieListAsync(type, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieListAsync(MovieListType type, string language, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMovieListAsync(MovieListType type, string language, int page = 0)
         {
             RestRequest req;
             switch (type)
@@ -215,7 +216,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<SearchContainer<MovieResult>> resp = await req.ExecuteGet<SearchContainer<MovieResult>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
 
             return resp;
         }
@@ -276,14 +277,14 @@ namespace TMDbLib.Client
             return await GetMovieMethod<SearchContainer<Review>>(movieId, MovieMethods.Reviews, page: page, language: language).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieSimilarAsync(int movieId, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, int page = 0)
         {
             return await GetMovieSimilarAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieSimilarAsync(int movieId, string language, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, string language, int page = 0)
         {
-            return await GetMovieMethod<SearchContainer<MovieResult>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
+            return await GetMovieMethod<SearchContainer<SearchMovie>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
         }
 
         public async Task<TranslationsContainer> GetMovieTranslationsAsync(int movieId)

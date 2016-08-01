@@ -8,7 +8,7 @@ namespace TMDbLib.Objects.Find
     public class FindContainer
     {
         [JsonProperty("movie_results")]
-        public List<MovieResult> MovieResults { get; set; }
+        public List<SearchMovie> MovieResults { get; set; }
 
         [JsonProperty("person_results")]
         public List<SearchPerson> PersonResults { get; set; } // Unconfirmed type

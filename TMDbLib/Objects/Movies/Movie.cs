@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Movies
 {
@@ -94,7 +95,7 @@ namespace TMDbLib.Objects.Movies
         public int? Runtime { get; set; }
 
         [JsonProperty("similar")]
-        public SearchContainer<MovieResult> Similar { get; set; }
+        public SearchContainer<SearchMovie> Similar { get; set; }
 
         [JsonProperty("spoken_languages")]
         public List<SpokenLanguage> SpokenLanguages { get; set; }

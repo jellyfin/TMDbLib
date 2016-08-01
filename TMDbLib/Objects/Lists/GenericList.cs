@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Lists
 {
@@ -10,6 +11,6 @@ namespace TMDbLib.Objects.Lists
         public string CreatedBy { get; set; }
 
         [JsonProperty("items")]
-        public List<MovieResult> Items { get; set; }
+        public List<SearchMovie> Items { get; set; }
     }
 }

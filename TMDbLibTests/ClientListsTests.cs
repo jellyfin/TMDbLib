@@ -5,6 +5,7 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -24,7 +25,7 @@ namespace TMDbLibTests
             Assert.Equal(TestListId, list.Id);
             Assert.Equal(list.ItemCount, list.Items.Count);
 
-            foreach (MovieResult movieResult in list.Items)
+            foreach (SearchMovie movieResult in list.Items)
             {
                 Assert.NotNull(movieResult);
 
