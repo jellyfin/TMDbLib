@@ -9,47 +9,12 @@ Nuget
 Install from Nuget using the command: **Install-Package TMDbLib**
 View more about that here: http://nuget.org/packages/TMDbLib/
 
-Changelog
+Index
 ---------
 
-**0.9.2-alpha**
-Changes:
-   - Combined a number of classes (#195)
-   - Drastically improved the SearchMulti method (#145)
-   - Used Newtonsoft.Json tricks to deserialize JSON into multiple different types
-
-**0.9.1-alpha**
-Changes:
- - Changed project to a .NET Core project (#188), changes required:
-   - Removed the [Display] attribute, replaced with custom attribute
-   - Changed StringComparison.InvariantCultureIgnoreCase to OrdinalIgnoreCase
-   - Removed [Serializable]
-   - Support `net45` and `netcoreapp1.0` (also added `net451`, `net452`, `net46` and `netstandard1.6`)
-   - Removed ObjectHelper
-   - Upgraded to `Newtonsoft.Json 9.0.1` to support `netcoreapp1.0`
-
-**0.9.0-alpha**
- - Removed Restsharp in favour of HttpClient and Json.Net
-   - Fixes a lot of weirdness in Json parsing and gives flexibility
-   - Simplified retry logic
- - Brings the API up to date
-   - Broke up Tv shows and Movie methods
-   - Refactorings in code
-   - Breaking changes, mostly renames and splitting methods
- - Async support
-
-**0.8.3**
-
- - Major update which brings the API up to date (minus a few features)
- - Multiple breaking changes from 0.7, but mostly parameter changes or renames.
- - Prepared for a 0.9 release with `Async` support.
-
-**0.7**
-
- - First release
- - Available on Nuget
- - Basic API design with a great potential for refactoring (be warned on design changes)
- - Supports most (if not all) read-only operations (login sessions not supported - yet).
+- [Nuget](#nuget)
+- [Examples](#examples)
+- [Changelog](#changelog)
 
 Examples
 --------
@@ -95,6 +60,48 @@ However, another way to get all James Bond movies, is to use the collection-appr
     
     foreach (Part part in jamesBonds.Parts)
         Console.WriteLine(part.Title);
+
+Changelog
+---------
+
+**0.9.2-alpha**
+Changes:
+   - Combined a number of classes (#195)
+   - Drastically improved the SearchMulti method (#145)
+   - Used Newtonsoft.Json tricks to deserialize JSON into multiple different types
+
+**0.9.1-alpha**
+Changes:
+ - Changed project to a .NET Core project (#188), changes required:
+   - Removed the [Display] attribute, replaced with custom attribute
+   - Changed StringComparison.InvariantCultureIgnoreCase to OrdinalIgnoreCase
+   - Removed [Serializable]
+   - Support `net45` and `netcoreapp1.0` (also added `net451`, `net452`, `net46` and `netstandard1.6`)
+   - Removed ObjectHelper
+   - Upgraded to `Newtonsoft.Json 9.0.1` to support `netcoreapp1.0`
+
+**0.9.0-alpha**
+ - Removed Restsharp in favour of HttpClient and Json.Net
+   - Fixes a lot of weirdness in Json parsing and gives flexibility
+   - Simplified retry logic
+ - Brings the API up to date
+   - Broke up Tv shows and Movie methods
+   - Refactorings in code
+   - Breaking changes, mostly renames and splitting methods
+ - Async support
+
+**0.8.3**
+
+ - Major update which brings the API up to date (minus a few features)
+ - Multiple breaking changes from 0.7, but mostly parameter changes or renames.
+ - Prepared for a 0.9 release with `Async` support.
+
+**0.7**
+
+ - First release
+ - Available on Nuget
+ - Basic API design with a great potential for refactoring (be warned on design changes)
+ - Supports most (if not all) read-only operations (login sessions not supported - yet).
 
 Apiary
 ------
