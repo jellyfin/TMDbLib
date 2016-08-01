@@ -3,7 +3,16 @@ build_script:
 - cmd: >-
     dotnet restore TMDbLib\
 
+    dotnet restore TMDbLibTests\
+
+    dotnet restore TestApplication\
+
+
     dotnet build TMDbLib\ -c Release
+
+    dotnet build TMDbLibTests\ -c Release
+
+    dotnet build TestApplication\ -c Release
 notifications:
 - provider: Email
   to:
