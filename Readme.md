@@ -12,9 +12,13 @@ View more about that here: http://nuget.org/packages/TMDbLib/
 Changelog
 ---------
 
-**0.9.1**
-Still pre-release
+**0.9.2-alpha**
+Changes:
+   - Combined a number of classes (#195)
+   - Drastically improved the SearchMulti method (#145)
+   - Used Newtonsoft.Json tricks to deserialize JSON into multiple different types
 
+**0.9.1-alpha**
 Changes:
  - Changed project to a .NET Core project (#188), changes required:
    - Removed the [Display] attribute, replaced with custom attribute
@@ -24,9 +28,7 @@ Changes:
    - Removed ObjectHelper
    - Upgraded to `Newtonsoft.Json 9.0.1` to support `netcoreapp1.0`
 
-**0.9.0**
-Still pre-release
-
+**0.9.0-alpha**
  - Removed Restsharp in favour of HttpClient and Json.Net
    - Fixes a lot of weirdness in Json parsing and gives flexibility
    - Simplified retry logic
