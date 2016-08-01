@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using TMDbLib.Helpers;
 
 namespace TMDbLib.Objects.Changes
 {
