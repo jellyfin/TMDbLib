@@ -10,6 +10,6 @@ namespace TMDbLib.Objects.People
         public int Id { get; set; }
 
         [JsonProperty("profiles")]
-        public List<ProfileImage> Profiles { get; set; }
+        public List<ImageData> Profiles { get; set; }
     }
 }

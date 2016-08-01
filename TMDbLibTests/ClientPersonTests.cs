@@ -265,7 +265,7 @@ namespace TMDbLibTests
             // Test image url generator
             TestImagesHelpers.TestImages(Config, images);
 
-            ProfileImage image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
+            ImageData image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
 
             Assert.NotNull(image);
             Assert.True(Math.Abs(0.666666666666667 - image.AspectRatio) < double.Epsilon);
