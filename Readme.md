@@ -1,4 +1,4 @@
-TMDbLib
+TMDbLib [![Build status](https://ci.appveyor.com/api/projects/status/t7wph9cawrl9qho0?svg=true)](https://ci.appveyor.com/project/LordMike/tmdblib)
 =======
 
 A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themoviedb.org/).
