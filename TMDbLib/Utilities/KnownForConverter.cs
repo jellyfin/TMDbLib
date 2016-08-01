@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json.Linq;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Utilities
@@ -13,13 +14,13 @@ namespace TMDbLib.Utilities
 
         protected override KnownForBase GetInstance(JObject jObject)
         {
-            string mediaType = jObject["media_type"].ToString();
+            MediaType mediaType = jObject["media_type"].ToObject<MediaType>();
 
             switch (mediaType)
             {
-                case "movie":
+                case MediaType.Movie:
                     return new KnownForMovie();
-                case "tv":
+                case MediaType.Tv:
                     return new KnownForTv();
                 default:
                     throw new ArgumentOutOfRangeException();
