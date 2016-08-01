@@ -8,6 +8,7 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Cast = TMDbLib.Objects.Movies.Cast;
@@ -290,10 +291,10 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieSimilarMovies()
         {
-            SearchContainer<MovieResult> resp = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard).Result;
+            SearchContainer<SearchMovie> resp = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
-            SearchContainer<MovieResult> respGerman = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard, language: "de").Result;
+            SearchContainer<SearchMovie> respGerman = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard, language: "de").Result;
             Assert.NotNull(respGerman);
 
             Assert.Equal(resp.Results.Count, respGerman.Results.Count);
@@ -382,19 +383,19 @@ namespace TMDbLibTests
             //GetMovieListAsync(MovieListType type, string language, int page = -1)
             foreach (MovieListType type in Enum.GetValues(typeof(MovieListType)).OfType<MovieListType>())
             {
-                SearchContainer<MovieResult> list = Config.Client.GetMovieListAsync(type).Result;
+                SearchContainer<SearchMovie> list = Config.Client.GetMovieListAsync(type).Result;
 
                 Assert.NotNull(list);
                 Assert.True(list.Results.Count > 0);
                 Assert.Equal(1, list.Page);
 
-                SearchContainer<MovieResult> listPage2 = Config.Client.GetMovieListAsync(type, 2).Result;
+                SearchContainer<SearchMovie> listPage2 = Config.Client.GetMovieListAsync(type, 2).Result;
 
                 Assert.NotNull(listPage2);
                 Assert.True(listPage2.Results.Count > 0);
                 Assert.Equal(2, listPage2.Page);
 
-                SearchContainer<MovieResult> listDe = Config.Client.GetMovieListAsync(type, "de").Result;
+                SearchContainer<SearchMovie> listDe = Config.Client.GetMovieListAsync(type, "de").Result;
 
                 Assert.NotNull(listDe);
                 Assert.True(listDe.Results.Count > 0);

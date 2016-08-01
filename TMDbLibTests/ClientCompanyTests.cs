@@ -4,6 +4,7 @@ using System.Linq;
 using Xunit;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -66,9 +67,9 @@ namespace TMDbLibTests
         public void TestCompaniesGetters()
         {
             //GetCompanyMoviesAsync(int id, string language, int page = -1)
-            SearchContainerWithId<MovieResult> resp = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox).Result;
-            SearchContainerWithId<MovieResult> respPage2 = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2).Result;
-            SearchContainerWithId<MovieResult> respItalian = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it").Result;
+            SearchContainerWithId<SearchMovie> resp = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox).Result;
+            SearchContainerWithId<SearchMovie> respPage2 = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2).Result;
+            SearchContainerWithId<SearchMovie> respItalian = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it").Result;
 
             Assert.NotNull(resp);
             Assert.NotNull(respPage2);

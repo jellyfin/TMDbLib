@@ -2,6 +2,7 @@
 using Xunit;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -43,9 +44,9 @@ namespace TMDbLibTests
             Keyword testKeyword = keywords.Keywords.First();
 
             // Get movies
-            SearchContainer<MovieResult> movies = Config.Client.GetKeywordMoviesAsync(testKeyword.Id).Result;
-            SearchContainer<MovieResult> moviesItalian = Config.Client.GetKeywordMoviesAsync(testKeyword.Id, "it").Result;
-            SearchContainer<MovieResult> moviesPage2 = Config.Client.GetKeywordMoviesAsync(testKeyword.Id, 2).Result;
+            SearchContainer<SearchMovie> movies = Config.Client.GetKeywordMoviesAsync(testKeyword.Id).Result;
+            SearchContainer<SearchMovie> moviesItalian = Config.Client.GetKeywordMoviesAsync(testKeyword.Id, "it").Result;
+            SearchContainer<SearchMovie> moviesPage2 = Config.Client.GetKeywordMoviesAsync(testKeyword.Id, 2).Result;
 
             Assert.NotNull(movies);
             Assert.NotNull(moviesItalian);
