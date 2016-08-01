@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Companies
 {
@@ -27,6 +28,6 @@ namespace TMDbLib.Objects.Companies
         public string Name { get; set; }
 
         [JsonProperty("parent_company")]
-        public ParentCompany ParentCompany { get; set; }
+        public SearchCompany ParentCompany { get; set; }
     }
 }
