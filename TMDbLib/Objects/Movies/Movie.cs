@@ -23,7 +23,7 @@ namespace TMDbLib.Objects.Movies
         public string BackdropPath { get; set; }
 
         [JsonProperty("belongs_to_collection")]
-        public BelongsToCollection BelongsToCollection { get; set; }
+        public SearchCollection BelongsToCollection { get; set; }
 
         [JsonProperty("budget")]
         public long Budget { get; set; }

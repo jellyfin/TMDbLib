@@ -48,10 +48,10 @@ namespace TMDbLibTests
         {
             TestHelpers.SearchPages(i => Config.Client.SearchCollectionAsync("007", i).Result);
 
-            SearchContainer<SearchResultCollection> result = Config.Client.SearchCollectionAsync("James Bond").Result;
+            SearchContainer<SearchCollection> result = Config.Client.SearchCollectionAsync("James Bond").Result;
 
             Assert.True(result.Results.Any());
-            SearchResultCollection item = result.Results.SingleOrDefault(s => s.Id == 645);
+            SearchCollection item = result.Results.SingleOrDefault(s => s.Id == 645);
 
             Assert.NotNull(item);
             Assert.Equal(645, item.Id);

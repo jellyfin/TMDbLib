@@ -7,14 +7,14 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, int page = 0)
+        public async Task<SearchContainer<SearchCollection>> SearchCollectionAsync(string query, int page = 0)
         {
             return await SearchCollectionAsync(query, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, string language, int page = 0)
+        public async Task<SearchContainer<SearchCollection>> SearchCollectionAsync(string query, string language, int page = 0)
         {
-            return await SearchMethod<SearchContainer<SearchResultCollection>>("collection", query, page, language).ConfigureAwait(false);
+            return await SearchMethod<SearchContainer<SearchCollection>>("collection", query, page, language).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchCompany>> SearchCompanyAsync(string query, int page = 0)

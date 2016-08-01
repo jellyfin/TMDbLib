@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Movies
+namespace TMDbLib.Objects.Search
 {
-    public class BelongsToCollection
+    public class SearchCollection
     {
         [JsonProperty("backdrop_path")]
         public string BackdropPath { get; set; }
