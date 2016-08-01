@@ -28,7 +28,7 @@ namespace TMDbLib.Objects.People
 
         [JsonIgnore]
         [JsonProperty("media")]
-        public MediaBase Media { get; set; }
+        public SearchBase Media { get; set; }
 
         [JsonProperty("media_type")]
         public MediaType MediaType { get; set; }

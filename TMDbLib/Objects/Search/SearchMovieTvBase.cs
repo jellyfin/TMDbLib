@@ -3,11 +3,8 @@ using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.Search
 {
-    public class MediaBase
+    public class SearchMovieTvBase : SearchBase
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
         [JsonProperty("backdrop_path")]
         public string BackdropPath { get; set; }
 
@@ -23,9 +20,6 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("genre_ids")]
         public List<int> GenreIds { get; set; }
         
-        [JsonProperty("popularity")]
-        public double Popularity { get; set; }
-
         [JsonProperty("vote_average")]
         public double VoteAverage { get; set; }
 

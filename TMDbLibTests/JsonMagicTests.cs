@@ -43,5 +43,22 @@ namespace TMDbLibTests
             Assert.Contains(result.Results, item => item.MediaType == MediaType.Tv && item.Media is SearchTv);
             Assert.Contains(result.Results, item => item.MediaType == MediaType.Movie && item.Media is SearchMovie);
         }
+
+        /// <summary>
+        /// Tests the SearchBaseConverter
+        /// </summary>
+        [Fact]
+        public void TestSearchBaseConverter()
+        {
+            TestHelpers.SearchPages(i => Config.Client.SearchMultiAsync("Rock", i).Result);
+            SearchContainer<SearchBase> result = Config.Client.SearchMultiAsync("Rock").Result;
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Results);
+
+            Assert.Contains(result.Results, item => item.MediaType == MediaType.Tv && item is SearchTv);
+            Assert.Contains(result.Results, item => item.MediaType == MediaType.Movie && item is SearchMovie);
+            Assert.Contains(result.Results, item => item.MediaType == MediaType.Person && item is SearchPerson);
+        }
     }
 }
