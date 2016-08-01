@@ -1,8 +1,11 @@
 ﻿using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.People
 {
+    [JsonConverter(typeof(TaggedImageConverter))]
     public class TaggedImage
     {
         [JsonProperty("aspect_ratio")]
@@ -23,8 +26,9 @@ namespace TMDbLib.Objects.People
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
 
+        [JsonIgnore]
         [JsonProperty("media")]
-        public Media Media { get; set; }
+        public MediaBase Media { get; set; }
 
         [JsonProperty("media_type")]
         public MediaType MediaType { get; set; }

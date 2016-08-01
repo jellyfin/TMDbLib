@@ -37,6 +37,7 @@
         // Persons
         public const int PersonPartialDate = 833;
         public const int BruceWillis = 62;
+        public const int HughLaurie = 41419;
         public const string ImdbBruceWillis = "nm0000246";
 
         // Collections

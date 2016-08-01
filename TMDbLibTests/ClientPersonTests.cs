@@ -5,6 +5,7 @@ using Xunit;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -305,25 +306,28 @@ namespace TMDbLibTests
             Assert.Equal(MediaType.Movie, image.MediaType);
 
             Assert.NotNull(image.Media);
-            Assert.Equal(false, image.Media.Adult);
-            Assert.True(TestImagesHelpers.TestImagePath(image.Media.BackdropPath), "image.Media.BackdropPath was not a valid image path, was: " + image.Media.BackdropPath);
-            Assert.Equal(187, image.Media.Id);
-            Assert.Equal("en", image.Media.OriginalLanguage);
-            Assert.Equal("Sin City", image.Media.OriginalTitle);
-            Assert.Equal("Welcome to Sin City. This town beckons to the tough, the corrupt, the brokenhearted. Some call it dark… Hard-boiled. Then there are those who call it home — Crooked cops, sexy dames, desperate vigilantes. Some are seeking revenge, others lust after redemption, and then there are those hoping for a little of both. A universe of unlikely and reluctant heroes still trying to do the right thing in a city that refuses to care.", image.Media.Overview);
-            Assert.Equal(new DateTime(2005, 3, 31), image.Media.ReleaseDate);
-            Assert.True(TestImagesHelpers.TestImagePath(image.Media.PosterPath), "image.Media.PosterPath was not a valid image path, was: " + image.Media.PosterPath);
-            Assert.True(image.Media.Popularity > 0);
-            Assert.Equal("Sin City", image.Media.Title);
-            Assert.Equal(false, image.Media.Video);
-            Assert.True(image.Media.VoteAverage > 0);
-            Assert.True(image.Media.VoteCount > 0);
+            Assert.IsType<SearchMovie>(image.Media);
 
-            Assert.NotNull(image.Media.GenreIds);
-            Assert.Equal(3, image.Media.GenreIds.Count);
-            Assert.True(image.Media.GenreIds.Contains(28));
-            Assert.True(image.Media.GenreIds.Contains(53));
-            Assert.True(image.Media.GenreIds.Contains(80));
+            SearchMovie mediaBase = (SearchMovie)image.Media;
+            Assert.Equal(false, mediaBase.Adult);
+            Assert.True(TestImagesHelpers.TestImagePath(mediaBase.BackdropPath), "image.Media.BackdropPath was not a valid image path, was: " + mediaBase.BackdropPath);
+            Assert.Equal(187, mediaBase.Id);
+            Assert.Equal("en", mediaBase.OriginalLanguage);
+            Assert.Equal("Sin City", mediaBase.OriginalTitle);
+            Assert.Equal("Welcome to Sin City. This town beckons to the tough, the corrupt, the brokenhearted. Some call it dark… Hard-boiled. Then there are those who call it home — Crooked cops, sexy dames, desperate vigilantes. Some are seeking revenge, others lust after redemption, and then there are those hoping for a little of both. A universe of unlikely and reluctant heroes still trying to do the right thing in a city that refuses to care.", mediaBase.Overview);
+            Assert.Equal(new DateTime(2005, 3, 31), mediaBase.ReleaseDate);
+            Assert.True(TestImagesHelpers.TestImagePath(mediaBase.PosterPath), "image.Media.PosterPath was not a valid image path, was: " + mediaBase.PosterPath);
+            Assert.True(mediaBase.Popularity > 0);
+            Assert.Equal("Sin City", mediaBase.Title);
+            Assert.Equal(false, mediaBase.Video);
+            Assert.True(mediaBase.VoteAverage > 0);
+            Assert.True(mediaBase.VoteCount > 0);
+
+            Assert.NotNull(mediaBase.GenreIds);
+            Assert.Equal(3, mediaBase.GenreIds.Count);
+            Assert.True(mediaBase.GenreIds.Contains(28));
+            Assert.True(mediaBase.GenreIds.Contains(53));
+            Assert.True(mediaBase.GenreIds.Contains(80));
         }
 
         [Fact]
