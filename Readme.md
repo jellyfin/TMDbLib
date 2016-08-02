@@ -70,7 +70,7 @@ Tips
 
 * All methods are `async` and awaitable
 * Most methods are very straightforward, and do as they are named, `GetMovie`, `GetPerson` etc.
-* Almost all enums are of th `[Flags]` type. This means you can combine them: `MovieMethods.Casts | MovieMethods.Trailers`
+* Almost all enums are of the `[Flags]` type. This means you can combine them: `MovieMethods.Casts | MovieMethods.Trailers`
 * TMDb are big fans of serving as little as possible, so most properties on primary classes like `Movie` are null, until you request the extra data using the enums like above.
 
 Changelog
