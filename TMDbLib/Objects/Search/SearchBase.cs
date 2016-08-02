@@ -10,10 +10,10 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonProperty("popularity")]
-        public double Popularity { get; set; }
-
         [JsonIgnore]
         public MediaType MediaType { get; set; }
+
+        [JsonProperty("popularity")]
+        public double Popularity { get; set; }
     }
 }

@@ -8,6 +8,9 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("backdrop_path")]
         public string BackdropPath { get; set; }
 
+        [JsonProperty("genre_ids")]
+        public List<int> GenreIds { get; set; }
+
         [JsonProperty("original_language")]
         public string OriginalLanguage { get; set; }
 
@@ -17,9 +20,6 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
 
-        [JsonProperty("genre_ids")]
-        public List<int> GenreIds { get; set; }
-        
         [JsonProperty("vote_average")]
         public double VoteAverage { get; set; }
 
