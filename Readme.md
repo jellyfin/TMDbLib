@@ -14,6 +14,7 @@ Index
 
 - [Nuget](#nuget)
 - [Examples](#examples)
+- [Tips](#tips)
 - [Changelog](#changelog)
 
 Examples
@@ -63,6 +64,14 @@ However, another way to get all James Bond movies, is to use the collection-appr
     Console.WriteLine($"Got {jamesBonds.Parts.Count:N0} James Bond Movies");
     foreach (SearchMovie part in jamesBonds.Parts)
         Console.WriteLine(part.Title);
+
+Tips
+---------
+
+* All methods are `async` and awaitable
+* Most methods are very straightforward, and do as they are named, `GetMovie`, `GetPerson` etc.
+* Almost all enums are of th `[Flags]` type. This means you can combine them: `MovieMethods.Casts | MovieMethods.Trailers`
+* TMDb are big fans of serving as little as possible, so most properties on primary classes like `Movie` are null, until you request the extra data using the enums like above.
 
 Changelog
 ---------
