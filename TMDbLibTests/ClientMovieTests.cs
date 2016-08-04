@@ -325,10 +325,11 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieLists()
         {
             //GetMovieListsAsync(int id, string language, int page = -1)
-            SearchContainer<ListResult> resp = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard).Result;
+            SearchContainerWithId<ListResult> resp = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
+            Assert.Equal(IdHelper.AGoodDayToDieHard, resp.Id);
 
-            SearchContainer<ListResult> respPage2 = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard, 2).Result;
+            SearchContainerWithId<ListResult> respPage2 = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard, 2).Result;
             Assert.NotNull(respPage2);
 
             Assert.Equal(1, resp.Page);

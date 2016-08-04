@@ -221,14 +221,14 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<ListResult>> GetMovieListsAsync(int movieId, int page = 0)
+        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, int page = 0)
         {
             return await GetMovieListsAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0)
+        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0)
         {
-            return await GetMovieMethod<SearchContainer<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language).ConfigureAwait(false);
+            return await GetMovieMethod<SearchContainerWithId<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language).ConfigureAwait(false);
         }
 
         private async Task<T> GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
