@@ -110,9 +110,9 @@ namespace TMDbLib.Client
         /// <param name="seasonNumber">The season number of the season the episode belongs to. Note use 0 for specials.</param>
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve information for.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        public async Task<TvShowEpisodeCredits> GetTvEpisodeCreditsAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
+        public async Task<CreditsWithGuestStars> GetTvEpisodeCreditsAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
         {
-            return await GetTvEpisodeMethod<TvShowEpisodeCredits>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language).ConfigureAwait(false);
+            return await GetTvEpisodeMethod<CreditsWithGuestStars>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language).ConfigureAwait(false);
         }
 
         /// <summary>

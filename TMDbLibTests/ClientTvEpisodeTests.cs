@@ -103,7 +103,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeSeparateExtrasCredits()
         {
-            TvShowEpisodeCredits credits = Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            CreditsWithGuestStars credits = Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.NotNull(credits);
 
             Cast guestStarItem = credits.GuestStars.FirstOrDefault(s => s.Id == 92495);

@@ -14,8 +14,8 @@ namespace TMDbLib.Objects.TvShows
         public DateTime? AirDate { get; set; }
 
         [JsonProperty("credits")]
-        public Credits Credits { get; set; }
-
+        public CreditsWithGuestStars Credits { get; set; }
+        
         [JsonProperty("crew")]
         public List<Crew> Crew { get; set; }
 
