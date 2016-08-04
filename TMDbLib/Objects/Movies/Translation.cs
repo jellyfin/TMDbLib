@@ -2,7 +2,6 @@
 
 namespace TMDbLib.Objects.Movies
 {
-    // TODO: Move into generic objects
     public class Translation
     {
         [JsonProperty("english_name")]

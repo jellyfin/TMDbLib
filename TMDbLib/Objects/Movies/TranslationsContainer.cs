@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.Movies
 {
-    // TODO: Move into generic objects
     public class TranslationsContainer
     {
         [JsonProperty("id")]
