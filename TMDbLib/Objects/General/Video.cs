@@ -10,6 +10,9 @@ namespace TMDbLib.Objects.General
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
 
+        [JsonProperty("iso_3166_1")]
+        public string Iso_3166_1 { get; set; }
+
         [JsonProperty("key")]
         public string Key { get; set; }
 

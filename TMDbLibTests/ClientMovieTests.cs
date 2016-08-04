@@ -267,6 +267,7 @@ namespace TMDbLibTests
 
             Assert.Equal("533ec6a7c3a368544800556f", video.Id);
             Assert.Equal("en", video.Iso_639_1);
+            Assert.Equal("US", video.Iso_3166_1);
             Assert.Equal("7EgVRvG2mM0", video.Key);
             Assert.Equal("A Good Day To Die Hard Official Trailer", video.Name);
             Assert.Equal("YouTube", video.Site);
