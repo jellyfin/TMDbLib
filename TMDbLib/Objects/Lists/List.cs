@@ -14,7 +14,7 @@ namespace TMDbLib.Objects.Lists
         public string Id { get; set; }
 
         /// <summary>
-        /// The Language iso code of a language the list is targeting. Ex en
+        /// A language code, e.g. en
         /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }

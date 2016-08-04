@@ -13,6 +13,9 @@ namespace TMDbLib.Objects.General
         [JsonProperty("height")]
         public int Height { get; set; }
 
+        /// <summary>
+        /// A language code, e.g. en
+        /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
 

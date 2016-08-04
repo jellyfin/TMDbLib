@@ -8,6 +8,9 @@ namespace TMDbLib.Objects.Movies
         [JsonProperty("english_name")]
         public string EnglishName { get; set; }
 
+        /// <summary>
+        /// A language code, e.g. en
+        /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
 

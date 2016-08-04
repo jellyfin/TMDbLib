@@ -23,6 +23,9 @@ namespace TMDbLib.Objects.People
         [JsonProperty("image_type")]
         public string ImageType { get; set; } // TODO: Turn into enum
 
+        /// <summary>
+        /// A language code, e.g. en
+        /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
 
