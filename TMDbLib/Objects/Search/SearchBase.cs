@@ -11,6 +11,7 @@ namespace TMDbLib.Objects.Search
         public int Id { get; set; }
 
         [JsonIgnore]
+        [JsonProperty("media_type")]
         public MediaType MediaType { get; set; }
 
         [JsonProperty("popularity")]
