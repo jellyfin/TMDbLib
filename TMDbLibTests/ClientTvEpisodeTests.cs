@@ -103,24 +103,32 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeSeparateExtrasCredits()
         {
-            Credits credits = Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            TvShowEpisodeCredits credits = Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.NotNull(credits);
-            Assert.NotNull(credits.Cast);
-            Assert.Equal("Walter White", credits.Cast[0].Character);
-            Assert.Equal("52542282760ee313280017f9", credits.Cast[0].CreditId);
-            Assert.Equal(17419, credits.Cast[0].Id);
-            Assert.Equal("Bryan Cranston", credits.Cast[0].Name);
-            Assert.NotNull(credits.Cast[0].ProfilePath);
-            Assert.Equal(0, credits.Cast[0].Order);
 
-            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1280071);
-            Assert.NotNull(crewPersonId);
+            Cast guestStarItem = credits.GuestStars.FirstOrDefault(s => s.Id == 92495);
+            Assert.Equal(92495, guestStarItem.Id);
+            Assert.Equal("Emilio Koyama", guestStarItem.Character);
+            Assert.Equal("52542273760ee3132800068e", guestStarItem.CreditId);
+            Assert.Equal("John Koyama", guestStarItem.Name);
+            Assert.NotNull(guestStarItem.ProfilePath);
+            Assert.Equal(1, guestStarItem.Order);
 
-            Assert.Equal(1280071, crewPersonId.Id);
-            Assert.Equal("Editing", crewPersonId.Department);
-            Assert.Equal("Lynne Willingham", crewPersonId.Name);
-            Assert.Equal("Editor", crewPersonId.Job);
-            Assert.Null(crewPersonId.ProfilePath);
+            Cast castItem = credits.Cast.FirstOrDefault(s => s.Id == 17419);
+            Assert.Equal(17419, castItem.Id);
+            Assert.Equal("Walter White", castItem.Character);
+            Assert.Equal("52542282760ee313280017f9", castItem.CreditId);
+            Assert.Equal("Bryan Cranston", castItem.Name);
+            Assert.NotNull(castItem.ProfilePath);
+            Assert.Equal(0, castItem.Order);
+
+            Crew crewItem = credits.Crew.FirstOrDefault(s => s.Id == 1280071);
+            Assert.NotNull(crewItem);
+            Assert.Equal(1280071, crewItem.Id);
+            Assert.Equal("Editing", crewItem.Department);
+            Assert.Equal("Lynne Willingham", crewItem.Name);
+            Assert.Equal("Editor", crewItem.Job);
+            Assert.Null(crewItem.ProfilePath);
         }
 
         [Fact]
