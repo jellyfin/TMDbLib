@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Movies
 {
+    [JsonConverter(typeof(AccountStateConverter))]
     public class TvEpisodeAccountState
     {
         [JsonProperty("episode_number")]

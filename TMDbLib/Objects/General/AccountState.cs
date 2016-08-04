@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.General
 {
+    [JsonConverter(typeof(AccountStateConverter))]
     public class AccountState
     {
         /// <summary>

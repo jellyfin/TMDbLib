@@ -35,15 +35,7 @@ namespace TMDbLib.Client
 
             RestResponse<AccountState> response = await req.ExecuteGet<AccountState>().ConfigureAwait(false);
 
-            AccountState item = await response.GetDataObject().ConfigureAwait(false);
-
-            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-            if (item != null)
-            {
-                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent().ConfigureAwait(false));
-            }
-
-            return item;
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId)
@@ -129,15 +121,11 @@ namespace TMDbLib.Client
             if (item.Translations != null)
                 item.Translations.Id = item.Id;
 
+            if (item.AccountStates != null)
+                item.AccountStates.Id = item.Id;
+
             // Overview is the only field that is HTML encoded from the source.
             item.Overview = WebUtility.HtmlDecode(item.Overview);
-
-            if (item.AccountStates != null)
-            {
-                item.AccountStates.Id = item.Id;
-                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent().ConfigureAwait(false));
-            }
 
             return item;
         }

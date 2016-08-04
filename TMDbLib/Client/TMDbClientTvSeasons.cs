@@ -27,15 +27,7 @@ namespace TMDbLib.Client
 
             RestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountState>>().ConfigureAwait(false);
 
-            ResultContainer<TvEpisodeAccountState> item = await response.GetDataObject().ConfigureAwait(false);
-
-            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-            if (item != null)
-            {
-                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent().ConfigureAwait(false));
-            }
-
-            return item;
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -90,11 +82,7 @@ namespace TMDbLib.Client
                 item.ExternalIds.Id = item.Id ?? 0;
 
             if (item.AccountStates != null)
-            {
                 item.AccountStates.Id = item.Id ?? 0;
-                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent().ConfigureAwait(false));
-            }
 
             return item;
         }
