@@ -285,6 +285,7 @@ namespace TMDbLibTests
             Assert.NotNull(translation);
 
             Assert.Equal("German", translation.EnglishName);
+            Assert.Equal("DE", translation.Iso_3166_1);
             Assert.Equal("de", translation.Iso_639_1);
             Assert.Equal("Deutsch", translation.Name);
         }
