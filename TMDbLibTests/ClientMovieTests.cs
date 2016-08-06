@@ -346,7 +346,8 @@ namespace TMDbLibTests
 
             //GetMovieChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
             // FindAsync latest changed title
-            int latestChanged = Config.Client.GetMovieLatestAsync().Sync().Id;
+            Movie lastestMovie = Config.Client.GetMovieLatestAsync().Sync();
+            int latestChanged = lastestMovie.Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-13);

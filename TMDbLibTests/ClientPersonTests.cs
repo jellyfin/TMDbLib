@@ -226,7 +226,8 @@ namespace TMDbLibTests
         {
             //GetPersonChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
             // FindAsync latest changed person
-            int latestChanged = Config.Client.GetChangesPeopleAsync().Sync().Results.First().Id;
+            SearchContainer<ChangesListItem> latestChanges = Config.Client.GetChangesPeopleAsync().Sync();
+            int latestChanged = latestChanges.Results.First().Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-14);
