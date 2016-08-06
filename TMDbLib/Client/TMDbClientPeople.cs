@@ -14,7 +14,7 @@ namespace TMDbLib.Client
     {
         public async Task<Person> GetLatestPersonAsync()
         {
-            RestRequest req =  _client.Create("person/latest");
+            RestRequest req = _client.Create("person/latest");
 
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
@@ -84,7 +84,7 @@ namespace TMDbLib.Client
             switch (type)
             {
                 case PersonListType.Popular:
-                    req =  _client.Create("person/popular");
+                    req = _client.Create("person/popular");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type));
@@ -104,7 +104,7 @@ namespace TMDbLib.Client
         private async Task<T> GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
                                         int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req =  _client.Create("person/{personId}/{method}");
+            RestRequest req = _client.Create("person/{personId}/{method}");
             req.AddUrlSegment("personId", personId.ToString());
             req.AddUrlSegment("method", personMethod.GetDescription());
 
@@ -142,7 +142,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainerWithId<TaggedImage>> GetPersonTaggedImagesAsync(int personId, int page)
         {
-            return await  GetPersonTaggedImagesAsync(personId, DefaultLanguage, page).ConfigureAwait(false);
+            return await GetPersonTaggedImagesAsync(personId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
         public async Task<SearchContainerWithId<TaggedImage>> GetPersonTaggedImagesAsync(int personId, string language, int page)
