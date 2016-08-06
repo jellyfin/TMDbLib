@@ -342,6 +342,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieChanges()
         {
+            IgnoreMissingJson = true;
+
             //GetMovieChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
             // FindAsync latest changed title
             int latestChanged = Config.Client.GetMovieLatestAsync().Sync().Id;
