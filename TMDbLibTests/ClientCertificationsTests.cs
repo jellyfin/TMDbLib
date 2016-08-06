@@ -9,17 +9,10 @@ namespace TMDbLibTests
 {
     public class ClientCertificationsTests : TestBase
     {
-        private readonly TestConfig _config;
-
-        public ClientCertificationsTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
         public void TestCertificationsListMovie()
         {
-            CertificationsContainer result = _config.Client.GetMovieCertificationsAsync().Sync();
+            CertificationsContainer result = Config.Client.GetMovieCertificationsAsync().Sync();
             Assert.NotNull(result);
             Assert.NotNull(result.Certifications);
             Assert.True(result.Certifications.Count > 1);
@@ -39,7 +32,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestCertificationsListTv()
         {
-            CertificationsContainer result = _config.Client.GetTvCertificationsAsync().Sync();
+            CertificationsContainer result = Config.Client.GetTvCertificationsAsync().Sync();
             Assert.NotNull(result);
             Assert.NotNull(result.Certifications);
             Assert.True(result.Certifications.Count > 1);

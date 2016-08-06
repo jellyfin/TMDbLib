@@ -12,20 +12,16 @@ namespace TMDbLibTests
     /// </summary>
     public class ClientAuthenticationTests : TestBase
     {
-        private readonly TestConfig _config;
-
         public ClientAuthenticationTests()
         {
-            _config = new TestConfig();
-
-            if (string.IsNullOrWhiteSpace(_config.Username) || string.IsNullOrWhiteSpace(_config.Password))
+            if (string.IsNullOrWhiteSpace(Config.Username) || string.IsNullOrWhiteSpace(Config.Password))
                 throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
         }
 
         [Fact]
         public void TestAuthenticationRequestNewToken()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
+            Token token = Config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
 
             Assert.NotNull(token);
             Assert.True(token.Success);
@@ -57,7 +53,7 @@ namespace TMDbLibTests
         {
             const string requestToken = "bla";
 
-            Assert.Throws<UnauthorizedAccessException>(() => _config.Client.AuthenticationGetUserSessionAsync(requestToken).Sync());
+            Assert.Throws<UnauthorizedAccessException>(() => Config.Client.AuthenticationGetUserSessionAsync(requestToken).Sync());
         }
 
         /// <remarks>
@@ -66,17 +62,17 @@ namespace TMDbLibTests
         [Fact]
         public void TestAuthenticationGetUserSessionApiUserValidationSuccess()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
+            Token token = Config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
 
-            _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, _config.Username, _config.Password).Sync();
+            Config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, Config.Username, Config.Password).Sync();
         }
 
         [Fact]
         public void TestAuthenticationGetUserSessionApiUserValidationInvalidLogin()
         {
-            Token token = _config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
+            Token token = Config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
 
-            Assert.Throws<UnauthorizedAccessException>(() => _config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla").Sync());
+            Assert.Throws<UnauthorizedAccessException>(() => Config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla").Sync());
         }
 
         /// <remarks>
@@ -85,7 +81,7 @@ namespace TMDbLibTests
         [Fact]
         public void AuthenticationGetUserSessionWithLoginSuccess()
         {
-            UserSession session = _config.Client.AuthenticationGetUserSessionAsync(_config.Username, _config.Password).Result;
+            UserSession session = Config.Client.AuthenticationGetUserSessionAsync(Config.Username, Config.Password).Result;
 
             Assert.NotNull(session);
             Assert.True(session.Success);
@@ -97,13 +93,13 @@ namespace TMDbLibTests
         {
             const string requestToken = "5f3a62c0d7977319e3d14adf1a2064c0c0938bcf";
 
-            Assert.Throws<UnauthorizedAccessException>(() => _config.Client.AuthenticationGetUserSessionAsync(requestToken).Sync());
+            Assert.Throws<UnauthorizedAccessException>(() => Config.Client.AuthenticationGetUserSessionAsync(requestToken).Sync());
         }
 
         [Fact]
         public void TestAuthenticationCreateGuestSession()
         {
-            GuestSession guestSession = _config.Client.AuthenticationCreateGuestSessionAsync().Sync();
+            GuestSession guestSession = Config.Client.AuthenticationCreateGuestSessionAsync().Sync();
 
             Assert.NotNull(guestSession);
             Assert.True(guestSession.Success);

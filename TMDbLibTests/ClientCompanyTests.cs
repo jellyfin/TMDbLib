@@ -13,12 +13,9 @@ namespace TMDbLibTests
     public class ClientCompanyTests : TestBase
     {
         private static Dictionary<CompanyMethods, Func<Company, object>> _methods;
-        private readonly TestConfig _config;
 
         public ClientCompanyTests()
         {
-            _config = new TestConfig();
-
             _methods = new Dictionary<CompanyMethods, Func<Company, object>>
             {
                 [CompanyMethods.Movies] = company => company.Movies
@@ -31,7 +28,7 @@ namespace TMDbLibTests
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson = true;
 
-            Company company = _config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
+            Company company = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
 
             Assert.NotNull(company);
 
@@ -51,14 +48,14 @@ namespace TMDbLibTests
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson = true;
 
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => _config.Client.GetCompanyAsync(id, extras).Result, IdHelper.TwentiethCenturyFox);
+            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetCompanyAsync(id, extras).Result, IdHelper.TwentiethCenturyFox);
         }
 
         [Fact]
         public void TestCompaniesExtrasAll()
         {
             CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Company item = _config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combinedEnum).Result;
+            Company item = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(_methods, item);
         }
@@ -67,9 +64,9 @@ namespace TMDbLibTests
         public void TestCompaniesGetters()
         {
             //GetCompanyMoviesAsync(int id, string language, int page = -1)
-            SearchContainerWithId<SearchMovie> resp = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox).Result;
-            SearchContainerWithId<SearchMovie> respPage2 = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2).Result;
-            SearchContainerWithId<SearchMovie> respItalian = _config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it").Result;
+            SearchContainerWithId<SearchMovie> resp = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox).Result;
+            SearchContainerWithId<SearchMovie> respPage2 = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2).Result;
+            SearchContainerWithId<SearchMovie> respItalian = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it").Result;
 
             Assert.NotNull(resp);
             Assert.NotNull(respPage2);
@@ -97,13 +94,13 @@ namespace TMDbLibTests
             IgnoreMissingJson = true;
 
             // Get config
-            _config.Client.GetConfig();
+            Config.Client.GetConfig();
 
             // Test image url generator
-            Company company = _config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
+            Company company = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
 
-            Uri url = _config.Client.GetImageUrl("original", company.LogoPath);
-            Uri urlSecure = _config.Client.GetImageUrl("original", company.LogoPath, true);
+            Uri url = Config.Client.GetImageUrl("original", company.LogoPath);
+            Uri urlSecure = Config.Client.GetImageUrl("original", company.LogoPath, true);
 
             Assert.True(TestHelpers.InternetUriExists(url));
             Assert.True(TestHelpers.InternetUriExists(urlSecure));
@@ -114,7 +111,7 @@ namespace TMDbLibTests
         {
             IgnoreMissingJson = true;
 
-            Company company = _config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures).Result;
+            Company company = Config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures).Result;
 
             Assert.NotNull(company);
 
