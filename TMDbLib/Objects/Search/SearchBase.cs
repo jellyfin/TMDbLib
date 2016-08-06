@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
-using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Search
 {

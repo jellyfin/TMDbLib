@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
-using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.People
 {
