@@ -140,14 +140,14 @@ namespace TMDbLib.Client
             return await GetPersonMethod<MovieCredits>(personId, PersonMethods.MovieCredits, language: language).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImagesAsync(int personId, int page)
+        public async Task<SearchContainerWithId<TaggedImage>> GetPersonTaggedImagesAsync(int personId, int page)
         {
             return await  GetPersonTaggedImagesAsync(personId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImagesAsync(int personId, string language, int page)
+        public async Task<SearchContainerWithId<TaggedImage>> GetPersonTaggedImagesAsync(int personId, string language, int page)
         {
-            return await GetPersonMethod<SearchContainer<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page).ConfigureAwait(false);
+            return await GetPersonMethod<SearchContainerWithId<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page).ConfigureAwait(false);
         }
 
         public async Task<TvCredits> GetPersonTvCreditsAsync(int personId)

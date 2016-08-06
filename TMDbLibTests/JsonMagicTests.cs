@@ -35,10 +35,11 @@ namespace TMDbLibTests
         public void TestJsonTaggedImageConverter()
         {
             // Get images
-            SearchContainer<TaggedImage> result = Config.Client.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1).Result;
+            SearchContainerWithId<TaggedImage> result = Config.Client.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1).Result;
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);
+            Assert.Equal(IdHelper.HughLaurie, result.Id);
 
             Assert.Contains(result.Results, item => item.MediaType == MediaType.Tv && item.Media is SearchTv);
             Assert.Contains(result.Results, item => item.MediaType == MediaType.Movie && item.Media is SearchMovie);
