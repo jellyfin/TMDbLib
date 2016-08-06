@@ -61,5 +61,46 @@ namespace TMDbLibTests
             Assert.Contains(result.Results, item => item.MediaType == MediaType.Movie && item is SearchMovie);
             Assert.Contains(result.Results, item => item.MediaType == MediaType.Person && item is SearchPerson);
         }
+
+        /// <summary>
+        /// Tests the AccountStateConverter on the AccountState type
+        /// </summary>
+        [Fact]
+        public void TestAccountStateConverterAccountState()
+        {
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = Config.Client.GetMovieAccountStateAsync(IdHelper.Avatar).Sync();
+
+            Assert.Equal(IdHelper.Avatar, accountState.Id);
+            Assert.True(accountState.Favorite);
+            Assert.False(accountState.Watchlist);
+            Assert.Equal(2.5d, accountState.Rating);
+        }
+
+        /// <summary>
+        /// Tests the AccountStateConverter on the TvEpisodeAccountState type
+        /// </summary>
+        [Fact]
+        public void TestAccountStateConverterTvEpisodeAccountState()
+        {
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            ResultContainer<TvEpisodeAccountState> season = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1).Sync();
+
+            // Episode 1 has a rating
+            TvEpisodeAccountState episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 1);
+            Assert.NotNull(episode);
+
+            Assert.Equal(IdHelper.BigBangTheorySeason1Episode1Id, episode.Id);
+            Assert.Equal(1, episode.EpisodeNumber);
+            Assert.Equal(5d, episode.Rating);
+
+            // Episode 2 has no rating
+            episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 2);
+            Assert.NotNull(episode);
+
+            Assert.Equal(IdHelper.BigBangTheorySeason1Episode2Id, episode.Id);
+            Assert.Equal(2, episode.EpisodeNumber);
+            Assert.Null(episode.Rating);
+        }
     }
 }
