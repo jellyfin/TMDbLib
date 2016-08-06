@@ -281,7 +281,7 @@ namespace TMDbLibTests
             TranslationsContainer resp = Config.Client.GetMovieTranslationsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
-            Translation translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
+            TranslationWithCountry translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
             Assert.NotNull(translation);
 
             Assert.Equal("German", translation.EnglishName);

@@ -271,9 +271,9 @@ namespace TMDbLib.Client
             return await GetTvShowListAsync(page, language, "top_rated").ConfigureAwait(false);
         }
 
-        public async Task<TranslationsContainer> GetTvShowTranslationsAsync(int id)
+        public async Task<TranslationsContainerTv> GetTvShowTranslationsAsync(int id)
         {
-            return await GetTvShowMethod<TranslationsContainer>(id, TvShowMethods.Translations).ConfigureAwait(false);
+            return await GetTvShowMethod<TranslationsContainerTv>(id, TvShowMethods.Translations).ConfigureAwait(false);
         }
 
         public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id)

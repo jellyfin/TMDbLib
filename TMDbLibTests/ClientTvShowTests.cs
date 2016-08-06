@@ -149,7 +149,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasTranslations()
         {
-            TranslationsContainer translations = Config.Client.GetTvShowTranslationsAsync(IdHelper.BreakingBad).Result;
+            TranslationsContainerTv translations = Config.Client.GetTvShowTranslationsAsync(IdHelper.BreakingBad).Result;
             Assert.NotNull(translations);
             Assert.Equal(IdHelper.BreakingBad, translations.Id);
 
@@ -312,7 +312,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowTranslations()
         {
-            TranslationsContainer translations = Config.Client.GetTvShowTranslationsAsync(1668).Result;
+            TranslationsContainerTv translations = Config.Client.GetTvShowTranslationsAsync(1668).Result;
 
             Assert.Equal(1668, translations.Id);
             Translation translation = translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
