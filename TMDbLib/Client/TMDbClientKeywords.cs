@@ -17,12 +17,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetKeywordMoviesAsync(int keywordId, int page = 0)
+        public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, int page = 0)
         {
             return await GetKeywordMoviesAsync(keywordId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetKeywordMoviesAsync(int keywordId, string language, int page = 0)
+        public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, string language, int page = 0)
         {
             RestRequest req = _client.Create("keyword/{keywordId}/movies");
             req.AddUrlSegment("keywordId", keywordId.ToString());
@@ -34,7 +34,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
 
-            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
+            RestResponse<SearchContainerWithId<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithId<SearchMovie>>().ConfigureAwait(false);
 
             return resp;
         }
