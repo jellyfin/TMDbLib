@@ -12,6 +12,9 @@ namespace TMDbLib.Objects.Changes
         [JsonProperty("id")]
         public string Id { get; set; }
 
+        [JsonProperty("original_value")]
+        public string OriginalValue { get; set; }
+
         /// <summary>
         /// A language code, e.g. en
         /// </summary>
