@@ -30,7 +30,7 @@ namespace TMDbLib.Objects.People
         public DateTime? Deathday { get; set; }
 
         [JsonProperty("external_ids")]
-        public ExternalIds ExternalIds { get; set; }
+        public ExternalIdsPerson ExternalIds { get; set; }
 
         [JsonProperty("homepage")]
         public string Homepage { get; set; }

@@ -124,9 +124,9 @@ namespace TMDbLib.Client
         /// Returns an object that contains all known exteral id's for the tv show related to the specified TMDB id.
         /// </summary>
         /// <param name="id">The TMDb id of the target tv show.</param>
-        public async Task<ExternalIds> GetTvShowExternalIdsAsync(int id)
+        public async Task<ExternalIdsTvShow> GetTvShowExternalIdsAsync(int id)
         {
-            return await GetTvShowMethod<ExternalIds>(id, TvShowMethods.ExternalIds).ConfigureAwait(false);
+            return await GetTvShowMethod<ExternalIdsTvShow>(id, TvShowMethods.ExternalIds).ConfigureAwait(false);
         }
 
         /// <summary>

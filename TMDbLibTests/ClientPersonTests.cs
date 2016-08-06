@@ -172,16 +172,16 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetPersonExternalIds()
         {
-            ExternalIds item = Config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis).Result;
+            ExternalIdsPerson item = Config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
-
             Assert.Equal(IdHelper.BruceWillis, item.Id);
             Assert.Equal("nm0000246", item.ImdbId);
             Assert.Equal("/m/0h7pj", item.FreebaseMid);
             Assert.Equal("/en/bruce_willis", item.FreebaseId);
-            Assert.Null(item.TvdbId);
             Assert.Equal("10183", item.TvrageId);
+            Assert.Null(item.FacebookId);
+            Assert.Null(item.TwitterId);
         }
 
         [Fact]

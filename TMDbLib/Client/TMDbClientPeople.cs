@@ -68,9 +68,9 @@ namespace TMDbLib.Client
             return changesContainer.Changes;
         }
 
-        public async Task<ExternalIds> GetPersonExternalIdsAsync(int personId)
+        public async Task<ExternalIdsPerson> GetPersonExternalIdsAsync(int personId)
         {
-            return await GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds).ConfigureAwait(false);
+            return await GetPersonMethod<ExternalIdsPerson>(personId, PersonMethods.ExternalIds).ConfigureAwait(false);
         }
 
         public async Task<ProfileImages> GetPersonImagesAsync(int personId)

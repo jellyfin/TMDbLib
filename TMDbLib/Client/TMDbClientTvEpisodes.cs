@@ -120,9 +120,9 @@ namespace TMDbLib.Client
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season the episode belongs to. Note use 0 for specials.</param>
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve information for.</param>
-        public async Task<ExternalIds> GetTvEpisodeExternalIdsAsync(int tvShowId, int seasonNumber, int episodeNumber)
+        public async Task<ExternalIdsTvEpisode> GetTvEpisodeExternalIdsAsync(int tvShowId, int seasonNumber, int episodeNumber)
         {
-            return await GetTvEpisodeMethod<ExternalIds>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds).ConfigureAwait(false);
+            return await GetTvEpisodeMethod<ExternalIdsTvEpisode>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds).ConfigureAwait(false);
         }
 
         /// <summary>

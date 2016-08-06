@@ -134,7 +134,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = Config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            ExternalIdsTvEpisode externalIds = Config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            
             Assert.NotNull(externalIds);
             Assert.True(string.IsNullOrEmpty(externalIds.FreebaseId));
             Assert.Equal(62085, externalIds.Id);

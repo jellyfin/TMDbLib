@@ -98,7 +98,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = Config.Client.GetTvShowExternalIdsAsync(IdHelper.BreakingBad).Result;
+            ExternalIdsTvShow externalIds = Config.Client.GetTvShowExternalIdsAsync(IdHelper.BreakingBad).Result;
+            
             Assert.NotNull(externalIds);
             Assert.Equal(1396, externalIds.Id);
             Assert.Equal("/en/breaking_bad", externalIds.FreebaseId);

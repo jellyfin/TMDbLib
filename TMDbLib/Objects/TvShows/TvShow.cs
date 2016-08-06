@@ -33,7 +33,7 @@ namespace TMDbLib.Objects.TvShows
         public List<int> EpisodeRunTime { get; set; }
 
         [JsonProperty("external_ids")]
-        public ExternalIds ExternalIds { get; set; }
+        public ExternalIdsTvShow ExternalIds { get; set; }
 
         [JsonProperty("genres")]
         public List<Genre> Genres { get; set; }

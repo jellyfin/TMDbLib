@@ -23,7 +23,7 @@ namespace TMDbLib.Objects.TvShows
         public int EpisodeNumber { get; set; }
 
         [JsonProperty("external_ids")]
-        public ExternalIds ExternalIds { get; set; }
+        public ExternalIdsTvEpisode ExternalIds { get; set; }
 
         [JsonProperty("guest_stars")]
         public List<Cast> GuestStars { get; set; }

@@ -125,12 +125,12 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = Config.Client.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1).Result;
+            ExternalIdsTvSeason externalIds = Config.Client.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1).Result;
+            
             Assert.NotNull(externalIds);
             Assert.Equal(3572, externalIds.Id);
             Assert.Equal("/en/breaking_bad_season_1", externalIds.FreebaseId);
             Assert.Equal("/m/05yy27m", externalIds.FreebaseMid);
-            Assert.Null(externalIds.ImdbId);
             Assert.Null(externalIds.TvrageId);
             Assert.Equal("30272", externalIds.TvdbId);
         }
