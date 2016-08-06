@@ -103,7 +103,7 @@ namespace TMDbLib.Rest
 
             CheckResponse(resp);
 
-            return new RestResponse<T>(resp);
+            return new RestResponse<T>(resp, _client.Serializer);
         }
 
         public async Task<RestResponse> ExecuteGet()
@@ -121,7 +121,7 @@ namespace TMDbLib.Rest
 
             CheckResponse(resp);
 
-            return new RestResponse<T>(resp);
+            return new RestResponse<T>(resp, _client.Serializer);
         }
 
         public async Task<RestResponse> ExecutePost()
@@ -139,7 +139,7 @@ namespace TMDbLib.Rest
 
             CheckResponse(resp);
 
-            return new RestResponse<T>(resp);
+            return new RestResponse<T>(resp, _client.Serializer);
         }
 
         private HttpRequestMessage PrepRequest(HttpMethod method)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Rest
 {
@@ -7,9 +8,12 @@ namespace TMDbLib.Rest
     {
         private int _maxRetryCount;
 
-        public RestClient(Uri baseUrl)
+        internal JsonSerializer Serializer { get; }
+
+        public RestClient(Uri baseUrl, JsonSerializer serializer)
         {
             BaseUrl = baseUrl;
+            Serializer = serializer;
             DefaultQueryString = new List<KeyValuePair<string, string>>();
 
             MaxRetryCount = 0;

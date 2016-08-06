@@ -27,18 +27,13 @@ namespace TMDbLibTests.JsonHelpers
 
         public TestBase()
         {
-            Config = new TestConfig();
-            
-            JsonConvert.DefaultSettings = () =>
-            {
-                JsonSerializerSettings sett = new JsonSerializerSettings();
+            JsonSerializerSettings sett = new JsonSerializerSettings();
 
-                //sett.MissingMemberHandling = MissingMemberHandling.Error;
-                //sett.ContractResolver = new FailingContractResolver();
-                //sett.Error = Error;
+            //sett.MissingMemberHandling = MissingMemberHandling.Error;
+            //sett.ContractResolver = new FailingContractResolver();
+            //sett.Error = Error;
 
-                return sett;
-            };
+            Config = new TestConfig(serializer: JsonSerializer.Create(sett));
         }
 
         private void Error(object sender, ErrorEventArgs errorEventArgs)
