@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using TMDbLib.Utilities.Converters;
 
-namespace TMDbLib.Objects.Movies
+namespace TMDbLib.Objects.TvShows
 {
     [JsonConverter(typeof(AccountStateConverter))]
     public class TvEpisodeAccountState

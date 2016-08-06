@@ -1,6 +1,6 @@
 ﻿using TMDbLib.Utilities;
 
-namespace TMDbLib.Objects.Movies
+namespace TMDbLib.Objects.TvShows
 {
     public enum TvShowListType
     {
