@@ -5,7 +5,7 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Search;
 
-namespace TMDbLib.Utilities
+namespace TMDbLib.Utilities.Converters
 {
     internal class TaggedImageConverter : JsonConverter
     {

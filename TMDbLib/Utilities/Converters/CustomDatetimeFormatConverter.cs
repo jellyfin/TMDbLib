@@ -3,7 +3,7 @@ using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace TMDbLib.Utilities
+namespace TMDbLib.Utilities.Converters
 {
     public class CustomDatetimeFormatConverter : DateTimeConverterBase
     {

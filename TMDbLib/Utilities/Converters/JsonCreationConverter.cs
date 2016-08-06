@@ -2,7 +2,7 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace TMDbLib.Utilities
+namespace TMDbLib.Utilities.Converters
 {
     internal abstract class JsonCreationConverter<T> : JsonConverter
     {
