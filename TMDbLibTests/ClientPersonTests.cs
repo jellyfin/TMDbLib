@@ -83,6 +83,7 @@ namespace TMDbLibTests
             Assert.NotNull(item);
             Assert.Equal(false, item.Adult);
             Assert.NotNull(item.Biography);
+            Assert.Equal(PersonGender.Male, item.Gender);
             Assert.Equal(new DateTime(1955, 3, 19), item.Birthday);
             Assert.False(item.Deathday.HasValue);
             Assert.Equal("http://www.b-willis.com/", item.Homepage);
