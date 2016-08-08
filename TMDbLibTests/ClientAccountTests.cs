@@ -210,6 +210,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetRatedTvEpisodes()
         {
+            IgnoreMissingCSharp("results[array]._id / _id");
+
             // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetRatedTvShowEpisodesAsync(i).Result);
