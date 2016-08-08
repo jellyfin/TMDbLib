@@ -89,7 +89,7 @@ namespace TMDbLib.Objects.Movies
         public long Revenue { get; set; }
 
         [JsonProperty("reviews")]
-        public SearchContainer<Review> Reviews { get; set; }
+        public SearchContainer<ReviewBase> Reviews { get; set; }
 
         [JsonProperty("runtime")]
         public int? Runtime { get; set; }
