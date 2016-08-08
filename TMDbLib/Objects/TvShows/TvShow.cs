@@ -24,7 +24,7 @@ namespace TMDbLib.Objects.TvShows
         public ResultContainer<ContentRating> ContentRatings { get; set; }
 
         [JsonProperty("created_by")]
-        public List<SearchPerson> CreatedBy { get; set; }
+        public List<CreatedBy> CreatedBy { get; set; }
 
         [JsonProperty("credits")]
         public Credits Credits { get; set; }
