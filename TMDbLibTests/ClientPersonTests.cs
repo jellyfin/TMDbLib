@@ -70,6 +70,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetWithPartialDate()
         {
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
+            
             Person item = Config.Client.GetPersonAsync(IdHelper.PersonPartialDate).Result;
 
             Assert.NotNull(item);
