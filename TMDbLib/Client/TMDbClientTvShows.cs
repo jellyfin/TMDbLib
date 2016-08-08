@@ -95,7 +95,7 @@ namespace TMDbLib.Client
                 item.Translations.Id = id;
 
             if (item.AccountStates != null)
-                item.AccountStates.Id = item.Id;
+                item.AccountStates.Id = id;
 
             return item;
         }
