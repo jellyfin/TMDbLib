@@ -59,6 +59,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsExtrasAll()
         {
+            IgnoreMissingJson("external_ids / id", "images / id", "movie_credits / id", "tv_credits / id");
+            
             PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis, combinedEnum).Result;
 
@@ -78,6 +80,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGet()
         {
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
+            
             Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
@@ -363,6 +367,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestGetLatestPerson()
         {
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
+            
             Person item = Config.Client.GetLatestPersonAsync().Sync();
             Assert.NotNull(item);
         }

@@ -73,6 +73,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesImdbExtrasAll()
         {
+            IgnoreMissingJson(" / id", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "reviews.results[array] / media_type", "translations / id");
+            
             Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
             tmpMethods.Remove(MovieMethods.Videos);
 
@@ -102,6 +104,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesLanguage()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+            
             Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
             Movie movieItalian = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard, "it").Result;
 
@@ -568,7 +572,7 @@ namespace TMDbLibTests
         public void TestMoviesGetHtmlEncodedText()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
-            
+
             Movie item = Config.Client.GetMovieAsync(IdHelper.Furious7, "de").Result;
 
             Assert.NotNull(item);
@@ -580,7 +584,7 @@ namespace TMDbLibTests
         public void TestMoviesGet()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
-            
+
             Movie item = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(item);
