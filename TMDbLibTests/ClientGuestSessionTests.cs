@@ -65,7 +65,7 @@ namespace TMDbLibTests
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            SearchContainer<TvShowWithRating> ratings = Config.Client.GetGuestSessionRatedTvAsync().Sync();
+            SearchContainer<SearchTvShowWithRating> ratings = Config.Client.GetGuestSessionRatedTvAsync().Sync();
 
             double tmpRating = ratings.Results.Single(s => s.Id == IdHelper.House).Rating;
             Assert.True(ratings.Results.Any(s => s.Id == IdHelper.House));
@@ -164,7 +164,7 @@ namespace TMDbLibTests
             TestHelpers.SearchPages(i => Config.Client.GetGuestSessionRatedTvAsync(i).Result);
 
             // Fetch ratings
-            SearchContainer<TvShowWithRating> result = Config.Client.GetGuestSessionRatedTvAsync().Sync();
+            SearchContainer<SearchTvShowWithRating> result = Config.Client.GetGuestSessionRatedTvAsync().Sync();
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

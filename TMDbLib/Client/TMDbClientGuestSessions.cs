@@ -34,12 +34,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTvAsync(int page = 0)
+        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(int page = 0)
         {
             return await GetGuestSessionRatedTvAsync(DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TvShowWithRating>> GetGuestSessionRatedTvAsync(string language, int page = 0)
+        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -53,7 +53,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<TvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<TvShowWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchTvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchTvShowWithRating>>().ConfigureAwait(false);
 
             return resp;
         }
