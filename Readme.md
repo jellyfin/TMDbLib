@@ -76,6 +76,11 @@ Tips
 Changelog
 ---------
 
+**0.9.4-alpha**
+Changes:
+   - Refining tests revealed a number of mismatches between the API and the library. These are fixed as I go along
+   - A number of types will have moved namespaces, and properties have been added / removed
+
 **0.9.2-alpha**
 Changes:
    - Combined a number of classes (#195)
