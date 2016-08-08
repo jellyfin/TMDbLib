@@ -98,7 +98,7 @@ namespace TMDbLibTests.JsonHelpers
                 {
                     sb.AppendLine("Fields missing in C# (Present in JSON)");
                     foreach (KeyValuePair<string, ErrorEventArgs> pair in missingFieldInCSharp)
-                        sb.AppendLine($"{pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+                        sb.AppendLine($"[{pair.Value.CurrentObject.GetType().Name}] {pair.Key}: {pair.Value.ErrorContext.Error.Message}");
 
                     sb.AppendLine();
                 }
@@ -107,7 +107,7 @@ namespace TMDbLibTests.JsonHelpers
                 {
                     sb.AppendLine("Fields missing in JSON (Present in C#)");
                     foreach (KeyValuePair<string, ErrorEventArgs> pair in missingPropertyInJson)
-                        sb.AppendLine($"{pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+                        sb.AppendLine($"[{pair.Value.CurrentObject.GetType().Name}] {pair.Key}: {pair.Value.ErrorContext.Error.Message}");
 
                     sb.AppendLine();
                 }
@@ -116,7 +116,7 @@ namespace TMDbLibTests.JsonHelpers
                 {
                     sb.AppendLine("Other errors");
                     foreach (KeyValuePair<string, ErrorEventArgs> pair in other)
-                        sb.AppendLine($"{pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+                        sb.AppendLine($"[{pair.Value.CurrentObject.GetType().Name}] {pair.Key}: {pair.Value.ErrorContext.Error.Message}");
 
                     sb.AppendLine();
                 }
