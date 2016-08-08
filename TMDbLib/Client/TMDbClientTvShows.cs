@@ -170,7 +170,7 @@ namespace TMDbLib.Client
         /// <param name="page">Page</param>
         /// <param name="timezone">Only relevant for list type AiringToday</param>
         /// <returns></returns>
-        public async Task<SearchContainer<TvShow>> GetTvShowListAsync(TvShowListType list, int page = 0, string timezone = null)
+        public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, int page = 0, string timezone = null)
         {
             return await GetTvShowListAsync(list, DefaultLanguage, page, timezone).ConfigureAwait(false);
         }
@@ -183,7 +183,7 @@ namespace TMDbLib.Client
         /// <param name="page">Page</param>
         /// <param name="timezone">Only relevant for list type AiringToday</param>
         /// <returns></returns>
-        public async Task<SearchContainer<TvShow>> GetTvShowListAsync(TvShowListType list, string language, int page = 0, string timezone = null)
+        public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, string language, int page = 0, string timezone = null)
         {
             RestRequest req = _client.Create("tv/{method}");
             req.AddUrlSegment("method", list.GetDescription());
@@ -198,7 +198,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<SearchContainer<TvShow>> resp = await req.ExecuteGet<SearchContainer<TvShow>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchTv>> resp = await req.ExecuteGet<SearchContainer<SearchTv>>().ConfigureAwait(false);
 
             return resp;
         }
