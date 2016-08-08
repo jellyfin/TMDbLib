@@ -8,7 +8,7 @@ namespace TMDbLib.Objects.General
     {
         [JsonProperty("adult")]
         public bool Adult { get; set; }
-        
+
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -18,10 +18,10 @@ namespace TMDbLib.Objects.General
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("profile_path")]
-        public string ProfilePath { get; set; }
-
         [JsonProperty("popularity")]
         public double Popularity { get; set; }
+
+        [JsonProperty("profile_path")]
+        public string ProfilePath { get; set; }
     }
 }

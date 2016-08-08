@@ -20,7 +20,7 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("episode_count")]
         public int EpisodeCount { get; set; }
-        
+
         [JsonProperty("episodes")]
         public List<TvEpisode> Episodes { get; set; }
 

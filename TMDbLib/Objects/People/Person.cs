@@ -18,9 +18,6 @@ namespace TMDbLib.Objects.People
         [JsonProperty("biography")]
         public string Biography { get; set; }
 
-        [JsonProperty("gender")]
-        public PersonGender Gender { get; set; }
-
         [JsonProperty("birthday")]
         [JsonConverter(typeof(TmdbPartialDateConverter))]
         public DateTime? Birthday { get; set; }
@@ -34,6 +31,9 @@ namespace TMDbLib.Objects.People
 
         [JsonProperty("external_ids")]
         public ExternalIdsPerson ExternalIds { get; set; }
+
+        [JsonProperty("gender")]
+        public PersonGender Gender { get; set; }
 
         [JsonProperty("homepage")]
         public string Homepage { get; set; }

@@ -6,7 +6,7 @@ namespace TMDbLib.Objects.General
     {
         [JsonProperty("english_name")]
         public string EnglishName { get; set; }
-        
+
         /// <summary>
         /// A language code, e.g. en
         /// </summary>

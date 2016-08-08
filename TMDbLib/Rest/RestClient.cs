@@ -9,9 +9,6 @@ namespace TMDbLib.Rest
     {
         private int _maxRetryCount;
 
-        internal JsonSerializer Serializer { get; }
-        internal Encoding Encoding { get; } = new UTF8Encoding(false);
-
         public RestClient(Uri baseUrl, JsonSerializer serializer)
         {
             BaseUrl = baseUrl;
@@ -23,6 +20,7 @@ namespace TMDbLib.Rest
 
         internal Uri BaseUrl { get; }
         internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
+        internal Encoding Encoding { get; } = new UTF8Encoding(false);
 
         public int MaxRetryCount
         {
@@ -35,6 +33,8 @@ namespace TMDbLib.Rest
                 _maxRetryCount = value;
             }
         }
+
+        internal JsonSerializer Serializer { get; }
 
         public void AddDefaultQueryString(string key, string value)
         {

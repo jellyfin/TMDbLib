@@ -13,10 +13,10 @@ namespace TMDbLib.Client
     {
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
-        private RestClient _client;
-        private TMDbConfig _config;
 
         private readonly JsonSerializer _serializer;
+        private RestClient _client;
+        private TMDbConfig _config;
 
         public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null)
         {
