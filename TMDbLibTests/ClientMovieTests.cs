@@ -74,7 +74,7 @@ namespace TMDbLibTests
         public void TestMoviesImdbExtrasAll()
         {
             IgnoreMissingJson(" / id", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "reviews.results[array] / media_type", "translations / id");
-            
+
             Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
             tmpMethods.Remove(MovieMethods.Videos);
 
@@ -92,7 +92,10 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesExtrasAll()
         {
-            IgnoreMissingJson("alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id");
+            // We ignore the 'notes' field, as TMDb sometimes leaves it out
+            IgnoreMissingJson("release_dates.results[array].release_dates[array] / note");
+
+            IgnoreMissingJson(" / id", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
@@ -105,7 +108,7 @@ namespace TMDbLibTests
         public void TestMoviesLanguage()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
-            
+
             Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
             Movie movieItalian = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard, "it").Result;
 
