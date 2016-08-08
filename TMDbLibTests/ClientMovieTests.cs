@@ -90,6 +90,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesExtrasAll()
         {
+            IgnoreMissingJson("alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard, combinedEnum).Result;
@@ -565,6 +567,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetHtmlEncodedText()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+            
             Movie item = Config.Client.GetMovieAsync(IdHelper.Furious7, "de").Result;
 
             Assert.NotNull(item);
@@ -575,6 +579,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGet()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+            
             Movie item = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(item);
