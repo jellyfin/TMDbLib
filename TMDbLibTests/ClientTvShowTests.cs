@@ -184,7 +184,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasAccountState()
         {
-            IgnoreMissingJson(" / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
+            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -291,7 +291,7 @@ namespace TMDbLibTests
         public void TestTvShowSeasonCount()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
-            
+
             TvShow tvShow = Config.Client.GetTvShowAsync(1668).Result;
             Assert.Equal(tvShow.Seasons[1].EpisodeCount, 24);
         }
@@ -379,7 +379,7 @@ namespace TMDbLibTests
         public void TestTvShowLatest()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / similar", " / translations", " / videos");
-            
+
             TvShow tvShow = Config.Client.GetLatestTvShowAsync().Sync();
 
             Assert.NotNull(tvShow);
@@ -389,7 +389,7 @@ namespace TMDbLibTests
         public void TestTvShowLists()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / created_by", " / credits", " / external_ids", " / genres", " / images", " / in_production", " / keywords", " / languages", " / networks", " / production_companies", " / seasons", " / similar", " / translations", " / videos");
-            
+
             foreach (TvShowListType type in Enum.GetValues(typeof(TvShowListType)).OfType<TvShowListType>())
             {
                 TestHelpers.SearchPages(i => Config.Client.GetTvShowListAsync(type, i).Result);
