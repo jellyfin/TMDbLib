@@ -38,7 +38,7 @@ namespace TMDbLibTests
         public void TestTvShowExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / adult", " / known_for", " / popularity", " / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / genre_ids");
 
             TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.BreakingBad).Result;
 

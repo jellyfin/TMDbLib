@@ -32,7 +32,7 @@ namespace TMDbLibTests
         public void TestPersonsExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
 
             Person person = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
@@ -51,7 +51,7 @@ namespace TMDbLibTests
         public void TestPersonsExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits", "external_ids / id", "images / id", "movie_credits / id", "tv_credits / id");
 
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetPersonAsync(id, extras).Result, IdHelper.BruceWillis);
         }

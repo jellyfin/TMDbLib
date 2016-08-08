@@ -83,9 +83,6 @@ namespace TMDbLibTests
         [Fact]
         public void ClientRateLimitTest()
         {
-            IgnoreMissingJson = true;
-            IgnoreMissingProperties = true;
-
             const int id = IdHelper.AGoodDayToDieHard;
 
             TMDbClient client = new TMDbClient(TestConfig.APIKey);

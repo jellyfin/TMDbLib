@@ -23,10 +23,18 @@ namespace TMDbLibTests.JsonHelpers
         /// <summary>
         /// Ignores errors about missing JSON properties (Where C# properties are not set)
         /// </summary>
-        protected bool IgnoreMissingJson = false;
+        private readonly List<string> _ignoreMissingJsonProperties;
+
+        protected void IgnoreMissingJson(params string[] keys)
+        {
+            _ignoreMissingJsonProperties.AddRange(keys);
+        }
 
         public TestBase()
         {
+            // Always ignore certain properties, as TMDb shouldn't be serving those
+            _ignoreMissingJsonProperties = new List<string> { " / _id" };
+
             JsonSerializerSettings sett = new JsonSerializerSettings();
 
             //sett.MissingMemberHandling = MissingMemberHandling.Error;
@@ -68,7 +76,7 @@ namespace TMDbLibTests.JsonHelpers
                     else if (errorMessage.StartsWith("Required property"))
                     {
                         // Field in C# is missing in JSON
-                        if (!IgnoreMissingJson && !missingPropertyInJson.ContainsKey(key))
+                        if (!_ignoreMissingJsonProperties.Contains(key) && !missingPropertyInJson.ContainsKey(key))
                             missingPropertyInJson.Add(key, error);
                     }
                     else
@@ -86,6 +94,8 @@ namespace TMDbLibTests.JsonHelpers
                     sb.AppendLine("Fields missing in C# (Present in JSON)");
                     foreach (KeyValuePair<string, ErrorEventArgs> pair in missingFieldInCSharp)
                         sb.AppendLine($"{pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+
+                    sb.AppendLine();
                 }
 
                 if (missingPropertyInJson.Any())
@@ -93,6 +103,8 @@ namespace TMDbLibTests.JsonHelpers
                     sb.AppendLine("Fields missing in JSON (Present in C#)");
                     foreach (KeyValuePair<string, ErrorEventArgs> pair in missingPropertyInJson)
                         sb.AppendLine($"{pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+
+                    sb.AppendLine();
                 }
 
                 if (other.Any())
@@ -100,6 +112,17 @@ namespace TMDbLibTests.JsonHelpers
                     sb.AppendLine("Other errors");
                     foreach (KeyValuePair<string, ErrorEventArgs> pair in other)
                         sb.AppendLine($"{pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+
+                    sb.AppendLine();
+                }
+
+                if (missingPropertyInJson.Any())
+                {
+                    // Helper line of properties that can be ignored
+                    sb.AppendLine("Ignore C# props missing from JSON:");
+                    sb.AppendLine(string.Join(", ", missingPropertyInJson.OrderBy(s => s.Key).Select(s => $"\"{s.Key}\"")));
+
+                    sb.AppendLine();
                 }
 
                 if (missingFieldInCSharp.Any() || missingPropertyInJson.Any() || other.Any())

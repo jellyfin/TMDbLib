@@ -35,7 +35,7 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / credits", " / episode_count", " / external_ids", " / images", " / videos");
 
             TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
 
@@ -52,7 +52,7 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasAccountState()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos", "account_states / id");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -93,7 +93,7 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / episode_count", " / external_ids", " / images", " / videos", " / credits", "external_ids / id", "videos / id", "credits / id", "account_states / id");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvSeasonAsync(id, 1, extras).Result, IdHelper.BreakingBad);
@@ -126,7 +126,7 @@ namespace TMDbLibTests
         public void TestTvSeasonSeparateExtrasExternalIds()
         {
             ExternalIdsTvSeason externalIds = Config.Client.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1).Result;
-            
+
             Assert.NotNull(externalIds);
             Assert.Equal(3572, externalIds.Id);
             Assert.Equal("/en/breaking_bad_season_1", externalIds.FreebaseId);

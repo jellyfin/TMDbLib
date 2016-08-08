@@ -26,7 +26,7 @@ namespace TMDbLibTests
         public void TestCompaniesExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / movies");
 
             Company company = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
 
@@ -45,9 +45,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesExtrasExclusive()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
-
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetCompanyAsync(id, extras).Result, IdHelper.TwentiethCenturyFox);
         }
 
@@ -91,7 +88,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesImages()
         {
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / movies");
 
             // Get config
             Config.Client.GetConfig();
@@ -109,7 +106,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesFull()
         {
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / movies");
 
             Company company = Config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures).Result;
 

@@ -19,7 +19,7 @@ namespace TMDbLibTests
     public class ClientMovieTests : TestBase
     {
         private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
-        
+
         public ClientMovieTests()
         {
             _methods = new Dictionary<MovieMethods, Func<Movie, object>>
@@ -44,7 +44,7 @@ namespace TMDbLibTests
         public void TestMoviesExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
 
             Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
@@ -64,7 +64,7 @@ namespace TMDbLibTests
         public void TestMoviesExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetMovieAsync(id, extras).Result, IdHelper.AGoodDayToDieHard);
@@ -342,7 +342,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieChanges()
         {
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
 
             //GetMovieChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
             // FindAsync latest changed title
@@ -624,6 +624,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesExtrasAccountState()
         {
+            // Ignore certain properties
+            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 

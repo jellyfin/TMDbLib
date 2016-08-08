@@ -35,7 +35,7 @@ namespace TMDbLibTests
         public void TestTvEpisodeExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos");
 
             TvEpisode tvEpisode = Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1).Result;
 
@@ -52,7 +52,7 @@ namespace TMDbLibTests
         public void TestTvEpisodeExtrasAccountState()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -135,7 +135,7 @@ namespace TMDbLibTests
         public void TestTvEpisodeSeparateExtrasExternalIds()
         {
             ExternalIdsTvEpisode externalIds = Config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1).Result;
-            
+
             Assert.NotNull(externalIds);
             Assert.True(string.IsNullOrEmpty(externalIds.FreebaseId));
             Assert.Equal(62085, externalIds.Id);
