@@ -2,6 +2,7 @@
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Rest;
 
@@ -9,12 +10,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMoviesAsync(int page = 0)
+        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(int page = 0)
         {
             return await GetGuestSessionRatedMoviesAsync(DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieWithRating>> GetGuestSessionRatedMoviesAsync(string language, int page = 0)
+        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(string language, int page = 0)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -28,7 +29,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<MovieWithRating>> resp = await request.ExecuteGet<SearchContainer<MovieWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchMovieWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchMovieWithRating>>().ConfigureAwait(false);
 
             return resp;
         }

@@ -5,6 +5,7 @@ using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
@@ -99,38 +100,38 @@ namespace TMDbLibTests
             Config.Client.SetSessionInformation(Config.GuestTestSessionId, SessionType.GuestSession);
 
             // Try changing the rating
-            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Avatar, 7.5).Result);
+            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Terminator, 7.5).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            SearchContainer<MovieWithRating> ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
+            SearchContainer<SearchMovieWithRating> ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
-            double tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Avatar).Rating;
-            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Avatar));
+            double tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Terminator).Rating;
+            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Terminator));
             Assert.True(Math.Abs(7.5 - tmpRating) < float.Epsilon);
 
             // Try changing it back to the previous rating
-            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Avatar, 8).Result);
+            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Terminator, 8).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
-            tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Avatar).Rating;
-            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Avatar));
+            tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Terminator).Rating;
+            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Terminator));
             Assert.True(Math.Abs(8 - tmpRating) < float.Epsilon);
 
             // Try removing the rating
-            Assert.True(Config.Client.MovieRemoveRatingAsync(IdHelper.Avatar).Result);
+            Assert.True(Config.Client.MovieRemoveRatingAsync(IdHelper.Terminator).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
-            Assert.False(ratings.Results.Any(s => s.Id == IdHelper.Avatar));
+            Assert.False(ratings.Results.Any(s => s.Id == IdHelper.Terminator));
         }
 
         [Fact]
@@ -181,7 +182,7 @@ namespace TMDbLibTests
             TestHelpers.SearchPages(i => Config.Client.GetGuestSessionRatedMoviesAsync(i).Result);
 
             // Fetch ratings
-            SearchContainer<MovieWithRating> result = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
+            SearchContainer<SearchMovieWithRating> result = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);
