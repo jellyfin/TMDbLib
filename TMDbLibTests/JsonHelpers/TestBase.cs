@@ -15,25 +15,30 @@ namespace TMDbLibTests.JsonHelpers
 
         protected readonly TestConfig Config;
 
-        /// <summary>
-        /// Ignores errors about missing C# properties (Where new or unknown JSON properties are present)
-        /// </summary>
-        protected bool IgnoreMissingProperties = false;
+        private readonly List<string> _ignoreMissingCSharp;
+
+        private readonly List<string> _ignoreMissingJson;
 
         /// <summary>
         /// Ignores errors about missing JSON properties (Where C# properties are not set)
         /// </summary>
-        private readonly List<string> _ignoreMissingJsonProperties;
-
         protected void IgnoreMissingJson(params string[] keys)
         {
-            _ignoreMissingJsonProperties.AddRange(keys);
+            _ignoreMissingJson.AddRange(keys);
+        }
+
+        /// <summary>
+        /// Ignores errors about missing C# properties (Where new or unknown JSON properties are present)
+        /// </summary>
+        protected void IgnoreMissingCSharp(params string[] keys)
+        {
+            _ignoreMissingCSharp.AddRange(keys);
         }
 
         public TestBase()
         {
-            // Always ignore certain properties, as TMDb shouldn't be serving those
-            _ignoreMissingJsonProperties = new List<string> { " / _id" };
+            _ignoreMissingJson = new List<string>();
+            _ignoreMissingCSharp = new List<string>();
 
             JsonSerializerSettings sett = new JsonSerializerSettings();
 
@@ -70,13 +75,13 @@ namespace TMDbLibTests.JsonHelpers
                     if (errorMessage.StartsWith("Could not find member"))
                     {
                         // Field in JSON is missing in C#
-                        if (!IgnoreMissingProperties && !missingFieldInCSharp.ContainsKey(key))
+                        if (!_ignoreMissingCSharp.Contains(key) && !missingFieldInCSharp.ContainsKey(key))
                             missingFieldInCSharp.Add(key, error);
                     }
                     else if (errorMessage.StartsWith("Required property"))
                     {
                         // Field in C# is missing in JSON
-                        if (!_ignoreMissingJsonProperties.Contains(key) && !missingPropertyInJson.ContainsKey(key))
+                        if (!_ignoreMissingJson.Contains(key) && !missingPropertyInJson.ContainsKey(key))
                             missingPropertyInJson.Add(key, error);
                     }
                     else
@@ -116,11 +121,20 @@ namespace TMDbLibTests.JsonHelpers
                     sb.AppendLine();
                 }
 
+                if (missingFieldInCSharp.Any())
+                {
+                    // Helper line of properties that can be ignored
+                    sb.AppendLine("Ignore JSON props missing from C#:");
+                    sb.AppendLine(nameof(IgnoreMissingCSharp) + "(" + string.Join(", ", missingFieldInCSharp.OrderBy(s => s.Key).Select(s => $"\"{s.Key}\"")) + ");");
+
+                    sb.AppendLine();
+                }
+
                 if (missingPropertyInJson.Any())
                 {
                     // Helper line of properties that can be ignored
                     sb.AppendLine("Ignore C# props missing from JSON:");
-                    sb.AppendLine(string.Join(", ", missingPropertyInJson.OrderBy(s => s.Key).Select(s => $"\"{s.Key}\"")));
+                    sb.AppendLine(nameof(IgnoreMissingJson) + "(" + string.Join(", ", missingPropertyInJson.OrderBy(s => s.Key).Select(s => $"\"{s.Key}\"")) + ");");
 
                     sb.AppendLine();
                 }
