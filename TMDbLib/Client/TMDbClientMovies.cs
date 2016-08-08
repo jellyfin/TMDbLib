@@ -255,14 +255,14 @@ namespace TMDbLib.Client
             return await GetMovieMethod<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<Review>> GetMovieReviewsAsync(int movieId, int page = 0)
+        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, int page = 0)
         {
             return await GetMovieReviewsAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<Review>> GetMovieReviewsAsync(int movieId, string language, int page = 0)
+        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, string language, int page = 0)
         {
-            return await GetMovieMethod<SearchContainer<Review>>(movieId, MovieMethods.Reviews, page: page, language: language).ConfigureAwait(false);
+            return await GetMovieMethod<SearchContainerWithId<ReviewBase>>(movieId, MovieMethods.Reviews, page: page, language: language).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, int page = 0)

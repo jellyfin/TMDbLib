@@ -318,7 +318,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieReviews()
         {
-            SearchContainer<Review> resp = Config.Client.GetMovieReviewsAsync(IdHelper.TheDarkKnightRises).Result;
+            SearchContainerWithId<ReviewBase> resp = Config.Client.GetMovieReviewsAsync(IdHelper.TheDarkKnightRises).Result;
             Assert.NotNull(resp);
 
             Assert.NotEqual(0, resp.Results.Count);
