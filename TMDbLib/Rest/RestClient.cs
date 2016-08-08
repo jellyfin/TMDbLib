@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Newtonsoft.Json;
 
 namespace TMDbLib.Rest
@@ -9,6 +10,7 @@ namespace TMDbLib.Rest
         private int _maxRetryCount;
 
         internal JsonSerializer Serializer { get; }
+        internal Encoding Encoding { get; } = new UTF8Encoding(false);
 
         public RestClient(Uri baseUrl, JsonSerializer serializer)
         {

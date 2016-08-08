@@ -32,21 +32,21 @@ namespace TMDbLib.Rest
 
     internal class RestResponse<T> : RestResponse
     {
-        private readonly JsonSerializer _serializer;
+        private readonly RestClient _client;
 
-        public RestResponse(HttpResponseMessage response, JsonSerializer serializer)
+        public RestResponse(HttpResponseMessage response, RestClient client)
             : base(response)
         {
-            _serializer = serializer;
+            _client = client;
         }
 
         public async Task<T> GetDataObject()
         {
             Stream content = await Response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-            using (StreamReader sr = new StreamReader(content))
+            using (StreamReader sr = new StreamReader(content, _client.Encoding))
             using (JsonTextReader tr = new JsonTextReader(sr))
-                return _serializer.Deserialize<T>(tr);
+                return _client.Serializer.Deserialize<T>(tr);
         }
 
         public static implicit operator T(RestResponse<T> response)
