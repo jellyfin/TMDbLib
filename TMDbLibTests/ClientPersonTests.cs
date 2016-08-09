@@ -231,10 +231,12 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetPersonChanges()
         {
-            //GetPersonChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
+            // Not all ChangeItem's have an iso_639_1
+            IgnoreMissingJson(" / iso_639_1");
+            
             // FindAsync latest changed person
             SearchContainer<ChangesListItem> latestChanges = Config.Client.GetChangesPeopleAsync().Sync();
-            int latestChanged = latestChanges.Results.First().Id;
+            int latestChanged = latestChanges.Results.Last().Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-14);
@@ -249,7 +251,7 @@ namespace TMDbLibTests
             higher = higher.AddDays(1);
 
             foreach (Change change in respRange)
-                foreach (ChangeItem changeItem in change.Items)
+                foreach (ChangeItemBase changeItem in change.Items)
                 {
                     DateTime date = changeItem.Time;
                     Assert.True(lower <= date);

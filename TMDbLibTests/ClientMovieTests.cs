@@ -341,7 +341,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieLists()
         {
-            //GetMovieListsAsync(int id, string language, int page = -1)
             SearchContainerWithId<ListResult> resp = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
             Assert.Equal(IdHelper.AGoodDayToDieHard, resp.Id);
@@ -357,6 +356,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieChanges()
         {
+            // Not all ChangeItem's have an iso_639_1
+            IgnoreMissingJson(" / iso_639_1");
+
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
 
             //GetMovieChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
@@ -377,7 +379,7 @@ namespace TMDbLibTests
             higher = higher.AddDays(1);
 
             foreach (Change change in respRange)
-                foreach (ChangeItem changeItem in change.Items)
+                foreach (ChangeItemBase changeItem in change.Items)
                 {
                     DateTime date = changeItem.Time;
                     Assert.True(lower <= date);
