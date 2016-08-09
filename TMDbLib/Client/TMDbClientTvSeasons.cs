@@ -70,7 +70,10 @@ namespace TMDbLib.Client
             // Nothing to patch up
             if (item == null)
                 return null;
-                
+
+            if (item.Images != null)
+                item.Images.Id = item.Id ?? 0;
+
             if (item.Credits != null)
                 item.Credits.Id = item.Id ?? 0;
 

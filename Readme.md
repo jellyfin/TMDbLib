@@ -80,6 +80,7 @@ Changelog
 Changes:
    - ChangeItem has been refactored into separate types for each of the applicable actions (#197)
    - Created a new object for Episodes of a TvSeason
+   - More cleanup of types, removing unset properties and adding missing ones
 
 **0.9.4-alpha**
 Changes:

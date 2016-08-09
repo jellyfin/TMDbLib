@@ -30,7 +30,7 @@ namespace TMDbLib.Objects.TvShows
         public int? Id { get; set; }
 
         [JsonProperty("images")]
-        public Images Images { get; set; }
+        public PosterImages Images { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
