@@ -9,7 +9,7 @@ namespace TMDbLib.Objects.Changes
         {
             Action = ChangeAction.Added;
         }
-        
+
         [JsonProperty("value")]
         public JToken Value { get; set; }
     }

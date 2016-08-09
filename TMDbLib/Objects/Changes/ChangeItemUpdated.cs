@@ -9,7 +9,7 @@ namespace TMDbLib.Objects.Changes
         {
             Action = ChangeAction.Updated;
         }
-        
+
         /// <summary>
         /// This field is not always set
         /// </summary>

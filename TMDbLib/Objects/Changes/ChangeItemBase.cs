@@ -14,7 +14,7 @@ namespace TMDbLib.Objects.Changes
 
         [JsonProperty("id")]
         public string Id { get; set; }
-        
+
         /// <summary>
         /// A language code, e.g. en
         /// This field is not always set

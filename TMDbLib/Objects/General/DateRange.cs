@@ -5,10 +5,10 @@ namespace TMDbLib.Objects.General
 {
     public class DateRange
     {
-        [JsonProperty("minimum")]
-        public DateTime Minimum { get; set; }
-
         [JsonProperty("maximum")]
         public DateTime Maximum { get; set; }
+
+        [JsonProperty("minimum")]
+        public DateTime Minimum { get; set; }
     }
 }
