@@ -10,7 +10,7 @@ namespace TMDbLib.Utilities.Converters
     {
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(AccountState) || objectType == typeof(TvEpisodeAccountState);
+            return objectType == typeof(AccountState) || objectType == typeof(TvAccountState) || objectType == typeof(TvEpisodeAccountState);
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

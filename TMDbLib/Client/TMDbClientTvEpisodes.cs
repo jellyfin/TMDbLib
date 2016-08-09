@@ -84,10 +84,7 @@ namespace TMDbLib.Client
 
             if (item.ExternalIds != null)
                 item.ExternalIds.Id = item.Id ?? 0;
-
-            if (item.AccountStates != null)
-                item.AccountStates.Id = item.Id ?? 0;
-
+                
             return item;
         }
 

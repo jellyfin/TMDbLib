@@ -1,10 +1,8 @@
 ﻿using Newtonsoft.Json;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.TvShows
 {
-    [JsonConverter(typeof(AccountStateConverter))]
-    public class TvEpisodeAccountState
+    public class TvEpisodeAccountState : TvAccountState
     {
         [JsonProperty("episode_number")]
         public int EpisodeNumber { get; set; }
@@ -14,8 +12,5 @@ namespace TMDbLib.Objects.TvShows
         /// </summary>
         [JsonProperty("id")]
         public int Id { get; set; }
-
-        [JsonProperty("rating")]
-        public double? Rating { get; set; }
     }
 }

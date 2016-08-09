@@ -8,7 +8,7 @@ namespace TMDbLib.Objects.TvShows
     public class TvEpisode
     {
         [JsonProperty("account_states")]
-        public AccountState AccountStates { get; set; }
+        public TvAccountState AccountStates { get; set; }
 
         [JsonProperty("air_date")]
         public DateTime? AirDate { get; set; }
