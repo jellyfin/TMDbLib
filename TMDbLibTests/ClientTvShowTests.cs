@@ -51,6 +51,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowExtrasAll()
         {
+            IgnoreMissingJson(" / id");
             IgnoreMissingJson(" / genre_ids", " / known_for", " / similar", " / translations", " / videos", "alternative_titles / id", "content_ratings / id", "credits / id", "external_ids / id", "keywords / id");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
