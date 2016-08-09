@@ -9,16 +9,10 @@ namespace TMDbLib.Objects.Changes
         {
             Action = ChangeAction.Updated;
         }
-
-        /// <summary>
-        /// This field is not always set
-        /// </summary>
+        
         [JsonProperty("original_value")]
         public JToken OriginalValue { get; set; }
-
-        /// <summary>
-        /// This field is not always set
-        /// </summary>
+        
         [JsonProperty("value")]
         public JToken Value { get; set; }
     }

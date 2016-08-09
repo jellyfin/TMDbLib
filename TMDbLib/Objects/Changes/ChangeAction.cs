@@ -13,6 +13,9 @@ namespace TMDbLib.Objects.Changes
         Created = 2,
 
         [EnumValue("updated")]
-        Updated = 3
+        Updated = 3,
+
+        [EnumValue("deleted")]
+        Deleted = 4
     }
 }
