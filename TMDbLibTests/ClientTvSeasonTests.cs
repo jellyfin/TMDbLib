@@ -35,7 +35,7 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / account_states", " / credits", " / episode_count", " / external_ids", " / images", " / videos");
+            IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos");
 
             TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
 
@@ -93,7 +93,7 @@ namespace TMDbLibTests
         public void TestTvSeasonExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / account_states", " / episode_count", " / external_ids", " / images", " / videos", " / credits", "external_ids / id", "videos / id", "credits / id", "account_states / id");
+            IgnoreMissingJson(" / account_states", " / external_ids", " / images", " / videos", " / credits", "external_ids / id", "videos / id", "credits / id", "account_states / id");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvSeasonAsync(id, 1, extras).Result, IdHelper.BreakingBad);
