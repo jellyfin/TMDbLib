@@ -42,9 +42,9 @@ namespace TMDbLibTests.JsonHelpers
 
             JsonSerializerSettings sett = new JsonSerializerSettings();
 
-            //sett.MissingMemberHandling = MissingMemberHandling.Error;
-            //sett.ContractResolver = new FailingContractResolver();
-            //sett.Error = Error;
+            sett.MissingMemberHandling = MissingMemberHandling.Error;
+            sett.ContractResolver = new FailingContractResolver();
+            sett.Error = Error;
 
             Config = new TestConfig(serializer: JsonSerializer.Create(sett));
         }
