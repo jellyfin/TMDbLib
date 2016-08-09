@@ -76,6 +76,10 @@ Tips
 Changelog
 ---------
 
+**0.9.5-alpha**
+Changes:
+   - ChangeItem has been refactored into separate types for each of the applicable actions (#197)
+
 **0.9.4-alpha**
 Changes:
    - Refining tests revealed a number of mismatches between the API and the library. These are fixed as I go along
