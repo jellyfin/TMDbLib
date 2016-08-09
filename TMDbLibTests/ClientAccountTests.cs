@@ -237,7 +237,10 @@ namespace TMDbLibTests
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
-                throw new Exception("Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
+                Assert.True(Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false).Result);
+
+            if (DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
+                throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
 
             // Try to mark is as a favorite
             Assert.True(Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true).Result);
@@ -258,6 +261,9 @@ namespace TMDbLibTests
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
+            if (DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
+                Assert.True(Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
+
             if (DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
                 throw new Exception($"Test movie '{IdHelper.Terminator}' was already marked as favorite. Unable to perform test correctly");
 
@@ -281,6 +287,9 @@ namespace TMDbLibTests
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
+                Assert.True(Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false).Result);
+
+            if (DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
                 throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
 
             // Try to add an item to the watchlist
@@ -302,6 +311,9 @@ namespace TMDbLibTests
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
+            if (DoesWatchListContainSpecificMovie(IdHelper.Terminator))
+                Assert.True(Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false).Result);
+
             if (DoesWatchListContainSpecificMovie(IdHelper.Terminator))
                 throw new Exception($"Test movie '{IdHelper.Terminator}' was already on watchlist. Unable to perform test correctly");
 
