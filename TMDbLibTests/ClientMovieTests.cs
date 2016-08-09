@@ -63,6 +63,10 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesExtrasExclusive()
         {
+            // We ignore the 'notes' field, as TMDb sometimes leaves it out
+            IgnoreMissingJson("release_dates.results[array].release_dates[array] / note");
+            IgnoreMissingJson(" / id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id");
 
@@ -129,7 +133,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieAlternativeTitles()
         {
-            //GetMovieAlternativeTitlesAsync(int id, string country)
             AlternativeTitles respUs = Config.Client.GetMovieAlternativeTitlesAsync(IdHelper.AGoodDayToDieHard, "US").Result;
             Assert.NotNull(respUs);
 
@@ -146,6 +149,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieReleaseDates()
         {
+            // We ignore the 'notes' field, as TMDb sometimes leaves it out
+            IgnoreMissingJson("results[array].release_dates[array] / note");
+
             ResultContainer<ReleaseDatesContainer> resp = Config.Client.GetMovieReleaseDatesAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
