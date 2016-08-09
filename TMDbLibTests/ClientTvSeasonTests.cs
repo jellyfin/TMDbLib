@@ -178,7 +178,7 @@ namespace TMDbLibTests
             Thread.Sleep(2000);
 
             // Fetch out the seasons state
-            ResultContainer<TvEpisodeAccountState> state = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
+            ResultContainer<TvEpisodeAccountStateWithNumber> state = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
             Assert.NotNull(state);
 
             Assert.True(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);

@@ -14,7 +14,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<ResultContainer<TvEpisodeAccountState>> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber)
+        public async Task<ResultContainer<TvEpisodeAccountStateWithNumber>> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -24,7 +24,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountState>>().ConfigureAwait(false);
+            RestResponse<ResultContainer<TvEpisodeAccountStateWithNumber>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountStateWithNumber>>().ConfigureAwait(false);
 
             return await response.GetDataObject().ConfigureAwait(false);
         }

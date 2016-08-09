@@ -104,10 +104,10 @@ namespace TMDbLibTests
         public void TestAccountStateConverterTvEpisodeAccountState()
         {
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
-            ResultContainer<TvEpisodeAccountState> season = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1).Sync();
+            ResultContainer<TvEpisodeAccountStateWithNumber> season = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1).Sync();
 
             // Episode 1 has a rating
-            TvEpisodeAccountState episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 1);
+            TvEpisodeAccountStateWithNumber episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 1);
             Assert.NotNull(episode);
 
             Assert.Equal(IdHelper.BigBangTheorySeason1Episode1Id, episode.Id);
@@ -129,6 +129,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestChangeItemConverter()
         {
+            // Not all ChangeItem's have an iso_639_1
+            IgnoreMissingJson(" / iso_639_1");
+
             // Ignore missing movie properties
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
 
