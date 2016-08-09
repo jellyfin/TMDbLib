@@ -19,6 +19,6 @@ namespace TMDbLib.Objects.Find
         public List<SearchTv> TvResults { get; set; }
 
         [JsonProperty("tv_season_results")]
-        public List<SearchTvSeason> TvSeason { get; set; }
+        public List<FindTvSeason> TvSeason { get; set; }
     }
 }
