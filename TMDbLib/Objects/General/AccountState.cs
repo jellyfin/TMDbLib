@@ -13,7 +13,7 @@ namespace TMDbLib.Objects.General
         public bool Favorite { get; set; }
 
         /// <summary>
-        /// The TMDb if for the related movie
+        /// The TMDb id for the related movie
         /// </summary>
         [JsonProperty("id")]
         public int Id { get; set; }
