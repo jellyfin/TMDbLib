@@ -26,31 +26,33 @@ namespace TMDbLibTests
 
             SearchContainer<TvEpisodeWithRating> ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
 
-            double tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
-            Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
-            Assert.True(Math.Abs(7.5 - tmpRating) < float.Epsilon);
+            Assert.False(true, "This test has been failing for some time - TMDb has been made aware, but have not responded");
 
-            // Try changing it back to the previous rating
-            Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 8).Result);
+            //double tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
+            //Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            //Assert.True(Math.Abs(7.5 - tmpRating) < float.Epsilon);
 
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            //// Try changing it back to the previous rating
+            //Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 8).Result);
 
-            ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
+            //// Allow TMDb to cache our changes
+            //Thread.Sleep(2000);
 
-            tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
-            Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
-            Assert.True(Math.Abs(8 - tmpRating) < float.Epsilon);
+            //ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
 
-            // Try removing the rating
-            Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
+            //tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
+            //Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            //Assert.True(Math.Abs(8 - tmpRating) < float.Epsilon);
 
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            //// Try removing the rating
+            //Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
 
-            ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
+            //// Allow TMDb to cache our changes
+            //Thread.Sleep(2000);
 
-            Assert.False(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            //ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
+
+            //Assert.False(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
         }
 
         [Fact]
