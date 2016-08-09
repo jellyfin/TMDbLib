@@ -74,6 +74,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasAll()
         {
+            IgnoreMissingJson("credits / id", "external_ids / id", "images / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
@@ -94,6 +96,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasExclusive()
         {
+            IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos", "credits / id", "external_ids / id", "images / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvEpisodeAsync(id, 1, 1, extras).Result, IdHelper.BreakingBad);
         }
