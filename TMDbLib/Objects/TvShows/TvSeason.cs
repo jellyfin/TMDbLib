@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -15,12 +16,9 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("credits")]
         public Credits Credits { get; set; }
-
-        [JsonProperty("episode_count")]
-        public int EpisodeCount { get; set; }
-
+        
         [JsonProperty("episodes")]
-        public List<TvEpisode> Episodes { get; set; }
+        public List<TvSeasonEpisode> Episodes { get; set; }
 
         [JsonProperty("external_ids")]
         public ExternalIdsTvSeason ExternalIds { get; set; }

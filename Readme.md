@@ -79,6 +79,7 @@ Changelog
 **0.9.5-alpha**
 Changes:
    - ChangeItem has been refactored into separate types for each of the applicable actions (#197)
+   - Created a new object for Episodes of a TvSeason
 
 **0.9.4-alpha**
 Changes:

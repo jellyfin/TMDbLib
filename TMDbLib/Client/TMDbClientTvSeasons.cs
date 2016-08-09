@@ -70,10 +70,7 @@ namespace TMDbLib.Client
             // Nothing to patch up
             if (item == null)
                 return null;
-
-            if (item.Episodes != null)
-                item.EpisodeCount = item.Episodes.Count;
-
+                
             if (item.Credits != null)
                 item.Credits.Id = item.Id ?? 0;
 
@@ -82,6 +79,9 @@ namespace TMDbLib.Client
 
             if (item.AccountStates != null)
                 item.AccountStates.Id = item.Id ?? 0;
+
+            if (item.Videos != null)
+                item.Videos.Id = item.Id ?? 0;
 
             return item;
         }

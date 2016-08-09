@@ -33,6 +33,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasNone()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos");
 
@@ -50,6 +53,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasAccountState()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos", "account_states / id");
 
@@ -75,6 +81,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasAll()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
+            IgnoreMissingJson("account_states / id", "credits / id", "external_ids / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
@@ -91,6 +102,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasExclusive()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / account_states", " / external_ids", " / images", " / videos", " / credits", "external_ids / id", "videos / id", "credits / id", "account_states / id");
 
@@ -148,16 +162,6 @@ namespace TMDbLibTests
             ResultContainer<Video> videos = Config.Client.GetTvSeasonVideosAsync(IdHelper.BreakingBad, 1).Result;
             Assert.NotNull(videos);
             Assert.NotNull(videos.Results);
-        }
-
-        [Fact]
-        public void TestTvSeasonEpisodeCount()
-        {
-            TvSeason season = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.NotNull(season);
-            Assert.NotNull(season.Episodes);
-
-            Assert.Equal(season.Episodes.Count, season.EpisodeCount);
         }
 
         [Fact]
