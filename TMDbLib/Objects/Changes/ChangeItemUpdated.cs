@@ -9,10 +9,10 @@ namespace TMDbLib.Objects.Changes
         {
             Action = ChangeAction.Updated;
         }
-        
+
         [JsonProperty("original_value")]
         public JToken OriginalValue { get; set; }
-        
+
         [JsonProperty("value")]
         public JToken Value { get; set; }
     }

@@ -16,7 +16,7 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("credits")]
         public Credits Credits { get; set; }
-        
+
         [JsonProperty("episodes")]
         public List<TvSeasonEpisode> Episodes { get; set; }
 
