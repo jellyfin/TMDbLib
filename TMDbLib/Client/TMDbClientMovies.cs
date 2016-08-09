@@ -170,45 +170,62 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieListAsync(MovieListType type, int page = 0)
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieNowPlayingListAsync(string language = null, int page = 0)
         {
-            return await GetMovieListAsync(type, DefaultLanguage, page).ConfigureAwait(false);
+            RestRequest req = _client.Create("movie/now_playing");
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
+                
+            RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>().ConfigureAwait(false);
+
+            return resp;
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieListAsync(MovieListType type, string language, int page = 0)
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieUpcomingListAsync(string language = null, int page = 0)
         {
-            RestRequest req;
-            switch (type)
-            {
-                case MovieListType.NowPlaying:
-                    req = _client.Create("movie/now_playing");
-                    break;
-                case MovieListType.Popular:
-                    req = _client.Create("movie/popular");
-                    break;
-                case MovieListType.TopRated:
-                    req = _client.Create("movie/top_rated");
-                    break;
-                case MovieListType.Upcoming:
-                    req = _client.Create("movie/upcoming");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(type));
-            }
+            RestRequest req = _client.Create("movie/upcoming");
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
             if (language != null)
                 req.AddParameter("language", language);
 
-            // TODO: Dateformat?
-            //req.DateFormat = "yyyy-MM-dd";
+            RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>().ConfigureAwait(false);
+
+            return resp;
+        }
+
+        public async Task<SearchContainer<SearchMovie>> GetMoviePopularListAsync(string language = null, int page = 0)
+        {
+            RestRequest req = _client.Create("movie/popular");
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
 
             RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
 
             return resp;
         }
 
+        public async Task<SearchContainer<SearchMovie>> GetMovieTopRatedListAsync(string language = null, int page = 0)
+        {
+            RestRequest req = _client.Create("movie/top_rated");
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
+
+            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
+
+            return resp;
+        }
+        
         public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, int page = 0)
         {
             return await GetMovieListsAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);

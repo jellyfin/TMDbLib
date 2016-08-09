@@ -393,32 +393,103 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestMoviesList()
+        public void TestMoviesPopularList()
         {
-            //GetMovieListAsync(MovieListType type, string language, int page = -1)
-            foreach (MovieListType type in Enum.GetValues(typeof(MovieListType)).OfType<MovieListType>())
-            {
-                SearchContainer<SearchMovie> list = Config.Client.GetMovieListAsync(type).Result;
+            SearchContainer<SearchMovie> list = Config.Client.GetMoviePopularListAsync().Result;
 
-                Assert.NotNull(list);
-                Assert.True(list.Results.Count > 0);
-                Assert.Equal(1, list.Page);
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
 
-                SearchContainer<SearchMovie> listPage2 = Config.Client.GetMovieListAsync(type, 2).Result;
+            SearchContainer<SearchMovie> listPage2 = Config.Client.GetMoviePopularListAsync(page: 2).Result;
 
-                Assert.NotNull(listPage2);
-                Assert.True(listPage2.Results.Count > 0);
-                Assert.Equal(2, listPage2.Page);
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
 
-                SearchContainer<SearchMovie> listDe = Config.Client.GetMovieListAsync(type, "de").Result;
+            SearchContainer<SearchMovie> listDe = Config.Client.GetMoviePopularListAsync("de").Result;
 
-                Assert.NotNull(listDe);
-                Assert.True(listDe.Results.Count > 0);
-                Assert.Equal(1, listDe.Page);
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
 
-                // At least one title should differ
-                Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
-            }
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+        }
+
+        [Fact]
+        public void TestMoviesTopRatedList()
+        {
+            SearchContainer<SearchMovie> list = Config.Client.GetMovieTopRatedListAsync().Result;
+
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
+
+            SearchContainer<SearchMovie> listPage2 = Config.Client.GetMovieTopRatedListAsync(page: 2).Result;
+
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
+
+            SearchContainer<SearchMovie> listDe = Config.Client.GetMovieTopRatedListAsync("de").Result;
+
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
+
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+        }
+
+        [Fact]
+        public void TestMoviesNowPlayingList()
+        {
+            SearchContainerWithDates<SearchMovie> list = Config.Client.GetMovieNowPlayingListAsync().Result;
+
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
+
+            SearchContainerWithDates<SearchMovie> listPage2 = Config.Client.GetMovieNowPlayingListAsync(page: 2).Result;
+
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
+
+            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieNowPlayingListAsync("de").Result;
+
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
+
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+        }
+
+        [Fact]
+        public void TestMoviesUpcomingList()
+        {
+            SearchContainerWithDates<SearchMovie> list = Config.Client.GetMovieUpcomingListAsync().Result;
+
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
+
+            SearchContainerWithDates<SearchMovie> listPage2 = Config.Client.GetMovieUpcomingListAsync(page: 2).Result;
+
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
+
+            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieUpcomingListAsync("de").Result;
+
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
+
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
         }
 
         [Fact]
