@@ -6,12 +6,10 @@ using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Cast = TMDbLib.Objects.TvShows.Cast;
-using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
 {
