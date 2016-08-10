@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace TMDbLib.Utilities
@@ -15,20 +17,35 @@ namespace TMDbLib.Utilities
                 throw new ArgumentException("EnumerationValue must be of Enum type", nameof(enumerationValue));
             }
 
+            IEnumerable<MemberInfo> members = typeof(T).GetTypeInfo().DeclaredMembers;
+
+            string requestedName = enumerationValue.ToString();
+
             // Tries to find a DisplayAttribute for a potential friendly name for the enum
-            MemberInfo[] memberInfo = typeInfo.GetMember(enumerationValue.ToString());
-            if (memberInfo.Length > 0)
+            foreach (MemberInfo member in members)
             {
-                EnumValueAttribute attr = memberInfo[0].GetCustomAttribute<EnumValueAttribute>();
-                if (attr != null)
+                if (member.Name != requestedName)
+                    continue;
+
+                foreach (CustomAttributeData attributeData in member.CustomAttributes)
                 {
+                    if (attributeData.AttributeType != typeof(EnumValueAttribute))
+                        continue;
+
                     // Pull out the Value
-                    return attr.Value;
+                    if (!attributeData.ConstructorArguments.Any())
+                        break;
+
+                    CustomAttributeTypedArgument argument = attributeData.ConstructorArguments.First();
+                    string value = argument.Value as string;
+                    return value;
                 }
+
+                break;
             }
 
             // If we have no description attribute, just return the ToString of the enum
-            return enumerationValue.ToString();
+            return requestedName;
         }
     }
 }
