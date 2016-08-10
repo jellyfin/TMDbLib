@@ -76,6 +76,11 @@ Tips
 Changelog
 ---------
 
+**0.9.6-alpha**
+Changes:
+   - Added UAP10.0 as a target
+   - Changed netstandard1.6 target to netstandard1.0
+
 **0.9.5-alpha**
 Changes:
    - ChangeItem has been refactored into separate types for each of the applicable actions (#197)
