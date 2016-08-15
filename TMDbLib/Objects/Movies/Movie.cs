@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Movies
 {
@@ -22,7 +23,7 @@ namespace TMDbLib.Objects.Movies
         public string BackdropPath { get; set; }
 
         [JsonProperty("belongs_to_collection")]
-        public BelongsToCollection BelongsToCollection { get; set; }
+        public SearchCollection BelongsToCollection { get; set; }
 
         [JsonProperty("budget")]
         public long Budget { get; set; }
@@ -88,13 +89,13 @@ namespace TMDbLib.Objects.Movies
         public long Revenue { get; set; }
 
         [JsonProperty("reviews")]
-        public SearchContainer<Review> Reviews { get; set; }
+        public SearchContainer<ReviewBase> Reviews { get; set; }
 
         [JsonProperty("runtime")]
         public int? Runtime { get; set; }
 
         [JsonProperty("similar")]
-        public SearchContainer<MovieResult> Similar { get; set; }
+        public SearchContainer<SearchMovie> Similar { get; set; }
 
         [JsonProperty("spoken_languages")]
         public List<SpokenLanguage> SpokenLanguages { get; set; }

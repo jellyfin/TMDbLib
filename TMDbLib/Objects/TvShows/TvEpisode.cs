@@ -8,13 +8,13 @@ namespace TMDbLib.Objects.TvShows
     public class TvEpisode
     {
         [JsonProperty("account_states")]
-        public AccountState AccountStates { get; set; }
+        public TvAccountState AccountStates { get; set; }
 
         [JsonProperty("air_date")]
         public DateTime? AirDate { get; set; }
 
         [JsonProperty("credits")]
-        public Credits Credits { get; set; }
+        public CreditsWithGuestStars Credits { get; set; }
 
         [JsonProperty("crew")]
         public List<Crew> Crew { get; set; }
@@ -23,7 +23,7 @@ namespace TMDbLib.Objects.TvShows
         public int EpisodeNumber { get; set; }
 
         [JsonProperty("external_ids")]
-        public ExternalIds ExternalIds { get; set; }
+        public ExternalIdsTvEpisode ExternalIds { get; set; }
 
         [JsonProperty("guest_stars")]
         public List<Cast> GuestStars { get; set; }
@@ -51,10 +51,7 @@ namespace TMDbLib.Objects.TvShows
         /// </summary>
         [JsonProperty("season_number")]
         public int? SeasonNumber { get; set; }
-
-        [JsonProperty("show_id")]
-        public int? ShowId { get; set; }
-
+        
         [JsonProperty("still_path")]
         public string StillPath { get; set; }
 

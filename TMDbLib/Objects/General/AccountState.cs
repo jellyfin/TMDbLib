@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.General
 {
+    [JsonConverter(typeof(AccountStateConverter))]
     public class AccountState
     {
         /// <summary>
@@ -11,7 +13,7 @@ namespace TMDbLib.Objects.General
         public bool Favorite { get; set; }
 
         /// <summary>
-        /// The TMDb if for the related movie
+        /// The TMDb id for the related movie
         /// </summary>
         [JsonProperty("id")]
         public int Id { get; set; }

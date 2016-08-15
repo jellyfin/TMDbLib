@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -12,13 +13,17 @@ namespace TMDbLib.Client
     {
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
+
+        private readonly JsonSerializer _serializer;
         private RestClient _client;
         private TMDbConfig _config;
 
-        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl)
+        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null)
         {
             DefaultLanguage = null;
             DefaultCountry = null;
+
+            _serializer = serializer ?? JsonSerializer.CreateDefault();
 
             Initialize(baseUrl, useSsl, apiKey);
         }
@@ -136,7 +141,7 @@ namespace TMDbLib.Client
         public void GetConfig()
         {
             TMDbConfig config = _client.Create("configuration").ExecuteGet<TMDbConfig>().Result;
-            
+
             if (config == null)
                 throw new Exception("Unable to retrieve configuration");
 
@@ -168,7 +173,7 @@ namespace TMDbLib.Client
                 baseUrl = baseUrl.Substring("https://".Length);
 
             string httpScheme = useSsl ? "https" : "http";
-            _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)));
+            _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer);
             _client.AddDefaultQueryString("api_key", apiKey);
         }
 

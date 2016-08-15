@@ -48,9 +48,6 @@ namespace TMDbLib.Client
         public async Task<Token> AuthenticationRequestAutenticationTokenAsync()
         {
             RestRequest request = _client.Create("authentication/token/new");
-            //{
-            //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC";
-            //};
 
             RestResponse<Token> response = await request.ExecuteGet<Token>().ConfigureAwait(false);
             Token token = response;

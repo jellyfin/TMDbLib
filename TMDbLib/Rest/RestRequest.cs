@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -103,7 +104,7 @@ namespace TMDbLib.Rest
 
             CheckResponse(resp);
 
-            return new RestResponse<T>(resp);
+            return new RestResponse<T>(resp, _client);
         }
 
         public async Task<RestResponse> ExecuteGet()
@@ -121,7 +122,7 @@ namespace TMDbLib.Rest
 
             CheckResponse(resp);
 
-            return new RestResponse<T>(resp);
+            return new RestResponse<T>(resp, _client);
         }
 
         public async Task<RestResponse> ExecutePost()
@@ -139,7 +140,7 @@ namespace TMDbLib.Rest
 
             CheckResponse(resp);
 
-            return new RestResponse<T>(resp);
+            return new RestResponse<T>(resp, _client);
         }
 
         private HttpRequestMessage PrepRequest(HttpMethod method)
@@ -173,9 +174,16 @@ namespace TMDbLib.Rest
             // Body
             if (method == HttpMethod.Post && _bodyObj != null)
             {
-                string json = JsonConvert.SerializeObject(_bodyObj);
+                MemoryStream ms = new MemoryStream();
+                using (StreamWriter sw = new StreamWriter(ms, _client.Encoding, 4096, true))
+                using (JsonTextWriter tw = new JsonTextWriter(sw))
+                {
+                    _client.Serializer.Serialize(tw, _bodyObj);
+                }
 
-                req.Content = new StringContent(json);
+                ms.Seek(0, SeekOrigin.Begin);
+
+                req.Content = new StreamContent(ms);
                 req.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             }
 
@@ -208,7 +216,7 @@ namespace TMDbLib.Rest
                     else
                         // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
                         await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
-                    
+
                     continue;
                 }
 

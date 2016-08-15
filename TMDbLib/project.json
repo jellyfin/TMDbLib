@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.9.1.5-alpha",
+  "version": "0.9.6.0-alpha",
   "title": "TMDb Library",
   "authors": [ "LordMike", "Naliath" ],
   "packOptions": {
@@ -18,7 +18,7 @@
   },
 
   "frameworks": {
-    "netstandard1.6": {
+    "netstandard1.0": {
       "imports": "dnxcore50",
       "dependencies": {
         "System.Net.Http": "4.0.0"
@@ -48,6 +48,13 @@
     "net46": {
       "dependencies": {
         "System.Net.Http": "4.0.0"
+      }
+    },
+    "uap10.0": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0",
+        "System.Linq": "4.1.0",
+        "System.Dynamic.Runtime": "4.0.11"
       }
     }
   }

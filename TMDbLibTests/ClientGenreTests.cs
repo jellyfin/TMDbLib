@@ -2,6 +2,7 @@
 using System.Linq;
 using Xunit;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -58,9 +59,9 @@ namespace TMDbLibTests
             Genre genre = Config.Client.GetMovieGenresAsync().Sync().First();
 
             // Get movies
-            SearchContainerWithId<MovieResult> movies = Config.Client.GetGenreMoviesAsync(genre.Id).Result;
-            SearchContainerWithId<MovieResult> moviesPage2 = Config.Client.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false).Result;
-            SearchContainerWithId<MovieResult> moviesAll = Config.Client.GetGenreMoviesAsync(genre.Id, includeAllMovies: true).Result;
+            SearchContainerWithId<SearchMovie> movies = Config.Client.GetGenreMoviesAsync(genre.Id).Result;
+            SearchContainerWithId<SearchMovie> moviesPage2 = Config.Client.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false).Result;
+            SearchContainerWithId<SearchMovie> moviesAll = Config.Client.GetGenreMoviesAsync(genre.Id, includeAllMovies: true).Result;
 
             Assert.Equal(1, movies.Page);
             Assert.Equal(2, moviesPage2.Page);

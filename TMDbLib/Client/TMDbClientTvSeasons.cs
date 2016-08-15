@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
@@ -15,7 +14,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<ResultContainer<TvEpisodeAccountState>> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber)
+        public async Task<ResultContainer<TvEpisodeAccountStateWithNumber>> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -25,17 +24,9 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<ResultContainer<TvEpisodeAccountState>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountState>>().ConfigureAwait(false);
+            RestResponse<ResultContainer<TvEpisodeAccountStateWithNumber>> response = await req.ExecuteGet<ResultContainer<TvEpisodeAccountStateWithNumber>>().ConfigureAwait(false);
 
-            ResultContainer<TvEpisodeAccountState> item = await response.GetDataObject().ConfigureAwait(false);
-
-            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-            if (item != null)
-            {
-                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent().ConfigureAwait(false));
-            }
-
-            return item;
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -80,8 +71,8 @@ namespace TMDbLib.Client
             if (item == null)
                 return null;
 
-            if (item.Episodes != null)
-                item.EpisodeCount = item.Episodes.Count;
+            if (item.Images != null)
+                item.Images.Id = item.Id ?? 0;
 
             if (item.Credits != null)
                 item.Credits.Id = item.Id ?? 0;
@@ -90,11 +81,10 @@ namespace TMDbLib.Client
                 item.ExternalIds.Id = item.Id ?? 0;
 
             if (item.AccountStates != null)
-            {
                 item.AccountStates.Id = item.Id ?? 0;
-                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent().ConfigureAwait(false));
-            }
+
+            if (item.Videos != null)
+                item.Videos.Id = item.Id ?? 0;
 
             return item;
         }
@@ -125,9 +115,9 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-        public async Task<ExternalIds> GetTvSeasonExternalIdsAsync(int tvShowId, int seasonNumber)
+        public async Task<ExternalIdsTvSeason> GetTvSeasonExternalIdsAsync(int tvShowId, int seasonNumber)
         {
-            return await GetTvSeasonMethod<ExternalIds>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds).ConfigureAwait(false);
+            return await GetTvSeasonMethod<ExternalIdsTvSeason>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -4,7 +4,7 @@ using System.Threading;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
@@ -26,31 +26,33 @@ namespace TMDbLibTests
 
             SearchContainer<TvEpisodeWithRating> ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
 
-            double tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
-            Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
-            Assert.True(Math.Abs(7.5 - tmpRating) < float.Epsilon);
+            Assert.False(true, "This test has been failing for some time - TMDb has been made aware, but have not responded");
 
-            // Try changing it back to the previous rating
-            Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 8).Result);
+            //double tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
+            //Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            //Assert.True(Math.Abs(7.5 - tmpRating) < float.Epsilon);
 
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            //// Try changing it back to the previous rating
+            //Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 8).Result);
 
-            ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
+            //// Allow TMDb to cache our changes
+            //Thread.Sleep(2000);
 
-            tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
-            Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
-            Assert.True(Math.Abs(8 - tmpRating) < float.Epsilon);
+            //ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
 
-            // Try removing the rating
-            Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
+            //tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
+            //Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            //Assert.True(Math.Abs(8 - tmpRating) < float.Epsilon);
 
-            // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            //// Try removing the rating
+            //Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
 
-            ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
+            //// Allow TMDb to cache our changes
+            //Thread.Sleep(2000);
 
-            Assert.False(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
+            //ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
+
+            //Assert.False(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
         }
 
         [Fact]
@@ -64,7 +66,7 @@ namespace TMDbLibTests
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            SearchContainer<TvShowWithRating> ratings = Config.Client.GetGuestSessionRatedTvAsync().Sync();
+            SearchContainer<SearchTvShowWithRating> ratings = Config.Client.GetGuestSessionRatedTvAsync().Sync();
 
             double tmpRating = ratings.Results.Single(s => s.Id == IdHelper.House).Rating;
             Assert.True(ratings.Results.Any(s => s.Id == IdHelper.House));
@@ -99,38 +101,38 @@ namespace TMDbLibTests
             Config.Client.SetSessionInformation(Config.GuestTestSessionId, SessionType.GuestSession);
 
             // Try changing the rating
-            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Avatar, 7.5).Result);
+            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Terminator, 7.5).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
-            SearchContainer<MovieWithRating> ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
+            SearchContainer<SearchMovieWithRating> ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
-            double tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Avatar).Rating;
-            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Avatar));
+            double tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Terminator).Rating;
+            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Terminator));
             Assert.True(Math.Abs(7.5 - tmpRating) < float.Epsilon);
 
             // Try changing it back to the previous rating
-            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Avatar, 8).Result);
+            Assert.True(Config.Client.MovieSetRatingAsync(IdHelper.Terminator, 8).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
-            tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Avatar).Rating;
-            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Avatar));
+            tmpRating = ratings.Results.Single(s => s.Id == IdHelper.Terminator).Rating;
+            Assert.True(ratings.Results.Any(s => s.Id == IdHelper.Terminator));
             Assert.True(Math.Abs(8 - tmpRating) < float.Epsilon);
 
             // Try removing the rating
-            Assert.True(Config.Client.MovieRemoveRatingAsync(IdHelper.Avatar).Result);
+            Assert.True(Config.Client.MovieRemoveRatingAsync(IdHelper.Terminator).Result);
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             ratings = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
-            Assert.False(ratings.Results.Any(s => s.Id == IdHelper.Avatar));
+            Assert.False(ratings.Results.Any(s => s.Id == IdHelper.Terminator));
         }
 
         [Fact]
@@ -163,7 +165,7 @@ namespace TMDbLibTests
             TestHelpers.SearchPages(i => Config.Client.GetGuestSessionRatedTvAsync(i).Result);
 
             // Fetch ratings
-            SearchContainer<TvShowWithRating> result = Config.Client.GetGuestSessionRatedTvAsync().Sync();
+            SearchContainer<SearchTvShowWithRating> result = Config.Client.GetGuestSessionRatedTvAsync().Sync();
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);
@@ -181,7 +183,7 @@ namespace TMDbLibTests
             TestHelpers.SearchPages(i => Config.Client.GetGuestSessionRatedMoviesAsync(i).Result);
 
             // Fetch ratings
-            SearchContainer<MovieWithRating> result = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
+            SearchContainer<SearchMovieWithRating> result = Config.Client.GetGuestSessionRatedMoviesAsync().Sync();
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

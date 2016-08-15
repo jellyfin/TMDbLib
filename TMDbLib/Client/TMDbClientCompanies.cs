@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
@@ -49,14 +50,14 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMoviesAsync(int companyId, int page = 0)
+        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, int page = 0)
         {
             return await GetCompanyMoviesAsync(companyId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<MovieResult>> GetCompanyMoviesAsync(int companyId, string language, int page = 0)
+        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, string language, int page = 0)
         {
-            return await GetCompanyMethod<SearchContainerWithId<MovieResult>>(companyId, CompanyMethods.Movies, page, language).ConfigureAwait(false);
+            return await GetCompanyMethod<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language).ConfigureAwait(false);
         }
     }
 }

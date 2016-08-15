@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Rest;
@@ -42,15 +41,7 @@ namespace TMDbLib.Client
 
             RestResponse<AccountState> response = await req.ExecuteGet<AccountState>().ConfigureAwait(false);
 
-            AccountState item = await response.GetDataObject().ConfigureAwait(false);
-
-            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-            if (item != null)
-            {
-                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent().ConfigureAwait(false));
-            }
-
-            return item;
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         public async Task<ResultContainer<AlternativeTitle>> GetTvShowAlternativeTitlesAsync(int id)
@@ -103,11 +94,7 @@ namespace TMDbLib.Client
                 item.Translations.Id = id;
 
             if (item.AccountStates != null)
-            {
-                item.AccountStates.Id = item.Id;
-                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent().ConfigureAwait(false));
-            }
+                item.AccountStates.Id = id;
 
             return item;
         }
@@ -136,9 +123,9 @@ namespace TMDbLib.Client
         /// Returns an object that contains all known exteral id's for the tv show related to the specified TMDB id.
         /// </summary>
         /// <param name="id">The TMDb id of the target tv show.</param>
-        public async Task<ExternalIds> GetTvShowExternalIdsAsync(int id)
+        public async Task<ExternalIdsTvShow> GetTvShowExternalIdsAsync(int id)
         {
-            return await GetTvShowMethod<ExternalIds>(id, TvShowMethods.ExternalIds).ConfigureAwait(false);
+            return await GetTvShowMethod<ExternalIdsTvShow>(id, TvShowMethods.ExternalIds).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -182,7 +169,7 @@ namespace TMDbLib.Client
         /// <param name="page">Page</param>
         /// <param name="timezone">Only relevant for list type AiringToday</param>
         /// <returns></returns>
-        public async Task<SearchContainer<TvShow>> GetTvShowListAsync(TvShowListType list, int page = 0, string timezone = null)
+        public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, int page = 0, string timezone = null)
         {
             return await GetTvShowListAsync(list, DefaultLanguage, page, timezone).ConfigureAwait(false);
         }
@@ -195,7 +182,7 @@ namespace TMDbLib.Client
         /// <param name="page">Page</param>
         /// <param name="timezone">Only relevant for list type AiringToday</param>
         /// <returns></returns>
-        public async Task<SearchContainer<TvShow>> GetTvShowListAsync(TvShowListType list, string language, int page = 0, string timezone = null)
+        public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, string language, int page = 0, string timezone = null)
         {
             RestRequest req = _client.Create("tv/{method}");
             req.AddUrlSegment("method", list.GetDescription());
@@ -210,7 +197,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<SearchContainer<TvShow>> resp = await req.ExecuteGet<SearchContainer<TvShow>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchTv>> resp = await req.ExecuteGet<SearchContainer<SearchTv>>().ConfigureAwait(false);
 
             return resp;
         }
@@ -283,9 +270,9 @@ namespace TMDbLib.Client
             return await GetTvShowListAsync(page, language, "top_rated").ConfigureAwait(false);
         }
 
-        public async Task<TranslationsContainer> GetTvShowTranslationsAsync(int id)
+        public async Task<TranslationsContainerTv> GetTvShowTranslationsAsync(int id)
         {
-            return await GetTvShowMethod<TranslationsContainer>(id, TvShowMethods.Translations).ConfigureAwait(false);
+            return await GetTvShowMethod<TranslationsContainerTv>(id, TvShowMethods.Translations).ConfigureAwait(false);
         }
 
         public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id)

@@ -5,7 +5,6 @@ using System.Threading;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
@@ -18,7 +17,7 @@ namespace TMDbLibTests
     public class ClientTvShowTests : TestBase
     {
         private static Dictionary<TvShowMethods, Func<TvShow, object>> _methods;
-        
+
         public ClientTvShowTests()
         {
             _methods = new Dictionary<TvShowMethods, Func<TvShow, object>>
@@ -38,7 +37,7 @@ namespace TMDbLibTests
         public void TestTvShowExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / known_for", " / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / genre_ids");
 
             TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.BreakingBad).Result;
 
@@ -52,6 +51,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowExtrasAll()
         {
+            IgnoreMissingJson(" / id");
+            IgnoreMissingJson(" / genre_ids", " / known_for", " / similar", " / translations", " / videos", "alternative_titles / id", "content_ratings / id", "credits / id", "external_ids / id", "keywords / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
@@ -98,7 +100,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = Config.Client.GetTvShowExternalIdsAsync(IdHelper.BreakingBad).Result;
+            ExternalIdsTvShow externalIds = Config.Client.GetTvShowExternalIdsAsync(IdHelper.BreakingBad).Result;
+
             Assert.NotNull(externalIds);
             Assert.Equal(1396, externalIds.Id);
             Assert.Equal("/en/breaking_bad", externalIds.FreebaseId);
@@ -148,7 +151,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasTranslations()
         {
-            TranslationsContainer translations = Config.Client.GetTvShowTranslationsAsync(IdHelper.BreakingBad).Result;
+            TranslationsContainerTv translations = Config.Client.GetTvShowTranslationsAsync(IdHelper.BreakingBad).Result;
             Assert.NotNull(translations);
             Assert.Equal(IdHelper.BreakingBad, translations.Id);
 
@@ -181,6 +184,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasAccountState()
         {
+            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
+
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
@@ -212,7 +217,6 @@ namespace TMDbLibTests
         private void TestBreakingBadBaseProperties(TvShow tvShow)
         {
             Assert.NotNull(tvShow);
-            Assert.NotNull(tvShow.Id);
             Assert.Equal("Breaking Bad", tvShow.Name);
             Assert.Equal("Breaking Bad", tvShow.OriginalName);
             Assert.NotNull(tvShow.Overview);
@@ -257,7 +261,6 @@ namespace TMDbLibTests
             Assert.Equal(6, tvShow.Seasons.Count);
             Assert.Equal(0, tvShow.Seasons[0].SeasonNumber);
             Assert.Equal(1, tvShow.Seasons[1].SeasonNumber);
-            Assert.Null(tvShow.Seasons[1].Episodes);
 
             Assert.Equal(62, tvShow.NumberOfEpisodes);
             Assert.Equal(5, tvShow.NumberOfSeasons);
@@ -287,6 +290,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeasonCount()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
+
             TvShow tvShow = Config.Client.GetTvShowAsync(1668).Result;
             Assert.Equal(tvShow.Seasons[1].EpisodeCount, 24);
         }
@@ -294,6 +299,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowVideos()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", "videos / id");
+
             TvShow tvShow = Config.Client.GetTvShowAsync(1668, TvShowMethods.Videos).Result;
             Assert.NotNull(tvShow.Videos);
             Assert.NotNull(tvShow.Videos.Results);
@@ -311,7 +318,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowTranslations()
         {
-            TranslationsContainer translations = Config.Client.GetTvShowTranslationsAsync(1668).Result;
+            TranslationsContainerTv translations = Config.Client.GetTvShowTranslationsAsync(1668).Result;
 
             Assert.Equal(1668, translations.Id);
             Translation translation = translations.Translations.SingleOrDefault(s => s.Iso_639_1 == "hr");
@@ -371,6 +378,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowLatest()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / similar", " / translations", " / videos");
+
             TvShow tvShow = Config.Client.GetLatestTvShowAsync().Sync();
 
             Assert.NotNull(tvShow);
@@ -379,6 +388,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowLists()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / created_by", " / credits", " / external_ids", " / genres", " / images", " / in_production", " / keywords", " / languages", " / networks", " / production_companies", " / seasons", " / similar", " / translations", " / videos");
+
             foreach (TvShowListType type in Enum.GetValues(typeof(TvShowListType)).OfType<TvShowListType>())
             {
                 TestHelpers.SearchPages(i => Config.Client.GetTvShowListAsync(type, i).Result);

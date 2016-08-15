@@ -8,6 +8,7 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Cast = TMDbLib.Objects.Movies.Cast;
@@ -18,7 +19,7 @@ namespace TMDbLibTests
     public class ClientMovieTests : TestBase
     {
         private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
-        
+
         public ClientMovieTests()
         {
             _methods = new Dictionary<MovieMethods, Func<Movie, object>>
@@ -43,7 +44,7 @@ namespace TMDbLibTests
         public void TestMoviesExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
 
             Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
@@ -62,8 +63,12 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesExtrasExclusive()
         {
+            // We ignore the 'notes' field, as TMDb sometimes leaves it out
+            IgnoreMissingJson("release_dates.results[array].release_dates[array] / note");
+            IgnoreMissingJson(" / id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetMovieAsync(id, extras).Result, IdHelper.AGoodDayToDieHard);
@@ -72,6 +77,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesImdbExtrasAll()
         {
+            IgnoreMissingJson(" / id", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "reviews.results[array] / media_type", "translations / id");
+
             Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
             tmpMethods.Remove(MovieMethods.Videos);
 
@@ -89,6 +96,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesExtrasAll()
         {
+            // We ignore the 'notes' field, as TMDb sometimes leaves it out
+            IgnoreMissingJson("release_dates.results[array].release_dates[array] / note");
+
+            IgnoreMissingJson(" / id", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             MovieMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Movie item = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard, combinedEnum).Result;
@@ -99,6 +111,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesLanguage()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+
             Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
             Movie movieItalian = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard, "it").Result;
 
@@ -119,7 +133,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieAlternativeTitles()
         {
-            //GetMovieAlternativeTitlesAsync(int id, string country)
             AlternativeTitles respUs = Config.Client.GetMovieAlternativeTitlesAsync(IdHelper.AGoodDayToDieHard, "US").Result;
             Assert.NotNull(respUs);
 
@@ -136,6 +149,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieReleaseDates()
         {
+            // We ignore the 'notes' field, as TMDb sometimes leaves it out
+            IgnoreMissingJson("results[array].release_dates[array] / note");
+
             ResultContainer<ReleaseDatesContainer> resp = Config.Client.GetMovieReleaseDatesAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
@@ -266,6 +282,7 @@ namespace TMDbLibTests
 
             Assert.Equal("533ec6a7c3a368544800556f", video.Id);
             Assert.Equal("en", video.Iso_639_1);
+            Assert.Equal("US", video.Iso_3166_1);
             Assert.Equal("7EgVRvG2mM0", video.Key);
             Assert.Equal("A Good Day To Die Hard Official Trailer", video.Name);
             Assert.Equal("YouTube", video.Site);
@@ -279,10 +296,11 @@ namespace TMDbLibTests
             TranslationsContainer resp = Config.Client.GetMovieTranslationsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
-            Translation translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
+            TranslationWithCountry translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
             Assert.NotNull(translation);
 
             Assert.Equal("German", translation.EnglishName);
+            Assert.Equal("DE", translation.Iso_3166_1);
             Assert.Equal("de", translation.Iso_639_1);
             Assert.Equal("Deutsch", translation.Name);
         }
@@ -290,10 +308,10 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieSimilarMovies()
         {
-            SearchContainer<MovieResult> resp = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard).Result;
+            SearchContainer<SearchMovie> resp = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
-            SearchContainer<MovieResult> respGerman = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard, language: "de").Result;
+            SearchContainer<SearchMovie> respGerman = Config.Client.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard, language: "de").Result;
             Assert.NotNull(respGerman);
 
             Assert.Equal(resp.Results.Count, respGerman.Results.Count);
@@ -313,7 +331,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieReviews()
         {
-            SearchContainer<Review> resp = Config.Client.GetMovieReviewsAsync(IdHelper.TheDarkKnightRises).Result;
+            SearchContainerWithId<ReviewBase> resp = Config.Client.GetMovieReviewsAsync(IdHelper.TheDarkKnightRises).Result;
             Assert.NotNull(resp);
 
             Assert.NotEqual(0, resp.Results.Count);
@@ -323,11 +341,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieLists()
         {
-            //GetMovieListsAsync(int id, string language, int page = -1)
-            SearchContainer<ListResult> resp = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard).Result;
+            SearchContainerWithId<ListResult> resp = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
+            Assert.Equal(IdHelper.AGoodDayToDieHard, resp.Id);
 
-            SearchContainer<ListResult> respPage2 = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard, 2).Result;
+            SearchContainerWithId<ListResult> respPage2 = Config.Client.GetMovieListsAsync(IdHelper.AGoodDayToDieHard, 2).Result;
             Assert.NotNull(respPage2);
 
             Assert.Equal(1, resp.Page);
@@ -338,9 +356,15 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieChanges()
         {
+            // Not all ChangeItem's have an iso_639_1
+            IgnoreMissingJson(" / iso_639_1");
+
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+
             //GetMovieChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
             // FindAsync latest changed title
-            int latestChanged = Config.Client.GetMovieLatestAsync().Sync().Id;
+            Movie lastestMovie = Config.Client.GetMovieLatestAsync().Sync();
+            int latestChanged = lastestMovie.Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-13);
@@ -355,7 +379,7 @@ namespace TMDbLibTests
             higher = higher.AddDays(1);
 
             foreach (Change change in respRange)
-                foreach (ChangeItem changeItem in change.Items)
+                foreach (ChangeItemBase changeItem in change.Items)
                 {
                     DateTime date = changeItem.Time;
                     Assert.True(lower <= date);
@@ -377,32 +401,103 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestMoviesList()
+        public void TestMoviesPopularList()
         {
-            //GetMovieListAsync(MovieListType type, string language, int page = -1)
-            foreach (MovieListType type in Enum.GetValues(typeof(MovieListType)).OfType<MovieListType>())
-            {
-                SearchContainer<MovieResult> list = Config.Client.GetMovieListAsync(type).Result;
+            SearchContainer<SearchMovie> list = Config.Client.GetMoviePopularListAsync().Result;
 
-                Assert.NotNull(list);
-                Assert.True(list.Results.Count > 0);
-                Assert.Equal(1, list.Page);
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
 
-                SearchContainer<MovieResult> listPage2 = Config.Client.GetMovieListAsync(type, 2).Result;
+            SearchContainer<SearchMovie> listPage2 = Config.Client.GetMoviePopularListAsync(page: 2).Result;
 
-                Assert.NotNull(listPage2);
-                Assert.True(listPage2.Results.Count > 0);
-                Assert.Equal(2, listPage2.Page);
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
 
-                SearchContainer<MovieResult> listDe = Config.Client.GetMovieListAsync(type, "de").Result;
+            SearchContainer<SearchMovie> listDe = Config.Client.GetMoviePopularListAsync("de").Result;
 
-                Assert.NotNull(listDe);
-                Assert.True(listDe.Results.Count > 0);
-                Assert.Equal(1, listDe.Page);
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
 
-                // At least one title should differ
-                Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
-            }
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+        }
+
+        [Fact]
+        public void TestMoviesTopRatedList()
+        {
+            SearchContainer<SearchMovie> list = Config.Client.GetMovieTopRatedListAsync().Result;
+
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
+
+            SearchContainer<SearchMovie> listPage2 = Config.Client.GetMovieTopRatedListAsync(page: 2).Result;
+
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
+
+            SearchContainer<SearchMovie> listDe = Config.Client.GetMovieTopRatedListAsync("de").Result;
+
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
+
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+        }
+
+        [Fact]
+        public void TestMoviesNowPlayingList()
+        {
+            SearchContainerWithDates<SearchMovie> list = Config.Client.GetMovieNowPlayingListAsync().Result;
+
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
+
+            SearchContainerWithDates<SearchMovie> listPage2 = Config.Client.GetMovieNowPlayingListAsync(page: 2).Result;
+
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
+
+            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieNowPlayingListAsync("de").Result;
+
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
+
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+        }
+
+        [Fact]
+        public void TestMoviesUpcomingList()
+        {
+            SearchContainerWithDates<SearchMovie> list = Config.Client.GetMovieUpcomingListAsync().Result;
+
+            Assert.NotNull(list);
+            Assert.True(list.Results.Count > 0);
+            Assert.Equal(1, list.Page);
+
+            SearchContainerWithDates<SearchMovie> listPage2 = Config.Client.GetMovieUpcomingListAsync(page: 2).Result;
+
+            Assert.NotNull(listPage2);
+            Assert.True(listPage2.Results.Count > 0);
+            Assert.Equal(2, listPage2.Page);
+
+            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieUpcomingListAsync("de").Result;
+
+            Assert.NotNull(listDe);
+            Assert.True(listDe.Results.Count > 0);
+            Assert.Equal(1, listDe.Page);
+
+            // At least one title should differ
+            Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
         }
 
         [Fact]
@@ -558,6 +653,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetHtmlEncodedText()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+
             Movie item = Config.Client.GetMovieAsync(IdHelper.Furious7, "de").Result;
 
             Assert.NotNull(item);
@@ -568,6 +665,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGet()
         {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+
             Movie item = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(item);
@@ -617,6 +716,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesExtrasAccountState()
         {
+            // Ignore certain properties
+            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos");
+
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 

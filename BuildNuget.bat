@@ -1,4 +1,2 @@
-cd TMDbLib
-
-del /s /q bin\Release
-dotnet pack -o ..\Nuget -c Release
+del /s /q TMDbLib\bin\Release
+dotnet pack TMDbLib\ -o Nuget -c Release

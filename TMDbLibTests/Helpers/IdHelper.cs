@@ -16,12 +16,14 @@
 
         public const int TmdbTerminatorId = 218;
         public const string ImdbTerminatorId = "tt0088247";
-        
+
         // TV
         public const int BreakingBad = 1396;
         public const int BreakingBadSeason1Id = 3572;
         public const int BreakingBadSeason1Episode1Id = 62085;
         public const int BigBangTheory = 1418;
+        public const int BigBangTheorySeason1Episode1Id = 64766;
+        public const int BigBangTheorySeason1Episode2Id = 64777;
         public const int DoctorWho = 121;
         public const int House = 1408;
 
@@ -37,6 +39,7 @@
         // Persons
         public const int PersonPartialDate = 833;
         public const int BruceWillis = 62;
+        public const int HughLaurie = 41419;
         public const string ImdbBruceWillis = "nm0000246";
 
         // Collections

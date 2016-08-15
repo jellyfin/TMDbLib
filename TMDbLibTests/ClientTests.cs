@@ -59,16 +59,16 @@ namespace TMDbLibTests
         [Fact]
         public void ClientConstructorUrlTest()
         {
-            TMDbClient clientA = new TMDbClient(TestConfig.APIKey, false, "http://api.themoviedb.org");
+            TMDbClient clientA = new TMDbClient(TestConfig.APIKey, false, "http://api.themoviedb.org") { MaxRetryCount = 2 };
             clientA.GetConfig();
 
-            TMDbClient clientB = new TMDbClient(TestConfig.APIKey, true, "http://api.themoviedb.org");
+            TMDbClient clientB = new TMDbClient(TestConfig.APIKey, true, "http://api.themoviedb.org") { MaxRetryCount = 2 };
             clientB.GetConfig();
 
-            TMDbClient clientC = new TMDbClient(TestConfig.APIKey, false, "https://api.themoviedb.org");
+            TMDbClient clientC = new TMDbClient(TestConfig.APIKey, false, "https://api.themoviedb.org") { MaxRetryCount = 2 };
             clientC.GetConfig();
 
-            TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org");
+            TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org") { MaxRetryCount = 2 };
             clientD.GetConfig();
         }
 
@@ -83,9 +83,6 @@ namespace TMDbLibTests
         [Fact]
         public void ClientRateLimitTest()
         {
-            IgnoreMissingJson = true;
-            IgnoreMissingProperties = true;
-
             const int id = IdHelper.AGoodDayToDieHard;
 
             TMDbClient client = new TMDbClient(TestConfig.APIKey);

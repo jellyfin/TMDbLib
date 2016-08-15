@@ -14,7 +14,7 @@ namespace TMDbLib.Client
     {
         public async Task<Person> GetLatestPersonAsync()
         {
-            RestRequest req =  _client.Create("person/latest");
+            RestRequest req = _client.Create("person/latest");
 
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
@@ -68,9 +68,9 @@ namespace TMDbLib.Client
             return changesContainer.Changes;
         }
 
-        public async Task<ExternalIds> GetPersonExternalIdsAsync(int personId)
+        public async Task<ExternalIdsPerson> GetPersonExternalIdsAsync(int personId)
         {
-            return await GetPersonMethod<ExternalIds>(personId, PersonMethods.ExternalIds).ConfigureAwait(false);
+            return await GetPersonMethod<ExternalIdsPerson>(personId, PersonMethods.ExternalIds).ConfigureAwait(false);
         }
 
         public async Task<ProfileImages> GetPersonImagesAsync(int personId)
@@ -84,7 +84,7 @@ namespace TMDbLib.Client
             switch (type)
             {
                 case PersonListType.Popular:
-                    req =  _client.Create("person/popular");
+                    req = _client.Create("person/popular");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type));
@@ -104,7 +104,7 @@ namespace TMDbLib.Client
         private async Task<T> GetPersonMethod<T>(int personId, PersonMethods personMethod, string dateFormat = null, string country = null, string language = null,
                                         int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
         {
-            RestRequest req =  _client.Create("person/{personId}/{method}");
+            RestRequest req = _client.Create("person/{personId}/{method}");
             req.AddUrlSegment("personId", personId.ToString());
             req.AddUrlSegment("method", personMethod.GetDescription());
 
@@ -140,14 +140,14 @@ namespace TMDbLib.Client
             return await GetPersonMethod<MovieCredits>(personId, PersonMethods.MovieCredits, language: language).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImagesAsync(int personId, int page)
+        public async Task<SearchContainerWithId<TaggedImage>> GetPersonTaggedImagesAsync(int personId, int page)
         {
-            return await  GetPersonTaggedImagesAsync(personId, DefaultLanguage, page).ConfigureAwait(false);
+            return await GetPersonTaggedImagesAsync(personId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TaggedImage>> GetPersonTaggedImagesAsync(int personId, string language, int page)
+        public async Task<SearchContainerWithId<TaggedImage>> GetPersonTaggedImagesAsync(int personId, string language, int page)
         {
-            return await GetPersonMethod<SearchContainer<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page).ConfigureAwait(false);
+            return await GetPersonMethod<SearchContainerWithId<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page).ConfigureAwait(false);
         }
 
         public async Task<TvCredits> GetPersonTvCreditsAsync(int personId)

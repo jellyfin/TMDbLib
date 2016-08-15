@@ -48,10 +48,10 @@ namespace TMDbLibTests
         {
             TestHelpers.SearchPages(i => Config.Client.SearchCollectionAsync("007", i).Result);
 
-            SearchContainer<SearchResultCollection> result = Config.Client.SearchCollectionAsync("James Bond").Result;
+            SearchContainer<SearchCollection> result = Config.Client.SearchCollectionAsync("James Bond").Result;
 
             Assert.True(result.Results.Any());
-            SearchResultCollection item = result.Results.SingleOrDefault(s => s.Id == 645);
+            SearchCollection item = result.Results.SingleOrDefault(s => s.Id == 645);
 
             Assert.NotNull(item);
             Assert.Equal(645, item.Id);
@@ -170,16 +170,16 @@ namespace TMDbLibTests
         {
             TestHelpers.SearchPages(i => Config.Client.SearchMultiAsync("Arrow", i).Result);
 
-            SearchContainer<SearchMulti> result = Config.Client.SearchMultiAsync("Arrow").Result;
+            SearchContainer<SearchBase> result = Config.Client.SearchMultiAsync("Arrow").Result;
 
             Assert.True(result.Results.Any());
-            SearchMulti item = result.Results.SingleOrDefault(s => s.Id == 1412);
+            SearchTv item = result.Results.OfType<SearchTv>().SingleOrDefault(s => s.Id == 1412);
 
             Assert.NotNull(item);
             Assert.Equal(1412, item.Id);
             Assert.True(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
             Assert.Equal(new DateTime(2012, 10, 10), item.FirstAirDate);
-            Assert.Equal(MediaType.Tv, item.Type);
+            Assert.Equal(MediaType.Tv, item.MediaType);
             Assert.Equal("Arrow", item.Name);
             Assert.Equal("Arrow", item.OriginalName);
             Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);

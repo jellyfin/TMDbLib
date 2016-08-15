@@ -5,6 +5,7 @@ using Xunit;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -31,7 +32,7 @@ namespace TMDbLibTests
         public void TestPersonsExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
 
             Person person = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
@@ -50,7 +51,7 @@ namespace TMDbLibTests
         public void TestPersonsExtrasExclusive()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits", "external_ids / id", "images / id", "movie_credits / id", "tv_credits / id");
 
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetPersonAsync(id, extras).Result, IdHelper.BruceWillis);
         }
@@ -58,6 +59,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsExtrasAll()
         {
+            IgnoreMissingJson("external_ids / id", "images / id", "movie_credits / id", "tv_credits / id");
+            
             PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis, combinedEnum).Result;
 
@@ -67,6 +70,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetWithPartialDate()
         {
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
+            
             Person item = Config.Client.GetPersonAsync(IdHelper.PersonPartialDate).Result;
 
             Assert.NotNull(item);
@@ -77,11 +82,14 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGet()
         {
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
+            
             Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
             Assert.Equal(false, item.Adult);
             Assert.NotNull(item.Biography);
+            Assert.Equal(PersonGender.Male, item.Gender);
             Assert.Equal(new DateTime(1955, 3, 19), item.Birthday);
             Assert.False(item.Deathday.HasValue);
             Assert.Equal("http://www.b-willis.com/", item.Homepage);
@@ -171,16 +179,16 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetPersonExternalIds()
         {
-            ExternalIds item = Config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis).Result;
+            ExternalIdsPerson item = Config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
-
             Assert.Equal(IdHelper.BruceWillis, item.Id);
             Assert.Equal("nm0000246", item.ImdbId);
             Assert.Equal("/m/0h7pj", item.FreebaseMid);
             Assert.Equal("/en/bruce_willis", item.FreebaseId);
-            Assert.Null(item.TvdbId);
             Assert.Equal("10183", item.TvrageId);
+            Assert.Null(item.FacebookId);
+            Assert.Null(item.TwitterId);
         }
 
         [Fact]
@@ -223,9 +231,12 @@ namespace TMDbLibTests
         [Fact]
         public void TestPersonsGetPersonChanges()
         {
-            //GetPersonChangesAsync(int id, DateTime? startDate = null, DateTime? endDate = null)
+            // Not all ChangeItem's have an iso_639_1
+            IgnoreMissingJson(" / iso_639_1");
+            
             // FindAsync latest changed person
-            int latestChanged = Config.Client.GetChangesPeopleAsync().Sync().Results.First().Id;
+            SearchContainer<ChangesListItem> latestChanges = Config.Client.GetChangesPeopleAsync().Sync();
+            int latestChanged = latestChanges.Results.Last().Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-14);
@@ -240,7 +251,7 @@ namespace TMDbLibTests
             higher = higher.AddDays(1);
 
             foreach (Change change in respRange)
-                foreach (ChangeItem changeItem in change.Items)
+                foreach (ChangeItemBase changeItem in change.Items)
                 {
                     DateTime date = changeItem.Time;
                     Assert.True(lower <= date);
@@ -264,7 +275,7 @@ namespace TMDbLibTests
             // Test image url generator
             TestImagesHelpers.TestImages(Config, images);
 
-            ProfileImage image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
+            ImageData image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
 
             Assert.NotNull(image);
             Assert.True(Math.Abs(0.666666666666667 - image.AspectRatio) < double.Epsilon);
@@ -305,25 +316,28 @@ namespace TMDbLibTests
             Assert.Equal(MediaType.Movie, image.MediaType);
 
             Assert.NotNull(image.Media);
-            Assert.Equal(false, image.Media.Adult);
-            Assert.True(TestImagesHelpers.TestImagePath(image.Media.BackdropPath), "image.Media.BackdropPath was not a valid image path, was: " + image.Media.BackdropPath);
-            Assert.Equal(187, image.Media.Id);
-            Assert.Equal("en", image.Media.OriginalLanguage);
-            Assert.Equal("Sin City", image.Media.OriginalTitle);
-            Assert.Equal("Welcome to Sin City. This town beckons to the tough, the corrupt, the brokenhearted. Some call it dark… Hard-boiled. Then there are those who call it home — Crooked cops, sexy dames, desperate vigilantes. Some are seeking revenge, others lust after redemption, and then there are those hoping for a little of both. A universe of unlikely and reluctant heroes still trying to do the right thing in a city that refuses to care.", image.Media.Overview);
-            Assert.Equal(new DateTime(2005, 3, 31), image.Media.ReleaseDate);
-            Assert.True(TestImagesHelpers.TestImagePath(image.Media.PosterPath), "image.Media.PosterPath was not a valid image path, was: " + image.Media.PosterPath);
-            Assert.True(image.Media.Popularity > 0);
-            Assert.Equal("Sin City", image.Media.Title);
-            Assert.Equal(false, image.Media.Video);
-            Assert.True(image.Media.VoteAverage > 0);
-            Assert.True(image.Media.VoteCount > 0);
+            Assert.IsType<SearchMovie>(image.Media);
 
-            Assert.NotNull(image.Media.GenreIds);
-            Assert.Equal(3, image.Media.GenreIds.Count);
-            Assert.True(image.Media.GenreIds.Contains(28));
-            Assert.True(image.Media.GenreIds.Contains(53));
-            Assert.True(image.Media.GenreIds.Contains(80));
+            SearchMovie mediaBase = (SearchMovie)image.Media;
+            Assert.Equal(false, mediaBase.Adult);
+            Assert.True(TestImagesHelpers.TestImagePath(mediaBase.BackdropPath), "image.Media.BackdropPath was not a valid image path, was: " + mediaBase.BackdropPath);
+            Assert.Equal(187, mediaBase.Id);
+            Assert.Equal("en", mediaBase.OriginalLanguage);
+            Assert.Equal("Sin City", mediaBase.OriginalTitle);
+            Assert.Equal("Welcome to Sin City. This town beckons to the tough, the corrupt, the brokenhearted. Some call it dark… Hard-boiled. Then there are those who call it home — Crooked cops, sexy dames, desperate vigilantes. Some are seeking revenge, others lust after redemption, and then there are those hoping for a little of both. A universe of unlikely and reluctant heroes still trying to do the right thing in a city that refuses to care.", mediaBase.Overview);
+            Assert.Equal(new DateTime(2005, 3, 31), mediaBase.ReleaseDate);
+            Assert.True(TestImagesHelpers.TestImagePath(mediaBase.PosterPath), "image.Media.PosterPath was not a valid image path, was: " + mediaBase.PosterPath);
+            Assert.True(mediaBase.Popularity > 0);
+            Assert.Equal("Sin City", mediaBase.Title);
+            Assert.Equal(false, mediaBase.Video);
+            Assert.True(mediaBase.VoteAverage > 0);
+            Assert.True(mediaBase.VoteCount > 0);
+
+            Assert.NotNull(mediaBase.GenreIds);
+            Assert.Equal(3, mediaBase.GenreIds.Count);
+            Assert.True(mediaBase.GenreIds.Contains(28));
+            Assert.True(mediaBase.GenreIds.Contains(53));
+            Assert.True(mediaBase.GenreIds.Contains(80));
         }
 
         [Fact]
@@ -357,6 +371,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestGetLatestPerson()
         {
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
+            
             Person item = Config.Client.GetLatestPersonAsync().Sync();
             Assert.NotNull(item);
         }

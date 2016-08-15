@@ -9,6 +9,7 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
 using Credits = TMDbLib.Objects.Movies.Credits;
@@ -34,15 +35,7 @@ namespace TMDbLib.Client
 
             RestResponse<AccountState> response = await req.ExecuteGet<AccountState>().ConfigureAwait(false);
 
-            AccountState item = await response.GetDataObject().ConfigureAwait(false);
-
-            // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-            if (item != null)
-            {
-                CustomDeserialization.DeserializeAccountStatesRating(item, await response.GetContent().ConfigureAwait(false));
-            }
-
-            return item;
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId)
@@ -128,15 +121,11 @@ namespace TMDbLib.Client
             if (item.Translations != null)
                 item.Translations.Id = item.Id;
 
+            if (item.AccountStates != null)
+                item.AccountStates.Id = item.Id;
+
             // Overview is the only field that is HTML encoded from the source.
             item.Overview = WebUtility.HtmlDecode(item.Overview);
-
-            if (item.AccountStates != null)
-            {
-                item.AccountStates.Id = item.Id;
-                // Do some custom deserialization, since TMDb uses a property that changes type we can't use automatic deserialization
-                CustomDeserialization.DeserializeAccountStatesRating(item.AccountStates, await response.GetContent().ConfigureAwait(false));
-            }
 
             return item;
         }
@@ -181,53 +170,14 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieListAsync(MovieListType type, int page = 0)
-        {
-            return await GetMovieListAsync(type, DefaultLanguage, page).ConfigureAwait(false);
-        }
-
-        public async Task<SearchContainer<MovieResult>> GetMovieListAsync(MovieListType type, string language, int page = 0)
-        {
-            RestRequest req;
-            switch (type)
-            {
-                case MovieListType.NowPlaying:
-                    req = _client.Create("movie/now_playing");
-                    break;
-                case MovieListType.Popular:
-                    req = _client.Create("movie/popular");
-                    break;
-                case MovieListType.TopRated:
-                    req = _client.Create("movie/top_rated");
-                    break;
-                case MovieListType.Upcoming:
-                    req = _client.Create("movie/upcoming");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(type));
-            }
-
-            if (page >= 1)
-                req.AddParameter("page", page.ToString());
-            if (language != null)
-                req.AddParameter("language", language);
-
-            // TODO: Dateformat?
-            //req.DateFormat = "yyyy-MM-dd";
-
-            RestResponse<SearchContainer<MovieResult>> resp = await req.ExecuteGet<SearchContainer<MovieResult>>().ConfigureAwait(false);
-
-            return resp;
-        }
-
-        public async Task<SearchContainer<ListResult>> GetMovieListsAsync(int movieId, int page = 0)
+        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, int page = 0)
         {
             return await GetMovieListsAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0)
+        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0)
         {
-            return await GetMovieMethod<SearchContainer<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language).ConfigureAwait(false);
+            return await GetMovieMethod<SearchContainerWithId<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language).ConfigureAwait(false);
         }
 
         private async Task<T> GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
@@ -256,6 +206,34 @@ namespace TMDbLib.Client
             return response;
         }
 
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieNowPlayingListAsync(string language = null, int page = 0)
+        {
+            RestRequest req = _client.Create("movie/now_playing");
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
+                
+            RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>().ConfigureAwait(false);
+
+            return resp;
+        }
+
+        public async Task<SearchContainer<SearchMovie>> GetMoviePopularListAsync(string language = null, int page = 0)
+        {
+            RestRequest req = _client.Create("movie/popular");
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
+
+            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
+
+            return resp;
+        }
+
         public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDatesAsync(int movieId)
         {
             return await GetMovieMethod<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates).ConfigureAwait(false);
@@ -266,29 +244,57 @@ namespace TMDbLib.Client
             return await GetMovieMethod<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<Review>> GetMovieReviewsAsync(int movieId, int page = 0)
+        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, int page = 0)
         {
             return await GetMovieReviewsAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<Review>> GetMovieReviewsAsync(int movieId, string language, int page = 0)
+        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, string language, int page = 0)
         {
-            return await GetMovieMethod<SearchContainer<Review>>(movieId, MovieMethods.Reviews, page: page, language: language).ConfigureAwait(false);
+            return await GetMovieMethod<SearchContainerWithId<ReviewBase>>(movieId, MovieMethods.Reviews, page: page, language: language).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieSimilarAsync(int movieId, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, int page = 0)
         {
             return await GetMovieSimilarAsync(movieId, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<MovieResult>> GetMovieSimilarAsync(int movieId, string language, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, string language, int page = 0)
         {
-            return await GetMovieMethod<SearchContainer<MovieResult>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
+            return await GetMovieMethod<SearchContainer<SearchMovie>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchMovie>> GetMovieTopRatedListAsync(string language = null, int page = 0)
+        {
+            RestRequest req = _client.Create("movie/top_rated");
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
+
+            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
+
+            return resp;
         }
 
         public async Task<TranslationsContainer> GetMovieTranslationsAsync(int movieId)
         {
             return await GetMovieMethod<TranslationsContainer>(movieId, MovieMethods.Translations).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieUpcomingListAsync(string language = null, int page = 0)
+        {
+            RestRequest req = _client.Create("movie/upcoming");
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
+
+            RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>().ConfigureAwait(false);
+
+            return resp;
         }
 
         public async Task<ResultContainer<Video>> GetMovieVideosAsync(int movieId)

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Xunit;
 using TMDbLib.Objects.Credit;
+using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -9,23 +10,16 @@ namespace TMDbLibTests
 {
     public class ClientCreditTests : TestBase
     {
-        private readonly TestConfig _config;
-
-        public ClientCreditTests()
-        {
-            _config = new TestConfig();
-        }
-
         [Fact]
-        public void TestGetCreditBase()
+        public void TestGetCreditTv()
         {
-            Credit result = _config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
 
             Assert.NotNull(result);
-            Assert.Equal("cast", result.CreditType);
+            Assert.Equal(CreditType.Cast, result.CreditType);
             Assert.Equal("Actors", result.Department);
             Assert.Equal("Actor", result.Job);
-            Assert.Equal("tv", result.MediaType);
+            Assert.Equal(MediaType.Tv, result.MediaType);
             Assert.Equal(IdHelper.BruceWillisMiamiVice, result.Id);
 
             Assert.NotNull(result.Person);
@@ -42,7 +36,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestGetCreditEpisode()
         {
-            Credit result = _config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
 
             Assert.NotNull(result);
             Assert.NotNull(result.Media);
@@ -62,7 +56,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestGetCreditSeasons()
         {
-            Credit result = _config.Client.GetCreditsAsync(IdHelper.HughLaurieHouse).Result;
+            Credit result = Config.Client.GetCreditsAsync(IdHelper.HughLaurieHouse).Result;
 
             Assert.NotNull(result);
             Assert.NotNull(result.Media);

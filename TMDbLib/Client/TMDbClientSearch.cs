@@ -7,14 +7,14 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, int page = 0)
+        public async Task<SearchContainer<SearchCollection>> SearchCollectionAsync(string query, int page = 0)
         {
             return await SearchCollectionAsync(query, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchResultCollection>> SearchCollectionAsync(string query, string language, int page = 0)
+        public async Task<SearchContainer<SearchCollection>> SearchCollectionAsync(string query, string language, int page = 0)
         {
-            return await SearchMethod<SearchContainer<SearchResultCollection>>("collection", query, page, language).ConfigureAwait(false);
+            return await SearchMethod<SearchContainer<SearchCollection>>("collection", query, page, language).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchCompany>> SearchCompanyAsync(string query, int page = 0)
@@ -68,14 +68,14 @@ namespace TMDbLib.Client
             return await SearchMethod<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd").ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMulti>> SearchMultiAsync(string query, int page = 0, bool includeAdult = false, int year = 0)
+        public async Task<SearchContainer<SearchBase>> SearchMultiAsync(string query, int page = 0, bool includeAdult = false, int year = 0)
         {
             return await SearchMultiAsync(query, DefaultLanguage, page, includeAdult, year).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMulti>> SearchMultiAsync(string query, string language, int page = 0, bool includeAdult = false, int year = 0)
+        public async Task<SearchContainer<SearchBase>> SearchMultiAsync(string query, string language, int page = 0, bool includeAdult = false, int year = 0)
         {
-            return await SearchMethod<SearchContainer<SearchMulti>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd").ConfigureAwait(false);
+            return await SearchMethod<SearchContainer<SearchBase>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd").ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchPerson>> SearchPersonAsync(string query, int page = 0, bool includeAdult = false)

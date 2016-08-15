@@ -13,12 +13,6 @@ namespace TMDbLib.Objects.General
         [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonProperty("imdb_id")]
-        public string ImdbId { get; set; }
-
-        [JsonProperty("tvdb_id")]
-        public string TvdbId { get; set; }
-
         [JsonProperty("tvrage_id")]
         public string TvrageId { get; set; }
     }

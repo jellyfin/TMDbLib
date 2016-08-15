@@ -2,18 +2,19 @@
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
+using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
 
 namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null)
+        public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null)
         {
             return await GetGenreMoviesAsync(genreId, DefaultLanguage, page, includeAllMovies).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<MovieResult>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null)
+        public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null)
         {
             RestRequest req = _client.Create("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
@@ -27,7 +28,7 @@ namespace TMDbLib.Client
             if (includeAllMovies.HasValue)
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
-            RestResponse<SearchContainerWithId<MovieResult>> resp = await req.ExecuteGet<SearchContainerWithId<MovieResult>>().ConfigureAwait(false);
+            RestResponse<SearchContainerWithId<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithId<SearchMovie>>().ConfigureAwait(false);
 
             return resp;
         }

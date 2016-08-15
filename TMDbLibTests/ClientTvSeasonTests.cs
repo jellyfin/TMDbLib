@@ -6,7 +6,6 @@ using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
@@ -34,8 +33,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasNone()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / images", " / account_states", " / credits", " / external_ids", " / images", " / videos");
 
             TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
 
@@ -51,8 +53,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasAccountState()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos", "account_states / id");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -76,6 +81,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasAll()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
+            IgnoreMissingJson("images / id", "account_states / id", "credits / id", "external_ids / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
@@ -92,8 +102,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonExtrasExclusive()
         {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id");
+
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / images", " / account_states", " / external_ids", " / images", " / videos", " / credits", "images / id", "external_ids / id", "videos / id", "credits / id", "account_states / id");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvSeasonAsync(id, 1, extras).Result, IdHelper.BreakingBad);
@@ -125,12 +138,12 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSeasonSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = Config.Client.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1).Result;
+            ExternalIdsTvSeason externalIds = Config.Client.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1).Result;
+
             Assert.NotNull(externalIds);
             Assert.Equal(3572, externalIds.Id);
             Assert.Equal("/en/breaking_bad_season_1", externalIds.FreebaseId);
             Assert.Equal("/m/05yy27m", externalIds.FreebaseMid);
-            Assert.Null(externalIds.ImdbId);
             Assert.Null(externalIds.TvrageId);
             Assert.Equal("30272", externalIds.TvdbId);
         }
@@ -152,16 +165,6 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestTvSeasonEpisodeCount()
-        {
-            TvSeason season = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.NotNull(season);
-            Assert.NotNull(season.Episodes);
-
-            Assert.Equal(season.Episodes.Count, season.EpisodeCount);
-        }
-
-        [Fact]
         public void TestTvSeasonAccountStateRatingSet()
         {
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -175,7 +178,7 @@ namespace TMDbLibTests
             Thread.Sleep(2000);
 
             // Fetch out the seasons state
-            ResultContainer<TvEpisodeAccountState> state = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
+            ResultContainer<TvEpisodeAccountStateWithNumber> state = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
             Assert.NotNull(state);
 
             Assert.True(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);

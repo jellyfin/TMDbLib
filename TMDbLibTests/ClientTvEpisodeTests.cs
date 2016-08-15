@@ -6,12 +6,10 @@ using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Cast = TMDbLib.Objects.TvShows.Cast;
-using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests
 {
@@ -35,7 +33,7 @@ namespace TMDbLibTests
         public void TestTvEpisodeExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos");
 
             TvEpisode tvEpisode = Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1).Result;
 
@@ -52,7 +50,7 @@ namespace TMDbLibTests
         public void TestTvEpisodeExtrasAccountState()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson = true;
+            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -76,6 +74,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasAll()
         {
+            IgnoreMissingJson("credits / id", "external_ids / id", "images / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
@@ -96,6 +96,8 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasExclusive()
         {
+            IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos", "credits / id", "external_ids / id", "images / id", "videos / id");
+
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvEpisodeAsync(id, 1, 1, extras).Result, IdHelper.BreakingBad);
         }
@@ -103,30 +105,39 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeSeparateExtrasCredits()
         {
-            Credits credits = Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            CreditsWithGuestStars credits = Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1).Result;
             Assert.NotNull(credits);
-            Assert.NotNull(credits.Cast);
-            Assert.Equal("Walter White", credits.Cast[0].Character);
-            Assert.Equal("52542282760ee313280017f9", credits.Cast[0].CreditId);
-            Assert.Equal(17419, credits.Cast[0].Id);
-            Assert.Equal("Bryan Cranston", credits.Cast[0].Name);
-            Assert.NotNull(credits.Cast[0].ProfilePath);
-            Assert.Equal(0, credits.Cast[0].Order);
 
-            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1280071);
-            Assert.NotNull(crewPersonId);
+            Cast guestStarItem = credits.GuestStars.FirstOrDefault(s => s.Id == 92495);
+            Assert.Equal(92495, guestStarItem.Id);
+            Assert.Equal("Emilio Koyama", guestStarItem.Character);
+            Assert.Equal("52542273760ee3132800068e", guestStarItem.CreditId);
+            Assert.Equal("John Koyama", guestStarItem.Name);
+            Assert.NotNull(guestStarItem.ProfilePath);
+            Assert.Equal(1, guestStarItem.Order);
 
-            Assert.Equal(1280071, crewPersonId.Id);
-            Assert.Equal("Editing", crewPersonId.Department);
-            Assert.Equal("Lynne Willingham", crewPersonId.Name);
-            Assert.Equal("Editor", crewPersonId.Job);
-            Assert.Null(crewPersonId.ProfilePath);
+            Cast castItem = credits.Cast.FirstOrDefault(s => s.Id == 17419);
+            Assert.Equal(17419, castItem.Id);
+            Assert.Equal("Walter White", castItem.Character);
+            Assert.Equal("52542282760ee313280017f9", castItem.CreditId);
+            Assert.Equal("Bryan Cranston", castItem.Name);
+            Assert.NotNull(castItem.ProfilePath);
+            Assert.Equal(0, castItem.Order);
+
+            Crew crewItem = credits.Crew.FirstOrDefault(s => s.Id == 1280071);
+            Assert.NotNull(crewItem);
+            Assert.Equal(1280071, crewItem.Id);
+            Assert.Equal("Editing", crewItem.Department);
+            Assert.Equal("Lynne Willingham", crewItem.Name);
+            Assert.Equal("Editor", crewItem.Job);
+            Assert.Null(crewItem.ProfilePath);
         }
 
         [Fact]
         public void TestTvEpisodeSeparateExtrasExternalIds()
         {
-            ExternalIds externalIds = Config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1).Result;
+            ExternalIdsTvEpisode externalIds = Config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1).Result;
+
             Assert.NotNull(externalIds);
             Assert.True(string.IsNullOrEmpty(externalIds.FreebaseId));
             Assert.Equal(62085, externalIds.Id);

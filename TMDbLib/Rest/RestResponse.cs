@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -9,45 +10,49 @@ namespace TMDbLib.Rest
 {
     internal class RestResponse
     {
-        protected readonly HttpResponseMessage _response;
+        protected readonly HttpResponseMessage Response;
 
         public RestResponse(HttpResponseMessage response)
         {
-            _response = response;
+            Response = response;
         }
 
-        public HttpStatusCode StatusCode => _response.StatusCode;
+        public HttpStatusCode StatusCode => Response.StatusCode;
 
         public async Task<string> GetContent()
         {
-            return await _response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return await Response.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
         public string GetHeader(string name, string @default = null)
         {
-            return _response.Headers.GetValues(name).FirstOrDefault() ?? @default;
+            return Response.Headers.GetValues(name).FirstOrDefault() ?? @default;
         }
     }
-    
+
     internal class RestResponse<T> : RestResponse
     {
-        public RestResponse(HttpResponseMessage response)
+        private readonly RestClient _client;
+
+        public RestResponse(HttpResponseMessage response, RestClient client)
             : base(response)
         {
+            _client = client;
         }
 
         public async Task<T> GetDataObject()
         {
-            string content = await _response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            Stream content = await Response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<T>(content);
+            using (StreamReader sr = new StreamReader(content, _client.Encoding))
+            using (JsonTextReader tr = new JsonTextReader(sr))
+                return _client.Serializer.Deserialize<T>(tr);
         }
 
         public static implicit operator T(RestResponse<T> response)
         {
             try
             {
-
                 return response.GetDataObject().Result;
             }
             catch (AggregateException ex)

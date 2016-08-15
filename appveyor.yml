@@ -1,0 +1,18 @@
+version: 0.9.2.{build}-alpha
+build_script:
+- cmd: >-
+    dotnet restore TMDbLib\
+
+    dotnet restore TestApplication\
+
+
+    dotnet build TMDbLib\ -c Release
+
+    dotnet build TestApplication\ -c Release
+notifications:
+- provider: Email
+  to:
+  - michael@mbwarez.dk
+  on_build_success: false
+  on_build_failure: false
+  on_build_status_changed: true

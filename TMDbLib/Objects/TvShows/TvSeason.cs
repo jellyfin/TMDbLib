@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.TvShows
 {
     public class TvSeason
     {
         [JsonProperty("account_states")]
-        public ResultContainer<TvEpisodeAccountState> AccountStates { get; set; }
+        public ResultContainer<TvEpisodeAccountStateWithNumber> AccountStates { get; set; }
 
         [JsonProperty("air_date")]
         public DateTime? AirDate { get; set; }
@@ -17,14 +17,11 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("credits")]
         public Credits Credits { get; set; }
 
-        [JsonProperty("episode_count")]
-        public int EpisodeCount { get; set; }
-
         [JsonProperty("episodes")]
-        public List<TvEpisode> Episodes { get; set; }
+        public List<TvSeasonEpisode> Episodes { get; set; }
 
         [JsonProperty("external_ids")]
-        public ExternalIds ExternalIds { get; set; }
+        public ExternalIdsTvSeason ExternalIds { get; set; }
 
         /// <summary>
         /// Object Id, will only be populated when explicitly getting episode details
@@ -33,7 +30,7 @@ namespace TMDbLib.Objects.TvShows
         public int? Id { get; set; }
 
         [JsonProperty("images")]
-        public Images Images { get; set; }
+        public PosterImages Images { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
