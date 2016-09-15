@@ -204,7 +204,14 @@ namespace TMDbLib.Rest
             do
             {
                 HttpRequestMessage req = PrepRequest(method);
-                HttpResponseMessage resp = await new HttpClient().SendAsync(req).ConfigureAwait(false);
+                HttpClientHandler handler = new HttpClientHandler();
+
+                //Added to support proxy during requests to TMDb API
+                //Proxy is optional, so we only use it if set into the RestClient
+                if (_client.Proxy != null)
+                    handler.Proxy = _client.Proxy;
+
+                HttpResponseMessage resp = await new HttpClient(handler).SendAsync(req).ConfigureAwait(false);
 
                 if (resp.StatusCode == (HttpStatusCode)429)
                 {
