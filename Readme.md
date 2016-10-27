@@ -76,6 +76,10 @@ Tips
 Changelog
 ---------
 
+**1.0.0**
+
+No changes. We finally moved to the first stable release in over a year. Compare to `0.8.3`, there will be some breaking changes - but most should be trivial to fix.
+
 **0.9.6-alpha**
 Changes:
    - Added UAP10.0 as a target
