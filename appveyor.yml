@@ -19,6 +19,7 @@ build_script:
     # Tests
 
     dotnet build -c Release TMDbLibTests
+test: off
 artifacts:
 - path: Nuget\*.nupkg
 deploy:
