@@ -2,6 +2,5 @@
 {
     struct EnumTestStruct
     {
-        public int A;
     }
 }
