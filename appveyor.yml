@@ -19,8 +19,6 @@ build_script:
     # Tests
 
     dotnet build -c Release TMDbLibTests
-test_script:
-- cmd: dotnet test -c Release TMDbLibTests
 artifacts:
 - path: Nuget\*.nupkg
 deploy:
