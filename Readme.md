@@ -18,9 +18,7 @@ Index
 - [Changelog](#changelog)
 
 Examples
---------
-
-Note: All examples are based on the still-unreleased `0.9.2.0-alpha`. 
+-------- 
 
 Simple example, getting the basic info for "A good day to die hard".
 

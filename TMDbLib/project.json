@@ -1,9 +1,14 @@
 ﻿{
   "version": "1.0.0",
   "title": "TMDb Library",
-  "authors": [ "LordMike", "Naliath" ],
+  "authors": [
+    "LordMike",
+    "Naliath"
+  ],
   "packOptions": {
-    "owners": [ "LordMike" ],
+    "owners": [
+      "LordMike"
+    ],
     "requireLicenseAcceptance": false,
     "projectUrl": "https://github.com/LordMike/TMDbLib",
     "description": "TMDb Library wrapper for The Movie Database's API.",
@@ -12,22 +17,14 @@
       "url": "https://github.com/LordMike/TMDbLib"
     }
   },
-
   "dependencies": {
     "Newtonsoft.Json": "9.0.1"
   },
-
   "frameworks": {
     "netstandard1.0": {
       "imports": "dnxcore50",
       "dependencies": {
         "System.Net.Http": "4.0.0"
-      }
-    },
-    "netcoreapp1.0": {
-      "imports": "dnxcore50",
-      "dependencies": {
-        "NETStandard.Library": "1.6.0"
       }
     },
     "net45": {
