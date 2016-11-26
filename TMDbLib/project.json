@@ -21,12 +21,6 @@
     "Newtonsoft.Json": "9.0.1"
   },
   "frameworks": {
-    "netstandard1.0": {
-      "imports": "dnxcore50",
-      "dependencies": {
-        "System.Net.Http": "4.0.0"
-      }
-    },
     "net45": {
       "dependencies": {
         "System.Net.Http": "4.0.0"
@@ -47,11 +41,17 @@
         "System.Net.Http": "4.0.0"
       }
     },
+    "netstandard1.0": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "System.Net.Http": "4.0.0"
+      }
+    },
     "uap10.0": {
       "dependencies": {
-        "System.Net.Http": "4.0.0",
+        "System.Dynamic.Runtime": "4.0.11",
         "System.Linq": "4.1.0",
-        "System.Dynamic.Runtime": "4.0.11"
+        "System.Net.Http": "4.0.0"
       }
     }
   }
