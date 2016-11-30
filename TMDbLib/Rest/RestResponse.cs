@@ -19,9 +19,9 @@ namespace TMDbLib.Rest
 
         public HttpStatusCode StatusCode => Response.StatusCode;
 
-        public async Task<string> GetContent()
+        public async Task<Stream> GetContent()
         {
-            return await Response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return await Response.Content.ReadAsStreamAsync().ConfigureAwait(false);
         }
 
         public string GetHeader(string name, string @default = null)
@@ -42,7 +42,7 @@ namespace TMDbLib.Rest
 
         public async Task<T> GetDataObject()
         {
-            Stream content = await Response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            Stream content = await GetContent().ConfigureAwait(false);
 
             using (StreamReader sr = new StreamReader(content, _client.Encoding))
             using (JsonTextReader tr = new JsonTextReader(sr))
