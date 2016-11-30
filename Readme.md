@@ -13,9 +13,15 @@ Index
 ---------
 
 - [Nuget](#nuget)
+- [Documentation](#documentation)
 - [Examples](#examples)
 - [Tips](#tips)
 - [Changelog](#changelog)
+
+Documentation
+-------- 
+
+Most of the library is self-explaining, and closely follows the possibilities at the official TMDb documentation site: [developers.themoviedb.org](https://developers.themoviedb.org/3/getting-started).
 
 Examples
 -------- 
@@ -133,18 +139,3 @@ Changes:
  - Available on Nuget
  - Basic API design with a great potential for refactoring (be warned on design changes)
  - Supports most (if not all) read-only operations (login sessions not supported - yet).
-
-Apiary
-------
-
-TMDb have provided an Apiary interface. Apiary is an API documentation service, which also provides a nifty feature that proxies a service through them. It then allows them to log all calls you make to TMDb, and get them shown at Apiary for debugging purposes. This is especially handy if you've set up a client on a server, where it isn't possible to debug web requests.
-
-I use it to debug the library. It ***shouldn't be necesary for you*** to use Apiary for this library, as the library *should* work.
-
-To use this, create an account with Apiary, and view TMDb's API (http://docs.themoviedb.apiary.io/). Open the inspector tab, and note down your personal proxy URL. It looks like this: *http://private-____-themoviedb.apiary.io*.
-
-Instantiate the client like this:
-
-    TMDbClient client = new TMDbClient("APIKey", false, "private-____-themoviedb.apiary.io");
-
-This instructs the client to use the above domain as its base URL. The 2nd parameter (boolean) is whether or not to use SSL.
