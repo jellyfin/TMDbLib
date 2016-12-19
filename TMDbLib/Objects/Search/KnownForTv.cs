@@ -1,11 +1,17 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Search
 {
     public class KnownForTv : KnownForBase
     {
+        public KnownForTv()
+        {
+            MediaType = MediaType.Tv;
+        }
+
         [JsonProperty("first_air_date")]
         public DateTime? FirstAirDate { get; set; }
 
