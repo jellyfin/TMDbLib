@@ -29,6 +29,7 @@ namespace TMDbLib.Client
             _serializer.Converters.Add(new AccountStateConverter());
             _serializer.Converters.Add(new KnownForConverter());
             _serializer.Converters.Add(new SearchBaseConverter());
+            _serializer.Converters.Add(new TaggedImageConverter());
 
             Initialize(baseUrl, useSsl, apiKey);
         }
