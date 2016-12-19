@@ -16,12 +16,14 @@ namespace TMDbLibTests.UtilityTests
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new CustomDatetimeFormatConverter());
 
-            DateTime original = DateTime.UtcNow;
+            Token original = new Token();
+            original.ExpiresAt = DateTime.UtcNow.Date;
+            original.ExpiresAt = original.ExpiresAt.AddMilliseconds(-original.ExpiresAt.Millisecond);
 
             string json = JsonConvert.SerializeObject(original);
-            DateTime result = JsonConvert.DeserializeObject<DateTime>(json, settings);
+            Token result = JsonConvert.DeserializeObject<Token>(json, settings);
 
-            Assert.Equal(original, result);
+            Assert.Equal(original.ExpiresAt, result.ExpiresAt);
         }
 
         /// <summary>
