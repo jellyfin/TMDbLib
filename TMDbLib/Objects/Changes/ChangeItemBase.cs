@@ -4,7 +4,6 @@ using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes
 {
-    [JsonConverter(typeof(ChangeItemConverter))]
     public abstract class ChangeItemBase
     {
         [JsonProperty("action")]

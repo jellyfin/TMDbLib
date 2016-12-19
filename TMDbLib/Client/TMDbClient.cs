@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities.Converters;
 using ParameterType = TMDbLib.Rest.ParameterType;
 using RestClient = TMDbLib.Rest.RestClient;
 using RestRequest = TMDbLib.Rest.RestRequest;
@@ -24,6 +25,7 @@ namespace TMDbLib.Client
             DefaultCountry = null;
 
             _serializer = serializer ?? JsonSerializer.CreateDefault();
+            _serializer.Converters.Add(new ChangeItemConverter());
 
             Initialize(baseUrl, useSsl, apiKey);
         }
