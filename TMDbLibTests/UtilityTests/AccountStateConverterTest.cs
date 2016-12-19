@@ -1,7 +1,9 @@
 using System.Linq;
+using Newtonsoft.Json;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
+using TMDbLib.Utilities.Converters;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -10,6 +12,40 @@ namespace TMDbLibTests.UtilityTests
 {
     public class AccountStateConverterTest : TestBase
     {
+        [Fact]
+        public void AccountStateConverter_WithData()
+        {
+            // { "rated": { "value": 5 } }
+
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.Converters.Add(new AccountStateConverter());
+
+            AccountState original = new AccountState();
+            original.Rating = 5;
+
+            string json = JsonConvert.SerializeObject(original);
+            AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
+
+            Assert.Equal(original.Rating, result.Rating);
+        }
+
+        [Fact]
+        public void AccountStateConverter_WithoutData()
+        {
+            // { "rated": False }
+
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.Converters.Add(new AccountStateConverter());
+
+            AccountState original = new AccountState();
+            original.Rating = null;
+
+            string json = JsonConvert.SerializeObject(original);
+            AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
+
+            Assert.Equal(original.Rating, result.Rating);
+        }
+
         /// <summary>
         /// Tests the AccountStateConverter on the AccountState type
         /// </summary>
