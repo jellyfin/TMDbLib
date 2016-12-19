@@ -1,7 +1,10 @@
-﻿using TMDbLib.Utilities;
+﻿using Newtonsoft.Json;
+using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes
 {
+    [JsonConverter(typeof(EnumStringValueConverter))]
     public enum ChangeAction
     {
         Unknown,

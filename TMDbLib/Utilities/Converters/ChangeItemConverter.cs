@@ -54,7 +54,9 @@ namespace TMDbLib.Utilities.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            JToken jToken = JToken.FromObject(value);
+
+            serializer.Serialize(writer, jToken);
         }
     }
 }
