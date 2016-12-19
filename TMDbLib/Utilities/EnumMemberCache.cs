@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace TMDbLib.Utilities.Converters
+namespace TMDbLib.Utilities
 {
     internal static class EnumMemberCache
     {
@@ -20,8 +20,11 @@ namespace TMDbLib.Utilities.Converters
                 throw new ArgumentException();
 
             Dictionary<object, string> cache;
-            if (MemberCache.TryGetValue(type, out cache))
-                return cache;
+            lock (MemberCache)
+            {
+                if (MemberCache.TryGetValue(type, out cache))
+                    return cache;
+            }
 
             cache = new Dictionary<object, string>();
 
@@ -43,7 +46,8 @@ namespace TMDbLib.Utilities.Converters
                 }
             }
 
-            MemberCache[type] = cache;
+            lock (MemberCache)
+                MemberCache[type] = cache;
 
             return cache;
         }
