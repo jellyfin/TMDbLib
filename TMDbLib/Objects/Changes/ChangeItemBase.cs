@@ -1,6 +1,5 @@
 ﻿using System;
 using Newtonsoft.Json;
-using TMDbLib.Helpers;
 using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes

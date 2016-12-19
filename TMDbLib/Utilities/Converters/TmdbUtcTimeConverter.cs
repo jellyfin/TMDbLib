@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace TMDbLib.Helpers
+namespace TMDbLib.Utilities.Converters
 {
     public class TmdbUtcTimeConverter : DateTimeConverterBase
     {
