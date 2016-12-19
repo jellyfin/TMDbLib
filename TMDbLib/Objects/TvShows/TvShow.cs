@@ -5,6 +5,7 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.TvShows
 {

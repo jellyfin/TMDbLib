@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.People
 {
