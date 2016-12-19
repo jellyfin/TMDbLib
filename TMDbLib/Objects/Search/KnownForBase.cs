@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Search
 {
-    [JsonConverter(typeof(KnownForConverter))]
     public abstract class KnownForBase
     {
         [JsonProperty("backdrop_path")]

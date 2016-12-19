@@ -27,6 +27,7 @@ namespace TMDbLib.Client
             _serializer = serializer ?? JsonSerializer.CreateDefault();
             _serializer.Converters.Add(new ChangeItemConverter());
             _serializer.Converters.Add(new AccountStateConverter());
+            _serializer.Converters.Add(new KnownForConverter());
 
             Initialize(baseUrl, useSsl, apiKey);
         }
