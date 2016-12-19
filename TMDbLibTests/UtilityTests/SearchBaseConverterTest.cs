@@ -19,7 +19,7 @@ namespace TMDbLibTests.UtilityTests
             SearchMovie original = new SearchMovie();
             original.OriginalTitle = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             SearchMovie result = JsonConvert.DeserializeObject<SearchBase>(json, settings) as SearchMovie;
 
             Assert.NotNull(result);
@@ -36,7 +36,7 @@ namespace TMDbLibTests.UtilityTests
             SearchTv original = new SearchTv();
             original.OriginalName = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             SearchTv result = JsonConvert.DeserializeObject<SearchBase>(json, settings) as SearchTv;
 
             Assert.NotNull(result);
@@ -53,7 +53,7 @@ namespace TMDbLibTests.UtilityTests
             SearchPerson original = new SearchPerson();
             original.Name = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             SearchPerson result = JsonConvert.DeserializeObject<SearchBase>(json, settings) as SearchPerson;
 
             Assert.NotNull(result);

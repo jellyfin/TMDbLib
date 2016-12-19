@@ -23,7 +23,7 @@ namespace TMDbLibTests.UtilityTests
             original.MediaType = MediaType.Movie;
             original.Media = originalMedia;
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             TaggedImage result = JsonConvert.DeserializeObject<TaggedImage>(json, settings);
 
             Assert.NotNull(result);
@@ -48,7 +48,7 @@ namespace TMDbLibTests.UtilityTests
             original.MediaType = MediaType.Tv;
             original.Media = originalMedia;
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             TaggedImage result = JsonConvert.DeserializeObject<TaggedImage>(json, settings);
 
             Assert.NotNull(result);

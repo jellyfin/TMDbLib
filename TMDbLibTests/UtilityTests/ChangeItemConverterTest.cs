@@ -22,7 +22,7 @@ namespace TMDbLibTests.UtilityTests
             original.Iso_639_1 = "en";
             original.Value = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemAdded result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemAdded;
 
             Assert.NotNull(result);
@@ -39,7 +39,7 @@ namespace TMDbLibTests.UtilityTests
             ChangeItemCreated original = new ChangeItemCreated();
             original.Iso_639_1 = "en";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemCreated result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemCreated;
 
             Assert.NotNull(result);
@@ -56,7 +56,7 @@ namespace TMDbLibTests.UtilityTests
             original.Iso_639_1 = "en";
             original.OriginalValue = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemDeleted result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemDeleted;
 
             Assert.NotNull(result);
@@ -75,7 +75,7 @@ namespace TMDbLibTests.UtilityTests
             original.OriginalValue = "Hello world";
             original.Value = "Hello world 1234";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemUpdated result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemUpdated;
 
             Assert.NotNull(result);

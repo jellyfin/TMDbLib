@@ -31,7 +31,7 @@ namespace TMDbLibTests.UtilityTests
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new EnumStringValueConverter());
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             object result = JsonConvert.DeserializeObject(json, original.GetType(), settings);
 
             Assert.IsType(original.GetType(), result);

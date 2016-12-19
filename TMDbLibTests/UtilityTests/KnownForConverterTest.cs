@@ -21,7 +21,7 @@ namespace TMDbLibTests.UtilityTests
             KnownForMovie original = new KnownForMovie();
             original.OriginalTitle = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             KnownForMovie result = JsonConvert.DeserializeObject<KnownForBase>(json, settings) as KnownForMovie;
 
             Assert.NotNull(result);
@@ -38,7 +38,7 @@ namespace TMDbLibTests.UtilityTests
             KnownForTv original = new KnownForTv();
             original.OriginalName = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             KnownForTv result = JsonConvert.DeserializeObject<KnownForBase>(json, settings) as KnownForTv;
 
             Assert.NotNull(result);
@@ -52,6 +52,9 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void TestJsonKnownForConverter()
         {
+            // Ignore missing fields
+            IgnoreMissingJson("results[array] / media_type");
+
             SearchContainer<SearchPerson> result = Config.Client.SearchPersonAsync("Willis").Sync();
 
             Assert.NotNull(result);

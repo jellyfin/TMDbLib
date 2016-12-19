@@ -23,7 +23,7 @@ namespace TMDbLibTests.UtilityTests
             AccountState original = new AccountState();
             original.Rating = 5;
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
 
             Assert.Equal(original.Rating, result.Rating);
@@ -40,7 +40,7 @@ namespace TMDbLibTests.UtilityTests
             AccountState original = new AccountState();
             original.Rating = null;
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
 
             Assert.Equal(original.Rating, result.Rating);

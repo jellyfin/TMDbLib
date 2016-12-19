@@ -20,7 +20,7 @@ namespace TMDbLibTests.UtilityTests
             original.ExpiresAt = DateTime.UtcNow.Date;
             original.ExpiresAt = original.ExpiresAt.AddMilliseconds(-original.ExpiresAt.Millisecond);
 
-            string json = JsonConvert.SerializeObject(original);
+            string json = JsonConvert.SerializeObject(original, settings);
             Token result = JsonConvert.DeserializeObject<Token>(json, settings);
 
             Assert.Equal(original.ExpiresAt, result.ExpiresAt);
