@@ -188,7 +188,14 @@ namespace TMDbLibTests
             Assert.Equal("/en/bruce_willis", item.FreebaseId);
             Assert.Equal("10183", item.TvrageId);
             Assert.Null(item.FacebookId);
-            Assert.Null(item.TwitterId);
+
+            item = Config.Client.GetPersonExternalIdsAsync(IdHelper.JoshACagan).Result;
+
+            Assert.NotNull(item);
+            Assert.Equal(IdHelper.JoshACagan, item.Id);
+            Assert.Null(item.FacebookId);
+            Assert.Equal("joshacagan", item.TwitterId);
+            Assert.Equal("joshacagan", item.InstagramId);
         }
 
         [Fact]
