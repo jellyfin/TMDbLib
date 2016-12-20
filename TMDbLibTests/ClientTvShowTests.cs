@@ -276,6 +276,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowPopular()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             TestHelpers.SearchPages(i => Config.Client.GetTvShowPopularAsync(i).Result);
 
             SearchContainer<SearchTv> result = Config.Client.GetTvShowPopularAsync().Sync();
@@ -332,6 +335,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSimilars()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             SearchContainer<SearchTv> tvShow = Config.Client.GetTvShowSimilarAsync(1668).Result;
 
             Assert.NotNull(tvShow);
@@ -358,6 +364,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowTopRated()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             // This test might fail with inconsistent information from the pages due to a caching problem in the API.
             // Comment from the Developer of the API
             // That would be caused from different pages getting cached at different times. 
@@ -388,7 +397,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowLists()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / created_by", " / credits", " / external_ids", " / genres", " / images", " / in_production", " / keywords", " / languages", " / networks", " / production_companies", " / seasons", " / similar", " / translations", " / videos");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / created_by", " / credits", " / external_ids", " / genres", " / images", " / in_production", " / keywords", " / languages", " / networks", " / production_companies", " / seasons", " / similar", " / translations", " / videos", "results[array] / media_type");
 
             foreach (TvShowListType type in Enum.GetValues(typeof(TvShowListType)).OfType<TvShowListType>())
             {
