@@ -7,6 +7,7 @@ using TMDbLib.Utilities.Converters;
 using ParameterType = TMDbLib.Rest.ParameterType;
 using RestClient = TMDbLib.Rest.RestClient;
 using RestRequest = TMDbLib.Rest.RestRequest;
+using System.Net;
 
 namespace TMDbLib.Client
 {
@@ -19,7 +20,7 @@ namespace TMDbLib.Client
         private RestClient _client;
         private TMDbConfig _config;
 
-        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null)
+        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null, IWebProxy proxy = null)
         {
             DefaultLanguage = null;
             DefaultCountry = null;
@@ -30,6 +31,10 @@ namespace TMDbLib.Client
             _serializer.Converters.Add(new KnownForConverter());
             _serializer.Converters.Add(new SearchBaseConverter());
             _serializer.Converters.Add(new TaggedImageConverter());
+
+            //Setup proxy to use during requests
+            //Proxy is optional. If passed, will be used in every request.
+            WebProxy = proxy;
 
             Initialize(baseUrl, useSsl, apiKey);
         }
@@ -114,6 +119,18 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
+        /// Gets or sets the Web Proxy to use during requests to TMDb API.
+        /// </summary>
+        /// <remarks>
+        /// The Web Proxy is optional. If set, every request will be sent through it.
+        /// Use the constructor for setting it.
+        /// 
+        /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
+        /// Check <see cref="Utilities.TMDbAPIProxy"/> for more information.
+        /// </remarks>
+        public IWebProxy WebProxy { get; private set; }
+        
+        /// <summary>
         /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
         /// </summary>
         /// <param name="req">Request</param>
@@ -179,7 +196,7 @@ namespace TMDbLib.Client
                 baseUrl = baseUrl.Substring("https://".Length);
 
             string httpScheme = useSsl ? "https" : "http";
-            _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer);
+            _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy);
             _client.AddDefaultQueryString("api_key", apiKey);
         }
 
