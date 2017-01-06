@@ -1,5 +1,6 @@
 {
   "version": "1.0.0-*",
+
   "buildOptions": {
     "emitEntryPoint": true
   },
@@ -9,8 +10,10 @@
       "type": "platform",
       "version": "1.0.0"
     },
-    "TMDbLib": "0.9.5.0-alpha",
-    "Newtonsoft.Json": "9.0.1"
+    "Newtonsoft.Json": "9.0.1",
+    "TMDbLib": {
+      "target": "project"
+    }
   },
 
   "frameworks": {

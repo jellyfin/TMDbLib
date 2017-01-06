@@ -60,7 +60,7 @@ namespace TMDbLibTests
         public void TestPersonsExtrasAll()
         {
             IgnoreMissingJson("external_ids / id", "images / id", "movie_credits / id", "tv_credits / id");
-            
+
             PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis, combinedEnum).Result;
 
@@ -71,7 +71,7 @@ namespace TMDbLibTests
         public void TestPersonsGetWithPartialDate()
         {
             IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
-            
+
             Person item = Config.Client.GetPersonAsync(IdHelper.PersonPartialDate).Result;
 
             Assert.NotNull(item);
@@ -83,7 +83,7 @@ namespace TMDbLibTests
         public void TestPersonsGet()
         {
             IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
-            
+
             Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
 
             Assert.NotNull(item);
@@ -188,7 +188,14 @@ namespace TMDbLibTests
             Assert.Equal("/en/bruce_willis", item.FreebaseId);
             Assert.Equal("10183", item.TvrageId);
             Assert.Null(item.FacebookId);
-            Assert.Null(item.TwitterId);
+
+            item = Config.Client.GetPersonExternalIdsAsync(IdHelper.JoshACagan).Result;
+
+            Assert.NotNull(item);
+            Assert.Equal(IdHelper.JoshACagan, item.Id);
+            Assert.Null(item.FacebookId);
+            Assert.Equal("joshacagan", item.TwitterId);
+            Assert.Equal("joshacagan", item.InstagramId);
         }
 
         [Fact]
@@ -233,7 +240,7 @@ namespace TMDbLibTests
         {
             // Not all ChangeItem's have an iso_639_1
             IgnoreMissingJson(" / iso_639_1");
-            
+
             // FindAsync latest changed person
             SearchContainer<ChangesListItem> latestChanges = Config.Client.GetChangesPeopleAsync().Sync();
             int latestChanged = latestChanges.Results.Last().Id;
@@ -372,7 +379,7 @@ namespace TMDbLibTests
         public void TestGetLatestPerson()
         {
             IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
-            
+
             Person item = Config.Client.GetLatestPersonAsync().Sync();
             Assert.NotNull(item);
         }

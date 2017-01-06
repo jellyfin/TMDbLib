@@ -1,18 +1,30 @@
-version: 0.9.2.{build}-alpha
 build_script:
-- cmd: >-
-    dotnet restore TMDbLib\
+- ps: >-
+    $version = (Get-Content .\TMDbLib\project.json | ConvertFrom-Json).version
 
-    dotnet restore TestApplication\
+    Update-AppveyorBuild -Version "$version build $env:APPVEYOR_BUILD_NUMBER"
+- ps: >-
+    # Core
 
+    dotnet restore
+- ps: >-
+    # Library
 
-    dotnet build TMDbLib\ -c Release
+    dotnet pack -c Release -o Nuget\ TMDbLib
+- ps: >-
+    # Test app
 
-    dotnet build TestApplication\ -c Release
-notifications:
-- provider: Email
-  to:
-  - michael@mbwarez.dk
-  on_build_success: false
-  on_build_failure: false
-  on_build_status_changed: true
+    dotnet build -c Release TestApplication
+- ps: >-
+    # Tests
+
+    dotnet build -c Release TMDbLibTests
+test: off
+artifacts:
+- path: Nuget\*.nupkg
+deploy:
+- provider: NuGet
+  api_key:
+    secure: dgfUEGXULcqCTyNcS6UEDK8BCBi8y+M2+d4IFjnb3Gf9DqV34fMSp1XjxJg2AVRC
+  on:
+    branch: nuget

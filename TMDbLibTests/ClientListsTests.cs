@@ -14,7 +14,7 @@ namespace TMDbLibTests
     public class ClientListsTests : TestBase
     {
         private const string TestListId = "528349d419c2954bd21ca0a8";
-        
+
         [Fact]
         public void TestList()
         {
@@ -49,7 +49,7 @@ namespace TMDbLibTests
                 }
             }
         }
-        
+
         [Fact]
         public void TestListIsMoviePresentFailure()
         {

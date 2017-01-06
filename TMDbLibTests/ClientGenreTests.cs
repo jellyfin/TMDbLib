@@ -55,6 +55,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestGenreMovies()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             // Get first genre
             Genre genre = Config.Client.GetMovieGenresAsync().Sync().First();
 

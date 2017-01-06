@@ -433,7 +433,7 @@
           "ref/netstandard1.6/System.AppContext.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.6/System.AppContext.dll": {}
+          "lib/netstandard1.6/_._": {}
         }
       },
       "System.Buffers/4.0.0": {
@@ -449,7 +449,7 @@
           "lib/netstandard1.1/System.Buffers.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.1/System.Buffers.dll": {}
+          "lib/netstandard1.1/_._": {}
         }
       },
       "System.Collections/4.0.11": {
@@ -782,11 +782,7 @@
           "ref/netstandard1.3/System.IO.Compression.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.3/System.IO.Compression.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.3/System.IO.Compression.dll": {
+          "runtimes/win/lib/netstandard1.3/_._": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -809,7 +805,7 @@
           "ref/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
+          "lib/netstandard1.3/_._": {}
         }
       },
       "System.IO.FileSystem/4.0.1": {
@@ -1443,11 +1439,7 @@
           "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
+          "runtimes/win/lib/netstandard1.1/_._": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -2074,18 +2066,18 @@
           "lib/netstandard1.3/_._": {}
         }
       },
-      "TMDbLib/0.9.6-alpha": {
+      "TMDbLib/1.0.2-alpha": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v1.0",
+        "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "Newtonsoft.Json": "9.0.1"
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.0.0"
         },
         "compile": {
-          "netcoreapp1.0/TMDbLib.dll": {}
+          "netstandard1.0/TMDbLib.dll": {}
         },
         "runtime": {
-          "netcoreapp1.0/TMDbLib.dll": {}
+          "netstandard1.0/TMDbLib.dll": {}
         }
       }
     }
@@ -6777,7 +6769,7 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "TMDbLib/0.9.6-alpha": {
+    "TMDbLib/1.0.2-alpha": {
       "type": "project",
       "path": "../TMDbLib/project.json",
       "msbuildProject": "../TMDbLib/TMDbLib.xproj"
@@ -6787,7 +6779,7 @@
     "": [
       "Microsoft.NETCore.App >= 1.0.0",
       "Newtonsoft.Json >= 9.0.1",
-      "TMDbLib >= 0.9.5-alpha"
+      "TMDbLib"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

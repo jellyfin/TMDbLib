@@ -58,6 +58,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvSetRatingGuestSession()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             Config.Client.SetSessionInformation(Config.GuestTestSessionId, SessionType.GuestSession);
 
             // Try changing the rating
@@ -98,6 +101,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesSetRatingGuestSession()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             Config.Client.SetSessionInformation(Config.GuestTestSessionId, SessionType.GuestSession);
 
             // Try changing the rating
@@ -156,6 +162,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestGuestSessionGetRatedTv()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             Config.Client.SetSessionInformation(Config.GuestTestSessionId, SessionType.GuestSession);
 
             // Ensure we have a rating
@@ -174,6 +183,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestGuestSessionGetRatedMovies()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             Config.Client.SetSessionInformation(Config.GuestTestSessionId, SessionType.GuestSession);
 
             // Ensure we have a rating

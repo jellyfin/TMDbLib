@@ -1,26 +1,21 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace TMDbLib.Helpers
+namespace TMDbLib.Utilities.Converters
 {
-    public class TmdbPartialDateConverter : JsonConverter
+    public class TmdbNullIntAsZero : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(DateTime?);
+            return objectType == typeof(int);
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            string str = reader.Value as string;
-            if (string.IsNullOrEmpty(str))
-                return null;
+            if (reader.Value == null)
+                return 0;
 
-            DateTime result;
-            if (!DateTime.TryParse(str, out result))
-                return null;
-
-            return result;
+            return Convert.ToInt32(reader.Value);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

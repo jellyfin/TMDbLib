@@ -53,7 +53,21 @@ namespace TMDbLib.Utilities.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            JObject jToken = JObject.FromObject(value);
+
+            JValue obj = (JValue)jToken["rating"];
+            jToken.Remove("rating");
+
+            if (obj.Value == null)
+            {
+                jToken["rated"] = null;
+            }
+            else
+            {
+                jToken["rated"] = JToken.FromObject(new { value = obj });
+            }
+
+            jToken.WriteTo(writer);
         }
     }
 }

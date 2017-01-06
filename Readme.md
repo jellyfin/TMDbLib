@@ -1,4 +1,4 @@
-TMDbLib [![Build status](https://ci.appveyor.com/api/projects/status/t7wph9cawrl9qho0?svg=true)](https://ci.appveyor.com/project/LordMike/tmdblib)
+TMDbLib [![Build status](https://ci.appveyor.com/api/projects/status/t7wph9cawrl9qho0?svg=true)](https://ci.appveyor.com/project/LordMike/tmdblib) [![NuGet](https://img.shields.io/nuget/v/Tmdblib.svg)](https://www.nuget.org/packages/Tmdblib)
 =======
 
 A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themoviedb.org/).
@@ -13,14 +13,18 @@ Index
 ---------
 
 - [Nuget](#nuget)
+- [Documentation](#documentation)
 - [Examples](#examples)
 - [Tips](#tips)
 - [Changelog](#changelog)
 
-Examples
---------
+Documentation
+-------- 
 
-Note: All examples are based on the still-unreleased `0.9.2.0-alpha`. 
+Most of the library is self-explaining, and closely follows the possibilities at the official TMDb documentation site: [developers.themoviedb.org](https://developers.themoviedb.org/3/getting-started).
+
+Examples
+-------- 
 
 Simple example, getting the basic info for "A good day to die hard".
 
@@ -75,6 +79,10 @@ Tips
 
 Changelog
 ---------
+
+**1.0.0**
+
+No changes. We finally moved to the first stable release in over a year. Compare to `0.8.3`, there will be some breaking changes - but most should be trivial to fix.
 
 **0.9.6-alpha**
 Changes:
@@ -131,18 +139,3 @@ Changes:
  - Available on Nuget
  - Basic API design with a great potential for refactoring (be warned on design changes)
  - Supports most (if not all) read-only operations (login sessions not supported - yet).
-
-Apiary
-------
-
-TMDb have provided an Apiary interface. Apiary is an API documentation service, which also provides a nifty feature that proxies a service through them. It then allows them to log all calls you make to TMDb, and get them shown at Apiary for debugging purposes. This is especially handy if you've set up a client on a server, where it isn't possible to debug web requests.
-
-I use it to debug the library. It ***shouldn't be necesary for you*** to use Apiary for this library, as the library *should* work.
-
-To use this, create an account with Apiary, and view TMDb's API (http://docs.themoviedb.apiary.io/). Open the inspector tab, and note down your personal proxy URL. It looks like this: *http://private-____-themoviedb.apiary.io*.
-
-Instantiate the client like this:
-
-    TMDbClient client = new TMDbClient("APIKey", false, "private-____-themoviedb.apiary.io");
-
-This instructs the client to use the above domain as its base URL. The 2nd parameter (boolean) is whether or not to use SSL.

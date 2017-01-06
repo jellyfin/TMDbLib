@@ -1,10 +1,10 @@
 ﻿using System;
-using Xunit;
 using TMDbLib.Utilities;
 using TMDbLibTests.JsonHelpers;
 using TMDbLibTests.TestClasses;
+using Xunit;
 
-namespace TMDbLibTests
+namespace TMDbLibTests.UtilityTests
 {
     public class UtilsTest : TestBase
     {

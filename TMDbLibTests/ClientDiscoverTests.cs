@@ -13,6 +13,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestDiscoverTvShowsNoParams()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             TestHelpers.SearchPages(i => Config.Client.DiscoverTvShowsAsync().Query(i).Result);
 
             SearchContainer<SearchTv> result = Config.Client.DiscoverTvShowsAsync().Query().Result;
@@ -26,6 +29,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestDiscoverTvShows()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             DiscoverTv query = Config.Client.DiscoverTvShowsAsync()
                     .WhereVoteCountIsAtLeast(100)
                     .WhereVoteAverageIsAtLeast(2);
@@ -36,6 +42,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestDiscoverMoviesNoParams()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             TestHelpers.SearchPages(i => Config.Client.DiscoverMoviesAsync().Query(i).Result);
 
             SearchContainer<SearchMovie> result = Config.Client.DiscoverMoviesAsync().Query().Result;
@@ -49,6 +58,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestDiscoverMovies()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync()
                     .WhereVoteCountIsAtLeast(1000)
                     .WhereVoteAverageIsAtLeast(2);

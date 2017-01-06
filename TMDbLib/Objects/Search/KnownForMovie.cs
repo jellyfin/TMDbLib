@@ -1,10 +1,16 @@
 using System;
 using Newtonsoft.Json;
+using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Search
 {
     public class KnownForMovie : KnownForBase
     {
+        public KnownForMovie()
+        {
+            MediaType = MediaType.Movie;
+        }
+
         [JsonProperty("adult")]
         public bool Adult { get; set; }
 
