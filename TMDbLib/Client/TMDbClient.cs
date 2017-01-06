@@ -6,6 +6,7 @@ using TMDbLib.Objects.General;
 using ParameterType = TMDbLib.Rest.ParameterType;
 using RestClient = TMDbLib.Rest.RestClient;
 using RestRequest = TMDbLib.Rest.RestRequest;
+using System.Net;
 
 namespace TMDbLib.Client
 {
@@ -18,12 +19,16 @@ namespace TMDbLib.Client
         private RestClient _client;
         private TMDbConfig _config;
 
-        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null)
+        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null, IWebProxy proxy = null)
         {
             DefaultLanguage = null;
             DefaultCountry = null;
 
             _serializer = serializer ?? JsonSerializer.CreateDefault();
+
+            //Setup proxy to use during requests
+            //Proxy is optional. If passed, will be used in every request.
+            WebProxy = proxy;
 
             Initialize(baseUrl, useSsl, apiKey);
         }
@@ -106,6 +111,19 @@ namespace TMDbLib.Client
             get { return MaxRetryCount == 0; }
             set { MaxRetryCount = value ? 0 : 5; }
         }
+
+        /// <summary>
+        /// Gets or sets the Web Proxy to use during requests to TMDb API.
+        /// </summary>
+        /// <remarks>
+        /// The Web Proxy is optional. If set, every request will be sent through it.
+        /// Use the constructor for setting it.
+        /// 
+        /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
+        /// Check <see cref="TMDbLib.Utilities.TMDbAPIProxy"/> for more information.
+        /// </remarks>
+        public IWebProxy WebProxy { get; private set; }
+        
 
         /// <summary>
         /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
