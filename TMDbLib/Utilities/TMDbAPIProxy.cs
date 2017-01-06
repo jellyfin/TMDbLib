@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace TMDbLib.Utilities
 {
@@ -15,14 +12,15 @@ namespace TMDbLib.Utilities
     /// </remarks>
     public class TMDbAPIProxy : IWebProxy
     {
-        private Uri _proxyUri;
+        private readonly Uri _proxyUri;
 
         /// <summary>
         /// Initializes a new instance for this Proxy
         /// </summary>
         public TMDbAPIProxy(Uri proxyUri, ICredentials credentials = null)
         {
-            if (proxyUri == null) throw new ArgumentNullException("proxyUri");
+            if (proxyUri == null)
+                throw new ArgumentNullException(nameof(proxyUri));
 
             _proxyUri = proxyUri;
             Credentials = credentials;
@@ -31,11 +29,7 @@ namespace TMDbLib.Utilities
         /// <summary>
         /// Gets or sets the credentials to use for authenticating in the proxy server.
         /// </summary>
-        public ICredentials Credentials
-        {
-            get;
-            set;
-        }
+        public ICredentials Credentials { get; set; }
 
         /// <summary>
         /// Gets the proxy server <see cref="Uri"/> to be used when accessing <paramref name="destination"/>.

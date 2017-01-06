@@ -126,11 +126,10 @@ namespace TMDbLib.Client
         /// Use the constructor for setting it.
         /// 
         /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
-        /// Check <see cref="TMDbLib.Utilities.TMDbAPIProxy"/> for more information.
+        /// Check <see cref="Utilities.TMDbAPIProxy"/> for more information.
         /// </remarks>
         public IWebProxy WebProxy { get; private set; }
         
-
         /// <summary>
         /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
         /// </summary>
