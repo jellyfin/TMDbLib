@@ -18,7 +18,6 @@ namespace TMDbLib.Client
         private readonly JsonSerializer _serializer;
         private RestClient _client;
         private TMDbConfig _config;
-        private IWebProxy _proxy;
 
         public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null, IWebProxy proxy = null)
         {
@@ -29,7 +28,7 @@ namespace TMDbLib.Client
 
             //Setup proxy to use during requests
             //Proxy is optional. If passed, will be used in every request.
-            _proxy = proxy;
+            WebProxy = proxy;
 
             Initialize(baseUrl, useSsl, apiKey);
         }
@@ -123,10 +122,8 @@ namespace TMDbLib.Client
         /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
         /// Check <see cref="TMDbLib.Utilities.TMDbAPIProxy"/> for more information.
         /// </remarks>
-        public IWebProxy WebProxy
-        {
-            get { return _proxy; }
-        }
+        public IWebProxy WebProxy { get; private set; }
+        
 
         /// <summary>
         /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.

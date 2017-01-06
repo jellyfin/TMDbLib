@@ -9,7 +9,6 @@ namespace TMDbLib.Rest
     internal class RestClient
     {
         private int _maxRetryCount;
-        private IWebProxy _proxy;
 
         public RestClient(Uri baseUrl, JsonSerializer serializer, IWebProxy proxy = null)
         {
@@ -18,13 +17,13 @@ namespace TMDbLib.Rest
             DefaultQueryString = new List<KeyValuePair<string, string>>();
 
             MaxRetryCount = 0;
-            _proxy = proxy;
+            Proxy = proxy;
         }
 
         internal Uri BaseUrl { get; }
         internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
         internal Encoding Encoding { get; } = new UTF8Encoding(false);
-        internal IWebProxy Proxy { get { return _proxy; } }
+        internal IWebProxy Proxy { get; private set; }
 
         public int MaxRetryCount
         {
