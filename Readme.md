@@ -80,6 +80,12 @@ Tips
 Changelog
 ---------
 
+**1.0.4-alpha**
+Changes:
+   - Implemented `Serialize()` for a number of custom serializers
+   - Implemented `destroyed` Changes action
+   - Added ability to pass a WebProxy to the TMDbClient
+   
 **1.0.0**
 
 No changes. We finally moved to the first stable release in over a year. Compare to `0.8.3`, there will be some breaking changes - but most should be trivial to fix.
