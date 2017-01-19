@@ -41,6 +41,9 @@ namespace TMDbLib.Utilities.Converters
                     case ChangeAction.Deleted:
                         result = new ChangeItemDeleted();
                         break;
+                    case ChangeAction.Destroyed:
+                        result = new ChangeItemDestroyed();
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
