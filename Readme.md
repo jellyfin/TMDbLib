@@ -80,6 +80,10 @@ Tips
 Changelog
 ---------
 
+**1.0.5-alpha**
+Changes:
+   - Added `Rating` to `AccountGetRatedMoviesAsync` results
+   
 **1.0.4-alpha**
 Changes:
    - Implemented `Serialize()` for a number of custom serializers
