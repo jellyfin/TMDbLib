@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMDbLib", "TMDbLib\TMDbLib.csproj", "{A7D4744C-9EF2-4CC3-B786-E8E568874933}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TMDbLib", "TMDbLib\TMDbLib.xproj", "{A7D4744C-9EF2-4CC3-B786-E8E568874933}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplication", "TestApplication\TestApplication.csproj", "{4C8E1F72-DA9D-4EC6-8C04-5EC8EDC59FA1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestApplication", "TestApplication\TestApplication.xproj", "{4C8E1F72-DA9D-4EC6-8C04-5EC8EDC59FA1}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TMDbLibTests", "TMDbLibTests\TMDbLibTests.xproj", "{228615EB-BFA3-44A7-8648-A7EA48470777}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26BF5A0A-354A-46F5-A20C-0BEB5D45783A}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
 		Readme.md = Readme.md
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMDbLibTests", "TMDbLibTests\TMDbLibTests.csproj", "{46DF563A-5905-48A4-9C15-C72389D609BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{4C8E1F72-DA9D-4EC6-8C04-5EC8EDC59FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C8E1F72-DA9D-4EC6-8C04-5EC8EDC59FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C8E1F72-DA9D-4EC6-8C04-5EC8EDC59FA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46DF563A-5905-48A4-9C15-C72389D609BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46DF563A-5905-48A4-9C15-C72389D609BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46DF563A-5905-48A4-9C15-C72389D609BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46DF563A-5905-48A4-9C15-C72389D609BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228615EB-BFA3-44A7-8648-A7EA48470777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228615EB-BFA3-44A7-8648-A7EA48470777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228615EB-BFA3-44A7-8648-A7EA48470777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228615EB-BFA3-44A7-8648-A7EA48470777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
