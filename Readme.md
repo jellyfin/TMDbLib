@@ -80,6 +80,10 @@ Tips
 Changelog
 ---------
 
+**1.0.6-alpha**
+Changes:
+   - Retargeted to netstandard1.2 and moved to the 1.0 version of the project files (user VS 2017)
+
 **1.0.5-alpha**
 Changes:
    - Added `Rating` to `AccountGetRatedMoviesAsync` results
