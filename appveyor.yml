@@ -1,24 +1,19 @@
+image: Visual Studio 2017
 build_script:
 - ps: >-
-    $version = (Get-Content .\TMDbLib\project.json | ConvertFrom-Json).version
+    [xml]$doc = (Get-Content .\TMDbLib\TMDbLib.csproj)
+
+    $version = $doc.Project.PropertyGroup.VersionPrefix
 
     Update-AppveyorBuild -Version "$version build $env:APPVEYOR_BUILD_NUMBER"
-- ps: >-
-    # Core
-
-    dotnet restore
-- ps: >-
-    # Library
-
-    dotnet pack -c Release -o Nuget\ TMDbLib
-- ps: >-
-    # Test app
-
-    dotnet build -c Release TestApplication
-- ps: >-
-    # Tests
-
-    dotnet build -c Release TMDbLibTests
+- ps: # Core
+- ps: dotnet restore
+- ps: # Library
+- ps: dotnet pack -c Release -o Nuget\ TMDbLib
+- ps: # Test app
+- ps: dotnet build -c Release TestApplication
+- ps: # Tests
+- ps: dotnet build -c Release TMDbLibTests
 test: off
 artifacts:
 - path: Nuget\*.nupkg
