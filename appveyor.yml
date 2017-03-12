@@ -7,13 +7,15 @@ build_script:
 
     Update-AppveyorBuild -Version "$version build $env:APPVEYOR_BUILD_NUMBER"
 - ps: # Core
-- ps: dotnet restore
+- ps: msbuild /t:Restore
+- ps: # Build Library
+- ps: msbuild /t:Build /p:Configuration=Release TMDbLib
 - ps: # Library
-- ps: dotnet pack -c Release -o Nuget\ TMDbLib
+- ps: msbuild /t:Pack /p:Configuration=Release /p:OutputPath=..\Nuget\ TMDbLib
 - ps: # Test app
-- ps: dotnet build -c Release TestApplication
+- ps: msbuild /t:Build /p:Configuration=Release TestApplication
 - ps: # Tests
-- ps: dotnet build -c Release TMDbLibTests
+- ps: msbuild /t:Build /p:Configuration=Release TMDbLibTests
 test: off
 artifacts:
 - path: Nuget\*.nupkg
