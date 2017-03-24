@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
@@ -88,6 +92,84 @@ namespace TMDbLib.Client
             // No data to patch up so return
             if (item == null)
                 return null;
+
+            // Patch up data, so that the end user won't notice that we share objects between request-types.
+            if (item.Translations != null)
+                item.Translations.Id = id;
+
+            if (item.AccountStates != null)
+                item.AccountStates.Id = id;
+
+            return item;
+        }
+
+        /// <summary>
+        /// Retrieve a tv Show by id.
+        /// </summary>
+        /// <param name="id">TMDb id of the tv show to retrieve.</param>
+        /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
+        /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
+        /// <returns>The requested Tv Show</returns>
+        public async Task<TvShow> GetTvShowWithFullSeasonInfoAsync(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
+        {
+            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
+                RequireSessionId(SessionType.UserSession);
+
+            RestRequest req = _client.Create("tv/{id}");
+            req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
+
+            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
+                AddSessionId(req, SessionType.UserSession);
+
+            language = language ?? DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+                req.AddParameter("language", language);
+
+            // Add all method flags
+            var appendValues = Enum.GetValues(typeof(TvShowMethods))
+                .OfType<TvShowMethods>()
+                .Except(new[] { TvShowMethods.Undefined })
+                .Where(s => extraMethods.HasFlag(s))
+                .Select(s => s.GetDescription())
+                .ToList();
+
+            int maxNumberOfAppends = 20;
+            for (int i = 0; i < maxNumberOfAppends - appendValues.Count; i++)
+            {
+                appendValues.Add($"season/{i}");
+            }
+
+            req.AddParameter("append_to_response", string.Join(",", appendValues));
+
+            RestResponse response = await req.ExecuteGet().ConfigureAwait(false);
+            Stream content = await response.GetContent().ConfigureAwait(false);
+
+            TvShowWithSeasonDetails item;
+            using (StreamReader sr = new StreamReader(content, _client.Encoding))
+            using (JsonTextReader tr = new JsonTextReader(sr))
+            {
+                var dynamicResult = _client.Serializer.Deserialize<JObject>(tr);
+
+                // Get the base show information
+                item = dynamicResult.ToObject<TvShowWithSeasonDetails>(_client.Serializer);
+
+                // No data to patch up so return
+                if (item == null)
+                    return null;
+
+                // Extract the full season details
+                item.SeasonsWithDetails =
+                    ((IEnumerable<KeyValuePair<string, JToken>>)dynamicResult)
+                        .Where(x => x.Key.StartsWith("season/"))
+                        .Select(x => x.Value.ToObject<TvSeason>(_client.Serializer))
+                        .ToList();
+
+                // TODO retrieve missing seasons with additional call and add them to the list
+
+                // Patch the season id's, at time of writing a _id is returned to does not match the normal season id's
+                foreach (var season in item.Seasons)
+                    item.SeasonsWithDetails.First(s=>s.SeasonNumber == season.SeasonNumber).Id = season.Id;
+            }
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (item.Translations != null)

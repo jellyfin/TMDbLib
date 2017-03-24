@@ -49,6 +49,25 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestTvShowWithSeasonsExtrasNone()
+        {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson(" / known_for", " / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / genre_ids",
+                " / SeasonsWithDetails", "season/0 / account_states", "season/0 / credits", "season/0 / external_ids", "season/0 / id", "season/0 / images", "season/0 / videos", "season/1 / account_states", "season/1 / credits", "season/1 / external_ids", 
+                "season/1 / id", "season/1 / images", "season/1 / videos", "season/2 / account_states", "season/2 / credits", "season/2 / external_ids", "season/2 / id", "season/2 / images", "season/2 / videos", "season/3 / account_states", "season/3 / credits", 
+                "season/3 / external_ids", "season/3 / id", "season/3 / images", "season/3 / videos", "season/4 / account_states", "season/4 / credits", "season/4 / external_ids", "season/4 / id", "season/4 / images", "season/4 / videos", "season/5 / account_states", 
+                "season/5 / credits", "season/5 / external_ids", "season/5 / id", "season/5 / images", "season/5 / videos");
+            IgnoreMissingCSharp("season/0 / season/0", "season/0._id / _id", "season/1 / season/1", "season/1._id / _id", "season/2 / season/2", "season/2._id / _id", "season/3 / season/3", "season/3._id / _id", "season/4 / season/4", "season/4._id / _id", "season/5 / season/5", "season/5._id / _id");
+            TvShow tvShow = Config.Client.GetTvShowWithFullSeasonInfoAsync(IdHelper.BreakingBad).Result;
+
+            TestBreakingBadBaseProperties(tvShow);
+
+            // Test all extras, ensure none of them are populated
+            foreach (Func<TvShow, object> selector in _methods.Values)
+                Assert.Null(selector(tvShow));
+        }
+
+        [Fact]
         public void TestTvShowExtrasAll()
         {
             IgnoreMissingJson(" / id");
