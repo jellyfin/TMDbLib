@@ -110,7 +110,7 @@ namespace TMDbLib.Objects.TvShows
         public List<ProductionCompany> ProductionCompanies { get; set; }
 
         [JsonProperty("seasons")]
-        public List<SearchTvSeason> Seasons { get; set; }
+        public List<TvSeason> Seasons { get; set; }
 
         [JsonProperty("similar")]
         public ResultContainer<TvShow> Similar { get; set; }

@@ -37,7 +37,7 @@ namespace TMDbLibTests
             IgnoreMissingCSharp("_id / _id");
 
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", " / account_states", " / credits", " / external_ids", " / images", " / videos");
+            IgnoreMissingJson(" / images", " / account_states", " / credits", " / external_ids", " / images", " / videos", " / episode_count");
 
             TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
 
@@ -57,7 +57,7 @@ namespace TMDbLibTests
             IgnoreMissingCSharp("_id / _id");
 
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos", "account_states / id");
+            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos", "account_states / id", " / episode_count");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -84,7 +84,7 @@ namespace TMDbLibTests
             // TMDb is sending an extra property
             IgnoreMissingCSharp("_id / _id");
 
-            IgnoreMissingJson("images / id", "account_states / id", "credits / id", "external_ids / id", "videos / id");
+            IgnoreMissingJson("images / id", "account_states / id", "credits / id", "external_ids / id", "videos / id", " / episode_count");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
@@ -106,7 +106,7 @@ namespace TMDbLibTests
             IgnoreMissingCSharp("_id / _id");
 
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", " / account_states", " / external_ids", " / images", " / videos", " / credits", "images / id", "external_ids / id", "videos / id", "credits / id", "account_states / id");
+            IgnoreMissingJson(" / images", " / account_states", " / external_ids", " / images", " / videos", " / credits", "images / id", "external_ids / id", "videos / id", "credits / id", "account_states / id", " / episode_count");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvSeasonAsync(id, 1, extras).Result, IdHelper.BreakingBad);

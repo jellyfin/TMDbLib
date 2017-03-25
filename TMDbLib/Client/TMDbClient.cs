@@ -15,6 +15,7 @@ namespace TMDbLib.Client
     {
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
+        private const int MaxNumberOfAppends = 20;
 
         private readonly JsonSerializer _serializer;
         private RestClient _client;

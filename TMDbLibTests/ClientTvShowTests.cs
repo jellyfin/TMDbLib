@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Collections.Generic;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -38,7 +38,7 @@ namespace TMDbLibTests
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / known_for", " / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / genre_ids");
-
+            IgnoreMissingJson("seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
             TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.BreakingBad).Result;
 
             TestBreakingBadBaseProperties(tvShow);
@@ -49,16 +49,18 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestTvShowWithSeasonsExtrasNone()
+        public void TestTvShowWithSeasonDetailsExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / known_for", " / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / genre_ids",
-                " / SeasonsWithDetails", "season/0 / account_states", "season/0 / credits", "season/0 / external_ids", "season/0 / id", "season/0 / images", "season/0 / videos", "season/1 / account_states", "season/1 / credits", "season/1 / external_ids", 
-                "season/1 / id", "season/1 / images", "season/1 / videos", "season/2 / account_states", "season/2 / credits", "season/2 / external_ids", "season/2 / id", "season/2 / images", "season/2 / videos", "season/3 / account_states", "season/3 / credits", 
-                "season/3 / external_ids", "season/3 / id", "season/3 / images", "season/3 / videos", "season/4 / account_states", "season/4 / credits", "season/4 / external_ids", "season/4 / id", "season/4 / images", "season/4 / videos", "season/5 / account_states", 
-                "season/5 / credits", "season/5 / external_ids", "season/5 / id", "season/5 / images", "season/5 / videos");
-            IgnoreMissingCSharp("season/0 / season/0", "season/0._id / _id", "season/1 / season/1", "season/1._id / _id", "season/2 / season/2", "season/2._id / _id", "season/3 / season/3", "season/3._id / _id", "season/4 / season/4", "season/4._id / _id", "season/5 / season/5", "season/5._id / _id");
-            TvShow tvShow = Config.Client.GetTvShowWithFullSeasonInfoAsync(IdHelper.BreakingBad).Result;
+                " / SeasonsWithDetails", "season/0 / account_states", "season/0 / credits", "season/0 / external_ids", "season/0 / id", "season/0 / images", "season/0 / videos", "season/1 / account_states", "season/1 / credits", "season/1 / external_ids",
+                "season/1 / id", "season/1 / images", "season/1 / videos", "season/2 / account_states", "season/2 / credits", "season/2 / external_ids", "season/2 / id", "season/2 / images", "season/2 / videos", "season/3 / account_states", "season/3 / credits",
+                "season/3 / external_ids", "season/3 / id", "season/3 / images", "season/3 / videos", "season/4 / account_states", "season/4 / credits", "season/4 / external_ids", "season/4 / id", "season/4 / images", "season/4 / videos", "season/5 / account_states",
+                "season/5 / credits", "season/5 / external_ids", "season/5 / id", "season/5 / images", "season/5 / videos", "season/0 / episode_count", "season/1 / episode_count", "season/2 / episode_count", "season/3 / episode_count", "season/4 / episode_count",
+                "season/5 / episode_count", "seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
+            IgnoreMissingCSharp("season/0 / season/0", "season/0._id / _id", "season/1 / season/1", "season/1._id / _id", "season/2 / season/2", "season/2._id / _id", "season/3 / season/3", "season/3._id / _id", "season/4 / season/4", "season/4._id / _id", "season/5 / season/5", "season/5._id / _id");
+
+            TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.BreakingBad, includeSeasonDetails: true).Result;
 
             TestBreakingBadBaseProperties(tvShow);
 
@@ -68,11 +70,32 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestTvShowWithSeasonsWithMoreThanTwentySeasonsExtrasAll()
+        {
+            // We will intentionally ignore errors reg. missing JSON as we do not request it
+            IgnoreMissingJson(" / genre_ids", " / known_for", " / similar", " / translations", " / videos", "alternative_titles / id", "content_ratings / id", "credits / id", "external_ids / id", "keywords / id");
+            IgnoreMissingJson(" / id", "season/0 / account_states", "season/0 / credits", "season/0 / episode_count", "season/0 / external_ids", "season/0 / id", "season/0 / images", "season/0 / videos", "season/1 / account_states", "season/1 / credits", "season/1 / episode_count", "season/1 / external_ids", "season/1 / id", "season/1 / images", "season/1 / videos", "season/10 / account_states", "season/10 / credits", "season/10 / episode_count", "season/10 / external_ids", "season/10 / id", "season/10 / images", "season/10 / videos", "season/11 / account_states", "season/11 / credits", "season/11 / episode_count", "season/11 / external_ids", "season/11 / id", "season/11 / images", "season/11 / videos", "season/12 / account_states", "season/12 / credits", "season/12 / episode_count", "season/12 / external_ids", "season/12 / id", "season/12 / images", "season/12 / videos", "season/13 / account_states", "season/13 / credits", "season/13 / episode_count", "season/13 / external_ids", "season/13 / id", "season/13 / images", "season/13 / videos", "season/14 / account_states", "season/14 / credits", "season/14 / episode_count", "season/14 / external_ids", "season/14 / id", "season/14 / images", "season/14 / videos", "season/15 / account_states", "season/15 / credits", "season/15 / episode_count", "season/15 / external_ids", "season/15 / id", "season/15 / images", "season/15 / videos", "season/16 / account_states", "season/16 / credits", "season/16 / episode_count", "season/16 / external_ids", "season/16 / id", "season/16 / images", "season/16 / videos", "season/17 / account_states", "season/17 / credits", "season/17 / episode_count", "season/17 / external_ids", "season/17 / id", "season/17 / images", "season/17 / videos", "season/18 / account_states", "season/18 / credits", "season/18 / episode_count", "season/18 / external_ids", "season/18 / id", "season/18 / images", "season/18 / videos", "season/19 / account_states", "season/19 / credits", "season/19 / episode_count", "season/19 / external_ids", "season/19 / id", "season/19 / images", "season/19 / videos", "season/2 / account_states", "season/2 / credits", "season/2 / episode_count", "season/2 / external_ids", "season/2 / id", "season/2 / images", "season/2 / videos", "season/20 / account_states", "season/20 / credits", "season/20 / episode_count", "season/20 / external_ids", "season/20 / id", "season/20 / images", "season/20 / videos", "season/21 / account_states", "season/21 / credits", "season/21 / episode_count", "season/21 / external_ids", "season/21 / id", "season/21 / images", "season/21 / videos", "season/22 / account_states", "season/22 / credits", "season/22 / episode_count", "season/22 / external_ids", "season/22 / id", "season/22 / images", "season/22 / videos", "season/23 / account_states", "season/23 / credits", "season/23 / episode_count", "season/23 / external_ids", "season/23 / id", "season/23 / images", "season/23 / videos", "season/24 / account_states", "season/24 / credits", "season/24 / episode_count", "season/24 / external_ids", "season/24 / id", "season/24 / images", "season/24 / videos", "season/25 / account_states", "season/25 / credits", "season/25 / episode_count", "season/25 / external_ids", "season/25 / id", "season/25 / images", "season/25 / videos", "season/26 / account_states", "season/26 / credits", "season/26 / episode_count", "season/26 / external_ids", "season/26 / id", "season/26 / images", "season/26 / videos", "season/27 / account_states", "season/27 / credits", "season/27 / episode_count", "season/27 / external_ids", "season/27 / id", "season/27 / images", "season/27 / videos", "season/28 / account_states", "season/28 / credits", "season/28 / episode_count", "season/28 / external_ids", "season/28 / id", "season/28 / images", "season/28 / videos", "season/29 / account_states", "season/29 / credits", "season/29 / episode_count", "season/29 / external_ids", "season/29 / id", "season/29 / images", "season/29 / videos", "season/3 / account_states", "season/3 / credits", "season/3 / episode_count", "season/3 / external_ids", "season/3 / id", "season/3 / images", "season/3 / videos", "season/4 / account_states", "season/4 / credits", "season/4 / episode_count", "season/4 / external_ids", "season/4 / id", "season/4 / images", "season/4 / videos", "season/5 / account_states", "season/5 / credits", "season/5 / episode_count", "season/5 / external_ids", "season/5 / id", "season/5 / images", "season/5 / videos", "season/6 / account_states", "season/6 / credits", "season/6 / episode_count", "season/6 / external_ids", "season/6 / id", "season/6 / images", "season/6 / videos", "season/7 / account_states", "season/7 / credits", "season/7 / episode_count", "season/7 / external_ids", "season/7 / id", "season/7 / images", "season/7 / videos", "season/8 / account_states", "season/8 / credits", "season/8 / episode_count", "season/8 / external_ids", "season/8 / id", "season/8 / images", "season/8 / videos", "season/9 / account_states", "season/9 / credits", "season/9 / episode_count", "season/9 / external_ids", "season/9 / id", "season/9 / images", "season/9 / videos", "seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
+            IgnoreMissingCSharp("season/0 / season/0", "season/0._id / _id", "season/1 / season/1", "season/1._id / _id", "season/2 / season/2", "season/2._id / _id", "season/3 / season/3", "season/3._id / _id", "season/4 / season/4", "season/4._id / _id", "season/5 / season/5", "season/5._id / _id", "season/10 / season/10", "season/10._id / _id", "season/11 / season/11", "season/11._id / _id", "season/12._id / _id", "season/13._id / _id", "season/14._id / _id", "season/15._id / _id", "season/16._id / _id", "season/17._id / _id", "season/18._id / _id", "season/19._id / _id", "season/20._id / _id", "season/21._id / _id", "season/22._id / _id", "season/23._id / _id", "season/24._id / _id", "season/25._id / _id", "season/26._id / _id", "season/27._id / _id", "season/28._id / _id", "season/29._id / _id", "season/6 / season/6", "season/6._id / _id", "season/7 / season/7", "season/7._id / _id", "season/8 / season/8", "season/8._id / _id", "season/9 / season/9", "season/9._id / _id");
+
+            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+
+            // Account states will only show up if we've done something
+            Config.Client.TvShowSetRatingAsync(IdHelper.Simpsons, 5).Sync();
+
+            TvShowMethods combinedEnum = _methods.Keys.Aggregate((methods, tvShowMethods) => methods | tvShowMethods);
+            TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.Simpsons, combinedEnum, includeSeasonDetails: true).Result;
+
+            TestSimpsonsBaseProperties(tvShow);
+
+            TestMethodsHelper.TestAllNotNull(_methods, tvShow);
+        }
+
+        [Fact]
         public void TestTvShowExtrasAll()
         {
             IgnoreMissingJson(" / id");
             IgnoreMissingJson(" / genre_ids", " / known_for", " / similar", " / translations", " / videos", "alternative_titles / id", "content_ratings / id", "credits / id", "external_ids / id", "keywords / id");
-
+            IgnoreMissingJson("seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
@@ -204,6 +227,7 @@ namespace TMDbLibTests
         public void TestTvShowSeparateExtrasAccountState()
         {
             IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
+            IgnoreMissingJson("seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -292,6 +316,65 @@ namespace TMDbLibTests
             Assert.NotEqual(0, tvShow.VoteAverage);
         }
 
+        private void TestSimpsonsBaseProperties(TvShow tvShow)
+        {
+            Assert.NotNull(tvShow);
+            Assert.Equal("The Simpsons", tvShow.Name);
+            Assert.Equal("The Simpsons", tvShow.OriginalName);
+            Assert.NotNull(tvShow.Overview);
+            Assert.NotNull(tvShow.Homepage);
+            Assert.Equal(new DateTime(1989, 12, 17), tvShow.FirstAirDate);
+            Assert.True(new DateTime(2017, 01, 15) >= tvShow.LastAirDate);
+            Assert.Equal(true, tvShow.InProduction);
+            Assert.Equal("Returning Series", tvShow.Status);
+            Assert.Equal("Scripted", tvShow.Type);
+            Assert.Equal("en", tvShow.OriginalLanguage);
+
+            Assert.NotNull(tvShow.ProductionCompanies);
+            Assert.Equal(3, tvShow.ProductionCompanies.Count);
+            Assert.Equal(18, tvShow.ProductionCompanies[0].Id);
+            Assert.Equal("Gracie Films", tvShow.ProductionCompanies[0].Name);
+
+            Assert.NotNull(tvShow.CreatedBy);
+            Assert.Equal(1, tvShow.CreatedBy.Count);
+            Assert.Equal(5741, tvShow.CreatedBy[0].Id);
+            Assert.Equal("Matt Groening", tvShow.CreatedBy[0].Name);
+
+            Assert.NotNull(tvShow.EpisodeRunTime);
+            Assert.Equal(1, tvShow.EpisodeRunTime.Count);
+
+            Assert.NotNull(tvShow.Genres);
+            Assert.Equal(16, tvShow.Genres[0].Id);
+            Assert.Equal("Animation", tvShow.Genres[0].Name);
+
+            Assert.NotNull(tvShow.Languages);
+            Assert.Equal("en", tvShow.Languages[0]);
+
+            Assert.NotNull(tvShow.Networks);
+            Assert.Equal(1, tvShow.Networks.Count);
+            Assert.Equal(19, tvShow.Networks[0].Id);
+            Assert.Equal("Fox Broadcasting Company", tvShow.Networks[0].Name);
+
+            Assert.NotNull(tvShow.OriginCountry);
+            Assert.Equal(1, tvShow.OriginCountry.Count);
+            Assert.Equal("US", tvShow.OriginCountry[0]);
+
+            Assert.NotNull(tvShow.Seasons);
+            Assert.True(30 >= tvShow.Seasons.Count);
+            Assert.Equal(0, tvShow.Seasons[0].SeasonNumber);
+            Assert.Equal(1, tvShow.Seasons[1].SeasonNumber);
+
+            Assert.True(614 >= tvShow.NumberOfEpisodes);
+            Assert.True(29 >= tvShow.NumberOfSeasons);
+
+            Assert.NotNull(tvShow.PosterPath);
+            Assert.NotNull(tvShow.BackdropPath);
+
+            Assert.NotEqual(0, tvShow.Popularity);
+            Assert.NotEqual(0, tvShow.VoteAverage);
+            Assert.NotEqual(0, tvShow.VoteAverage);
+        }
+
         [Fact]
         public void TestTvShowPopular()
         {
@@ -313,7 +396,7 @@ namespace TMDbLibTests
         public void TestTvShowSeasonCount()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
-
+            IgnoreMissingJson("seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
             TvShow tvShow = Config.Client.GetTvShowAsync(1668).Result;
             Assert.Equal(tvShow.Seasons[1].EpisodeCount, 24);
         }
@@ -322,6 +405,7 @@ namespace TMDbLibTests
         public void TestTvShowVideos()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", "videos / id");
+            IgnoreMissingJson("seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
 
             TvShow tvShow = Config.Client.GetTvShowAsync(1668, TvShowMethods.Videos).Result;
             Assert.NotNull(tvShow.Videos);
@@ -407,7 +491,7 @@ namespace TMDbLibTests
         public void TestTvShowLatest()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / similar", " / translations", " / videos");
-
+            IgnoreMissingJson("seasons[array] / account_states", "seasons[array] / credits", "seasons[array] / episodes", "seasons[array] / external_ids", "seasons[array] / images", "seasons[array] / name", "seasons[array] / overview", "seasons[array] / videos");
             TvShow tvShow = Config.Client.GetLatestTvShowAsync().Sync();
 
             Assert.NotNull(tvShow);

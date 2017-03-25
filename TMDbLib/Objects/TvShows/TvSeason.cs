@@ -17,6 +17,15 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("credits")]
         public Credits Credits { get; set; }
 
+        // Special field that will only be populated when you do a tvshow retrieval withouth season details, patched for consistency sake
+        private int _episodeCount;
+        [JsonProperty("episode_count")]
+        public int EpisodeCount
+        {
+            get { return Episodes == null ? _episodeCount : Episodes.Count; }
+            set { _episodeCount = value; }
+        }
+
         [JsonProperty("episodes")]
         public List<TvSeasonEpisode> Episodes { get; set; }
 

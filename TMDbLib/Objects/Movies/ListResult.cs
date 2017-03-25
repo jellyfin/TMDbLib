@@ -22,6 +22,9 @@ namespace TMDbLib.Objects.Movies
         [JsonProperty("item_Count")]
         public int ItemCount { get; set; }
 
+        [JsonProperty("list_type")]
+        public string ListType { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
@@ -59,35 +60,13 @@ namespace TMDbLib.Client
         /// <param name="id">TMDb id of the tv show to retrieve.</param>
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
+        /// <param name="includeSeasonDetails">If true the client will retrieve extended season details such as it's underlying episodes</param>
         /// <returns>The requested Tv Show</returns>
-        public async Task<TvShow> GetTvShowAsync(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
+        public async Task<TvShow> GetTvShowAsync(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null, bool includeSeasonDetails = false)
         {
-            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
-                RequireSessionId(SessionType.UserSession);
-
-            RestRequest req = _client.Create("tv/{id}");
-            req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
-
-            if (extraMethods.HasFlag(TvShowMethods.AccountStates))
-                AddSessionId(req, SessionType.UserSession);
-
-            language = language ?? DefaultLanguage;
-            if (!string.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
-
-            string appends = string.Join(",",
-                                         Enum.GetValues(typeof(TvShowMethods))
-                                             .OfType<TvShowMethods>()
-                                             .Except(new[] { TvShowMethods.Undefined })
-                                             .Where(s => extraMethods.HasFlag(s))
-                                             .Select(s => s.GetDescription()));
-
-            if (appends != string.Empty)
-                req.AddParameter("append_to_response", appends);
-
-            RestResponse<TvShow> response = await req.ExecuteGet<TvShow>().ConfigureAwait(false);
-
-            TvShow item = await response.GetDataObject().ConfigureAwait(false);
+            JObject dynamicResult = await GetTvShowInternalAsync(id, extraMethods, language, includeSeasonDetails).ConfigureAwait(false);
+            // Deserialize the base show information
+            TvShow item = dynamicResult.ToObject<TvShow>(_client.Serializer);
 
             // No data to patch up so return
             if (item == null)
@@ -100,17 +79,44 @@ namespace TMDbLib.Client
             if (item.AccountStates != null)
                 item.AccountStates.Id = id;
 
+            if (!includeSeasonDetails)
+                return item;
+
+            List<TvSeason> seasonsLight = item.Seasons;
+            // Replace the bare bones version with the full versions we have retrieved so far
+            item.Seasons =
+                ((IEnumerable<KeyValuePair<string, JToken>>)dynamicResult)
+                    .Where(x => x.Key.StartsWith("season/"))
+                    .Select(x => x.Value.ToObject<TvSeason>(_client.Serializer))
+                    .ToList();
+
+            // Calculate and retrieve missing seasons
+            int numberOfMissingSeasons = seasonsLight.Count - item.Seasons.Count;
+            int maxSeasonNumber = seasonsLight.Max(x => x.SeasonNumber);
+            while (numberOfMissingSeasons > 0)
+            {
+                int nextUnpopulatedSeason = item.Seasons.Max(x => x.SeasonNumber) + 1;
+                JObject dynamicSeasonResult = await GetTvShowInternalAsync(id, TvShowMethods.Undefined, language, true, nextUnpopulatedSeason, maxSeasonNumber).ConfigureAwait(false);
+
+                IEnumerable<TvSeason> additionalSeasons = ((IEnumerable<KeyValuePair<string, JToken>>)dynamicSeasonResult)
+                    .Where(x => x.Key.StartsWith("season/"))
+                    .Select(x => x.Value.ToObject<TvSeason>(_client.Serializer));
+                foreach (var season in additionalSeasons)
+                {
+                    item.Seasons.Add(season);
+                }
+
+                numberOfMissingSeasons = seasonsLight.Count - item.Seasons.Count;
+            }
+
+            // Patch the season id's, at time of writing a _id is returned and does not match the normal season id's
+            foreach (var seasonLight in seasonsLight)
+                item.Seasons.First(s => s.SeasonNumber == seasonLight.SeasonNumber).Id = seasonLight.Id;
+
             return item;
         }
 
-        /// <summary>
-        /// Retrieve a tv Show by id.
-        /// </summary>
-        /// <param name="id">TMDb id of the tv show to retrieve.</param>
-        /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
-        /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        /// <returns>The requested Tv Show</returns>
-        public async Task<TvShow> GetTvShowWithFullSeasonInfoAsync(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null)
+        private async Task<JObject> GetTvShowInternalAsync(int id, TvShowMethods extraMethods, string language, bool includeSeasonDetails = false, int seasonOffset = 0, int? maxSeasonNumber = null)
         {
             if (extraMethods.HasFlag(TvShowMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
@@ -133,52 +139,30 @@ namespace TMDbLib.Client
                 .Select(s => s.GetDescription())
                 .ToList();
 
-            int maxNumberOfAppends = 20;
-            for (int i = 0; i < maxNumberOfAppends - appendValues.Count; i++)
+            if (includeSeasonDetails)
             {
-                appendValues.Add($"season/{i}");
+                int availableAppendCount = MaxNumberOfAppends - appendValues.Count;
+                int limit;
+                if (maxSeasonNumber == null)
+                {
+                    limit = availableAppendCount + seasonOffset;
+                }
+                else
+                {
+                    limit = (int)(maxSeasonNumber + 1);
+                    // Check that the limit is does not exceed our available appends
+                    limit = (limit - seasonOffset) > availableAppendCount ? (availableAppendCount + seasonOffset) : limit;
+                }
+                for (int i = seasonOffset; i < limit; i++)
+                {
+                    appendValues.Add($"season/{i}");
+                }
             }
 
             req.AddParameter("append_to_response", string.Join(",", appendValues));
 
-            RestResponse response = await req.ExecuteGet().ConfigureAwait(false);
-            Stream content = await response.GetContent().ConfigureAwait(false);
-
-            TvShowWithSeasonDetails item;
-            using (StreamReader sr = new StreamReader(content, _client.Encoding))
-            using (JsonTextReader tr = new JsonTextReader(sr))
-            {
-                var dynamicResult = _client.Serializer.Deserialize<JObject>(tr);
-
-                // Get the base show information
-                item = dynamicResult.ToObject<TvShowWithSeasonDetails>(_client.Serializer);
-
-                // No data to patch up so return
-                if (item == null)
-                    return null;
-
-                // Extract the full season details
-                item.SeasonsWithDetails =
-                    ((IEnumerable<KeyValuePair<string, JToken>>)dynamicResult)
-                        .Where(x => x.Key.StartsWith("season/"))
-                        .Select(x => x.Value.ToObject<TvSeason>(_client.Serializer))
-                        .ToList();
-
-                // TODO retrieve missing seasons with additional call and add them to the list
-
-                // Patch the season id's, at time of writing a _id is returned to does not match the normal season id's
-                foreach (var season in item.Seasons)
-                    item.SeasonsWithDetails.First(s=>s.SeasonNumber == season.SeasonNumber).Id = season.Id;
-            }
-
-            // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (item.Translations != null)
-                item.Translations.Id = id;
-
-            if (item.AccountStates != null)
-                item.AccountStates.Id = id;
-
-            return item;
+            RestResponse<JObject> response = await req.ExecuteGet<JObject>().ConfigureAwait(false);
+            return await response.GetDataObject();
         }
 
         public async Task<ChangesContainer> GetTvShowChangesAsync(int id)
