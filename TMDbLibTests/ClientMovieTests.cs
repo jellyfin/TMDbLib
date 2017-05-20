@@ -92,7 +92,7 @@ namespace TMDbLibTests
             Config.Client.MovieSetRatingAsync(IdHelper.TheDarkKnightRises, 5).Sync();
 
             MovieMethods combinedEnum = tmpMethods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Movie item = Config.Client.GetMovieAsync(IdHelper.TheDarkKnightRises, combinedEnum).Result;
+            Movie item = Config.Client.GetMovieAsync(IdHelper.TheDarkKnightRisesImdb, combinedEnum).Result;
 
             TestMethodsHelper.TestAllNotNull(tmpMethods, item);
         }
