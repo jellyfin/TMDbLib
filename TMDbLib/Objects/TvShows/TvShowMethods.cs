@@ -29,6 +29,8 @@ namespace TMDbLib.Objects.TvShows
         [EnumValue("account_states")]
         AccountStates = 512,
         [EnumValue("changes")]
-        Changes = 1024
+        Changes = 1024,
+        [EnumValue("recommendations")]
+        Recommendations = 2048
     }
 }

@@ -36,6 +36,8 @@ namespace TMDbLib.Objects.Movies
         [EnumValue("account_states")]
         AccountStates = 2048,
         [EnumValue("release_dates")]
-        ReleaseDates = 4096
+        ReleaseDates = 4096,
+        [EnumValue("recommendations")]
+        Recommendations = 8192
     }
 }

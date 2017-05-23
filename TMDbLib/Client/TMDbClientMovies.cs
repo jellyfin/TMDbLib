@@ -180,6 +180,16 @@ namespace TMDbLib.Client
             return await GetMovieMethod<SearchContainerWithId<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language).ConfigureAwait(false);
         }
 
+        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, int page = 0)
+        {
+            return await GetMovieRecommendationsAsync(id, DefaultLanguage, page).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, string language, int page = 0)
+        {
+            return await GetMovieMethod<SearchContainer<SearchMovie>>(id, MovieMethods.Recommendations, language: language, page: page).ConfigureAwait(false);
+        }
+
         private async Task<T> GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
             string country = null,
             string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()

@@ -241,9 +241,19 @@ namespace TMDbLib.Client
             return await GetTvShowSimilarAsync(id, DefaultLanguage, page).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchTv>> GetTvShowSimilarAsync(int id, string language, int page)
+        public async Task<SearchContainer<SearchTv>> GetTvShowSimilarAsync(int id, string language, int page = 0)
         {
             return await GetTvShowMethod<SearchContainer<SearchTv>>(id, TvShowMethods.Similar, language: language, page: page).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchTv>> GetTvShowRecommendationsAsync(int id, int page = 0)
+        {
+            return await GetTvShowRecommendationsAsync(id, DefaultLanguage, page).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchTv>> GetTvShowRecommendationsAsync(int id, string language, int page = 0)
+        {
+            return await GetTvShowMethod<SearchContainer<SearchTv>>(id, TvShowMethods.Recommendations, language: language, page: page).ConfigureAwait(false);
         }
 
         [Obsolete("Use GetTvShowPopularAsync")]
@@ -324,5 +334,6 @@ namespace TMDbLib.Client
             // TODO: Original code had a check for item=null
             return item.StatusCode == 1 || item.StatusCode == 12;
         }
+
     }
 }

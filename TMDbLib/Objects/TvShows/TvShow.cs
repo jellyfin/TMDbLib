@@ -115,6 +115,9 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("similar")]
         public ResultContainer<TvShow> Similar { get; set; }
 
+        [JsonProperty("recommendations")]
+        public ResultContainer<TvShow> Recommendations { get; set; }
+
         [JsonProperty("status")]
         public string Status { get; set; }
 
