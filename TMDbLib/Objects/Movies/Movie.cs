@@ -97,6 +97,9 @@ namespace TMDbLib.Objects.Movies
         [JsonProperty("similar")]
         public SearchContainer<SearchMovie> Similar { get; set; }
 
+        [JsonProperty("recommendations")]
+        public SearchContainer<SearchMovie> Recommendations { get; set; }
+
         [JsonProperty("spoken_languages")]
         public List<SpokenLanguage> SpokenLanguages { get; set; }
 
