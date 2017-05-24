@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyTitle>TMDb Library</AssemblyTitle>
+    <VersionPrefix>1.0.6-alpha</VersionPrefix>
+    <Authors>LordMike;Naliath</Authors>
+    <TargetFrameworks>net45;netstandard1.2</TargetFrameworks>
+    <AssemblyName>TMDbLib</AssemblyName>
+    <PackageId>TMDbLib</PackageId>
+    <PackageProjectUrl>https://github.com/LordMike/TMDbLib</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/LordMike/TMDbLib</RepositoryUrl>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.2' ">
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
+    <PackageReference Include="System.Net.Http" Version="4.1.0" />
+    <PackageReference Include="System.Dynamic.Runtime" Version="4.0.11" />
+    <PackageReference Include="System.Linq" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>
