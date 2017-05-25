@@ -82,8 +82,8 @@ Changelog
 
 **1.0.6-alpha**
 Changes:
-	- Added gender to cast and crew for TV shows
-	- Added recommendations for tvshows and movies
+   - Added gender to cast and crew for TV shows
+   - Added recommendations for tvshows and movies
 
 **1.0.5-alpha**
 Changes:
