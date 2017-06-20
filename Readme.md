@@ -80,10 +80,15 @@ Tips
 Changelog
 ---------
 
+**1.0.7-alpha**
+Changes:
+   - Added gender to cast and crew for movies
+   - Modified enum handeling for when null is returned from the api
+
 **1.0.6-alpha**
 Changes:
-	- Added gender to cast and crew for TV shows
-	- Added recommendations for tvshows and movies
+   - Added gender to cast and crew for TV shows
+   - Added recommendations for tvshows and movies
 
 **1.0.5-alpha**
 Changes:
