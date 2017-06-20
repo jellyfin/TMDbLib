@@ -66,9 +66,6 @@ namespace TMDbLibTests
             // Ignore missing json
             IgnoreMissingJson("similar.results[array] / media_type");
 
-            // Ignore gender, not availble on movies 
-            IgnoreMissingJson("credits.crew[array] / gender");
-
             // We ignore the 'notes' field, as TMDb sometimes leaves it out
             IgnoreMissingJson("release_dates.results[array].release_dates[array] / note");
             IgnoreMissingJson(" / id");
@@ -84,7 +81,7 @@ namespace TMDbLibTests
         public void TestMoviesImdbExtrasAll()
         {
             // Ignore missing json
-            IgnoreMissingJson(" / id", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "reviews.results[array] / media_type", "translations / id", "similar.results[array] / media_type", " / recommendations", "credits.crew[array] / gender");
+            IgnoreMissingJson(" / id", " / videos", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "reviews.results[array] / media_type", "translations / id", "similar.results[array] / media_type", " / recommendations");
 
             Dictionary<MovieMethods, Func<Movie, object>> tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(_methods);
             tmpMethods.Remove(MovieMethods.Videos);
@@ -105,9 +102,6 @@ namespace TMDbLibTests
         {
             // We ignore the 'notes' field, as TMDb sometimes leaves it out
             IgnoreMissingJson("release_dates.results[array].release_dates[array] / note");
-
-            // Ignore gender, not availble on movies 
-            IgnoreMissingJson("credits.crew[array] / gender");
 
             IgnoreMissingJson("similar.results[array] / media_type");
             IgnoreMissingJson(" / id", "alternative_titles / id", "credits / id", "keywords / id", "release_dates / id", "releases / id", "translations / id", "videos / id", " / recommendations");
@@ -196,8 +190,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieCasts()
         {
-            IgnoreMissingJson("crew[array] / gender");
-
             Credits resp = Config.Client.GetMovieCreditsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
