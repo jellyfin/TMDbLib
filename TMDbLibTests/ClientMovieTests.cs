@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using Xunit;
@@ -460,6 +461,15 @@ namespace TMDbLibTests
 
             // At least one title should differ
             Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+
+            SearchContainer<SearchMovie> listRegion = Config.Client.GetMoviePopularListAsync(region:"de").Result;
+
+            Assert.NotNull(listRegion);
+            Assert.True(listRegion.Results.Count > 0);
+            Assert.Equal(1, listRegion.Page);
+
+            // At least one title should differ
+            Assert.True(listDe.Results.Any(s => listRegion.Results.Any(x => x.Title != s.Title)));
         }
 
         [Fact]
@@ -488,6 +498,15 @@ namespace TMDbLibTests
 
             // At least one title should differ
             Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+
+            SearchContainer<SearchMovie> listRegion = Config.Client.GetMovieTopRatedListAsync(region:"de").Result;
+
+            Assert.NotNull(listRegion);
+            Assert.True(listRegion.Results.Count > 0);
+            Assert.Equal(1, listRegion.Page);
+
+            // At least one title should differ
+            Assert.True(listDe.Results.Any(s => listRegion.Results.Any(x => x.Title != s.Title)));
         }
 
         [Fact]
@@ -516,6 +535,15 @@ namespace TMDbLibTests
 
             // At least one title should differ
             Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+
+            SearchContainerWithDates<SearchMovie> listRegion = Config.Client.GetMovieNowPlayingListAsync(region:"de").Result;
+
+            Assert.NotNull(listRegion);
+            Assert.True(listRegion.Results.Count > 0);
+            Assert.Equal(1, listRegion.Page);
+
+            // At least one title should differ
+            Assert.True(listDe.Results.Any(s => listRegion.Results.Any(x => x.Title != s.Title)));
         }
 
         [Fact]
@@ -536,7 +564,7 @@ namespace TMDbLibTests
             Assert.True(listPage2.Results.Count > 0);
             Assert.Equal(2, listPage2.Page);
 
-            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieUpcomingListAsync("de").Result;
+            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieUpcomingListAsync(language:"de").Result;
 
             Assert.NotNull(listDe);
             Assert.True(listDe.Results.Count > 0);
@@ -544,6 +572,15 @@ namespace TMDbLibTests
 
             // At least one title should differ
             Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
+
+            SearchContainerWithDates<SearchMovie> listDeRegion = Config.Client.GetMovieUpcomingListAsync(region: "de").Result;
+
+            Assert.NotNull(listDeRegion);
+            Assert.True(listDeRegion.Results.Count > 0);
+            Assert.Equal(1, listDeRegion.Page);
+
+            // At least one title should differ
+            Assert.True(listDe.Results.Any(s => listDeRegion.Results.Any(x => x.Title != s.Title)));
         }
 
         [Fact]
