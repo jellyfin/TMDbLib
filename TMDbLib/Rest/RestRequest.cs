@@ -204,7 +204,7 @@ namespace TMDbLib.Rest
             do
             {
                 HttpRequestMessage req = PrepRequest(method);
-                HttpClientHandler handler = new HttpClientHandler();
+                HttpClientHandler handler = new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate };
 
                 //Added to support proxy during requests to TMDb API
                 //Proxy is optional, so we only use it if set into the RestClient
