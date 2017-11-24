@@ -18,6 +18,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="source">The source the specified id belongs to</param>
         /// <param name="id">The id of the object you wish to located</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         public async Task<Timezones> GetTimezonesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {

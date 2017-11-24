@@ -19,6 +19,7 @@ namespace TMDbLib.Client
         /// <param name="source">The source the specified id belongs to</param>
         /// <param name="id">The id of the object you wish to located</param>
         /// <returns>A list of all objects in TMDb that matched your id</returns>
+        /// <param name="cancellationToken">A cancellation token</param>
         public async Task<FindContainer> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("find/{id}");

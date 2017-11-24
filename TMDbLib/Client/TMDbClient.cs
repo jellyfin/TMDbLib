@@ -132,12 +132,13 @@ namespace TMDbLib.Client
         /// Check <see cref="Utilities.TMDbAPIProxy"/> for more information.
         /// </remarks>
         public IWebProxy WebProxy { get; private set; }
-        
+
         /// <summary>
         /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
         /// </summary>
         /// <param name="req">Request</param>
         /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
+        /// <param name="parameterType">The location of the paramter in the resulting query</param>
         private void AddSessionId(RestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
         {
             if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||

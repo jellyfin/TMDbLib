@@ -29,6 +29,7 @@ namespace TMDbLib.Client
         /// Retrieves all information for a specific tv show in relation to the current user account
         /// </summary>
         /// <param name="tvShowId">The id of the tv show to get the account states for</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public async Task<AccountState> GetTvShowAccountStateAsync(int tvShowId, CancellationToken cancellationToken = default(CancellationToken))
@@ -56,6 +57,7 @@ namespace TMDbLib.Client
         /// <param name="id">TMDb id of the tv show to retrieve.</param>
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>The requested Tv Show</returns>
         public async Task<TvShow> GetTvShowAsync(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -115,6 +117,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="id">The TMDb id of the target tv show.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
+        /// <param name="cancellationToken">A cancellation token</param>
         public async Task<Credits> GetTvShowCreditsAsync(int id, string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await GetTvShowMethod<Credits>(id, TvShowMethods.Credits, "yyyy-MM-dd", language, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -124,6 +127,7 @@ namespace TMDbLib.Client
         /// Returns an object that contains all known exteral id's for the tv show related to the specified TMDB id.
         /// </summary>
         /// <param name="id">The TMDb id of the target tv show.</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         public async Task<ExternalIdsTvShow> GetTvShowExternalIdsAsync(int id, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await GetTvShowMethod<ExternalIdsTvShow>(id, TvShowMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -137,6 +141,7 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
+        /// <param name="cancellationToken">A cancellation token</param>
         public async Task<ImagesWithId> GetTvShowImagesAsync(int id, string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await GetTvShowMethod<ImagesWithId>(id, TvShowMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -169,6 +174,7 @@ namespace TMDbLib.Client
         /// <param name="list">Type of list to fetch</param>
         /// <param name="page">Page</param>
         /// <param name="timezone">Only relevant for list type AiringToday</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns></returns>
         public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, int page = 0, string timezone = null, CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -182,6 +188,7 @@ namespace TMDbLib.Client
         /// <param name="language">Language</param>
         /// <param name="page">Page</param>
         /// <param name="timezone">Only relevant for list type AiringToday</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns></returns>
         public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, string language, int page = 0, string timezone = null, CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -313,6 +320,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="tvShowId">The id of the tv show to rate</param>
         /// <param name="rating">The rating you wish to assign to the specified tv show. Value needs to be between 0.5 and 10 and must use increments of 0.5. Ex. using 7.1 will not work and return false.</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>True if the the tv show's rating was successfully updated, false if not</returns>
         /// <remarks>Requires a valid guest or user session</remarks>
         /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>

@@ -39,6 +39,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="username">A valid TMDb username</param>
         /// <param name="password">The passoword for the provided login</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         public async Task<UserSession> AuthenticationGetUserSessionAsync(string username, string password, CancellationToken cancellationToken = default(CancellationToken))
         {
             Token token = await AuthenticationRequestAutenticationTokenAsync(cancellationToken).ConfigureAwait(false);

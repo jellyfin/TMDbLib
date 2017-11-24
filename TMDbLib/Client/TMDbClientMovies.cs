@@ -23,6 +23,7 @@ namespace TMDbLib.Client
         /// Retrieves all information for a specific movie in relation to the current user account
         /// </summary>
         /// <param name="movieId">The id of the movie to get the account states for</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public async Task<AccountState> GetMovieAccountStateAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
@@ -70,6 +71,7 @@ namespace TMDbLib.Client
         /// <param name="imdbId">The Imdb id of the movie OR the TMDb id as string</param>
         /// <param name="language">Language to localize the results in.</param>
         /// <param name="extraMethods">A list of additional methods to execute for this req as enum flags</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>The reqed movie or null if it could not be found</returns>
         /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned, see remarks.</exception>
@@ -343,6 +345,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="movieId">The id of the movie to rate</param>
         /// <param name="rating">The rating you wish to assign to the specified movie. Value needs to be between 0.5 and 10 and must use increments of 0.5. Ex. using 7.1 will not work and return false.</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>True if the the movie's rating was successfully updated, false if not</returns>
         /// <remarks>Requires a valid guest or user session</remarks>
         /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>

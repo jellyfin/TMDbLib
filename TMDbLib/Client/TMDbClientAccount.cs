@@ -46,6 +46,7 @@ namespace TMDbLib.Client
         /// <param name="mediaType">The type of media to influence</param>
         /// <param name="mediaId">The id of the movie/tv show to influence</param>
         /// <param name="isOnWatchlist">True if you want the specified movie to be part of the watchlist, false if not</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>True if the the movie's status on the watchlist was successfully updated, false if not</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
