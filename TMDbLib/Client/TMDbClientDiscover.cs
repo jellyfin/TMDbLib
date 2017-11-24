@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
@@ -17,7 +18,7 @@ namespace TMDbLib.Client
             return new DiscoverMovie(this);
         }
 
-        internal async Task<SearchContainer<T>> DiscoverPerformAsync<T>(string endpoint, string language, int page, SimpleNamedValueCollection parameters)
+        internal async Task<SearchContainer<T>> DiscoverPerformAsync<T>(string endpoint, string language, int page, SimpleNamedValueCollection parameters, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest request = _client.Create(endpoint);
 
@@ -30,7 +31,7 @@ namespace TMDbLib.Client
             foreach (KeyValuePair<string, string> pair in parameters)
                 request.AddParameter(pair.Key, pair.Value);
 
-            RestResponse<SearchContainer<T>> response = await request.ExecuteGet<SearchContainer<T>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<T>> response = await request.ExecuteGet<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
             return response;
         }
 

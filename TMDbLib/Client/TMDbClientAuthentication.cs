@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Net;
+using System.Threading;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Rest;
 
@@ -8,24 +9,24 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<GuestSession> AuthenticationCreateGuestSessionAsync()
+        public async Task<GuestSession> AuthenticationCreateGuestSessionAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest request = _client.Create("authentication/guest_session/new");
             //{
             //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
             //};
 
-            RestResponse<GuestSession> response = await request.ExecuteGet<GuestSession>().ConfigureAwait(false);
+            RestResponse<GuestSession> response = await request.ExecuteGet<GuestSession>(cancellationToken).ConfigureAwait(false);
 
             return response;
         }
 
-        public async Task<UserSession> AuthenticationGetUserSessionAsync(string initialRequestToken)
+        public async Task<UserSession> AuthenticationGetUserSessionAsync(string initialRequestToken, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest request = _client.Create("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
 
-            RestResponse<UserSession> response = await request.ExecuteGet<UserSession>().ConfigureAwait(false);
+            RestResponse<UserSession> response = await request.ExecuteGet<UserSession>(cancellationToken).ConfigureAwait(false);
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
                 throw new UnauthorizedAccessException();
@@ -38,18 +39,18 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="username">A valid TMDb username</param>
         /// <param name="password">The passoword for the provided login</param>
-        public async Task<UserSession> AuthenticationGetUserSessionAsync(string username, string password)
+        public async Task<UserSession> AuthenticationGetUserSessionAsync(string username, string password, CancellationToken cancellationToken = default(CancellationToken))
         {
-            Token token = await AuthenticationRequestAutenticationTokenAsync().ConfigureAwait(false);
-            await AuthenticationValidateUserTokenAsync(token.RequestToken, username, password).ConfigureAwait(false);
-            return await AuthenticationGetUserSessionAsync(token.RequestToken).ConfigureAwait(false);
+            Token token = await AuthenticationRequestAutenticationTokenAsync(cancellationToken).ConfigureAwait(false);
+            await AuthenticationValidateUserTokenAsync(token.RequestToken, username, password, cancellationToken).ConfigureAwait(false);
+            return await AuthenticationGetUserSessionAsync(token.RequestToken, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Token> AuthenticationRequestAutenticationTokenAsync()
+        public async Task<Token> AuthenticationRequestAutenticationTokenAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest request = _client.Create("authentication/token/new");
 
-            RestResponse<Token> response = await request.ExecuteGet<Token>().ConfigureAwait(false);
+            RestResponse<Token> response = await request.ExecuteGet<Token>(cancellationToken).ConfigureAwait(false);
             Token token = response;
 
             token.AuthenticationCallback = response.GetHeader("Authentication-Callback");
@@ -57,7 +58,7 @@ namespace TMDbLib.Client
             return token;
         }
 
-        public async Task AuthenticationValidateUserTokenAsync(string initialRequestToken, string username, string password)
+        public async Task AuthenticationValidateUserTokenAsync(string initialRequestToken, string username, string password, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest request = _client.Create("authentication/token/validate_with_login");
             request.AddParameter("request_token", initialRequestToken);
@@ -67,7 +68,7 @@ namespace TMDbLib.Client
             RestResponse response;
             try
             {
-                response = await request.ExecuteGet().ConfigureAwait(false);
+                response = await request.ExecuteGet(cancellationToken).ConfigureAwait(false);
             }
             catch (AggregateException ex)
             {

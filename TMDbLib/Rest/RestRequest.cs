@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Exceptions;
@@ -89,54 +90,54 @@ namespace TMDbLib.Rest
                 throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
         }
 
-        public async Task<RestResponse> ExecuteDelete()
+        public async Task<RestResponse> ExecuteDelete(CancellationToken cancellationToken)
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
             CheckResponse(resp);
 
             return new RestResponse(resp);
         }
 
-        public async Task<RestResponse<T>> ExecuteDelete<T>()
+        public async Task<RestResponse<T>> ExecuteDelete<T>(CancellationToken cancellationToken)
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete).ConfigureAwait(false);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
             CheckResponse(resp);
 
             return new RestResponse<T>(resp, _client);
         }
 
-        public async Task<RestResponse> ExecuteGet()
+        public async Task<RestResponse> ExecuteGet(CancellationToken cancellationToken)
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
             CheckResponse(resp);
 
             return new RestResponse(resp);
         }
 
-        public async Task<RestResponse<T>> ExecuteGet<T>()
+        public async Task<RestResponse<T>> ExecuteGet<T>(CancellationToken cancellationToken)
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Get).ConfigureAwait(false);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
             CheckResponse(resp);
 
             return new RestResponse<T>(resp, _client);
         }
 
-        public async Task<RestResponse> ExecutePost()
+        public async Task<RestResponse> ExecutePost(CancellationToken cancellationToken)
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
             CheckResponse(resp);
 
             return new RestResponse(resp);
         }
 
-        public async Task<RestResponse<T>> ExecutePost<T>()
+        public async Task<RestResponse<T>> ExecutePost<T>(CancellationToken cancellationToken)
         {
-            HttpResponseMessage resp = await SendInternal(HttpMethod.Post).ConfigureAwait(false);
+            HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
             CheckResponse(resp);
 
@@ -190,7 +191,7 @@ namespace TMDbLib.Rest
             return req;
         }
 
-        private async Task<HttpResponseMessage> SendInternal(HttpMethod method)
+        private async Task<HttpResponseMessage> SendInternal(HttpMethod method, CancellationToken cancellationToken)
         {
             // Account for the following settings:
             // - MaxRetryCount                          Max times to retry
@@ -211,7 +212,7 @@ namespace TMDbLib.Rest
                 if (_client.Proxy != null)
                     handler.Proxy = _client.Proxy;
 
-                HttpResponseMessage resp = await new HttpClient(handler).SendAsync(req).ConfigureAwait(false);
+                HttpResponseMessage resp = await new HttpClient(handler).SendAsync(req, cancellationToken).ConfigureAwait(false);
 
                 if (resp.StatusCode == (HttpStatusCode)429)
                 {
@@ -219,10 +220,10 @@ namespace TMDbLib.Rest
                     TimeSpan? retryAfter = resp.Headers.RetryAfter?.Delta.Value;
 
                     if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
-                        await Task.Delay(retryAfter.Value).ConfigureAwait(false);
+                        await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
                     else
                         // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
-                        await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
+                        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
 
                     continue;
                 }

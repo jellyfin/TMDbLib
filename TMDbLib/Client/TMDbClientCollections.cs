@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
@@ -10,12 +11,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetCollectionAsync(collectionId, DefaultLanguage, extraMethods).ConfigureAwait(false);
+            return await GetCollectionAsync(collectionId, DefaultLanguage, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Collection> GetCollectionAsync(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined)
+        public async Task<Collection> GetCollectionAsync(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
@@ -36,17 +37,17 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Collection> resp = await req.ExecuteGet<Collection>().ConfigureAwait(false);
+            RestResponse<Collection> resp = await req.ExecuteGet<Collection>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
 
-        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null)
+        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language).ConfigureAwait(false);
+            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null) where T : new()
+        private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default(CancellationToken)) where T : new()
         {
             RestRequest req = _client.Create("collection/{collectionId}/{method}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
@@ -55,7 +56,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
