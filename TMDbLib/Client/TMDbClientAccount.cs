@@ -156,13 +156,13 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<SearchContainer<SearchMovie>> AccountGetRatedMoviesAsync(
+        public async Task<SearchContainer<SearchMovieWithRating>> AccountGetRatedMoviesAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies).ConfigureAwait(false);
+            return await GetAccountList<SearchMovieWithRating>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies).ConfigureAwait(false);
         }
 
         /// <summary>

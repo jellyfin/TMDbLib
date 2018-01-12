@@ -1,18 +1,27 @@
-version: 0.9.2.{build}-alpha
+image: Visual Studio 2017
 build_script:
-- cmd: >-
-    dotnet restore TMDbLib\
+- ps: >-
+    [xml]$doc = (Get-Content .\TMDbLib\TMDbLib.csproj)
 
-    dotnet restore TestApplication\
+    $version = $doc.Project.PropertyGroup.VersionPrefix
 
-
-    dotnet build TMDbLib\ -c Release
-
-    dotnet build TestApplication\ -c Release
-notifications:
-- provider: Email
-  to:
-  - michael@mbwarez.dk
-  on_build_success: false
-  on_build_failure: false
-  on_build_status_changed: true
+    Update-AppveyorBuild -Version "$version build $env:APPVEYOR_BUILD_NUMBER"
+- ps: # Core
+- ps: msbuild /t:Restore
+- ps: # Build Library
+- ps: msbuild /t:Build /p:Configuration=Release TMDbLib
+- ps: # Library
+- ps: msbuild /t:Pack /p:Configuration=Release /p:OutputPath=..\Nuget\ TMDbLib
+- ps: # Test app
+- ps: msbuild /t:Build /p:Configuration=Release TestApplication
+- ps: # Tests
+- ps: msbuild /t:Build /p:Configuration=Release TMDbLibTests
+test: off
+artifacts:
+- path: Nuget\*.nupkg
+deploy:
+- provider: NuGet
+  api_key:
+    secure: dgfUEGXULcqCTyNcS6UEDK8BCBi8y+M2+d4IFjnb3Gf9DqV34fMSp1XjxJg2AVRC
+  on:
+    branch: nuget

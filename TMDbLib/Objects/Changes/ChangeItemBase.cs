@@ -1,14 +1,11 @@
 ﻿using System;
 using Newtonsoft.Json;
-using TMDbLib.Helpers;
 using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes
 {
-    [JsonConverter(typeof(ChangeItemConverter))]
     public abstract class ChangeItemBase
     {
-        [JsonIgnore]
         [JsonProperty("action")]
         public ChangeAction Action { get; set; }
 

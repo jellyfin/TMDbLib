@@ -1,8 +1,11 @@
+using TMDbLib.Utilities;
+
 namespace TMDbLib.Objects.People
 {
     public enum PersonGender
     {
-        Unknown,
+        [EnumValue(null)]
+        Unknown = 0,
         Female = 1,
         Male = 2
     }

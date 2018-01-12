@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.Movies
 {
@@ -24,5 +25,8 @@ namespace TMDbLib.Objects.Movies
 
         [JsonProperty("profile_path")]
         public string ProfilePath { get; set; }
+
+        [JsonProperty("gender")]
+        public PersonGender Gender { get; set; }
     }
 }

@@ -12,5 +12,8 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("twitter_id")]
         public string TwitterId { get; set; }
+
+        [JsonProperty("instagram_id")]
+        public string InstagramId { get; set; }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using TMDbLib.Helpers;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -114,6 +114,9 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("similar")]
         public ResultContainer<TvShow> Similar { get; set; }
+
+        [JsonProperty("recommendations")]
+        public ResultContainer<TvShow> Recommendations { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }

@@ -41,6 +41,9 @@ namespace TMDbLib.Utilities.Converters
                     case ChangeAction.Deleted:
                         result = new ChangeItemDeleted();
                         break;
+                    case ChangeAction.Destroyed:
+                        result = new ChangeItemDestroyed();
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -54,7 +57,9 @@ namespace TMDbLib.Utilities.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            JToken jToken = JToken.FromObject(value);
+
+            serializer.Serialize(writer, jToken);
         }
     }
 }

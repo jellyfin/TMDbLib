@@ -37,7 +37,7 @@ namespace TMDbLibTests
         public void TestTvShowExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / known_for", " / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / genre_ids");
+            IgnoreMissingJson(" / known_for", " / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / genre_ids", " / recommendations");
 
             TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.BreakingBad).Result;
 
@@ -52,7 +52,7 @@ namespace TMDbLibTests
         public void TestTvShowExtrasAll()
         {
             IgnoreMissingJson(" / id");
-            IgnoreMissingJson(" / genre_ids", " / known_for", " / similar", " / translations", " / videos", "alternative_titles / id", "content_ratings / id", "credits / id", "external_ids / id", "keywords / id");
+            IgnoreMissingJson(" / genre_ids", " / known_for", " / similar", " / translations", " / videos", "alternative_titles / id", "content_ratings / id", "credits / id", "external_ids / id", "keywords / id", " / recommendations");
 
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
@@ -110,7 +110,6 @@ namespace TMDbLibTests
             Assert.Equal("18164", externalIds.TvrageId);
             Assert.Equal("81189", externalIds.TvdbId);
         }
-
 
         [Fact]
         public void TestTvShowSeparateExtrasContentRatings()
@@ -184,7 +183,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasAccountState()
         {
-            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
+            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos", " / recommendations");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
@@ -276,6 +275,9 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowPopular()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             TestHelpers.SearchPages(i => Config.Client.GetTvShowPopularAsync(i).Result);
 
             SearchContainer<SearchTv> result = Config.Client.GetTvShowPopularAsync().Sync();
@@ -290,7 +292,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeasonCount()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", " / videos", " / recommendations");
 
             TvShow tvShow = Config.Client.GetTvShowAsync(1668).Result;
             Assert.Equal(tvShow.Seasons[1].EpisodeCount, 24);
@@ -299,7 +301,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowVideos()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", "videos / id");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / known_for", " / similar", " / translations", "videos / id", " / recommendations");
 
             TvShow tvShow = Config.Client.GetTvShowAsync(1668, TvShowMethods.Videos).Result;
             Assert.NotNull(tvShow.Videos);
@@ -332,7 +334,42 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSimilars()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             SearchContainer<SearchTv> tvShow = Config.Client.GetTvShowSimilarAsync(1668).Result;
+
+            Assert.NotNull(tvShow);
+            Assert.NotNull(tvShow.Results);
+
+            SearchTv item = tvShow.Results.SingleOrDefault(s => s.Id == 1100);
+            Assert.NotNull(item);
+
+            Assert.True(TestImagesHelpers.TestImagePath(item.BackdropPath),
+                "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
+            Assert.Equal(1100, item.Id);
+            Assert.Equal("How I Met Your Mother", item.OriginalName);
+            Assert.Equal(new DateTime(2005, 09, 19), item.FirstAirDate);
+            Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath),
+                "item.PosterPath was not a valid image path, was: " + item.PosterPath);
+            Assert.True(item.Popularity > 0);
+            Assert.Equal("How I Met Your Mother", item.Name);
+            Assert.True(item.VoteAverage > 0);
+            Assert.True(item.VoteCount > 0);
+
+            Assert.NotNull(item.OriginCountry);
+            Assert.Equal(1, item.OriginCountry.Count);
+            Assert.True(item.OriginCountry.Contains("US"));
+        }
+
+
+        [Fact]
+        public void TestTvShowRecommendations()
+        {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
+            SearchContainer<SearchTv> tvShow = Config.Client.GetTvShowRecommendationsAsync(1668).Result;
 
             Assert.NotNull(tvShow);
             Assert.NotNull(tvShow.Results);
@@ -355,9 +392,13 @@ namespace TMDbLibTests
             Assert.True(item.OriginCountry.Contains("US"));
         }
 
+
         [Fact]
         public void TestTvShowTopRated()
         {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
             // This test might fail with inconsistent information from the pages due to a caching problem in the API.
             // Comment from the Developer of the API
             // That would be caused from different pages getting cached at different times. 
@@ -378,7 +419,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowLatest()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / similar", " / translations", " / videos");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / similar", " / translations", " / videos", " / recommendations");
 
             TvShow tvShow = Config.Client.GetLatestTvShowAsync().Sync();
 
@@ -388,7 +429,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowLists()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / created_by", " / credits", " / external_ids", " / genres", " / images", " / in_production", " / keywords", " / languages", " / networks", " / production_companies", " / seasons", " / similar", " / translations", " / videos");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / created_by", " / credits", " / external_ids", " / genres", " / images", " / in_production", " / keywords", " / languages", " / networks", " / production_companies", " / seasons", " / similar", " / translations", " / videos", "results[array] / media_type", " / recommendations");
 
             foreach (TvShowListType type in Enum.GetValues(typeof(TvShowListType)).OfType<TvShowListType>())
             {

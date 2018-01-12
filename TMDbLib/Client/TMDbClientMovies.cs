@@ -180,6 +180,16 @@ namespace TMDbLib.Client
             return await GetMovieMethod<SearchContainerWithId<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language).ConfigureAwait(false);
         }
 
+        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, int page = 0)
+        {
+            return await GetMovieRecommendationsAsync(id, DefaultLanguage, page).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, string language, int page = 0)
+        {
+            return await GetMovieMethod<SearchContainer<SearchMovie>>(id, MovieMethods.Recommendations, language: language, page: page).ConfigureAwait(false);
+        }
+
         private async Task<T> GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
             string country = null,
             string language = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null) where T : new()
@@ -206,7 +216,7 @@ namespace TMDbLib.Client
             return response;
         }
 
-        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieNowPlayingListAsync(string language = null, int page = 0)
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieNowPlayingListAsync(string language = null, int page = 0, string region = null)
         {
             RestRequest req = _client.Create("movie/now_playing");
 
@@ -214,13 +224,15 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
             if (language != null)
                 req.AddParameter("language", language);
-                
+            if (region != null)
+                req.AddParameter("region", region);
+
             RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>().ConfigureAwait(false);
 
             return resp;
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMoviePopularListAsync(string language = null, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMoviePopularListAsync(string language = null, int page = 0, string region = null)
         {
             RestRequest req = _client.Create("movie/popular");
 
@@ -228,6 +240,8 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
             if (language != null)
                 req.AddParameter("language", language);
+            if (region != null)
+                req.AddParameter("region", region);
 
             RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
 
@@ -264,7 +278,7 @@ namespace TMDbLib.Client
             return await GetMovieMethod<SearchContainer<SearchMovie>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd").ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieTopRatedListAsync(string language = null, int page = 0)
+        public async Task<SearchContainer<SearchMovie>> GetMovieTopRatedListAsync(string language = null, int page = 0, string region = null)
         {
             RestRequest req = _client.Create("movie/top_rated");
 
@@ -272,6 +286,8 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
             if (language != null)
                 req.AddParameter("language", language);
+            if (region != null)
+                req.AddParameter("region", region);
 
             RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>().ConfigureAwait(false);
 
@@ -283,7 +299,7 @@ namespace TMDbLib.Client
             return await GetMovieMethod<TranslationsContainer>(movieId, MovieMethods.Translations).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieUpcomingListAsync(string language = null, int page = 0)
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieUpcomingListAsync(string language = null, int page = 0, string region = null)
         {
             RestRequest req = _client.Create("movie/upcoming");
 
@@ -291,6 +307,8 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
             if (language != null)
                 req.AddParameter("language", language);
+            if (region != null)
+                req.AddParameter("region", region);
 
             RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>().ConfigureAwait(false);
 

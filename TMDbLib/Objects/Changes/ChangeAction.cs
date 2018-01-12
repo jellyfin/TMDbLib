@@ -1,7 +1,10 @@
-﻿using TMDbLib.Utilities;
+﻿using Newtonsoft.Json;
+using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes
 {
+    [JsonConverter(typeof(EnumStringValueConverter))]
     public enum ChangeAction
     {
         Unknown,
@@ -16,6 +19,9 @@ namespace TMDbLib.Objects.Changes
         Updated = 3,
 
         [EnumValue("deleted")]
-        Deleted = 4
+        Deleted = 4,
+
+        [EnumValue("destroyed")]
+        Destroyed = 5
     }
 }
