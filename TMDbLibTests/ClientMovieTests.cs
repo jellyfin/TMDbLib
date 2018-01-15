@@ -226,7 +226,7 @@ namespace TMDbLibTests
             ImageData backdrop = resp.Backdrops.SingleOrDefault(s => s.FilePath == "/17zArExB7ztm6fjUXZwQWgGMC9f.jpg");
             Assert.NotNull(backdrop);
 
-            Assert.True(Math.Abs(1.77777777777778 - backdrop.AspectRatio) < double.Epsilon);
+            Assert.True(Math.Abs(1.7777777777777779 - backdrop.AspectRatio) < double.Epsilon);
             Assert.True(TestImagesHelpers.TestImagePath(backdrop.FilePath), "backdrop.FilePath was not a valid image path, was: " + backdrop.FilePath);
             Assert.Equal(1080, backdrop.Height);
             Assert.Equal("xx", backdrop.Iso_639_1);
@@ -302,7 +302,7 @@ namespace TMDbLibTests
             TranslationsContainer resp = Config.Client.GetMovieTranslationsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
-            TranslationWithCountry translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
+            Translation translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
             Assert.NotNull(translation);
 
             Assert.Equal("German", translation.EnglishName);

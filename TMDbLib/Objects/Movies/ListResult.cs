@@ -25,6 +25,9 @@ namespace TMDbLib.Objects.Movies
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("list_type")]
+        public string ListType { get; set; }
+
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
     }
