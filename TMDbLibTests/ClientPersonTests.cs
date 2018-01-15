@@ -96,12 +96,12 @@ namespace TMDbLibTests
             Assert.Equal(62, item.Id);
             Assert.Equal("nm0000246", item.ImdbId);
             Assert.Equal("Bruce Willis", item.Name);
-            Assert.Equal("Idar-Oberstein, Germany", item.PlaceOfBirth);
+            Assert.Equal("Idar-Oberstein, Allemagne de l'Ouest", item.PlaceOfBirth);
             Assert.True(item.Popularity > 0);
             Assert.True(TestImagesHelpers.TestImagePath(item.ProfilePath), "item.ProfilePath was not a valid image path, was: " + item.ProfilePath);
 
             Assert.NotNull(item.AlsoKnownAs);
-            Assert.Equal(2, item.AlsoKnownAs.Count);
+            Assert.Equal(6, item.AlsoKnownAs.Count);
             Assert.True(item.AlsoKnownAs.Contains("Брюс Уиллис"));
             Assert.True(item.AlsoKnownAs.Contains("브루스 윌리스"));
         }
@@ -121,7 +121,7 @@ namespace TMDbLibTests
             Assert.NotNull(cast);
             Assert.Equal("David Addison Jr.", cast.Character);
             Assert.Equal("52571e7f19c2957114107d48", cast.CreditId);
-            Assert.Equal(71, cast.EpisodeCount);
+            Assert.Equal(66, cast.EpisodeCount);
             Assert.Equal(new DateTime(1985, 3, 3), cast.FirstAirDate);
             Assert.Equal(1998, cast.Id);
             Assert.Equal("Moonlighting", cast.Name);
@@ -170,7 +170,7 @@ namespace TMDbLibTests
             Assert.Equal("Production", job.Department);
             Assert.Equal(2026, job.Id);
             Assert.Equal("Producer", job.Job);
-            Assert.Equal(new DateTime(2005, 3, 9), job.ReleaseDate);
+            Assert.Equal(new DateTime(2005, 3, 10), job.ReleaseDate);
             Assert.True(TestImagesHelpers.TestImagePath(job.PosterPath), "job.PosterPath was not a valid image path, was: " + job.PosterPath);
             Assert.Equal("Hostage", job.Title);
             Assert.Equal("Hostage", job.OriginalTitle);
@@ -285,7 +285,7 @@ namespace TMDbLibTests
             ImageData image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
 
             Assert.NotNull(image);
-            Assert.True(Math.Abs(0.666666666666667 - image.AspectRatio) < double.Epsilon);
+            Assert.True(Math.Abs(0.66666666666667 - image.AspectRatio) < double.Epsilon);
             Assert.True(TestImagesHelpers.TestImagePath(image.FilePath), "image.FilePath was not a valid image path, was: " + image.FilePath);
             Assert.Equal(1500, image.Height);
             Assert.Null(image.Iso_639_1);
@@ -311,7 +311,7 @@ namespace TMDbLibTests
             TaggedImage image = images.Results.SingleOrDefault(s => s.FilePath == "/my81Hjt7NpZhaMX9bHi4wVhFy0v.jpg");
 
             Assert.NotNull(image);
-            Assert.True(Math.Abs(1.77777777777778 - image.AspectRatio) < double.Epsilon);
+            Assert.True(Math.Abs(1.7777777777778 - image.AspectRatio) < double.Epsilon);
             Assert.True(TestImagesHelpers.TestImagePath(image.FilePath), "image.FilePath was not a valid image path, was: " + image.FilePath);
             Assert.Equal(1080, image.Height);
             Assert.Equal("4ea5d0792c058837cb000431", image.Id);

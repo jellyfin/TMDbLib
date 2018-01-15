@@ -32,6 +32,13 @@ namespace TMDbLibTests
                 // Ensure all movies point to this list
                 int page = 1;
                 SearchContainer<ListResult> movieLists = Config.Client.GetMovieListsAsync(movieResult.Id).Result;
+
+                ListResult listItem = movieLists.Results.First();
+                Assert.NotEmpty(listItem.Description);
+                Assert.NotEmpty(listItem.Iso_639_1);
+                Assert.NotEmpty(listItem.Id);
+                Assert.NotEmpty(listItem.Name);
+
                 while (movieLists != null)
                 {
                     // Check if the current result page contains the relevant list
