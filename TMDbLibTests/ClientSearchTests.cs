@@ -197,9 +197,8 @@ namespace TMDbLibTests
             Assert.True(item.VoteCount > 0);
 
             Assert.NotNull(item.OriginCountry);
-            Assert.Equal(2, item.OriginCountry.Count);
+            Assert.Equal(1, item.OriginCountry.Count);
             Assert.True(item.OriginCountry.Contains("US"));
-            Assert.True(item.OriginCountry.Contains("CA"));
         }
     }
 }

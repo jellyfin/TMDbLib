@@ -9,6 +9,6 @@ namespace TMDbLib.Objects.General
         public int Id { get; set; }
 
         [JsonProperty("translations")]
-        public List<TranslationWithCountry> Translations { get; set; }
+        public List<Translation> Translations { get; set; }
     }
 }
