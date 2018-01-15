@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
@@ -13,7 +14,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<TvEpisodeAccountState> GetTvEpisodeAccountStateAsync(int tvShowId, int seasonNumber, int episodeNumber)
+        public async Task<TvEpisodeAccountState> GetTvEpisodeAccountStateAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -24,8 +25,8 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<TvEpisodeAccountState> response = await req.ExecuteGet<TvEpisodeAccountState>().ConfigureAwait(false);
-            
+            RestResponse<TvEpisodeAccountState> response = await req.ExecuteGet<TvEpisodeAccountState>(cancellationToken).ConfigureAwait(false);
+
             return await response.GetDataObject().ConfigureAwait(false);
         }
 
@@ -37,7 +38,8 @@ namespace TMDbLib.Client
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve.</param>
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        public async Task<TvEpisode> GetTvEpisodeAsync(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null)
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<TvEpisode> GetTvEpisodeAsync(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
@@ -64,7 +66,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            RestResponse<TvEpisode> resp = await req.ExecuteGet<TvEpisode>().ConfigureAwait(false);
+            RestResponse<TvEpisode> resp = await req.ExecuteGet<TvEpisode>(cancellationToken).ConfigureAwait(false);
 
             TvEpisode item = await resp.GetDataObject().ConfigureAwait(false);
 
@@ -84,16 +86,16 @@ namespace TMDbLib.Client
 
             if (item.ExternalIds != null)
                 item.ExternalIds.Id = item.Id ?? 0;
-                
+
             return item;
         }
 
-        public async Task<ChangesContainer> GetTvEpisodeChangesAsync(int episodeId)
+        public async Task<ChangesContainer> GetTvEpisodeChangesAsync(int episodeId, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("tv/episode/{id}/changes");
             req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
 
-            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>().ConfigureAwait(false);
+            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>(cancellationToken).ConfigureAwait(false);
 
             return response;
         }
@@ -105,9 +107,10 @@ namespace TMDbLib.Client
         /// <param name="seasonNumber">The season number of the season the episode belongs to. Note use 0 for specials.</param>
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve information for.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        public async Task<CreditsWithGuestStars> GetTvEpisodeCreditsAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<CreditsWithGuestStars> GetTvEpisodeCreditsAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetTvEpisodeMethod<CreditsWithGuestStars>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language).ConfigureAwait(false);
+            return await GetTvEpisodeMethod<CreditsWithGuestStars>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Credits, dateFormat: "yyyy-MM-dd", language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -116,9 +119,10 @@ namespace TMDbLib.Client
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season the episode belongs to. Note use 0 for specials.</param>
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve information for.</param>
-        public async Task<ExternalIdsTvEpisode> GetTvEpisodeExternalIdsAsync(int tvShowId, int seasonNumber, int episodeNumber)
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<ExternalIdsTvEpisode> GetTvEpisodeExternalIdsAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetTvEpisodeMethod<ExternalIdsTvEpisode>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds).ConfigureAwait(false);
+            return await GetTvEpisodeMethod<ExternalIdsTvEpisode>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -131,12 +135,13 @@ namespace TMDbLib.Client
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
         /// For images this means that the image might contain language specifc text
         /// </param>
-        public async Task<StillImages> GetTvEpisodeImagesAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null)
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<StillImages> GetTvEpisodeImagesAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetTvEpisodeMethod<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language).ConfigureAwait(false);
+            return await GetTvEpisodeMethod<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<T> GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null) where T : new()
+        private async Task<T> GetTvEpisodeMethod<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null, CancellationToken cancellationToken = default(CancellationToken)) where T : new()
         {
             RestRequest req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
@@ -153,17 +158,17 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<T> resp = await req.ExecuteGet<T>().ConfigureAwait(false);
+            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
 
-        public async Task<ResultContainer<Video>> GetTvEpisodeVideosAsync(int tvShowId, int seasonNumber, int episodeNumber)
+        public async Task<ResultContainer<Video>> GetTvEpisodeVideosAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos).ConfigureAwait(false);
+            return await GetTvEpisodeMethod<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<bool> TvEpisodeRemoveRatingAsync(int tvShowId, int seasonNumber, int episodeNumber)
+        public async Task<bool> TvEpisodeRemoveRatingAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -174,7 +179,7 @@ namespace TMDbLib.Client
 
             AddSessionId(req);
 
-            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 13 = "The item/record was deleted successfully."
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
@@ -183,7 +188,7 @@ namespace TMDbLib.Client
             return item.StatusCode == 13;
         }
 
-        public async Task<bool> TvEpisodeSetRatingAsync(int tvShowId, int seasonNumber, int episodeNumber, double rating)
+        public async Task<bool> TvEpisodeSetRatingAsync(int tvShowId, int seasonNumber, int episodeNumber, double rating, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -196,7 +201,7 @@ namespace TMDbLib.Client
 
             req.SetBody(new { value = rating });
 
-            RestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -13,7 +14,8 @@ namespace TMDbLib.Client
         /// Retrieve a list by it's id
         /// </summary>
         /// <param name="listId">The id of the list you want to retrieve</param>
-        public async Task<GenericList> GetListAsync(string listId)
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<GenericList> GetListAsync(string listId, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException(nameof(listId));
@@ -21,7 +23,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
 
-            RestResponse<GenericList> resp = await req.ExecuteGet<GenericList>().ConfigureAwait(false);
+            RestResponse<GenericList> resp = await req.ExecuteGet<GenericList>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -31,7 +33,8 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="listId">Id of the list to check in</param>
         /// <param name="movieId">Id of the movie to check for in the list</param>
-        public async Task<bool> GetListIsMoviePresentAsync(string listId, int movieId)
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<bool> GetListIsMoviePresentAsync(string listId, int movieId, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException(nameof(listId));
@@ -43,7 +46,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("listId", listId);
             req.AddParameter("movie_id", movieId.ToString());
 
-            RestResponse<ListStatus> response = await req.ExecuteGet<ListStatus>().ConfigureAwait(false);
+            RestResponse<ListStatus> response = await req.ExecuteGet<ListStatus>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false)).ItemPresent;
         }
@@ -53,22 +56,24 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="listId">The id of the list to add the movie to</param>
         /// <param name="movieId">The id of the movie to add</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>True if the method was able to add the movie to the list, will retrun false in case of an issue or when the movie was already added to the list</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListAddMovieAsync(string listId, int movieId)
+        public async Task<bool> ListAddMovieAsync(string listId, int movieId, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await ManipulateMediaListAsync(listId, movieId, "add_item").ConfigureAwait(false);
+            return await ManipulateMediaListAsync(listId, movieId, "add_item", cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Clears a list, without confirmation.
         /// </summary>
         /// <param name="listId">The id of the list to clear</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListClearAsync(string listId)
+        public async Task<bool> ListClearAsync(string listId, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -80,7 +85,7 @@ namespace TMDbLib.Client
             request.AddParameter("confirm", "true");
             AddSessionId(request, SessionType.UserSession);
 
-            RestResponse<PostReply> response = await request.ExecutePost<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await request.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // Status code 12 = "The item/record was updated successfully"
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
@@ -95,9 +100,10 @@ namespace TMDbLib.Client
         /// <param name="name">The name of the new list</param>
         /// <param name="description">Optional description for the list</param>
         /// <param name="language">Optional language that might indicate the language of the content in the list</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<string> ListCreateAsync(string name, string description = "", string language = null)
+        public async Task<string> ListCreateAsync(string name, string description = "", string language = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -122,7 +128,7 @@ namespace TMDbLib.Client
                 req.SetBody(new { name = name, description = description });
             }
 
-            RestResponse<ListCreateReply> response = await req.ExecutePost<ListCreateReply>().ConfigureAwait(false);
+            RestResponse<ListCreateReply> response = await req.ExecutePost<ListCreateReply>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false)).ListId;
         }
@@ -131,9 +137,10 @@ namespace TMDbLib.Client
         /// Deletes the specified list that is owned by the user
         /// </summary>
         /// <param name="listId">A list id that is owned by the user associated with the current session id</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListDeleteAsync(string listId)
+        public async Task<bool> ListDeleteAsync(string listId, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -144,7 +151,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("listId", listId);
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // Status code 13 = success
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
@@ -158,15 +165,16 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="listId">The id of the list to add the movie to</param>
         /// <param name="movieId">The id of the movie to add</param>
+        /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> ListRemoveMovieAsync(string listId, int movieId)
+        public async Task<bool> ListRemoveMovieAsync(string listId, int movieId, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await ManipulateMediaListAsync(listId, movieId, "remove_item").ConfigureAwait(false);
+            return await ManipulateMediaListAsync(listId, movieId, "remove_item", cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<bool> ManipulateMediaListAsync(string listId, int movieId, string method)
+        private async Task<bool> ManipulateMediaListAsync(string listId, int movieId, string method, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -184,7 +192,7 @@ namespace TMDbLib.Client
 
             req.SetBody(new { media_id = movieId });
 
-            RestResponse<PostReply> response = await req.ExecutePost<PostReply>().ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // Status code 12 = "The item/record was updated successfully"
             // Status code 13 = "The item/record was deleted successfully"

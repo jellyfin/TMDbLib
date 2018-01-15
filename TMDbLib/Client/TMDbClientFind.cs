@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Find;
 using TMDbLib.Rest;
@@ -18,7 +19,8 @@ namespace TMDbLib.Client
         /// <param name="source">The source the specified id belongs to</param>
         /// <param name="id">The id of the object you wish to located</param>
         /// <returns>A list of all objects in TMDb that matched your id</returns>
-        public async Task<FindContainer> FindAsync(FindExternalSource source, string id)
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<FindContainer> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("find/{id}");
 
@@ -30,7 +32,7 @@ namespace TMDbLib.Client
 
             req.AddParameter("external_source", source.GetDescription());
 
-            RestResponse<FindContainer> resp = await req.ExecuteGet<FindContainer>().ConfigureAwait(false);
+            RestResponse<FindContainer> resp = await req.ExecuteGet<FindContainer>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
