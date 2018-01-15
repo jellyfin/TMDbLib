@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Collections;
@@ -38,8 +39,12 @@ namespace TMDbLib.Client
             //req.DateFormat = "yyyy-MM-dd";
 
             RestResponse<Collection> resp = await req.ExecuteGet<Collection>(cancellationToken).ConfigureAwait(false);
+            Collection item = await resp.GetDataObject().ConfigureAwait(false);
 
-            return resp;
+            if (item != null)
+                item.Overview = WebUtility.HtmlDecode(item.Overview);
+
+            return item;
         }
 
         public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default(CancellationToken))
