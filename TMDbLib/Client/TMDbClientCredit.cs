@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using TMDbLib.Objects.Credit;
 using TMDbLib.Rest;
 
@@ -6,12 +7,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Credit> GetCreditsAsync(string id)
+        public async Task<Credit> GetCreditsAsync(string id, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetCreditsAsync(id, DefaultLanguage).ConfigureAwait(false);
+            return await GetCreditsAsync(id, DefaultLanguage, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Credit> GetCreditsAsync(string id, string language)
+        public async Task<Credit> GetCreditsAsync(string id, string language, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("credit/{id}");
 
@@ -20,7 +21,7 @@ namespace TMDbLib.Client
 
             req.AddUrlSegment("id", id);
 
-            RestResponse<Credit> resp = await req.ExecuteGet<Credit>().ConfigureAwait(false);
+            RestResponse<Credit> resp = await req.ExecuteGet<Credit>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

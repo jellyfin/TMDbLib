@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
@@ -9,12 +10,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(int page = 0)
+        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(int page = 0, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetGuestSessionRatedMoviesAsync(DefaultLanguage, page).ConfigureAwait(false);
+            return await GetGuestSessionRatedMoviesAsync(DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(string language, int page = 0)
+        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -28,17 +29,17 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<SearchMovieWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchMovieWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchMovieWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchMovieWithRating>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
 
-        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(int page = 0)
+        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(int page = 0, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetGuestSessionRatedTvAsync(DefaultLanguage, page).ConfigureAwait(false);
+            return await GetGuestSessionRatedTvAsync(DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(string language, int page = 0)
+        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -52,17 +53,17 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<SearchTvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchTvShowWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<SearchTvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchTvShowWithRating>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
 
-        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(int page = 0)
+        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(int page = 0, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetGuestSessionRatedTvEpisodesAsync(DefaultLanguage, page).ConfigureAwait(false);
+            return await GetGuestSessionRatedTvEpisodesAsync(DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(string language, int page = 0)
+        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -76,7 +77,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGet<SearchContainer<TvEpisodeWithRating>>().ConfigureAwait(false);
+            RestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGet<SearchContainer<TvEpisodeWithRating>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
