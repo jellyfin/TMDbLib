@@ -100,7 +100,7 @@ namespace TMDbLibTests
             IgnoreMissingJson(" / movies");
 
             // Get config
-            Config.Client.GetConfig();
+            Config.Client.GetConfigAsync().Sync();
 
             // Test image url generator
             Company company = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
@@ -13,7 +14,7 @@ namespace TestApplication
 {
     public class Program
     {
-        private static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
             // Instantiate a new client, all that's needed is an API key, but it's possible to 
             // also specify if SSL should be used, and if another server address should be used.
@@ -21,21 +22,21 @@ namespace TestApplication
 
             // We need the config from TMDb in case we want to get stuff like images
             // The config needs to be fetched for each new client we create, but we can cache it to a file (as in this example).
-            FetchConfig(client);
+            await FetchConfig(client);
 
             // Try fetching a movie
-            FetchMovieExample(client);
+            await FetchMovieExample(client);
 
             // Once we've got a movie, or person, or so on, we can display images. 
             // TMDb follow the pattern shown in the following example
             // This example also shows an important feature of most of the Get-methods.
-            FetchImagesExample(client);
+            await FetchImagesExample(client);
 
             Console.WriteLine("Done.");
             Console.ReadLine();
         }
 
-        private static void FetchConfig(TMDbClient client)
+        private static async Task FetchConfig(TMDbClient client)
         {
             FileInfo configJson = new FileInfo("config.json");
 
@@ -45,23 +46,23 @@ namespace TestApplication
             {
                 Console.WriteLine("Using stored config");
                 string json = File.ReadAllText(configJson.FullName, Encoding.UTF8);
-                
+
                 client.SetConfig(JsonConvert.DeserializeObject<TMDbConfig>(json));
             }
             else
             {
                 Console.WriteLine("Getting new config");
-                client.GetConfig();
+                var config = await client.GetConfigAsync();
 
                 Console.WriteLine("Storing config");
-                string json = JsonConvert.SerializeObject(client.Config);
+                string json = JsonConvert.SerializeObject(config);
                 File.WriteAllText(configJson.FullName, json, Encoding.UTF8);
             }
 
             Spacer();
         }
 
-        private static void FetchImagesExample(TMDbClient client)
+        private static async Task FetchImagesExample(TMDbClient client)
         {
             const int movieId = 76338; // Thor: The Dark World (2013)
 
@@ -77,7 +78,7 @@ namespace TestApplication
             // Note: Each method normally corresponds to a property on the resulting object. If you haven't requested the information, the property will most likely be null.
 
             // Also note, that while we could have used 'client.GetMovieImagesAsync()' - it was better to do it like this because we also wanted the Title of the movie.
-            Movie movie = client.GetMovieAsync(movieId, MovieMethods.Images).Result;
+            Movie movie = await client.GetMovieAsync(movieId, MovieMethods.Images);
 
             Console.WriteLine("Fetching images for '" + movie.Title + "'");
 
@@ -116,13 +117,13 @@ namespace TestApplication
             }
         }
 
-        private static void FetchMovieExample(TMDbClient client)
+        private static async Task FetchMovieExample(TMDbClient client)
         {
             string query = "Thor";
 
             // This example shows the fetching of a movie.
             // Say the user searches for "Thor" in order to find "Thor: The Dark World" or "Thor"
-            SearchContainer<SearchMovie> results = client.SearchMovieAsync(query).Result;
+            SearchContainer<SearchMovie> results = await client.SearchMovieAsync(query);
 
             // The results is a list, currently on page 1 because we didn't specify any page.
             Console.WriteLine("Searched for movies: '" + query + "', found " + results.TotalResults + " results in " +

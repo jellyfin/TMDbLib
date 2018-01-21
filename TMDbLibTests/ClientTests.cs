@@ -16,7 +16,7 @@ namespace TMDbLibTests
         public void GetConfigTest()
         {
             Assert.False(Config.Client.HasConfig);
-            Config.Client.GetConfig();
+            Config.Client.GetConfigAsync().Sync();
             Assert.True(Config.Client.HasConfig);
 
             Assert.NotNull(Config.Client.Config);
@@ -28,7 +28,7 @@ namespace TMDbLibTests
             TestConfig config = new TestConfig(true);
 
             Assert.False(config.Client.HasConfig);
-            config.Client.GetConfig();
+            config.Client.GetConfigAsync().Sync();
             Assert.True(config.Client.HasConfig);
 
             Assert.NotNull(config.Client.Config);
@@ -60,16 +60,16 @@ namespace TMDbLibTests
         public void ClientConstructorUrlTest()
         {
             TMDbClient clientA = new TMDbClient(TestConfig.APIKey, false, "http://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientA.GetConfig();
+            clientA.GetConfigAsync().Sync();
 
             TMDbClient clientB = new TMDbClient(TestConfig.APIKey, true, "http://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientB.GetConfig();
+            clientB.GetConfigAsync().Sync();
 
             TMDbClient clientC = new TMDbClient(TestConfig.APIKey, false, "https://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientC.GetConfig();
+            clientC.GetConfigAsync().Sync();
 
             TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientD.GetConfig();
+            clientD.GetConfigAsync().Sync();
         }
 
         [Fact]

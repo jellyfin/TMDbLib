@@ -270,7 +270,7 @@ namespace TMDbLibTests
         public void TestPersonsImages()
         {
             // Get config
-            Config.Client.GetConfig();
+            Config.Client.GetConfigAsync().Sync();
 
             // Get images
             ProfileImages images = Config.Client.GetPersonImagesAsync(IdHelper.BruceWillis).Result;
@@ -298,7 +298,7 @@ namespace TMDbLibTests
         public void TestPersonsTaggedImages()
         {
             // Get config
-            Config.Client.GetConfig();
+            Config.Client.GetConfigAsync().Sync();
 
             // Get images
             TestHelpers.SearchPages(i => Config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, i).Result);
