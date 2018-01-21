@@ -264,18 +264,6 @@ namespace TMDbLib.Client
             return await GetTvShowMethod<SearchContainer<SearchTv>>(id, TvShowMethods.Recommendations, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        [Obsolete("Use GetTvShowPopularAsync")]
-        public async Task<SearchContainer<SearchTv>> GetTvShowsPopularAsync(int page = -1, string language = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return await GetTvShowPopularAsync(page, language, cancellationToken).ConfigureAwait(false);
-        }
-
-        [Obsolete("Use GetTvShowTopRatedAsync")]
-        public async Task<SearchContainer<SearchTv>> GetTvShowsTopRatedAsync(int page = -1, string language = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return await GetTvShowTopRatedAsync(page, language, cancellationToken).ConfigureAwait(false);
-        }
-
         /// <summary>
         /// Get the list of top rated TV shows. By default, this list will only include TV shows that have 2 or more votes. This list refreshes every day.
         /// </summary>
