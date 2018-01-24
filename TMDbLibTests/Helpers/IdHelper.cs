@@ -3,6 +3,7 @@
     public static class IdHelper
     {
         // Movies
+        public const int BladeRunner2049 = 335984;
         public const int Avatar = 19995;
         public const int AGoodDayToDieHard = 47964;
         public const int TheDarkKnightRises = 49026;
@@ -18,6 +19,7 @@
         public const string ImdbTerminatorId = "tt0088247";
 
         // TV
+        public const int GameOfThrones = 1399;
         public const int BreakingBad = 1396;
         public const int BreakingBadSeason1Id = 3572;
         public const int BreakingBadSeason1Episode1Id = 62085;

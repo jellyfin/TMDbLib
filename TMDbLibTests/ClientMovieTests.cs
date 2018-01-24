@@ -218,6 +218,19 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestMoviesGetExternalIds()
+        {
+            ExternalIdsMovie externalIds = Config.Client.GetMovieExternalIdsAsync(IdHelper.BladeRunner2049).Result;
+
+            Assert.NotNull(externalIds);
+            Assert.Equal(335984, externalIds.Id);
+            Assert.Equal("tt1856101", externalIds.ImdbId);
+            Assert.Equal("BladeRunner2049", externalIds.FacebookId);
+            Assert.Equal("bladerunner", externalIds.TwitterId);
+            Assert.Equal("bladerunnermovie", externalIds.InstagramId);
+        }
+
+        [Fact]
         public void TestMoviesGetMovieImages()
         {
             ImagesWithId resp = Config.Client.GetMovieImagesAsync(IdHelper.AGoodDayToDieHard).Result;

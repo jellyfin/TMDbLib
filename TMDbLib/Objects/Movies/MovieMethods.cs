@@ -30,14 +30,16 @@ namespace TMDbLib.Objects.Movies
         Lists = 512,
         [EnumValue("changes")]
         Changes = 1024,
+        [EnumValue("external_ids")]
+        ExternalIds = 2048,
         /// <summary>
         /// Requires a valid user session to be set on the client object
         /// </summary>
         [EnumValue("account_states")]
-        AccountStates = 2048,
+        AccountStates = 4096,
         [EnumValue("release_dates")]
-        ReleaseDates = 4096,
+        ReleaseDates = 8192,
         [EnumValue("recommendations")]
-        Recommendations = 8192
+        Recommendations = 16384
     }
 }
