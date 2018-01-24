@@ -18,8 +18,8 @@ namespace TMDbLibTests
             Assert.True(jobs.Count > 0);
 
             Assert.True(jobs.All(job => !string.IsNullOrEmpty(job.Department)));
-            Assert.True(jobs.All(job => job.JobList != null));
-            Assert.True(jobs.All(job => job.JobList.Count > 0));
+            Assert.True(jobs.All(job => job.Jobs != null));
+            Assert.True(jobs.All(job => job.Jobs.Count > 0));
         }
     }
 }

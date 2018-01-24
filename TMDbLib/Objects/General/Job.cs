@@ -8,7 +8,7 @@ namespace TMDbLib.Objects.General
         [JsonProperty("department")]
         public string Department { get; set; }
 
-        [JsonProperty("job_list")]
-        public List<string> JobList { get; set; }
+        [JsonProperty("jobs")]
+        public List<string> Jobs { get; set; }
     }
 }
