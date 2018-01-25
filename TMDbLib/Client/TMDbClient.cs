@@ -84,19 +84,6 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// The base number of seconds that will be waited between retry attempts.
-        /// Each retry will take progressively longer to give the service a chance to recover from what ever the problem is.
-        /// Formula: RetryAttempt * RetryWaitTimeInSeconds, this is the amount of time in seconds the application will wait before retrying
-        /// </summary>
-        /// <remarks>Default is 10</remarks>
-        [Obsolete("Setting this has no effect, as TMDb informs us of how long to wait")]
-        public int RetryWaitTimeInSeconds
-        {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
-        }
-
-        /// <summary>
         /// The session id that will be used when TMDb requires authentication
         /// </summary>
         /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
@@ -107,19 +94,6 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
         public SessionType SessionType { get; private set; }
-
-        /// <summary>
-        /// The TMDb only allows x amount of requests over a specific time span.
-        /// If you exceed this limit your request will be denied untill the timer resets.
-        /// By default the client will keep waiting for the time to expire and then try again.
-        /// For details about the allowed limits: https://www.themoviedb.org/talk/5317af69c3a3685c4a0003b1?page=1
-        /// </summary>
-        [Obsolete("Setting this is identical to setting 'MaxRetryCount = 0'")]
-        public bool ThrowErrorOnExeedingMaxCalls
-        {
-            get { return MaxRetryCount == 0; }
-            set { MaxRetryCount = value ? 0 : 5; }
-        }
 
         /// <summary>
         /// Gets or sets the Web Proxy to use during requests to TMDb API.
