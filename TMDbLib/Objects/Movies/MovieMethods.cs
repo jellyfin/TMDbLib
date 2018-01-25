@@ -38,6 +38,8 @@ namespace TMDbLib.Objects.Movies
         [EnumValue("release_dates")]
         ReleaseDates = 4096,
         [EnumValue("recommendations")]
-        Recommendations = 8192
+        Recommendations = 8192,
+        [EnumValue("external_ids")]
+        ExternalIds = 16384
     }
 }

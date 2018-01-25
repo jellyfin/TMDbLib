@@ -82,6 +82,9 @@ namespace TMDbLib.Objects.Movies
         [JsonProperty("release_dates")]
         public ResultContainer<ReleaseDatesContainer> ReleaseDates { get; set; }
 
+        [JsonProperty("external_ids")]
+        public ExternalIdsMovie ExternalIds { get; set; }
+
         [JsonProperty("releases")]
         public Releases Releases { get; set; }
 

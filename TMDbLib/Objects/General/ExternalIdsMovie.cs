@@ -1,14 +1,14 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.General
 {
-    public class ExternalIdsTvShow : ExternalIds
+    public class ExternalIdsMovie
     {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
         [JsonProperty("imdb_id")]
         public string ImdbId { get; set; }
-
-        [JsonProperty("tvdb_id")]
-        public string TvdbId { get; set; }
 
         [JsonProperty("facebook_id")]
         public string FacebookId { get; set; }

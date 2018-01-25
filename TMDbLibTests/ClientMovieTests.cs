@@ -37,7 +37,9 @@ namespace TMDbLibTests
                 [MovieMethods.Lists] = movie => movie.Lists,
                 [MovieMethods.Changes] = movie => movie.Changes,
                 [MovieMethods.AccountStates] = movie => movie.AccountStates,
-                [MovieMethods.ReleaseDates] = movie => movie.ReleaseDates
+                [MovieMethods.ReleaseDates] = movie => movie.ReleaseDates,
+                [MovieMethods.Recommendations] = movie => movie.Recommendations,
+                [MovieMethods.ExternalIds] = movie => movie.ExternalIds
             };
         }
 
@@ -45,7 +47,7 @@ namespace TMDbLibTests
         public void TestMoviesExtrasNone()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
 
             Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
@@ -215,6 +217,19 @@ namespace TMDbLibTests
             Assert.Equal("Marco Beltrami", crew.Name);
             Assert.True(TestImagesHelpers.TestImagePath(crew.ProfilePath), "crew.ProfilePath was not a valid image path, was: " + crew.ProfilePath);
 
+        }
+
+        [Fact]
+        public void TestMoviesGetExternalIds()
+        {
+            ExternalIdsMovie externalIds = Config.Client.GetMovieExternalIdsAsync(IdHelper.BladeRunner2049).Result;
+
+            Assert.NotNull(externalIds);
+            Assert.Equal(335984, externalIds.Id);
+            Assert.Equal("tt1856101", externalIds.ImdbId);
+            Assert.Equal("BladeRunner2049", externalIds.FacebookId);
+            Assert.Equal("bladerunner", externalIds.TwitterId);
+            Assert.Equal("bladerunnermovie", externalIds.InstagramId);
         }
 
         [Fact]
@@ -462,7 +477,7 @@ namespace TMDbLibTests
             // At least one title should differ
             Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
 
-            SearchContainer<SearchMovie> listRegion = Config.Client.GetMoviePopularListAsync(region:"de").Result;
+            SearchContainer<SearchMovie> listRegion = Config.Client.GetMoviePopularListAsync(region: "de").Result;
 
             Assert.NotNull(listRegion);
             Assert.True(listRegion.Results.Count > 0);
@@ -499,7 +514,7 @@ namespace TMDbLibTests
             // At least one title should differ
             Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
 
-            SearchContainer<SearchMovie> listRegion = Config.Client.GetMovieTopRatedListAsync(region:"de").Result;
+            SearchContainer<SearchMovie> listRegion = Config.Client.GetMovieTopRatedListAsync(region: "de").Result;
 
             Assert.NotNull(listRegion);
             Assert.True(listRegion.Results.Count > 0);
@@ -536,7 +551,7 @@ namespace TMDbLibTests
             // At least one title should differ
             Assert.True(list.Results.Any(s => listDe.Results.Any(x => x.Title != s.Title)));
 
-            SearchContainerWithDates<SearchMovie> listRegion = Config.Client.GetMovieNowPlayingListAsync(region:"de").Result;
+            SearchContainerWithDates<SearchMovie> listRegion = Config.Client.GetMovieNowPlayingListAsync(region: "de").Result;
 
             Assert.NotNull(listRegion);
             Assert.True(listRegion.Results.Count > 0);
@@ -564,7 +579,7 @@ namespace TMDbLibTests
             Assert.True(listPage2.Results.Count > 0);
             Assert.Equal(2, listPage2.Page);
 
-            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieUpcomingListAsync(language:"de").Result;
+            SearchContainerWithDates<SearchMovie> listDe = Config.Client.GetMovieUpcomingListAsync(language: "de").Result;
 
             Assert.NotNull(listDe);
             Assert.True(listDe.Results.Count > 0);

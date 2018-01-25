@@ -127,6 +127,9 @@ namespace TMDbLib.Client
             if (item.AccountStates != null)
                 item.AccountStates.Id = item.Id;
 
+            if (item.ExternalIds != null)
+                item.ExternalIds.Id = item.Id;
+
             // Overview is the only field that is HTML encoded from the source.
             item.Overview = WebUtility.HtmlDecode(item.Overview);
 
@@ -142,6 +145,16 @@ namespace TMDbLib.Client
         public async Task<Credits> GetMovieCreditsAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await GetMovieMethod<Credits>(movieId, MovieMethods.Credits, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Returns an object that contains all known exteral id's for the movie related to the specified TMDB id.
+        /// </summary>
+        /// <param name="id">The TMDb id of the target movie.</param>
+        /// <param name="cancellationToken">A cancellation token</param>
+        public async Task<ExternalIdsMovie> GetMovieExternalIdsAsync(int id, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await GetMovieMethod<ExternalIdsMovie>(id, MovieMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<ImagesWithId> GetMovieImagesAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))

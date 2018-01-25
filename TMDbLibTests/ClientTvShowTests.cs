@@ -29,7 +29,9 @@ namespace TMDbLibTests
                 [TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles,
                 [TvShowMethods.Keywords] = tvShow => tvShow.Keywords,
                 [TvShowMethods.Changes] = tvShow => tvShow.Changes,
-                [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates
+                [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates,
+                [TvShowMethods.Recommendations] = tvShow => tvShow.Recommendations,
+                [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds
             };
         }
 
@@ -100,15 +102,18 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvShowSeparateExtrasExternalIds()
         {
-            ExternalIdsTvShow externalIds = Config.Client.GetTvShowExternalIdsAsync(IdHelper.BreakingBad).Result;
+            ExternalIdsTvShow externalIds = Config.Client.GetTvShowExternalIdsAsync(IdHelper.GameOfThrones).Result;
 
             Assert.NotNull(externalIds);
-            Assert.Equal(1396, externalIds.Id);
-            Assert.Equal("/en/breaking_bad", externalIds.FreebaseId);
-            Assert.Equal("/m/03d34x8", externalIds.FreebaseMid);
-            Assert.Equal("tt0903747", externalIds.ImdbId);
-            Assert.Equal("18164", externalIds.TvrageId);
-            Assert.Equal("81189", externalIds.TvdbId);
+            Assert.Equal(1399, externalIds.Id);
+            Assert.Equal("/en/game_of_thrones", externalIds.FreebaseId);
+            Assert.Equal("/m/0524b41", externalIds.FreebaseMid);
+            Assert.Equal("tt0944947", externalIds.ImdbId);
+            Assert.Equal("24493", externalIds.TvrageId);
+            Assert.Equal("121361", externalIds.TvdbId);
+            Assert.Equal("GameOfThrones", externalIds.FacebookId);
+            Assert.Equal("GameOfThrones", externalIds.TwitterId);
+            Assert.Equal("gameofthrones", externalIds.InstagramId);
         }
 
         [Fact]
