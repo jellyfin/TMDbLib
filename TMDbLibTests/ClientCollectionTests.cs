@@ -84,7 +84,7 @@ namespace TMDbLibTests
         public void TestCollectionsImages()
         {
             // Get config
-            Config.Client.GetConfig();
+            Config.Client.GetConfigAsync().Sync();
 
             // Test image url generator
             ImagesWithId images = Config.Client.GetCollectionImagesAsync(IdHelper.JamesBondCollection).Result;

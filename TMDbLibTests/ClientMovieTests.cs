@@ -441,7 +441,7 @@ namespace TMDbLibTests
         public void TestMoviesImages()
         {
             // Get config
-            Config.Client.GetConfig();
+            Config.Client.GetConfigAsync().Sync();
 
             // Test image url generator
             ImagesWithId images = Config.Client.GetMovieImagesAsync(IdHelper.AGoodDayToDieHard).Result;

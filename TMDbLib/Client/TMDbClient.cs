@@ -9,6 +9,7 @@ using RestClient = TMDbLib.Rest.RestClient;
 using RestRequest = TMDbLib.Rest.RestRequest;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace TMDbLib.Client
 {
@@ -165,9 +166,9 @@ namespace TMDbLib.Client
             throw new UserSessionRequiredException();
         }
 
-        public void GetConfig()
+        public async Task<TMDbConfig> GetConfigAsync()
         {
-            TMDbConfig config = _client.Create("configuration").ExecuteGet<TMDbConfig>(CancellationToken.None).Result;
+            TMDbConfig config = await _client.Create("configuration").ExecuteGet<TMDbConfig>(CancellationToken.None);
 
             if (config == null)
                 throw new Exception("Unable to retrieve configuration");
@@ -175,6 +176,8 @@ namespace TMDbLib.Client
             // Store config
             Config = config;
             HasConfig = true;
+
+            return config;
         }
 
         public Uri GetImageUrl(string size, string filePath, bool useSsl = false)
