@@ -127,6 +127,9 @@ namespace TMDbLib.Client
             if (item.AccountStates != null)
                 item.AccountStates.Id = item.Id;
 
+            if (item.ExternalIds != null)
+                item.ExternalIds.Id = item.Id;
+
             // Overview is the only field that is HTML encoded from the source.
             item.Overview = WebUtility.HtmlDecode(item.Overview);
 
