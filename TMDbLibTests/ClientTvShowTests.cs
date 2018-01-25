@@ -29,7 +29,9 @@ namespace TMDbLibTests
                 [TvShowMethods.AlternativeTitles] = tvShow => tvShow.AlternativeTitles,
                 [TvShowMethods.Keywords] = tvShow => tvShow.Keywords,
                 [TvShowMethods.Changes] = tvShow => tvShow.Changes,
-                [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates
+                [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates,
+                [TvShowMethods.Recommendations] = tvShow => tvShow.Recommendations,
+                [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds
             };
         }
 
