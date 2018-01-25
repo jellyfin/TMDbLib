@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace TMDbLib.Client
 {
-    public partial class TMDbClient
+    public partial class TMDbClient : IDisposable
     {
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
@@ -34,7 +34,6 @@ namespace TMDbLib.Client
             _serializer.Converters.Add(new SearchBaseConverter());
             _serializer.Converters.Add(new TaggedImageConverter());
             _serializer.Converters.Add(new TolerantEnumConverter());
-            
 
             //Setup proxy to use during requests
             //Proxy is optional. If passed, will be used in every request.
@@ -271,6 +270,11 @@ namespace TMDbLib.Client
                     throw;
                 }
             }
+        }
+
+        public void Dispose()
+        {
+            _client?.Dispose();
         }
     }
 }

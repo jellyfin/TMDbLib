@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 using System.Net;
+using System.Net.Http;
 
 namespace TMDbLib.Rest
 {
-    internal class RestClient
+    internal class RestClient : IDisposable
     {
         private int _maxRetryCount;
 
@@ -18,12 +19,19 @@ namespace TMDbLib.Rest
 
             MaxRetryCount = 0;
             Proxy = proxy;
+
+            HttpClient = new HttpClient(new HttpClientHandler
+            {
+                Proxy = proxy
+            });
         }
 
         internal Uri BaseUrl { get; }
         internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
         internal Encoding Encoding { get; } = new UTF8Encoding(false);
         internal IWebProxy Proxy { get; private set; }
+
+        internal HttpClient HttpClient { get; private set; }
 
         public int MaxRetryCount
         {
@@ -47,6 +55,11 @@ namespace TMDbLib.Rest
         public RestRequest Create(string endpoint)
         {
             return new RestRequest(this, endpoint);
+        }
+
+        public void Dispose()
+        {
+            HttpClient?.Dispose();
         }
     }
 }
