@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.Search
 {
@@ -19,6 +20,9 @@ namespace TMDbLib.Objects.Search
 
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("gender")]
+        public PersonGender Gender { get; set; }
 
         [JsonProperty("profile_path")]
         public string ProfilePath { get; set; }
