@@ -17,6 +17,12 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("overview")]
+        public string Overview { get; set; }
+
+        [JsonProperty("production_code")]
+        public string ProductionCode { get; set; }
+
         [JsonProperty("season_number")]
         public int SeasonNumber { get; set; }
 
