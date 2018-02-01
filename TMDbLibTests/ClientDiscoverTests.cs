@@ -5,6 +5,7 @@ using System.Linq;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using System;
 
 namespace TMDbLibTests
 {
@@ -64,6 +65,17 @@ namespace TMDbLibTests
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync()
                     .WhereVoteCountIsAtLeast(1000)
                     .WhereVoteAverageIsAtLeast(2);
+
+            TestHelpers.SearchPages(i => query.Query(i).Result);
+        }
+
+        [Fact]
+        public void TestDiscoverMoviesRegion()
+        {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
+            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereReleaseDateIsInRegion("BR").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
 
             TestHelpers.SearchPages(i => query.Query(i).Result);
         }
