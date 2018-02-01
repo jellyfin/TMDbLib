@@ -6,12 +6,7 @@ namespace TMDbLib.Objects.Find
     {
         [EnumValue("imdb_id")]
         Imdb,
-        [EnumValue("freebase_mid")]
-        FreeBaseMid,
-        [EnumValue("freebase_id")]
-        FreeBaseId,
-        [EnumValue("tvrage_id")]
-        TvRage,
+
         [EnumValue("tvdb_id")]
         TvDb
     }
