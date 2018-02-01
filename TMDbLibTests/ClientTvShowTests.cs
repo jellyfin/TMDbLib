@@ -173,16 +173,16 @@ namespace TMDbLibTests
             Assert.NotNull(videos);
             Assert.Equal(IdHelper.BreakingBad, videos.Id);
 
-            Video video = videos.Results.FirstOrDefault(r => r.Id == "5335e299c3a368265000001d");
+            Video video = videos.Results.FirstOrDefault(r => r.Id == "5759db2fc3a3683e7c003df7");
             Assert.NotNull(video);
 
-            Assert.Equal("5335e299c3a368265000001d", video.Id);
+            Assert.Equal("5759db2fc3a3683e7c003df7", video.Id);
             Assert.Equal("en", video.Iso_639_1);
-            Assert.Equal("6OdIbPMU720", video.Key);
-            Assert.Equal("Opening Credits (Short)", video.Name);
+            Assert.Equal("XZ8daibM3AE", video.Key);
+            Assert.Equal("Trailer", video.Name);
             Assert.Equal("YouTube", video.Site);
-            Assert.Equal(480, video.Size);
-            Assert.Equal("Opening Credits", video.Type);
+            Assert.Equal(720, video.Size);
+            Assert.Equal("Trailer", video.Type);
         }
 
         [Fact]
@@ -367,12 +367,11 @@ namespace TMDbLibTests
             Assert.True(item.OriginCountry.Contains("US"));
         }
 
-
         [Fact]
         public void TestTvShowRecommendations()
         {
             // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
+            IgnoreMissingJson("results[array] / media_type", "results[array] / popularity");
 
             SearchContainer<SearchTv> tvShow = Config.Client.GetTvShowRecommendationsAsync(1668).Result;
 
@@ -387,7 +386,6 @@ namespace TMDbLibTests
             Assert.Equal("How I Met Your Mother", item.OriginalName);
             Assert.Equal(new DateTime(2005, 09, 19), item.FirstAirDate);
             Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
-            Assert.True(item.Popularity > 0);
             Assert.Equal("How I Met Your Mother", item.Name);
             Assert.True(item.VoteAverage > 0);
             Assert.True(item.VoteCount > 0);
@@ -397,7 +395,6 @@ namespace TMDbLibTests
             Assert.True(item.OriginCountry.Contains("US"));
         }
 
-
         [Fact]
         public void TestTvShowTopRated()
         {
@@ -406,10 +403,10 @@ namespace TMDbLibTests
 
             // This test might fail with inconsistent information from the pages due to a caching problem in the API.
             // Comment from the Developer of the API
-            // That would be caused from different pages getting cached at different times. 
-            // Since top rated only pulls TV shows with 2 or more votes right now this will be something that happens until we have a lot more ratings. 
-            // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data. 
-            // And as we get more ratings I increase that limit so we get more accurate results. 
+            // That would be caused from different pages getting cached at different times.
+            // Since top rated only pulls TV shows with 2 or more votes right now this will be something that happens until we have a lot more ratings.
+            // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data.
+            // And as we get more ratings I increase that limit so we get more accurate results.
             TestHelpers.SearchPages(i => Config.Client.GetTvShowTopRatedAsync(i).Result);
 
             SearchContainer<SearchTv> result = Config.Client.GetTvShowTopRatedAsync().Sync();
