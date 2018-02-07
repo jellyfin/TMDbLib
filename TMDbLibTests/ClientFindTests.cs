@@ -69,38 +69,5 @@ namespace TMDbLibTests
             Assert.Equal(1, result.Result.TvResults.Count);
             Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
         }
-
-        [Fact]
-        public void TestFindTvRageTvShow()
-        {
-            // Ignore missing json
-            IgnoreMissingJson("tv_results[array] / media_type", "tv_results[array] / popularity");
-
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.TvRage, IdHelper.TvRageBreakingBadId);
-            Assert.Equal(1, result.Result.TvResults.Count);
-            Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
-        }
-
-        [Fact]
-        public void TestFindFreebaseTvShow()
-        {
-            // Ignore missing json
-            IgnoreMissingJson("tv_results[array] / media_type");
-
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.FreeBaseId, IdHelper.FreebaseBreakingBadId);
-            Assert.Equal(1, result.Result.TvResults.Count);
-            Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
-        }
-
-        [Fact]
-        public void TestFindFreebaseMidTvShow()
-        {
-            // Ignore missing json
-            IgnoreMissingJson("tv_results[array] / media_type", "tv_results[array] / popularity");
-
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.FreeBaseMid, IdHelper.FreebaseMidBreakingBadId);
-            Assert.Equal(1, result.Result.TvResults.Count);
-            Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
-        }
     }
 }

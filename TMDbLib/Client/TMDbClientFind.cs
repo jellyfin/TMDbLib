@@ -24,11 +24,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("find/{id}");
 
-            if (source == FindExternalSource.FreeBaseId || source == FindExternalSource.FreeBaseMid)
-                // No url encoding for freebase Id's (they include /-slashes)
-                req.AddUrlSegment("id", id);
-            else
-                req.AddUrlSegment("id", WebUtility.UrlEncode(id));
+            req.AddUrlSegment("id", WebUtility.UrlEncode(id));
 
             req.AddParameter("external_source", source.GetDescription());
 

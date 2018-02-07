@@ -12,10 +12,9 @@ namespace TMDbLib.Objects.Discover
 {
     public class DiscoverMovie : DiscoverBase<SearchMovie>
     {
-        public DiscoverMovie(TMDbClient client ) 
+        public DiscoverMovie(TMDbClient client)
             : base("discover/movie", client)
         {
-
         }
 
         private void ClearCertification()
@@ -70,7 +69,7 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Only include movies that have this person id added as a cast member. Expected value is an integer (the id of a person). 
+        /// Only include movies that have this person id added as a cast member. Expected value is an integer (the id of a person).
         /// This method performs an AND query.
         /// </summary>
         public DiscoverMovie IncludeWithAllOfCast(IEnumerable<int> castIds)
@@ -184,7 +183,7 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Only include movies that have this person id added as a cast member. Expected value is an integer (the id of a person). 
+        /// Only include movies that have this person id added as a cast member. Expected value is an integer (the id of a person).
         /// This method performs an OR query.
         /// </summary>
         public DiscoverMovie IncludeWithAnyOfCast(IEnumerable<int> castIds)
@@ -437,6 +436,15 @@ namespace TMDbLib.Objects.Discover
             ClearVoteCount();
 
             Parameters["vote_count.lte"] = count.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Specifies which region to use for release date filtering (using ISO 3166-1 code)
+        /// </summary>
+        public DiscoverMovie WhereReleaseDateIsInRegion(string region)
+        {
+            Parameters["region"] = region;
             return this;
         }
     }
