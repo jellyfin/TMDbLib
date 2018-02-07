@@ -21,9 +21,6 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("gender")]
-        public PersonGender Gender { get; set; }
-
         [JsonProperty("profile_path")]
         public string ProfilePath { get; set; }
     }

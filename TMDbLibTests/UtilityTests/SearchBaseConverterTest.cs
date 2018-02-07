@@ -67,8 +67,8 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void TestSearchBaseConverter()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchMultiAsync("Rock", i).Sync());
-            SearchContainer<SearchBase> result = Config.Client.SearchMultiAsync("Rock").Sync();
+            TestHelpers.SearchPages(i => Config.Client.SearchMultiAsync("Jobs", i).Sync());
+            SearchContainer<SearchBase> result = Config.Client.SearchMultiAsync("Jobs").Sync();
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

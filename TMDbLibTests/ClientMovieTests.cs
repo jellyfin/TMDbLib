@@ -216,7 +216,6 @@ namespace TMDbLibTests
             Assert.Equal("Music", crew.Job);
             Assert.Equal("Marco Beltrami", crew.Name);
             Assert.True(TestImagesHelpers.TestImagePath(crew.ProfilePath), "crew.ProfilePath was not a valid image path, was: " + crew.ProfilePath);
-
         }
 
         [Fact]
@@ -317,7 +316,7 @@ namespace TMDbLibTests
             TranslationsContainer resp = Config.Client.GetMovieTranslationsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
-            TranslationWithCountry translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
+            Translation translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
             Assert.NotNull(translation);
 
             Assert.Equal("German", translation.EnglishName);
