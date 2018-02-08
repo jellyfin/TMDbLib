@@ -23,7 +23,7 @@ namespace TMDbLibTests
         public void TestFindImdbPerson()
         {
             // Ignore missing json
-            IgnoreMissingJson("person_results[array] / media_type");
+            IgnoreMissingJson("person_results[array] / media_type", " / popularity", "person_results[array] / popularity");
 
             Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis);
             Assert.Equal(1, result.Result.PersonResults.Count);

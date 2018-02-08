@@ -8,5 +8,8 @@ namespace TMDbLib.Objects.Find
     {
         [JsonProperty("gender")]
         public PersonGender Gender { get; set; }
+
+        [JsonProperty("known_for_department")]
+        public string KnownForDepartment { get; set; }
     }
 }
