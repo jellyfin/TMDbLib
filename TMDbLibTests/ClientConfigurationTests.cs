@@ -7,7 +7,7 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
-    public class ClientJobTests : TestBase
+    public class ClientConfigurationTests : TestBase
     {
         [Fact]
         public void TestJobList()
