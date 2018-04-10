@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 using TMDbLib.Objects.Timezones;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using TMDbLib.Objects.Countries;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.Languages;
 
 namespace TMDbLibTests
@@ -44,6 +46,19 @@ namespace TMDbLibTests
             Assert.NotNull(item);
             Assert.Equal(1, item.Count);
             Assert.Equal("Europe/Copenhagen", item[0]);
+        }
+
+        [Fact]
+        public void TestJobList()
+        {
+            List<Job> jobs = Config.Client.GetJobsAsync().Sync();
+
+            Assert.NotNull(jobs);
+            Assert.True(jobs.Count > 0);
+
+            Assert.True(jobs.All(job => !string.IsNullOrEmpty(job.Department)));
+            Assert.True(jobs.All(job => job.Jobs != null));
+            Assert.True(jobs.All(job => job.Jobs.Count > 0));
         }
     }
 }
