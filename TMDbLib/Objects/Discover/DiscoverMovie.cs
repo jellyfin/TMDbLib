@@ -447,5 +447,14 @@ namespace TMDbLib.Objects.Discover
             Parameters["region"] = region;
             return this;
         }
+
+        /// <summary>
+        /// Specifies which language to use for translatable fields
+        /// </summary>
+        public DiscoverMovie WhereLanguageIs(string language)
+        {
+            Parameters["language"] = language;
+            return this;
+        }
     }
 }
