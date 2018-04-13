@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
@@ -10,11 +11,13 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        [Obsolete("GetGenreMovies is deprecated, use DiscoverMovies instead")]
         public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await GetGenreMoviesAsync(genreId, DefaultLanguage, page, includeAllMovies, cancellationToken).ConfigureAwait(false);
         }
 
+        [Obsolete("GetGenreMovies is deprecated, use DiscoverMovies instead")]
         public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("genre/{genreId}/movies");
