@@ -79,5 +79,18 @@ namespace TMDbLibTests
 
             TestHelpers.SearchPages(i => query.Query(i).Result);
         }
+
+        [Fact]
+        public void TestDiscoverMoviesLanguage()
+        {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
+            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereLanguageIs("da-DK").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
+
+            Assert.Equal("Skønheden og Udyret", query.Query(0).Result.Results[11].Title);
+
+            TestHelpers.SearchPages(i => query.Query(i).Result);
+        }
     }
 }
