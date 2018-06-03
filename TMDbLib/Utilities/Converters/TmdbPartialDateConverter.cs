@@ -1,5 +1,6 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
+using System.Globalization;
 
 namespace TMDbLib.Utilities.Converters
 {
@@ -17,7 +18,7 @@ namespace TMDbLib.Utilities.Converters
                 return null;
 
             DateTime result;
-            if (!DateTime.TryParse(str, out result))
+            if (!DateTime.TryParse(str, CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.None, out result))
                 return null;
 
             return result;
@@ -25,7 +26,8 @@ namespace TMDbLib.Utilities.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            var date = value as DateTime?;
+            writer.WriteValue(date?.ToString(CultureInfo.InvariantCulture));
         }
     }
 }
