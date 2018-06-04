@@ -1,5 +1,6 @@
-using System;
 using Newtonsoft.Json;
+using System;
+using System.Reflection;
 
 namespace TMDbLib.Utilities.Converters
 {
@@ -21,7 +22,7 @@ namespace TMDbLib.Utilities.Converters
 
         public override bool CanConvert(Type objectType)
         {
-            throw new NotImplementedException();
+            return objectType.GetTypeInfo().IsEnum;
         }
     }
 }
