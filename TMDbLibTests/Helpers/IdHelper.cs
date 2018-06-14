@@ -51,7 +51,7 @@
         // Networks
         public const int TwentiethCenturyFox = 25;
         public const int ColumbiaPictures = 5;
-        public const int Hbo = 49;
+        public const int AMC = 174;
         public const int Netflix = 213;
 
         // Credits
