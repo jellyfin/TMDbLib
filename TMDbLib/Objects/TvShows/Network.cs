@@ -2,12 +2,15 @@
 
 namespace TMDbLib.Objects.TvShows
 {
-    public class Network
+    public class Network : NetworkBase
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+        [JsonProperty("headquarters")]
+        public string Headquarters;
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        [JsonProperty("homepage")]
+        public string Homepage;
+
+        [JsonProperty("origin_country")]
+        public string OriginCountry;
     }
 }

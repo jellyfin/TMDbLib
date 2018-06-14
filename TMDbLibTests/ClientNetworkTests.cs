@@ -10,11 +10,13 @@ namespace TMDbLibTests
         [Fact]
         public void TestNetworkGetById()
         {
-            Network network = Config.Client.GetNetworkAsync(IdHelper.Hbo).Result;
+            Network network = Config.Client.GetNetworkAsync(IdHelper.Netflix).Result;
 
             Assert.NotNull(network);
-            Assert.Equal("HBO", network.Name);
-            Assert.Equal(IdHelper.Hbo, network.Id);
+            Assert.Equal("Netflix", network.Name);
+            Assert.Equal(IdHelper.Netflix, network.Id);
+            Assert.Equal("http://www.netflix.com", network.Homepage);
+            Assert.Equal("Los Gatos, California, United States", network.Headquarters);
         }
     }
 }
