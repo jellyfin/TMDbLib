@@ -194,12 +194,6 @@ namespace TMDbLib.Rest
                     HttpResponseMessage resp =
                         await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
 
-                    if (!resp.IsSuccessStatusCode)
-                    {
-                        statusMessage =
-                            JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync());
-                    }
-
                     if (resp.StatusCode == (HttpStatusCode)429)
                     {
                         // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
@@ -220,6 +214,9 @@ namespace TMDbLib.Rest
 
                     if (!resp.IsSuccessStatusCode)
                     {
+                        statusMessage =
+                            JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync());
+
                         switch (resp.StatusCode)
                         {
                             case HttpStatusCode.Unauthorized:
@@ -235,8 +232,11 @@ namespace TMDbLib.Rest
                                     return null;
                                 }
                         }
+                    }
+
+                    if (!resp.IsSuccessStatusCode || !resp.Content.Headers.ContentType.MediaType.Equals("application/json"))
+                    {
                         throw new GeneralHttpException(resp.StatusCode);
-                        //return resp;
                     }
                 }
             } while (timesToTry-- > 0);
