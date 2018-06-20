@@ -42,8 +42,10 @@ namespace TMDbLib.Rest
             {
                 case ParameterType.QueryString:
                     return AddQueryString(key, value);
+
                 case ParameterType.UrlSegment:
                     return AddUrlSegment(key, value);
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
@@ -84,17 +86,17 @@ namespace TMDbLib.Rest
             AppendQueryString(sb, value.Key, value.Value);
         }
 
-        private void CheckResponse(HttpResponseMessage response)
+        /**private void CheckResponse(HttpResponseMessage response)
         {
             if (response.StatusCode == HttpStatusCode.Unauthorized)
                 throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
-        }
+        }**/
 
         public async Task<RestResponse> ExecuteDelete(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
+            //CheckResponse(resp);
 
             return new RestResponse(resp);
         }
@@ -103,7 +105,7 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
+            //CheckResponse(resp);
 
             return new RestResponse<T>(resp, _client);
         }
@@ -112,7 +114,7 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
+            //CheckResponse(resp);
 
             return new RestResponse(resp);
         }
@@ -121,7 +123,7 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
+            //CheckResponse(resp);
 
             return new RestResponse<T>(resp, _client);
         }
@@ -130,7 +132,7 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
+            //CheckResponse(resp);
 
             return new RestResponse(resp);
         }
@@ -139,7 +141,7 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
+            //CheckResponse(resp);
 
             return new RestResponse<T>(resp, _client);
         }
@@ -201,12 +203,20 @@ namespace TMDbLib.Rest
 
             Debug.Assert(timesToTry >= 1);
 
+            TMDbStatusMessage statusMessage = null;
+
             do
             {
                 using (HttpRequestMessage req = PrepRequest(method))
                 {
                     HttpResponseMessage resp =
                         await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+
+                    if (!resp.IsSuccessStatusCode)
+                    {
+                        statusMessage =
+                            JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync());
+                    }
 
                     if (resp.StatusCode == (HttpStatusCode)429)
                     {
@@ -227,12 +237,30 @@ namespace TMDbLib.Rest
                         return resp;
 
                     if (!resp.IsSuccessStatusCode)
-                        return resp;
+                    {
+                        switch (resp.StatusCode)
+                        {
+                            case HttpStatusCode.Unauthorized:
+                                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+
+                            case HttpStatusCode.NotFound:
+                                if (_client.ThrowExceptionsOnNotFound)
+                                {
+                                    throw new NotFoundException(resp.StatusCode, statusMessage);
+                                }
+                                else
+                                {
+                                    return null;
+                                }
+                        }
+                        throw new UnhandledException(resp.StatusCode, statusMessage);
+                        //return resp;
+                    }
                 }
             } while (timesToTry-- > 0);
 
             // We never reached a success
-            throw new RequestLimitExceededException(retryHeader?.Date, retryHeader?.Delta);
+            throw new RequestLimitExceededException((HttpStatusCode)429, statusMessage, retryHeader?.Date, retryHeader?.Delta);
         }
 
         public RestRequest SetBody(object obj)

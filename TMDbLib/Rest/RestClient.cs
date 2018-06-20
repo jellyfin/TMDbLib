@@ -45,6 +45,8 @@ namespace TMDbLib.Rest
             }
         }
 
+        public bool ThrowExceptionsOnNotFound { get; set; }
+
         internal JsonSerializer Serializer { get; }
 
         public void AddDefaultQueryString(string key, string value)

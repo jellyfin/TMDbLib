@@ -101,7 +101,7 @@ namespace TMDbLib.Client
             RestResponse<Movie> response = await req.ExecuteGet<Movie>(cancellationToken).ConfigureAwait(false);
 
             // No data to patch up so return
-            if (response == null) return null;
+            if (response == null || !response.Valid) return null;
 
             Movie item = await response.GetDataObject().ConfigureAwait(false);
 
@@ -172,7 +172,7 @@ namespace TMDbLib.Client
             return await GetMovieMethod<KeywordsContainer>(movieId, MovieMethods.Keywords, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovieLatestAsync( CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieLatestAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("movie/latest");
             RestResponse<Movie> resp = await req.ExecuteGet<Movie>(cancellationToken).ConfigureAwait(false);
@@ -383,4 +383,3 @@ namespace TMDbLib.Client
         }
     }
 }
-

@@ -49,7 +49,7 @@ namespace TMDbLibTests
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
 
-            Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
+            Movie movie = Config.Client.GetMovieAsync(230).Result;
 
             Assert.NotNull(movie);
 
@@ -216,7 +216,6 @@ namespace TMDbLibTests
             Assert.Equal("Music", crew.Job);
             Assert.Equal("Marco Beltrami", crew.Name);
             Assert.True(TestImagesHelpers.TestImagePath(crew.ProfilePath), "crew.ProfilePath was not a valid image path, was: " + crew.ProfilePath);
-
         }
 
         [Fact]
@@ -435,6 +434,16 @@ namespace TMDbLibTests
                     Assert.True(lower <= date);
                     Assert.True(date <= higher);
                 }
+        }
+
+        [Fact]
+        public void TestMoviesMissing()
+        {
+            Movie movie1 = Config.Client.GetMovieAsync(999999999).Result;
+            Assert.Null(movie1);
+
+            Movie movie2 = Config.Client.GetMovieAsync(230).Result;
+            Assert.Null(movie2);
         }
 
         [Fact]
