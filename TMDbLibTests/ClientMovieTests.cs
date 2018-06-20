@@ -49,7 +49,7 @@ namespace TMDbLibTests
             // We will intentionally ignore errors reg. missing JSON as we do not request it
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
 
-            Movie movie = Config.Client.GetMovieAsync(230).Result;
+            Movie movie = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(movie);
 
