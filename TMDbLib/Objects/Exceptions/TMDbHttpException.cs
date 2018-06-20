@@ -2,12 +2,12 @@
 
 namespace TMDbLib.Objects.Exceptions
 {
-    public class TMDbHttpException : TMDbException
+    public class GeneralHttpException : TMDbException
     {
         public HttpStatusCode HttpStatusCode { get; }
 
-        public TMDbHttpException(string message, HttpStatusCode httpStatusCode, TMDbStatusMessage statusMessage)
-                       : base(message, statusMessage)
+        public GeneralHttpException(HttpStatusCode httpStatusCode)
+                       : base("TMDb returned an unexpected HTTP error")
         {
             HttpStatusCode = httpStatusCode;
         }

@@ -17,7 +17,7 @@ namespace TMDbLib.Rest
             Response = response;
         }
 
-        public bool Valid { get { return Response != null; } }
+        public bool IsValid { get { return Response != null; } }
 
         public HttpStatusCode StatusCode => Response.StatusCode;
 
@@ -55,7 +55,7 @@ namespace TMDbLib.Rest
         {
             try
             {
-                if (response.Valid)
+                if (response.IsValid)
                 {
                     return response.GetDataObject().Result;
                 }

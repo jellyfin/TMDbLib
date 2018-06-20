@@ -4,12 +4,9 @@ namespace TMDbLib.Objects.Exceptions
 {
     public class TMDbException : Exception
     {
-        public TMDbStatusMessage StatusMessage { get; }
-
-        public TMDbException(string message, TMDbStatusMessage statusMessage)
+        public TMDbException(string message)
                 : base(message)
         {
-            StatusMessage = statusMessage;
         }
     }
 }

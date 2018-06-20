@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace TMDbLib.Objects.Exceptions
 {
-    public class NotFoundException : TMDbHttpException
+    public class NotFoundException : APIException
     {
-        public NotFoundException(HttpStatusCode httpStatusCode, TMDbStatusMessage statusMessage)
-                        : base("The requested item was not found", httpStatusCode, statusMessage)
+        public NotFoundException(TMDbStatusMessage statusMessage)
+                        : base("The requested item was not found", statusMessage)
         {
         }
     }
