@@ -367,7 +367,6 @@ namespace TMDbLibTests
             Assert.True(item.OriginCountry.Contains("US"));
         }
 
-
         [Fact]
         public void TestTvShowRecommendations()
         {
@@ -397,7 +396,6 @@ namespace TMDbLibTests
             Assert.True(item.OriginCountry.Contains("US"));
         }
 
-
         [Fact]
         public void TestTvShowTopRated()
         {
@@ -406,10 +404,10 @@ namespace TMDbLibTests
 
             // This test might fail with inconsistent information from the pages due to a caching problem in the API.
             // Comment from the Developer of the API
-            // That would be caused from different pages getting cached at different times. 
-            // Since top rated only pulls TV shows with 2 or more votes right now this will be something that happens until we have a lot more ratings. 
-            // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data. 
-            // And as we get more ratings I increase that limit so we get more accurate results. 
+            // That would be caused from different pages getting cached at different times.
+            // Since top rated only pulls TV shows with 2 or more votes right now this will be something that happens until we have a lot more ratings.
+            // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data.
+            // And as we get more ratings I increase that limit so we get more accurate results.
             TestHelpers.SearchPages(i => Config.Client.GetTvShowTopRatedAsync(i).Result);
 
             SearchContainer<SearchTv> result = Config.Client.GetTvShowTopRatedAsync().Sync();
@@ -613,24 +611,12 @@ namespace TMDbLibTests
             Assert.True(Config.Client.TvShowSetRatingAsync(IdHelper.BreakingBad, 8).Result);
         }
 
-        //[Fact]
-        //public void TestMoviesLanguage()
-        //{
-        //    Movie movie = _config.Client.GetMovieAsync(AGoodDayToDieHard);
-        //    Movie movieItalian = _config.Client.GetMovieAsync(AGoodDayToDieHard, "it");
+        [Fact]
+        public void TestTvShowMissing()
+        {
+            TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.MissingID).Result;
 
-        //    Assert.NotNull(movie);
-        //    Assert.NotNull(movieItalian);
-
-        //    Assert.Equal("A Good Day to Die Hard", movie.Title);
-        //    Assert.NotEqual(movie.Title, movieItalian.Title);
-
-        //    // Test all extras, ensure none of them exist
-        //    foreach (Func<Movie, object> selector in _methods.Values)
-        //    {
-        //        Assert.Null(selector(movie));
-        //        Assert.Null(selector(movieItalian));
-        //    }
-        //}
+            Assert.Null(tvShow);
+        }
     }
 }

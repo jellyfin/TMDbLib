@@ -230,24 +230,12 @@ namespace TMDbLibTests
             Assert.NotNull(tvSeason.Episodes[0].StillPath);
         }
 
-        //[Fact]
-        //public void TestMoviesLanguage()
-        //{
-        //    Movie movie = _config.Client.GetMovieAsync(AGoodDayToDieHard);
-        //    Movie movieItalian = _config.Client.GetMovieAsync(AGoodDayToDieHard, "it");
+        [Fact]
+        public void TestTvSeasonMissing()
+        {
+            TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.MissingID, 1).Result;
 
-        //    Assert.NotNull(movie);
-        //    Assert.NotNull(movieItalian);
-
-        //    Assert.Equal("A Good Day to Die Hard", movie.Title);
-        //    Assert.NotEqual(movie.Title, movieItalian.Title);
-
-        //    // Test all extras, ensure none of them exist
-        //    foreach (Func<Movie, object> selector in _methods.Values)
-        //    {
-        //        Assert.Null(selector(movie));
-        //        Assert.Null(selector(movieItalian));
-        //    }
-        //}
+            Assert.Null(tvSeason);
+        }
     }
 }

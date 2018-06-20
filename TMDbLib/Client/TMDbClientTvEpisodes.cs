@@ -68,6 +68,11 @@ namespace TMDbLib.Client
 
             RestResponse<TvEpisode> resp = await req.ExecuteGet<TvEpisode>(cancellationToken).ConfigureAwait(false);
 
+            if (!resp.IsValid)
+            {
+                return null;
+            }
+
             TvEpisode item = await resp.GetDataObject().ConfigureAwait(false);
 
             // No data to patch up so return

@@ -36,7 +36,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestMissingCredit()
         {
-            Credit result = Config.Client.GetCreditsAsync("9999999999").Result;
+            Credit result = Config.Client.GetCreditsAsync(IdHelper.MissingID.ToString()).Result;
 
             Assert.Null(result);
         }

@@ -56,5 +56,9 @@
         // Credits
         public const string BruceWillisMiamiVice = "525719bb760ee3776a1835d3";
         public const string HughLaurieHouse = "5256ccf519c2956ff607ca00";
+
+        // Invalid IDs
+        public const int MissingMovie = 230;
+        public const int MissingID = 999999999;
     }
 }

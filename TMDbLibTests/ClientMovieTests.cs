@@ -439,10 +439,10 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesMissing()
         {
-            Movie movie1 = Config.Client.GetMovieAsync(999999999).Result;
+            Movie movie1 = Config.Client.GetMovieAsync(IdHelper.MissingID).Result;
             Assert.Null(movie1);
 
-            Movie movie2 = Config.Client.GetMovieAsync(230).Result;
+            Movie movie2 = Config.Client.GetMovieAsync(IdHelper.MissingMovie).Result;
             Assert.Null(movie2);
         }
 

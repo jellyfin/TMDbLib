@@ -16,7 +16,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<TvShow> GetLatestTvShowAsync( CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TvShow> GetLatestTvShowAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("tv/latest");
 
@@ -85,6 +85,11 @@ namespace TMDbLib.Client
                 req.AddParameter("append_to_response", appends);
 
             RestResponse<TvShow> response = await req.ExecuteGet<TvShow>(cancellationToken).ConfigureAwait(false);
+
+            if (!response.IsValid)
+            {
+                return null;
+            }
 
             TvShow item = await response.GetDataObject().ConfigureAwait(false);
 
@@ -337,6 +342,5 @@ namespace TMDbLib.Client
             // TODO: Original code had a check for item=null
             return item.StatusCode == 1 || item.StatusCode == 12;
         }
-
     }
 }
