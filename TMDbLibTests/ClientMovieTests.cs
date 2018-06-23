@@ -446,6 +446,16 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestMoviesMissing()
+        {
+            Movie movie1 = Config.Client.GetMovieAsync(IdHelper.MissingID).Result;
+            Assert.Null(movie1);
+
+            Movie movie2 = Config.Client.GetMovieAsync(IdHelper.MissingMovie).Result;
+            Assert.Null(movie2);
+        }
+
+        [Fact]
         public void TestMoviesImages()
         {
             // Get config

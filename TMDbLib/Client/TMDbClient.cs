@@ -74,13 +74,22 @@ namespace TMDbLib.Client
         public bool HasConfig { get; private set; }
 
         /// <summary>
+        /// Throw exceptions when TMDbs API returns certain errors, such as Not Found.
+        /// </summary>
+        public bool ThrowApiExceptions
+        {
+            get => _client.ThrowApiExceptions;
+            set => _client.ThrowApiExceptions = value;
+        }
+
+        /// <summary>
         /// The maximum number of times a call to TMDb will be retried
         /// </summary>
         /// <remarks>Default is 0</remarks>
         public int MaxRetryCount
         {
-            get { return _client.MaxRetryCount; }
-            set { _client.MaxRetryCount = value; }
+            get => _client.MaxRetryCount;
+            set => _client.MaxRetryCount = value;
         }
 
         /// <summary>
@@ -101,7 +110,7 @@ namespace TMDbLib.Client
         /// <remarks>
         /// The Web Proxy is optional. If set, every request will be sent through it.
         /// Use the constructor for setting it.
-        /// 
+        ///
         /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
         /// Check <see cref="Utilities.TMDbAPIProxy"/> for more information.
         /// </remarks>

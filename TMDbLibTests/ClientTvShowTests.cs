@@ -620,24 +620,12 @@ namespace TMDbLibTests
             Assert.True(Config.Client.TvShowSetRatingAsync(IdHelper.BreakingBad, 8).Result);
         }
 
-        //[Fact]
-        //public void TestMoviesLanguage()
-        //{
-        //    Movie movie = _config.Client.GetMovieAsync(AGoodDayToDieHard);
-        //    Movie movieItalian = _config.Client.GetMovieAsync(AGoodDayToDieHard, "it");
+        [Fact]
+        public void TestTvShowMissing()
+        {
+            TvShow tvShow = Config.Client.GetTvShowAsync(IdHelper.MissingID).Result;
 
-        //    Assert.NotNull(movie);
-        //    Assert.NotNull(movieItalian);
-
-        //    Assert.Equal("A Good Day to Die Hard", movie.Title);
-        //    Assert.NotEqual(movie.Title, movieItalian.Title);
-
-        //    // Test all extras, ensure none of them exist
-        //    foreach (Func<Movie, object> selector in _methods.Values)
-        //    {
-        //        Assert.Null(selector(movie));
-        //        Assert.Null(selector(movieItalian));
-        //    }
-        //}
+            Assert.Null(tvShow);
+        }
     }
 }

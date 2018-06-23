@@ -66,9 +66,12 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            RestResponse<TvEpisode> resp = await req.ExecuteGet<TvEpisode>(cancellationToken).ConfigureAwait(false);
+            RestResponse<TvEpisode> response = await req.ExecuteGet<TvEpisode>(cancellationToken).ConfigureAwait(false);
 
-            TvEpisode item = await resp.GetDataObject().ConfigureAwait(false);
+            if (!response.IsValid)
+                return null;
+
+            TvEpisode item = await response.GetDataObject().ConfigureAwait(false);
 
             // No data to patch up so return
             if (item == null)

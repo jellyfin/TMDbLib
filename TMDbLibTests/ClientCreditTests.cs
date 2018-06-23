@@ -34,6 +34,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestMissingCredit()
+        {
+            Credit result = Config.Client.GetCreditsAsync(IdHelper.MissingID.ToString()).Result;
+
+            Assert.Null(result);
+        }
+
+        [Fact]
         public void TestGetCreditEpisode()
         {
             Credit result = Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;

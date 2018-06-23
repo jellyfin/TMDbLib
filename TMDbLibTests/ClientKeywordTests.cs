@@ -32,6 +32,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestKeywordsMissing()
+        {
+            KeywordsContainer keywords = Config.Client.GetMovieKeywordsAsync(IdHelper.MissingID).Result;
+
+            Assert.Null(keywords);
+        }
+
+        [Fact]
         public void TestKeywordMovies()
         {
             // Ignore missing json

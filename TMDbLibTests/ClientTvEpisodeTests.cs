@@ -251,27 +251,14 @@ namespace TMDbLibTests
             Assert.Equal("Emilio Koyama", star.Character);
             Assert.Equal(1, star.Order);
             Assert.True(TestImagesHelpers.TestImagePath(star.ProfilePath), "star.ProfilePath was not a valid image path, was: " + star.ProfilePath);
-
         }
 
-        //[Fact]
-        //public void TestMoviesLanguage()
-        //{
-        //    Movie movie = _config.Client.GetMovieAsync(AGoodDayToDieHard);
-        //    Movie movieItalian = _config.Client.GetMovieAsync(AGoodDayToDieHard, "it");
+        [Fact]
+        public void TestTvEpisodeMissing()
+        {
+            TvEpisode tvEpisode = Config.Client.GetTvEpisodeAsync(IdHelper.MissingID, 1, 1).Result;
 
-        //    Assert.NotNull(movie);
-        //    Assert.NotNull(movieItalian);
-
-        //    Assert.Equal("A Good Day to Die Hard", movie.Title);
-        //    Assert.NotEqual(movie.Title, movieItalian.Title);
-
-        //    // Test all extras, ensure none of them exist
-        //    foreach (Func<Movie, object> selector in _methods.Values)
-        //    {
-        //        Assert.Null(selector(movie));
-        //        Assert.Null(selector(movieItalian));
-        //    }
-        //}
+            Assert.Null(tvEpisode);
+        }
     }
 }

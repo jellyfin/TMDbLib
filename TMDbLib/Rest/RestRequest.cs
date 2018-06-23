@@ -42,8 +42,10 @@ namespace TMDbLib.Rest
             {
                 case ParameterType.QueryString:
                     return AddQueryString(key, value);
+
                 case ParameterType.UrlSegment:
                     return AddUrlSegment(key, value);
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
@@ -84,17 +86,9 @@ namespace TMDbLib.Rest
             AppendQueryString(sb, value.Key, value.Value);
         }
 
-        private void CheckResponse(HttpResponseMessage response)
-        {
-            if (response.StatusCode == HttpStatusCode.Unauthorized)
-                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
-        }
-
         public async Task<RestResponse> ExecuteDelete(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
-
-            CheckResponse(resp);
 
             return new RestResponse(resp);
         }
@@ -103,16 +97,12 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
-
             return new RestResponse<T>(resp, _client);
         }
 
         public async Task<RestResponse> ExecuteGet(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
-
-            CheckResponse(resp);
 
             return new RestResponse(resp);
         }
@@ -121,8 +111,6 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
-
             return new RestResponse<T>(resp, _client);
         }
 
@@ -130,16 +118,12 @@ namespace TMDbLib.Rest
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
-            CheckResponse(resp);
-
             return new RestResponse(resp);
         }
 
         public async Task<RestResponse<T>> ExecutePost<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
-
-            CheckResponse(resp);
 
             return new RestResponse<T>(resp, _client);
         }
@@ -197,7 +181,9 @@ namespace TMDbLib.Rest
             // - MaxRetryCount                          Max times to retry
 
             int timesToTry = _client.MaxRetryCount + 1;
-            RetryConditionHeaderValue retryHeader = null;
+
+            RetryConditionHeaderValue retryHeader;
+            TMDbStatusMessage statusMessage;
 
             Debug.Assert(timesToTry >= 1);
 
@@ -205,34 +191,53 @@ namespace TMDbLib.Rest
             {
                 using (HttpRequestMessage req = PrepRequest(method))
                 {
-                    HttpResponseMessage resp =
-                        await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+                    HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
 
-                    if (resp.StatusCode == (HttpStatusCode)429)
+                    bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json");
+
+                    if (resp.IsSuccessStatusCode && isJson)
+                        return resp;
+
+                    if (isJson)
+                        statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync());
+                    else
+                        statusMessage = null;
+
+                    switch (resp.StatusCode)
                     {
-                        // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
-                        retryHeader = resp.Headers.RetryAfter;
-                        TimeSpan? retryAfter = retryHeader?.Delta.Value;
+                        case (HttpStatusCode)429:
+                            // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
+                            retryHeader = resp.Headers.RetryAfter;
+                            TimeSpan? retryAfter = retryHeader?.Delta.Value;
 
-                        if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
-                            await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
-                        else
-                            // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
-                            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
+                            if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
+                                await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
+                            else
+                                // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
+                                await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
 
-                        continue;
+                            continue;
+                        case HttpStatusCode.Unauthorized:
+                            throw new UnauthorizedAccessException(
+                                "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+
+                        case HttpStatusCode.NotFound:
+                            if (_client.ThrowApiExceptions)
+                            {
+                                throw new NotFoundException(statusMessage);
+                            }
+                            else
+                            {
+                                return null;
+                            }
                     }
 
-                    if (resp.IsSuccessStatusCode)
-                        return resp;
-
-                    if (!resp.IsSuccessStatusCode)
-                        return resp;
+                    throw new GeneralHttpException(resp.StatusCode);
                 }
             } while (timesToTry-- > 0);
 
             // We never reached a success
-            throw new RequestLimitExceededException(retryHeader?.Date, retryHeader?.Delta);
+            throw new RequestLimitExceededException(statusMessage, retryHeader?.Date, retryHeader?.Delta);
         }
 
         public RestRequest SetBody(object obj)

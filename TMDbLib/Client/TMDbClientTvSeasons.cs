@@ -67,6 +67,9 @@ namespace TMDbLib.Client
 
             RestResponse<TvSeason> response = await req.ExecuteGet<TvSeason>(cancellationToken).ConfigureAwait(false);
 
+            if (!response.IsValid)
+                return null;
+
             TvSeason item = await response.GetDataObject().ConfigureAwait(false);
 
             // Nothing to patch up

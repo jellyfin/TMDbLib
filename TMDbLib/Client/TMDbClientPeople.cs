@@ -13,7 +13,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Person> GetLatestPersonAsync( CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Person> GetLatestPersonAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("person/latest");
 
@@ -43,9 +43,12 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Person> resp = await req.ExecuteGet<Person>(cancellationToken).ConfigureAwait(false);
+            RestResponse<Person> response = await req.ExecuteGet<Person>(cancellationToken).ConfigureAwait(false);
 
-            Person item = await resp.GetDataObject().ConfigureAwait(false);
+            if (!response.IsValid)
+                return null;
+
+            Person item = await response.GetDataObject().ConfigureAwait(false);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (item != null)
@@ -87,6 +90,7 @@ namespace TMDbLib.Client
                 case PersonListType.Popular:
                     req = _client.Create("person/popular");
                     break;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type));
             }

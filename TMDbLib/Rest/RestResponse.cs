@@ -17,6 +17,8 @@ namespace TMDbLib.Rest
             Response = response;
         }
 
+        public bool IsValid => Response != null;
+
         public HttpStatusCode StatusCode => Response.StatusCode;
 
         public async Task<Stream> GetContent()
@@ -53,7 +55,10 @@ namespace TMDbLib.Rest
         {
             try
             {
-                return response.GetDataObject().Result;
+                if (response.IsValid)
+                    return response.GetDataObject().Result;
+
+                return default(T);
             }
             catch (AggregateException ex)
             {
