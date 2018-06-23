@@ -218,6 +218,15 @@ namespace TMDbLibTests
             Assert.NotNull(images.Posters);
         }
 
+        [Fact]
+        public void TestTvShowGetImagesWithImageLanguage()
+        {
+            ImagesWithId resp = Config.Client.GetTvShowImagesAsync(IdHelper.BreakingBad, language: "en-US", includeImageLanguage: "en").Result;
+
+            Assert.True(resp.Backdrops.Count > 0);
+            Assert.True(resp.Posters.Count > 0);
+        }
+
         private void TestBreakingBadBaseProperties(TvShow tvShow)
         {
             Assert.NotNull(tvShow);
@@ -367,7 +376,6 @@ namespace TMDbLibTests
             Assert.True(item.OriginCountry.Contains("US"));
         }
 
-
         [Fact]
         public void TestTvShowRecommendations()
         {
@@ -397,7 +405,6 @@ namespace TMDbLibTests
             Assert.True(item.OriginCountry.Contains("US"));
         }
 
-
         [Fact]
         public void TestTvShowTopRated()
         {
@@ -406,10 +413,10 @@ namespace TMDbLibTests
 
             // This test might fail with inconsistent information from the pages due to a caching problem in the API.
             // Comment from the Developer of the API
-            // That would be caused from different pages getting cached at different times. 
-            // Since top rated only pulls TV shows with 2 or more votes right now this will be something that happens until we have a lot more ratings. 
-            // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data. 
-            // And as we get more ratings I increase that limit so we get more accurate results. 
+            // That would be caused from different pages getting cached at different times.
+            // Since top rated only pulls TV shows with 2 or more votes right now this will be something that happens until we have a lot more ratings.
+            // It's the single biggest missing data right now and there's no way around it until we get more people using the TV data.
+            // And as we get more ratings I increase that limit so we get more accurate results.
             TestHelpers.SearchPages(i => Config.Client.GetTvShowTopRatedAsync(i).Result);
 
             SearchContainer<SearchTv> result = Config.Client.GetTvShowTopRatedAsync().Sync();
