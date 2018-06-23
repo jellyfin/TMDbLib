@@ -42,6 +42,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestCollectionMissing()
+        {
+            Collection collection = Config.Client.GetCollectionAsync(IdHelper.MissingID).Result;
+
+            Assert.Null(collection);
+        }
+
+        [Fact]
         public void TestCollectionsParts()
         {
             // We will intentionally ignore errors reg. missing JSON as we do not request it

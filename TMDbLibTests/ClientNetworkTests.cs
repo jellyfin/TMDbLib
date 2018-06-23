@@ -16,5 +16,13 @@ namespace TMDbLibTests
             Assert.Equal("HBO", network.Name);
             Assert.Equal(IdHelper.Hbo, network.Id);
         }
+
+        [Fact]
+        public void TestNetworkMissing()
+        {
+            Network network = Config.Client.GetNetworkAsync(IdHelper.MissingID).Result;
+
+            Assert.Null(network);
+        }
     }
 }

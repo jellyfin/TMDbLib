@@ -100,8 +100,10 @@ namespace TMDbLib.Client
 
             RestResponse<Movie> response = await req.ExecuteGet<Movie>(cancellationToken).ConfigureAwait(false);
 
-            // No data to patch up so return
-            if (response == null || !response.IsValid) return null;
+            if (!response.IsValid)
+            {
+                return null;
+            }
 
             Movie item = await response.GetDataObject().ConfigureAwait(false);
 

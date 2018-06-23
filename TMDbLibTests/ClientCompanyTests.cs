@@ -64,6 +64,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestCompanyMissing()
+        {
+            Company company = Config.Client.GetCompanyAsync(IdHelper.MissingID).Result;
+
+            Assert.Null(company);
+        }
+
+        [Fact]
         public void TestCompaniesGetters()
         {
             // Ignore missing json

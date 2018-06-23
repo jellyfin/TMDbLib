@@ -23,5 +23,13 @@ namespace TMDbLibTests
             Assert.Equal("https://www.themoviedb.org/review/5010553819c2952d1b000451", review.Url);
             Assert.Equal(MediaType.Movie, review.MediaType);
         }
+
+        [Fact]
+        public void TestReviewMissing()
+        {
+            Review review = Config.Client.GetReviewAsync(IdHelper.MissingID.ToString()).Result;
+
+            Assert.Null(review);
+        }
     }
 }

@@ -51,6 +51,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestListMissing()
+        {
+            GenericList list = Config.Client.GetListAsync(IdHelper.MissingID.ToString()).Result;
+
+            Assert.Null(list);
+        }
+
+        [Fact]
         public void TestListIsMoviePresentFailure()
         {
             Assert.False(Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Terminator).Result);

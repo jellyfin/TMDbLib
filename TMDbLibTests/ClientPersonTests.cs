@@ -80,6 +80,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestPersonMissing()
+        {
+            Person person = Config.Client.GetPersonAsync(IdHelper.MissingID).Result;
+
+            Assert.Null(person);
+        }
+
+        [Fact]
         public void TestPersonsGet()
         {
             IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");

@@ -13,7 +13,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Person> GetLatestPersonAsync( CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Person> GetLatestPersonAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("person/latest");
 
@@ -44,6 +44,11 @@ namespace TMDbLib.Client
             //req.DateFormat = "yyyy-MM-dd";
 
             RestResponse<Person> resp = await req.ExecuteGet<Person>(cancellationToken).ConfigureAwait(false);
+
+            if (!resp.IsValid)
+            {
+                return null;
+            }
 
             Person item = await resp.GetDataObject().ConfigureAwait(false);
 
@@ -87,6 +92,7 @@ namespace TMDbLib.Client
                 case PersonListType.Popular:
                     req = _client.Create("person/popular");
                     break;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type));
             }
