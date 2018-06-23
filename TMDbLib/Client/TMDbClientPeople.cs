@@ -43,14 +43,12 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Person> resp = await req.ExecuteGet<Person>(cancellationToken).ConfigureAwait(false);
+            RestResponse<Person> response = await req.ExecuteGet<Person>(cancellationToken).ConfigureAwait(false);
 
-            if (!resp.IsValid)
-            {
+            if (!response.IsValid)
                 return null;
-            }
 
-            Person item = await resp.GetDataObject().ConfigureAwait(false);
+            Person item = await response.GetDataObject().ConfigureAwait(false);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
             if (item != null)

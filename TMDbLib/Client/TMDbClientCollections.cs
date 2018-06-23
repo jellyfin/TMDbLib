@@ -38,14 +38,12 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Collection> resp = await req.ExecuteGet<Collection>(cancellationToken).ConfigureAwait(false);
+            RestResponse<Collection> response = await req.ExecuteGet<Collection>(cancellationToken).ConfigureAwait(false);
 
-            if (!resp.IsValid)
-            {
+            if (!response.IsValid)
                 return null;
-            }
 
-            Collection item = await resp.GetDataObject().ConfigureAwait(false);
+            Collection item = await response.GetDataObject().ConfigureAwait(false);
 
             if (item != null)
                 item.Overview = WebUtility.HtmlDecode(item.Overview);
