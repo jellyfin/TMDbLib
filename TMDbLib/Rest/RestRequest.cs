@@ -212,10 +212,14 @@ namespace TMDbLib.Rest
                     if (resp.IsSuccessStatusCode)
                         return resp;
 
-                    if (!resp.IsSuccessStatusCode)
+                    if (!resp.IsSuccessStatusCode || !resp.Content.Headers.ContentType.MediaType.Equals("application/json"))
                     {
-                        statusMessage =
-                            JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync());
+                        if (resp.Content.Headers.ContentType.MediaType.Equals("application/json"))
+                        {
+                            statusMessage =
+                                JsonConvert.DeserializeObject<TMDbStatusMessage>(
+                                    await resp.Content.ReadAsStringAsync());
+                        }
 
                         switch (resp.StatusCode)
                         {
@@ -232,10 +236,6 @@ namespace TMDbLib.Rest
                                     return null;
                                 }
                         }
-                    }
-
-                    if (!resp.IsSuccessStatusCode || !resp.Content.Headers.ContentType.MediaType.Equals("application/json"))
-                    {
                         throw new GeneralHttpException(resp.StatusCode);
                     }
                 }
