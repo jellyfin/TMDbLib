@@ -216,7 +216,6 @@ namespace TMDbLibTests
             Assert.Equal("Music", crew.Job);
             Assert.Equal("Marco Beltrami", crew.Name);
             Assert.True(TestImagesHelpers.TestImagePath(crew.ProfilePath), "crew.ProfilePath was not a valid image path, was: " + crew.ProfilePath);
-
         }
 
         [Fact]
@@ -259,6 +258,15 @@ namespace TMDbLibTests
             Assert.True(poster.VoteAverage > 0);
             Assert.True(poster.VoteCount > 0);
             Assert.Equal(1000, poster.Width);
+        }
+
+        [Fact]
+        public void TestMoviesGetMovieImagesWithImageLanguage()
+        {
+            ImagesWithId resp = Config.Client.GetMovieImagesAsync(IdHelper.AGoodDayToDieHard, language: "en-US", includeImageLanguage: "en").Result;
+
+            Assert.True(resp.Backdrops.Count > 0);
+            Assert.True(resp.Posters.Count > 0);
         }
 
         [Fact]
