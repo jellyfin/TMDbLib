@@ -222,7 +222,7 @@ namespace TMDbLib.Rest
                                 "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
 
                         case HttpStatusCode.NotFound:
-                            if (_client.ThrowExceptionsOnNotFound)
+                            if (_client.ThrowApiExceptions)
                             {
                                 throw new NotFoundException(statusMessage);
                             }

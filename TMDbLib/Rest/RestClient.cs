@@ -45,7 +45,7 @@ namespace TMDbLib.Rest
             }
         }
 
-        public bool ThrowExceptionsOnNotFound { get; set; }
+        public bool ThrowApiExceptions { get; set; }
 
         internal JsonSerializer Serializer { get; }
 

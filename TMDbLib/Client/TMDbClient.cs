@@ -73,10 +73,13 @@ namespace TMDbLib.Client
 
         public bool HasConfig { get; private set; }
 
-        public bool ThrowExceptionsOnNotFound
+        /// <summary>
+        /// Throw exceptions when TMDbs API returns certain errors, such as Not Found.
+        /// </summary>
+        public bool ThrowApiExceptions
         {
-            get { return _client.ThrowExceptionsOnNotFound; }
-            set { _client.ThrowExceptionsOnNotFound = value; }
+            get => _client.ThrowApiExceptions;
+            set => _client.ThrowApiExceptions = value;
         }
 
         /// <summary>
@@ -85,8 +88,8 @@ namespace TMDbLib.Client
         /// <remarks>Default is 0</remarks>
         public int MaxRetryCount
         {
-            get { return _client.MaxRetryCount; }
-            set { _client.MaxRetryCount = value; }
+            get => _client.MaxRetryCount;
+            set => _client.MaxRetryCount = value;
         }
 
         /// <summary>
