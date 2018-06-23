@@ -181,63 +181,58 @@ namespace TMDbLib.Rest
             // - MaxRetryCount                          Max times to retry
 
             int timesToTry = _client.MaxRetryCount + 1;
-            RetryConditionHeaderValue retryHeader = null;
+
+            RetryConditionHeaderValue retryHeader;
+            TMDbStatusMessage statusMessage;
 
             Debug.Assert(timesToTry >= 1);
-
-            TMDbStatusMessage statusMessage = null;
 
             do
             {
                 using (HttpRequestMessage req = PrepRequest(method))
                 {
-                    HttpResponseMessage resp =
-                        await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+                    HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
 
-                    if (resp.StatusCode == (HttpStatusCode)429)
-                    {
-                        // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
-                        retryHeader = resp.Headers.RetryAfter;
-                        TimeSpan? retryAfter = retryHeader?.Delta.Value;
+                    bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json");
 
-                        if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
-                            await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
-                        else
-                            // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
-                            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
-
-                        continue;
-                    }
-
-                    if (resp.IsSuccessStatusCode)
+                    if (resp.IsSuccessStatusCode && isJson)
                         return resp;
 
-                    if (!resp.IsSuccessStatusCode || !resp.Content.Headers.ContentType.MediaType.Equals("application/json"))
+                    if (isJson)
+                        statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync());
+                    else
+                        statusMessage = null;
+
+                    switch (resp.StatusCode)
                     {
-                        if (resp.Content.Headers.ContentType.MediaType.Equals("application/json"))
-                        {
-                            statusMessage =
-                                JsonConvert.DeserializeObject<TMDbStatusMessage>(
-                                    await resp.Content.ReadAsStringAsync());
-                        }
+                        case (HttpStatusCode)429:
+                            // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
+                            retryHeader = resp.Headers.RetryAfter;
+                            TimeSpan? retryAfter = retryHeader?.Delta.Value;
 
-                        switch (resp.StatusCode)
-                        {
-                            case HttpStatusCode.Unauthorized:
-                                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+                            if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
+                                await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
+                            else
+                                // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
+                                await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
 
-                            case HttpStatusCode.NotFound:
-                                if (_client.ThrowExceptionsOnNotFound)
-                                {
-                                    throw new NotFoundException(statusMessage);
-                                }
-                                else
-                                {
-                                    return null;
-                                }
-                        }
-                        throw new GeneralHttpException(resp.StatusCode);
+                            continue;
+                        case HttpStatusCode.Unauthorized:
+                            throw new UnauthorizedAccessException(
+                                "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+
+                        case HttpStatusCode.NotFound:
+                            if (_client.ThrowExceptionsOnNotFound)
+                            {
+                                throw new NotFoundException(statusMessage);
+                            }
+                            else
+                            {
+                                return null;
+                            }
                     }
+
+                    throw new GeneralHttpException(resp.StatusCode);
                 }
             } while (timesToTry-- > 0);
 
