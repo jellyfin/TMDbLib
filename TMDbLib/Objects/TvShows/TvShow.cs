@@ -75,7 +75,7 @@ namespace TMDbLib.Objects.TvShows
         public string Name { get; set; }
 
         [JsonProperty("networks")]
-        public List<Network> Networks { get; set; }
+        public List<NetworkBase> Networks { get; set; }
 
         [JsonProperty("number_of_episodes")]
         [JsonConverter(typeof(TmdbNullIntAsZero))]
