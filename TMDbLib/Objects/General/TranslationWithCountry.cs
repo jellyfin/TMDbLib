@@ -9,5 +9,8 @@ namespace TMDbLib.Objects.General
         /// </summary>
         [JsonProperty("iso_3166_1")]
         public string Iso_3166_1 { get; set; }
+        
+        [JsonProperty("data")]
+        public TranslationData Data { get; set; }
     }
 }
