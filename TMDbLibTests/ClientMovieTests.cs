@@ -332,9 +332,9 @@ namespace TMDbLibTests
             Assert.Equal("DE", translation.Iso_3166_1);
             Assert.Equal("de", translation.Iso_639_1);
             Assert.Equal("Deutsch", translation.Name);
-			Assert.Equal("Stirb langsam - Ein guter Tag zum Sterben", translation.Data.Title);
-			Assert.Equal("Als ein gefürchteter russischer Führer aus der Gefangenschaft ausbricht und John McClanes Sohn Jack in die Ereignisse verwickelt wird, reist John nach Russland. Dort will er mittels frecher Sprüche und Waffeneinsatz seinen Spross, mit dem er bislang wenig Kontakt hatte, aus der Gefahrenzone retten. Wie sich herausstellt, ist sein Sohn jedoch alles andere als der von John McClane erwartete Waschlappen geworden. Hier ist der Apfel nicht weit vom Stamm gefallen, denn ohne Johns Wissen wurde Jack zu einem kaltschnäuzigen CIA-Agenten ausgebildet und ist ebenso hart im Nehmen wie sein alter Herr. Mit von der Partie ist ein Russe namens Komorov, hinter dem die gesamte russische Unterwelt her ist. Gemeinsam sieht sich das taffe Vater-Sohn-Duo mit Unterstützung von Komorov der halben Sowjet-Armee gegenüber, die einen Machtwechsel in Russland anstrebt…",
-				translation.Data.Overview);
+            Assert.Equal("Stirb langsam - Ein guter Tag zum Sterben", translation.Data.Title);
+            Assert.Equal("Als ein gefürchteter russischer Führer aus der Gefangenschaft ausbricht und John McClanes Sohn Jack in die Ereignisse verwickelt wird, reist John nach Russland. Dort will er mittels frecher Sprüche und Waffeneinsatz seinen Spross, mit dem er bislang wenig Kontakt hatte, aus der Gefahrenzone retten. Wie sich herausstellt, ist sein Sohn jedoch alles andere als der von John McClane erwartete Waschlappen geworden. Hier ist der Apfel nicht weit vom Stamm gefallen, denn ohne Johns Wissen wurde Jack zu einem kaltschnäuzigen CIA-Agenten ausgebildet und ist ebenso hart im Nehmen wie sein alter Herr. Mit von der Partie ist ein Russe namens Komorov, hinter dem die gesamte russische Unterwelt her ist. Gemeinsam sieht sich das taffe Vater-Sohn-Duo mit Unterstützung von Komorov der halben Sowjet-Armee gegenüber, die einen Machtwechsel in Russland anstrebt…",
+              translation.Data.Overview);
 		}
 
         [Fact]
