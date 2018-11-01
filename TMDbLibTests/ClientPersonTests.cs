@@ -391,5 +391,15 @@ namespace TMDbLibTests
             Person item = Config.Client.GetLatestPersonAsync().Sync();
             Assert.NotNull(item);
         }
+
+        [Fact]
+        public void TestGetTranslatedPerson()
+        {
+            IgnoreMissingCSharp("known_for_department / known_for_department");
+            IgnoreMissingJson(" / changes", " / external_ids", " / images", " / movie_credits", " / tagged_images", " / tv_credits");
+            Person person = Config.Client.GetPersonAsync(1019, "da").Result;
+            Assert.NotNull(person);
+            Assert.Equal("Mads Dittmann Mikkelsen, der er søn af fuldmægtig Henning Mikkelsen og hustru sygehjælper Bente Christiansen, voksede op på Nørrebro i København. I 11 år var han gymnast og gymnastikinstruktør i Gymnastikforeningen Gefion. Efter studentereksamen tilmeldte han sig et dansekursus for arbejdsløse. Det blev siden til otte års professionelt engagement i danseensemblet Mikado og han var to gange på Martha Grahams sommerskole i New York. Senere blev han også vikar for Vicky Leander på Daghøjskolen for dansk, drama og musik. Han blev skuespilleruddannet fra Århus Teaterskole i 1996 og debuterede som førsteelsker i \"Kunst\" på Århus Teater. Mads Mikkelsen har bl.a. stået på scenen i \"Paradis\" (1997), \"Længe siden\" (1999) og \"Fiaskospiralen\" (1999) på Dr. Dante’s Aveny samt \"Romeo og Julie\" (1998) på Østre Gasværk. Han filmdebuterede allerede i 1995 med en af hovedrollerne i novellefilmen \"Blomsterfangen\" I 1996 fik han sit store kunstneriske filmgennembrud som den kronragede slyngel Tonny i den banebrydende og meget rå film \"Pusher\". Han havde den ene af hovedrollerne i den danske film \"Vildspor\", rollen som Lenny i \"Bleeder\" og huskes som den våbengale Arne i Anders Thomas Jensens første spillefilm \"Blinkende Lygter\" (2000), der blev det helt store biografhit. I 2001 fik han også fænomenal succes i Hella Joofs biograffilm \"En kort, en lang\", hvor han spillede bøssen Jacob over for Troels Lyby. Siden 2005 har han haft international succes i film som \"King Arthur\" og især som storskurken Le Chiffre i James Bond- filmen \"Casino Royale\" fra 2006. I DR\'s politiserie \"Rejseholdet\" fik han sit folkelige gennembrud som politimanden Allan Fischer. Han er bror til skuespilleren Lars Mikkelsen. Mads Mikkelsen blev den 2. december 2000 gift med danserinde og koreograf Hanne Jacobsen (13-01-1961) og sammen har de to børn.", person.Biography);
+        }
     }
 }

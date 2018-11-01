@@ -25,10 +25,19 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<Person> GetPersonAsync(int personId, PersonMethods extraMethods = PersonMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Person> GetPersonAsync(int personId, PersonMethods extraMethods = PersonMethods.Undefined,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await GetPersonAsync(personId, DefaultLanguage, extraMethods, cancellationToken);
+        }
+
+        public async Task<Person> GetPersonAsync(int personId, string language, PersonMethods extraMethods = PersonMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("person/{personId}");
             req.AddUrlSegment("personId", personId.ToString());
+
+            if (language != null)
+                req.AddParameter("language", language);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(PersonMethods))
