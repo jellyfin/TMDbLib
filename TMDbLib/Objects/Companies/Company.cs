@@ -29,5 +29,8 @@ namespace TMDbLib.Objects.Companies
 
         [JsonProperty("parent_company")]
         public SearchCompany ParentCompany { get; set; }
+
+        [JsonProperty("origin_country")]
+        public string OriginCountry { get; set; }
     }
 }
