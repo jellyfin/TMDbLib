@@ -9,7 +9,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private async Task<T> GetChanges<T>(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default(CancellationToken)) where T : new()
+        private async Task<SearchContainer<ChangesListItem>> GetChanges(string type, int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("{type}/changes");
             req.AddUrlSegment("type", type);
@@ -21,9 +21,13 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+            RestResponse<SearchContainer<ChangesListItem>> resp = await req.ExecuteGet<SearchContainer<ChangesListItem>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<ChangesListItem> res = await resp.GetDataObject().ConfigureAwait(false);
 
-            return resp;
+            // https://github.com/LordMike/TMDbLib/issues/296
+            res.Results.RemoveAll(s => s.Id == 0);
+
+            return res;
         }
 
         /// <summary>
@@ -35,7 +39,7 @@ namespace TMDbLib.Client
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show movies that have been edited since.</remarks>
         public async Task<SearchContainer<ChangesListItem>> GetChangesMoviesAsync(int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetChanges<SearchContainer<ChangesListItem>>("movie", page, startDate, endDate, cancellationToken).ConfigureAwait(false);
+            return await GetChanges("movie", page, startDate, endDate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -47,7 +51,7 @@ namespace TMDbLib.Client
 		/// <remarks>the change log system to support this was changed on October 5, 2012 and will only show people that have been edited since.</remarks>
         public async Task<SearchContainer<ChangesListItem>> GetChangesPeopleAsync(int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetChanges<SearchContainer<ChangesListItem>>("person", page, startDate, endDate, cancellationToken).ConfigureAwait(false);
+            return await GetChanges("person", page, startDate, endDate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -62,7 +66,7 @@ namespace TMDbLib.Client
 		/// </remarks>
 		public async Task<SearchContainer<ChangesListItem>> GetChangesTvAsync(int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetChanges<SearchContainer<ChangesListItem>>("tv", page, startDate, endDate, cancellationToken).ConfigureAwait(false);
+            return await GetChanges("tv", page, startDate, endDate, cancellationToken).ConfigureAwait(false);
         }
     }
 }

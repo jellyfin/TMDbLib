@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes
 {
@@ -8,6 +9,7 @@ namespace TMDbLib.Objects.Changes
         public bool? Adult { get; set; }
 
         [JsonProperty("id")]
+        [JsonConverter(typeof(TmdbNullIntAsZero))]
         public int Id { get; set; }
     }
 }
