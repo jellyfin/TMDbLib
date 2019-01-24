@@ -5,7 +5,7 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Utilities.Converters;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Xunit;
 
 namespace TMDbLibTests.UtilityTests

@@ -6,10 +6,9 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json.Serialization;
 using Xunit;
 
-namespace TMDbLibTests.JsonHelpers
+namespace TMDbLibTests.TestFramework
 {
-    [Collection(nameof(ClientFixture))]
-    public class TestBase : IDisposable
+    public class TestBase : IClassFixture<TestConfig>, IDisposable
     {
         private const bool IgnoreJsonErrors = true;
 
@@ -21,6 +20,17 @@ namespace TMDbLibTests.JsonHelpers
         private readonly List<string> _ignoreMissingCSharp;
 
         private readonly List<string> _ignoreMissingJson;
+
+        public TestBase(TestConfig config)
+        {
+            _ignoreMissingJson = new List<string>();
+            _ignoreMissingCSharp = new List<string>();
+
+            Config = config;
+            Config.Init(GetType().Name);
+
+            config.OnJsonError += ConfigOnOnJsonError;
+        }
 
         /// <summary>
         /// Ignores errors about missing JSON properties (Where C# properties are not set)
@@ -36,16 +46,6 @@ namespace TMDbLibTests.JsonHelpers
         protected void IgnoreMissingCSharp(params string[] keys)
         {
             _ignoreMissingCSharp.AddRange(keys);
-        }
-
-        public TestBase(TestConfig config)
-        {
-            _ignoreMissingJson = new List<string>();
-            _ignoreMissingCSharp = new List<string>();
-
-            Config = config;
-
-            config.OnJsonError += ConfigOnOnJsonError;
         }
 
         private void ConfigOnOnJsonError(ErrorEventArgs obj)

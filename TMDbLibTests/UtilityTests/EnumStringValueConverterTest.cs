@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Utilities.Converters;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Xunit;
 
 namespace TMDbLibTests.UtilityTests

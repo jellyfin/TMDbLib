@@ -4,8 +4,8 @@ using TMDbLib.Objects.General;
 using System.Linq;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
 using System;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

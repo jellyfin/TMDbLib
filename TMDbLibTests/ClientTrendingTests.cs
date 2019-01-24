@@ -1,5 +1,5 @@
 ﻿using TMDbLib.Objects.Trending;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Xunit;
 
 namespace TMDbLibTests

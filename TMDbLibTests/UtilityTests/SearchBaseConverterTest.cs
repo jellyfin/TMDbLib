@@ -3,7 +3,7 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Utilities.Converters;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Xunit;
 
 namespace TMDbLibTests.UtilityTests

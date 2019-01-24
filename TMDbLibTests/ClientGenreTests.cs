@@ -4,7 +4,7 @@ using Xunit;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

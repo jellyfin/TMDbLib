@@ -7,7 +7,7 @@ using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

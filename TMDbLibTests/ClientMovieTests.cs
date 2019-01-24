@@ -10,7 +10,7 @@ using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Cast = TMDbLib.Objects.Movies.Cast;
 using Credits = TMDbLib.Objects.Movies.Credits;
 

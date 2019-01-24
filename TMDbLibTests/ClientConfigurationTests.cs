@@ -3,10 +3,10 @@ using System.Linq;
 using Xunit;
 using TMDbLib.Objects.Timezones;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
 using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Languages;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

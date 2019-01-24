@@ -3,7 +3,7 @@ using System.Linq;
 using Xunit;
 using TMDbLib.Objects.Certifications;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

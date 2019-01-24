@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Utilities.Converters;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Xunit;
 
 namespace TMDbLibTests.UtilityTests

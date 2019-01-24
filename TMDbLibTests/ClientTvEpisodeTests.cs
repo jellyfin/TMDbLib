@@ -8,7 +8,7 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Cast = TMDbLib.Objects.TvShows.Cast;
 
 namespace TMDbLibTests

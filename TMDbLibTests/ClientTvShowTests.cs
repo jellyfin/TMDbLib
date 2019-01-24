@@ -8,7 +8,7 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 using Cast = TMDbLib.Objects.TvShows.Cast;
 using Credits = TMDbLib.Objects.TvShows.Credits;
 

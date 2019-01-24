@@ -2,7 +2,7 @@
 using Xunit;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

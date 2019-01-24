@@ -2,7 +2,7 @@
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

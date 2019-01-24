@@ -2,7 +2,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace TMDbLibTests.JsonHelpers
+namespace TMDbLibTests.TestFramework
 {
     public class FailingContractResolver : DefaultContractResolver
     {

@@ -3,7 +3,7 @@ using TMDbLibTests.Exceptions;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

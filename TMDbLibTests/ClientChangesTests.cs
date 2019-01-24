@@ -4,7 +4,7 @@ using Xunit;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {

@@ -6,7 +6,6 @@ namespace TMDbLibTests.Exceptions
     {
         public ConfigurationErrorsException(string message) : base(message)
         {
-
         }
     }
 }

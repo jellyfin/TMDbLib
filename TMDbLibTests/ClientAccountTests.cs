@@ -9,7 +9,7 @@ using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Exceptions;
 using TMDbLibTests.Helpers;
-using TMDbLibTests.JsonHelpers;
+using TMDbLibTests.TestFramework;
 
 namespace TMDbLibTests
 {
