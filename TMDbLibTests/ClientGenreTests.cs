@@ -10,6 +10,10 @@ namespace TMDbLibTests
 {
     public class ClientGenreTests : TestBase
     {
+        public ClientGenreTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestGenreTvList()
         {

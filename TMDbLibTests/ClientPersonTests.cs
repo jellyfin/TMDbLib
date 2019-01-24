@@ -14,8 +14,8 @@ namespace TMDbLibTests
     public class ClientPersonTests : TestBase
     {
         private static Dictionary<PersonMethods, Func<Person, object>> _methods;
-
-        public ClientPersonTests()
+        
+        public ClientPersonTests(TestConfig testConfig) : base(testConfig)
         {
             _methods = new Dictionary<PersonMethods, Func<Person, object>>
             {

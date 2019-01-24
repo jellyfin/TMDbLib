@@ -8,6 +8,10 @@ namespace TMDbLibTests
 {
     public class ClientFindTests : TestBase
     {
+        public ClientFindTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestFindImdbMovie()
         {

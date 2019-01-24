@@ -14,7 +14,7 @@ namespace TMDbLibTests
     {
         private static Dictionary<CompanyMethods, Func<Company, object>> _methods;
 
-        public ClientCompanyTests()
+        public ClientCompanyTests(TestConfig testConfig) : base(testConfig)
         {
             _methods = new Dictionary<CompanyMethods, Func<Company, object>>
             {

@@ -10,6 +10,10 @@ namespace TMDbLibTests
 {
     public class ClientSearchTests : TestBase
     {
+        public ClientSearchTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestSearchMovie()
         {

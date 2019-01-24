@@ -12,7 +12,7 @@ namespace TMDbLibTests
     /// </summary>
     public class ClientAuthenticationTests : TestBase
     {
-        public ClientAuthenticationTests()
+        public ClientAuthenticationTests(TestConfig testConfig) : base(testConfig)
         {
             if (string.IsNullOrWhiteSpace(Config.Username) || string.IsNullOrWhiteSpace(Config.Password))
                 throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");

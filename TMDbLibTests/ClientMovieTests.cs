@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Threading;
 using Xunit;
@@ -21,7 +20,7 @@ namespace TMDbLibTests
     {
         private static Dictionary<MovieMethods, Func<Movie, object>> _methods;
 
-        public ClientMovieTests()
+        public ClientMovieTests(TestConfig testConfig) : base(testConfig)
         {
             _methods = new Dictionary<MovieMethods, Func<Movie, object>>
             {

@@ -8,6 +8,10 @@ namespace TMDbLibTests
 {
     public class ClientReviewTests : TestBase
     {
+        public ClientReviewTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestReviewFullDetails()
         {

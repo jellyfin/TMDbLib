@@ -11,6 +11,10 @@ namespace TMDbLibTests.UtilityTests
 {
     public class TaggedImageConverterTest : TestBase
     {
+        public TaggedImageConverterTest(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TaggedImageConverter_Movie()
         {

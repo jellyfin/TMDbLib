@@ -15,7 +15,7 @@ namespace TMDbLibTests
 {
     public class ClientAccountTests : TestBase
     {
-        public ClientAccountTests() : base()
+        public ClientAccountTests(TestConfig testConfig) : base(testConfig)
         {
             if (string.IsNullOrWhiteSpace(Config.UserSessionId))
                 throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");

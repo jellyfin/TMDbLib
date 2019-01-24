@@ -10,6 +10,10 @@ namespace TMDbLibTests
 {
     public class ClientChangesTests : TestBase
     {
+        public ClientChangesTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestChangesMovies()
         {

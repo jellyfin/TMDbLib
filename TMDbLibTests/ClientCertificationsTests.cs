@@ -9,6 +9,10 @@ namespace TMDbLibTests
 {
     public class ClientCertificationsTests : TestBase
     {
+        public ClientCertificationsTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestCertificationsListMovie()
         {

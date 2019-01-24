@@ -10,6 +10,10 @@ namespace TMDbLibTests.UtilityTests
 {
     public class SearchBaseConverterTest : TestBase
     {
+        public SearchBaseConverterTest(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void SearchBaseConverter_Movie()
         {

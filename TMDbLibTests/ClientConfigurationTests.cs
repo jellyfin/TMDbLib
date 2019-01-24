@@ -12,6 +12,10 @@ namespace TMDbLibTests
 {
     public class ClientConfigurationTests : TestBase
     {
+        public ClientConfigurationTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestCountryList()
         {

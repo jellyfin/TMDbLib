@@ -10,6 +10,10 @@ namespace TMDbLibTests
 {
     public class ClientKeywordTests : TestBase
     {
+        public ClientKeywordTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestKeywordGet()
         {

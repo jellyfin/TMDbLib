@@ -12,6 +12,10 @@ namespace TMDbLibTests.UtilityTests
 {
     public class AccountStateConverterTest : TestBase
     {
+        public AccountStateConverterTest(TestConfig config) : base(config)
+        {
+        }
+
         [Fact]
         public void AccountStateConverter_WithData()
         {

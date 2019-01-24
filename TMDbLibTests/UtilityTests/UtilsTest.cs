@@ -1,12 +1,11 @@
 ﻿using System;
 using TMDbLib.Utilities;
-using TMDbLibTests.JsonHelpers;
 using TMDbLibTests.TestClasses;
 using Xunit;
 
 namespace TMDbLibTests.UtilityTests
 {
-    public class UtilsTest : TestBase
+    public class UtilsTest
     {
         [Fact]
         public void EnumDescriptionNonEnumTest()

@@ -10,6 +10,10 @@ namespace TMDbLibTests
 {
     public class ClientCreditTests : TestBase
     {
+        public ClientCreditTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestGetCreditTv()
         {

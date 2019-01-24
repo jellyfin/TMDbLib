@@ -8,6 +8,7 @@ using ParameterType = TMDbLib.Rest.ParameterType;
 using RestClient = TMDbLib.Rest.RestClient;
 using RestRequest = TMDbLib.Rest.RestRequest;
 using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,14 +19,60 @@ namespace TMDbLib.Client
         private const string ApiVersion = "3";
         private const string ProductionUrl = "api.themoviedb.org";
 
-        private readonly JsonSerializer _serializer;
+        private JsonSerializer _serializer;
         private RestClient _client;
         private TMDbConfig _config;
 
+        /// <summary>
+        /// Creates a new TMDbClient using a default HttpClient
+        /// </summary>
+        /// <param name="apiKey"></param>
+        /// <param name="useSsl"></param>
+        /// <param name="baseUrl"></param>
+        /// <param name="serializer"></param>
+        /// <param name="proxy">
+        /// The Web Proxy is optional. If set, every request will be sent through it.
+        /// Use the constructor for setting it.
+        ///
+        /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
+        /// Check <see cref="Utilities.TMDbAPIProxy"/> for more information.
+        /// </param>
         public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null, IWebProxy proxy = null)
         {
             DefaultLanguage = null;
             DefaultCountry = null;
+
+            var httpClient = new HttpClient(new HttpClientHandler
+            {
+                Proxy = proxy
+            });
+
+            Initialize(httpClient, baseUrl, useSsl, apiKey, serializer);
+        }
+
+        /// <summary>
+        /// Creates a new TMDbClient using the provided HttpClient. This allows end users to override behavior, and introduce new features such as Retrying.
+        /// </summary>
+        /// <param name="httpClient"></param>
+        /// <param name="apiKey"></param>
+        /// <param name="useSsl"></param>
+        /// <param name="baseUrl"></param>
+        /// <param name="serializer"></param>
+        public TMDbClient(HttpClient httpClient, string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null)
+        {
+            DefaultLanguage = null;
+            DefaultCountry = null;
+
+            Initialize(httpClient, baseUrl, useSsl, apiKey, serializer);
+        }
+
+        private void Initialize(HttpClient httpClient, string baseUrl, bool useSsl, string apiKey, JsonSerializer serializer)
+        {
+            if (string.IsNullOrWhiteSpace(baseUrl))
+                throw new ArgumentException("baseUrl");
+
+            if (string.IsNullOrWhiteSpace(apiKey))
+                throw new ArgumentException("apiKey");
 
             _serializer = serializer ?? JsonSerializer.CreateDefault();
             _serializer.Converters.Add(new ChangeItemConverter());
@@ -35,11 +82,17 @@ namespace TMDbLib.Client
             _serializer.Converters.Add(new TaggedImageConverter());
             _serializer.Converters.Add(new TolerantEnumConverter());
 
-            //Setup proxy to use during requests
-            //Proxy is optional. If passed, will be used in every request.
-            WebProxy = proxy;
+            ApiKey = apiKey;
 
-            Initialize(baseUrl, useSsl, apiKey);
+            // Cleanup the provided url so that we don't get any issues when we are configuring the client
+            if (baseUrl.StartsWith("http://", StringComparison.OrdinalIgnoreCase))
+                baseUrl = baseUrl.Substring("http://".Length);
+            else if (baseUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                baseUrl = baseUrl.Substring("https://".Length);
+
+            string httpScheme = useSsl ? "https" : "http";
+            _client = new RestClient(httpClient, new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer);
+            _client.AddDefaultQueryString("api_key", apiKey);
         }
 
         /// <summary>
@@ -107,13 +160,6 @@ namespace TMDbLib.Client
         /// <summary>
         /// Gets or sets the Web Proxy to use during requests to TMDb API.
         /// </summary>
-        /// <remarks>
-        /// The Web Proxy is optional. If set, every request will be sent through it.
-        /// Use the constructor for setting it.
-        ///
-        /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
-        /// Check <see cref="Utilities.TMDbAPIProxy"/> for more information.
-        /// </remarks>
         public IWebProxy WebProxy { get; private set; }
 
         /// <summary>
@@ -166,27 +212,6 @@ namespace TMDbLib.Client
         {
             string baseUrl = useSsl ? Config.Images.SecureBaseUrl : Config.Images.BaseUrl;
             return new Uri(baseUrl + size + filePath);
-        }
-
-        private void Initialize(string baseUrl, bool useSsl, string apiKey)
-        {
-            if (string.IsNullOrWhiteSpace(baseUrl))
-                throw new ArgumentException("baseUrl");
-
-            if (string.IsNullOrWhiteSpace(apiKey))
-                throw new ArgumentException("apiKey");
-
-            ApiKey = apiKey;
-
-            // Cleanup the provided url so that we don't get any issues when we are configuring the client
-            if (baseUrl.StartsWith("http://", StringComparison.OrdinalIgnoreCase))
-                baseUrl = baseUrl.Substring("http://".Length);
-            else if (baseUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
-                baseUrl = baseUrl.Substring("https://".Length);
-
-            string httpScheme = useSsl ? "https" : "http";
-            _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy);
-            _client.AddDefaultQueryString("api_key", apiKey);
         }
 
         /// <summary>

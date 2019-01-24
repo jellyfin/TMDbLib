@@ -13,6 +13,10 @@ namespace TMDbLibTests
 {
     public class ClientGuestSessionTests : TestBase
     {
+        public ClientGuestSessionTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestTvEpisodeSetRatingGuestSession()
         {

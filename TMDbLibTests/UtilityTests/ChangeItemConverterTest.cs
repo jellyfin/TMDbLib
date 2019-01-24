@@ -12,6 +12,10 @@ namespace TMDbLibTests.UtilityTests
 {
     public class ChangeItemConverterTest : TestBase
     {
+        public ChangeItemConverterTest(TestConfig config) : base(config)
+        {
+        }
+
         [Fact]
         public void ChangeItemConverter_ChangeItemAdded()
         {

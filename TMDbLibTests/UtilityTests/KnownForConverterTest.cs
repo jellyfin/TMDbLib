@@ -12,6 +12,10 @@ namespace TMDbLibTests.UtilityTests
 {
     public class KnownForConverterTest : TestBase
     {
+        public KnownForConverterTest(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void KnownForConverter_Movie()
         {

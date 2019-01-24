@@ -15,6 +15,10 @@ namespace TMDbLibTests
     {
         private const string TestListId = "528349d419c2954bd21ca0a8";
 
+        public ClientListsTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestList()
         {

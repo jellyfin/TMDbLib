@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
-using System.Net;
 using System.Net.Http;
 
 namespace TMDbLib.Rest
@@ -11,25 +10,20 @@ namespace TMDbLib.Rest
     {
         private int _maxRetryCount;
 
-        public RestClient(Uri baseUrl, JsonSerializer serializer, IWebProxy proxy = null)
+        public RestClient(HttpClient httpClient, Uri baseUrl, JsonSerializer serializer)
         {
             BaseUrl = baseUrl;
             Serializer = serializer;
             DefaultQueryString = new List<KeyValuePair<string, string>>();
 
             MaxRetryCount = 0;
-            Proxy = proxy;
 
-            HttpClient = new HttpClient(new HttpClientHandler
-            {
-                Proxy = proxy
-            });
+            HttpClient = httpClient;
         }
 
         internal Uri BaseUrl { get; }
         internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
         internal Encoding Encoding { get; } = new UTF8Encoding(false);
-        internal IWebProxy Proxy { get; private set; }
 
         internal HttpClient HttpClient { get; private set; }
 

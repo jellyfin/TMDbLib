@@ -13,6 +13,10 @@ namespace TMDbLibTests.UtilityTests
 {
     public class EnumStringValueConverterTest : TestBase
     {
+        public EnumStringValueConverterTest(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         public static IEnumerable<object[]> GetEnumMembers(Type type)
         {
             IEnumerable<FieldInfo> members = type.GetTypeInfo().DeclaredFields.Where(s => s.IsStatic);

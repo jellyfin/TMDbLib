@@ -11,6 +11,10 @@ namespace TMDbLibTests
 {
     public class ClientDiscoverTests : TestBase
     {
+        public ClientDiscoverTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestDiscoverTvShowsNoParams()
         {

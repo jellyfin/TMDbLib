@@ -4,6 +4,7 @@ using TMDbLib.Objects.General;
 using System.Linq;
 using System.Text.RegularExpressions;
 using TMDbLib.Objects.People;
+using TMDbLibTests.JsonHelpers;
 using Xunit;
 
 namespace TMDbLibTests.Helpers

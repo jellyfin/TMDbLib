@@ -10,6 +10,10 @@ namespace TMDbLibTests.UtilityTests
 {
     public class CustomDatetimeFormatConverterTest : TestBase
     {
+        public CustomDatetimeFormatConverterTest(TestConfig config) : base(config)
+        {
+        }
+
         [Fact]
         public void CustomDatetimeFormatConverter_Data()
         {

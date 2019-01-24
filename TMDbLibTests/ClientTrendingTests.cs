@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TMDbLib.Objects.Trending;
+﻿using TMDbLib.Objects.Trending;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -9,6 +6,10 @@ namespace TMDbLibTests
 {
     public class ClientTrendingTests : TestBase
     {
+        public ClientTrendingTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestTrendingMovies()
         {

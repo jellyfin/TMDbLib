@@ -17,7 +17,7 @@ namespace TMDbLibTests
     {
         private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
 
-        public ClientTvSeasonTests()
+        public ClientTvSeasonTests(TestConfig testConfig) : base(testConfig)
         {
             _methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>
             {

@@ -8,6 +8,10 @@ namespace TMDbLibTests
 {
     public class ClientNetworkTests : TestBase
     {
+        public ClientNetworkTests(TestConfig testConfig) : base(testConfig)
+        {
+        }
+
         [Fact]
         public void TestNetworkGetById()
         {
