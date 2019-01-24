@@ -325,7 +325,7 @@ namespace TMDbLibTests
             TranslationsContainer resp = Config.Client.GetMovieTranslationsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
 
-            TranslationWithCountry translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
+            Translation translation = resp.Translations.SingleOrDefault(s => s.EnglishName == "German");
             Assert.NotNull(translation);
 
             Assert.Equal("German", translation.EnglishName);
@@ -364,7 +364,7 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieRecommendationsMovies()
         {
             // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
+            IgnoreMissingJson("results[array] / media_type", "results[array] / popularity");
 
             SearchContainer<SearchMovie> resp = Config.Client.GetMovieRecommendationsAsync(IdHelper.AGoodDayToDieHard).Result;
             Assert.NotNull(resp);
@@ -769,7 +769,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetHtmlEncodedText()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
 
             Movie item = Config.Client.GetMovieAsync(IdHelper.Furious7, "de").Result;
 
@@ -781,7 +781,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGet()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
 
             Movie item = Config.Client.GetMovieAsync(IdHelper.AGoodDayToDieHard).Result;
 
@@ -833,7 +833,7 @@ namespace TMDbLibTests
         public void TestMoviesExtrasAccountState()
         {
             // Ignore certain properties
-            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations");
+            IgnoreMissingJson(" / id", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
 
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);

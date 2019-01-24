@@ -12,5 +12,8 @@ namespace TMDbLib.Objects.Lists
 
         [JsonProperty("status_message")]
         public string StatusMessage { get; set; }
+
+        [JsonProperty("success")]
+        public bool Success { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -9,6 +10,9 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("gender")]
+        public PersonGender Gender { get; set; }
 
         [JsonProperty("profile_path")]
         public string ProfilePath { get; set; }

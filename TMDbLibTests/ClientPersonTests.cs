@@ -247,7 +247,7 @@ namespace TMDbLibTests
         public void TestPersonsGetPersonChanges()
         {
             // Not all ChangeItem's have an iso_639_1
-            IgnoreMissingJson(" / iso_639_1");
+            IgnoreMissingJson(" / iso_639_1", " / value");
 
             // FindAsync latest changed person
             SearchContainer<ChangesListItem> latestChanges = Config.Client.GetChangesPeopleAsync().Sync();

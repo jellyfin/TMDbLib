@@ -31,7 +31,7 @@ namespace TMDbLibTests
             Assert.True(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
             Assert.Equal("en", item.OriginalLanguage);
             Assert.Equal("Dr. No", item.OriginalTitle);
-            Assert.Equal("In the film that launched the James Bond saga, Agent 007 (Sean Connery) battles mysterious Dr. No, a scientific genius bent on destroying the U.S. space program. As the countdown to disaster begins, Bond must go to Jamaica, where he encounters beautiful Honey Ryder (Ursula Andress), to confront a megalomaniacal villain in his massive island headquarters.", item.Overview);
+            Assert.Equal("In the film that launched the James Bond saga, Agent 007 battles mysterious Dr. No, a scientific genius bent on destroying the U.S. space program. As the countdown to disaster begins, Bond must go to Jamaica, where he encounters beautiful Honey Ryder, to confront a megalomaniacal villain in his massive island headquarters.", item.Overview);
             Assert.Equal(false, item.Video);
             Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
             Assert.Equal(new DateTime(1962, 10, 4), item.ReleaseDate);
@@ -197,9 +197,8 @@ namespace TMDbLibTests
             Assert.True(item.VoteCount > 0);
 
             Assert.NotNull(item.OriginCountry);
-            Assert.Equal(2, item.OriginCountry.Count);
+            Assert.Equal(1, item.OriginCountry.Count);
             Assert.True(item.OriginCountry.Contains("US"));
-            Assert.True(item.OriginCountry.Contains("CA"));
         }
     }
 }

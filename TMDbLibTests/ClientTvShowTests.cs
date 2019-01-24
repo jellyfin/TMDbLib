@@ -173,16 +173,16 @@ namespace TMDbLibTests
             Assert.NotNull(videos);
             Assert.Equal(IdHelper.BreakingBad, videos.Id);
 
-            Video video = videos.Results.FirstOrDefault(r => r.Id == "5335e299c3a368265000001d");
+            Video video = videos.Results.FirstOrDefault(r => r.Id == "5759db2fc3a3683e7c003df7");
             Assert.NotNull(video);
 
-            Assert.Equal("5335e299c3a368265000001d", video.Id);
+            Assert.Equal("5759db2fc3a3683e7c003df7", video.Id);
             Assert.Equal("en", video.Iso_639_1);
-            Assert.Equal("6OdIbPMU720", video.Key);
-            Assert.Equal("Opening Credits (Short)", video.Name);
+            Assert.Equal("XZ8daibM3AE", video.Key);
+            Assert.Equal("Trailer", video.Name);
             Assert.Equal("YouTube", video.Site);
-            Assert.Equal(480, video.Size);
-            Assert.Equal("Opening Credits", video.Type);
+            Assert.Equal(720, video.Size);
+            Assert.Equal("Trailer", video.Type);
         }
 
         [Fact]
@@ -380,7 +380,7 @@ namespace TMDbLibTests
         public void TestTvShowRecommendations()
         {
             // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
+            IgnoreMissingJson("results[array] / media_type", "results[array] / popularity");
 
             SearchContainer<SearchTv> tvShow = Config.Client.GetTvShowRecommendationsAsync(1668).Result;
 
@@ -395,7 +395,6 @@ namespace TMDbLibTests
             Assert.Equal("How I Met Your Mother", item.OriginalName);
             Assert.Equal(new DateTime(2005, 09, 19), item.FirstAirDate);
             Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
-            Assert.True(item.Popularity > 0);
             Assert.Equal("How I Met Your Mother", item.Name);
             Assert.True(item.VoteAverage > 0);
             Assert.True(item.VoteCount > 0);
