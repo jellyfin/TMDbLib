@@ -1,0 +1,142 @@
+[
+  {
+    "RecordedAt": "2019-01-26T17:47:38.7868492Z",
+    "ReducedUri": "/3/account?session_id=c413282cdadad9af972c06d9b13096a8b13ab1c1",
+    "RespData": {
+      "avatar": {
+        "gravatar": {
+          "hash": "7cf5357dbc2014cbd616257c358ea0a1"
+        }
+      },
+      "id": 6089455,
+      "iso_639_1": "en",
+      "iso_3166_1": "BE",
+      "name": "Test Name",
+      "include_adult": false,
+      "username": "TMDbTestAccount"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:47:38.6189928Z",
+    "ReducedUri": "/3/movie/19995/account_states?session_id=c413282cdadad9af972c06d9b13096a8b13ab1c1",
+    "RespData": {
+      "id": 19995,
+      "favorite": true,
+      "rated": {
+        "value": 2.5
+      },
+      "watchlist": false
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:47:38.9881702Z",
+    "ReducedUri": "/3/tv/1418/season/1/account_states?session_id=c413282cdadad9af972c06d9b13096a8b13ab1c1",
+    "RespData": {
+      "id": 3738,
+      "results": [
+        {
+          "id": 64766,
+          "episode_number": 1,
+          "rated": {
+            "value": 5.0
+          }
+        },
+        {
+          "id": 64777,
+          "episode_number": 2,
+          "rated": false
+        },
+        {
+          "id": 64765,
+          "episode_number": 3,
+          "rated": false
+        },
+        {
+          "id": 64762,
+          "episode_number": 4,
+          "rated": false
+        },
+        {
+          "id": 64763,
+          "episode_number": 5,
+          "rated": false
+        },
+        {
+          "id": 64764,
+          "episode_number": 6,
+          "rated": false
+        },
+        {
+          "id": 64767,
+          "episode_number": 7,
+          "rated": false
+        },
+        {
+          "id": 64769,
+          "episode_number": 8,
+          "rated": false
+        },
+        {
+          "id": 64770,
+          "episode_number": 9,
+          "rated": false
+        },
+        {
+          "id": 64650,
+          "episode_number": 10,
+          "rated": false
+        },
+        {
+          "id": 64768,
+          "episode_number": 11,
+          "rated": false
+        },
+        {
+          "id": 64774,
+          "episode_number": 12,
+          "rated": false
+        },
+        {
+          "id": 64775,
+          "episode_number": 13,
+          "rated": false
+        },
+        {
+          "id": 64773,
+          "episode_number": 14,
+          "rated": false
+        },
+        {
+          "id": 64771,
+          "episode_number": 15,
+          "rated": false
+        },
+        {
+          "id": 64772,
+          "episode_number": 16,
+          "rated": false
+        },
+        {
+          "id": 64776,
+          "episode_number": 17,
+          "rated": false
+        }
+      ]
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+]

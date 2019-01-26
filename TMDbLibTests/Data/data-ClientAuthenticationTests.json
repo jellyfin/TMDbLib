@@ -1,0 +1,152 @@
+[
+  {
+    "RecordedAt": "2019-01-26T17:48:00.4063593Z",
+    "ReducedUri": "/3/authentication/guest_session/new",
+    "RespData": {
+      "success": true,
+      "guest_session_id": "94fbd15821a0d05dc2ad39bced35ace3",
+      "expires_at": "2019-01-27 17:48:02 UTC"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:48:04.5998667Z",
+    "ReducedUri": "/3/authentication/session/new?request_token=24c52a71bf8dc298d853d67d8a63fe4847336fde",
+    "RespData": {
+      "success": true,
+      "session_id": "790f8b122dfa176247111b50370489ad1b0baacd"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:48:04.7173699Z",
+    "ReducedUri": "/3/authentication/session/new?request_token=5f3a62c0d7977319e3d14adf1a2064c0c0938bcf",
+    "RespData": {
+      "failure": true,
+      "status_code": 17,
+      "status_message": "Session denied."
+    },
+    "RespStatusCode": 401,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "0001-01-01T00:00:00",
+    "ReducedUri": "/3/authentication/session/new?request_token=700c24718297450ae2714ca0dfa8626bc7d0a973",
+    "RespData": {
+      "success": true,
+      "session_id": "a32d4cef9af50399e249f07f37b3cf4e4d76cccf"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:52:01.4466321Z",
+    "ReducedUri": "/3/authentication/session/new?request_token=bla",
+    "RespData": {
+      "failure": true,
+      "status_code": 17,
+      "status_message": "Session denied."
+    },
+    "RespStatusCode": 401,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:48:04.299881Z",
+    "ReducedUri": "/3/authentication/token/new",
+    "RespData": {
+      "success": true,
+      "expires_at": "2019-01-26 18:48:06 UTC",
+      "request_token": "24c52a71bf8dc298d853d67d8a63fe4847336fde"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:48:04.1895225Z",
+    "ReducedUri": "/3/authentication/token/validate_with_login?request_token=191bb176c4aad46e060cd06b00b6d023b1a335bd&username=TMDbTestAccount&password=TJX6vP7bPC%25!ZrJwAqtCU5FshHEKAwzr6YvR3%25CU9s7BrjqUWmjC8AMuXju*eTEu524zsxDQK5ySY6EmjAC3e54B%25WvkS9FNPE3K",
+    "RespData": {
+      "success": true,
+      "expires_at": "2019-01-26 18:48:05 UTC",
+      "request_token": "191bb176c4aad46e060cd06b00b6d023b1a335bd"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:48:04.4471648Z",
+    "ReducedUri": "/3/authentication/token/validate_with_login?request_token=24c52a71bf8dc298d853d67d8a63fe4847336fde&username=TMDbTestAccount&password=TJX6vP7bPC%25!ZrJwAqtCU5FshHEKAwzr6YvR3%25CU9s7BrjqUWmjC8AMuXju*eTEu524zsxDQK5ySY6EmjAC3e54B%25WvkS9FNPE3K",
+    "RespData": {
+      "success": true,
+      "expires_at": "2019-01-26 18:48:06 UTC",
+      "request_token": "24c52a71bf8dc298d853d67d8a63fe4847336fde"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "0001-01-01T00:00:00",
+    "ReducedUri": "/3/authentication/token/validate_with_login?request_token=700c24718297450ae2714ca0dfa8626bc7d0a973&username=TMDbTestAccount&password=TJX6vP7bPC%25!ZrJwAqtCU5FshHEKAwzr6YvR3%25CU9s7BrjqUWmjC8AMuXju*eTEu524zsxDQK5ySY6EmjAC3e54B%25WvkS9FNPE3K",
+    "RespData": {
+      "success": true,
+      "expires_at": "2019-01-26 18:17:34 UTC",
+      "request_token": "700c24718297450ae2714ca0dfa8626bc7d0a973"
+    },
+    "RespStatusCode": 200,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "2019-01-26T17:48:00.7268903Z",
+    "ReducedUri": "/3/authentication/token/validate_with_login?request_token=8020d71f533c2439163ba0b34d76af5430c3088e&username=bla&password=bla",
+    "RespData": {
+      "status_code": 30,
+      "status_message": "Invalid username and/or password: You did not provide a valid login."
+    },
+    "RespStatusCode": 401,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "RecordedAt": "0001-01-01T00:00:00",
+    "ReducedUri": "/3/authentication/token/validate_with_login?request_token=bd99c86b719d14d6249ce9c38f1c447bf4aa86de&username=bla&password=bla",
+    "RespData": {
+      "status_code": 30,
+      "status_message": "Invalid username and/or password: You did not provide a valid login."
+    },
+    "RespStatusCode": 401,
+    "ReqMethod": "GET",
+    "RespHeaders": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+]
