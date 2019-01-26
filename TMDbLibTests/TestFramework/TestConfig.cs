@@ -57,8 +57,8 @@ namespace TMDbLibTests.TestFramework
             _initializedAs = name;
             string file = Path.Combine(dataDir, $"data-{name}.json");
 
-            RecordingHandler handler = new RecordingHandler(file, new SocketsHttpHandler());
-            //ReplayingHandler handler = new ReplayingHandler(file);
+            //RecordingHandler handler = new RecordingHandler(file, new SocketsHttpHandler());
+            ReplayingHandler handler = new ReplayingHandler(file);
 
             HttpClient httpClient = new HttpClient(handler);
 
