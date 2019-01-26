@@ -17,7 +17,7 @@ namespace TMDbLibTests
         {
         }
 
-        [Fact]
+        [Fact(Skip = "This test has been failing for some time - TMDb has been made aware, but have not responded")]
         public void TestTvEpisodeSetRatingGuestSession()
         {
             Config.Client.SetSessionInformation(Config.GuestTestSessionId, SessionType.GuestSession);
@@ -29,9 +29,7 @@ namespace TMDbLibTests
             Thread.Sleep(2000);
 
             SearchContainer<TvEpisodeWithRating> ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
-
-            Assert.False(true, "This test has been failing for some time - TMDb has been made aware, but have not responded");
-
+            
             //double tmpRating = ratings.Results.Single(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1).Rating;
             //Assert.True(ratings.Results.Any(s => s.ShowId == IdHelper.BreakingBad && s.SeasonNumber == 1 && s.EpisodeNumber == 1));
             //Assert.True(Math.Abs(7.5 - tmpRating) < float.Epsilon);
