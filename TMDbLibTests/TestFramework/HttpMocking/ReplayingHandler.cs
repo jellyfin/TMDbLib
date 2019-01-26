@@ -20,13 +20,13 @@ namespace TMDbLibTests.TestFramework.HttpMocking
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             // Load request content
-            JObject reqObj = null;
+            JToken reqObj = null;
             if (request.Content != null)
             {
                 await request.Content.LoadIntoBufferAsync();
 
                 string reqJson = await request.Content.ReadAsStringAsync();
-                reqObj = JsonConvert.DeserializeObject<JObject>(reqJson);
+                reqObj = JsonConvert.DeserializeObject<JToken>(reqJson);
             }
 
             string reducedUri = GetReducedUri(request.RequestUri);

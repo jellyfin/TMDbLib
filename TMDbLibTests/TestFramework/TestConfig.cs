@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Http;
 using Newtonsoft.Json;
 using TMDbLib.Client;
@@ -48,11 +49,16 @@ namespace TMDbLibTests.TestFramework
                 return;
             }
 
-            _initializedAs = name;
-            string file = $"data-{name}.json";
+            string dataDir = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()))), "Data");
 
-            //RecordingHandler handler = new RecordingHandler(file, new SocketsHttpHandler());
-            ReplayingHandler handler = new ReplayingHandler(file);
+            if (!Directory.Exists(dataDir))
+                Directory.CreateDirectory(dataDir);
+
+            _initializedAs = name;
+            string file = Path.Combine(dataDir, $"data-{name}.json");
+
+            RecordingHandler handler = new RecordingHandler(file, new SocketsHttpHandler());
+            //ReplayingHandler handler = new ReplayingHandler(file);
 
             HttpClient httpClient = new HttpClient(handler);
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading;
@@ -28,13 +29,13 @@ namespace TMDbLibTests.TestFramework.HttpMocking
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             // Load request content
-            JObject reqObj = null;
+            JToken reqObj = null;
             if (request.Content != null)
             {
                 await request.Content.LoadIntoBufferAsync();
 
                 string reqJson = await request.Content.ReadAsStringAsync();
-                reqObj = JsonConvert.DeserializeObject<JObject>(reqJson);
+                reqObj = JsonConvert.DeserializeObject<JToken>(reqJson);
             }
 
             // Do the live request
@@ -47,10 +48,11 @@ namespace TMDbLibTests.TestFramework.HttpMocking
             headers.Add("Content-Type", result.Content.Headers.ContentType.ToString());
 
             string respJson = await result.Content.ReadAsStringAsync();
-            JObject respObj = JsonConvert.DeserializeObject<JObject>(respJson);
+            JToken respObj = JsonConvert.DeserializeObject<JToken>(respJson);
 
             _responses.AddResponse(new ResponseObject
             {
+                RecordedAt = DateTime.UtcNow,
                 ReducedUri = GetReducedUri(request.RequestUri),
                 ReqMethod = request.Method.Method,
                 ReqData = reqObj,

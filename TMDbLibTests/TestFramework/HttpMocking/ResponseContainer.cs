@@ -27,6 +27,9 @@ namespace TMDbLibTests.TestFramework.HttpMocking
         {
             lock (_responses)
             {
+                if (!_responses.Any())
+                    return;
+
                 IOrderedEnumerable<ResponseObject> data = _responses
                     .OrderBy(s => s.ReducedUri)
                     .ThenBy(s => s.ReqMethod)
@@ -68,14 +71,13 @@ namespace TMDbLibTests.TestFramework.HttpMocking
             }
         }
 
-        public ResponseObject FindResponse(string reducedUri, string method, JObject requestObject)
+        public ResponseObject FindResponse(string reducedUri, string method, JToken requestObject)
         {
             lock (_responses)
             {
                 IEnumerable<ResponseObject> applicables = _responses.Where(s =>
                     s.ReducedUri.Equals(reducedUri, StringComparison.OrdinalIgnoreCase) &&
                     s.ReqMethod.Equals(method, StringComparison.OrdinalIgnoreCase));
-
                 if (requestObject != null)
                     applicables = applicables.Where(s => JToken.DeepEquals(s.ReqData, requestObject));
 
