@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using System.Linq;
@@ -6,6 +6,7 @@ using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System;
+using System.Collections.Generic;
 
 namespace TMDbLibTests
 {
@@ -91,6 +92,21 @@ namespace TMDbLibTests
             Assert.Equal("Skønheden og Udyret", query.Query(0).Result.Results[11].Title);
 
             TestHelpers.SearchPages(i => query.Query(i).Result);
+        }
+
+        [Theory]
+        [InlineData("ko")]
+        [InlineData("zh")]
+        public void TestDiscoverMoviesOriginalLanguage(string language)
+        {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+
+            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
+            List<SearchMovie> results = query.Query(0).Result.Results;
+
+            Assert.NotEmpty(results);
+            Assert.All(results, item => Assert.Contains(language, item.OriginalLanguage));
         }
     }
 }
