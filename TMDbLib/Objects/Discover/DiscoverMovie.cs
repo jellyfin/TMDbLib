@@ -465,8 +465,5 @@ namespace TMDbLib.Objects.Discover
             Parameters["with_original_language"] = language;
             return this;
         }
-
-
-        
     }
 }
