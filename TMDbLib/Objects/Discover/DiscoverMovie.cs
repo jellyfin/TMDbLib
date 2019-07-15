@@ -456,5 +456,17 @@ namespace TMDbLib.Objects.Discover
             Parameters["language"] = language;
             return this;
         }
+
+        /// <summary>
+        /// Specifies which language to use for translatable fields
+        /// </summary>
+        public DiscoverMovie WhereOriginalLanguageIs(string language)
+        {
+            Parameters["with_original_language"] = language;
+            return this;
+        }
+
+
+        
     }
 }

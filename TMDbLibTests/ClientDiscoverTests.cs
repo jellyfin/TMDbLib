@@ -92,5 +92,19 @@ namespace TMDbLibTests
 
             TestHelpers.SearchPages(i => query.Query(i).Result);
         }
+
+
+ 
+        [Theory]
+        [InlineData("ko")]
+        [InlineData("zh")]
+        public void TestDiscoverMoviesOriginalLanguage(string language)
+        {
+            // Ignore missing json
+            IgnoreMissingJson("results[array] / media_type");
+            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
+            var results = query.Query(0).Result.Results;
+            Assert.All(results, item => Assert.Contains(language, item.OriginalLanguage));
+        }
     }
 }
