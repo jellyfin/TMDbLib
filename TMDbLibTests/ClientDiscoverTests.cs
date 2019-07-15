@@ -6,6 +6,7 @@ using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System;
+using System.Collections.Generic;
 
 namespace TMDbLibTests
 {
@@ -93,8 +94,6 @@ namespace TMDbLibTests
             TestHelpers.SearchPages(i => query.Query(i).Result);
         }
 
-
- 
         [Theory]
         [InlineData("ko")]
         [InlineData("zh")]
@@ -102,8 +101,10 @@ namespace TMDbLibTests
         {
             // Ignore missing json
             IgnoreMissingJson("results[array] / media_type");
+
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
-            var results = query.Query(0).Result.Results;
+            List<SearchMovie> results = query.Query(0).Result.Results;
+
             Assert.All(results, item => Assert.Contains(language, item.OriginalLanguage));
         }
     }
