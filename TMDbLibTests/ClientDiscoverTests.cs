@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
 using System.Linq;
@@ -105,6 +105,7 @@ namespace TMDbLibTests
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
             List<SearchMovie> results = query.Query(0).Result.Results;
 
+            Assert.NotEmpty(results);
             Assert.All(results, item => Assert.Contains(language, item.OriginalLanguage));
         }
     }
