@@ -18,7 +18,7 @@ namespace TMDbLib.Objects.TvShows
         public string Description { get; set; }
 
         [JsonProperty("network")]
-        public TvGroupNetwork Network { get; set; }
+        public NetworkBase Network { get; set; }
 
         [JsonProperty("episode_count")]
         public int EpisodeCount { get; set; }
