@@ -22,7 +22,7 @@ namespace TMDbLib.Client
         private RestClient _client;
         private TMDbConfig _config;
 
-        public TMDbClient(string apiKey, bool useSsl = false, string baseUrl = ProductionUrl, JsonSerializer serializer = null, IWebProxy proxy = null)
+        public TMDbClient(string apiKey, bool useSsl = true, string baseUrl = ProductionUrl, JsonSerializer serializer = null, IWebProxy proxy = null)
         {
             DefaultLanguage = null;
             DefaultCountry = null;
