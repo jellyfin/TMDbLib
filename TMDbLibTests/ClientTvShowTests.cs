@@ -261,6 +261,11 @@ namespace TMDbLibTests
             Assert.NotNull(tvShow.Languages);
             Assert.Equal("en", tvShow.Languages[0]);
 
+            Assert.Null(tvShow.NextEpisodeToAir);
+
+            Assert.NotNull(tvShow.LastEpisodeToAir);
+            Assert.Equal(62161, tvShow.LastEpisodeToAir.Id);
+
             Assert.NotNull(tvShow.Networks);
             Assert.Equal(1, tvShow.Networks.Count);
             Assert.Equal(174, tvShow.Networks[0].Id);
