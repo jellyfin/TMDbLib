@@ -10,9 +10,6 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("logo_path")]
-        public string LogoPath { get; set; }
-
         [JsonProperty("origin_country")]
         public string OriginCountry { get; set; }
     }
