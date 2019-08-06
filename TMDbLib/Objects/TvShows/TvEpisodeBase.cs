@@ -12,7 +12,7 @@ namespace TMDbLib.Objects.TvShows
         public int EpisodeNumber { get; set; }
 
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
