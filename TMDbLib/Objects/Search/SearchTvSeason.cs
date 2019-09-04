@@ -14,6 +14,12 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("id")]
         public int Id { get; set; }
 
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("overview")]
+        public string Overview { get; set; }
+
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
 
