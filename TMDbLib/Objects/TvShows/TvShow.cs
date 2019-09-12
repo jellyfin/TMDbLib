@@ -71,11 +71,17 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("last_air_date")]
         public DateTime? LastAirDate { get; set; }
 
+        [JsonProperty("last_episode_to_air")]
+        public TvEpisodeBase LastEpisodeToAir { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("next_episode_to_air")]
+        public TvEpisodeBase NextEpisodeToAir { get; set; }
+
         [JsonProperty("networks")]
-        public List<NetworkBase> Networks { get; set; }
+        public List<NetworkWithLogo> Networks { get; set; }
 
         [JsonProperty("number_of_episodes")]
         [JsonConverter(typeof(TmdbNullIntAsZero))]

@@ -9,8 +9,5 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("homepage")]
         public string Homepage { get; set; }
-
-        [JsonProperty("origin_country")]
-        public string OriginCountry { get; set; }
     }
 }
