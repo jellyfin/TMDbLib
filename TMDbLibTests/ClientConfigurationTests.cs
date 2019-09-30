@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMDbLib.Objects.Configuration;
 using Xunit;
 using TMDbLib.Objects.Timezones;
 using TMDbLibTests.Helpers;
@@ -12,6 +13,26 @@ namespace TMDbLibTests
 {
     public class ClientConfigurationTests : TestBase
     {
+        [Fact]
+        public void TestConfiguration()
+        {
+            APIConfiguration result = Config.Client.GetAPIConfiguration().Sync();
+
+            Assert.NotNull(result);
+
+            Assert.Contains(result.Images.BackdropSizes, c => c == "original");
+        }
+
+        [Fact]
+        public void TestPrimaryTranslations()
+        {
+            List<string> result = Config.Client.GetPrimaryTranslationsAsync().Sync();
+
+            Assert.NotNull(result);
+
+            Assert.Contains(result, c => c == "da-DK");
+        }
+
         [Fact]
         public void TestCountryList()
         {
