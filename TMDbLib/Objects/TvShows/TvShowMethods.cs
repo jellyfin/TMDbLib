@@ -31,6 +31,8 @@ namespace TMDbLib.Objects.TvShows
         [EnumValue("changes")]
         Changes = 1024,
         [EnumValue("recommendations")]
-        Recommendations = 2048
+        Recommendations = 2048,
+        [EnumValue("reviews")]
+        Reviews = 4096
     }
 }

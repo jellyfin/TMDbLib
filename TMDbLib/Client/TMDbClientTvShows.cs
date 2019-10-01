@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Rest;
@@ -296,6 +297,11 @@ namespace TMDbLib.Client
         public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await GetTvShowMethod<ResultContainer<Video>>(id, TvShowMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task<SearchContainerWithId<ReviewBase>> GetTvShowReviewsAsync(int id, string language = null, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await GetTvShowMethod<SearchContainerWithId<ReviewBase>>(id, TvShowMethods.Reviews, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<bool> TvShowRemoveRatingAsync(int tvShowId, CancellationToken cancellationToken = default(CancellationToken))
