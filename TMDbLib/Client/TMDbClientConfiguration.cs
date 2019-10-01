@@ -39,6 +39,7 @@ namespace TMDbLib.Client
 
             return (await response.GetDataObject().ConfigureAwait(false));
         }
+        
         public async Task<List<string>> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("configuration/primary_translations");
