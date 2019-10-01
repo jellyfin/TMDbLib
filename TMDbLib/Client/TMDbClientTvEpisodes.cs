@@ -102,6 +102,13 @@ namespace TMDbLib.Client
 
             return response;
         }
+        public async Task<ResultContainer<TvEpisodeInfo>> GetTvEpisodesScreenedTheatricallyAsync(int tvShowId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            RestRequest req = _client.Create("tv/{tv_id}/screened_theatrically");
+            req.AddUrlSegment("tv_id", tvShowId.ToString(CultureInfo.InvariantCulture));
+
+            return await req.ExecuteGet<ResultContainer<TvEpisodeInfo>>(cancellationToken).ConfigureAwait(false);
+        }
 
         /// <summary>
         /// Returns a credits object for the specified episode.

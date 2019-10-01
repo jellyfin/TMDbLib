@@ -3,16 +3,10 @@ using System;
 
 namespace TMDbLib.Objects.TvShows
 {
-    public class TvEpisodeBase
+    public class TvEpisodeBase : TvEpisodeInfo
     {
         [JsonProperty("air_date")]
         public DateTime? AirDate { get; set; }
-
-        [JsonProperty("episode_number")]
-        public int EpisodeNumber { get; set; }
-
-        [JsonProperty("id")]
-        public int? Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -22,9 +16,6 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("production_code")]
         public string ProductionCode { get; set; }
-
-        [JsonProperty("season_number")]
-        public int SeasonNumber { get; set; }
 
         [JsonProperty("show_id")]
         public int ShowId { get; set; }
