@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using TMDbLib.Objects.Configuration;
 using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Languages;
@@ -12,6 +13,15 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        public async Task<APIConfiguration> GetAPIConfiguration(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            RestRequest req = _client.Create("configuration");
+
+            RestResponse<APIConfiguration> response = await req.ExecuteGet<APIConfiguration>(cancellationToken).ConfigureAwait(false);
+
+            return (await response.GetDataObject().ConfigureAwait(false));
+        }
+
         public async Task<List<Country>> GetCountriesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("configuration/countries");
@@ -26,6 +36,15 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("configuration/languages");
 
             RestResponse<List<Language>> response = await req.ExecuteGet<List<Language>>(cancellationToken).ConfigureAwait(false);
+
+            return (await response.GetDataObject().ConfigureAwait(false));
+        }
+        
+        public async Task<List<string>> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            RestRequest req = _client.Create("configuration/primary_translations");
+
+            RestResponse<List<string>> response = await req.ExecuteGet<List<string>>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false));
         }
