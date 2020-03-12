@@ -260,5 +260,18 @@ namespace TMDbLibTests
 
             Assert.Null(tvEpisode);
         }
+
+        [Fact]
+        public void TestTvEpisodesScreenedTheatrically()
+        {
+            ResultContainer<TvEpisodeInfo> results = Config.Client.GetTvEpisodesScreenedTheatricallyAsync(IdHelper.GameOfThrones).Result;
+
+            Assert.Equal(IdHelper.GameOfThrones, results.Id);
+
+            TvEpisodeInfo single = results.Results.FirstOrDefault(s => s.Id == 63103);
+            Assert.NotNull(single);
+            Assert.Equal(4, single.SeasonNumber);
+            Assert.Equal(10, single.EpisodeNumber);
+        }
     }
 }

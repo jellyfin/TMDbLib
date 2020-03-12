@@ -443,6 +443,12 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestTvShowReviews()
+        {
+            TestHelpers.SearchPages(i => Config.Client.GetTvShowReviewsAsync(IdHelper.BreakingBad, page: i).Result);
+        }
+
+        [Fact]
         public void TestTvShowLists()
         {
             IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / created_by", " / credits", " / external_ids", " / genres", " / images", " / in_production", " / keywords", " / languages", " / networks", " / production_companies", " / seasons", " / similar", " / translations", " / videos", "results[array] / media_type", " / recommendations");
