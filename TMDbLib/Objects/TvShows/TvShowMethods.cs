@@ -9,30 +9,30 @@ namespace TMDbLib.Objects.TvShows
         [EnumValue("Undefined")]
         Undefined = 0,
         [EnumValue("credits")]
-        Credits = 1,
+        Credits = 1 << 0,
         [EnumValue("images")]
-        Images = 2,
+        Images = 1 << 1,
         [EnumValue("external_ids")]
-        ExternalIds = 4,
+        ExternalIds = 1 << 2,
         [EnumValue("content_ratings")]
-        ContentRatings = 8,
+        ContentRatings = 1 << 3,
         [EnumValue("alternative_titles")]
-        AlternativeTitles = 16,
+        AlternativeTitles = 1 << 4,
         [EnumValue("keywords")]
-        Keywords = 32,
+        Keywords = 1 << 5,
         [EnumValue("similar")]
-        Similar = 64,
+        Similar = 1 << 6,
         [EnumValue("videos")]
-        Videos = 128,
+        Videos = 1 << 7,
         [EnumValue("translations")]
-        Translations = 256,
+        Translations = 1 << 8,
         [EnumValue("account_states")]
-        AccountStates = 512,
+        AccountStates = 1 << 9,
         [EnumValue("changes")]
-        Changes = 1024,
+        Changes = 1 << 10,
         [EnumValue("recommendations")]
-        Recommendations = 2048,
+        Recommendations = 1 << 11,
         [EnumValue("reviews")]
-        Reviews = 4096
+        Reviews = 1 << 12,
     }
 }
