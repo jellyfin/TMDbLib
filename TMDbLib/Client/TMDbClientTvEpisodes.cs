@@ -102,6 +102,7 @@ namespace TMDbLib.Client
 
             return response;
         }
+
         public async Task<ResultContainer<TvEpisodeInfo>> GetTvEpisodesScreenedTheatricallyAsync(int tvShowId, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("tv/{tv_id}/screened_theatrically");
