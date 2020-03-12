@@ -264,12 +264,14 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodesScreenedTheatrically()
         {
-            var results = Config.Client.GetTvEpisodesScreenedTheatricallyAsync(IdHelper.GameOfThrones).Result;
+            ResultContainer<TvEpisodeInfo> results = Config.Client.GetTvEpisodesScreenedTheatricallyAsync(IdHelper.GameOfThrones).Result;
 
             Assert.Equal(IdHelper.GameOfThrones, results.Id);
-            Assert.NotNull(results);
-            Assert.NotNull(results.Results);
-            Assert.True(results.Results.Count > 0);
+
+            TvEpisodeInfo single = results.Results.FirstOrDefault(s => s.Id == 63103);
+            Assert.NotNull(single);
+            Assert.Equal(4, single.SeasonNumber);
+            Assert.Equal(10, single.EpisodeNumber);
         }
     }
 }
