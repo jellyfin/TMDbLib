@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Search;
 using TMDbLib.Utilities.Converters;
 
@@ -117,6 +118,9 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("seasons")]
         public List<SearchTvSeason> Seasons { get; set; }
+
+        [JsonProperty("reviews")]
+        public SearchContainer<ReviewBase> Reviews { get; set; }
 
         [JsonProperty("similar")]
         public ResultContainer<TvShow> Similar { get; set; }

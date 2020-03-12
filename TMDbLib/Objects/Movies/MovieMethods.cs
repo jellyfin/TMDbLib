@@ -9,37 +9,37 @@ namespace TMDbLib.Objects.Movies
         [EnumValue("Undefined")]
         Undefined = 0,
         [EnumValue("alternative_titles")]
-        AlternativeTitles = 1,
+        AlternativeTitles = 1 << 0,
         [EnumValue("credits")]
-        Credits = 2,
+        Credits = 1 << 1,
         [EnumValue("images")]
-        Images = 4,
+        Images = 1 << 2,
         [EnumValue("keywords")]
-        Keywords = 8,
+        Keywords = 1 << 3,
         [EnumValue("releases")]
-        Releases = 16,
+        Releases = 1 << 4,
         [EnumValue("videos")]
-        Videos = 32,
+        Videos = 1 << 5,
         [EnumValue("translations")]
-        Translations = 64,
+        Translations = 1 << 6,
         [EnumValue("similar")]
-        Similar = 128,
+        Similar = 1 << 7,
         [EnumValue("reviews")]
-        Reviews = 256,
+        Reviews = 1 << 8,
         [EnumValue("lists")]
-        Lists = 512,
+        Lists = 1 << 9,
         [EnumValue("changes")]
-        Changes = 1024,
+        Changes = 1 << 10,
         /// <summary>
         /// Requires a valid user session to be set on the client object
         /// </summary>
         [EnumValue("account_states")]
-        AccountStates = 2048,
+        AccountStates = 1 << 11,
         [EnumValue("release_dates")]
-        ReleaseDates = 4096,
+        ReleaseDates = 1 << 12,
         [EnumValue("recommendations")]
-        Recommendations = 8192,
+        Recommendations = 1 << 13,
         [EnumValue("external_ids")]
-        ExternalIds = 16384
+        ExternalIds = 1 << 14
     }
 }
