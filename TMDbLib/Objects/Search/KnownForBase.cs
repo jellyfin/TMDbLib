@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Search
 {
@@ -10,6 +11,7 @@ namespace TMDbLib.Objects.Search
         public string BackdropPath { get; set; }
 
         [JsonProperty("genre_ids")]
+        [JsonConverter(typeof(TmdbIntArrayAsObjectConverter))]
         public List<int> GenreIds { get; set; }
 
         [JsonProperty("id")]
