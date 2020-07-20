@@ -347,7 +347,7 @@ namespace TMDbLib.Objects.Discover
         {
             if( date.HasValue )
             {
-                Parameters["primary_release_date.gte"] = date.ToString("yyyy-MM-dd");
+                Parameters["primary_release_date.gte"] = date.Value.ToString("yyyy-MM-dd");
             }
             else
             {
@@ -364,7 +364,7 @@ namespace TMDbLib.Objects.Discover
         {
             if( date.HasValue )
             {
-                Parameters["primary_release_date.lte"] = date.ToString("yyyy-MM-dd");
+                Parameters["primary_release_date.lte"] = date.Value.ToString("yyyy-MM-dd");
             }
             else
             {
