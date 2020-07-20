@@ -343,22 +343,34 @@ namespace TMDbLib.Objects.Discover
         /// <summary>
         /// Filter by the primary release date and only include those which are greater than or equal to the specified value. Expected format is YYYY-MM-DD.
         /// </summary>
-        public DiscoverMovie WherePrimaryReleaseDateIsAfter(DateTime date)
+        public DiscoverMovie WherePrimaryReleaseDateIsAfter(DateTime? date = null)
         {
-            ClearPrimaryReleaseDate();
+            if( date.HasValue )
+            {
+                Parameters["primary_release_date.gte"] = date.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                Parameters.Remove("primary_release_date.gte");
+            }
 
-            Parameters["primary_release_date.gte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
 
         /// <summary>
         /// Filter by the primary release date and only include those which are greater than or equal to the specified value. Expected format is YYYY-MM-DD.
         /// </summary>
-        public DiscoverMovie WherePrimaryReleaseDateIsBefore(DateTime date)
+        public DiscoverMovie WherePrimaryReleaseDateIsBefore(DateTime? date = null)
         {
-            ClearPrimaryReleaseDate();
+            if( date.HasValue )
+            {
+                Parameters["primary_release_date.lte"] = date.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                Parameters.Remove("primary_release_date.lte");
+            }
 
-            Parameters["primary_release_date.lte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
 
