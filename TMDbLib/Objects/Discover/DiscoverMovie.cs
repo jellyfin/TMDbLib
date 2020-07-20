@@ -51,7 +51,7 @@ namespace TMDbLib.Objects.Discover
         /// <summary>
         /// Toggle the inclusion of adult titles. Expected value is a boolean, true or false. Default is false.
         /// </summary>
-        public DiscoverMovie IncludeAdultMovies(bool include = true)
+        public DiscoverMovie IncludeAdultMovies(bool include = false)
         {
             Parameters["include_adult"] = include.ToString();
 
