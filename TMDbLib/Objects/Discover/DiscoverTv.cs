@@ -17,19 +17,6 @@ namespace TMDbLib.Objects.Discover
 
         }
 
-        private void ClearAirDate()
-        {
-            Parameters.Remove("air_date.gte");
-            Parameters.Remove("air_date.lte");
-        }
-
-        private void ClearFirstAirDate()
-        {
-            Parameters.Remove("first_air_date.gte");
-            Parameters.Remove("first_air_date.lte");
-            Parameters.Remove("first_air_date_year");
-        }
-
         /// <summary>
         /// Available options are vote_average.desc, vote_average.asc, first_air_date.desc, first_air_date.asc, popularity.desc, popularity.asc
         /// </summary>
@@ -53,8 +40,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereAirDateIsAfter(DateTime date)
         {
-            ClearAirDate();
-
             Parameters["air_date.gte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -64,8 +49,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereAirDateIsBefore(DateTime date)
         {
-            ClearAirDate();
-
             Parameters["air_date.lte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -75,8 +58,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereFirstAirDateIsAfter(DateTime date)
         {
-            ClearFirstAirDate();
-
             Parameters["first_air_date.gte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -86,8 +67,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereFirstAirDateIsBefore(DateTime date)
         {
-            ClearFirstAirDate();
-
             Parameters["first_air_date.lte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -97,8 +76,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereFirstAirDateIsInYear(int year)
         {
-            ClearFirstAirDate();
-
             Parameters["first_air_date_year"] = year.ToString("0000");
             return this;
         }
