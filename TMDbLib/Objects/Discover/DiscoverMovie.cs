@@ -24,37 +24,12 @@ namespace TMDbLib.Objects.Discover
             Parameters.Remove("certification.lte");
         }
 
-        private void ClearPrimaryReleaseDate()
-        {
-            Parameters.Remove("primary_release_date.gte");
-            Parameters.Remove("primary_release_date.lte");
-        }
-
-        private void ClearReleaseDate()
-        {
-            Parameters.Remove("release_date.gte");
-            Parameters.Remove("release_date.lte");
-        }
-
-        private void ClearVoteAverage()
-        {
-            Parameters.Remove("vote_average.gte");
-            Parameters.Remove("vote_average.lte");
-        }
-
-        private void ClearVoteCount()
-        {
-            Parameters.Remove("vote_count.gte");
-            Parameters.Remove("vote_count.lte");
-        }
-
         /// <summary>
         /// Toggle the inclusion of adult titles. Expected value is a boolean, true or false. Default is false.
         /// </summary>
         public DiscoverMovie IncludeAdultMovies(bool include = true)
         {
             Parameters["include_adult"] = include.ToString();
-
             return this;
         }
 
@@ -64,7 +39,6 @@ namespace TMDbLib.Objects.Discover
         public DiscoverMovie IncludeVideoMovies(bool include = true)
         {
             Parameters["include_video"] = include.ToString();
-
             return this;
         }
 
@@ -345,8 +319,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WherePrimaryReleaseDateIsAfter(DateTime date)
         {
-            ClearPrimaryReleaseDate();
-
             Parameters["primary_release_date.gte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -356,8 +328,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WherePrimaryReleaseDateIsBefore(DateTime date)
         {
-            ClearPrimaryReleaseDate();
-
             Parameters["primary_release_date.lte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -376,8 +346,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereReleaseDateIsAfter(DateTime date)
         {
-            ClearReleaseDate();
-
             Parameters["release_date.gte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -387,8 +355,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereReleaseDateIsBefore(DateTime date)
         {
-            ClearReleaseDate();
-
             Parameters["release_date.lte"] = date.ToString("yyyy-MM-dd");
             return this;
         }
@@ -398,8 +364,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereVoteAverageIsAtLeast(double score)
         {
-            ClearVoteAverage();
-
             // TODO: Apply culture to the ToString
             Parameters["vote_average.gte"] = score.ToString();
             return this;
@@ -410,8 +374,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereVoteAverageIsAtMost(double score)
         {
-            ClearVoteAverage();
-
             // TODO: Apply culture to the ToString
             Parameters["vote_average.lte"] = score.ToString();
             return this;
@@ -422,8 +384,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereVoteCountIsAtLeast(int count)
         {
-            ClearVoteCount();
-
             Parameters["vote_count.gte"] = count.ToString();
             return this;
         }
@@ -433,8 +393,6 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereVoteCountIsAtMost(int count)
         {
-            ClearVoteCount();
-
             Parameters["vote_count.lte"] = count.ToString();
             return this;
         }
