@@ -103,9 +103,9 @@ namespace TMDbLib.Objects.Discover
         /// Only include movies with the specified genres. Expected value is an integer (the id of a genre).
         /// This method performs an AND query.
         /// </summary>
-        public DiscoverMovie IncludeWithAllOfGenre(IEnumerable<int> castIds)
+        public DiscoverMovie IncludeWithAllOfGenre(IEnumerable<int> genreIds)
         {
-            Parameters["with_genres"] = string.Join(",", castIds.Select(s => s.ToString()));
+            Parameters["with_genres"] = string.Join(",", genreIds.Select(s => s.ToString()));
             return this;
         }
 
