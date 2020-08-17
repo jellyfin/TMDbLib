@@ -144,20 +144,20 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Only include TV shows that are equal to, or have a runtime higher than this value. Expected value is an integer.
+        /// Only include TV shows that are equal to, or have a runtime higher than this value. Expected value is an integer (minutes).
         /// </summary>        
-        public DiscoverTv WhereRuntimeIsAtLeast(int runtime)
+        public DiscoverTv WhereRuntimeIsAtLeast(int minutes)
         {
-            Parameters["with_runtime.gte"] = runtime.ToString();
+            Parameters["with_runtime.gte"] = minutes.ToString();
             return this;
         }
 
         /// <summary>
-        /// Only include TV shows that are equal to, or have a runtime lower than this value. Expected value is an integer.
+        /// Only include TV shows that are equal to, or have a runtime lower than this value. Expected value is an integer (minutes).
         /// </summary>        
-        public DiscoverTv WhereRuntimeIsAtMost(int runtime)
+        public DiscoverTv WhereRuntimeIsAtMost(int minutes)
         {
-            Parameters["with_runtime.lte"] = runtime.ToString();
+            Parameters["with_runtime.lte"] = minutes.ToString();
             return this;
         }
 
