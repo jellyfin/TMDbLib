@@ -246,5 +246,14 @@ namespace TMDbLib.Objects.Discover
             Parameters["without_keywords"] = string.Join("|", keywordIds.Select(s => s.ToString()));
             return this;
         }
+
+        /// <summary>
+        /// Specifies which language to use for translatable fields
+        /// </summary>
+        public DiscoverTv WhereLanguageIs(string language)
+        {
+            Parameters["language"] = language;
+            return this;
+        }
     }
 }
