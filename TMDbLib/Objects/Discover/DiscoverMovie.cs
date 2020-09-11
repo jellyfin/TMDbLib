@@ -22,6 +22,7 @@ namespace TMDbLib.Objects.Discover
             Parameters.Remove("certification_country");
             Parameters.Remove("certification");
             Parameters.Remove("certification.lte");
+            Parameters.Remove("certification.gte");
         }
 
         /// <summary>
@@ -310,6 +311,19 @@ namespace TMDbLib.Objects.Discover
 
             Parameters["certification_country"] = country;
             Parameters["certification.lte"] = maxCertification;
+
+            return this;
+        }
+
+        /// <summary>
+        /// Only include movies with this certification and higher. Expected value is a valid certification for the specificed 'certification_country'.
+        /// </summary>
+        public DiscoverMovie WhereCertificationIsAtLeast(string country, string minCertification)
+        {
+            ClearCertification();
+
+            Parameters["certification_country"] = country;
+            Parameters["certification.gte"] = minCertification;
 
             return this;
         }
