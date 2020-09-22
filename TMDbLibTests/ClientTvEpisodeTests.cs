@@ -273,5 +273,15 @@ namespace TMDbLibTests
             Assert.Equal(4, single.SeasonNumber);
             Assert.Equal(10, single.EpisodeNumber);
         }
+        
+        [Fact]
+        public void TestTvEpisodeGetTvEpisodeWithImageLanguage()
+        {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / content_ratings", " / genre_ids", "images / id", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / show_id", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
+
+            TvEpisode resp = Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvEpisodeMethods.Images).Result;
+
+            Assert.True(resp.Images.Stills.Count > 0);
+        }
     }
 }

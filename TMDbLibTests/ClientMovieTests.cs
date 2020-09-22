@@ -270,6 +270,19 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestMoviesGetMovieWithImageLanguage()
+        {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
+
+            Movie resp = Config.Client.GetMovieAsync(IdHelper.Avatar, language: "en-US", includeImageLanguage: "en", extraMethods: MovieMethods.Images).Result;
+
+            Assert.True(resp.Images.Backdrops.Count > 0);
+            Assert.True(resp.Images.Backdrops.All(b => b.Iso_639_1.Equals("en", StringComparison.OrdinalIgnoreCase)));
+            Assert.True(resp.Images.Posters.Count > 0);
+            Assert.True(resp.Images.Posters.All(p => p.Iso_639_1.Equals("en", StringComparison.OrdinalIgnoreCase)));
+        }
+
+        [Fact]
         public void TestMoviesGetMovieKeywords()
         {
             KeywordsContainer resp = Config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard).Result;

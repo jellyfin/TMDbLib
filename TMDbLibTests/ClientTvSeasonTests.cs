@@ -237,5 +237,18 @@ namespace TMDbLibTests
 
             Assert.Null(tvSeason);
         }
+        
+        [Fact]
+        public void TestTvSeasonGetTvSeasonWithImageLanguage()
+        {
+            // TMDb is sending an extra property
+            IgnoreMissingCSharp("_id / _id", "episodes[array].show_id / show_id");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / content_ratings", " / genre_ids", "images / id", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
+
+            TvSeason resp = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvSeasonMethods.Images).Result;
+
+            Assert.True(resp.Images.Posters.Count > 0);
+            Assert.True(resp.Images.Posters.All(p => p.Iso_639_1.Equals("en", StringComparison.OrdinalIgnoreCase)));
+        }
     }
 }
