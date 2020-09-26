@@ -89,6 +89,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
+            includeImageLanguage = includeImageLanguage ?? DefaultImageLanguage;
             if (includeImageLanguage != null)
                 req.AddParameter("include_image_language", includeImageLanguage);
 
