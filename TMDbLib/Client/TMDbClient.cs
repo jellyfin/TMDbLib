@@ -25,6 +25,7 @@ namespace TMDbLib.Client
         public TMDbClient(string apiKey, bool useSsl = true, string baseUrl = ProductionUrl, JsonSerializer serializer = null, IWebProxy proxy = null)
         {
             DefaultLanguage = null;
+            DefaultImageLanguage = null;
             DefaultCountry = null;
 
             _serializer = serializer ?? JsonSerializer.CreateDefault();
@@ -70,6 +71,11 @@ namespace TMDbLib.Client
         /// ISO 639-1 code. Ex en
         /// </summary>
         public string DefaultLanguage { get; set; }
+
+        /// <summary>
+        /// ISO 639-1 code. Ex en
+        /// </summary>
+        public string DefaultImageLanguage { get; set; }
 
         public bool HasConfig { get; private set; }
 

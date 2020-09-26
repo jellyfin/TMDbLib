@@ -52,30 +52,31 @@ namespace TMDbLib.Client
 
         public async Task<Movie> GetMovieAsync(int movieId, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetMovieAsync(movieId, DefaultLanguage, extraMethods, cancellationToken).ConfigureAwait(false);
+            return await GetMovieAsync(movieId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<Movie> GetMovieAsync(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetMovieAsync(imdbId, DefaultLanguage, extraMethods, cancellationToken).ConfigureAwait(false);
+            return await GetMovieAsync(imdbId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovieAsync(int movieId, string language, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieAsync(int movieId, string language, string includeImageLanguage = null, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetMovieAsync(movieId.ToString(CultureInfo.InvariantCulture), language, extraMethods, cancellationToken).ConfigureAwait(false);
+            return await GetMovieAsync(movieId.ToString(CultureInfo.InvariantCulture), language, includeImageLanguage, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Retrieves a movie by it's imdb Id
+        /// Retrieves a movie by its IMDb Id
         /// </summary>
-        /// <param name="imdbId">The Imdb id of the movie OR the TMDb id as string</param>
+        /// <param name="imdbId">The IMDb id of the movie OR the TMDb id as string</param>
         /// <param name="language">Language to localize the results in.</param>
+        /// <param name="includeImageLanguage">If specified the api will attempt to return localized image results eg. en,it,es.</param>
         /// <param name="extraMethods">A list of additional methods to execute for this req as enum flags</param>
         /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>The reqed movie or null if it could not be found</returns>
         /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned, see remarks.</exception>
-        public async Task<Movie> GetMovieAsync(string imdbId, string language, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieAsync(string imdbId, string language, string includeImageLanguage = null, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
@@ -87,6 +88,10 @@ namespace TMDbLib.Client
 
             if (language != null)
                 req.AddParameter("language", language);
+
+            includeImageLanguage = includeImageLanguage ?? DefaultImageLanguage;
+            if (includeImageLanguage != null)
+                req.AddParameter("include_image_language", includeImageLanguage);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(MovieMethods))

@@ -227,6 +227,19 @@ namespace TMDbLibTests
             Assert.True(resp.Posters.Count > 0);
         }
 
+        [Fact]
+        public void TestTvShowGetTvShowWithImageLanguage()
+        {
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / content_ratings", " / genre_ids", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
+
+            TvShow resp = Config.Client.GetTvShowAsync(IdHelper.BreakingBad, language: "en-US", includeImageLanguage: "en", extraMethods: TvShowMethods.Images).Result;
+
+            Assert.True(resp.Images.Backdrops.Count > 0);
+            Assert.True(resp.Images.Backdrops.All(b => b.Iso_639_1.Equals("en", StringComparison.OrdinalIgnoreCase)));
+            Assert.True(resp.Images.Posters.Count > 0);
+            Assert.True(resp.Images.Posters.All(p => p.Iso_639_1.Equals("en", StringComparison.OrdinalIgnoreCase)));
+        }
+
         private void TestBreakingBadBaseProperties(TvShow tvShow)
         {
             Assert.NotNull(tvShow);

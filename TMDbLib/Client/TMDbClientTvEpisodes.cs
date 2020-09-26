@@ -38,8 +38,9 @@ namespace TMDbLib.Client
         /// <param name="episodeNumber">The episode number of the episode you want to retrieve.</param>
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
+        /// <param name="includeImageLanguage">If specified the api will attempt to return localized image results eg. en,it,es.</param>
         /// <param name="cancellationToken">A cancellation token</param>
-        public async Task<TvEpisode> GetTvEpisodeAsync(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TvEpisode> GetTvEpisodeAsync(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
@@ -55,6 +56,10 @@ namespace TMDbLib.Client
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
+
+            includeImageLanguage = includeImageLanguage ?? DefaultImageLanguage;
+            if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+                req.AddParameter("include_image_language", includeImageLanguage);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(TvEpisodeMethods))
