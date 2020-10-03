@@ -16,9 +16,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverTvShowsNoParamsAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.DiscoverTvShowsAsync().Query(i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverTvShowsAsync().Query(i));
 
-            SearchContainer<SearchTv> result = await Config.Client.DiscoverTvShowsAsync().Query();
+            SearchContainer<SearchTv> result = await TMDbClient.DiscoverTvShowsAsync().Query();
 
             Assert.NotNull(result);
             Assert.Equal(1, result.Page);
@@ -29,7 +29,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverTvShowsAsync()
         {
-            DiscoverTv query = Config.Client.DiscoverTvShowsAsync()
+            DiscoverTv query = TMDbClient.DiscoverTvShowsAsync()
                     .WhereVoteCountIsAtLeast(100)
                     .WhereVoteAverageIsAtLeast(2);
 
@@ -39,9 +39,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverMoviesNoParamsAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.DiscoverMoviesAsync().Query(i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverMoviesAsync().Query(i));
 
-            SearchContainer<SearchMovie> result = await Config.Client.DiscoverMoviesAsync().Query();
+            SearchContainer<SearchMovie> result = await TMDbClient.DiscoverMoviesAsync().Query();
 
             Assert.NotNull(result);
             Assert.Equal(1, result.Page);
@@ -52,7 +52,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverMoviesAsync()
         {
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync()
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync()
                     .WhereVoteCountIsAtLeast(1000)
                     .WhereVoteAverageIsAtLeast(2);
 
@@ -62,7 +62,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverMoviesRegionAsync()
         {
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereReleaseDateIsInRegion("BR").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync().WhereReleaseDateIsInRegion("BR").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
 
             await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
@@ -70,7 +70,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverMoviesLanguageAsync()
         {
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereLanguageIs("da-DK").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync().WhereLanguageIs("da-DK").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
 
             Assert.Equal("Skønheden og Udyret", (await query.Query(0)).Results[11].Title);
 
@@ -82,7 +82,7 @@ namespace TMDbLibTests
         [InlineData("zh")]
         public async Task TestDiscoverMoviesOriginalLanguage(string language)
         {
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
             List<SearchMovie> results = (await query.Query(0)).Results;
 
             Assert.NotEmpty(results);

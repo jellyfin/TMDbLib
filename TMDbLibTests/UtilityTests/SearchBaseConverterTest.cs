@@ -68,8 +68,8 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task TestSearchBaseConverter()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchMultiAsync("Jobs", i));
-            SearchContainer<SearchBase> result = await Config.Client.SearchMultiAsync("Jobs");
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMultiAsync("Jobs", i));
+            SearchContainer<SearchBase> result = await TMDbClient.SearchMultiAsync("Jobs");
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

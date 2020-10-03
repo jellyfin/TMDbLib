@@ -33,7 +33,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeExtrasNoneAsync()
         {
-            TvEpisode tvEpisode = await Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1);
+            TvEpisode tvEpisode = await TMDbClient.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1);
 
             TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
 
@@ -48,17 +48,17 @@ namespace TMDbLibTests
         public async Task TestTvEpisodeExtrasAccountState()
         {
             // Test the custom parsing code for Account State rating
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-            TvEpisode episode = await Config.Client.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates);
+            TvEpisode episode = await TMDbClient.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates);
             if (episode.AccountStates == null || !episode.AccountStates.Rating.HasValue)
             {
-                await Config.Client.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
+                await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
 
                 // Allow TMDb to update cache
                 Thread.Sleep(2000);
 
-                episode = await Config.Client.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates);
+                episode = await TMDbClient.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates);
             }
 
             Assert.NotNull(episode.AccountStates);
@@ -69,12 +69,12 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeExtrasAll()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            await Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5);
+            await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5);
 
-            await TestMethodsHelper.TestGetAll(_methods, combined => Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, combined),
+            await TestMethodsHelper.TestGetAll(_methods, combined => TMDbClient.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, combined),
                 tvEpisode =>
                 {
                     TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
@@ -88,14 +88,14 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeExtrasExclusiveAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestMethodsHelper.TestGetExclusive(_methods, extras => Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, extras));
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestMethodsHelper.TestGetExclusive(_methods, extras => TMDbClient.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, extras));
         }
 
         [Fact]
         public async Task TestTvEpisodeSeparateExtrasCreditsAsync()
         {
-            CreditsWithGuestStars credits = await Config.Client.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1);
+            CreditsWithGuestStars credits = await TMDbClient.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1);
             Assert.NotNull(credits);
 
             Cast guestStarItem = credits.GuestStars.FirstOrDefault(s => s.Id == 92495);
@@ -126,7 +126,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeSeparateExtrasExternalIdsAsync()
         {
-            ExternalIdsTvEpisode externalIds = await Config.Client.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1);
+            ExternalIdsTvEpisode externalIds = await TMDbClient.GetTvEpisodeExternalIdsAsync(IdHelper.BreakingBad, 1, 1);
 
             Assert.NotNull(externalIds);
             Assert.True(string.IsNullOrEmpty(externalIds.FreebaseId));
@@ -140,7 +140,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeSeparateExtrasImagesAsync()
         {
-            StillImages images = await Config.Client.GetTvEpisodeImagesAsync(IdHelper.BreakingBad, 1, 1);
+            StillImages images = await TMDbClient.GetTvEpisodeImagesAsync(IdHelper.BreakingBad, 1, 1);
             Assert.NotNull(images);
             Assert.NotNull(images.Stills);
         }
@@ -148,7 +148,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeSeparateExtrasVideosAsync()
         {
-            ResultContainer<Video> images = await Config.Client.GetTvEpisodeVideosAsync(IdHelper.BreakingBad, 1, 1);
+            ResultContainer<Video> images = await TMDbClient.GetTvEpisodeVideosAsync(IdHelper.BreakingBad, 1, 1);
             Assert.NotNull(images);
             Assert.NotNull(images.Results);
         }
@@ -156,53 +156,53 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeAccountStateRatingSetAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            TvEpisodeAccountState accountState = await Config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            TvEpisodeAccountState accountState = await TMDbClient.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1);
 
             // Remove the rating
             if (accountState.Rating.HasValue)
             {
-                Assert.True(await Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
+                Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
 
                 // Allow TMDb to cache our changes
                 Thread.Sleep(2000);
             }
 
             // Test that the episode is NOT rated
-            accountState = await Config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1);
+            accountState = await TMDbClient.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1);
 
             Assert.Equal(IdHelper.BreakingBadSeason1Episode1Id, accountState.Id);
             Assert.False(accountState.Rating.HasValue);
 
             // Rate the episode
-            Assert.True(await Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5));
+            Assert.True(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5));
 
             // Allow TMDb to cache our changes
             Thread.Sleep(2000);
 
             // Test that the episode IS rated
-            accountState = await Config.Client.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1);
+            accountState = await TMDbClient.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1);
             Assert.Equal(IdHelper.BreakingBadSeason1Episode1Id, accountState.Id);
             Assert.True(accountState.Rating.HasValue);
 
             // Remove the rating
-            Assert.True(await Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
+            Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
         }
 
         [Fact]
         public async Task TestTvEpisodeRateBadAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-            Assert.False(await Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, -1));
-            Assert.False(await Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 0));
-            Assert.False(await Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 10.5));
+            Assert.False(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, -1));
+            Assert.False(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 0));
+            Assert.False(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 10.5));
         }
 
         [Fact]
         public async Task TestTvEpisodeGetChangesAsync()
         {
-            ChangesContainer changes = await Config.Client.GetTvEpisodeChangesAsync(IdHelper.BreakingBadSeason1Episode1Id);
+            ChangesContainer changes = await TMDbClient.GetTvEpisodeChangesAsync(IdHelper.BreakingBadSeason1Episode1Id);
 
             Assert.NotNull(changes);
             Assert.NotNull(changes.Changes);
@@ -246,7 +246,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeMissingAsync()
         {
-            TvEpisode tvEpisode = await Config.Client.GetTvEpisodeAsync(IdHelper.MissingID, 1, 1);
+            TvEpisode tvEpisode = await TMDbClient.GetTvEpisodeAsync(IdHelper.MissingID, 1, 1);
 
             Assert.Null(tvEpisode);
         }
@@ -254,7 +254,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodesScreenedTheatricallyAsync()
         {
-            ResultContainer<TvEpisodeInfo> results = await Config.Client.GetTvEpisodesScreenedTheatricallyAsync(IdHelper.GameOfThrones);
+            ResultContainer<TvEpisodeInfo> results = await TMDbClient.GetTvEpisodesScreenedTheatricallyAsync(IdHelper.GameOfThrones);
 
             Assert.Equal(IdHelper.GameOfThrones, results.Id);
 
@@ -267,7 +267,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTvEpisodeGetTvEpisodeWithImageLanguageAsync()
         {
-            TvEpisode resp = await Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvEpisodeMethods.Images);
+            TvEpisode resp = await TMDbClient.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvEpisodeMethods.Images);
 
             Assert.True(resp.Images.Stills.Count > 0);
         }

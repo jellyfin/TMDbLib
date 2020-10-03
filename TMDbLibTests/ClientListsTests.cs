@@ -20,7 +20,7 @@ namespace TMDbLibTests
         public async Task TestListAsync()
         {
             // Get list
-            GenericList list = await Config.Client.GetListAsync(TestListId);
+            GenericList list = await TMDbClient.GetListAsync(TestListId);
 
             Assert.NotNull(list);
             Assert.Equal(TestListId, list.Id);
@@ -32,7 +32,7 @@ namespace TMDbLibTests
 
                 // Ensure all movies point to this list
                 int page = 1;
-                SearchContainer<ListResult> movieLists = await Config.Client.GetMovieListsAsync(movieResult.Id);
+                SearchContainer<ListResult> movieLists = await TMDbClient.GetMovieListsAsync(movieResult.Id);
                 while (movieLists != null)
                 {
                     // Check if the current result page contains the relevant list
@@ -44,7 +44,7 @@ namespace TMDbLibTests
 
                     // See if there is an other page we could try, if not the test fails
                     if (movieLists.Page < movieLists.TotalPages)
-                        movieLists = await Config.Client.GetMovieListsAsync(movieResult.Id, ++page);
+                        movieLists = await TMDbClient.GetMovieListsAsync(movieResult.Id, ++page);
                     else
                         throw new Exception($"Movie '{movieResult.Title}' was not linked to the test list");
                 }
@@ -54,7 +54,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestListMissingAsync()
         {
-            GenericList list = await Config.Client.GetListAsync(IdHelper.MissingID.ToString());
+            GenericList list = await TMDbClient.GetListAsync(IdHelper.MissingID.ToString());
 
             Assert.Null(list);
         }
@@ -62,20 +62,20 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestListIsMoviePresentFailureAsync()
         {
-            Assert.False(await Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Terminator));
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            Assert.False(await TMDbClient.GetListIsMoviePresentAsync(TestListId, IdHelper.Terminator));
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Clear list
-            Assert.True(await Config.Client.ListClearAsync(TestListId));
+            Assert.True(await TMDbClient.ListClearAsync(TestListId));
 
             // Verify Avatar is not present
-            Assert.False(await Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
+            Assert.False(await TMDbClient.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
 
             // Add Avatar
-            Assert.True(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.Avatar));
+            Assert.True(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.Avatar));
 
             // Verify Avatar is present
-            Assert.True(await Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
+            Assert.True(await TMDbClient.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
         }
 
         [Fact]
@@ -83,12 +83,12 @@ namespace TMDbLibTests
         {
             const string listName = "Test List 123";
 
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            string newListId = await Config.Client.ListCreateAsync(listName);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            string newListId = await TMDbClient.ListCreateAsync(listName);
 
             Assert.False(string.IsNullOrWhiteSpace(newListId));
 
-            GenericList newlyAddedList = await Config.Client.GetListAsync(newListId);
+            GenericList newlyAddedList = await TMDbClient.GetListAsync(newListId);
             Assert.NotNull(newlyAddedList);
             Assert.Equal(listName, newlyAddedList.Name);
             Assert.Equal("", newlyAddedList.Description); // "" is the default value
@@ -97,58 +97,58 @@ namespace TMDbLibTests
             Assert.Empty(newlyAddedList.Items);
             Assert.False(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
 
-            Assert.True(await Config.Client.ListDeleteAsync(newListId));
+            Assert.True(await TMDbClient.ListDeleteAsync(newListId));
         }
 
         [Fact]
         public async Task TestListDeleteFailureAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Try removing a list with an incorrect id
-            Assert.False(await Config.Client.ListDeleteAsync("bla"));
+            Assert.False(await TMDbClient.ListDeleteAsync("bla"));
         }
 
         [Fact]
         public async Task TestListAddAndRemoveMovieAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Add a new movie to the list
-            Assert.True(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
+            Assert.True(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
 
             // Try again, this time it should fail since the list already contains this movie
-            Assert.False(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
+            Assert.False(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
 
             // Get list and check if the item was added
-            GenericList listAfterAdd = await Config.Client.GetListAsync(TestListId);
+            GenericList listAfterAdd = await TMDbClient.GetListAsync(TestListId);
             Assert.Contains(listAfterAdd.Items, m => m.Id == IdHelper.EvanAlmighty);
 
             // Remove the previously added movie from the list
-            Assert.True(await Config.Client.ListRemoveMovieAsync(TestListId, IdHelper.EvanAlmighty));
+            Assert.True(await TMDbClient.ListRemoveMovieAsync(TestListId, IdHelper.EvanAlmighty));
 
             // Get list and check if the item was removed
-            GenericList listAfterRemove = await Config.Client.GetListAsync(TestListId);
+            GenericList listAfterRemove = await TMDbClient.GetListAsync(TestListId);
             Assert.DoesNotContain(listAfterRemove.Items, m => m.Id == IdHelper.EvanAlmighty);
         }
 
         [Fact]
         public async Task TestListClearAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Add a new movie to the list
-            Assert.True(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.MadMaxFuryRoad));
+            Assert.True(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.MadMaxFuryRoad));
 
             // Get list and check if the item was added
-            GenericList listAfterAdd = await Config.Client.GetListAsync(TestListId);
+            GenericList listAfterAdd = await TMDbClient.GetListAsync(TestListId);
             Assert.Contains(listAfterAdd.Items, m => m.Id == IdHelper.MadMaxFuryRoad);
 
             // Clear the list
-            Assert.True(await Config.Client.ListClearAsync(TestListId));
+            Assert.True(await TMDbClient.ListClearAsync(TestListId));
 
             // Get list and check that all items were removed
-            GenericList listAfterRemove = await Config.Client.GetListAsync(TestListId);
+            GenericList listAfterRemove = await TMDbClient.GetListAsync(TestListId);
             Assert.False(listAfterRemove.Items.Any());
         }
     }

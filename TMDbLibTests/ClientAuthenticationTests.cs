@@ -14,14 +14,14 @@ namespace TMDbLibTests
     {
         public ClientAuthenticationTests()
         {
-            if (string.IsNullOrWhiteSpace(Config.Username) || string.IsNullOrWhiteSpace(Config.Password))
+            if (string.IsNullOrWhiteSpace(TestConfig.Username) || string.IsNullOrWhiteSpace(TestConfig.Password))
                 throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
         }
 
         [Fact]
         public async Task TestAuthenticationRequestNewToken()
         {
-            Token token = await Config.Client.AuthenticationRequestAutenticationTokenAsync();
+            Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
             Assert.NotNull(token);
             Assert.True(token.Success);
@@ -52,7 +52,7 @@ namespace TMDbLibTests
         {
             const string requestToken = "bla";
 
-            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => Config.Client.AuthenticationGetUserSessionAsync(requestToken));
+            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationGetUserSessionAsync(requestToken));
         }
 
         /// <remarks>
@@ -61,17 +61,17 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAuthenticationGetUserSessionApiUserValidationSuccessAsync()
         {
-            Token token = await Config.Client.AuthenticationRequestAutenticationTokenAsync();
+            Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
-            await Config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, Config.Username, Config.Password);
+            await TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, TestConfig.Username, TestConfig.Password);
         }
 
         [Fact]
         public async Task TestAuthenticationGetUserSessionApiUserValidationInvalidLoginAsync()
         {
-            Token token = await Config.Client.AuthenticationRequestAutenticationTokenAsync();
+            Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
-            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => Config.Client.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla"));
+            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla"));
         }
 
         /// <remarks>
@@ -80,7 +80,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task AuthenticationGetUserSessionWithLoginSuccess()
         {
-            UserSession session = await Config.Client.AuthenticationGetUserSessionAsync(Config.Username, Config.Password);
+            UserSession session = await TMDbClient.AuthenticationGetUserSessionAsync(TestConfig.Username, TestConfig.Password);
 
             Assert.NotNull(session);
             Assert.True(session.Success);
@@ -92,13 +92,13 @@ namespace TMDbLibTests
         {
             const string requestToken = "5f3a62c0d7977319e3d14adf1a2064c0c0938bcf";
 
-            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => Config.Client.AuthenticationGetUserSessionAsync(requestToken));
+            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationGetUserSessionAsync(requestToken));
         }
 
         [Fact]
         public async Task TestAuthenticationCreateGuestSessionAsync()
         {
-            GuestSession guestSession = await Config.Client.AuthenticationCreateGuestSessionAsync();
+            GuestSession guestSession = await TMDbClient.AuthenticationCreateGuestSessionAsync();
 
             Assert.NotNull(guestSession);
             Assert.True(guestSession.Success);

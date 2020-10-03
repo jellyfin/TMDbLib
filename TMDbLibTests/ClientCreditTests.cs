@@ -14,7 +14,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestGetCreditTv()
         {
-            Credit result = await Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
 
             Assert.NotNull(result);
             Assert.Equal(CreditType.Cast, result.CreditType);
@@ -37,7 +37,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestMissingCredit()
         {
-            Credit result = await Config.Client.GetCreditsAsync(IdHelper.MissingID.ToString());
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString());
 
             Assert.Null(result);
         }
@@ -45,7 +45,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestGetCreditEpisode()
         {
-            Credit result = await Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Media);
@@ -65,7 +65,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestGetCreditSeasons()
         {
-            Credit result = await Config.Client.GetCreditsAsync(IdHelper.HughLaurieHouse);
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Media);

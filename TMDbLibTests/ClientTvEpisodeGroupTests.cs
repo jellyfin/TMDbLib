@@ -11,7 +11,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeGroups()
         {
-            Task<TvGroupCollection> group = Config.Client.GetTvEpisodeGroupsAsync("5acf93e60e0a26346d0000ce");
+            Task<TvGroupCollection> group = TMDbClient.GetTvEpisodeGroupsAsync("5acf93e60e0a26346d0000ce");
 
             Assert.Equal("5acf93e60e0a26346d0000ce", group.Result.Id);
             Assert.Equal("Netflix Collections", group.Result.Name);

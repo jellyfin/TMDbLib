@@ -90,8 +90,8 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task TestChangeItemConverter()
         {
-            Movie latestMovie = await Config.Client.GetMovieLatestAsync();
-            List<Change> changes = await Config.Client.GetMovieChangesAsync(latestMovie.Id);
+            Movie latestMovie = await TMDbClient.GetMovieLatestAsync();
+            List<Change> changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id);
             List<ChangeItemBase> changeItems = changes.SelectMany(s => s.Items).ToList();
 
             ChangeAction[] actions = { ChangeAction.Added, ChangeAction.Created, ChangeAction.Updated };

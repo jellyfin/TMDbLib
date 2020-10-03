@@ -24,7 +24,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCollectionsExtrasNone()
         {
-            Collection collection = await Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection);
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection);
 
             Assert.NotNull(collection);
             Assert.Equal("James Bond Collection", collection.Name);
@@ -41,7 +41,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCollectionMissing()
         {
-            Collection collection = await Config.Client.GetCollectionAsync(IdHelper.MissingID);
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.MissingID);
 
             Assert.Null(collection);
         }
@@ -49,7 +49,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCollectionsParts()
         {
-            Collection collection = await Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection);
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection);
 
             Assert.NotNull(collection);
             Assert.Equal("James Bond Collection", collection.Name);
@@ -64,26 +64,26 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCollectionsExtrasExclusive()
         {
-            await TestMethodsHelper.TestGetExclusive(_methods, extras => Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, extras));
+            await TestMethodsHelper.TestGetExclusive(_methods, extras => TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection, extras));
         }
 
         [Fact]
         public async Task TestCollectionsExtrasAll()
         {
-            await TestMethodsHelper.TestGetAll(_methods, combined => Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, combined));
+            await TestMethodsHelper.TestGetAll(_methods, combined => TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection, combined));
         }
 
         [Fact]
         public async Task TestCollectionsImagesAsync()
         {
             // Get config
-            await Config.Client.GetConfigAsync();
+            await TMDbClient.GetConfigAsync();
 
             // Test image url generator
-            ImagesWithId images = await Config.Client.GetCollectionImagesAsync(IdHelper.JamesBondCollection);
+            ImagesWithId images = await TMDbClient.GetCollectionImagesAsync(IdHelper.JamesBondCollection);
 
             Assert.Equal(IdHelper.JamesBondCollection, images.Id);
-            await TestImagesHelpers.TestImagesAsync(Config, images);
+            await TestImagesHelpers.TestImagesAsync(TestConfig, images);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestConfigurationAsync()
         {
-            APIConfiguration result = await Config.Client.GetAPIConfiguration();
+            APIConfiguration result = await TMDbClient.GetAPIConfiguration();
 
             Assert.NotNull(result);
 
@@ -26,7 +26,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestPrimaryTranslationsAsync()
         {
-            List<string> result = await Config.Client.GetPrimaryTranslationsAsync();
+            List<string> result = await TMDbClient.GetPrimaryTranslationsAsync();
 
             Assert.NotNull(result);
 
@@ -36,7 +36,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCountryListAsync()
         {
-            List<Country> result = await Config.Client.GetCountriesAsync();
+            List<Country> result = await TMDbClient.GetCountriesAsync();
 
             Assert.NotNull(result);
             Assert.True(result.Count > 200);
@@ -47,7 +47,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestLanguageListAsync()
         {
-            List<Language> result = await Config.Client.GetLanguagesAsync();
+            List<Language> result = await TMDbClient.GetLanguagesAsync();
 
             Assert.NotNull(result);
             Assert.True(result.Count > 180);
@@ -58,7 +58,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestTimezonesListAsync()
         {
-            Timezones result = await Config.Client.GetTimezonesAsync();
+            Timezones result = await TMDbClient.GetTimezonesAsync();
 
             Assert.NotNull(result);
             Assert.True(result.List.Count > 200);
@@ -72,7 +72,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestJobListAsync()
         {
-            List<Job> jobs = await Config.Client.GetJobsAsync();
+            List<Job> jobs = await TMDbClient.GetJobsAsync();
 
             Assert.NotNull(jobs);
             Assert.True(jobs.Count > 0);

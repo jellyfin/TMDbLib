@@ -14,11 +14,11 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchMovieAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchMovieAsync("007", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMovieAsync("007", i));
 
             // Search pr. Year
             // 1962: First James Bond movie, "Dr. No"
-            SearchContainer<SearchMovie> result =  await Config.Client.SearchMovieAsync("007", year: 1962);
+            SearchContainer<SearchMovie> result =  await TMDbClient.SearchMovieAsync("007", year: 1962);
 
             Assert.True(result.Results.Any());
             SearchMovie item = result.Results.SingleOrDefault(s => s.Id == 646);
@@ -47,9 +47,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchCollectionAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchCollectionAsync("007", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchCollectionAsync("007", i));
 
-            SearchContainer<SearchCollection> result = await Config.Client.SearchCollectionAsync("James Bond");
+            SearchContainer<SearchCollection> result = await TMDbClient.SearchCollectionAsync("James Bond");
 
             Assert.True(result.Results.Any());
             SearchCollection item = result.Results.SingleOrDefault(s => s.Id == 645);
@@ -64,9 +64,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchPersonAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchPersonAsync("Willis", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchPersonAsync("Willis", i));
 
-            SearchContainer<SearchPerson> result = await Config.Client.SearchPersonAsync("Willis");
+            SearchContainer<SearchPerson> result = await TMDbClient.SearchPersonAsync("Willis");
 
             Assert.True(result.Results.Any());
             SearchPerson item = result.Results.SingleOrDefault(s => s.Id == 62);
@@ -85,9 +85,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchListAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchListAsync("to watch", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchListAsync("to watch", i));
 
-            SearchContainer<SearchList> result = await Config.Client.SearchListAsync("to watch");
+            SearchContainer<SearchList> result = await TMDbClient.SearchListAsync("to watch");
 
             Assert.True(result.Results.Any());
             SearchList item = result.Results.SingleOrDefault(s => s.Id == "54a5c0ceaed56c28c300013a");
@@ -106,9 +106,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchCompanyAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchCompanyAsync("20th", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchCompanyAsync("20th", i));
 
-            SearchContainer<SearchCompany> result = await Config.Client.SearchCompanyAsync("20th");
+            SearchContainer<SearchCompany> result = await TMDbClient.SearchCompanyAsync("20th");
 
             Assert.True(result.Results.Any());
             SearchCompany item = result.Results.SingleOrDefault(s => s.Id == 25);
@@ -122,9 +122,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchKeywordAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchKeywordAsync("plot", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchKeywordAsync("plot", i));
 
-            SearchContainer<SearchKeyword> result = await Config.Client.SearchKeywordAsync("plot");
+            SearchContainer<SearchKeyword> result = await TMDbClient.SearchKeywordAsync("plot");
 
             Assert.True(result.Results.Any());
             SearchKeyword item = result.Results.SingleOrDefault(s => s.Id == 11121);
@@ -137,9 +137,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchTvShowAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchTvShowAsync("Breaking Bad", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchTvShowAsync("Breaking Bad", i));
 
-            SearchContainer<SearchTv> result = await Config.Client.SearchTvShowAsync("Breaking Bad");
+            SearchContainer<SearchTv> result = await TMDbClient.SearchTvShowAsync("Breaking Bad");
 
             Assert.True(result.Results.Any());
             SearchTv item = result.Results.SingleOrDefault(s => s.Id == 1396);
@@ -169,9 +169,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestSearchMultiAsync()
         {
-            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchMultiAsync("Arrow", i));
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMultiAsync("Arrow", i));
 
-            SearchContainer<SearchBase> result = await Config.Client.SearchMultiAsync("Arrow");
+            SearchContainer<SearchBase> result = await TMDbClient.SearchMultiAsync("Arrow");
 
             Assert.True(result.Results.Any());
             SearchTv item = result.Results.OfType<SearchTv>().SingleOrDefault(s => s.Id == 1412);

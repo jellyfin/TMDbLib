@@ -12,7 +12,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestReviewFullDetails()
         {
-            Review review = await Config.Client.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId);
+            Review review = await TMDbClient.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId);
 
             Assert.NotNull(review);
 
@@ -28,7 +28,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestReviewMissing()
         {
-            Review review = await Config.Client.GetReviewAsync(IdHelper.MissingID.ToString());
+            Review review = await TMDbClient.GetReviewAsync(IdHelper.MissingID.ToString());
 
             Assert.Null(review);
         }

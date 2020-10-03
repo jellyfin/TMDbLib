@@ -1,16 +1,19 @@
 using Newtonsoft.Json;
+using TMDbLib.Client;
 
 namespace TMDbLibTests.JsonHelpers
 {
-    public abstract class TestBase 
+    public abstract class TestBase
     {
-        protected readonly TestConfig Config;
+        protected readonly TestConfig TestConfig;
+
+        protected TMDbClient TMDbClient => TestConfig.Client;
 
         protected TestBase()
         {
             JsonSerializerSettings sett = new JsonSerializerSettings();
 
-            Config = new TestConfig(serializer: JsonSerializer.Create(sett));
+            TestConfig = new TestConfig(serializer: JsonSerializer.Create(sett));
         }
     }
 }

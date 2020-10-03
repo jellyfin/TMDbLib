@@ -14,7 +14,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestKeywordGet()
         {
-            KeywordsContainer keywords = await Config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard);
+            KeywordsContainer keywords = await TMDbClient.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard);
 
             Assert.NotNull(keywords);
             Assert.NotNull(keywords.Keywords);
@@ -23,7 +23,7 @@ namespace TMDbLibTests
             // Try to get all keywords
             foreach (Keyword testKeyword in keywords.Keywords)
             {
-                Keyword getKeyword = await Config.Client.GetKeywordAsync(testKeyword.Id);
+                Keyword getKeyword = await TMDbClient.GetKeywordAsync(testKeyword.Id);
 
                 Assert.NotNull(getKeyword);
 
@@ -35,7 +35,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestKeywordsMissing()
         {
-            KeywordsContainer keywords = await Config.Client.GetMovieKeywordsAsync(IdHelper.MissingID);
+            KeywordsContainer keywords = await TMDbClient.GetMovieKeywordsAsync(IdHelper.MissingID);
 
             Assert.Null(keywords);
         }
@@ -43,7 +43,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestKeywordMovies()
         {
-            KeywordsContainer keywords = await Config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard);
+            KeywordsContainer keywords = await TMDbClient.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard);
 
             Assert.NotNull(keywords);
             Assert.NotNull(keywords.Keywords);
@@ -53,9 +53,9 @@ namespace TMDbLibTests
             Keyword testKeyword = keywords.Keywords.First();
 
             // Get movies
-            SearchContainerWithId<SearchMovie> movies = await Config.Client.GetKeywordMoviesAsync(testKeyword.Id);
-            SearchContainerWithId<SearchMovie> moviesItalian = await Config.Client.GetKeywordMoviesAsync(testKeyword.Id, "it");
-            SearchContainerWithId<SearchMovie> moviesPage2 = await Config.Client.GetKeywordMoviesAsync(testKeyword.Id, 2);
+            SearchContainerWithId<SearchMovie> movies = await TMDbClient.GetKeywordMoviesAsync(testKeyword.Id);
+            SearchContainerWithId<SearchMovie> moviesItalian = await TMDbClient.GetKeywordMoviesAsync(testKeyword.Id, "it");
+            SearchContainerWithId<SearchMovie> moviesPage2 = await TMDbClient.GetKeywordMoviesAsync(testKeyword.Id, 2);
 
             Assert.NotNull(movies);
             Assert.NotNull(moviesItalian);

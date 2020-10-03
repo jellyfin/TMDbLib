@@ -15,11 +15,11 @@ namespace TMDbLibTests
         [Fact]
         public async Task GetConfigTest()
         {
-            Assert.False(Config.Client.HasConfig);
-            await Config.Client.GetConfigAsync();
-            Assert.True(Config.Client.HasConfig);
+            Assert.False(TMDbClient.HasConfig);
+            await TMDbClient.GetConfigAsync();
+            Assert.True(TMDbClient.HasConfig);
 
-            Assert.NotNull(Config.Client.Config);
+            Assert.NotNull(TMDbClient.Config);
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace TMDbLibTests
         [Fact]
         public void GetConfigFailTest()
         {
-            Assert.Throws<InvalidOperationException>(() => Config.Client.Config);
+            Assert.Throws<InvalidOperationException>(() => TMDbClient.Config);
         }
 
         [Fact]
@@ -49,11 +49,11 @@ namespace TMDbLibTests
             config.Images = new ConfigImageTypes();
             config.Images.BaseUrl = " ..";
 
-            Assert.False(Config.Client.HasConfig);
-            Config.Client.SetConfig(config);
-            Assert.True(Config.Client.HasConfig);
+            Assert.False(TMDbClient.HasConfig);
+            TMDbClient.SetConfig(config);
+            Assert.True(TMDbClient.HasConfig);
 
-            Assert.Same(config, Config.Client.Config);
+            Assert.Same(config, TMDbClient.Config);
         }
 
         [Fact]

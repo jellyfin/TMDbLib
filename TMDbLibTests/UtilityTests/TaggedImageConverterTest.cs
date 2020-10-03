@@ -69,7 +69,7 @@ namespace TMDbLibTests.UtilityTests
         public async Task TestJsonTaggedImageConverter()
         {
             // Get images
-            SearchContainerWithId<TaggedImage> result = await Config.Client.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1);
+            SearchContainerWithId<TaggedImage> result = await TMDbClient.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

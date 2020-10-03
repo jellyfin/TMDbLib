@@ -14,13 +14,13 @@ namespace TMDbLibTests
         public async Task TestGenreTvListAsync()
         {
             // Default language
-            List<Genre> genres = await Config.Client.GetTvGenresAsync();
+            List<Genre> genres = await TMDbClient.GetTvGenresAsync();
 
             Assert.NotNull(genres);
             Assert.True(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = await Config.Client.GetTvGenresAsync("da");
+            List<Genre> genresDanish = await TMDbClient.GetTvGenresAsync("da");
 
             Assert.NotNull(genresDanish);
             Assert.True(genresDanish.Count > 0);
@@ -35,13 +35,13 @@ namespace TMDbLibTests
         public async Task TestGenreMovieListAsync()
         {
             // Default language
-            List<Genre> genres = await Config.Client.GetMovieGenresAsync();
+            List<Genre> genres = await TMDbClient.GetMovieGenresAsync();
 
             Assert.NotNull(genres);
             Assert.True(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = await Config.Client.GetMovieGenresAsync("da");
+            List<Genre> genresDanish = await TMDbClient.GetMovieGenresAsync("da");
 
             Assert.NotNull(genresDanish);
             Assert.True(genresDanish.Count > 0);
@@ -56,12 +56,12 @@ namespace TMDbLibTests
         public async Task TestGenreMoviesAsync()
         {
             // Get first genre
-            Genre genre = (await Config.Client.GetMovieGenresAsync()).First();
+            Genre genre = (await TMDbClient.GetMovieGenresAsync()).First();
 
             // Get movies
-            SearchContainerWithId<SearchMovie> movies = await Config.Client.GetGenreMoviesAsync(genre.Id);
-            SearchContainerWithId<SearchMovie> moviesPage2 = await Config.Client.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false);
-            SearchContainerWithId<SearchMovie> moviesAll = await Config.Client.GetGenreMoviesAsync(genre.Id, includeAllMovies: true);
+            SearchContainerWithId<SearchMovie> movies = await TMDbClient.GetGenreMoviesAsync(genre.Id);
+            SearchContainerWithId<SearchMovie> moviesPage2 = await TMDbClient.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false);
+            SearchContainerWithId<SearchMovie> moviesAll = await TMDbClient.GetGenreMoviesAsync(genre.Id, includeAllMovies: true);
 
             Assert.Equal(1, movies.Page);
             Assert.Equal(2, moviesPage2.Page);

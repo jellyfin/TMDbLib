@@ -12,7 +12,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCertificationsListMovieAsync()
         {
-            CertificationsContainer result = await Config.Client.GetMovieCertificationsAsync();
+            CertificationsContainer result = await TMDbClient.GetMovieCertificationsAsync();
             Assert.NotNull(result);
             Assert.NotNull(result.Certifications);
             Assert.True(result.Certifications.Count > 1);
@@ -32,7 +32,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCertificationsListTvAsync()
         {
-            CertificationsContainer result = await Config.Client.GetTvCertificationsAsync();
+            CertificationsContainer result = await TMDbClient.GetTvCertificationsAsync();
             Assert.NotNull(result);
             Assert.NotNull(result.Certifications);
             Assert.True(result.Certifications.Count > 1);

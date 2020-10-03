@@ -52,7 +52,7 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task TestJsonKnownForConverter()
         {
-            SearchContainer<SearchPerson> result = await Config.Client.SearchPersonAsync("Willis");
+            SearchContainer<SearchPerson> result = await TMDbClient.SearchPersonAsync("Willis");
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

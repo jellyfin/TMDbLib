@@ -11,7 +11,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestFindImdbMovie()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbTerminatorId);
+            Task<FindContainer> result = TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbTerminatorId);
             Assert.Single(result.Result.MovieResults);
             Assert.Equal(IdHelper.TmdbTerminatorId, result.Result.MovieResults[0].Id);
         }
@@ -19,7 +19,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestFindImdbPerson()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis);
+            Task<FindContainer> result = TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis);
             Assert.Single(result.Result.PersonResults);
             Assert.Equal(IdHelper.BruceWillis, result.Result.PersonResults[0].Id);
         }
@@ -27,7 +27,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestFindImdbTvShowEpisode()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadSeason1Episode1Id);
+            Task<FindContainer> result = TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadSeason1Episode1Id);
             Assert.Single(result.Result.TvEpisode);
             Assert.Equal(IdHelper.BreakingBadSeason1Episode1Id, result.Result.TvEpisode[0].Id);
         }
@@ -35,7 +35,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestFindImdbTvShowSeason()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id);
+            Task<FindContainer> result = TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id);
             Assert.Single(result.Result.TvEpisode);
 
             Assert.Single(result.Result.TvSeason);
@@ -45,7 +45,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestFindTvdbTvShow()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId);
+            Task<FindContainer> result = TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId);
             Assert.Single(result.Result.TvResults);
             Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
         }
@@ -53,7 +53,7 @@ namespace TMDbLibTests
         [Fact]
         public void TestFindImdbTvShow()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId);
+            Task<FindContainer> result = TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId);
             Assert.Single(result.Result.TvResults);
             Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
         }

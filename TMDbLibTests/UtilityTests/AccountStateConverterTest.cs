@@ -53,8 +53,8 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task TestAccountStateConverterAccountState()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            AccountState accountState = await Config.Client.GetMovieAccountStateAsync(IdHelper.Avatar);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            AccountState accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.Avatar);
 
             Assert.Equal(IdHelper.Avatar, accountState.Id);
             Assert.True(accountState.Favorite);
@@ -68,8 +68,8 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task TestAccountStateConverterTvEpisodeAccountState()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            ResultContainer<TvEpisodeAccountStateWithNumber> season = await Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            ResultContainer<TvEpisodeAccountStateWithNumber> season = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1);
 
             // Episode 1 has a rating
             TvEpisodeAccountStateWithNumber episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 1);

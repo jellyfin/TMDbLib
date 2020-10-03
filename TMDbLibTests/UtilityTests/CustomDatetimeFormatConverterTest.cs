@@ -32,7 +32,7 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task TestCustomDatetimeFormatConverter()
         {
-            Token token = await Config.Client.AuthenticationRequestAutenticationTokenAsync();
+            Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
             DateTime low = DateTime.UtcNow.AddHours(-2);
             DateTime high = DateTime.UtcNow.AddHours(2);

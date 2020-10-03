@@ -18,23 +18,23 @@ namespace TMDbLibTests
     {
         public ClientAccountTests() : base()
         {
-            if (string.IsNullOrWhiteSpace(Config.UserSessionId))
+            if (string.IsNullOrWhiteSpace(TestConfig.UserSessionId))
                 throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");
         }
 
         [Fact]
         public async Task TestAccountGetDetailsGuestAccount()
         {
-            await Config.Client.SetSessionInformationAsync(Config.GuestTestSessionId, SessionType.GuestSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.GuestTestSessionId, SessionType.GuestSession);
 
-            await Assert.ThrowsAsync<UserSessionRequiredException>(() => Config.Client.AccountGetDetailsAsync());
+            await Assert.ThrowsAsync<UserSessionRequiredException>(() => TMDbClient.AccountGetDetailsAsync());
         }
 
         [Fact]
         public async Task TestAccountGetDetailsUserAccount()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            AccountDetails account = await Config.Client.AccountGetDetailsAsync();
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            AccountDetails account = await TMDbClient.AccountGetDetailsAsync();
 
             // Naturally the specified account must have these values populated for the test to pass
             Assert.NotNull(account);
@@ -52,9 +52,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountAccountGetLists()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetListsAsync(i));
-            AccountList list = (await Config.Client.AccountGetListsAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetListsAsync(i));
+            AccountList list = (await TMDbClient.AccountGetListsAsync()).Results[0];
 
             Assert.NotNull(list.Id);
             Assert.NotNull(list.Name);
@@ -66,9 +66,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountGetFavoriteMovies()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetFavoriteMoviesAsync(i));
-            SearchMovie movie = (await Config.Client.AccountGetFavoriteMoviesAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
+            SearchMovie movie = (await TMDbClient.AccountGetFavoriteMoviesAsync()).Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
             Assert.True(movie.Id > 0);
@@ -90,9 +90,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountGetFavoriteTv()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetFavoriteTvAsync(i));
-            SearchTv tvShow = (await Config.Client.AccountGetFavoriteTvAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteTvAsync(i));
+            SearchTv tvShow = (await TMDbClient.AccountGetFavoriteTvAsync()).Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
             Assert.True(tvShow.Id > 0);
@@ -114,9 +114,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountGetMovieWatchlist()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetFavoriteMoviesAsync(i));
-            SearchMovie movie = (await Config.Client.AccountGetFavoriteMoviesAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
+            SearchMovie movie = (await TMDbClient.AccountGetFavoriteMoviesAsync()).Results[0];
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
             Assert.True(movie.Id > 0);
@@ -138,9 +138,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountGetTvWatchlist()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetTvWatchlistAsync(i));
-            SearchTv tvShow = (await Config.Client.AccountGetTvWatchlistAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetTvWatchlistAsync(i));
+            SearchTv tvShow = (await TMDbClient.AccountGetTvWatchlistAsync()).Results[0];
 
             // Requires that you have added at least one movie to your watchlist else this test will fail
             Assert.True(tvShow.Id > 0);
@@ -162,9 +162,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountGetRatedMovies()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetFavoriteMoviesAsync(i));
-            SearchMovie movie = (await Config.Client.AccountGetFavoriteMoviesAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
+            SearchMovie movie = (await TMDbClient.AccountGetFavoriteMoviesAsync()).Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.True(movie.Id > 0);
@@ -186,9 +186,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountGetRatedTv()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetRatedTvShowsAsync(i));
-            AccountSearchTv tvShow = (await Config.Client.AccountGetRatedTvShowsAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowsAsync(i));
+            AccountSearchTv tvShow = (await TMDbClient.AccountGetRatedTvShowsAsync()).Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.True(tvShow.Id > 0);
@@ -211,9 +211,9 @@ namespace TMDbLibTests
         public async Task TestAccountGetRatedTvEpisodes()
         {
             // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => Config.Client.AccountGetRatedTvShowEpisodesAsync(i));
-            AccountSearchTvEpisode tvEpisode = (await Config.Client.AccountGetRatedTvShowEpisodesAsync()).Results[0];
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowEpisodesAsync(i));
+            AccountSearchTvEpisode tvEpisode = (await TMDbClient.AccountGetRatedTvShowEpisodesAsync()).Results[0];
 
             // Requires that you have rated at least one movie else this test will fail
             Assert.True(tvEpisode.Id > 0);
@@ -231,23 +231,23 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountChangeTvFavoriteStatusAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
-                Assert.True(await Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+                Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
 
             if (await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
                 throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
 
             // Try to mark is as a favorite
-            Assert.True(await Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
+            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
 
             // Check if it worked
             Assert.True(await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to un-mark is as a favorite
-            Assert.True(await Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
 
             // Check if it worked
             Assert.False(await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
@@ -256,23 +256,23 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountChangeMovieFavoriteStatusAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
-                Assert.True(await Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+                Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
 
             if (await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
                 throw new Exception($"Test movie '{IdHelper.Terminator}' was already marked as favorite. Unable to perform test correctly");
 
             // Try to mark is as a favorite
-            Assert.True(await Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
+            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
 
             // Check if it worked
             Assert.True(await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to un-mark is as a favorite
-            Assert.True(await Config.Client.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
 
             // Check if it worked
             Assert.False(await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
@@ -281,23 +281,23 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountChangeTvWatchlistStatusAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
-                Assert.True(await Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+                Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
 
             if (await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
                 throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
 
             // Try to add an item to the watchlist
-            Assert.True(await Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
+            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
 
             // Check if it worked
             Assert.True(await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
 
             // Try to remove item from watchlist
-            Assert.True(await Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
 
             // Check if it worked
             Assert.False(await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
@@ -306,23 +306,23 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAccountChangeMovieWatchlistStatusAsync()
         {
-            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesWatchListContainSpecificMovie(IdHelper.Terminator))
-                Assert.True(await Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+                Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
 
             if (await DoesWatchListContainSpecificMovie(IdHelper.Terminator))
                 throw new Exception($"Test movie '{IdHelper.Terminator}' was already on watchlist. Unable to perform test correctly");
 
             // Try to add an item to the watchlist
-            Assert.True(await Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
+            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
 
             // Check if it worked
             Assert.True(await DoesWatchListContainSpecificMovie(IdHelper.Terminator));
 
             // Try to remove item from watchlist
-            Assert.True(await Config.Client.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
 
             // Check if it worked
             Assert.False(await DoesWatchListContainSpecificMovie(IdHelper.Terminator));
@@ -330,22 +330,22 @@ namespace TMDbLibTests
 
         private async Task<bool> DoesFavoriteListContainSpecificTvShow(int tvId)
         {
-            return await DoesListContainSpecificMovie(tvId, async page => (await Config.Client.AccountGetFavoriteTvAsync(page)).Results.Select(s => s.Id));
+            return await DoesListContainSpecificMovie(tvId, async page => (await TMDbClient.AccountGetFavoriteTvAsync(page)).Results.Select(s => s.Id));
         }
 
         private async Task<bool> DoesWatchListContainSpecificTvShow(int tvId)
         {
-            return await DoesListContainSpecificMovie(tvId, async page => (await Config.Client.AccountGetTvWatchlistAsync(page)).Results.Select(s => s.Id));
+            return await DoesListContainSpecificMovie(tvId, async page => (await TMDbClient.AccountGetTvWatchlistAsync(page)).Results.Select(s => s.Id));
         }
 
         private async Task<bool> DoesFavoriteListContainSpecificMovie(int movieId)
         {
-            return await DoesListContainSpecificMovie(movieId, async page => (await Config.Client.AccountGetFavoriteMoviesAsync(page)).Results.Select(s => s.Id));
+            return await DoesListContainSpecificMovie(movieId, async page => (await TMDbClient.AccountGetFavoriteMoviesAsync(page)).Results.Select(s => s.Id));
         }
 
         private async Task<bool> DoesWatchListContainSpecificMovie(int movieId)
         {
-            return await DoesListContainSpecificMovie(movieId, async page => (await Config.Client.AccountGetMovieWatchlistAsync(page)).Results.Select(s => s.Id));
+            return await DoesListContainSpecificMovie(movieId, async page => (await TMDbClient.AccountGetMovieWatchlistAsync(page)).Results.Select(s => s.Id));
         }
 
         private async Task<bool> DoesListContainSpecificMovie(int movieId, Func<int, Task<IEnumerable<int>>> listGetter)

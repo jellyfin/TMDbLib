@@ -25,7 +25,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCompaniesExtrasNoneAsync()
         {
-            Company company = await Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+            Company company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
 
             Assert.NotNull(company);
 
@@ -42,19 +42,19 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCompaniesExtrasExclusive()
         {
-            await TestMethodsHelper.TestGetExclusive(_methods, extras => Config.Client.GetCompanyAsync( IdHelper.TwentiethCenturyFox, extras));
+            await TestMethodsHelper.TestGetExclusive(_methods, extras => TMDbClient.GetCompanyAsync( IdHelper.TwentiethCenturyFox, extras));
         }
 
         [Fact]
         public async Task TestCompaniesExtrasAllAsync()
         {
-            await TestMethodsHelper.TestGetAll(_methods, combined => Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combined));
+            await TestMethodsHelper.TestGetAll(_methods, combined => TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combined));
         }
 
         [Fact]
         public async Task TestCompanyMissingAsync()
         {
-            Company company = await Config.Client.GetCompanyAsync(IdHelper.MissingID);
+            Company company = await TMDbClient.GetCompanyAsync(IdHelper.MissingID);
 
             Assert.Null(company);
         }
@@ -63,9 +63,9 @@ namespace TMDbLibTests
         public async Task TestCompaniesGettersAsync()
         {
             //GetCompanyMoviesAsync(int id, string language, int page = -1)
-            SearchContainerWithId<SearchMovie> resp = await Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox);
-            SearchContainerWithId<SearchMovie> respPage2 = await Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2);
-            SearchContainerWithId<SearchMovie> respItalian = await Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it");
+            SearchContainerWithId<SearchMovie> resp = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox);
+            SearchContainerWithId<SearchMovie> respPage2 = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2);
+            SearchContainerWithId<SearchMovie> respItalian = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it");
 
             Assert.NotNull(resp);
             Assert.NotNull(respPage2);
@@ -91,13 +91,13 @@ namespace TMDbLibTests
         public async Task TestCompaniesImagesAsync()
         {
             // Get config
-            await Config.Client.GetConfigAsync();
+            await TMDbClient.GetConfigAsync();
 
             // Test image url generator
-            Company company = await Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+            Company company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
 
-            Uri url = Config.Client.GetImageUrl("original", company.LogoPath);
-            Uri urlSecure = Config.Client.GetImageUrl("original", company.LogoPath, true);
+            Uri url = TMDbClient.GetImageUrl("original", company.LogoPath);
+            Uri urlSecure = TMDbClient.GetImageUrl("original", company.LogoPath, true);
 
             Assert.True(await TestHelpers.InternetUriExistsAsync(url));
             Assert.True(await TestHelpers.InternetUriExistsAsync(urlSecure));
@@ -106,7 +106,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCompaniesFullAsync()
         {
-            Company company = await Config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures);
+            Company company = await TMDbClient.GetCompanyAsync(IdHelper.ColumbiaPictures);
 
             Assert.NotNull(company);
 

@@ -14,7 +14,7 @@ namespace TMDbLibTests
         public async Task TestChangesMoviesAsync()
         {
             // Basic check
-            SearchContainer<ChangesListItem> changesPage1 = await Config.Client.GetChangesMoviesAsync();
+            SearchContainer<ChangesListItem> changesPage1 = await TMDbClient.GetChangesMoviesAsync();
 
             Assert.NotNull(changesPage1);
             Assert.True(changesPage1.Results.Count > 0);
@@ -22,14 +22,14 @@ namespace TMDbLibTests
             Assert.Equal(1, changesPage1.Page);
 
             // Page 2
-            SearchContainer<ChangesListItem> changesPage2 = await Config.Client.GetChangesMoviesAsync(2);
+            SearchContainer<ChangesListItem> changesPage2 = await TMDbClient.GetChangesMoviesAsync(2);
 
             Assert.NotNull(changesPage2);
             Assert.Equal(2, changesPage2.Page);
 
             // Check date range (max)
             DateTime higher = DateTime.UtcNow.AddDays(-7);
-            SearchContainer<ChangesListItem> changesMaxDate = await Config.Client.GetChangesMoviesAsync(endDate: higher);
+            SearchContainer<ChangesListItem> changesMaxDate = await TMDbClient.GetChangesMoviesAsync(endDate: higher);
 
             Assert.NotNull(changesMaxDate);
             Assert.Equal(1, changesMaxDate.Page);
@@ -37,7 +37,7 @@ namespace TMDbLibTests
 
             // Check date range (lower)
             DateTime lower = DateTime.UtcNow.AddDays(-6);       // Use 6 days to avoid clashes with the 'higher'
-            SearchContainer<ChangesListItem> changesLowDate = await Config.Client.GetChangesMoviesAsync(startDate: lower);
+            SearchContainer<ChangesListItem> changesLowDate = await TMDbClient.GetChangesMoviesAsync(startDate: lower);
 
             Assert.NotNull(changesLowDate);
             Assert.Equal(1, changesLowDate.Page);
@@ -48,7 +48,7 @@ namespace TMDbLibTests
         public async Task TestChangesPeopleAsync()
         {
             // Basic check
-            SearchContainer<ChangesListItem> changesPage1 = await Config.Client.GetChangesPeopleAsync();
+            SearchContainer<ChangesListItem> changesPage1 = await TMDbClient.GetChangesPeopleAsync();
 
             Assert.NotNull(changesPage1);
             Assert.True(changesPage1.Results.Count > 0);
@@ -56,14 +56,14 @@ namespace TMDbLibTests
             Assert.Equal(1, changesPage1.Page);
 
             // Page 2
-            SearchContainer<ChangesListItem> changesPage2 = await Config.Client.GetChangesPeopleAsync(2);
+            SearchContainer<ChangesListItem> changesPage2 = await TMDbClient.GetChangesPeopleAsync(2);
 
             Assert.NotNull(changesPage2);
             Assert.Equal(2, changesPage2.Page);
 
             // Check date range (max)
             DateTime higher = DateTime.UtcNow.AddDays(-7);
-            SearchContainer<ChangesListItem> changesMaxDate = await Config.Client.GetChangesPeopleAsync(endDate: higher);
+            SearchContainer<ChangesListItem> changesMaxDate = await TMDbClient.GetChangesPeopleAsync(endDate: higher);
 
             Assert.NotNull(changesMaxDate);
             Assert.Equal(1, changesMaxDate.Page);
@@ -71,7 +71,7 @@ namespace TMDbLibTests
 
             // Check date range (lower)
             DateTime lower = DateTime.UtcNow.AddDays(-6);       // Use 6 days to avoid clashes with the 'higher'
-            SearchContainer<ChangesListItem> changesLowDate = await Config.Client.GetChangesPeopleAsync(startDate: lower);
+            SearchContainer<ChangesListItem> changesLowDate = await TMDbClient.GetChangesPeopleAsync(startDate: lower);
 
             Assert.NotNull(changesLowDate);
             Assert.Equal(1, changesLowDate.Page);
@@ -87,7 +87,7 @@ namespace TMDbLibTests
         public async Task TestChangesTvShowsAsync()
         {
             // Basic check
-            SearchContainer<ChangesListItem> changesPage1 = await Config.Client.GetChangesTvAsync();
+            SearchContainer<ChangesListItem> changesPage1 = await TMDbClient.GetChangesTvAsync();
 
             Assert.NotNull(changesPage1);
             Assert.NotNull(changesPage1.Results);
@@ -99,7 +99,7 @@ namespace TMDbLibTests
             {
                 Assert.True(changesPage1.TotalResults > changesPage1.Results.Count);
                 // Page 2
-                SearchContainer<ChangesListItem> changesPage2 = await Config.Client.GetChangesTvAsync(2);
+                SearchContainer<ChangesListItem> changesPage2 = await TMDbClient.GetChangesTvAsync(2);
 
                 Assert.NotNull(changesPage2);
                 Assert.Equal(2, changesPage2.Page);
@@ -107,7 +107,7 @@ namespace TMDbLibTests
 
             // Check date range (max)
             DateTime higher = DateTime.UtcNow.AddDays(-8);
-            SearchContainer<ChangesListItem> changesMaxDate = await Config.Client.GetChangesTvAsync(endDate: higher);
+            SearchContainer<ChangesListItem> changesMaxDate = await TMDbClient.GetChangesTvAsync(endDate: higher);
 
             Assert.NotNull(changesMaxDate);
             Assert.Equal(1, changesMaxDate.Page);
@@ -115,7 +115,7 @@ namespace TMDbLibTests
 
             // Check date range (lower)
             DateTime lower = DateTime.UtcNow.AddDays(-6);       // Use 6 days to avoid clashes with the 'higher'
-            SearchContainer<ChangesListItem> changesLowDate = await Config.Client.GetChangesTvAsync(startDate: lower);
+            SearchContainer<ChangesListItem> changesLowDate = await TMDbClient.GetChangesTvAsync(startDate: lower);
 
             Assert.NotNull(changesLowDate);
             Assert.Equal(1, changesLowDate.Page);
