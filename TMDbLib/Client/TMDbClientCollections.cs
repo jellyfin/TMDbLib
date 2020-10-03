@@ -14,10 +14,10 @@ namespace TMDbLib.Client
     {
         public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await GetCollectionAsync(collectionId, DefaultLanguage, extraMethods, cancellationToken).ConfigureAwait(false);
+            return await GetCollectionAsync(collectionId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Collection> GetCollectionAsync(int collectionId, string language, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Collection> GetCollectionAsync(int collectionId, string language, string includeImageLanguages, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
         {
             RestRequest req = _client.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
@@ -25,6 +25,10 @@ namespace TMDbLib.Client
             language = language ?? DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
+
+            includeImageLanguages = includeImageLanguages ?? DefaultImageLanguage;
+            if (!string.IsNullOrWhiteSpace(includeImageLanguages))
+                req.AddParameter("include_image_language", includeImageLanguages);
 
             string appends = string.Join(",",
                                          Enum.GetValues(typeof(CollectionMethods))
