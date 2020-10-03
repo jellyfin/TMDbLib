@@ -23,8 +23,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestNetworkImages()
         {
-            IgnoreMissingCSharp("logos[array].file_type / file_type", "logos[array].id / id");
-            IgnoreMissingJson("logos[array] / iso_639_1");
             NetworkLogos logos = Config.Client.GetNetworkImagesAsync(IdHelper.Netflix).Result;
 
             Assert.NotNull(logos);

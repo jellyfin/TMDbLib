@@ -42,9 +42,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestKeywordMovies()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             KeywordsContainer keywords = Config.Client.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(keywords);

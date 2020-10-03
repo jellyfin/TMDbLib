@@ -24,9 +24,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestCollectionsExtrasNone()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", "parts[array] / media_type");
-
             Collection collection = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
 
             Assert.NotNull(collection);
@@ -52,9 +49,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestCollectionsParts()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", "parts[array] / media_type");
-
             Collection collection = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
 
             Assert.NotNull(collection);
@@ -70,18 +64,12 @@ namespace TMDbLibTests
         [Fact]
         public void TestCollectionsExtrasExclusive()
         {
-            // Ignore missing json
-            IgnoreMissingJson("parts[array] / media_type");
-
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetCollectionAsync(id, extras).Result, IdHelper.JamesBondCollection);
         }
 
         [Fact]
         public void TestCollectionsExtrasAll()
         {
-            // Ignore missing json
-            IgnoreMissingJson("parts[array] / media_type");
-
             CollectionMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Collection item = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, combinedEnum).Result;
 

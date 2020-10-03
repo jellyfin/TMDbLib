@@ -67,10 +67,6 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void TestJsonTaggedImageConverter()
         {
-            // Ignore fields not set
-            IgnoreMissingCSharp("_id / _id", "adult / adult", "backdrop_path / backdrop_path", "first_air_date / first_air_date", "genre_ids / genre_ids", "name / name", "origin_country / origin_country", "original_language / original_language", "original_name / original_name", "original_title / original_title", "overview / overview", "poster_path / poster_path", "release_date / release_date", "title / title", "video / video", "vote_average / vote_average", "vote_count / vote_count");
-            IgnoreMissingJson(" / media_type");
-
             // Get images
             SearchContainerWithId<TaggedImage> result = Config.Client.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1).Sync();
 

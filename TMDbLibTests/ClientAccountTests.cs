@@ -66,9 +66,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetFavoriteMovies()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetFavoriteMoviesAsync(i).Result);
             SearchMovie movie = Config.Client.AccountGetFavoriteMoviesAsync().Sync().Results[0];
@@ -93,9 +90,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetFavoriteTv()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetFavoriteTvAsync(i).Result);
             SearchTv tvShow = Config.Client.AccountGetFavoriteTvAsync().Sync().Results[0];
@@ -120,9 +114,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetMovieWatchlist()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetFavoriteMoviesAsync(i).Result);
             SearchMovie movie = Config.Client.AccountGetFavoriteMoviesAsync().Sync().Results[0];
@@ -147,9 +138,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetTvWatchlist()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetTvWatchlistAsync(i).Result);
             SearchTv tvShow = Config.Client.AccountGetTvWatchlistAsync().Sync().Results[0];
@@ -174,9 +162,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetRatedMovies()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetFavoriteMoviesAsync(i).Result);
             SearchMovie movie = Config.Client.AccountGetFavoriteMoviesAsync().Sync().Results[0];
@@ -201,9 +186,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetRatedTv()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetRatedTvShowsAsync(i).Result);
             AccountSearchTv tvShow = Config.Client.AccountGetRatedTvShowsAsync().Sync().Results[0];
@@ -228,8 +210,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountGetRatedTvEpisodes()
         {
-            IgnoreMissingCSharp("results[array]._id / _id");
-
             // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestHelpers.SearchPages(i => Config.Client.AccountGetRatedTvShowEpisodesAsync(i).Result);
@@ -251,9 +231,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountChangeTvFavoriteStatus()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
@@ -279,9 +256,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountChangeMovieFavoriteStatus()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
@@ -307,9 +281,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountChangeTvWatchlistStatus()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test
@@ -335,9 +306,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestAccountChangeMovieWatchlistStatus()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Ensure that the test movie is not marked as favorite before we start the test

@@ -52,9 +52,6 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void TestJsonKnownForConverter()
         {
-            // Ignore missing fields
-            IgnoreMissingJson("results[array] / media_type");
-
             SearchContainer<SearchPerson> result = Config.Client.SearchPersonAsync("Willis").Sync();
 
             Assert.NotNull(result);

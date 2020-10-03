@@ -90,12 +90,6 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void TestChangeItemConverter()
         {
-            // Not all ChangeItem's have an iso_639_1 or an original_value
-            IgnoreMissingJson(" / iso_639_1", " / original_value");
-
-            // Ignore missing movie properties
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / external_ids", " / recommendations");
-
             Movie latestMovie = Config.Client.GetMovieLatestAsync().Sync();
             List<Change> changes = Config.Client.GetMovieChangesAsync(latestMovie.Id).Sync();
             List<ChangeItemBase> changeItems = changes.SelectMany(s => s.Items).ToList();

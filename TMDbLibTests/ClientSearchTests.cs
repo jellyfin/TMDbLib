@@ -13,9 +13,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestSearchMovie()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             TestHelpers.SearchPages(i => Config.Client.SearchMovieAsync("007", i).Result);
 
             // Search pr. Year
@@ -66,9 +63,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestSearchPerson()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             TestHelpers.SearchPages(i => Config.Client.SearchPersonAsync("Willis", i).Result);
 
             SearchContainer<SearchPerson> result = Config.Client.SearchPersonAsync("Willis").Result;
@@ -142,9 +136,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestSearchTvShow()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             TestHelpers.SearchPages(i => Config.Client.SearchTvShowAsync("Breaking Bad", i).Result);
 
             SearchContainer<SearchTv> result = Config.Client.SearchTvShowAsync("Breaking Bad").Result;

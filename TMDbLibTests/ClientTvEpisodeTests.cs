@@ -32,9 +32,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasNone()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos");
-
             TvEpisode tvEpisode = Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1).Result;
 
             TestBreakingBadSeasonOneEpisodeOneBaseProperties(tvEpisode);
@@ -49,9 +46,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasAccountState()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos");
-
             // Test the custom parsing code for Account State rating
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
@@ -74,8 +68,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasAll()
         {
-            IgnoreMissingJson("credits / id", "external_ids / id", "images / id", "videos / id");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
@@ -96,8 +88,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeExtrasExclusive()
         {
-            IgnoreMissingJson(" / account_states", " / credits", " / external_ids", " / images", " / videos", "credits / id", "external_ids / id", "images / id", "videos / id");
-
             Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvEpisodeAsync(id, 1, 1, extras).Result, IdHelper.BreakingBad);
         }
@@ -277,8 +267,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestTvEpisodeGetTvEpisodeWithImageLanguage()
         {
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / content_ratings", " / genre_ids", "images / id", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / show_id", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
-
             TvEpisode resp = Config.Client.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvEpisodeMethods.Images).Result;
 
             Assert.True(resp.Images.Stills.Count > 0);

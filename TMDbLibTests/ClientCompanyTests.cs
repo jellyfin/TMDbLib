@@ -25,9 +25,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesExtrasNone()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / movies");
-
             Company company = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
 
             Assert.NotNull(company);
@@ -45,18 +42,12 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesExtrasExclusive()
         {
-            // Ignore missing json
-            IgnoreMissingJson("movies.results[array] / media_type");
-
             TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetCompanyAsync(id, extras).Result, IdHelper.TwentiethCenturyFox);
         }
 
         [Fact]
         public void TestCompaniesExtrasAll()
         {
-            // Ignore missing json
-            IgnoreMissingJson("movies.results[array] / media_type");
-
             CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
             Company item = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combinedEnum).Result;
 
@@ -74,9 +65,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesGetters()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
             //GetCompanyMoviesAsync(int id, string language, int page = -1)
             SearchContainerWithId<SearchMovie> resp = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox).Result;
             SearchContainerWithId<SearchMovie> respPage2 = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2).Result;
@@ -105,8 +93,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesImages()
         {
-            IgnoreMissingJson(" / movies");
-
             // Get config
             Config.Client.GetConfigAsync().Sync();
 
@@ -123,8 +109,6 @@ namespace TMDbLibTests
         [Fact]
         public void TestCompaniesFull()
         {
-            IgnoreMissingJson(" / movies");
-
             Company company = Config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures).Result;
 
             Assert.NotNull(company);
