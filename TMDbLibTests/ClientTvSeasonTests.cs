@@ -57,7 +57,7 @@ namespace TMDbLibTests
                 await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
 
                 // Allow TMDb to update cache
-                Thread.Sleep(2000);
+                await Task.Delay(2000);
 
                 season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
             }
@@ -151,7 +151,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 3, 3));
 
             // Wait for TMDb to un-cache our value
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             // Fetch out the seasons state
             ResultContainer<TvEpisodeAccountStateWithNumber> state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
@@ -167,7 +167,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3));
 
             // Wait for TMDb to un-cache our value
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
             Assert.NotNull(state);

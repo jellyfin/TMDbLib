@@ -56,7 +56,7 @@ namespace TMDbLibTests
                 await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
 
                 // Allow TMDb to update cache
-                Thread.Sleep(2000);
+                await Task.Delay(2000);
 
                 episode = await TMDbClient.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates);
             }
@@ -165,7 +165,7 @@ namespace TMDbLibTests
                 Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
 
                 // Allow TMDb to cache our changes
-                Thread.Sleep(2000);
+                await Task.Delay(2000);
             }
 
             // Test that the episode is NOT rated
@@ -178,7 +178,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             // Test that the episode IS rated
             accountState = await TMDbClient.GetTvEpisodeAccountStateAsync(IdHelper.BreakingBad, 1, 1);

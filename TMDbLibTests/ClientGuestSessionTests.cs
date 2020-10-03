@@ -23,7 +23,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 7.5));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             SearchContainer<TvEpisodeWithRating> ratings = await TMDbClient.GetGuestSessionRatedTvEpisodesAsync();
 
@@ -37,7 +37,7 @@ namespace TMDbLibTests
             //Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 8));
 
             //// Allow TMDb to cache our changes
-            //Thread.Sleep(2000);
+            //await Task.Delay(2000);
 
             //ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
 
@@ -49,7 +49,7 @@ namespace TMDbLibTests
             //Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
 
             //// Allow TMDb to cache our changes
-            //Thread.Sleep(2000);
+            //await Task.Delay(2000);
 
             //ratings = Config.Client.GetGuestSessionRatedTvEpisodesAsync().Sync();
 
@@ -65,7 +65,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.TvShowSetRatingAsync(IdHelper.House, 7.5));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             SearchContainer<SearchTvShowWithRating> ratings = await TMDbClient.GetGuestSessionRatedTvAsync();
 
@@ -77,7 +77,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.TvShowSetRatingAsync(IdHelper.House, 8));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             ratings = await TMDbClient.GetGuestSessionRatedTvAsync();
 
@@ -89,7 +89,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.TvShowRemoveRatingAsync(IdHelper.House));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             ratings = await TMDbClient.GetGuestSessionRatedTvAsync();
 
@@ -105,7 +105,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.MovieSetRatingAsync(IdHelper.Terminator, 7.5));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             SearchContainer<SearchMovieWithRating> ratings = await TMDbClient.GetGuestSessionRatedMoviesAsync();
 
@@ -117,7 +117,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.MovieSetRatingAsync(IdHelper.Terminator, 8));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             ratings = await TMDbClient.GetGuestSessionRatedMoviesAsync();
 
@@ -129,7 +129,7 @@ namespace TMDbLibTests
             Assert.True(await TMDbClient.MovieRemoveRatingAsync(IdHelper.Terminator));
 
             // Allow TMDb to cache our changes
-            Thread.Sleep(2000);
+            await Task.Delay(2000);
 
             ratings = await TMDbClient.GetGuestSessionRatedMoviesAsync();
 
