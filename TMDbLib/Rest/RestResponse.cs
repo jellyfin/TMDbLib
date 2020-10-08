@@ -50,21 +50,5 @@ namespace TMDbLib.Rest
             using (JsonTextReader tr = new JsonTextReader(sr))
                 return _client.Serializer.Deserialize<T>(tr);
         }
-
-        [Obsolete("Remove this, uses .Result")]
-        public static implicit operator T(RestResponse<T> response)
-        {
-            try
-            {
-                if (response.IsValid)
-                    return response.GetDataObject().Result;
-
-                return default;
-            }
-            catch (AggregateException ex)
-            {
-                throw ex.InnerException;
-            }
-        }
     }
 }

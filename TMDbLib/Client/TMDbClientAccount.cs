@@ -34,7 +34,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
-            SearchContainer<T> response = await request.ExecuteGet<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<T> response = await request.GetOfT<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
 
             return response;
         }
@@ -58,7 +58,7 @@ namespace TMDbLib.Client
             request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
             AddSessionId(request, SessionType.UserSession);
 
-            PostReply response = await request.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
+            PostReply response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 1 = "Success" - Returned when adding a movie as favorite for the first time
             // status code 13 = "The item/record was deleted successfully" - When removing an item as favorite, no matter if it exists or not
@@ -85,7 +85,7 @@ namespace TMDbLib.Client
             request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
             AddSessionId(request, SessionType.UserSession);
 
-            PostReply response = await request.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
+            PostReply response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 13 = "The item/record was deleted successfully" - When removing an item from the watchlist, no matter if it exists or not
@@ -105,7 +105,7 @@ namespace TMDbLib.Client
             RestRequest request = _client.Create("account");
             AddSessionId(request, SessionType.UserSession);
 
-            AccountDetails response = await request.ExecuteGet<AccountDetails>(cancellationToken).ConfigureAwait(false);
+            AccountDetails response = await request.GetOfT<AccountDetails>(cancellationToken).ConfigureAwait(false);
 
             return response;
         }
@@ -161,7 +161,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddQueryString("language", language);
 
-            SearchContainer<AccountList> response = await request.ExecuteGet<SearchContainer<AccountList>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<AccountList> response = await request.GetOfT<SearchContainer<AccountList>>(cancellationToken).ConfigureAwait(false);
 
             return response;
         }

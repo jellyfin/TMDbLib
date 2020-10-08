@@ -37,7 +37,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
-            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+            T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -49,7 +49,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Person> resp = await req.ExecuteGet<Person>(cancellationToken).ConfigureAwait(false);
+            Person resp = await req.GetOfT<Person>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -81,7 +81,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Person> response = await req.ExecuteGet<Person>(cancellationToken).ConfigureAwait(false);
+            RestResponse<Person> response = await req.Get<Person>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
                 return null;
@@ -139,7 +139,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<SearchContainer<PersonResult>> resp = await req.ExecuteGet<SearchContainer<PersonResult>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<PersonResult> resp = await req.GetOfT<SearchContainer<PersonResult>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

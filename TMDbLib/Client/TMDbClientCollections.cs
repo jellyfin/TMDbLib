@@ -21,7 +21,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+            T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -56,7 +56,7 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Collection> response = await req.ExecuteGet<Collection>(cancellationToken).ConfigureAwait(false);
+            RestResponse<Collection> response = await req.Get<Collection>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
                 return null;

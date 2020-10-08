@@ -11,7 +11,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("certification/movie/list");
 
-            RestResponse<CertificationsContainer> resp = await req.ExecuteGet<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
+            CertificationsContainer resp = await req.GetOfT<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -20,7 +20,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("certification/tv/list");
 
-            RestResponse<CertificationsContainer> resp = await req.ExecuteGet<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
+            CertificationsContainer resp = await req.GetOfT<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

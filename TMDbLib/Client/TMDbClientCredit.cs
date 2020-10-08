@@ -21,7 +21,7 @@ namespace TMDbLib.Client
 
             req.AddUrlSegment("id", id);
 
-            RestResponse<Credit> resp = await req.ExecuteGet<Credit>(cancellationToken).ConfigureAwait(false);
+            Credit resp = await req.GetOfT<Credit>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

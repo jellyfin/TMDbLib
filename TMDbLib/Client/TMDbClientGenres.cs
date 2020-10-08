@@ -32,7 +32,7 @@ namespace TMDbLib.Client
             if (includeAllMovies.HasValue)
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
 
-            RestResponse<SearchContainerWithId<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+            SearchContainerWithId<SearchMovie> resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -50,7 +50,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>(cancellationToken).ConfigureAwait(false);
+            RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
 
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }
@@ -68,7 +68,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<GenreContainer> resp = await req.ExecuteGet<GenreContainer>(cancellationToken).ConfigureAwait(false);
+            RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
 
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }

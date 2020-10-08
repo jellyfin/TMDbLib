@@ -17,7 +17,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
 
-            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -30,7 +30,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
 
-            RestResponse<SearchContainer<SearchTv>> resp = await req.ExecuteGet<SearchContainer<SearchTv>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchTv> resp = await req.GetOfT<SearchContainer<SearchTv>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -43,7 +43,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
 
-            RestResponse<SearchContainer<SearchPerson>> resp = await req.ExecuteGet<SearchContainer<SearchPerson>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchPerson> resp = await req.GetOfT<SearchContainer<SearchPerson>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

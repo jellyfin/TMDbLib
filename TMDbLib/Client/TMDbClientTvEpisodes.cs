@@ -31,7 +31,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+            T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -47,7 +47,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<TvEpisodeAccountState> response = await req.ExecuteGet<TvEpisodeAccountState>(cancellationToken).ConfigureAwait(false);
+            RestResponse<TvEpisodeAccountState> response = await req.Get<TvEpisodeAccountState>(cancellationToken).ConfigureAwait(false);
 
             return await response.GetDataObject().ConfigureAwait(false);
         }
@@ -93,7 +93,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            RestResponse<TvEpisode> response = await req.ExecuteGet<TvEpisode>(cancellationToken).ConfigureAwait(false);
+            RestResponse<TvEpisode> response = await req.Get<TvEpisode>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
                 return null;
@@ -125,9 +125,9 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("tv/episode/{id}/changes");
             req.AddUrlSegment("id", episodeId.ToString(CultureInfo.InvariantCulture));
 
-            RestResponse<ChangesContainer> response = await req.ExecuteGet<ChangesContainer>(cancellationToken).ConfigureAwait(false);
+            RestResponse<ChangesContainer> response = await req.Get<ChangesContainer>(cancellationToken).ConfigureAwait(false);
 
-            return response;
+            return await response.GetDataObject();
         }
 
         public async Task<ResultContainer<TvEpisodeInfo>> GetTvEpisodesScreenedTheatricallyAsync(int tvShowId, CancellationToken cancellationToken = default)
@@ -135,7 +135,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("tv/{tv_id}/screened_theatrically");
             req.AddUrlSegment("tv_id", tvShowId.ToString(CultureInfo.InvariantCulture));
 
-            return await req.ExecuteGet<ResultContainer<TvEpisodeInfo>>(cancellationToken).ConfigureAwait(false);
+            return await req.GetOfT<ResultContainer<TvEpisodeInfo>>(cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace TMDbLib.Client
 
             AddSessionId(req);
 
-            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>(cancellationToken).ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 13 = "The item/record was deleted successfully."
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
@@ -217,7 +217,7 @@ namespace TMDbLib.Client
 
             req.SetBody(new { value = rating });
 
-            RestResponse<PostReply> response = await req.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user

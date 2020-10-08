@@ -43,7 +43,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            RestResponse<T> response = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+            T response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
             return response;
         }
@@ -64,7 +64,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<AccountState> response = await req.ExecuteGet<AccountState>(cancellationToken).ConfigureAwait(false);
+            RestResponse<AccountState> response = await req.Get<AccountState>(cancellationToken).ConfigureAwait(false);
 
             return await response.GetDataObject().ConfigureAwait(false);
         }
@@ -132,7 +132,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            RestResponse<Movie> response = await req.ExecuteGet<Movie>(cancellationToken).ConfigureAwait(false);
+            RestResponse<Movie> response = await req.Get<Movie>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
                 return null;
@@ -209,7 +209,7 @@ namespace TMDbLib.Client
         public async Task<Movie> GetMovieLatestAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("movie/latest");
-            RestResponse<Movie> resp = await req.ExecuteGet<Movie>(cancellationToken).ConfigureAwait(false);
+            RestResponse<Movie> resp = await req.Get<Movie>(cancellationToken).ConfigureAwait(false);
 
             Movie item = await resp.GetDataObject().ConfigureAwait(false);
 
@@ -251,7 +251,7 @@ namespace TMDbLib.Client
             if (region != null)
                 req.AddParameter("region", region);
 
-            RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+            SearchContainerWithDates<SearchMovie> resp = await req.GetOfT<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -267,7 +267,7 @@ namespace TMDbLib.Client
             if (region != null)
                 req.AddParameter("region", region);
 
-            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -313,7 +313,7 @@ namespace TMDbLib.Client
             if (region != null)
                 req.AddParameter("region", region);
 
-            RestResponse<SearchContainer<SearchMovie>> resp = await req.ExecuteGet<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -334,7 +334,7 @@ namespace TMDbLib.Client
             if (region != null)
                 req.AddParameter("region", region);
 
-            RestResponse<SearchContainerWithDates<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+            SearchContainerWithDates<SearchMovie> resp = await req.GetOfT<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -357,7 +357,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
-            RestResponse<PostReply> response = await req.ExecuteDelete<PostReply>(cancellationToken).ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 13 = "The item/record was deleted successfully."
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
@@ -385,7 +385,7 @@ namespace TMDbLib.Client
 
             req.SetBody(new { value = rating });
 
-            RestResponse<PostReply> response = await req.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
+            RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user

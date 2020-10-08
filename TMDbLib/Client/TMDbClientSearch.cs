@@ -38,7 +38,7 @@ namespace TMDbLib.Client
             if (firstAirDateYear >= 1)
                 req.AddParameter("first_air_date_year", firstAirDateYear.ToString());
 
-            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+            T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

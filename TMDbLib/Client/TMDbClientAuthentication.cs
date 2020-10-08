@@ -16,7 +16,7 @@ namespace TMDbLib.Client
             //    DateFormat = "yyyy-MM-dd HH:mm:ss UTC"
             //};
 
-            RestResponse<GuestSession> response = await request.ExecuteGet<GuestSession>(cancellationToken).ConfigureAwait(false);
+            GuestSession response = await request.GetOfT<GuestSession>(cancellationToken).ConfigureAwait(false);
 
             return response;
         }
@@ -26,12 +26,12 @@ namespace TMDbLib.Client
             RestRequest request = _client.Create("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
 
-            RestResponse<UserSession> response = await request.ExecuteGet<UserSession>(cancellationToken).ConfigureAwait(false);
+            RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
                 throw new UnauthorizedAccessException();
 
-            return response;
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -51,8 +51,8 @@ namespace TMDbLib.Client
         {
             RestRequest request = _client.Create("authentication/token/new");
 
-            RestResponse<Token> response = await request.ExecuteGet<Token>(cancellationToken).ConfigureAwait(false);
-            Token token = response;
+            RestResponse<Token> response = await request.Get<Token>(cancellationToken).ConfigureAwait(false);
+            Token token = await response.GetDataObject().ConfigureAwait(false);
 
             token.AuthenticationCallback = response.GetHeader("Authentication-Callback");
 
@@ -69,7 +69,7 @@ namespace TMDbLib.Client
             RestResponse response;
             try
             {
-                response = await request.ExecuteGet(cancellationToken).ConfigureAwait(false);
+                response = await request.Get(cancellationToken).ConfigureAwait(false);
             }
             catch (AggregateException ex)
             {

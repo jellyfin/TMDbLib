@@ -86,42 +86,42 @@ namespace TMDbLib.Rest
             AppendQueryString(sb, value.Key, value.Value);
         }
 
-        public async Task<RestResponse> ExecuteDelete(CancellationToken cancellationToken)
+        public async Task<RestResponse> Delete(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
             return new RestResponse(resp);
         }
 
-        public async Task<RestResponse<T>> ExecuteDelete<T>(CancellationToken cancellationToken)
+        public async Task<RestResponse<T>> Delete<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
             return new RestResponse<T>(resp, _client);
         }
 
-        public async Task<RestResponse> ExecuteGet(CancellationToken cancellationToken)
+        public async Task<RestResponse> Get(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
             return new RestResponse(resp);
         }
 
-        public async Task<RestResponse<T>> ExecuteGet<T>(CancellationToken cancellationToken)
+        public async Task<RestResponse<T>> Get<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
             return new RestResponse<T>(resp, _client);
         }
 
-        public async Task<RestResponse> ExecutePost(CancellationToken cancellationToken)
+        public async Task<RestResponse> Post(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
             return new RestResponse(resp);
         }
 
-        public async Task<RestResponse<T>> ExecutePost<T>(CancellationToken cancellationToken)
+        public async Task<RestResponse<T>> Post<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 

@@ -15,7 +15,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //request.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Review> resp = await request.ExecuteGet<Review>(cancellationToken).ConfigureAwait(false);
+            Review resp = await request.GetOfT<Review>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

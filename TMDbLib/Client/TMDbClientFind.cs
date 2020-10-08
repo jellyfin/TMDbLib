@@ -49,7 +49,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrEmpty(language))
                 req.AddParameter("language", language);
 
-            RestResponse<FindContainer> resp = await req.ExecuteGet<FindContainer>(cancellationToken).ConfigureAwait(false);
+            FindContainer resp = await req.GetOfT<FindContainer>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

@@ -13,7 +13,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("keyword/{keywordId}");
             req.AddUrlSegment("keywordId", keywordId.ToString());
 
-            RestResponse<Keyword> resp = await req.ExecuteGet<Keyword>(cancellationToken).ConfigureAwait(false);
+            Keyword resp = await req.GetOfT<Keyword>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -35,7 +35,7 @@ namespace TMDbLib.Client
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
 
-            RestResponse<SearchContainerWithId<SearchMovie>> resp = await req.ExecuteGet<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+            SearchContainerWithId<SearchMovie> resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

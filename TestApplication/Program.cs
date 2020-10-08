@@ -52,7 +52,7 @@ namespace TestApplication
             else
             {
                 Console.WriteLine("Getting new config");
-                var config = await client.GetConfigAsync();
+                TMDbConfig config = await client.GetConfigAsync();
 
                 Console.WriteLine("Storing config");
                 string json = JsonConvert.SerializeObject(config);

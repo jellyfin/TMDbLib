@@ -29,7 +29,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<SearchMovieWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchMovieWithRating>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchMovieWithRating> resp = await request.GetOfT<SearchContainer<SearchMovieWithRating>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -53,7 +53,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<SearchTvShowWithRating>> resp = await request.ExecuteGet<SearchContainer<SearchTvShowWithRating>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchTvShowWithRating> resp = await request.GetOfT<SearchContainer<SearchTvShowWithRating>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
@@ -77,7 +77,7 @@ namespace TMDbLib.Client
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
-            RestResponse<SearchContainer<TvEpisodeWithRating>> resp = await request.ExecuteGet<SearchContainer<TvEpisodeWithRating>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<TvEpisodeWithRating> resp = await request.GetOfT<SearchContainer<TvEpisodeWithRating>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
