@@ -31,7 +31,8 @@ namespace TMDbLibTests
                 [TvShowMethods.Changes] = tvShow => tvShow.Changes,
                 [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates,
                 [TvShowMethods.Recommendations] = tvShow => tvShow.Recommendations,
-                [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds
+                [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds,
+                [TvShowMethods.WatchProviders] = tvShow => tvShow.WatchProviders
             };
         }
 
