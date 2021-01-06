@@ -350,6 +350,19 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public void TestTvShowGetMovieWatchProviders()
+        {
+            SingleResultContainer<WatchProvidersByRegion> resp = Config.Client.GetTvShowWatchProvidersAsync(IdHelper.GameOfThrones).Result;
+
+            Assert.NotNull(resp);
+
+            WatchProvidersByRegion watchProvidersByRegion = resp.Results;
+            Assert.NotNull(watchProvidersByRegion);
+
+            // Not making further assertions since this data is highly dynamic.
+        }
+
+        [Fact]
         public void TestTvShowTranslations()
         {
             TranslationsContainerTv translations = Config.Client.GetTvShowTranslationsAsync(1668).Result;

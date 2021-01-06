@@ -39,7 +39,8 @@ namespace TMDbLibTests
                 [MovieMethods.AccountStates] = movie => movie.AccountStates,
                 [MovieMethods.ReleaseDates] = movie => movie.ReleaseDates,
                 [MovieMethods.Recommendations] = movie => movie.Recommendations,
-                [MovieMethods.ExternalIds] = movie => movie.ExternalIds
+                [MovieMethods.ExternalIds] = movie => movie.ExternalIds,
+                [MovieMethods.WatchProviders] = movie => movie.WatchProviders
             };
         }
 
@@ -314,7 +315,6 @@ namespace TMDbLibTests
         public void TestMoviesGetMovieVideos()
         {
             ResultContainer<Video> resp = Config.Client.GetMovieVideosAsync(IdHelper.AGoodDayToDieHard).Result;
-            Assert.NotNull(resp);
 
             Assert.NotNull(resp);
             Assert.NotNull(resp.Results);
@@ -330,6 +330,19 @@ namespace TMDbLibTests
             Assert.Equal("YouTube", video.Site);
             Assert.Equal(720, video.Size);
             Assert.Equal("Trailer", video.Type);
+        }
+
+        [Fact]
+        public void TestMoviesGetMovieWatchProviders()
+        {
+            SingleResultContainer<WatchProvidersByRegion> resp = Config.Client.GetMovieWatchProvidersAsync(IdHelper.AGoodDayToDieHard).Result;
+
+            Assert.NotNull(resp);
+
+            WatchProvidersByRegion watchProvidersByRegion = resp.Results;
+            Assert.NotNull(watchProvidersByRegion);
+
+            // Not making further assertions since this data is highly dynamic.
         }
 
         [Fact]
