@@ -34,5 +34,7 @@ namespace TMDbLib.Objects.TvShows
         Recommendations = 1 << 11,
         [EnumValue("reviews")]
         Reviews = 1 << 12,
+        [EnumValue("watch/providers")]
+        WatchProviders = 1 << 13
     }
 }

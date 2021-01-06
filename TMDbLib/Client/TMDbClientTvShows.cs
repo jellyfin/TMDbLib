@@ -309,6 +309,11 @@ namespace TMDbLib.Client
             return await GetTvShowMethod<ResultContainer<Video>>(id, TvShowMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        public async Task<SingleResultContainer<WatchProvidersByRegion>> GetTvShowWatchProvidersAsync(int id, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await GetTvShowMethod<SingleResultContainer<WatchProvidersByRegion>>(id, TvShowMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         public async Task<bool> TvShowRemoveRatingAsync(int tvShowId, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.GuestSession);
