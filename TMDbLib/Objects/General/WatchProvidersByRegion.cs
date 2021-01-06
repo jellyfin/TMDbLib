@@ -141,7 +141,5 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("ZA")]
         public WatchProviders ZA { get; set; }
-
-
     }
 }
