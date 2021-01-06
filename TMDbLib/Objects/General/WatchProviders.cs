@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Movies
+namespace TMDbLib.Objects.General
 {
     public class WatchProviders
     {
