@@ -335,11 +335,11 @@ namespace TMDbLibTests
         [Fact]
         public void TestMoviesGetMovieWatchProviders()
         {
-            SingleResultContainer<WatchProvidersByRegion> resp = Config.Client.GetMovieWatchProvidersAsync(IdHelper.AGoodDayToDieHard).Result;
+            SingleResultContainer<Dictionary<string, WatchProviders>> resp = Config.Client.GetMovieWatchProvidersAsync(IdHelper.AGoodDayToDieHard).Result;
 
             Assert.NotNull(resp);
 
-            WatchProvidersByRegion watchProvidersByRegion = resp.Results;
+            Dictionary<string, WatchProviders> watchProvidersByRegion = resp.Results;
             Assert.NotNull(watchProvidersByRegion);
 
             // Not making further assertions since this data is highly dynamic.
