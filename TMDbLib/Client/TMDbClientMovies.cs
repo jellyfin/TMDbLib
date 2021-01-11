@@ -344,6 +344,11 @@ namespace TMDbLib.Client
             return await GetMovieMethod<ResultContainer<Video>>(movieId, MovieMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetMovieWatchProvidersAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await GetMovieMethod<SingleResultContainer<Dictionary<string, WatchProviders>>>(movieId, MovieMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         public async Task<bool> MovieRemoveRatingAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
         {
             RequireSessionId(SessionType.GuestSession);

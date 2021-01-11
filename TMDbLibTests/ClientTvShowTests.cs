@@ -31,7 +31,8 @@ namespace TMDbLibTests
                 [TvShowMethods.Changes] = tvShow => tvShow.Changes,
                 [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates,
                 [TvShowMethods.Recommendations] = tvShow => tvShow.Recommendations,
-                [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds
+                [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds,
+                [TvShowMethods.WatchProviders] = tvShow => tvShow.WatchProviders
             };
         }
 
@@ -347,6 +348,19 @@ namespace TMDbLibTests
             Assert.Equal("YouTube", tvShow.Videos.Results[0].Site);
             Assert.Equal(360, tvShow.Videos.Results[0].Size);
             Assert.Equal("Opening Credits", tvShow.Videos.Results[0].Type);
+        }
+
+        [Fact]
+        public void TestTvShowGetMovieWatchProviders()
+        {
+            SingleResultContainer<Dictionary<string, WatchProviders>> resp = Config.Client.GetTvShowWatchProvidersAsync(IdHelper.GameOfThrones).Result;
+
+            Assert.NotNull(resp);
+
+            Dictionary<string, WatchProviders> watchProvidersByRegion = resp.Results;
+            Assert.NotNull(watchProvidersByRegion);
+
+            // Not making further assertions since this data is highly dynamic.
         }
 
         [Fact]

@@ -124,6 +124,9 @@ namespace TMDbLib.Objects.Movies
         [JsonProperty("videos")]
         public ResultContainer<Video> Videos { get; set; }
 
+        [JsonProperty("watch/providers")]
+        public SingleResultContainer<Dictionary<string, WatchProviders>> WatchProviders { get; set; }
+
         [JsonProperty("vote_average")]
         public double VoteAverage { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -307,6 +308,11 @@ namespace TMDbLib.Client
         public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await GetTvShowMethod<ResultContainer<Video>>(id, TvShowMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetTvShowWatchProvidersAsync(int id, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await GetTvShowMethod<SingleResultContainer<Dictionary<string, WatchProviders>>>(id, TvShowMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<bool> TvShowRemoveRatingAsync(int tvShowId, CancellationToken cancellationToken = default(CancellationToken))

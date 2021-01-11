@@ -40,6 +40,8 @@ namespace TMDbLib.Objects.Movies
         [EnumValue("recommendations")]
         Recommendations = 1 << 13,
         [EnumValue("external_ids")]
-        ExternalIds = 1 << 14
+        ExternalIds = 1 << 14,
+        [EnumValue("watch/providers")]
+        WatchProviders = 1 << 15
     }
 }
