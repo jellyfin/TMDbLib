@@ -340,7 +340,7 @@ namespace TMDbLibTests
             Assert.NotNull(resp);
 
             Dictionary<string, WatchProviders> watchProvidersByRegion = resp.Results;
-            Assert.NotNull(watchProvidersByRegion);
+            Assert.NotEmpty(watchProvidersByRegion);
 
             // Not making further assertions since this data is highly dynamic.
         }
