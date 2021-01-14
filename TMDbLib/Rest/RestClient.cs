@@ -20,10 +20,15 @@ namespace TMDbLib.Rest
             MaxRetryCount = 0;
             Proxy = proxy;
 
-            HttpClient = new HttpClient(new HttpClientHandler
+            HttpClientHandler handler = new HttpClientHandler();
+            if (proxy != null)
             {
-                Proxy = proxy
-            });
+                // Blazor apparently throws on the Proxy setter.
+                // https://github.com/LordMike/TMDbLib/issues/354
+                handler.Proxy = proxy;
+            }
+
+            HttpClient = new HttpClient(handler);
         }
 
         internal Uri BaseUrl { get; }
