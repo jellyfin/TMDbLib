@@ -116,20 +116,26 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("production_companies")]
         public List<ProductionCompany> ProductionCompanies { get; set; }
 
-        [JsonProperty("seasons")]
-        public List<SearchTvSeason> Seasons { get; set; }
+        [JsonProperty("recommendations")]
+        public ResultContainer<TvShow> Recommendations { get; set; }
 
         [JsonProperty("reviews")]
         public SearchContainer<ReviewBase> Reviews { get; set; }
 
+        [JsonProperty("seasons")]
+        public List<SearchTvSeason> Seasons { get; set; }
+
         [JsonProperty("similar")]
         public ResultContainer<TvShow> Similar { get; set; }
 
-        [JsonProperty("recommendations")]
-        public ResultContainer<TvShow> Recommendations { get; set; }
+        [JsonProperty("spoken_languages")]
+        public List<SpokenLanguage> SpokenLanguages { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }
+        
+        [JsonProperty("tagline")]
+        public string Tagline { get; set; }
 
         [JsonProperty("translations")]
         public TranslationsContainer Translations { get; set; }
