@@ -12,5 +12,11 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("title")]
         public string Title { get; set; }
+        
+        /// <summary>
+        /// The type of title (e.g. working title, DVD title, modern title)
+        /// </summary>
+        [JsonProperty("type")]
+        public string Type { get; set; }
     }
 }
