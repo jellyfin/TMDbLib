@@ -1,16 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyTitle>TMDb Library</AssemblyTitle>
-    <VersionPrefix>1.7.6-alpha</VersionPrefix>
     <Authors>LordMike;Naliath</Authors>
     <TargetFrameworks>net45;netstandard2.1;netstandard2.0;netstandard1.2</TargetFrameworks>
     <AssemblyName>TMDbLib</AssemblyName>
     <PackageId>TMDbLib</PackageId>
-    <PackageProjectUrl>https://github.com/LordMike/TMDbLib</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/LordMike/TMDbLib</RepositoryUrl>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <Description>.NET Client library for The Movie Database (https://www.themoviedb.org/)</Description>
   </PropertyGroup>
 
   <ItemGroup>
