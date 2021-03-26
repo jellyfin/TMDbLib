@@ -33,6 +33,9 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("credits")]
         public Credits Credits { get; set; }
 
+        [JsonProperty("episode_groups")]
+        public ResultContainer<TvGroupCollection> EpisodeGroups { get; set; }
+
         [JsonProperty("episode_run_time")]
         public List<int> EpisodeRunTime { get; set; }
 
@@ -133,7 +136,7 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("status")]
         public string Status { get; set; }
-        
+
         [JsonProperty("tagline")]
         public string Tagline { get; set; }
 

@@ -32,7 +32,8 @@ namespace TMDbLibTests
                 [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates,
                 [TvShowMethods.Recommendations] = tvShow => tvShow.Recommendations,
                 [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds,
-                [TvShowMethods.WatchProviders] = tvShow => tvShow.WatchProviders
+                [TvShowMethods.WatchProviders] = tvShow => tvShow.WatchProviders,
+                [TvShowMethods.EpisodeGroups] = tvShow => tvShow.EpisodeGroups
             };
         }
 
@@ -175,6 +176,16 @@ namespace TMDbLibTests
                 backdrop,
                 poster
             });
+        }
+
+        [Fact]
+        public void TestTvShowGetTvShowWithEpisodeGroups()
+        {
+            IgnoreMissingCSharp("production_countries / production_countries", "spoken_languages[array].english_name / english_name");
+            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / recommendations", " / reviews", " / similar", " / translations", " / videos", " / watch/providers", "episode_groups / id", "episode_groups.results[array] / groups", "last_episode_to_air / show_id");
+
+            TvShow resp = Config.Client.GetTvShowAsync(IdHelper.Seinfeld, extraMethods: TvShowMethods.EpisodeGroups).Result;
+            Assert.True(resp.EpisodeGroups.Results.Count > 0);
         }
 
         [Fact]

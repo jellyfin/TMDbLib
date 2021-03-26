@@ -35,6 +35,8 @@ namespace TMDbLib.Objects.TvShows
         [EnumValue("reviews")]
         Reviews = 1 << 12,
         [EnumValue("watch/providers")]
-        WatchProviders = 1 << 13
+        WatchProviders = 1 << 13,
+        [EnumValue("episode_groups")]
+        EpisodeGroups = 1 << 14
     }
 }
