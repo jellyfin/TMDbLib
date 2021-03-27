@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -84,22 +84,25 @@ namespace TestApplication
 
             // Images come in two forms, each dispayed below
             Console.WriteLine("Displaying Backdrops");
-            ProcessImages(client, movie.Images.Backdrops.Take(3), client.Config.Images.BackdropSizes);
+            await ProcessImages(client, movie.Images.Backdrops.Take(3), client.Config.Images.BackdropSizes);
             Console.WriteLine();
 
             Console.WriteLine("Displaying Posters");
-            ProcessImages(client, movie.Images.Posters.Take(3), client.Config.Images.PosterSizes);
+            await ProcessImages(client, movie.Images.Posters.Take(3), client.Config.Images.PosterSizes);
             Console.WriteLine();
 
             Spacer();
         }
 
-        private static void ProcessImages(TMDbClient client, IEnumerable<ImageData> images, IEnumerable<string> sizes)
+        private static async Task ProcessImages(TMDbClient client, IEnumerable<ImageData> images, IEnumerable<string> sizes)
         {
             // Displays basic information about each image, as well as all the possible adresses for it.
             // All images should be available in all the sizes provided by the configuration.
 
-            foreach (ImageData imageData in images)
+            List<ImageData> imagesLst = images.ToList();
+            List<string> sizesLst = sizes.ToList();
+
+            foreach (ImageData imageData in imagesLst)
             {
                 Console.WriteLine(imageData.FilePath);
                 Console.WriteLine("\t " + imageData.Width + "x" + imageData.Height);
@@ -107,7 +110,7 @@ namespace TestApplication
                 // Calculate the images path
                 // There are multiple resizing available for each image, directly from TMDb.
                 // There's always the "original" size if you're in doubt which to choose.
-                foreach (string size in sizes)
+                foreach (string size in sizesLst)
                 {
                     Uri imageUri = client.GetImageUrl(size, imageData.FilePath);
                     Console.WriteLine("\t -> " + imageUri);
@@ -115,6 +118,14 @@ namespace TestApplication
 
                 Console.WriteLine();
             }
+
+            // Download an image for testing, uses the internal HttpClient in the API.
+            Console.WriteLine("Downloading image for the first url, as a test");
+
+            Uri testUrl = client.GetImageUrl(sizesLst.First(), imagesLst.First().FilePath);
+            byte[] bts = await client.GetImageBytes(sizesLst.First(), imagesLst.First().FilePath);
+
+            Console.WriteLine($"Downloaded {testUrl}: {bts.Length} bytes");
         }
 
         private static async Task FetchMovieExample(TMDbClient client)

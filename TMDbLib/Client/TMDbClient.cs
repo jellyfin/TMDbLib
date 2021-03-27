@@ -174,6 +174,12 @@ namespace TMDbLib.Client
             return new Uri(baseUrl + size + filePath);
         }
 
+        public Task<byte[]> GetImageBytes(string size, string filePath, bool useSsl = false)
+        {
+            Uri url = GetImageUrl(size, filePath, useSsl);
+            return _client.HttpClient.GetByteArrayAsync(url);
+        }
+
         private void Initialize(string baseUrl, bool useSsl, string apiKey)
         {
             if (string.IsNullOrWhiteSpace(baseUrl))
