@@ -15,7 +15,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", method);
             req.AddParameter("query", query);
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 

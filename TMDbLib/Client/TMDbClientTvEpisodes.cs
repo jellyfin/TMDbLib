@@ -26,7 +26,7 @@ namespace TMDbLib.Client
             //if (dateFormat != null)
             //    req.DateFormat = dateFormat;
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
@@ -74,11 +74,11 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
                 AddSessionId(req, SessionType.UserSession);
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            includeImageLanguage = includeImageLanguage ?? DefaultImageLanguage;
+            includeImageLanguage ??= DefaultImageLanguage;
             if (!string.IsNullOrWhiteSpace(includeImageLanguage))
                 req.AddParameter("include_image_language", includeImageLanguage);
 

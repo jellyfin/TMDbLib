@@ -24,7 +24,8 @@ namespace TMDbLib.Client
 
             if (country != null)
                 req.AddParameter("country", country);
-            language = language ?? DefaultLanguage;
+
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 

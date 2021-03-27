@@ -42,10 +42,9 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("find/{id}");
 
             req.AddUrlSegment("id", WebUtility.UrlEncode(id));
-
             req.AddParameter("external_source", source.GetDescription());
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrEmpty(language))
                 req.AddParameter("language", language);
 

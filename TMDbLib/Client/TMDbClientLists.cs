@@ -145,7 +145,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("list");
             AddSessionId(req, SessionType.UserSession);
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
             {
                 req.SetBody(new { name = name, description = description, language = language });

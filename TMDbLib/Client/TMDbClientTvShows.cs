@@ -31,11 +31,11 @@ namespace TMDbLib.Client
             if (page > 0)
                 req.AddParameter("page", page.ToString());
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            includeImageLanguage = includeImageLanguage ?? DefaultImageLanguage;
+            includeImageLanguage ??= DefaultImageLanguage;
             if (!string.IsNullOrWhiteSpace(includeImageLanguage))
                 req.AddParameter("include_image_language", includeImageLanguage);
 
@@ -48,7 +48,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("tv/" + tvShowListType);
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
@@ -115,7 +115,7 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(TvShowMethods.AccountStates))
                 AddSessionId(req, SessionType.UserSession);
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
@@ -247,7 +247,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrEmpty(timezone))
                 req.AddParameter("timezone", timezone);
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 

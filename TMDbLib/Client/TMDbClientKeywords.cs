@@ -28,7 +28,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("keyword/{keywordId}/movies");
             req.AddUrlSegment("keywordId", keywordId.ToString());
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 

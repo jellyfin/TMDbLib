@@ -36,11 +36,11 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            includeImageLanguages = includeImageLanguages ?? DefaultImageLanguage;
+            includeImageLanguages ??= DefaultImageLanguage;
             if (!string.IsNullOrWhiteSpace(includeImageLanguages))
                 req.AddParameter("include_image_language", includeImageLanguages);
 
@@ -73,5 +73,5 @@ namespace TMDbLib.Client
         {
             return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
         }
-        }
+    }
 }

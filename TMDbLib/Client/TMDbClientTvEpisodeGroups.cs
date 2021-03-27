@@ -19,7 +19,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("tv/episode_group/{id}");
             req.AddUrlSegment("id", id);
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 

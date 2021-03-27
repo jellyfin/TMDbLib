@@ -30,7 +30,7 @@ namespace TMDbLib.Client
             if (sortOrder != SortOrder.Undefined)
                 request.AddParameter("sort_order", sortOrder.GetDescription());
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddParameter("language", language);
 
@@ -157,7 +157,7 @@ namespace TMDbLib.Client
                 request.AddQueryString("page", page.ToString());
             }
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 request.AddQueryString("language", language);
 

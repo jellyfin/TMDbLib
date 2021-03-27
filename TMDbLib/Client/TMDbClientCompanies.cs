@@ -20,7 +20,8 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
-            language = language ?? DefaultLanguage;
+
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 

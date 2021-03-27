@@ -23,7 +23,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
@@ -46,7 +46,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("genre/movie/list");
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
@@ -64,7 +64,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("genre/tv/list");
 
-            language = language ?? DefaultLanguage;
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 

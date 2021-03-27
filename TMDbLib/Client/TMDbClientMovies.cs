@@ -28,7 +28,8 @@ namespace TMDbLib.Client
 
             if (country != null)
                 req.AddParameter("country", country);
-            language = language ?? DefaultLanguage;
+
+            language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
@@ -117,7 +118,7 @@ namespace TMDbLib.Client
             if (language != null)
                 req.AddParameter("language", language);
 
-            includeImageLanguage = includeImageLanguage ?? DefaultImageLanguage;
+            includeImageLanguage ??= DefaultImageLanguage;
             if (includeImageLanguage != null)
                 req.AddParameter("include_image_language", includeImageLanguage);
 
