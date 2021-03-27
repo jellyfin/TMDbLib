@@ -202,19 +202,22 @@ namespace TMDbLibTests
 
             Assert.Equal(1, cast.CastId);
             Assert.Equal("John McClane", cast.Character);
-            Assert.Equal("52fe4751c3a36847f812f049", cast.CreditId);
+            Assert.NotEmpty(cast.CreditId);
             Assert.Equal(62, cast.Id);
             Assert.Equal("Bruce Willis", cast.Name);
             Assert.Equal(0, cast.Order);
+            Assert.True(cast.Popularity > 0);
+            Assert.Equal("Bruce Willis", cast.OriginalName);
+            Assert.Equal("Acting", cast.KnownForDepartment);
             Assert.True(TestImagesHelpers.TestImagePath(cast.ProfilePath), "cast.ProfilePath was not a valid image path, was: " + cast.ProfilePath);
 
             Crew crew = resp.Crew.SingleOrDefault(s => s.Name == "Marco Beltrami");
             Assert.NotNull(crew);
 
-            Assert.Equal("5336b0e09251417d9b000cc7", crew.CreditId);
+            Assert.NotEmpty(crew.CreditId);
             Assert.Equal("Sound", crew.Department);
             Assert.Equal(7229, crew.Id);
-            Assert.Equal("Music", crew.Job);
+            Assert.Equal("Original Music Composer", crew.Job);
             Assert.Equal("Marco Beltrami", crew.Name);
             Assert.True(TestImagesHelpers.TestImagePath(crew.ProfilePath), "crew.ProfilePath was not a valid image path, was: " + crew.ProfilePath);
         }

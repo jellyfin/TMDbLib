@@ -28,5 +28,17 @@ namespace TMDbLib.Objects.Movies
 
         [JsonProperty("gender")]
         public PersonGender Gender { get; set; }
+
+        [JsonProperty("adult")]
+        public bool Adult { get; set; }
+
+        [JsonProperty("known_for_department")]
+        public string KnownForDepartment { get; set; }
+
+        [JsonProperty("original_name")]
+        public string OriginalName { get; set; }
+
+        [JsonProperty("popularity")]
+        public float Popularity { get; set; }
     }
 }
