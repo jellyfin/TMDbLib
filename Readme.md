@@ -41,7 +41,7 @@ Using the extra features of TMDb, we can fetch more info in one go (here we fetc
 
 ```csharp
 TMDbClient client = new TMDbClient("APIKey");
-Movie movie = client.GetMovie(47964, MovieMethods.Casts | MovieMethods.Trailers);
+Movie movie = await client.GetMovieAsync(47964, MovieMethods.Credits | MovieMethods.Videos);
 
 Console.WriteLine($"Movie title: {movie.Title}");
 foreach (Cast cast in movie.Credits.Cast)
@@ -71,12 +71,12 @@ SearchContainer<SearchCollection> collectons = client.SearchCollectionAsync("Jam
 Console.WriteLine($"Got {collectons.Results.Count:N0} collections");
 
 Collection jamesBonds = client.GetCollectionAsync(collectons.Results.First().Id).Result;
-Console.WriteLine($"Collection: {jamesBonds.Name}" );
+Console.WriteLine($"Collection: {jamesBonds.Name}");
 Console.WriteLine();
 
 Console.WriteLine($"Got {jamesBonds.Parts.Count:N0} James Bond Movies");
 foreach (SearchMovie part in jamesBonds.Parts)
-    Console.WriteLine(part.Title);
+      Console.WriteLine(part.Title);
 ```
 
 Tips
