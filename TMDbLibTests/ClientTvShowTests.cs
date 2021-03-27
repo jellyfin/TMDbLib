@@ -179,13 +179,11 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestTvShowGetTvShowWithEpisodeGroups()
+        public async Task TestTvShowGetTvShowWithEpisodeGroups()
         {
-            IgnoreMissingCSharp("production_countries / production_countries", "spoken_languages[array].english_name / english_name");
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / content_ratings", " / credits", " / external_ids", " / genre_ids", " / images", " / keywords", " / recommendations", " / reviews", " / similar", " / translations", " / videos", " / watch/providers", "episode_groups / id", "episode_groups.results[array] / groups", "last_episode_to_air / show_id");
+            TvShow resp = await TMDbClient.GetTvShowAsync(IdHelper.Seinfeld, TvShowMethods.EpisodeGroups);
 
-            TvShow resp = Config.Client.GetTvShowAsync(IdHelper.Seinfeld, extraMethods: TvShowMethods.EpisodeGroups).Result;
-            Assert.True(resp.EpisodeGroups.Results.Count > 0);
+            await Verify(resp.EpisodeGroups);
         }
 
         [Fact]
