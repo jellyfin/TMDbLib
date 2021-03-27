@@ -10,12 +10,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetGuestSessionRatedMoviesAsync(DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovieWithRating>> GetGuestSessionRatedMoviesAsync(string language, int page = 0, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -34,12 +34,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetGuestSessionRatedTvAsync(DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchTvShowWithRating>> GetGuestSessionRatedTvAsync(string language, int page = 0, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -58,12 +58,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetGuestSessionRatedTvEpisodesAsync(DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<TvEpisodeWithRating>> GetGuestSessionRatedTvEpisodesAsync(string language, int page = 0, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.GuestSession);
 

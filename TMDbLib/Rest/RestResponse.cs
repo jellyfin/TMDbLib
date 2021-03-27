@@ -59,7 +59,7 @@ namespace TMDbLib.Rest
                 if (response.IsValid)
                     return response.GetDataObject().Result;
 
-                return default(T);
+                return default;
             }
             catch (AggregateException ex)
             {

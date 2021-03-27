@@ -19,12 +19,12 @@ namespace TMDbLib.Objects.Discover
             Parameters = new SimpleNamedValueCollection();
         }
 
-        public async Task<SearchContainer<T>> Query(int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<T>> Query(int page = 0, CancellationToken cancellationToken = default)
         {
             return await Query(_client.DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<T>> Query(string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<T>> Query(string language, int page = 0, CancellationToken cancellationToken = default)
         {
             return await _client.DiscoverPerformAsync<T>(_endpoint, language, page, Parameters, cancellationToken).ConfigureAwait(false);
         }

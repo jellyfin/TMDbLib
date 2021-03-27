@@ -18,7 +18,7 @@ namespace TMDbLib.Client
             return new DiscoverMovie(this);
         }
 
-        internal async Task<SearchContainer<T>> DiscoverPerformAsync<T>(string endpoint, string language, int page, SimpleNamedValueCollection parameters, CancellationToken cancellationToken = default(CancellationToken))
+        internal async Task<SearchContainer<T>> DiscoverPerformAsync<T>(string endpoint, string language, int page, SimpleNamedValueCollection parameters, CancellationToken cancellationToken = default)
         {
             RestRequest request = _client.Create(endpoint);
 

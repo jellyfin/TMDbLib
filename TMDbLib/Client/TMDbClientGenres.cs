@@ -12,13 +12,13 @@ namespace TMDbLib.Client
     public partial class TMDbClient
     {
         [Obsolete("GetGenreMovies is deprecated, use DiscoverMovies instead")]
-        public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, int page = 0, bool? includeAllMovies = null, CancellationToken cancellationToken = default)
         {
             return await GetGenreMoviesAsync(genreId, DefaultLanguage, page, includeAllMovies, cancellationToken).ConfigureAwait(false);
         }
 
         [Obsolete("GetGenreMovies is deprecated, use DiscoverMovies instead")]
-        public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("genre/{genreId}/movies");
             req.AddUrlSegment("genreId", genreId.ToString());
@@ -37,12 +37,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<List<Genre>> GetMovieGenresAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Genre>> GetMovieGenresAsync(CancellationToken cancellationToken = default)
         {
             return await GetMovieGenresAsync(DefaultLanguage, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<List<Genre>> GetMovieGenresAsync(string language, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Genre>> GetMovieGenresAsync(string language, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("genre/movie/list");
 
@@ -55,12 +55,12 @@ namespace TMDbLib.Client
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }
 
-        public async Task<List<Genre>> GetTvGenresAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Genre>> GetTvGenresAsync(CancellationToken cancellationToken = default)
         {
             return await GetTvGenresAsync(DefaultLanguage, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<List<Genre>> GetTvGenresAsync(string language, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Genre>> GetTvGenresAsync(string language, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("genre/tv/list");
 

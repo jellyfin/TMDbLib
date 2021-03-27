@@ -12,7 +12,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("company/{companyId}");
             req.AddUrlSegment("companyId", companyId.ToString());
@@ -34,7 +34,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        private async Task<T> GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null, CancellationToken cancellationToken = default(CancellationToken)) where T : new()
+        private async Task<T> GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null, CancellationToken cancellationToken = default) where T : new()
         {
             RestRequest req = _client.Create("company/{companyId}/{method}");
             req.AddUrlSegment("companyId", companyId.ToString());
@@ -51,12 +51,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetCompanyMoviesAsync(companyId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, string language, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetCompanyMethod<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language, cancellationToken).ConfigureAwait(false);
         }

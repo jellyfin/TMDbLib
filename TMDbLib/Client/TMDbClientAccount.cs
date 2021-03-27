@@ -23,7 +23,7 @@ namespace TMDbLib.Client
         /// <returns>True if the the movie's favorite status was successfully updated, false if not</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> AccountChangeFavoriteStatusAsync(MediaType mediaType, int mediaId, bool isFavorite, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<bool> AccountChangeFavoriteStatusAsync(MediaType mediaType, int mediaId, bool isFavorite, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -50,7 +50,7 @@ namespace TMDbLib.Client
         /// <returns>True if the the movie's status on the watchlist was successfully updated, false if not</returns>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<bool> AccountChangeWatchlistStatusAsync(MediaType mediaType, int mediaId, bool isOnWatchlist, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<bool> AccountChangeWatchlistStatusAsync(MediaType mediaType, int mediaId, bool isOnWatchlist, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -72,7 +72,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<AccountDetails> AccountGetDetailsAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AccountDetails> AccountGetDetailsAsync(CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -93,7 +93,7 @@ namespace TMDbLib.Client
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null, CancellationToken cancellationToken = default(CancellationToken))
+            string language = null, CancellationToken cancellationToken = default)
         {
             return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies, cancellationToken).ConfigureAwait(false);
         }
@@ -107,7 +107,7 @@ namespace TMDbLib.Client
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null, CancellationToken cancellationToken = default(CancellationToken))
+            string language = null, CancellationToken cancellationToken = default)
         {
             return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv, cancellationToken).ConfigureAwait(false);
         }
@@ -118,7 +118,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<SearchContainer<AccountList>> AccountGetListsAsync(int page = 1, string language = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<AccountList>> AccountGetListsAsync(int page = 1, string language = null, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -149,7 +149,7 @@ namespace TMDbLib.Client
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null, CancellationToken cancellationToken = default(CancellationToken))
+            string language = null, CancellationToken cancellationToken = default)
         {
             return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist, cancellationToken).ConfigureAwait(false);
         }
@@ -163,7 +163,7 @@ namespace TMDbLib.Client
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null, CancellationToken cancellationToken = default(CancellationToken))
+            string language = null, CancellationToken cancellationToken = default)
         {
             return await GetAccountList<SearchMovieWithRating>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies, cancellationToken).ConfigureAwait(false);
         }
@@ -177,7 +177,7 @@ namespace TMDbLib.Client
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null, CancellationToken cancellationToken = default(CancellationToken))
+            string language = null, CancellationToken cancellationToken = default)
         {
             return await GetAccountList<AccountSearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes, cancellationToken).ConfigureAwait(false);
         }
@@ -191,7 +191,7 @@ namespace TMDbLib.Client
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null, CancellationToken cancellationToken = default(CancellationToken))
+            string language = null, CancellationToken cancellationToken = default)
         {
             return await GetAccountList<AccountSearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv, cancellationToken).ConfigureAwait(false);
         }
@@ -205,12 +205,12 @@ namespace TMDbLib.Client
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null, CancellationToken cancellationToken = default(CancellationToken))
+            string language = null, CancellationToken cancellationToken = default)
         {
             return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist, cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<SearchContainer<T>> GetAccountList<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method, CancellationToken cancellationToken = default(CancellationToken))
+        private async Task<SearchContainer<T>> GetAccountList<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.UserSession);
 

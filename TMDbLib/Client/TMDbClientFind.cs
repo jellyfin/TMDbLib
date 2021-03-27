@@ -20,7 +20,7 @@ namespace TMDbLib.Client
         /// <param name="id">The id of the object you wish to located</param>
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         /// <param name="cancellationToken">A cancellation token</param>
-        public Task<FindContainer> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<FindContainer> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default)
         {
             return FindAsync(source, id, null, cancellationToken);
         }
@@ -37,7 +37,7 @@ namespace TMDbLib.Client
         /// <returns>A list of all objects in TMDb that matched your id</returns>
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es.</param>
         /// <param name="cancellationToken">A cancellation token</param>
-        public async Task<FindContainer> FindAsync(FindExternalSource source, string id, string language, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<FindContainer> FindAsync(FindExternalSource source, string id, string language, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("find/{id}");
 

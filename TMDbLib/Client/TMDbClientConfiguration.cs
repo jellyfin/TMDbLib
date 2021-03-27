@@ -13,7 +13,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<APIConfiguration> GetAPIConfiguration(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<APIConfiguration> GetAPIConfiguration(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration");
 
@@ -22,7 +22,7 @@ namespace TMDbLib.Client
             return (await response.GetDataObject().ConfigureAwait(false));
         }
 
-        public async Task<List<Country>> GetCountriesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Country>> GetCountriesAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration/countries");
 
@@ -31,7 +31,7 @@ namespace TMDbLib.Client
             return (await response.GetDataObject().ConfigureAwait(false));
         }
 
-        public async Task<List<Language>> GetLanguagesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Language>> GetLanguagesAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration/languages");
 
@@ -40,7 +40,7 @@ namespace TMDbLib.Client
             return (await response.GetDataObject().ConfigureAwait(false));
         }
         
-        public async Task<List<string>> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<string>> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration/primary_translations");
 
@@ -49,7 +49,7 @@ namespace TMDbLib.Client
             return (await response.GetDataObject().ConfigureAwait(false));
         }
 
-        public async Task<Timezones> GetTimezonesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Timezones> GetTimezonesAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("timezones/list");
 
@@ -77,7 +77,7 @@ namespace TMDbLib.Client
         /// Retrieves a list of departments and positions within
         /// </summary>
         /// <returns>Valid jobs and their departments</returns>
-        public async Task<List<Job>> GetJobsAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Job>> GetJobsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration/jobs");
 

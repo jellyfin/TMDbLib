@@ -26,7 +26,7 @@ namespace TMDbLib.Client
         /// <param name="cancellationToken">A cancellation token</param>
         /// <remarks>Requires a valid user session</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-        public async Task<AccountState> GetMovieAccountStateAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AccountState> GetMovieAccountStateAsync(int movieId, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.UserSession);
 
@@ -40,27 +40,27 @@ namespace TMDbLib.Client
             return await response.GetDataObject().ConfigureAwait(false);
         }
 
-        public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieAlternativeTitlesAsync(movieId, DefaultCountry, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId, string country, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AlternativeTitles> GetMovieAlternativeTitlesAsync(int movieId, string country, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<AlternativeTitles>(movieId, MovieMethods.AlternativeTitles, country: country, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovieAsync(int movieId, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieAsync(int movieId, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default)
         {
             return await GetMovieAsync(movieId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovieAsync(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieAsync(string imdbId, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default)
         {
             return await GetMovieAsync(imdbId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovieAsync(int movieId, string language, string includeImageLanguage = null, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieAsync(int movieId, string language, string includeImageLanguage = null, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default)
         {
             return await GetMovieAsync(movieId.ToString(CultureInfo.InvariantCulture), language, includeImageLanguage, extraMethods, cancellationToken).ConfigureAwait(false);
         }
@@ -76,7 +76,7 @@ namespace TMDbLib.Client
         /// <returns>The reqed movie or null if it could not be found</returns>
         /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned, see remarks.</exception>
-        public async Task<Movie> GetMovieAsync(string imdbId, string language, string includeImageLanguage = null, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieAsync(string imdbId, string language, string includeImageLanguage = null, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default)
         {
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 RequireSessionId(SessionType.UserSession);
@@ -141,13 +141,13 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<List<Change>> GetMovieChangesAsync(int movieId, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Change>> GetMovieChangesAsync(int movieId, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default)
         {
             ChangesContainer changesContainer = await GetMovieMethod<ChangesContainer>(movieId, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC", cancellationToken: cancellationToken).ConfigureAwait(false);
             return changesContainer.Changes;
         }
 
-        public async Task<Credits> GetMovieCreditsAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Credits> GetMovieCreditsAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<Credits>(movieId, MovieMethods.Credits, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -157,27 +157,27 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="id">The TMDb id of the target movie.</param>
         /// <param name="cancellationToken">A cancellation token</param>
-        public async Task<ExternalIdsMovie> GetMovieExternalIdsAsync(int id, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ExternalIdsMovie> GetMovieExternalIdsAsync(int id, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<ExternalIdsMovie>(id, MovieMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<ImagesWithId> GetMovieImagesAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ImagesWithId> GetMovieImagesAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieImagesAsync(movieId, DefaultLanguage, null, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<ImagesWithId> GetMovieImagesAsync(int movieId, string language, string includeImageLanguage = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ImagesWithId> GetMovieImagesAsync(int movieId, string language, string includeImageLanguage = null, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<ImagesWithId>(movieId, MovieMethods.Images, language: language, includeImageLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<KeywordsContainer> GetMovieKeywordsAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<KeywordsContainer> GetMovieKeywordsAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<KeywordsContainer>(movieId, MovieMethods.Keywords, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Movie> GetMovieLatestAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Movie> GetMovieLatestAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("movie/latest");
             RestResponse<Movie> resp = await req.ExecuteGet<Movie>(cancellationToken).ConfigureAwait(false);
@@ -191,29 +191,29 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieListsAsync(movieId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<SearchContainerWithId<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieRecommendationsAsync(id, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, string language, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<SearchContainer<SearchMovie>>(id, MovieMethods.Recommendations, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         private async Task<T> GetMovieMethod<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
             string country = null,
-            string language = null, string includeImageLanguage = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default(CancellationToken)) where T : new()
+            string language = null, string includeImageLanguage = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default) where T : new()
         {
             RestRequest req = _client.Create("movie/{movieId}/{method}");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
@@ -240,7 +240,7 @@ namespace TMDbLib.Client
             return response;
         }
 
-        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieNowPlayingListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieNowPlayingListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("movie/now_playing");
 
@@ -256,7 +256,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMoviePopularListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovie>> GetMoviePopularListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("movie/popular");
 
@@ -272,37 +272,37 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDatesAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDatesAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Releases> GetMovieReleasesAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Releases> GetMovieReleasesAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd", cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieReviewsAsync(movieId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<SearchContainerWithId<ReviewBase>>(movieId, MovieMethods.Reviews, page: page, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieSimilarAsync(movieId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<SearchContainer<SearchMovie>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd", cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<SearchMovie>> GetMovieTopRatedListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovie>> GetMovieTopRatedListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("movie/top_rated");
 
@@ -318,12 +318,12 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<TranslationsContainer> GetMovieTranslationsAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TranslationsContainer> GetMovieTranslationsAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<TranslationsContainer>(movieId, MovieMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieUpcomingListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithDates<SearchMovie>> GetMovieUpcomingListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("movie/upcoming");
 
@@ -339,17 +339,17 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<ResultContainer<Video>> GetMovieVideosAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ResultContainer<Video>> GetMovieVideosAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<ResultContainer<Video>>(movieId, MovieMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetMovieWatchProvidersAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetMovieWatchProvidersAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethod<SingleResultContainer<Dictionary<string, WatchProviders>>>(movieId, MovieMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<bool> MovieRemoveRatingAsync(int movieId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<bool> MovieRemoveRatingAsync(int movieId, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.GuestSession);
 
@@ -375,7 +375,7 @@ namespace TMDbLib.Client
         /// <returns>True if the the movie's rating was successfully updated, false if not</returns>
         /// <remarks>Requires a valid guest or user session</remarks>
         /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>
-        public async Task<bool> MovieSetRatingAsync(int movieId, double rating, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<bool> MovieSetRatingAsync(int movieId, double rating, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.GuestSession);
 

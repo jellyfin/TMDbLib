@@ -7,7 +7,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<CertificationsContainer> GetMovieCertificationsAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<CertificationsContainer> GetMovieCertificationsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("certification/movie/list");
 
@@ -16,7 +16,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<CertificationsContainer> GetTvCertificationsAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<CertificationsContainer> GetTvCertificationsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("certification/tv/list");
 

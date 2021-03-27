@@ -12,12 +12,12 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
         {
             return await GetCollectionAsync(collectionId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Collection> GetCollectionAsync(int collectionId, string language, string includeImageLanguages, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Collection> GetCollectionAsync(int collectionId, string language, string includeImageLanguages, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("collection/{collectionId}");
             req.AddUrlSegment("collectionId", collectionId.ToString());
@@ -55,12 +55,12 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default)
         {
             return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default(CancellationToken)) where T : new()
+        private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default) where T : new()
         {
             RestRequest req = _client.Create("collection/{collectionId}/{method}");
             req.AddUrlSegment("collectionId", collectionId.ToString());

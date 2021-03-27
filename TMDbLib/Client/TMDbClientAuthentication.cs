@@ -9,7 +9,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<GuestSession> AuthenticationCreateGuestSessionAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<GuestSession> AuthenticationCreateGuestSessionAsync(CancellationToken cancellationToken = default)
         {
             RestRequest request = _client.Create("authentication/guest_session/new");
             //{
@@ -21,7 +21,7 @@ namespace TMDbLib.Client
             return response;
         }
 
-        public async Task<UserSession> AuthenticationGetUserSessionAsync(string initialRequestToken, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<UserSession> AuthenticationGetUserSessionAsync(string initialRequestToken, CancellationToken cancellationToken = default)
         {
             RestRequest request = _client.Create("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
@@ -40,14 +40,14 @@ namespace TMDbLib.Client
         /// <param name="username">A valid TMDb username</param>
         /// <param name="password">The passoword for the provided login</param>
         /// <param name="cancellationToken">A cancellation token</param>
-        public async Task<UserSession> AuthenticationGetUserSessionAsync(string username, string password, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<UserSession> AuthenticationGetUserSessionAsync(string username, string password, CancellationToken cancellationToken = default)
         {
             Token token = await AuthenticationRequestAutenticationTokenAsync(cancellationToken).ConfigureAwait(false);
             await AuthenticationValidateUserTokenAsync(token.RequestToken, username, password, cancellationToken).ConfigureAwait(false);
             return await AuthenticationGetUserSessionAsync(token.RequestToken, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Token> AuthenticationRequestAutenticationTokenAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Token> AuthenticationRequestAutenticationTokenAsync(CancellationToken cancellationToken = default)
         {
             RestRequest request = _client.Create("authentication/token/new");
 
@@ -59,7 +59,7 @@ namespace TMDbLib.Client
             return token;
         }
 
-        public async Task AuthenticationValidateUserTokenAsync(string initialRequestToken, string username, string password, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task AuthenticationValidateUserTokenAsync(string initialRequestToken, string username, string password, CancellationToken cancellationToken = default)
         {
             RestRequest request = _client.Create("authentication/token/validate_with_login");
             request.AddParameter("request_token", initialRequestToken);

@@ -7,7 +7,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Review> GetReviewAsync(string reviewId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Review> GetReviewAsync(string reviewId, CancellationToken cancellationToken = default)
         {
             RestRequest request  = _client.Create("review/{reviewId}");
             request.AddUrlSegment("reviewId", reviewId);

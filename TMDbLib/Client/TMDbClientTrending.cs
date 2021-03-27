@@ -9,7 +9,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<SearchContainer<SearchMovie>> GetTrendingMoviesAsync(TimeWindow timeWindow, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchMovie>> GetTrendingMoviesAsync(TimeWindow timeWindow, int page = 0, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("trending/movie/{time_window}");
             req.AddUrlSegment("time_window", timeWindow.ToString());
@@ -22,7 +22,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<SearchTv>> GetTrendingTvAsync(TimeWindow timeWindow, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchTv>> GetTrendingTvAsync(TimeWindow timeWindow, int page = 0, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("trending/tv/{time_window}");
             req.AddUrlSegment("time_window", timeWindow.ToString());
@@ -35,7 +35,7 @@ namespace TMDbLib.Client
             return resp;
         }
 
-        public async Task<SearchContainer<SearchPerson>> GetTrendingPeopleAsync(TimeWindow timeWindow, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainer<SearchPerson>> GetTrendingPeopleAsync(TimeWindow timeWindow, int page = 0, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("trending/person/{time_window}");
             req.AddUrlSegment("time_window", timeWindow.ToString());
