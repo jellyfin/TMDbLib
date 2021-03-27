@@ -1,8 +1,8 @@
 using System;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Utilities.Converters;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -30,9 +30,9 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the CustomDatetimeFormatConverter
         /// </summary>
         [Fact]
-        public void TestCustomDatetimeFormatConverter()
+        public async Task TestCustomDatetimeFormatConverter()
         {
-            Token token = Config.Client.AuthenticationRequestAutenticationTokenAsync().Sync();
+            Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
             DateTime low = DateTime.UtcNow.AddHours(-2);
             DateTime high = DateTime.UtcNow.AddHours(2);

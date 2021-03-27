@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -49,21 +48,6 @@ namespace TMDbLib.Rest
             using (StreamReader sr = new StreamReader(content, _client.Encoding))
             using (JsonTextReader tr = new JsonTextReader(sr))
                 return _client.Serializer.Deserialize<T>(tr);
-        }
-
-        public static implicit operator T(RestResponse<T> response)
-        {
-            try
-            {
-                if (response.IsValid)
-                    return response.GetDataObject().Result;
-
-                return default(T);
-            }
-            catch (AggregateException ex)
-            {
-                throw ex.InnerException;
-            }
         }
     }
 }

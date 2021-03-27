@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.Trending;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -10,31 +10,24 @@ namespace TMDbLibTests
     public class ClientTrendingTests : TestBase
     {
         [Fact]
-        public void TestTrendingMovies()
+        public async Task TestTrendingMoviesAsync()
         {
-            IgnoreMissingJson("results[array] / media_type");
-
-            var movies = Config.Client.GetTrendingMoviesAsync(TimeWindow.Week).Result;
-            Assert.True(movies.Results.Count > 0);
+            SearchContainer<SearchMovie> movies = await TMDbClient.GetTrendingMoviesAsync(TimeWindow.Week);
+            Assert.NotEmpty(movies.Results);
         }
 
         [Fact]
-        public void TestTrendingTv()
+        public async Task TestTrendingTvAsync()
         {
-            IgnoreMissingJson("results[array] / media_type");
-
-            var tv = Config.Client.GetTrendingTvAsync(TimeWindow.Week).Result;
-            Assert.True(tv.Results.Count > 0);
+            SearchContainer<SearchTv> tv = await TMDbClient.GetTrendingTvAsync(TimeWindow.Week);
+            Assert.NotEmpty(tv.Results);
         }
 
         [Fact]
-        public void TestTrendingPeople()
+        public async Task TestTrendingPeopleAsync()
         {
-            IgnoreMissingCSharp("results[array].gender / gender", "results[array].known_for_department / known_for_department");
-            IgnoreMissingJson(" / popularity", "results[array] / media_type");
-
-            var people = Config.Client.GetTrendingPeopleAsync(TimeWindow.Week).Result;
-            Assert.True(people.Results.Count > 0);
+            SearchContainer<SearchPerson> people = await TMDbClient.GetTrendingPeopleAsync(TimeWindow.Week);
+            Assert.NotEmpty(people.Results);
         }
     }
 }

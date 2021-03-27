@@ -1,146 +1,174 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+using System.Net;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using TMDbLib.Client;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
+using TMDbLibTests.Helpers;
+using VerifyTests;
+using VerifyXunit;
 
 namespace TMDbLibTests.JsonHelpers
 {
-    public class TestBase : IDisposable
+    [UsesVerify]
+    public abstract class TestBase
     {
-        private static readonly Regex NormalizeRegex = new Regex(@"\[[\d]+\]", RegexOptions.Compiled);
-        private readonly List<ErrorEventArgs> _errors = new List<ErrorEventArgs>();
+        private VerifySettings VerifySettings { get; }
 
-        protected readonly TestConfig Config;
+        protected readonly TestConfig TestConfig;
 
-        private readonly List<string> _ignoreMissingCSharp;
+        protected TMDbClient TMDbClient => TestConfig.Client;
 
-        private readonly List<string> _ignoreMissingJson;
-
-        /// <summary>
-        /// Ignores errors about missing JSON properties (Where C# properties are not set)
-        /// </summary>
-        protected void IgnoreMissingJson(params string[] keys)
+        protected TestBase()
         {
-            _ignoreMissingJson.AddRange(keys);
-        }
+            VerifySettings = new VerifySettings();
+            //VerifySettings.UseExtension("json");
+            VerifySettings.AutoVerify();
 
-        /// <summary>
-        /// Ignores errors about missing C# properties (Where new or unknown JSON properties are present)
-        /// </summary>
-        protected void IgnoreMissingCSharp(params string[] keys)
-        {
-            _ignoreMissingCSharp.AddRange(keys);
-        }
+            VerifySettings.UseDirectory("..\\Verification");
 
-        public TestBase()
-        {
-            _ignoreMissingJson = new List<string>();
-            _ignoreMissingCSharp = new List<string>();
+            // Ignore and simplify many dynamic properties
+            VerifySettings.IgnoreProperty<SearchMovie>(x => x.VoteCount, x => x.Popularity, x => x.VoteAverage);
+            VerifySettings.SimplifyProperty<SearchMovie>(x => x.BackdropPath, x => x.PosterPath);
+            VerifySettings.SimplifyProperty<SearchPerson>(x => x.ProfilePath);
+            VerifySettings.SimplifyProperty<SearchTvEpisode>(x => x.StillPath);
+            VerifySettings.SimplifyProperty<ImageData>(x => x.FilePath);
+            VerifySettings.SimplifyProperty<SearchCompany>(x => x.LogoPath);
+
+            VerifySettings.AddExtraSettings(serializerSettings =>
+            {
+                serializerSettings.ContractResolver = new DataSortingContractResolver(serializerSettings.ContractResolver);
+            });
 
             JsonSerializerSettings sett = new JsonSerializerSettings();
 
-            sett.MissingMemberHandling = MissingMemberHandling.Error;
-            sett.ContractResolver = new FailingContractResolver();
-            sett.Error = Error;
+            WebProxy proxy = null;
+            //WebProxy proxy = new WebProxy("http://127.0.0.1:8888");
 
-            Config = new TestConfig(serializer: JsonSerializer.Create(sett));
+            TestConfig = new TestConfig(serializer: JsonSerializer.Create(sett), proxy: proxy);
         }
 
-        private void Error(object sender, ErrorEventArgs errorEventArgs)
+        protected Task Verify<T>(T obj, Action<VerifySettings> configure = null)
         {
-            _errors.Add(errorEventArgs);
-            errorEventArgs.ErrorContext.Handled = true;
-        }
+            VerifySettings settings = VerifySettings;
 
-        public void Dispose()
-        {
-            if (_errors.Any())
+            if (configure != null)
             {
-                // Sort the errors
-                // Also deduplicate them, as there is no point in blasting us with multiple instances of the "same" error
-                Dictionary<string, ErrorEventArgs> missingFieldInCSharp = new Dictionary<string, ErrorEventArgs>();
-                Dictionary<string, ErrorEventArgs> missingPropertyInJson = new Dictionary<string, ErrorEventArgs>();
-                Dictionary<string, ErrorEventArgs> other = new Dictionary<string, ErrorEventArgs>();
+                settings = new VerifySettings(VerifySettings);
+                configure(settings);
+            }
 
-                foreach (ErrorEventArgs error in _errors)
+            return Verifier.Verify(obj, settings);
+        }
+
+        class DataSortingContractResolver : IContractResolver
+        {
+            private readonly IContractResolver _innerResolver;
+
+            public DataSortingContractResolver(IContractResolver innerResolver)
+            {
+                _innerResolver = innerResolver;
+            }
+
+            public JsonContract ResolveContract(Type type)
+            {
+                JsonContract contract = _innerResolver.ResolveContract(type);
+
+                // Add a callback that is invoked on each serialization of an object
+                // We do this to be able to sort lists
+                contract.OnSerializingCallbacks.Add(SerializingCallback);
+
+                return contract;
+            }
+
+            private static string[] _sortFieldsInOrder = { "CreditId", "Id", "Iso_3166_1", "EpisodeNumber", "SeasonNumber" };
+
+            private void SerializingCallback(object obj, StreamingContext context)
+            {
+                if (!(obj is IEnumerable) || obj is IDictionary)
+                    return;
+
+                Type objType = obj.GetType();
+                if (obj is IList objAsList)
                 {
-                    string key = error.ErrorContext.Path + " / " + error.ErrorContext.Member;
-                    string errorMessage = error.ErrorContext.Error.Message;
+                    Debug.Assert(objType.IsGenericType);
 
-                    key = NormalizeRegex.Replace(key, "[array]");
+                    Type innerType = objType.GetGenericArguments().First();
 
-                    if (errorMessage.StartsWith("Could not find member"))
-                    {
-                        // Field in JSON is missing in C#
-                        if (!_ignoreMissingCSharp.Contains(key) && !missingFieldInCSharp.ContainsKey(key))
-                            missingFieldInCSharp.Add(key, error);
-                    }
-                    else if (errorMessage.StartsWith("Required property"))
-                    {
-                        // Field in C# is missing in JSON
-                        if (!_ignoreMissingJson.Contains(key) && !missingPropertyInJson.ContainsKey(key))
-                            missingPropertyInJson.Add(key, error);
-                    }
+                    // Determine which comparer to use
+                    IComparer comparer = null;
+                    if (innerType.IsValueType)
+                        comparer = Comparer.Default;
                     else
                     {
-                        if (!other.ContainsKey(key))
-                            other.Add(key, error);
+                        foreach (string fieldName in _sortFieldsInOrder)
+                        {
+                            PropertyInfo prop = innerType.GetProperty(fieldName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
+                            if (prop == null)
+                                continue;
+
+                            comparer = new CompareObjectOnProperty(prop);
+                            break;
+                        }
+                    }
+
+                    if (comparer != null)
+                    {
+                        // Is sorted?
+                        bool isSorted = IsSorted(objAsList, comparer);
+
+                        if (!isSorted)
+                        {
+                            // Sort the list using our comparer
+                            List<object> sortList = objAsList.Cast<object>().ToList();
+                            sortList.Sort((x, y) => comparer.Compare(x, y));
+
+                            // Transfer values
+                            for (int i = 0; i < objAsList.Count; i++)
+                                objAsList[i] = sortList[i];
+                        }
                     }
                 }
+            }
 
-                // Combine all errors into a nice text
-                StringBuilder sb = new StringBuilder();
-
-                if (missingFieldInCSharp.Any())
+            private static bool IsSorted(IList list, IComparer comparer)
+            {
+                for (var i = 1; i < list.Count; i++)
                 {
-                    sb.AppendLine("Fields missing in C# (Present in JSON)");
-                    foreach (KeyValuePair<string, ErrorEventArgs> pair in missingFieldInCSharp)
-                        sb.AppendLine($"[{pair.Value.CurrentObject.GetType().Name}] {pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+                    var a = list[i - 1];
+                    var b = list[i];
 
-                    sb.AppendLine();
+                    if (comparer.Compare(a, b) > 0)
+                        return false;
                 }
 
-                if (missingPropertyInJson.Any())
-                {
-                    sb.AppendLine("Fields missing in JSON (Present in C#)");
-                    foreach (KeyValuePair<string, ErrorEventArgs> pair in missingPropertyInJson)
-                        sb.AppendLine($"[{pair.Value.CurrentObject.GetType().Name}] {pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+                return true;
+            }
 
-                    sb.AppendLine();
+            class CompareObjectOnProperty : IComparer
+            {
+                private readonly PropertyInfo _property;
+
+                public CompareObjectOnProperty(PropertyInfo property)
+                {
+                    _property = property;
                 }
 
-                if (other.Any())
+                public int Compare(object x, object y)
                 {
-                    sb.AppendLine("Other errors");
-                    foreach (KeyValuePair<string, ErrorEventArgs> pair in other)
-                        sb.AppendLine($"[{pair.Value.CurrentObject.GetType().Name}] {pair.Key}: {pair.Value.ErrorContext.Error.Message}");
+                    object? valX = _property.GetValue(x);
+                    object? valY = _property.GetValue(y);
 
-                    sb.AppendLine();
+                    return Comparer.Default.Compare(valX, valY);
                 }
-
-                if (missingFieldInCSharp.Any())
-                {
-                    // Helper line of properties that can be ignored
-                    sb.AppendLine("Ignore JSON props missing from C#:");
-                    sb.AppendLine(nameof(IgnoreMissingCSharp) + "(" + string.Join(", ", missingFieldInCSharp.OrderBy(s => s.Key).Select(s => $"\"{s.Key}\"")) + ");");
-
-                    sb.AppendLine();
-                }
-
-                if (missingPropertyInJson.Any())
-                {
-                    // Helper line of properties that can be ignored
-                    sb.AppendLine("Ignore C# props missing from JSON:");
-                    sb.AppendLine(nameof(IgnoreMissingJson) + "(" + string.Join(", ", missingPropertyInJson.OrderBy(s => s.Key).Select(s => $"\"{s.Key}\"")) + ");");
-
-                    sb.AppendLine();
-                }
-
-                if (missingFieldInCSharp.Any() || missingPropertyInJson.Any() || other.Any())
-                    throw new Exception(sb.ToString());
             }
         }
     }

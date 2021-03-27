@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
@@ -15,11 +15,11 @@ namespace TMDbLibTests
 {
     public class ClientTvSeasonTests : TestBase
     {
-        private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
+        private static readonly Dictionary<TvSeasonMethods, Func<TvSeason, object>> Methods;
 
-        public ClientTvSeasonTests()
+        static ClientTvSeasonTests()
         {
-            _methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>
+            Methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>
             {
                 [TvSeasonMethods.Credits] = tvSeason => tvSeason.Credits,
                 [TvSeasonMethods.Images] = tvSeason => tvSeason.Images,
@@ -31,46 +31,32 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestTvSeasonExtrasNone()
+        public async Task TestTvSeasonExtrasNoneAsync()
         {
-            // TMDb is sending an extra property
-            IgnoreMissingCSharp("_id / _id");
+            TvSeason tvSeason = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1);
 
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", " / account_states", " / credits", " / external_ids", " / images", " / videos");
-
-            TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1).Result;
-
-            TestBreakingBadBaseProperties(tvSeason);
+            await Verify(tvSeason);
 
             // Test all extras, ensure none of them are populated
-            foreach (Func<TvSeason, object> selector in _methods.Values)
-            {
+            foreach (Func<TvSeason, object> selector in Methods.Values)
                 Assert.Null(selector(tvSeason));
-            }
         }
 
         [Fact]
-        public void TestTvSeasonExtrasAccountState()
+        public async Task TestTvSeasonExtrasAccountState()
         {
-            // TMDb is sending an extra property
-            IgnoreMissingCSharp("_id / _id");
-
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / credits", " / external_ids", " / images", " / videos", "account_states / id");
-
             // Test the custom parsing code for Account State rating
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-            TvSeason season = Config.Client.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
+            TvSeason season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
             if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
             {
-                Config.Client.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5).Sync();
+                await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
 
                 // Allow TMDb to update cache
-                Thread.Sleep(2000);
+                await Task.Delay(2000);
 
-                season = Config.Client.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates).Result;
+                season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
             }
 
             Assert.NotNull(season.AccountStates);
@@ -79,179 +65,103 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestTvSeasonExtrasAll()
+        public async Task TestTvSeasonExtrasAllAsync()
         {
-            // TMDb is sending an extra property
-            IgnoreMissingCSharp("_id / _id");
-
-            IgnoreMissingJson("images / id", "account_states / id", "credits / id", "external_ids / id", "videos / id");
-
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Sync();
+            await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.FullerHouse, 1, 1, 5);
 
-            TvSeasonMethods combinedEnum = _methods.Keys.Aggregate((methods, tvSeasonMethods) => methods | tvSeasonMethods);
-            TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1, combinedEnum).Result;
-
-            TestBreakingBadBaseProperties(tvSeason);
-
-            TestMethodsHelper.TestAllNotNull(_methods, tvSeason);
+            await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetTvSeasonAsync(IdHelper.FullerHouse, 1, combined), season => Verify(season));
         }
 
         [Fact]
-        public void TestTvSeasonExtrasExclusive()
+        public async Task TestTvSeasonExtrasExclusiveAsync()
         {
-            // TMDb is sending an extra property
-            IgnoreMissingCSharp("_id / _id");
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", " / account_states", " / external_ids", " / images", " / videos", " / credits", "images / id", "external_ids / id", "videos / id", "credits / id", "account_states / id");
-
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetTvSeasonAsync(id, 1, extras).Result, IdHelper.BreakingBad);
+            await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, extras));
         }
 
         [Fact]
-        public void TestTvSeasonSeparateExtrasCredits()
+        public async Task TestTvSeasonSeparateExtrasCreditsAsync()
         {
-            Credits credits = Config.Client.GetTvSeasonCreditsAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.NotNull(credits);
-            Assert.NotNull(credits.Cast);
-            Assert.Equal("Walter White", credits.Cast[0].Character);
-            Assert.Equal("52542282760ee313280017f9", credits.Cast[0].CreditId);
-            Assert.Equal(17419, credits.Cast[0].Id);
-            Assert.Equal("Bryan Cranston", credits.Cast[0].Name);
-            Assert.NotNull(credits.Cast[0].ProfilePath);
-            Assert.Equal(0, credits.Cast[0].Order);
-            Assert.True(credits.Cast[0].Popularity > 0);
-            Assert.Equal("Acting", credits.Cast[0].KnownForDepartment);
-            Assert.Equal("Bryan Cranston", credits.Cast[0].OriginalName);
+            Credits credits = await TMDbClient.GetTvSeasonCreditsAsync(IdHelper.BreakingBad, 1);
 
-            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1223202);
-            Assert.NotNull(crewPersonId);
-
-            Assert.Equal(1223202, crewPersonId.Id);
-            Assert.Equal("Production", crewPersonId.Department);
-            Assert.Equal("Diane Mercer", crewPersonId.Name);
-            Assert.Equal("Producer", crewPersonId.Job);
-            Assert.Null(crewPersonId.ProfilePath);
+            await Verify(credits);
         }
 
         [Fact]
-        public void TestTvSeasonSeparateExtrasExternalIds()
+        public async Task TestTvSeasonSeparateExtrasExternalIdsAsync()
         {
-            ExternalIdsTvSeason externalIds = Config.Client.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1).Result;
+            ExternalIdsTvSeason externalIds = await TMDbClient.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1);
 
-            Assert.NotNull(externalIds);
-            Assert.Equal(3572, externalIds.Id);
-            Assert.Equal("/en/breaking_bad_season_1", externalIds.FreebaseId);
-            Assert.Equal("/m/05yy27m", externalIds.FreebaseMid);
-            Assert.Null(externalIds.TvrageId);
-            Assert.Equal("30272", externalIds.TvdbId);
+            await Verify(externalIds);
         }
 
         [Fact]
-        public void TestTvSeasonSeparateExtrasImages()
+        public async Task TestTvSeasonSeparateExtrasImagesAsync()
         {
-            PosterImages images = Config.Client.GetTvSeasonImagesAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.NotNull(images);
-            Assert.NotNull(images.Posters);
+            PosterImages images = await TMDbClient.GetTvSeasonImagesAsync(IdHelper.BreakingBad, 1);
+
+            Assert.NotEmpty(images.Posters);
+            TestImagesHelpers.TestImagePaths(images.Posters);
         }
 
         [Fact]
-        public void TestTvSeasonSeparateExtrasVideos()
+        public async Task TestTvSeasonSeparateExtrasVideosAsync()
         {
-            ResultContainer<Video> videos = Config.Client.GetTvSeasonVideosAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.NotNull(videos);
-            Assert.NotNull(videos.Results);
+            ResultContainer<Video> videos = await TMDbClient.GetTvSeasonVideosAsync(IdHelper.GameOfThrones, 1);
+            Video single = videos.Results.Single(s => s.Id == "5c9b7e95c3a36841a341b9c6");
+
+            await Verify(single);
         }
 
         [Fact]
-        public void TestTvSeasonAccountStateRatingSet()
+        public async Task TestTvSeasonAccountStateRatingSetAsync()
         {
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-            // Rate episode 1, 2 and 3 of BreakingBad
-            Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5).Result);
-            Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 2, 7).Result);
-            Assert.True(Config.Client.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 3, 3).Result);
+            await TestMethodsHelper.SetValidateRemoveTest(
+                () => TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 3, 5),
+                () => TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3),
+                async shouldBeSet =>
+                {
+                    ResultContainer<TvEpisodeAccountStateWithNumber> state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
 
-            // Wait for TMDb to un-cache our value
-            Thread.Sleep(2000);
-
-            // Fetch out the seasons state
-            ResultContainer<TvEpisodeAccountStateWithNumber> state = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.NotNull(state);
-
-            Assert.True(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
-            Assert.True(Math.Abs(7 - (state.Results.Single(s => s.EpisodeNumber == 2).Rating ?? 0)) < double.Epsilon);
-            Assert.True(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
-
-            // Test deleting Ratings
-            Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1).Result);
-            Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 2).Result);
-            Assert.True(Config.Client.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3).Result);
-
-            // Wait for TMDb to un-cache our value
-            Thread.Sleep(2000);
-
-            state = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1).Result;
-            Assert.NotNull(state);
-
-            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
-            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 2).Rating);
-            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 3).Rating);
+                    if (shouldBeSet)
+                        Assert.Contains(state.Results, x => x.EpisodeNumber == 3 && x.Rating.HasValue);
+                    else
+                        Assert.Contains(state.Results, x => x.EpisodeNumber == 3 && !x.Rating.HasValue);
+                });
         }
 
         [Fact]
-        public void TestTvSeasonGetChanges()
+        public async Task TestTvSeasonGetChangesAsync()
         {
-            ChangesContainer changes = Config.Client.GetTvSeasonChangesAsync(IdHelper.BreakingBadSeason1Id).Result;
-            Assert.NotNull(changes);
-            Assert.NotNull(changes.Changes);
-        }
+            TvShow latestTvShow = await TMDbClient.GetLatestTvShowAsync();
+            int latestSeasonId = latestTvShow.Seasons.Max(s => s.Id);
+            IList<Change> changes = await TMDbClient.GetTvSeasonChangesAsync(latestSeasonId);
 
-        private void TestBreakingBadBaseProperties(TvSeason tvSeason)
-        {
-            Assert.NotNull(tvSeason);
-            Assert.NotNull(tvSeason.Id);
-            Assert.Equal(1, tvSeason.SeasonNumber);
-            Assert.Equal("Season 1", tvSeason.Name);
-            Assert.NotNull(tvSeason.AirDate);
-            Assert.NotNull(tvSeason.Overview);
-            Assert.NotNull(tvSeason.PosterPath);
-
-            Assert.NotNull(tvSeason.Episodes);
-            Assert.Equal(7, tvSeason.Episodes.Count);
-            Assert.NotNull(tvSeason.Episodes[0].Id);
-            Assert.Equal(1, tvSeason.Episodes[0].EpisodeNumber);
-            Assert.Equal("Pilot", tvSeason.Episodes[0].Name);
-            Assert.NotNull(tvSeason.Episodes[0].Overview);
-            Assert.Null(tvSeason.Episodes[0].ProductionCode);
-            Assert.Equal(1, tvSeason.Episodes[0].SeasonNumber);
-            Assert.NotNull(tvSeason.Episodes[0].StillPath);
+            Assert.NotEmpty(changes);
         }
 
         [Fact]
-        public void TestTvSeasonMissing()
+        public async Task TestTvSeasonMissingAsync()
         {
-            TvSeason tvSeason = Config.Client.GetTvSeasonAsync(IdHelper.MissingID, 1).Result;
+            TvSeason tvSeason = await TMDbClient.GetTvSeasonAsync(IdHelper.MissingID, 1);
 
             Assert.Null(tvSeason);
         }
-        
+
         [Fact]
-        public void TestTvSeasonGetTvSeasonWithImageLanguage()
+        public async Task TestTvSeasonGetTvSeasonWithImageLanguageAsync()
         {
-            // TMDb is sending an extra property
-            IgnoreMissingCSharp("_id / _id", "episodes[array].show_id / show_id");
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / content_ratings", " / genre_ids", "images / id", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / recommendations", " / external_ids");
+            TvSeason resp = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvSeasonMethods.Images);
 
-            TvSeason resp = Config.Client.GetTvSeasonAsync(IdHelper.BreakingBad, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvSeasonMethods.Images).Result;
+            ImageData poster = resp.Images.Posters.Single(s => s.FilePath == "/uFh3OrBvkwKSU3N5y0XnXOhqBJz.jpg");
 
-            Assert.True(resp.Images.Posters.Count > 0);
-            Assert.True(resp.Images.Posters.All(p => p.Iso_639_1.Equals("en", StringComparison.OrdinalIgnoreCase)));
+            await Verify(poster);
         }
     }
 }

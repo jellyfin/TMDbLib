@@ -1,112 +1,83 @@
 using Xunit;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
-using System.Linq;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TMDbLibTests
 {
     public class ClientDiscoverTests : TestBase
     {
         [Fact]
-        public void TestDiscoverTvShowsNoParams()
+        public async Task TestDiscoverTvShowsNoParamsAsync()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
-            TestHelpers.SearchPages(i => Config.Client.DiscoverTvShowsAsync().Query(i).Result);
-
-            SearchContainer<SearchTv> result = Config.Client.DiscoverTvShowsAsync().Query().Result;
-
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Page);
-            Assert.NotNull(result.Results);
-            Assert.True(result.Results.Any());
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverTvShowsAsync().Query(i));
         }
 
         [Fact]
-        public void TestDiscoverTvShows()
+        public async Task TestDiscoverMoviesNoParamsAsync()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverMoviesAsync().Query(i));
+        }
 
-            DiscoverTv query = Config.Client.DiscoverTvShowsAsync()
+        [Fact]
+        public async Task TestDiscoverTvShowsAsync()
+        {
+            DiscoverTv query = TMDbClient.DiscoverTvShowsAsync()
                     .WhereVoteCountIsAtLeast(100)
                     .WhereVoteAverageIsAtLeast(2);
 
-            TestHelpers.SearchPages(i => query.Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
 
         [Fact]
-        public void TestDiscoverMoviesNoParams()
+        public async Task TestDiscoverMoviesAsync()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
-            TestHelpers.SearchPages(i => Config.Client.DiscoverMoviesAsync().Query(i).Result);
-
-            SearchContainer<SearchMovie> result = Config.Client.DiscoverMoviesAsync().Query().Result;
-
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Page);
-            Assert.NotNull(result.Results);
-            Assert.True(result.Results.Any());
-        }
-
-        [Fact]
-        public void TestDiscoverMovies()
-        {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync()
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync()
                     .WhereVoteCountIsAtLeast(1000)
                     .WhereVoteAverageIsAtLeast(2);
 
-            TestHelpers.SearchPages(i => query.Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
 
         [Fact]
-        public void TestDiscoverMoviesRegion()
+        public async Task TestDiscoverMoviesRegionAsync()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync()
+                .WhereReleaseDateIsInRegion("BR")
+                .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
 
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereReleaseDateIsInRegion("BR").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
-
-            TestHelpers.SearchPages(i => query.Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
 
         [Fact]
-        public void TestDiscoverMoviesLanguage()
+        public async Task TestDiscoverMoviesLanguageAsync()
         {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
+            SearchContainer<SearchMovie> query = await TMDbClient.DiscoverMoviesAsync()
+                .WhereOriginalLanguageIs("en-US")
+                .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
+                .Query();
 
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereLanguageIs("da-DK").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
+            SearchContainer<SearchMovie> queryDanish = await TMDbClient.DiscoverMoviesAsync()
+                .WhereLanguageIs("da-DK")
+                .WhereOriginalLanguageIs("en-US")
+                .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
+                .Query();
 
-            Assert.Equal("Skønheden og Udyret", query.Query(0).Result.Results[11].Title);
+            // Should be the same identities, but different titles
+            Assert.Equal(query.TotalResults, queryDanish.TotalResults);
 
-            TestHelpers.SearchPages(i => query.Query(i).Result);
-        }
+            for (int i = 0; i < query.Results.Count; i++)
+            {
+                SearchMovie a = query.Results[i];
+                SearchMovie b = queryDanish.Results[i];
 
-        [Theory]
-        [InlineData("ko")]
-        [InlineData("zh")]
-        public void TestDiscoverMoviesOriginalLanguage(string language)
-        {
-            // Ignore missing json
-            IgnoreMissingJson("results[array] / media_type");
-
-            DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
-            List<SearchMovie> results = query.Query(0).Result.Results;
-
-            Assert.NotEmpty(results);
-            Assert.All(results, item => Assert.Contains(language, item.OriginalLanguage));
+                Assert.Equal(a.Id, b.Id);
+                Assert.NotEqual(a.Title, b.Title);
+            }
         }
     }
 }

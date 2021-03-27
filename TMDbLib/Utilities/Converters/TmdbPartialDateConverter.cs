@@ -26,7 +26,7 @@ namespace TMDbLib.Utilities.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var date = value as DateTime?;
+            DateTime? date = value as DateTime?;
             writer.WriteValue(date?.ToString(CultureInfo.InvariantCulture));
         }
     }

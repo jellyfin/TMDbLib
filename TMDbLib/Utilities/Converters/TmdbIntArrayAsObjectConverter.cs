@@ -33,6 +33,9 @@ namespace TMDbLib.Utilities.Converters
                 return new List<int>();
             }
 
+            if (reader.TokenType == JsonToken.Null)
+                return null;
+
             throw new Exception("Unable to convert list of integers");
         }
 

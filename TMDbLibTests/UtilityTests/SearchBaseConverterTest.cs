@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
@@ -20,10 +21,9 @@ namespace TMDbLibTests.UtilityTests
             original.OriginalTitle = "Hello world";
 
             string json = JsonConvert.SerializeObject(original, settings);
-            SearchMovie result = JsonConvert.DeserializeObject<SearchBase>(json, settings) as SearchMovie;
+            SearchMovie result = (SearchMovie)JsonConvert.DeserializeObject<SearchBase>(json, settings);
 
             Assert.NotNull(result);
-            Assert.Equal(original.MediaType, result.MediaType);
             Assert.Equal(original.OriginalTitle, result.OriginalTitle);
         }
 
@@ -37,7 +37,7 @@ namespace TMDbLibTests.UtilityTests
             original.OriginalName = "Hello world";
 
             string json = JsonConvert.SerializeObject(original, settings);
-            SearchTv result = JsonConvert.DeserializeObject<SearchBase>(json, settings) as SearchTv;
+            SearchTv result = (SearchTv)JsonConvert.DeserializeObject<SearchBase>(json, settings);
 
             Assert.NotNull(result);
             Assert.Equal(original.MediaType, result.MediaType);
@@ -54,7 +54,7 @@ namespace TMDbLibTests.UtilityTests
             original.Name = "Hello world";
 
             string json = JsonConvert.SerializeObject(original, settings);
-            SearchPerson result = JsonConvert.DeserializeObject<SearchBase>(json, settings) as SearchPerson;
+            SearchPerson result = (SearchPerson)JsonConvert.DeserializeObject<SearchBase>(json, settings);
 
             Assert.NotNull(result);
             Assert.Equal(original.MediaType, result.MediaType);
@@ -65,10 +65,10 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the SearchBaseConverter
         /// </summary>
         [Fact]
-        public void TestSearchBaseConverter()
+        public async Task TestSearchBaseConverter()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchMultiAsync("Jobs", i).Sync());
-            SearchContainer<SearchBase> result = Config.Client.SearchMultiAsync("Jobs").Sync();
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMultiAsync("Jobs", i));
+            SearchContainer<SearchBase> result = await TMDbClient.SearchMultiAsync("Jobs");
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

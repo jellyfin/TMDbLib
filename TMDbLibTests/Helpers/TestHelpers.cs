@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Net;
+using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using Xunit;
 
@@ -8,56 +7,32 @@ namespace TMDbLibTests.Helpers
 {
     public static class TestHelpers
     {
-        public static bool InternetUriExists(Uri uri)
+        public static Task SearchPagesAsync<T>(Func<int, Task<SearchContainer<T>>> getter)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
-            req.Method = "HEAD";
-
-            try
-            {
-                using (req.GetResponseAsync().Sync())
-                {
-                    // It exists
-                    return true;
-                }
-            }
-            catch (WebException ex)
-            {
-                HttpWebResponse response = (HttpWebResponse)ex.Response;
-                if (response == null)
-                    Debug.WriteLine(ex.Status + ": " + uri);
-                else
-                    Debug.WriteLine(response.StatusCode + ": " + uri);
-                return false;
-            }
+            return SearchPagesAsync<SearchContainer<T>, T>(getter);
         }
 
-        public static void SearchPages<T>(Func<int, SearchContainer<T>> getter)
+        public static async Task SearchPagesAsync<TContainer, T>(Func<int, Task<TContainer>> getter) where TContainer : SearchContainer<T>
         {
             // Check page 1
-            SearchContainer<T> results = getter(1);
-
-            Assert.NotNull(results);
-            Assert.NotNull(results.Results);
+            TContainer results = await getter(1);
+            
             Assert.Equal(1, results.Page);
+            Assert.NotEmpty(results.Results);
             Assert.True(results.Results.Count > 0);
             Assert.True(results.TotalResults > 0);
             Assert.True(results.TotalPages > 0);
 
             // Check page 2
-            SearchContainer<T> results2 = getter(2);
-
-            Assert.NotNull(results2);
-            Assert.NotNull(results2.Results);
+            TContainer results2 = await getter(2);
+            
             Assert.Equal(2, results2.Page);
-            // The page counts often don't match due to caching on the api
-            //Assert.AreEqual(results.TotalResults, results2.TotalResults);
-            //Assert.AreEqual(results.TotalPages, results2.TotalPages);
 
+            // If page 1 has all results, page 2 must be empty - else not.
             if (results.Results.Count == results.TotalResults)
-                Assert.Equal(0, results2.Results.Count);
+                Assert.Empty(results2.Results);
             else
-                Assert.NotEqual(0, results2.Results.Count);
+                Assert.NotEmpty(results2.Results);
         }
     }
 }

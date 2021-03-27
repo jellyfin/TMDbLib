@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Certifications;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
@@ -10,43 +10,31 @@ namespace TMDbLibTests
     public class ClientCertificationsTests : TestBase
     {
         [Fact]
-        public void TestCertificationsListMovie()
+        public async Task TestCertificationsListMovieAsync()
         {
-            CertificationsContainer result = Config.Client.GetMovieCertificationsAsync().Sync();
-            Assert.NotNull(result);
-            Assert.NotNull(result.Certifications);
-            Assert.True(result.Certifications.Count > 1);
+            CertificationsContainer result = await TMDbClient.GetMovieCertificationsAsync();
+            Assert.NotEmpty(result.Certifications);
 
             List<CertificationItem> certAu = result.Certifications["AU"];
-            Assert.NotNull(certAu);
-            Assert.True(certAu.Count > 2);
+            Assert.NotEmpty(certAu);
 
             CertificationItem ratingE = certAu.Single(s => s.Certification == "E");
 
-            Assert.NotNull(ratingE);
-            Assert.Equal("E", ratingE.Certification);
-            Assert.Equal("Exempt from classification. Films that are exempt from classification must not contain contentious material (i.e. material that would ordinarily be rated M or higher).", ratingE.Meaning);
-            Assert.Equal(1, ratingE.Order);
+            await Verify(ratingE);
         }
 
         [Fact]
-        public void TestCertificationsListTv()
+        public async Task TestCertificationsListTvAsync()
         {
-            CertificationsContainer result = Config.Client.GetTvCertificationsAsync().Sync();
-            Assert.NotNull(result);
-            Assert.NotNull(result.Certifications);
-            Assert.True(result.Certifications.Count > 1);
+            CertificationsContainer result = await TMDbClient.GetTvCertificationsAsync();
+            Assert.NotEmpty(result.Certifications);
 
             List<CertificationItem> certUs = result.Certifications["US"];
-            Assert.NotNull(certUs);
-            Assert.True(certUs.Count > 2);
+            Assert.NotEmpty(certUs);
 
             CertificationItem ratingNr = certUs.SingleOrDefault(s => s.Certification == "NR");
-
-            Assert.NotNull(ratingNr);
-            Assert.Equal("NR", ratingNr.Certification);
-            Assert.Equal("No rating information.", ratingNr.Meaning);
-            Assert.Equal(0, ratingNr.Order);
+            
+            await Verify(ratingNr);
         }
     }
 }

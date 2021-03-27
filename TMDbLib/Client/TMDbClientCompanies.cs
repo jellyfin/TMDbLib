@@ -12,7 +12,24 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default(CancellationToken))
+        private async Task<T> GetCompanyMethodInternal<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null, CancellationToken cancellationToken = default) where T : new()
+        {
+            RestRequest req = _client.Create("company/{companyId}/{method}");
+            req.AddUrlSegment("companyId", companyId.ToString());
+            req.AddUrlSegment("method", companyMethod.GetDescription());
+
+            if (page >= 1)
+                req.AddParameter("page", page.ToString());
+            language = language ?? DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+                req.AddParameter("language", language);
+
+            T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
+
+            return resp;
+        }
+
+        public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("company/{companyId}");
             req.AddUrlSegment("companyId", companyId.ToString());
@@ -29,36 +46,19 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Company> resp = await req.ExecuteGet<Company>(cancellationToken).ConfigureAwait(false);
+            Company resp = await req.GetOfT<Company>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
 
-        private async Task<T> GetCompanyMethod<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null, CancellationToken cancellationToken = default(CancellationToken)) where T : new()
-        {
-            RestRequest req = _client.Create("company/{companyId}/{method}");
-            req.AddUrlSegment("companyId", companyId.ToString());
-            req.AddUrlSegment("method", companyMethod.GetDescription());
-
-            if (page >= 1)
-                req.AddParameter("page", page.ToString());
-            language = language ?? DefaultLanguage;
-            if (!string.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
-
-            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
-
-            return resp;
-        }
-
-        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default)
         {
             return await GetCompanyMoviesAsync(companyId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, string language, int page = 0, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, string language, int page = 0, CancellationToken cancellationToken = default)
         {
-            return await GetCompanyMethod<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language, cancellationToken).ConfigureAwait(false);
+            return await GetCompanyMethodInternal<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language, cancellationToken).ConfigureAwait(false);
         }
     }
 }

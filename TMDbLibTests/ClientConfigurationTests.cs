@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TMDbLib.Objects.Configuration;
 using Xunit;
 using TMDbLib.Objects.Timezones;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
@@ -14,72 +14,63 @@ namespace TMDbLibTests
     public class ClientConfigurationTests : TestBase
     {
         [Fact]
-        public void TestConfiguration()
+        public async Task TestConfigurationAsync()
         {
-            APIConfiguration result = Config.Client.GetAPIConfiguration().Sync();
+            APIConfiguration result = await TMDbClient.GetAPIConfiguration();
 
-            Assert.NotNull(result);
-
-            Assert.Contains(result.Images.BackdropSizes, c => c == "original");
+            await Verify(result);
         }
 
         [Fact]
-        public void TestPrimaryTranslations()
+        public async Task TestPrimaryTranslationsAsync()
         {
-            List<string> result = Config.Client.GetPrimaryTranslationsAsync().Sync();
+            List<string> result = await TMDbClient.GetPrimaryTranslationsAsync();
 
-            Assert.NotNull(result);
-
-            Assert.Contains(result, c => c == "da-DK");
+            Assert.Contains("da-DK", result);
         }
 
         [Fact]
-        public void TestCountryList()
+        public async Task TestCountryListAsync()
         {
-            List<Country> result = Config.Client.GetCountriesAsync().Sync();
+            List<Country> result = await TMDbClient.GetCountriesAsync();
 
-            Assert.NotNull(result);
-            Assert.True(result.Count > 200);
+            Assert.NotEmpty(result);
+            Country single = result.Single(s => s.EnglishName == "Denmark");
 
-            Assert.Contains(result, c => c.EnglishName == "Denmark" && c.Iso_3166_1 == "DK");
+            await Verify(single);
         }
 
         [Fact]
-        public void TestLanguageList()
+        public async Task TestLanguageListAsync()
         {
-            List<Language> result = Config.Client.GetLanguagesAsync().Sync();
+            List<Language> result = await TMDbClient.GetLanguagesAsync();
 
-            Assert.NotNull(result);
-            Assert.True(result.Count > 180);
+            Assert.NotEmpty(result);
+            Language single = result.Single(s => s.Name == "Dansk");
 
-            Assert.Contains(result, l => l.Name == "Dansk" && l.EnglishName == "Danish" && l.Iso_639_1 == "da");
+            await Verify(single);
         }
 
         [Fact]
-        public void TestTimezonesList()
+        public async Task TestTimezonesListAsync()
         {
-            Timezones result = Config.Client.GetTimezonesAsync().Sync();
+            Timezones result = await TMDbClient.GetTimezonesAsync();
 
-            Assert.NotNull(result);
-            Assert.True(result.List.Count > 200);
+            Assert.NotEmpty(result.List);
+            List<string> single = result.List["DK"];
 
-            List<string> item = result.List["DK"];
-            Assert.NotNull(item);
-            Assert.Equal(1, item.Count);
-            Assert.Equal("Europe/Copenhagen", item[0]);
+            await Verify(single);
         }
 
         [Fact]
-        public void TestJobList()
+        public async Task TestJobListAsync()
         {
-            List<Job> jobs = Config.Client.GetJobsAsync().Sync();
+            List<Job> jobs = await TMDbClient.GetJobsAsync();
 
-            Assert.NotNull(jobs);
-            Assert.True(jobs.Count > 0);
+            Assert.NotEmpty(jobs);
+            Job single = jobs.Single(s => s.Department == "Writing");
 
-            Assert.True(jobs.All(job => !string.IsNullOrEmpty(job.Department)));
-            Assert.True(jobs.All(job => job.Jobs != null));
-            Assert.True(jobs.All(job => job.Jobs.Count > 0));
+            await Verify(single);
         }
     }
 }

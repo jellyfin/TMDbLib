@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
@@ -11,94 +11,60 @@ namespace TMDbLibTests
 {
     public class ClientCollectionTests : TestBase
     {
-        private static Dictionary<CollectionMethods, Func<Collection, object>> _methods;
+        private static readonly Dictionary<CollectionMethods, Func<Collection, object>> Methods;
 
-        public ClientCollectionTests()
+        static ClientCollectionTests()
         {
-            _methods = new Dictionary<CollectionMethods, Func<Collection, object>>
+            Methods = new Dictionary<CollectionMethods, Func<Collection, object>>
             {
                 [CollectionMethods.Images] = collection => collection.Images
             };
         }
 
         [Fact]
-        public void TestCollectionsExtrasNone()
+        public async Task TestCollectionsExtrasNone()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", "parts[array] / media_type");
-
-            Collection collection = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
-
-            Assert.NotNull(collection);
-            Assert.Equal("James Bond Collection", collection.Name);
-            Assert.NotNull(collection.Parts);
-            Assert.True(collection.Parts.Count > 0);
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
 
             // Test all extras, ensure none of them exist
-            foreach (Func<Collection, object> selector in _methods.Values)
-            {
+            foreach (Func<Collection, object> selector in Methods.Values)
                 Assert.Null(selector(collection));
-            }
         }
 
         [Fact]
-        public void TestCollectionMissing()
+        public async Task TestCollectionMissing()
         {
-            Collection collection = Config.Client.GetCollectionAsync(IdHelper.MissingID).Result;
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.MissingID);
 
             Assert.Null(collection);
         }
 
         [Fact]
-        public void TestCollectionsParts()
+        public async Task TestCollectionsParts()
         {
-            // We will intentionally ignore errors reg. missing JSON as we do not request it
-            IgnoreMissingJson(" / images", "parts[array] / media_type");
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
 
-            Collection collection = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
-
-            Assert.NotNull(collection);
-            Assert.Equal("James Bond Collection", collection.Name);
-
-            Assert.NotNull(collection.Parts);
-            Assert.True(collection.Parts.Count > 0);
-
-            Assert.Contains(collection.Parts, movie => movie.Title == "Live and Let Die");
-            Assert.Contains(collection.Parts, movie => movie.Title == "Dr. No");
+            await Verify(collection);
         }
 
         [Fact]
-        public void TestCollectionsExtrasExclusive()
+        public async Task TestCollectionsExtrasExclusive()
         {
-            // Ignore missing json
-            IgnoreMissingJson("parts[array] / media_type");
-
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetCollectionAsync(id, extras).Result, IdHelper.JamesBondCollection);
+            await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, extras));
         }
 
         [Fact]
-        public void TestCollectionsExtrasAll()
+        public async Task TestCollectionsExtrasAll()
         {
-            // Ignore missing json
-            IgnoreMissingJson("parts[array] / media_type");
-
-            CollectionMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Collection item = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, combinedEnum).Result;
-
-            TestMethodsHelper.TestAllNotNull(_methods, item);
+            await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, combined), async collection => await Verify(collection));
         }
 
         [Fact]
-        public void TestCollectionsImages()
+        public async Task TestCollectionsImagesAsync()
         {
-            // Get config
-            Config.Client.GetConfigAsync().Sync();
+            ImagesWithId images = await TMDbClient.GetCollectionImagesAsync(IdHelper.BackToTheFutureCollection);
 
-            // Test image url generator
-            ImagesWithId images = Config.Client.GetCollectionImagesAsync(IdHelper.JamesBondCollection).Result;
-
-            Assert.Equal(IdHelper.JamesBondCollection, images.Id);
-            TestImagesHelpers.TestImages(Config, images);
+            TestImagesHelpers.TestImagePaths(images);
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using TMDbLib.Objects.General;
+﻿using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.TvShows
 {

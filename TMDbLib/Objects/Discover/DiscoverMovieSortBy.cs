@@ -1,11 +1,9 @@
-﻿using System;
-using TMDbLib.Utilities;
+﻿using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Discover
 {
     public enum DiscoverMovieSortBy
     {
-        [Obsolete]
         Undefined,
         [EnumValue("popularity.asc")]
         Popularity,

@@ -9,65 +9,51 @@ namespace TMDbLibTests
     public class ClientFindTests : TestBase
     {
         [Fact]
-        public void TestFindImdbMovie()
+        public async Task TestFindImdbMovie()
         {
-            // Ignore missing json
-            IgnoreMissingJson("movie_results[array] / media_type", "movie_results[array] / popularity");
+            FindContainer result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbTerminatorId);
 
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbTerminatorId);
-            Assert.Equal(1, result.Result.MovieResults.Count);
-            Assert.Equal(IdHelper.TmdbTerminatorId, result.Result.MovieResults[0].Id);
+            await Verify(result);
         }
 
         [Fact]
-        public void TestFindImdbPerson()
+        public async Task TestFindImdbPerson()
         {
-            // Ignore missing json
-            IgnoreMissingJson("person_results[array] / media_type", " / popularity", "person_results[array] / popularity");
-
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis);
-            Assert.Equal(1, result.Result.PersonResults.Count);
-            Assert.Equal(IdHelper.BruceWillis, result.Result.PersonResults[0].Id);
+            FindContainer result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis);
+            
+            await Verify(result);
         }
 
         [Fact]
-        public void TestFindImdbTvShowEpisode()
+        public async Task TestFindImdbTvShowEpisode()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadSeason1Episode1Id);
-            Assert.Equal(1, result.Result.TvEpisode.Count);
-            Assert.Equal(IdHelper.BreakingBadSeason1Episode1Id, result.Result.TvEpisode[0].Id);
+            FindContainer result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadSeason1Episode1Id);
+            
+            await Verify(result);
         }
 
         [Fact]
-        public void TestFindImdbTvShowSeason()
+        public async Task TestFindImdbTvShowSeasonAsync()
         {
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id);
-            Assert.Equal(1, result.Result.TvEpisode.Count);
-
-            Assert.Equal(1, result.Result.TvSeason.Count);
-            Assert.Equal(IdHelper.BreakingBadSeason1Id, result.Result.TvSeason[0].Id);
+            FindContainer result =  await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id);
+           
+            await Verify(result);
         }
 
         [Fact]
-        public void TestFindTvdbTvShow()
+        public async Task TestFindTvdbTvShowAsync()
         {
-            // Ignore missing json
-            IgnoreMissingJson("tv_results[array] / media_type", "tv_results[array] / popularity");
-
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId);
-            Assert.Equal(1, result.Result.TvResults.Count);
-            Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
+            FindContainer result = await  TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId);
+           
+            await Verify(result);
         }
 
         [Fact]
-        public void TestFindImdbTvShow()
+        public async Task TestFindImdbTvShowAsync()
         {
-            // Ignore missing json
-            IgnoreMissingJson("tv_results[array] / media_type", "tv_results[array] / popularity");
-
-            Task<FindContainer> result = Config.Client.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId);
-            Assert.Equal(1, result.Result.TvResults.Count);
-            Assert.Equal(IdHelper.TmdbBreakingBadId, result.Result.TvResults[0].Id);
+            FindContainer result =  await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId);
+           
+            await Verify(result);
         }
     }
 }

@@ -11,16 +11,16 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void EnumDescriptionNonEnumTest()
         {
-            EnumTestStruct strct = new EnumTestStruct();
+            EnumTestStruct @struct = new EnumTestStruct();
 
-            Assert.Throws<ArgumentException>(() => strct.GetDescription());
+            Assert.Throws<ArgumentException>(() => @struct.GetDescription());
         }
 
         [Fact]
         public void EnumDescriptionNonDescriptionTest()
         {
-            EnumTestEnum enm = EnumTestEnum.A;
-            string s = enm.GetDescription();
+            EnumTestEnum @enum = EnumTestEnum.A;
+            string s = @enum.GetDescription();
 
             Assert.Equal("A", s);
         }
@@ -28,8 +28,8 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void EnumDescriptionTest()
         {
-            EnumTestEnum enm = EnumTestEnum.B;
-            string s = enm.GetDescription();
+            EnumTestEnum @enum = EnumTestEnum.B;
+            string s = @enum.GetDescription();
 
             Assert.Equal("B-Description", s);
         }

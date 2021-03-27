@@ -7,7 +7,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        public async Task<Review> GetReviewAsync(string reviewId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Review> GetReviewAsync(string reviewId, CancellationToken cancellationToken = default)
         {
             RestRequest request  = _client.Create("review/{reviewId}");
             request.AddUrlSegment("reviewId", reviewId);
@@ -15,7 +15,7 @@ namespace TMDbLib.Client
             // TODO: Dateformat?
             //request.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Review> resp = await request.ExecuteGet<Review>(cancellationToken).ConfigureAwait(false);
+            Review resp = await request.GetOfT<Review>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }

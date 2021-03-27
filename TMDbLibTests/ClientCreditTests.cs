@@ -1,8 +1,6 @@
-using System;
-using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Credit;
-using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -11,71 +9,33 @@ namespace TMDbLibTests
     public class ClientCreditTests : TestBase
     {
         [Fact]
-        public void TestGetCreditTv()
+        public async Task TestGetCreditTv()
         {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
 
-            Assert.NotNull(result);
-            Assert.Equal(CreditType.Cast, result.CreditType);
-            Assert.Equal("Actors", result.Department);
-            Assert.Equal("Actor", result.Job);
-            Assert.Equal(MediaType.Tv, result.MediaType);
-            Assert.Equal(IdHelper.BruceWillisMiamiVice, result.Id);
+            // Episode must exist
+            Assert.Contains(result.Media.Episodes, s => s.Name == "No Exit");
 
-            Assert.NotNull(result.Person);
-            Assert.Equal("Bruce Willis", result.Person.Name);
-            Assert.Equal(62, result.Person.Id);
-
-            Assert.NotNull(result.Media);
-            Assert.Equal(1908, result.Media.Id);
-            Assert.Equal("Miami Vice", result.Media.Name);
-            Assert.Equal("Miami Vice", result.Media.OriginalName);
-            Assert.Equal("", result.Media.Character);
+            await Verify(result);
         }
 
         [Fact]
-        public void TestMissingCredit()
+        public async Task TestMissingCredit()
         {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.MissingID.ToString()).Result;
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString());
 
             Assert.Null(result);
         }
 
         [Fact]
-        public void TestGetCreditEpisode()
+        public async Task TestGetCreditSeasons()
         {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse);
 
-            Assert.NotNull(result);
-            Assert.NotNull(result.Media);
-            Assert.NotNull(result.Media.Episodes);
+            // Season must exist
+            Assert.Contains(result.Media.Seasons, s => s.SeasonNumber == 1);
 
-            CreditEpisode item = result.Media.Episodes.SingleOrDefault(s => s.Name == "No Exit");
-            Assert.NotNull(item);
-
-            Assert.Equal(new DateTime(1984, 11, 9), item.AirDate);
-            Assert.Equal(8, item.EpisodeNumber);
-            Assert.Equal("No Exit", item.Name);
-            Assert.Equal("Crockett attempts to help an old flame free herself from a racketeer, then is framed for taking bribes. Martin Castillo becomes the squad's new Lieutenant.", item.Overview);
-            Assert.Equal(1, item.SeasonNumber);
-            Assert.True(TestImagesHelpers.TestImagePath(item.StillPath), "item.StillPath was not a valid image path, was: " + item.StillPath);
-        }
-
-        [Fact]
-        public void TestGetCreditSeasons()
-        {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.HughLaurieHouse).Result;
-
-            Assert.NotNull(result);
-            Assert.NotNull(result.Media);
-            Assert.NotNull(result.Media.Seasons);
-
-            CreditSeason item = result.Media.Seasons.SingleOrDefault(s => s.SeasonNumber == 1);
-            Assert.NotNull(item);
-
-            Assert.Equal(new DateTime(2004, 11, 16), item.AirDate);
-            Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
-            Assert.Equal(1, item.SeasonNumber);
+            await Verify(result);
         }
     }
 }

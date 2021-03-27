@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
@@ -19,9 +20,11 @@ namespace TMDbLibTests.UtilityTests
 
             SearchMovie originalMedia = new SearchMovie { OriginalTitle = "Hello world" };
 
-            TaggedImage original = new TaggedImage();
-            original.MediaType = MediaType.Movie;
-            original.Media = originalMedia;
+            TaggedImage original = new TaggedImage
+            {
+                MediaType = originalMedia.MediaType,
+                Media = originalMedia
+            };
 
             string json = JsonConvert.SerializeObject(original, settings);
             TaggedImage result = JsonConvert.DeserializeObject<TaggedImage>(json, settings);
@@ -65,21 +68,25 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the TaggedImageConverter
         /// </summary>
         [Fact]
-        public void TestJsonTaggedImageConverter()
+        public async Task TestJsonTaggedImageConverter()
         {
-            // Ignore fields not set
-            IgnoreMissingCSharp("_id / _id", "adult / adult", "backdrop_path / backdrop_path", "first_air_date / first_air_date", "genre_ids / genre_ids", "name / name", "origin_country / origin_country", "original_language / original_language", "original_name / original_name", "original_title / original_title", "overview / overview", "poster_path / poster_path", "release_date / release_date", "title / title", "video / video", "vote_average / vote_average", "vote_count / vote_count");
-            IgnoreMissingJson(" / media_type");
-
             // Get images
-            SearchContainerWithId<TaggedImage> result = Config.Client.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1).Sync();
+            SearchContainerWithId<TaggedImage> result = await TMDbClient.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);
             Assert.Equal(IdHelper.HughLaurie, result.Id);
 
-            Assert.Contains(result.Results, item => item.MediaType == MediaType.Tv && item.Media is SearchTv);
-            Assert.Contains(result.Results, item => item.MediaType == MediaType.Movie && item.Media is SearchMovie);
+            Assert.All(result.Results, item =>
+            {
+                if (item.MediaType == MediaType.Tv)
+                    Assert.IsType<SearchTv>(item.Media);
+            });
+            Assert.All(result.Results, item =>
+            {
+                if (item.MediaType == MediaType.Movie)
+                    Assert.IsType<SearchMovie>(item.Media);
+            });
         }
     }
 }

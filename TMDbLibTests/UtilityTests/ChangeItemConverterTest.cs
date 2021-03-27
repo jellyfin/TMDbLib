@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Utilities.Converters;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -13,7 +13,7 @@ namespace TMDbLibTests.UtilityTests
     public class ChangeItemConverterTest : TestBase
     {
         [Fact]
-        public void ChangeItemConverter_ChangeItemAdded()
+        public async Task ChangeItemConverter_ChangeItemAdded()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new ChangeItemConverter());
@@ -25,13 +25,11 @@ namespace TMDbLibTests.UtilityTests
             string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemAdded result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemAdded;
 
-            Assert.NotNull(result);
-            Assert.Equal(original.Iso_639_1, result.Iso_639_1);
-            Assert.Equal(original.Value, result.Value);
+            await Verify(result);
         }
 
         [Fact]
-        public void ChangeItemConverter_ChangeItemCreated()
+        public async Task ChangeItemConverter_ChangeItemCreated()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new ChangeItemConverter());
@@ -41,13 +39,12 @@ namespace TMDbLibTests.UtilityTests
 
             string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemCreated result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemCreated;
-
-            Assert.NotNull(result);
-            Assert.Equal(original.Iso_639_1, result.Iso_639_1);
+            
+            await Verify(result);
         }
 
         [Fact]
-        public void ChangeItemConverter_ChangeItemDeleted()
+        public async Task ChangeItemConverter_ChangeItemDeleted()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new ChangeItemConverter());
@@ -58,14 +55,12 @@ namespace TMDbLibTests.UtilityTests
 
             string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemDeleted result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemDeleted;
-
-            Assert.NotNull(result);
-            Assert.Equal(original.Iso_639_1, result.Iso_639_1);
-            Assert.Equal(original.OriginalValue, result.OriginalValue);
+            
+            await Verify(result);
         }
 
         [Fact]
-        public void ChangeItemConverter_ChangeItemUpdated()
+        public async Task ChangeItemConverter_ChangeItemUpdated()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new ChangeItemConverter());
@@ -77,27 +72,19 @@ namespace TMDbLibTests.UtilityTests
 
             string json = JsonConvert.SerializeObject(original, settings);
             ChangeItemUpdated result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemUpdated;
-
-            Assert.NotNull(result);
-            Assert.Equal(original.Iso_639_1, result.Iso_639_1);
-            Assert.Equal(original.OriginalValue, result.OriginalValue);
-            Assert.Equal(original.Value, result.Value);
+            
+            await Verify(result);
         }
 
         /// <summary>
         /// Tests the ChangeItemConverter
         /// </summary>
         [Fact]
-        public void TestChangeItemConverter()
+        public async Task TestChangeItemConverter()
         {
-            // Not all ChangeItem's have an iso_639_1 or an original_value
-            IgnoreMissingJson(" / iso_639_1", " / original_value");
+            Movie latestMovie = await TMDbClient.GetMovieLatestAsync();
+            IList<Change> changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id);
 
-            // Ignore missing movie properties
-            IgnoreMissingJson(" / account_states", " / alternative_titles", " / changes", " / credits", " / images", " / keywords", " / lists", " / release_dates", " / releases", " / reviews", " / similar", " / translations", " / videos", " / external_ids", " / recommendations");
-
-            Movie latestMovie = Config.Client.GetMovieLatestAsync().Sync();
-            List<Change> changes = Config.Client.GetMovieChangesAsync(latestMovie.Id).Sync();
             List<ChangeItemBase> changeItems = changes.SelectMany(s => s.Items).ToList();
 
             ChangeAction[] actions = { ChangeAction.Added, ChangeAction.Created, ChangeAction.Updated };

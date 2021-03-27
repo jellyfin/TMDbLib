@@ -7,13 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="JsonHelpers\*.verified.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TMDbLib\TMDbLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" PrivateAssets="All" />
+    <PackageReference Include="Verify.Xunit" Version="11.1.0" />
   </ItemGroup>
 
   <ItemGroup>

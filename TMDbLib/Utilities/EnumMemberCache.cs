@@ -65,7 +65,7 @@ namespace TMDbLib.Utilities
                 }
             }
 
-            return default(T);
+            return default;
         }
 
         public static object GetValue(string input, Type type)
