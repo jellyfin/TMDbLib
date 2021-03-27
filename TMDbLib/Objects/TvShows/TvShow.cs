@@ -119,6 +119,9 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("production_companies")]
         public List<ProductionCompany> ProductionCompanies { get; set; }
 
+        [JsonProperty("production_countries")]
+        public List<ProductionCountry> ProductionCountries { get; set; }
+
         [JsonProperty("recommendations")]
         public ResultContainer<TvShow> Recommendations { get; set; }
 
