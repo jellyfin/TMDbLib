@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
@@ -16,7 +15,7 @@ namespace TMDbLibTests
 {
     public class ClientAccountTests : TestBase
     {
-        public ClientAccountTests() : base()
+        public ClientAccountTests()
         {
             if (string.IsNullOrWhiteSpace(TestConfig.UserSessionId))
                 throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");
@@ -34,177 +33,109 @@ namespace TMDbLibTests
         public async Task TestAccountGetDetailsUserAccount()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-            AccountDetails account = await TMDbClient.AccountGetDetailsAsync();
 
-            // Naturally the specified account must have these values populated for the test to pass
-            Assert.NotNull(account);
-            Assert.True(account.Id > 1);
-            Assert.Equal("Test Name", account.Name);
-            Assert.Equal("TMDbTestAccount", account.Username);
-            Assert.Equal("BE", account.Iso_3166_1);
-            Assert.Equal("en", account.Iso_639_1);
-
-            Assert.NotNull(account.Avatar);
-            Assert.NotNull(account.Avatar.Gravatar);
-            Assert.Equal("7cf5357dbc2014cbd616257c358ea0a1", account.Avatar.Gravatar.Hash);
+            await Verify(TMDbClient.ActiveAccount);
         }
 
         [Fact]
         public async Task TestAccountAccountGetLists()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetListsAsync(i));
-            AccountList list = (await TMDbClient.AccountGetListsAsync()).Results[0];
 
-            Assert.NotNull(list.Id);
-            Assert.NotNull(list.Name);
-            Assert.Null(list.PosterPath);
-            Assert.NotNull(list.Description);
-            Assert.NotNull(list.Iso_639_1);
+            SearchContainer<AccountList> result = await TMDbClient.AccountGetListsAsync();
+
+            Assert.NotEmpty(result.Results);
+
+            AccountList single = result.Results.Single(s => s.Id == 1724);
+
+            await Verify(single);
+        }
+
+        [Fact(Skip = "TMDb has an issue in pagination of AccountGetListsAsync")]
+        public async Task TestAccountAccountGetListsPaged()
+        {
+            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetListsAsync(i));
         }
 
         [Fact]
         public async Task TestAccountGetFavoriteMovies()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+
             await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
-            SearchMovie movie = (await TMDbClient.AccountGetFavoriteMoviesAsync()).Results[0];
 
             // Requires that you have marked at least one movie as favorite else this test will fail
-            Assert.True(movie.Id > 0);
-            Assert.NotNull(movie.Title);
-            Assert.NotNull(movie.PosterPath);
-            Assert.NotNull(movie.BackdropPath);
-            Assert.NotNull(movie.OriginalTitle);
-            Assert.NotNull(movie.Overview);
-            Assert.NotNull(movie.OriginalLanguage);
-            Assert.NotNull(movie.ReleaseDate);
-            Assert.True(movie.VoteCount > 0);
-            Assert.True(movie.VoteAverage > 0);
-            Assert.True(movie.Popularity > 0);
+            SearchContainer<SearchMovie> movies = await TMDbClient.AccountGetFavoriteMoviesAsync();
+            SearchMovie movie = movies.Results.Single(s => s.Id == IdHelper.Avatar);
 
-            Assert.NotNull(movie.GenreIds);
-            Assert.True(movie.GenreIds.Any());
+            await Verify(movie, x => x.IgnoreProperty<SearchMovie>(n => n.VoteCount, n => n.Popularity));
         }
 
         [Fact]
         public async Task TestAccountGetFavoriteTv()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+
             await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteTvAsync(i));
-            SearchTv tvShow = (await TMDbClient.AccountGetFavoriteTvAsync()).Results[0];
 
-            // Requires that you have marked at least one movie as favorite else this test will fail
-            Assert.True(tvShow.Id > 0);
-            Assert.NotNull(tvShow.Name);
-            Assert.NotNull(tvShow.PosterPath);
-            Assert.NotNull(tvShow.BackdropPath);
-            Assert.NotNull(tvShow.OriginalName);
-            Assert.NotNull(tvShow.Overview);
-            Assert.NotNull(tvShow.OriginalLanguage);
-            Assert.NotNull(tvShow.FirstAirDate);
-            Assert.True(tvShow.VoteCount > 0);
-            Assert.True(tvShow.VoteAverage > 0);
-            Assert.True(tvShow.Popularity > 0);
+            SearchContainer<SearchTv> tvShows = await TMDbClient.AccountGetFavoriteTvAsync();
+            SearchTv tvShow = tvShows.Results.Single(s => s.Id == IdHelper.BreakingBad);
 
-            Assert.NotNull(tvShow.GenreIds);
-            Assert.True(tvShow.GenreIds.Any());
+            await Verify(tvShow);
         }
 
         [Fact]
         public async Task TestAccountGetMovieWatchlist()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
-            SearchMovie movie = (await TMDbClient.AccountGetFavoriteMoviesAsync()).Results[0];
 
-            // Requires that you have added at least one movie to your watchlist else this test will fail
-            Assert.True(movie.Id > 0);
-            Assert.NotNull(movie.Title);
-            Assert.NotNull(movie.PosterPath);
-            Assert.NotNull(movie.BackdropPath);
-            Assert.NotNull(movie.OriginalTitle);
-            Assert.NotNull(movie.Overview);
-            Assert.NotNull(movie.OriginalLanguage);
-            Assert.NotNull(movie.ReleaseDate);
-            Assert.True(movie.VoteCount > 0);
-            Assert.True(movie.VoteAverage > 0);
-            Assert.True(movie.Popularity > 0);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetMovieWatchlistAsync(i));
 
-            Assert.NotNull(movie.GenreIds);
-            Assert.True(movie.GenreIds.Any());
+            SearchContainer<SearchMovie> watchlist = await TMDbClient.AccountGetMovieWatchlistAsync();
+            SearchMovie movie = watchlist.Results.Single(s => s.Id == 100042);
+
+            await Verify(movie);
         }
 
         [Fact]
         public async Task TestAccountGetTvWatchlist()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+
             await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetTvWatchlistAsync(i));
-            SearchTv tvShow = (await TMDbClient.AccountGetTvWatchlistAsync()).Results[0];
 
-            // Requires that you have added at least one movie to your watchlist else this test will fail
-            Assert.True(tvShow.Id > 0);
-            Assert.NotNull(tvShow.Name);
-            Assert.NotNull(tvShow.PosterPath);
-            Assert.NotNull(tvShow.BackdropPath);
-            Assert.NotNull(tvShow.OriginalName);
-            Assert.NotNull(tvShow.Overview);
-            Assert.NotNull(tvShow.OriginalLanguage);
-            Assert.NotNull(tvShow.FirstAirDate);
-            Assert.True(tvShow.VoteCount > 0);
-            Assert.True(tvShow.VoteAverage > 0);
-            Assert.True(tvShow.Popularity > 0);
+            SearchContainer<SearchTv> tvShows = await TMDbClient.AccountGetTvWatchlistAsync();
+            SearchTv tvShow = tvShows.Results.Single(s => s.Id == 2691);
 
-            Assert.NotNull(tvShow.GenreIds);
-            Assert.True(tvShow.GenreIds.Any());
+            await Verify(tvShow);
         }
 
         [Fact]
         public async Task TestAccountGetRatedMovies()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+
             await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
-            SearchMovie movie = (await TMDbClient.AccountGetFavoriteMoviesAsync()).Results[0];
 
-            // Requires that you have rated at least one movie else this test will fail
-            Assert.True(movie.Id > 0);
-            Assert.NotNull(movie.Title);
-            Assert.NotNull(movie.PosterPath);
-            Assert.NotNull(movie.BackdropPath);
-            Assert.NotNull(movie.OriginalTitle);
-            Assert.NotNull(movie.Overview);
-            Assert.NotNull(movie.OriginalLanguage);
-            Assert.NotNull(movie.ReleaseDate);
-            Assert.True(movie.VoteCount > 0);
-            Assert.True(movie.VoteAverage > 0);
-            Assert.True(movie.Popularity > 0);
+            SearchContainer<SearchMovie> movies = await TMDbClient.AccountGetFavoriteMoviesAsync();
+            SearchMovie movie = movies.Results.Single(s => s.Id == IdHelper.Avatar);
 
-            Assert.NotNull(movie.GenreIds);
-            Assert.True(movie.GenreIds.Any());
+            await Verify(movie);
         }
 
         [Fact]
         public async Task TestAccountGetRatedTv()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+
             await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowsAsync(i));
-            AccountSearchTv tvShow = (await TMDbClient.AccountGetRatedTvShowsAsync()).Results[0];
 
-            // Requires that you have rated at least one movie else this test will fail
-            Assert.True(tvShow.Id > 0);
-            Assert.NotNull(tvShow.Name);
-            Assert.NotNull(tvShow.PosterPath);
-            Assert.NotNull(tvShow.BackdropPath);
-            Assert.NotNull(tvShow.OriginalName);
-            Assert.NotNull(tvShow.Overview);
-            Assert.NotNull(tvShow.OriginalLanguage);
-            Assert.NotNull(tvShow.FirstAirDate);
-            Assert.True(tvShow.VoteCount > 0);
-            Assert.True(tvShow.VoteAverage > 0);
-            Assert.True(tvShow.Popularity > 0);
+            SearchContainer<AccountSearchTv> tvShows = await TMDbClient.AccountGetRatedTvShowsAsync();
+            AccountSearchTv tvShow = tvShows.Results.Single(s => s.Id == IdHelper.BigBangTheory);
 
-            Assert.NotNull(tvShow.GenreIds);
-            Assert.True(tvShow.GenreIds.Any());
+            await Verify(tvShow);
         }
 
         [Fact]
@@ -212,20 +143,13 @@ namespace TMDbLibTests
         {
             // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowEpisodesAsync(i));
-            AccountSearchTvEpisode tvEpisode = (await TMDbClient.AccountGetRatedTvShowEpisodesAsync()).Results[0];
 
-            // Requires that you have rated at least one movie else this test will fail
-            Assert.True(tvEpisode.Id > 0);
-            Assert.True(tvEpisode.ShowId > 0);
-            Assert.True(tvEpisode.EpisodeNumber > 0);
-            Assert.True(tvEpisode.SeasonNumber > 0);
-            Assert.NotNull(tvEpisode.Name);
-            Assert.NotNull(tvEpisode.AirDate);
-            Assert.NotNull(tvEpisode.StillPath);
-            Assert.True(tvEpisode.VoteCount > 0);
-            Assert.True(tvEpisode.VoteAverage > 0);
-            Assert.True(tvEpisode.Rating > 0);
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowEpisodesAsync(i));
+
+            SearchContainer<AccountSearchTvEpisode> tvEpisodes = await TMDbClient.AccountGetRatedTvShowEpisodesAsync();
+            AccountSearchTvEpisode tvEpisode = tvEpisodes.Results.Single(s => s.Id == IdHelper.BreakingBadSeason1Episode1Id);
+
+            await Verify(tvEpisode);
         }
 
         [Fact]
@@ -351,7 +275,7 @@ namespace TMDbLibTests
         private async Task<bool> DoesListContainSpecificMovie(int movieId, Func<int, Task<IEnumerable<int>>> listGetter)
         {
             int page = 1;
-            List<int> originalList = (await listGetter(1)).ToList();
+            List<int> originalList = (await listGetter(page)).ToList();
             while (originalList != null && originalList.Any())
             {
                 // Check if the current result page contains the relevant movie

@@ -169,12 +169,6 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<List<Change>> GetMovieChangesAsync(int movieId, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default)
-        {
-            ChangesContainer changesContainer = await GetMovieMethodInternal<ChangesContainer>(movieId, MovieMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC", cancellationToken: cancellationToken).ConfigureAwait(false);
-            return changesContainer.Changes;
-        }
-
         public async Task<Credits> GetMovieCreditsAsync(int movieId, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethodInternal<Credits>(movieId, MovieMethods.Credits, cancellationToken: cancellationToken).ConfigureAwait(false);

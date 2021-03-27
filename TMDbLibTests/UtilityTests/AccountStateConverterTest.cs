@@ -21,13 +21,15 @@ namespace TMDbLibTests.UtilityTests
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new AccountStateConverter());
 
-            AccountState original = new AccountState();
-            original.Rating = 5;
+            var original = new
+            {
+                rated = new { value = 5 }
+            };
 
             string json = JsonConvert.SerializeObject(original, settings);
             AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
 
-            Assert.Equal(original.Rating, result.Rating);
+            Assert.Equal(5, result.Rating);
         }
 
         [Fact]
@@ -38,13 +40,11 @@ namespace TMDbLibTests.UtilityTests
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new AccountStateConverter());
 
-            AccountState original = new AccountState();
-            original.Rating = null;
-
+            var original = new { rated = false };
             string json = JsonConvert.SerializeObject(original, settings);
             AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
 
-            Assert.Equal(original.Rating, result.Rating);
+            Assert.Null(result.Rating);
         }
 
         /// <summary>
@@ -56,10 +56,7 @@ namespace TMDbLibTests.UtilityTests
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
             AccountState accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.Avatar);
 
-            Assert.Equal(IdHelper.Avatar, accountState.Id);
-            Assert.True(accountState.Favorite);
-            Assert.False(accountState.Watchlist);
-            Assert.Equal(2.5d, accountState.Rating);
+            await Verify(accountState);
         }
 
         /// <summary>
@@ -72,20 +69,19 @@ namespace TMDbLibTests.UtilityTests
             ResultContainer<TvEpisodeAccountStateWithNumber> season = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1);
 
             // Episode 1 has a rating
-            TvEpisodeAccountStateWithNumber episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 1);
-            Assert.NotNull(episode);
+            TvEpisodeAccountStateWithNumber episodeA = season.Results.Single(s => s.EpisodeNumber == 1);
 
-            Assert.Equal(IdHelper.BigBangTheorySeason1Episode1Id, episode.Id);
-            Assert.Equal(1, episode.EpisodeNumber);
-            Assert.Equal(5d, episode.Rating);
+            Assert.NotNull(episodeA.Rating);
 
             // Episode 2 has no rating
-            episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 2);
-            Assert.NotNull(episode);
+            TvEpisodeAccountStateWithNumber episodeB = season.Results.Single(s => s.EpisodeNumber == 2);
+            Assert.Null(episodeB.Rating);
 
-            Assert.Equal(IdHelper.BigBangTheorySeason1Episode2Id, episode.Id);
-            Assert.Equal(2, episode.EpisodeNumber);
-            Assert.Null(episode.Rating);
+            await Verify(new
+            {
+                episodeA,
+                episodeB
+            });
         }
     }
 }

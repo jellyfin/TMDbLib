@@ -18,9 +18,7 @@ namespace TMDbLibTests
         {
             APIConfiguration result = await TMDbClient.GetAPIConfiguration();
 
-            Assert.NotNull(result);
-
-            Assert.Contains(result.Images.BackdropSizes, c => c == "original");
+            await Verify(result);
         }
 
         [Fact]
@@ -28,9 +26,7 @@ namespace TMDbLibTests
         {
             List<string> result = await TMDbClient.GetPrimaryTranslationsAsync();
 
-            Assert.NotNull(result);
-
-            Assert.Contains(result, c => c == "da-DK");
+            Assert.Contains("da-DK", result);
         }
 
         [Fact]
@@ -38,10 +34,10 @@ namespace TMDbLibTests
         {
             List<Country> result = await TMDbClient.GetCountriesAsync();
 
-            Assert.NotNull(result);
-            Assert.True(result.Count > 200);
+            Assert.NotEmpty(result);
+            Country single = result.Single(s => s.EnglishName == "Denmark");
 
-            Assert.Contains(result, c => c.EnglishName == "Denmark" && c.Iso_3166_1 == "DK");
+            await Verify(single);
         }
 
         [Fact]
@@ -49,10 +45,10 @@ namespace TMDbLibTests
         {
             List<Language> result = await TMDbClient.GetLanguagesAsync();
 
-            Assert.NotNull(result);
-            Assert.True(result.Count > 180);
+            Assert.NotEmpty(result);
+            Language single = result.Single(s => s.Name == "Dansk");
 
-            Assert.Contains(result, l => l.Name == "Dansk" && l.EnglishName == "Danish" && l.Iso_639_1 == "da");
+            await Verify(single);
         }
 
         [Fact]
@@ -60,13 +56,10 @@ namespace TMDbLibTests
         {
             Timezones result = await TMDbClient.GetTimezonesAsync();
 
-            Assert.NotNull(result);
-            Assert.True(result.List.Count > 200);
+            Assert.NotEmpty(result.List);
+            List<string> single = result.List["DK"];
 
-            List<string> item = result.List["DK"];
-            Assert.NotNull(item);
-            Assert.Single(item);
-            Assert.Equal("Europe/Copenhagen", item[0]);
+            await Verify(single);
         }
 
         [Fact]
@@ -74,12 +67,10 @@ namespace TMDbLibTests
         {
             List<Job> jobs = await TMDbClient.GetJobsAsync();
 
-            Assert.NotNull(jobs);
-            Assert.True(jobs.Count > 0);
+            Assert.NotEmpty(jobs);
+            Job single = jobs.Single(s => s.Department == "Writing");
 
-            Assert.True(jobs.All(job => !string.IsNullOrEmpty(job.Department)));
-            Assert.True(jobs.All(job => job.Jobs != null));
-            Assert.True(jobs.All(job => job.Jobs.Count > 0));
+            await Verify(single);
         }
     }
 }

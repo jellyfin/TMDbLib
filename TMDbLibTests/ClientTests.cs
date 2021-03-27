@@ -19,7 +19,7 @@ namespace TMDbLibTests
             await TMDbClient.GetConfigAsync();
             Assert.True(TMDbClient.HasConfig);
 
-            Assert.NotNull(TMDbClient.Config);
+            await Verify(TMDbClient.Config);
         }
 
         [Fact]
@@ -31,7 +31,7 @@ namespace TMDbLibTests
             await config.Client.GetConfigAsync();
             Assert.True(config.Client.HasConfig);
 
-            Assert.NotNull(config.Client.Config);
+            await Verify(config.Client.Config);
         }
 
         [Fact]
@@ -75,17 +75,28 @@ namespace TMDbLibTests
         [Fact]
         public void ClientSetBadMaxRetryValue()
         {
-            TMDbClient client = new TMDbClient(TestConfig.APIKey);
-
-            Assert.Throws<ArgumentOutOfRangeException>(() => client.MaxRetryCount = -1);
+            Assert.Throws<ArgumentOutOfRangeException>(() => TMDbClient.MaxRetryCount = -1);
         }
 
         [Fact]
+        public async Task ClientTestUrlGenerator()
+        {
+            await TMDbClient.GetConfigAsync();
+
+            Uri uri = TMDbClient.GetImageUrl("w92", "/2B7RySy2WMVJKKEFN2XA3IFb8w0.jpg");
+            Uri uriSsl = TMDbClient.GetImageUrl("w92", "/2B7RySy2WMVJKKEFN2XA3IFb8w0.jpg", true);
+
+            await Verify(new
+            {
+                uri,
+                uriSsl
+            });
+        }
+
+        [Fact(Skip = "Disabled till we can consistently reproduce a rate limit")]
         public async Task ClientRateLimitTest()
         {
-            const int id = IdHelper.AGoodDayToDieHard;
-
-            TMDbClient client = new TMDbClient(TestConfig.APIKey);
+            TMDbClient client = TMDbClient;
             client.MaxRetryCount = 0;
 
             await Assert.ThrowsAsync<RequestLimitExceededException>(async () =>
@@ -94,7 +105,7 @@ namespace TMDbLibTests
                 {
                     List<Task> tasks = new List<Task>(100);
                     for (int i = 0; i < 100; i++)
-                        tasks.Add(client.GetMovieAsync(id));
+                        tasks.Add(client.GetMovieAsync(IdHelper.AGoodDayToDieHard));
 
                     await Task.WhenAll(tasks);
                 }

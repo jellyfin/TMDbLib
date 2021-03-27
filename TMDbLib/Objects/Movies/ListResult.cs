@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Movies
 {
@@ -18,9 +19,12 @@ namespace TMDbLib.Objects.Movies
         /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
-
+        
         [JsonProperty("item_Count")]
         public int ItemCount { get; set; }
+
+        [JsonProperty("list_type")]
+        public MediaType ListType { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

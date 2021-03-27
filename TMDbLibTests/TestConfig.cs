@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Net;
+using Newtonsoft.Json;
 using TMDbLibTests.Exceptions;
 using TMDbLib.Client;
 
@@ -13,18 +14,18 @@ namespace TMDbLibTests
         public readonly string UserSessionId = "c413282cdadad9af972c06d9b13096a8b13ab1c1";
         public readonly string GuestTestSessionId = "d425468da2781d6799ba14c05f7327e7";
 
-        public TMDbClient Client { get; set; }
+        public TMDbClient Client { get; }
 
         public string Username = "TMDbTestAccount";
 
         public string Password = "TJX6vP7bPC%!ZrJwAqtCU5FshHEKAwzr6YvR3%CU9s7BrjqUWmjC8AMuXju*eTEu524zsxDQK5ySY6EmjAC3e54B%WvkS9FNPE3K";
 
-        public TestConfig(bool useSsl = false, JsonSerializer serializer = null)
+        public TestConfig(bool useSsl = false, JsonSerializer serializer = null, IWebProxy proxy = null)
         {
             if (APIKey.Length == 0)
                 throw new ConfigurationErrorsException("You need to configure the API Key before running any tests. Look at the TestConfig class.");
 
-            Client = new TMDbClient(APIKey, useSsl, serializer: serializer)
+            Client = new TMDbClient(APIKey, useSsl, serializer: serializer, proxy: proxy)
             {
                 MaxRetryCount = 1
             };

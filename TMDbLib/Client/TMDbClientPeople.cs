@@ -102,12 +102,6 @@ namespace TMDbLib.Client
             return item;
         }
 
-        public async Task<List<Change>> GetPersonChangesAsync(int personId, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default)
-        {
-            ChangesContainer changesContainer = await GetPersonMethodInternal<ChangesContainer>(personId, PersonMethods.Changes, startDate: startDate, endDate: endDate, dateFormat: "yyyy-MM-dd HH:mm:ss UTC", cancellationToken: cancellationToken).ConfigureAwait(false);
-            return changesContainer.Changes;
-        }
-
         public async Task<ExternalIdsPerson> GetPersonExternalIdsAsync(int personId, CancellationToken cancellationToken = default)
         {
             return await GetPersonMethodInternal<ExternalIdsPerson>(personId, PersonMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);

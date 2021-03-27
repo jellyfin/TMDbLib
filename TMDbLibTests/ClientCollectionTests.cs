@@ -11,11 +11,11 @@ namespace TMDbLibTests
 {
     public class ClientCollectionTests : TestBase
     {
-        private static Dictionary<CollectionMethods, Func<Collection, object>> _methods;
+        private static readonly Dictionary<CollectionMethods, Func<Collection, object>> Methods;
 
-        public ClientCollectionTests()
+        static ClientCollectionTests()
         {
-            _methods = new Dictionary<CollectionMethods, Func<Collection, object>>
+            Methods = new Dictionary<CollectionMethods, Func<Collection, object>>
             {
                 [CollectionMethods.Images] = collection => collection.Images
             };
@@ -24,18 +24,11 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCollectionsExtrasNone()
         {
-            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection);
-
-            Assert.NotNull(collection);
-            Assert.Equal("James Bond Collection", collection.Name);
-            Assert.NotNull(collection.Parts);
-            Assert.True(collection.Parts.Count > 0);
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
 
             // Test all extras, ensure none of them exist
-            foreach (Func<Collection, object> selector in _methods.Values)
-            {
+            foreach (Func<Collection, object> selector in Methods.Values)
                 Assert.Null(selector(collection));
-            }
         }
 
         [Fact]
@@ -49,41 +42,29 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestCollectionsParts()
         {
-            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection);
+            Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
 
-            Assert.NotNull(collection);
-            Assert.Equal("James Bond Collection", collection.Name);
-
-            Assert.NotNull(collection.Parts);
-            Assert.True(collection.Parts.Count > 0);
-
-            Assert.Contains(collection.Parts, movie => movie.Title == "Live and Let Die");
-            Assert.Contains(collection.Parts, movie => movie.Title == "Dr. No");
+            await Verify(collection);
         }
 
         [Fact]
         public async Task TestCollectionsExtrasExclusive()
         {
-            await TestMethodsHelper.TestGetExclusive(_methods, extras => TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection, extras));
+            await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, extras));
         }
 
         [Fact]
         public async Task TestCollectionsExtrasAll()
         {
-            await TestMethodsHelper.TestGetAll(_methods, combined => TMDbClient.GetCollectionAsync(IdHelper.JamesBondCollection, combined));
+            await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, combined), async collection => await Verify(collection));
         }
 
         [Fact]
         public async Task TestCollectionsImagesAsync()
         {
-            // Get config
-            await TMDbClient.GetConfigAsync();
+            ImagesWithId images = await TMDbClient.GetCollectionImagesAsync(IdHelper.BackToTheFutureCollection);
 
-            // Test image url generator
-            ImagesWithId images = await TMDbClient.GetCollectionImagesAsync(IdHelper.JamesBondCollection);
-
-            Assert.Equal(IdHelper.JamesBondCollection, images.Id);
-            await TestImagesHelpers.TestImagesAsync(TestConfig, images);
+            TestImagesHelpers.TestImagePaths(images);
         }
     }
 }

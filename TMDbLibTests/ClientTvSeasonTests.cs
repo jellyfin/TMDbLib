@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Authentication;
@@ -16,11 +15,11 @@ namespace TMDbLibTests
 {
     public class ClientTvSeasonTests : TestBase
     {
-        private static Dictionary<TvSeasonMethods, Func<TvSeason, object>> _methods;
+        private static readonly Dictionary<TvSeasonMethods, Func<TvSeason, object>> Methods;
 
-        public ClientTvSeasonTests()
+        static ClientTvSeasonTests()
         {
-            _methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>
+            Methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>
             {
                 [TvSeasonMethods.Credits] = tvSeason => tvSeason.Credits,
                 [TvSeasonMethods.Images] = tvSeason => tvSeason.Images,
@@ -36,13 +35,11 @@ namespace TMDbLibTests
         {
             TvSeason tvSeason = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1);
 
-            TestBreakingBadBaseProperties(tvSeason);
+            await Verify(tvSeason);
 
             // Test all extras, ensure none of them are populated
-            foreach (Func<TvSeason, object> selector in _methods.Values)
-            {
+            foreach (Func<TvSeason, object> selector in Methods.Values)
                 Assert.Null(selector(tvSeason));
-            }
         }
 
         [Fact]
@@ -73,42 +70,25 @@ namespace TMDbLibTests
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Account states will only show up if we've done something
-            await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5);
+            await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.FullerHouse, 1, 1, 5);
 
-            await TestMethodsHelper.TestGetAll(_methods, combined => TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, combined), TestBreakingBadBaseProperties);
+            await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetTvSeasonAsync(IdHelper.FullerHouse, 1, combined), season => Verify(season));
         }
 
         [Fact]
         public async Task TestTvSeasonExtrasExclusiveAsync()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-            await TestMethodsHelper.TestGetExclusive(_methods, extras => TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, extras));
+
+            await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, extras));
         }
 
         [Fact]
         public async Task TestTvSeasonSeparateExtrasCreditsAsync()
         {
             Credits credits = await TMDbClient.GetTvSeasonCreditsAsync(IdHelper.BreakingBad, 1);
-            Assert.NotNull(credits);
-            Assert.NotNull(credits.Cast);
-            Assert.Equal("Walter White", credits.Cast[0].Character);
-            Assert.Equal("52542282760ee313280017f9", credits.Cast[0].CreditId);
-            Assert.Equal(17419, credits.Cast[0].Id);
-            Assert.Equal("Bryan Cranston", credits.Cast[0].Name);
-            Assert.NotNull(credits.Cast[0].ProfilePath);
-            Assert.Equal(0, credits.Cast[0].Order);
-            Assert.True(credits.Cast[0].Popularity > 0);
-            Assert.Equal("Acting", credits.Cast[0].KnownForDepartment);
-            Assert.Equal("Bryan Cranston", credits.Cast[0].OriginalName);
 
-            Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1223202);
-            Assert.NotNull(crewPersonId);
-
-            Assert.Equal(1223202, crewPersonId.Id);
-            Assert.Equal("Production", crewPersonId.Department);
-            Assert.Equal("Diane Mercer", crewPersonId.Name);
-            Assert.Equal("Producer", crewPersonId.Job);
-            Assert.Null(crewPersonId.ProfilePath);
+            await Verify(credits);
         }
 
         [Fact]
@@ -116,28 +96,25 @@ namespace TMDbLibTests
         {
             ExternalIdsTvSeason externalIds = await TMDbClient.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1);
 
-            Assert.NotNull(externalIds);
-            Assert.Equal(3572, externalIds.Id);
-            Assert.Equal("/en/breaking_bad_season_1", externalIds.FreebaseId);
-            Assert.Equal("/m/05yy27m", externalIds.FreebaseMid);
-            Assert.Null(externalIds.TvrageId);
-            Assert.Equal("30272", externalIds.TvdbId);
+            await Verify(externalIds);
         }
 
         [Fact]
         public async Task TestTvSeasonSeparateExtrasImagesAsync()
         {
             PosterImages images = await TMDbClient.GetTvSeasonImagesAsync(IdHelper.BreakingBad, 1);
-            Assert.NotNull(images);
-            Assert.NotNull(images.Posters);
+
+            Assert.NotEmpty(images.Posters);
+            TestImagesHelpers.TestImagePaths(images.Posters);
         }
 
         [Fact]
         public async Task TestTvSeasonSeparateExtrasVideosAsync()
         {
-            ResultContainer<Video> videos = await TMDbClient.GetTvSeasonVideosAsync(IdHelper.BreakingBad, 1);
-            Assert.NotNull(videos);
-            Assert.NotNull(videos.Results);
+            ResultContainer<Video> videos = await TMDbClient.GetTvSeasonVideosAsync(IdHelper.GameOfThrones, 1);
+            Video single = videos.Results.Single(s => s.Id == "5c9b7e95c3a36841a341b9c6");
+
+            await Verify(single);
         }
 
         [Fact]
@@ -145,64 +122,28 @@ namespace TMDbLibTests
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-            // Rate episode 1, 2 and 3 of BreakingBad
-            Assert.True(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 5));
-            Assert.True(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 2, 7));
-            Assert.True(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 3, 3));
+            await TestMethodsHelper.SetValidateRemoveTest(
+                () => TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 3, 5),
+                () => TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3),
+                async shouldBeSet =>
+                {
+                    ResultContainer<TvEpisodeAccountStateWithNumber> state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
 
-            // Wait for TMDb to un-cache our value
-            await Task.Delay(2000);
-
-            // Fetch out the seasons state
-            ResultContainer<TvEpisodeAccountStateWithNumber> state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
-            Assert.NotNull(state);
-
-            Assert.True(Math.Abs(5 - (state.Results.Single(s => s.EpisodeNumber == 1).Rating ?? 0)) < double.Epsilon);
-            Assert.True(Math.Abs(7 - (state.Results.Single(s => s.EpisodeNumber == 2).Rating ?? 0)) < double.Epsilon);
-            Assert.True(Math.Abs(3 - (state.Results.Single(s => s.EpisodeNumber == 3).Rating ?? 0)) < double.Epsilon);
-
-            // Test deleting Ratings
-            Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
-            Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 2));
-            Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3));
-
-            // Wait for TMDb to un-cache our value
-            await Task.Delay(2000);
-
-            state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
-            Assert.NotNull(state);
-
-            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 1).Rating);
-            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 2).Rating);
-            Assert.Null(state.Results.Single(s => s.EpisodeNumber == 3).Rating);
+                    if (shouldBeSet)
+                        Assert.Contains(state.Results, x => x.EpisodeNumber == 3 && x.Rating.HasValue);
+                    else
+                        Assert.Contains(state.Results, x => x.EpisodeNumber == 3 && !x.Rating.HasValue);
+                });
         }
 
         [Fact]
         public async Task TestTvSeasonGetChangesAsync()
         {
-            ChangesContainer changes = await TMDbClient.GetTvSeasonChangesAsync(IdHelper.BreakingBadSeason1Id);
-            Assert.NotNull(changes);
-            Assert.NotNull(changes.Changes);
-        }
+            TvShow latestTvShow = await TMDbClient.GetLatestTvShowAsync();
+            int latestSeasonId = latestTvShow.Seasons.Max(s => s.Id);
+            IList<Change> changes = await TMDbClient.GetTvSeasonChangesAsync(latestSeasonId);
 
-        private void TestBreakingBadBaseProperties(TvSeason tvSeason)
-        {
-            Assert.NotNull(tvSeason);
-            Assert.NotNull(tvSeason.Id);
-            Assert.Equal(1, tvSeason.SeasonNumber);
-            Assert.Equal("Season 1", tvSeason.Name);
-            Assert.NotNull(tvSeason.AirDate);
-            Assert.NotNull(tvSeason.Overview);
-            Assert.NotNull(tvSeason.PosterPath);
-
-            Assert.NotNull(tvSeason.Episodes);
-            Assert.Equal(7, tvSeason.Episodes.Count);
-            Assert.Equal(1, tvSeason.Episodes[0].EpisodeNumber);
-            Assert.Equal("Pilot", tvSeason.Episodes[0].Name);
-            Assert.NotNull(tvSeason.Episodes[0].Overview);
-            Assert.Null(tvSeason.Episodes[0].ProductionCode);
-            Assert.Equal(1, tvSeason.Episodes[0].SeasonNumber);
-            Assert.NotNull(tvSeason.Episodes[0].StillPath);
+            Assert.NotEmpty(changes);
         }
 
         [Fact]
@@ -218,8 +159,9 @@ namespace TMDbLibTests
         {
             TvSeason resp = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvSeasonMethods.Images);
 
-            Assert.True(resp.Images.Posters.Count > 0);
-            Assert.True(resp.Images.Posters.All(p => p.Iso_639_1.Equals("en", StringComparison.OrdinalIgnoreCase)));
+            ImageData poster = resp.Images.Posters.Single(s => s.FilePath == "/uFh3OrBvkwKSU3N5y0XnXOhqBJz.jpg");
+
+            await Verify(poster);
         }
     }
 }

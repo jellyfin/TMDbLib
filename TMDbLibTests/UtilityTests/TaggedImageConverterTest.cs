@@ -20,9 +20,11 @@ namespace TMDbLibTests.UtilityTests
 
             SearchMovie originalMedia = new SearchMovie { OriginalTitle = "Hello world" };
 
-            TaggedImage original = new TaggedImage();
-            original.MediaType = MediaType.Movie;
-            original.Media = originalMedia;
+            TaggedImage original = new TaggedImage
+            {
+                MediaType = originalMedia.MediaType,
+                Media = originalMedia
+            };
 
             string json = JsonConvert.SerializeObject(original, settings);
             TaggedImage result = JsonConvert.DeserializeObject<TaggedImage>(json, settings);
@@ -75,8 +77,16 @@ namespace TMDbLibTests.UtilityTests
             Assert.NotNull(result.Results);
             Assert.Equal(IdHelper.HughLaurie, result.Id);
 
-            Assert.Contains(result.Results, item => item.MediaType == MediaType.Tv && item.Media is SearchTv);
-            Assert.Contains(result.Results, item => item.MediaType == MediaType.Movie && item.Media is SearchMovie);
+            Assert.All(result.Results, item =>
+            {
+                if (item.MediaType == MediaType.Tv)
+                    Assert.IsType<SearchTv>(item.Media);
+            });
+            Assert.All(result.Results, item =>
+            {
+                if (item.MediaType == MediaType.Movie)
+                    Assert.IsType<SearchMovie>(item.Media);
+            });
         }
     }
 }

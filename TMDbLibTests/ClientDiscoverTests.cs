@@ -1,12 +1,10 @@
 using Xunit;
 using TMDbLib.Objects.Discover;
 using TMDbLib.Objects.General;
-using System.Linq;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TMDbLibTests
@@ -17,13 +15,12 @@ namespace TMDbLibTests
         public async Task TestDiscoverTvShowsNoParamsAsync()
         {
             await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverTvShowsAsync().Query(i));
+        }
 
-            SearchContainer<SearchTv> result = await TMDbClient.DiscoverTvShowsAsync().Query();
-
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Page);
-            Assert.NotNull(result.Results);
-            Assert.True(result.Results.Any());
+        [Fact]
+        public async Task TestDiscoverMoviesNoParamsAsync()
+        {
+            await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverMoviesAsync().Query(i));
         }
 
         [Fact]
@@ -34,19 +31,6 @@ namespace TMDbLibTests
                     .WhereVoteAverageIsAtLeast(2);
 
             await TestHelpers.SearchPagesAsync(i => query.Query(i));
-        }
-
-        [Fact]
-        public async Task TestDiscoverMoviesNoParamsAsync()
-        {
-            await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverMoviesAsync().Query(i));
-
-            SearchContainer<SearchMovie> result = await TMDbClient.DiscoverMoviesAsync().Query();
-
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Page);
-            Assert.NotNull(result.Results);
-            Assert.True(result.Results.Any());
         }
 
         [Fact]
@@ -62,7 +46,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverMoviesRegionAsync()
         {
-            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync().WhereReleaseDateIsInRegion("BR").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync()
+                .WhereReleaseDateIsInRegion("BR")
+                .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
 
             await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
@@ -70,23 +56,28 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestDiscoverMoviesLanguageAsync()
         {
-            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync().WhereLanguageIs("da-DK").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
+            SearchContainer<SearchMovie> query = await TMDbClient.DiscoverMoviesAsync()
+                .WhereOriginalLanguageIs("en-US")
+                .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
+                .Query();
 
-            Assert.Equal("Skønheden og Udyret", (await query.Query(0)).Results[11].Title);
+            SearchContainer<SearchMovie> queryDanish = await TMDbClient.DiscoverMoviesAsync()
+                .WhereLanguageIs("da-DK")
+                .WhereOriginalLanguageIs("en-US")
+                .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
+                .Query();
 
-            await TestHelpers.SearchPagesAsync(i => query.Query(i));
-        }
+            // Should be the same identities, but different titles
+            Assert.Equal(query.TotalResults, queryDanish.TotalResults);
 
-        [Theory]
-        [InlineData("ko")]
-        [InlineData("zh")]
-        public async Task TestDiscoverMoviesOriginalLanguage(string language)
-        {
-            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
-            List<SearchMovie> results = (await query.Query(0)).Results;
+            for (int i = 0; i < query.Results.Count; i++)
+            {
+                SearchMovie a = query.Results[i];
+                SearchMovie b = queryDanish.Results[i];
 
-            Assert.NotEmpty(results);
-            Assert.All(results, item => Assert.Contains(language, item.OriginalLanguage));
+                Assert.Equal(a.Id, b.Id);
+                Assert.NotEqual(a.Title, b.Title);
+            }
         }
     }
 }

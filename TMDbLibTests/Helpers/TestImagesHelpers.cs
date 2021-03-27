@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using TMDbLib.Objects.General;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
 using Xunit;
 
@@ -13,43 +10,25 @@ namespace TMDbLibTests.Helpers
     {
         private static readonly Regex ImagePathRegex = new Regex(@"^/[a-zA-Z0-9]{26,}\.(?:jpg|png)$", RegexOptions.Compiled);
 
-        public static async Task TestImagesAsync(TestConfig config, ProfileImages images)
+        public static void TestImagePaths(Images images)
         {
-            Assert.True(images.Profiles.Count > 0);
-
-            string profileSize = config.Client.Config.Images.ProfileSizes.First();
-
-            await TestImagesInternal(config, images.Profiles.Select(s => s.FilePath), profileSize);
+            TestImagePaths(images.Backdrops);
+            TestImagePaths(images.Posters);
         }
 
-        public static async Task TestImagesAsync(TestConfig config, Images images)
+        public static void TestImagePaths(IEnumerable<string> imagePaths)
         {
-            Assert.True(images.Backdrops.Count > 0);
-            Assert.True(images.Posters.Count > 0);
-
-            string backdropSize = config.Client.Config.Images.BackdropSizes.First();
-            string posterSize = config.Client.Config.Images.PosterSizes.First();
-
-            await TestImagesInternal(config, images.Backdrops.Select(s => s.FilePath), backdropSize);
-
-            await TestImagesInternal(config, images.Posters.Select(s => s.FilePath), posterSize);
+            Assert.All(imagePaths, path => Assert.True(ImagePathRegex.IsMatch(path), "path was not a valid image path, was: " + path));
         }
 
-        private static async Task TestImagesInternal(TestConfig config, IEnumerable<string> images, string posterSize)
+        public static void TestImagePaths<T>(IEnumerable<T> images) where T : ImageData
         {
-            foreach (string imageData in images)
-            {
-                Uri url = config.Client.GetImageUrl(posterSize, imageData);
-                Uri urlSecure = config.Client.GetImageUrl(posterSize, imageData, true);
-
-                Assert.True(await TestHelpers.InternetUriExistsAsync(url));
-                Assert.True(await TestHelpers.InternetUriExistsAsync(urlSecure));
-            }
+            Assert.All(images, x => Assert.True(ImagePathRegex.IsMatch(x.FilePath), "image.FilePath was not a valid image path, was: " + x.FilePath));
         }
 
-        public static bool TestImagePath(string path)
+        public static void TestImagePaths(IEnumerable<TaggedImage> images)
         {
-            return ImagePathRegex.IsMatch(path);
+            Assert.All(images, x => Assert.True(ImagePathRegex.IsMatch(x.FilePath), "image.FilePath was not a valid image path, was: " + x.FilePath));
         }
     }
 }

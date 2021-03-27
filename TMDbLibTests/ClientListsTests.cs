@@ -1,54 +1,39 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using TMDbLib.Client;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
-using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
 {
+    [Collection(nameof(ListFixturesCollection))]
     public class ClientListsTests : TestBase
     {
         private const string TestListId = "528349d419c2954bd21ca0a8";
+        private const string EphemeralListPrefix = "TestListTMDbLib-";
 
         [Fact]
-        public async Task TestListAsync()
+        public async Task TestGetListAsync()
         {
             // Get list
             GenericList list = await TMDbClient.GetListAsync(TestListId);
 
-            Assert.NotNull(list);
-            Assert.Equal(TestListId, list.Id);
-            Assert.Equal(list.ItemCount, list.Items.Count);
+            await Verify(list);
+        }
 
-            foreach (SearchMovie movieResult in list.Items)
-            {
-                Assert.NotNull(movieResult);
+        [Fact]
+        public async Task TestListAsync()
+        {
+            SearchContainer<ListResult> movieLists = await TMDbClient.GetMovieListsAsync(IdHelper.Avatar);
 
-                // Ensure all movies point to this list
-                int page = 1;
-                SearchContainer<ListResult> movieLists = await TMDbClient.GetMovieListsAsync(movieResult.Id);
-                while (movieLists != null)
-                {
-                    // Check if the current result page contains the relevant list
-                    if (movieLists.Results.Any(s => s.Id == TestListId))
-                    {
-                        movieLists = null;
-                        continue;
-                    }
-
-                    // See if there is an other page we could try, if not the test fails
-                    if (movieLists.Page < movieLists.TotalPages)
-                        movieLists = await TMDbClient.GetMovieListsAsync(movieResult.Id, ++page);
-                    else
-                        throw new Exception($"Movie '{movieResult.Title}' was not linked to the test list");
-                }
-            }
+            Assert.NotEmpty(movieLists.Results);
+            Assert.All(movieLists.Results, x => Assert.Equal(MediaType.Movie, x.ListType));
         }
 
         [Fact]
@@ -60,44 +45,38 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async Task TestListIsMoviePresentFailureAsync()
+        public async Task TestListCreateAddClearAndDeleteAsync()
         {
-            Assert.False(await TMDbClient.GetListIsMoviePresentAsync(TestListId, IdHelper.Terminator));
+            string listName = EphemeralListPrefix + DateTime.UtcNow.ToString("O");
+
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-            // Clear list
-            Assert.True(await TMDbClient.ListClearAsync(TestListId));
+            string listId = await TMDbClient.ListCreateAsync(listName);
 
-            // Verify Avatar is not present
-            Assert.False(await TMDbClient.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
+            Assert.False(string.IsNullOrWhiteSpace(listId));
 
-            // Add Avatar
-            Assert.True(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.Avatar));
+            GenericList newlyAddedList = await TMDbClient.GetListAsync(listId);
 
-            // Verify Avatar is present
-            Assert.True(await TMDbClient.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
-        }
+            await Verify(newlyAddedList, settings => settings.IgnoreProperty<GenericList>(x => x.Id, x => x.Name));
 
-        [Fact]
-        public async Task TestListCreateAndDeleteAsync()
-        {
-            const string listName = "Test List 123";
+            // Add a movie
+            await TMDbClient.ListAddMovieAsync(listId, IdHelper.Avatar);
+            await TMDbClient.ListAddMovieAsync(listId, IdHelper.AGoodDayToDieHard);
 
-            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-            string newListId = await TMDbClient.ListCreateAsync(listName);
+            Assert.True(await TMDbClient.GetListIsMoviePresentAsync(listId, IdHelper.Avatar));
 
-            Assert.False(string.IsNullOrWhiteSpace(newListId));
+            // Remove a movie
+            await TMDbClient.ListRemoveMovieAsync(listId, IdHelper.Avatar);
 
-            GenericList newlyAddedList = await TMDbClient.GetListAsync(newListId);
-            Assert.NotNull(newlyAddedList);
-            Assert.Equal(listName, newlyAddedList.Name);
-            Assert.Equal("", newlyAddedList.Description); // "" is the default value
-            Assert.Equal("en", newlyAddedList.Iso_639_1); // en is the default value
-            Assert.Equal(0, newlyAddedList.ItemCount);
-            Assert.Empty(newlyAddedList.Items);
-            Assert.False(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
+            Assert.False(await TMDbClient.GetListIsMoviePresentAsync(listId, IdHelper.Avatar));
 
-            Assert.True(await TMDbClient.ListDeleteAsync(newListId));
+            // Clear the list
+            await TMDbClient.ListClearAsync(listId);
+
+            Assert.False(await TMDbClient.GetListIsMoviePresentAsync(listId, IdHelper.AGoodDayToDieHard));
+
+            // Delete the list
+            Assert.True(await TMDbClient.ListDeleteAsync(listId));
         }
 
         [Fact]
@@ -106,50 +85,35 @@ namespace TMDbLibTests
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             // Try removing a list with an incorrect id
-            Assert.False(await TMDbClient.ListDeleteAsync("bla"));
+            Assert.False(await TMDbClient.ListDeleteAsync("invalid_id"));
         }
 
-        [Fact]
-        public async Task TestListAddAndRemoveMovieAsync()
+        private class ListCleanupFixture : IDisposable
         {
-            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+            public void Dispose()
+            {
+                TestConfig config = new TestConfig();
+                TMDbClient client = config.Client;
 
-            // Add a new movie to the list
-            Assert.True(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
+                client.SetSessionInformationAsync(config.UserSessionId, SessionType.UserSession).GetAwaiter().GetResult();
 
-            // Try again, this time it should fail since the list already contains this movie
-            Assert.False(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
+                // Yes, this is only the first page, but that's fine.
+                // Eventually we'll delete all remaining lists
+                SearchContainer<AccountList> lists = client.AccountGetListsAsync().GetAwaiter().GetResult();
 
-            // Get list and check if the item was added
-            GenericList listAfterAdd = await TMDbClient.GetListAsync(TestListId);
-            Assert.Contains(listAfterAdd.Items, m => m.Id == IdHelper.EvanAlmighty);
-
-            // Remove the previously added movie from the list
-            Assert.True(await TMDbClient.ListRemoveMovieAsync(TestListId, IdHelper.EvanAlmighty));
-
-            // Get list and check if the item was removed
-            GenericList listAfterRemove = await TMDbClient.GetListAsync(TestListId);
-            Assert.DoesNotContain(listAfterRemove.Items, m => m.Id == IdHelper.EvanAlmighty);
+                foreach (AccountList list in lists.Results.Where(s => s.Name.StartsWith(EphemeralListPrefix)))
+                {
+                    client.ListDeleteAsync(list.Id.ToString()).GetAwaiter().GetResult();
+                }
+            }
         }
 
-        [Fact]
-        public async Task TestListClearAsync()
+        [CollectionDefinition(nameof(ListFixturesCollection))]
+        public class ListFixturesCollection : ICollectionFixture<ListCleanupFixture>
         {
-            await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-
-            // Add a new movie to the list
-            Assert.True(await TMDbClient.ListAddMovieAsync(TestListId, IdHelper.MadMaxFuryRoad));
-
-            // Get list and check if the item was added
-            GenericList listAfterAdd = await TMDbClient.GetListAsync(TestListId);
-            Assert.Contains(listAfterAdd.Items, m => m.Id == IdHelper.MadMaxFuryRoad);
-
-            // Clear the list
-            Assert.True(await TMDbClient.ListClearAsync(TestListId));
-
-            // Get list and check that all items were removed
-            GenericList listAfterRemove = await TMDbClient.GetListAsync(TestListId);
-            Assert.False(listAfterRemove.Items.Any());
+            // This class has no code, and is never created. Its purpose is simply
+            // to be the place to apply [CollectionDefinition] and all the
+            // ICollectionFixture<> interfaces.
         }
     }
 }

@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
@@ -15,11 +13,11 @@ namespace TMDbLibTests.UtilityTests
     {
         public static IEnumerable<object[]> GetEnumMembers(Type type)
         {
-            IEnumerable<FieldInfo> members = type.GetTypeInfo().DeclaredFields.Where(s => s.IsStatic);
+            Array values = Enum.GetValues(type);
 
-            foreach (FieldInfo member in members)
+            foreach (Enum value in values)
             {
-                yield return new[] { member.GetValue(null) };
+                yield return new object[] { value };
             }
         }
 

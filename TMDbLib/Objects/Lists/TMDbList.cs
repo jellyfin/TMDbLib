@@ -2,7 +2,7 @@
 
 namespace TMDbLib.Objects.Lists
 {
-    public class List
+    public abstract class TMDbList<TId>
     {
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -11,7 +11,7 @@ namespace TMDbLib.Objects.Lists
         public int FavoriteCount { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public TId Id { get; set; }
 
         /// <summary>
         /// A language code, e.g. en

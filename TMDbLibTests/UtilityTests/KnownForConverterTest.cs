@@ -13,7 +13,7 @@ namespace TMDbLibTests.UtilityTests
     public class KnownForConverterTest : TestBase
     {
         [Fact]
-        public void KnownForConverter_Movie()
+        public async Task KnownForConverter_Movie()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new KnownForConverter());
@@ -22,10 +22,9 @@ namespace TMDbLibTests.UtilityTests
             original.OriginalTitle = "Hello world";
 
             string json = JsonConvert.SerializeObject(original, settings);
-            KnownForMovie result = JsonConvert.DeserializeObject<KnownForBase>(json, settings) as KnownForMovie;
+            KnownForMovie result = (KnownForMovie)JsonConvert.DeserializeObject<KnownForBase>(json, settings);
 
             Assert.NotNull(result);
-            Assert.Equal(original.MediaType, result.MediaType);
             Assert.Equal(original.Title, result.Title);
         }
 
@@ -39,10 +38,9 @@ namespace TMDbLibTests.UtilityTests
             original.OriginalName = "Hello world";
 
             string json = JsonConvert.SerializeObject(original, settings);
-            KnownForTv result = JsonConvert.DeserializeObject<KnownForBase>(json, settings) as KnownForTv;
+            KnownForTv result = (KnownForTv)JsonConvert.DeserializeObject<KnownForBase>(json, settings);
 
             Assert.NotNull(result);
-            Assert.Equal(original.MediaType, result.MediaType);
             Assert.Equal(original.OriginalName, result.OriginalName);
         }
 
@@ -54,8 +52,7 @@ namespace TMDbLibTests.UtilityTests
         {
             SearchContainer<SearchPerson> result = await TMDbClient.SearchPersonAsync("Willis");
 
-            Assert.NotNull(result);
-            Assert.NotNull(result.Results);
+            Assert.NotNull(result?.Results);
 
             List<KnownForBase> knownForList = result.Results.SelectMany(s => s.KnownFor).ToList();
             Assert.True(knownForList.Any());

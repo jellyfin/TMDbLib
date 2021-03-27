@@ -4,7 +4,7 @@ using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Lists
 {
-    public class GenericList : List
+    public class GenericList : TMDbList<string>
     {
         [JsonProperty("created_by")]
         public string CreatedBy { get; set; }

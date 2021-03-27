@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Reviews;
-using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -14,15 +13,7 @@ namespace TMDbLibTests
         {
             Review review = await TMDbClient.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId);
 
-            Assert.NotNull(review);
-
-            Assert.Equal(IdHelper.TheDarkKnightRisesReviewId, review.Id);
-            Assert.Equal(49026, review.MediaId);
-            Assert.Equal("The Dark Knight Rises", review.MediaTitle);
-            Assert.Equal("Travis Bell", review.Author);
-            Assert.Equal("en", review.Iso_639_1);
-            Assert.Equal("https://www.themoviedb.org/review/5010553819c2952d1b000451", review.Url);
-            Assert.Equal(MediaType.Movie, review.MediaType);
+            await Verify(review);
         }
 
         [Fact]
