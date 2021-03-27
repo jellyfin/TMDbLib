@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TMDbLib.Objects.TvShows
+﻿namespace TMDbLib.Objects.TvShows
 {
     public enum TvGroupType
     {

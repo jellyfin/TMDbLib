@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.Search
 {
