@@ -8,6 +8,7 @@ using ParameterType = TMDbLib.Rest.ParameterType;
 using RestClient = TMDbLib.Rest.RestClient;
 using RestRequest = TMDbLib.Rest.RestRequest;
 using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -174,10 +175,14 @@ namespace TMDbLib.Client
             return new Uri(baseUrl + size + filePath);
         }
 
-        public Task<byte[]> GetImageBytes(string size, string filePath, bool useSsl = false)
+        public async Task<byte[]> GetImageBytes(string size, string filePath, bool useSsl = false, CancellationToken token = default)
         {
             Uri url = GetImageUrl(size, filePath, useSsl);
-            return _client.HttpClient.GetByteArrayAsync(url);
+
+            HttpResponseMessage response = await _client.HttpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead, token);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsByteArrayAsync();
         }
 
         private void Initialize(string baseUrl, bool useSsl, string apiKey)
