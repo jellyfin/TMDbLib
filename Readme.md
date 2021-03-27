@@ -1,4 +1,4 @@
-TMDbLib [![Build status](https://ci.appveyor.com/api/projects/status/t7wph9cawrl9qho0?svg=true)](https://ci.appveyor.com/project/LordMike/tmdblib) [![NuGet](https://img.shields.io/nuget/v/Tmdblib.svg)](https://www.nuget.org/packages/Tmdblib)
+TMDbLib [![Generic Build](https://github.com/LordMike/TMDbLib/actions/workflows/dotnet.yml/badge.svg)](https://github.com/LordMike/TMDbLib/actions/workflows/dotnet.yml) [![NuGet](https://img.shields.io/nuget/v/Tmdblib.svg)](https://www.nuget.org/packages/Tmdblib) [![GHPackages](https://img.shields.io/badge/package-alpha-green)](https://github.com/LordMike/TMDbLib/packages/691970)
 =======
 
 A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themoviedb.org/).
@@ -8,6 +8,9 @@ Nuget
 
 Install from Nuget using the command: **Install-Package TMDbLib**
 View more about that here: http://nuget.org/packages/TMDbLib/
+
+## Alpha packages
+.. can be found [here](https://github.com/LordMike/TMDbLib/packages/691970)
 
 Index
 ---------
