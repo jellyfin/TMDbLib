@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
@@ -11,16 +11,16 @@ namespace TMDbLibTests
     public class ClientGenreTests : TestBase
     {
         [Fact]
-        public void TestGenreTvList()
+        public async Task TestGenreTvListAsync()
         {
             // Default language
-            List<Genre> genres = Config.Client.GetTvGenresAsync().Sync();
+            List<Genre> genres = await Config.Client.GetTvGenresAsync();
 
             Assert.NotNull(genres);
             Assert.True(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = Config.Client.GetTvGenresAsync("da").Result;
+            List<Genre> genresDanish = await Config.Client.GetTvGenresAsync("da");
 
             Assert.NotNull(genresDanish);
             Assert.True(genresDanish.Count > 0);
@@ -28,20 +28,20 @@ namespace TMDbLibTests
             Assert.Equal(genres.Count, genresDanish.Count);
 
             // At least one should be different
-            Assert.True(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
+            Assert.Contains(genres, genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name);
         }
 
         [Fact]
-        public void TestGenreMovieList()
+        public async Task TestGenreMovieListAsync()
         {
             // Default language
-            List<Genre> genres = Config.Client.GetMovieGenresAsync().Sync();
+            List<Genre> genres = await Config.Client.GetMovieGenresAsync();
 
             Assert.NotNull(genres);
             Assert.True(genres.Count > 0);
 
             // Another language
-            List<Genre> genresDanish = Config.Client.GetMovieGenresAsync("da").Result;
+            List<Genre> genresDanish = await Config.Client.GetMovieGenresAsync("da");
 
             Assert.NotNull(genresDanish);
             Assert.True(genresDanish.Count > 0);
@@ -49,19 +49,19 @@ namespace TMDbLibTests
             Assert.Equal(genres.Count, genresDanish.Count);
 
             // At least one should be different
-            Assert.True(genres.Any(genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name));
+            Assert.Contains(genres, genre => genresDanish.First(danishGenre => danishGenre.Id == genre.Id).Name != genre.Name);
         }
 
         [Fact]
-        public void TestGenreMovies()
+        public async Task TestGenreMoviesAsync()
         {
             // Get first genre
-            Genre genre = Config.Client.GetMovieGenresAsync().Sync().First();
+            Genre genre = (await Config.Client.GetMovieGenresAsync()).First();
 
             // Get movies
-            SearchContainerWithId<SearchMovie> movies = Config.Client.GetGenreMoviesAsync(genre.Id).Result;
-            SearchContainerWithId<SearchMovie> moviesPage2 = Config.Client.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false).Result;
-            SearchContainerWithId<SearchMovie> moviesAll = Config.Client.GetGenreMoviesAsync(genre.Id, includeAllMovies: true).Result;
+            SearchContainerWithId<SearchMovie> movies = await Config.Client.GetGenreMoviesAsync(genre.Id);
+            SearchContainerWithId<SearchMovie> moviesPage2 = await Config.Client.GetGenreMoviesAsync(genre.Id, "it", 2, includeAllMovies: false);
+            SearchContainerWithId<SearchMovie> moviesAll = await Config.Client.GetGenreMoviesAsync(genre.Id, includeAllMovies: true);
 
             Assert.Equal(1, movies.Page);
             Assert.Equal(2, moviesPage2.Page);

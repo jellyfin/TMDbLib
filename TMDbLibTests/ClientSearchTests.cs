@@ -3,6 +3,7 @@ using Xunit;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using System.Linq;
+using System.Threading.Tasks;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -11,25 +12,25 @@ namespace TMDbLibTests
     public class ClientSearchTests : TestBase
     {
         [Fact]
-        public void TestSearchMovie()
+        public async Task TestSearchMovieAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchMovieAsync("007", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchMovieAsync("007", i));
 
             // Search pr. Year
             // 1962: First James Bond movie, "Dr. No"
-            SearchContainer<SearchMovie> result = Config.Client.SearchMovieAsync("007", year: 1962).Result;
+            SearchContainer<SearchMovie> result =  await Config.Client.SearchMovieAsync("007", year: 1962);
 
             Assert.True(result.Results.Any());
             SearchMovie item = result.Results.SingleOrDefault(s => s.Id == 646);
 
             Assert.NotNull(item);
             Assert.Equal(646, item.Id);
-            Assert.Equal(false, item.Adult);
+            Assert.False(item.Adult);
             Assert.True(TestImagesHelpers.TestImagePath(item.BackdropPath), "item.BackdropPath was not a valid image path, was: " + item.BackdropPath);
             Assert.Equal("en", item.OriginalLanguage);
             Assert.Equal("Dr. No", item.OriginalTitle);
             Assert.Equal("In the film that launched the James Bond saga, Agent 007 battles mysterious Dr. No, a scientific genius bent on destroying the U.S. space program. As the countdown to disaster begins, Bond must go to Jamaica, where he encounters beautiful Honey Ryder, to confront a megalomaniacal villain in his massive island headquarters.", item.Overview);
-            Assert.Equal(false, item.Video);
+            Assert.False(item.Video);
             Assert.True(TestImagesHelpers.TestImagePath(item.PosterPath), "item.PosterPath was not a valid image path, was: " + item.PosterPath);
             Assert.Equal(new DateTime(1962, 10, 4), item.ReleaseDate);
             Assert.Equal("Dr. No", item.Title);
@@ -38,17 +39,17 @@ namespace TMDbLibTests
             Assert.True(item.VoteCount > 0);
 
             Assert.NotNull(item.GenreIds);
-            Assert.True(item.GenreIds.Contains(12));
-            Assert.True(item.GenreIds.Contains(28));
-            Assert.True(item.GenreIds.Contains(53));
+            Assert.Contains(12, item.GenreIds);
+            Assert.Contains(28, item.GenreIds);
+            Assert.Contains(53, item.GenreIds);
         }
 
         [Fact]
-        public void TestSearchCollection()
+        public async Task TestSearchCollectionAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchCollectionAsync("007", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchCollectionAsync("007", i));
 
-            SearchContainer<SearchCollection> result = Config.Client.SearchCollectionAsync("James Bond").Result;
+            SearchContainer<SearchCollection> result = await Config.Client.SearchCollectionAsync("James Bond");
 
             Assert.True(result.Results.Any());
             SearchCollection item = result.Results.SingleOrDefault(s => s.Id == 645);
@@ -61,11 +62,11 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestSearchPerson()
+        public async Task TestSearchPersonAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchPersonAsync("Willis", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchPersonAsync("Willis", i));
 
-            SearchContainer<SearchPerson> result = Config.Client.SearchPersonAsync("Willis").Result;
+            SearchContainer<SearchPerson> result = await Config.Client.SearchPersonAsync("Willis");
 
             Assert.True(result.Results.Any());
             SearchPerson item = result.Results.SingleOrDefault(s => s.Id == 62);
@@ -74,19 +75,19 @@ namespace TMDbLibTests
             Assert.Equal(62, item.Id);
             Assert.Equal("Bruce Willis", item.Name);
             Assert.True(TestImagesHelpers.TestImagePath(item.ProfilePath), "item.ProfilePath was not a valid image path, was: " + item.ProfilePath);
-            Assert.Equal(false, item.Adult);
+            Assert.False(item.Adult);
             Assert.True(item.Popularity > 0);
 
             Assert.NotNull(item.KnownFor);
-            Assert.True(item.KnownFor.Any(s => s.Id == 680));
+            Assert.Contains(item.KnownFor, s => s.Id == 680);
         }
 
         [Fact]
-        public void TestSearchList()
+        public async Task TestSearchListAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchListAsync("to watch", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchListAsync("to watch", i));
 
-            SearchContainer<SearchList> result = Config.Client.SearchListAsync("to watch").Result;
+            SearchContainer<SearchList> result = await Config.Client.SearchListAsync("to watch");
 
             Assert.True(result.Results.Any());
             SearchList item = result.Results.SingleOrDefault(s => s.Id == "54a5c0ceaed56c28c300013a");
@@ -103,11 +104,11 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestSearchCompany()
+        public async Task TestSearchCompanyAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchCompanyAsync("20th", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchCompanyAsync("20th", i));
 
-            SearchContainer<SearchCompany> result = Config.Client.SearchCompanyAsync("20th").Result;
+            SearchContainer<SearchCompany> result = await Config.Client.SearchCompanyAsync("20th");
 
             Assert.True(result.Results.Any());
             SearchCompany item = result.Results.SingleOrDefault(s => s.Id == 25);
@@ -119,11 +120,11 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestSearchKeyword()
+        public async Task TestSearchKeywordAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchKeywordAsync("plot", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchKeywordAsync("plot", i));
 
-            SearchContainer<SearchKeyword> result = Config.Client.SearchKeywordAsync("plot").Result;
+            SearchContainer<SearchKeyword> result = await Config.Client.SearchKeywordAsync("plot");
 
             Assert.True(result.Results.Any());
             SearchKeyword item = result.Results.SingleOrDefault(s => s.Id == 11121);
@@ -134,11 +135,11 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestSearchTvShow()
+        public async Task TestSearchTvShowAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchTvShowAsync("Breaking Bad", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchTvShowAsync("Breaking Bad", i));
 
-            SearchContainer<SearchTv> result = Config.Client.SearchTvShowAsync("Breaking Bad").Result;
+            SearchContainer<SearchTv> result = await Config.Client.SearchTvShowAsync("Breaking Bad");
 
             Assert.True(result.Results.Any());
             SearchTv item = result.Results.SingleOrDefault(s => s.Id == 1396);
@@ -157,20 +158,20 @@ namespace TMDbLibTests
             Assert.True(item.VoteCount > 0);
 
             Assert.NotNull(item.GenreIds);
-            Assert.Equal(1, item.GenreIds.Count);
+            Assert.Single(item.GenreIds);
             Assert.Equal(18, item.GenreIds[0]);
 
             Assert.NotNull(item.OriginCountry);
-            Assert.Equal(1, item.OriginCountry.Count);
+            Assert.Single(item.OriginCountry);
             Assert.Equal("US", item.OriginCountry[0]);
         }
 
         [Fact]
-        public void TestSearchMulti()
+        public async Task TestSearchMultiAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchMultiAsync("Arrow", i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchMultiAsync("Arrow", i));
 
-            SearchContainer<SearchBase> result = Config.Client.SearchMultiAsync("Arrow").Result;
+            SearchContainer<SearchBase> result = await Config.Client.SearchMultiAsync("Arrow");
 
             Assert.True(result.Results.Any());
             SearchTv item = result.Results.OfType<SearchTv>().SingleOrDefault(s => s.Id == 1412);
@@ -188,8 +189,8 @@ namespace TMDbLibTests
             Assert.True(item.VoteCount > 0);
 
             Assert.NotNull(item.OriginCountry);
-            Assert.Equal(1, item.OriginCountry.Count);
-            Assert.True(item.OriginCountry.Contains("US"));
+            Assert.Single(item.OriginCountry);
+            Assert.Contains("US", item.OriginCountry);
         }
     }
 }

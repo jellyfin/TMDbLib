@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Utilities.Converters;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -88,10 +88,10 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the ChangeItemConverter
         /// </summary>
         [Fact]
-        public void TestChangeItemConverter()
+        public async Task TestChangeItemConverter()
         {
-            Movie latestMovie = Config.Client.GetMovieLatestAsync().Sync();
-            List<Change> changes = Config.Client.GetMovieChangesAsync(latestMovie.Id).Sync();
+            Movie latestMovie = await Config.Client.GetMovieLatestAsync();
+            List<Change> changes = await Config.Client.GetMovieChangesAsync(latestMovie.Id);
             List<ChangeItemBase> changeItems = changes.SelectMany(s => s.Items).ToList();
 
             ChangeAction[] actions = { ChangeAction.Added, ChangeAction.Created, ChangeAction.Updated };

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
@@ -23,9 +23,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCompaniesExtrasNone()
+        public async Task TestCompaniesExtrasNoneAsync()
         {
-            Company company = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
+            Company company = await Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
 
             Assert.NotNull(company);
 
@@ -40,35 +40,32 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCompaniesExtrasExclusive()
+        public async Task TestCompaniesExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetCompanyAsync(id, extras).Result, IdHelper.TwentiethCenturyFox);
+            await TestMethodsHelper.TestGetExclusive(_methods, extras => Config.Client.GetCompanyAsync( IdHelper.TwentiethCenturyFox, extras));
         }
 
         [Fact]
-        public void TestCompaniesExtrasAll()
+        public async Task TestCompaniesExtrasAllAsync()
         {
-            CompanyMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Company item = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combinedEnum).Result;
-
-            TestMethodsHelper.TestAllNotNull(_methods, item);
+            await TestMethodsHelper.TestGetAll(_methods, combined => Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combined));
         }
 
         [Fact]
-        public void TestCompanyMissing()
+        public async Task TestCompanyMissingAsync()
         {
-            Company company = Config.Client.GetCompanyAsync(IdHelper.MissingID).Result;
+            Company company = await Config.Client.GetCompanyAsync(IdHelper.MissingID);
 
             Assert.Null(company);
         }
 
         [Fact]
-        public void TestCompaniesGetters()
+        public async Task TestCompaniesGettersAsync()
         {
             //GetCompanyMoviesAsync(int id, string language, int page = -1)
-            SearchContainerWithId<SearchMovie> resp = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox).Result;
-            SearchContainerWithId<SearchMovie> respPage2 = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2).Result;
-            SearchContainerWithId<SearchMovie> respItalian = Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it").Result;
+            SearchContainerWithId<SearchMovie> resp = await Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox);
+            SearchContainerWithId<SearchMovie> respPage2 = await Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2);
+            SearchContainerWithId<SearchMovie> respItalian = await Config.Client.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it");
 
             Assert.NotNull(resp);
             Assert.NotNull(respPage2);
@@ -91,25 +88,25 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCompaniesImages()
+        public async Task TestCompaniesImagesAsync()
         {
             // Get config
-            Config.Client.GetConfigAsync().Sync();
+            await Config.Client.GetConfigAsync();
 
             // Test image url generator
-            Company company = Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox).Result;
+            Company company = await Config.Client.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
 
             Uri url = Config.Client.GetImageUrl("original", company.LogoPath);
             Uri urlSecure = Config.Client.GetImageUrl("original", company.LogoPath, true);
 
-            Assert.True(TestHelpers.InternetUriExists(url));
-            Assert.True(TestHelpers.InternetUriExists(urlSecure));
+            Assert.True(await TestHelpers.InternetUriExistsAsync(url));
+            Assert.True(await TestHelpers.InternetUriExistsAsync(urlSecure));
         }
 
         [Fact]
-        public void TestCompaniesFull()
+        public async Task TestCompaniesFullAsync()
         {
-            Company company = Config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures).Result;
+            Company company = await Config.Client.GetCompanyAsync(IdHelper.ColumbiaPictures);
 
             Assert.NotNull(company);
 

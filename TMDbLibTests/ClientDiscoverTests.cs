@@ -7,17 +7,18 @@ using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TMDbLibTests
 {
     public class ClientDiscoverTests : TestBase
     {
         [Fact]
-        public void TestDiscoverTvShowsNoParams()
+        public async Task TestDiscoverTvShowsNoParamsAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.DiscoverTvShowsAsync().Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.DiscoverTvShowsAsync().Query(i));
 
-            SearchContainer<SearchTv> result = Config.Client.DiscoverTvShowsAsync().Query().Result;
+            SearchContainer<SearchTv> result = await Config.Client.DiscoverTvShowsAsync().Query();
 
             Assert.NotNull(result);
             Assert.Equal(1, result.Page);
@@ -26,21 +27,21 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestDiscoverTvShows()
+        public async Task TestDiscoverTvShowsAsync()
         {
             DiscoverTv query = Config.Client.DiscoverTvShowsAsync()
                     .WhereVoteCountIsAtLeast(100)
                     .WhereVoteAverageIsAtLeast(2);
 
-            TestHelpers.SearchPages(i => query.Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
 
         [Fact]
-        public void TestDiscoverMoviesNoParams()
+        public async Task TestDiscoverMoviesNoParamsAsync()
         {
-            TestHelpers.SearchPages(i => Config.Client.DiscoverMoviesAsync().Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => Config.Client.DiscoverMoviesAsync().Query(i));
 
-            SearchContainer<SearchMovie> result = Config.Client.DiscoverMoviesAsync().Query().Result;
+            SearchContainer<SearchMovie> result = await Config.Client.DiscoverMoviesAsync().Query();
 
             Assert.NotNull(result);
             Assert.Equal(1, result.Page);
@@ -49,40 +50,40 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestDiscoverMovies()
+        public async Task TestDiscoverMoviesAsync()
         {
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync()
                     .WhereVoteCountIsAtLeast(1000)
                     .WhereVoteAverageIsAtLeast(2);
 
-            TestHelpers.SearchPages(i => query.Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
 
         [Fact]
-        public void TestDiscoverMoviesRegion()
+        public async Task TestDiscoverMoviesRegionAsync()
         {
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereReleaseDateIsInRegion("BR").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
 
-            TestHelpers.SearchPages(i => query.Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
 
         [Fact]
-        public void TestDiscoverMoviesLanguage()
+        public async Task TestDiscoverMoviesLanguageAsync()
         {
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereLanguageIs("da-DK").WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
 
-            Assert.Equal("Skønheden og Udyret", query.Query(0).Result.Results[11].Title);
+            Assert.Equal("Skønheden og Udyret", (await query.Query(0)).Results[11].Title);
 
-            TestHelpers.SearchPages(i => query.Query(i).Result);
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
 
         [Theory]
         [InlineData("ko")]
         [InlineData("zh")]
-        public void TestDiscoverMoviesOriginalLanguage(string language)
+        public async Task TestDiscoverMoviesOriginalLanguage(string language)
         {
             DiscoverMovie query = Config.Client.DiscoverMoviesAsync().WhereOriginalLanguageIs(language);
-            List<SearchMovie> results = query.Query(0).Result.Results;
+            List<SearchMovie> results = (await query.Query(0)).Results;
 
             Assert.NotEmpty(results);
             Assert.All(results, item => Assert.Contains(language, item.OriginalLanguage));

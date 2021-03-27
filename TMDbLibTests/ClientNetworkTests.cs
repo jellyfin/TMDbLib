@@ -1,4 +1,5 @@
-﻿using TMDbLib.Objects.General;
+﻿using System.Threading.Tasks;
+using TMDbLib.Objects.General;
 using Xunit;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
@@ -9,9 +10,9 @@ namespace TMDbLibTests
     public class ClientNetworkTests : TestBase
     {
         [Fact]
-        public void TestNetworkGetById()
+        public async Task TestNetworkGetByIdAsync()
         {
-            Network network = Config.Client.GetNetworkAsync(IdHelper.Netflix).Result;
+            Network network =  await Config.Client.GetNetworkAsync(IdHelper.Netflix);
 
             Assert.NotNull(network);
             Assert.Equal("Netflix", network.Name);
@@ -21,9 +22,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestNetworkImages()
+        public async Task TestNetworkImagesAsync()
         {
-            NetworkLogos logos = Config.Client.GetNetworkImagesAsync(IdHelper.Netflix).Result;
+            NetworkLogos logos = await  Config.Client.GetNetworkImagesAsync(IdHelper.Netflix);
 
             Assert.NotNull(logos);
             Assert.Equal(IdHelper.Netflix, logos.Id);
@@ -31,9 +32,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestNetworkAlternativeNames()
+        public async Task TestNetworkAlternativeNamesAsync()
         {
-            AlternativeNames names = Config.Client.GetNetworkAlternativeNamesAsync(IdHelper.AMC).Result;
+            AlternativeNames names = await  Config.Client.GetNetworkAlternativeNamesAsync(IdHelper.AMC);
 
             Assert.NotNull(names);
             Assert.Equal(IdHelper.AMC, names.Id);
@@ -42,9 +43,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestNetworkMissing()
+        public async Task TestNetworkMissingAsync()
         {
-            Network network = Config.Client.GetNetworkAsync(IdHelper.MissingID).Result;
+            Network network =  await Config.Client.GetNetworkAsync(IdHelper.MissingID);
 
             Assert.Null(network);
         }

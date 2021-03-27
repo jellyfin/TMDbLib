@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.General;
@@ -22,9 +22,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCollectionsExtrasNone()
+        public async Task TestCollectionsExtrasNone()
         {
-            Collection collection = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
+            Collection collection = await Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection);
 
             Assert.NotNull(collection);
             Assert.Equal("James Bond Collection", collection.Name);
@@ -39,17 +39,17 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCollectionMissing()
+        public async Task TestCollectionMissing()
         {
-            Collection collection = Config.Client.GetCollectionAsync(IdHelper.MissingID).Result;
+            Collection collection = await Config.Client.GetCollectionAsync(IdHelper.MissingID);
 
             Assert.Null(collection);
         }
 
         [Fact]
-        public void TestCollectionsParts()
+        public async Task TestCollectionsParts()
         {
-            Collection collection = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection).Result;
+            Collection collection = await Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection);
 
             Assert.NotNull(collection);
             Assert.Equal("James Bond Collection", collection.Name);
@@ -62,31 +62,28 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCollectionsExtrasExclusive()
+        public async Task TestCollectionsExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetCollectionAsync(id, extras).Result, IdHelper.JamesBondCollection);
+            await TestMethodsHelper.TestGetExclusive(_methods, extras => Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, extras));
         }
 
         [Fact]
-        public void TestCollectionsExtrasAll()
+        public async Task TestCollectionsExtrasAll()
         {
-            CollectionMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Collection item = Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, combinedEnum).Result;
-
-            TestMethodsHelper.TestAllNotNull(_methods, item);
+            await TestMethodsHelper.TestGetAll(_methods, combined => Config.Client.GetCollectionAsync(IdHelper.JamesBondCollection, combined));
         }
 
         [Fact]
-        public void TestCollectionsImages()
+        public async Task TestCollectionsImagesAsync()
         {
             // Get config
-            Config.Client.GetConfigAsync().Sync();
+            await Config.Client.GetConfigAsync();
 
             // Test image url generator
-            ImagesWithId images = Config.Client.GetCollectionImagesAsync(IdHelper.JamesBondCollection).Result;
+            ImagesWithId images = await Config.Client.GetCollectionImagesAsync(IdHelper.JamesBondCollection);
 
             Assert.Equal(IdHelper.JamesBondCollection, images.Id);
-            TestImagesHelpers.TestImages(Config, images);
+            await TestImagesHelpers.TestImagesAsync(Config, images);
         }
     }
 }

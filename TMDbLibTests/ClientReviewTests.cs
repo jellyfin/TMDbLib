@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Threading.Tasks;
+using Xunit;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
@@ -9,9 +10,9 @@ namespace TMDbLibTests
     public class ClientReviewTests : TestBase
     {
         [Fact]
-        public void TestReviewFullDetails()
+        public async Task TestReviewFullDetails()
         {
-            Review review = Config.Client.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId).Result;
+            Review review = await Config.Client.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId);
 
             Assert.NotNull(review);
 
@@ -25,9 +26,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestReviewMissing()
+        public async Task TestReviewMissing()
         {
-            Review review = Config.Client.GetReviewAsync(IdHelper.MissingID.ToString()).Result;
+            Review review = await Config.Client.GetReviewAsync(IdHelper.MissingID.ToString());
 
             Assert.Null(review);
         }

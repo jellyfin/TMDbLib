@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 using TMDbLib.Objects.Trending;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -10,23 +10,23 @@ namespace TMDbLibTests
     public class ClientTrendingTests : TestBase
     {
         [Fact]
-        public void TestTrendingMovies()
+        public async Task TestTrendingMoviesAsync()
         {
-            var movies = Config.Client.GetTrendingMoviesAsync(TimeWindow.Week).Result;
+            SearchContainer<SearchMovie> movies = await Config.Client.GetTrendingMoviesAsync(TimeWindow.Week);
             Assert.True(movies.Results.Count > 0);
         }
 
         [Fact]
-        public void TestTrendingTv()
+        public async Task TestTrendingTvAsync()
         {
-            var tv = Config.Client.GetTrendingTvAsync(TimeWindow.Week).Result;
+            SearchContainer<SearchTv> tv = await Config.Client.GetTrendingTvAsync(TimeWindow.Week);
             Assert.True(tv.Results.Count > 0);
         }
 
         [Fact]
-        public void TestTrendingPeople()
+        public async Task TestTrendingPeopleAsync()
         {
-            var people = Config.Client.GetTrendingPeopleAsync(TimeWindow.Week).Result;
+            SearchContainer<SearchPerson> people = await Config.Client.GetTrendingPeopleAsync(TimeWindow.Week);
             Assert.True(people.Results.Count > 0);
         }
     }

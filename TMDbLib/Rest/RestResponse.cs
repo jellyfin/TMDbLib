@@ -51,6 +51,7 @@ namespace TMDbLib.Rest
                 return _client.Serializer.Deserialize<T>(tr);
         }
 
+        [Obsolete("Remove this, uses .Result")]
         public static implicit operator T(RestResponse<T> response)
         {
             try

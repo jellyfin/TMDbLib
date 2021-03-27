@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.People;
@@ -29,9 +30,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsExtrasNone()
+        public async Task TestPersonsExtrasNoneAsync()
         {
-            Person person = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
+            Person person = await Config.Client.GetPersonAsync(IdHelper.BruceWillis);
 
             Assert.NotNull(person);
 
@@ -45,24 +46,21 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsExtrasExclusive()
+        public async Task TestPersonsExtrasExclusive()
         {
-            TestMethodsHelper.TestGetExclusive(_methods, (id, extras) => Config.Client.GetPersonAsync(id, extras).Result, IdHelper.BruceWillis);
+            await TestMethodsHelper.TestGetExclusive(_methods, extras => Config.Client.GetPersonAsync(IdHelper.BruceWillis, extras));
         }
 
         [Fact]
-        public void TestPersonsExtrasAll()
+        public async Task TestPersonsExtrasAllAsync()
         {
-            PersonMethods combinedEnum = _methods.Keys.Aggregate((methods, movieMethods) => methods | movieMethods);
-            Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis, combinedEnum).Result;
-
-            TestMethodsHelper.TestAllNotNull(_methods, item);
+            await TestMethodsHelper.TestGetAll(_methods, combined => Config.Client.GetPersonAsync(IdHelper.BruceWillis, combined));
         }
 
         [Fact]
-        public void TestPersonsGetWithPartialDate()
+        public async Task TestPersonsGetWithPartialDateAsync()
         {
-            Person item = Config.Client.GetPersonAsync(IdHelper.PersonPartialDate).Result;
+            Person item = await Config.Client.GetPersonAsync(IdHelper.PersonPartialDate);
 
             Assert.NotNull(item);
             Assert.Null(item.Birthday);
@@ -70,20 +68,20 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonMissing()
+        public async Task TestPersonMissingAsync()
         {
-            Person person = Config.Client.GetPersonAsync(IdHelper.MissingID).Result;
+            Person person = await Config.Client.GetPersonAsync(IdHelper.MissingID);
 
             Assert.Null(person);
         }
 
         [Fact]
-        public void TestPersonsGet()
+        public async Task TestPersonsGetAsync()
         {
-            Person item = Config.Client.GetPersonAsync(IdHelper.BruceWillis).Result;
+            Person item = await Config.Client.GetPersonAsync(IdHelper.BruceWillis);
 
             Assert.NotNull(item);
-            Assert.Equal(false, item.Adult);
+            Assert.False(item.Adult);
             Assert.NotNull(item.Biography);
             Assert.Equal(PersonGender.Male, item.Gender);
             Assert.Equal(new DateTime(1955, 3, 19), item.Birthday);
@@ -98,14 +96,14 @@ namespace TMDbLibTests
 
             Assert.NotNull(item.AlsoKnownAs);
             Assert.Equal(2, item.AlsoKnownAs.Count);
-            Assert.True(item.AlsoKnownAs.Contains("Брюс Уиллис"));
-            Assert.True(item.AlsoKnownAs.Contains("브루스 윌리스"));
+            Assert.Contains("Брюс Уиллис", item.AlsoKnownAs);
+            Assert.Contains("브루스 윌리스", item.AlsoKnownAs);
         }
 
         [Fact]
-        public void TestPersonsGetPersonTvCredits()
+        public async Task TestPersonsGetPersonTvCreditsAsync()
         {
-            TvCredits item = Config.Client.GetPersonTvCreditsAsync(IdHelper.BruceWillis).Result;
+            TvCredits item = await Config.Client.GetPersonTvCreditsAsync(IdHelper.BruceWillis);
 
             Assert.NotNull(item);
             Assert.NotNull(item.Cast);
@@ -138,9 +136,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsGetPersonMovieCredits()
+        public async Task TestPersonsGetPersonMovieCreditsAsync()
         {
-            MovieCredits item = Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis).Result;
+            MovieCredits item = await Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis);
 
             Assert.NotNull(item);
             Assert.NotNull(item.Cast);
@@ -150,7 +148,7 @@ namespace TMDbLibTests
 
             MovieRole cast = item.Cast.SingleOrDefault(s => s.CreditId == "52fe4329c3a36847f803f193");
             Assert.NotNull(cast);
-            Assert.Equal(false, cast.Adult);
+            Assert.False(cast.Adult);
             Assert.Equal("Lieutenant Muldoon", cast.Character);
             Assert.Equal("52fe4329c3a36847f803f193", cast.CreditId);
             Assert.Equal(1992, cast.Id);
@@ -161,7 +159,7 @@ namespace TMDbLibTests
 
             MovieJob job = item.Crew.SingleOrDefault(s => s.CreditId == "52fe432ec3a36847f8040603");
             Assert.NotNull(job);
-            Assert.Equal(false, job.Adult);
+            Assert.False(job.Adult);
             Assert.Equal("52fe432ec3a36847f8040603", job.CreditId);
             Assert.Equal("Production", job.Department);
             Assert.Equal(2026, job.Id);
@@ -173,9 +171,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsGetPersonExternalIds()
+        public async Task TestPersonsGetPersonExternalIdsAsync()
         {
-            ExternalIdsPerson item = Config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis).Result;
+            ExternalIdsPerson item = await Config.Client.GetPersonExternalIdsAsync(IdHelper.BruceWillis);
 
             Assert.NotNull(item);
             Assert.Equal(IdHelper.BruceWillis, item.Id);
@@ -185,7 +183,7 @@ namespace TMDbLibTests
             Assert.Equal("10183", item.TvrageId);
             Assert.Null(item.FacebookId);
 
-            item = Config.Client.GetPersonExternalIdsAsync(IdHelper.JoshACagan).Result;
+            item = await Config.Client.GetPersonExternalIdsAsync(IdHelper.JoshACagan);
 
             Assert.NotNull(item);
             Assert.Equal(IdHelper.JoshACagan, item.Id);
@@ -195,13 +193,13 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsGetPersonCredits()
+        public async Task TestPersonsGetPersonCreditsAsync()
         {
             //GetPersonCredits(int id, string language)
-            MovieCredits resp = Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis).Result;
+            MovieCredits resp = await Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis);
             Assert.NotNull(resp);
 
-            MovieCredits respItalian = Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis, "it").Result;
+            MovieCredits respItalian = await Config.Client.GetPersonMovieCreditsAsync(IdHelper.BruceWillis, "it");
             Assert.NotNull(respItalian);
 
             Assert.Equal(resp.Cast.Count, respItalian.Cast.Count);
@@ -232,16 +230,16 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsGetPersonChanges()
+        public async Task TestPersonsGetPersonChangesAsync()
         {
             // FindAsync latest changed person
-            SearchContainer<ChangesListItem> latestChanges = Config.Client.GetChangesPeopleAsync().Sync();
+            SearchContainer<ChangesListItem> latestChanges = await Config.Client.GetChangesPeopleAsync();
             int latestChanged = latestChanges.Results.Last().Id;
 
             // Fetch changelog
             DateTime lower = DateTime.UtcNow.AddDays(-14);
             DateTime higher = DateTime.UtcNow;
-            List<Change> respRange = Config.Client.GetPersonChangesAsync(latestChanged, lower, higher).Result;
+            List<Change> respRange = await Config.Client.GetPersonChangesAsync(latestChanged, lower, higher);
 
             Assert.NotNull(respRange);
             Assert.True(respRange.Count > 0);
@@ -260,20 +258,20 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsImages()
+        public async Task TestPersonsImagesAsync()
         {
             // Get config
-            Config.Client.GetConfigAsync().Sync();
+            await Config.Client.GetConfigAsync();
 
             // Get images
-            ProfileImages images = Config.Client.GetPersonImagesAsync(IdHelper.BruceWillis).Result;
+            ProfileImages images = await Config.Client.GetPersonImagesAsync(IdHelper.BruceWillis);
 
             Assert.NotNull(images);
             Assert.NotNull(images.Profiles);
             Assert.Equal(IdHelper.BruceWillis, images.Id);
 
             // Test image url generator
-            TestImagesHelpers.TestImages(Config, images);
+            await TestImagesHelpers.TestImagesAsync(Config, images);
 
             ImageData image = images.Profiles.SingleOrDefault(s => s.FilePath == "/kI1OluWhLJk3pnR19VjOfABpnTY.jpg");
 
@@ -288,15 +286,15 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPersonsTaggedImages()
+        public async Task TestPersonsTaggedImagesAsync()
         {
             // Get config
-            Config.Client.GetConfigAsync().Sync();
+            await Config.Client.GetConfigAsync();
 
             // Get images
-            TestHelpers.SearchPages(i => Config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, i).Result);
+            await TestHelpers.SearchPagesAsync<SearchContainerWithId<TaggedImage>, TaggedImage>(i => Config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, i));
 
-            SearchContainer<TaggedImage> images = Config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, 1).Result;
+            SearchContainer<TaggedImage> images = await Config.Client.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, 1);
 
             Assert.NotNull(images);
             Assert.NotNull(images.Results);
@@ -319,7 +317,7 @@ namespace TMDbLibTests
             Assert.IsType<SearchMovie>(image.Media);
 
             SearchMovie mediaBase = (SearchMovie)image.Media;
-            Assert.Equal(false, mediaBase.Adult);
+            Assert.False(mediaBase.Adult);
             Assert.True(TestImagesHelpers.TestImagePath(mediaBase.BackdropPath), "image.Media.BackdropPath was not a valid image path, was: " + mediaBase.BackdropPath);
             Assert.Equal(187, mediaBase.Id);
             Assert.Equal("en", mediaBase.OriginalLanguage);
@@ -329,56 +327,56 @@ namespace TMDbLibTests
             Assert.True(TestImagesHelpers.TestImagePath(mediaBase.PosterPath), "image.Media.PosterPath was not a valid image path, was: " + mediaBase.PosterPath);
             Assert.True(mediaBase.Popularity > 0);
             Assert.Equal("Sin City", mediaBase.Title);
-            Assert.Equal(false, mediaBase.Video);
+            Assert.False(mediaBase.Video);
             Assert.True(mediaBase.VoteAverage > 0);
             Assert.True(mediaBase.VoteCount > 0);
 
             Assert.NotNull(mediaBase.GenreIds);
             Assert.Equal(3, mediaBase.GenreIds.Count);
-            Assert.True(mediaBase.GenreIds.Contains(28));
-            Assert.True(mediaBase.GenreIds.Contains(53));
-            Assert.True(mediaBase.GenreIds.Contains(80));
+            Assert.Contains(28, mediaBase.GenreIds);
+            Assert.Contains(53, mediaBase.GenreIds);
+            Assert.Contains(80, mediaBase.GenreIds);
         }
 
         [Fact]
-        public void TestPersonsList()
+        public async Task TestPersonsListAsync()
         {
             foreach (PersonListType type in Enum.GetValues(typeof(PersonListType)).OfType<PersonListType>())
             {
-                SearchContainer<PersonResult> list = Config.Client.GetPersonListAsync(type).Result;
+                SearchContainer<PersonResult> list = await Config.Client.GetPersonListAsync(type);
 
                 Assert.NotNull(list);
                 Assert.True(list.Results.Count > 0);
                 Assert.Equal(1, list.Page);
 
-                SearchContainer<PersonResult> listPage2 = Config.Client.GetPersonListAsync(type, 2).Result;
+                SearchContainer<PersonResult> listPage2 = await Config.Client.GetPersonListAsync(type, 2);
 
                 Assert.NotNull(listPage2);
                 Assert.True(listPage2.Results.Count > 0);
                 Assert.Equal(2, listPage2.Page);
 
-                SearchContainer<PersonResult> list2 = Config.Client.GetPersonListAsync(type).Result;
+                SearchContainer<PersonResult> list2 = await Config.Client.GetPersonListAsync(type);
 
                 Assert.NotNull(list2);
                 Assert.True(list2.Results.Count > 0);
                 Assert.Equal(1, list2.Page);
 
                 // At least one person should differ
-                Assert.True(list.Results.Any(s => list2.Results.Any(x => x.Name != s.Name)));
+                Assert.Contains(list.Results, s => list2.Results.Any(x => x.Name != s.Name));
             }
         }
 
         [Fact]
-        public void TestGetLatestPerson()
+        public async Task TestGetLatestPersonAsync()
         {
-            Person item = Config.Client.GetLatestPersonAsync().Sync();
+            Person item = await Config.Client.GetLatestPersonAsync();
             Assert.NotNull(item);
         }
 
         [Fact]
-        public void TestGetTranslatedPerson()
+        public async Task TestGetTranslatedPersonAsync()
         {
-            Person person = Config.Client.GetPersonAsync(1019, "da").Result;
+            Person person = await Config.Client.GetPersonAsync(1019, "da");
             Assert.NotNull(person);
             Assert.Equal("Mads Dittmann Mikkelsen, der er søn af fuldmægtig Henning Mikkelsen og hustru sygehjælper Bente Christiansen, voksede op på Nørrebro i København. I 11 år var han gymnast og gymnastikinstruktør i Gymnastikforeningen Gefion. Efter studentereksamen tilmeldte han sig et dansekursus for arbejdsløse. Det blev siden til otte års professionelt engagement i danseensemblet Mikado og han var to gange på Martha Grahams sommerskole i New York. Senere blev han også vikar for Vicky Leander på Daghøjskolen for dansk, drama og musik. Han blev skuespilleruddannet fra Århus Teaterskole i 1996 og debuterede som førsteelsker i \"Kunst\" på Århus Teater. Mads Mikkelsen har bl.a. stået på scenen i \"Paradis\" (1997), \"Længe siden\" (1999) og \"Fiaskospiralen\" (1999) på Dr. Dante’s Aveny samt \"Romeo og Julie\" (1998) på Østre Gasværk. Han filmdebuterede allerede i 1995 med en af hovedrollerne i novellefilmen \"Blomsterfangen\" I 1996 fik han sit store kunstneriske filmgennembrud som den kronragede slyngel Tonny i den banebrydende og meget rå film \"Pusher\". Han havde den ene af hovedrollerne i den danske film \"Vildspor\", rollen som Lenny i \"Bleeder\" og huskes som den våbengale Arne i Anders Thomas Jensens første spillefilm \"Blinkende Lygter\" (2000), der blev det helt store biografhit. I 2001 fik han også fænomenal succes i Hella Joofs biograffilm \"En kort, en lang\", hvor han spillede bøssen Jacob over for Troels Lyby. Siden 2005 har han haft international succes i film som \"King Arthur\" og især som storskurken Le Chiffre i James Bond- filmen \"Casino Royale\" fra 2006. I DR\'s politiserie \"Rejseholdet\" fik han sit folkelige gennembrud som politimanden Allan Fischer. Han er bror til skuespilleren Lars Mikkelsen. Mads Mikkelsen blev den 2. december 2000 gift med danserinde og koreograf Hanne Jacobsen (13-01-1961) og sammen har de to børn.", person.Biography);
         }

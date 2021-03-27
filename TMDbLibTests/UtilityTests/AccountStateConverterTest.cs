@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -50,10 +51,10 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the AccountStateConverter on the AccountState type
         /// </summary>
         [Fact]
-        public void TestAccountStateConverterAccountState()
+        public async Task TestAccountStateConverterAccountState()
         {
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
-            AccountState accountState = Config.Client.GetMovieAccountStateAsync(IdHelper.Avatar).Sync();
+            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            AccountState accountState = await Config.Client.GetMovieAccountStateAsync(IdHelper.Avatar);
 
             Assert.Equal(IdHelper.Avatar, accountState.Id);
             Assert.True(accountState.Favorite);
@@ -65,10 +66,10 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the AccountStateConverter on the TvEpisodeAccountState type
         /// </summary>
         [Fact]
-        public void TestAccountStateConverterTvEpisodeAccountState()
+        public async Task TestAccountStateConverterTvEpisodeAccountState()
         {
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
-            ResultContainer<TvEpisodeAccountStateWithNumber> season = Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1).Sync();
+            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            ResultContainer<TvEpisodeAccountStateWithNumber> season = await Config.Client.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1);
 
             // Episode 1 has a rating
             TvEpisodeAccountStateWithNumber episode = season.Results.FirstOrDefault(s => s.EpisodeNumber == 1);

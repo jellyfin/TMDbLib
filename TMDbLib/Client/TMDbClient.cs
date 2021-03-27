@@ -243,7 +243,7 @@ namespace TMDbLib.Client
         /// - Use the 'AuthenticationGetUserSessionAsync' and 'AuthenticationCreateGuestSessionAsync' methods to optain the respective session ids.
         /// - User sessions have access to far for methods than guest sessions, these can currently only be used to rate media.
         /// </remarks>
-        public void SetSessionInformation(string sessionId, SessionType sessionType)
+        public async Task SetSessionInformationAsync(string sessionId, SessionType sessionType)
         {
             ActiveAccount = null;
             SessionId = sessionId;
@@ -259,7 +259,7 @@ namespace TMDbLib.Client
             {
                 try
                 {
-                    ActiveAccount = AccountGetDetailsAsync().Result;
+                    ActiveAccount = await AccountGetDetailsAsync().ConfigureAwait(false);
                 }
                 catch (Exception)
                 {

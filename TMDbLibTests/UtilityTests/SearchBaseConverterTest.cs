@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
@@ -65,10 +66,10 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the SearchBaseConverter
         /// </summary>
         [Fact]
-        public void TestSearchBaseConverter()
+        public async Task TestSearchBaseConverter()
         {
-            TestHelpers.SearchPages(i => Config.Client.SearchMultiAsync("Jobs", i).Sync());
-            SearchContainer<SearchBase> result = Config.Client.SearchMultiAsync("Jobs").Sync();
+            await TestHelpers.SearchPagesAsync(i => Config.Client.SearchMultiAsync("Jobs", i));
+            SearchContainer<SearchBase> result = await Config.Client.SearchMultiAsync("Jobs");
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

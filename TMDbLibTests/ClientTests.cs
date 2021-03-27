@@ -13,22 +13,22 @@ namespace TMDbLibTests
     public class ClientTests : TestBase
     {
         [Fact]
-        public void GetConfigTest()
+        public async Task GetConfigTest()
         {
             Assert.False(Config.Client.HasConfig);
-            Config.Client.GetConfigAsync().Sync();
+            await Config.Client.GetConfigAsync();
             Assert.True(Config.Client.HasConfig);
 
             Assert.NotNull(Config.Client.Config);
         }
 
         [Fact]
-        public void GetConfigSslTest()
+        public async Task GetConfigSslTest()
         {
             TestConfig config = new TestConfig(true);
 
             Assert.False(config.Client.HasConfig);
-            config.Client.GetConfigAsync().Sync();
+            await config.Client.GetConfigAsync();
             Assert.True(config.Client.HasConfig);
 
             Assert.NotNull(config.Client.Config);
@@ -57,19 +57,19 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void ClientConstructorUrlTest()
+        public async Task ClientConstructorUrlTest()
         {
             TMDbClient clientA = new TMDbClient(TestConfig.APIKey, false, "http://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientA.GetConfigAsync().Sync();
+            await clientA.GetConfigAsync();
 
             TMDbClient clientB = new TMDbClient(TestConfig.APIKey, true, "http://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientB.GetConfigAsync().Sync();
+            await clientB.GetConfigAsync();
 
             TMDbClient clientC = new TMDbClient(TestConfig.APIKey, false, "https://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientC.GetConfigAsync().Sync();
+            await clientC.GetConfigAsync();
 
             TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org") { MaxRetryCount = 2 };
-            clientD.GetConfigAsync().Sync();
+            await clientD.GetConfigAsync();
         }
 
         [Fact]
@@ -81,21 +81,22 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void ClientRateLimitTest()
+        public async Task ClientRateLimitTest()
         {
             const int id = IdHelper.AGoodDayToDieHard;
 
             TMDbClient client = new TMDbClient(TestConfig.APIKey);
             client.MaxRetryCount = 0;
 
-            Assert.Throws<RequestLimitExceededException>(() =>
+            await Assert.ThrowsAsync<RequestLimitExceededException>(async () =>
             {
                 try
                 {
-                    Parallel.For(0, 100, i =>
-                    {
-                        client.GetMovieAsync(id).Sync();
-                    });
+                    List<Task> tasks = new List<Task>(100);
+                    for (int i = 0; i < 100; i++)
+                        tasks.Add(client.GetMovieAsync(id));
+
+                    await Task.WhenAll(tasks);
                 }
                 catch (AggregateException ex)
                 {

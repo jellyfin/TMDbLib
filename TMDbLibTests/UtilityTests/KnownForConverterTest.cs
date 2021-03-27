@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Utilities.Converters;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -50,9 +50,9 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the KnownForConverter
         /// </summary>
         [Fact]
-        public void TestJsonKnownForConverter()
+        public async Task TestJsonKnownForConverter()
         {
-            SearchContainer<SearchPerson> result = Config.Client.SearchPersonAsync("Willis").Sync();
+            SearchContainer<SearchPerson> result = await Config.Client.SearchPersonAsync("Willis");
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

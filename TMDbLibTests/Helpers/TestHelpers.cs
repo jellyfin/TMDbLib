@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Net;
+using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using Xunit;
 
@@ -8,14 +9,15 @@ namespace TMDbLibTests.Helpers
 {
     public static class TestHelpers
     {
-        public static bool InternetUriExists(Uri uri)
+        [Obsolete("Use HttpClient")]
+        public static async Task<bool> InternetUriExistsAsync(Uri uri)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
             req.Method = "HEAD";
 
             try
             {
-                using (req.GetResponseAsync().Sync())
+                using (await req.GetResponseAsync())
                 {
                     // It exists
                     return true;
@@ -32,10 +34,15 @@ namespace TMDbLibTests.Helpers
             }
         }
 
-        public static void SearchPages<T>(Func<int, SearchContainer<T>> getter)
+        public static Task SearchPagesAsync<T>(Func<int, Task<SearchContainer<T>>> getter)
+        {
+            return SearchPagesAsync<SearchContainer<T>, T>(getter);
+        }
+
+        public static async Task SearchPagesAsync<TContainer, T>(Func<int, Task<TContainer>> getter) where TContainer : SearchContainer<T>
         {
             // Check page 1
-            SearchContainer<T> results = getter(1);
+            TContainer results = await getter(1);
 
             Assert.NotNull(results);
             Assert.NotNull(results.Results);
@@ -45,7 +52,7 @@ namespace TMDbLibTests.Helpers
             Assert.True(results.TotalPages > 0);
 
             // Check page 2
-            SearchContainer<T> results2 = getter(2);
+            TContainer results2 = await getter(2);
 
             Assert.NotNull(results2);
             Assert.NotNull(results2.Results);
@@ -55,9 +62,9 @@ namespace TMDbLibTests.Helpers
             //Assert.AreEqual(results.TotalPages, results2.TotalPages);
 
             if (results.Results.Count == results.TotalResults)
-                Assert.Equal(0, results2.Results.Count);
+                Assert.Empty(results2.Results);
             else
-                Assert.NotEqual(0, results2.Results.Count);
+                Assert.NotEmpty(results2.Results);
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Certifications;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests
@@ -10,9 +10,9 @@ namespace TMDbLibTests
     public class ClientCertificationsTests : TestBase
     {
         [Fact]
-        public void TestCertificationsListMovie()
+        public async Task TestCertificationsListMovieAsync()
         {
-            CertificationsContainer result = Config.Client.GetMovieCertificationsAsync().Sync();
+            CertificationsContainer result = await Config.Client.GetMovieCertificationsAsync();
             Assert.NotNull(result);
             Assert.NotNull(result.Certifications);
             Assert.True(result.Certifications.Count > 1);
@@ -30,9 +30,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCertificationsListTv()
+        public async Task TestCertificationsListTvAsync()
         {
-            CertificationsContainer result = Config.Client.GetTvCertificationsAsync().Sync();
+            CertificationsContainer result = await Config.Client.GetTvCertificationsAsync();
             Assert.NotNull(result);
             Assert.NotNull(result.Certifications);
             Assert.True(result.Certifications.Count > 1);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -16,10 +17,10 @@ namespace TMDbLibTests
         private const string TestListId = "528349d419c2954bd21ca0a8";
 
         [Fact]
-        public void TestList()
+        public async Task TestListAsync()
         {
             // Get list
-            GenericList list = Config.Client.GetListAsync(TestListId).Result;
+            GenericList list = await Config.Client.GetListAsync(TestListId);
 
             Assert.NotNull(list);
             Assert.Equal(TestListId, list.Id);
@@ -31,7 +32,7 @@ namespace TMDbLibTests
 
                 // Ensure all movies point to this list
                 int page = 1;
-                SearchContainer<ListResult> movieLists = Config.Client.GetMovieListsAsync(movieResult.Id).Result;
+                SearchContainer<ListResult> movieLists = await Config.Client.GetMovieListsAsync(movieResult.Id);
                 while (movieLists != null)
                 {
                     // Check if the current result page contains the relevant list
@@ -43,7 +44,7 @@ namespace TMDbLibTests
 
                     // See if there is an other page we could try, if not the test fails
                     if (movieLists.Page < movieLists.TotalPages)
-                        movieLists = Config.Client.GetMovieListsAsync(movieResult.Id, ++page).Result;
+                        movieLists = await Config.Client.GetMovieListsAsync(movieResult.Id, ++page);
                     else
                         throw new Exception($"Movie '{movieResult.Title}' was not linked to the test list");
                 }
@@ -51,103 +52,103 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestListMissing()
+        public async Task TestListMissingAsync()
         {
-            GenericList list = Config.Client.GetListAsync(IdHelper.MissingID.ToString()).Result;
+            GenericList list = await Config.Client.GetListAsync(IdHelper.MissingID.ToString());
 
             Assert.Null(list);
         }
 
         [Fact]
-        public void TestListIsMoviePresentFailure()
+        public async Task TestListIsMoviePresentFailureAsync()
         {
-            Assert.False(Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Terminator).Result);
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            Assert.False(await Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Terminator));
+            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
 
             // Clear list
-            Assert.True(Config.Client.ListClearAsync(TestListId).Result);
+            Assert.True(await Config.Client.ListClearAsync(TestListId));
 
             // Verify Avatar is not present
-            Assert.False(Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar).Result);
+            Assert.False(await Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
 
             // Add Avatar
-            Assert.True(Config.Client.ListAddMovieAsync(TestListId, IdHelper.Avatar).Result);
+            Assert.True(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.Avatar));
 
             // Verify Avatar is present
-            Assert.True(Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar).Result);
+            Assert.True(await Config.Client.GetListIsMoviePresentAsync(TestListId, IdHelper.Avatar));
         }
 
         [Fact]
-        public void TestListCreateAndDelete()
+        public async Task TestListCreateAndDeleteAsync()
         {
             const string listName = "Test List 123";
 
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
-            string newListId = Config.Client.ListCreateAsync(listName).Result;
+            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
+            string newListId = await Config.Client.ListCreateAsync(listName);
 
             Assert.False(string.IsNullOrWhiteSpace(newListId));
 
-            GenericList newlyAddedList = Config.Client.GetListAsync(newListId).Result;
+            GenericList newlyAddedList = await Config.Client.GetListAsync(newListId);
             Assert.NotNull(newlyAddedList);
             Assert.Equal(listName, newlyAddedList.Name);
             Assert.Equal("", newlyAddedList.Description); // "" is the default value
             Assert.Equal("en", newlyAddedList.Iso_639_1); // en is the default value
             Assert.Equal(0, newlyAddedList.ItemCount);
-            Assert.Equal(0, newlyAddedList.Items.Count);
+            Assert.Empty(newlyAddedList.Items);
             Assert.False(string.IsNullOrWhiteSpace(newlyAddedList.CreatedBy));
 
-            Assert.True(Config.Client.ListDeleteAsync(newListId).Result);
+            Assert.True(await Config.Client.ListDeleteAsync(newListId));
         }
 
         [Fact]
-        public void TestListDeleteFailure()
+        public async Task TestListDeleteFailureAsync()
         {
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
 
             // Try removing a list with an incorrect id
-            Assert.False(Config.Client.ListDeleteAsync("bla").Result);
+            Assert.False(await Config.Client.ListDeleteAsync("bla"));
         }
 
         [Fact]
-        public void TestListAddAndRemoveMovie()
+        public async Task TestListAddAndRemoveMovieAsync()
         {
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
 
             // Add a new movie to the list
-            Assert.True(Config.Client.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty).Result);
+            Assert.True(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
 
             // Try again, this time it should fail since the list already contains this movie
-            Assert.False(Config.Client.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty).Result);
+            Assert.False(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.EvanAlmighty));
 
             // Get list and check if the item was added
-            GenericList listAfterAdd = Config.Client.GetListAsync(TestListId).Result;
-            Assert.True(listAfterAdd.Items.Any(m => m.Id == IdHelper.EvanAlmighty));
+            GenericList listAfterAdd = await Config.Client.GetListAsync(TestListId);
+            Assert.Contains(listAfterAdd.Items, m => m.Id == IdHelper.EvanAlmighty);
 
             // Remove the previously added movie from the list
-            Assert.True(Config.Client.ListRemoveMovieAsync(TestListId, IdHelper.EvanAlmighty).Result);
+            Assert.True(await Config.Client.ListRemoveMovieAsync(TestListId, IdHelper.EvanAlmighty));
 
             // Get list and check if the item was removed
-            GenericList listAfterRemove = Config.Client.GetListAsync(TestListId).Result;
-            Assert.False(listAfterRemove.Items.Any(m => m.Id == IdHelper.EvanAlmighty));
+            GenericList listAfterRemove = await Config.Client.GetListAsync(TestListId);
+            Assert.DoesNotContain(listAfterRemove.Items, m => m.Id == IdHelper.EvanAlmighty);
         }
 
         [Fact]
-        public void TestListClear()
+        public async Task TestListClearAsync()
         {
-            Config.Client.SetSessionInformation(Config.UserSessionId, SessionType.UserSession);
+            await Config.Client.SetSessionInformationAsync(Config.UserSessionId, SessionType.UserSession);
 
             // Add a new movie to the list
-            Assert.True(Config.Client.ListAddMovieAsync(TestListId, IdHelper.MadMaxFuryRoad).Result);
+            Assert.True(await Config.Client.ListAddMovieAsync(TestListId, IdHelper.MadMaxFuryRoad));
 
             // Get list and check if the item was added
-            GenericList listAfterAdd = Config.Client.GetListAsync(TestListId).Result;
-            Assert.True(listAfterAdd.Items.Any(m => m.Id == IdHelper.MadMaxFuryRoad));
+            GenericList listAfterAdd = await Config.Client.GetListAsync(TestListId);
+            Assert.Contains(listAfterAdd.Items, m => m.Id == IdHelper.MadMaxFuryRoad);
 
             // Clear the list
-            Assert.True(Config.Client.ListClearAsync(TestListId).Result);
+            Assert.True(await Config.Client.ListClearAsync(TestListId));
 
             // Get list and check that all items were removed
-            GenericList listAfterRemove = Config.Client.GetListAsync(TestListId).Result;
+            GenericList listAfterRemove = await Config.Client.GetListAsync(TestListId);
             Assert.False(listAfterRemove.Items.Any());
         }
     }

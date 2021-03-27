@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Credit;
 using TMDbLib.Objects.General;
@@ -11,9 +12,9 @@ namespace TMDbLibTests
     public class ClientCreditTests : TestBase
     {
         [Fact]
-        public void TestGetCreditTv()
+        public async Task TestGetCreditTv()
         {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = await Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
 
             Assert.NotNull(result);
             Assert.Equal(CreditType.Cast, result.CreditType);
@@ -34,17 +35,17 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestMissingCredit()
+        public async Task TestMissingCredit()
         {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.MissingID.ToString()).Result;
+            Credit result = await Config.Client.GetCreditsAsync(IdHelper.MissingID.ToString());
 
             Assert.Null(result);
         }
 
         [Fact]
-        public void TestGetCreditEpisode()
+        public async Task TestGetCreditEpisode()
         {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice).Result;
+            Credit result = await Config.Client.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Media);
@@ -62,9 +63,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestGetCreditSeasons()
+        public async Task TestGetCreditSeasons()
         {
-            Credit result = Config.Client.GetCreditsAsync(IdHelper.HughLaurieHouse).Result;
+            Credit result = await Config.Client.GetCreditsAsync(IdHelper.HughLaurieHouse);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Media);

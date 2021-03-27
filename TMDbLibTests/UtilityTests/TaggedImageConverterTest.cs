@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
@@ -65,10 +66,10 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the TaggedImageConverter
         /// </summary>
         [Fact]
-        public void TestJsonTaggedImageConverter()
+        public async Task TestJsonTaggedImageConverter()
         {
             // Get images
-            SearchContainerWithId<TaggedImage> result = Config.Client.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1).Sync();
+            SearchContainerWithId<TaggedImage> result = await Config.Client.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);

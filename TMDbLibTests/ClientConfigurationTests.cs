@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TMDbLib.Objects.Configuration;
 using Xunit;
 using TMDbLib.Objects.Timezones;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
@@ -14,9 +14,9 @@ namespace TMDbLibTests
     public class ClientConfigurationTests : TestBase
     {
         [Fact]
-        public void TestConfiguration()
+        public async Task TestConfigurationAsync()
         {
-            APIConfiguration result = Config.Client.GetAPIConfiguration().Sync();
+            APIConfiguration result = await Config.Client.GetAPIConfiguration();
 
             Assert.NotNull(result);
 
@@ -24,9 +24,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestPrimaryTranslations()
+        public async Task TestPrimaryTranslationsAsync()
         {
-            List<string> result = Config.Client.GetPrimaryTranslationsAsync().Sync();
+            List<string> result = await Config.Client.GetPrimaryTranslationsAsync();
 
             Assert.NotNull(result);
 
@@ -34,9 +34,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestCountryList()
+        public async Task TestCountryListAsync()
         {
-            List<Country> result = Config.Client.GetCountriesAsync().Sync();
+            List<Country> result = await Config.Client.GetCountriesAsync();
 
             Assert.NotNull(result);
             Assert.True(result.Count > 200);
@@ -45,9 +45,9 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestLanguageList()
+        public async Task TestLanguageListAsync()
         {
-            List<Language> result = Config.Client.GetLanguagesAsync().Sync();
+            List<Language> result = await Config.Client.GetLanguagesAsync();
 
             Assert.NotNull(result);
             Assert.True(result.Count > 180);
@@ -56,23 +56,23 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public void TestTimezonesList()
+        public async Task TestTimezonesListAsync()
         {
-            Timezones result = Config.Client.GetTimezonesAsync().Sync();
+            Timezones result = await Config.Client.GetTimezonesAsync();
 
             Assert.NotNull(result);
             Assert.True(result.List.Count > 200);
 
             List<string> item = result.List["DK"];
             Assert.NotNull(item);
-            Assert.Equal(1, item.Count);
+            Assert.Single(item);
             Assert.Equal("Europe/Copenhagen", item[0]);
         }
 
         [Fact]
-        public void TestJobList()
+        public async Task TestJobListAsync()
         {
-            List<Job> jobs = Config.Client.GetJobsAsync().Sync();
+            List<Job> jobs = await Config.Client.GetJobsAsync();
 
             Assert.NotNull(jobs);
             Assert.True(jobs.Count > 0);
