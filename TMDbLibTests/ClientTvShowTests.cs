@@ -32,7 +32,8 @@ namespace TMDbLibTests
                 [TvShowMethods.AccountStates] = tvShow => tvShow.AccountStates,
                 [TvShowMethods.Recommendations] = tvShow => tvShow.Recommendations,
                 [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds,
-                [TvShowMethods.WatchProviders] = tvShow => tvShow.WatchProviders
+                [TvShowMethods.WatchProviders] = tvShow => tvShow.WatchProviders,
+                [TvShowMethods.EpisodeGroups] = tvShow => tvShow.EpisodeGroups
             };
         }
 
@@ -175,6 +176,14 @@ namespace TMDbLibTests
                 backdrop,
                 poster
             });
+        }
+
+        [Fact]
+        public async Task TestTvShowGetTvShowWithEpisodeGroups()
+        {
+            TvShow resp = await TMDbClient.GetTvShowAsync(IdHelper.Seinfeld, TvShowMethods.EpisodeGroups);
+
+            await Verify(resp.EpisodeGroups);
         }
 
         [Fact]
