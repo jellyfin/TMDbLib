@@ -86,6 +86,9 @@ namespace TMDbLibTests
             Assert.Equal("Bryan Cranston", castPerson.Name);
             Assert.NotNull(castPerson.ProfilePath);
             Assert.Equal(0, castPerson.Order);
+            Assert.True(castPerson.Popularity > 0);
+            Assert.Equal("Acting", castPerson.KnownForDepartment);
+            Assert.Equal("Bryan Cranston", castPerson.OriginalName);
 
             Assert.NotNull(credits.Crew);
 

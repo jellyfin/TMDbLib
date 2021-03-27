@@ -124,6 +124,9 @@ namespace TMDbLibTests
             Assert.Equal("Bryan Cranston", credits.Cast[0].Name);
             Assert.NotNull(credits.Cast[0].ProfilePath);
             Assert.Equal(0, credits.Cast[0].Order);
+            Assert.True(credits.Cast[0].Popularity > 0);
+            Assert.Equal("Acting", credits.Cast[0].KnownForDepartment);
+            Assert.Equal("Bryan Cranston", credits.Cast[0].OriginalName);
 
             Crew crewPersonId = credits.Crew.FirstOrDefault(s => s.Id == 1223202);
             Assert.NotNull(crewPersonId);
