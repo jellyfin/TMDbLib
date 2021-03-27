@@ -10,6 +10,34 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        private async Task<bool> GetManipulateMediaListAsyncInternal(string listId, int movieId, string method, CancellationToken cancellationToken = default)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            if (string.IsNullOrWhiteSpace(listId))
+                throw new ArgumentNullException(nameof(listId));
+
+            // Movie Id is expected by the API and can not be null
+            if (movieId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(movieId));
+
+            RestRequest req = _client.Create("list/{listId}/{method}");
+            req.AddUrlSegment("listId", listId);
+            req.AddUrlSegment("method", method);
+            AddSessionId(req, SessionType.UserSession);
+
+            req.SetBody(new { media_id = movieId });
+
+            RestResponse<PostReply> response = await req.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
+
+            // Status code 12 = "The item/record was updated successfully"
+            // Status code 13 = "The item/record was deleted successfully"
+            PostReply item = await response.GetDataObject().ConfigureAwait(false);
+
+            // TODO: Previous code checked for item=null
+            return item.StatusCode == 12 || item.StatusCode == 13;
+        }
+
         /// <summary>
         /// Retrieve a list by it's id
         /// </summary>
@@ -62,7 +90,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public async Task<bool> ListAddMovieAsync(string listId, int movieId, CancellationToken cancellationToken = default)
         {
-            return await ManipulateMediaListAsync(listId, movieId, "add_item", cancellationToken).ConfigureAwait(false);
+            return await GetManipulateMediaListAsyncInternal(listId, movieId, "add_item", cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -171,35 +199,7 @@ namespace TMDbLib.Client
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public async Task<bool> ListRemoveMovieAsync(string listId, int movieId, CancellationToken cancellationToken = default)
         {
-            return await ManipulateMediaListAsync(listId, movieId, "remove_item", cancellationToken).ConfigureAwait(false);
-        }
-
-        private async Task<bool> ManipulateMediaListAsync(string listId, int movieId, string method, CancellationToken cancellationToken = default)
-        {
-            RequireSessionId(SessionType.UserSession);
-
-            if (string.IsNullOrWhiteSpace(listId))
-                throw new ArgumentNullException(nameof(listId));
-
-            // Movie Id is expected by the API and can not be null
-            if (movieId <= 0)
-                throw new ArgumentOutOfRangeException(nameof(movieId));
-
-            RestRequest req = _client.Create("list/{listId}/{method}");
-            req.AddUrlSegment("listId", listId);
-            req.AddUrlSegment("method", method);
-            AddSessionId(req, SessionType.UserSession);
-
-            req.SetBody(new { media_id = movieId });
-
-            RestResponse<PostReply> response = await req.ExecutePost<PostReply>(cancellationToken).ConfigureAwait(false);
-
-            // Status code 12 = "The item/record was updated successfully"
-            // Status code 13 = "The item/record was deleted successfully"
-            PostReply item = await response.GetDataObject().ConfigureAwait(false);
-
-            // TODO: Previous code checked for item=null
-            return item.StatusCode == 12 || item.StatusCode == 13;
+            return await GetManipulateMediaListAsyncInternal(listId, movieId, "remove_item", cancellationToken).ConfigureAwait(false);
         }
     }
 }

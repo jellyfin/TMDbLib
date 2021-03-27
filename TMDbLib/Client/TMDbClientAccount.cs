@@ -13,6 +13,32 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        private async Task<SearchContainer<T>> GetAccountListInternal<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method, CancellationToken cancellationToken = default)
+        {
+            RequireSessionId(SessionType.UserSession);
+
+            RestRequest request = _client.Create("account/{accountId}/" + method.GetDescription());
+            request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
+            AddSessionId(request, SessionType.UserSession);
+
+            if (page > 1)
+                request.AddParameter("page", page.ToString());
+
+            if (sortBy != AccountSortBy.Undefined)
+                request.AddParameter("sort_by", sortBy.GetDescription());
+
+            if (sortOrder != SortOrder.Undefined)
+                request.AddParameter("sort_order", sortOrder.GetDescription());
+
+            language = language ?? DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+                request.AddParameter("language", language);
+
+            SearchContainer<T> response = await request.ExecuteGet<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
+
+            return response;
+        }
+
         /// <summary>
         /// Change the favorite status of a specific movie. Either make the movie a favorite or remove that status depending on the supplied boolean value.
         /// </summary>
@@ -95,7 +121,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies, cancellationToken).ConfigureAwait(false);
+            return await GetAccountListInternal<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -109,7 +135,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv, cancellationToken).ConfigureAwait(false);
+            return await GetAccountListInternal<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -151,7 +177,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetAccountList<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist, cancellationToken).ConfigureAwait(false);
+            return await GetAccountListInternal<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -165,7 +191,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetAccountList<SearchMovieWithRating>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies, cancellationToken).ConfigureAwait(false);
+            return await GetAccountListInternal<SearchMovieWithRating>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -179,7 +205,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetAccountList<AccountSearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes, cancellationToken).ConfigureAwait(false);
+            return await GetAccountListInternal<AccountSearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -193,7 +219,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetAccountList<AccountSearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv, cancellationToken).ConfigureAwait(false);
+            return await GetAccountListInternal<AccountSearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -207,33 +233,7 @@ namespace TMDbLib.Client
             SortOrder sortOrder = SortOrder.Undefined,
             string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetAccountList<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist, cancellationToken).ConfigureAwait(false);
-        }
-
-        private async Task<SearchContainer<T>> GetAccountList<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method, CancellationToken cancellationToken = default)
-        {
-            RequireSessionId(SessionType.UserSession);
-
-            RestRequest request = _client.Create("account/{accountId}/" + method.GetDescription());
-            request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
-            AddSessionId(request, SessionType.UserSession);
-
-            if (page > 1)
-                request.AddParameter("page", page.ToString());
-
-            if (sortBy != AccountSortBy.Undefined)
-                request.AddParameter("sort_by", sortBy.GetDescription());
-
-            if (sortOrder != SortOrder.Undefined)
-                request.AddParameter("sort_order", sortOrder.GetDescription());
-
-            language = language ?? DefaultLanguage;
-            if (!string.IsNullOrWhiteSpace(language))
-                request.AddParameter("language", language);
-
-            SearchContainer<T> response = await request.ExecuteGet<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
-
-            return response;
+            return await GetAccountListInternal<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist, cancellationToken).ConfigureAwait(false);
         }
 
         private enum AccountListsMethods

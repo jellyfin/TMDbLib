@@ -9,7 +9,7 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private async Task<T> SearchMethod<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null, string region = null, int primaryReleaseYear = 0, int firstAirDateYear = 0, CancellationToken cancellationToken = default) where T : new()
+        private async Task<T> SearchMethodInternal<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null, string region = null, int primaryReleaseYear = 0, int firstAirDateYear = 0, CancellationToken cancellationToken = default) where T : new()
         {
             RestRequest req = _client.Create("search/{method}");
             req.AddUrlSegment("method", method);
@@ -50,23 +50,23 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<SearchCollection>> SearchCollectionAsync(string query, string language, int page = 0, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchCollection>>("collection", query, page, language, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchCollection>>("collection", query, page, language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchCompany>> SearchCompanyAsync(string query, int page = 0, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchCompany>>("company", query, page, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchCompany>>("company", query, page, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchKeyword>> SearchKeywordAsync(string query, int page = 0, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchKeyword>>("keyword", query, page, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchKeyword>>("keyword", query, page, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         [Obsolete("20200701 No longer present in public API")]
         public async Task<SearchContainer<SearchList>> SearchListAsync(string query, int page = 0, bool includeAdult = false, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchMovie>> SearchMovieAsync(string query, int page = 0, bool includeAdult = false, int year = 0, string region = null, int primaryReleaseYear = 0, CancellationToken cancellationToken = default)
@@ -76,7 +76,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<SearchMovie>> SearchMovieAsync(string query, string language, int page = 0, bool includeAdult = false, int year = 0, string region = null, int primaryReleaseYear = 0, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd", region, primaryReleaseYear, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd", region, primaryReleaseYear, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchBase>> SearchMultiAsync(string query, int page = 0, bool includeAdult = false, int year = 0, string region = null, CancellationToken cancellationToken = default)
@@ -86,7 +86,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<SearchBase>> SearchMultiAsync(string query, string language, int page = 0, bool includeAdult = false, int year = 0, string region = null, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchBase>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd", region, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchBase>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd", region, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchPerson>> SearchPersonAsync(string query, int page = 0, bool includeAdult = false, string region = null, CancellationToken cancellationToken = default)
@@ -96,7 +96,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<SearchPerson>> SearchPersonAsync(string query, string language, int page = 0, bool includeAdult = false, string region = null, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchPerson>>("person", query, page, language, includeAdult, region: region, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchPerson>>("person", query, page, language, includeAdult, region: region, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<SearchContainer<SearchTv>> SearchTvShowAsync(string query, int page = 0, bool includeAdult = false, int firstAirDateYear = 0, CancellationToken cancellationToken = default)
@@ -106,7 +106,7 @@ namespace TMDbLib.Client
 
         public async Task<SearchContainer<SearchTv>> SearchTvShowAsync(string query, string language, int page = 0, bool includeAdult = false, int firstAirDateYear = 0, CancellationToken cancellationToken = default)
         {
-            return await SearchMethod<SearchContainer<SearchTv>>("tv", query, page, language, includeAdult, firstAirDateYear: firstAirDateYear, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await SearchMethodInternal<SearchContainer<SearchTv>>("tv", query, page, language, includeAdult, firstAirDateYear: firstAirDateYear, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

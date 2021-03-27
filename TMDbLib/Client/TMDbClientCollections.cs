@@ -12,6 +12,20 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        private async Task<T> GetCollectionMethodInternal<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default) where T : new()
+        {
+            RestRequest req = _client.Create("collection/{collectionId}/{method}");
+            req.AddUrlSegment("collectionId", collectionId.ToString());
+            req.AddUrlSegment("method", collectionMethod.GetDescription());
+
+            if (language != null)
+                req.AddParameter("language", language);
+
+            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+
+            return resp;
+        }
+
         public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
         {
             return await GetCollectionAsync(collectionId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
@@ -57,21 +71,7 @@ namespace TMDbLib.Client
 
         public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetCollectionMethod<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
+            return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
         }
-
-        private async Task<T> GetCollectionMethod<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default) where T : new()
-        {
-            RestRequest req = _client.Create("collection/{collectionId}/{method}");
-            req.AddUrlSegment("collectionId", collectionId.ToString());
-            req.AddUrlSegment("method", collectionMethod.GetDescription());
-
-            if (language != null)
-                req.AddParameter("language", language);
-
-            RestResponse<T> resp = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
-
-            return resp;
         }
-    }
 }

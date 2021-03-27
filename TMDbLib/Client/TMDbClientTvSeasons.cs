@@ -15,6 +15,26 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
+        private async Task<T> GetTvSeasonMethodInternal<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null, CancellationToken cancellationToken = default) where T : new()
+        {
+            RestRequest req = _client.Create("tv/{id}/season/{season_number}/{method}");
+            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
+            req.AddUrlSegment("method", tvShowMethod.GetDescription());
+
+            // TODO: Dateformat?
+            //if (dateFormat != null)
+            //    req.DateFormat = dateFormat;
+
+            language = language ?? DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+                req.AddParameter("language", language);
+
+            RestResponse<T> response = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
+
+            return response;
+        }
+
         public async Task<ResultContainer<TvEpisodeAccountStateWithNumber>> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
         {
             RequireSessionId(SessionType.UserSession);
@@ -118,7 +138,7 @@ namespace TMDbLib.Client
         /// <param name="cancellationToken">A cancellation token</param>
         public async Task<Credits> GetTvSeasonCreditsAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetTvSeasonMethod<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, dateFormat: "yyyy-MM-dd", language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await GetTvSeasonMethodInternal<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, dateFormat: "yyyy-MM-dd", language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -129,7 +149,7 @@ namespace TMDbLib.Client
         /// <param name="cancellationToken">A cancellation token</param>
         public async Task<ExternalIdsTvSeason> GetTvSeasonExternalIdsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
         {
-            return await GetTvSeasonMethod<ExternalIdsTvSeason>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await GetTvSeasonMethodInternal<ExternalIdsTvSeason>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -144,32 +164,12 @@ namespace TMDbLib.Client
         /// <param name="cancellationToken">A cancellation token</param>
         public async Task<PosterImages> GetTvSeasonImagesAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetTvSeasonMethod<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        private async Task<T> GetTvSeasonMethod<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null, CancellationToken cancellationToken = default) where T : new()
-        {
-            RestRequest req = _client.Create("tv/{id}/season/{season_number}/{method}");
-            req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
-            req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
-            req.AddUrlSegment("method", tvShowMethod.GetDescription());
-
-            // TODO: Dateformat?
-            //if (dateFormat != null)
-            //    req.DateFormat = dateFormat;
-
-            language = language ?? DefaultLanguage;
-            if (!string.IsNullOrWhiteSpace(language))
-                req.AddParameter("language", language);
-
-            RestResponse<T> response = await req.ExecuteGet<T>(cancellationToken).ConfigureAwait(false);
-
-            return response;
+            return await GetTvSeasonMethodInternal<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<ResultContainer<Video>> GetTvSeasonVideosAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetTvSeasonMethod<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await GetTvSeasonMethodInternal<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
