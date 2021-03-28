@@ -3,14 +3,8 @@ TMDbLib [![Generic Build](https://github.com/LordMike/TMDbLib/actions/workflows/
 
 A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themoviedb.org/).
 
-Nuget
------
-
-Install from Nuget using the command: **Install-Package TMDbLib**
-View more about that here: http://nuget.org/packages/TMDbLib/
-
-## Alpha packages
-.. can be found [here](https://github.com/LordMike/TMDbLib/packages/691970)
+## Using alpha packages
+All commits to master produce an Alpha package that can be [found here](https://github.com/LordMike/TMDbLib/packages/691970). [Read more on how to use these packages](https://blog.mbwarez.dk/consuming-my-nuget-packages-from-github/).
 
 Index
 ---------
