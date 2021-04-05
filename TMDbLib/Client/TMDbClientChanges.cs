@@ -84,7 +84,7 @@ namespace TMDbLib.Client
 
         public async Task<IList<Change>> GetMovieChangesAsync(int movieId, int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default)
         {
-            ChangesContainer changesContainer = await GetChangesInternal<ChangesContainer>("movie", page, movieId, startDate, endDate, cancellationToken);
+            ChangesContainer changesContainer = await GetChangesInternal<ChangesContainer>("movie", page, movieId, startDate, endDate, cancellationToken).ConfigureAwait(false);
             return changesContainer.Changes;
         }
 

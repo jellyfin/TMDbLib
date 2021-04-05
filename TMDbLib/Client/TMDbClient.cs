@@ -158,7 +158,7 @@ namespace TMDbLib.Client
 
         public async Task<TMDbConfig> GetConfigAsync()
         {
-            TMDbConfig config = await _client.Create("configuration").GetOfT<TMDbConfig>(CancellationToken.None);
+            TMDbConfig config = await _client.Create("configuration").GetOfT<TMDbConfig>(CancellationToken.None).ConfigureAwait(false);
 
             if (config == null)
                 throw new Exception("Unable to retrieve configuration");
@@ -180,10 +180,10 @@ namespace TMDbLib.Client
         {
             Uri url = GetImageUrl(size, filePath, useSsl);
 
-            HttpResponseMessage response = await _client.HttpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead, token);
+            using HttpResponseMessage response = await _client.HttpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead, token).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            return await response.Content.ReadAsByteArrayAsync();
+            return await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
         }
 
         private void Initialize(string baseUrl, bool useSsl, string apiKey)

@@ -159,7 +159,8 @@ namespace TMDbLib.Rest
             // Body
             if (method == HttpMethod.Post && _bodyObj != null)
             {
-                MemoryStream ms = new MemoryStream();
+                using MemoryStream ms = new MemoryStream();
+
                 using (StreamWriter sw = new StreamWriter(ms, _client.Encoding, 4096, true))
                 using (JsonTextWriter tw = new JsonTextWriter(sw))
                 {
@@ -199,7 +200,7 @@ namespace TMDbLib.Rest
                         return resp;
 
                     if (isJson)
-                        statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync());
+                        statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
                     else
                         statusMessage = null;
 

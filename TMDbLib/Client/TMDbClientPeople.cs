@@ -56,7 +56,7 @@ namespace TMDbLib.Client
         public async Task<Person> GetPersonAsync(int personId, PersonMethods extraMethods = PersonMethods.Undefined,
             CancellationToken cancellationToken = default)
         {
-            return await GetPersonAsync(personId, DefaultLanguage, extraMethods, cancellationToken);
+            return await GetPersonAsync(personId, DefaultLanguage, extraMethods, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<Person> GetPersonAsync(int personId, string language, PersonMethods extraMethods = PersonMethods.Undefined, CancellationToken cancellationToken = default)
