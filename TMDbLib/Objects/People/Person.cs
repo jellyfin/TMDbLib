@@ -59,6 +59,9 @@ namespace TMDbLib.Objects.People
         [JsonProperty("popularity")]
         public double Popularity { get; set; }
 
+        [JsonProperty("known_for_department")]
+        public string KnownForDepartment { get; set; }
+
         [JsonProperty("profile_path")]
         public string ProfilePath { get; set; }
 

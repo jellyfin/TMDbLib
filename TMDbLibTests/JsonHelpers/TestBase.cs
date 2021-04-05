@@ -31,7 +31,7 @@ namespace TMDbLibTests.JsonHelpers
         {
             VerifySettings = new VerifySettings();
             //VerifySettings.UseExtension("json");
-            VerifySettings.AutoVerify();
+            //VerifySettings.AutoVerify();
 
             VerifySettings.UseDirectory("..\\Verification");
 
