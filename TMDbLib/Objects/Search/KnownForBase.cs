@@ -11,7 +11,7 @@ namespace TMDbLib.Objects.Search
         public string BackdropPath { get; set; }
 
         [JsonProperty("genre_ids")]
-        [JsonConverter(typeof(TmdbIntArrayAsObjectConverter))]
+        [JsonConverter(typeof(TmdbIntArrayAsObjectConverter)) /*#307*/]
         public List<int> GenreIds { get; set; }
 
         [JsonProperty("id")]
