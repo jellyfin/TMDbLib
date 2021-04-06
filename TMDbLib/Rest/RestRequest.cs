@@ -159,7 +159,9 @@ namespace TMDbLib.Rest
             // Body
             if (method == HttpMethod.Post && _bodyObj != null)
             {
-                using MemoryStream ms = new MemoryStream();
+#pragma warning disable IDISP001 // Dispose created. => Stream is used in HttpContent
+                MemoryStream ms = new MemoryStream();
+#pragma warning restore IDISP001 // Dispose created.
 
                 using (StreamWriter sw = new StreamWriter(ms, _client.Encoding, 4096, true))
                 using (JsonTextWriter tw = new JsonTextWriter(sw))
