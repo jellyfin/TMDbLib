@@ -28,7 +28,7 @@ namespace TMDbLib.Utilities.Serializer
 
             ms.Seek(0, SeekOrigin.Begin);
 
-            using var sr = new StreamReader(ms, Encoding.UTF8);
+            using StreamReader sr = new StreamReader(ms, Encoding.UTF8);
 
             return sr.ReadToEnd();
         }

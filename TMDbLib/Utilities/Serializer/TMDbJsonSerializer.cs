@@ -13,7 +13,7 @@ namespace TMDbLib.Utilities.Serializer
 
         public static TMDbJsonSerializer Instance { get; } = new();
 
-        public TMDbJsonSerializer()
+        private TMDbJsonSerializer()
         {
             _serializer = JsonSerializer.CreateDefault();
             _serializer.Converters.Add(new ChangeItemConverter());
@@ -26,16 +26,16 @@ namespace TMDbLib.Utilities.Serializer
 
         public void Serialize(Stream target, object obj, Type type)
         {
-            using var sw = new StreamWriter(target, _encoding, 4096, true);
-            using var jw = new JsonTextWriter(sw);
+            using StreamWriter sw = new StreamWriter(target, _encoding, 4096, true);
+            using JsonTextWriter jw = new JsonTextWriter(sw);
 
             _serializer.Serialize(jw, obj, type);
         }
 
         public object Deserialize(Stream source, Type type)
         {
-            using var sr = new StreamReader(source, _encoding, false, 4096, true);
-            using var jr = new JsonTextReader(sr);
+            using StreamReader sr = new StreamReader(source, _encoding, false, 4096, true);
+            using JsonTextReader jr = new JsonTextReader(sr);
 
             return _serializer.Deserialize(jr, type);
         }
