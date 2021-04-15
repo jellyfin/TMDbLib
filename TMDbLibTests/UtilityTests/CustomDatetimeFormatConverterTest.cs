@@ -1,8 +1,7 @@
 using System;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Objects.Authentication;
-using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -13,17 +12,21 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public void CustomDatetimeFormatConverter_Data()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new CustomDatetimeFormatConverter());
 
             Token original = new Token();
             original.ExpiresAt = DateTime.UtcNow.Date;
             original.ExpiresAt = original.ExpiresAt.AddMilliseconds(-original.ExpiresAt.Millisecond);
 
-            string json = JsonConvert.SerializeObject(original, settings);
-            Token result = JsonConvert.DeserializeObject<Token>(json, settings);
+            string json = Serializer.SerializeToString(original);
+            Token result = Serializer.DeserializeFromString<Token>(json);
 
             Assert.Equal(original.ExpiresAt, result.ExpiresAt);
+
+            Verify(new
+            {
+                json,
+                result
+            });
         }
 
         /// <summary>

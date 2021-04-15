@@ -1,5 +1,4 @@
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace TMDbLib.Objects.Changes
 {
@@ -11,6 +10,6 @@ namespace TMDbLib.Objects.Changes
         }
 
         [JsonProperty("original_value")]
-        public JToken OriginalValue { get; set; }
+        public object OriginalValue { get; set; }
     }
 }

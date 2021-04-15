@@ -7,11 +7,11 @@ using System.Net;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.Helpers;
 using VerifyTests;
 using VerifyXunit;
@@ -27,10 +27,11 @@ namespace TMDbLibTests.JsonHelpers
 
         protected TMDbClient TMDbClient => TestConfig.Client;
 
+        protected ITMDbSerializer Serializer => TMDbJsonSerializer.Instance;
+
         protected TestBase()
         {
             VerifySettings = new VerifySettings();
-            //VerifySettings.UseExtension("json");
             //VerifySettings.AutoVerify();
 
             VerifySettings.UseDirectory("..\\Verification");
@@ -48,12 +49,10 @@ namespace TMDbLibTests.JsonHelpers
                 serializerSettings.ContractResolver = new DataSortingContractResolver(serializerSettings.ContractResolver);
             });
 
-            JsonSerializerSettings sett = new JsonSerializerSettings();
-
             WebProxy proxy = null;
             //WebProxy proxy = new WebProxy("http://127.0.0.1:8888");
 
-            TestConfig = new TestConfig(serializer: JsonSerializer.Create(sett), proxy: proxy);
+            TestConfig = new TestConfig(serializer: null, proxy: proxy);
         }
 
         protected Task Verify<T>(T obj, Action<VerifySettings> configure = null)
@@ -141,10 +140,10 @@ namespace TMDbLibTests.JsonHelpers
 
             private static bool IsSorted(IList list, IComparer comparer)
             {
-                for (var i = 1; i < list.Count; i++)
+                for (int i = 1; i < list.Count; i++)
                 {
-                    var a = list[i - 1];
-                    var b = list[i];
+                    object a = list[i - 1];
+                    object b = list[i];
 
                     if (comparer.Compare(a, b) > 0)
                         return false;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using TMDbLibTests.Exceptions;
 using Xunit;
 using TMDbLib.Objects.Authentication;

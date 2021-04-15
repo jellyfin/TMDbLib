@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -12,53 +13,56 @@ namespace TMDbLibTests.UtilityTests
     public class SearchBaseConverterTest : TestBase
     {
         [Fact]
-        public void SearchBaseConverter_Movie()
+        public async Task SearchBaseConverter_Movie()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new SearchBaseConverter());
-
             SearchMovie original = new SearchMovie();
             original.OriginalTitle = "Hello world";
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            SearchMovie result = (SearchMovie)JsonConvert.DeserializeObject<SearchBase>(json, settings);
-
-            Assert.NotNull(result);
+            
+            string json = Serializer.SerializeToString(original);
+            SearchMovie result = Serializer.DeserializeFromString<SearchBase>(json) as SearchMovie;
+            
             Assert.Equal(original.OriginalTitle, result.OriginalTitle);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
-        public void SearchBaseConverter_Tv()
+        public async Task SearchBaseConverter_Tv()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new SearchBaseConverter());
-
             SearchTv original = new SearchTv();
             original.OriginalName = "Hello world";
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            SearchTv result = (SearchTv)JsonConvert.DeserializeObject<SearchBase>(json, settings);
-
-            Assert.NotNull(result);
+            
+            string json = Serializer.SerializeToString(original);
+            SearchTv result = Serializer.DeserializeFromString<SearchBase>(json) as SearchTv;
+            
             Assert.Equal(original.MediaType, result.MediaType);
             Assert.Equal(original.OriginalName, result.OriginalName);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
-        public void SearchBaseConverter_Person()
+        public async Task SearchBaseConverter_Person()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new SearchBaseConverter());
-
             SearchPerson original = new SearchPerson();
             original.Name = "Hello world";
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            SearchPerson result = (SearchPerson)JsonConvert.DeserializeObject<SearchBase>(json, settings);
-
-            Assert.NotNull(result);
+            
+            string json = Serializer.SerializeToString(original);
+            SearchPerson result = Serializer.DeserializeFromString<SearchBase>(json) as SearchPerson;
+            
             Assert.Equal(original.MediaType, result.MediaType);
             Assert.Equal(original.Name, result.Name);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         /// <summary>

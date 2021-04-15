@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
-using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -26,12 +25,9 @@ namespace TMDbLibTests.UtilityTests
         [MemberData(nameof(GetEnumMembers), typeof(MediaType))]
         public void EnumStringValueConverter_Data(object original)
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new EnumStringValueConverter());
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            object result = JsonConvert.DeserializeObject(json, original.GetType(), settings);
-
+            string json = Serializer.SerializeToString(original);
+            object result = Serializer.DeserializeFromString(json, original.GetType());
+            
             Assert.IsType(original.GetType(), result);
             Assert.Equal(original, result);
         }

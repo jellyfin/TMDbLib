@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -10,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Exceptions;
+using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest
 {
@@ -159,19 +159,9 @@ namespace TMDbLib.Rest
             // Body
             if (method == HttpMethod.Post && _bodyObj != null)
             {
-#pragma warning disable IDISP001 // Dispose created. => Stream is used in HttpContent
-                MemoryStream ms = new MemoryStream();
-#pragma warning restore IDISP001 // Dispose created.
+                byte[] bodyBytes = _client.Serializer.SerializeToBytes(_bodyObj);
 
-                using (StreamWriter sw = new StreamWriter(ms, _client.Encoding, 4096, true))
-                using (JsonTextWriter tw = new JsonTextWriter(sw))
-                {
-                    _client.Serializer.Serialize(tw, _bodyObj);
-                }
-
-                ms.Seek(0, SeekOrigin.Begin);
-
-                req.Content = new StreamContent(ms);
+                req.Content = new ByteArrayContent(bodyBytes);
                 req.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             }
 

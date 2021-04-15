@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
+using TMDbLib.Utilities.Serializer;
 
 namespace TestApplication
 {
@@ -47,7 +47,7 @@ namespace TestApplication
                 Console.WriteLine("Using stored config");
                 string json = File.ReadAllText(configJson.FullName, Encoding.UTF8);
 
-                client.SetConfig(JsonConvert.DeserializeObject<TMDbConfig>(json));
+                client.SetConfig(TMDbJsonSerializer.Instance.DeserializeFromString<TMDbConfig>(json));
             }
             else
             {
@@ -55,7 +55,7 @@ namespace TestApplication
                 TMDbConfig config = await client.GetConfigAsync();
 
                 Console.WriteLine("Storing config");
-                string json = JsonConvert.SerializeObject(config);
+                string json = TMDbJsonSerializer.Instance.SerializeToString(config);
                 File.WriteAllText(configJson.FullName, json, Encoding.UTF8);
             }
 

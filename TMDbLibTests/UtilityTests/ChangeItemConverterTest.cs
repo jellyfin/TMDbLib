@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -15,65 +15,69 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task ChangeItemConverter_ChangeItemAdded()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new ChangeItemConverter());
-
             ChangeItemAdded original = new ChangeItemAdded();
             original.Iso_639_1 = "en";
             original.Value = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original, settings);
-            ChangeItemAdded result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemAdded;
+            string json = Serializer.SerializeToString(original);
+            ChangeItemAdded result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemAdded;
 
-            await Verify(result);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
         public async Task ChangeItemConverter_ChangeItemCreated()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new ChangeItemConverter());
-
             ChangeItemCreated original = new ChangeItemCreated();
             original.Iso_639_1 = "en";
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            ChangeItemCreated result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemCreated;
             
-            await Verify(result);
+            string json = Serializer.SerializeToString(original);
+            ChangeItemCreated result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemCreated;
+            
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
         public async Task ChangeItemConverter_ChangeItemDeleted()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new ChangeItemConverter());
-
             ChangeItemDeleted original = new ChangeItemDeleted();
             original.Iso_639_1 = "en";
             original.OriginalValue = "Hello world";
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            ChangeItemDeleted result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemDeleted;
             
-            await Verify(result);
+            string json = Serializer.SerializeToString(original);
+            ChangeItemDeleted result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemDeleted;
+            
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
         public async Task ChangeItemConverter_ChangeItemUpdated()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new ChangeItemConverter());
-
             ChangeItemUpdated original = new ChangeItemUpdated();
             original.Iso_639_1 = "en";
             original.OriginalValue = "Hello world";
             original.Value = "Hello world 1234";
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            ChangeItemUpdated result = JsonConvert.DeserializeObject<ChangeItemBase>(json, settings) as ChangeItemUpdated;
             
-            await Verify(result);
+            string json = Serializer.SerializeToString(original);
+            ChangeItemUpdated result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemUpdated;
+            
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         /// <summary>

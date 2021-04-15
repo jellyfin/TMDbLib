@@ -1,9 +1,8 @@
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Search;
-using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -13,11 +12,8 @@ namespace TMDbLibTests.UtilityTests
     public class TaggedImageConverterTest : TestBase
     {
         [Fact]
-        public void TaggedImageConverter_Movie()
+        public async Task TaggedImageConverter_Movie()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new TaggedImageConverter());
-
             SearchMovie originalMedia = new SearchMovie { OriginalTitle = "Hello world" };
 
             TaggedImage original = new TaggedImage
@@ -25,43 +21,36 @@ namespace TMDbLibTests.UtilityTests
                 MediaType = originalMedia.MediaType,
                 Media = originalMedia
             };
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            TaggedImage result = JsonConvert.DeserializeObject<TaggedImage>(json, settings);
-
-            Assert.NotNull(result);
-            Assert.NotNull(result.Media);
+            
+            string json = Serializer.SerializeToString(original);
+            TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json) ;
+            
             Assert.IsType<SearchMovie>(result.Media);
-            Assert.Equal(original.MediaType, result.MediaType);
-            Assert.Equal(original.MediaType, result.Media.MediaType);
-
-            SearchMovie resultMedia = (SearchMovie)result.Media;
-            Assert.Equal(originalMedia.OriginalTitle, resultMedia.OriginalTitle);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
-        public void TaggedImageConverter_Tv()
+        public async Task TaggedImageConverter_Tv()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new TaggedImageConverter());
-
             SearchTv originalMedia = new SearchTv { OriginalName = "Hello world" };
 
             TaggedImage original = new TaggedImage();
             original.MediaType = MediaType.Tv;
             original.Media = originalMedia;
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            TaggedImage result = JsonConvert.DeserializeObject<TaggedImage>(json, settings);
-
-            Assert.NotNull(result);
-            Assert.NotNull(result.Media);
+            
+            string json = Serializer.SerializeToString(original);
+            TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json) ;
+            
             Assert.IsType<SearchTv>(result.Media);
-            Assert.Equal(original.MediaType, result.MediaType);
-            Assert.Equal(original.MediaType, result.Media.MediaType);
-
-            SearchTv resultMedia = (SearchTv)result.Media;
-            Assert.Equal(originalMedia.OriginalName, resultMedia.OriginalName);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         /// <summary>
