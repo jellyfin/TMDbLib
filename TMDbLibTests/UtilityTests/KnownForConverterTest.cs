@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
-using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -15,33 +14,35 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task KnownForConverter_Movie()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new KnownForConverter());
-
             KnownForMovie original = new KnownForMovie();
             original.OriginalTitle = "Hello world";
 
-            string json = JsonConvert.SerializeObject(original, settings);
-            KnownForMovie result = (KnownForMovie)JsonConvert.DeserializeObject<KnownForBase>(json, settings);
-
-            Assert.NotNull(result);
+            string json = Serializer.SerializeToString(original);
+            KnownForMovie result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForMovie;
+            
             Assert.Equal(original.Title, result.Title);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
-        public void KnownForConverter_Tv()
+        public async Task KnownForConverter_Tv()
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new KnownForConverter());
-
             KnownForTv original = new KnownForTv();
             original.OriginalName = "Hello world";
-
-            string json = JsonConvert.SerializeObject(original, settings);
-            KnownForTv result = (KnownForTv)JsonConvert.DeserializeObject<KnownForBase>(json, settings);
-
-            Assert.NotNull(result);
+            
+            string json = Serializer.SerializeToString(original);
+            KnownForTv result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForTv;
+            
             Assert.Equal(original.OriginalName, result.OriginalName);
+            await Verify(new
+            {
+                json,
+                result
+            });
         }
 
         /// <summary>

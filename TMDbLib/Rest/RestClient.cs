@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
+using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest
 {
@@ -11,7 +11,7 @@ namespace TMDbLib.Rest
     {
         private int _maxRetryCount;
 
-        public RestClient(Uri baseUrl, JsonSerializer serializer, IWebProxy proxy = null)
+        public RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy proxy = null)
         {
             BaseUrl = baseUrl;
             Serializer = serializer;
@@ -52,7 +52,7 @@ namespace TMDbLib.Rest
 
         public bool ThrowApiExceptions { get; set; }
 
-        internal JsonSerializer Serializer { get; }
+        internal ITMDbSerializer Serializer { get; }
 
         public void AddDefaultQueryString(string key, string value)
         {

@@ -1,10 +1,9 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
-using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -18,33 +17,36 @@ namespace TMDbLibTests.UtilityTests
         {
             // { "rated": { "value": 5 } }
 
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new AccountStateConverter());
-
             var original = new
             {
                 rated = new { value = 5 }
             };
 
-            string json = JsonConvert.SerializeObject(original, settings);
-            AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
+            string json = Serializer.SerializeToString(original);
+            AccountState result = Serializer.DeserializeFromString<AccountState>(json);
 
-            Assert.Equal(5, result.Rating);
+            Verify(new
+            {
+                json,
+                result
+            });
         }
 
         [Fact]
         public void AccountStateConverter_WithoutData()
         {
-            // { "rated": False }
-
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new AccountStateConverter());
+            // { "rated": false }
 
             var original = new { rated = false };
-            string json = JsonConvert.SerializeObject(original, settings);
-            AccountState result = JsonConvert.DeserializeObject<AccountState>(json, settings);
 
-            Assert.Null(result.Rating);
+            string json = Serializer.SerializeToString(original);
+            AccountState result = Serializer.DeserializeFromString<AccountState>(json);
+
+            Verify(new
+            {
+                json,
+                result
+            });
         }
 
         /// <summary>

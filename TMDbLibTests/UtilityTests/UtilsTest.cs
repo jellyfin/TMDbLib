@@ -1,7 +1,6 @@
 ﻿using System;
 using TMDbLib.Utilities;
 using TMDbLibTests.JsonHelpers;
-using TMDbLibTests.TestClasses;
 using Xunit;
 
 namespace TMDbLibTests.UtilityTests
@@ -32,6 +31,17 @@ namespace TMDbLibTests.UtilityTests
             string s = @enum.GetDescription();
 
             Assert.Equal("B-Description", s);
+        }
+
+        enum EnumTestEnum
+        {
+            A,
+            [EnumValue("B-Description")]
+            B
+        }
+
+        struct EnumTestStruct
+        {
         }
     }
 }

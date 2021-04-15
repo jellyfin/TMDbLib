@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest
 {
@@ -43,11 +43,9 @@ namespace TMDbLib.Rest
 
         public async Task<T> GetDataObject()
         {
-            Stream content = await GetContent().ConfigureAwait(false);
+            using Stream content = await GetContent().ConfigureAwait(false);
 
-            using (StreamReader sr = new StreamReader(content, _client.Encoding))
-            using (JsonTextReader tr = new JsonTextReader(sr))
-                return _client.Serializer.Deserialize<T>(tr);
+            return _client.Serializer.Deserialize<T>(content);
         }
     }
 }
