@@ -169,7 +169,13 @@ namespace TMDbLib.Client
             return new Uri(baseUrl + size + filePath);
         }
 
-        public async Task<byte[]> GetImageBytes(string size, string filePath, bool useSsl = false, CancellationToken token = default)
+        [Obsolete("Use " + nameof(GetImageBytesAsync))]
+        public Task<byte[]> GetImageBytes(string size, string filePath, bool useSsl = false, CancellationToken token = default)
+        {
+            return GetImageBytesAsync(size, filePath, useSsl, token);
+        }
+
+        public async Task<byte[]> GetImageBytesAsync(string size, string filePath, bool useSsl = false, CancellationToken token = default)
         {
             Uri url = GetImageUrl(size, filePath, useSsl);
 

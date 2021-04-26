@@ -123,7 +123,7 @@ namespace TestApplication
             Console.WriteLine("Downloading image for the first url, as a test");
 
             Uri testUrl = client.GetImageUrl(sizesLst.First(), imagesLst.First().FilePath);
-            byte[] bts = await client.GetImageBytes(sizesLst.First(), imagesLst.First().FilePath);
+            byte[] bts = await client.GetImageBytesAsync(sizesLst.First(), imagesLst.First().FilePath);
 
             Console.WriteLine($"Downloaded {testUrl}: {bts.Length} bytes");
         }
