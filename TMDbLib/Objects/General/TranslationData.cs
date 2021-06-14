@@ -11,6 +11,9 @@ namespace TMDbLib.Objects.General
         [JsonProperty("overview")]
         public string Overview { get; set; }
 
+        [JsonProperty("homepage")]
+        public string HomePage { get; set; }
+
         [JsonProperty("tagline")]
         public string Tagline { get; set; }
     }
