@@ -10,5 +10,8 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("posters")]
         public List<ImageData> Posters { get; set; }
+
+        [JsonProperty("logos")]
+        public List<ImageData> Logos { get; set; }
     }
 }
