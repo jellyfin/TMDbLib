@@ -4,6 +4,7 @@ on:
   push:
     tags:
     - 'v*'
+    - '!v*-*'
 
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
