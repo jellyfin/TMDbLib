@@ -181,6 +181,18 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
+        /// Returns a credits object for the aggragation of tv show associated with the provided TMDb id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="language"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<Credits> GetAggregateCredits(int id, string language = null, CancellationToken cancellationToken = default)
+        {
+            return await GetTvShowMethodInternal<Credits>(id, TvShowMethods.CreditsAggregate, language: language, page: 0, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Returns an object that contains all known exteral id's for the tv show related to the specified TMDB id.
         /// </summary>
         /// <param name="id">The TMDb id of the target tv show.</param>

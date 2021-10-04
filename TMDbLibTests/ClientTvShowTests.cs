@@ -69,6 +69,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
+        public async Task TestAggregateCreditsExtractAllAsync()
+        {
+            Credits credits = await TMDbClient.GetAggregateCredits(IdHelper.Lupin);
+
+            await Verify(credits);
+        }
+
+        [Fact]
         public async Task TestTvShowSeparateExtrasExternalIdsAsync()
         {
             ExternalIdsTvShow externalIds = await TMDbClient.GetTvShowExternalIdsAsync(IdHelper.GameOfThrones);

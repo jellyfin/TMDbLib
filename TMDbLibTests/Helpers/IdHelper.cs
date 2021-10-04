@@ -33,6 +33,7 @@
         public const int House = 1408;
         public const int FullerHouse = 63623;
         public const int Seinfeld = 1400;
+        public const int Lupin = 96677;
 
         public const int TmdbBreakingBadId = 1396;
         public const string TvdbBreakingBadId = "81189";
