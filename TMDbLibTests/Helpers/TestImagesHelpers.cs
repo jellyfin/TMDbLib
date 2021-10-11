@@ -8,12 +8,13 @@ namespace TMDbLibTests.Helpers
 {
     public static class TestImagesHelpers
     {
-        private static readonly Regex ImagePathRegex = new Regex(@"^/[a-zA-Z0-9]{26,}\.(?:jpg|png)$", RegexOptions.Compiled);
+        private static readonly Regex ImagePathRegex = new Regex(@"^/[a-zA-Z0-9]{26,}\.(?:jpg|png|svg)$", RegexOptions.Compiled);
 
         public static void TestImagePaths(Images images)
         {
             TestImagePaths(images.Backdrops);
             TestImagePaths(images.Posters);
+            TestImagePaths(images.Logos);
         }
 
         public static void TestImagePaths(IEnumerable<string> imagePaths)
