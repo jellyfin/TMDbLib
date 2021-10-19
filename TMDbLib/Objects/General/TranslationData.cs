@@ -4,7 +4,6 @@ namespace TMDbLib.Objects.General
 {
     public class TranslationData
     {
-
         [JsonProperty("name")]
         public string Name { get; set; }
 
