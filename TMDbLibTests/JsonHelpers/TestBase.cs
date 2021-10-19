@@ -50,7 +50,7 @@ namespace TMDbLibTests.JsonHelpers
             });
 
             WebProxy proxy = null;
-            //WebProxy proxy = new WebProxy("http://127.0.0.1:8888");
+            //proxy = new WebProxy("http://127.0.0.1:8888");
 
             TestConfig = new TestConfig(serializer: null, proxy: proxy);
         }

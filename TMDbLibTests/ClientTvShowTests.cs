@@ -33,7 +33,8 @@ namespace TMDbLibTests
                 [TvShowMethods.Recommendations] = tvShow => tvShow.Recommendations,
                 [TvShowMethods.ExternalIds] = tvShow => tvShow.ExternalIds,
                 [TvShowMethods.WatchProviders] = tvShow => tvShow.WatchProviders,
-                [TvShowMethods.EpisodeGroups] = tvShow => tvShow.EpisodeGroups
+                [TvShowMethods.EpisodeGroups] = tvShow => tvShow.EpisodeGroups,
+                [TvShowMethods.CreditsAggregate] = tvShow => tvShow.AggregateCredits
             };
         }
 
@@ -64,6 +65,14 @@ namespace TMDbLibTests
         public async Task TestTvShowSeparateExtrasCreditsAsync()
         {
             Credits credits = await TMDbClient.GetTvShowCreditsAsync(IdHelper.BreakingBad);
+
+            await Verify(credits);
+        }
+
+        [Fact]
+        public async Task TestAggregateCreditsExtractAllAsync()
+        {
+            Credits credits = await TMDbClient.GetAggregateCredits(IdHelper.Lupin);
 
             await Verify(credits);
         }

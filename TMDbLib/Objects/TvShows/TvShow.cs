@@ -33,6 +33,9 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("credits")]
         public Credits Credits { get; set; }
 
+        [JsonProperty("aggregate_credits")]
+        public Credits AggregateCredits { get; set; }
+
         [JsonProperty("episode_groups")]
         public ResultContainer<TvGroupCollection> EpisodeGroups { get; set; }
 
