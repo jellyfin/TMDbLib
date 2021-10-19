@@ -18,5 +18,8 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("data")]
+        public TranslationData Data { get; set; }
     }
 }
