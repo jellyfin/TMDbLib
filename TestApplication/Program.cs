@@ -82,13 +82,17 @@ namespace TestApplication
 
             Console.WriteLine("Fetching images for '" + movie.Title + "'");
 
-            // Images come in two forms, each dispayed below
+            // Images come in three forms, each dispayed below
             Console.WriteLine("Displaying Backdrops");
             await ProcessImages(client, movie.Images.Backdrops.Take(3), client.Config.Images.BackdropSizes);
             Console.WriteLine();
 
             Console.WriteLine("Displaying Posters");
             await ProcessImages(client, movie.Images.Posters.Take(3), client.Config.Images.PosterSizes);
+            Console.WriteLine();
+
+            Console.WriteLine("Displaying Logos");
+            await ProcessImages(client, movie.Images.Logos.Take(3), client.Config.Images.LogoSizes);
             Console.WriteLine();
 
             Spacer();

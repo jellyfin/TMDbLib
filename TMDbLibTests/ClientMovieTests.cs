@@ -154,11 +154,13 @@ namespace TMDbLibTests
 
             ImageData backdrop = resp.Backdrops.Single(s => s.FilePath == "/js3J4SBiRfLvmRzaHoTA2tpKROw.jpg");
             ImageData poster = resp.Posters.Single(s => s.FilePath == "/c4G6lW5hAWmwveThfLSqs52yHB1.jpg");
+            ImageData logo = resp.Logos.Single(s => s.FilePath == "/sZcHIwp0UD7aqOKzPkOqtd63F9r.png");
 
             await Verify(new
             {
                 backdrop,
-                poster
+                poster,
+                logo
             });
         }
 
@@ -171,11 +173,13 @@ namespace TMDbLibTests
 
             ImageData backdrop = images.Backdrops.Single(s => s.FilePath == "/js3J4SBiRfLvmRzaHoTA2tpKROw.jpg");
             ImageData poster = images.Posters.Single(s => s.FilePath == "/9Zq88w35f1PpM22TIbf2amtjHD6.jpg");
+            ImageData logo = images.Logos.Single(s => s.FilePath == "/sZcHIwp0UD7aqOKzPkOqtd63F9r.png");
 
             await Verify(new
             {
                 backdrop,
-                poster
+                poster,
+                logo
             });
         }
 
@@ -189,11 +193,13 @@ namespace TMDbLibTests
 
             ImageData backdrop = images.Backdrops.Single(s => s.FilePath == "/4U9fN2jsQ94GQfDGeLEe8UaReRO.jpg");
             ImageData poster = images.Posters.Single(s => s.FilePath == "/8VV4YUwOGxgolFZTo2SgNwsfznR.jpg");
+            ImageData logo = images.Logos.Single(s => s.FilePath == "/jIWzq9B4KPH9hyUISlma02ijTFb.png");
 
             await Verify(new
             {
                 backdrop,
-                poster
+                poster,
+                logo
             });
         }
 
