@@ -10,6 +10,6 @@ namespace TMDbLib.Objects.Lists
         public string CreatedBy { get; set; }
 
         [JsonProperty("items")]
-        public List<SearchMovie> Items { get; set; }
+        public List<SearchBase> Items { get; set; }
     }
 }
