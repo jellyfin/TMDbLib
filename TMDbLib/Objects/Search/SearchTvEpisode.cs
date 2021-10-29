@@ -1,18 +1,21 @@
 using System;
 using Newtonsoft.Json;
+using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Search
 {
-    public class SearchTvEpisode
+    public class SearchTvEpisode : SearchBase
     {
+        public SearchTvEpisode()
+        {
+            MediaType = MediaType.Episode;
+        }
+
         [JsonProperty("air_date")]
         public DateTime? AirDate { get; set; }
 
         [JsonProperty("episode_number")]
         public int EpisodeNumber { get; set; }
-
-        [JsonProperty("id")]
-        public int Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

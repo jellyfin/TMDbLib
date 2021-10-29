@@ -68,13 +68,18 @@ namespace TMDbLibTests.UtilityTests
 
             Assert.All(result.Results, item =>
             {
+                if (item.MediaType == MediaType.Movie)
+                    Assert.IsType<SearchMovie>(item.Media);
+            });
+            Assert.All(result.Results, item =>
+            {
                 if (item.MediaType == MediaType.Tv)
                     Assert.IsType<SearchTv>(item.Media);
             });
             Assert.All(result.Results, item =>
             {
-                if (item.MediaType == MediaType.Movie)
-                    Assert.IsType<SearchMovie>(item.Media);
+                if (item.MediaType == MediaType.Episode)
+                    Assert.IsType<SearchTvEpisode>(item.Media);
             });
         }
     }
