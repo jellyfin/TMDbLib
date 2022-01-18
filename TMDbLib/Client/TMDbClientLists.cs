@@ -42,14 +42,19 @@ namespace TMDbLib.Client
         /// Retrieve a list by it's id
         /// </summary>
         /// <param name="listId">The id of the list you want to retrieve</param>
+        /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         /// <param name="cancellationToken">A cancellation token</param>
-        public async Task<GenericList> GetListAsync(string listId, CancellationToken cancellationToken = default)
+        public async Task<GenericList> GetListAsync(string listId, string language = null, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrWhiteSpace(listId))
                 throw new ArgumentNullException(nameof(listId));
 
             RestRequest req = _client.Create("list/{listId}");
             req.AddUrlSegment("listId", listId);
+
+            language ??= DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+                req.AddParameter("language", language);
 
             GenericList resp = await req.GetOfT<GenericList>(cancellationToken).ConfigureAwait(false);
 
