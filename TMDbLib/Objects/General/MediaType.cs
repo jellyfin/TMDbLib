@@ -19,6 +19,6 @@ namespace TMDbLib.Objects.General
         Person = 3,
 
         [EnumValue("episode")]
-        Episode = 4,
+        Episode = 4
     }
 }
