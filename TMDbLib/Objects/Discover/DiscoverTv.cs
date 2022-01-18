@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMDbLib.Client;
+using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
@@ -139,6 +140,119 @@ namespace TMDbLib.Objects.Discover
         public DiscoverTv WhereOriginalLanguageIs(string language)
         {
             Parameters["with_original_language"] = language;
+            return this;
+        }
+
+        /// <summary>
+        /// Only include TV shows that are equal to, or have a runtime higher than this value. Expected value is an integer (minutes).
+        /// </summary>        
+        public DiscoverTv WhereRuntimeIsAtLeast(int minutes)
+        {
+            Parameters["with_runtime.gte"] = minutes.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Only include TV shows that are equal to, or have a runtime lower than this value. Expected value is an integer (minutes).
+        /// </summary>        
+        public DiscoverTv WhereRuntimeIsAtMost(int minutes)
+        {
+            Parameters["with_runtime.lte"] = minutes.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Toggle the inclusion of TV shows with null first air data. Expected value is a boolean, true or false.
+        /// </summary>
+        public DiscoverTv IncludeNullFirstAirDates(bool include)
+        {
+            Parameters["include_null_first_air_dates"] = include.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Exclude TV shows with the specified genres. Expected value is a list of Generes. 
+        /// </summary>
+        public DiscoverTv WhereGenresExclude(IEnumerable<Genre> genres)
+        {
+            return WhereGenresInclude(genres.Select(s => s.Id));
+        }
+
+        /// <summary>
+        /// Exclude TV shows with the specified genres. Expected value is an integer (the id of a genre).
+        /// </summary>
+        public DiscoverTv WhereGenresExclude(IEnumerable<int> genreIds)
+        {
+            Parameters["without_genres"] = string.Join(",", genreIds.Select(s => s.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Only include TV shows with the specified companies. Expected value is an list of companies. 
+        /// </summary>        
+        public DiscoverTv WhereCompaniesInclude(IEnumerable<Company> companies)
+        {
+            return WhereCompaniesInclude(companies.Select(s => s.Id));
+        }
+
+        /// <summary>
+        /// Only include TV shows with the specified companies. Expected value is a list of integer (the id of a company). 
+        /// </summary>        
+        public DiscoverTv WhereCompaniesInclude(IEnumerable<int> companyIds)
+        {
+            Parameters["with_companies"] = string.Join(",", companyIds.Select(s => s.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Filter results to include items that have been screened theatrically.
+        /// </summary>        
+        public DiscoverTv WhereScreenedTheatrically(bool theatrical)
+        {
+            Parameters["screened_theatrically"] = theatrical.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Filter TV shows to include a specific keyword. Expected value is a list of keywords.
+        /// </summary>        
+        public DiscoverTv WhereKeywordsInclude(IEnumerable<Keyword> keywords)
+        {
+            return WhereKeywordsInclude(keywords.Select(s => s.Id));
+        }
+
+        /// <summary>
+        /// Filter TV shows to include a specific keyword. Expected value is a list of integer (the id of a keyword).
+        /// </summary>        
+        public DiscoverTv WhereKeywordsInclude(IEnumerable<int> keywordIds)
+        {
+            Parameters["with_keywords"] = string.Join(",", keywordIds.Select(s => s.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Filter TV shows to exclude a specific keyword. Expected value is a list of keywords.
+        /// </summary>        
+        public DiscoverTv WhereKeywordsExclude(IEnumerable<Keyword> keywords)
+        {
+            return WhereKeywordsInclude(keywords.Select(s => s.Id));
+        }
+
+        /// <summary>
+        /// Filter TV shows to exclude a specific keyword. Expected value is a list of integer (the id of a keyword).
+        /// </summary>        
+        public DiscoverTv WhereKeywordsExclude(IEnumerable<int> keywordIds)
+        {
+            Parameters["without_keywords"] = string.Join("|", keywordIds.Select(s => s.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Specifies which language to use for translatable fields
+        /// </summary>
+        public DiscoverTv WhereLanguageIs(string language)
+        {
+            Parameters["language"] = language;
             return this;
         }
     }
