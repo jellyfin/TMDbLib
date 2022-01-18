@@ -30,6 +30,9 @@ namespace TMDbLib.Utilities.Converters
                 case MediaType.Tv:
                     result.Media = mediaJson.ToObject<SearchTv>();
                     break;
+                case MediaType.Episode:
+                    result.Media = mediaJson.ToObject<SearchTvEpisode>();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

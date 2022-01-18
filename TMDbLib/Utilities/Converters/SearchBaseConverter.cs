@@ -39,6 +39,9 @@ namespace TMDbLib.Utilities.Converters
                     case MediaType.Person:
                         result = new SearchPerson();
                         break;
+                    case MediaType.Episode:
+                        result = new SearchTvEpisode();
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

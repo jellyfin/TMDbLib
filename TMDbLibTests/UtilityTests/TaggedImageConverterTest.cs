@@ -21,10 +21,10 @@ namespace TMDbLibTests.UtilityTests
                 MediaType = originalMedia.MediaType,
                 Media = originalMedia
             };
-            
+
             string json = Serializer.SerializeToString(original);
-            TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json) ;
-            
+            TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json);
+
             Assert.IsType<SearchMovie>(result.Media);
             await Verify(new
             {
@@ -41,10 +41,10 @@ namespace TMDbLibTests.UtilityTests
             TaggedImage original = new TaggedImage();
             original.MediaType = MediaType.Tv;
             original.Media = originalMedia;
-            
+
             string json = Serializer.SerializeToString(original);
-            TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json) ;
-            
+            TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json);
+
             Assert.IsType<SearchTv>(result.Media);
             await Verify(new
             {
@@ -56,25 +56,29 @@ namespace TMDbLibTests.UtilityTests
         /// <summary>
         /// Tests the TaggedImageConverter
         /// </summary>
-        [Fact]
-        public async Task TestJsonTaggedImageConverter()
+        [Theory]
+        [InlineData(IdHelper.HughLaurie)]   // Has Movie media
+        [InlineData(IdHelper.TomHanks)] // Has Episode media
+        public async Task TestJsonTaggedImageConverter(int personId)
         {
             // Get images
-            SearchContainerWithId<TaggedImage> result = await TMDbClient.GetPersonTaggedImagesAsync(IdHelper.HughLaurie, 1);
+            SearchContainerWithId<TaggedImage> result = await TMDbClient.GetPersonTaggedImagesAsync(personId, 1);
 
             Assert.NotNull(result);
             Assert.NotNull(result.Results);
-            Assert.Equal(IdHelper.HughLaurie, result.Id);
+            Assert.NotEmpty(result.Results);
+            Assert.Equal(personId, result.Id);
 
-            Assert.All(result.Results, item =>
-            {
-                if (item.MediaType == MediaType.Tv)
-                    Assert.IsType<SearchTv>(item.Media);
-            });
             Assert.All(result.Results, item =>
             {
                 if (item.MediaType == MediaType.Movie)
                     Assert.IsType<SearchMovie>(item.Media);
+                else if (item.MediaType == MediaType.Tv)
+                    Assert.IsType<SearchTv>(item.Media);
+                else if (item.MediaType == MediaType.Episode)
+                    Assert.IsType<SearchTvEpisode>(item.Media);
+                else
+                    Assert.False(true, $"Unexpected type {item.GetType().Name}");
             });
         }
     }
