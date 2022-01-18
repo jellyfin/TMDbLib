@@ -56,7 +56,7 @@ namespace TMDbLib.Client
 
             //req.DateFormat = "yyyy-MM-dd";
 
-            RestResponse<Collection> response = await req.Get<Collection>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<Collection> response = await req.Get<Collection>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
                 return null;

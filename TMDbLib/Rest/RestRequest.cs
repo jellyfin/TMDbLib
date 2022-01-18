@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -93,6 +94,7 @@ namespace TMDbLib.Rest
             return new RestResponse(resp);
         }
 
+        [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "resp is disposed by RestResponse<>()")]
         public async Task<RestResponse<T>> Delete<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
@@ -107,6 +109,7 @@ namespace TMDbLib.Rest
             return new RestResponse(resp);
         }
 
+        [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "resp is disposed by RestResponse<>()")]
         public async Task<RestResponse<T>> Get<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
@@ -121,6 +124,7 @@ namespace TMDbLib.Rest
             return new RestResponse(resp);
         }
 
+        [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "resp is disposed by RestResponse<>()")]
         public async Task<RestResponse<T>> Post<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
@@ -182,51 +186,49 @@ namespace TMDbLib.Rest
 
             do
             {
-                using (HttpRequestMessage req = PrepRequest(method))
+                using HttpRequestMessage req = PrepRequest(method);
+                using HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+
+                bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json");
+
+                if (resp.IsSuccessStatusCode && isJson)
+                    return resp;
+
+                if (isJson)
+                    statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
+                else
+                    statusMessage = null;
+
+                switch (resp.StatusCode)
                 {
-                    HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+                    case (HttpStatusCode)429:
+                        // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
+                        retryHeader = resp.Headers.RetryAfter;
+                        TimeSpan? retryAfter = retryHeader?.Delta.Value;
 
-                    bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json");
+                        if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
+                            await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
+                        else
+                            // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
+                            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
 
-                    if (resp.IsSuccessStatusCode && isJson)
-                        return resp;
+                        continue;
+                    case HttpStatusCode.Unauthorized:
+                        throw new UnauthorizedAccessException(
+                            "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
 
-                    if (isJson)
-                        statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
-                    else
-                        statusMessage = null;
-
-                    switch (resp.StatusCode)
-                    {
-                        case (HttpStatusCode)429:
-                            // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
-                            retryHeader = resp.Headers.RetryAfter;
-                            TimeSpan? retryAfter = retryHeader?.Delta.Value;
-
-                            if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
-                                await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
-                            else
-                                // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
-                                await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
-
-                            continue;
-                        case HttpStatusCode.Unauthorized:
-                            throw new UnauthorizedAccessException(
-                                "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
-
-                        case HttpStatusCode.NotFound:
-                            if (_client.ThrowApiExceptions)
-                            {
-                                throw new NotFoundException(statusMessage);
-                            }
-                            else
-                            {
-                                return null;
-                            }
-                    }
-
-                    throw new GeneralHttpException(resp.StatusCode);
+                    case HttpStatusCode.NotFound:
+                        if (_client.ThrowApiExceptions)
+                        {
+                            throw new NotFoundException(statusMessage);
+                        }
+                        else
+                        {
+                            return null;
+                        }
                 }
+
+                throw new GeneralHttpException(resp.StatusCode);
             } while (timesToTry-- > 0);
 
             // We never reached a success

@@ -50,7 +50,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
 
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }
@@ -68,7 +68,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
 
             return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
         }

@@ -64,7 +64,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", MovieMethods.AccountStates.GetDescription());
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<AccountState> response = await req.Get<AccountState>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<AccountState> response = await req.Get<AccountState>(cancellationToken).ConfigureAwait(false);
 
             return await response.GetDataObject().ConfigureAwait(false);
         }
@@ -132,7 +132,7 @@ namespace TMDbLib.Client
             if (appends != string.Empty)
                 req.AddParameter("append_to_response", appends);
 
-            RestResponse<Movie> response = await req.Get<Movie>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<Movie> response = await req.Get<Movie>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
                 return null;
@@ -203,7 +203,7 @@ namespace TMDbLib.Client
         public async Task<Movie> GetMovieLatestAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("movie/latest");
-            RestResponse<Movie> resp = await req.Get<Movie>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<Movie> resp = await req.Get<Movie>(cancellationToken).ConfigureAwait(false);
 
             Movie item = await resp.GetDataObject().ConfigureAwait(false);
 
@@ -351,7 +351,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             AddSessionId(req);
 
-            RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 13 = "The item/record was deleted successfully."
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
@@ -379,7 +379,7 @@ namespace TMDbLib.Client
 
             req.SetBody(new { value = rating });
 
-            RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // status code 1 = "Success"
             // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user

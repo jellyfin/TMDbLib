@@ -163,8 +163,8 @@ namespace TMDbLibTests.JsonHelpers
 
                 public int Compare(object x, object y)
                 {
-                    object? valX = _property.GetValue(x);
-                    object? valY = _property.GetValue(y);
+                    object valX = _property.GetValue(x);
+                    object valY = _property.GetValue(y);
 
                     return Comparer.Default.Compare(valX, valY);
                 }

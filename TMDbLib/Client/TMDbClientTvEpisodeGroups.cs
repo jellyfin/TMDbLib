@@ -23,7 +23,7 @@ namespace TMDbLib.Client
             if (!string.IsNullOrWhiteSpace(language))
                 req.AddParameter("language", language);
 
-            RestResponse<TvGroupCollection> response = await req.Get<TvGroupCollection>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<TvGroupCollection> response = await req.Get<TvGroupCollection>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
                 return null;

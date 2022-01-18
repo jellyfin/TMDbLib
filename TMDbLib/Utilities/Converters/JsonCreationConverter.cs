@@ -13,7 +13,9 @@ namespace TMDbLib.Utilities.Converters
             JObject jObject = JObject.Load(reader);
 
             T target = GetInstance(jObject);
-            serializer.Populate(jObject.CreateReader(), target);
+
+            using JsonReader jsonReader = jObject.CreateReader();
+            serializer.Populate(jsonReader, target);
 
             return target;
         }

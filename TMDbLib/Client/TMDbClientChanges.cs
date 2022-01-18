@@ -31,7 +31,7 @@ namespace TMDbLib.Client
             if (endDate != null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
-            RestResponse<T> resp = await req.Get<T>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<T> resp = await req.Get<T>(cancellationToken).ConfigureAwait(false);
             T res = await resp.GetDataObject().ConfigureAwait(false);
 
             if (res is SearchContainer<ChangesListItem> asSearch)

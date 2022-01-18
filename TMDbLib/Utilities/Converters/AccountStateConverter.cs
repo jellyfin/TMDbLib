@@ -46,7 +46,8 @@ namespace TMDbLib.Utilities.Converters
             object result = Activator.CreateInstance(objectType);
 
             // Populate the result
-            serializer.Populate(jObject.CreateReader(), result);
+            using JsonReader jsonReader = jObject.CreateReader();
+            serializer.Populate(jsonReader, result);
 
             return result;
         }

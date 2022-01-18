@@ -26,7 +26,7 @@ namespace TMDbLib.Client
             RestRequest request = _client.Create("authentication/session/new");
             request.AddParameter("request_token", initialRequestToken);
 
-            RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
                 throw new UnauthorizedAccessException();
@@ -51,7 +51,7 @@ namespace TMDbLib.Client
         {
             RestRequest request = _client.Create("authentication/token/new");
 
-            RestResponse<Token> response = await request.Get<Token>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<Token> response = await request.Get<Token>(cancellationToken).ConfigureAwait(false);
             Token token = await response.GetDataObject().ConfigureAwait(false);
 
             token.AuthenticationCallback = response.GetHeader("Authentication-Callback");
@@ -75,6 +75,8 @@ namespace TMDbLib.Client
             {
                 throw ex.InnerException;
             }
+
+            using RestResponse _ = response;
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {

@@ -7,7 +7,7 @@ using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest
 {
-    internal class RestClient : IDisposable
+    internal sealed class RestClient : IDisposable
     {
         private int _maxRetryCount;
 

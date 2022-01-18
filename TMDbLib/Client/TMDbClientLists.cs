@@ -28,7 +28,7 @@ namespace TMDbLib.Client
 
             req.SetBody(new { media_id = movieId });
 
-            RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // Status code 12 = "The item/record was updated successfully"
             // Status code 13 = "The item/record was deleted successfully"
@@ -79,7 +79,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("listId", listId);
             req.AddParameter("movie_id", movieId.ToString());
 
-            RestResponse<ListStatus> response = await req.Get<ListStatus>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<ListStatus> response = await req.Get<ListStatus>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false)).ItemPresent;
         }
@@ -118,7 +118,7 @@ namespace TMDbLib.Client
             request.AddParameter("confirm", "true");
             AddSessionId(request, SessionType.UserSession);
 
-            RestResponse<PostReply> response = await request.Post<PostReply>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<PostReply> response = await request.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // Status code 12 = "The item/record was updated successfully"
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
@@ -161,7 +161,7 @@ namespace TMDbLib.Client
                 req.SetBody(new { name = name, description = description });
             }
 
-            RestResponse<ListCreateReply> response = await req.Post<ListCreateReply>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<ListCreateReply> response = await req.Post<ListCreateReply>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false)).ListId;
         }
@@ -184,7 +184,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("listId", listId);
             AddSessionId(req, SessionType.UserSession);
 
-            RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
 
             // Status code 13 = success
             PostReply item = await response.GetDataObject().ConfigureAwait(false);

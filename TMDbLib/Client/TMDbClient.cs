@@ -185,6 +185,7 @@ namespace TMDbLib.Client
             return await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "Only called from ctor")]
         private void Initialize(string baseUrl, bool useSsl, string apiKey)
         {
             if (string.IsNullOrWhiteSpace(baseUrl))
@@ -202,6 +203,7 @@ namespace TMDbLib.Client
                 baseUrl = baseUrl.Substring("https://".Length);
 
             string httpScheme = useSsl ? "https" : "http";
+
             _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy);
             _client.AddDefaultQueryString("api_key", apiKey);
         }
@@ -272,7 +274,7 @@ namespace TMDbLib.Client
             }
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             _client?.Dispose();
         }

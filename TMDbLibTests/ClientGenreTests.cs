@@ -58,11 +58,13 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestGenreMoviesAsync()
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             SearchContainerWithId<SearchMovie> movies = await TMDbClient.GetGenreMoviesAsync(IdHelper.AdventureMovieGenre);
 
             Assert.NotEmpty(movies.Results);
             Assert.Equal(IdHelper.AdventureMovieGenre, movies.Id);
             Assert.All(movies.Results, x => Assert.Contains(IdHelper.AdventureMovieGenre, x.GenreIds));
+#pragma warning restore CS0618 // Type or member is obsolete
         }
     }
 }

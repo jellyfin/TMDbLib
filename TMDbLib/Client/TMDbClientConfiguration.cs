@@ -17,7 +17,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("configuration");
 
-            RestResponse<APIConfiguration> response = await req.Get<APIConfiguration>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<APIConfiguration> response = await req.Get<APIConfiguration>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false));
         }
@@ -26,16 +26,16 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("configuration/countries");
 
-            RestResponse<List<Country>> response = await req.Get<List<Country>>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<List<Country>> response = await req.Get<List<Country>>(cancellationToken).ConfigureAwait(false);
 
-            return (await response.GetDataObject().ConfigureAwait(false));
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         public async Task<List<Language>> GetLanguagesAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration/languages");
 
-            RestResponse<List<Language>> response = await req.Get<List<Language>>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<List<Language>> response = await req.Get<List<Language>>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false));
         }
@@ -44,7 +44,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("configuration/primary_translations");
 
-            RestResponse<List<string>> response = await req.Get<List<string>>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<List<string>> response = await req.Get<List<string>>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false));
         }
@@ -53,7 +53,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("timezones/list");
 
-            RestResponse<List<Dictionary<string, List<string>>>> resp = await req.Get<List<Dictionary<string, List<string>>>>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<List<Dictionary<string, List<string>>>> resp = await req.Get<List<Dictionary<string, List<string>>>>(cancellationToken).ConfigureAwait(false);
 
             List<Dictionary<string, List<string>>> item = await resp.GetDataObject().ConfigureAwait(false);
 
@@ -81,7 +81,7 @@ namespace TMDbLib.Client
         {
             RestRequest req = _client.Create("configuration/jobs");
 
-            RestResponse<List<Job>> response = await req.Get<List<Job>>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<List<Job>> response = await req.Get<List<Job>>(cancellationToken).ConfigureAwait(false);
 
             return (await response.GetDataObject().ConfigureAwait(false));
         }
