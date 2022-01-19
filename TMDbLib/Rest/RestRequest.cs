@@ -187,48 +187,57 @@ namespace TMDbLib.Rest
             do
             {
                 using HttpRequestMessage req = PrepRequest(method);
-                using HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+                HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
 
                 bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json");
 
                 if (resp.IsSuccessStatusCode && isJson)
+#pragma warning disable IDISP011 // Don't return disposed instance
                     return resp;
+#pragma warning restore IDISP011 // Don't return disposed instance
 
-                if (isJson)
-                    statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
-                else
-                    statusMessage = null;
-
-                switch (resp.StatusCode)
+                try
                 {
-                    case (HttpStatusCode)429:
-                        // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
-                        retryHeader = resp.Headers.RetryAfter;
-                        TimeSpan? retryAfter = retryHeader?.Delta.Value;
+                    if (isJson)
+                        statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
+                    else
+                        statusMessage = null;
 
-                        if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
-                            await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
-                        else
-                            // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
-                            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
+                    switch (resp.StatusCode)
+                    {
+                        case (HttpStatusCode)429:
+                            // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
+                            retryHeader = resp.Headers.RetryAfter;
+                            TimeSpan? retryAfter = retryHeader?.Delta.Value;
 
-                        continue;
-                    case HttpStatusCode.Unauthorized:
-                        throw new UnauthorizedAccessException(
-                            "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+                            if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
+                                await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
+                            else
+                                // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
+                                await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
 
-                    case HttpStatusCode.NotFound:
-                        if (_client.ThrowApiExceptions)
-                        {
-                            throw new NotFoundException(statusMessage);
-                        }
-                        else
-                        {
-                            return null;
-                        }
+                            continue;
+                        case HttpStatusCode.Unauthorized:
+                            throw new UnauthorizedAccessException(
+                                "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+
+                        case HttpStatusCode.NotFound:
+                            if (_client.ThrowApiExceptions)
+                            {
+                                throw new NotFoundException(statusMessage);
+                            }
+                            else
+                            {
+                                return null;
+                            }
+                    }
+
+                    throw new GeneralHttpException(resp.StatusCode);
                 }
-
-                throw new GeneralHttpException(resp.StatusCode);
+                finally
+                {
+                    resp.Dispose();
+                }
             } while (timesToTry-- > 0);
 
             // We never reached a success

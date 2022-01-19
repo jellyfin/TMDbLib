@@ -8,7 +8,7 @@ namespace TMDbLib.Rest
         public static async Task<T> DeleteOfT<T>(this RestRequest request, CancellationToken cancellationToken)
         {
             using RestResponse<T> resp = await request.Delete<T>(cancellationToken).ConfigureAwait(false);
-            
+
             if (!resp.IsValid)
                 return default;
 
@@ -28,7 +28,7 @@ namespace TMDbLib.Rest
         public static async Task<T> PostOfT<T>(this RestRequest request, CancellationToken cancellationToken)
         {
             using RestResponse<T> resp = await request.Post<T>(cancellationToken).ConfigureAwait(false);
-            
+
             if (!resp.IsValid)
                 return default;
 
