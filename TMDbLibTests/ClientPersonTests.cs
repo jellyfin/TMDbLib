@@ -144,12 +144,9 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestPersonsListAsync()
         {
-            foreach (PersonListType type in Enum.GetValues(typeof(PersonListType)).OfType<PersonListType>())
-            {
-                SearchContainer<PersonResult> list = await TMDbClient.GetPersonListAsync(type);
+            SearchContainer<SearchPerson> list = await TMDbClient.GetPersonPopularListAsync();
 
-                Assert.NotEmpty(list.Results);
-            }
+            Assert.NotEmpty(list.Results);
         }
 
         [Fact]

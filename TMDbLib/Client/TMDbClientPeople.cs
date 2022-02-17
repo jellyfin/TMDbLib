@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
+using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
@@ -113,26 +114,19 @@ namespace TMDbLib.Client
             return await GetPersonMethodInternal<ProfileImages>(personId, PersonMethods.Images, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<SearchContainer<PersonResult>> GetPersonListAsync(PersonListType type, int page = 0, CancellationToken cancellationToken = default)
+        public async Task<SearchContainer<SearchPerson>> GetPersonPopularListAsync(int page = 0, string language = null, CancellationToken cancellationToken = default)
         {
-            RestRequest req;
-            switch (type)
-            {
-                case PersonListType.Popular:
-                    req = _client.Create("person/popular");
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(type));
-            }
+            RestRequest req = _client.Create("person/popular");
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
+            if (language != null)
+                req.AddParameter("language", language);
 
             // TODO: Dateformat?
             //req.DateFormat = "yyyy-MM-dd";
 
-            SearchContainer<PersonResult> resp = await req.GetOfT<SearchContainer<PersonResult>>(cancellationToken).ConfigureAwait(false);
+            SearchContainer<SearchPerson> resp = await req.GetOfT<SearchContainer<SearchPerson>>(cancellationToken).ConfigureAwait(false);
 
             return resp;
         }
