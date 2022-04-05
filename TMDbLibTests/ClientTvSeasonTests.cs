@@ -25,7 +25,6 @@ namespace TMDbLibTests
                 [TvSeasonMethods.Images] = tvSeason => tvSeason.Images,
                 [TvSeasonMethods.ExternalIds] = tvSeason => tvSeason.ExternalIds,
                 [TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos,
-                [TvSeasonMethods.Videos] = tvSeason => tvSeason.Videos,
                 [TvSeasonMethods.AccountStates] = tvSeason => tvSeason.AccountStates
             };
         }
