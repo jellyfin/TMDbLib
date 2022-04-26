@@ -46,7 +46,7 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// Returns a list of all of the countries TMDb has watch provider (OTT/streaming) data for.
+        /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for shows.
         /// </summary>
         /// <param name="cancellationToken">A cancellation token</param>
         /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data</remarks>
