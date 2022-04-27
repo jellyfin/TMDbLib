@@ -35,7 +35,7 @@ namespace TMDbLib.Rest
         [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected.", Justification = "RestResponse owns the response")]
         public virtual void Dispose()
         {
-            Response.Dispose();
+            Response?.Dispose();
         }
     }
 
