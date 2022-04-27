@@ -1,9 +1,6 @@
 ﻿using System.Threading.Tasks;
-
 using TMDbLib.Objects.General;
-
 using TMDbLibTests.JsonHelpers;
-
 using Xunit;
 
 namespace TMDbLibTests

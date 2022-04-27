@@ -1,6 +1,5 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-
 using TMDbLib.Objects.General;
 using TMDbLib.Rest;
 
@@ -8,7 +7,6 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-
         /// <summary>
         /// Returns a list of all of the countries TMDb has watch provider (OTT/streaming) data for.
         /// </summary>
@@ -24,7 +22,6 @@ namespace TMDbLib.Client
 
             return response;
         }
-
 
         /// <summary>
         /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for movies.
