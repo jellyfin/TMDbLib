@@ -4,8 +4,8 @@ namespace TMDbLib.Objects.General
 {
     public class TranslationData
     {
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        [JsonProperty("title")]
+        public string Title { get; set; }
 
         [JsonProperty("overview")]
         public string Overview { get; set; }
@@ -15,5 +15,8 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("tagline")]
         public string Tagline { get; set; }
+
+        [JsonProperty("runtime")]
+        public int Runtime { get; set; }
     }
 }
