@@ -187,9 +187,9 @@ namespace TMDbLib.Client
         /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
         /// <param name="cancellationToken">A cancellation token</param>
         /// <returns></returns>
-        public async Task<Credits> GetAggregateCredits(int id, string language = null, CancellationToken cancellationToken = default)
+        public async Task<CreditsAggregate> GetAggregateCredits(int id, string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetTvShowMethodInternal<Credits>(id, TvShowMethods.CreditsAggregate, language: language, page: 0, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await GetTvShowMethodInternal<CreditsAggregate>(id, TvShowMethods.CreditsAggregate, language: language, page: 0, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
