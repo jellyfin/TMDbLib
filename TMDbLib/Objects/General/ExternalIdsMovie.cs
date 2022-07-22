@@ -2,11 +2,8 @@
 
 namespace TMDbLib.Objects.General
 {
-    public class ExternalIdsMovie
+    public class ExternalIdsMovie : ExternalIds
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
         [JsonProperty("imdb_id")]
         public string ImdbId { get; set; }
 
