@@ -71,7 +71,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestAggregateCreditsExtractAllAsync()
         {
-            Credits credits = await TMDbClient.GetAggregateCredits(IdHelper.Lupin);
+            CreditsAggregate credits = await TMDbClient.GetAggregateCredits(IdHelper.Lupin);
 
             await Verify(credits);
         }
