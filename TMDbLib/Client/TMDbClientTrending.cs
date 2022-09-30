@@ -12,7 +12,7 @@ namespace TMDbLib.Client
         public async Task<SearchContainer<SearchMovie>> GetTrendingMoviesAsync(TimeWindow timeWindow, int page = 0, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("trending/movie/{time_window}");
-            req.AddUrlSegment("time_window", timeWindow.ToString());
+            req.AddUrlSegment("time_window", timeWindow.ToString().ToLower());
 
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
