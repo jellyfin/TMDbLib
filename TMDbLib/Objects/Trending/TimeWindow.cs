@@ -2,6 +2,9 @@
 {
     public enum TimeWindow
     {
-        Day, Week
+        [EnumValue("day")]
+        Day, 
+        [EnumValue("week")]
+        Week
     }
 }
