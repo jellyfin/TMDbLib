@@ -1,4 +1,6 @@
-﻿namespace TMDbLib.Objects.Trending
+﻿using TMDbLib.Utilities;
+
+namespace TMDbLib.Objects.Trending
 {
     public enum TimeWindow
     {
