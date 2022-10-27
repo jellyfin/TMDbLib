@@ -94,6 +94,15 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
+        /// Gets or sets timeout when requests to TMDb API.
+        /// </summary>
+        public TimeSpan Timeout
+        {
+            get => _client.Timeout;
+            set => _client.Timeout = value;
+        }
+
+        /// <summary>
         /// The session id that will be used when TMDb requires authentication
         /// </summary>
         /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>

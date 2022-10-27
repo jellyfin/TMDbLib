@@ -50,6 +50,12 @@ namespace TMDbLib.Rest
             }
         }
 
+        public TimeSpan Timeout
+        {
+            get => HttpClient.Timeout;
+            set => HttpClient.Timeout = value;
+        }
+
         public bool ThrowApiExceptions { get; set; }
 
         internal ITMDbSerializer Serializer { get; }
