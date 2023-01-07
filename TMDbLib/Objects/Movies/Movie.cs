@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Reviews;
@@ -65,7 +67,7 @@ namespace TMDbLib.Objects.Movies
         public string Overview { get; set; }
 
         [JsonProperty("popularity")]
-        public double Popularity { get; set; }
+        public double? Popularity { get; set; }
 
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
