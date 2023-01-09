@@ -127,7 +127,7 @@ namespace TMDbLib.Objects.TvShows
         public List<ProductionCountry> ProductionCountries { get; set; }
 
         [JsonProperty("recommendations")]
-        public ResultContainer<TvShow> Recommendations { get; set; }
+        public SearchContainer<SearchTv> Recommendations { get; set; }
 
         [JsonProperty("reviews")]
         public SearchContainer<ReviewBase> Reviews { get; set; }
@@ -136,7 +136,7 @@ namespace TMDbLib.Objects.TvShows
         public List<SearchTvSeason> Seasons { get; set; }
 
         [JsonProperty("similar")]
-        public ResultContainer<TvShow> Similar { get; set; }
+        public SearchContainer<SearchTv> Similar { get; set; }
 
         [JsonProperty("spoken_languages")]
         public List<SpokenLanguage> SpokenLanguages { get; set; }

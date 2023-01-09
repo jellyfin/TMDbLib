@@ -150,9 +150,6 @@ namespace TMDbLib.Client
             if (item.AccountStates != null)
                 item.AccountStates.Id = id;
 
-            if (item.Recommendations != null)
-                item.Recommendations.Id = id;
-
             if (item.ExternalIds != null)
                 item.ExternalIds.Id = id;
 
