@@ -4,9 +4,10 @@ using System.Linq;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
 using TMDbLib.Client;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
-using TMDbLib.Objects.TvShows;
 using TMDbLib.Utilities;
+using Cast = TMDbLib.Objects.TvShows.Cast;
 
 namespace TMDbLib.Objects.Discover
 {
@@ -435,6 +436,24 @@ namespace TMDbLib.Objects.Discover
         public DiscoverMovie WhereOriginalLanguageIs(string language)
         {
             Parameters["with_original_language"] = language;
+            return this;
+        }
+
+        /// <summary>
+        /// Specifies that only movies with all the given release types will be returned.
+        /// </summary>
+        public DiscoverMovie WithAllOfReleaseTypes(params ReleaseDateType[] releaseTypes)
+        {
+            Parameters["with_release_type"] = string.Join(",", releaseTypes.Select(s => ((int)s).ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Specifies that only movies with the given release types will be returned.
+        /// </summary>
+        public DiscoverMovie WithAnyOfReleaseTypes(params ReleaseDateType[] releaseTypes)
+        {
+            Parameters["with_release_type"] = string.Join("|", releaseTypes.Select(s => ((int)s).ToString()));
             return this;
         }
     }

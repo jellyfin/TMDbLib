@@ -6,6 +6,7 @@ using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System;
 using System.Threading.Tasks;
+using TMDbLib.Objects.Movies;
 
 namespace TMDbLibTests
 {
@@ -49,6 +50,15 @@ namespace TMDbLibTests
             DiscoverMovie query = TMDbClient.DiscoverMoviesAsync()
                 .WhereReleaseDateIsInRegion("BR")
                 .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01));
+
+            await TestHelpers.SearchPagesAsync(i => query.Query(i));
+        }
+
+        [Fact]
+        public async Task TestDiscoverMoviesReleaseTypeAsync()
+        {
+            DiscoverMovie query = TMDbClient.DiscoverMoviesAsync()
+                .WithAnyOfReleaseTypes(ReleaseDateType.Premiere);
 
             await TestHelpers.SearchPagesAsync(i => query.Query(i));
         }
