@@ -54,5 +54,20 @@ namespace TMDbLib.Client
 
             return resp;
         }
+
+        public async Task<SearchContainer<SearchBase>> GetTrendingAllAsync(TimeWindow timeWindow, int page = 0, string language = null, CancellationToken cancellationToken = default)
+        {
+            RestRequest req = _client.Create("trending/all/{time_window}");
+            req.AddUrlSegment("time_window", timeWindow.GetDescription());
+
+            if (page >= 1)
+                req.AddQueryString("page", page.ToString());
+            if (language != null)
+                req.AddQueryString("language", language);
+
+            SearchContainer<SearchBase> resp = await req.GetOfT<SearchContainer<SearchBase>>(cancellationToken).ConfigureAwait(false);
+
+            return resp;
+        }
     }
 }
