@@ -19,6 +19,15 @@ namespace TMDbLib.Objects.General
         Person = 3,
 
         [EnumValue("episode")]
-        Episode = 4
+        Episode = 4,
+
+        [EnumValue("tv_episode")]
+        TvEpisode = 5,
+
+        [EnumValue("season")]
+        Season = 6,
+
+        [EnumValue("tv_season")]
+        TvSeason = 7
     }
 }
