@@ -57,7 +57,7 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the TaggedImageConverter
         /// </summary>
         [Theory]
-        [InlineData(IdHelper.HughLaurie)]   // Has Movie media
+        [InlineData(IdHelper.HughLaurie)] // Has Movie media
         [InlineData(IdHelper.TomHanks)] // Has Episode media
         [InlineData(IdHelper.AnnaTorv)] // Has Tv, Season media
         public async Task TestJsonTaggedImageConverter(int personId)
