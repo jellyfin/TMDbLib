@@ -44,6 +44,12 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
   </ItemGroup>
 
+  <!-- Set copying files etc. to timeout faster -->
+  <PropertyGroup>
+    <CopyRetryCount>2</CopyRetryCount>
+    <CopyRetryDelayMilliseconds>500</CopyRetryDelayMilliseconds>
+  </PropertyGroup>
+
   <!-- Ensure AssemblyInfo.cs can be included in <EmbedUntrackedSources> https://github.com/dotnet/sourcelink/issues/572 -->
   <Target Name="_workaroundMsBuild1479" BeforeTargets="BeforeCompile" AfterTargets="GenerateAssemblyInfo"></Target>
 
