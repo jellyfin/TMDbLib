@@ -29,5 +29,12 @@ namespace TMDbLibTests
             SearchContainer<SearchPerson> people = await TMDbClient.GetTrendingPeopleAsync(TimeWindow.Week);
             Assert.NotEmpty(people.Results);
         }
+
+        [Fact]
+        public async Task TestTrendingAllAsync()
+        {
+            SearchContainer<SearchBase> all = await TMDbClient.GetTrendingAllAsync(TimeWindow.Week);
+            Assert.NotEmpty(all.Results);
+        }
     }
 }
