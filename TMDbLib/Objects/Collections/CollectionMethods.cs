@@ -9,6 +9,8 @@ namespace TMDbLib.Objects.Collections
         [EnumValue("Undefined")]
         Undefined = 0,
         [EnumValue("images")]
-        Images = 1
+        Images = 1,
+        [EnumValue("translations")]
+        Translations = 2,
     }
 }
