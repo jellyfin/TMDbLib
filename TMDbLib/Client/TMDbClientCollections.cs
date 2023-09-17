@@ -74,9 +74,9 @@ namespace TMDbLib.Client
             return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<TranslationsContainer> GetCollectionTranslationsAsync(int collecitonId, CancellationToken cancellationToken = default)
+        public async Task<TranslationsContainer> GetCollectionTranslationsAsync(int collectionId, CancellationToken cancellationToken = default)
         {
-            return await GetCollectionMethodInternal<TranslationsContainer>(collecitonId, CollectionMethods.Translations, null, cancellationToken).ConfigureAwait(false);
+            return await GetCollectionMethodInternal<TranslationsContainer>(collectionId, CollectionMethods.Translations, null, cancellationToken).ConfigureAwait(false);
         }
     }
 }
