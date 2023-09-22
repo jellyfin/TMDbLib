@@ -57,8 +57,9 @@ namespace TMDbLibTests.UtilityTests
         /// Tests the TaggedImageConverter
         /// </summary>
         [Theory]
-        [InlineData(IdHelper.HughLaurie)]   // Has Movie media
+        [InlineData(IdHelper.HughLaurie)] // Has Movie media
         [InlineData(IdHelper.TomHanks)] // Has Episode media
+        [InlineData(IdHelper.AnnaTorv)] // Has Tv, Season media
         public async Task TestJsonTaggedImageConverter(int personId)
         {
             // Get images
@@ -77,6 +78,8 @@ namespace TMDbLibTests.UtilityTests
                     Assert.IsType<SearchTv>(item.Media);
                 else if (item.MediaType == MediaType.Episode)
                     Assert.IsType<SearchTvEpisode>(item.Media);
+                else if (item.MediaType == MediaType.Season)
+                    Assert.IsType<SearchTvSeason>(item.Media);
                 else
                     Assert.False(true, $"Unexpected type {item.GetType().Name}");
             });
