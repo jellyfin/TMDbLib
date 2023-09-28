@@ -46,5 +46,8 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("videos")]
         public ResultContainer<Video> Videos { get; set; }
+
+        [JsonProperty("translations")]
+        public TranslationsContainer Translations { get; set; }
     }
 }
