@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Authors>LordMike;Naliath</Authors>
-    <TargetFrameworks>net45;netstandard2.1;netstandard2.0;netstandard1.2</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
     <AssemblyName>TMDbLib</AssemblyName>
     <PackageId>TMDbLib</PackageId>
     <Description>.NET Client library for The Movie Database (https://www.themoviedb.org/)</Description>
@@ -23,15 +23,6 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" PrivateAssets="compile" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="Microsoft.CSharp" />
-    <PackageReference Include="System.Net.Http" Version="4.3.4" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.2' ">
-    <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
 </Project>
