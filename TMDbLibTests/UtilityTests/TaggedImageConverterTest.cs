@@ -81,7 +81,7 @@ namespace TMDbLibTests.UtilityTests
                 else if (item.MediaType == MediaType.Season)
                     Assert.IsType<SearchTvSeason>(item.Media);
                 else
-                    Assert.False(true, $"Unexpected type {item.GetType().Name}");
+                    Assert.Fail($"Unexpected type {item.GetType().Name}");
             });
         }
     }
