@@ -32,6 +32,9 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("production_code")]
         public string ProductionCode { get; set; }
 
+        [JsonProperty("runtime")]
+        public int? Runtime { get; set; }
+
         [JsonProperty("season_number")]
         public int SeasonNumber { get; set; }
         
