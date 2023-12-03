@@ -44,6 +44,9 @@ namespace TMDbLib.Objects.TvShows
         [JsonProperty("season_number")]
         public int SeasonNumber { get; set; }
 
+        [JsonProperty("vote_average")]
+        public double VoteAverage { get; set; }
+
         [JsonProperty("videos")]
         public ResultContainer<Video> Videos { get; set; }
 
