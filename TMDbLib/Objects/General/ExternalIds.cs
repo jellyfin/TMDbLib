@@ -15,5 +15,8 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("tvrage_id")]
         public string TvrageId { get; set; }
+
+        [JsonProperty("wikidata_id")]
+        public string WikidataId { get; set; }
     }
 }
