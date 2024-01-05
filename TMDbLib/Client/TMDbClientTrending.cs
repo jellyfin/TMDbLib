@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Languages;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.Trending;
 using TMDbLib.Rest;
@@ -17,8 +18,11 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
-            if (language != null)
+
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddQueryString("language", language);
+            else if (!string.IsNullOrWhiteSpace(DefaultLanguage))
+                req.AddParameter("language", DefaultLanguage);
 
             SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
@@ -32,8 +36,11 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
-            if (language != null)
+
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddQueryString("language", language);
+            else if (!string.IsNullOrWhiteSpace(DefaultLanguage))
+                req.AddParameter("language", DefaultLanguage);
 
             SearchContainer<SearchTv> resp = await req.GetOfT<SearchContainer<SearchTv>>(cancellationToken).ConfigureAwait(false);
 
@@ -47,8 +54,11 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
-            if (language != null)
+
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddQueryString("language", language);
+            else if (!string.IsNullOrWhiteSpace(DefaultLanguage))
+                req.AddParameter("language", DefaultLanguage);
 
             SearchContainer<SearchPerson> resp = await req.GetOfT<SearchContainer<SearchPerson>>(cancellationToken).ConfigureAwait(false);
 
@@ -62,8 +72,11 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddQueryString("page", page.ToString());
-            if (language != null)
+
+            if (!string.IsNullOrWhiteSpace(language))
                 req.AddQueryString("language", language);
+            else if (!string.IsNullOrWhiteSpace(DefaultLanguage))
+                req.AddParameter("language", DefaultLanguage);
 
             SearchContainer<SearchBase> resp = await req.GetOfT<SearchContainer<SearchBase>>(cancellationToken).ConfigureAwait(false);
 
