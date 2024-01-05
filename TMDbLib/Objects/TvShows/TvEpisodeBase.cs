@@ -28,5 +28,8 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("vote_count")]
         public int VoteCount { get; set; }
+
+        [JsonProperty("runtime")]
+        public int? Runtime { get; set; }
     }
 }

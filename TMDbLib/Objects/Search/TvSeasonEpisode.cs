@@ -17,6 +17,9 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("episode_number")]
         public int EpisodeNumber { get; set; }
 
+        [JsonProperty("episode_type")]
+        public string EpisodeType { get; set; }
+
         [JsonProperty("guest_stars")]
         public List<Cast> GuestStars { get; set; }
 
@@ -32,9 +35,12 @@ namespace TMDbLib.Objects.Search
         [JsonProperty("production_code")]
         public string ProductionCode { get; set; }
 
+        [JsonProperty("runtime")]
+        public int? Runtime { get; set; }
+
         [JsonProperty("season_number")]
         public int SeasonNumber { get; set; }
-        
+
         [JsonProperty("still_path")]
         public string StillPath { get; set; }
 

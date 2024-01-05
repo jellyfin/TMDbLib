@@ -28,23 +28,17 @@ namespace TMDbLib.Utilities.Converters
                 // Determine the type based on the media_type
                 MediaType mediaType = jObject["media_type"].ToObject<MediaType>();
 
-                switch (mediaType)
+                result = mediaType switch
                 {
-                    case MediaType.Movie:
-                        result = new SearchMovie();
-                        break;
-                    case MediaType.Tv:
-                        result = new SearchTv();
-                        break;
-                    case MediaType.Person:
-                        result = new SearchPerson();
-                        break;
-                    case MediaType.Episode:
-                        result = new SearchTvEpisode();
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+                    MediaType.Movie => new SearchMovie(),
+                    MediaType.Tv => new SearchTv(),
+                    MediaType.Person => new SearchPerson(),
+                    MediaType.Episode => new SearchTvEpisode(),
+                    MediaType.TvEpisode => new SearchTvEpisode(),
+                    MediaType.Season => new SearchTvSeason(),
+                    MediaType.TvSeason => new SearchTvSeason(),
+                    _ => throw new ArgumentOutOfRangeException(),
+                };
             }
 
             // Populate the result

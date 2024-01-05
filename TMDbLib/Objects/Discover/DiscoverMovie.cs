@@ -375,6 +375,24 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
+        /// Only include movies that are equal to, or have a runtime higher than this value. Expected value is an integer (minutes).
+        /// </summary>
+        public DiscoverMovie WhereRuntimeIsAtLeast(int minutes)
+        {
+            Parameters["with_runtime.gte"] = minutes.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Only include movies that are equal to, or have a runtime lower than this value. Expected value is an integer (minutes).
+        /// </summary>
+        public DiscoverMovie WhereRuntimeIsAtMost(int minutes)
+        {
+            Parameters["with_runtime.lte"] = minutes.ToString();
+            return this;
+        }
+
+        /// <summary>
         /// Filter movies by their vote average and only include those that have an average rating that is equal to or higher than the specified value. Expected value is a float.
         /// </summary>
         public DiscoverMovie WhereVoteAverageIsAtLeast(double score)

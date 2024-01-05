@@ -160,5 +160,10 @@ namespace TMDbLib.Client
         {
             return await GetTvSeasonMethodInternal<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        public async Task<TranslationsContainer> GetTvSeasonTranslationsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
+        {
+            return await GetTvSeasonMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, TvSeasonMethods.Translations, null, null, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

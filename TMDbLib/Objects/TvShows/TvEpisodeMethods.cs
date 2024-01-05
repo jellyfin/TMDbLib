@@ -18,5 +18,7 @@ namespace TMDbLib.Objects.TvShows
         Videos = 8,
         [EnumValue("account_states")]
         AccountStates = 16,
+        [EnumValue("translations")]
+        Translations = 32,
     }
 }

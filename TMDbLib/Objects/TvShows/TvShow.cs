@@ -12,6 +12,9 @@ namespace TMDbLib.Objects.TvShows
 {
     public class TvShow
     {
+        [JsonProperty("adult")]
+        public bool Adult { get; set; }
+
         [JsonProperty("account_states")]
         public AccountState AccountStates { get; set; }
 

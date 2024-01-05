@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using TMDbLib.Objects.Reviews;
+using System;
 
 namespace TMDbLib.Objects.Reviews
 {
@@ -19,5 +19,11 @@ namespace TMDbLib.Objects.Reviews
 
         [JsonProperty("url")]
         public string Url { get; set; }
+
+        [JsonProperty("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        [JsonProperty("updated_at")]
+        public DateTime UpdatedAt { get; set; }
     }
 }

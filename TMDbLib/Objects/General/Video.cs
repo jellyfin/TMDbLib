@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.General
 {
@@ -24,6 +25,12 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("official")]
+        public bool Official { get; set; }
+
+        [JsonProperty("published_at")]
+        public DateTime PublishedAt { get; set; }
 
         [JsonProperty("site")]
         public string Site { get; set; }

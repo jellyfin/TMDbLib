@@ -126,11 +126,29 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
+        /// Only include TV shows that are equal to, or have a lower average rating than this value. Expected value is a float.
+        /// </summary>
+        public DiscoverTv WhereVoteAverageIsAtMost(double score)
+        {
+            Parameters["vote_average.lte"] = score.ToString();
+            return this;
+        }
+
+        /// <summary>
         /// Only include TV shows that are equal to, or have a vote count higher than this value. Expected value is an integer.
         /// </summary>
         public DiscoverTv WhereVoteCountIsAtLeast(int count)
         {
             Parameters["vote_count.gte"] = count.ToString();
+            return this;
+        }
+
+        /// <summary>
+        /// Only include TV shows that are equal to, or have a vote count lower than this value. Expected value is an integer.
+        /// </summary>
+        public DiscoverTv WhereVoteCountIsAtMost(int count)
+        {
+            Parameters["vote_count.lte"] = count.ToString();
             return this;
         }
 

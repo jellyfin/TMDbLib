@@ -16,6 +16,18 @@ namespace TMDbLib.Objects.Discover
         [EnumValue("popularity.asc")]
         Popularity,
         [EnumValue("popularity.desc")]
-        PopularityDesc
+        PopularityDesc,
+        [EnumValue("revenue.asc")]
+        Revenue,
+        [EnumValue("revenue.desc")]
+        RevenueDesc,
+        [EnumValue("primary_release_date.asc")]
+        PrimaryReleaseDate,
+        [EnumValue("primary_release_date.desc")]
+        PrimaryReleaseDateDesc,
+        [EnumValue("vote_count.asc")]
+        VoteCount,
+        [EnumValue("vote_count.desc")]
+        VoteCountDesc
     }
 }

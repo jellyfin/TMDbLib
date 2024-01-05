@@ -16,6 +16,9 @@ namespace TMDbLib.Objects.Collections
         [JsonProperty("images")]
         public Images Images { get; set; }
 
+        [JsonProperty("translations")]
+        public TranslationsContainer Translations { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 

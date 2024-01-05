@@ -18,6 +18,14 @@ namespace TMDbLib.Objects.General
         [JsonProperty("overview")]
         public string Overview { get; set; }
 
+        // Private hack to ensure two properties (overview, biography) are deserialized into Overview.
+        // Most of the entities have an overview, but people have a biography.
+        [JsonProperty("biography")]
+        private string Biography
+        {
+            set => Overview = value;
+        }
+
         [JsonProperty("homepage")]
         public string HomePage { get; set; }
 
