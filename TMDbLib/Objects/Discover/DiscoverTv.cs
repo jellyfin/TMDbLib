@@ -189,15 +189,15 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Exclude TV shows with the specified genres. Expected value is a list of Generes. 
+        /// Exclude TV shows with the specified genres. Expected value is a list of genres. 
         /// </summary>
         public DiscoverTv WhereGenresExclude(IEnumerable<Genre> genres)
         {
-            return WhereGenresInclude(genres.Select(s => s.Id));
+            return WhereGenresExclude(genres.Select(s => s.Id));
         }
 
         /// <summary>
-        /// Exclude TV shows with the specified genres. Expected value is an integer (the id of a genre).
+        /// Exclude TV shows with the specified genres. Expected value is a list of integer (the id of a genre).
         /// </summary>
         public DiscoverTv WhereGenresExclude(IEnumerable<int> genreIds)
         {
