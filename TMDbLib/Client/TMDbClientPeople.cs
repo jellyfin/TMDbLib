@@ -160,5 +160,10 @@ namespace TMDbLib.Client
         {
             return await GetPersonMethodInternal<TvCredits>(personId, PersonMethods.TvCredits, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        public async Task<TranslationsContainer> GePersonTranslationsAsync(int personId, CancellationToken cancellationToken = default)
+        {
+            return await GetPersonMethodInternal<TranslationsContainer>(personId, PersonMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
     }
 }

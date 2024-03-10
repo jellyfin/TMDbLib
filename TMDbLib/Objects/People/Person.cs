@@ -70,5 +70,8 @@ namespace TMDbLib.Objects.People
 
         [JsonProperty("tv_credits")]
         public TvCredits TvCredits { get; set; }
+
+        [JsonProperty("translations")]
+        public TranslationsContainer Translations { get; set; }
     }
 }
