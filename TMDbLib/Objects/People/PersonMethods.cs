@@ -19,6 +19,8 @@ namespace TMDbLib.Objects.People
         [EnumValue("tagged_images")]
         TaggedImages = 16,
         [EnumValue("changes")]
-        Changes = 32
+        Changes = 32,
+        [EnumValue("translations")]
+        Translations = 64,
     }
 }
