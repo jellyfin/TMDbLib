@@ -315,9 +315,9 @@ namespace TMDbLib.Client
             return await GetTvShowMethodInternal<TranslationsContainerTv>(id, TvShowMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id, CancellationToken cancellationToken = default)
+        public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id, string language = null, CancellationToken cancellationToken = default)
         {
-            return await GetTvShowMethodInternal<ResultContainer<Video>>(id, TvShowMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await GetTvShowMethodInternal<ResultContainer<Video>>(id, TvShowMethods.Videos, language:language, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetTvShowWatchProvidersAsync(int id, CancellationToken cancellationToken = default)
