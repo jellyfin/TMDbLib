@@ -37,6 +37,7 @@ namespace TMDbLib.Utilities.Converters
                     MediaType.TvEpisode => new SearchTvEpisode(),
                     MediaType.Season => new SearchTvSeason(),
                     MediaType.TvSeason => new SearchTvSeason(),
+                    MediaType.Collection => new SearchCollection(),
                     _ => throw new ArgumentOutOfRangeException(),
                 };
             }
