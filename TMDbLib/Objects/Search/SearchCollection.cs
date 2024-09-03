@@ -15,7 +15,6 @@ namespace TMDbLib.Objects.Search
         
         [JsonProperty("backdrop_path")]
         public string BackdropPath { get; set; }
-        
         private string _name;
         private string _originalName;
 
