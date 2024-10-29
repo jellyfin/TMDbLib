@@ -31,5 +31,9 @@ namespace TMDbLib.Objects.TvShows
 
         [JsonProperty("runtime")]
         public int? Runtime { get; set; }
+
+        [JsonProperty("episode_type")]
+        public string EpisodeType { get; set; }
+
     }
 }
