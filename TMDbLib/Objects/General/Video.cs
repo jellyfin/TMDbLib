@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.General
 {
@@ -30,6 +31,7 @@ namespace TMDbLib.Objects.General
         public bool Official { get; set; }
 
         [JsonProperty("published_at")]
+        [JsonConverter(typeof(CustomDatetimeFormatConverter))]
         public DateTime PublishedAt { get; set; }
 
         [JsonProperty("site")]
