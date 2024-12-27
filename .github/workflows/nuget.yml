@@ -18,7 +18,7 @@ jobs:
     # We do not need to fetch tags, as we're already at a tagged build - it should be available automatically
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25 # v4
+      uses: actions/setup-dotnet@87b7050bc53ea08284295505d98d2aa94301e852 # v4
       with:
         dotnet-version: 7.0.x
 
