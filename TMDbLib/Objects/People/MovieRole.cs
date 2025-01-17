@@ -53,5 +53,8 @@ namespace TMDbLib.Objects.People
 
         [JsonProperty("genre_ids")]
         public int[] GenreIds { get; set; }
+
+        [JsonProperty("video")]
+        public bool Video { get; set; }
     }
 }
