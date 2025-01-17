@@ -16,7 +16,7 @@ namespace TMDbLib.Objects.People
         public int[] GenreIds { get; set; }
 
         [JsonProperty("id")]
-        public int Id { get; set; } = 0;
+        public int Id { get; set; }
 
         [JsonProperty("original_language")]
         public string OriginalLanguage { get; set; }
@@ -28,7 +28,7 @@ namespace TMDbLib.Objects.People
         public string Overview { get; set; }
 
         [JsonProperty("popularity")]
-        public double Popularity { get; set; } = 0;
+        public double Popularity { get; set; }
 
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
@@ -43,10 +43,10 @@ namespace TMDbLib.Objects.People
         public bool Video { get; set; } = true;
 
         [JsonProperty("vote_average")]
-        public double VoteAverage { get; set; } = 0;
+        public double VoteAverage { get; set; }
 
         [JsonProperty("vote_count")]
-        public int VoteCount { get; set; } = 0;
+        public int VoteCount { get; set; }
 
         [JsonProperty("character")]
         public string Character { get; set; }
@@ -55,6 +55,6 @@ namespace TMDbLib.Objects.People
         public string CreditId { get; set; }
 
         [JsonProperty("order")]
-        public int Order { get; set; } = 0;
+        public int Order { get; set; }
     }
 }
