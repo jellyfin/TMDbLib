@@ -34,7 +34,7 @@ namespace TMDbLib.Objects.People
         public string PosterPath { get; set; }
 
         [JsonProperty("release_date")]
-        public string ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
         [JsonProperty("title")]
         public string Title { get; set; }
