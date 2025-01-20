@@ -7,7 +7,7 @@ namespace TMDbLib.Objects.Exceptions
         public HttpStatusCode HttpStatusCode { get; }
 
         public GeneralHttpException(HttpStatusCode httpStatusCode)
-            : base("TMDb returned an unexpected HTTP error")
+            : base($"TMDb returned an unexpected HTTP error: {(int)httpStatusCode}")
         {
             HttpStatusCode = httpStatusCode;
         }
