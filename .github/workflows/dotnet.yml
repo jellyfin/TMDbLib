@@ -21,7 +21,7 @@ jobs:
     - run: git fetch --tags
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@87b7050bc53ea08284295505d98d2aa94301e852 # v4
+      uses: actions/setup-dotnet@3951f0dfe7a07e2313ec93c75700083e2005cbab # v4
       with:
         dotnet-version: 7.0.x
 
