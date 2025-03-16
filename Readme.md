@@ -1,10 +1,10 @@
-TMDbLib [![Generic Build](https://github.com/LordMike/TMDbLib/actions/workflows/dotnet.yml/badge.svg)](https://github.com/LordMike/TMDbLib/actions/workflows/dotnet.yml) [![NuGet](https://img.shields.io/nuget/v/Tmdblib.svg)](https://www.nuget.org/packages/Tmdblib) [![GHPackages](https://img.shields.io/badge/package-alpha-green)](https://github.com/LordMike/TMDbLib/packages/691970)
+TMDbLib [![Generic Build](https://github.com/jellyfin/TMDbLib/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jellyfin/TMDbLib/actions/workflows/dotnet.yml) [![NuGet](https://img.shields.io/nuget/v/Tmdblib.svg)](https://www.nuget.org/packages/Tmdblib) [![GHPackages](https://img.shields.io/badge/package-alpha-green)](https://github.com/jellyfin/TMDbLib/pkgs/nuget/TMDbLib)
 =======
 
 A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themoviedb.org/).
 
 ## Using alpha packages
-All commits to master produce an Alpha package that can be [found here](https://github.com/LordMike/TMDbLib/packages/691970). [Read more on how to use these packages](https://blog.mbwarez.dk/consuming-my-nuget-packages-from-github/).
+All commits to master produce an Alpha package that can be [found here](https://github.com/jellyfin/TMDbLib/pkgs/nuget/TMDbLib).
 
 Index
 ---------
