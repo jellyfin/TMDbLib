@@ -33,7 +33,7 @@ namespace TMDbLib.Objects.People
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
 
-        [JsonProperty("release_date")]
+        [JsonProperty("release_date", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? ReleaseDate { get; set; }
 
         [JsonProperty("title")]
