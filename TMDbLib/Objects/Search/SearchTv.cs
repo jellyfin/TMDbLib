@@ -22,7 +22,7 @@ namespace TMDbLib.Objects.Search
         public string OriginalName { get; set; }
 
         /// <summary>
-        /// Country ISO code ex. US
+        /// Country ISO code ex. US.
         /// </summary>
         [JsonProperty("origin_country")]
         public List<string> OriginCountry { get; set; }

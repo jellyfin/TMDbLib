@@ -5,7 +5,7 @@ namespace TMDbLib.Objects.Trending
     public enum TimeWindow
     {
         [EnumValue("day")]
-        Day, 
+        Day,
         [EnumValue("week")]
         Week
     }

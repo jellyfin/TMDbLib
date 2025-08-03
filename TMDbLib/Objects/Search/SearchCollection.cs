@@ -9,12 +9,13 @@ namespace TMDbLib.Objects.Search
         // Property to hold additional data from the JSON
         [JsonExtensionData]
         private IDictionary<string, JToken> _additionalData;
-        
+
         [JsonProperty("adult")]
         public bool Adult { get; set; }
-        
+
         [JsonProperty("backdrop_path")]
         public string BackdropPath { get; set; }
+
         private string _name;
         private string _originalName;
 
@@ -33,7 +34,7 @@ namespace TMDbLib.Objects.Search
             }
             set => _name = value;
         }
-        
+
         [JsonProperty("original_language")]
         public string OriginalLanguage { get; set; }
 
@@ -53,7 +54,7 @@ namespace TMDbLib.Objects.Search
             }
             set => _originalName = value;
         }
-        
+
         [JsonProperty("overview")]
         public string Overview { get; set; }
 

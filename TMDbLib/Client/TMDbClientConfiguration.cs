@@ -19,7 +19,7 @@ namespace TMDbLib.Client
 
             using RestResponse<APIConfiguration> response = await req.Get<APIConfiguration>(cancellationToken).ConfigureAwait(false);
 
-            return (await response.GetDataObject().ConfigureAwait(false));
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         public async Task<List<Country>> GetCountriesAsync(CancellationToken cancellationToken = default)
@@ -37,16 +37,16 @@ namespace TMDbLib.Client
 
             using RestResponse<List<Language>> response = await req.Get<List<Language>>(cancellationToken).ConfigureAwait(false);
 
-            return (await response.GetDataObject().ConfigureAwait(false));
+            return await response.GetDataObject().ConfigureAwait(false);
         }
-        
+
         public async Task<List<string>> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration/primary_translations");
 
             using RestResponse<List<string>> response = await req.Get<List<string>>(cancellationToken).ConfigureAwait(false);
 
-            return (await response.GetDataObject().ConfigureAwait(false));
+            return await response.GetDataObject().ConfigureAwait(false);
         }
 
         public async Task<Timezones> GetTimezonesAsync(CancellationToken cancellationToken = default)
@@ -57,11 +57,15 @@ namespace TMDbLib.Client
 
             List<Dictionary<string, List<string>>> item = await resp.GetDataObject().ConfigureAwait(false);
 
-            if (item == null)
+            if (item is null)
+            {
                 return null;
+            }
 
-            Timezones result = new Timezones();
-            result.List = new Dictionary<string, List<string>>();
+            Timezones result = new Timezones
+            {
+                List = []
+            };
 
             foreach (Dictionary<string, List<string>> dictionary in item)
             {
@@ -74,16 +78,16 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// Retrieves a list of departments and positions within
+        /// Retrieves a list of departments and positions within.
         /// </summary>
-        /// <returns>Valid jobs and their departments</returns>
+        /// <returns>Valid jobs and their departments.</returns>
         public async Task<List<Job>> GetJobsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("configuration/jobs");
 
             using RestResponse<List<Job>> response = await req.Get<List<Job>>(cancellationToken).ConfigureAwait(false);
 
-            return (await response.GetDataObject().ConfigureAwait(false));
+            return await response.GetDataObject().ConfigureAwait(false);
         }
     }
 }

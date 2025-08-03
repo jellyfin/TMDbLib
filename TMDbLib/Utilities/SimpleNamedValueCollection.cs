@@ -15,8 +15,7 @@ namespace TMDbLib.Utilities
 
         public string this[string index]
         {
-            get { return Get(index); }
-            set { Add(index, value); }
+            get => Get(index); set => Add(index, value);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -27,7 +26,9 @@ namespace TMDbLib.Utilities
         public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
         {
             foreach (KeyValuePair<string, string> pair in _list)
+            {
                 yield return pair;
+            }
         }
 
         public void Add(string key, string value)
@@ -42,7 +43,9 @@ namespace TMDbLib.Utilities
             foreach (KeyValuePair<string, string> pair in _list)
             {
                 if (pair.Key.Equals(key, StringComparison.OrdinalIgnoreCase))
+                {
                     return pair.Value;
+                }
             }
 
             return @default;

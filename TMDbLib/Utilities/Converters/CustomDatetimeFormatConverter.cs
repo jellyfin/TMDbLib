@@ -14,6 +14,7 @@ namespace TMDbLib.Utilities.Converters
         }
 
         public CultureInfo CultureInfo { get; set; }
+
         public string DatetimeFormat { get; set; }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

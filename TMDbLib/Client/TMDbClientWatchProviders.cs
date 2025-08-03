@@ -10,13 +10,15 @@ namespace TMDbLib.Client
         /// <summary>
         /// Returns a list of all of the countries TMDb has watch provider (OTT/streaming) data for.
         /// </summary>
-        /// <param name="cancellationToken">A cancellation token</param>
-        /// <remarks>Uses <see cref="DefaultLanguage"/> to translate data</remarks>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <remarks>Uses <see cref="DefaultLanguage"/> to translate data.</remarks>
         public async Task<ResultContainer<WatchProviderRegion>> GetWatchProviderRegionsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("watch/providers/regions");
-            if (DefaultLanguage != null)
+            if (DefaultLanguage is not null)
+            {
                 req.AddParameter("language", DefaultLanguage);
+            }
 
             ResultContainer<WatchProviderRegion> response = await req.GetOfT<ResultContainer<WatchProviderRegion>>(cancellationToken).ConfigureAwait(false);
 
@@ -26,16 +28,20 @@ namespace TMDbLib.Client
         /// <summary>
         /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for movies.
         /// </summary>
-        /// <param name="cancellationToken">A cancellation token</param>
-        /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data</remarks>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
         public async Task<ResultContainer<WatchProviderItem>> GetMovieWatchProvidersAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("watch/providers/movie");
-            if (DefaultLanguage != null)
+            if (DefaultLanguage is not null)
+            {
                 req.AddParameter("language", DefaultLanguage);
+            }
 
-            if (DefaultCountry != null)
+            if (DefaultCountry is not null)
+            {
                 req.AddParameter("watch_region", DefaultCountry);
+            }
 
             ResultContainer<WatchProviderItem> response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
 
@@ -45,16 +51,20 @@ namespace TMDbLib.Client
         /// <summary>
         /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for shows.
         /// </summary>
-        /// <param name="cancellationToken">A cancellation token</param>
-        /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data</remarks>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
         public async Task<ResultContainer<WatchProviderItem>> GetTvWatchProvidersAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("watch/providers/tv");
-            if (DefaultLanguage != null)
+            if (DefaultLanguage is not null)
+            {
                 req.AddParameter("language", DefaultLanguage);
+            }
 
-            if (DefaultCountry != null)
+            if (DefaultCountry is not null)
+            {
                 req.AddParameter("watch_region", DefaultCountry);
+            }
 
             ResultContainer<WatchProviderItem> response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
 

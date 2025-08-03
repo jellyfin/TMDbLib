@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Globalization;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -22,10 +23,14 @@ namespace TMDbLib.Client
             RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/movies");
 
             if (page > 0)
-                request.AddParameter("page", page.ToString());
+            {
+                request.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
 
             if (!string.IsNullOrEmpty(language))
+            {
                 request.AddParameter("language", language);
+            }
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
@@ -46,10 +51,14 @@ namespace TMDbLib.Client
             RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/tv");
 
             if (page > 0)
-                request.AddParameter("page", page.ToString());
+            {
+                request.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
 
             if (!string.IsNullOrEmpty(language))
+            {
                 request.AddParameter("language", language);
+            }
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 
@@ -70,10 +79,14 @@ namespace TMDbLib.Client
             RestRequest request = _client.Create("guest_session/{guest_session_id}/rated/tv/episodes");
 
             if (page > 0)
-                request.AddParameter("page", page.ToString());
+            {
+                request.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
 
             if (!string.IsNullOrEmpty(language))
+            {
                 request.AddParameter("language", language);
+            }
 
             AddSessionId(request, SessionType.GuestSession, ParameterType.UrlSegment);
 

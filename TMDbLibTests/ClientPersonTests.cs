@@ -36,7 +36,9 @@ namespace TMDbLibTests
 
             // Test all extras, ensure none of them exist
             foreach (Func<Person, object> selector in Methods.Values)
+            {
                 Assert.Null(selector(person));
+            }
 
             await Verify(person);
         }

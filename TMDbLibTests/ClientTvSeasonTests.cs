@@ -38,7 +38,9 @@ namespace TMDbLibTests
 
             // Test all extras, ensure none of them are populated
             foreach (Func<TvSeason, object> selector in Methods.Values)
+            {
                 Assert.Null(selector(tvSeason));
+            }
         }
 
         [Fact]
@@ -129,9 +131,13 @@ namespace TMDbLibTests
                     ResultContainer<TvEpisodeAccountStateWithNumber> state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
 
                     if (shouldBeSet)
+                    {
                         Assert.Contains(state.Results, x => x.EpisodeNumber == 3 && x.Rating.HasValue);
+                    }
                     else
+                    {
                         Assert.Contains(state.Results, x => x.EpisodeNumber == 3 && !x.Rating.HasValue);
+                    }
                 });
         }
 

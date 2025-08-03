@@ -13,8 +13,10 @@ namespace TMDbLibTests.UtilityTests
         public void CustomDatetimeFormatConverter_Data()
         {
 
-            Token original = new Token();
-            original.ExpiresAt = DateTime.UtcNow.Date;
+            Token original = new Token
+            {
+                ExpiresAt = DateTime.UtcNow.Date
+            };
             original.ExpiresAt = original.ExpiresAt.AddMilliseconds(-original.ExpiresAt.Millisecond);
 
             string json = Serializer.SerializeToString(original);

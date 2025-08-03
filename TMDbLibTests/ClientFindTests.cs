@@ -20,7 +20,7 @@ namespace TMDbLibTests
         public async Task TestFindImdbPerson()
         {
             FindContainer result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis);
-            
+
             await Verify(result);
         }
 
@@ -28,31 +28,31 @@ namespace TMDbLibTests
         public async Task TestFindImdbTvShowEpisode()
         {
             FindContainer result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadSeason1Episode1Id);
-            
+
             await Verify(result);
         }
 
         [Fact]
         public async Task TestFindImdbTvShowSeasonAsync()
         {
-            FindContainer result =  await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id);
-           
+            FindContainer result = await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id);
+
             await Verify(result);
         }
 
         [Fact]
         public async Task TestFindTvdbTvShowAsync()
         {
-            FindContainer result = await  TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId);
-           
+            FindContainer result = await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId);
+
             await Verify(result);
         }
 
         [Fact]
         public async Task TestFindImdbTvShowAsync()
         {
-            FindContainer result =  await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId);
-           
+            FindContainer result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId);
+
             await Verify(result);
         }
     }

@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -30,10 +30,9 @@ namespace TMDbLib.Objects.TvShows
         public int VoteCount { get; set; }
 
         [JsonProperty("runtime")]
-        public int? Runtime { get; set; }
+        public int? Runtime { get; set; }
 
         [JsonProperty("episode_type")]
         public string EpisodeType { get; set; }
-
     }
 }

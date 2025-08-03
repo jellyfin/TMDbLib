@@ -28,7 +28,9 @@ namespace TMDbLibTests
 
             // Test all extras, ensure none of them exist
             foreach (Func<Collection, object> selector in Methods.Values)
+            {
                 Assert.Null(selector(collection));
+            }
         }
 
         [Fact]

@@ -3,6 +3,7 @@ using Xunit;
 using TMDbLib.Objects.Reviews;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using System.Globalization;
 
 namespace TMDbLibTests
 {
@@ -19,7 +20,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestReviewMissing()
         {
-            Review review = await TMDbClient.GetReviewAsync(IdHelper.MissingID.ToString());
+            Review review = await TMDbClient.GetReviewAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
 
             Assert.Null(review);
         }

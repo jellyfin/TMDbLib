@@ -9,14 +9,16 @@ namespace TMDbLib.Client
     {
         public async Task<Review> GetReviewAsync(string reviewId, string language = null, CancellationToken cancellationToken = default)
         {
-            RestRequest request  = _client.Create("review/{reviewId}");
+            RestRequest request = _client.Create("review/{reviewId}");
             request.AddUrlSegment("reviewId", reviewId);
 
-            if (language != null)
+            if (language is not null)
+            {
                 request.AddQueryString("language", language);
+            }
 
             // TODO: Dateformat?
-            //request.DateFormat = "yyyy-MM-dd";
+            // request.DateFormat = "yyyy-MM-dd";
 
             Review resp = await request.GetOfT<Review>(cancellationToken).ConfigureAwait(false);
 

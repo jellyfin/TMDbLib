@@ -9,7 +9,7 @@ namespace TMDbLib.Objects.Countries
 
         [JsonProperty("english_name")]
         public string EnglishName { get; set; }
-        
+
         [JsonProperty("native_name")]
         public string NativeName { get; set; }
     }

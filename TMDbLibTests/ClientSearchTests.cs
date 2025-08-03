@@ -22,7 +22,7 @@ namespace TMDbLibTests
 
             await Verify(item);
 
-            TestImagesHelpers.TestImagePaths(new[] { item.BackdropPath, item.PosterPath });
+            TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace TMDbLibTests
 
             await Verify(item);
 
-            TestImagesHelpers.TestImagePaths(new[] { item.BackdropPath, item.PosterPath });
+            TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace TMDbLibTests
 
             await Verify(item);
 
-            TestImagesHelpers.TestImagePaths(new[] { item.ProfilePath });
+            TestImagesHelpers.TestImagePaths([item.ProfilePath]);
         }
 
         [Fact]
@@ -61,7 +61,7 @@ namespace TMDbLibTests
 
             await Verify(item);
 
-            TestImagesHelpers.TestImagePaths(new[] { item.LogoPath });
+            TestImagesHelpers.TestImagePaths([item.LogoPath]);
         }
 
         [Fact]
@@ -84,8 +84,8 @@ namespace TMDbLibTests
             SearchTv item = result.Results.Single(s => s.Id == 1396);
 
             await Verify(item);
-            
-            TestImagesHelpers.TestImagePaths(new[] { item.BackdropPath, item.PosterPath });
+
+            TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
         }
 
         [Fact]
@@ -97,8 +97,8 @@ namespace TMDbLibTests
             SearchTv item = result.Results.OfType<SearchTv>().Single(s => s.Id == 1412);
 
             await Verify(item);
-            
-            TestImagesHelpers.TestImagePaths(new[] { item.BackdropPath, item.PosterPath });
+
+            TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
         }
     }
 }
