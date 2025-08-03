@@ -50,7 +50,7 @@ namespace TMDbLibTests
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             TvEpisode episode = await TMDbClient.GetTvEpisodeAsync(IdHelper.BigBangTheory, 1, 1, TvEpisodeMethods.AccountStates);
-            if (episode.AccountStates == null || !episode.AccountStates.Rating.HasValue)
+            if (episode.AccountStates is null || !episode.AccountStates.Rating.HasValue)
             {
                 await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
 

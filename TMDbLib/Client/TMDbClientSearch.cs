@@ -27,7 +27,7 @@ namespace TMDbLib.Client
                 req.AddParameter("include_adult", includeAdult.Value ? "true" : "false");
 
             // TODO: Dateformat?
-            //if (dateFormat != null)
+            //if (dateFormat is not null)
             //    req.DateFormat = dateFormat;
 
             if (!string.IsNullOrWhiteSpace(region))

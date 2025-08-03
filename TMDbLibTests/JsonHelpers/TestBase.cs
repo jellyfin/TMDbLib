@@ -51,7 +51,7 @@ namespace TMDbLibTests.JsonHelpers
         {
             VerifySettings settings = VerifySettings;
 
-            if (configure != null)
+            if (configure is not null)
             {
                 settings = new VerifySettings(VerifySettings);
                 configure(settings);

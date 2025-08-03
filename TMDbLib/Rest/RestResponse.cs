@@ -18,7 +18,7 @@ namespace TMDbLib.Rest
             Response = response;
         }
 
-        public bool IsValid => Response != null;
+        public bool IsValid => Response is not null;
 
         public HttpStatusCode StatusCode => Response.StatusCode;
 

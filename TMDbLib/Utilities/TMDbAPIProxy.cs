@@ -19,7 +19,7 @@ namespace TMDbLib.Utilities
         /// </summary>
         public TMDbAPIProxy(Uri proxyUri, ICredentials credentials = null)
         {
-            if (proxyUri == null)
+            if (proxyUri is null)
                 throw new ArgumentNullException(nameof(proxyUri));
 
             _proxyUri = proxyUri;

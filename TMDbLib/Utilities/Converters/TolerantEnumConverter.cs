@@ -28,7 +28,7 @@ namespace TMDbLib.Utilities.Converters
                 {
                     string match = names.FirstOrDefault(n => string.Equals(n, enumText, StringComparison.OrdinalIgnoreCase));
 
-                    if (match != null)
+                    if (match is not null)
                     {
                         return Enum.Parse(enumType, match);
                     }

@@ -25,7 +25,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
             // TODO: Dateformat?
-            //if (dateFormat != null)
+            //if (dateFormat is not null)
             //    req.DateFormat = dateFormat;
 
             if (page > 0)
@@ -144,17 +144,17 @@ namespace TMDbLib.Client
             TvShow item = await response.GetDataObject().ConfigureAwait(false);
 
             // No data to patch up so return
-            if (item == null)
+            if (item is null)
                 return null;
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (item.Translations != null)
+            if (item.Translations is not null)
                 item.Translations.Id = id;
 
-            if (item.AccountStates != null)
+            if (item.AccountStates is not null)
                 item.AccountStates.Id = id;
 
-            if (item.ExternalIds != null)
+            if (item.ExternalIds is not null)
                 item.ExternalIds.Id = id;
 
             return item;
