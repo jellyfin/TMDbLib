@@ -5,44 +5,43 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
 
-namespace TMDbLib.Client
+namespace TMDbLib.Client;
+
+public partial class TMDbClient
 {
-    public partial class TMDbClient
+    public async Task<Keyword> GetKeywordAsync(int keywordId, CancellationToken cancellationToken = default)
     {
-        public async Task<Keyword> GetKeywordAsync(int keywordId, CancellationToken cancellationToken = default)
+        RestRequest req = _client.Create("keyword/{keywordId}");
+        req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
+
+        Keyword resp = await req.GetOfT<Keyword>(cancellationToken).ConfigureAwait(false);
+
+        return resp;
+    }
+
+    public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, int page = 0, CancellationToken cancellationToken = default)
+    {
+        return await GetKeywordMoviesAsync(keywordId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, string language, int page = 0, CancellationToken cancellationToken = default)
+    {
+        RestRequest req = _client.Create("keyword/{keywordId}/movies");
+        req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
+
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
-            RestRequest req = _client.Create("keyword/{keywordId}");
-            req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
-
-            Keyword resp = await req.GetOfT<Keyword>(cancellationToken).ConfigureAwait(false);
-
-            return resp;
+            req.AddParameter("language", language);
         }
 
-        public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, int page = 0, CancellationToken cancellationToken = default)
+        if (page >= 1)
         {
-            return await GetKeywordMoviesAsync(keywordId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
+            req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, string language, int page = 0, CancellationToken cancellationToken = default)
-        {
-            RestRequest req = _client.Create("keyword/{keywordId}/movies");
-            req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
+        SearchContainerWithId<SearchMovie> resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
-            language ??= DefaultLanguage;
-            if (!string.IsNullOrWhiteSpace(language))
-            {
-                req.AddParameter("language", language);
-            }
-
-            if (page >= 1)
-            {
-                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
-            }
-
-            SearchContainerWithId<SearchMovie> resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
-
-            return resp;
-        }
+        return resp;
     }
 }

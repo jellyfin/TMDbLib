@@ -1,14 +1,13 @@
 ﻿using System;
 using TMDbLib.Utilities;
 
-namespace TMDbLib.Objects.Companies
+namespace TMDbLib.Objects.Companies;
+
+[Flags]
+public enum CompanyMethods
 {
-    [Flags]
-    public enum CompanyMethods
-    {
-        [EnumValue("Undefined")]
-        Undefined = 0,
-        [EnumValue("movies")]
-        Movies = 1
-    }
+    [EnumValue("Undefined")]
+    Undefined = 0,
+    [EnumValue("movies")]
+    Movies = 1
 }

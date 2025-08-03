@@ -1,15 +1,14 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Changes
-{
-    public class ChangeItemDestroyed : ChangeItemBase
-    {
-        public ChangeItemDestroyed()
-        {
-            Action = ChangeAction.Destroyed;
-        }
+namespace TMDbLib.Objects.Changes;
 
-        [JsonProperty("value")]
-        public object Value { get; set; }
+public class ChangeItemDestroyed : ChangeItemBase
+{
+    public ChangeItemDestroyed()
+    {
+        Action = ChangeAction.Destroyed;
     }
+
+    [JsonProperty("value")]
+    public object Value { get; set; }
 }

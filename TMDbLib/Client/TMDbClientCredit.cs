@@ -3,29 +3,28 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Credit;
 using TMDbLib.Rest;
 
-namespace TMDbLib.Client
+namespace TMDbLib.Client;
+
+public partial class TMDbClient
 {
-    public partial class TMDbClient
+    public async Task<Credit> GetCreditsAsync(string id, CancellationToken cancellationToken = default)
     {
-        public async Task<Credit> GetCreditsAsync(string id, CancellationToken cancellationToken = default)
+        return await GetCreditsAsync(id, DefaultLanguage, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<Credit> GetCreditsAsync(string id, string language, CancellationToken cancellationToken = default)
+    {
+        RestRequest req = _client.Create("credit/{id}");
+
+        if (!string.IsNullOrEmpty(language))
         {
-            return await GetCreditsAsync(id, DefaultLanguage, cancellationToken).ConfigureAwait(false);
+            req.AddParameter("language", language);
         }
 
-        public async Task<Credit> GetCreditsAsync(string id, string language, CancellationToken cancellationToken = default)
-        {
-            RestRequest req = _client.Create("credit/{id}");
+        req.AddUrlSegment("id", id);
 
-            if (!string.IsNullOrEmpty(language))
-            {
-                req.AddParameter("language", language);
-            }
+        Credit resp = await req.GetOfT<Credit>(cancellationToken).ConfigureAwait(false);
 
-            req.AddUrlSegment("id", id);
-
-            Credit resp = await req.GetOfT<Credit>(cancellationToken).ConfigureAwait(false);
-
-            return resp;
-        }
+        return resp;
     }
 }

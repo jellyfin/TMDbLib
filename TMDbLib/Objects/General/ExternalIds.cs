@@ -1,22 +1,21 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.General
+namespace TMDbLib.Objects.General;
+
+public class ExternalIds
 {
-    public class ExternalIds
-    {
-        [JsonProperty("freebase_id")]
-        public string FreebaseId { get; set; }
+    [JsonProperty("freebase_id")]
+    public string FreebaseId { get; set; }
 
-        [JsonProperty("freebase_mid")]
-        public string FreebaseMid { get; set; }
+    [JsonProperty("freebase_mid")]
+    public string FreebaseMid { get; set; }
 
-        [JsonProperty("id")]
-        public int Id { get; set; }
+    [JsonProperty("id")]
+    public int Id { get; set; }
 
-        [JsonProperty("tvrage_id")]
-        public string TvrageId { get; set; }
+    [JsonProperty("tvrage_id")]
+    public string TvrageId { get; set; }
 
-        [JsonProperty("wikidata_id")]
-        public string WikidataId { get; set; }
-    }
+    [JsonProperty("wikidata_id")]
+    public string WikidataId { get; set; }
 }

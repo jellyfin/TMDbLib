@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 
-namespace TMDbLib.Objects.Certifications
+namespace TMDbLib.Objects.Certifications;
+
+public class CertificationsContainer
 {
-    public class CertificationsContainer
-    {
-        public Dictionary<string, List<CertificationItem>> Certifications { get; set; }
-    }
+    public Dictionary<string, List<CertificationItem>> Certifications { get; set; }
 }
