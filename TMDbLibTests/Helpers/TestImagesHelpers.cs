@@ -13,19 +13,13 @@ namespace TMDbLibTests.Helpers
         public static void TestImagePaths(Images images)
         {
             if (images.Backdrops is not null)
-            {
                 TestImagePaths(images.Backdrops);
-            }
 
             if (images.Posters is not null)
-            {
                 TestImagePaths(images.Posters);
-            }
 
             if (images.Logos is not null)
-            {
                 TestImagePaths(images.Logos);
-            }   
         }
 
         public static void TestImagePaths(IEnumerable<string> imagePaths)
