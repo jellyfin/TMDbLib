@@ -17,7 +17,7 @@ namespace TMDbLib.Utilities.Converters
             JObject jObject = JObject.Load(reader);
 
             ChangeItemBase result;
-            if (jObject["action"] == null)
+            if (jObject["action"] is null)
             {
                 // We cannot determine the correct type, let's hope we were provided one
                 result = (ChangeItemBase)Activator.CreateInstance(objectType);

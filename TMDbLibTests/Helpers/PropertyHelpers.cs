@@ -19,7 +19,7 @@ namespace TMDbLibTests.Helpers
                 throw new ArgumentException($"Expression '{propertyLambda}' refers to a method, not a property.");
 
             PropertyInfo propInfo = member.Member as PropertyInfo;
-            if (propInfo == null)
+            if (propInfo is null)
                 throw new ArgumentException($"Expression '{propertyLambda}' refers to a field, not a property.");
 
             if (type != propInfo.ReflectedType &&

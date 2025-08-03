@@ -21,7 +21,7 @@ namespace TMDbLib.Rest
             Proxy = proxy;
 
             HttpClientHandler handler = new HttpClientHandler();
-            if (proxy != null)
+            if (proxy is not null)
             {
                 // Blazor apparently throws on the Proxy setter.
                 // https://github.com/LordMike/TMDbLib/issues/354

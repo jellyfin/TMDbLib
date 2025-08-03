@@ -57,7 +57,7 @@ namespace TMDbLib.Client
 
             List<Dictionary<string, List<string>>> item = await resp.GetDataObject().ConfigureAwait(false);
 
-            if (item == null)
+            if (item is null)
                 return null;
 
             Timezones result = new Timezones();

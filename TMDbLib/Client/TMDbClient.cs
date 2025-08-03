@@ -162,7 +162,7 @@ namespace TMDbLib.Client
         {
             TMDbConfig config = await _client.Create("configuration").GetOfT<TMDbConfig>(CancellationToken.None).ConfigureAwait(false);
 
-            if (config == null)
+            if (config is null)
                 throw new Exception("Unable to retrieve configuration");
 
             // Store config

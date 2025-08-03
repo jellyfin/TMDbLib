@@ -26,7 +26,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", movieMethod.GetDescription());
 
-            if (country != null)
+            if (country is not null)
                 req.AddParameter("country", country);
 
             language ??= DefaultLanguage;
@@ -40,7 +40,7 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
-            if (endDate != null)
+            if (endDate is not null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
             T response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -115,11 +115,11 @@ namespace TMDbLib.Client
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
                 AddSessionId(req, SessionType.UserSession);
 
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
 
             includeImageLanguage ??= DefaultImageLanguage;
-            if (includeImageLanguage != null)
+            if (includeImageLanguage is not null)
                 req.AddParameter("include_image_language", includeImageLanguage);
 
             string appends = string.Join(",",
@@ -140,28 +140,28 @@ namespace TMDbLib.Client
             Movie item = await response.GetDataObject().ConfigureAwait(false);
 
             // Patch up data, so that the end user won't notice that we share objects between req-types.
-            if (item.Videos != null)
+            if (item.Videos is not null)
                 item.Videos.Id = item.Id;
 
-            if (item.AlternativeTitles != null)
+            if (item.AlternativeTitles is not null)
                 item.AlternativeTitles.Id = item.Id;
 
-            if (item.Credits != null)
+            if (item.Credits is not null)
                 item.Credits.Id = item.Id;
 
-            if (item.Releases != null)
+            if (item.Releases is not null)
                 item.Releases.Id = item.Id;
 
-            if (item.Keywords != null)
+            if (item.Keywords is not null)
                 item.Keywords.Id = item.Id;
 
-            if (item.Translations != null)
+            if (item.Translations is not null)
                 item.Translations.Id = item.Id;
 
-            if (item.AccountStates != null)
+            if (item.AccountStates is not null)
                 item.AccountStates.Id = item.Id;
 
-            if (item.ExternalIds != null)
+            if (item.ExternalIds is not null)
                 item.ExternalIds.Id = item.Id;
 
             // Overview is the only field that is HTML encoded from the source.
@@ -208,7 +208,7 @@ namespace TMDbLib.Client
             Movie item = await resp.GetDataObject().ConfigureAwait(false);
 
             // Overview is the only field that is HTML encoded from the source.
-            if (item != null)
+            if (item is not null)
                 item.Overview = WebUtility.HtmlDecode(item.Overview);
 
             return item;
@@ -240,9 +240,9 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
-            if (region != null)
+            if (region is not null)
                 req.AddParameter("region", region);
 
             SearchContainerWithDates<SearchMovie> resp = await req.GetOfT<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
@@ -256,9 +256,9 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
-            if (region != null)
+            if (region is not null)
                 req.AddParameter("region", region);
 
             SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
@@ -302,9 +302,9 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
-            if (region != null)
+            if (region is not null)
                 req.AddParameter("region", region);
 
             SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
@@ -323,9 +323,9 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
-            if (region != null)
+            if (region is not null)
                 req.AddParameter("region", region);
 
             SearchContainerWithDates<SearchMovie> resp = await req.GetOfT<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
@@ -357,7 +357,7 @@ namespace TMDbLib.Client
             PostReply item = await response.GetDataObject().ConfigureAwait(false);
 
             // TODO: Previous code checked for item=null
-            return item != null && item.StatusCode == 13;
+            return item is not null && item.StatusCode == 13;
         }
 
         /// <summary>

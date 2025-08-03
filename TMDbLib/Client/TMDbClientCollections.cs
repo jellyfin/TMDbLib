@@ -18,7 +18,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("collectionId", collectionId.ToString());
             req.AddUrlSegment("method", collectionMethod.GetDescription());
 
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
 
             T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -63,7 +63,7 @@ namespace TMDbLib.Client
 
             Collection item = await response.GetDataObject().ConfigureAwait(false);
 
-            if (item != null)
+            if (item is not null)
                 item.Overview = WebUtility.HtmlDecode(item.Overview);
 
             return item;

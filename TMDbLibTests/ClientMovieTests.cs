@@ -133,8 +133,8 @@ namespace TMDbLibTests
                 crew
             });
 
-            TestImagesHelpers.TestImagePaths(resp.Cast.Select(s => s.ProfilePath).Where(s => s != null));
-            TestImagesHelpers.TestImagePaths(resp.Crew.Select(s => s.ProfilePath).Where(s => s != null));
+            TestImagesHelpers.TestImagePaths(resp.Cast.Select(s => s.ProfilePath).Where(s => s is not null));
+            TestImagesHelpers.TestImagePaths(resp.Crew.Select(s => s.ProfilePath).Where(s => s is not null));
         }
 
         [Fact]
@@ -436,7 +436,7 @@ namespace TMDbLibTests
 
             Movie movie = await TMDbClient.GetMovieAsync(IdHelper.TheDarkKnightRises, MovieMethods.AccountStates);
 
-            if (movie.AccountStates?.Rating == null)
+            if (movie.AccountStates?.Rating is null)
             {
                 await TMDbClient.MovieSetRatingAsync(IdHelper.TheDarkKnightRises, 5);
 
