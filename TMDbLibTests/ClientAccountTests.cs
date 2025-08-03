@@ -277,7 +277,7 @@ namespace TMDbLibTests
         {
             int page = 1;
             List<int> originalList = (await listGetter(page)).ToList();
-            while (originalList != null && originalList.Any())
+            while (originalList is not null && originalList.Any())
             {
                 // Check if the current result page contains the relevant movie
                 if (originalList.Contains(movieId))

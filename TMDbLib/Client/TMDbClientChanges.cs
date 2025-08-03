@@ -28,7 +28,7 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
-            if (endDate != null)
+            if (endDate is not null)
                 req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
 
             using RestResponse<T> resp = await req.Get<T>(cancellationToken).ConfigureAwait(false);

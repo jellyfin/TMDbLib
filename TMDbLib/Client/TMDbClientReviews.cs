@@ -12,7 +12,7 @@ namespace TMDbLib.Client
             RestRequest request  = _client.Create("review/{reviewId}");
             request.AddUrlSegment("reviewId", reviewId);
 
-            if (language != null)
+            if (language is not null)
                 request.AddQueryString("language", language);
 
             // TODO: Dateformat?

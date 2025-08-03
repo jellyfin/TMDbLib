@@ -48,7 +48,7 @@ namespace TMDbLibTests
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             TvSeason season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
-            if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
+            if (season.AccountStates is null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
             {
                 await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
 

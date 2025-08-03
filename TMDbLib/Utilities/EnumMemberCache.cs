@@ -33,7 +33,7 @@ namespace TMDbLib.Utilities
                 object value = fieldInfo.GetValue(null);
                 CustomAttributeData attrib = fieldInfo.CustomAttributes.FirstOrDefault(s => s.AttributeType == typeof(EnumValueAttribute));
 
-                if (attrib == null)
+                if (attrib is null)
                 {
                     cache[value] = value.ToString();
                 }

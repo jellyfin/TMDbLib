@@ -24,7 +24,7 @@ namespace TMDbLib.Objects.Search
             get
             {
                 // If _name is not set, attempt to retrieve the "title" property from additional data
-                if (_name == null && _additionalData != null && _additionalData.TryGetValue("title", out var nameToken))
+                if (_name is null && _additionalData is not null && _additionalData.TryGetValue("title", out var nameToken))
                 {
                     return nameToken.ToString();
                 }
@@ -43,7 +43,7 @@ namespace TMDbLib.Objects.Search
             get
             {
                 // If _originalName is not set, attempt to retrieve the "original_title" property from additional data
-                if (_originalName == null && _additionalData != null &&
+                if (_originalName is null && _additionalData is not null &&
                     _additionalData.TryGetValue("original_title", out var originalNameToken))
                 {
                     return originalNameToken.ToString();

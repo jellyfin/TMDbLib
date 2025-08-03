@@ -22,7 +22,7 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
             // TODO: Dateformat?
-            //if (dateFormat != null)
+            //if (dateFormat is not null)
             //    req.DateFormat = dateFormat;
 
             language ??= DefaultLanguage;
@@ -97,22 +97,22 @@ namespace TMDbLib.Client
             TvSeason item = await response.GetDataObject().ConfigureAwait(false);
 
             // Nothing to patch up
-            if (item == null)
+            if (item is null)
                 return null;
 
-            if (item.Images != null)
+            if (item.Images is not null)
                 item.Images.Id = item.Id ?? 0;
 
-            if (item.Credits != null)
+            if (item.Credits is not null)
                 item.Credits.Id = item.Id ?? 0;
 
-            if (item.ExternalIds != null)
+            if (item.ExternalIds is not null)
                 item.ExternalIds.Id = item.Id ?? 0;
 
-            if (item.AccountStates != null)
+            if (item.AccountStates is not null)
                 item.AccountStates.Id = item.Id ?? 0;
 
-            if (item.Videos != null)
+            if (item.Videos is not null)
                 item.Videos.Id = item.Id ?? 0;
 
             return item;
