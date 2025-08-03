@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.General
-{
-    public class ResultContainer<T>
-    {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+namespace TMDbLib.Objects.General;
 
-        [JsonProperty("results")]
-        public List<T> Results { get; set; }
-    }
+public class ResultContainer<T>
+{
+    [JsonProperty("id")]
+    public int Id { get; set; }
+
+    [JsonProperty("results")]
+    public List<T> Results { get; set; }
 }

@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.TvShows
+namespace TMDbLib.Objects.TvShows;
+
+public class TvGroupEpisode : TvEpisodeBase
 {
-    public class TvGroupEpisode : TvEpisodeBase
-    {
-        [JsonProperty("order")]
-        public int Order { get; set; }
-    }
+    [JsonProperty("order")]
+    public int Order { get; set; }
 }

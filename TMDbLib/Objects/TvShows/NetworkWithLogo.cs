@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.TvShows
+namespace TMDbLib.Objects.TvShows;
+
+public class NetworkWithLogo : NetworkBase
 {
-    public class NetworkWithLogo : NetworkBase
-    {
-        [JsonProperty("logo_path")]
-        public string LogoPath { get; set; }
-    }
+    [JsonProperty("logo_path")]
+    public string LogoPath { get; set; }
 }

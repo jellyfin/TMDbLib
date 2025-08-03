@@ -2,11 +2,10 @@
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 
-namespace TMDbLib.Objects.Genres
+namespace TMDbLib.Objects.Genres;
+
+public class GenreContainer
 {
-    public class GenreContainer
-    {
-        [JsonProperty("genres")]
-        public List<Genre> Genres { get; set; }
-    }
+    [JsonProperty("genres")]
+    public List<Genre> Genres { get; set; }
 }

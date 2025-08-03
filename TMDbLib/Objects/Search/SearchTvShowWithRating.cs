@@ -1,10 +1,9 @@
 using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Search
+namespace TMDbLib.Objects.Search;
+
+public class SearchTvShowWithRating : SearchTv
 {
-    public class SearchTvShowWithRating : SearchTv
-    {
-        [JsonProperty("rating")]
-        public double Rating { get; set; }
-    }
+    [JsonProperty("rating")]
+    public double Rating { get; set; }
 }

@@ -1,15 +1,14 @@
 ﻿using Newtonsoft.Json;
-using TMDbLib.Objects.Search;
 using TMDbLib.Objects.People;
+using TMDbLib.Objects.Search;
 
-namespace TMDbLib.Objects.Find
+namespace TMDbLib.Objects.Find;
+
+public class FindPerson : SearchPerson
 {
-    public class FindPerson : SearchPerson
-    {
-        [JsonProperty("gender")]
-        public PersonGender Gender { get; set; }
+    [JsonProperty("gender")]
+    public PersonGender Gender { get; set; }
 
-        [JsonProperty("known_for_department")]
-        public string KnownForDepartment { get; set; }
-    }
+    [JsonProperty("known_for_department")]
+    public string KnownForDepartment { get; set; }
 }

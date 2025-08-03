@@ -1,14 +1,13 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.General
+namespace TMDbLib.Objects.General;
+
+public class AlternativeNames
 {
-    public class AlternativeNames
-    {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+    [JsonProperty("id")]
+    public int Id { get; set; }
 
-        [JsonProperty("results")]
-        public List<AlternativeName> Results { get; set; }
-    }
+    [JsonProperty("results")]
+    public List<AlternativeName> Results { get; set; }
 }

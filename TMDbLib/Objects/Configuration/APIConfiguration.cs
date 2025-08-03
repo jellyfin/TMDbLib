@@ -1,14 +1,13 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Configuration
+namespace TMDbLib.Objects.Configuration;
+
+public class APIConfiguration
 {
-    public class APIConfiguration
-    {
-        [JsonProperty("images")]
-        public APIConfigurationImages Images { get; set; }
+    [JsonProperty("images")]
+    public APIConfigurationImages Images { get; set; }
 
-        [JsonProperty("change_keys")]
-        public List<string> ChangeKeys { get; set; }
-    }
+    [JsonProperty("change_keys")]
+    public List<string> ChangeKeys { get; set; }
 }

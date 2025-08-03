@@ -1,8 +1,7 @@
-namespace TMDbLib.Rest
+namespace TMDbLib.Rest;
+
+internal enum ParameterType
 {
-    internal enum ParameterType
-    {
-        QueryString,
-        UrlSegment
-    }
+    QueryString,
+    UrlSegment
 }

@@ -1,13 +1,12 @@
 using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.General
-{
-    public class ExternalIdsTvEpisode : ExternalIds
-    {
-        [JsonProperty("imdb_id")]
-        public string ImdbId { get; set; }
+namespace TMDbLib.Objects.General;
 
-        [JsonProperty("tvdb_id")]
-        public string TvdbId { get; set; }
-    }
+public class ExternalIdsTvEpisode : ExternalIds
+{
+    [JsonProperty("imdb_id")]
+    public string ImdbId { get; set; }
+
+    [JsonProperty("tvdb_id")]
+    public string TvdbId { get; set; }
 }

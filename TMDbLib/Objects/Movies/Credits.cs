@@ -2,17 +2,16 @@
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 
-namespace TMDbLib.Objects.Movies
+namespace TMDbLib.Objects.Movies;
+
+public class Credits
 {
-    public class Credits
-    {
-        [JsonProperty("cast")]
-        public List<Cast> Cast { get; set; }
+    [JsonProperty("cast")]
+    public List<Cast> Cast { get; set; }
 
-        [JsonProperty("crew")]
-        public List<Crew> Crew { get; set; }
+    [JsonProperty("crew")]
+    public List<Crew> Crew { get; set; }
 
-        [JsonProperty("id")]
-        public int Id { get; set; }
-    }
+    [JsonProperty("id")]
+    public int Id { get; set; }
 }

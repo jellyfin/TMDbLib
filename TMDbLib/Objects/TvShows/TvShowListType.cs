@@ -1,16 +1,15 @@
 ﻿using TMDbLib.Utilities;
 
-namespace TMDbLib.Objects.TvShows
+namespace TMDbLib.Objects.TvShows;
+
+public enum TvShowListType
 {
-    public enum TvShowListType
-    {
-        [EnumValue("on_the_air")]
-        OnTheAir,
-        [EnumValue("airing_today")]
-        AiringToday,
-        [EnumValue("top_rated")]
-        TopRated,
-        [EnumValue("popular")]
-        Popular
-    }
+    [EnumValue("on_the_air")]
+    OnTheAir,
+    [EnumValue("airing_today")]
+    AiringToday,
+    [EnumValue("top_rated")]
+    TopRated,
+    [EnumValue("popular")]
+    Popular
 }

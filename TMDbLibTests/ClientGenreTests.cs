@@ -7,64 +7,61 @@ using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
-namespace TMDbLibTests
+namespace TMDbLibTests;
+
+public class ClientGenreTests : TestBase
 {
-    public class ClientGenreTests : TestBase
+    [Fact]
+    public async Task TestGenreTvListAsync()
     {
-        [Fact]
-        public async Task TestGenreTvListAsync()
+        // Default language
+        List<Genre> genres = await TMDbClient.GetTvGenresAsync();
+
+        // Another language
+        List<Genre> genresDanish = await TMDbClient.GetTvGenresAsync("da");
+
+        await Verify(new
         {
-            // Default language
-            List<Genre> genres = await TMDbClient.GetTvGenresAsync();
+            genres,
+            genresDanish
+        });
 
-            // Another language
-            List<Genre> genresDanish = await TMDbClient.GetTvGenresAsync("da");
+        // At least one should be different
+        Genre actionEn = genres.Single(s => s.Id == IdHelper.ActionAdventureTvGenre);
+        Genre actionDa = genresDanish.Single(s => s.Id == IdHelper.ActionAdventureTvGenre);
 
-            await Verify(new
-            {
-                genres,
-                genresDanish
-            });
+        Assert.NotEqual(actionEn.Name, actionDa.Name);
+    }
+    [Fact]
+    public async Task TestGenreMovieListAsync()
+    {
+        // Default language
+        List<Genre> genres = await TMDbClient.GetMovieGenresAsync();
 
-            // At least one should be different
-            Genre actionEn = genres.Single(s => s.Id == IdHelper.ActionAdventureTvGenre);
-            Genre actionDa = genresDanish.Single(s => s.Id == IdHelper.ActionAdventureTvGenre);
+        // Another language
+        List<Genre> genresDanish = await TMDbClient.GetMovieGenresAsync("da");
 
-            Assert.NotEqual(actionEn.Name, actionDa.Name);
-        }
-
-        [Fact]
-        public async Task TestGenreMovieListAsync()
+        await Verify(new
         {
-            // Default language
-            List<Genre> genres = await TMDbClient.GetMovieGenresAsync();
+            genres,
+            genresDanish
+        });
 
-            // Another language
-            List<Genre> genresDanish = await TMDbClient.GetMovieGenresAsync("da");
+        // At least one should be different
+        Genre actionEn = genres.Single(s => s.Id == IdHelper.AdventureMovieGenre);
+        Genre actionDa = genresDanish.Single(s => s.Id == IdHelper.AdventureMovieGenre);
 
-            await Verify(new
-            {
-                genres,
-                genresDanish
-            });
-
-            // At least one should be different
-            Genre actionEn = genres.Single(s => s.Id == IdHelper.AdventureMovieGenre);
-            Genre actionDa = genresDanish.Single(s => s.Id == IdHelper.AdventureMovieGenre);
-
-            Assert.NotEqual(actionEn.Name, actionDa.Name);
-        }
-
-        [Fact]
-        public async Task TestGenreMoviesAsync()
-        {
+        Assert.NotEqual(actionEn.Name, actionDa.Name);
+    }
+    [Fact]
+    public async Task TestGenreMoviesAsync()
+    {
 #pragma warning disable CS0618 // Type or member is obsolete
-            SearchContainerWithId<SearchMovie> movies = await TMDbClient.GetGenreMoviesAsync(IdHelper.AdventureMovieGenre);
+        SearchContainerWithId<SearchMovie> movies = await TMDbClient.GetGenreMoviesAsync(IdHelper.AdventureMovieGenre);
 
-            Assert.NotEmpty(movies.Results);
-            Assert.Equal(IdHelper.AdventureMovieGenre, movies.Id);
-            Assert.All(movies.Results, x => Assert.Contains(IdHelper.AdventureMovieGenre, x.GenreIds));
+        Assert.NotEmpty(movies.Results);
+        Assert.Equal(IdHelper.AdventureMovieGenre, movies.Id);
+        Assert.All(movies.Results, x => Assert.Contains(IdHelper.AdventureMovieGenre, x.GenreIds));
 #pragma warning restore CS0618 // Type or member is obsolete
-        }
     }
 }
