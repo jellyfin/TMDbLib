@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Countries
+namespace TMDbLib.Objects.Countries;
+
+public class Country
 {
-    public class Country
-    {
-        [JsonProperty("iso_3166_1")]
-        public string Iso_3166_1 { get; set; }
+    [JsonProperty("iso_3166_1")]
+    public string Iso_3166_1 { get; set; }
 
-        [JsonProperty("english_name")]
-        public string EnglishName { get; set; }
+    [JsonProperty("english_name")]
+    public string EnglishName { get; set; }
 
-        [JsonProperty("native_name")]
-        public string NativeName { get; set; }
-    }
+    [JsonProperty("native_name")]
+    public string NativeName { get; set; }
 }

@@ -6,52 +6,51 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using TMDbLib.Utilities.Serializer;
 
-namespace TMDbLib.Rest
+namespace TMDbLib.Rest;
+
+internal class RestResponse : IDisposable
 {
-    internal class RestResponse : IDisposable
+    private readonly HttpResponseMessage Response;
+
+    public RestResponse(HttpResponseMessage response)
     {
-        private readonly HttpResponseMessage Response;
-
-        public RestResponse(HttpResponseMessage response)
-        {
-            Response = response;
-        }
-
-        public bool IsValid => Response != null;
-
-        public HttpStatusCode StatusCode => Response.StatusCode;
-
-        public async Task<Stream> GetContent()
-        {
-            return await Response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-        }
-
-        public string GetHeader(string name, string @default = null)
-        {
-            return Response.Headers.GetValues(name).FirstOrDefault() ?? @default;
-        }
-
-        public virtual void Dispose()
-        {
-            Response?.Dispose();
-        }
+        Response = response;
     }
 
-    internal class RestResponse<T> : RestResponse
+    public bool IsValid => Response != null;
+
+    public HttpStatusCode StatusCode => Response.StatusCode;
+
+    public async Task<Stream> GetContent()
     {
-        private readonly RestClient _client;
+        return await Response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+    }
 
-        public RestResponse(HttpResponseMessage response, RestClient client)
-            : base(response)
-        {
-            _client = client;
-        }
+    public string GetHeader(string name, string @default = null)
+    {
+        return Response.Headers.GetValues(name).FirstOrDefault() ?? @default;
+    }
 
-        public async Task<T> GetDataObject()
-        {
-            using Stream content = await GetContent().ConfigureAwait(false);
+    public virtual void Dispose()
+    {
+        Response?.Dispose();
+    }
+}
 
-            return _client.Serializer.Deserialize<T>(content);
-        }
+internal class RestResponse<T> : RestResponse
+{
+    private readonly RestClient _client;
+
+    public RestResponse(HttpResponseMessage response, RestClient client)
+        : base(response)
+    {
+        _client = client;
+    }
+
+    public async Task<T> GetDataObject()
+    {
+        using Stream content = await GetContent().ConfigureAwait(false);
+
+        return _client.Serializer.Deserialize<T>(content);
     }
 }

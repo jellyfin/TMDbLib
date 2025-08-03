@@ -1,15 +1,14 @@
 ﻿using TMDbLib.Utilities;
 
-namespace TMDbLib.Objects.General
+namespace TMDbLib.Objects.General;
+
+public enum CreditType
 {
-    public enum CreditType
-    {
-        Unknown,
+    Unknown,
 
-        [EnumValue("crew")]
-        Crew = 1,
+    [EnumValue("crew")]
+    Crew = 1,
 
-        [EnumValue("cast")]
-        Cast = 2
-    }
+    [EnumValue("cast")]
+    Cast = 2
 }

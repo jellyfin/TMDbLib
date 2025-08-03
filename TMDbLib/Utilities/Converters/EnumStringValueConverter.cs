@@ -2,27 +2,26 @@ using System;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace TMDbLib.Utilities.Converters
+namespace TMDbLib.Utilities.Converters;
+
+internal class EnumStringValueConverter : JsonConverter
 {
-    internal class EnumStringValueConverter : JsonConverter
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            string str = EnumMemberCache.GetString(value);
+        string str = EnumMemberCache.GetString(value);
 
-            writer.WriteValue(str);
-        }
+        writer.WriteValue(str);
+    }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            object val = EnumMemberCache.GetValue(reader.Value as string, objectType);
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+        object val = EnumMemberCache.GetValue(reader.Value as string, objectType);
 
-            return val;
-        }
+        return val;
+    }
 
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType.GetTypeInfo().IsEnum;
-        }
+    public override bool CanConvert(Type objectType)
+    {
+        return objectType.GetTypeInfo().IsEnum;
     }
 }

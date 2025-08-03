@@ -1,19 +1,18 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Reviews
+namespace TMDbLib.Objects.Reviews;
+
+public class AuthorDetails
 {
-    public class AuthorDetails
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
+    [JsonProperty("name")]
+    public string Name { get; set; }
 
-        [JsonProperty("username")]
-        public string Username { get; set; }
+    [JsonProperty("username")]
+    public string Username { get; set; }
 
-        [JsonProperty("avatar_path")]
-        public string AvatarPath { get; set; }
+    [JsonProperty("avatar_path")]
+    public string AvatarPath { get; set; }
 
-        [JsonProperty("rating")]
-        public double? Rating { get; set; }
-    }
+    [JsonProperty("rating")]
+    public double? Rating { get; set; }
 }

@@ -9,89 +9,88 @@ using TMDbLib.Objects.General;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
 
-namespace TMDbLib.Client
+namespace TMDbLib.Client;
+
+public partial class TMDbClient
 {
-    public partial class TMDbClient
+    private async Task<T> GetCollectionMethodInternal<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default)
+        where T : new()
     {
-        private async Task<T> GetCollectionMethodInternal<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default)
-            where T : new()
+        RestRequest req = _client.Create("collection/{collectionId}/{method}");
+        req.AddUrlSegment("collectionId", collectionId.ToString(CultureInfo.InvariantCulture));
+        req.AddUrlSegment("method", collectionMethod.GetDescription());
+
+        if (language is not null)
         {
-            RestRequest req = _client.Create("collection/{collectionId}/{method}");
-            req.AddUrlSegment("collectionId", collectionId.ToString(CultureInfo.InvariantCulture));
-            req.AddUrlSegment("method", collectionMethod.GetDescription());
-
-            if (language is not null)
-            {
-                req.AddParameter("language", language);
-            }
-
-            T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
-
-            return resp;
+            req.AddParameter("language", language);
         }
 
-        public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
+        T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
+
+        return resp;
+    }
+
+    public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
+    {
+        return await GetCollectionAsync(collectionId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<Collection> GetCollectionAsync(int collectionId, string language, string includeImageLanguages, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
+    {
+        RestRequest req = _client.Create("collection/{collectionId}");
+        req.AddUrlSegment("collectionId", collectionId.ToString(CultureInfo.InvariantCulture));
+
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
-            return await GetCollectionAsync(collectionId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
+            req.AddParameter("language", language);
         }
 
-        public async Task<Collection> GetCollectionAsync(int collectionId, string language, string includeImageLanguages, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
+        includeImageLanguages ??= DefaultImageLanguage;
+        if (!string.IsNullOrWhiteSpace(includeImageLanguages))
         {
-            RestRequest req = _client.Create("collection/{collectionId}");
-            req.AddUrlSegment("collectionId", collectionId.ToString(CultureInfo.InvariantCulture));
-
-            language ??= DefaultLanguage;
-            if (!string.IsNullOrWhiteSpace(language))
-            {
-                req.AddParameter("language", language);
-            }
-
-            includeImageLanguages ??= DefaultImageLanguage;
-            if (!string.IsNullOrWhiteSpace(includeImageLanguages))
-            {
-                req.AddParameter("include_image_language", includeImageLanguages);
-            }
-
-            string appends = string.Join(
-                ",",
-                Enum.GetValues(typeof(CollectionMethods))
-                                             .OfType<CollectionMethods>()
-                                             .Except([CollectionMethods.Undefined])
-                                             .Where(s => extraMethods.HasFlag(s))
-                                             .Select(s => s.GetDescription()));
-
-            if (appends != string.Empty)
-            {
-                req.AddParameter("append_to_response", appends);
-            }
-
-            // req.DateFormat = "yyyy-MM-dd";
-
-            using RestResponse<Collection> response = await req.Get<Collection>(cancellationToken).ConfigureAwait(false);
-
-            if (!response.IsValid)
-            {
-                return null;
-            }
-
-            Collection item = await response.GetDataObject().ConfigureAwait(false);
-
-            if (item is not null)
-            {
-                item.Overview = WebUtility.HtmlDecode(item.Overview);
-            }
-
-            return item;
+            req.AddParameter("include_image_language", includeImageLanguages);
         }
 
-        public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default)
+        string appends = string.Join(
+            ",",
+            Enum.GetValues(typeof(CollectionMethods))
+                                         .OfType<CollectionMethods>()
+                                         .Except([CollectionMethods.Undefined])
+                                         .Where(s => extraMethods.HasFlag(s))
+                                         .Select(s => s.GetDescription()));
+
+        if (appends != string.Empty)
         {
-            return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
+            req.AddParameter("append_to_response", appends);
         }
 
-        public async Task<TranslationsContainer> GetCollectionTranslationsAsync(int collectionId, CancellationToken cancellationToken = default)
+        // req.DateFormat = "yyyy-MM-dd";
+
+        using RestResponse<Collection> response = await req.Get<Collection>(cancellationToken).ConfigureAwait(false);
+
+        if (!response.IsValid)
         {
-            return await GetCollectionMethodInternal<TranslationsContainer>(collectionId, CollectionMethods.Translations, null, cancellationToken).ConfigureAwait(false);
+            return null;
         }
+
+        Collection item = await response.GetDataObject().ConfigureAwait(false);
+
+        if (item is not null)
+        {
+            item.Overview = WebUtility.HtmlDecode(item.Overview);
+        }
+
+        return item;
+    }
+
+    public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default)
+    {
+        return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<TranslationsContainer> GetCollectionTranslationsAsync(int collectionId, CancellationToken cancellationToken = default)
+    {
+        return await GetCollectionMethodInternal<TranslationsContainer>(collectionId, CollectionMethods.Translations, null, cancellationToken).ConfigureAwait(false);
     }
 }

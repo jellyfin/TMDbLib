@@ -5,36 +5,34 @@ using Xunit;
 using TMDbLib.Objects.Certifications;
 using TMDbLibTests.JsonHelpers;
 
-namespace TMDbLibTests
+namespace TMDbLibTests;
+
+public class ClientCertificationsTests : TestBase
 {
-    public class ClientCertificationsTests : TestBase
+    [Fact]
+    public async Task TestCertificationsListMovieAsync()
     {
-        [Fact]
-        public async Task TestCertificationsListMovieAsync()
-        {
-            CertificationsContainer result = await TMDbClient.GetMovieCertificationsAsync();
-            Assert.NotEmpty(result.Certifications);
+        CertificationsContainer result = await TMDbClient.GetMovieCertificationsAsync();
+        Assert.NotEmpty(result.Certifications);
 
-            List<CertificationItem> certAu = result.Certifications["AU"];
-            Assert.NotEmpty(certAu);
+        List<CertificationItem> certAu = result.Certifications["AU"];
+        Assert.NotEmpty(certAu);
 
-            CertificationItem ratingE = certAu.Single(s => s.Certification == "E");
+        CertificationItem ratingE = certAu.Single(s => s.Certification == "E");
 
-            await Verify(ratingE);
-        }
+        await Verify(ratingE);
+    }
+    [Fact]
+    public async Task TestCertificationsListTvAsync()
+    {
+        CertificationsContainer result = await TMDbClient.GetTvCertificationsAsync();
+        Assert.NotEmpty(result.Certifications);
 
-        [Fact]
-        public async Task TestCertificationsListTvAsync()
-        {
-            CertificationsContainer result = await TMDbClient.GetTvCertificationsAsync();
-            Assert.NotEmpty(result.Certifications);
+        List<CertificationItem> certUs = result.Certifications["US"];
+        Assert.NotEmpty(certUs);
 
-            List<CertificationItem> certUs = result.Certifications["US"];
-            Assert.NotEmpty(certUs);
+        CertificationItem ratingNr = certUs.SingleOrDefault(s => s.Certification == "NR");
 
-            CertificationItem ratingNr = certUs.SingleOrDefault(s => s.Certification == "NR");
-
-            await Verify(ratingNr);
-        }
+        await Verify(ratingNr);
     }
 }

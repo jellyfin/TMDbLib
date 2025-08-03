@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.General
-{
-    public class AlternativeName
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
+namespace TMDbLib.Objects.General;
 
-        [JsonProperty("type")]
-        public string Type { get; set; }
-    }
+public class AlternativeName
+{
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("type")]
+    public string Type { get; set; }
 }

@@ -2,14 +2,13 @@
 using Newtonsoft.Json;
 using TMDbLib.Objects.Search;
 
-namespace TMDbLib.Objects.Lists
-{
-    public class GenericList : TMDbList<string>
-    {
-        [JsonProperty("created_by")]
-        public string CreatedBy { get; set; }
+namespace TMDbLib.Objects.Lists;
 
-        [JsonProperty("items")]
-        public List<SearchBase> Items { get; set; }
-    }
+public class GenericList : TMDbList<string>
+{
+    [JsonProperty("created_by")]
+    public string CreatedBy { get; set; }
+
+    [JsonProperty("items")]
+    public List<SearchBase> Items { get; set; }
 }

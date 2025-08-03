@@ -2,14 +2,13 @@
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Search;
 
-namespace TMDbLib.Objects.Find
-{
-    public class FindPerson : SearchPerson
-    {
-        [JsonProperty("gender")]
-        public PersonGender Gender { get; set; }
+namespace TMDbLib.Objects.Find;
 
-        [JsonProperty("known_for_department")]
-        public string KnownForDepartment { get; set; }
-    }
+public class FindPerson : SearchPerson
+{
+    [JsonProperty("gender")]
+    public PersonGender Gender { get; set; }
+
+    [JsonProperty("known_for_department")]
+    public string KnownForDepartment { get; set; }
 }

@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Account
+namespace TMDbLib.Objects.Account;
+
+public class Gravatar
 {
-    public class Gravatar
-    {
-        [JsonProperty("hash")]
-        public string Hash { get; set; }
-    }
+    [JsonProperty("hash")]
+    public string Hash { get; set; }
 }

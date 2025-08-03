@@ -1,11 +1,10 @@
 ﻿using TMDbLib.Utilities;
 
-namespace TMDbLib.Objects.Account
+namespace TMDbLib.Objects.Account;
+
+public enum AccountSortBy
 {
-    public enum AccountSortBy
-    {
-        Undefined = 0,
-        [EnumValue("created_at")]
-        CreatedAt = 1,
-    }
+    Undefined = 0,
+    [EnumValue("created_at")]
+    CreatedAt = 1,
 }

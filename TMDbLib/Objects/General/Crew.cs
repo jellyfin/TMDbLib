@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.General
-{
-    public class Crew : CrewBase
-    {
-        [JsonProperty("credit_id")]
-        public string CreditId { get; set; }
+namespace TMDbLib.Objects.General;
 
-        [JsonProperty("job")]
-        public string Job { get; set; }
-    }
+public class Crew : CrewBase
+{
+    [JsonProperty("credit_id")]
+    public string CreditId { get; set; }
+
+    [JsonProperty("job")]
+    public string Job { get; set; }
 }
