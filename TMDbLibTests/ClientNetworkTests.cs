@@ -12,7 +12,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestNetworkGetByIdAsync()
         {
-            Network network =  await TMDbClient.GetNetworkAsync(IdHelper.Netflix);
+            Network network = await TMDbClient.GetNetworkAsync(IdHelper.Netflix);
 
             await Verify(network);
         }
@@ -20,23 +20,23 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestNetworkImagesAsync()
         {
-            NetworkLogos logos = await  TMDbClient.GetNetworkImagesAsync(IdHelper.Netflix);
-            
+            NetworkLogos logos = await TMDbClient.GetNetworkImagesAsync(IdHelper.Netflix);
+
             await Verify(logos);
         }
 
         [Fact]
         public async Task TestNetworkAlternativeNamesAsync()
         {
-            AlternativeNames names = await  TMDbClient.GetNetworkAlternativeNamesAsync(IdHelper.AMC);
-            
+            AlternativeNames names = await TMDbClient.GetNetworkAlternativeNamesAsync(IdHelper.AMC);
+
             await Verify(names);
         }
 
         [Fact]
         public async Task TestNetworkMissingAsync()
         {
-            Network network =  await TMDbClient.GetNetworkAsync(IdHelper.MissingID);
+            Network network = await TMDbClient.GetNetworkAsync(IdHelper.MissingID);
 
             Assert.Null(network);
         }

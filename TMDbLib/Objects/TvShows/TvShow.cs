@@ -74,7 +74,7 @@ namespace TMDbLib.Objects.TvShows
         public ResultContainer<Keyword> Keywords { get; set; }
 
         /// <summary>
-        /// language ISO code ex. en
+        /// language ISO code ex. en.
         /// </summary>
         [JsonProperty("languages")]
         public List<string> Languages { get; set; }
@@ -109,7 +109,7 @@ namespace TMDbLib.Objects.TvShows
         public string OriginalName { get; set; }
 
         /// <summary>
-        /// Country ISO code ex. US
+        /// Country ISO code ex. US.
         /// </summary>
         [JsonProperty("origin_country")]
         public List<string> OriginCountry { get; set; }

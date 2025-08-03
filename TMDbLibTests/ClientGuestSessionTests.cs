@@ -27,9 +27,13 @@ namespace TMDbLibTests
                 SearchContainer<TvEpisodeWithRating> ratings = await TMDbClient.GetGuestSessionRatedTvEpisodesAsync();
 
                 if (shouldBeSet)
+                {
                     Assert.Contains(ratings.Results, x => x.ShowId == IdHelper.BreakingBad && x.SeasonNumber == 1 && x.EpisodeNumber == 1);
+                }
                 else
+                {
                     Assert.DoesNotContain(ratings.Results, x => x.ShowId == IdHelper.BreakingBad && x.SeasonNumber == 1 && x.EpisodeNumber == 1);
+                }
             });
         }
 
@@ -49,9 +53,13 @@ namespace TMDbLibTests
                 SearchContainer<SearchTvShowWithRating> ratings = await TMDbClient.GetGuestSessionRatedTvAsync();
 
                 if (shouldBeSet)
+                {
                     Assert.Contains(ratings.Results, x => x.Id == IdHelper.House);
+                }
                 else
+                {
                     Assert.DoesNotContain(ratings.Results, x => x.Id == IdHelper.House);
+                }
             });
         }
 
@@ -59,7 +67,7 @@ namespace TMDbLibTests
         public async Task TestMoviesSetRatingGuestSessionAsync()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.GuestTestSessionId, SessionType.GuestSession);
-            
+
             await TestMethodsHelper.SetValidateRemoveTest(async () =>
             {
                 Assert.True(await TMDbClient.MovieSetRatingAsync(IdHelper.Terminator, 7.5));
@@ -71,9 +79,13 @@ namespace TMDbLibTests
                 SearchContainer<SearchMovieWithRating> ratings = await TMDbClient.GetGuestSessionRatedMoviesAsync();
 
                 if (shouldBeSet)
+                {
                     Assert.Contains(ratings.Results, x => x.Id == IdHelper.Terminator);
+                }
                 else
+                {
                     Assert.DoesNotContain(ratings.Results, x => x.Id == IdHelper.Terminator);
+                }
             });
         }
     }

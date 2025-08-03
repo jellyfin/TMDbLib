@@ -27,7 +27,7 @@ namespace TMDbLibTests.UtilityTests
         {
             string json = Serializer.SerializeToString(original);
             object result = Serializer.DeserializeFromString(json, original.GetType());
-            
+
             Assert.IsType(original.GetType(), result);
             Assert.Equal(original, result);
         }

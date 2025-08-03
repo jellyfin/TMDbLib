@@ -14,12 +14,14 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task KnownForConverter_Movie()
         {
-            KnownForMovie original = new KnownForMovie();
-            original.OriginalTitle = "Hello world";
+            KnownForMovie original = new KnownForMovie
+            {
+                OriginalTitle = "Hello world"
+            };
 
             string json = Serializer.SerializeToString(original);
             KnownForMovie result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForMovie;
-            
+
             Assert.Equal(original.Title, result.Title);
             await Verify(new
             {
@@ -31,12 +33,14 @@ namespace TMDbLibTests.UtilityTests
         [Fact]
         public async Task KnownForConverter_Tv()
         {
-            KnownForTv original = new KnownForTv();
-            original.OriginalName = "Hello world";
-            
+            KnownForTv original = new KnownForTv
+            {
+                OriginalName = "Hello world"
+            };
+
             string json = Serializer.SerializeToString(original);
             KnownForTv result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForTv;
-            
+
             Assert.Equal(original.OriginalName, result.OriginalName);
             await Verify(new
             {
@@ -56,7 +60,7 @@ namespace TMDbLibTests.UtilityTests
             Assert.NotNull(result?.Results);
 
             List<KnownForBase> knownForList = result.Results.SelectMany(s => s.KnownFor).ToList();
-            Assert.True(knownForList.Any());
+            Assert.True(knownForList.Count != 0);
 
             Assert.Contains(knownForList, item => item.MediaType == MediaType.Tv && item is KnownForTv);
             Assert.Contains(knownForList, item => item.MediaType == MediaType.Movie && item is KnownForMovie);

@@ -15,13 +15,16 @@ namespace TMDbLib.Utilities
         private readonly Uri _proxyUri;
 
         /// <summary>
-        /// Initializes a new instance for this Proxy
+        /// Initializes a new instance of the <see cref="TMDbAPIProxy"/> class.
         /// </summary>
         public TMDbAPIProxy(Uri proxyUri, ICredentials credentials = null)
         {
-            if (proxyUri == null)
+#if NETSTANDARD2_0
+            if (proxyUri is null)
                 throw new ArgumentNullException(nameof(proxyUri));
-
+#else
+            ArgumentNullException.ThrowIfNull(proxyUri);
+#endif
             _proxyUri = proxyUri;
             Credentials = credentials;
         }
@@ -35,7 +38,7 @@ namespace TMDbLib.Utilities
         /// Gets the proxy server <see cref="Uri"/> to be used when accessing <paramref name="destination"/>.
         /// </summary>
         /// <param name="destination">The destination URL to be accessed.</param>
-        /// <returns></returns>
+        /// <returns>Proxy URI.</returns>
         public Uri GetProxy(Uri destination)
         {
             return _proxyUri;

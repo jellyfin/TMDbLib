@@ -46,7 +46,9 @@ namespace TMDbLibTests
 
             // Test all extras, ensure none of them are populated
             foreach (Func<TvShow, object> selector in Methods.Values)
+            {
                 Assert.Null(selector(tvShow));
+            }
         }
 
         [Fact]
@@ -404,7 +406,9 @@ namespace TMDbLibTests
                     Assert.Equal(5, accountState.Rating.Value);
                 }
                 else
+                {
                     Assert.Null(accountState.Rating);
+                }
             });
         }
 

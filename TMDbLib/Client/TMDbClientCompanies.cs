@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,18 +13,23 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private async Task<T> GetCompanyMethodInternal<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null, CancellationToken cancellationToken = default) where T : new()
+        private async Task<T> GetCompanyMethodInternal<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null, CancellationToken cancellationToken = default)
+            where T : new()
         {
             RestRequest req = _client.Create("company/{companyId}/{method}");
-            req.AddUrlSegment("companyId", companyId.ToString());
+            req.AddUrlSegment("companyId", companyId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", companyMethod.GetDescription());
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
@@ -33,19 +39,22 @@ namespace TMDbLib.Client
         public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("company/{companyId}");
-            req.AddUrlSegment("companyId", companyId.ToString());
+            req.AddUrlSegment("companyId", companyId.ToString(CultureInfo.InvariantCulture));
 
-            string appends = string.Join(",",
-                                         Enum.GetValues(typeof(CompanyMethods))
+            string appends = string.Join(
+                ",",
+                Enum.GetValues(typeof(CompanyMethods))
                                              .OfType<CompanyMethods>()
-                                             .Except(new[] { CompanyMethods.Undefined })
+                                             .Except([CompanyMethods.Undefined])
                                              .Where(s => extraMethods.HasFlag(s))
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
+            {
                 req.AddParameter("append_to_response", appends);
+            }
 
-            //req.DateFormat = "yyyy-MM-dd";
+            // req.DateFormat = "yyyy-MM-dd";
 
             Company resp = await req.GetOfT<Company>(cancellationToken).ConfigureAwait(false);
 

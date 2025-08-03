@@ -1,8 +1,9 @@
+#pragma warning disable CA2201 // Do not raise reserved exception types
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -19,7 +20,9 @@ namespace TMDbLibTests
         public ClientAccountTests()
         {
             if (string.IsNullOrWhiteSpace(TestConfig.UserSessionId))
+            {
                 throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");
+            }
         }
 
         [Fact]
@@ -160,10 +163,14 @@ namespace TMDbLibTests
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
+            {
                 Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+            }
 
             if (await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
+            {
                 throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
+            }
 
             // Try to mark is as a favorite
             Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
@@ -185,10 +192,14 @@ namespace TMDbLibTests
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
+            {
                 Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+            }
 
             if (await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
+            {
                 throw new Exception($"Test movie '{IdHelper.Terminator}' was already marked as favorite. Unable to perform test correctly");
+            }
 
             // Try to mark is as a favorite
             Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
@@ -210,10 +221,14 @@ namespace TMDbLibTests
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
+            {
                 Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+            }
 
             if (await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
+            {
                 throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
+            }
 
             // Try to add an item to the watchlist
             Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
@@ -235,10 +250,14 @@ namespace TMDbLibTests
 
             // Ensure that the test movie is not marked as favorite before we start the test
             if (await DoesWatchListContainSpecificMovie(IdHelper.Terminator))
+            {
                 Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+            }
 
             if (await DoesWatchListContainSpecificMovie(IdHelper.Terminator))
+            {
                 throw new Exception($"Test movie '{IdHelper.Terminator}' was already on watchlist. Unable to perform test correctly");
+            }
 
             // Try to add an item to the watchlist
             Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
@@ -277,14 +296,16 @@ namespace TMDbLibTests
         {
             int page = 1;
             List<int> originalList = (await listGetter(page)).ToList();
-            while (originalList != null && originalList.Any())
+            while (originalList is not null && originalList.Count != 0)
             {
                 // Check if the current result page contains the relevant movie
                 if (originalList.Contains(movieId))
+                {
                     return true;
+                }
 
                 // See if there is an other page we could try, if not the test passes
-                originalList = originalList.Any() ? (await listGetter(++page)).ToList() : null;
+                originalList = originalList.Count != 0 ? (await listGetter(++page)).ToList() : null;
             }
             return false;
         }

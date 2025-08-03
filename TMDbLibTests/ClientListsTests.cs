@@ -9,6 +9,7 @@ using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using System.Globalization;
 
 namespace TMDbLibTests
 {
@@ -39,7 +40,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestListMissingAsync()
         {
-            GenericList list = await TMDbClient.GetListAsync(IdHelper.MissingID.ToString());
+            GenericList list = await TMDbClient.GetListAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
 
             Assert.Null(list);
         }
@@ -101,9 +102,9 @@ namespace TMDbLibTests
                 // Eventually we'll delete all remaining lists
                 SearchContainer<AccountList> lists = client.AccountGetListsAsync().GetAwaiter().GetResult();
 
-                foreach (AccountList list in lists.Results.Where(s => s.Name.StartsWith(EphemeralListPrefix)))
+                foreach (AccountList list in lists.Results.Where(s => s.Name.StartsWith(EphemeralListPrefix, StringComparison.Ordinal)))
                 {
-                    client.ListDeleteAsync(list.Id.ToString()).GetAwaiter().GetResult();
+                    client.ListDeleteAsync(list.Id.ToString(CultureInfo.InvariantCulture)).GetAwaiter().GetResult();
                 }
             }
         }

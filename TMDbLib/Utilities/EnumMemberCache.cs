@@ -17,13 +17,17 @@ namespace TMDbLib.Utilities
         private static Dictionary<object, string> GetOrPrepareCache(Type type)
         {
             if (!type.GetTypeInfo().IsEnum)
+            {
                 throw new ArgumentException();
+            }
 
             Dictionary<object, string> cache;
             lock (MemberCache)
             {
                 if (MemberCache.TryGetValue(type, out cache))
+                {
                     return cache;
+                }
             }
 
             cache = new Dictionary<object, string>();
@@ -47,7 +51,9 @@ namespace TMDbLib.Utilities
             }
 
             lock (MemberCache)
+            {
                 MemberCache[type] = cache;
+            }
 
             return cache;
         }
@@ -88,8 +94,7 @@ namespace TMDbLib.Utilities
             Type valueType = value.GetType();
             Dictionary<object, string> cache = GetOrPrepareCache(valueType);
 
-            string str;
-            cache.TryGetValue(value, out str);
+            cache.TryGetValue(value, out var str);
 
             return str;
         }

@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Utilities.Converters
 {
@@ -36,11 +37,11 @@ namespace TMDbLib.Utilities.Converters
             }
             else if (reader.TokenType == JsonToken.Integer)
             {
-                int enumVal = Convert.ToInt32(reader.Value);
+                int enumVal = Convert.ToInt32(reader.Value, CultureInfo.InvariantCulture);
                 int[] values = (int[])Enum.GetValues(enumType);
                 if (values.Contains(enumVal))
                 {
-                    return Enum.Parse(enumType, enumVal.ToString());
+                    return Enum.Parse(enumType, enumVal.ToString(CultureInfo.InvariantCulture));
                 }
             }
 

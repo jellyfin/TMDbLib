@@ -14,7 +14,8 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private async Task<T> GetTvSeasonMethodInternal<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null, CancellationToken cancellationToken = default) where T : new()
+        private async Task<T> GetTvSeasonMethodInternal<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null, CancellationToken cancellationToken = default)
+            where T : new()
         {
             RestRequest req = _client.Create("tv/{id}/season/{season_number}/{method}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
@@ -22,12 +23,14 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
             // TODO: Dateformat?
-            //if (dateFormat != null)
+            // if (dateFormat is not null)
             //    req.DateFormat = dateFormat;
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             T response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
@@ -55,65 +58,90 @@ namespace TMDbLib.Client
         /// <param name="tvShowId">TMDb id of the tv show the desired season belongs to.</param>
         /// <param name="seasonNumber">The season number of the season you want to retrieve. Note use 0 for specials.</param>
         /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
-        /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
+        /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
         /// <param name="includeImageLanguage">If specified the api will attempt to return localized image results eg. en,it,es.</param>
-        /// <param name="cancellationToken">A cancellation token</param>
-        /// <returns>The requested season for the specified tv show</returns>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <returns>The requested season for the specified tv show.</returns>
         public async Task<TvSeason> GetTvSeasonAsync(int tvShowId, int seasonNumber, TvSeasonMethods extraMethods = TvSeasonMethods.Undefined, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
         {
             if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
+            {
                 RequireSessionId(SessionType.UserSession);
+            }
 
             RestRequest req = _client.Create("tv/{id}/season/{season_number}");
             req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
 
             if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
+            {
                 AddSessionId(req, SessionType.UserSession);
+            }
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             includeImageLanguage ??= DefaultImageLanguage;
             if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+            {
                 req.AddParameter("include_image_language", includeImageLanguage);
+            }
 
-            string appends = string.Join(",",
-                                         Enum.GetValues(typeof(TvSeasonMethods))
+            string appends = string.Join(
+                ",",
+                Enum.GetValues(typeof(TvSeasonMethods))
                                              .OfType<TvSeasonMethods>()
-                                             .Except(new[] { TvSeasonMethods.Undefined })
+                                             .Except([TvSeasonMethods.Undefined])
                                              .Where(s => extraMethods.HasFlag(s))
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
+            {
                 req.AddParameter("append_to_response", appends);
+            }
 
             using RestResponse<TvSeason> response = await req.Get<TvSeason>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
+            {
                 return null;
+            }
 
             TvSeason item = await response.GetDataObject().ConfigureAwait(false);
 
             // Nothing to patch up
-            if (item == null)
+            if (item is null)
+            {
                 return null;
+            }
 
-            if (item.Images != null)
+            if (item.Images is not null)
+            {
                 item.Images.Id = item.Id ?? 0;
+            }
 
-            if (item.Credits != null)
+            if (item.Credits is not null)
+            {
                 item.Credits.Id = item.Id ?? 0;
+            }
 
-            if (item.ExternalIds != null)
+            if (item.ExternalIds is not null)
+            {
                 item.ExternalIds.Id = item.Id ?? 0;
+            }
 
-            if (item.AccountStates != null)
+            if (item.AccountStates is not null)
+            {
                 item.AccountStates.Id = item.Id ?? 0;
+            }
 
-            if (item.Videos != null)
+            if (item.Videos is not null)
+            {
                 item.Videos.Id = item.Id ?? 0;
+            }
 
             return item;
         }
@@ -123,8 +151,8 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-        /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es </param>
-        /// <param name="cancellationToken">A cancellation token</param>
+        /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async Task<Credits> GetTvSeasonCreditsAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
         {
             return await GetTvSeasonMethodInternal<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, dateFormat: "yyyy-MM-dd", language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -135,7 +163,7 @@ namespace TMDbLib.Client
         /// </summary>
         /// <param name="tvShowId">The TMDb id of the target tv show.</param>
         /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-        /// <param name="cancellationToken">A cancellation token</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async Task<ExternalIdsTvSeason> GetTvSeasonExternalIdsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
         {
             return await GetTvSeasonMethodInternal<ExternalIdsTvSeason>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -148,9 +176,9 @@ namespace TMDbLib.Client
         /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
         /// <param name="language">
         /// If specified the api will attempt to return a localized result. ex: en,it,es.
-        /// For images this means that the image might contain language specifc text
+        /// For images this means that the image might contain language specifc text.
         /// </param>
-        /// <param name="cancellationToken">A cancellation token</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async Task<PosterImages> GetTvSeasonImagesAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
         {
             return await GetTvSeasonMethodInternal<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);

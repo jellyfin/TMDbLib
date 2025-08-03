@@ -5,7 +5,6 @@ namespace TMDbLib.Objects.People
 {
     public class MovieRole
     {
-
         [JsonProperty("adult")]
         public bool Adult { get; set; } = true;
 

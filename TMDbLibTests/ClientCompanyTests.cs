@@ -79,7 +79,9 @@ namespace TMDbLibTests
                 Assert.Equal(resp.Results[index].Id, respItalian.Results[index].Id);
 
                 if (resp.Results[index].Title != respItalian.Results[index].Title)
+                {
                     allTitlesIdentical = false;
+                }
             }
 
             Assert.False(allTitlesIdentical);

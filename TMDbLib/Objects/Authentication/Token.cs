@@ -6,7 +6,7 @@ namespace TMDbLib.Objects.Authentication
 {
     /// <summary>
     /// A request token is required in order to request a user authenticated session id.
-    /// Request tokens will expire after 60 minutes. 
+    /// Request tokens will expire after 60 minutes.
     /// As soon as a valid session id has been created the token will be useless.
     /// </summary>
     public class Token

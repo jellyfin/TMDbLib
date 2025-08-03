@@ -31,7 +31,7 @@ namespace TMDbLib.Objects.Movies
         [EnumValue("changes")]
         Changes = 1 << 10,
         /// <summary>
-        /// Requires a valid user session to be set on the client object
+        /// Requires a valid user session to be set on the client object.
         /// </summary>
         [EnumValue("account_states")]
         AccountStates = 1 << 11,

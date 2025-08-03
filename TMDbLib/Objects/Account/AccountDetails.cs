@@ -14,13 +14,13 @@ namespace TMDbLib.Objects.Account
         public bool IncludeAdult { get; set; }
 
         /// <summary>
-        /// A country code, e.g. US
+        /// A country code, e.g. US.
         /// </summary>
         [JsonProperty("iso_3166_1")]
         public string Iso_3166_1 { get; set; }
 
         /// <summary>
-        /// A language code, e.g. en
+        /// A language code, e.g. en.
         /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }

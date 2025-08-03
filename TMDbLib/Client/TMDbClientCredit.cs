@@ -17,7 +17,9 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("credit/{id}");
 
             if (!string.IsNullOrEmpty(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             req.AddUrlSegment("id", id);
 

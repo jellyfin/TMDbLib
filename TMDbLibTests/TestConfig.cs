@@ -24,7 +24,9 @@ namespace TMDbLibTests
         public TestConfig(bool useSsl = false, ITMDbSerializer serializer = null, IWebProxy proxy = null)
         {
             if (APIKey.Length == 0)
+            {
                 throw new ConfigurationErrorsException("You need to configure the API Key before running any tests. Look at the TestConfig class.");
+            }
 
             Client = new TMDbClient(APIKey, useSsl, serializer: serializer, proxy: proxy)
             {

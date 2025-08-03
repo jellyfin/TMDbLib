@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Globalization;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
@@ -11,7 +12,7 @@ namespace TMDbLib.Client
         public async Task<Keyword> GetKeywordAsync(int keywordId, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("keyword/{keywordId}");
-            req.AddUrlSegment("keywordId", keywordId.ToString());
+            req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
 
             Keyword resp = await req.GetOfT<Keyword>(cancellationToken).ConfigureAwait(false);
 
@@ -26,14 +27,18 @@ namespace TMDbLib.Client
         public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, string language, int page = 0, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("keyword/{keywordId}/movies");
-            req.AddUrlSegment("keywordId", keywordId.ToString());
+            req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
 
             SearchContainerWithId<SearchMovie> resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 

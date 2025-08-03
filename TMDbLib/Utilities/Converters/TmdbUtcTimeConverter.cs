@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -15,7 +16,7 @@ namespace TMDbLib.Utilities.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            writer.WriteValue(((DateTime)value).ToString(Format));
+            writer.WriteValue(((DateTime)value).ToString(Format, CultureInfo.InvariantCulture));
         }
     }
 }

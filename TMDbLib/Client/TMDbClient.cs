@@ -1,16 +1,19 @@
-﻿using System;
-using TMDbLib.Objects.Account;
-using TMDbLib.Objects.Authentication;
-using TMDbLib.Objects.General;
-using ParameterType = TMDbLib.Rest.ParameterType;
-using RestClient = TMDbLib.Rest.RestClient;
-using RestRequest = TMDbLib.Rest.RestRequest;
+﻿#pragma warning disable CA2201 // Do not raise reserved exception types
+
+using System;
+using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using TMDbLib.Objects.Account;
+using TMDbLib.Objects.Authentication;
+using TMDbLib.Objects.General;
 using TMDbLib.Rest;
 using TMDbLib.Utilities.Serializer;
+using ParameterType = TMDbLib.Rest.ParameterType;
+using RestClient = TMDbLib.Rest.RestClient;
+using RestRequest = TMDbLib.Rest.RestRequest;
 
 namespace TMDbLib.Client
 {
@@ -22,6 +25,7 @@ namespace TMDbLib.Client
         private readonly ITMDbSerializer _serializer;
         private RestClient _client;
         private TMDbConfig _config;
+        private bool _disposed;
 
         public TMDbClient(string apiKey, bool useSsl = true, string baseUrl = ProductionUrl, ITMDbSerializer serializer = null, IWebProxy proxy = null)
         {
@@ -31,17 +35,17 @@ namespace TMDbLib.Client
 
             _serializer = serializer ?? TMDbJsonSerializer.Instance;
 
-            //Setup proxy to use during requests
-            //Proxy is optional. If passed, will be used in every request.
+            // Setup proxy to use during requests
+            // Proxy is optional. If passed, will be used in every request.
             WebProxy = proxy;
 
             Initialize(baseUrl, useSsl, apiKey);
         }
 
         /// <summary>
-        /// The account details of the user account associated with the current user session
+        /// The account details of the user account associated with the current user session.
         /// </summary>
-        /// <remarks>This value is automaticly populated when setting a user session</remarks>
+        /// <remarks>This value is automaticly populated when setting a user session.</remarks>
         public AccountDetails ActiveAccount { get; private set; }
 
         public string ApiKey { get; private set; }
@@ -51,24 +55,28 @@ namespace TMDbLib.Client
             get
             {
                 if (!HasConfig)
+                {
                     throw new InvalidOperationException("Call GetConfig() or SetConfig() first");
+                }
+
                 return _config;
             }
-            private set { _config = value; }
+
+            private set => _config = value;
         }
 
         /// <summary>
-        /// ISO 3166-1 code. Ex. US
+        /// ISO 3166-1 code. Ex. US.
         /// </summary>
         public string DefaultCountry { get; set; }
 
         /// <summary>
-        /// ISO 639-1 code. Ex en
+        /// ISO 639-1 code. Ex en.
         /// </summary>
         public string DefaultLanguage { get; set; }
 
         /// <summary>
-        /// ISO 639-1 code. Ex en
+        /// ISO 639-1 code. Ex en.
         /// </summary>
         public string DefaultImageLanguage { get; set; }
 
@@ -84,9 +92,9 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// The maximum number of times a call to TMDb will be retried
+        /// The maximum number of times a call to TMDb will be retried.
         /// </summary>
-        /// <remarks>Default is 0</remarks>
+        /// <remarks>Default is 0.</remarks>
         public int MaxRetryCount
         {
             get => _client.MaxRetryCount;
@@ -103,15 +111,15 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// The session id that will be used when TMDb requires authentication
+        /// The session id that will be used when TMDb requires authentication.
         /// </summary>
-        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
+        /// <remarks>Use 'SetSessionInformation' to assign this value.</remarks>
         public string SessionId { get; private set; }
 
         /// <summary>
-        /// The type of the session id, this will determine the level of access that is granted on the API
+        /// The type of the session id, this will determine the level of access that is granted on the API.
         /// </summary>
-        /// <remarks>Use 'SetSessionInformation' to assign this value</remarks>
+        /// <remarks>Use 'SetSessionInformation' to assign this value.</remarks>
         public SessionType SessionType { get; private set; }
 
         /// <summary>
@@ -129,9 +137,9 @@ namespace TMDbLib.Client
         /// <summary>
         /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
         /// </summary>
-        /// <param name="req">Request</param>
+        /// <param name="req">Request.</param>
         /// <param name="targetType">The target session type to set. If set to Unassigned, the method will take the currently set session.</param>
-        /// <param name="parameterType">The location of the paramter in the resulting query</param>
+        /// <param name="parameterType">The location of the paramter in the resulting query.</param>
         private void AddSessionId(RestRequest req, SessionType targetType = SessionType.Unassigned, ParameterType parameterType = ParameterType.QueryString)
         {
             if ((targetType == SessionType.Unassigned && SessionType == SessionType.GuestSession) ||
@@ -160,10 +168,8 @@ namespace TMDbLib.Client
 
         public async Task<TMDbConfig> GetConfigAsync()
         {
-            TMDbConfig config = await _client.Create("configuration").GetOfT<TMDbConfig>(CancellationToken.None).ConfigureAwait(false);
-
-            if (config == null)
-                throw new Exception("Unable to retrieve configuration");
+            TMDbConfig config = await _client.Create("configuration").GetOfT<TMDbConfig>(CancellationToken.None).ConfigureAwait(false)
+                ?? throw new Exception("Unable to retrieve configuration");
 
             // Store config
             Config = config;
@@ -191,50 +197,68 @@ namespace TMDbLib.Client
             using HttpResponseMessage response = await _client.HttpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead, token).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
+#if NETSTANDARD2_0
             return await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
+#else
+            return await response.Content.ReadAsByteArrayAsync(token).ConfigureAwait(false);
+#endif
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "Only called from ctor")]
         private void Initialize(string baseUrl, bool useSsl, string apiKey)
         {
             if (string.IsNullOrWhiteSpace(baseUrl))
-                throw new ArgumentException("baseUrl");
+            {
+                throw new ArgumentException(null, nameof(baseUrl));
+            }
 
             if (string.IsNullOrWhiteSpace(apiKey))
-                throw new ArgumentException("apiKey");
+            {
+                throw new ArgumentException(null, nameof(apiKey));
+            }
 
             ApiKey = apiKey;
 
             // Cleanup the provided url so that we don't get any issues when we are configuring the client
             if (baseUrl.StartsWith("http://", StringComparison.OrdinalIgnoreCase))
+            {
                 baseUrl = baseUrl.Substring("http://".Length);
+            }
             else if (baseUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+            {
                 baseUrl = baseUrl.Substring("https://".Length);
+            }
 
             string httpScheme = useSsl ? "https" : "http";
 
-            _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy);
+            _client?.Dispose();
+            _client = new RestClient(new Uri(string.Format(CultureInfo.InvariantCulture, "{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy);
             _client.AddDefaultQueryString("api_key", apiKey);
         }
 
         /// <summary>
-        /// Used internally to determine if the current client has the required session set, if not an appropriate exception will be thrown
+        /// Used internally to determine if the current client has the required session set, if not an appropriate exception will be thrown.
         /// </summary>
-        /// <param name="sessionType">The type of session that is required by the calling method</param>
-        /// <exception cref="UserSessionRequiredException">Thrown if the calling method requires a user session and one isn't set on the client object</exception>
-        /// <exception cref="GuestSessionRequiredException">Thrown if the calling method requires a guest session and no session is set on the client object. (neither user or client type session)</exception>
+        /// <param name="sessionType">The type of session that is required by the calling method.</param>
+        /// <exception cref="UserSessionRequiredException">Thrown if the calling method requires a user session and one isn't set on the client object.</exception>
+        /// <exception cref="GuestSessionRequiredException">Thrown if the calling method requires a guest session and no session is set on the client object. (neither user or client type session).</exception>
         private void RequireSessionId(SessionType sessionType)
         {
             if (string.IsNullOrWhiteSpace(SessionId))
             {
                 if (sessionType == SessionType.GuestSession)
+                {
                     throw new UserSessionRequiredException();
+                }
                 else
+                {
                     throw new GuestSessionRequiredException();
+                }
             }
 
             if (sessionType == SessionType.UserSession && SessionType == SessionType.GuestSession)
+            {
                 throw new UserSessionRequiredException();
+            }
         }
 
         public void SetConfig(TMDbConfig config)
@@ -248,8 +272,8 @@ namespace TMDbLib.Client
         /// Use this method to set the current client's authentication information.
         /// The session id assigned here will be used by the client when ever TMDb requires it.
         /// </summary>
-        /// <param name="sessionId">The session id to use when making calls that require authentication</param>
-        /// <param name="sessionType">The type of session id</param>
+        /// <param name="sessionId">The session id to use when making calls that require authentication.</param>
+        /// <param name="sessionType">The type of session id.</param>
         /// <remarks>
         /// - Use the 'AuthenticationGetUserSessionAsync' and 'AuthenticationCreateGuestSessionAsync' methods to optain the respective session ids.
         /// - User sessions have access to far for methods than guest sessions, these can currently only be used to rate media.
@@ -283,9 +307,29 @@ namespace TMDbLib.Client
             }
         }
 
-        public virtual void Dispose()
+        /// <inheritdoc/>
+        public void Dispose()
         {
-            _client?.Dispose();
+            Dispose(true);
+        }
+
+        /// <summary>
+        /// Disposes the stream state.
+        /// </summary>
+        /// <param name="disposing">Whether the object is currently being disposed.</param>
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                _client?.Dispose();
+            }
+
+            _disposed = true;
         }
     }
 }

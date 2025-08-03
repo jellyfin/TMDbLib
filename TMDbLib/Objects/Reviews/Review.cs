@@ -6,7 +6,7 @@ namespace TMDbLib.Objects.Reviews
     public class Review : ReviewBase
     {
         /// <summary>
-        /// A language code, e.g. en
+        /// A language code, e.g. en.
         /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }

@@ -16,7 +16,7 @@ namespace TMDbLib.Objects.General
 
         [JsonProperty("buy")]
         public List<WatchProviderItem> Buy { get; set; }
-         
+
         [JsonProperty("free")]
         public List<WatchProviderItem> Free { get; set; }
 

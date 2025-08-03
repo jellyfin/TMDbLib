@@ -38,9 +38,11 @@ namespace TMDbLibTests.UtilityTests
         {
             SearchTv originalMedia = new SearchTv { OriginalName = "Hello world" };
 
-            TaggedImage original = new TaggedImage();
-            original.MediaType = MediaType.Tv;
-            original.Media = originalMedia;
+            TaggedImage original = new TaggedImage
+            {
+                MediaType = MediaType.Tv,
+                Media = originalMedia
+            };
 
             string json = Serializer.SerializeToString(original);
             TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json);
@@ -73,15 +75,25 @@ namespace TMDbLibTests.UtilityTests
             Assert.All(result.Results, item =>
             {
                 if (item.MediaType == MediaType.Movie)
+                {
                     Assert.IsType<SearchMovie>(item.Media);
+                }
                 else if (item.MediaType == MediaType.Tv)
+                {
                     Assert.IsType<SearchTv>(item.Media);
+                }
                 else if (item.MediaType == MediaType.Episode)
+                {
                     Assert.IsType<SearchTvEpisode>(item.Media);
+                }
                 else if (item.MediaType == MediaType.Season)
+                {
                     Assert.IsType<SearchTvSeason>(item.Media);
+                }
                 else
+                {
                     Assert.Fail($"Unexpected type {item.GetType().Name}");
+                }
             });
         }
     }

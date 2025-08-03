@@ -1,5 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using System.Globalization;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Utilities.Converters
 {
@@ -12,10 +13,12 @@ namespace TMDbLib.Utilities.Converters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if (reader.Value == null)
+            if (reader.Value is null)
+            {
                 return 0;
+            }
 
-            return Convert.ToInt32(reader.Value);
+            return Convert.ToInt32(reader.Value, CultureInfo.InvariantCulture);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

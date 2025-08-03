@@ -24,7 +24,7 @@ namespace TMDbLib.Objects.TvShows
         public ExternalIdsTvSeason ExternalIds { get; set; }
 
         /// <summary>
-        /// Object Id, will only be populated when explicitly getting episode details
+        /// Object Id, will only be populated when explicitly getting episode details.
         /// </summary>
         [JsonProperty("id")]
         public int? Id { get; set; }

@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -9,7 +8,7 @@ using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest
 {
-    internal class RestResponse :IDisposable
+    internal class RestResponse : IDisposable
     {
         private readonly HttpResponseMessage Response;
 
@@ -32,7 +31,6 @@ namespace TMDbLib.Rest
             return Response.Headers.GetValues(name).FirstOrDefault() ?? @default;
         }
 
-        [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected.", Justification = "RestResponse owns the response")]
         public virtual void Dispose()
         {
             Response?.Dispose();

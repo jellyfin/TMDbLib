@@ -10,10 +10,10 @@ namespace TMDbLib.Client
     public partial class TMDbClient
     {
         /// <summary>
-        /// Retrieves a network by it's TMDb id. A network is a distributor of media content ex. HBO, AMC
+        /// Retrieves a network by it's TMDb id. A network is a distributor of media content ex. HBO, AMC.
         /// </summary>
-        /// <param name="networkId">The id of the network object to retrieve</param>
-        /// <param name="cancellationToken">A cancellation token</param>
+        /// <param name="networkId">The id of the network object to retrieve.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async Task<Network> GetNetworkAsync(int networkId, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("network/{networkId}");
@@ -25,10 +25,10 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// Gets the logos of a network given a TMDb id
+        /// Gets the logos of a network given a TMDb id.
         /// </summary>
-        /// <param name="networkId">The TMDb id of the network</param>
-        /// <param name="cancellationToken">A cancellation token</param>
+        /// <param name="networkId">The TMDb id of the network.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async Task<NetworkLogos> GetNetworkImagesAsync(int networkId, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("network/{networkId}/images");
@@ -40,10 +40,10 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// Gets the alternative names of a network given a TMDb id
+        /// Gets the alternative names of a network given a TMDb id.
         /// </summary>
-        /// <param name="networkId">The TMDb id of the network</param>
-        /// <param name="cancellationToken">A cancellation token</param>
+        /// <param name="networkId">The TMDb id of the network.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async Task<AlternativeNames> GetNetworkAlternativeNamesAsync(int networkId, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("network/{networkId}/alternative_names");

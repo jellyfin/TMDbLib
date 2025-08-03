@@ -29,7 +29,7 @@ namespace TMDbLib.Objects.General
 
         [EnumValue("tv_season")]
         TvSeason = 7,
-        
+
         [EnumValue("collection")]
         Collection = 8
     }

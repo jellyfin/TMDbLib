@@ -14,7 +14,7 @@ namespace TMDbLib.Objects.Changes
 
         /// <summary>
         /// A language code, e.g. en
-        /// This field is not always set
+        /// This field is not always set.
         /// </summary>
         [JsonProperty("iso_639_1")]
         public string Iso_639_1 { get; set; }
