@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using Newtonsoft.Json;
 using TMDbLibTests.Exceptions;
 using TMDbLib.Client;
 using TMDbLib.Utilities.Serializer;
