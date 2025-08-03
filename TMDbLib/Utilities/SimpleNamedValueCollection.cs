@@ -2,58 +2,57 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace TMDbLib.Utilities
+namespace TMDbLib.Utilities;
+
+public class SimpleNamedValueCollection : IEnumerable<KeyValuePair<string, string>>
 {
-    public class SimpleNamedValueCollection : IEnumerable<KeyValuePair<string, string>>
+    private readonly List<KeyValuePair<string, string>> _list;
+
+    public SimpleNamedValueCollection()
     {
-        private readonly List<KeyValuePair<string, string>> _list;
+        _list = new List<KeyValuePair<string, string>>();
+    }
 
-        public SimpleNamedValueCollection()
+    public string this[string index]
+    {
+        get => Get(index); set => Add(index, value);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
+    {
+        foreach (KeyValuePair<string, string> pair in _list)
         {
-            _list = new List<KeyValuePair<string, string>>();
+            yield return pair;
         }
+    }
 
-        public string this[string index]
-        {
-            get => Get(index); set => Add(index, value);
-        }
+    public void Add(string key, string value)
+    {
+        Remove(key);
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        _list.Add(new KeyValuePair<string, string>(key, value));
+    }
 
-        public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
+    public string Get(string key, string @default = null)
+    {
+        foreach (KeyValuePair<string, string> pair in _list)
         {
-            foreach (KeyValuePair<string, string> pair in _list)
+            if (pair.Key.Equals(key, StringComparison.OrdinalIgnoreCase))
             {
-                yield return pair;
+                return pair.Value;
             }
         }
 
-        public void Add(string key, string value)
-        {
-            Remove(key);
+        return @default;
+    }
 
-            _list.Add(new KeyValuePair<string, string>(key, value));
-        }
-
-        public string Get(string key, string @default = null)
-        {
-            foreach (KeyValuePair<string, string> pair in _list)
-            {
-                if (pair.Key.Equals(key, StringComparison.OrdinalIgnoreCase))
-                {
-                    return pair.Value;
-                }
-            }
-
-            return @default;
-        }
-
-        public bool Remove(string key)
-        {
-            return _list.RemoveAll(s => s.Key.Equals(key, StringComparison.OrdinalIgnoreCase)) > 0;
-        }
+    public bool Remove(string key)
+    {
+        return _list.RemoveAll(s => s.Key.Equals(key, StringComparison.OrdinalIgnoreCase)) > 0;
     }
 }

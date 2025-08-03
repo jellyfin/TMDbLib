@@ -3,32 +3,29 @@ using TMDbLib.Objects.General;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
-namespace TMDbLibTests
+namespace TMDbLibTests;
+
+public class ClientWatchProvidersTests : TestBase
 {
-    public class ClientWatchProvidersTests : TestBase
+    [Fact]
+    public async Task TestGetRegions()
     {
-        [Fact]
-        public async Task TestGetRegions()
-        {
-            ResultContainer<WatchProviderRegion> watchProviderRegions = await TMDbClient.GetWatchProviderRegionsAsync();
+        ResultContainer<WatchProviderRegion> watchProviderRegions = await TMDbClient.GetWatchProviderRegionsAsync();
 
-            await Verify(watchProviderRegions);
-        }
+        await Verify(watchProviderRegions);
+    }
+    [Fact]
+    public async Task TestGetMovieWatchProviders()
+    {
+        ResultContainer<WatchProviderItem> watchProviders = await TMDbClient.GetMovieWatchProvidersAsync();
 
-        [Fact]
-        public async Task TestGetMovieWatchProviders()
-        {
-            ResultContainer<WatchProviderItem> watchProviders = await TMDbClient.GetMovieWatchProvidersAsync();
+        await Verify(watchProviders);
+    }
+    [Fact]
+    public async Task TestGetTvWatchProviders()
+    {
+        ResultContainer<WatchProviderItem> watchProviders = await TMDbClient.GetTvWatchProvidersAsync();
 
-            await Verify(watchProviders);
-        }
-
-        [Fact]
-        public async Task TestGetTvWatchProviders()
-        {
-            ResultContainer<WatchProviderItem> watchProviders = await TMDbClient.GetTvWatchProvidersAsync();
-
-            await Verify(watchProviders);
-        }
+        await Verify(watchProviders);
     }
 }

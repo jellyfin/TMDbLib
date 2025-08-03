@@ -1,10 +1,9 @@
 using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Search
+namespace TMDbLib.Objects.Search;
+
+public class AccountSearchTv : SearchTv
 {
-    public class AccountSearchTv : SearchTv
-    {
-        [JsonProperty("rating")]
-        public float Rating { get; set; }
-    }
+    [JsonProperty("rating")]
+    public float Rating { get; set; }
 }

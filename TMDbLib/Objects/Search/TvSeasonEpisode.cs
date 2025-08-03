@@ -4,50 +4,49 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 
-namespace TMDbLib.Objects.Search
+namespace TMDbLib.Objects.Search;
+
+public class TvSeasonEpisode
 {
-    public class TvSeasonEpisode
-    {
-        [JsonProperty("air_date")]
-        public DateTime? AirDate { get; set; }
+    [JsonProperty("air_date")]
+    public DateTime? AirDate { get; set; }
 
-        [JsonProperty("crew")]
-        public List<Crew> Crew { get; set; }
+    [JsonProperty("crew")]
+    public List<Crew> Crew { get; set; }
 
-        [JsonProperty("episode_number")]
-        public int EpisodeNumber { get; set; }
+    [JsonProperty("episode_number")]
+    public int EpisodeNumber { get; set; }
 
-        [JsonProperty("episode_type")]
-        public string EpisodeType { get; set; }
+    [JsonProperty("episode_type")]
+    public string EpisodeType { get; set; }
 
-        [JsonProperty("guest_stars")]
-        public List<Cast> GuestStars { get; set; }
+    [JsonProperty("guest_stars")]
+    public List<Cast> GuestStars { get; set; }
 
-        [JsonProperty("id")]
-        public int Id { get; set; }
+    [JsonProperty("id")]
+    public int Id { get; set; }
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
+    [JsonProperty("name")]
+    public string Name { get; set; }
 
-        [JsonProperty("overview")]
-        public string Overview { get; set; }
+    [JsonProperty("overview")]
+    public string Overview { get; set; }
 
-        [JsonProperty("production_code")]
-        public string ProductionCode { get; set; }
+    [JsonProperty("production_code")]
+    public string ProductionCode { get; set; }
 
-        [JsonProperty("runtime")]
-        public int? Runtime { get; set; }
+    [JsonProperty("runtime")]
+    public int? Runtime { get; set; }
 
-        [JsonProperty("season_number")]
-        public int SeasonNumber { get; set; }
+    [JsonProperty("season_number")]
+    public int SeasonNumber { get; set; }
 
-        [JsonProperty("still_path")]
-        public string StillPath { get; set; }
+    [JsonProperty("still_path")]
+    public string StillPath { get; set; }
 
-        [JsonProperty("vote_average")]
-        public double VoteAverage { get; set; }
+    [JsonProperty("vote_average")]
+    public double VoteAverage { get; set; }
 
-        [JsonProperty("vote_count")]
-        public int VoteCount { get; set; }
-    }
+    [JsonProperty("vote_count")]
+    public int VoteCount { get; set; }
 }

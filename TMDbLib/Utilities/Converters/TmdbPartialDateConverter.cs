@@ -2,35 +2,34 @@
 using System.Globalization;
 using Newtonsoft.Json;
 
-namespace TMDbLib.Utilities.Converters
+namespace TMDbLib.Utilities.Converters;
+
+public class TmdbPartialDateConverter : JsonConverter
 {
-    public class TmdbPartialDateConverter : JsonConverter
+    public override bool CanConvert(Type objectType)
     {
-        public override bool CanConvert(Type objectType)
+        return objectType == typeof(DateTime?);
+    }
+
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+        string str = reader.Value as string;
+        if (string.IsNullOrEmpty(str))
         {
-            return objectType == typeof(DateTime?);
+            return null;
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        if (!DateTime.TryParse(str, CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.None, out var result))
         {
-            string str = reader.Value as string;
-            if (string.IsNullOrEmpty(str))
-            {
-                return null;
-            }
-
-            if (!DateTime.TryParse(str, CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.None, out var result))
-            {
-                return null;
-            }
-
-            return result;
+            return null;
         }
 
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            DateTime? date = value as DateTime?;
-            writer.WriteValue(date?.ToString(CultureInfo.InvariantCulture));
-        }
+        return result;
+    }
+
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        DateTime? date = value as DateTime?;
+        writer.WriteValue(date?.ToString(CultureInfo.InvariantCulture));
     }
 }

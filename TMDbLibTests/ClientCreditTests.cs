@@ -5,38 +5,35 @@ using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System.Globalization;
 
-namespace TMDbLibTests
+namespace TMDbLibTests;
+
+public class ClientCreditTests : TestBase
 {
-    public class ClientCreditTests : TestBase
+    [Fact]
+    public async Task TestGetCreditTv()
     {
-        [Fact]
-        public async Task TestGetCreditTv()
-        {
-            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
+        Credit result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
 
-            // Episode must exist
-            Assert.Contains(result.Media.Episodes, s => s.Name == "No Exit");
+        // Episode must exist
+        Assert.Contains(result.Media.Episodes, s => s.Name == "No Exit");
 
-            await Verify(result);
-        }
+        await Verify(result);
+    }
+    [Fact]
+    public async Task TestMissingCredit()
+    {
+        Credit result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
 
-        [Fact]
-        public async Task TestMissingCredit()
-        {
-            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
+        Assert.Null(result);
+    }
+    [Fact]
+    public async Task TestGetCreditSeasons()
+    {
+        Credit result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse);
 
-            Assert.Null(result);
-        }
+        // Season must exist
+        Assert.Contains(result.Media.Seasons, s => s.SeasonNumber == 1);
 
-        [Fact]
-        public async Task TestGetCreditSeasons()
-        {
-            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse);
-
-            // Season must exist
-            Assert.Contains(result.Media.Seasons, s => s.SeasonNumber == 1);
-
-            await Verify(result);
-        }
+        await Verify(result);
     }
 }

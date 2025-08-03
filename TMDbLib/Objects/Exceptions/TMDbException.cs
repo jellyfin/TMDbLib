@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace TMDbLib.Objects.Exceptions
+namespace TMDbLib.Objects.Exceptions;
+
+public class TMDbException : Exception
 {
-    public class TMDbException : Exception
+    public TMDbException(string message)
+            : base(message)
     {
-        public TMDbException(string message)
-                : base(message)
-        {
-        }
     }
 }

@@ -5,81 +5,80 @@ using System.Net.Http;
 using System.Text;
 using TMDbLib.Utilities.Serializer;
 
-namespace TMDbLib.Rest
+namespace TMDbLib.Rest;
+
+internal sealed class RestClient : IDisposable
 {
-    internal sealed class RestClient : IDisposable
+    private int _maxRetryCount;
+
+    public RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy proxy = null)
     {
-        private int _maxRetryCount;
+        BaseUrl = baseUrl;
+        Serializer = serializer;
+        DefaultQueryString = new List<KeyValuePair<string, string>>();
 
-        public RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy proxy = null)
+        MaxRetryCount = 0;
+        Proxy = proxy;
+
+        HttpClientHandler handler = new HttpClientHandler();
+        if (proxy != null)
         {
-            BaseUrl = baseUrl;
-            Serializer = serializer;
-            DefaultQueryString = new List<KeyValuePair<string, string>>();
-
-            MaxRetryCount = 0;
-            Proxy = proxy;
-
-            HttpClientHandler handler = new HttpClientHandler();
-            if (proxy != null)
-            {
-                // Blazor apparently throws on the Proxy setter.
-                // https://github.com/LordMike/TMDbLib/issues/354
-                handler.Proxy = proxy;
-            }
-
-            HttpClient = new HttpClient(handler);
+            // Blazor apparently throws on the Proxy setter.
+            // https://github.com/LordMike/TMDbLib/issues/354
+            handler.Proxy = proxy;
         }
 
-        internal Uri BaseUrl { get; }
+        HttpClient = new HttpClient(handler);
+    }
 
-        internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
+    internal Uri BaseUrl { get; }
 
-        internal Encoding Encoding { get; } = new UTF8Encoding(false);
+    internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
 
-        internal IWebProxy Proxy { get; private set; }
+    internal Encoding Encoding { get; } = new UTF8Encoding(false);
 
-        internal HttpClient HttpClient { get; private set; }
+    internal IWebProxy Proxy { get; private set; }
 
-        public int MaxRetryCount
+    internal HttpClient HttpClient { get; private set; }
+
+    public int MaxRetryCount
+    {
+        get => _maxRetryCount;
+
+        set
         {
-            get => _maxRetryCount;
-
-            set
-            {
 #if NETSTANDARD2_0
-                if (value < 0)
-                    throw new ArgumentOutOfRangeException(nameof(value));
+            if (value < 0)
+                throw new ArgumentOutOfRangeException(nameof(value));
 #else
-                ArgumentOutOfRangeException.ThrowIfNegative(value);
+            ArgumentOutOfRangeException.ThrowIfNegative(value);
 #endif
-                _maxRetryCount = value;
-            }
+            _maxRetryCount = value;
         }
+    }
 
-        public TimeSpan Timeout
-        {
-            get => HttpClient.Timeout;
-            set => HttpClient.Timeout = value;
-        }
+    public TimeSpan Timeout
+    {
+        get => HttpClient.Timeout;
+        set => HttpClient.Timeout = value;
+    }
 
-        public bool ThrowApiExceptions { get; set; }
+    public bool ThrowApiExceptions { get; set; }
 
-        internal ITMDbSerializer Serializer { get; }
+    internal ITMDbSerializer Serializer { get; }
 
-        public void AddDefaultQueryString(string key, string value)
-        {
-            DefaultQueryString.Add(new KeyValuePair<string, string>(key, value));
-        }
+    public void AddDefaultQueryString(string key, string value)
+    {
+        DefaultQueryString.Add(new KeyValuePair<string, string>(key, value));
+    }
 
-        public RestRequest Create(string endpoint)
-        {
-            return new RestRequest(this, endpoint);
-        }
+    public RestRequest Create(string endpoint)
+    {
+        return new RestRequest(this, endpoint);
+    }
 
-        public void Dispose()
-        {
-            HttpClient?.Dispose();
-        }
+    public void Dispose()
+    {
+        HttpClient?.Dispose();
     }
 }

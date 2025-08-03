@@ -1,10 +1,9 @@
-namespace TMDbLib.Objects.Changes
+namespace TMDbLib.Objects.Changes;
+
+public class ChangeItemCreated : ChangeItemBase
 {
-    public class ChangeItemCreated : ChangeItemBase
+    public ChangeItemCreated()
     {
-        public ChangeItemCreated()
-        {
-            Action = ChangeAction.Created;
-        }
+        Action = ChangeAction.Created;
     }
 }

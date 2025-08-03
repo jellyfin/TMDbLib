@@ -1,18 +1,17 @@
 using Newtonsoft.Json;
 
-namespace TMDbLib.Objects.Changes
+namespace TMDbLib.Objects.Changes;
+
+public class ChangeItemUpdated : ChangeItemBase
 {
-    public class ChangeItemUpdated : ChangeItemBase
+    public ChangeItemUpdated()
     {
-        public ChangeItemUpdated()
-        {
-            Action = ChangeAction.Updated;
-        }
-
-        [JsonProperty("original_value")]
-        public object OriginalValue { get; set; }
-
-        [JsonProperty("value")]
-        public object Value { get; set; }
+        Action = ChangeAction.Updated;
     }
+
+    [JsonProperty("original_value")]
+    public object OriginalValue { get; set; }
+
+    [JsonProperty("value")]
+    public object Value { get; set; }
 }
