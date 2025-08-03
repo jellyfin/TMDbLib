@@ -16,32 +16,55 @@ using Credits = TMDbLib.Objects.Movies.Credits;
 
 namespace TMDbLib.Client
 {
-    public partial class TMDbClient
+    public sealed partial class TMDbClient
     {
-        private async Task<T> GetMovieMethodInternal<T>(int movieId, MovieMethods movieMethod, string dateFormat = null,
+        private async Task<T> GetMovieMethodInternal<T>(
+            int movieId,
+            MovieMethods movieMethod,
+            string dateFormat = null,
             string country = null,
-            string language = null, string includeImageLanguage = null, int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default) where T : new()
+            string language = null,
+            string includeImageLanguage = null,
+            int page = 0,
+            DateTime? startDate = null,
+            DateTime? endDate = null,
+            CancellationToken cancellationToken = default)
+            where T : new()
         {
             RestRequest req = _client.Create("movie/{movieId}/{method}");
             req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
             req.AddUrlSegment("method", movieMethod.GetDescription());
 
-            if (country != null)
+            if (country is not null)
+            {
                 req.AddParameter("country", country);
+            }
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+            {
                 req.AddParameter("include_image_language", includeImageLanguage);
+            }
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
             if (startDate.HasValue)
-                req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd"));
-            if (endDate != null)
-                req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd"));
+            {
+                req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            }
+
+            if (endDate is not null)
+            {
+                req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            }
 
             T response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
@@ -49,11 +72,11 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// Retrieves all information for a specific movie in relation to the current user account
+        /// Retrieves all information for a specific movie in relation to the current user account.
         /// </summary>
-        /// <param name="movieId">The id of the movie to get the account states for</param>
-        /// <param name="cancellationToken">A cancellation token</param>
-        /// <remarks>Requires a valid user session</remarks>
+        /// <param name="movieId">The id of the movie to get the account states for.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <remarks>Requires a valid user session.</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
         public async Task<AccountState> GetMovieAccountStateAsync(int movieId, CancellationToken cancellationToken = default)
         {
@@ -95,74 +118,103 @@ namespace TMDbLib.Client
         }
 
         /// <summary>
-        /// Retrieves a movie by its IMDb Id
+        /// Retrieves a movie by its IMDb Id.
         /// </summary>
-        /// <param name="imdbId">The IMDb id of the movie OR the TMDb id as string</param>
+        /// <param name="imdbId">The IMDb id of the movie OR the TMDb id as string.</param>
         /// <param name="language">Language to localize the results in.</param>
         /// <param name="includeImageLanguage">If specified the api will attempt to return localized image results eg. en,it,es.</param>
-        /// <param name="extraMethods">A list of additional methods to execute for this req as enum flags</param>
-        /// <param name="cancellationToken">A cancellation token</param>
-        /// <returns>The reqed movie or null if it could not be found</returns>
-        /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag</remarks>
+        /// <param name="extraMethods">A list of additional methods to execute for this req as enum flags.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <returns>The reqed movie or null if it could not be found.</returns>
+        /// <remarks>Requires a valid user session when specifying the extra method 'AccountStates' flag.</remarks>
         /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned, see remarks.</exception>
         public async Task<Movie> GetMovieAsync(string imdbId, string language, string includeImageLanguage = null, MovieMethods extraMethods = MovieMethods.Undefined, CancellationToken cancellationToken = default)
         {
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
+            {
                 RequireSessionId(SessionType.UserSession);
+            }
 
             RestRequest req = _client.Create("movie/{movieId}");
             req.AddUrlSegment("movieId", imdbId);
             if (extraMethods.HasFlag(MovieMethods.AccountStates))
+            {
                 AddSessionId(req, SessionType.UserSession);
+            }
 
-            if (language != null)
+            if (language is not null)
+            {
                 req.AddParameter("language", language);
+            }
 
             includeImageLanguage ??= DefaultImageLanguage;
-            if (includeImageLanguage != null)
+            if (includeImageLanguage is not null)
+            {
                 req.AddParameter("include_image_language", includeImageLanguage);
+            }
 
-            string appends = string.Join(",",
-                                         Enum.GetValues(typeof(MovieMethods))
+            string appends = string.Join(
+                ",",
+                Enum.GetValues(typeof(MovieMethods))
                                              .OfType<MovieMethods>()
-                                             .Except(new[] { MovieMethods.Undefined })
+                                             .Except([MovieMethods.Undefined])
                                              .Where(s => extraMethods.HasFlag(s))
                                              .Select(s => s.GetDescription()));
 
             if (appends != string.Empty)
+            {
                 req.AddParameter("append_to_response", appends);
+            }
 
             using RestResponse<Movie> response = await req.Get<Movie>(cancellationToken).ConfigureAwait(false);
 
             if (!response.IsValid)
+            {
                 return null;
+            }
 
             Movie item = await response.GetDataObject().ConfigureAwait(false);
 
             // Patch up data, so that the end user won't notice that we share objects between req-types.
-            if (item.Videos != null)
+            if (item.Videos is not null)
+            {
                 item.Videos.Id = item.Id;
+            }
 
-            if (item.AlternativeTitles != null)
+            if (item.AlternativeTitles is not null)
+            {
                 item.AlternativeTitles.Id = item.Id;
+            }
 
-            if (item.Credits != null)
+            if (item.Credits is not null)
+            {
                 item.Credits.Id = item.Id;
+            }
 
-            if (item.Releases != null)
+            if (item.Releases is not null)
+            {
                 item.Releases.Id = item.Id;
+            }
 
-            if (item.Keywords != null)
+            if (item.Keywords is not null)
+            {
                 item.Keywords.Id = item.Id;
+            }
 
-            if (item.Translations != null)
+            if (item.Translations is not null)
+            {
                 item.Translations.Id = item.Id;
+            }
 
-            if (item.AccountStates != null)
+            if (item.AccountStates is not null)
+            {
                 item.AccountStates.Id = item.Id;
+            }
 
-            if (item.ExternalIds != null)
+            if (item.ExternalIds is not null)
+            {
                 item.ExternalIds.Id = item.Id;
+            }
 
             // Overview is the only field that is HTML encoded from the source.
             item.Overview = WebUtility.HtmlDecode(item.Overview);
@@ -179,7 +231,7 @@ namespace TMDbLib.Client
         /// Returns an object that contains all known exteral id's for the movie related to the specified TMDB id.
         /// </summary>
         /// <param name="id">The TMDb id of the target movie.</param>
-        /// <param name="cancellationToken">A cancellation token</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async Task<ExternalIdsMovie> GetMovieExternalIdsAsync(int id, CancellationToken cancellationToken = default)
         {
             return await GetMovieMethodInternal<ExternalIdsMovie>(id, MovieMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -208,8 +260,10 @@ namespace TMDbLib.Client
             Movie item = await resp.GetDataObject().ConfigureAwait(false);
 
             // Overview is the only field that is HTML encoded from the source.
-            if (item != null)
+            if (item is not null)
+            {
                 item.Overview = WebUtility.HtmlDecode(item.Overview);
+            }
 
             return item;
         }
@@ -239,11 +293,19 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("movie/now_playing");
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
-            if (language != null)
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (language is not null)
+            {
                 req.AddParameter("language", language);
-            if (region != null)
+            }
+
+            if (region is not null)
+            {
                 req.AddParameter("region", region);
+            }
 
             SearchContainerWithDates<SearchMovie> resp = await req.GetOfT<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
@@ -255,11 +317,19 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("movie/popular");
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
-            if (language != null)
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (language is not null)
+            {
                 req.AddParameter("language", language);
-            if (region != null)
+            }
+
+            if (region is not null)
+            {
                 req.AddParameter("region", region);
+            }
 
             SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
@@ -301,11 +371,19 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("movie/top_rated");
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
-            if (language != null)
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (language is not null)
+            {
                 req.AddParameter("language", language);
-            if (region != null)
+            }
+
+            if (region is not null)
+            {
                 req.AddParameter("region", region);
+            }
 
             SearchContainer<SearchMovie> resp = await req.GetOfT<SearchContainer<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
@@ -322,11 +400,19 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("movie/upcoming");
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
-            if (language != null)
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (language is not null)
+            {
                 req.AddParameter("language", language);
-            if (region != null)
+            }
+
+            if (region is not null)
+            {
                 req.AddParameter("region", region);
+            }
 
             SearchContainerWithDates<SearchMovie> resp = await req.GetOfT<SearchContainerWithDates<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
@@ -363,11 +449,11 @@ namespace TMDbLib.Client
         /// <summary>
         /// Change the rating of a specified movie.
         /// </summary>
-        /// <param name="movieId">The id of the movie to rate</param>
+        /// <param name="movieId">The id of the movie to rate.</param>
         /// <param name="rating">The rating you wish to assign to the specified movie. Value needs to be between 0.5 and 10 and must use increments of 0.5. Ex. using 7.1 will not work and return false.</param>
-        /// <param name="cancellationToken">A cancellation token</param>
-        /// <returns>True if the the movie's rating was successfully updated, false if not</returns>
-        /// <remarks>Requires a valid guest or user session</remarks>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <returns>True if the the movie's rating was successfully updated, false if not.</returns>
+        /// <remarks>Requires a valid guest or user session.</remarks>
         /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doens't have a guest or user session assigned.</exception>
         public async Task<bool> MovieSetRatingAsync(int movieId, double rating, CancellationToken cancellationToken = default)
         {

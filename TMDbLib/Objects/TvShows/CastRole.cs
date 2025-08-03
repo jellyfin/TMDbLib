@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.TvShows
 {

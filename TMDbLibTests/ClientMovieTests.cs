@@ -44,7 +44,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesExtrasNone()
+        public async Task TestMoviesExtrasNone()
         {
             Movie movie = await TMDbClient.GetMovieAsync(IdHelper.AGoodDayToDieHard);
 
@@ -58,7 +58,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesExtrasExclusive()
+        public async Task TestMoviesExtrasExclusive()
         {
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
@@ -80,7 +80,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesLanguage()
+        public async Task TestMoviesLanguage()
         {
             Movie movie = await TMDbClient.GetMovieAsync(IdHelper.AGoodDayToDieHard);
             Movie movieItalian = await TMDbClient.GetMovieAsync(IdHelper.AGoodDayToDieHard, "it");
@@ -93,7 +93,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieAlternativeTitles()
+        public async Task TestMoviesGetMovieAlternativeTitles()
         {
             AlternativeTitles respUs = await TMDbClient.GetMovieAlternativeTitlesAsync(IdHelper.AGoodDayToDieHard, "US");
             AlternativeTitles respFrench = await TMDbClient.GetMovieAlternativeTitlesAsync(IdHelper.AGoodDayToDieHard, "FR");
@@ -111,7 +111,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieReleaseDates()
+        public async Task TestMoviesGetMovieReleaseDates()
         {
             ResultContainer<ReleaseDatesContainer> resp = await TMDbClient.GetMovieReleaseDatesAsync(IdHelper.AGoodDayToDieHard);
 
@@ -119,7 +119,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieCasts()
+        public async Task TestMoviesGetMovieCasts()
         {
             Credits resp = await TMDbClient.GetMovieCreditsAsync(IdHelper.AGoodDayToDieHard);
             Assert.NotNull(resp);
@@ -138,7 +138,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetExternalIds()
+        public async Task TestMoviesGetExternalIds()
         {
             ExternalIdsMovie externalIds = await TMDbClient.GetMovieExternalIdsAsync(IdHelper.BladeRunner2049);
 
@@ -146,7 +146,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieImages()
+        public async Task TestMoviesGetMovieImages()
         {
             ImagesWithId resp = await TMDbClient.GetMovieImagesAsync(IdHelper.AGoodDayToDieHard);
 
@@ -165,7 +165,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieImagesWithImageLanguage()
+        public async Task TestMoviesGetMovieImagesWithImageLanguage()
         {
             ImagesWithId images = await TMDbClient.GetMovieImagesAsync(IdHelper.AGoodDayToDieHard, "en-US", "en");
 
@@ -184,7 +184,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieWithImageLanguage()
+        public async Task TestMoviesGetMovieWithImageLanguage()
         {
             Movie resp = await TMDbClient.GetMovieAsync(IdHelper.Avatar, "de-DE", "de", MovieMethods.Images);
             Images images = resp.Images;
@@ -204,7 +204,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieKeywords()
+        public async Task TestMoviesGetMovieKeywords()
         {
             KeywordsContainer resp = await TMDbClient.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard);
 
@@ -212,7 +212,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieReleases()
+        public async Task TestMoviesGetMovieReleases()
         {
             Releases resp = await TMDbClient.GetMovieReleasesAsync(IdHelper.AGoodDayToDieHard);
 
@@ -220,7 +220,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieVideos()
+        public async Task TestMoviesGetMovieVideos()
         {
             ResultContainer<Video> resp = await TMDbClient.GetMovieVideosAsync(IdHelper.AGoodDayToDieHard);
 
@@ -241,7 +241,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieTranslations()
+        public async Task TestMoviesGetMovieTranslations()
         {
             TranslationsContainer resp = await TMDbClient.GetMovieTranslationsAsync(IdHelper.AGoodDayToDieHard);
 
@@ -249,7 +249,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieSimilarMovies()
+        public async Task TestMoviesGetMovieSimilarMovies()
         {
             SearchContainer<SearchMovie> resp = await TMDbClient.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard);
             SearchContainer<SearchMovie> respGerman = await TMDbClient.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard, "de");
@@ -265,7 +265,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieRecommendationsMovies()
+        public async Task TestMoviesGetMovieRecommendationsMovies()
         {
             SearchContainer<SearchMovie> resp = await TMDbClient.GetMovieRecommendationsAsync(IdHelper.AGoodDayToDieHard);
             SearchContainer<SearchMovie> respGerman = await TMDbClient.GetMovieRecommendationsAsync(IdHelper.AGoodDayToDieHard, "de");
@@ -281,7 +281,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieReviews()
+        public async Task TestMoviesGetMovieReviews()
         {
             SearchContainerWithId<ReviewBase> resp = await TMDbClient.GetMovieReviewsAsync(IdHelper.AGoodDayToDieHard);
 
@@ -291,7 +291,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetMovieLists()
+        public async Task TestMoviesGetMovieLists()
         {
             await TestHelpers.SearchPagesAsync<SearchContainerWithId<ListResult>, ListResult>(page => TMDbClient.GetMovieListsAsync(IdHelper.AGoodDayToDieHard, page));
 
@@ -310,14 +310,14 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesMissing()
+        public async Task TestMoviesMissing()
         {
             Movie movie = await TMDbClient.GetMovieAsync(IdHelper.MissingID);
             Assert.Null(movie);
         }
 
         [Fact]
-        public async void TestMoviesPopularList()
+        public async Task TestMoviesPopularList()
         {
             await TestHelpers.SearchPagesAsync(page => TMDbClient.GetMoviePopularListAsync(page: page));
 
@@ -326,7 +326,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesTopRatedList()
+        public async Task TestMoviesTopRatedList()
         {
             await TestHelpers.SearchPagesAsync(page => TMDbClient.GetMovieTopRatedListAsync(page: page));
 
@@ -335,7 +335,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesNowPlayingList()
+        public async Task TestMoviesNowPlayingList()
         {
             await TestHelpers.SearchPagesAsync<SearchContainerWithDates<SearchMovie>, SearchMovie>(page => TMDbClient.GetMovieNowPlayingListAsync(page: page));
 
@@ -344,7 +344,7 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesUpcomingList()
+        public async Task TestMoviesUpcomingList()
         {
             await TestHelpers.SearchPagesAsync<SearchContainerWithDates<SearchMovie>, SearchMovie>(page => TMDbClient.GetMovieUpcomingListAsync(page: page));
 
@@ -419,13 +419,13 @@ namespace TMDbLibTests
         }
 
         [Fact]
-        public async void TestMoviesGetHtmlEncodedText()
+        public async Task TestMoviesGetHtmlEncodedText()
         {
             Movie item = await TMDbClient.GetMovieAsync(IdHelper.Furious7, "de");
 
             Assert.NotNull(item);
 
-            Assert.DoesNotContain("&amp;", item.Overview);
+            Assert.DoesNotContain("&amp;", item.Overview, StringComparison.Ordinal);
         }
 
         [Fact]

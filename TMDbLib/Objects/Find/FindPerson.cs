@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using TMDbLib.Objects.Search;
 using TMDbLib.Objects.People;
+using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Objects.Find
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
@@ -9,7 +10,8 @@ namespace TMDbLib.Client
 {
     public partial class TMDbClient
     {
-        private async Task<T> SearchMethodInternal<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null, string region = null, int primaryReleaseYear = 0, int firstAirDateYear = 0, CancellationToken cancellationToken = default) where T : new()
+        private async Task<T> SearchMethodInternal<T>(string method, string query, int page, string language = null, bool? includeAdult = null, int year = 0, string dateFormat = null, string region = null, int primaryReleaseYear = 0, int firstAirDateYear = 0, CancellationToken cancellationToken = default)
+            where T : new()
         {
             RestRequest req = _client.Create("search/{method}");
             req.AddUrlSegment("method", method);
@@ -17,26 +19,43 @@ namespace TMDbLib.Client
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
             if (year >= 1)
-                req.AddParameter("year", year.ToString());
+            {
+                req.AddParameter("year", year.ToString(CultureInfo.InvariantCulture));
+            }
+
             if (includeAdult.HasValue)
+            {
                 req.AddParameter("include_adult", includeAdult.Value ? "true" : "false");
+            }
 
             // TODO: Dateformat?
-            //if (dateFormat != null)
+            // if (dateFormat is not null)
             //    req.DateFormat = dateFormat;
 
             if (!string.IsNullOrWhiteSpace(region))
+            {
                 req.AddParameter("region", region);
+            }
 
             if (primaryReleaseYear >= 1)
-                req.AddParameter("primary_release_year", primaryReleaseYear.ToString());
+            {
+                req.AddParameter("primary_release_year", primaryReleaseYear.ToString(CultureInfo.InvariantCulture));
+            }
+
             if (firstAirDateYear >= 1)
-                req.AddParameter("first_air_date_year", firstAirDateYear.ToString());
+            {
+                req.AddParameter("first_air_date_year", firstAirDateYear.ToString(CultureInfo.InvariantCulture));
+            }
 
             T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 

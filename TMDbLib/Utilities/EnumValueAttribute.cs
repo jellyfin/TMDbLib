@@ -3,7 +3,7 @@
 namespace TMDbLib.Utilities
 {
     [AttributeUsage(AttributeTargets.Field)]
-    public class EnumValueAttribute : Attribute
+    public sealed class EnumValueAttribute : Attribute
     {
         public EnumValueAttribute(string value)
         {

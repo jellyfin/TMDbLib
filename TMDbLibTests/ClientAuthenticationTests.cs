@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLibTests.Exceptions;
 using Xunit;
 using TMDbLib.Objects.Authentication;
@@ -16,7 +15,9 @@ namespace TMDbLibTests
         public ClientAuthenticationTests()
         {
             if (string.IsNullOrWhiteSpace(TestConfig.Username) || string.IsNullOrWhiteSpace(TestConfig.Password))
+            {
                 throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
+            }
         }
 
         [Fact]

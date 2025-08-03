@@ -43,11 +43,15 @@ namespace TMDbLibTests
         [Fact]
         public void SetConfigTest()
         {
-            TMDbConfig config = new TMDbConfig();
-            config.ChangeKeys = new List<string>();
+            TMDbConfig config = new TMDbConfig
+            {
+                ChangeKeys = new List<string>()
+            };
             config.ChangeKeys.Add("a");
-            config.Images = new ConfigImageTypes();
-            config.Images.BaseUrl = " ..";
+            config.Images = new ConfigImageTypes
+            {
+                BaseUrl = " .."
+            };
 
             Assert.False(TMDbClient.HasConfig);
             TMDbClient.SetConfig(config);
@@ -105,7 +109,9 @@ namespace TMDbLibTests
                 {
                     List<Task> tasks = new List<Task>(100);
                     for (int i = 0; i < 100; i++)
+                    {
                         tasks.Add(client.GetMovieAsync(IdHelper.AGoodDayToDieHard));
+                    }
 
                     await Task.WhenAll(tasks);
                 }

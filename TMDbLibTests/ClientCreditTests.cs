@@ -3,6 +3,7 @@ using Xunit;
 using TMDbLib.Objects.Credit;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using System.Globalization;
 
 namespace TMDbLibTests
 {
@@ -22,7 +23,7 @@ namespace TMDbLibTests
         [Fact]
         public async Task TestMissingCredit()
         {
-            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString());
+            Credit result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
 
             Assert.Null(result);
         }

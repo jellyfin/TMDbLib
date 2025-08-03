@@ -10,7 +10,9 @@ namespace TMDbLib.Rest
             using RestResponse<T> resp = await request.Delete<T>(cancellationToken).ConfigureAwait(false);
 
             if (!resp.IsValid)
+            {
                 return default;
+            }
 
             return await resp.GetDataObject().ConfigureAwait(false);
         }
@@ -20,7 +22,9 @@ namespace TMDbLib.Rest
             using RestResponse<T> resp = await request.Get<T>(cancellationToken).ConfigureAwait(false);
 
             if (!resp.IsValid)
+            {
                 return default;
+            }
 
             return await resp.GetDataObject().ConfigureAwait(false);
         }
@@ -30,7 +34,9 @@ namespace TMDbLib.Rest
             using RestResponse<T> resp = await request.Post<T>(cancellationToken).ConfigureAwait(false);
 
             if (!resp.IsValid)
+            {
                 return default;
+            }
 
             return await resp.GetDataObject().ConfigureAwait(false);
         }

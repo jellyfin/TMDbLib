@@ -1,3 +1,5 @@
+#pragma warning disable CA2201 // Do not raise reserved exception types
+
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
@@ -5,7 +7,7 @@ using Newtonsoft.Json;
 namespace TMDbLib.Utilities.Converters
 {
     /// <summary>
-    /// In some cases, TMDb sends a list of integers as an object
+    /// In some cases, TMDb sends a list of integers as an object.
     /// </summary>
     internal class TmdbIntArrayAsObjectConverter : JsonConverter
     {
@@ -25,7 +27,9 @@ namespace TMDbLib.Utilities.Converters
             //  "genre_ids": [ 1 ]
 
             if (reader.TokenType == JsonToken.StartArray)
+            {
                 return serializer.Deserialize<List<int>>(reader);
+            }
 
             if (reader.TokenType == JsonToken.StartObject)
             {
@@ -34,7 +38,9 @@ namespace TMDbLib.Utilities.Converters
             }
 
             if (reader.TokenType == JsonToken.Null)
+            {
                 return null;
+            }
 
             throw new Exception("Unable to convert list of integers");
         }

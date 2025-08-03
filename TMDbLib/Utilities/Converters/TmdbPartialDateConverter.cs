@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Globalization;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Utilities.Converters
 {
@@ -15,11 +15,14 @@ namespace TMDbLib.Utilities.Converters
         {
             string str = reader.Value as string;
             if (string.IsNullOrEmpty(str))
+            {
                 return null;
+            }
 
-            DateTime result;
-            if (!DateTime.TryParse(str, CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.None, out result))
+            if (!DateTime.TryParse(str, CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.None, out var result))
+            {
                 return null;
+            }
 
             return result;
         }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -54,8 +55,10 @@ namespace TMDbLib.Rest
 
         public RestRequest AddQueryString(string key, string value)
         {
-            if (_queryString == null)
+            if (_queryString is null)
+            {
                 _queryString = new List<KeyValuePair<string, string>>();
+            }
 
             _queryString.Add(new KeyValuePair<string, string>(key, value));
 
@@ -64,8 +67,10 @@ namespace TMDbLib.Rest
 
         public RestRequest AddUrlSegment(string key, string value)
         {
-            if (_urlSegment == null)
+            if (_urlSegment is null)
+            {
                 _urlSegment = new List<KeyValuePair<string, string>>();
+            }
 
             _urlSegment.Add(new KeyValuePair<string, string>(key, value));
 
@@ -75,10 +80,12 @@ namespace TMDbLib.Rest
         private void AppendQueryString(StringBuilder sb, string key, string value)
         {
             if (sb.Length > 0)
-                sb.Append("&");
+            {
+                sb.Append('&');
+            }
 
             sb.Append(key);
-            sb.Append("=");
+            sb.Append('=');
             sb.Append(WebUtility.UrlEncode(value));
         }
 
@@ -94,7 +101,6 @@ namespace TMDbLib.Rest
             return new RestResponse(resp);
         }
 
-        [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "resp is disposed by RestResponse<>()")]
         public async Task<RestResponse<T>> Delete<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
@@ -109,7 +115,6 @@ namespace TMDbLib.Rest
             return new RestResponse(resp);
         }
 
-        [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "resp is disposed by RestResponse<>()")]
         public async Task<RestResponse<T>> Get<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
@@ -124,7 +129,6 @@ namespace TMDbLib.Rest
             return new RestResponse(resp);
         }
 
-        [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "resp is disposed by RestResponse<>()")]
         public async Task<RestResponse<T>> Post<T>(CancellationToken cancellationToken)
         {
             HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
@@ -140,23 +144,35 @@ namespace TMDbLib.Rest
             if (_queryString != null)
             {
                 foreach (KeyValuePair<string, string> pair in _queryString)
+                {
                     AppendQueryString(queryStringSb, pair);
+                }
             }
 
             foreach (KeyValuePair<string, string> pair in _client.DefaultQueryString)
+            {
                 AppendQueryString(queryStringSb, pair);
+            }
 
             // Url
             string endpoint = _endpoint;
             if (_urlSegment != null)
             {
                 foreach (KeyValuePair<string, string> pair in _urlSegment)
+                {
+#if NETSTANDARD2_0
                     endpoint = endpoint.Replace("{" + pair.Key + "}", pair.Value);
+#else
+                    endpoint = endpoint.Replace("{" + pair.Key + "}", pair.Value, StringComparison.OrdinalIgnoreCase);
+#endif
+                }
             }
 
             // Build
-            UriBuilder builder = new UriBuilder(new Uri(_client.BaseUrl, endpoint));
-            builder.Query = queryStringSb.ToString();
+            UriBuilder builder = new UriBuilder(new Uri(_client.BaseUrl, endpoint))
+            {
+                Query = queryStringSb.ToString()
+            };
 
             HttpRequestMessage req = new HttpRequestMessage(method, builder.Uri);
 
@@ -189,19 +205,27 @@ namespace TMDbLib.Rest
                 using HttpRequestMessage req = PrepRequest(method);
                 HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
 
-                bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json");
+                bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json", StringComparison.OrdinalIgnoreCase);
 
                 if (resp.IsSuccessStatusCode && isJson)
-#pragma warning disable IDISP011 // Don't return disposed instance
+                {
                     return resp;
-#pragma warning restore IDISP011 // Don't return disposed instance
+                }
 
                 try
                 {
                     if (isJson)
+                    {
+#if NETSTANDARD2_0
                         statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
+#else
+                        statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false));
+#endif
+                    }
                     else
+                    {
                         statusMessage = null;
+                    }
 
                     switch (resp.StatusCode)
                     {
@@ -211,10 +235,14 @@ namespace TMDbLib.Rest
                             TimeSpan? retryAfter = retryHeader?.Delta.Value;
 
                             if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
+                            {
                                 await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
+                            }
                             else
+                            {
                                 // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
                                 await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
+                            }
 
                             continue;
                         case HttpStatusCode.Unauthorized:

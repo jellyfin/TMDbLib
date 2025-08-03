@@ -33,7 +33,7 @@ namespace TMDbLibTests
             Assert.NotEmpty(certUs);
 
             CertificationItem ratingNr = certUs.SingleOrDefault(s => s.Certification == "NR");
-            
+
             await Verify(ratingNr);
         }
     }

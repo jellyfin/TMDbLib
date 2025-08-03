@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using TMDbLib.Client;
 using TMDbLib.Objects.Companies;
@@ -15,11 +16,10 @@ namespace TMDbLib.Objects.Discover
         public DiscoverTv(TMDbClient client)
             : base("discover/tv", client)
         {
-
         }
 
         /// <summary>
-        /// Available options are vote_average.desc, vote_average.asc, first_air_date.desc, first_air_date.asc, popularity.desc, popularity.asc
+        /// Available options are vote_average.desc, vote_average.asc, first_air_date.desc, first_air_date.asc, popularity.desc, popularity.asc.
         /// </summary>
         public DiscoverTv OrderBy(DiscoverTvShowSortBy sortBy)
         {
@@ -41,7 +41,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereAirDateIsAfter(DateTime date)
         {
-            Parameters["air_date.gte"] = date.ToString("yyyy-MM-dd");
+            Parameters["air_date.gte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -50,7 +50,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereAirDateIsBefore(DateTime date)
         {
-            Parameters["air_date.lte"] = date.ToString("yyyy-MM-dd");
+            Parameters["air_date.lte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -59,7 +59,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereFirstAirDateIsAfter(DateTime date)
         {
-            Parameters["first_air_date.gte"] = date.ToString("yyyy-MM-dd");
+            Parameters["first_air_date.gte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -68,7 +68,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereFirstAirDateIsBefore(DateTime date)
         {
-            Parameters["first_air_date.lte"] = date.ToString("yyyy-MM-dd");
+            Parameters["first_air_date.lte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -77,7 +77,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereFirstAirDateIsInYear(int year)
         {
-            Parameters["first_air_date_year"] = year.ToString("0000");
+            Parameters["first_air_date_year"] = year.ToString("0000", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -94,7 +94,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereGenresInclude(IEnumerable<int> genreIds)
         {
-            Parameters["with_genres"] = string.Join(",", genreIds.Select(s => s.ToString()));
+            Parameters["with_genres"] = string.Join(",", genreIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -111,7 +111,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereNetworksInclude(IEnumerable<int> networkIds)
         {
-            Parameters["with_networks"] = string.Join(",", networkIds.Select(s => s.ToString()));
+            Parameters["with_networks"] = string.Join(",", networkIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -121,7 +121,7 @@ namespace TMDbLib.Objects.Discover
         public DiscoverTv WhereVoteAverageIsAtLeast(double score)
         {
             // TODO: Apply culture to the ToString
-            Parameters["vote_average.gte"] = score.ToString();
+            Parameters["vote_average.gte"] = score.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -130,7 +130,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereVoteAverageIsAtMost(double score)
         {
-            Parameters["vote_average.lte"] = score.ToString();
+            Parameters["vote_average.lte"] = score.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -139,7 +139,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereVoteCountIsAtLeast(int count)
         {
-            Parameters["vote_count.gte"] = count.ToString();
+            Parameters["vote_count.gte"] = count.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -148,12 +148,12 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereVoteCountIsAtMost(int count)
         {
-            Parameters["vote_count.lte"] = count.ToString();
+            Parameters["vote_count.lte"] = count.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
         /// <summary>
-        /// Specifies which language to use for translatable fields
+        /// Specifies which language to use for translatable fields.
         /// </summary>
         public DiscoverTv WhereOriginalLanguageIs(string language)
         {
@@ -163,19 +163,19 @@ namespace TMDbLib.Objects.Discover
 
         /// <summary>
         /// Only include TV shows that are equal to, or have a runtime higher than this value. Expected value is an integer (minutes).
-        /// </summary>        
+        /// </summary>
         public DiscoverTv WhereRuntimeIsAtLeast(int minutes)
         {
-            Parameters["with_runtime.gte"] = minutes.ToString();
+            Parameters["with_runtime.gte"] = minutes.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
         /// <summary>
         /// Only include TV shows that are equal to, or have a runtime lower than this value. Expected value is an integer (minutes).
-        /// </summary>        
+        /// </summary>
         public DiscoverTv WhereRuntimeIsAtMost(int minutes)
         {
-            Parameters["with_runtime.lte"] = minutes.ToString();
+            Parameters["with_runtime.lte"] = minutes.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -189,7 +189,7 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Exclude TV shows with the specified genres. Expected value is a list of genres. 
+        /// Exclude TV shows with the specified genres. Expected value is a list of genres.
         /// </summary>
         public DiscoverTv WhereGenresExclude(IEnumerable<Genre> genres)
         {
@@ -201,30 +201,30 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverTv WhereGenresExclude(IEnumerable<int> genreIds)
         {
-            Parameters["without_genres"] = string.Join(",", genreIds.Select(s => s.ToString()));
+            Parameters["without_genres"] = string.Join(",", genreIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
         /// <summary>
-        /// Only include TV shows with the specified companies. Expected value is an list of companies. 
-        /// </summary>        
+        /// Only include TV shows with the specified companies. Expected value is an list of companies.
+        /// </summary>
         public DiscoverTv WhereCompaniesInclude(IEnumerable<Company> companies)
         {
             return WhereCompaniesInclude(companies.Select(s => s.Id));
         }
 
         /// <summary>
-        /// Only include TV shows with the specified companies. Expected value is a list of integer (the id of a company). 
-        /// </summary>        
+        /// Only include TV shows with the specified companies. Expected value is a list of integer (the id of a company).
+        /// </summary>
         public DiscoverTv WhereCompaniesInclude(IEnumerable<int> companyIds)
         {
-            Parameters["with_companies"] = string.Join(",", companyIds.Select(s => s.ToString()));
+            Parameters["with_companies"] = string.Join(",", companyIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
         /// <summary>
         /// Filter results to include items that have been screened theatrically.
-        /// </summary>        
+        /// </summary>
         public DiscoverTv WhereScreenedTheatrically(bool theatrical)
         {
             Parameters["screened_theatrically"] = theatrical.ToString();
@@ -233,7 +233,7 @@ namespace TMDbLib.Objects.Discover
 
         /// <summary>
         /// Filter TV shows to include a specific keyword. Expected value is a list of keywords.
-        /// </summary>        
+        /// </summary>
         public DiscoverTv WhereKeywordsInclude(IEnumerable<Keyword> keywords)
         {
             return WhereKeywordsInclude(keywords.Select(s => s.Id));
@@ -241,16 +241,16 @@ namespace TMDbLib.Objects.Discover
 
         /// <summary>
         /// Filter TV shows to include a specific keyword. Expected value is a list of integer (the id of a keyword).
-        /// </summary>        
+        /// </summary>
         public DiscoverTv WhereKeywordsInclude(IEnumerable<int> keywordIds)
         {
-            Parameters["with_keywords"] = string.Join(",", keywordIds.Select(s => s.ToString()));
+            Parameters["with_keywords"] = string.Join(",", keywordIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
         /// <summary>
         /// Filter TV shows to exclude a specific keyword. Expected value is a list of keywords.
-        /// </summary>        
+        /// </summary>
         public DiscoverTv WhereKeywordsExclude(IEnumerable<Keyword> keywords)
         {
             return WhereKeywordsInclude(keywords.Select(s => s.Id));
@@ -258,15 +258,15 @@ namespace TMDbLib.Objects.Discover
 
         /// <summary>
         /// Filter TV shows to exclude a specific keyword. Expected value is a list of integer (the id of a keyword).
-        /// </summary>        
+        /// </summary>
         public DiscoverTv WhereKeywordsExclude(IEnumerable<int> keywordIds)
         {
-            Parameters["without_keywords"] = string.Join("|", keywordIds.Select(s => s.ToString()));
+            Parameters["without_keywords"] = string.Join("|", keywordIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
         /// <summary>
-        /// Specifies which language to use for translatable fields
+        /// Specifies which language to use for translatable fields.
         /// </summary>
         public DiscoverTv WhereLanguageIs(string language)
         {

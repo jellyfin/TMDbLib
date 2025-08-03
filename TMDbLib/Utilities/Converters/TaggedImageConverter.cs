@@ -21,7 +21,9 @@ namespace TMDbLib.Utilities.Converters
             TaggedImage result = new TaggedImage();
 
             using (JsonReader jsonReader = jObject.CreateReader())
+            {
                 serializer.Populate(jsonReader, result);
+            }
 
             JToken mediaJson = jObject["media"];
             result.Media = result.MediaType switch

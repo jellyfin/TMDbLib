@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
@@ -21,16 +22,23 @@ namespace TMDbLib.Client
         public async Task<SearchContainerWithId<SearchMovie>> GetGenreMoviesAsync(int genreId, string language, int page = 0, bool? includeAllMovies = null, CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("genre/{genreId}/movies");
-            req.AddUrlSegment("genreId", genreId.ToString());
+            req.AddUrlSegment("genreId", genreId.ToString(CultureInfo.InvariantCulture));
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             if (page >= 1)
-                req.AddParameter("page", page.ToString());
+            {
+                req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
             if (includeAllMovies.HasValue)
+            {
                 req.AddParameter("include_all_movies", includeAllMovies.Value ? "true" : "false");
+            }
 
             SearchContainerWithId<SearchMovie> resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
@@ -48,7 +56,9 @@ namespace TMDbLib.Client
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             using RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
 
@@ -66,7 +76,9 @@ namespace TMDbLib.Client
 
             language ??= DefaultLanguage;
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 req.AddParameter("language", language);
+            }
 
             using RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
 

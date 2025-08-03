@@ -7,7 +7,8 @@ namespace TMDbLib.Utilities
 {
     public static class EnumExtensions
     {
-        public static string GetDescription<T>(this T enumerationValue) where T : struct
+        public static string GetDescription<T>(this T enumerationValue)
+            where T : struct
         {
             Type type = enumerationValue.GetType();
             TypeInfo typeInfo = type.GetTypeInfo();
@@ -25,16 +26,22 @@ namespace TMDbLib.Utilities
             foreach (MemberInfo member in members)
             {
                 if (member.Name != requestedName)
+                {
                     continue;
+                }
 
                 foreach (CustomAttributeData attributeData in member.CustomAttributes)
                 {
                     if (attributeData.AttributeType != typeof(EnumValueAttribute))
+                    {
                         continue;
+                    }
 
                     // Pull out the Value
                     if (!attributeData.ConstructorArguments.Any())
+                    {
                         break;
+                    }
 
                     CustomAttributeTypedArgument argument = attributeData.ConstructorArguments.First();
                     string value = argument.Value as string;

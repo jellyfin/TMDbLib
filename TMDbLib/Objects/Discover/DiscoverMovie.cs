@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using TMDbLib.Client;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.General;
-using TMDbLib.Client;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using TMDbLib.Utilities;
@@ -50,7 +51,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAllOfCast(IEnumerable<int> castIds)
         {
-            Parameters["with_cast"] = string.Join(",", castIds.Select(s => s.ToString()));
+            Parameters["with_cast"] = string.Join(",", castIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -69,7 +70,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAllOfCompany(IEnumerable<int> companyIds)
         {
-            Parameters["with_companies"] = string.Join(",", companyIds.Select(s => s.ToString()));
+            Parameters["with_companies"] = string.Join(",", companyIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -88,7 +89,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAllOfCrew(IEnumerable<int> crewIds)
         {
-            Parameters["with_crew"] = string.Join(",", crewIds.Select(s => s.ToString()));
+            Parameters["with_crew"] = string.Join(",", crewIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -107,7 +108,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAllOfGenre(IEnumerable<int> genreIds)
         {
-            Parameters["with_genres"] = string.Join(",", genreIds.Select(s => s.ToString()));
+            Parameters["with_genres"] = string.Join(",", genreIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -126,7 +127,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAllOfKeywords(IEnumerable<int> keywordIds)
         {
-            Parameters["with_keywords"] = string.Join(",", keywordIds.Select(s => s.ToString()));
+            Parameters["with_keywords"] = string.Join(",", keywordIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -145,7 +146,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAllOfPeople(IEnumerable<int> peopleIds)
         {
-            Parameters["with_people"] = string.Join(",", peopleIds.Select(s => s.ToString()));
+            Parameters["with_people"] = string.Join(",", peopleIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -164,7 +165,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAnyOfCast(IEnumerable<int> castIds)
         {
-            Parameters["with_cast"] = string.Join("|", castIds.Select(s => s.ToString()));
+            Parameters["with_cast"] = string.Join("|", castIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -183,7 +184,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAnyOfCompany(IEnumerable<int> companyIds)
         {
-            Parameters["with_companies"] = string.Join("|", companyIds.Select(s => s.ToString()));
+            Parameters["with_companies"] = string.Join("|", companyIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -202,7 +203,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAnyOfCrew(IEnumerable<int> crewIds)
         {
-            Parameters["with_crew"] = string.Join("|", crewIds.Select(s => s.ToString()));
+            Parameters["with_crew"] = string.Join("|", crewIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -221,7 +222,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAnyOfGenre(IEnumerable<int> castIds)
         {
-            Parameters["with_genres"] = string.Join("|", castIds.Select(s => s.ToString()));
+            Parameters["with_genres"] = string.Join("|", castIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -240,7 +241,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAnyOfKeywords(IEnumerable<int> keywordIds)
         {
-            Parameters["with_keywords"] = string.Join("|", keywordIds.Select(s => s.ToString()));
+            Parameters["with_keywords"] = string.Join("|", keywordIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -259,7 +260,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie IncludeWithAnyOfPeople(IEnumerable<int> peopleIds)
         {
-            Parameters["with_people"] = string.Join("|", peopleIds.Select(s => s.ToString()));
+            Parameters["with_people"] = string.Join("|", peopleIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -273,7 +274,7 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Available options are: popularity.ascpopularity.descrelease_date.ascrelease_date.descrevenue.ascrevenue.descprimary_release_date.ascprimary_release_date.descoriginal_title.ascoriginal_title.descvote_average.ascvote_average.descvote_count.ascvote_count.desc
+        /// Available options are: popularity.ascpopularity.descrelease_date.ascrelease_date.descrevenue.ascrevenue.descprimary_release_date.ascprimary_release_date.descoriginal_title.ascoriginal_title.descvote_average.ascvote_average.descvote_count.ascvote_count.desc.
         /// </summary>
         public DiscoverMovie OrderBy(DiscoverMovieSortBy sortBy)
         {
@@ -286,7 +287,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereAnyReleaseDateIsInYear(int year)
         {
-            Parameters["year"] = year.ToString("0000");
+            Parameters["year"] = year.ToString("0000", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -334,7 +335,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WherePrimaryReleaseDateIsAfter(DateTime date)
         {
-            Parameters["primary_release_date.gte"] = date.ToString("yyyy-MM-dd");
+            Parameters["primary_release_date.gte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -343,7 +344,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WherePrimaryReleaseDateIsBefore(DateTime date)
         {
-            Parameters["primary_release_date.lte"] = date.ToString("yyyy-MM-dd");
+            Parameters["primary_release_date.lte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -352,7 +353,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WherePrimaryReleaseIsInYear(int year)
         {
-            Parameters["primary_release_year"] = year.ToString("0000");
+            Parameters["primary_release_year"] = year.ToString("0000", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -361,7 +362,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereReleaseDateIsAfter(DateTime date)
         {
-            Parameters["release_date.gte"] = date.ToString("yyyy-MM-dd");
+            Parameters["release_date.gte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -370,7 +371,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereReleaseDateIsBefore(DateTime date)
         {
-            Parameters["release_date.lte"] = date.ToString("yyyy-MM-dd");
+            Parameters["release_date.lte"] = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -379,7 +380,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereRuntimeIsAtLeast(int minutes)
         {
-            Parameters["with_runtime.gte"] = minutes.ToString();
+            Parameters["with_runtime.gte"] = minutes.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -388,7 +389,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereRuntimeIsAtMost(int minutes)
         {
-            Parameters["with_runtime.lte"] = minutes.ToString();
+            Parameters["with_runtime.lte"] = minutes.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -398,7 +399,7 @@ namespace TMDbLib.Objects.Discover
         public DiscoverMovie WhereVoteAverageIsAtLeast(double score)
         {
             // TODO: Apply culture to the ToString
-            Parameters["vote_average.gte"] = score.ToString();
+            Parameters["vote_average.gte"] = score.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -408,7 +409,7 @@ namespace TMDbLib.Objects.Discover
         public DiscoverMovie WhereVoteAverageIsAtMost(double score)
         {
             // TODO: Apply culture to the ToString
-            Parameters["vote_average.lte"] = score.ToString();
+            Parameters["vote_average.lte"] = score.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -417,7 +418,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereVoteCountIsAtLeast(int count)
         {
-            Parameters["vote_count.gte"] = count.ToString();
+            Parameters["vote_count.gte"] = count.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
@@ -426,12 +427,12 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WhereVoteCountIsAtMost(int count)
         {
-            Parameters["vote_count.lte"] = count.ToString();
+            Parameters["vote_count.lte"] = count.ToString(CultureInfo.InvariantCulture);
             return this;
         }
 
         /// <summary>
-        /// Specifies which region to use for release date filtering (using ISO 3166-1 code)
+        /// Specifies which region to use for release date filtering (using ISO 3166-1 code).
         /// </summary>
         public DiscoverMovie WhereReleaseDateIsInRegion(string region)
         {
@@ -440,7 +441,7 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Specifies which language to use for translatable fields
+        /// Specifies which language to use for translatable fields.
         /// </summary>
         public DiscoverMovie WhereLanguageIs(string language)
         {
@@ -449,7 +450,7 @@ namespace TMDbLib.Objects.Discover
         }
 
         /// <summary>
-        /// Specifies which language to use for translatable fields
+        /// Specifies which language to use for translatable fields.
         /// </summary>
         public DiscoverMovie WhereOriginalLanguageIs(string language)
         {
@@ -462,7 +463,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WithAllOfReleaseTypes(params ReleaseDateType[] releaseTypes)
         {
-            Parameters["with_release_type"] = string.Join(",", releaseTypes.Select(s => ((int)s).ToString()));
+            Parameters["with_release_type"] = string.Join(",", releaseTypes.Select(s => ((int)s).ToString(CultureInfo.InvariantCulture)));
             return this;
         }
 
@@ -471,7 +472,7 @@ namespace TMDbLib.Objects.Discover
         /// </summary>
         public DiscoverMovie WithAnyOfReleaseTypes(params ReleaseDateType[] releaseTypes)
         {
-            Parameters["with_release_type"] = string.Join("|", releaseTypes.Select(s => ((int)s).ToString()));
+            Parameters["with_release_type"] = string.Join("|", releaseTypes.Select(s => ((int)s).ToString(CultureInfo.InvariantCulture)));
             return this;
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
@@ -16,7 +17,7 @@ namespace TestApplication
     {
         private static async Task Main(string[] args)
         {
-            // Instantiate a new client, all that's needed is an API key, but it's possible to 
+            // Instantiate a new client, all that's needed is an API key, but it's possible to
             // also specify if SSL should be used, and if another server address should be used.
             using TMDbClient client = new TMDbClient("c6b31d1cdad6a56a23f0c913e2482a31");
 
@@ -27,7 +28,7 @@ namespace TestApplication
             // Try fetching a movie
             await FetchMovieExample(client);
 
-            // Once we've got a movie, or person, or so on, we can display images. 
+            // Once we've got a movie, or person, or so on, we can display images.
             // TMDb follow the pattern shown in the following example
             // This example also shows an important feature of most of the Get-methods.
             await FetchImagesExample(client);
@@ -45,7 +46,7 @@ namespace TestApplication
             if (configJson.Exists && configJson.LastWriteTimeUtc >= DateTime.UtcNow.AddHours(-1))
             {
                 Console.WriteLine("Using stored config");
-                string json = File.ReadAllText(configJson.FullName, Encoding.UTF8);
+                string json = await File.ReadAllTextAsync(configJson.FullName, Encoding.UTF8, CancellationToken.None).ConfigureAwait(false);
 
                 client.SetConfig(TMDbJsonSerializer.Instance.DeserializeFromString<TMDbConfig>(json));
             }
@@ -56,7 +57,7 @@ namespace TestApplication
 
                 Console.WriteLine("Storing config");
                 string json = TMDbJsonSerializer.Instance.SerializeToString(config);
-                File.WriteAllText(configJson.FullName, json, Encoding.UTF8);
+                await File.WriteAllTextAsync(configJson.FullName, json, Encoding.UTF8, CancellationToken.None).ConfigureAwait(false);
             }
 
             Spacer();
@@ -64,7 +65,7 @@ namespace TestApplication
 
         private static async Task FetchImagesExample(TMDbClient client)
         {
-            const int movieId = 76338; // Thor: The Dark World (2013)
+            const int MovieId = 76338; // Thor: The Dark World (2013)
 
             // In the call below, we're fetching the wanted movie from TMDb, but we're also doing something else.
             // We're requesting additional data, in this case: Images. This means that the Movie property "Images" will be populated (else it will be null).
@@ -74,11 +75,11 @@ namespace TestApplication
             //      client.GetMovieAsync(movieId, MovieMethods.Images | MovieMethods.Trailers | MovieMethods.Translations);
             //
             // .. and so on..
-            // 
+            //
             // Note: Each method normally corresponds to a property on the resulting object. If you haven't requested the information, the property will most likely be null.
 
             // Also note, that while we could have used 'client.GetMovieImagesAsync()' - it was better to do it like this because we also wanted the Title of the movie.
-            Movie movie = await client.GetMovieAsync(movieId, MovieMethods.Images);
+            Movie movie = await client.GetMovieAsync(MovieId, MovieMethods.Images);
 
             Console.WriteLine("Fetching images for '" + movie.Title + "'");
 

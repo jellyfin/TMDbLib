@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest
@@ -32,20 +32,27 @@ namespace TMDbLib.Rest
         }
 
         internal Uri BaseUrl { get; }
+
         internal List<KeyValuePair<string, string>> DefaultQueryString { get; }
+
         internal Encoding Encoding { get; } = new UTF8Encoding(false);
+
         internal IWebProxy Proxy { get; private set; }
 
         internal HttpClient HttpClient { get; private set; }
 
         public int MaxRetryCount
         {
-            get { return _maxRetryCount; }
+            get => _maxRetryCount;
+
             set
             {
+#if NETSTANDARD2_0
                 if (value < 0)
                     throw new ArgumentOutOfRangeException(nameof(value));
-
+#else
+                ArgumentOutOfRangeException.ThrowIfNegative(value);
+#endif
                 _maxRetryCount = value;
             }
         }

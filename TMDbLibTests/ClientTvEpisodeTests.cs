@@ -122,7 +122,7 @@ namespace TMDbLibTests
         public async Task TestTvEpisodeSeparateExtrasVideosAsync()
         {
             ResultContainer<Video> images = await TMDbClient.GetTvEpisodeVideosAsync(IdHelper.BreakingBad, 1, 1);
-            
+
             await Verify(images);
         }
 
@@ -176,7 +176,7 @@ namespace TMDbLibTests
         public async Task TestTvEpisodeGetChangesAsync()
         {
             IList<Change> changes = await TMDbClient.GetTvEpisodeChangesAsync(IdHelper.BreakingBadSeason1Episode1Id);
-            
+
             Assert.NotEmpty(changes);
 
             await Verify(changes);

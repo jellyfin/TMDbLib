@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -23,8 +24,10 @@ namespace TMDbLibTests.Helpers
                 Assert.NotNull(methodSelectors[method](item));
 
                 // .. And none of the others
-                foreach (TEnum otherMethod in methodSelectors.Keys.Except(new[] { method }))
+                foreach (TEnum otherMethod in methodSelectors.Keys.Except([method]))
+                {
                     Assert.Null(methodSelectors[otherMethod](item));
+                }
             }
         }
 
@@ -35,7 +38,9 @@ namespace TMDbLibTests.Helpers
         {
             int combinedEnumInt = 0;
             foreach (TEnum key in methodSelectors.Keys)
-                combinedEnumInt |= Convert.ToInt32(key);
+            {
+                combinedEnumInt |= Convert.ToInt32(key, CultureInfo.InvariantCulture);
+            }
 
             TEnum combinedEnum = (TEnum)Enum.ToObject(typeof(TEnum), combinedEnumInt);
 
@@ -43,11 +48,15 @@ namespace TMDbLibTests.Helpers
 
             // Ensure we have all the pieces
             foreach (TEnum method in methodSelectors.Keys)
+            {
                 Assert.NotNull(methodSelectors[method](item));
+            }
 
             // Execute any additional tests
-            if (extraAction != null)
+            if (extraAction is not null)
+            {
                 await extraAction(item);
+            }
         }
 
         public static async Task SetValidateRemoveTest(Func<Task> set, Func<Task> remove, Func<bool, Task> validate)
@@ -57,10 +66,10 @@ namespace TMDbLibTests.Helpers
 
             // Allow TMDb to cache our changes
             await Task.Delay(2000);
-            
+
             // Validate
             await validate(true);
-            
+
             // Act
             await remove();
 

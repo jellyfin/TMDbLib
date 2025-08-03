@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Discover;
@@ -11,7 +12,7 @@ namespace TMDbLib.Client
     public partial class TMDbClient
     {
         /// <summary>
-        /// Can be used to discover movies matching certain criteria
+        /// Can be used to discover movies matching certain criteria.
         /// </summary>
         public DiscoverMovie DiscoverMoviesAsync()
         {
@@ -23,20 +24,26 @@ namespace TMDbLib.Client
             RestRequest request = _client.Create(endpoint);
 
             if (page != 1 && page > 1)
-                request.AddParameter("page", page.ToString());
+            {
+                request.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+            }
 
             if (!string.IsNullOrWhiteSpace(language))
+            {
                 request.AddParameter("language", language);
+            }
 
             foreach (KeyValuePair<string, string> pair in parameters)
+            {
                 request.AddParameter(pair.Key, pair.Value);
+            }
 
             SearchContainer<T> response = await request.GetOfT<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
             return response;
         }
 
         /// <summary>
-        /// Can be used to discover new tv shows matching certain criteria
+        /// Can be used to discover new tv shows matching certain criteria.
         /// </summary>
         public DiscoverTv DiscoverTvShowsAsync()
         {

@@ -12,11 +12,11 @@ namespace TMDbLib.Objects.Discover
         private readonly string _endpoint;
         protected readonly SimpleNamedValueCollection Parameters;
 
-        public DiscoverBase(string endpoint, TMDbClient client)
+        protected DiscoverBase(string endpoint, TMDbClient client)
         {
             _endpoint = endpoint;
             _client = client;
-            Parameters = new SimpleNamedValueCollection();
+            Parameters = [];
         }
 
         public async Task<SearchContainer<T>> Query(int page = 0, CancellationToken cancellationToken = default)
