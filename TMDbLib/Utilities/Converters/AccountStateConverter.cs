@@ -59,7 +59,7 @@ namespace TMDbLib.Utilities.Converters
             JValue obj = (JValue)jToken["rating"];
             jToken.Remove("rating");
 
-            if (obj.Value == null)
+            if (obj.Value is null)
             {
                 jToken["rated"] = null;
             }

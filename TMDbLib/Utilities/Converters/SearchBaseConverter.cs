@@ -18,7 +18,7 @@ namespace TMDbLib.Utilities.Converters
             JObject jObject = JObject.Load(reader);
 
             SearchBase result;
-            if (jObject["media_type"] == null)
+            if (jObject["media_type"] is null)
             {
                 // We cannot determine the correct type, let's hope we were provided one
                 result = (SearchBase)Activator.CreateInstance(objectType);

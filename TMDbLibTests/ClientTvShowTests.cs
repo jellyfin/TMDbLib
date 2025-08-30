@@ -137,7 +137,7 @@ namespace TMDbLibTests
             await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
             TvShow show = await TMDbClient.GetTvShowAsync(IdHelper.BigBangTheory, TvShowMethods.AccountStates);
-            if (show.AccountStates == null || !show.AccountStates.Rating.HasValue)
+            if (show.AccountStates is null || !show.AccountStates.Rating.HasValue)
             {
                 await TMDbClient.TvShowSetRatingAsync(IdHelper.BigBangTheory, 5);
 

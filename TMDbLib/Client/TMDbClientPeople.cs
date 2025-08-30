@@ -20,10 +20,10 @@ namespace TMDbLib.Client
             req.AddUrlSegment("method", personMethod.GetDescription());
 
             // TODO: Dateformat?
-            //if (dateFormat != null)
+            //if (dateFormat is not null)
             //    req.DateFormat = dateFormat;
 
-            if (country != null)
+            if (country is not null)
                 req.AddParameter("country", country);
 
             language ??= DefaultLanguage;
@@ -34,7 +34,7 @@ namespace TMDbLib.Client
                 req.AddParameter("page", page.ToString());
             if (startDate.HasValue)
                 req.AddParameter("startDate", startDate.Value.ToString("yyyy-MM-dd"));
-            if (endDate != null)
+            if (endDate is not null)
                 req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd"));
 
             T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -65,7 +65,7 @@ namespace TMDbLib.Client
             RestRequest req = _client.Create("person/{personId}");
             req.AddUrlSegment("personId", personId.ToString());
 
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
 
             string appends = string.Join(",",
@@ -89,15 +89,15 @@ namespace TMDbLib.Client
             Person item = await response.GetDataObject().ConfigureAwait(false);
 
             // Patch up data, so that the end user won't notice that we share objects between request-types.
-            if (item != null)
+            if (item is not null)
             {
-                if (item.Images != null)
+                if (item.Images is not null)
                     item.Images.Id = item.Id;
 
-                if (item.TvCredits != null)
+                if (item.TvCredits is not null)
                     item.TvCredits.Id = item.Id;
 
-                if (item.MovieCredits != null)
+                if (item.MovieCredits is not null)
                     item.MovieCredits.Id = item.Id;
             }
 
@@ -120,7 +120,7 @@ namespace TMDbLib.Client
 
             if (page >= 1)
                 req.AddParameter("page", page.ToString());
-            if (language != null)
+            if (language is not null)
                 req.AddParameter("language", language);
 
             // TODO: Dateformat?

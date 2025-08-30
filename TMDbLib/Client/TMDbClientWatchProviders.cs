@@ -15,7 +15,7 @@ namespace TMDbLib.Client
         public async Task<ResultContainer<WatchProviderRegion>> GetWatchProviderRegionsAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("watch/providers/regions");
-            if (DefaultLanguage != null)
+            if (DefaultLanguage is not null)
                 req.AddParameter("language", DefaultLanguage);
 
             ResultContainer<WatchProviderRegion> response = await req.GetOfT<ResultContainer<WatchProviderRegion>>(cancellationToken).ConfigureAwait(false);
@@ -31,10 +31,10 @@ namespace TMDbLib.Client
         public async Task<ResultContainer<WatchProviderItem>> GetMovieWatchProvidersAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("watch/providers/movie");
-            if (DefaultLanguage != null)
+            if (DefaultLanguage is not null)
                 req.AddParameter("language", DefaultLanguage);
 
-            if (DefaultCountry != null)
+            if (DefaultCountry is not null)
                 req.AddParameter("watch_region", DefaultCountry);
 
             ResultContainer<WatchProviderItem> response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
@@ -50,10 +50,10 @@ namespace TMDbLib.Client
         public async Task<ResultContainer<WatchProviderItem>> GetTvWatchProvidersAsync(CancellationToken cancellationToken = default)
         {
             RestRequest req = _client.Create("watch/providers/tv");
-            if (DefaultLanguage != null)
+            if (DefaultLanguage is not null)
                 req.AddParameter("language", DefaultLanguage);
 
-            if (DefaultCountry != null)
+            if (DefaultCountry is not null)
                 req.AddParameter("watch_region", DefaultCountry);
 
             ResultContainer<WatchProviderItem> response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);

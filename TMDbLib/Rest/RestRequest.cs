@@ -54,7 +54,7 @@ namespace TMDbLib.Rest
 
         public RestRequest AddQueryString(string key, string value)
         {
-            if (_queryString == null)
+            if (_queryString is null)
                 _queryString = new List<KeyValuePair<string, string>>();
 
             _queryString.Add(new KeyValuePair<string, string>(key, value));
@@ -64,7 +64,7 @@ namespace TMDbLib.Rest
 
         public RestRequest AddUrlSegment(string key, string value)
         {
-            if (_urlSegment == null)
+            if (_urlSegment is null)
                 _urlSegment = new List<KeyValuePair<string, string>>();
 
             _urlSegment.Add(new KeyValuePair<string, string>(key, value));
@@ -137,7 +137,7 @@ namespace TMDbLib.Rest
             StringBuilder queryStringSb = new StringBuilder();
 
             // Query String
-            if (_queryString != null)
+            if (_queryString is not null)
             {
                 foreach (KeyValuePair<string, string> pair in _queryString)
                     AppendQueryString(queryStringSb, pair);
@@ -148,7 +148,7 @@ namespace TMDbLib.Rest
 
             // Url
             string endpoint = _endpoint;
-            if (_urlSegment != null)
+            if (_urlSegment is not null)
             {
                 foreach (KeyValuePair<string, string> pair in _urlSegment)
                     endpoint = endpoint.Replace("{" + pair.Key + "}", pair.Value);
@@ -161,7 +161,7 @@ namespace TMDbLib.Rest
             HttpRequestMessage req = new HttpRequestMessage(method, builder.Uri);
 
             // Body
-            if (method == HttpMethod.Post && _bodyObj != null)
+            if (method == HttpMethod.Post && _bodyObj is not null)
             {
                 byte[] bodyBytes = _client.Serializer.SerializeToBytes(_bodyObj);
 

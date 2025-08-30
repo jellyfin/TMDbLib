@@ -46,7 +46,7 @@ namespace TMDbLibTests.Helpers
                 Assert.NotNull(methodSelectors[method](item));
 
             // Execute any additional tests
-            if (extraAction != null)
+            if (extraAction is not null)
                 await extraAction(item);
         }
 
