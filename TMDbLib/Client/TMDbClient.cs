@@ -7,6 +7,7 @@ using RestClient = TMDbLib.Rest.RestClient;
 using RestRequest = TMDbLib.Rest.RestRequest;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Rest;
@@ -214,7 +215,7 @@ namespace TMDbLib.Client
             string httpScheme = useSsl ? "https" : "http";
 
             _client = new RestClient(new Uri(string.Format("{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy);
-            _client.AddDefaultQueryString("api_key", apiKey);
+            _client.HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {ApiKey}");
         }
 
         /// <summary>
