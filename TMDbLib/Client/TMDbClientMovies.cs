@@ -76,6 +76,7 @@ public sealed partial class TMDbClient
     /// </summary>
     /// <param name="movieId">The id of the movie to get the account states for.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The account state information for the specified movie, including favorite and watchlist status.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
     public async Task<AccountState> GetMovieAccountStateAsync(int movieId, CancellationToken cancellationToken = default)
@@ -280,6 +281,7 @@ public sealed partial class TMDbClient
     /// </summary>
     /// <param name="id">The TMDb id of the target movie.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>External IDs for the movie from various sources like IMDb, Facebook, Twitter, etc.</returns>
     public async Task<ExternalIdsMovie> GetMovieExternalIdsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<ExternalIdsMovie>(id, MovieMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);

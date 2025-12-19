@@ -36,21 +36,3 @@ internal class RestResponse : IDisposable
         response?.Dispose();
     }
 }
-
-internal class RestResponse<T> : RestResponse
-{
-    private readonly RestClient _client;
-
-    public RestResponse(HttpResponseMessage response, RestClient client)
-        : base(response)
-    {
-        _client = client;
-    }
-
-    public async Task<T> GetDataObject()
-    {
-        using Stream content = await GetContent().ConfigureAwait(false);
-
-        return _client.Serializer.Deserialize<T>(content);
-    }
-}

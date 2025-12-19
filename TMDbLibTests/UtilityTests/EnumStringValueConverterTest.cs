@@ -13,6 +13,11 @@ namespace TMDbLibTests.UtilityTests;
 /// </summary>
 public class EnumStringValueConverterTest : TestBase
 {
+    /// <summary>
+    /// Gets all enum members of the specified type for use in theory tests.
+    /// </summary>
+    /// <param name="type">The enum type to get members from.</param>
+    /// <returns>A collection of object arrays containing each enum member.</returns>
     public static IEnumerable<object[]> GetEnumMembers(Type type)
     {
         Array values = Enum.GetValues(type);

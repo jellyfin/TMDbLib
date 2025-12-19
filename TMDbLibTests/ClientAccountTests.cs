@@ -20,6 +20,9 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientAccountTests : TestBase
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ClientAccountTests"/> class.
+    /// </summary>
     public ClientAccountTests()
     {
         if (string.IsNullOrWhiteSpace(TestConfig.UserSessionId))
@@ -27,6 +30,7 @@ public class ClientAccountTests : TestBase
             throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");
         }
     }
+
     /// <summary>
     /// Tests that getting account details with a guest session throws UserSessionRequiredException.
     /// </summary>
@@ -37,6 +41,7 @@ public class ClientAccountTests : TestBase
 
         await Assert.ThrowsAsync<UserSessionRequiredException>(() => TMDbClient.AccountGetDetailsAsync());
     }
+
     /// <summary>
     /// Tests that getting account details with a user session returns valid account information.
     /// </summary>
@@ -47,6 +52,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(TMDbClient.ActiveAccount);
     }
+
     /// <summary>
     /// Tests that retrieving account lists returns expected lists and can find a specific list by ID.
     /// </summary>
@@ -63,6 +69,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(single);
     }
+
     /// <summary>
     /// Tests that pagination works correctly for account lists.
     /// </summary>
@@ -73,6 +80,7 @@ public class ClientAccountTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetListsAsync(i));
     }
+
     /// <summary>
     /// Tests that retrieving favorite movies returns expected results and supports pagination.
     /// </summary>
@@ -89,6 +97,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(movie, x => x.IgnoreProperty<SearchMovie>(n => n.VoteCount, n => n.Popularity));
     }
+
     /// <summary>
     /// Tests that retrieving favorite TV shows returns expected results and supports pagination.
     /// </summary>
@@ -104,6 +113,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvShow);
     }
+
     /// <summary>
     /// Tests that retrieving movie watchlist returns expected results and supports pagination.
     /// </summary>
@@ -119,6 +129,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(movie);
     }
+
     /// <summary>
     /// Tests that retrieving TV show watchlist returns expected results and supports pagination.
     /// </summary>
@@ -134,6 +145,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvShow);
     }
+
     /// <summary>
     /// Tests that retrieving rated movies returns expected results and supports pagination.
     /// </summary>
@@ -149,6 +161,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(movie);
     }
+
     /// <summary>
     /// Tests that retrieving rated TV shows returns expected results and supports pagination.
     /// </summary>
@@ -164,6 +177,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvShow);
     }
+
     /// <summary>
     /// Tests that retrieving rated TV episodes returns expected results and supports pagination.
     /// </summary>
@@ -180,6 +194,7 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvEpisode);
     }
+
     /// <summary>
     /// Tests that marking and unmarking a TV show as favorite works correctly.
     /// </summary>
@@ -209,6 +224,7 @@ public class ClientAccountTests : TestBase
         // Check if it worked
         Assert.False(await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
     }
+
     /// <summary>
     /// Tests that marking and unmarking a movie as favorite works correctly.
     /// </summary>
@@ -238,6 +254,7 @@ public class ClientAccountTests : TestBase
         // Check if it worked
         Assert.False(await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
     }
+
     /// <summary>
     /// Tests that adding and removing a TV show from the watchlist works correctly.
     /// </summary>
@@ -267,6 +284,7 @@ public class ClientAccountTests : TestBase
         // Check if it worked
         Assert.False(await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
     }
+
     /// <summary>
     /// Tests that adding and removing a movie from the watchlist works correctly.
     /// </summary>

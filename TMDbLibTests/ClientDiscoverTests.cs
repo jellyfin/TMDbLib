@@ -23,6 +23,7 @@ public class ClientDiscoverTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverTvShowsAsync().Query(i));
     }
+
     /// <summary>
     /// Tests that discovering movies without parameters returns results and supports pagination.
     /// </summary>
@@ -31,6 +32,7 @@ public class ClientDiscoverTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverMoviesAsync().Query(i));
     }
+
     /// <summary>
     /// Tests that discovering TV shows with vote count and average filters returns filtered results.
     /// </summary>
@@ -43,6 +45,7 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+
     /// <summary>
     /// Tests that discovering movies with vote count and average filters returns filtered results.
     /// </summary>
@@ -55,6 +58,7 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+
     /// <summary>
     /// Tests that discovering movies with region and release date filters returns region-specific results.
     /// </summary>
@@ -67,6 +71,7 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+
     /// <summary>
     /// Tests that discovering movies with release type filters returns movies matching the specified release type.
     /// </summary>
@@ -78,6 +83,7 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+
     /// <summary>
     /// Tests that discovering movies with language filters returns localized titles while maintaining same movie IDs.
     /// </summary>

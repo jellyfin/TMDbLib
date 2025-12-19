@@ -37,6 +37,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Toggle the inclusion of adult titles. Expected value is a boolean, true or false. Default is false.
     /// </summary>
+    /// <param name="include">Whether to include adult titles.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeAdultMovies(bool include = true)
     {
@@ -47,6 +48,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Toggle the inclusion of items marked as a video. Expected value is a boolean, true or false. Default is true.
     /// </summary>
+    /// <param name="include">Whether to include video titles.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeVideoMovies(bool include = true)
     {
@@ -58,6 +60,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a cast member. Expected value is an integer (the id of a person).
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="castIds">The cast member IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfCast(IEnumerable<int> castIds)
     {
@@ -69,6 +72,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a cast member.
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="casts">The cast members to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfCast(IEnumerable<Cast> casts)
     {
@@ -79,6 +83,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this company id added as a crew member. Expected value is an integer (the id of a company).
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="companyIds">The company IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfCompany(IEnumerable<int> companyIds)
     {
@@ -90,6 +95,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this company id added as a crew member.
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="companies">The companies to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfCompany(IEnumerable<Company> companies)
     {
@@ -100,6 +106,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a crew member. Expected value is an integer (the id of a person).
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="crewIds">The crew member IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfCrew(IEnumerable<int> crewIds)
     {
@@ -111,6 +118,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a crew member.
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="crews">The crew members to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfCrew(IEnumerable<Crew> crews)
     {
@@ -121,6 +129,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified genres. Expected value is an integer (the id of a genre).
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="genreIds">The genre IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfGenre(IEnumerable<int> genreIds)
     {
@@ -132,6 +141,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified genres.
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="genres">The genres to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfGenre(IEnumerable<Genre> genres)
     {
@@ -142,6 +152,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified keywords. Expected value is an integer (the id of a keyword).
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="keywordIds">The keyword IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfKeywords(IEnumerable<int> keywordIds)
     {
@@ -153,6 +164,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified keywords.
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="keywords">The keywords to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfKeywords(IEnumerable<Genre> keywords)
     {
@@ -163,6 +175,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have these person id's added as a cast or crew member. Expected value is an integer (the id or ids of a person).
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="peopleIds">The people IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfPeople(IEnumerable<int> peopleIds)
     {
@@ -174,6 +187,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have these person id's added as a cast or crew member.
     /// This method performs an AND query.
     /// </summary>
+    /// <param name="people">The people to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAllOfPeople(IEnumerable<Genre> people)
     {
@@ -184,6 +198,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a cast member. Expected value is an integer (the id of a person).
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="castIds">The cast member IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfCast(IEnumerable<int> castIds)
     {
@@ -195,6 +210,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a cast member.
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="casts">The cast members to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfCast(IEnumerable<Cast> casts)
     {
@@ -205,6 +221,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this company id added as a crew member. Expected value is an integer (the id of a company).
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="companyIds">The company IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfCompany(IEnumerable<int> companyIds)
     {
@@ -216,6 +233,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this company id added as a crew member.
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="companies">The companies to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfCompany(IEnumerable<Company> companies)
     {
@@ -226,6 +244,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a crew member. Expected value is an integer (the id of a person).
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="crewIds">The crew member IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfCrew(IEnumerable<int> crewIds)
     {
@@ -237,6 +256,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have this person id added as a crew member.
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="crews">The crew members to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfCrew(IEnumerable<Crew> crews)
     {
@@ -247,6 +267,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified genres. Expected value is an integer (the id of a genre).
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="castIds">The genre IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfGenre(IEnumerable<int> castIds)
     {
@@ -258,6 +279,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified genres.
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="genres">The genres to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfGenre(IEnumerable<Genre> genres)
     {
@@ -268,6 +290,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified keywords. Expected value is an integer (the id of a keyword).
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="keywordIds">The keyword IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfKeywords(IEnumerable<int> keywordIds)
     {
@@ -279,6 +302,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies with the specified keywords.
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="keywords">The keywords to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfKeywords(IEnumerable<Genre> keywords)
     {
@@ -289,6 +313,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have these person id's added as a cast or crew member. Expected value is an integer (the id or ids of a person).
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="peopleIds">The people IDs to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfPeople(IEnumerable<int> peopleIds)
     {
@@ -300,6 +325,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// Only include movies that have these person id's added as a cast or crew member.
     /// This method performs an OR query.
     /// </summary>
+    /// <param name="people">The people to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie IncludeWithAnyOfPeople(IEnumerable<Genre> people)
     {
@@ -309,6 +335,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Available options are: popularity.ascpopularity.descrelease_date.ascrelease_date.descrevenue.ascrevenue.descprimary_release_date.ascprimary_release_date.descoriginal_title.ascoriginal_title.descvote_average.ascvote_average.descvote_count.ascvote_count.desc.
     /// </summary>
+    /// <param name="sortBy">The sort order to apply.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie OrderBy(DiscoverMovieSortBy sortBy)
     {
@@ -319,6 +346,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter the results by all available release dates that have the specified value added as a year. Expected value is an integer (year).
     /// </summary>
+    /// <param name="year">The year to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereAnyReleaseDateIsInYear(int year)
     {
@@ -329,6 +357,8 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Only include movies with this certification. Expected value is a valid certification for the specificed 'certification_country'.
     /// </summary>
+    /// <param name="country">The country code.</param>
+    /// <param name="certification">The certification rating.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereCertificationIs(string country, string certification)
     {
@@ -343,6 +373,8 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Only include movies with this certification and lower. Expected value is a valid certification for the specificed 'certification_country'.
     /// </summary>
+    /// <param name="country">The country code.</param>
+    /// <param name="maxCertification">The maximum certification rating.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereCertificationIsAtMost(string country, string maxCertification)
     {
@@ -357,6 +389,8 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Only include movies with this certification and higher. Expected value is a valid certification for the specificed 'certification_country'.
     /// </summary>
+    /// <param name="country">The country code.</param>
+    /// <param name="minCertification">The minimum certification rating.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereCertificationIsAtLeast(string country, string minCertification)
     {
@@ -371,6 +405,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter by the primary release date and only include those which are greater than or equal to the specified value. Expected format is YYYY-MM-DD.
     /// </summary>
+    /// <param name="date">The minimum release date.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WherePrimaryReleaseDateIsAfter(DateTime date)
     {
@@ -381,6 +416,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter by the primary release date and only include those which are greater than or equal to the specified value. Expected format is YYYY-MM-DD.
     /// </summary>
+    /// <param name="date">The maximum release date.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WherePrimaryReleaseDateIsBefore(DateTime date)
     {
@@ -391,6 +427,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter the results so that only the primary release date year has this value. Expected value is a year.
     /// </summary>
+    /// <param name="year">The year to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WherePrimaryReleaseIsInYear(int year)
     {
@@ -401,6 +438,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter by all available release dates and only include those which are greater or equal to the specified value. Expected format is YYYY-MM-DD.
     /// </summary>
+    /// <param name="date">The minimum release date.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereReleaseDateIsAfter(DateTime date)
     {
@@ -411,6 +449,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter by all available release dates and only include those which are less or equal to the specified value. Expected format is YYYY-MM-DD.
     /// </summary>
+    /// <param name="date">The maximum release date.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereReleaseDateIsBefore(DateTime date)
     {
@@ -421,6 +460,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Only include movies that are equal to, or have a runtime higher than this value. Expected value is an integer (minutes).
     /// </summary>
+    /// <param name="minutes">The minimum runtime in minutes.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereRuntimeIsAtLeast(int minutes)
     {
@@ -431,6 +471,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Only include movies that are equal to, or have a runtime lower than this value. Expected value is an integer (minutes).
     /// </summary>
+    /// <param name="minutes">The maximum runtime in minutes.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereRuntimeIsAtMost(int minutes)
     {
@@ -441,6 +482,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter movies by their vote average and only include those that have an average rating that is equal to or higher than the specified value. Expected value is a float.
     /// </summary>
+    /// <param name="score">The minimum vote average.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereVoteAverageIsAtLeast(double score)
     {
@@ -452,6 +494,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter movies by their vote average and only include those that have an average rating that is equal to or lower than the specified value. Expected value is a float.
     /// </summary>
+    /// <param name="score">The maximum vote average.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereVoteAverageIsAtMost(double score)
     {
@@ -463,6 +506,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter movies by their vote count and only include movies that have a vote count that is equal to or lower than the specified value.
     /// </summary>
+    /// <param name="count">The minimum vote count.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereVoteCountIsAtLeast(int count)
     {
@@ -473,6 +517,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Filter movies by their vote count and only include movies that have a vote count that is equal to or lower than the specified value. Expected value is an integer.
     /// </summary>
+    /// <param name="count">The maximum vote count.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereVoteCountIsAtMost(int count)
     {
@@ -483,6 +528,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Specifies which region to use for release date filtering (using ISO 3166-1 code).
     /// </summary>
+    /// <param name="region">The region code.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereReleaseDateIsInRegion(string region)
     {
@@ -493,6 +539,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Specifies which language to use for translatable fields.
     /// </summary>
+    /// <param name="language">The language code.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereLanguageIs(string language)
     {
@@ -503,6 +550,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Specifies which language to use for translatable fields.
     /// </summary>
+    /// <param name="language">The original language code.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WhereOriginalLanguageIs(string language)
     {
@@ -513,6 +561,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Specifies that only movies with all the given release types will be returned.
     /// </summary>
+    /// <param name="releaseTypes">The release types to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WithAllOfReleaseTypes(params ReleaseDateType[] releaseTypes)
     {
@@ -523,6 +572,7 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
     /// <summary>
     /// Specifies that only movies with the given release types will be returned.
     /// </summary>
+    /// <param name="releaseTypes">The release types to filter by.</param>
     /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
     public DiscoverMovie WithAnyOfReleaseTypes(params ReleaseDateType[] releaseTypes)
     {

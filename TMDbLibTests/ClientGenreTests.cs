@@ -38,6 +38,7 @@ public class ClientGenreTests : TestBase
 
         Assert.NotEqual(actionEn.Name, actionDa.Name);
     }
+
     /// <summary>
     /// Tests that movie genre lists can be retrieved in different languages.
     /// </summary>
@@ -62,6 +63,7 @@ public class ClientGenreTests : TestBase
 
         Assert.NotEqual(actionEn.Name, actionDa.Name);
     }
+
     /// <summary>
     /// Tests that movies can be retrieved by genre ID.
     /// </summary>

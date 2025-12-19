@@ -49,7 +49,9 @@ internal sealed class RestClient : IDisposable
         {
 #if NETSTANDARD2_0
             if (value < 0)
+            {
                 throw new ArgumentOutOfRangeException(nameof(value));
+            }
 #else
             ArgumentOutOfRangeException.ThrowIfNegative(value);
 #endif

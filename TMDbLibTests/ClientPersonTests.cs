@@ -31,6 +31,7 @@ public class ClientPersonTests : TestBase
             [PersonMethods.Changes] = person => person.Changes
         };
     }
+
     /// <summary>
     /// Tests that retrieving a person without extra methods returns no additional data.
     /// </summary>
@@ -46,6 +47,7 @@ public class ClientPersonTests : TestBase
         }
         await Verify(person);
     }
+
     /// <summary>
     /// Tests that each person extra method can be requested exclusively.
     /// </summary>
@@ -54,6 +56,7 @@ public class ClientPersonTests : TestBase
     {
         await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetPersonAsync(IdHelper.BruceWillis, extras));
     }
+
     /// <summary>
     /// Tests that all person extra methods can be requested together.
     /// </summary>
@@ -62,6 +65,7 @@ public class ClientPersonTests : TestBase
     {
         await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetPersonAsync(IdHelper.FrankSinatra, combined), async person => await Verify(person));
     }
+
     /// <summary>
     /// Verifies that retrieving a non-existent person returns null.
     /// </summary>
@@ -72,6 +76,7 @@ public class ClientPersonTests : TestBase
 
         Assert.Null(person);
     }
+
     /// <summary>
     /// Tests that TV credits for a person can be retrieved.
     /// </summary>
@@ -93,6 +98,7 @@ public class ClientPersonTests : TestBase
             crew
         });
     }
+
     /// <summary>
     /// Tests that movie credits for a person can be retrieved.
     /// </summary>
@@ -114,6 +120,7 @@ public class ClientPersonTests : TestBase
             crew
         });
     }
+
     /// <summary>
     /// Tests that external IDs for a person can be retrieved.
     /// </summary>
@@ -124,6 +131,7 @@ public class ClientPersonTests : TestBase
 
         await Verify(item);
     }
+
     /// <summary>
     /// Tests that the latest changes to people can be retrieved.
     /// </summary>
@@ -134,6 +142,7 @@ public class ClientPersonTests : TestBase
 
         Assert.NotEmpty(latestChanges.Results);
     }
+
     /// <summary>
     /// Tests that profile images for a person can be retrieved.
     /// </summary>
@@ -147,6 +156,7 @@ public class ClientPersonTests : TestBase
 
         TestImagesHelpers.TestImagePaths(images.Profiles);
     }
+
     /// <summary>
     /// Tests that tagged images for a person can be retrieved.
     /// </summary>
@@ -164,6 +174,7 @@ public class ClientPersonTests : TestBase
         Assert.IsType<SearchMovie>(image.Media);
         await Verify(image);
     }
+
     /// <summary>
     /// Tests that the list of popular people can be retrieved.
     /// </summary>
@@ -174,6 +185,7 @@ public class ClientPersonTests : TestBase
 
         Assert.NotEmpty(list.Results);
     }
+
     /// <summary>
     /// Tests that the latest person added to TMDb can be retrieved.
     /// </summary>
@@ -184,6 +196,7 @@ public class ClientPersonTests : TestBase
 
         Assert.NotNull(item);
     }
+
     /// <summary>
     /// Tests that a person can be retrieved in a different language.
     /// </summary>

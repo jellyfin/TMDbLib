@@ -23,7 +23,9 @@ public partial class TMDbClient
         // Movie Id is expected by the API and can not be null
 #if NETSTANDARD2_0
         if (movieId <= 0)
+        {
             throw new ArgumentOutOfRangeException(nameof(movieId));
+        }
 #else
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(movieId);
 #endif
@@ -51,6 +53,7 @@ public partial class TMDbClient
     /// <param name="listId">The id of the list you want to retrieve.</param>
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The requested list with its details and items.</returns>
     public async Task<GenericList> GetListAsync(string listId, string language = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(listId))
@@ -78,6 +81,7 @@ public partial class TMDbClient
     /// <param name="listId">Id of the list to check in.</param>
     /// <param name="movieId">Id of the movie to check for in the list.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>True if the movie is present in the list, false otherwise.</returns>
     public async Task<bool> GetListIsMoviePresentAsync(string listId, int movieId, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(listId))
@@ -86,7 +90,9 @@ public partial class TMDbClient
         }
 #if NETSTANDARD2_0
         if (movieId <= 0)
+        {
             throw new ArgumentOutOfRangeException(nameof(movieId));
+        }
 #else
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(movieId);
 #endif
@@ -152,6 +158,7 @@ public partial class TMDbClient
     /// <param name="description">Optional description for the list.</param>
     /// <param name="language">Optional language that might indicate the language of the content in the list.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The ID of the newly created list.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
     public async Task<string> ListCreateAsync(string name, string description = "", string language = null, CancellationToken cancellationToken = default)
@@ -166,7 +173,7 @@ public partial class TMDbClient
         // Description is expected by the API and can not be null
         if (string.IsNullOrWhiteSpace(description))
         {
-            description = "";
+            description = string.Empty;
         }
 
         RestRequest req = _client.Create("list");
@@ -192,6 +199,7 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="listId">A list id that is owned by the user associated with the current session id.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>True if the list was successfully deleted, false otherwise.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
     public async Task<bool> ListDeleteAsync(string listId, CancellationToken cancellationToken = default)

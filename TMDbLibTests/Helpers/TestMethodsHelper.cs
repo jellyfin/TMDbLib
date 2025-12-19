@@ -38,6 +38,7 @@ public static class TestMethodsHelper
             }
         }
     }
+
     /// <summary>
     /// Tests that a client method will get all parts of the TMDb api when requested.
     /// </summary>
@@ -69,6 +70,7 @@ public static class TestMethodsHelper
             await extraAction(item);
         }
     }
+
     /// <summary>
     /// Tests a set-validate-remove pattern by setting a value, validating it exists, removing it, and validating it's gone.
     /// </summary>

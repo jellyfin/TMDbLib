@@ -42,6 +42,7 @@ public class ClientGuestSessionTests : TestBase
             }
         });
     }
+
     /// <summary>
     /// Tests that TV show ratings can be set and removed using a guest session.
     /// </summary>
@@ -70,6 +71,7 @@ public class ClientGuestSessionTests : TestBase
             }
         });
     }
+
     /// <summary>
     /// Tests that movie ratings can be set and removed using a guest session.
     /// </summary>

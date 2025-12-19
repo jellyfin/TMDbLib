@@ -22,6 +22,7 @@ public class ClientNetworkTests : TestBase
 
         await Verify(network);
     }
+
     /// <summary>
     /// Tests that logos for a network can be retrieved.
     /// </summary>
@@ -32,6 +33,7 @@ public class ClientNetworkTests : TestBase
 
         await Verify(logos);
     }
+
     /// <summary>
     /// Tests that alternative names for a network can be retrieved.
     /// </summary>
@@ -42,6 +44,7 @@ public class ClientNetworkTests : TestBase
 
         await Verify(names);
     }
+
     /// <summary>
     /// Verifies that retrieving a non-existent network returns null.
     /// </summary>

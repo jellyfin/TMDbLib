@@ -92,6 +92,7 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="tvShowId">The id of the tv show to get the account states for.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The account state information for the specified TV show, including favorite and watchlist status.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
     public async Task<AccountState> GetTvShowAccountStateAsync(int tvShowId, CancellationToken cancellationToken = default)
@@ -229,6 +230,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the target tv show.</param>
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>Credits information including cast and crew for the TV show.</returns>
     public async Task<Credits> GetTvShowCreditsAsync(int id, string language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<Credits>(id, TvShowMethods.Credits, "yyyy-MM-dd", language, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -240,7 +242,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the target tv show.</param>
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns></returns>
+    /// <returns>A task representing the asynchronous operation, with the aggregate credits as the result.</returns>
     public async Task<CreditsAggregate> GetAggregateCredits(int id, string language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<CreditsAggregate>(id, TvShowMethods.CreditsAggregate, language: language, page: 0, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -251,6 +253,7 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="id">The TMDb id of the target tv show.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>External IDs for the TV show from various sources like IMDb, TVDB, Facebook, Twitter, etc.</returns>
     public async Task<ExternalIdsTvShow> GetTvShowExternalIdsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ExternalIdsTvShow>(id, TvShowMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -266,6 +269,7 @@ public partial class TMDbClient
     /// </param>
     /// <param name="includeImageLanguage">If you want to include a fallback language (especially useful for backdrops) you can use the include_image_language parameter. This should be a comma separated value like so: include_image_language=en,null.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>Images for the TV show including posters, backdrops, and logos.</returns>
     public async Task<ImagesWithId> GetTvShowImagesAsync(int id, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ImagesWithId>(id, TvShowMethods.Images, language: language, includeMediaLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -302,7 +306,7 @@ public partial class TMDbClient
     /// <param name="page">Page.</param>
     /// <param name="timezone">Only relevant for list type AiringToday.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns></returns>
+    /// <returns>A task representing the asynchronous operation, with a paged list of TV shows as the result.</returns>
     public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, int page = 0, string timezone = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowListAsync(list, DefaultLanguage, page, timezone, cancellationToken).ConfigureAwait(false);
@@ -316,7 +320,7 @@ public partial class TMDbClient
     /// <param name="page">Page.</param>
     /// <param name="timezone">Only relevant for list type AiringToday.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns></returns>
+    /// <returns>A task representing the asynchronous operation, with a paged list of TV shows as the result.</returns>
     public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, string language, int page = 0, string timezone = null, CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("tv/{method}");
@@ -346,6 +350,9 @@ public partial class TMDbClient
     /// <summary>
     /// Get the list of popular TV shows. This list refreshes every day.
     /// </summary>
+    /// <param name="page">The page of results to retrieve. Use -1 for the default page.</param>
+    /// <param name="language">The language to use for the results. Use null for the default language.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>
     /// Returns the basic information about a tv show.
     /// For additional data use the main GetTvShowAsync method using the tv show id as parameter.
@@ -408,6 +415,9 @@ public partial class TMDbClient
     /// <summary>
     /// Get the list of top rated TV shows. By default, this list will only include TV shows that have 2 or more votes. This list refreshes every day.
     /// </summary>
+    /// <param name="page">The page of results to retrieve. Use -1 for the default page.</param>
+    /// <param name="language">The language to use for the results. Use null for the default language.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>
     /// Returns the basic information about a tv show.
     /// For additional data use the main GetTvShowAsync method using the tv show id as parameter.

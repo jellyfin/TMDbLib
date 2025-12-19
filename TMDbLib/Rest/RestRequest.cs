@@ -198,7 +198,7 @@ internal class RestRequest
         RetryConditionHeaderValue retryHeader;
         TMDbStatusMessage statusMessage;
 
-        Debug.Assert(timesToTry >= 1);
+        Debug.Assert(timesToTry >= 1, "Times to try must be at least 1");
 
         do
         {
@@ -209,64 +209,68 @@ internal class RestRequest
 
             if (resp.IsSuccessStatusCode && isJson)
             {
+#pragma warning disable IDISP011 // Don't return disposed instance - False positive, resp is not disposed in this path
                 return resp;
+#pragma warning restore IDISP011
             }
 
-            try
+            if (isJson)
             {
-                if (isJson)
-                {
 #if NETSTANDARD2_0
-                    statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
+                statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
 #else
-                    statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false));
+                statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false));
 #endif
-                }
-                else
-                {
-                    statusMessage = null;
-                }
-
-                switch (resp.StatusCode)
-                {
-                    case (HttpStatusCode)429:
-                        // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
-                        retryHeader = resp.Headers.RetryAfter;
-                        TimeSpan? retryAfter = retryHeader?.Delta.Value;
-
-                        if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
-                        {
-                            await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
-                        }
-                        else
-                        {
-                            // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
-                            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
-                        }
-
-                        continue;
-                    case HttpStatusCode.Unauthorized:
-                        throw new UnauthorizedAccessException(
-                            "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
-
-                    case HttpStatusCode.NotFound:
-                        if (_client.ThrowApiExceptions)
-                        {
-                            throw new NotFoundException(statusMessage);
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                }
-
-                throw new GeneralHttpException(resp.StatusCode);
             }
-            finally
+            else
             {
-                resp.Dispose();
+                statusMessage = null;
             }
-        } while (timesToTry-- > 0);
+
+            switch (resp.StatusCode)
+            {
+                case (HttpStatusCode)429:
+                    // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
+                    retryHeader = resp.Headers.RetryAfter;
+                    TimeSpan? retryAfter = retryHeader?.Delta.Value;
+
+                    if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
+                    {
+                        await Task.Delay(retryAfter.Value, cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        // TMDb sometimes gives us 0-second waits, which can lead to rapid succession of requests
+                        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
+                    }
+
+                    resp.Dispose();
+                    continue;
+
+                case HttpStatusCode.Unauthorized:
+                    resp.Dispose();
+                    throw new UnauthorizedAccessException(
+                        "Call to TMDb returned unauthorized. Most likely the provided API key is invalid.");
+
+                case HttpStatusCode.NotFound:
+                    if (_client.ThrowApiExceptions)
+                    {
+                        resp.Dispose();
+                        throw new NotFoundException(statusMessage);
+                    }
+                    else
+                    {
+                        resp.Dispose();
+                        return null;
+                    }
+            }
+
+#pragma warning disable IDISP016, IDISP017 // Explicit disposal is correct here for error paths
+            resp.Dispose();
+#pragma warning restore IDISP016, IDISP017
+            throw new GeneralHttpException(resp.StatusCode);
+        }
+        while (timesToTry-- > 0);
 
         // We never reached a success
         throw new RequestLimitExceededException(statusMessage, retryHeader?.Date, retryHeader?.Delta);
