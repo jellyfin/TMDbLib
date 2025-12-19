@@ -10,8 +10,14 @@ using Xunit;
 
 namespace TMDbLibTests.UtilityTests;
 
+/// <summary>
+/// Contains tests for the AccountState converter.
+/// </summary>
 public class AccountStateConverterTest : TestBase
 {
+    /// <summary>
+    /// Tests that the AccountState converter correctly deserializes when rating data is present.
+    /// </summary>
     [Fact]
     public void AccountStateConverter_WithData()
     {
@@ -30,6 +36,10 @@ public class AccountStateConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the AccountState converter correctly deserializes when rating data is false.
+    /// </summary>
     [Fact]
     public void AccountStateConverter_WithoutData()
     {
@@ -45,6 +55,7 @@ public class AccountStateConverterTest : TestBase
             result
         });
     }
+
     /// <summary>
     /// Tests the AccountStateConverter on the AccountState type
     /// </summary>
@@ -56,6 +67,7 @@ public class AccountStateConverterTest : TestBase
 
         await Verify(accountState);
     }
+
     /// <summary>
     /// Tests the AccountStateConverter on the TvEpisodeAccountState type
     /// </summary>

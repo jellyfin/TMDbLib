@@ -11,6 +11,9 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb company functionality.
+/// </summary>
 public class ClientCompanyTests : TestBase
 {
     private static readonly Dictionary<CompanyMethods, Func<Company, object>> Methods;
@@ -22,6 +25,10 @@ public class ClientCompanyTests : TestBase
             [CompanyMethods.Movies] = company => company.Movies
         };
     }
+
+    /// <summary>
+    /// Tests that retrieving a company without extras does not include extra data.
+    /// </summary>
     [Fact]
     public async Task TestCompaniesExtrasNoneAsync()
     {
@@ -33,11 +40,19 @@ public class ClientCompanyTests : TestBase
             Assert.Null(selector(company));
         }
     }
+
+    /// <summary>
+    /// Tests that requesting specific company extras returns only those extras.
+    /// </summary>
     [Fact]
     public async Task TestCompaniesExtrasExclusive()
     {
         await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, extras));
     }
+
+    /// <summary>
+    /// Tests that requesting all company extras returns all available extra data.
+    /// </summary>
     [Fact]
     public async Task TestCompaniesExtrasAllAsync()
     {
@@ -49,6 +64,10 @@ public class ClientCompanyTests : TestBase
             await Verify(company, settings => settings.IgnoreProperty(nameof(company.Movies.TotalPages), nameof(company.Movies.TotalResults)));
         });
     }
+
+    /// <summary>
+    /// Tests that attempting to retrieve a non-existent company returns null.
+    /// </summary>
     [Fact]
     public async Task TestCompanyMissingAsync()
     {
@@ -56,6 +75,10 @@ public class ClientCompanyTests : TestBase
 
         Assert.Null(company);
     }
+
+    /// <summary>
+    /// Tests that retrieving company movies returns results and supports language filtering and pagination.
+    /// </summary>
     [Fact]
     public async Task TestCompaniesMoviesAsync()
     {
@@ -80,6 +103,10 @@ public class ClientCompanyTests : TestBase
         }
         Assert.False(allTitlesIdentical);
     }
+
+    /// <summary>
+    /// Tests that company logo URLs are generated correctly for both secure and non-secure URLs.
+    /// </summary>
     [Fact]
     public async Task TestCompaniesImagesAsync()
     {

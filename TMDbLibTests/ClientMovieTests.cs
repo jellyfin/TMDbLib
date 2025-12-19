@@ -16,6 +16,9 @@ using Credits = TMDbLib.Objects.Movies.Credits;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb movie functionality.
+/// </summary>
 public class ClientMovieTests : TestBase
 {
     private static readonly Dictionary<MovieMethods, Func<Movie, object>> Methods;
@@ -42,6 +45,9 @@ public class ClientMovieTests : TestBase
             [MovieMethods.WatchProviders] = movie => movie.WatchProviders
         };
     }
+    /// <summary>
+    /// Tests that retrieving a movie without extra methods returns no additional data.
+    /// </summary>
     [Fact]
     public async Task TestMoviesExtrasNone()
     {
@@ -55,6 +61,9 @@ public class ClientMovieTests : TestBase
             Assert.Null(selector(movie));
         }
     }
+    /// <summary>
+    /// Tests that each movie extra method can be requested exclusively.
+    /// </summary>
     [Fact]
     public async Task TestMoviesExtrasExclusive()
     {
@@ -62,6 +71,9 @@ public class ClientMovieTests : TestBase
 
         await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetMovieAsync(IdHelper.AGoodDayToDieHard, extras));
     }
+    /// <summary>
+    /// Tests that all movie extra methods can be requested together using an IMDb ID.
+    /// </summary>
     [Fact]
     public async Task TestMoviesImdbExtrasAllAsync()
     {
@@ -75,6 +87,9 @@ public class ClientMovieTests : TestBase
 
         await TestMethodsHelper.TestGetAll(tmpMethods, combined => TMDbClient.GetMovieAsync(IdHelper.TheDarkKnightRisesImdb, combined), movie => Verify(movie));
     }
+    /// <summary>
+    /// Tests that movies can be retrieved in different languages.
+    /// </summary>
     [Fact]
     public async Task TestMoviesLanguage()
     {
@@ -87,6 +102,9 @@ public class ClientMovieTests : TestBase
         Assert.Equal("A Good Day to Die Hard", movie.Title);
         Assert.NotEqual(movie.Title, movieItalian.Title);
     }
+    /// <summary>
+    /// Tests that alternative titles for a movie can be retrieved by country.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieAlternativeTitles()
     {
@@ -104,6 +122,9 @@ public class ClientMovieTests : TestBase
             respCaDefault
         });
     }
+    /// <summary>
+    /// Tests that release dates for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieReleaseDates()
     {
@@ -111,6 +132,9 @@ public class ClientMovieTests : TestBase
 
         await Verify(resp);
     }
+    /// <summary>
+    /// Tests that cast and crew credits for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieCasts()
     {
@@ -129,6 +153,9 @@ public class ClientMovieTests : TestBase
         TestImagesHelpers.TestImagePaths(resp.Cast.Select(s => s.ProfilePath).Where(s => s != null));
         TestImagesHelpers.TestImagePaths(resp.Crew.Select(s => s.ProfilePath).Where(s => s != null));
     }
+    /// <summary>
+    /// Tests that external IDs for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetExternalIds()
     {
@@ -136,6 +163,9 @@ public class ClientMovieTests : TestBase
 
         await Verify(externalIds);
     }
+    /// <summary>
+    /// Tests that images for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieImages()
     {
@@ -154,6 +184,9 @@ public class ClientMovieTests : TestBase
             logo
         });
     }
+    /// <summary>
+    /// Tests that images for a movie can be filtered by language.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieImagesWithImageLanguage()
     {
@@ -172,6 +205,9 @@ public class ClientMovieTests : TestBase
             logo
         });
     }
+    /// <summary>
+    /// Tests that a movie with images can be retrieved with language filtering applied.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieWithImageLanguage()
     {
@@ -191,6 +227,9 @@ public class ClientMovieTests : TestBase
             logo
         });
     }
+    /// <summary>
+    /// Tests that keywords for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieKeywords()
     {
@@ -198,6 +237,9 @@ public class ClientMovieTests : TestBase
 
         await Verify(resp);
     }
+    /// <summary>
+    /// Tests that release information for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieReleases()
     {
@@ -205,6 +247,9 @@ public class ClientMovieTests : TestBase
 
         await Verify(resp);
     }
+    /// <summary>
+    /// Tests that videos for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieVideos()
     {
@@ -212,6 +257,9 @@ public class ClientMovieTests : TestBase
 
         await Verify(resp);
     }
+    /// <summary>
+    /// Tests that watch providers for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieWatchProviders()
     {
@@ -224,6 +272,9 @@ public class ClientMovieTests : TestBase
 
         // Not making further assertions since this data is highly dynamic.
     }
+    /// <summary>
+    /// Tests that translations for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieTranslations()
     {
@@ -231,6 +282,9 @@ public class ClientMovieTests : TestBase
 
         await Verify(resp);
     }
+    /// <summary>
+    /// Tests that similar movies for a given movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieSimilarMovies()
     {
@@ -246,6 +300,9 @@ public class ClientMovieTests : TestBase
             singleGerman
         });
     }
+    /// <summary>
+    /// Tests that recommended movies for a given movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieRecommendationsMovies()
     {
@@ -261,6 +318,9 @@ public class ClientMovieTests : TestBase
             singleGerman
         });
     }
+    /// <summary>
+    /// Tests that reviews for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieReviews()
     {
@@ -270,6 +330,9 @@ public class ClientMovieTests : TestBase
 
         await Verify(single);
     }
+    /// <summary>
+    /// Tests that lists containing a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieLists()
     {
@@ -280,6 +343,9 @@ public class ClientMovieTests : TestBase
         Assert.Equal(IdHelper.AGoodDayToDieHard, resp.Id);
         Assert.NotEmpty(resp.Results);
     }
+    /// <summary>
+    /// Tests that changes to a movie can be retrieved within a date range.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetMovieChangesAsync()
     {
@@ -287,12 +353,18 @@ public class ClientMovieTests : TestBase
 
         Assert.NotEmpty(changes);
     }
+    /// <summary>
+    /// Verifies that retrieving a non-existent movie returns null.
+    /// </summary>
     [Fact]
     public async Task TestMoviesMissing()
     {
         Movie movie = await TMDbClient.GetMovieAsync(IdHelper.MissingID);
         Assert.Null(movie);
     }
+    /// <summary>
+    /// Tests that the list of popular movies can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesPopularList()
     {
@@ -301,6 +373,9 @@ public class ClientMovieTests : TestBase
         SearchContainer<SearchMovie> list = await TMDbClient.GetMoviePopularListAsync("de");
         Assert.NotEmpty(list.Results);
     }
+    /// <summary>
+    /// Tests that the list of top-rated movies can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesTopRatedList()
     {
@@ -309,6 +384,9 @@ public class ClientMovieTests : TestBase
         SearchContainer<SearchMovie> list = await TMDbClient.GetMovieTopRatedListAsync("de");
         Assert.NotEmpty(list.Results);
     }
+    /// <summary>
+    /// Tests that the list of now-playing movies can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesNowPlayingList()
     {
@@ -317,6 +395,9 @@ public class ClientMovieTests : TestBase
         SearchContainer<SearchMovie> list = await TMDbClient.GetMovieNowPlayingListAsync("de");
         Assert.NotEmpty(list.Results);
     }
+    /// <summary>
+    /// Tests that the list of upcoming movies can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestMoviesUpcomingList()
     {
@@ -325,6 +406,9 @@ public class ClientMovieTests : TestBase
         SearchContainer<SearchMovie> list = await TMDbClient.GetMovieUpcomingListAsync("de");
         Assert.NotEmpty(list.Results);
     }
+    /// <summary>
+    /// Tests that a movie can be marked and unmarked as a favorite.
+    /// </summary>
     [Fact]
     public async Task TestMoviesAccountStateFavoriteSetAsync()
     {
@@ -340,6 +424,9 @@ public class ClientMovieTests : TestBase
                 Assert.Equal(shouldBeSet, accountState.Favorite);
             });
     }
+    /// <summary>
+    /// Tests that a movie can be added to and removed from the watchlist.
+    /// </summary>
     [Fact]
     public async Task TestMoviesAccountStateWatchlistSetAsync()
     {
@@ -355,6 +442,9 @@ public class ClientMovieTests : TestBase
                 Assert.Equal(shouldBeSet, accountState.Watchlist);
             });
     }
+    /// <summary>
+    /// Tests that a movie rating can be set and removed.
+    /// </summary>
     [Fact]
     public async Task TestMoviesAccountStateRatingSetAsync()
     {
@@ -370,6 +460,9 @@ public class ClientMovieTests : TestBase
                 Assert.Equal(shouldBeSet, accountState.Rating.HasValue);
             });
     }
+    /// <summary>
+    /// Verifies that invalid movie ratings are rejected while valid ratings are accepted.
+    /// </summary>
     [Fact]
     public async Task TestMoviesSetRatingBadRating()
     {
@@ -387,6 +480,9 @@ public class ClientMovieTests : TestBase
 
         Assert.False(await TMDbClient.MovieRemoveRatingAsync(IdHelper.Avatar));
     }
+    /// <summary>
+    /// Verifies that HTML entities in movie data are properly decoded.
+    /// </summary>
     [Fact]
     public async Task TestMoviesGetHtmlEncodedText()
     {
@@ -396,6 +492,9 @@ public class ClientMovieTests : TestBase
 
         Assert.DoesNotContain("&amp;", item.Overview, StringComparison.Ordinal);
     }
+    /// <summary>
+    /// Tests that account state including rating can be retrieved with movie extra methods.
+    /// </summary>
     [Fact]
     public async Task TestMoviesExtrasAccountStateAsync()
     {

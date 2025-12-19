@@ -7,11 +7,19 @@ using Xunit;
 
 namespace TMDbLibTests.Helpers;
 
+/// <summary>
+/// Helper methods for testing TMDb API methods.
+/// </summary>
 public static class TestMethodsHelper
 {
     /// <summary>
-    /// Tests that a client method will get a specific part of the TMDb api, but not any other methods
+    /// Tests that a client method will get a specific part of the TMDb api, but not any other methods.
     /// </summary>
+    /// <typeparam name="TEnum">The enum type representing different API methods.</typeparam>
+    /// <typeparam name="TResult">The result type returned by the getter method.</typeparam>
+    /// <param name="methodSelectors">A dictionary mapping enum values to functions that extract the corresponding data from the result.</param>
+    /// <param name="getterMethod">A function that fetches data for a given enum value.</param>
+    /// <returns>A task representing the asynchronous test operation.</returns>
     public static async Task TestGetExclusive<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod) where TEnum : Enum
     {
         // Test each method
@@ -31,8 +39,14 @@ public static class TestMethodsHelper
         }
     }
     /// <summary>
-    /// Tests that a client method will get all parts of the TMDb api, when requested
+    /// Tests that a client method will get all parts of the TMDb api when requested.
     /// </summary>
+    /// <typeparam name="TEnum">The enum type representing different API methods.</typeparam>
+    /// <typeparam name="TResult">The result type returned by the getter method.</typeparam>
+    /// <param name="methodSelectors">A dictionary mapping enum values to functions that extract the corresponding data from the result.</param>
+    /// <param name="getterMethod">A function that fetches data for a given enum value.</param>
+    /// <param name="extraAction">An optional additional action to perform on the result.</param>
+    /// <returns>A task representing the asynchronous test operation.</returns>
     public static async Task TestGetAll<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod, Func<TResult, Task> extraAction = null) where TEnum : Enum
     {
         int combinedEnumInt = 0;
@@ -55,6 +69,13 @@ public static class TestMethodsHelper
             await extraAction(item);
         }
     }
+    /// <summary>
+    /// Tests a set-validate-remove pattern by setting a value, validating it exists, removing it, and validating it's gone.
+    /// </summary>
+    /// <param name="set">A function that sets a value.</param>
+    /// <param name="remove">A function that removes the value.</param>
+    /// <param name="validate">A function that validates whether the value exists.</param>
+    /// <returns>A task representing the asynchronous test operation.</returns>
     public static async Task SetValidateRemoveTest(Func<Task> set, Func<Task> remove, Func<bool, Task> validate)
     {
         // Act

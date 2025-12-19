@@ -73,6 +73,11 @@ public partial class TMDbClient
         return response;
     }
 
+    /// <summary>
+    /// Retrieves the most recently created TV show on TMDb.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The latest TV show added to TMDb.</returns>
     public async Task<TvShow> GetLatestTvShowAsync(CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("tv/latest");
@@ -196,11 +201,23 @@ public partial class TMDbClient
         return item;
     }
 
+    /// <summary>
+    /// Retrieves the changes made to a TV show within a time period.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with the changes made to the TV show.</returns>
     public async Task<ChangesContainer> GetTvShowChangesAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ChangesContainer>(id, TvShowMethods.Changes, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves content ratings for a TV show by country.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with content rating information organized by country.</returns>
     public async Task<ResultContainer<ContentRating>> GetTvShowContentRatingsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<ContentRating>>(id, TvShowMethods.ContentRatings, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -254,11 +271,25 @@ public partial class TMDbClient
         return await GetTvShowMethodInternal<ImagesWithId>(id, TvShowMethods.Images, language: language, includeMediaLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves user reviews for a TV show.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with TV show reviews.</returns>
     public async Task<SearchContainerWithId<ReviewBase>> GetTvShowReviewsAsync(int id, string language = null, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SearchContainerWithId<ReviewBase>>(id, TvShowMethods.Reviews, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves the keywords associated with a TV show.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with the keywords for the TV show.</returns>
     public async Task<ResultContainer<Keyword>> GetTvShowKeywordsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<Keyword>>(id, TvShowMethods.Keywords, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -324,21 +355,51 @@ public partial class TMDbClient
         return await GetTvShowListInternal(page, language, "popular", cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves similar TV shows based on a TV show using the default language.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with similar TV shows.</returns>
     public async Task<SearchContainer<SearchTv>> GetTvShowSimilarAsync(int id, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowSimilarAsync(id, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves similar TV shows based on a TV show with specific language settings.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with similar TV shows.</returns>
     public async Task<SearchContainer<SearchTv>> GetTvShowSimilarAsync(int id, string language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SearchContainer<SearchTv>>(id, TvShowMethods.Similar, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves recommended TV shows based on a TV show using the default language.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with recommended TV shows.</returns>
     public async Task<SearchContainer<SearchTv>> GetTvShowRecommendationsAsync(int id, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowRecommendationsAsync(id, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves recommended TV shows based on a TV show with specific language settings.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with recommended TV shows.</returns>
     public async Task<SearchContainer<SearchTv>> GetTvShowRecommendationsAsync(int id, string language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SearchContainer<SearchTv>>(id, TvShowMethods.Recommendations, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -356,21 +417,48 @@ public partial class TMDbClient
         return await GetTvShowListInternal(page, language, "top_rated", cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves available translations for a TV show.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with translation information for the TV show.</returns>
     public async Task<TranslationsContainerTv> GetTvShowTranslationsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<TranslationsContainerTv>(id, TvShowMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves videos (trailers, teasers, clips, etc.) for a TV show.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="includeMediaLanguage">If specified the api will attempt to return localized video results.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with video information for the TV show.</returns>
     public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id, string includeMediaLanguage = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<Video>>(id, TvShowMethods.Videos, includeMediaLanguage: includeMediaLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves watch provider information for a TV show by region.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with watch provider information organized by region.</returns>
     public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetTvShowWatchProvidersAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SingleResultContainer<Dictionary<string, WatchProviders>>>(id, TvShowMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Removes the user's rating for a TV show.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>True if the rating was successfully removed, false otherwise.</returns>
+    /// <remarks>Requires a valid guest or user session.</remarks>
+    /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doesn't have a guest or user session assigned.</exception>
     public async Task<bool> TvShowRemoveRatingAsync(int tvShowId, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.GuestSession);

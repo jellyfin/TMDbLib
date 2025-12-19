@@ -37,6 +37,15 @@ public partial class TMDbClient
         return response;
     }
 
+    /// <summary>
+    /// Retrieves the account states for all episodes in a TV season.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with account states for each episode in the season.</returns>
+    /// <remarks>Requires a valid user session.</remarks>
+    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doesn't have a user session assigned.</exception>
     public async Task<ResultContainer<TvEpisodeAccountStateWithNumber>> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -184,11 +193,26 @@ public partial class TMDbClient
         return await GetTvSeasonMethodInternal<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves videos (trailers, teasers, clips, etc.) for a TV season.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with video information for the season.</returns>
     public async Task<ResultContainer<Video>> GetTvSeasonVideosAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves available translations for a TV season.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with translation information for the season.</returns>
     public async Task<TranslationsContainer> GetTvSeasonTranslationsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, TvSeasonMethods.Translations, null, null, cancellationToken).ConfigureAwait(false);

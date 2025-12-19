@@ -5,8 +5,14 @@ using Xunit;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb TV episode group functionality.
+/// </summary>
 public class ClientTvEpisodeGroupTests : TestBase
 {
+    /// <summary>
+    /// Tests that TV episode group information can be retrieved by group ID.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeGroups()
     {

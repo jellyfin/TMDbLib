@@ -309,11 +309,22 @@ public sealed partial class TMDbClient
         return await GetMovieMethodInternal<ImagesWithId>(movieId, MovieMethods.Images, language: language, includeImageLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves the keywords associated with a movie.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with the keywords for the movie.</returns>
     public async Task<KeywordsContainer> GetMovieKeywordsAsync(int movieId, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<KeywordsContainer>(movieId, MovieMethods.Keywords, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves the most recently created movie on TMDb.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The latest movie added to TMDb.</returns>
     public async Task<Movie> GetMovieLatestAsync(CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("movie/latest");
@@ -330,26 +341,64 @@ public sealed partial class TMDbClient
         return item;
     }
 
+    /// <summary>
+    /// Retrieves the lists that a movie belongs to using the default language.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with the lists containing the movie.</returns>
     public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieListsAsync(movieId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves the lists that a movie belongs to with specific language settings.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with the lists containing the movie.</returns>
     public async Task<SearchContainerWithId<ListResult>> GetMovieListsAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<SearchContainerWithId<ListResult>>(movieId, MovieMethods.Lists, page: page, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves recommended movies based on a movie using the default language.
+    /// </summary>
+    /// <param name="id">The TMDb id of the movie.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with recommended movies.</returns>
     public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieRecommendationsAsync(id, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves recommended movies based on a movie with specific language settings.
+    /// </summary>
+    /// <param name="id">The TMDb id of the movie.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with recommended movies.</returns>
     public async Task<SearchContainer<SearchMovie>> GetMovieRecommendationsAsync(int id, string language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<SearchContainer<SearchMovie>>(id, MovieMethods.Recommendations, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves a list of movies currently in theaters.
+    /// </summary>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="region">The ISO 3166-1 region code to filter results for.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with movies now playing in theaters including minimum and maximum dates.</returns>
     public async Task<SearchContainerWithDates<SearchMovie>> GetMovieNowPlayingListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("movie/now_playing");
@@ -374,6 +423,14 @@ public sealed partial class TMDbClient
         return resp;
     }
 
+    /// <summary>
+    /// Retrieves a list of popular movies.
+    /// </summary>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="region">The ISO 3166-1 region code to filter results for.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with popular movies.</returns>
     public async Task<SearchContainer<SearchMovie>> GetMoviePopularListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("movie/popular");
@@ -398,36 +455,86 @@ public sealed partial class TMDbClient
         return resp;
     }
 
+    /// <summary>
+    /// Retrieves release dates and certifications for a movie by country.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with release date information organized by country.</returns>
     public async Task<ResultContainer<ReleaseDatesContainer>> GetMovieReleaseDatesAsync(int movieId, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves release information for a movie.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>Release information for the movie.</returns>
     public async Task<Releases> GetMovieReleasesAsync(int movieId, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd", cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves user reviews for a movie using the default language.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with movie reviews.</returns>
     public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieReviewsAsync(movieId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves user reviews for a movie with specific language settings.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with movie reviews.</returns>
     public async Task<SearchContainerWithId<ReviewBase>> GetMovieReviewsAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<SearchContainerWithId<ReviewBase>>(movieId, MovieMethods.Reviews, page: page, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves similar movies based on a movie using the default language.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with similar movies.</returns>
     public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieSimilarAsync(movieId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves similar movies based on a movie with specific language settings.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with similar movies.</returns>
     public async Task<SearchContainer<SearchMovie>> GetMovieSimilarAsync(int movieId, string language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<SearchContainer<SearchMovie>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd", cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves a list of top-rated movies.
+    /// </summary>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="region">The ISO 3166-1 region code to filter results for.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with top-rated movies.</returns>
     public async Task<SearchContainer<SearchMovie>> GetMovieTopRatedListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("movie/top_rated");
@@ -452,11 +559,25 @@ public sealed partial class TMDbClient
         return resp;
     }
 
+    /// <summary>
+    /// Retrieves available translations for a movie.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with translation information for the movie.</returns>
     public async Task<TranslationsContainer> GetMovieTranslationsAsync(int movieId, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<TranslationsContainer>(movieId, MovieMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves a list of upcoming movies.
+    /// </summary>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="region">The ISO 3166-1 region code to filter results for.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with upcoming movies including minimum and maximum dates.</returns>
     public async Task<SearchContainerWithDates<SearchMovie>> GetMovieUpcomingListAsync(string language = null, int page = 0, string region = null, CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("movie/upcoming");
@@ -481,16 +602,36 @@ public sealed partial class TMDbClient
         return resp;
     }
 
+    /// <summary>
+    /// Retrieves videos (trailers, teasers, clips, etc.) associated with a movie.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with video information for the movie.</returns>
     public async Task<ResultContainer<Video>> GetMovieVideosAsync(int movieId, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<ResultContainer<Video>>(movieId, MovieMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves watch provider information for a movie by region.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with watch provider information organized by region.</returns>
     public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetMovieWatchProvidersAsync(int movieId, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<SingleResultContainer<Dictionary<string, WatchProviders>>>(movieId, MovieMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Removes the user's rating for a movie.
+    /// </summary>
+    /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>True if the rating was successfully removed, false otherwise.</returns>
+    /// <remarks>Requires a valid guest or user session.</remarks>
+    /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doesn't have a guest or user session assigned.</exception>
     public async Task<bool> MovieRemoveRatingAsync(int movieId, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.GuestSession);

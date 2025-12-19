@@ -13,6 +13,9 @@ using Cast = TMDbLib.Objects.TvShows.Cast;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb TV episode functionality.
+/// </summary>
 public class ClientTvEpisodeTests : TestBase
 {
     private static readonly Dictionary<TvEpisodeMethods, Func<TvEpisode, object>> Methods;
@@ -28,6 +31,9 @@ public class ClientTvEpisodeTests : TestBase
             [TvEpisodeMethods.AccountStates] = tvEpisode => tvEpisode.AccountStates
         };
     }
+    /// <summary>
+    /// Tests that a TV episode can be retrieved without any extra methods.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeExtrasNoneAsync()
     {
@@ -41,6 +47,9 @@ public class ClientTvEpisodeTests : TestBase
             Assert.Null(selector(tvEpisode));
         }
     }
+    /// <summary>
+    /// Tests that account states can be retrieved with a TV episode, including rating information.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeExtrasAccountState()
     {
@@ -59,6 +68,9 @@ public class ClientTvEpisodeTests : TestBase
         }
         await Verify(episode);
     }
+    /// <summary>
+    /// Tests that all extra methods can be retrieved together for a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeExtrasAll()
     {
@@ -72,12 +84,18 @@ public class ClientTvEpisodeTests : TestBase
                 await Verify(tvEpisode);
             });
     }
+    /// <summary>
+    /// Tests that each extra method can be retrieved exclusively for a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeExtrasExclusiveAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
         await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetTvEpisodeAsync(IdHelper.BreakingBad, 1, 1, extras));
     }
+    /// <summary>
+    /// Tests that credits including cast, crew, and guest stars can be retrieved separately for a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeSeparateExtrasCreditsAsync()
     {
@@ -95,6 +113,9 @@ public class ClientTvEpisodeTests : TestBase
             crewItem
         });
     }
+    /// <summary>
+    /// Tests that external IDs can be retrieved separately for a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeSeparateExtrasExternalIdsAsync()
     {
@@ -102,6 +123,9 @@ public class ClientTvEpisodeTests : TestBase
 
         await Verify(externalIds);
     }
+    /// <summary>
+    /// Tests that still images can be retrieved separately for a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeSeparateExtrasImagesAsync()
     {
@@ -109,6 +133,9 @@ public class ClientTvEpisodeTests : TestBase
 
         await Verify(images);
     }
+    /// <summary>
+    /// Tests that videos can be retrieved separately for a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeSeparateExtrasVideosAsync()
     {
@@ -116,6 +143,9 @@ public class ClientTvEpisodeTests : TestBase
 
         await Verify(images);
     }
+    /// <summary>
+    /// Tests that a TV episode rating can be set, retrieved, and removed through account states.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeAccountStateRatingSetAsync()
     {
@@ -150,6 +180,9 @@ public class ClientTvEpisodeTests : TestBase
         // Remove the rating
         Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
     }
+    /// <summary>
+    /// Tests that invalid rating values are rejected when rating a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeRateBadAsync()
     {
@@ -159,6 +192,9 @@ public class ClientTvEpisodeTests : TestBase
         Assert.False(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 0));
         Assert.False(await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BreakingBad, 1, 1, 10.5));
     }
+    /// <summary>
+    /// Tests that change history can be retrieved for a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeGetChangesAsync()
     {
@@ -168,6 +204,9 @@ public class ClientTvEpisodeTests : TestBase
 
         await Verify(changes);
     }
+    /// <summary>
+    /// Tests that null is returned when attempting to retrieve a non-existent TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeMissingAsync()
     {
@@ -175,6 +214,9 @@ public class ClientTvEpisodeTests : TestBase
 
         Assert.Null(tvEpisode);
     }
+    /// <summary>
+    /// Tests that TV episodes that were screened theatrically can be retrieved for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodesScreenedTheatricallyAsync()
     {
@@ -183,6 +225,9 @@ public class ClientTvEpisodeTests : TestBase
 
         await Verify(single);
     }
+    /// <summary>
+    /// Tests that images can be filtered by language when retrieving a TV episode.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeGetTvEpisodeWithImageLanguageAsync()
     {

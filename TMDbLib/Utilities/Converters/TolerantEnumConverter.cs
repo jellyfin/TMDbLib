@@ -6,14 +6,30 @@ using Newtonsoft.Json;
 
 namespace TMDbLib.Utilities.Converters;
 
+/// <summary>
+/// JSON converter for enum values that gracefully handles unrecognized values by falling back to defaults.
+/// </summary>
 public class TolerantEnumConverter : JsonConverter
 {
+    /// <summary>
+    /// Determines whether this instance can convert the specified object type.
+    /// </summary>
+    /// <param name="objectType">Type of the object.</param>
+    /// <returns>True if this converter can convert the type; otherwise, false.</returns>
     public override bool CanConvert(Type objectType)
     {
         Type type = IsNullableType(objectType) ? Nullable.GetUnderlyingType(objectType) : objectType;
         return type.GetTypeInfo().IsEnum;
     }
 
+    /// <summary>
+    /// Reads the JSON representation of the object.
+    /// </summary>
+    /// <param name="reader">The <see cref="JsonReader"/> to read from.</param>
+    /// <param name="objectType">Type of the object.</param>
+    /// <param name="existingValue">The existing value of object being read.</param>
+    /// <param name="serializer">The calling serializer.</param>
+    /// <returns>The parsed enum value, or a default value if parsing fails.</returns>
     public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
     {
         bool isNullable = IsNullableType(objectType);
@@ -55,6 +71,12 @@ public class TolerantEnumConverter : JsonConverter
         return null;
     }
 
+    /// <summary>
+    /// Writes the JSON representation of the object.
+    /// </summary>
+    /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
+    /// <param name="value">The value to write.</param>
+    /// <param name="serializer">The calling serializer.</param>
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
         writer.WriteValue(value.ToString());

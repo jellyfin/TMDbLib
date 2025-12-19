@@ -4,21 +4,32 @@ using Newtonsoft.Json.Linq;
 
 namespace TMDbLib.Objects.Search;
 
+/// <summary>
+/// Represents a collection search result.
+/// </summary>
 public class SearchCollection : SearchBase
 {
     // Property to hold additional data from the JSON
     [JsonExtensionData]
-    private IDictionary<string, JToken> _additionalData;
-
-    [JsonProperty("adult")]
-    public bool Adult { get; set; }
-
-    [JsonProperty("backdrop_path")]
-    public string BackdropPath { get; set; }
-
+    private IDictionary<string, JToken> _additionalData = null!;
     private string _name;
     private string _originalName;
 
+    /// <summary>
+    /// Gets or sets a value indicating whether the collection contains adult content.
+    /// </summary>
+    [JsonProperty("adult")]
+    public bool Adult { get; set; }
+
+    /// <summary>
+    /// Gets or sets the backdrop image path.
+    /// </summary>
+    [JsonProperty("backdrop_path")]
+    public string BackdropPath { get; set; }
+
+    /// <summary>
+    /// Gets or sets the name of the collection.
+    /// </summary>
     [JsonProperty("name")]
     public string Name
     {
@@ -35,9 +46,15 @@ public class SearchCollection : SearchBase
         set => _name = value;
     }
 
+    /// <summary>
+    /// Gets or sets the original language code.
+    /// </summary>
     [JsonProperty("original_language")]
     public string OriginalLanguage { get; set; }
 
+    /// <summary>
+    /// Gets or sets the original name of the collection.
+    /// </summary>
     [JsonProperty("original_name")]
     public string OriginalName
     {
@@ -55,9 +72,15 @@ public class SearchCollection : SearchBase
         set => _originalName = value;
     }
 
+    /// <summary>
+    /// Gets or sets the overview text of the collection.
+    /// </summary>
     [JsonProperty("overview")]
     public string Overview { get; set; }
 
+    /// <summary>
+    /// Gets or sets the poster image path.
+    /// </summary>
     [JsonProperty("poster_path")]
     public string PosterPath { get; set; }
 }

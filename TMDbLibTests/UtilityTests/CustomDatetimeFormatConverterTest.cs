@@ -7,8 +7,14 @@ using Xunit;
 
 namespace TMDbLibTests.UtilityTests;
 
+/// <summary>
+/// Contains tests for the custom datetime format converter.
+/// </summary>
 public class CustomDatetimeFormatConverterTest : TestBase
 {
+    /// <summary>
+    /// Tests that the custom datetime format converter correctly serializes and deserializes datetime values.
+    /// </summary>
     [Fact]
     public void CustomDatetimeFormatConverter_Data()
     {
@@ -30,8 +36,9 @@ public class CustomDatetimeFormatConverterTest : TestBase
             result
         });
     }
+
     /// <summary>
-    /// Tests the CustomDatetimeFormatConverter
+    /// Verifies that the custom datetime format converter correctly deserializes datetime values from API responses.
     /// </summary>
     [Fact]
     public async Task TestCustomDatetimeFormatConverter()

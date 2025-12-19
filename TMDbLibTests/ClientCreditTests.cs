@@ -7,8 +7,14 @@ using System.Globalization;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb credit functionality.
+/// </summary>
 public class ClientCreditTests : TestBase
 {
+    /// <summary>
+    /// Tests that retrieving TV credit information returns expected episode data.
+    /// </summary>
     [Fact]
     public async Task TestGetCreditTv()
     {
@@ -19,6 +25,10 @@ public class ClientCreditTests : TestBase
 
         await Verify(result);
     }
+
+    /// <summary>
+    /// Tests that attempting to retrieve a non-existent credit returns null.
+    /// </summary>
     [Fact]
     public async Task TestMissingCredit()
     {
@@ -26,6 +36,10 @@ public class ClientCreditTests : TestBase
 
         Assert.Null(result);
     }
+
+    /// <summary>
+    /// Tests that retrieving season credit information returns expected season data.
+    /// </summary>
     [Fact]
     public async Task TestGetCreditSeasons()
     {

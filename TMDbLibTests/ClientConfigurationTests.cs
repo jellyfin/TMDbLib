@@ -11,8 +11,14 @@ using TMDbLib.Objects.Languages;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb configuration functionality.
+/// </summary>
 public class ClientConfigurationTests : TestBase
 {
+    /// <summary>
+    /// Tests that retrieving the API configuration returns valid configuration data.
+    /// </summary>
     [Fact]
     public async Task TestConfigurationAsync()
     {
@@ -20,6 +26,10 @@ public class ClientConfigurationTests : TestBase
 
         await Verify(result);
     }
+
+    /// <summary>
+    /// Tests that retrieving primary translations returns a valid list including expected translations.
+    /// </summary>
     [Fact]
     public async Task TestPrimaryTranslationsAsync()
     {
@@ -27,6 +37,10 @@ public class ClientConfigurationTests : TestBase
 
         Assert.Contains("da-DK", result);
     }
+
+    /// <summary>
+    /// Tests that retrieving the country list returns valid country data.
+    /// </summary>
     [Fact]
     public async Task TestCountryListAsync()
     {
@@ -37,6 +51,10 @@ public class ClientConfigurationTests : TestBase
 
         await Verify(single);
     }
+
+    /// <summary>
+    /// Tests that retrieving the language list returns valid language data.
+    /// </summary>
     [Fact]
     public async Task TestLanguageListAsync()
     {
@@ -47,6 +65,10 @@ public class ClientConfigurationTests : TestBase
 
         await Verify(single);
     }
+
+    /// <summary>
+    /// Tests that retrieving the timezones list returns valid timezone data.
+    /// </summary>
     [Fact]
     public async Task TestTimezonesListAsync()
     {
@@ -57,6 +79,10 @@ public class ClientConfigurationTests : TestBase
 
         await Verify(single);
     }
+
+    /// <summary>
+    /// Tests that retrieving the job list returns valid job department data.
+    /// </summary>
     [Fact]
     public async Task TestJobListAsync()
     {

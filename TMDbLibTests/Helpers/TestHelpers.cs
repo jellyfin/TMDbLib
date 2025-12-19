@@ -5,12 +5,29 @@ using Xunit;
 
 namespace TMDbLibTests.Helpers;
 
+/// <summary>
+/// General helper methods for tests.
+/// </summary>
 public static class TestHelpers
 {
+    /// <summary>
+    /// Tests search pagination by verifying the first two pages of results.
+    /// </summary>
+    /// <typeparam name="T">The type of items in the search results.</typeparam>
+    /// <param name="getter">A function that fetches a page of search results.</param>
+    /// <returns>A task representing the asynchronous test operation.</returns>
     public static Task SearchPagesAsync<T>(Func<int, Task<SearchContainer<T>>> getter)
     {
         return SearchPagesAsync<SearchContainer<T>, T>(getter);
     }
+
+    /// <summary>
+    /// Tests search pagination by verifying the first two pages of results with a custom container type.
+    /// </summary>
+    /// <typeparam name="TContainer">The container type for search results.</typeparam>
+    /// <typeparam name="T">The type of items in the search results.</typeparam>
+    /// <param name="getter">A function that fetches a page of search results.</param>
+    /// <returns>A task representing the asynchronous test operation.</returns>
     public static async Task SearchPagesAsync<TContainer, T>(Func<int, Task<TContainer>> getter) where TContainer : SearchContainer<T>
     {
         // Check page 1

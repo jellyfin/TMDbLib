@@ -17,11 +17,15 @@ public class TMDbAPIProxy : IWebProxy
     /// <summary>
     /// Initializes a new instance of the <see cref="TMDbAPIProxy"/> class.
     /// </summary>
+    /// <param name="proxyUri">The URI of the proxy server.</param>
+    /// <param name="credentials">The credentials to use for authenticating with the proxy server. Optional.</param>
     public TMDbAPIProxy(Uri proxyUri, ICredentials credentials = null)
     {
 #if NETSTANDARD2_0
         if (proxyUri is null)
+        {
             throw new ArgumentNullException(nameof(proxyUri));
+        }
 #else
         ArgumentNullException.ThrowIfNull(proxyUri);
 #endif
@@ -44,6 +48,11 @@ public class TMDbAPIProxy : IWebProxy
         return _proxyUri;
     }
 
+    /// <summary>
+    /// Determines whether the proxy should be bypassed for the specified host.
+    /// </summary>
+    /// <param name="host">The host URI to check.</param>
+    /// <returns>Always returns false as this proxy does not support bypassing.</returns>
     public bool IsBypassed(Uri host)
     {
         return false;

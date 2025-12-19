@@ -4,8 +4,19 @@ using System.Reflection;
 
 namespace TMDbLibTests.Helpers;
 
+/// <summary>
+/// Helper methods for working with property expressions.
+/// </summary>
 internal static class PropertyHelpers
 {
+    /// <summary>
+    /// Extracts PropertyInfo from a property lambda expression.
+    /// </summary>
+    /// <typeparam name="TSource">The source type containing the property.</typeparam>
+    /// <typeparam name="TProperty">The property type.</typeparam>
+    /// <param name="propertyLambda">The property expression to extract from.</param>
+    /// <returns>The PropertyInfo for the specified property.</returns>
+    /// <exception cref="ArgumentException">Thrown when the expression does not represent a valid property access.</exception>
     public static PropertyInfo GetPropertyInfo<TSource, TProperty>(Expression<Func<TSource, TProperty>> propertyLambda)
     {
         Type type = typeof(TSource);

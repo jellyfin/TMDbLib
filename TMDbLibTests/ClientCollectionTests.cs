@@ -9,6 +9,9 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb collection functionality.
+/// </summary>
 public class ClientCollectionTests : TestBase
 {
     private static readonly Dictionary<CollectionMethods, Func<Collection, object>> Methods;
@@ -20,6 +23,10 @@ public class ClientCollectionTests : TestBase
             [CollectionMethods.Images] = collection => collection.Images
         };
     }
+
+    /// <summary>
+    /// Tests that retrieving a collection without extras does not include extra data.
+    /// </summary>
     [Fact]
     public async Task TestCollectionsExtrasNone()
     {
@@ -31,6 +38,10 @@ public class ClientCollectionTests : TestBase
             Assert.Null(selector(collection));
         }
     }
+
+    /// <summary>
+    /// Tests that attempting to retrieve a non-existent collection returns null.
+    /// </summary>
     [Fact]
     public async Task TestCollectionMissing()
     {
@@ -38,6 +49,10 @@ public class ClientCollectionTests : TestBase
 
         Assert.Null(collection);
     }
+
+    /// <summary>
+    /// Tests that retrieving a collection returns the expected collection parts.
+    /// </summary>
     [Fact]
     public async Task TestCollectionsParts()
     {
@@ -45,16 +60,28 @@ public class ClientCollectionTests : TestBase
 
         await Verify(collection);
     }
+
+    /// <summary>
+    /// Tests that requesting specific collection extras returns only those extras.
+    /// </summary>
     [Fact]
     public async Task TestCollectionsExtrasExclusive()
     {
         await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, extras));
     }
+
+    /// <summary>
+    /// Tests that requesting all collection extras returns all available extra data.
+    /// </summary>
     [Fact]
     public async Task TestCollectionsExtrasAll()
     {
         await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, combined), async collection => await Verify(collection));
     }
+
+    /// <summary>
+    /// Tests that retrieving collection images returns valid image paths.
+    /// </summary>
     [Fact]
     public async Task TestCollectionsImagesAsync()
     {

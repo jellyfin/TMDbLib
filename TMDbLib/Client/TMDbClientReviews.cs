@@ -7,6 +7,13 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
+    /// <summary>
+    /// Retrieves detailed information about a review.
+    /// </summary>
+    /// <param name="reviewId">The id of the review.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The detailed review information.</returns>
     public async Task<Review> GetReviewAsync(string reviewId, string language = null, CancellationToken cancellationToken = default)
     {
         RestRequest request = _client.Create("review/{reviewId}");

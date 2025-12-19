@@ -9,8 +9,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb guest session functionality.
+/// </summary>
 public class ClientGuestSessionTests : TestBase
 {
+    /// <summary>
+    /// Tests that TV episode ratings can be set and removed using a guest session.
+    /// </summary>
     [Fact]
     public async Task TestTvEpisodeSetRatingGuestSessionAsync()
     {
@@ -36,6 +42,9 @@ public class ClientGuestSessionTests : TestBase
             }
         });
     }
+    /// <summary>
+    /// Tests that TV show ratings can be set and removed using a guest session.
+    /// </summary>
     [Fact]
     public async Task TestTvSetRatingGuestSessionAsync()
     {
@@ -61,6 +70,9 @@ public class ClientGuestSessionTests : TestBase
             }
         });
     }
+    /// <summary>
+    /// Tests that movie ratings can be set and removed using a guest session.
+    /// </summary>
     [Fact]
     public async Task TestMoviesSetRatingGuestSessionAsync()
     {

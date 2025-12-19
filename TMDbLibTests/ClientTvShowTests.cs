@@ -14,6 +14,9 @@ using Credits = TMDbLib.Objects.TvShows.Credits;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb TV show functionality.
+/// </summary>
 public class ClientTvShowTests : TestBase
 {
     private static readonly Dictionary<TvShowMethods, Func<TvShow, object>> Methods;
@@ -36,6 +39,10 @@ public class ClientTvShowTests : TestBase
             [TvShowMethods.CreditsAggregate] = tvShow => tvShow.AggregateCredits
         };
     }
+
+    /// <summary>
+    /// Tests that a TV show can be retrieved without any extra methods.
+    /// </summary>
     [Fact]
     public async Task TestTvShowExtrasNoneAsync()
     {
@@ -49,6 +56,10 @@ public class ClientTvShowTests : TestBase
             Assert.Null(selector(tvShow));
         }
     }
+
+    /// <summary>
+    /// Tests that all extra methods can be retrieved together for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowExtrasAllAsync()
     {
@@ -59,6 +70,10 @@ public class ClientTvShowTests : TestBase
 
         await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetTvShowAsync(IdHelper.KeepingUpAppearances, combined), show => Verify(show));
     }
+
+    /// <summary>
+    /// Tests that credits can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasCreditsAsync()
     {
@@ -66,6 +81,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(credits);
     }
+
+    /// <summary>
+    /// Tests that aggregate credits can be retrieved for a TV show across all seasons and episodes.
+    /// </summary>
     [Fact]
     public async Task TestAggregateCreditsExtractAllAsync()
     {
@@ -73,6 +92,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(credits);
     }
+
+    /// <summary>
+    /// Tests that external IDs can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasExternalIdsAsync()
     {
@@ -80,6 +103,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(externalIds);
     }
+
+    /// <summary>
+    /// Tests that content ratings can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasContentRatingsAsync()
     {
@@ -87,6 +114,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(contentRatings);
     }
+
+    /// <summary>
+    /// Tests that alternative titles can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasAlternativeTitlesAsync()
     {
@@ -94,6 +125,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(alternativeTitles);
     }
+
+    /// <summary>
+    /// Tests that keywords can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasKeywordsAsync()
     {
@@ -103,6 +138,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(single);
     }
+
+    /// <summary>
+    /// Tests that translations can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasTranslationsAsync()
     {
@@ -112,6 +151,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(single);
     }
+
+    /// <summary>
+    /// Tests that videos can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasVideosAsync()
     {
@@ -121,6 +164,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(single);
     }
+
+    /// <summary>
+    /// Tests that account states can be retrieved with a TV show, including rating information.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasAccountStateAsync()
     {
@@ -141,6 +188,10 @@ public class ClientTvShowTests : TestBase
         Assert.True(show.AccountStates.Rating.HasValue);
         Assert.True(Math.Abs(show.AccountStates.Rating.Value - 5) < double.Epsilon);
     }
+
+    /// <summary>
+    /// Tests that images including backdrops, posters, and logos can be retrieved separately for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeparateExtrasImagesAsync()
     {
@@ -159,6 +210,10 @@ public class ClientTvShowTests : TestBase
             logo
         });
     }
+
+    /// <summary>
+    /// Tests that images can be filtered by language when retrieving TV show images separately.
+    /// </summary>
     [Fact]
     public async Task TestTvShowGetImagesWithImageLanguageAsync()
     {
@@ -177,6 +232,10 @@ public class ClientTvShowTests : TestBase
             logo
         });
     }
+
+    /// <summary>
+    /// Tests that episode groups can be retrieved with a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowGetTvShowWithEpisodeGroups()
     {
@@ -184,6 +243,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(resp.EpisodeGroups);
     }
+
+    /// <summary>
+    /// Tests that images can be filtered by language when retrieving a TV show with extra methods.
+    /// </summary>
     [Fact]
     public async Task TestTvShowGetTvShowWithImageLanguageAsync()
     {
@@ -202,6 +265,10 @@ public class ClientTvShowTests : TestBase
             logo
         });
     }
+
+    /// <summary>
+    /// Tests that popular TV shows can be retrieved with proper pagination.
+    /// </summary>
     [Fact]
     public async Task TestTvShowPopular()
     {
@@ -216,6 +283,10 @@ public class ClientTvShowTests : TestBase
         Assert.NotNull(result.Results[0].PosterPath);
         Assert.NotNull(result.Results[0].BackdropPath);
     }
+
+    /// <summary>
+    /// Tests that a TV show's season count is correctly retrieved.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSeasonCountAsync()
     {
@@ -224,6 +295,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(tvShow);
     }
+
+    /// <summary>
+    /// Tests that videos can be retrieved as part of a TV show request.
+    /// </summary>
     [Fact]
     public async Task TestTvShowVideosAsync()
     {
@@ -231,6 +306,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(tvShow);
     }
+
+    /// <summary>
+    /// Tests that watch provider information can be retrieved for a TV show by region.
+    /// </summary>
     [Fact]
     public async Task TestTvShowGetMovieWatchProviders()
     {
@@ -243,6 +322,10 @@ public class ClientTvShowTests : TestBase
 
         // Not making further assertions since this data is highly dynamic.
     }
+
+    /// <summary>
+    /// Tests that all available translations can be retrieved for a TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowTranslationsAsync()
     {
@@ -250,6 +333,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(translations);
     }
+
+    /// <summary>
+    /// Tests that similar TV shows can be retrieved based on a given TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSimilarsAsync()
     {
@@ -261,6 +348,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(tvShow);
     }
+
+    /// <summary>
+    /// Tests that recommended TV shows can be retrieved based on a given TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowRecommendationsAsync()
     {
@@ -272,6 +363,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(tvShow);
     }
+
+    /// <summary>
+    /// Tests that top-rated TV shows can be retrieved with proper pagination.
+    /// </summary>
     [Fact]
     public async Task TestTvShowTopRated()
     {
@@ -283,6 +378,10 @@ public class ClientTvShowTests : TestBase
         Assert.NotNull(result.Results[0].FirstAirDate);
         Assert.NotNull(result.Results[0].PosterPath ?? result.Results[0].BackdropPath);
     }
+
+    /// <summary>
+    /// Tests that the latest TV show added to TMDb can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestTvShowLatest()
     {
@@ -290,6 +389,10 @@ public class ClientTvShowTests : TestBase
 
         Assert.NotNull(tvShow);
     }
+
+    /// <summary>
+    /// Tests that reviews can be retrieved for a TV show with proper pagination.
+    /// </summary>
     [Fact]
     public async Task TestTvShowReviews()
     {
@@ -301,6 +404,10 @@ public class ClientTvShowTests : TestBase
 
         await Verify(single);
     }
+
+    /// <summary>
+    /// Tests that TV show lists of various types can be retrieved with proper pagination.
+    /// </summary>
     [Fact]
     public async Task TestTvShowLists()
     {
@@ -309,6 +416,10 @@ public class ClientTvShowTests : TestBase
             await TestHelpers.SearchPagesAsync(i => TMDbClient.GetTvShowListAsync(type, i));
         }
     }
+
+    /// <summary>
+    /// Tests that a TV show can be added to and removed from a user's favorites list.
+    /// </summary>
     [Fact]
     public async Task TestTvShowAccountStateFavoriteSet()
     {
@@ -330,6 +441,10 @@ public class ClientTvShowTests : TestBase
             Assert.Equal(shouldBe, accountState.Favorite);
         });
     }
+
+    /// <summary>
+    /// Tests that a TV show can be added to and removed from a user's watchlist.
+    /// </summary>
     [Fact]
     public async Task TestTvShowAccountStateWatchlistSet()
     {
@@ -351,6 +466,10 @@ public class ClientTvShowTests : TestBase
             Assert.Equal(shouldBe, accountState.Watchlist);
         });
     }
+
+    /// <summary>
+    /// Tests that a TV show rating can be set and removed through account states.
+    /// </summary>
     [Fact]
     public async Task TestTvShowAccountStateRatingSet()
     {
@@ -381,6 +500,10 @@ public class ClientTvShowTests : TestBase
             }
         });
     }
+
+    /// <summary>
+    /// Tests that TV show rating validation accepts valid values and rejects invalid values.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSetRating()
     {
@@ -396,6 +519,10 @@ public class ClientTvShowTests : TestBase
 
         Assert.False(await TMDbClient.TvShowSetRatingAsync(IdHelper.BreakingBad, 0));
     }
+
+    /// <summary>
+    /// Tests that a TV show can be rated using a guest session.
+    /// </summary>
     [Fact]
     public async Task TestTvShowSetRatingGuestSession()
     {
@@ -410,6 +537,10 @@ public class ClientTvShowTests : TestBase
         // Try changing it back to the previous rating
         Assert.True(await TMDbClient.TvShowSetRatingAsync(IdHelper.BreakingBad, 8));
     }
+
+    /// <summary>
+    /// Tests that null is returned when attempting to retrieve a non-existent TV show.
+    /// </summary>
     [Fact]
     public async Task TestTvShowMissingAsync()
     {

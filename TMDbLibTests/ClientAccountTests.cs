@@ -15,6 +15,9 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb account functionality.
+/// </summary>
 public class ClientAccountTests : TestBase
 {
     public ClientAccountTests()
@@ -24,6 +27,9 @@ public class ClientAccountTests : TestBase
             throw new ConfigurationErrorsException("To successfully complete the ClientAccountTests you will need to specify a valid 'UserSessionId' in the test config file");
         }
     }
+    /// <summary>
+    /// Tests that getting account details with a guest session throws UserSessionRequiredException.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetDetailsGuestAccount()
     {
@@ -31,6 +37,9 @@ public class ClientAccountTests : TestBase
 
         await Assert.ThrowsAsync<UserSessionRequiredException>(() => TMDbClient.AccountGetDetailsAsync());
     }
+    /// <summary>
+    /// Tests that getting account details with a user session returns valid account information.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetDetailsUserAccount()
     {
@@ -38,6 +47,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(TMDbClient.ActiveAccount);
     }
+    /// <summary>
+    /// Tests that retrieving account lists returns expected lists and can find a specific list by ID.
+    /// </summary>
     [Fact]
     public async Task TestAccountAccountGetLists()
     {
@@ -51,6 +63,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(single);
     }
+    /// <summary>
+    /// Tests that pagination works correctly for account lists.
+    /// </summary>
     [Fact(Skip = "TMDb has an issue in pagination of AccountGetListsAsync")]
     public async Task TestAccountAccountGetListsPaged()
     {
@@ -58,6 +73,9 @@ public class ClientAccountTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetListsAsync(i));
     }
+    /// <summary>
+    /// Tests that retrieving favorite movies returns expected results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetFavoriteMovies()
     {
@@ -71,6 +89,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(movie, x => x.IgnoreProperty<SearchMovie>(n => n.VoteCount, n => n.Popularity));
     }
+    /// <summary>
+    /// Tests that retrieving favorite TV shows returns expected results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetFavoriteTv()
     {
@@ -83,6 +104,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvShow);
     }
+    /// <summary>
+    /// Tests that retrieving movie watchlist returns expected results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetMovieWatchlist()
     {
@@ -95,6 +119,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(movie);
     }
+    /// <summary>
+    /// Tests that retrieving TV show watchlist returns expected results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetTvWatchlist()
     {
@@ -107,6 +134,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvShow);
     }
+    /// <summary>
+    /// Tests that retrieving rated movies returns expected results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetRatedMovies()
     {
@@ -119,6 +149,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(movie);
     }
+    /// <summary>
+    /// Tests that retrieving rated TV shows returns expected results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetRatedTv()
     {
@@ -131,6 +164,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvShow);
     }
+    /// <summary>
+    /// Tests that retrieving rated TV episodes returns expected results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestAccountGetRatedTvEpisodes()
     {
@@ -144,6 +180,9 @@ public class ClientAccountTests : TestBase
 
         await Verify(tvEpisode);
     }
+    /// <summary>
+    /// Tests that marking and unmarking a TV show as favorite works correctly.
+    /// </summary>
     [Fact]
     public async Task TestAccountChangeTvFavoriteStatusAsync()
     {
@@ -170,6 +209,9 @@ public class ClientAccountTests : TestBase
         // Check if it worked
         Assert.False(await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
     }
+    /// <summary>
+    /// Tests that marking and unmarking a movie as favorite works correctly.
+    /// </summary>
     [Fact]
     public async Task TestAccountChangeMovieFavoriteStatusAsync()
     {
@@ -196,6 +238,9 @@ public class ClientAccountTests : TestBase
         // Check if it worked
         Assert.False(await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
     }
+    /// <summary>
+    /// Tests that adding and removing a TV show from the watchlist works correctly.
+    /// </summary>
     [Fact]
     public async Task TestAccountChangeTvWatchlistStatusAsync()
     {
@@ -222,6 +267,9 @@ public class ClientAccountTests : TestBase
         // Check if it worked
         Assert.False(await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
     }
+    /// <summary>
+    /// Tests that adding and removing a movie from the watchlist works correctly.
+    /// </summary>
     [Fact]
     public async Task TestAccountChangeMovieWatchlistStatusAsync()
     {
