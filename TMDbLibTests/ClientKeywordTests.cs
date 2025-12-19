@@ -9,8 +9,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb keyword functionality.
+/// </summary>
 public class ClientKeywordTests : TestBase
 {
+    /// <summary>
+    /// Tests that keywords for a movie can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestGetMovieKeywordsAsync()
     {
@@ -18,6 +24,10 @@ public class ClientKeywordTests : TestBase
 
         await Verify(keywords);
     }
+
+    /// <summary>
+    /// Tests that keywords for a TV show can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestGetTvShowKeywordsAsync()
     {
@@ -25,6 +35,10 @@ public class ClientKeywordTests : TestBase
 
         await Verify(keywords);
     }
+
+    /// <summary>
+    /// Tests that a single keyword can be retrieved by ID.
+    /// </summary>
     [Fact]
     public async Task TestKeywordGetSingle()
     {
@@ -32,6 +46,10 @@ public class ClientKeywordTests : TestBase
 
         await Verify(keyword);
     }
+
+    /// <summary>
+    /// Verifies that retrieving keywords for a non-existent movie returns null.
+    /// </summary>
     [Fact]
     public async Task TestKeywordsMissing()
     {
@@ -39,6 +57,10 @@ public class ClientKeywordTests : TestBase
 
         Assert.Null(keywords);
     }
+
+    /// <summary>
+    /// Tests that movies associated with a keyword can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestKeywordMovies()
     {

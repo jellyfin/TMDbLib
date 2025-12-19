@@ -8,7 +8,7 @@ using TMDbLibTests.JsonHelpers;
 namespace TMDbLibTests;
 
 /// <summary>
-/// https://www.themoviedb.org/documentation/api/sessions
+/// Contains tests for the TMDb authentication functionality.
 /// </summary>
 public class ClientAuthenticationTests : TestBase
 {
@@ -19,6 +19,10 @@ public class ClientAuthenticationTests : TestBase
             throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
         }
     }
+
+    /// <summary>
+    /// Tests that requesting a new authentication token returns a valid token.
+    /// </summary>
     [Fact]
     public async Task TestAuthenticationRequestNewToken()
     {
@@ -46,6 +50,10 @@ public class ClientAuthenticationTests : TestBase
     //    Assert.True(session.Success);
     //    Assert.NotNull(session.SessionId);
     //}
+
+    /// <summary>
+    /// Tests that attempting to create a user session with an invalid token throws UnauthorizedAccessException.
+    /// </summary>
     [Fact]
     public async Task TestAuthenticationUserAuthenticatedSessionInvalidTokenAsync()
     {
@@ -53,6 +61,10 @@ public class ClientAuthenticationTests : TestBase
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationGetUserSessionAsync(requestToken));
     }
+
+    /// <summary>
+    /// Tests that validating a user token with valid credentials succeeds.
+    /// </summary>
     /// <remarks>
     /// Requires a valid test user to be assigned
     /// </remarks>
@@ -63,6 +75,10 @@ public class ClientAuthenticationTests : TestBase
 
         await TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, TestConfig.Username, TestConfig.Password);
     }
+
+    /// <summary>
+    /// Tests that validating a user token with invalid credentials throws UnauthorizedAccessException.
+    /// </summary>
     [Fact]
     public async Task TestAuthenticationGetUserSessionApiUserValidationInvalidLoginAsync()
     {
@@ -70,6 +86,10 @@ public class ClientAuthenticationTests : TestBase
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla"));
     }
+
+    /// <summary>
+    /// Tests that creating a user session with valid username and password succeeds and returns a valid session.
+    /// </summary>
     /// <remarks>
     /// Requires a valid test user to be assigned
     /// </remarks>
@@ -82,6 +102,10 @@ public class ClientAuthenticationTests : TestBase
         Assert.True(session.Success);
         Assert.NotNull(session.SessionId);
     }
+
+    /// <summary>
+    /// Tests that attempting to create a user session with an expired token throws UnauthorizedAccessException.
+    /// </summary>
     [Fact]
     public async Task TestAuthenticationUserAuthenticatedSessionOldTokenAsync()
     {
@@ -89,6 +113,10 @@ public class ClientAuthenticationTests : TestBase
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationGetUserSessionAsync(requestToken));
     }
+
+    /// <summary>
+    /// Tests that creating a guest session returns a valid guest session ID.
+    /// </summary>
     [Fact]
     public async Task TestAuthenticationCreateGuestSessionAsync()
     {

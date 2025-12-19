@@ -8,8 +8,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb changes functionality.
+/// </summary>
 public class ClientChangesTests : TestBase
 {
+    /// <summary>
+    /// Tests that retrieving movie changes returns results and newer changes are present.
+    /// </summary>
     [Fact]
     public async Task TestChangesMoviesAsync()
     {
@@ -22,6 +28,10 @@ public class ClientChangesTests : TestBase
         // At least one item must be newer in page1
         Assert.Contains(page1.Results, x => oldChanges.Results.All(s => s.Id != x.Id));
     }
+
+    /// <summary>
+    /// Tests that retrieving people changes returns results and newer changes are present.
+    /// </summary>
     [Fact]
     public async Task TestChangesPeopleAsync()
     {
@@ -34,6 +44,10 @@ public class ClientChangesTests : TestBase
         // At least one item must be newer in page1
         Assert.Contains(page1.Results, x => oldChanges.Results.All(s => s.Id != x.Id));
     }
+
+    /// <summary>
+    /// Tests that retrieving TV show changes returns results and newer changes are present.
+    /// </summary>
     [Fact]
     public async Task TestChangesTvShowsAsync()
     {

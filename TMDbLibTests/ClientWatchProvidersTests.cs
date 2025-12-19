@@ -5,8 +5,14 @@ using Xunit;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb watch providers functionality.
+/// </summary>
 public class ClientWatchProvidersTests : TestBase
 {
+    /// <summary>
+    /// Tests that all available watch provider regions can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestGetRegions()
     {
@@ -14,6 +20,10 @@ public class ClientWatchProvidersTests : TestBase
 
         await Verify(watchProviderRegions);
     }
+
+    /// <summary>
+    /// Tests that all movie watch providers can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestGetMovieWatchProviders()
     {
@@ -21,6 +31,10 @@ public class ClientWatchProvidersTests : TestBase
 
         await Verify(watchProviders);
     }
+
+    /// <summary>
+    /// Tests that all TV watch providers can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestGetTvWatchProviders()
     {

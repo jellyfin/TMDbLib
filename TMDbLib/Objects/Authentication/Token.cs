@@ -11,20 +11,29 @@ namespace TMDbLib.Objects.Authentication;
 /// </summary>
 public class Token
 {
+    /// <summary>
+    /// Gets or sets the authentication callback URL. This field is populated by custom code.
+    /// </summary>
     // This field is populated by custom code
     [JsonIgnore]
     public string AuthenticationCallback { get; set; }
 
     /// <summary>
-    /// The date / time before which the token must be used, else it will expire. Time is expressed as local time.
+    /// Gets or sets the date / time before which the token must be used, else it will expire. Time is expressed as local time.
     /// </summary>
     [JsonProperty("expires_at")]
     [JsonConverter(typeof(CustomDatetimeFormatConverter))]
     public DateTime ExpiresAt { get; set; }
 
+    /// <summary>
+    /// Gets or sets the request token.
+    /// </summary>
     [JsonProperty("request_token")]
     public string RequestToken { get; set; }
 
+    /// <summary>
+    /// Gets or sets a value indicating whether the token request was successful.
+    /// </summary>
     [JsonProperty("success")]
     public bool Success { get; set; }
 }

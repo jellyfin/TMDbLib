@@ -13,6 +13,9 @@ using TMDbLib.Utilities.Serializer;
 
 namespace TestApplication;
 
+/// <summary>
+/// Sample application demonstrating TMDbLib usage.
+/// </summary>
 public class Program
 {
     private static async Task Main(string[] args)

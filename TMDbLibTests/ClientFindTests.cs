@@ -6,8 +6,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb find functionality.
+/// </summary>
 public class ClientFindTests : TestBase
 {
+    /// <summary>
+    /// Tests that finding a movie by IMDb ID returns the expected movie data.
+    /// </summary>
     [Fact]
     public async Task TestFindImdbMovie()
     {
@@ -15,6 +21,9 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+    /// <summary>
+    /// Tests that finding a person by IMDb ID returns the expected person data.
+    /// </summary>
     [Fact]
     public async Task TestFindImdbPerson()
     {
@@ -22,6 +31,9 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+    /// <summary>
+    /// Tests that finding a TV episode by IMDb ID returns the expected episode data.
+    /// </summary>
     [Fact]
     public async Task TestFindImdbTvShowEpisode()
     {
@@ -29,6 +41,9 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+    /// <summary>
+    /// Tests that finding a TV season by TVDb ID returns the expected season data.
+    /// </summary>
     [Fact]
     public async Task TestFindImdbTvShowSeasonAsync()
     {
@@ -36,6 +51,9 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+    /// <summary>
+    /// Tests that finding a TV show by TVDb ID returns the expected show data.
+    /// </summary>
     [Fact]
     public async Task TestFindTvdbTvShowAsync()
     {
@@ -43,6 +61,9 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+    /// <summary>
+    /// Tests that finding a TV show by IMDb ID returns the expected show data.
+    /// </summary>
     [Fact]
     public async Task TestFindImdbTvShowAsync()
     {

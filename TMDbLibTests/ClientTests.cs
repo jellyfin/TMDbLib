@@ -10,8 +10,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb client functionality.
+/// </summary>
 public class ClientTests : TestBase
 {
+    /// <summary>
+    /// Tests that TMDb configuration can be retrieved and cached.
+    /// </summary>
     [Fact]
     public async Task GetConfigTest()
     {
@@ -21,6 +27,10 @@ public class ClientTests : TestBase
 
         await Verify(TMDbClient.Config);
     }
+
+    /// <summary>
+    /// Tests that TMDb configuration can be retrieved with SSL enabled.
+    /// </summary>
     [Fact]
     public async Task GetConfigSslTest()
     {
@@ -32,11 +42,19 @@ public class ClientTests : TestBase
 
         await Verify(config.Client.Config);
     }
+
+    /// <summary>
+    /// Verifies that accessing configuration before it is loaded throws an exception.
+    /// </summary>
     [Fact]
     public void GetConfigFailTest()
     {
         Assert.Throws<InvalidOperationException>(() => TMDbClient.Config);
     }
+
+    /// <summary>
+    /// Tests that TMDb configuration can be set manually.
+    /// </summary>
     [Fact]
     public void SetConfigTest()
     {
@@ -56,6 +74,9 @@ public class ClientTests : TestBase
 
         Assert.Same(config, TMDbClient.Config);
     }
+    /// <summary>
+    /// Tests that the client can be constructed with various URL and SSL configurations.
+    /// </summary>
     [Fact]
     public async Task ClientConstructorUrlTest()
     {
@@ -71,11 +92,17 @@ public class ClientTests : TestBase
         using TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org") { MaxRetryCount = 2 };
         await clientD.GetConfigAsync();
     }
+    /// <summary>
+    /// Verifies that setting an invalid MaxRetryCount value throws an exception.
+    /// </summary>
     [Fact]
     public void ClientSetBadMaxRetryValue()
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => TMDbClient.MaxRetryCount = -1);
     }
+    /// <summary>
+    /// Tests that image URLs can be generated with and without SSL.
+    /// </summary>
     [Fact]
     public async Task ClientTestUrlGenerator()
     {
@@ -90,6 +117,9 @@ public class ClientTests : TestBase
             uriSsl
         });
     }
+    /// <summary>
+    /// Tests that rate limit exceptions are properly thrown when the API rate limit is exceeded.
+    /// </summary>
     [Fact(Skip = "Disabled till we can consistently reproduce a rate limit")]
     public async Task ClientRateLimitTest()
     {

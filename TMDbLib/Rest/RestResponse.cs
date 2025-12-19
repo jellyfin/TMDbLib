@@ -10,30 +10,30 @@ namespace TMDbLib.Rest;
 
 internal class RestResponse : IDisposable
 {
-    private readonly HttpResponseMessage Response;
+    private readonly HttpResponseMessage response;
 
     public RestResponse(HttpResponseMessage response)
     {
-        Response = response;
+        this.response = response;
     }
 
-    public bool IsValid => Response != null;
+    public bool IsValid => response != null;
 
-    public HttpStatusCode StatusCode => Response.StatusCode;
+    public HttpStatusCode StatusCode => response.StatusCode;
 
     public async Task<Stream> GetContent()
     {
-        return await Response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+        return await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
     }
 
     public string GetHeader(string name, string @default = null)
     {
-        return Response.Headers.GetValues(name).FirstOrDefault() ?? @default;
+        return response.Headers.GetValues(name).FirstOrDefault() ?? @default;
     }
 
     public virtual void Dispose()
     {
-        Response?.Dispose();
+        response?.Dispose();
     }
 }
 

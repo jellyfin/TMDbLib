@@ -9,8 +9,14 @@ using Xunit;
 
 namespace TMDbLibTests.UtilityTests;
 
+/// <summary>
+/// Contains tests for the KnownFor converter.
+/// </summary>
 public class KnownForConverterTest : TestBase
 {
+    /// <summary>
+    /// Tests that the KnownFor converter correctly deserializes movie objects.
+    /// </summary>
     [Fact]
     public async Task KnownForConverter_Movie()
     {
@@ -29,6 +35,10 @@ public class KnownForConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the KnownFor converter correctly deserializes TV show objects.
+    /// </summary>
     [Fact]
     public async Task KnownForConverter_Tv()
     {
@@ -47,8 +57,9 @@ public class KnownForConverterTest : TestBase
             result
         });
     }
+
     /// <summary>
-    /// Tests the KnownForConverter
+    /// Verifies that the KnownFor converter correctly deserializes different media types from person search API responses.
     /// </summary>
     [Fact]
     public async Task TestJsonKnownForConverter()

@@ -36,6 +36,13 @@ public partial class TMDbClient
         return resp;
     }
 
+    /// <summary>
+    /// Retrieves a company by its TMDb ID.
+    /// </summary>
+    /// <param name="companyId">The TMDb ID of the company.</param>
+    /// <param name="extraMethods">Additional data to include in the response using the append_to_response pattern.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>The company object.</returns>
     public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("company/{companyId}");
@@ -61,11 +68,26 @@ public partial class TMDbClient
         return resp;
     }
 
+    /// <summary>
+    /// Retrieves a paginated list of movies produced by a specific company.
+    /// </summary>
+    /// <param name="companyId">The TMDb ID of the company.</param>
+    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A search container with movies produced by the company.</returns>
     public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetCompanyMoviesAsync(companyId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves a paginated list of movies produced by a specific company with language option.
+    /// </summary>
+    /// <param name="companyId">The TMDb ID of the company.</param>
+    /// <param name="language">The ISO 639-1 language code for the movie text. Defaults to the client's DefaultLanguage.</param>
+    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A search container with movies produced by the company.</returns>
     public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, string language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetCompanyMethodInternal<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language, cancellationToken).ConfigureAwait(false);

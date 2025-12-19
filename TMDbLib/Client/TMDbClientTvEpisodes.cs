@@ -38,6 +38,16 @@ public partial class TMDbClient
         return resp;
     }
 
+    /// <summary>
+    /// Retrieves the account states for a TV episode (rating, watchlist status, favorite status).
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="episodeNumber">The episode number.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>The account states for the episode.</returns>
+    /// <remarks>Requires a valid user session.</remarks>
+    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doesn't have a user session assigned.</exception>
     public async Task<TvEpisodeAccountState> GetTvEpisodeAccountStateAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -145,6 +155,12 @@ public partial class TMDbClient
         return item;
     }
 
+    /// <summary>
+    /// Retrieves a list of TV episodes that have been screened theatrically.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with episodes that were screened theatrically.</returns>
     public async Task<ResultContainer<TvEpisodeInfo>> GetTvEpisodesScreenedTheatricallyAsync(int tvShowId, CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("tv/{tv_id}/screened_theatrically");
@@ -194,16 +210,42 @@ public partial class TMDbClient
         return await GetTvEpisodeMethodInternal<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves videos (trailers, clips, etc.) for a TV episode.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="episodeNumber">The episode number.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with video information for the episode.</returns>
     public async Task<ResultContainer<Video>> GetTvEpisodeVideosAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default)
     {
         return await GetTvEpisodeMethodInternal<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Retrieves available translations for a TV episode.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="episodeNumber">The episode number.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A container with translation information for the episode.</returns>
     public async Task<TranslationsContainer> GetTvEpisodeTranslationsAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default)
     {
         return await GetTvEpisodeMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Translations, null, null, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Removes the user's rating for a TV episode.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="episodeNumber">The episode number.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>True if the rating was successfully removed, false otherwise.</returns>
+    /// <remarks>Requires a valid guest or user session.</remarks>
+    /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doesn't have a guest or user session assigned.</exception>
     public async Task<bool> TvEpisodeRemoveRatingAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.GuestSession);
@@ -224,6 +266,17 @@ public partial class TMDbClient
         return item.StatusCode == 13;
     }
 
+    /// <summary>
+    /// Sets or updates the user's rating for a TV episode.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="episodeNumber">The episode number.</param>
+    /// <param name="rating">The rating value between 0.5 and 10 in increments of 0.5.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>True if the rating was successfully set, false otherwise.</returns>
+    /// <remarks>Requires a valid guest or user session.</remarks>
+    /// <exception cref="GuestSessionRequiredException">Thrown when the current client object doesn't have a guest or user session assigned.</exception>
     public async Task<bool> TvEpisodeSetRatingAsync(int tvShowId, int seasonNumber, int episodeNumber, double rating, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.GuestSession);

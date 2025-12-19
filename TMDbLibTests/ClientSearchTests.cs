@@ -8,8 +8,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb search functionality.
+/// </summary>
 public class ClientSearchTests : TestBase
 {
+    /// <summary>
+    /// Tests that movies can be searched by title with optional year filtering.
+    /// </summary>
     [Fact]
     public async Task TestSearchMovieAsync()
     {
@@ -24,6 +30,9 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
+    /// <summary>
+    /// Tests that movie collections can be searched by name.
+    /// </summary>
     [Fact]
     public async Task TestSearchCollectionAsync()
     {
@@ -36,6 +45,9 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
+    /// <summary>
+    /// Tests that people can be searched by name.
+    /// </summary>
     [Fact]
     public async Task TestSearchPersonAsync()
     {
@@ -48,6 +60,9 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.ProfilePath]);
     }
+    /// <summary>
+    /// Tests that production companies can be searched by name.
+    /// </summary>
     [Fact]
     public async Task TestSearchCompanyAsync()
     {
@@ -60,6 +75,9 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.LogoPath]);
     }
+    /// <summary>
+    /// Tests that keywords can be searched by name.
+    /// </summary>
     [Fact]
     public async Task TestSearchKeywordAsync()
     {
@@ -70,6 +88,9 @@ public class ClientSearchTests : TestBase
 
         await Verify(item);
     }
+    /// <summary>
+    /// Tests that TV shows can be searched by name.
+    /// </summary>
     [Fact]
     public async Task TestSearchTvShowAsync()
     {
@@ -82,6 +103,9 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
+    /// <summary>
+    /// Tests that multi-search can query movies, TV shows, and people simultaneously.
+    /// </summary>
     [Fact]
     public async Task TestSearchMultiAsync()
     {

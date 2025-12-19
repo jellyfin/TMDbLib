@@ -7,8 +7,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb certifications functionality.
+/// </summary>
 public class ClientCertificationsTests : TestBase
 {
+    /// <summary>
+    /// Tests that retrieving movie certifications returns a valid list of certification items.
+    /// </summary>
     [Fact]
     public async Task TestCertificationsListMovieAsync()
     {
@@ -22,6 +28,10 @@ public class ClientCertificationsTests : TestBase
 
         await Verify(ratingE);
     }
+
+    /// <summary>
+    /// Tests that retrieving TV show certifications returns a valid list of certification items.
+    /// </summary>
     [Fact]
     public async Task TestCertificationsListTvAsync()
     {

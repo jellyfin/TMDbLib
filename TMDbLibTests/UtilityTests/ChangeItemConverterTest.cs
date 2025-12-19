@@ -9,8 +9,14 @@ using Xunit;
 
 namespace TMDbLibTests.UtilityTests;
 
+/// <summary>
+/// Contains tests for the ChangeItem converter.
+/// </summary>
 public class ChangeItemConverterTest : TestBase
 {
+    /// <summary>
+    /// Tests that the ChangeItem converter correctly deserializes ChangeItemAdded objects.
+    /// </summary>
     [Fact]
     public async Task ChangeItemConverter_ChangeItemAdded()
     {
@@ -29,6 +35,10 @@ public class ChangeItemConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the ChangeItem converter correctly deserializes ChangeItemCreated objects.
+    /// </summary>
     [Fact]
     public async Task ChangeItemConverter_ChangeItemCreated()
     {
@@ -46,6 +56,10 @@ public class ChangeItemConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the ChangeItem converter correctly deserializes ChangeItemDeleted objects.
+    /// </summary>
     [Fact]
     public async Task ChangeItemConverter_ChangeItemDeleted()
     {
@@ -64,6 +78,10 @@ public class ChangeItemConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the ChangeItem converter correctly deserializes ChangeItemUpdated objects.
+    /// </summary>
     [Fact]
     public async Task ChangeItemConverter_ChangeItemUpdated()
     {
@@ -83,8 +101,9 @@ public class ChangeItemConverterTest : TestBase
             result
         });
     }
+
     /// <summary>
-    /// Tests the ChangeItemConverter
+    /// Verifies that the ChangeItem converter correctly deserializes different change types from API responses.
     /// </summary>
     [Fact]
     public async Task TestChangeItemConverter()

@@ -10,18 +10,30 @@ using TMDbLib.Objects.Movies;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb discover functionality.
+/// </summary>
 public class ClientDiscoverTests : TestBase
 {
+    /// <summary>
+    /// Tests that discovering TV shows without parameters returns results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestDiscoverTvShowsNoParamsAsync()
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverTvShowsAsync().Query(i));
     }
+    /// <summary>
+    /// Tests that discovering movies without parameters returns results and supports pagination.
+    /// </summary>
     [Fact]
     public async Task TestDiscoverMoviesNoParamsAsync()
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.DiscoverMoviesAsync().Query(i));
     }
+    /// <summary>
+    /// Tests that discovering TV shows with vote count and average filters returns filtered results.
+    /// </summary>
     [Fact]
     public async Task TestDiscoverTvShowsAsync()
     {
@@ -31,6 +43,9 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+    /// <summary>
+    /// Tests that discovering movies with vote count and average filters returns filtered results.
+    /// </summary>
     [Fact]
     public async Task TestDiscoverMoviesAsync()
     {
@@ -40,6 +55,9 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+    /// <summary>
+    /// Tests that discovering movies with region and release date filters returns region-specific results.
+    /// </summary>
     [Fact]
     public async Task TestDiscoverMoviesRegionAsync()
     {
@@ -49,6 +67,9 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+    /// <summary>
+    /// Tests that discovering movies with release type filters returns movies matching the specified release type.
+    /// </summary>
     [Fact]
     public async Task TestDiscoverMoviesReleaseTypeAsync()
     {
@@ -57,6 +78,9 @@ public class ClientDiscoverTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => query.Query(i));
     }
+    /// <summary>
+    /// Tests that discovering movies with language filters returns localized titles while maintaining same movie IDs.
+    /// </summary>
     [Fact]
     public async Task TestDiscoverMoviesLanguageAsync()
     {

@@ -9,6 +9,11 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
+    /// <summary>
+    /// Creates a new guest session for rating movies and TV shows without a registered TMDb account.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A guest session object containing the guest session ID.</returns>
     public async Task<GuestSession> AuthenticationCreateGuestSessionAsync(CancellationToken cancellationToken = default)
     {
         RestRequest request = _client.Create("authentication/guest_session/new");
@@ -21,6 +26,13 @@ public partial class TMDbClient
         return response;
     }
 
+    /// <summary>
+    /// Creates a user session using a validated request token.
+    /// </summary>
+    /// <param name="initialRequestToken">A request token that has been validated with user credentials.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A user session object containing the session ID for authenticated API requests.</returns>
+    /// <exception cref="UnauthorizedAccessException">Thrown when the request token is invalid or has not been validated.</exception>
     public async Task<UserSession> AuthenticationGetUserSessionAsync(string initialRequestToken, CancellationToken cancellationToken = default)
     {
         RestRequest request = _client.Create("authentication/session/new");
@@ -42,6 +54,7 @@ public partial class TMDbClient
     /// <param name="username">A valid TMDb username.</param>
     /// <param name="password">The passoword for the provided login.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A user session object containing the session ID for authenticated API requests.</returns>
     public async Task<UserSession> AuthenticationGetUserSessionAsync(string username, string password, CancellationToken cancellationToken = default)
     {
         Token token = await AuthenticationRequestAutenticationTokenAsync(cancellationToken).ConfigureAwait(false);
@@ -49,6 +62,11 @@ public partial class TMDbClient
         return await AuthenticationGetUserSessionAsync(token.RequestToken, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>
+    /// Requests a new authentication token from TMDb for user authentication.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A token object containing the request token that must be validated before creating a session.</returns>
     public async Task<Token> AuthenticationRequestAutenticationTokenAsync(CancellationToken cancellationToken = default)
     {
         RestRequest request = _client.Create("authentication/token/new");
@@ -61,6 +79,15 @@ public partial class TMDbClient
         return token;
     }
 
+    /// <summary>
+    /// Validates a request token with TMDb user credentials.
+    /// </summary>
+    /// <param name="initialRequestToken">The request token to validate.</param>
+    /// <param name="username">The TMDb username.</param>
+    /// <param name="password">The TMDb password.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    /// <exception cref="UnauthorizedAccessException">Thrown when the provided user credentials are invalid.</exception>
     public async Task AuthenticationValidateUserTokenAsync(string initialRequestToken, string username, string password, CancellationToken cancellationToken = default)
     {
         RestRequest request = _client.Create("authentication/token/validate_with_login");

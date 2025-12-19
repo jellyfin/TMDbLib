@@ -8,8 +8,14 @@ using Xunit;
 
 namespace TMDbLibTests.UtilityTests;
 
+/// <summary>
+/// Contains tests for the SearchBase converter.
+/// </summary>
 public class SearchBaseConverterTest : TestBase
 {
+    /// <summary>
+    /// Tests that the SearchBase converter correctly deserializes movie search results.
+    /// </summary>
     [Fact]
     public async Task SearchBaseConverter_Movie()
     {
@@ -28,6 +34,10 @@ public class SearchBaseConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the SearchBase converter correctly deserializes TV show search results.
+    /// </summary>
     [Fact]
     public async Task SearchBaseConverter_Tv()
     {
@@ -47,6 +57,10 @@ public class SearchBaseConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the SearchBase converter correctly deserializes person search results.
+    /// </summary>
     [Fact]
     public async Task SearchBaseConverter_Person()
     {
@@ -66,8 +80,9 @@ public class SearchBaseConverterTest : TestBase
             result
         });
     }
+
     /// <summary>
-    /// Tests the SearchBaseConverter
+    /// Verifies that the SearchBase converter correctly deserializes multi-search API responses containing different media types.
     /// </summary>
     [Fact]
     public async Task TestSearchBaseConverter()

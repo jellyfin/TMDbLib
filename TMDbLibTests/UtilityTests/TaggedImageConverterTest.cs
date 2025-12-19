@@ -9,8 +9,14 @@ using Xunit;
 
 namespace TMDbLibTests.UtilityTests;
 
+/// <summary>
+/// Contains tests for the TaggedImage converter.
+/// </summary>
 public class TaggedImageConverterTest : TestBase
 {
+    /// <summary>
+    /// Tests that the TaggedImage converter correctly deserializes movie media types.
+    /// </summary>
     [Fact]
     public async Task TaggedImageConverter_Movie()
     {
@@ -32,6 +38,10 @@ public class TaggedImageConverterTest : TestBase
             result
         });
     }
+
+    /// <summary>
+    /// Tests that the TaggedImage converter correctly deserializes TV show media types.
+    /// </summary>
     [Fact]
     public async Task TaggedImageConverter_Tv()
     {
@@ -53,8 +63,9 @@ public class TaggedImageConverterTest : TestBase
             result
         });
     }
+
     /// <summary>
-    /// Tests the TaggedImageConverter
+    /// Verifies that the TaggedImage converter correctly deserializes different media types from API responses.
     /// </summary>
     [Theory]
     [InlineData(IdHelper.HughLaurie)] // Has Movie media

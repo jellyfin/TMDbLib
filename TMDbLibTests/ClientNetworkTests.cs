@@ -7,8 +7,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb network functionality.
+/// </summary>
 public class ClientNetworkTests : TestBase
 {
+    /// <summary>
+    /// Tests that a network can be retrieved by ID.
+    /// </summary>
     [Fact]
     public async Task TestNetworkGetByIdAsync()
     {
@@ -16,6 +22,9 @@ public class ClientNetworkTests : TestBase
 
         await Verify(network);
     }
+    /// <summary>
+    /// Tests that logos for a network can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestNetworkImagesAsync()
     {
@@ -23,6 +32,9 @@ public class ClientNetworkTests : TestBase
 
         await Verify(logos);
     }
+    /// <summary>
+    /// Tests that alternative names for a network can be retrieved.
+    /// </summary>
     [Fact]
     public async Task TestNetworkAlternativeNamesAsync()
     {
@@ -30,6 +42,9 @@ public class ClientNetworkTests : TestBase
 
         await Verify(names);
     }
+    /// <summary>
+    /// Verifies that retrieving a non-existent network returns null.
+    /// </summary>
     [Fact]
     public async Task TestNetworkMissingAsync()
     {

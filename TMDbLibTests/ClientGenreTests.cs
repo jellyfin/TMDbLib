@@ -9,8 +9,14 @@ using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
 
+/// <summary>
+/// Contains tests for the TMDb genre functionality.
+/// </summary>
 public class ClientGenreTests : TestBase
 {
+    /// <summary>
+    /// Tests that TV genre lists can be retrieved in different languages.
+    /// </summary>
     [Fact]
     public async Task TestGenreTvListAsync()
     {
@@ -32,6 +38,9 @@ public class ClientGenreTests : TestBase
 
         Assert.NotEqual(actionEn.Name, actionDa.Name);
     }
+    /// <summary>
+    /// Tests that movie genre lists can be retrieved in different languages.
+    /// </summary>
     [Fact]
     public async Task TestGenreMovieListAsync()
     {
@@ -53,6 +62,9 @@ public class ClientGenreTests : TestBase
 
         Assert.NotEqual(actionEn.Name, actionDa.Name);
     }
+    /// <summary>
+    /// Tests that movies can be retrieved by genre ID.
+    /// </summary>
     [Fact]
     public async Task TestGenreMoviesAsync()
     {

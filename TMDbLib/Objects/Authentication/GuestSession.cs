@@ -13,15 +13,21 @@ namespace TMDbLib.Objects.Authentication;
 public class GuestSession
 {
     /// <summary>
-    /// The date / time before which the session must be used for the first time else it will expire. Time is expressed as local time.
+    /// Gets or sets the date / time before which the session must be used for the first time else it will expire. Time is expressed as local time.
     /// </summary>
     [JsonProperty("expires_at")]
     [JsonConverter(typeof(CustomDatetimeFormatConverter))]
     public DateTime ExpiresAt { get; set; }
 
+    /// <summary>
+    /// Gets or sets the guest session ID.
+    /// </summary>
     [JsonProperty("guest_session_id")]
     public string GuestSessionId { get; set; }
 
+    /// <summary>
+    /// Gets or sets a value indicating whether the guest session creation was successful.
+    /// </summary>
     [JsonProperty("success")]
     public bool Success { get; set; }
 }
