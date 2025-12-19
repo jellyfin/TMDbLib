@@ -64,6 +64,11 @@ public partial class TMDbClient
     /// The maximum number of days that can be returned in a single request is 14.
     /// You can then use the movie changes API to get the actual data that has been changed. (.GetMovieChangesAsync).
     /// </summary>
+    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
+    /// <param name="startDate">The start date for filtering changes.</param>
+    /// <param name="endDate">The end date for filtering changes.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A search container with a list of movie IDs that have been edited.</returns>
     /// <remarks>the change log system to support this was changed on October 5, 2012 and will only show movies that have been edited since.</remarks>
     public async Task<SearchContainer<ChangesListItem>> GetMoviesChangesAsync(int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default)
     {
@@ -76,6 +81,11 @@ public partial class TMDbClient
     /// The maximum number of days that can be returned in a single request is 14.
     /// You can then use the person changes API to get the actual data that has been changed.(.GetPersonChangesAsync).
     /// </summary>
+    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
+    /// <param name="startDate">The start date for filtering changes.</param>
+    /// <param name="endDate">The end date for filtering changes.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A search container with a list of person IDs that have been edited.</returns>
     /// <remarks>the change log system to support this was changed on October 5, 2012 and will only show people that have been edited since.</remarks>
     public async Task<SearchContainer<ChangesListItem>> GetPeopleChangesAsync(int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default)
     {
@@ -88,6 +98,11 @@ public partial class TMDbClient
     /// The maximum number of days that can be returned in a single request is 14.
     /// You can then use the TV changes API to get the actual data that has been changed. (.GetTvShowChangesAsync).
     /// </summary>
+    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
+    /// <param name="startDate">The start date for filtering changes.</param>
+    /// <param name="endDate">The end date for filtering changes.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A search container with a list of TV show IDs that have been edited.</returns>
     /// <remarks>
     /// the change log system to properly support TV was updated on May 13, 2014.
     /// You'll likely only find the edits made since then to be useful in the change log system.

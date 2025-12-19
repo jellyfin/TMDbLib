@@ -31,6 +31,7 @@ public class ClientTvSeasonTests : TestBase
             [TvSeasonMethods.AccountStates] = tvSeason => tvSeason.AccountStates
         };
     }
+
     /// <summary>
     /// Tests that a TV season can be retrieved without any extra methods.
     /// </summary>
@@ -47,6 +48,7 @@ public class ClientTvSeasonTests : TestBase
             Assert.Null(selector(tvSeason));
         }
     }
+
     /// <summary>
     /// Tests that account states can be retrieved with a TV season, including episode ratings.
     /// </summary>
@@ -70,6 +72,7 @@ public class ClientTvSeasonTests : TestBase
         Assert.True(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.HasValue);
         Assert.True(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.Value - 5) < double.Epsilon);
     }
+
     /// <summary>
     /// Tests that all extra methods can be retrieved together for a TV season.
     /// </summary>
@@ -83,6 +86,7 @@ public class ClientTvSeasonTests : TestBase
 
         await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetTvSeasonAsync(IdHelper.FullerHouse, 1, combined), season => Verify(season));
     }
+
     /// <summary>
     /// Tests that each extra method can be retrieved exclusively for a TV season.
     /// </summary>
@@ -93,6 +97,7 @@ public class ClientTvSeasonTests : TestBase
 
         await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, extras));
     }
+
     /// <summary>
     /// Tests that credits can be retrieved separately for a TV season.
     /// </summary>
@@ -103,6 +108,7 @@ public class ClientTvSeasonTests : TestBase
 
         await Verify(credits);
     }
+
     /// <summary>
     /// Tests that external IDs can be retrieved separately for a TV season.
     /// </summary>
@@ -113,6 +119,7 @@ public class ClientTvSeasonTests : TestBase
 
         await Verify(externalIds);
     }
+
     /// <summary>
     /// Tests that poster images can be retrieved separately for a TV season.
     /// </summary>
@@ -124,6 +131,7 @@ public class ClientTvSeasonTests : TestBase
         Assert.NotEmpty(images.Posters);
         TestImagesHelpers.TestImagePaths(images.Posters);
     }
+
     /// <summary>
     /// Tests that videos can be retrieved separately for a TV season.
     /// </summary>
@@ -135,6 +143,7 @@ public class ClientTvSeasonTests : TestBase
 
         await Verify(single);
     }
+
     /// <summary>
     /// Tests that episode ratings can be set and removed, reflected in the season's account state.
     /// </summary>
@@ -160,6 +169,7 @@ public class ClientTvSeasonTests : TestBase
                 }
             });
     }
+
     /// <summary>
     /// Tests that change history can be retrieved for a TV season.
     /// </summary>
@@ -172,6 +182,7 @@ public class ClientTvSeasonTests : TestBase
 
         Assert.NotEmpty(changes);
     }
+
     /// <summary>
     /// Tests that null is returned when attempting to retrieve a non-existent TV season.
     /// </summary>
@@ -182,6 +193,7 @@ public class ClientTvSeasonTests : TestBase
 
         Assert.Null(tvSeason);
     }
+
     /// <summary>
     /// Tests that images can be filtered by language when retrieving a TV season.
     /// </summary>

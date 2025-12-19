@@ -22,6 +22,7 @@ public class ClientReviewTests : TestBase
 
         await Verify(review);
     }
+
     /// <summary>
     /// Verifies that retrieving a non-existent review returns null.
     /// </summary>

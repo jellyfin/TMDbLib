@@ -74,6 +74,7 @@ public class ClientTests : TestBase
 
         Assert.Same(config, TMDbClient.Config);
     }
+
     /// <summary>
     /// Tests that the client can be constructed with various URL and SSL configurations.
     /// </summary>
@@ -92,6 +93,7 @@ public class ClientTests : TestBase
         using TMDbClient clientD = new TMDbClient(TestConfig.APIKey, true, "https://api.themoviedb.org") { MaxRetryCount = 2 };
         await clientD.GetConfigAsync();
     }
+
     /// <summary>
     /// Verifies that setting an invalid MaxRetryCount value throws an exception.
     /// </summary>
@@ -100,6 +102,7 @@ public class ClientTests : TestBase
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => TMDbClient.MaxRetryCount = -1);
     }
+
     /// <summary>
     /// Tests that image URLs can be generated with and without SSL.
     /// </summary>
@@ -117,6 +120,7 @@ public class ClientTests : TestBase
             uriSsl
         });
     }
+
     /// <summary>
     /// Tests that rate limit exceptions are properly thrown when the API rate limit is exceeded.
     /// </summary>

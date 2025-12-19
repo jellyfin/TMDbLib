@@ -105,6 +105,7 @@ public partial class TMDbClient
     /// <summary>
     /// Retrieves a list of departments and positions within.
     /// </summary>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>Valid jobs and their departments.</returns>
     public async Task<List<Job>> GetJobsAsync(CancellationToken cancellationToken = default)
     {

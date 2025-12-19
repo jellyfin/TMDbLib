@@ -11,6 +11,7 @@ public partial class TMDbClient
     /// Returns a list of all of the countries TMDb has watch provider (OTT/streaming) data for.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A list of regions/countries with watch provider data available.</returns>
     /// <remarks>Uses <see cref="DefaultLanguage"/> to translate data.</remarks>
     public async Task<ResultContainer<WatchProviderRegion>> GetWatchProviderRegionsAsync(CancellationToken cancellationToken = default)
     {
@@ -29,6 +30,7 @@ public partial class TMDbClient
     /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for movies.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A list of watch providers for movies.</returns>
     /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
     public async Task<ResultContainer<WatchProviderItem>> GetMovieWatchProvidersAsync(CancellationToken cancellationToken = default)
     {
@@ -52,6 +54,7 @@ public partial class TMDbClient
     /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for shows.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A list of watch providers for TV shows.</returns>
     /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
     public async Task<ResultContainer<WatchProviderItem>> GetTvWatchProvidersAsync(CancellationToken cancellationToken = default)
     {

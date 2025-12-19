@@ -331,6 +331,7 @@ public partial class TMDbClient : IDisposable
     /// </summary>
     /// <param name="sessionId">The session id to use when making calls that require authentication.</param>
     /// <param name="sessionType">The type of session id.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     /// <remarks>
     /// - Use the 'AuthenticationGetUserSessionAsync' and 'AuthenticationCreateGuestSessionAsync' methods to optain the respective session ids.
     /// - User sessions have access to far for methods than guest sessions, these can currently only be used to rate media.

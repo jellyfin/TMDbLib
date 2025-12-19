@@ -44,12 +44,14 @@ public class UtilsTest : TestBase
 
         Assert.Equal("B-Description", s);
     }
+
     enum EnumTestEnum
     {
         A,
         [EnumValue("B-Description")]
         B
     }
+
     struct EnumTestStruct
     {
     }

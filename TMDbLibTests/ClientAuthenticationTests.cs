@@ -12,6 +12,9 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientAuthenticationTests : TestBase
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ClientAuthenticationTests"/> class.
+    /// </summary>
     public ClientAuthenticationTests()
     {
         if (string.IsNullOrWhiteSpace(TestConfig.Username) || string.IsNullOrWhiteSpace(TestConfig.Password))

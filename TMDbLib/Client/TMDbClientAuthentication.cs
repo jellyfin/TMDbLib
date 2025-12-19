@@ -105,11 +105,12 @@ public partial class TMDbClient
             throw ex.InnerException;
         }
 
-        using RestResponse _ = response;
-
-        if (response.StatusCode == HttpStatusCode.Unauthorized)
+        using (response)
         {
-            throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
+            }
         }
     }
 }

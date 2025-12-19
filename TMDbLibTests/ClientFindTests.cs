@@ -21,6 +21,7 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+
     /// <summary>
     /// Tests that finding a person by IMDb ID returns the expected person data.
     /// </summary>
@@ -31,6 +32,7 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+
     /// <summary>
     /// Tests that finding a TV episode by IMDb ID returns the expected episode data.
     /// </summary>
@@ -41,6 +43,7 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+
     /// <summary>
     /// Tests that finding a TV season by TVDb ID returns the expected season data.
     /// </summary>
@@ -51,6 +54,7 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+
     /// <summary>
     /// Tests that finding a TV show by TVDb ID returns the expected show data.
     /// </summary>
@@ -61,6 +65,7 @@ public class ClientFindTests : TestBase
 
         await Verify(result);
     }
+
     /// <summary>
     /// Tests that finding a TV show by IMDb ID returns the expected show data.
     /// </summary>

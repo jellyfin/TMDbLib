@@ -127,6 +127,9 @@ public class ClientListsTests : TestBase
         }
     }
 
+    /// <summary>
+    /// Collection definition for list cleanup fixtures.
+    /// </summary>
     [CollectionDefinition(nameof(ListFixturesCollection))]
     public class ListFixturesCollection : ICollectionFixture<ListCleanupFixture>
     {

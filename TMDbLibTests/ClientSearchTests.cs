@@ -30,6 +30,7 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
+
     /// <summary>
     /// Tests that movie collections can be searched by name.
     /// </summary>
@@ -45,6 +46,7 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
+
     /// <summary>
     /// Tests that people can be searched by name.
     /// </summary>
@@ -60,6 +62,7 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.ProfilePath]);
     }
+
     /// <summary>
     /// Tests that production companies can be searched by name.
     /// </summary>
@@ -75,6 +78,7 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.LogoPath]);
     }
+
     /// <summary>
     /// Tests that keywords can be searched by name.
     /// </summary>
@@ -88,6 +92,7 @@ public class ClientSearchTests : TestBase
 
         await Verify(item);
     }
+
     /// <summary>
     /// Tests that TV shows can be searched by name.
     /// </summary>
@@ -103,6 +108,7 @@ public class ClientSearchTests : TestBase
 
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
+
     /// <summary>
     /// Tests that multi-search can query movies, TV shows, and people simultaneously.
     /// </summary>

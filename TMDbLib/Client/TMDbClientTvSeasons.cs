@@ -162,6 +162,7 @@ public partial class TMDbClient
     /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>Credits information including cast and crew for the season.</returns>
     public async Task<Credits> GetTvSeasonCreditsAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, dateFormat: "yyyy-MM-dd", language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -173,6 +174,7 @@ public partial class TMDbClient
     /// <param name="tvShowId">The TMDb id of the target tv show.</param>
     /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>External IDs for the season from various sources like TVDB, etc.</returns>
     public async Task<ExternalIdsTvSeason> GetTvSeasonExternalIdsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<ExternalIdsTvSeason>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -188,6 +190,7 @@ public partial class TMDbClient
     /// For images this means that the image might contain language specifc text.
     /// </param>
     /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>Poster images for the season.</returns>
     public async Task<PosterImages> GetTvSeasonImagesAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
