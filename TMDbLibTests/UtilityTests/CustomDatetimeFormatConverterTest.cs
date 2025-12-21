@@ -18,12 +18,11 @@ public class CustomDatetimeFormatConverterTest : TestBase
     [Fact]
     public void CustomDatetimeFormatConverter_Data()
     {
-
+        // Use a fixed date to ensure deterministic test output
         Token original = new Token
         {
-            ExpiresAt = DateTime.UtcNow.Date
+            ExpiresAt = new DateTime(2020, 1, 15, 12, 30, 45, DateTimeKind.Utc)
         };
-        original.ExpiresAt = original.ExpiresAt.AddMilliseconds(-original.ExpiresAt.Millisecond);
 
         string json = Serializer.SerializeToString(original);
         Token result = Serializer.DeserializeFromString<Token>(json);

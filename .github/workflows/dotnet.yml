@@ -1,10 +1,11 @@
-name: Generic Build
+name: Build and Test
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    types: [ opened, synchronize, reopened ]
 
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -32,7 +33,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Test
-      run: "[ -f .ci-skip-tests ] && echo 'Skipping tests' || dotnet test --no-build --verbosity normal"
+      run: dotnet test --no-build --verbosity normal
 
     - name: Pack
       if: github.ref == 'refs/heads/master'
