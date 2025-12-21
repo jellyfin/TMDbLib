@@ -2,28 +2,31 @@
   backdrop_path: <non-empty>,
   created_by: [
     {
-      id: Id_1,
-      credit_id: 52542286760ee31328001a7b,
+      id: {Scrubbed},
+      credit_id: {Scrubbed},
       name: Vince Gilligan,
       gender: Male,
       profile_path: <non-empty>
     }
   ],
-  episode_run_time: [
-    45,
-    47
-  ],
+  episode_run_time: [],
   first_air_date: DateTime_1,
   genres: [
     {
-      id: Id_2,
+      id: {Scrubbed},
       name: Drama
+    },
+    {
+      id: {Scrubbed},
+      name: Crime
     }
   ],
-  homepage: http://www.amc.com/shows/breaking-bad,
-  id: Id_3,
+  homepage: https://www.sonypictures.com/tv/breakingbad,
+  id: {Scrubbed},
   languages: [
-    en
+    en,
+    de,
+    es
   ],
   last_air_date: DateTime_2,
   last_episode_to_air: {
@@ -31,8 +34,11 @@
     name: Felina,
     overview: All bad things must come to an end.,
     production_code: ,
+    show_id: {Scrubbed},
     still_path: <non-empty>,
-    id: Id_4,
+    runtime: 56,
+    episode_type: finale,
+    id: {Scrubbed},
     season_number: 5,
     episode_number: 16
   },
@@ -40,7 +46,7 @@
   networks: [
     {
       logo_path: <non-empty>,
-      id: Id_5,
+      id: {Scrubbed},
       name: AMC,
       origin_country: US
     }
@@ -52,97 +58,109 @@
   origin_country: [
     US
   ],
-  overview: When Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.,
+  overview: Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.,
   poster_path: <non-empty>,
   production_companies: [
     {
-      id: Id_6,
+      id: {Scrubbed},
       name: Gran Via Productions,
       origin_country: US
     },
     {
-      id: Id_7,
-      name: Sony Pictures Television Studios,
+      id: {Scrubbed},
+      name: Sony Pictures Television,
       logo_path: <non-empty>,
       origin_country: US
     },
     {
-      id: Id_8,
-      name: High Bridge Entertainment,
+      id: {Scrubbed},
+      name: High Bridge Productions,
+      logo_path: <non-empty>,
       origin_country: US
     }
   ],
   production_countries: [
     {
-      Iso_3166_1: US,
-      Name: United States of America
+      iso_3166_1: US,
+      name: United States of America
     }
   ],
   seasons: [
     {
       air_date: DateTime_1,
       episode_count: 7,
-      id: Id_9,
       name: Season 1,
       overview: High school chemistry teacher Walter White's life is suddenly transformed by a dire medical diagnosis. Street-savvy former student Jesse Pinkman "teaches" Walter a new trade.,
       poster_path: <non-empty>,
-      season_number: 1
+      season_number: 1,
+      id: {Scrubbed},
+      media_type: season
     },
     {
       air_date: DateTime_3,
       episode_count: 13,
-      id: Id_10,
       name: Season 2,
-      overview: In the second season, Walt must deal with the chain reaction of his choice, as he and Jesse face new and severe consequences. When danger and suspicion around Walt escalate, he is pushed to new levels of desperation. Just how much higher will the stakes rise? How far is Walt willing to go to ensure his family's security? Will his grand plan spiral out of control?,
+      overview: Walt must deal with the chain reaction of his choice, as he and Jesse face new and severe consequences. When danger and suspicion around Walt escalate, he is pushed to new levels of desperation. Just how much higher will the stakes rise? How far is Walt willing to go to ensure his family's security? Will his grand plan spiral out of control?,
       poster_path: <non-empty>,
-      season_number: 2
+      season_number: 2,
+      id: {Scrubbed},
+      media_type: season
     },
     {
       air_date: DateTime_4,
       episode_count: 13,
-      id: Id_11,
       name: Season 3,
-      overview: In the third season, Walt continues to battle dueling identities: a desperate husband and father trying to provide for his family, and a newly appointed key player in the Albuquerque drug trade. As the danger around him escalates, Walt is now entrenched in the complex worlds of an angst-ridden family on the verge of dissolution, and the ruthless and unrelenting drug cartel.,
+      overview: Walt continues to battle dueling identities: a desperate husband and father trying to provide for his family, and a newly appointed key player in the Albuquerque drug trade. As the danger around him escalates, Walt is now entrenched in the complex worlds of an angst-ridden family on the verge of dissolution, and the ruthless and unrelenting drug cartel.,
       poster_path: <non-empty>,
-      season_number: 3
+      season_number: 3,
+      id: {Scrubbed},
+      media_type: season
     },
     {
       air_date: DateTime_5,
       episode_count: 13,
-      id: Id_12,
       name: Season 4,
-      overview: This season, Walt and Jesse must cope with the fallout of their previous actions, both personally and professionally. Tension mounts as Walt faces a true standoff with his employer, Gus, with neither side willing or able to back down. Walt must also adjust to a new relationship with Skyler, whom while still reconciling her relationship with Walt, is committed to properly laundering Walt’s money and ensuring her sister Marie and an ailing Hank are financially stable.,
+      overview: Walt and Jesse must cope with the fallout of their previous actions, both personally and professionally. Tension mounts as Walt faces a true standoff with his employer, Gus, with neither side willing or able to back down. Walt must also adjust to a new relationship with Skyler, whom while still reconciling her relationship with Walt, is committed to properly laundering Walt’s money and ensuring her sister Marie and an ailing Hank are financially stable.,
       poster_path: <non-empty>,
-      season_number: 4
+      season_number: 4,
+      id: {Scrubbed},
+      media_type: season
     },
     {
       air_date: DateTime_6,
-      episode_count: 11,
-      id: Id_13,
+      episode_count: 9,
       name: Specials,
       overview: ,
-      poster_path: <non-empty>
+      poster_path: <non-empty>,
+      id: {Scrubbed},
+      media_type: season
     },
     {
       air_date: DateTime_7,
       episode_count: 16,
-      id: Id_14,
       name: Season 5,
-      overview:
-In season five, Walt is faced with the prospect of moving on in a world without his enemy. As the pressure of a criminal life starts to build, Skyler struggles to keep Walt’s terrible secrets. Facing resistance from sometime adversary and former Fring lieutenant Mike, Walt tries to keep his world from falling apart even as his DEA Agent brother in law, Hank, finds numerous leads that could blaze a path straight to Walt. 
-
-All bad things must come to an end.,
+      overview: Walt is faced with the prospect of moving on in a world without his enemy. As the pressure of a criminal life starts to build, Skyler struggles to keep Walt’s terrible secrets. Facing resistance from sometime adversary and former Fring lieutenant Mike, Walt tries to keep his world from falling apart even as his DEA Agent brother in law, Hank, finds numerous leads that could blaze a path straight to Walt. ,
       poster_path: <non-empty>,
-      season_number: 5
+      season_number: 5,
+      id: {Scrubbed},
+      media_type: season
     }
   ],
   spoken_languages: [
     {
-      Iso_639_1: en,
-      Name: English
+      iso_639_1: en,
+      name: English
+    },
+    {
+      iso_639_1: de,
+      name: Deutsch
+    },
+    {
+      iso_639_1: es,
+      name: Español
     }
   ],
   status: Ended,
-  tagline: Remember my name,
-  type: Scripted,
+  tagline: Change the equation.,
+  type: Scripted
 }

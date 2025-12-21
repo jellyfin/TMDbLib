@@ -12,6 +12,11 @@ internal sealed class RestClient : IDisposable
     private int _maxRetryCount;
 
     public RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy proxy = null)
+        : this(baseUrl, serializer, proxy, null)
+    {
+    }
+
+    internal RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy proxy, HttpMessageHandler httpMessageHandler)
     {
         BaseUrl = baseUrl;
         Serializer = serializer;
@@ -20,15 +25,22 @@ internal sealed class RestClient : IDisposable
         MaxRetryCount = 0;
         Proxy = proxy;
 
-        HttpClientHandler handler = new HttpClientHandler();
-        if (proxy != null)
+        if (httpMessageHandler is not null)
         {
-            // Blazor apparently throws on the Proxy setter.
-            // https://github.com/LordMike/TMDbLib/issues/354
-            handler.Proxy = proxy;
+            HttpClient = new HttpClient(httpMessageHandler);
         }
+        else
+        {
+            HttpClientHandler handler = new HttpClientHandler();
+            if (proxy is not null)
+            {
+                // Blazor apparently throws on the Proxy setter.
+                // https://github.com/LordMike/TMDbLib/issues/354
+                handler.Proxy = proxy;
+            }
 
-        HttpClient = new HttpClient(handler);
+            HttpClient = new HttpClient(handler);
+        }
     }
 
     internal Uri BaseUrl { get; }

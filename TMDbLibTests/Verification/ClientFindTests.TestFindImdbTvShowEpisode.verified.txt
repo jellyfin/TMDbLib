@@ -1,4 +1,6 @@
 ﻿{
+  movie_results: [],
+  person_results: [],
   tv_episode_results: [
     {
       air_date: DateTime_1,
@@ -7,10 +9,12 @@
       overview: When an unassuming high school chemistry teacher discovers he has a rare form of lung cancer, he decides to team up with a former student and create a top of the line crystal meth in a used RV, to provide for his family once he is gone.,
       production_code: ,
       season_number: 1,
-      show_id: Id_1,
+      show_id: {Scrubbed},
       still_path: <non-empty>,
-      id: Id_2,
-      media_type: episode
+      id: {Scrubbed},
+      media_type: tv_episode
     }
-  ]
+  ],
+  tv_results: [],
+  tv_season_results: []
 }

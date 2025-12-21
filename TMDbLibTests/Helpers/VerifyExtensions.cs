@@ -76,7 +76,7 @@ internal static partial class VerifyExtensions
                 {
                     return original;
                 }
-                if (match.Groups["name"].Value != propName)
+                if (!string.Equals(match.Groups["name"].Value, propName, StringComparison.OrdinalIgnoreCase))
                 {
                     return original;
                 }
@@ -110,6 +110,6 @@ internal static partial class VerifyExtensions
     /// Generated regex pattern for matching property lines in verification output.
     /// </summary>
     /// <returns>A compiled regex pattern.</returns>
-    [GeneratedRegex(@"^(?<pre>[\s]*)(?<name>[\S]+): (?<value>.*?)(?<post>,|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled, "en-US")]
+    [GeneratedRegex(@"^(?<pre>[\s]*)(?<name>[^:\s]+): (?<value>.*?)(?<post>,|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled, "en-US")]
     private static partial Regex MyRegex();
 }

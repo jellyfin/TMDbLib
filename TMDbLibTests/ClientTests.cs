@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Client;
@@ -34,7 +37,7 @@ public class ClientTests : TestBase
     [Fact]
     public async Task GetConfigSslTest()
     {
-        TestConfig config = new TestConfig(true);
+        var config = new TestConfig(true);
 
         Assert.False(config.Client.HasConfig);
         await config.Client.GetConfigAsync();
@@ -58,7 +61,7 @@ public class ClientTests : TestBase
     [Fact]
     public void SetConfigTest()
     {
-        TMDbConfig config = new TMDbConfig
+        var config = new TMDbConfig
         {
             ChangeKeys = new List<string>()
         };
@@ -111,8 +114,8 @@ public class ClientTests : TestBase
     {
         await TMDbClient.GetConfigAsync();
 
-        Uri uri = TMDbClient.GetImageUrl("w92", "/2B7RySy2WMVJKKEFN2XA3IFb8w0.jpg");
-        Uri uriSsl = TMDbClient.GetImageUrl("w92", "/2B7RySy2WMVJKKEFN2XA3IFb8w0.jpg", true);
+        var uri = TMDbClient.GetImageUrl("w92", "/2B7RySy2WMVJKKEFN2XA3IFb8w0.jpg");
+        var uriSsl = TMDbClient.GetImageUrl("w92", "/2B7RySy2WMVJKKEFN2XA3IFb8w0.jpg", true);
 
         await Verify(new
         {
@@ -124,28 +127,31 @@ public class ClientTests : TestBase
     /// <summary>
     /// Tests that rate limit exceptions are properly thrown when the API rate limit is exceeded.
     /// </summary>
-    [Fact(Skip = "Disabled till we can consistently reproduce a rate limit")]
+    [Fact]
     public async Task ClientRateLimitTest()
     {
-        TMDbClient client = TMDbClient;
+        // Create a mock handler that always returns 429 (Too Many Requests)
+        using var mockHandler = new RateLimitMockHandler();
+        using var client = new TMDbClient(TestConfig.APIKey, true, "api.themoviedb.org", null, null, mockHandler);
         client.MaxRetryCount = 0;
 
-        await Assert.ThrowsAsync<RequestLimitExceededException>(async () =>
+        await Assert.ThrowsAsync<RequestLimitExceededException>(() => client.GetMovieAsync(IdHelper.AGoodDayToDieHard));
+    }
+
+    /// <summary>
+    /// Mock HTTP handler that simulates rate limiting by returning 429 responses.
+    /// </summary>
+    private class RateLimitMockHandler : HttpMessageHandler
+    {
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            try
+            var response = new HttpResponseMessage((HttpStatusCode)429)
             {
-                List<Task> tasks = new List<Task>(100);
-                for (int i = 0; i < 100; i++)
-                {
-                    tasks.Add(client.GetMovieAsync(IdHelper.AGoodDayToDieHard));
-                }
-                await Task.WhenAll(tasks);
-            }
-            catch (AggregateException ex)
-            {
-                // Unpack the InnerException
-                throw ex.InnerException;
-            }
-        });
+                Content = new StringContent("{\"status_code\":25,\"status_message\":\"Your request count is over the allowed limit.\"}", System.Text.Encoding.UTF8, "application/json")
+            };
+            response.Headers.RetryAfter = new System.Net.Http.Headers.RetryConditionHeaderValue(TimeSpan.FromSeconds(1));
+
+            return Task.FromResult(response);
+        }
     }
 }

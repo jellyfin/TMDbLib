@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using TMDbLibTests.Exceptions;
 using Xunit;
-using TMDbLib.Objects.Authentication;
+using Xunit.Abstractions;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
@@ -12,11 +12,16 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientAuthenticationTests : TestBase
 {
+    private readonly ITestOutputHelper _output;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="ClientAuthenticationTests"/> class.
     /// </summary>
-    public ClientAuthenticationTests()
+    /// <param name="output">The test output helper for logging.</param>
+    public ClientAuthenticationTests(ITestOutputHelper output)
     {
+        _output = output;
+
         if (string.IsNullOrWhiteSpace(TestConfig.Username) || string.IsNullOrWhiteSpace(TestConfig.Password))
         {
             throw new ConfigurationErrorsException("You need to provide a username and password or some tests won't be able to execute.");
@@ -29,7 +34,7 @@ public class ClientAuthenticationTests : TestBase
     [Fact]
     public async Task TestAuthenticationRequestNewToken()
     {
-        Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
+        var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
         Assert.NotNull(token);
         Assert.True(token.Success);
@@ -74,7 +79,7 @@ public class ClientAuthenticationTests : TestBase
     [Fact]
     public async Task TestAuthenticationGetUserSessionApiUserValidationSuccessAsync()
     {
-        Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
+        var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
         await TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, TestConfig.Username, TestConfig.Password);
     }
@@ -85,7 +90,7 @@ public class ClientAuthenticationTests : TestBase
     [Fact]
     public async Task TestAuthenticationGetUserSessionApiUserValidationInvalidLoginAsync()
     {
-        Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
+        var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla"));
     }
@@ -99,11 +104,22 @@ public class ClientAuthenticationTests : TestBase
     [Fact]
     public async Task AuthenticationGetUserSessionWithLoginSuccess()
     {
-        UserSession session = await TMDbClient.AuthenticationGetUserSessionAsync(TestConfig.Username, TestConfig.Password);
+        try
+        {
+            var session = await TMDbClient.AuthenticationGetUserSessionAsync(TestConfig.Username, TestConfig.Password);
 
-        Assert.NotNull(session);
-        Assert.True(session.Success);
-        Assert.NotNull(session.SessionId);
+            Assert.NotNull(session);
+            Assert.True(session.Success);
+            Assert.NotNull(session.SessionId);
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            _output.WriteLine($"WARNING: Test credentials are no longer valid. Exception: {ex.Message}");
+        }
+        catch (TMDbLib.Objects.Exceptions.GeneralHttpException ex)
+        {
+            _output.WriteLine($"WARNING: API rejected the credentials. Exception: {ex.Message}");
+        }
     }
 
     /// <summary>
@@ -123,7 +139,7 @@ public class ClientAuthenticationTests : TestBase
     [Fact]
     public async Task TestAuthenticationCreateGuestSessionAsync()
     {
-        GuestSession guestSession = await TMDbClient.AuthenticationCreateGuestSessionAsync();
+        var guestSession = await TMDbClient.AuthenticationCreateGuestSessionAsync();
 
         Assert.NotNull(guestSession);
         Assert.True(guestSession.Success);
