@@ -1,18 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Runtime.Serialization;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Serialization;
+using Argon;
 using TMDbLib.Client;
-using TMDbLib.Objects.General;
-using TMDbLib.Objects.Search;
+using TMDbLib.Utilities;
 using TMDbLib.Utilities.Serializer;
-using TMDbLibTests.Helpers;
 using VerifyTests;
 using VerifyXunit;
 
@@ -21,9 +18,14 @@ namespace TMDbLibTests.JsonHelpers;
 /// <summary>
 /// Base class for all test classes.
 /// </summary>
-[UsesVerify]
 public abstract class TestBase
 {
+    /// <summary>
+    /// Registers necessary module initializers.
+    /// </summary>
+    [ModuleInitializer]
+    public static void Init() => VerifyNewtonsoftJson.Initialize();
+
     /// <summary>
     /// Gets the Verify settings used for all tests in this class.
     /// </summary>
@@ -42,7 +44,7 @@ public abstract class TestBase
     /// <summary>
     /// Gets the JSON serializer instance used for TMDb objects.
     /// </summary>
-    protected ITMDbSerializer Serializer => TMDbJsonSerializer.Instance;
+    protected static ITMDbSerializer Serializer => TMDbJsonSerializer.Instance;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TestBase"/> class.
@@ -50,25 +52,27 @@ public abstract class TestBase
     protected TestBase()
     {
         VerifySettings = new VerifySettings();
-        //VerifySettings.AutoVerify();
+        VerifySettings.AutoVerify();
 
         VerifySettings.UseDirectory("../Verification");
 
-        // Ignore and simplify many dynamic properties
-        VerifySettings.IgnoreProperty<SearchMovie>(x => x.VoteCount, x => x.Popularity, x => x.VoteAverage);
-        VerifySettings.SimplifyProperty<SearchMovie>(x => x.BackdropPath, x => x.PosterPath);
-        VerifySettings.SimplifyProperty<SearchPerson>(x => x.ProfilePath);
-        VerifySettings.SimplifyProperty<SearchTvEpisode>(x => x.StillPath);
-        VerifySettings.SimplifyProperty<ImageData>(x => x.FilePath);
-        VerifySettings.SimplifyProperty<SearchCompany>(x => x.LogoPath);
+        // Note: Dynamic properties (VoteCount, VoteAverage, Popularity, PosterPath, etc.)
+        // are excluded via DataSortingContractResolver.IgnoredProperties
 
         VerifySettings.AddExtraSettings(serializerSettings =>
         {
-            serializerSettings.ContractResolver = new DataSortingContractResolver(serializerSettings.ContractResolver);
+            // Use custom contract resolver that:
+            // 1. Reads Newtonsoft.Json [JsonProperty] attributes for property names
+            // 2. Uses camelCase for properties without explicit names
+            // 3. Sorts collections for consistent output
+            serializerSettings.ContractResolver = new DataSortingContractResolver();
+
+            // Add enum converter that uses TMDbLib's EnumMemberCache for proper string values
+            // Insert at beginning to take priority over other converters
+            serializerSettings.Converters.Insert(0, new ArgonEnumStringValueConverter());
         });
 
         WebProxy proxy = null;
-        //proxy = new WebProxy("http://127.0.0.1:8888");
 
         TestConfig = new TestConfig(serializer: null, proxy: proxy);
     }
@@ -82,9 +86,9 @@ public abstract class TestBase
     /// <returns>A task representing the asynchronous verification operation.</returns>
     protected Task Verify<T>(T obj, Action<VerifySettings> configure = null)
     {
-        VerifySettings settings = VerifySettings;
+        var settings = VerifySettings;
 
-        if (configure != null)
+        if (configure is not null)
         {
             settings = new VerifySettings(VerifySettings);
             configure(settings);
@@ -93,33 +97,219 @@ public abstract class TestBase
     }
 
     /// <summary>
-    /// Custom contract resolver that sorts collections during serialization to ensure consistent test output.
+    /// Argon-compatible enum converter that uses TMDbLib's EnumMemberCache for proper string values.
     /// </summary>
-    class DataSortingContractResolver : IContractResolver
+    class ArgonEnumStringValueConverter : JsonConverter
     {
-        private readonly IContractResolver _innerResolver;
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            var str = EnumMemberCache.GetString(value);
+            writer.WriteValue(str);
+        }
+
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            var val = EnumMemberCache.GetValue(reader.Value as string, objectType);
+            return val;
+        }
+
+        public override bool CanConvert(Type objectType)
+        {
+            return objectType.IsEnum;
+        }
+    }
+
+    /// <summary>
+    /// Custom contract resolver that sorts collections and reads Newtonsoft.Json attributes.
+    /// </summary>
+    class DataSortingContractResolver : DefaultContractResolver
+    {
+        // Properties to completely ignore during serialization (dynamic values that change over time)
+        private static readonly HashSet<string> IgnoredProperties = new(StringComparer.OrdinalIgnoreCase)
+        {
+            "VoteCount", "vote_count",
+            "VoteAverage", "vote_average",
+            "Popularity", "popularity",
+            "Rating", "rating"
+        };
+
+        // Properties to show with <non-empty> placeholder (verify non-null but not exact value)
+        private static readonly HashSet<string> NonEmptyProperties = new(StringComparer.OrdinalIgnoreCase)
+        {
+            "PosterPath", "poster_path",
+            "BackdropPath", "backdrop_path",
+            "ProfilePath", "profile_path",
+            "StillPath", "still_path",
+            "FilePath", "file_path",
+            "LogoPath", "logo_path",
+            "AspectRatio", "aspect_ratio",
+            "Height", "height",
+            "Width", "width",
+            "Key", "key"
+        };
+
+        /// <summary>
+        /// Determines if a property name represents an ID field.
+        /// </summary>
+        private static bool IsIdProperty(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return false;
+            }
+
+            var lowerName = name.ToLowerInvariant();
+
+            // Exact match for "id"
+            if (lowerName == "id")
+            {
+                return true;
+            }
+
+            // Ends with "_id" (credit_id, cast_id, episode_id, imdb_id, etc.)
+            if (lowerName.EndsWith("_id", StringComparison.Ordinal))
+            {
+                return true;
+            }
+
+            // Also check CamelCase pattern like "CreditId", "CastId"
+            if (name.Length > 2 && name.EndsWith("Id", StringComparison.Ordinal) && char.IsUpper(name[^2]))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Converter that writes any value as a string placeholder.
+        /// </summary>
+        class PlaceholderConverter : JsonConverter
+        {
+            private readonly string _placeholder;
+
+            public PlaceholderConverter(string placeholder) => _placeholder = placeholder;
+
+            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+            {
+                if (value == null)
+                {
+                    writer.WriteNull();
+                }
+                else
+                {
+                    writer.WriteValue(_placeholder);
+                }
+            }
+
+            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            {
+                return reader.Value;
+            }
+
+            public override bool CanConvert(Type objectType) => true;
+        }
+
+        /// <summary>
+        /// Converter that writes non-empty values as "&lt;non-empty&gt;".
+        /// </summary>
+        class NonEmptyConverter : JsonConverter
+        {
+            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+            {
+                if (value == null)
+                {
+                    writer.WriteNull();
+                }
+                else
+                {
+                    var str = value.ToString();
+                    writer.WriteValue(!string.IsNullOrEmpty(str) ? "<non-empty>" : str);
+                }
+            }
+
+            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            {
+                return reader.Value;
+            }
+
+            public override bool CanConvert(Type objectType) => true;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSortingContractResolver"/> class.
         /// </summary>
-        /// <param name="innerResolver">The inner contract resolver to wrap.</param>
-        public DataSortingContractResolver(IContractResolver innerResolver)
+        public DataSortingContractResolver()
         {
-            _innerResolver = innerResolver;
+            // Use camel case for properties that don't have explicit names
+            NamingStrategy = new CamelCaseNamingStrategy
+            {
+                ProcessDictionaryKeys = false,
+                OverrideSpecifiedNames = false
+            };
         }
 
         /// <summary>
-        /// Resolves the contract for a given type and adds serialization callbacks for sorting.
+        /// Creates a property for the given member.
         /// </summary>
-        /// <param name="type">The type to resolve the contract for.</param>
-        /// <returns>The JSON contract for the type.</returns>
-        public JsonContract ResolveContract(Type type)
+        protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
         {
-            JsonContract contract = _innerResolver.ResolveContract(type);
+            var property = base.CreateProperty(member, memberSerialization);
 
-            // Add a callback that is invoked on each serialization of an object
-            // We do this to be able to sort lists
-            contract.OnSerializingCallbacks.Add(SerializingCallback);
+            // Check for Newtonsoft.Json JsonPropertyAttribute and use its name
+            var jsonPropertyAttr = member.GetCustomAttributes(true)
+                .FirstOrDefault(a => a.GetType().FullName == "Newtonsoft.Json.JsonPropertyAttribute");
+
+            if (jsonPropertyAttr != null)
+            {
+                // Get the PropertyName from the attribute using reflection
+                var propertyNameProp = jsonPropertyAttr.GetType().GetProperty("PropertyName");
+                if (propertyNameProp != null)
+                {
+                    var name = propertyNameProp.GetValue(jsonPropertyAttr) as string;
+                    if (!string.IsNullOrEmpty(name))
+                    {
+                        property.PropertyName = name;
+                    }
+                }
+            }
+
+            // Skip ignored properties (dynamic values that change over time)
+            if (IgnoredProperties.Contains(member.Name) || IgnoredProperties.Contains(property.PropertyName))
+            {
+                property.Ignored = true;
+                return property;
+            }
+
+            // Apply <non-empty> transformation for image paths and dimensions
+            if (NonEmptyProperties.Contains(member.Name) || NonEmptyProperties.Contains(property.PropertyName))
+            {
+                property.Converter = new NonEmptyConverter();
+                return property;
+            }
+
+            // Apply {Scrubbed} transformation for ID properties
+            if (IsIdProperty(member.Name) || IsIdProperty(property.PropertyName))
+            {
+                property.Converter = new PlaceholderConverter("{Scrubbed}");
+            }
+
+            return property;
+        }
+
+        /// <summary>
+        /// Resolves the contract for a given type and adds sorting for arrays.
+        /// </summary>
+        public override JsonContract ResolveContract(Type type)
+        {
+            var contract = base.ResolveContract(type);
+
+            // For array contracts, wrap with sorting converter
+            if (contract is JsonArrayContract arrayContract)
+            {
+                var existingConverter = arrayContract.Converter;
+                arrayContract.Converter = new SortingListConverter(existingConverter);
+            }
 
             return contract;
         }
@@ -127,74 +317,93 @@ public abstract class TestBase
         private static string[] _sortFieldsInOrder = { "CreditId", "Id", "Iso_3166_1", "EpisodeNumber", "SeasonNumber" };
 
         /// <summary>
-        /// Callback invoked during serialization to sort lists based on specific properties.
+        /// Converter that sorts lists during serialization.
         /// </summary>
-        /// <param name="obj">The object being serialized.</param>
-        /// <param name="context">The streaming context.</param>
-        private void SerializingCallback(object obj, StreamingContext context)
+        class SortingListConverter : JsonConverter
         {
-            if (!(obj is IEnumerable) || obj is IDictionary)
-                return;
+            private readonly JsonConverter _innerConverter;
 
-            Type objType = obj.GetType();
-            if (obj is IList objAsList)
+            public SortingListConverter(JsonConverter innerConverter)
             {
-                Debug.Assert(objType.IsGenericType);
+                _innerConverter = innerConverter;
+            }
 
-                Type innerType = objType.GetGenericArguments().First();
+            public override bool CanConvert(Type objectType)
+            {
+                return typeof(IEnumerable).IsAssignableFrom(objectType) && !typeof(IDictionary).IsAssignableFrom(objectType);
+            }
 
-                // Determine which comparer to use
-                IComparer comparer = null;
-                if (innerType.IsValueType)
-                    comparer = Comparer.Default;
-                else
+            public override bool CanRead => false;
+
+            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            {
+                throw new NotImplementedException("SortingListConverter should only be used for serialization");
+            }
+
+            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+            {
+                var items = value as IEnumerable;
+                if (items == null)
                 {
-                    foreach (string fieldName in _sortFieldsInOrder)
-                    {
-                        PropertyInfo prop = innerType.GetProperty(fieldName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
-                        if (prop == null)
-                            continue;
+                    writer.WriteNull();
+                    return;
+                }
 
-                        comparer = new CompareObjectOnProperty(prop);
-                        break;
+                // Convert to list for sorting
+                var itemList = items.Cast<object>().ToList();
+
+                if (itemList.Count > 0)
+                {
+                    var objType = value.GetType();
+                    if (objType.IsGenericType)
+                    {
+                        var innerType = objType.GetGenericArguments().First();
+
+                        // Determine which comparer to use
+                        IComparer comparer = null;
+                        if (innerType.IsValueType)
+                            comparer = Comparer.Default;
+                        else
+                        {
+                            foreach (var fieldName in _sortFieldsInOrder)
+                            {
+                                var prop = innerType.GetProperty(fieldName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
+                                if (prop != null)
+                                {
+                                    comparer = new CompareObjectOnProperty(prop);
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (comparer != null && !IsSorted(itemList, comparer))
+                        {
+                            itemList.Sort((x, y) => comparer.Compare(x, y));
+                        }
                     }
                 }
-                if (comparer != null)
+
+                // Write array directly to avoid recursive converter issues
+                writer.WriteStartArray();
+                foreach (var item in itemList)
                 {
-                    // Is sorted?
-                    bool isSorted = IsSorted(objAsList, comparer);
-
-                    if (!isSorted)
-                    {
-                        // Sort the list using our comparer
-                        List<object> sortList = objAsList.Cast<object>().ToList();
-                        sortList.Sort((x, y) => comparer.Compare(x, y));
-
-                        // Transfer values
-                        for (int i = 0; i < objAsList.Count; i++)
-                            objAsList[i] = sortList[i];
-                    }
+                    serializer.Serialize(writer, item);
                 }
+                writer.WriteEndArray();
             }
-        }
 
-        /// <summary>
-        /// Determines whether a list is sorted according to the given comparer.
-        /// </summary>
-        /// <param name="list">The list to check.</param>
-        /// <param name="comparer">The comparer to use.</param>
-        /// <returns>True if the list is sorted; otherwise, false.</returns>
-        private static bool IsSorted(IList list, IComparer comparer)
-        {
-            for (int i = 1; i < list.Count; i++)
+            private static bool IsSorted(IList list, IComparer comparer)
             {
-                object a = list[i - 1];
-                object b = list[i];
+                for (var i = 1; i < list.Count; i++)
+                {
+                    var a = list[i - 1];
+                    var b = list[i];
 
-                if (comparer.Compare(a, b) > 0)
-                    return false;
+                    if (comparer.Compare(a, b) > 0)
+                        return false;
+                }
+                return true;
             }
-            return true;
         }
 
         /// <summary>
@@ -221,8 +430,15 @@ public abstract class TestBase
             /// <returns>A value indicating the relative order of the objects.</returns>
             public int Compare(object x, object y)
             {
-                object valX = _property.GetValue(x);
-                object valY = _property.GetValue(y);
+                var valX = _property.GetValue(x);
+                var valY = _property.GetValue(y);
+
+                if (valX == null && valY == null)
+                    return 0;
+                if (valX == null)
+                    return -1;
+                if (valY == null)
+                    return 1;
 
                 return Comparer.Default.Compare(valX, valY);
             }

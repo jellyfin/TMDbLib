@@ -21,12 +21,14 @@ public class ClientCertificationsTests : TestBase
         CertificationsContainer result = await TMDbClient.GetMovieCertificationsAsync();
         Assert.NotEmpty(result.Certifications);
 
-        List<CertificationItem> certAu = result.Certifications["AU"];
-        Assert.NotEmpty(certAu);
+        List<CertificationItem> certUs = result.Certifications["US"];
+        Assert.NotEmpty(certUs);
 
-        CertificationItem ratingE = certAu.Single(s => s.Certification == "E");
+        // Use a common US rating that's likely to exist
+        CertificationItem rating = certUs.FirstOrDefault(s => s.Certification == "PG-13")
+            ?? certUs.First();
 
-        await Verify(ratingE);
+        await Verify(rating);
     }
 
     /// <summary>

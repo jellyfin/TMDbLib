@@ -2,84 +2,84 @@
   backdrop_path: <non-empty>,
   belongs_to_collection: {
     backdrop_path: <non-empty>,
-    id: Id_1,
     name: Die Hard Collection,
-    poster_path: <non-empty>
+    poster_path: <non-empty>,
+    id: {Scrubbed}
   },
   budget: 92000000,
   genres: [
     {
-      id: Id_2,
+      id: {Scrubbed},
       name: Action
     },
     {
-      id: Id_3,
+      id: {Scrubbed},
       name: Thriller
     }
   ],
   homepage: http://www.diehardmovie.com/,
-  id: Id_4,
-  imdb_id: tt1606378,
+  id: {Scrubbed},
+  imdb_id: {Scrubbed},
   original_language: en,
   original_title: A Good Day to Die Hard,
   overview: Iconoclastic, take-no-prisoners cop John McClane, finds himself for the first time on foreign soil after traveling to Moscow to help his wayward son Jack - unaware that Jack is really a highly-trained CIA operative out to stop a nuclear weapons heist. With the Russian underworld in pursuit, and battling a countdown to war, the two McClanes discover that their opposing methods make them unstoppable heroes.,
   poster_path: <non-empty>,
   production_companies: [
     {
-      id: Id_5,
+      id: {Scrubbed},
       name: 20th Century Fox,
       logo_path: <non-empty>,
       origin_country: US
     },
     {
-      id: Id_6,
+      id: {Scrubbed},
       name: Ingenious Media,
       logo_path: <non-empty>,
       origin_country: GB
     },
     {
-      id: Id_7,
+      id: {Scrubbed},
       name: Dune Entertainment,
-      logo_path: <non-empty>,
       origin_country: US
     },
     {
-      id: Id_8,
+      id: {Scrubbed},
       name: Mid Atlantic Films,
       origin_country: HU
     },
     {
-      id: Id_9,
+      id: {Scrubbed},
       name: Big Screen Productions,
-      origin_country: 
+      origin_country: GB
     },
     {
-      id: Id_10,
+      id: {Scrubbed},
       name: Temple Hill Entertainment,
       logo_path: <non-empty>,
       origin_country: US
     },
     {
-      id: Id_11,
+      id: {Scrubbed},
       name: TSG Entertainment,
       logo_path: <non-empty>,
       origin_country: US
     },
     {
-      id: Id_12,
+      id: {Scrubbed},
       name: Giant Pictures,
-      origin_country: 
+      logo_path: <non-empty>,
+      origin_country: US
     },
     {
-      id: Id_13,
+      id: {Scrubbed},
       name: Origo Film Group,
       origin_country: 
     }
   ],
   production_countries: [
     {
-      Iso_3166_1: US,
-      Name: United States of America
+      iso_3166_1: US,
+      name: United States of America
     }
   ],
   release_date: DateTime_1,
@@ -87,15 +87,15 @@
   runtime: 98,
   spoken_languages: [
     {
-      Iso_639_1: en,
-      Name: English
+      iso_639_1: en,
+      name: English
     },
     {
-      Iso_639_1: ru,
-      Name: Pусский
+      iso_639_1: ru,
+      name: Pусский
     }
   ],
   status: Released,
-  tagline: Yippee Ki-Yay Mother Russia,
-  title: A Good Day to Die Hard,
+  tagline: Yippee Ki-Yay Mother Russia.,
+  title: A Good Day to Die Hard
 }

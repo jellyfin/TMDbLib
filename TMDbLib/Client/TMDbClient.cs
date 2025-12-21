@@ -26,6 +26,7 @@ public partial class TMDbClient : IDisposable
     private const string ProductionUrl = "api.themoviedb.org";
 
     private readonly ITMDbSerializer _serializer;
+    private readonly HttpMessageHandler _httpMessageHandler;
     private RestClient _client;
     private TMDbConfig _config;
     private bool _disposed;
@@ -39,12 +40,27 @@ public partial class TMDbClient : IDisposable
     /// <param name="serializer">The JSON serializer to use. If null, the default serializer will be used.</param>
     /// <param name="proxy">The web proxy to use for requests. Optional.</param>
     public TMDbClient(string apiKey, bool useSsl = true, string baseUrl = ProductionUrl, ITMDbSerializer serializer = null, IWebProxy proxy = null)
+        : this(apiKey, useSsl, baseUrl, serializer, proxy, null)
+    {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="TMDbClient"/> class with a custom HTTP message handler for testing.
+    /// </summary>
+    /// <param name="apiKey">Your TMDb API key.</param>
+    /// <param name="useSsl">Whether to use SSL/HTTPS for requests.</param>
+    /// <param name="baseUrl">The base URL for the TMDb API.</param>
+    /// <param name="serializer">The JSON serializer to use. If null, the default serializer will be used.</param>
+    /// <param name="proxy">The web proxy to use for requests. Optional.</param>
+    /// <param name="httpMessageHandler">The HTTP message handler to use for requests. Optional, primarily for testing.</param>
+    internal TMDbClient(string apiKey, bool useSsl, string baseUrl, ITMDbSerializer serializer, IWebProxy proxy, HttpMessageHandler httpMessageHandler)
     {
         DefaultLanguage = null;
         DefaultImageLanguage = null;
         DefaultCountry = null;
 
         _serializer = serializer ?? TMDbJsonSerializer.Instance;
+        _httpMessageHandler = httpMessageHandler;
 
         // Setup proxy to use during requests
         // Proxy is optional. If passed, will be used in every request.
@@ -284,7 +300,7 @@ public partial class TMDbClient : IDisposable
         string httpScheme = useSsl ? "https" : "http";
 
         _client?.Dispose();
-        _client = new RestClient(new Uri(string.Format(CultureInfo.InvariantCulture, "{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy);
+        _client = new RestClient(new Uri(string.Format(CultureInfo.InvariantCulture, "{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy, _httpMessageHandler);
         _client.AddDefaultQueryString("api_key", apiKey);
     }
 
