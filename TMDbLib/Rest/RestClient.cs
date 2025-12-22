@@ -25,22 +25,19 @@ internal sealed class RestClient : IDisposable
         MaxRetryCount = 0;
         Proxy = proxy;
 
-        if (httpMessageHandler is not null)
+        if (httpMessageHandler is null)
         {
-            HttpClient = new HttpClient(httpMessageHandler);
+            httpMessageHandler = new HttpMessageHandler();
         }
-        else
-        {
-            var handler = new HttpClientHandler();
-            if (proxy is not null)
-            {
-                // Blazor apparently throws on the Proxy setter.
-                // https://github.com/jellyfin/TMDbLib/issues/354
-                handler.Proxy = proxy;
-            }
 
-            HttpClient = new HttpClient(handler);
+        if (proxy is not null)
+        {
+            // Blazor apparently throws on the Proxy setter.
+            // https://github.com/jellyfin/TMDbLib/issues/354
+            httpMessageHandler.Proxy = proxy;
         }
+
+        HttpClient = new HttpClient(httpMessageHandler);
     }
 
     internal Uri BaseUrl { get; }
@@ -60,6 +57,7 @@ internal sealed class RestClient : IDisposable
         set
         {
             ArgumentOutOfRangeException.ThrowIfNegative(value);
+
             _maxRetryCount = value;
         }
     }
