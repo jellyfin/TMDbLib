@@ -77,6 +77,7 @@ public class ClientAuthenticationTests : TestBase
     /// Requires a valid test user to be assigned
     /// </remarks>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAuthenticationGetUserSessionApiUserValidationSuccessAsync()
     {
         var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
@@ -102,6 +103,7 @@ public class ClientAuthenticationTests : TestBase
     /// Requires a valid test user to be assigned
     /// </remarks>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task AuthenticationGetUserSessionWithLoginSuccess()
     {
         try

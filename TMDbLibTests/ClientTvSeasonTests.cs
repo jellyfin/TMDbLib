@@ -53,6 +53,7 @@ public class ClientTvSeasonTests : TestBase
     /// Tests that account states can be retrieved with a TV season, including episode ratings.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvSeasonExtrasAccountState()
     {
         // Test the custom parsing code for Account State rating
@@ -77,6 +78,7 @@ public class ClientTvSeasonTests : TestBase
     /// Tests that all extra methods can be retrieved together for a TV season.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvSeasonExtrasAllAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -91,6 +93,7 @@ public class ClientTvSeasonTests : TestBase
     /// Tests that each extra method can be retrieved exclusively for a TV season.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvSeasonExtrasExclusiveAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -148,6 +151,7 @@ public class ClientTvSeasonTests : TestBase
     /// Tests that episode ratings can be set and removed, reflected in the season's account state.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvSeasonAccountStateRatingSetAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);

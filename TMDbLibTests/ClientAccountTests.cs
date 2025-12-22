@@ -45,6 +45,7 @@ public class ClientAccountTests : TestBase
     /// Tests that getting account details with a user session returns valid account information.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetDetailsUserAccount()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -56,6 +57,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving account lists returns expected lists and can find a specific list by ID.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountAccountGetLists()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -73,6 +75,7 @@ public class ClientAccountTests : TestBase
     /// Tests that pagination works correctly for account lists.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountAccountGetListsPaged()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -84,6 +87,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving favorite movies returns expected results and supports pagination.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetFavoriteMovies()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -101,6 +105,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving favorite TV shows returns expected results.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetFavoriteTv()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -120,6 +125,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving movie watchlist returns expected results and supports pagination.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetMovieWatchlist()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -136,6 +142,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving TV show watchlist returns expected results and supports pagination.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetTvWatchlist()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -152,6 +159,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving rated movies returns expected results and supports pagination.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetRatedMovies()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -168,6 +176,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving rated TV shows returns expected results and supports pagination.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetRatedTv()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -184,6 +193,7 @@ public class ClientAccountTests : TestBase
     /// Tests that retrieving rated TV episodes returns expected results and supports pagination.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountGetRatedTvEpisodes()
     {
         // TODO: Error in TMDb: https://www.themoviedb.org/talk/557f1af49251410a2c002480
@@ -206,6 +216,7 @@ public class ClientAccountTests : TestBase
     /// Tests that marking and unmarking a TV show as favorite works correctly.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountChangeTvFavoriteStatusAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -236,6 +247,7 @@ public class ClientAccountTests : TestBase
     /// Tests that marking and unmarking a movie as favorite works correctly.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountChangeMovieFavoriteStatusAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -266,6 +278,7 @@ public class ClientAccountTests : TestBase
     /// Tests that adding and removing a TV show from the watchlist works correctly.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountChangeTvWatchlistStatusAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -296,6 +309,7 @@ public class ClientAccountTests : TestBase
     /// Tests that adding and removing a movie from the watchlist works correctly.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountChangeMovieWatchlistStatusAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);

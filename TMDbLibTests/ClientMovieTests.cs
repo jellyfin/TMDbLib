@@ -63,6 +63,7 @@ public class ClientMovieTests : TestBase
     /// Tests that each movie extra method can be requested exclusively.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestMoviesExtrasExclusive()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -433,6 +434,7 @@ public class ClientMovieTests : TestBase
     /// Tests that a movie can be marked and unmarked as a favorite.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestMoviesAccountStateFavoriteSetAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -452,6 +454,7 @@ public class ClientMovieTests : TestBase
     /// Tests that a movie can be added to and removed from the watchlist.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestMoviesAccountStateWatchlistSetAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -471,6 +474,7 @@ public class ClientMovieTests : TestBase
     /// Tests that a movie rating can be set and removed.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestMoviesAccountStateRatingSetAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -490,6 +494,7 @@ public class ClientMovieTests : TestBase
     /// Verifies that valid movie ratings are accepted.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestMoviesSetRatingBadRating()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -515,6 +520,7 @@ public class ClientMovieTests : TestBase
     /// Tests that account state including rating can be retrieved with movie extra methods.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestMoviesExtrasAccountStateAsync()
     {
         // Test the custom parsing code for Account State rating
