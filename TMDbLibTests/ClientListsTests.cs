@@ -60,6 +60,7 @@ public class ClientListsTests : TestBase
     /// Tests that a list can be created, have movies added and removed, be cleared, and be deleted.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestListCreateAddClearAndDeleteAsync()
     {
         var listName = EphemeralListPrefix + DateTime.UtcNow.ToString("O");
@@ -100,6 +101,7 @@ public class ClientListsTests : TestBase
     /// Verifies that attempting to delete a list with an invalid ID fails gracefully.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestListDeleteFailureAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);

@@ -59,6 +59,7 @@ public class ClientTvShowTests : TestBase
     /// Tests that all extra methods can be retrieved together for a TV show.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvShowExtrasAllAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -167,6 +168,7 @@ public class ClientTvShowTests : TestBase
     /// Tests that account states can be retrieved with a TV show, including rating information.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvShowSeparateExtrasAccountStateAsync()
     {
         // Test the custom parsing code for Account State rating
@@ -421,6 +423,7 @@ public class ClientTvShowTests : TestBase
     /// Tests that a TV show can be added to and removed from a user's favorites list.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvShowAccountStateFavoriteSet()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -446,6 +449,7 @@ public class ClientTvShowTests : TestBase
     /// Tests that a TV show can be added to and removed from a user's watchlist.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvShowAccountStateWatchlistSet()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -471,6 +475,7 @@ public class ClientTvShowTests : TestBase
     /// Tests that a TV show rating can be set and retrieved through account states.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvShowAccountStateRatingSet()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -491,6 +496,7 @@ public class ClientTvShowTests : TestBase
     /// Tests that TV show rating validation accepts valid values.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvShowSetRating()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);

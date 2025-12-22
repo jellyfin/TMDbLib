@@ -60,6 +60,7 @@ public class AccountStateConverterTest : TestBase
     /// Tests the AccountStateConverter on the AccountState type
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountStateConverterAccountState()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -72,6 +73,7 @@ public class AccountStateConverterTest : TestBase
     /// Tests the AccountStateConverter on the TvEpisodeAccountState type
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestAccountStateConverterTvEpisodeAccountState()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);

@@ -53,6 +53,7 @@ public class ClientTvEpisodeTests : TestBase
     /// Tests that account states can be retrieved with a TV episode, including rating information.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvEpisodeExtrasAccountState()
     {
         // Test the custom parsing code for Account State rating
@@ -75,6 +76,7 @@ public class ClientTvEpisodeTests : TestBase
     /// Tests that all extra methods can be retrieved together for a TV episode.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvEpisodeExtrasAll()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -92,6 +94,7 @@ public class ClientTvEpisodeTests : TestBase
     /// Tests that each extra method can be retrieved exclusively for a TV episode.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvEpisodeExtrasExclusiveAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -156,6 +159,7 @@ public class ClientTvEpisodeTests : TestBase
     /// Tests that a TV episode rating can be set, retrieved, and removed through account states.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvEpisodeAccountStateRatingSetAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
@@ -194,6 +198,7 @@ public class ClientTvEpisodeTests : TestBase
     /// Tests that valid rating values are accepted when rating a TV episode.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvEpisodeRateBadAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
