@@ -34,7 +34,7 @@ namespace TMDbLibTests.JsonHelpers
             VerifySettings = new VerifySettings();
             //VerifySettings.AutoVerify();
 
-            VerifySettings.UseDirectory("..\\Verification");
+            VerifySettings.UseDirectory("../Verification");
 
             // Ignore and simplify many dynamic properties
             VerifySettings.IgnoreProperty<SearchMovie>(x => x.VoteCount, x => x.Popularity, x => x.VoteAverage);
