@@ -18,6 +18,7 @@ public class ClientGuestSessionTests : TestBase
     /// Tests that TV episode ratings can be set and removed using a guest session.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvEpisodeSetRatingGuestSessionAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.GuestTestSessionId, SessionType.GuestSession);
@@ -47,6 +48,7 @@ public class ClientGuestSessionTests : TestBase
     /// Tests that TV show ratings can be set and removed using a guest session.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestTvSetRatingGuestSessionAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.GuestTestSessionId, SessionType.GuestSession);
@@ -76,6 +78,7 @@ public class ClientGuestSessionTests : TestBase
     /// Tests that movie ratings can be set and removed using a guest session.
     /// </summary>
     [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
     public async Task TestMoviesSetRatingGuestSessionAsync()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.GuestTestSessionId, SessionType.GuestSession);
