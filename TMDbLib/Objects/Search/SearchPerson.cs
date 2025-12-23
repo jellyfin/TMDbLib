@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Search;
 
@@ -26,7 +27,7 @@ public class SearchPerson : SearchBase
     /// <summary>
     /// Gets or sets the list of movies and TV shows the person is known for.
     /// </summary>
-    [JsonProperty("known_for")]
+    [JsonProperty("known_for", ItemConverterType = typeof(KnownForConverter))]
     public List<KnownForBase> KnownFor { get; set; }
 
     /// <summary>
