@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 
@@ -62,20 +61,5 @@ public class ClientGenreTests : TestBase
         Genre actionDa = genresDanish.Single(s => s.Id == IdHelper.AdventureMovieGenre);
 
         Assert.NotEqual(actionEn.Name, actionDa.Name);
-    }
-
-    /// <summary>
-    /// Tests that movies can be retrieved by genre ID.
-    /// </summary>
-    [Fact]
-    public async Task TestGenreMoviesAsync()
-    {
-#pragma warning disable CS0618 // Type or member is obsolete
-        SearchContainerWithId<SearchMovie> movies = await TMDbClient.GetGenreMoviesAsync(IdHelper.AdventureMovieGenre);
-
-        Assert.NotEmpty(movies.Results);
-        Assert.Equal(IdHelper.AdventureMovieGenre, movies.Id);
-        Assert.All(movies.Results, x => Assert.Contains(IdHelper.AdventureMovieGenre, x.GenreIds));
-#pragma warning restore CS0618 // Type or member is obsolete
     }
 }

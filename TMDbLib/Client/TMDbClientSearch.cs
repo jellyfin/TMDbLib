@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
@@ -109,20 +108,6 @@ public partial class TMDbClient
     public async Task<SearchContainer<SearchKeyword>> SearchKeywordAsync(string query, int page = 0, CancellationToken cancellationToken = default)
     {
         return await SearchMethodInternal<SearchContainer<SearchKeyword>>("keyword", query, page, cancellationToken: cancellationToken).ConfigureAwait(false);
-    }
-
-    /// <summary>
-    /// Searches for lists.
-    /// </summary>
-    /// <param name="query">The search query.</param>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="includeAdult">Whether to include adult content in the results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with list results.</returns>
-    [Obsolete("20200701 No longer present in public API")]
-    public async Task<SearchContainer<SearchList>> SearchListAsync(string query, int page = 0, bool includeAdult = false, CancellationToken cancellationToken = default)
-    {
-        return await SearchMethodInternal<SearchContainer<SearchList>>("list", query, page, includeAdult: includeAdult, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
