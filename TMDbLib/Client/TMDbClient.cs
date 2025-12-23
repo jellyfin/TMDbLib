@@ -243,22 +243,6 @@ public partial class TMDbClient : IDisposable
     /// <returns>The image data.</returns>
     /// <exception cref="InvalidOperationException">Thrown when configuration has not been loaded. Call GetConfigAsync() first.</exception>
     /// <exception cref="HttpRequestException">Thrown when the HTTP request fails.</exception>
-    [Obsolete("Use " + nameof(GetImageBytesAsync))]
-    public Task<byte[]> GetImageBytes(string size, string filePath, bool useSsl = false, CancellationToken token = default)
-    {
-        return GetImageBytesAsync(size, filePath, useSsl, token);
-    }
-
-    /// <summary>
-    /// Downloads image data from TMDb's image servers.
-    /// </summary>
-    /// <param name="size">The desired image size (e.g., "w500", "original").</param>
-    /// <param name="filePath">The image file path returned by the TMDb API.</param>
-    /// <param name="useSsl">Whether to use HTTPS (secure) URL. Defaults to false.</param>
-    /// <param name="token">A cancellation token to cancel the operation.</param>
-    /// <returns>The image data.</returns>
-    /// <exception cref="InvalidOperationException">Thrown when configuration has not been loaded. Call GetConfigAsync() first.</exception>
-    /// <exception cref="HttpRequestException">Thrown when the HTTP request fails.</exception>
     public async Task<byte[]> GetImageBytesAsync(string size, string filePath, bool useSsl = false, CancellationToken token = default)
     {
         Uri url = GetImageUrl(size, filePath, useSsl);
