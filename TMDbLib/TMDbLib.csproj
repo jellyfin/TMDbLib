@@ -5,7 +5,7 @@
     <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     <AssemblyName>TMDbLib</AssemblyName>
     <PackageId>TMDbLib</PackageId>
-    <Description>.NET Client library for The Movie Database (https://www.themoviedb.org/)</Description>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <!-- Analyzers -->
@@ -25,6 +25,10 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" PrivateAssets="compile" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../Readme.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

@@ -22,7 +22,7 @@
 
     <MinVerTagPrefix>v</MinVerTagPrefix>
 
-    <!-- Github packages does not support symbols, so we embed pdbs in nupkg (https://github.community/t/does-github-packages-dotnet-nuget-supports-to-publish-snupkg/123286/6) -->
+    <!-- Github packages does not support symbols, so we embed pdbs in nupkg (https://github.com/orgs/community/discussions/38678) -->
     <AllowedOutputExtensionsInPackageBuildOutputFolder Condition="'$(Configuration)'=='Debug'">$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 

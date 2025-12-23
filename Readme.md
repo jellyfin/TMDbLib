@@ -1,82 +1,113 @@
-TMDbLib [![Generic Build](https://github.com/jellyfin/TMDbLib/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jellyfin/TMDbLib/actions/workflows/dotnet.yml) [![NuGet](https://img.shields.io/nuget/v/Tmdblib.svg)](https://www.nuget.org/packages/Tmdblib) [![GHPackages](https://img.shields.io/badge/package-alpha-green)](https://github.com/jellyfin/TMDbLib/pkgs/nuget/TMDbLib)
-=======
+# TMDbLib
 
-A near-complete wrapper for v3 of TMDb's API (TheMovieDb - https://www.themoviedb.org/).
+[![Build](https://github.com/jellyfin/TMDbLib/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jellyfin/TMDbLib/actions/workflows/dotnet.yml)
+[![NuGet](https://img.shields.io/nuget/v/Tmdblib.svg)](https://www.nuget.org/packages/Tmdblib)
+[![GitHub Packages](https://img.shields.io/badge/package-alpha-green)](https://github.com/jellyfin/TMDbLib/pkgs/nuget/TMDbLib)
 
-## Using alpha packages
-All commits to master produce an Alpha package that can be [found here](https://github.com/jellyfin/TMDbLib/pkgs/nuget/TMDbLib).
+A near-complete .NET wrapper for v3 of [TMDb's API](https://www.themoviedb.org/).
 
-Index
----------
+## Table of Contents
 
-- [Nuget](#nuget)
+- [Installation](#installation)
 - [Documentation](#documentation)
 - [Examples](#examples)
 - [Tips](#tips)
 
-Documentation
--------- 
+## Installation
 
-Most of the library is self-explaining, and closely follows the possibilities at the official TMDb documentation site: [developers.themoviedb.org](https://developers.themoviedb.org/3/getting-started).
+Install via NuGet:
 
-Examples
--------- 
+```bash
+dotnet add package TMDbLib
+```
 
-Simple example, getting the basic info for "A good day to die hard".
+Or for alpha packages from GitHub Packages, see the [releases page](https://github.com/jellyfin/TMDbLib/pkgs/nuget/TMDbLib).
+
+## Documentation
+
+Most of the library is self-explaining and closely follows the official [TMDb API documentation](https://developers.themoviedb.org/3/getting-started).
+
+## Examples
+
+### Basic Usage
+
+Simple example, getting the basic info for "A Good Day to Die Hard":
 
 ```csharp
-TMDbClient client = new TMDbClient("APIKey");
-Movie movie = client.GetMovieAsync(47964).Result;
+using TMDbLib.Client;
+
+var client = new TMDbClient("APIKey");
+var movie = await client.GetMovieAsync(47964);
 
 Console.WriteLine($"Movie name: {movie.Title}");
 ```
 
-Using the extra features of TMDb, we can fetch more info in one go (here we fetch casts as well as trailers):
+### Fetching Additional Data
+
+Using the extra features of TMDb, you can fetch more info in one request (here we fetch credits and videos):
 
 ```csharp
-TMDbClient client = new TMDbClient("APIKey");
-Movie movie = await client.GetMovieAsync(47964, MovieMethods.Credits | MovieMethods.Videos);
+using TMDbLib.Client;
+using TMDbLib.Objects.Movies;
+
+var client = new TMDbClient("APIKey");
+var movie = await client.GetMovieAsync(47964, MovieMethods.Credits | MovieMethods.Videos);
 
 Console.WriteLine($"Movie title: {movie.Title}");
-foreach (Cast cast in movie.Credits.Cast)
+
+foreach (var cast in movie.Credits.Cast)
     Console.WriteLine($"{cast.Name} - {cast.Character}");
 
 Console.WriteLine();
-foreach (Video video in movie.Videos.Results)
+
+foreach (var video in movie.Videos.Results)
     Console.WriteLine($"Trailer: {video.Type} ({video.Site}), {video.Name}");
 ```
 
-It is likewise simple to search for people or movies, for example here we search for "007". This yields basically every James Bond film ever made:
+### Searching for Movies
+
+Search for people or movies. This example searches for "007", yielding James Bond films:
 
 ```csharp
-TMDbClient client = new TMDbClient("APIKey");
-SearchContainer<SearchMovie> results = client.SearchMovieAsync("007").Result;
+using TMDbLib.Client;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
+
+var client = new TMDbClient("APIKey");
+var results = await client.SearchMovieAsync("007");
 
 Console.WriteLine($"Got {results.Results.Count:N0} of {results.TotalResults:N0} results");
-foreach (SearchMovie result in results.Results)
+
+foreach (var result in results.Results)
     Console.WriteLine(result.Title);
 ```
 
-However, another way to get all James Bond movies, is to use the collection-approach. TMDb makes collections for series of movies, such as Die Hard and James Bond. I know there is one, so I will show how to search for the collection, and then list all movies in it:
+### Working with Collections
+
+TMDb groups related movies into collections (e.g., James Bond, Die Hard). Here's how to find and list a collection:
 
 ```csharp
-TMDbClient client = new TMDbClient("APIKey");
-SearchContainer<SearchCollection> collectons = client.SearchCollectionAsync("James Bond").Result;
-Console.WriteLine($"Got {collectons.Results.Count:N0} collections");
+using TMDbLib.Client;
+using TMDbLib.Objects.Collections;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 
-Collection jamesBonds = client.GetCollectionAsync(collectons.Results.First().Id).Result;
-Console.WriteLine($"Collection: {jamesBonds.Name}");
-Console.WriteLine();
+var client = new TMDbClient("APIKey");
+var collections = await client.SearchCollectionAsync("James Bond");
 
-Console.WriteLine($"Got {jamesBonds.Parts.Count:N0} James Bond Movies");
-foreach (SearchMovie part in jamesBonds.Parts)
-      Console.WriteLine(part.Title);
+Console.WriteLine($"Got {collections.Results.Count:N0} collections");
+
+var jamesBond = await client.GetCollectionAsync(collections.Results.First().Id);
+Console.WriteLine($"Collection: {jamesBond.Name}");
+Console.WriteLine($"Got {jamesBond.Parts.Count:N0} James Bond movies");
+
+foreach (var part in jamesBond.Parts)
+    Console.WriteLine(part.Title);
 ```
 
-Tips
----------
+## Tips
 
-* All methods are `async` and awaitable
-* Most methods are very straightforward, and do as they are named, `GetMovie`, `GetPerson` etc.
-* Almost all enums are of the `[Flags]` type. This means you can combine them: `MovieMethods.Casts | MovieMethods.Trailers`
-* TMDb are big fans of serving as little as possible, so most properties on primary classes like `Movie` are null, until you request the extra data using the enums like above.
+- All methods are `async` and awaitable
+- Most methods are straightforward and named accordingly: `GetMovieAsync`, `GetPersonAsync`, etc.
+- Almost all method enums use `[Flags]`, allowing you to combine them: `MovieMethods.Credits | MovieMethods.Videos`
+- TMDb returns minimal data by default; most properties on classes like `Movie` are null until you request extra data using the method enums
