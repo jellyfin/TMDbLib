@@ -51,7 +51,7 @@ public partial class TMDbClient
 
         if (res is SearchContainer<ChangesListItem> asSearch)
         {
-            // https://github.com/LordMike/TMDbLib/issues/296
+            // https://github.com/jellyfin/TMDbLib/issues/296
             asSearch.Results.RemoveAll(s => s.Id == 0);
         }
 

@@ -6,9 +6,8 @@
 
   <!-- Common NuGet properties -->
   <PropertyGroup>
-    <Authors>LordMike</Authors>
-    <Company>MBWarez</Company>
-    <Copyright>Michael Bisbjerg $([System.DateTime]::Now.ToString(yyyy))</Copyright>
+    <Authors>Jellyfin Contributors</Authors>
+    <Copyright>Michael Bisbjerg 2013-2023, Jellyfin Contributors 2023-$([System.DateTime]::Now.ToString(yyyy))</Copyright>
   </PropertyGroup>
 
   <!-- Release stuff -->
@@ -22,7 +21,7 @@
 
     <MinVerTagPrefix>v</MinVerTagPrefix>
 
-    <!-- Github packages does not support symbols, so we embed pdbs in nupkg (https://github.community/t/does-github-packages-dotnet-nuget-supports-to-publish-snupkg/123286/6) -->
+    <!-- Github packages does not support symbols, so we embed pdbs in nupkg (https://github.com/orgs/community/discussions/38678) -->
     <AllowedOutputExtensionsInPackageBuildOutputFolder Condition="'$(Configuration)'=='Debug'">$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 

@@ -35,7 +35,7 @@ internal sealed class RestClient : IDisposable
             if (proxy is not null)
             {
                 // Blazor apparently throws on the Proxy setter.
-                // https://github.com/LordMike/TMDbLib/issues/354
+                // https://github.com/jellyfin/TMDbLib/issues/354
                 handler.Proxy = proxy;
             }
 
