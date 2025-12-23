@@ -23,7 +23,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@2016bd2012dba4e32de620c46fe006a3ac9f0602 # v5
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 10.0.x
 
     - name: Restore dependencies
       run: dotnet restore
@@ -41,7 +41,7 @@ jobs:
     - name: "Github packages: Nuget push"
       if: github.ref == 'refs/heads/master'
       run: dotnet nuget push --no-symbols --skip-duplicate -k ${{ secrets.GITHUB_TOKEN }} -s "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" Build/*.nupkg
-      
+
     - name: "Github packages: Cleanup"
       if: github.ref == 'refs/heads/master'
       uses: stripethree/gpr-janitor@dist
@@ -52,4 +52,3 @@ jobs:
         versions-to-fetch: 20
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
