@@ -20,6 +20,8 @@ public class TMDbJsonSerializer : ITMDbSerializer
         _serializer.Converters.Add(new ChangeItemConverter());
         _serializer.Converters.Add(new AccountStateConverter());
         _serializer.Converters.Add(new KnownForConverter());
+        _serializer.Converters.Add(new CombinedCreditsCastConverter());
+        _serializer.Converters.Add(new CombinedCreditsCrewConverter());
         _serializer.Converters.Add(new SearchBaseConverter());
         _serializer.Converters.Add(new TaggedImageConverter());
         _serializer.Converters.Add(new TolerantEnumConverter());

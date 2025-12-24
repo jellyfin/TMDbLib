@@ -13,7 +13,7 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T> GetTvEpisodeMethodInternal<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null, CancellationToken cancellationToken = default)
+    private async Task<T> GetTvEpisodeMethodInternal<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string dateFormat = null, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
         where T : new()
     {
         RestRequest req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
@@ -31,6 +31,11 @@ public partial class TMDbClient
         if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
+        }
+
+        if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+        {
+            req.AddParameter("include_image_language", includeImageLanguage);
         }
 
         T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -207,11 +212,12 @@ public partial class TMDbClient
     /// If specified the api will attempt to return a localized result. ex: en,it,es.
     /// For images this means that the image might contain language specifc text.
     /// </param>
+    /// <param name="includeImageLanguage">If you want to include a fallback language you can use the include_image_language parameter. This should be a comma separated value like so: include_image_language=en,null.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>Still images (screenshots) from the episode.</returns>
-    public async Task<StillImages> GetTvEpisodeImagesAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null, CancellationToken cancellationToken = default)
+    public async Task<StillImages> GetTvEpisodeImagesAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
-        return await GetTvEpisodeMethodInternal<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetTvEpisodeMethodInternal<StillImages>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Images, language: language, includeImageLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -220,11 +226,12 @@ public partial class TMDbClient
     /// <param name="tvShowId">The TMDb id of the TV show.</param>
     /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
     /// <param name="episodeNumber">The episode number.</param>
+    /// <param name="language">Language to filter the video results.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with video information for the episode.</returns>
-    public async Task<ResultContainer<Video>> GetTvEpisodeVideosAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<Video>> GetTvEpisodeVideosAsync(int tvShowId, int seasonNumber, int episodeNumber, string language = null, CancellationToken cancellationToken = default)
     {
-        return await GetTvEpisodeMethodInternal<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetTvEpisodeMethodInternal<ResultContainer<Video>>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Videos, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -237,7 +244,7 @@ public partial class TMDbClient
     /// <returns>A container with translation information for the episode.</returns>
     public async Task<TranslationsContainer> GetTvEpisodeTranslationsAsync(int tvShowId, int seasonNumber, int episodeNumber, CancellationToken cancellationToken = default)
     {
-        return await GetTvEpisodeMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Translations, null, null, cancellationToken).ConfigureAwait(false);
+        return await GetTvEpisodeMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, episodeNumber, TvEpisodeMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>

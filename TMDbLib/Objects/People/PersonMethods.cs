@@ -56,4 +56,10 @@ public enum PersonMethods
     /// </summary>
     [EnumValue("translations")]
     Translations = 64,
+
+    /// <summary>
+    /// Include combined movie and TV credits.
+    /// </summary>
+    [EnumValue("combined_credits")]
+    CombinedCredits = 128,
 }

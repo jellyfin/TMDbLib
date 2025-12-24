@@ -135,6 +135,12 @@ public class Person
     public TvCredits TvCredits { get; set; }
 
     /// <summary>
+    /// Gets or sets the combined movie and TV credits.
+    /// </summary>
+    [JsonProperty("combined_credits")]
+    public CombinedCredits CombinedCredits { get; set; }
+
+    /// <summary>
     /// Gets or sets the translations.
     /// </summary>
     [JsonProperty("translations")]

@@ -203,17 +203,6 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves the changes made to a TV show within a time period.
-    /// </summary>
-    /// <param name="id">The TMDb id of the TV show.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A container with the changes made to the TV show.</returns>
-    public async Task<ChangesContainer> GetTvShowChangesAsync(int id, CancellationToken cancellationToken = default)
-    {
-        return await GetTvShowMethodInternal<ChangesContainer>(id, TvShowMethods.Changes, cancellationToken: cancellationToken).ConfigureAwait(false);
-    }
-
-    /// <summary>
     /// Retrieves content ratings for a TV show by country.
     /// </summary>
     /// <param name="id">The TMDb id of the TV show.</param>
