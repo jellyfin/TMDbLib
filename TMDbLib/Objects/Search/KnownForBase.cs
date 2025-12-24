@@ -11,6 +11,12 @@ namespace TMDbLib.Objects.Search;
 public abstract class KnownForBase
 {
     /// <summary>
+    /// Gets or sets a value indicating whether this is adult content.
+    /// </summary>
+    [JsonProperty("adult")]
+    public bool Adult { get; set; }
+
+    /// <summary>
     /// Gets or sets the backdrop image path.
     /// </summary>
     [JsonProperty("backdrop_path")]
