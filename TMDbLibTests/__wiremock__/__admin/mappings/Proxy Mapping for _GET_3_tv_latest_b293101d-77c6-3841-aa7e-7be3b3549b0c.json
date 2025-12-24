@@ -1,0 +1,112 @@
+{
+  "Guid": "b293101d-77c6-3841-aa7e-7be3b3549b0c",
+  "UpdatedAt": "2025-12-24T11:53:34.6983604Z",
+  "Title": "Proxy Mapping for GET /3/tv/latest",
+  "Description": "Proxy Mapping for GET /3/tv/latest",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/latest",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "backdrop_path": "/uNR3oku5TGEm33ZYBuVUfdaFoyT.jpg",
+      "created_by": [],
+      "episode_run_time": [],
+      "first_air_date": "2025-12-24",
+      "genres": [],
+      "homepage": "",
+      "id": 309086,
+      "in_production": false,
+      "languages": [
+        "ko"
+      ],
+      "last_air_date": null,
+      "last_episode_to_air": null,
+      "name": "\uCCAD\uB144 \uAE40\uB300\uAC74",
+      "next_episode_to_air": {
+        "id": 6784380,
+        "name": "Episode 1",
+        "overview": "",
+        "vote_average": 0.0,
+        "vote_count": 0,
+        "air_date": "2025-12-24",
+        "episode_number": 1,
+        "episode_type": "standard",
+        "production_code": "",
+        "runtime": null,
+        "season_number": 1,
+        "show_id": 309086,
+        "still_path": null
+      },
+      "networks": [],
+      "number_of_episodes": 1,
+      "number_of_seasons": 1,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "original_name": "\uCCAD\uB144 \uAE40\uB300\uAC74",
+      "overview": "",
+      "popularity": 0.0,
+      "poster_path": "/hW8eQtE4HGI8doV1RKzGUoQLZiy.jpg",
+      "production_companies": [],
+      "production_countries": [],
+      "seasons": [
+        {
+          "air_date": "2025-12-24",
+          "episode_count": 3,
+          "id": 490987,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": null,
+          "season_number": 1,
+          "vote_average": 0.0
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "Korean",
+          "iso_639_1": "ko",
+          "name": "\uD55C\uAD6D\uC5B4/\uC870\uC120\uB9D0"
+        }
+      ],
+      "status": "Ended",
+      "tagline": "",
+      "type": "Scripted",
+      "vote_average": 0.0,
+      "vote_count": 0
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "MISS",
+      "x-memc-key": "5451c9912b0d6936b14e2d06bac42307565a426031725cbd9581bf704399476f",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=0",
+      "ETag": "W/\u0022a64a60342601fdea2c26d9a4ec31af00\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

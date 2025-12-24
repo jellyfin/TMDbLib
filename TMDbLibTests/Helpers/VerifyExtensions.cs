@@ -23,7 +23,7 @@ internal static partial class VerifyExtensions
     {
         PropertyInfo prop = PropertyHelpers.GetPropertyInfo(expression);
 
-        JsonPropertyAttribute jsonPropAttribute = prop.GetCustomAttribute<JsonPropertyAttribute>();
+        JsonPropertyAttribute? jsonPropAttribute = prop.GetCustomAttribute<JsonPropertyAttribute>();
         return jsonPropAttribute?.PropertyName ?? prop.Name;
     }
 

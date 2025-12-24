@@ -1,0 +1,456 @@
+{
+  "Guid": "726e86ef-a8ed-e044-aa36-a44462e18da2",
+  "UpdatedAt": "2025-12-24T11:53:35.8479481Z",
+  "Title": "Proxy Mapping for GET /3/movie/upcoming",
+  "Description": "Proxy Mapping for GET /3/movie/upcoming",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/upcoming",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "dates": {
+        "maximum": "2026-01-21",
+        "minimum": "2025-12-31"
+      },
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg",
+          "genre_ids": [
+            878,
+            12,
+            14
+          ],
+          "id": 83533,
+          "original_language": "en",
+          "original_title": "Avatar: Fire and Ash",
+          "overview": "Nach dem verheerenden Krieg gegen die RDA und dem Verlust ihres \u00E4ltesten Sohnes sehen sich Jake Sully und Neytiri mit einer neuen Bedrohung auf Pandora konfrontiert: dem Aschvolk, einem gewaltt\u00E4tigen und machthungrigen Na\u0027vi-Stamm unter der F\u00FChrung des skrupellosen Varang. Jakes Familie muss in einem Konflikt, der sie an ihre emotionalen und physischen Grenzen bringt, um ihr \u00DCberleben und die Zukunft von Pandora k\u00E4mpfen. *Der Film enth\u00E4lt Sequenzen, die sich auf photosensitive Menschen oder Menschen mit photosensitiver Epilepsie auswirken k\u00F6nnten.",
+          "popularity": 559.9652,
+          "poster_path": "/nB8gjQdI6RPczGcJ5mzCgAdjdH8.jpg",
+          "release_date": "2025-12-17",
+          "title": "Avatar: Fire and Ash",
+          "video": false,
+          "vote_average": 7.387,
+          "vote_count": 554
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yCatt8lmp3oRFEcOZF8KHhsiASQ.jpg",
+          "genre_ids": [
+            28,
+            10752
+          ],
+          "id": 1223601,
+          "original_language": "fi",
+          "original_title": "Sisu 2",
+          "overview": "\u201EDer Mann, der nicht sterben will\u201C kehrt in das Haus zur\u00FCck, in dem seine Familie w\u00E4hrend des Krieges brutal ermordet wurde. Er zerlegt es in seine Einzelteile, verl\u00E4dt es auf einen Lastwagen und ist fest entschlossen, es an einem sicheren Ort zu Ehren seiner Familie wieder aufzubauen. Doch als der Kommandant der Roten Armee zur\u00FCckkehrt, der seine Familie get\u00F6tet hat \u2013 fest entschlossen, die Arbeit zu Ende zu bringen \u2013 beginnt eine unerbittliche, atemberaubende Verfolgungsjagd quer durch das Land.",
+          "popularity": 326.0945,
+          "poster_path": "/jy2uelnalM9laKbfW0iIFV4FKVs.jpg",
+          "release_date": "2025-10-21",
+          "title": "Sisu: Road to Revenge",
+          "video": false,
+          "vote_average": 7.6,
+          "vote_count": 261
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ae0p8SqtMNNxbmbUHyCaE20D2aQ.jpg",
+          "genre_ids": [
+            9648,
+            53
+          ],
+          "id": 1368166,
+          "original_language": "en",
+          "original_title": "The Housemaid",
+          "overview": "Millie ist eine Frau, die sich abm\u00FCht und erleichtert ist, als Hausm\u00E4dchen bei Nina und Andrew, einem gehobenen, wohlhabenden Paar, einen Neuanfang zu machen. Bald erf\u00E4hrt sie, dass die Geheimnisse der Familie viel gef\u00E4hrlicher sind als ihre eigenen.",
+          "popularity": 80.5845,
+          "poster_path": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+          "release_date": "2025-12-18",
+          "title": "The Housemaid - Wenn sie w\u00FCsste",
+          "video": false,
+          "vote_average": 8.176,
+          "vote_count": 34
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fuacZLpnohQtLD0AhtCErcPVL98.jpg",
+          "genre_ids": [
+            10749,
+            35,
+            18
+          ],
+          "id": 1259102,
+          "original_language": "en",
+          "original_title": "Eternity",
+          "overview": "Als Larry Cutler unerwartet stirbt \u2013 noch vor seiner Frau Joan \u2013, ist er schockiert, in einer chaotischen Zwischenwelt zu erwachen, wo Verk\u00E4ufer eine endlose Auswahl m\u00F6glicher Jenseitswelten anpreisen. Dort erf\u00E4hrt er von seiner zust\u00E4ndigen Jenseits-Koordinatorin, dass ihm nur eine Woche bleibt, sich der ultimativen Frage zu stellen: Wo und mit wem will er die Ewigkeit verbringen? Doch als Joan kurz nach ihm eintrifft, stellt sie fest, dass ihre erste Liebe Luke seit 67 Jahren darauf wartet, wieder mit ihr zusammen zu sein. Sie steht vor einer unm\u00F6glichen Wahl zwischen dem Mann, mit dem sie ihr Leben verbracht hat, und dem Mann, der ihr das Leben verspricht, das sie h\u00E4tte f\u00FChren k\u00F6nnen.",
+          "popularity": 64.648,
+          "poster_path": "/bHrxXdHApOZvztt23kzEIFVoVK0.jpg",
+          "release_date": "2025-11-26",
+          "title": "Eternity",
+          "video": false,
+          "vote_average": 7.058,
+          "vote_count": 78
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pAyImoslSnpMgjRwhaS5ZEdl8UI.jpg",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "id": 1448560,
+          "original_language": "en",
+          "original_title": "Wildcat",
+          "overview": "Ein ehemaliges Spezialeinheit-Team findet sich f\u00FCr eine letzte Mission zusammen - einen riskanten Raub\u00FCberfall, um die kleine Tochter ihres Kommandanten zu retten.",
+          "popularity": 57.84,
+          "poster_path": "/h893ImjM6Fsv5DFhKJdlZFZIJno.jpg",
+          "release_date": "2025-11-19",
+          "title": "Wildcat",
+          "video": false,
+          "vote_average": 6.3,
+          "vote_count": 51
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dEkFlZzj2cb5F7SShvqkL54E4lr.jpg",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "id": 1033148,
+          "original_language": "en",
+          "original_title": "Die My Love",
+          "overview": "Das verliebte junge Paar Grace und Jackson zieht von New York in ein geerbtes Haus auf dem  Land. In der Abgeschiedenheit sucht Grace nach ihrer Identit\u00E4t als Frau und Mutter eines neugeborenen Babys. Doch als sie droht, die Kontrolle und sich selbst zu verlieren, entdeckt sie sich neu \u2013 nicht in ihrer Schw\u00E4che, sondern in ihrer Vorstellungskraft, ihrer St\u00E4rke und ihrer \u00FCberw\u00E4ltigenden, ungez\u00E4hmten Lebendigkeit.",
+          "popularity": 51.5598,
+          "poster_path": "/ghE2JeKGbTFUyyjOsYVYldTpRmu.jpg",
+          "release_date": "2025-10-06",
+          "title": "Die My Love",
+          "video": false,
+          "vote_average": 6.375,
+          "vote_count": 204
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qFxULMQeFTdo2dcuviEdwks3CIO.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1286185,
+          "original_language": "en",
+          "original_title": "The Carpenter\u0027s Son",
+          "overview": "In einem abgelegenen Dorf im \u00C4gypten der R\u00F6merzeit bricht ein spiritueller Krieg aus, als ein Zimmermann, seine Frau und ihr Kind ins Visier \u00FCbernat\u00FCrlicher Kr\u00E4fte geraten.",
+          "popularity": 51.9323,
+          "poster_path": "/tXEtdZjoaHqjDjSxZJWwDVjIfx9.jpg",
+          "release_date": "2025-11-13",
+          "title": "The Carpenter\u0027s Son",
+          "video": false,
+          "vote_average": 5.2,
+          "vote_count": 23
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kVSUUWiXoNwq2wVCZ4Mcqkniqvr.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            12,
+            16
+          ],
+          "id": 991494,
+          "original_language": "en",
+          "original_title": "The SpongeBob Movie: Search for SquarePants",
+          "overview": "In ihrem brandneuen und bisher gr\u00F6\u00DFten Kinoabenteuer, SPONGEBOB SCHWAMMKOPF: PIRATEN AHOI!, stechen SpongeBob und seine Freunde aus Bikini Bottom in See! SpongeBob, der endlich auch zu den Gro\u00DFen geh\u00F6ren m\u00F6chte und Mr. Krabs seinen Mut beweisen will, folgt dem Fliegenden Holl\u00E4nder - einem mysteri\u00F6sen, verwegenen Geisterpiraten. Und so beginnt ein rasantes und witziges Seefahrts-Abenteuer, das ihn in die tiefsten Tiefen der Tiefsee f\u00FChrt, wo noch kein Schwamm zuvor gewesen ist.",
+          "popularity": 53.6244,
+          "poster_path": "/M7KKeJfhV5AVJO8JCd5Hix0vyH.jpg",
+          "release_date": "2025-12-16",
+          "title": "SpongeBob Schwammkopf: Piraten Ahoi!",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 14
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/i1Aa25l2TtKwp528wM5g2MK4ER6.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 1134463,
+          "original_language": "es",
+          "original_title": "Dreams",
+          "overview": "",
+          "popularity": 43.4911,
+          "poster_path": "/7u9MKsi7p7PPhb2IlhPMpIvop41.jpg",
+          "release_date": "2025-07-10",
+          "title": "Dreams",
+          "video": false,
+          "vote_average": 5.6,
+          "vote_count": 12
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ajzEWXl1z75Mx6lOj9lToHt5t6Z.jpg",
+          "genre_ids": [
+            36,
+            18
+          ],
+          "id": 1214931,
+          "original_language": "en",
+          "original_title": "Nuremberg",
+          "overview": "Nach Ende des Zweiten Weltkriegs werden die Hauptkriegsverbrecher im N\u00FCrnberger Prozess zur Rechenschaft gezogen. Das historische Drama \u0022N\u00FCrnberg\u0022 widmet sich ebenjenen Prozessen, in dem der Psychiater Douglas Kelley (Rami Malek) auf den Nazi Hermann G\u00F6ring (Russell Crowe) trifft, der als Hitlers rechte Hand galt.",
+          "popularity": 42.1306,
+          "poster_path": "/sxu8TsG7k06ymWL98ELEIE1EMZV.jpg",
+          "release_date": "2025-11-06",
+          "title": "N\u00FCrnberg",
+          "video": false,
+          "vote_average": 7.143,
+          "vote_count": 129
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iMxWTPRqWJJKVW7KYBlmirSeazw.jpg",
+          "genre_ids": [
+            10749,
+            35
+          ],
+          "id": 1429520,
+          "original_language": "en",
+          "original_title": "Sidelined 2: Intercepted",
+          "overview": "Drayton (Noah Beck) und Dallas (Siena Agudong) sind \u00FCbergl\u00FCcklich, in L. A. endlich gemeinsam ins Collegeleben zu starten \u2013 er als gefeierter Quarterback an der USC, sie als aufstrebende T\u00E4nzerin am CalArts. Schon bald m\u00FCssen sie jedoch feststellen, wie sehr das anspruchsvolle neue Umfeld ihre Beziehung belastet. W\u00E4hrend Drayton nach einem schweren R\u00FCckschlag an seiner Zukunft im Footballteam zweifelt, ist Dallas sich nicht sicher, ob das Tanzstudium wirklich der richtige Weg f\u00FCr sie ist. Unausgesprochene Gef\u00FChle, neue Versuchungen und unterschiedliche Vorstellungen f\u00FChren die zwei schlie\u00DFlich zur unausweichlichen Frage: Kann ihre Liebe all dem standhalten?",
+          "popularity": 36.326,
+          "poster_path": "/pV9kZYII1rAkvuXJL0YnzViSRxK.jpg",
+          "release_date": "2025-11-27",
+          "title": "The Bad Boy and Me 2",
+          "video": false,
+          "vote_average": 7.429,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/93yXJVBBC04mhgv5FlZRT8Zyofp.jpg",
+          "genre_ids": [
+            12,
+            35,
+            27
+          ],
+          "id": 1234731,
+          "original_language": "en",
+          "original_title": "Anaconda",
+          "overview": "DIES IST KEIN REBOOT, sondern ist eine v\u00F6llig neue Kom\u00F6die, inspiriert vom \u201EKlassiker\u201C Anaconda, in der Doug und Griff die Hauptrollen spielen. Die beiden sind seit ihrer Kindheit beste Freunde und tr\u00E4umen schon immer davon, ihren absoluten Lieblingsfilm neu zu verfilmen. Ihre Midlife-Crisis treibt sie dazu, ihren Traum endlich in die Tat umzusetzen. Sie reisen tief in den Amazonas, um mit den Dreharbeiten zu beginnen. Doch aus Spa\u00DF wird schnell Ernst, als pl\u00F6tzlich eine echte Riesenanaconda auftaucht \u2013 und das chaotisch-komische Filmset in eine t\u00F6dliche Falle verwandelt.",
+          "popularity": 35.0664,
+          "poster_path": "/z6lG1TjFqmX3WwG9GWYheM1JvWo.jpg",
+          "release_date": "2025-12-24",
+          "title": "Anaconda",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 6
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zhoMwQofjgVec5Sin05hWECJtVQ.jpg",
+          "genre_ids": [
+            18,
+            53,
+            80
+          ],
+          "id": 1456349,
+          "original_language": "fa",
+          "original_title": "\u06CC\u06A9 \u062A\u0635\u0627\u062F\u0641 \u0633\u0627\u062F\u0647",
+          "overview": "Als der Automechaniker Vahid zuf\u00E4llig auf den Mann trifft, der ihn mutma\u00DFlich im Gef\u00E4ngnis gefoltert hat, entf\u00FChrt er ihn, um Vergeltung zu \u00FCben. Doch der einzige Hinweis auf Eghbals Identit\u00E4t ist das unverkennbare Quietschen seiner Beinprothese. Auf der Suche nach Gewissheit wendet sich Vahid an einen zerstreuten Kreis anderer, inzwischen freigelassener Opfer. Doch je tiefer sie in ihre Vergangenheit eintauchen und je mehr ihre unterschiedlichen Weltanschauungen aufeinanderprallen, desto gr\u00F6\u00DFer werden die Zweifel: Ist er es wirklich? Und was hie\u00DFe Vergeltung \u00FCberhaupt?",
+          "popularity": 32.3791,
+          "poster_path": "/giBFj9Et00E8cymsBqVfrqMWUnk.jpg",
+          "release_date": "2025-09-27",
+          "title": "Ein einfacher Unfall",
+          "video": false,
+          "vote_average": 7.198,
+          "vote_count": 210
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5lQ4euO30sDin5nCifvi0vURFNd.jpg",
+          "genre_ids": [
+            28,
+            35,
+            10751
+          ],
+          "id": 1248226,
+          "original_language": "en",
+          "original_title": "Playdate",
+          "overview": "Als der arbeitslose Buchhalter Brian den nicht berufst\u00E4tigen Dad Jeff zu einem Spieltreffen mit ihren S\u00F6hnen besucht, erwartet er einen ruhigen Nachmittag. Stattdessen werden sie von S\u00F6ldnern gejagt, und Brian muss unvorbereitet ein absurdes Hindernis nach dem n\u00E4chsten \u00FCberleben. In diesem urkomischen Abenteuer trifft v\u00E4terliches Vorstadtleben auf Action-Film-Chaos.",
+          "popularity": 29.8934,
+          "poster_path": "/wccfm8HVvlfoW9S4AAVh8XHctV4.jpg",
+          "release_date": "2025-11-05",
+          "title": "Playdate - Die Action-Dads",
+          "video": false,
+          "vote_average": 6.163,
+          "vote_count": 407
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uIXIQUDXUxvhjfKvpUnXTiVfvuB.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1127628,
+          "original_language": "en",
+          "original_title": "The Thing with Feathers",
+          "overview": "",
+          "popularity": 22.8676,
+          "poster_path": "/j3kM0tMW7EQaOrit0JW9NvoPPrp.jpg",
+          "release_date": "2025-10-17",
+          "title": "The Thing with Feathers",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fTrQsdMS2MUw00RnzH0r3JWHhts.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1197306,
+          "original_language": "en",
+          "original_title": "A Working Man",
+          "overview": "Levon Cade hat eine erfolgreiche Milit\u00E4rkarriere im Bereich Geheimoperationen hinter sich gelassen, um ein einfaches Leben als Arbeiter auf dem Bau zu f\u00FChren. Als jedoch die Tochter seines Vorgesetzten, die f\u00FCr ihn wie eine Tochter ist, von einem Menschenh\u00E4ndlerring entf\u00FChrt wird, zieht er noch einmal in den Kampf. Bei seiner Suche st\u00F6\u00DFt er auf eine Welt voller Korruption, die selbst seine schlimmsten Vorstellungen \u00FCbertrifft.",
+          "popularity": 27.5785,
+          "poster_path": "/se0zJXl4GXvSOgDFhUcOtsiX6Me.jpg",
+          "release_date": "2025-03-26",
+          "title": "A Working Man",
+          "video": false,
+          "vote_average": 6.705,
+          "vote_count": 1687
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jBOhqsbzEL7Ks3NWy98iI7YDzBh.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 1317288,
+          "original_language": "en",
+          "original_title": "Marty Supreme",
+          "overview": "Marty Mauser, ein junger Mann mit einem Traum, den niemand respektiert, geht auf der Suche nach Gr\u00F6\u00DFe durch die H\u00F6lle und zur\u00FCck.",
+          "popularity": 30.7281,
+          "poster_path": "/8LGm5kOZnWpUI4uiomBYit4GWdF.jpg",
+          "release_date": "2025-12-19",
+          "title": "Marty Supreme",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e3lmJ6sI7aItMv3sXHnKZCeppCx.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            18,
+            35
+          ],
+          "id": 1167307,
+          "original_language": "en",
+          "original_title": "David",
+          "overview": "",
+          "popularity": 25.5943,
+          "poster_path": "/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",
+          "release_date": "2025-12-14",
+          "title": "David",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1ktHy4yBupG3JzYoFsQ8DFoqZh4.jpg",
+          "genre_ids": [
+            80,
+            53,
+            18
+          ],
+          "id": 639988,
+          "original_language": "ko",
+          "original_title": "\uC5B4\uCA54\uC218\uAC00\uC5C6\uB2E4",
+          "overview": "Man-su hat sich mit viel Flei\u00DF und harter Arbeit ein perfektes Leben geschaffen: Haus mit Garten, harmonische Ehe, talentierte Kinder und genug Zeit f\u00FCr sein geliebtes Bonsai-Hobby. Doch als KI pl\u00F6tzlich seinen Job ersetzt, m\u00FCssen er und seine Familie auf allerlei Annehmlichkeiten verzichten: die Tennisstunden der Gattin, das Netflix-Abo der Kinder und selbst die zwei treuen Golden Retriever k\u00F6nnen sie sich nicht mehr leisten. Und je l\u00E4nger Man-su vergeblich Bewerbungen schreibt, desto n\u00E4her r\u00FCckt auch der Verlust des geliebten Hauses. Schlie\u00DFlich begreift er: Nicht der Mangel an Jobs ist das Problem, sondern die Menge an Mitbewerbern. Man-su bleibt keine andere Wahl als sich \u2013 auf sehr kreative Art und Weise \u2013 seiner Konkurrenten zu entledigen.",
+          "popularity": 24.1949,
+          "poster_path": "/tImzXp37Q2RBcIdYS1HRdtffEaD.jpg",
+          "release_date": "2025-09-24",
+          "title": "No Other Choice",
+          "video": false,
+          "vote_average": 7.538,
+          "vote_count": 119
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yt9m5CiU2MZkQoNl1kqLPODNR4t.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 858024,
+          "original_language": "en",
+          "original_title": "Hamnet",
+          "overview": "Die bewegende Geschichte von Liebe und Verlust, die Shakespeare zu seinem zeitlosen Meisterwerk \u201EHamlet\u201C inspirierte.",
+          "popularity": 18.4461,
+          "poster_path": "/71KNp6RiOQTbs8Fn1DagrFQrZmx.jpg",
+          "release_date": "2025-11-26",
+          "title": "Hamnet",
+          "video": false,
+          "vote_average": 8.176,
+          "vote_count": 17
+        }
+      ],
+      "total_pages": 36,
+      "total_results": 720
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=26651",
+      "x-memc": "HIT",
+      "x-memc-key": "e8353548abb7e102a22a0f1028cc222224c0ce0195ff8162955319cd6aa916e6",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u002227935ed371ed6a06fb8908fc1fd1bac0\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

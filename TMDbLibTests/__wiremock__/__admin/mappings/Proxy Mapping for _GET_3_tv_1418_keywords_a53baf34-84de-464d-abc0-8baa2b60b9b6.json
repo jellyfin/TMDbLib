@@ -1,0 +1,68 @@
+{
+  "Guid": "a53baf34-84de-464d-abc0-8baa2b60b9b6",
+  "UpdatedAt": "2025-12-24T11:53:34.9371342Z",
+  "Title": "Proxy Mapping for GET /3/tv/1418/keywords",
+  "Description": "Proxy Mapping for GET /3/tv/1418/keywords",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1418/keywords",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1418,
+      "results": [
+        {
+          "name": "geek",
+          "id": 5800
+        },
+        {
+          "name": "nerd",
+          "id": 5801
+        },
+        {
+          "name": "friends",
+          "id": 9713
+        },
+        {
+          "name": "scientist",
+          "id": 14760
+        },
+        {
+          "name": "sitcom",
+          "id": 193171
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "2f6f1dfa233f5af8950fbda6370b6a4ff6d40ebed15f315cd68fe28b5cee7600",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=21851",
+      "ETag": "W/\u0022214e3d5ec0340344c4621fb10741ec55\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

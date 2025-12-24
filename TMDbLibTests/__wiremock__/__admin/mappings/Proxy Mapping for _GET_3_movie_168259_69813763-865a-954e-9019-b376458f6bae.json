@@ -1,0 +1,148 @@
+{
+  "Guid": "69813763-865a-954e-9019-b376458f6bae",
+  "UpdatedAt": "2025-12-24T11:53:35.5970552Z",
+  "Title": "Proxy Mapping for GET /3/movie/168259",
+  "Description": "Proxy Mapping for GET /3/movie/168259",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/168259",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "backdrop_path": "/ehzI1mVcnHqB58NqPyQwpMqcVoz.jpg",
+      "belongs_to_collection": {
+        "id": 9485,
+        "name": "The Fast and the Furious Filmreihe",
+        "poster_path": "/vEq10ZynOwHaSIIQ3mWohbHzvRb.jpg",
+        "backdrop_path": "/z5A5W3WYJc3UVEWljSGwdjDgQ0j.jpg"
+      },
+      "budget": 190000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 80,
+          "name": "Krimi"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        }
+      ],
+      "homepage": "http://www.fast7-film.de/",
+      "id": 168259,
+      "imdb_id": "tt2820852",
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_title": "Furious 7",
+      "overview": "Nachdem Dominic Toretto und sein Team den B\u00F6sewicht Owen Shaw ausgeschaltet haben, sinnt dessen Bruder Deckard nach blutiger Rache. Doch der ist nicht ihr einziges Problem. Die Bleifu\u00DF-Freunde sollen n\u00E4mlich gleichzeitig - im Auftrag eines mysteri\u00F6sen Agenten namens Mr. Nobody - heimt\u00FCckischen Terroristen ein \u0022Das Auge Gottes\u0022 genanntes GPS-Programm abjagen und die Programmiererin Ramsey aus deren H\u00E4nden befreien. Also klemmt sich die Crew noch einmal hinters Steuer und trotzt dabei mehrfach der Schwerkraft.",
+      "popularity": 9.6808,
+      "poster_path": "/lyZDOEX6zr9yv9RBjKQoYr6LyYk.jpg",
+      "production_companies": [
+        {
+          "id": 333,
+          "logo_path": "/5xUJfzPZ8jWJUDzYtIeuPO4qPIa.png",
+          "name": "Original Film",
+          "origin_country": "US"
+        },
+        {
+          "id": 1225,
+          "logo_path": "/rIxhJMR7oK8b2fMakmTfRLY2TZv.png",
+          "name": "One Race",
+          "origin_country": "US"
+        },
+        {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2015-04-01",
+      "revenue": 1515400000,
+      "runtime": 137,
+      "spoken_languages": [
+        {
+          "english_name": "Arabic",
+          "iso_639_1": "ar",
+          "name": "\u0627\u0644\u0639\u0631\u0628\u064A\u0629"
+        },
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Espa\u00F1ol"
+        },
+        {
+          "english_name": "Thai",
+          "iso_639_1": "th",
+          "name": "\u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Zeit f\u00FCr Vergeltung",
+      "title": "Fast \u0026 Furious 7",
+      "video": false,
+      "vote_average": 7.221,
+      "vote_count": 11054
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "a415a99732fce1218a8fdc74dd9c0abc10f076d3c7727354453ce65b14b9d406",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=19481",
+      "ETag": "W/\u002252dc1b40d2c360c394cda8cc28a1268e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

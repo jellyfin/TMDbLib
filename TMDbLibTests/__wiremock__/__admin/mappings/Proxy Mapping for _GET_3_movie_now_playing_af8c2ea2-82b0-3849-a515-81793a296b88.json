@@ -1,0 +1,462 @@
+{
+  "Guid": "af8c2ea2-82b0-3849-a515-81793a296b88",
+  "UpdatedAt": "2025-12-24T11:53:34.6240714Z",
+  "Title": "Proxy Mapping for GET /3/movie/now_playing",
+  "Description": "Proxy Mapping for GET /3/movie/now_playing",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/now_playing",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "dates": {
+        "maximum": "2025-12-31",
+        "minimum": "2025-11-19"
+      },
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg",
+          "genre_ids": [
+            878,
+            12,
+            14
+          ],
+          "id": 83533,
+          "original_language": "en",
+          "original_title": "Avatar: Fire and Ash",
+          "overview": "In the wake of the devastating war against the RDA and the loss of their eldest son, Jake Sully and Neytiri face a new threat on Pandora: the Ash People, a violent and power-hungry Na\u0027vi tribe led by the ruthless Varang. Jake\u0027s family must fight for their survival and the future of Pandora in a conflict that pushes them to their emotional and physical limits.",
+          "popularity": 559.9652,
+          "poster_path": "/g96wHxU7EnoIFwemb2RgohIXrgW.jpg",
+          "release_date": "2025-12-17",
+          "title": "Avatar: Fire and Ash",
+          "video": false,
+          "vote_average": 7.381,
+          "vote_count": 565
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ufqytAlziHq5pljKByGJ8IKhtEZ.jpg",
+          "genre_ids": [
+            53,
+            80,
+            9648
+          ],
+          "id": 425274,
+          "original_language": "en",
+          "original_title": "Now You See Me: Now You Don\u0027t",
+          "overview": "The original Four Horsemen reunite with a new generation of illusionists to take on powerful diamond heiress Veronika Vanderberg, who leads a criminal empire built on money laundering and trafficking. The new and old magicians must overcome their differences to work together on their most ambitious heist yet.",
+          "popularity": 375.3153,
+          "poster_path": "/oD3Eey4e4Z259XLm3eD3WGcoJAh.jpg",
+          "release_date": "2025-11-12",
+          "title": "Now You See Me: Now You Don\u0027t",
+          "video": false,
+          "vote_average": 6.492,
+          "vote_count": 604
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yCatt8lmp3oRFEcOZF8KHhsiASQ.jpg",
+          "genre_ids": [
+            28,
+            10752
+          ],
+          "id": 1223601,
+          "original_language": "fi",
+          "original_title": "Sisu 2",
+          "overview": "Returning to the house where his family was brutally murdered during the war, \u2018the man who refuses to die\u2019 dismantles it, loads it on a truck, and is determined to rebuild it somewhere safe in their honor. When the commander who killed his family comes back hellbent on finishing the job, a relentless, eye-popping cross-country chase ensues.",
+          "popularity": 326.0945,
+          "poster_path": "/jNsttCWZyPtW66MjhUozBzVsRb7.jpg",
+          "release_date": "2025-10-21",
+          "title": "Sisu: Road to Revenge",
+          "video": false,
+          "vote_average": 7.6,
+          "vote_count": 261
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zdva2LmrzZ0OdTI27ayzKPw0wkF.jpg",
+          "genre_ids": [
+            16,
+            35,
+            12,
+            10751,
+            9648
+          ],
+          "id": 1084242,
+          "original_language": "en",
+          "original_title": "Zootopia 2",
+          "overview": "After cracking the biggest case in Zootopia\u0027s history, rookie cops Judy Hopps and Nick Wilde find themselves on the twisting trail of a great mystery when Gary De\u0027Snake arrives and turns the animal metropolis upside down. To crack the case, Judy and Nick must go undercover to unexpected new parts of town, where their growing partnership is tested like never before.",
+          "popularity": 329.3201,
+          "poster_path": "/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg",
+          "release_date": "2025-11-26",
+          "title": "Zootopia 2",
+          "video": false,
+          "vote_average": 7.66,
+          "vote_count": 711
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bZlismAr366jWFiZNKzY3x3AN5X.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1228246,
+          "original_language": "en",
+          "original_title": "Five Nights at Freddy\u0027s 2",
+          "overview": "One year since the supernatural nightmare at Freddy Fazbear\u0027s Pizza, the stories about what transpired there have been twisted into a campy local legend, inspiring the town\u0027s first ever Fazfest. With the truth kept from her, Abby sneaks out to reconnect with Freddy, Bonnie, Chica, and Foxy, setting into motion a terrifying series of events that will reveal dark secrets about the real origin of Freddy\u0027s, and unleash a decades-hidden horror.",
+          "popularity": 249.8545,
+          "poster_path": "/2LGb8KyIbPlUTG6pr6WKZnTP5yR.jpg",
+          "release_date": "2025-12-03",
+          "title": "Five Nights at Freddy\u0027s 2",
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 224
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/AePlQ3osZShJmbNj8tzQ3NoMTQF.jpg",
+          "genre_ids": [
+            28,
+            53,
+            9648
+          ],
+          "id": 1013446,
+          "original_language": "fr",
+          "original_title": "Reflet dans un diamant mort",
+          "overview": "When the mysterious woman in the room next door disappears, a debonair 70-year-old ex-spy living in a luxury hotel on the C\u00F4te d\u0027Azur is confronted by the demons and darlings of a lurid past in which moviemaking, memories and madness collide.",
+          "popularity": 239.5594,
+          "poster_path": "/5CdRxBu7jRDHjthkAL8vE0GdKUD.jpg",
+          "release_date": "2025-06-25",
+          "title": "Reflection in a Dead Diamond",
+          "video": false,
+          "vote_average": 6.011,
+          "vote_count": 47
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aHj7d7wSLqrg5cjAcgHhiGr97Ih.jpg",
+          "genre_ids": [
+            28,
+            53,
+            878
+          ],
+          "id": 798645,
+          "original_language": "en",
+          "original_title": "The Running Man",
+          "overview": "Desperate to save his sick daughter, working-class Ben Richards is convinced by The Running Man\u0027s charming but ruthless producer to enter the deadly competition game as a last resort. But Ben\u0027s defiance, instincts, and grit turn him into an unexpected fan favorite \u2014 and a threat to the entire system. As ratings skyrocket, so does the danger, and Ben must outwit not just the Hunters, but a nation addicted to watching him fall.",
+          "popularity": 165.481,
+          "poster_path": "/dKL78O9zxczVgjtNcQ9UkbYLzqX.jpg",
+          "release_date": "2025-11-11",
+          "title": "The Running Man",
+          "video": false,
+          "vote_average": 6.833,
+          "vote_count": 729
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
+          "genre_ids": [
+            53,
+            9648,
+            35
+          ],
+          "id": 812583,
+          "original_language": "en",
+          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
+          "overview": "When young priest Jud Duplenticy is sent to assist charismatic firebrand Monsignor Jefferson Wicks, it\u2019s clear that all is not well in the pews. After a sudden and seemingly impossible murder rocks the town, the lack of an obvious suspect prompts local police chief Geraldine Scott to join forces with renowned detective Benoit Blanc to unravel a mystery that defies all logic.",
+          "popularity": 170.5348,
+          "poster_path": "/qCOGGi8JBVEZMc3DVby8rUivyXz.jpg",
+          "release_date": "2025-11-26",
+          "title": "Wake Up Dead Man: A Knives Out Mystery",
+          "video": false,
+          "vote_average": 7.201,
+          "vote_count": 1029
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x3s2lEGNguUnQ5YH3Goq7Ud7Lcn.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1491902,
+          "original_language": "en",
+          "original_title": "Bang: storm of bullets",
+          "overview": "Follows a ruthless hitman who, after narrowly escaping a fatal attempt on his life, betrays his gang in an effort to find forgiveness but ends up becoming a target himself.",
+          "popularity": 166.4193,
+          "poster_path": "/8SUzKOqe2ectvhYdSnR7Vq2F3n1.jpg",
+          "release_date": "2025-07-11",
+          "title": "Bang",
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 17
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gtuXARxjGdfsGFqEwggBB8zUJza.jpg",
+          "genre_ids": [
+            35,
+            28
+          ],
+          "id": 1589891,
+          "original_language": "es",
+          "original_title": "La hora de los valientes",
+          "overview": "A psychoanalyst on community service aids an agent shattered by infidelity; together, they will confront danger and discover second chances.",
+          "popularity": 141.974,
+          "poster_path": "/qKKG22O5pFxqglG0oMjWTjQWCNl.jpg",
+          "release_date": "2025-12-18",
+          "title": "A Time for Bravery",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 27
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4BtL2vvEufDXDP4u6xQjjQ1Y2aT.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1419406,
+          "original_language": "zh",
+          "original_title": "\u6355\u98CE\u8FFD\u5F71",
+          "overview": "Macau Police brings the tracking expert police officer out of retirement to help catch a dangerous group of professional thieves.",
+          "popularity": 126.9026,
+          "poster_path": "/e0RU6KpdnrqFxDKlI3NOqN8nHL6.jpg",
+          "release_date": "2025-08-16",
+          "title": "The Shadow\u0027s Edge",
+          "video": false,
+          "vote_average": 6.59,
+          "vote_count": 172
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eJ0HooOOD1uzI39CfOQNWIiWKlJ.jpg",
+          "genre_ids": [
+            28,
+            18,
+            53
+          ],
+          "id": 1387382,
+          "original_language": "en",
+          "original_title": "Hunting Season",
+          "overview": "When a reclusive survivalist and his daughter rescue a mysterious, wounded woman from a river, they become entangled in a deadly web of violence and revenge, forcing them to confront a brutal criminal to survive.",
+          "popularity": 112.4496,
+          "poster_path": "/cbryTyaWdqrKpQCw6K7zm2jrB5v.jpg",
+          "release_date": "2025-12-05",
+          "title": "Hunting Season",
+          "video": false,
+          "vote_average": 6.956,
+          "vote_count": 57
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg",
+          "genre_ids": [
+            16,
+            28,
+            10749,
+            14
+          ],
+          "id": 1218925,
+          "original_language": "ja",
+          "original_title": "\u5287\u5834\u7248 \u30C1\u30A7\u30F3\u30BD\u30FC\u30DE\u30F3 \u30EC\u30BC\u7BC7",
+          "overview": "In a brutal war between devils, hunters, and secret enemies, a mysterious girl named Reze has stepped into Denji\u0027s world, and he faces his deadliest battle yet, fueled by love in a world where survival knows no rules.",
+          "popularity": 100.138,
+          "poster_path": "/pHyxb2RV5wLlboAwm9ZJ9qTVEDw.jpg",
+          "release_date": "2025-09-19",
+          "title": "Chainsaw Man - The Movie: Reze Arc",
+          "video": false,
+          "vote_average": 8.296,
+          "vote_count": 471
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lZYMXx74pWmbj5Q5jp1QaMvmuuR.jpg",
+          "genre_ids": [
+            28,
+            14,
+            53
+          ],
+          "id": 1180831,
+          "original_language": "no",
+          "original_title": "Troll 2",
+          "overview": "When a dangerous new troll unleashes devastation across their homeland, Nora, Andreas and Major Kris embark on their most perilous mission yet.",
+          "popularity": 89.2163,
+          "poster_path": "/p6xAExLNFbHcLfvSuvLPoM8aqZU.jpg",
+          "release_date": "2025-11-30",
+          "title": "Troll 2",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 300
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ae0p8SqtMNNxbmbUHyCaE20D2aQ.jpg",
+          "genre_ids": [
+            9648,
+            53
+          ],
+          "id": 1368166,
+          "original_language": "en",
+          "original_title": "The Housemaid",
+          "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dangerous\u2014a sexy, seductive game of secrets, scandal, and power.",
+          "popularity": 80.5845,
+          "poster_path": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+          "release_date": "2025-12-18",
+          "title": "The Housemaid",
+          "video": false,
+          "vote_average": 8.176,
+          "vote_count": 34
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yRYgvo2crAeHzqKwXMVtEaDx7Qq.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1291608,
+          "original_language": "hi",
+          "original_title": "\u0927\u0941\u0930\u0902\u0927\u0930",
+          "overview": "An Indian intelligence mission unfolds over ten years as an undercover agent enters Karachi\u0027s criminal and political world to dismantle dangerous cross-border terror networks.",
+          "popularity": 70.9732,
+          "poster_path": "/8FHOtUpNIk5ZPEay2N2EY5lrxkv.jpg",
+          "release_date": "2025-12-05",
+          "title": "Dhurandhar",
+          "video": false,
+          "vote_average": 6.28,
+          "vote_count": 107
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zpEWFNqoN8Qg1SzMMHmaGyOBTdW.jpg",
+          "genre_ids": [
+            53,
+            80,
+            28
+          ],
+          "id": 1054867,
+          "original_language": "en",
+          "original_title": "One Battle After Another",
+          "overview": "Washed-up revolutionary Bob exists in a state of stoned paranoia, surviving off-grid with his spirited, self-reliant daughter, Willa. When his evil nemesis resurfaces after 16 years and she goes missing, the former radical scrambles to find her, father and daughter both battling the consequences of his past.",
+          "popularity": 74.8135,
+          "poster_path": "/r4uXvqCeco0KmO0CjlhXuTEFuSE.jpg",
+          "release_date": "2025-09-23",
+          "title": "One Battle After Another",
+          "video": false,
+          "vote_average": 7.483,
+          "vote_count": 1990
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qLAMT52DRM3vzqYtcRJ4hBAOYgd.jpg",
+          "genre_ids": [
+            27,
+            14,
+            10749
+          ],
+          "id": 1246049,
+          "original_language": "fr",
+          "original_title": "Dracula",
+          "overview": "When a 15th-century prince denounces God after the devastating loss of his wife, he inherits an eternal curse: he becomes Dracula. Condemned to wander the centuries, he defies fate and death itself, guided by a single hope \u2014 to be reunited with his lost love.",
+          "popularity": 70.1904,
+          "poster_path": "/ykyRfv7JDofLxXLAwtLXaSuaFfM.jpg",
+          "release_date": "2025-07-30",
+          "title": "Dracula",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 650
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gtKglOSEq3d4MgQE4VsrT1sRkd0.jpg",
+          "genre_ids": [
+            16,
+            28
+          ],
+          "id": 1539104,
+          "original_language": "ja",
+          "original_title": "\u5287\u5834\u7248 \u546A\u8853\u5EFB\u6226\u300C\u6E0B\u8C37\u4E8B\u5909 \u7279\u5225\u7DE8\u96C6\u7248\u300D\u00D7\u300C\u6B7B\u6EC5\u56DE\u6E38 \u5148\u884C\u4E0A\u6620\u300D",
+          "overview": "A veil abruptly descends over the busy Shibuya area amid the bustling Halloween crowds, trapping countless civilians inside. Satoru Gojo, the strongest jujutsu sorcerer, steps into the chaos. But lying in wait are curse users and spirits scheming to seal him away. Yuji Itadori, accompanied by his classmates and other top-tier jujutsu sorcerers, enters the fray in an unprecedented clash of curses \u2014 the Shibuya Incident. In the aftermath, ten colonies across Japan are transformed into dens of curses in a plan orchestrated by Noritoshi Kamo. As the deadly Culling Game starts, Special Grade sorcerer Yuta Okkotsu is assigned to carry out Yuji\u0027s execution for his perceived crimes. A compilation movie of Shibuya Incident including the first two episodes of the Culling Games arc.",
+          "popularity": 64.2848,
+          "poster_path": "/v0s3dx6am0RzfsuK3KdEy8ZoCDs.jpg",
+          "release_date": "2025-11-07",
+          "title": "JUJUTSU KAISEN: Execution -Shibuya Incident x The Culling Game Begins-",
+          "video": false,
+          "vote_average": 5.3,
+          "vote_count": 68
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fuacZLpnohQtLD0AhtCErcPVL98.jpg",
+          "genre_ids": [
+            10749,
+            35,
+            18
+          ],
+          "id": 1259102,
+          "original_language": "en",
+          "original_title": "Eternity",
+          "overview": "In an afterlife where souls have one week to decide where to spend eternity, Joan is faced with the impossible choice between the man she spent her life with and her first love, who died young and has waited decades for her to arrive.",
+          "popularity": 64.648,
+          "poster_path": "/o8pg20G67BGmQvRkXwstNre062J.jpg",
+          "release_date": "2025-11-26",
+          "title": "Eternity",
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 79
+        }
+      ],
+      "total_pages": 261,
+      "total_results": 5205
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=23195",
+      "x-memc": "HIT",
+      "x-memc-key": "4743c7b70cd89ab22dbce61c2a803cebeb3c1c4b9f9dd56a8cf71f78d5880f5f",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00224a0304d5cf761cbb15663abb70eb00ce\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

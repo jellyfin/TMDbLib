@@ -1,0 +1,51 @@
+{
+  "Guid": "4ac01f11-04a7-9a46-a033-4324ca6b4cf3",
+  "UpdatedAt": "2025-12-24T11:53:35.7687851Z",
+  "Title": "Proxy Mapping for GET /3/movie/335984/external_ids",
+  "Description": "Proxy Mapping for GET /3/movie/335984/external_ids",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/335984/external_ids",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 335984,
+      "imdb_id": "tt1856101",
+      "wikidata_id": "Q21500755",
+      "facebook_id": "bladerunner2049",
+      "instagram_id": "bladerunnermovie",
+      "twitter_id": "bladerunner"
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "1a3dbe04eb48cd6af05f89b1717dc1fcae2a7590d95e1dc14d3f45aa8c7a9911",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=12047",
+      "ETag": "W/\u0022b1edc767bbdd70ee75bc9839c874ae1b\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

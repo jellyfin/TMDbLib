@@ -1,0 +1,462 @@
+{
+  "Guid": "c991be3c-78d0-de4f-b06f-01b297539c32",
+  "UpdatedAt": "2025-12-24T11:53:34.495951Z",
+  "Title": "Proxy Mapping for GET /3/tv/changes",
+  "Description": "Proxy Mapping for GET /3/tv/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "end_date",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2025-11-24",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "results": [
+        {
+          "id": 79917,
+          "adult": false
+        },
+        {
+          "id": 258532,
+          "adult": false
+        },
+        {
+          "id": 82728,
+          "adult": false
+        },
+        {
+          "id": 34742,
+          "adult": false
+        },
+        {
+          "id": 306376,
+          "adult": false
+        },
+        {
+          "id": 306363,
+          "adult": false
+        },
+        {
+          "id": 117690,
+          "adult": false
+        },
+        {
+          "id": 90790,
+          "adult": false
+        },
+        {
+          "id": 66732,
+          "adult": false
+        },
+        {
+          "id": 306378,
+          "adult": false
+        },
+        {
+          "id": 306360,
+          "adult": false
+        },
+        {
+          "id": 306301,
+          "adult": null
+        },
+        {
+          "id": 306243,
+          "adult": false
+        },
+        {
+          "id": 302736,
+          "adult": false
+        },
+        {
+          "id": 305902,
+          "adult": false
+        },
+        {
+          "id": 284879,
+          "adult": false
+        },
+        {
+          "id": 301294,
+          "adult": false
+        },
+        {
+          "id": 302648,
+          "adult": false
+        },
+        {
+          "id": 303474,
+          "adult": false
+        },
+        {
+          "id": 1581,
+          "adult": false
+        },
+        {
+          "id": 225171,
+          "adult": false
+        },
+        {
+          "id": 306379,
+          "adult": false
+        },
+        {
+          "id": 306371,
+          "adult": false
+        },
+        {
+          "id": 206,
+          "adult": false
+        },
+        {
+          "id": 306380,
+          "adult": false
+        },
+        {
+          "id": 20794,
+          "adult": false
+        },
+        {
+          "id": 1448,
+          "adult": false
+        },
+        {
+          "id": 306381,
+          "adult": false
+        },
+        {
+          "id": 306215,
+          "adult": false
+        },
+        {
+          "id": 274915,
+          "adult": false
+        },
+        {
+          "id": 303289,
+          "adult": false
+        },
+        {
+          "id": 306382,
+          "adult": false
+        },
+        {
+          "id": 253896,
+          "adult": false
+        },
+        {
+          "id": 103757,
+          "adult": false
+        },
+        {
+          "id": 103804,
+          "adult": false
+        },
+        {
+          "id": 306383,
+          "adult": false
+        },
+        {
+          "id": 306384,
+          "adult": false
+        },
+        {
+          "id": 36460,
+          "adult": false
+        },
+        {
+          "id": 306385,
+          "adult": false
+        },
+        {
+          "id": 97951,
+          "adult": false
+        },
+        {
+          "id": 60910,
+          "adult": false
+        },
+        {
+          "id": 237512,
+          "adult": false
+        },
+        {
+          "id": 63770,
+          "adult": false
+        },
+        {
+          "id": 257530,
+          "adult": false
+        },
+        {
+          "id": 68135,
+          "adult": false
+        },
+        {
+          "id": 294865,
+          "adult": false
+        },
+        {
+          "id": 288644,
+          "adult": false
+        },
+        {
+          "id": 305197,
+          "adult": false
+        },
+        {
+          "id": 85431,
+          "adult": false
+        },
+        {
+          "id": 256853,
+          "adult": false
+        },
+        {
+          "id": 259140,
+          "adult": false
+        },
+        {
+          "id": 239870,
+          "adult": false
+        },
+        {
+          "id": 158198,
+          "adult": false
+        },
+        {
+          "id": 245194,
+          "adult": false
+        },
+        {
+          "id": 306386,
+          "adult": false
+        },
+        {
+          "id": 1711,
+          "adult": false
+        },
+        {
+          "id": 306361,
+          "adult": false
+        },
+        {
+          "id": 305721,
+          "adult": false
+        },
+        {
+          "id": 306242,
+          "adult": false
+        },
+        {
+          "id": 156345,
+          "adult": false
+        },
+        {
+          "id": 76331,
+          "adult": false
+        },
+        {
+          "id": 305670,
+          "adult": null
+        },
+        {
+          "id": 1396,
+          "adult": false
+        },
+        {
+          "id": 1398,
+          "adult": false
+        },
+        {
+          "id": 1408,
+          "adult": false
+        },
+        {
+          "id": 1438,
+          "adult": false
+        },
+        {
+          "id": 18096,
+          "adult": false
+        },
+        {
+          "id": 27660,
+          "adult": false
+        },
+        {
+          "id": 45790,
+          "adult": false
+        },
+        {
+          "id": 46195,
+          "adult": false
+        },
+        {
+          "id": 47665,
+          "adult": false
+        },
+        {
+          "id": 60059,
+          "adult": false
+        },
+        {
+          "id": 62560,
+          "adult": false
+        },
+        {
+          "id": 89456,
+          "adult": false
+        },
+        {
+          "id": 284445,
+          "adult": false
+        },
+        {
+          "id": 220255,
+          "adult": false
+        },
+        {
+          "id": 36581,
+          "adult": false
+        },
+        {
+          "id": 217164,
+          "adult": false
+        },
+        {
+          "id": 1667,
+          "adult": false
+        },
+        {
+          "id": 21315,
+          "adult": false
+        },
+        {
+          "id": 283935,
+          "adult": false
+        },
+        {
+          "id": 249971,
+          "adult": false
+        },
+        {
+          "id": 285788,
+          "adult": false
+        },
+        {
+          "id": 97525,
+          "adult": false
+        },
+        {
+          "id": 258901,
+          "adult": false
+        },
+        {
+          "id": 294867,
+          "adult": false
+        },
+        {
+          "id": 302658,
+          "adult": false
+        },
+        {
+          "id": 306387,
+          "adult": false
+        },
+        {
+          "id": 235493,
+          "adult": false
+        },
+        {
+          "id": 306388,
+          "adult": false
+        },
+        {
+          "id": 17037,
+          "adult": false
+        },
+        {
+          "id": 305674,
+          "adult": null
+        },
+        {
+          "id": 296851,
+          "adult": false
+        },
+        {
+          "id": 46518,
+          "adult": false
+        },
+        {
+          "id": 245292,
+          "adult": false
+        },
+        {
+          "id": 278136,
+          "adult": false
+        },
+        {
+          "id": 306210,
+          "adult": false
+        },
+        {
+          "id": 223876,
+          "adult": false
+        },
+        {
+          "id": 299224,
+          "adult": false
+        },
+        {
+          "id": 306389,
+          "adult": false
+        }
+      ],
+      "page": 1,
+      "total_pages": 23,
+      "total_results": 2236
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=77319",
+      "x-memc": "HIT",
+      "x-memc-key": "ce82df6851d9814d5c91665fd11311f580ec1bcad1167dd4733d7742e47c479d",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00228ed7d2c142ca9075bbbba7bf60bd2acb\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

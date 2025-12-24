@@ -1,0 +1,62 @@
+{
+  "Guid": "97cdff6e-28d9-f342-a7b0-1003a4ea4666",
+  "UpdatedAt": "2025-12-24T11:53:35.4334887Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/reviews",
+  "Description": "Proxy Mapping for GET /3/tv/1396/reviews",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/reviews",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1396,
+      "page": 2,
+      "results": [],
+      "total_pages": 1,
+      "total_results": 4
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "63d9a8656eddc9d2df3b62e8d72b36e9db85e51995f01369fbdcf8320b675482",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=22753",
+      "ETag": "W/\u0022473153d354eaf68f2e586f987f7e07c4\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

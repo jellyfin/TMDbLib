@@ -1,0 +1,475 @@
+{
+  "Guid": "95813631-3a4a-d542-89bd-bd579ea1b9b4",
+  "UpdatedAt": "2025-12-24T11:53:34.7355687Z",
+  "Title": "Proxy Mapping for GET /3/discover/movie",
+  "Description": "Proxy Mapping for GET /3/discover/movie",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/movie",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "vote_count.gte",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1000",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "vote_average.gte",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 2,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/lkDYN0whyE82mcM20rwtwjbniKF.jpg",
+          "genre_ids": [
+            28,
+            18
+          ],
+          "id": 911430,
+          "original_language": "en",
+          "original_title": "F1",
+          "overview": "Racing legend Sonny Hayes is coaxed out of retirement to lead a struggling Formula 1 team\u2014and mentor a young hotshot driver\u2014while chasing one more chance at glory.",
+          "popularity": 42.3895,
+          "poster_path": "/9PXZIUsSDh4alB80jheWX4fhZmy.jpg",
+          "release_date": "2025-06-25",
+          "title": "F1",
+          "video": false,
+          "vote_average": 7.796,
+          "vote_count": 2843
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oz4U9eA6ilYf1tyiVuGmkftdLac.jpg",
+          "genre_ids": [
+            18,
+            10749,
+            53
+          ],
+          "id": 1010581,
+          "original_language": "es",
+          "original_title": "Culpa m\u00EDa",
+          "overview": "Noah must leave her city, boyfriend, and friends to move into William Leister\u0027s mansion, the flashy and wealthy husband of her mother Rafaela. As a proud and independent 17 year old, Noah resists living in a mansion surrounded by luxury. However, it is there where she meets Nick, her new stepbrother, and the clash of their strong personalities becomes evident from the very beginning.",
+          "popularity": 39.9148,
+          "poster_path": "/w46Vw536HwNnEzOa7J24YH9DPRS.jpg",
+          "release_date": "2023-06-08",
+          "title": "My Fault",
+          "video": false,
+          "vote_average": 7.765,
+          "vote_count": 3946
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pBdQ4iorzRV2G38mdS6rzrmUfMA.jpg",
+          "genre_ids": [
+            28,
+            10752
+          ],
+          "id": 840326,
+          "original_language": "fi",
+          "original_title": "Sisu",
+          "overview": "When an ex-soldier who discovers gold in the Lapland wilderness tries to take the loot into the city, German soldiers led by a brutal SS officer battle him.",
+          "popularity": 38.9467,
+          "poster_path": "/ygO9lowFMXWymATCrhoQXd6gCEh.jpg",
+          "release_date": "2022-09-09",
+          "title": "Sisu",
+          "video": false,
+          "vote_average": 7.411,
+          "vote_count": 2579
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tcBX2dtkNozZ0uDLVaxXrE6rqyN.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1038392,
+          "original_language": "en",
+          "original_title": "The Conjuring: Last Rites",
+          "overview": "Paranormal investigators Ed and Lorraine Warren take on one last terrifying case involving mysterious entities they must confront.",
+          "popularity": 35.1604,
+          "poster_path": "/byWgphT74ClOVa8EOGzYDkl8DVL.jpg",
+          "release_date": "2025-09-03",
+          "title": "The Conjuring: Last Rites",
+          "video": false,
+          "vote_average": 6.945,
+          "vote_count": 1474
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/39rtAdg3yx6IDxRg0ZLXefv0aPY.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 238,
+          "original_language": "en",
+          "original_title": "The Godfather",
+          "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+          "popularity": 35.4978,
+          "poster_path": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+          "release_date": "1972-03-14",
+          "title": "The Godfather",
+          "video": false,
+          "vote_average": 8.685,
+          "vote_count": 22177
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ii8QGacT3MXESqBckQlyrATY0lT.jpg",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "id": 27205,
+          "original_language": "en",
+          "original_title": "Inception",
+          "overview": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \u0022inception\u0022, the implantation of another person\u0027s idea into a target\u0027s subconscious.",
+          "popularity": 37.4158,
+          "poster_path": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+          "release_date": "2010-07-15",
+          "title": "Inception",
+          "video": false,
+          "vote_average": 8.371,
+          "vote_count": 38382
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zfbjgQE1uSd9wiPTX4VzsLi0rGG.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 278,
+          "original_language": "en",
+          "original_title": "The Shawshank Redemption",
+          "overview": "Imprisoned in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+          "popularity": 36.179,
+          "poster_path": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+          "release_date": "1994-09-23",
+          "title": "The Shawshank Redemption",
+          "video": false,
+          "vote_average": 8.714,
+          "vote_count": 29390
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vHTFrcqJoCi1is3XN0PZe2LSnI2.jpg",
+          "genre_ids": [
+            14,
+            10751,
+            28,
+            12
+          ],
+          "id": 1087192,
+          "original_language": "en",
+          "original_title": "How to Train Your Dragon",
+          "overview": "On the rugged isle of Berk, where Vikings and dragons have been bitter enemies for generations, Hiccup stands apart, defying centuries of tradition when he befriends Toothless, a feared Night Fury dragon. Their unlikely bond reveals the true nature of dragons, challenging the very foundations of Viking society.",
+          "popularity": 33.9995,
+          "poster_path": "/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg",
+          "release_date": "2025-06-06",
+          "title": "How to Train Your Dragon",
+          "video": false,
+          "vote_average": 7.976,
+          "vote_count": 2278
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rOmUuQEZfPXglwFs5ELLLUDKodL.jpg",
+          "genre_ids": [
+            28,
+            35,
+            14
+          ],
+          "id": 845781,
+          "original_language": "en",
+          "original_title": "Red One",
+          "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole\u0027s Head of Security must team up with the world\u0027s most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+          "popularity": 36.0202,
+          "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+          "release_date": "2024-10-31",
+          "title": "Red One",
+          "video": false,
+          "vote_average": 7.022,
+          "vote_count": 2818
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7Zx3wDG5bBtcfk8lcnCWDOLM4Y4.jpg",
+          "genre_ids": [
+            10751,
+            878,
+            35
+          ],
+          "id": 552524,
+          "original_language": "en",
+          "original_title": "Lilo \u0026 Stitch",
+          "overview": "The wildly funny and touching story of a lonely Hawaiian girl and the fugitive alien who helps to mend her broken family.",
+          "popularity": 31.2278,
+          "poster_path": "/ckQzKpQJO4ZQDCN5evdpKcfm7Ys.jpg",
+          "release_date": "2025-05-17",
+          "title": "Lilo \u0026 Stitch",
+          "video": false,
+          "vote_average": 7.247,
+          "vote_count": 1905
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5lWIYxYEqWi8j3ZloxXntw3ImBo.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            16
+          ],
+          "id": 360920,
+          "original_language": "en",
+          "original_title": "The Grinch",
+          "overview": "The Grinch hatches a scheme to ruin Christmas when the residents of Whoville plan their annual holiday celebration.",
+          "popularity": 34.8234,
+          "poster_path": "/smxA8yvZ0LzDPer9BIRd4pyOpx1.jpg",
+          "release_date": "2018-11-08",
+          "title": "The Grinch",
+          "video": false,
+          "vote_average": 6.87,
+          "vote_count": 4315
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/82C04rTiXYZ7c8XZv91Nu53w82Y.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1007734,
+          "original_language": "en",
+          "original_title": "Nobody 2",
+          "overview": "Former assassin Hutch Mansell takes his family on a nostalgic vacation to a small-town theme park, only to be pulled back into violence when they clash with a corrupt operator, a crooked sheriff, and a ruthless crime boss.",
+          "popularity": 28.1752,
+          "poster_path": "/iyxwxDZCpIm0vIORaHpmgJv2BGF.jpg",
+          "release_date": "2025-08-13",
+          "title": "Nobody 2",
+          "video": false,
+          "vote_average": 7.035,
+          "vote_count": 1097
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nAxGnGHOsfzufThz20zgmRwKur3.jpg",
+          "genre_ids": [
+            27,
+            28,
+            53
+          ],
+          "id": 1233413,
+          "original_language": "en",
+          "original_title": "Sinners",
+          "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+          "popularity": 33.6791,
+          "poster_path": "/qTvFWCGeGXgBRaINLY1zqgTPSpn.jpg",
+          "release_date": "2025-04-16",
+          "title": "Sinners",
+          "video": false,
+          "vote_average": 7.502,
+          "vote_count": 3054
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4BS8tgBNWg2jPiDlBwM2iJe1xB7.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            12,
+            35
+          ],
+          "id": 49013,
+          "original_language": "en",
+          "original_title": "Cars 2",
+          "overview": "Star race car Lightning McQueen and his pal Mater head overseas to compete in the World Grand Prix race. But the road to the championship becomes rocky as Mater gets caught up in an intriguing adventure of his own: international espionage.",
+          "popularity": 33.2982,
+          "poster_path": "/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg",
+          "release_date": "2011-06-11",
+          "title": "Cars 2",
+          "video": false,
+          "vote_average": 6.165,
+          "vote_count": 8249
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg",
+          "genre_ids": [
+            35,
+            80,
+            9648
+          ],
+          "id": 546554,
+          "original_language": "en",
+          "original_title": "Knives Out",
+          "overview": "When renowned crime novelist Harlan Thrombey is found dead at his estate just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc is mysteriously enlisted to investigate. From Harlan\u0027s dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Harlan\u0027s untimely death.",
+          "popularity": 29.3907,
+          "poster_path": "/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
+          "release_date": "2019-11-27",
+          "title": "Knives Out",
+          "video": false,
+          "vote_average": 7.846,
+          "vote_count": 13387
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xXCuto8YVp5RFqBJ7yKmVmLOWpF.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 597,
+          "original_language": "en",
+          "original_title": "Titanic",
+          "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fianc\u00E9. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic\u0027s departure through to its death\u2014on its first and last voyage\u2014on April 15, 1912.",
+          "popularity": 31.2881,
+          "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+          "release_date": "1997-11-18",
+          "title": "Titanic",
+          "video": false,
+          "vote_average": 7.902,
+          "vote_count": 26562
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bfh9Z3Ghz4FOJAfLOAhmc3ccnHU.jpg",
+          "genre_ids": [
+            12,
+            14
+          ],
+          "id": 671,
+          "original_language": "en",
+          "original_title": "Harry Potter and the Philosopher\u0027s Stone",
+          "overview": "Harry Potter has lived under the stairs at his aunt and uncle\u0027s house his whole life. But on his 11th birthday, he learns he\u0027s a powerful wizard\u2014with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry. As he learns to harness his newfound powers with the help of the school\u0027s kindly headmaster, Harry uncovers the truth about his parents\u0027 deaths\u2014and about the villain who\u0027s to blame.",
+          "popularity": 28.4978,
+          "poster_path": "/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+          "release_date": "2001-11-16",
+          "title": "Harry Potter and the Philosopher\u0027s Stone",
+          "video": false,
+          "vote_average": 7.899,
+          "vote_count": 28913
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 385687,
+          "original_language": "en",
+          "original_title": "Fast X",
+          "overview": "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they\u0027ve ever faced: A terrifying threat emerging from the shadows of the past who\u0027s fueled by blood revenge, and who is determined to shatter this family and destroy everything\u2014and everyone\u2014that Dom loves, forever.",
+          "popularity": 28.3853,
+          "poster_path": "/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+          "release_date": "2023-05-17",
+          "title": "Fast X",
+          "video": false,
+          "vote_average": 7.01,
+          "vote_count": 6131
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/70cezTFUmtijJLqnZw02gQlKVKJ.jpg",
+          "genre_ids": [
+            878,
+            28,
+            12,
+            53
+          ],
+          "id": 106,
+          "original_language": "en",
+          "original_title": "Predator",
+          "overview": "A team of elite commandos on a secret mission in a Central American jungle come to find themselves hunted by an extraterrestrial warrior.",
+          "popularity": 28.5803,
+          "poster_path": "/k3mW4qfJo6SKqe6laRyNGnbB9n5.jpg",
+          "release_date": "1987-06-12",
+          "title": "Predator",
+          "video": false,
+          "vote_average": 7.542,
+          "vote_count": 8710
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 562,
+          "original_language": "en",
+          "original_title": "Die Hard",
+          "overview": "NYPD cop John McClane\u0027s plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her offices Christmas Party, the entire building is overtaken by a group of terrorists. With little help from the LAPD, wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.",
+          "popularity": 28.9381,
+          "poster_path": "/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
+          "release_date": "1988-07-15",
+          "title": "Die Hard",
+          "video": false,
+          "vote_average": 7.8,
+          "vote_count": 11853
+        }
+      ],
+      "total_pages": 234,
+      "total_results": 4668
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=22448",
+      "x-memc": "HIT",
+      "x-memc-key": "9954813ee1629468feab0349af8c920d0d6d4621939f8a1d91c6f08696061ddf",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u002237d8e3c3df5bea219adcc323dd764379\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "Guid": "4172c30e-9432-c040-85c6-437e8cd3aada",
+  "UpdatedAt": "2025-12-24T11:53:34.8897884Z",
+  "Title": "Proxy Mapping for GET /3/tv/airing_today",
+  "Description": "Proxy Mapping for GET /3/tv/airing_today",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/airing_today",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 2,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/kRDFtW9o2c7pbk1PhjL4ZSIqe0m.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 308290,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uB7EC\uBE0C: \uD2B8\uB799",
+          "overview": "A romance anthology featuring 10 different love stories, each with its own unique tone and charm. It has an ensemble cast.",
+          "popularity": 14.1702,
+          "poster_path": "/moMLNWOqOi3YeioCOimBV8y4cEQ.jpg",
+          "first_air_date": "2025-12-14",
+          "name": "Love: Track",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dyFTt1a9ZpFdKE96kPlE9fQvXOJ.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            18
+          ],
+          "id": 91759,
+          "origin_country": [
+            "HK"
+          ],
+          "original_language": "cn",
+          "original_name": "\u611B\u00B7\u56DE\u5BB6\u4E4B\u958B\u5FC3\u901F\u905E",
+          "overview": "Hung Sue Gan starting from the bottom, established his own logistics company, which is now running smoothly. His only concern now are his three daughters. His eldest daughter has immigrated overseas. His second daughter Hung Yeuk Shui has reached the marriageable age, but has no hopes for marriage anytime soon. She is constantly bickering with her younger sister Hung Sum Yue, who is an honour student, over trivial matters, causing their father to not know whether to laugh or cry. Hung Sue Yan, Hung Sue Gan\u0027s brother, moves in with the family, temporarily ending his life as a nomadic photographer. He joins Hung Yeuk Shui\u0027s company and encounters Ko Pak Fei, the director of an online shop. The two appear to be former lovers, making for lots of laughter. Since Hung Sue Yan moved in, a series of strange events have occurred in the family. Upon investigation, the source is traced to Lung Ging Fung, a promising young man who is the son of department store mogul Lung Gam Wai.",
+          "popularity": 19.8113,
+          "poster_path": "/lgD4j9gUGmMckZpWWRJjorWqGVT.jpg",
+          "first_air_date": "2017-02-06",
+          "name": "Come Home Love: Lo and Behold",
+          "vote_average": 5.4,
+          "vote_count": 44
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ynd225o8GuCahYGjHtFdEt8Xizm.jpg",
+          "genre_ids": [
+            10766
+          ],
+          "id": 235484,
+          "origin_country": [
+            "ZA"
+          ],
+          "original_language": "af",
+          "original_name": "Suidooster",
+          "overview": "Suidooster is a South African television soap opera produced by Suidooster Films which revolves around a matriarch, her family, friends and the people of Suidooster, a small shopping and business centre in the fictional Cape Town suburb of Ruiterbosch.",
+          "popularity": 12.4612,
+          "poster_path": "/naCgSiacvV685kait6fBvhVhdce.jpg",
+          "first_air_date": "2015-11-16",
+          "name": "Suidooster",
+          "vote_average": 7.2,
+          "vote_count": 23
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1rIQ1IHv6ULVbrR5Qcnc4x27du.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 278577,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u9A84\u9633\u4F3C\u6211",
+          "overview": "The story focuses on the real and delicate growth process of Nie Xiguang, a lively, cheerful and energetic female college student, as she walks out of campus and enters the workplace.",
+          "popularity": 21.4498,
+          "poster_path": "/cFBlFzOwh4C8wpuR4sYBIitvNiw.jpg",
+          "first_air_date": "2025-12-22",
+          "name": "Shine on Me",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/m9vxP7F52vTyFTlMqppxKFOcCPN.jpg",
+          "genre_ids": [],
+          "id": 307423,
+          "origin_country": [
+            "MX"
+          ],
+          "original_language": "en",
+          "original_name": "Dom\u00E9nica Montero",
+          "overview": "A respected and renowned businesswoman and philanthropist, considered one of the most sought-after brides in the country, who is left at the altar on her wedding day. Humiliated, betrayed, and turned into a target of public scrutiny, Dom\u00E9nica decides to flee and take refuge in one of her parents\u2019 old estates. There, marked by pain, she faces new challenges and meets Luis Fernando, the owner of the neighboring estate, who also carries a painful past. Between them, an explosive relationship develops, marked by pride, misunderstandings, and growing attraction, where land disputes intertwine with their shared desire to rebuild, heal, and give new meaning to their lives.",
+          "popularity": 12.6397,
+          "poster_path": "/sxMG0R9HTHvJvyTHYNP9Ij55YxS.jpg",
+          "first_air_date": "2025-12-08",
+          "name": "Dom\u00E9nica Montero",
+          "vote_average": 8.818,
+          "vote_count": 22
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bsnzAWs9MITfYgsQ8jp1SQ3AyHI.jpg",
+          "genre_ids": [
+            10766,
+            18
+          ],
+          "id": 289996,
+          "origin_country": [
+            "BR"
+          ],
+          "original_language": "pt",
+          "original_name": "Tr\u00EAs Gra\u00E7as",
+          "overview": "Gerluce Maria das Gra\u00E7as is part of a family of single mothers: she is the daughter of L\u00EDgia Maria das Gra\u00E7as and mother of Jo\u00E9lly Maria das Gra\u00E7as. Raised by her mother, who became pregnant as a teenager and was abandoned by her father, Gerluce faces a similar fate with the arrival of her daughter.",
+          "popularity": 12.1253,
+          "poster_path": "/euLl4ntSW4bJE5QnDk90UKGW2Tp.jpg",
+          "first_air_date": "2025-10-20",
+          "name": "Tr\u00EAs Gra\u00E7as",
+          "vote_average": 6.3,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eNjzPQsNNPd8zluKTpv7Axhk8p4.jpg",
+          "genre_ids": [
+            10767
+          ],
+          "id": 1900,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "LIVE with Kelly and Mark",
+          "overview": "A morning talk show with A-list celebrity guests, top-notch performances and one-of-a-kind segments that are unrivaled on daytime television, plus spontaneous, hilarious and unpredictable talk.",
+          "popularity": 11.5634,
+          "poster_path": "/hBkyypWN3EcOzkozatiCm5VeaG.jpg",
+          "first_air_date": "1988-09-05",
+          "name": "LIVE with Kelly and Mark",
+          "vote_average": 5.4,
+          "vote_count": 48
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rALzi6BHoWdXuHjbOhzGjIKfhV4.jpg",
+          "genre_ids": [
+            35,
+            10764,
+            10767
+          ],
+          "id": 62974,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "8 Out of 10 Cats Does Countdown",
+          "overview": "Jimmy Carr hosts proceedings as the 8 Out of 10 Cats crew take over the words and numbers quiz.",
+          "popularity": 11.6925,
+          "poster_path": "/184DSdPhc4G9vDyeuiddNPaSzIi.jpg",
+          "first_air_date": "2013-04-12",
+          "name": "8 Out of 10 Cats Does Countdown",
+          "vote_average": 7.3,
+          "vote_count": 94
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wBu3BErMuZ51H701J8QjmoHdBHr.jpg",
+          "genre_ids": [
+            18,
+            10766
+          ],
+          "id": 116479,
+          "origin_country": [
+            "IN"
+          ],
+          "original_language": "hi",
+          "original_name": "\u0905\u0928\u0941\u092A\u092E\u093E",
+          "overview": "Anupama had to sacrifice a lot to become an ideal wife, daughter-in-law, and mother. After a bitter realisation, she sets out to live on her own terms.",
+          "popularity": 10.3281,
+          "poster_path": "/97iWZDEhpxjM9cnVPLy9Xvlzpik.jpg",
+          "first_air_date": "2020-07-13",
+          "name": "Anupamaa",
+          "vote_average": 4.7,
+          "vote_count": 25
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/65K3llBL0wlW0C3pNaQyjWOdwbp.jpg",
+          "genre_ids": [
+            18,
+            10759,
+            10768
+          ],
+          "id": 302658,
+          "origin_country": [
+            "TR"
+          ],
+          "original_language": "tr",
+          "original_name": "Kurulus: Orhan",
+          "overview": "Kurulu\u015F: Orhan is a Turkish historical drama that follows the life of Orhan Bey, the son of Osman I and the second ruler of the Ottoman Empire. Set in the 14th century, the series portrays Orhan\u2019s transformation from a young warrior into a visionary leader who expands his father\u0027s legacy by conquering key Byzantine cities like Bursa and establishing the foundations of a powerful empire. With political intrigue, epic battles, and complex relationships, the show explores Orhan\u2019s rise amidst internal strife and external threats, continuing the legacy of Kurulu\u015F: Osman with a new generation of characters and high-stakes storytelling.",
+          "popularity": 11.1719,
+          "poster_path": "/1kEgzEvhJmw5eSxuGwn0o1cgHlK.jpg",
+          "first_air_date": "2025-10-29",
+          "name": "Founder: Orhan",
+          "vote_average": 9.5,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3UtKvTXlqLNHoADgkKxdj5QppPN.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 137726,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u6BDB\u96EA\u6C6A",
+          "overview": "Mao Xue Woof is a scene-based reality show variety show with the relationship of original friends as the starting point. The program takes friendship as the link, and takes \u0022Mao Xue Woof\u0027s Home\u0022 as the main shooting scene, telling the real and interesting stories of Mao Bu, Li Xueqin and their friends who meet here every week, tearing apart the status quo of daily life in laughter, showing the rich youth life and spiritual world of young people and recording the real growth. The program is broadcast every week all the year round, bringing companionship and emotional health healing to the hard-working young people in the city.",
+          "popularity": 10.3982,
+          "poster_path": "/kYBvEOxNhD3IfzapT6x1uPnTEFa.jpg",
+          "first_air_date": "2021-11-01",
+          "name": "Mao Xue Woof",
+          "vote_average": 8.8,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vgeDRVpSUa4Hvovg4C6dgm4dfUW.jpg",
+          "genre_ids": [
+            10766,
+            18
+          ],
+          "id": 112470,
+          "origin_country": [
+            "FR"
+          ],
+          "original_language": "fr",
+          "original_name": "Ici tout commence",
+          "overview": "This television drama series is centered around the prestigious culinary school of renowned chef Auguste Armand. The show follows the lives of students and staff as they navigate the challenges and pressures of the culinary world\u2014delving into their personal and professional lives, revealing secrets, rivalries, and complex relationships.",
+          "popularity": 9.2683,
+          "poster_path": "/x9HeaagUAyyGl1fQ6exQcpELBxP.jpg",
+          "first_air_date": "2020-11-02",
+          "name": "Ici tout commence",
+          "vote_average": 6.8,
+          "vote_count": 90
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hlVfglhjnlCP5tp8hFvTQKQVaMp.jpg",
+          "genre_ids": [
+            10766
+          ],
+          "id": 11890,
+          "origin_country": [
+            "NL"
+          ],
+          "original_language": "nl",
+          "original_name": "Goede Tijden, Slechte Tijden",
+          "overview": "Goede tijden, slechte tijden, also known as GTST, is the longest-running Dutch soap opera,  revolving around the lives of the families Alberts, Sanders, De Jong, Van Houten and Bouwhuis. It all takes place in the fictional town of Meerdijk.",
+          "popularity": 12.3386,
+          "poster_path": "/p1oXgtJ0q0wAcEp3tHA5DpiynxL.jpg",
+          "first_air_date": "1990-10-01",
+          "name": "Goede Tijden, Slechte Tijden",
+          "vote_average": 5.125,
+          "vote_count": 20
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cchlQWYrnMPyl1EbjZWCzeAz8l5.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 36361,
+          "origin_country": [
+            "CZ"
+          ],
+          "original_language": "cs",
+          "original_name": "Ulice",
+          "overview": "Ulice is a Czech soap opera produced and broadcast by Nova. In the Czech language Ulice means street.\n\nThe show describes the lives of the Farsk\u00FD, Jord\u00E1n, Boh\u00E1\u010D, Nikl, and Li\u0161ka families and many other people that live in Prague. Their daily battle against real problems of living in a modern world like divorce, love, betrayal and illness or disease. Ulice often shows crime.",
+          "popularity": 9.8696,
+          "poster_path": "/gFEHva8Csx18hMGJJZ6gi4sFSKR.jpg",
+          "first_air_date": "2005-09-05",
+          "name": "Ulice",
+          "vote_average": 4.6,
+          "vote_count": 33
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kkfqNkGQR5og5sDjJTxTVmI9PW.jpg",
+          "genre_ids": [
+            80,
+            18,
+            10766
+          ],
+          "id": 72879,
+          "origin_country": [
+            "FR"
+          ],
+          "original_language": "fr",
+          "original_name": "Demain nous appartient",
+          "overview": "The story revolves around the people of S\u00E8te, France. Their lives are punctuated by family rivalries, romance and scenes from daily life, but also by plots involving police investigations, secrets and betrayals.",
+          "popularity": 10.5916,
+          "poster_path": "/24rWFf7CeBVwEEmqLYuQexID8I7.jpg",
+          "first_air_date": "2017-07-17",
+          "name": "Tomorrow Is Ours",
+          "vote_average": 6.29,
+          "vote_count": 69
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/23AlZs7Teu9Gl4b4EEIQlh0Inb5.jpg",
+          "genre_ids": [
+            10767
+          ],
+          "id": 63706,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "The Last Leg",
+          "overview": "Adam Hills and co-hosts Josh Widdicombe and Alex Brooker provide some offbeat commentary on the significant moments of the past seven days.",
+          "popularity": 8.9008,
+          "poster_path": "/4euDsPzadRhz0m5CZhQlKcgbZGI.jpg",
+          "first_air_date": "2013-01-25",
+          "name": "The Last Leg",
+          "vote_average": 5.654,
+          "vote_count": 26
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oncTvFY9goRyWAQRdDh2FKQ5Zhs.jpg",
+          "genre_ids": [
+            18,
+            10766
+          ],
+          "id": 242874,
+          "origin_country": [
+            "ES"
+          ],
+          "original_language": "es",
+          "original_name": "Valle salvaje",
+          "overview": "1763. The life of Adriana, a brave and loyal woman, suffers an unexpected setback when she receives a devastating blow: her father has died, and, as a result of a secret pact, she must travel from the city of Madrid to Valle Salvaje, in northern Spain, to marry a stranger. A dark secret from her past follows her to the remote valley, home to her fianc\u00E9\u0027s family and her troubled aunt, Do\u00F1a Victoria. There, her life will change forever. She will experience true love, betrayal, and danger as she tries to uncover the truth behind her father\u0027s death.",
+          "popularity": 8.074,
+          "poster_path": "/qB356qujmLpMZrY4TobXE9Wtalm.jpg",
+          "first_air_date": "2024-09-18",
+          "name": "Valle salvaje",
+          "vote_average": 7.5,
+          "vote_count": 68
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uMVRiXpeqQGu6xKSI4WyNUEke50.jpg",
+          "genre_ids": [
+            10759,
+            18,
+            35
+          ],
+          "id": 121651,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30B9\u30BF\u30FC\u30C0\u30E0\u30FB\u30EF\u30FC\u30EB\u30C9\u306E\u30B9\u30BF\u30FC\u30C0\u30E0",
+          "overview": "Stardom World is the VOD network for World Wonder Ring Stardom. WWR Stardom is a Japanese women\u0027s promotion started in 2011 featuring matches of many varieties including high speed octane action, long brutal brawls, and even costume battle royals. In 2019, the promotion was acquired by Bushiroad and has since become one of the top wrestling promotions in Japan.",
+          "popularity": 8.5608,
+          "poster_path": "/zk617qH2L7eWpPL4FvhvDVN8WGz.jpg",
+          "first_air_date": "2011-01-23",
+          "name": "Stardom on Stardom World",
+          "vote_average": 9.5,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3z4zE7WvIyQYadqxDQ7MCpSRbOG.jpg",
+          "genre_ids": [
+            10766
+          ],
+          "id": 249010,
+          "origin_country": [
+            "ZA"
+          ],
+          "original_language": "af",
+          "original_name": "Kelders van Geheime",
+          "overview": "Kelders van Geheime (Cellars of Secrets) is a South African, Afrikaans-language telenovela based on the wheeling\u0027s and dealings of the community that lives on Soebatskloof (a wine farm in the Cape). The series focuses on three families: the Abrahams, Syster and Marais households. These families will have to stand together, agree (or agree to disagree), and work together to earn their bread and butter \u2013 and a glass of wine.",
+          "popularity": 9.1121,
+          "poster_path": "/r0hqXxOTJ7pTEYQYl7HWrD50ym0.jpg",
+          "first_air_date": "2024-05-06",
+          "name": "Kelders van Geheime",
+          "vote_average": 6.0,
+          "vote_count": 13
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/p0umYdTa7csDT9SkZX8DD52Sy4a.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 2051,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Price Is Right",
+          "overview": "\u0022Come on down!\u0022 The Price Is Right features a wide variety of games and contests with the same basic challenge: Guess the prices of everyday (or not-quite-everyday) retail items.\u00A0",
+          "popularity": 8.2158,
+          "poster_path": "/7MSqORrf1RZsmLUTQ2XoEJEtzt5.jpg",
+          "first_air_date": "1972-09-04",
+          "name": "The Price Is Right",
+          "vote_average": 6.3,
+          "vote_count": 90
+        }
+      ],
+      "total_pages": 11,
+      "total_results": 220
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=25534",
+      "x-memc": "HIT",
+      "x-memc-key": "e5282d831a7d16c51032b4945a269d5b5a8adc7023a32e58f665d020f24e1051",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u002256237c498173ce9f61a31a7931d0885f\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

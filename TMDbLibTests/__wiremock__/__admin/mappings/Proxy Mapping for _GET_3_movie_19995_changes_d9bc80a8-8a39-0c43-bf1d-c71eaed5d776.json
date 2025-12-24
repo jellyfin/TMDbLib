@@ -1,0 +1,133 @@
+{
+  "Guid": "d9bc80a8-8a39-0c43-bf1d-c71eaed5d776",
+  "UpdatedAt": "2025-12-24T11:53:34.9765399Z",
+  "Title": "Proxy Mapping for GET /3/movie/19995/changes",
+  "Description": "Proxy Mapping for GET /3/movie/19995/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/19995/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "start_date",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2024-12-24",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "changes": [
+        {
+          "key": "images",
+          "items": [
+            {
+              "id": "676a858efe3640664364ac2e",
+              "action": "added",
+              "time": "2024-12-24 09:57:34 UTC",
+              "iso_639_1": "",
+              "iso_3166_1": "",
+              "value": {
+                "poster": {
+                  "file_path": "/v5Y8pVwJK68SKQQ1GRbIB1hkPDy.jpg"
+                }
+              }
+            },
+            {
+              "id": "676a859aa05c09ebea7eb2ab",
+              "action": "updated",
+              "time": "2024-12-24 09:57:46 UTC",
+              "iso_639_1": "fr",
+              "iso_3166_1": "",
+              "value": {
+                "poster": {
+                  "file_path": "/v5Y8pVwJK68SKQQ1GRbIB1hkPDy.jpg",
+                  "iso_639_1": "fr"
+                }
+              },
+              "original_value": {
+                "poster": {
+                  "file_path": "/v5Y8pVwJK68SKQQ1GRbIB1hkPDy.jpg",
+                  "iso_639_1": null
+                }
+              }
+            },
+            {
+              "id": "676a85d09348daa54ba9f425",
+              "action": "updated",
+              "time": "2024-12-24 09:58:40 UTC",
+              "iso_639_1": "xx",
+              "iso_3166_1": "",
+              "value": {
+                "poster": {
+                  "file_path": "/3npygfmEhqnmNTmDWhHLz1LPcbA.jpg",
+                  "iso_639_1": "xx"
+                }
+              },
+              "original_value": {
+                "poster": {
+                  "file_path": "/3npygfmEhqnmNTmDWhHLz1LPcbA.jpg",
+                  "iso_639_1": "fr"
+                }
+              }
+            },
+            {
+              "id": "676a85d9a05c09ebea7eb2c1",
+              "action": "updated",
+              "time": "2024-12-24 09:58:49 UTC",
+              "iso_639_1": "xx",
+              "iso_3166_1": "",
+              "value": {
+                "poster": {
+                  "file_path": "/upd6F9IIMbzSl5reXsyMk7xH4Ou.jpg",
+                  "iso_639_1": "xx"
+                }
+              },
+              "original_value": {
+                "poster": {
+                  "file_path": "/upd6F9IIMbzSl5reXsyMk7xH4Ou.jpg",
+                  "iso_639_1": "fr"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "d2cf3cb90aafba5ff3f54dfbda1f003899a2c9ff3ff53d1417e6eac04310d492",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=600",
+      "ETag": "W/\u002237935d3ac23863fc113b7f0e4b4f06a4\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "Guid": "6d0c457c-1fbf-a843-be30-21eb43b0ffcd",
+  "UpdatedAt": "2025-12-24T11:53:34.5468992Z",
+  "Title": "Proxy Mapping for GET /3/person/41419/tagged_images",
+  "Description": "Proxy Mapping for GET /3/person/41419/tagged_images",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/41419/tagged_images",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 41419,
+      "page": 0,
+      "results": [
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/1aRDgdHrZfJDn0n7eworpSXWPJW.jpg",
+          "height": 3000,
+          "id": "5eadaadb0b7316001c3e70b6",
+          "iso_3166_1": "XX",
+          "iso_639_1": "xx",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/udMUwcH9UBxwjvpRD3f0ExEJq89.jpg",
+            "id": 520900,
+            "title": "The Personal History of David Copperfield",
+            "original_title": "The Personal History of David Copperfield",
+            "overview": "A fresh and distinctive take on Charles Dickens\u2019 semi-autobiographical masterpiece, The Personal History of David Copperfield, set in the 1840s, chronicles the life of its iconic title character as he navigates a chaotic world to find his elusive place within it. From his unhappy childhood to the discovery of his gift as a storyteller and writer, David\u2019s journey is by turns hilarious and tragic, but always full of life, colour and humanity.",
+            "poster_path": "/2epgo9k2Jrs7qrTL1Rork1mDSKT.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35
+            ],
+            "popularity": 1.3125,
+            "release_date": "2019-11-07",
+            "video": false,
+            "vote_average": 6.419,
+            "vote_count": 512
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/49XI9zPETVE8L7WyUa7TyO9E4mi.jpg",
+          "height": 3000,
+          "id": "5eadaadb1a934f0020e8ff39",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/udMUwcH9UBxwjvpRD3f0ExEJq89.jpg",
+            "id": 520900,
+            "title": "The Personal History of David Copperfield",
+            "original_title": "The Personal History of David Copperfield",
+            "overview": "A fresh and distinctive take on Charles Dickens\u2019 semi-autobiographical masterpiece, The Personal History of David Copperfield, set in the 1840s, chronicles the life of its iconic title character as he navigates a chaotic world to find his elusive place within it. From his unhappy childhood to the discovery of his gift as a storyteller and writer, David\u2019s journey is by turns hilarious and tragic, but always full of life, colour and humanity.",
+            "poster_path": "/2epgo9k2Jrs7qrTL1Rork1mDSKT.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35
+            ],
+            "popularity": 1.3125,
+            "release_date": "2019-11-07",
+            "video": false,
+            "vote_average": 6.419,
+            "vote_count": 512
+          },
+          "media_type": "movie"
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 2
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=15811",
+      "x-memc": "HIT",
+      "x-memc-key": "56576980a5463a00485267f2052a0013498a77b81837c1267f1a76eae64c8943",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00229920799385e3d5527cd4f4c6ffc3c764\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

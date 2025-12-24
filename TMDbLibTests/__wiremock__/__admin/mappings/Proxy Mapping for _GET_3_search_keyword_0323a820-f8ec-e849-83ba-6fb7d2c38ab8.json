@@ -1,0 +1,142 @@
+{
+  "Guid": "0323a820-f8ec-e849-83ba-6fb7d2c38ab8",
+  "UpdatedAt": "2025-12-24T11:53:34.5153541Z",
+  "Title": "Proxy Mapping for GET /3/search/keyword",
+  "Description": "Proxy Mapping for GET /3/search/keyword",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/keyword",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "plot",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "id": 348908,
+          "name": "plot"
+        },
+        {
+          "id": 279423,
+          "name": "plot hole"
+        },
+        {
+          "id": 161520,
+          "name": "terrorist plot"
+        },
+        {
+          "id": 284131,
+          "name": "bungled plot"
+        },
+        {
+          "id": 169378,
+          "name": "evil plot"
+        },
+        {
+          "id": 224813,
+          "name": "communist plot"
+        },
+        {
+          "id": 286922,
+          "name": "threadbare plot"
+        },
+        {
+          "id": 287455,
+          "name": "criminal plot"
+        },
+        {
+          "id": 235053,
+          "name": "plotin"
+        },
+        {
+          "id": 235054,
+          "name": "plotinus"
+        },
+        {
+          "id": 275311,
+          "name": "plot twist"
+        },
+        {
+          "id": 208388,
+          "name": "plot to kill"
+        },
+        {
+          "id": 208508,
+          "name": "murder plot"
+        },
+        {
+          "id": 197088,
+          "name": "revenge plot"
+        },
+        {
+          "id": 276456,
+          "name": "plot - counterplot"
+        },
+        {
+          "id": 206944,
+          "name": "devious plot"
+        },
+        {
+          "id": 161538,
+          "name": "counter plot"
+        },
+        {
+          "id": 185055,
+          "name": "gunpowder plot"
+        },
+        {
+          "id": 292179,
+          "name": "plotting bureaucrats"
+        },
+        {
+          "id": 300425,
+          "name": "children centered plot"
+        }
+      ],
+      "total_pages": 2,
+      "total_results": 27
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "b9ae75a06a00e72013a17ea68d2cf25677046ede4e2928bd27997675dc629b91",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=26679",
+      "ETag": "W/\u0022d8e98825bb602d4bfd5974860b4080c6\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

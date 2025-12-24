@@ -1,0 +1,60 @@
+{
+  "Guid": "fbcfc12f-76cf-3247-ae89-ca266976d9fe",
+  "UpdatedAt": "2025-12-24T11:53:35.1350338Z",
+  "Title": "Proxy Mapping for GET /3/account",
+  "Description": "Proxy Mapping for GET /3/account",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/account",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": []
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "avatar": {
+        "gravatar": {
+          "hash": "9ec1d4adda263fac03b990ec88f16b2e"
+        },
+        "tmdb": {
+          "avatar_path": null
+        }
+      },
+      "id": 6089455,
+      "iso_639_1": "en",
+      "iso_3166_1": "BE",
+      "name": "Test Name",
+      "include_adult": false,
+      "username": "TMDbTestAccount"
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "MISS",
+      "x-memc-key": "5c6bc127a88a71f6c4d18f8d04c5776ea0919cb125896ebd8970cc9d7bfcdc12",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=0",
+      "ETag": "W/\u0022ff94454d35cbbd65767c9f2ca15a36c3\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

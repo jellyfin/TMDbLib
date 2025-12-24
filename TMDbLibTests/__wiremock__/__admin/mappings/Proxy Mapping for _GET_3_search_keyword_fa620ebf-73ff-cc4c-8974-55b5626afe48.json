@@ -1,0 +1,100 @@
+{
+  "Guid": "fa620ebf-73ff-cc4c-8974-55b5626afe48",
+  "UpdatedAt": "2025-12-24T11:53:34.4977413Z",
+  "Title": "Proxy Mapping for GET /3/search/keyword",
+  "Description": "Proxy Mapping for GET /3/search/keyword",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/keyword",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "plot",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 2,
+      "results": [
+        {
+          "id": 332084,
+          "name": "plot oriented"
+        },
+        {
+          "id": 349354,
+          "name": "mini-plot"
+        },
+        {
+          "id": 354990,
+          "name": "well-plotted"
+        },
+        {
+          "id": 361839,
+          "name": "sport plots"
+        },
+        {
+          "id": 362071,
+          "name": "alibi plot"
+        },
+        {
+          "id": 364216,
+          "name": "\u002790s, classic, feature, plot oriented"
+        },
+        {
+          "id": 364454,
+          "name": "plot twist (reviravolta)."
+        }
+      ],
+      "total_pages": 2,
+      "total_results": 27
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "764e40050b12786be3998cb570a9d00383890615b44757adc9c0969c0840a6eb",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=28152",
+      "ETag": "W/\u00227624e91fe19323a807ceebf9a3097922\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

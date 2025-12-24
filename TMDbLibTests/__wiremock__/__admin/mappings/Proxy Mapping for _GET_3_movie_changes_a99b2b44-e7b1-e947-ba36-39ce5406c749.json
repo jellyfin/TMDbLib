@@ -1,0 +1,462 @@
+{
+  "Guid": "a99b2b44-e7b1-e947-ba36-39ce5406c749",
+  "UpdatedAt": "2025-12-24T11:53:34.5484443Z",
+  "Title": "Proxy Mapping for GET /3/movie/changes",
+  "Description": "Proxy Mapping for GET /3/movie/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "end_date",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2025-11-24",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "results": [
+        {
+          "id": 1064213,
+          "adult": false
+        },
+        {
+          "id": 1585880,
+          "adult": false
+        },
+        {
+          "id": 1565324,
+          "adult": false
+        },
+        {
+          "id": 1585741,
+          "adult": null
+        },
+        {
+          "id": 1585881,
+          "adult": false
+        },
+        {
+          "id": 39104,
+          "adult": false
+        },
+        {
+          "id": 975430,
+          "adult": false
+        },
+        {
+          "id": 1572215,
+          "adult": false
+        },
+        {
+          "id": 1555189,
+          "adult": false
+        },
+        {
+          "id": 1484604,
+          "adult": false
+        },
+        {
+          "id": 1509629,
+          "adult": false
+        },
+        {
+          "id": 1518432,
+          "adult": false
+        },
+        {
+          "id": 1525565,
+          "adult": false
+        },
+        {
+          "id": 1557056,
+          "adult": false
+        },
+        {
+          "id": 1560511,
+          "adult": false
+        },
+        {
+          "id": 1562802,
+          "adult": false
+        },
+        {
+          "id": 1568176,
+          "adult": false
+        },
+        {
+          "id": 1568938,
+          "adult": false
+        },
+        {
+          "id": 1570925,
+          "adult": false
+        },
+        {
+          "id": 1570936,
+          "adult": false
+        },
+        {
+          "id": 1571986,
+          "adult": false
+        },
+        {
+          "id": 1573350,
+          "adult": false
+        },
+        {
+          "id": 1574177,
+          "adult": false
+        },
+        {
+          "id": 1574661,
+          "adult": false
+        },
+        {
+          "id": 1575567,
+          "adult": false
+        },
+        {
+          "id": 1575569,
+          "adult": false
+        },
+        {
+          "id": 1575571,
+          "adult": false
+        },
+        {
+          "id": 1577541,
+          "adult": true
+        },
+        {
+          "id": 1577953,
+          "adult": false
+        },
+        {
+          "id": 1578636,
+          "adult": false
+        },
+        {
+          "id": 1579123,
+          "adult": false
+        },
+        {
+          "id": 1579268,
+          "adult": false
+        },
+        {
+          "id": 1579272,
+          "adult": false
+        },
+        {
+          "id": 1579273,
+          "adult": false
+        },
+        {
+          "id": 1579549,
+          "adult": false
+        },
+        {
+          "id": 1580576,
+          "adult": false
+        },
+        {
+          "id": 1583317,
+          "adult": false
+        },
+        {
+          "id": 1583319,
+          "adult": false
+        },
+        {
+          "id": 1583345,
+          "adult": false
+        },
+        {
+          "id": 1583347,
+          "adult": false
+        },
+        {
+          "id": 1583530,
+          "adult": false
+        },
+        {
+          "id": 1584556,
+          "adult": false
+        },
+        {
+          "id": 1584561,
+          "adult": false
+        },
+        {
+          "id": 1584565,
+          "adult": false
+        },
+        {
+          "id": 1584570,
+          "adult": false
+        },
+        {
+          "id": 1584576,
+          "adult": false
+        },
+        {
+          "id": 1584579,
+          "adult": false
+        },
+        {
+          "id": 1584583,
+          "adult": false
+        },
+        {
+          "id": 1584589,
+          "adult": false
+        },
+        {
+          "id": 1584593,
+          "adult": false
+        },
+        {
+          "id": 1584597,
+          "adult": false
+        },
+        {
+          "id": 1585099,
+          "adult": false
+        },
+        {
+          "id": 1585105,
+          "adult": false
+        },
+        {
+          "id": 1585112,
+          "adult": true
+        },
+        {
+          "id": 1218762,
+          "adult": false
+        },
+        {
+          "id": 1220924,
+          "adult": false
+        },
+        {
+          "id": 1291040,
+          "adult": false
+        },
+        {
+          "id": 1309400,
+          "adult": false
+        },
+        {
+          "id": 1309587,
+          "adult": false
+        },
+        {
+          "id": 1370364,
+          "adult": false
+        },
+        {
+          "id": 1423207,
+          "adult": false
+        },
+        {
+          "id": 1519347,
+          "adult": false
+        },
+        {
+          "id": 1572493,
+          "adult": false
+        },
+        {
+          "id": 1577623,
+          "adult": false
+        },
+        {
+          "id": 1580182,
+          "adult": true
+        },
+        {
+          "id": 1580706,
+          "adult": true
+        },
+        {
+          "id": 1585265,
+          "adult": false
+        },
+        {
+          "id": 1585267,
+          "adult": false
+        },
+        {
+          "id": 1585498,
+          "adult": false
+        },
+        {
+          "id": 1553850,
+          "adult": false
+        },
+        {
+          "id": 1585401,
+          "adult": false
+        },
+        {
+          "id": 1585422,
+          "adult": false
+        },
+        {
+          "id": 1585764,
+          "adult": null
+        },
+        {
+          "id": 1585382,
+          "adult": false
+        },
+        {
+          "id": 1585709,
+          "adult": false
+        },
+        {
+          "id": 1585497,
+          "adult": false
+        },
+        {
+          "id": 1566663,
+          "adult": false
+        },
+        {
+          "id": 1585418,
+          "adult": false
+        },
+        {
+          "id": 1585854,
+          "adult": false
+        },
+        {
+          "id": 1585859,
+          "adult": false
+        },
+        {
+          "id": 1514173,
+          "adult": false
+        },
+        {
+          "id": 1585789,
+          "adult": false
+        },
+        {
+          "id": 1585875,
+          "adult": false
+        },
+        {
+          "id": 1320386,
+          "adult": false
+        },
+        {
+          "id": 1585882,
+          "adult": false
+        },
+        {
+          "id": 1585883,
+          "adult": true
+        },
+        {
+          "id": 1487459,
+          "adult": false
+        },
+        {
+          "id": 962461,
+          "adult": false
+        },
+        {
+          "id": 1585788,
+          "adult": false
+        },
+        {
+          "id": 1582345,
+          "adult": false
+        },
+        {
+          "id": 933260,
+          "adult": false
+        },
+        {
+          "id": 967941,
+          "adult": false
+        },
+        {
+          "id": 396784,
+          "adult": false
+        },
+        {
+          "id": 964980,
+          "adult": false
+        },
+        {
+          "id": 14411,
+          "adult": false
+        },
+        {
+          "id": 1585877,
+          "adult": false
+        },
+        {
+          "id": 1585884,
+          "adult": false
+        },
+        {
+          "id": 1585885,
+          "adult": true
+        },
+        {
+          "id": 1585866,
+          "adult": false
+        },
+        {
+          "id": 1519692,
+          "adult": false
+        }
+      ],
+      "page": 1,
+      "total_pages": 118,
+      "total_results": 11785
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=77318",
+      "x-memc": "HIT",
+      "x-memc-key": "b7f369df23aebca89402a827aa269707eaec0e911907308b5f1ce375cb98515e",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00222c5804d32ce0113ae6b8ab24b94a3dd1\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

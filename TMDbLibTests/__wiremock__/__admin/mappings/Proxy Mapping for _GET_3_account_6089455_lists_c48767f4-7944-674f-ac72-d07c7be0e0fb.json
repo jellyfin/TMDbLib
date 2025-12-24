@@ -1,0 +1,71 @@
+{
+  "Guid": "c48767f4-7944-674f-ac72-d07c7be0e0fb",
+  "UpdatedAt": "2025-12-24T11:53:35.3544031Z",
+  "Title": "Proxy Mapping for GET /3/account/6089455/lists",
+  "Description": "Proxy Mapping for GET /3/account/6089455/lists",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/account/6089455/lists",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": []
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "description": "This is a test list",
+          "favorite_count": 0,
+          "id": 1724,
+          "item_count": 1,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test list",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 9886,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 2
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "MISS",
+      "x-memc-key": "7f44a8d96aad3e0e5aeb681c9c3270e04aef8c5ed3ddfd9833c5695bdb396160",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=0",
+      "ETag": "W/\u002246e8683dca38530c3dd7f1d80af3dabb\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

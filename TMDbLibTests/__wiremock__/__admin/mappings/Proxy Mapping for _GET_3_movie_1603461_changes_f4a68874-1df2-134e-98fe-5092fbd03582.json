@@ -1,0 +1,46 @@
+{
+  "Guid": "f4a68874-1df2-134e-98fe-5092fbd03582",
+  "UpdatedAt": "2025-12-24T11:53:34.5187825Z",
+  "Title": "Proxy Mapping for GET /3/movie/1603461/changes",
+  "Description": "Proxy Mapping for GET /3/movie/1603461/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1603461/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "changes": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "871f329f70d5d0f51b4806d24dd151561b29280ea6d62c3871d440575c692b47",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=600",
+      "ETag": "W/\u00221c7b0be7cfcb529d61df7c7b50baa91e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

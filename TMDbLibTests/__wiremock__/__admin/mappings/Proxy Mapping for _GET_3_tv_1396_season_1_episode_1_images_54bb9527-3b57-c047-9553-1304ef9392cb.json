@@ -1,0 +1,108 @@
+{
+  "Guid": "54bb9527-3b57-c047-9553-1304ef9392cb",
+  "UpdatedAt": "2025-12-24T11:53:35.0061783Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/images",
+  "Description": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/images",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/season/1/episode/1/images",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 62085,
+      "stills": [
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/ydlY3iPfeOAvu8gVqrxPoMvzNCn.jpg",
+          "vote_average": 6.2,
+          "vote_count": 10,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/88Z0fMP8a88EpQWMCs1593G0ngu.jpg",
+          "vote_average": 6.142,
+          "vote_count": 7,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/u90Ryx8OztC5OeVTXHPcZ8fnKoA.jpg",
+          "vote_average": 5.786,
+          "vote_count": 7,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/kdvMh2q0iexchzBwnaN3o0ZpxrC.jpg",
+          "vote_average": 2.278,
+          "vote_count": 3,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 720,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/890KI9fMOPnYKAf4WZz0slCqA6p.jpg",
+          "vote_average": 1.75,
+          "vote_count": 2,
+          "width": 1280
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/37TsVQ1YU7nkfuqD1iES6EzIQcw.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1920
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "13e1906f49e4ecf9e047ead9943cd47d4e21c1d3894cc09cbf0dfa9d9e7c801a",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=14620",
+      "ETag": "W/\u00224017a3809b09460f7b53380a8ec883d7\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

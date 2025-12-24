@@ -1,0 +1,480 @@
+{
+  "Guid": "1f838420-dad6-904a-a74d-b73b725fd4d9",
+  "UpdatedAt": "2025-12-24T11:53:35.1189913Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964/recommendations",
+  "Description": "Proxy Mapping for GET /3/movie/47964/recommendations",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964/recommendations",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/djSAd6HUm66eVNC3PiZbYwOpD5A.jpg",
+          "id": 81005,
+          "title": "Jack and the Giants",
+          "original_title": "Jack the Giant Slayer",
+          "overview": "Der junge Landarbeiter Jack st\u00FCrzt sich in ein gef\u00E4hrliches Abenteuer, als er sich aufmacht, die entf\u00FChrte Prinzessin Isabelle zu retten. Er betritt die Welt der Riesen und beendet damit den lange w\u00E4hrenden Frieden zwischen den Menschen und den meterhohen Gesch\u00F6pfen. Dieser Frieden hielt einzig durch den Umstand, dass das Tor zwischen den zwei Welten fest verschlossen blieb - jenes Tor, das Jack nun versehentlich weit aufgesto\u00DFen hat. Die alten Auseinandersetzungen entbrennen erneut und den Menschen droht gro\u00DFes Unheil. Jack hielt die Erz\u00E4hlungen seiner Vorfahren immer f\u00FCr M\u00E4rchen, aber die Riesen sind pl\u00F6tzlich real und es liegt nun an ihm, die scheinbar \u00FCberm\u00E4chtigen Widersacher aufzuhalten. Er hat gar keine andere Wahl, als sich dem Kampf zu stellen, wenn er seine Angebetete zur\u00FCckerobern m\u00F6chte.",
+          "poster_path": "/y5e4qtviB472ivZZyXCvmanHL1B.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            28,
+            12,
+            18
+          ],
+          "popularity": 10.0552,
+          "release_date": "2013-02-27",
+          "video": false,
+          "vote_average": 5.867,
+          "vote_count": 5098
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e9XpCB9XoTSvek6O7PNvJMhSlIK.jpg",
+          "id": 49051,
+          "title": "Der Hobbit - Eine unerwartete Reise",
+          "original_title": "The Hobbit: An Unexpected Journey",
+          "overview": "Mit dem Besuch des weisen Zauberers Gandalf ver\u00E4ndert sich das beschauliche Leben eines Hobbits f\u00FCr immer. Z\u00F6gerlich schlie\u00DFt sich der unbedarfte Bilbo mit Gandalf der Mission von 13 mutigen Zwergen an, die ihr Reich zur\u00FCckerobern wollen. Der furchterregende Drache Smaug, der es einst zerst\u00F6rte, ist seit Jahrzehnten verschwunden. Doch ist das Monstrum wirklich tot und k\u00F6nnen die gro\u00DFen Gefahren dieses Abenteuers, darunter gefr\u00E4\u00DFige Orks und w\u00FCtende Trolle, wirklich von so kleinen Helden \u00FCberwunden werden?",
+          "poster_path": "/bPYCAzOB3M3PZ91BpQzJeReKkP8.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            14,
+            28
+          ],
+          "popularity": 14.0233,
+          "release_date": "2012-12-12",
+          "video": false,
+          "vote_average": 7.365,
+          "vote_count": 19156
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
+          "id": 24428,
+          "title": "Marvel\u0027s The Avengers",
+          "original_title": "The Avengers",
+          "overview": "Nick Fury ist der Anf\u00FChrer der Organisation S.H.I.E.L.D., einer internationalen Friedensorganisation. Die Beh\u00F6rde ist ein Who\u0027s Who der Marvel Superhelden, mit Iron Man, Thor, Captain America, Hawkeye, dem Unglaublichen Hulk und Black Widow. Als die weltweite Sicherheit von Thors sinistrem Halbbruder Loki und seiner Schar bedroht wird, werden Nick Fury und sein Team all ihre Kr\u00E4fte brauchen, um die Welt vor einer Katastrophe zu bewahren ...",
+          "poster_path": "/hGTqvK9WaI74szUDPMHXrrHfiH3.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "popularity": 49.8791,
+          "release_date": "2012-04-25",
+          "video": false,
+          "vote_average": 7.881,
+          "vote_count": 34579
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mjYU7EwVeOtM39ArdWHZk78VhYm.jpg",
+          "id": 117263,
+          "title": "Olympus Has Fallen - Die Welt in Gefahr",
+          "original_title": "Olympus Has Fallen",
+          "overview": "Mike Banning arbeitet als Geheimdienst-Agent f\u00FCr die USA. Als er eines Abends zusammen mit dem Pr\u00E4sidenten Benjamin Asher und der First Lady Margaret in einem Auto unterwegs ist, kommt es zu einem tragischen Unfall. Banning muss blitzschnell handeln: Er entscheidet sich f\u00FCr die Rettung des Pr\u00E4sidenten und opfert somit dessen Frau. Obwohl ihm von allen Seiten best\u00E4tigt wird, die richtige Entscheidung getroffen zu haben, f\u00E4llt er in Ungnade und bekommt einen Posten hinter dem Schreibtisch verpasst. Als die USA sich eines Tages ganz pl\u00F6tzlich von einer Gruppe Terroristen \u00FCberrannt sieht, denen es in all dem Chaos gelingt, den Pr\u00E4sidenten in ihre Gewalt zu bringen, sieht Banning die Chance gekommen, seinen Fehler von einst wieder auszub\u00FCgeln und das Land mit seinem heldenhaften Einsatz vor der Vernichtung zu retten.",
+          "poster_path": "/AfeYDRhBAoyK5v9gccnHSreUMLu.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 9.0655,
+          "release_date": "2013-03-20",
+          "video": false,
+          "vote_average": 6.414,
+          "vote_count": 6895
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mJSe5dxKu8Sq0GfdjdWVqdGvzfV.jpg",
+          "id": 60304,
+          "title": "H\u00E4nsel und Gretel: Hexenj\u00E4ger",
+          "original_title": "Hansel \u0026 Gretel: Witch Hunters",
+          "overview": "H\u00E4nsel und Gretel verliefen sich im Wald\u2026 und kommen nach 15 Jahren mit H\u00E4nsel \u0026amp; Gretel: Hexenj\u00E4ger als professionelle, gnadenlose Hexenj\u00E4ger wieder! Das gerissene Geschwisterpaar hat sich nicht nur seine eigene Peinigerin vorgenommen. H\u00E4nsel und Gretel haben das Pfefferkuchenhaus hinter sich gelassen und aus ihrem traumatischen Erlebnis eine Lebensaufgabe gemacht. Sie ziehen nun durch das Land, um b\u00F6se Hexen zur Strecke zu bringen. Praktischerweise sind die beiden immun gegen b\u00F6se Zauberspr\u00FCche und Fl\u00FCche prallen an ihnen ab wie Kugeln an Panzerglas. Der Ruf der Geschwister als der Hexen schlimmster Albtraum bringt H\u00E4nsel und Gretel gutes Geld ein. So werden sie vom B\u00FCrgermeister der Stadt Augsburg beauftragt, seine Stadt von der teuflischen Muriel zu befreien.",
+          "poster_path": "/kfDkQ9y7mlMoCcAiutedTgJc4pW.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            27,
+            28
+          ],
+          "popularity": 4.6358,
+          "release_date": "2013-01-17",
+          "video": false,
+          "vote_average": 6.094,
+          "vote_count": 6963
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aRqTPOPt8BOHE0ngppM9jnuuaeS.jpg",
+          "id": 1571,
+          "title": "Stirb langsam 4.0",
+          "original_title": "Live Free or Die Hard",
+          "overview": "Die gesamte USA wird von einem bisher unvorstellbaren Akt des Terrorismus bedroht, der sich innovativster Techniken bedient und mittels Computerkraft das Land ins Chaos zu st\u00FCrzen vermag. Die IT-Infrastruktur des Landes wird komplett au\u00DFer Kraft gesetzt, Kommunikation und Bankwesen liegen lahm und die \u00FCberraschten Beh\u00F6rden wissen zun\u00E4chst nichts entgegen zu setzen. Nur ein Mann kann den Terror aufhalten: Der New Yorker Polizist John McClane h\u00E4lt nichts von modernem Schnickschnack und macht sich auf seine eigene Art auf die Jagd nach dem Drahtzieher des spektakul\u00E4ren Coups. Unterst\u00FCtzt wird er dabei von dem jungen Greg, den McClane eigentlich nur von New Jersey nach Washington bringen sollte. Doch mal wieder ist der alte Haudegen zur falschen Zeit am falschen Ort\u2026",
+          "poster_path": "/3zBDg1myjzemYsHygYwo1L9ukqs.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 9.1808,
+          "release_date": "2007-06-20",
+          "video": false,
+          "vote_average": 6.634,
+          "vote_count": 6151
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/n2eUT4zQA2yYcKOgAFidgOyiFoH.jpg",
+          "id": 68718,
+          "title": "Django Unchained",
+          "original_title": "Django Unchained",
+          "overview": "Als das Sklavenpaar Django und seine Frau Broomhilda bei einer Auktion getrennt werden, hat Django nur noch ein Ziel vor Augen: seine Frau wiederzufinden. Die Gelegenheit ergibt sich f\u00FCr den in Fesseln Geschlagenen schneller als erwartet, als er vom fr\u00FCheren Zahnarzt und jetzigen Kopfgeldj\u00E4ger Dr. Schultz befreit wird, damit er ihm bei der Identifikation steckbrieflich gesuchter Verbrecher behilflich sei. Zum Dank will Dr. Schultz ihn zum Kopfgeldj\u00E4ger ausbilden und ihm helfen, seine Frau ausfindig zu machen. Schlie\u00DFlich f\u00FChrt Django und Dr. Schultz die Spur nach Candyland, wo Broomhilda in den Besitz des charismatischen und \u00FCberaus gef\u00E4hrlichen Calvin Candie \u00FCbergegangen ist. Sie erschleichen sich erfolgreich das Vertrauen von Candie. Doch der Haussklave Stephen durchschaut ihr Spiel\u2026",
+          "poster_path": "/yK0qrQhi3BbOXvTNOBWHgpcbckZ.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            37
+          ],
+          "popularity": 14.7117,
+          "release_date": "2012-12-25",
+          "video": false,
+          "vote_average": 8.2,
+          "vote_count": 27340
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fOipappvgVtUbbHOtmCkHzcwJjC.jpg",
+          "id": 93456,
+          "title": "Ich - Einfach unverbesserlich 2",
+          "original_title": "Despicable Me 2",
+          "overview": "Nachdem der Superschurke Gru die drei Waisenkinder Margo, Edith und Agnes adoptiert hat, hat sich in seinem Leben viel ge\u00E4ndert. Anstatt als Griesgram Verbrechen zu begehen, dreht sich sein Leben nun um Gute-Nacht-Geschichten, Kindergeburtstage und erste Verehrer der M\u00E4dchen. Sein neues Leben wird pl\u00F6tzlich gest\u00F6rt, als Lucy, eine Agentin der geheimen Anti-Villain League, Gru gegen seinen Willen zu deren Zentrale f\u00FChrt. Dort bekommt Gru den Auftrag, die Welt vor einem neuen B\u00F6sewicht zu retten. Eifrig macht sich Gru ans Werk und bekommt dabei erneut Hilfe von Dr. Nefario  und seinen meist sehr tollpatschigen Minions. Doch seine neue Aufgabe mit der Erziehung seiner Adoptivt\u00F6chter in Einklang zu bringen ist nicht leicht und auch mit der Situation, dass Lucy auch au\u00DFerhalb der Arbeit sehr von Gru angetan ist, \u00FCberfordert den ehemaligen Einzelg\u00E4nger.",
+          "poster_path": "/e9uMneUxEN8vb3lS2wU9Pie597B.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            16,
+            35,
+            10751
+          ],
+          "popularity": 8.2226,
+          "release_date": "2013-06-26",
+          "video": false,
+          "vote_average": 6.938,
+          "vote_count": 11744
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/o6TYNmB1CT85j7lmyvSedoybyc9.jpg",
+          "id": 68728,
+          "title": "Die fantastische Welt von Oz",
+          "original_title": "Oz the Great and Powerful",
+          "overview": "Oscar Diggs  ist ein kleiner Zirkus-Magier mit zweifelhafter Moral, eben ein Scharlatan, der pl\u00F6tzlich aus dem verschlafenen Kansas ins schillernde Land von Oz geschleudert wird. Zun\u00E4chst ist Oscar begeistert, denn die Bewohner glauben, er sei der gro\u00DFe Zauberer von Oz. Ihn erwarten Ruhm und Reichtum - zumindest bis er auf drei Hexen trifft: Theodora, Evanora und Glinda kaufen dem verschlagenen Magier seine gro\u00DFe Kunst nicht ab. Bald ger\u00E4t Diggs in eine schwierige Lage, denn der junge Mann wird zunehmend mit den Problemen des Landes und seiner Einwohner konfrontiert und soll diese l\u00F6sen.",
+          "poster_path": "/akjZeW0fqCdNS8Tl35YjRs1SKKl.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            12,
+            10751
+          ],
+          "popularity": 5.1852,
+          "release_date": "2013-03-07",
+          "video": false,
+          "vote_average": 5.929,
+          "vote_count": 6693
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iVped1djsF0tvGkvnHbzsE3ZPTF.jpg",
+          "id": 68721,
+          "title": "Iron Man 3",
+          "original_title": "Iron Man 3",
+          "overview": "Die Dellen, die sich Iron Man im Kampf gegen seine Widersacher Justin Hammer und Ivan Vanko zugezogen hatte, sind kaum ausgebeult, da droht neue Gefahr. Ein streng geheimes Serum, welches Extremis genannt wird und auf Nanotechnologie basiert, erm\u00F6glicht es den mit dem Serum injizierten Menschen, ungeahnte Kr\u00E4fte zu entwickeln, allerdings mit einer Tendenz zu ungez\u00FCgelter Aggressivit\u00E4t. Aldrichs Kollegin Maya Hansen, baut auf die Hilfe von Vision\u00E4r Tony Stark. W\u00E4hrendessen bedroht eine dunkle Macht in Gestalt von The Mandarin die Welt und m\u00F6chte dem Wettr\u00FCsten ein Ende zu seinen Gunsten setzen. Dabei ver\u00FCbt er einen Anschlag auf die amerikanische Regierung und dessen Pr\u00E4sidenten, sowie auf die Air Force, bei der Tony Starks Freund Rhodey dient. Als ein Anschlag auf Tony Starks Eigenheim folgt, geraten er und Pepper Potts in gro\u00DFe Gefahr\u2026",
+          "poster_path": "/h0vJ6sTYWQmqenNqRa1IiW1t0Ys.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 17.718,
+          "release_date": "2013-04-18",
+          "video": false,
+          "vote_average": 6.93,
+          "vote_count": 22993
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
+          "id": 19995,
+          "title": "Avatar - Aufbruch nach Pandora",
+          "original_title": "Avatar",
+          "overview": "Ex-Marine Jake Sully nimmt auf dem Planeten Pandora an einem Experiment unter der Leitung der Wissenschaftlerin Dr. Grace Augustine teil. Als er sich im genetisch manipulierten K\u00F6rper der Ureinwohner in die sch\u00F6ne Neytiri verliebt, ger\u00E4t er zwischen die Fronten eines skrupellosen Konzerns und dem naturverbundenen Volk der Na\u0027vi. Jake muss sich entscheiden, auf welcher Seite er steht - in einem ungleichen Kampf, in dem es um das Schicksal einer einzigartigen Welt geht ...",
+          "poster_path": "/8VV4YUwOGxgolFZTo2SgNwsfznR.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            14,
+            878
+          ],
+          "popularity": 111.795,
+          "release_date": "2009-12-16",
+          "video": false,
+          "vote_average": 7.597,
+          "vote_count": 33011
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pEhXq18GVe1dg2ltplcxtGWfSje.jpg",
+          "id": 72559,
+          "title": "G.I. Joe - Die Abrechnung",
+          "original_title": "G.I. Joe: Retaliation",
+          "overview": "Die eigentlich recht wehrhafte Elite-Einheit G.I. Joe wird von einer h\u00F6heren Instanz attackiert und soll vollst\u00E4ndig ausgel\u00F6scht werden. Bei der perfide geplanten Liquidierungsaktion sterben viele Mitglieder der kampferprobten Elite-Einheit. Nur eine kleine Runde rund um Captain Duke Hauser, den zupackenden Roadblock und die verf\u00FChrerische Lady Jaye \u00FCberleben den t\u00F6dlichen \u00DCbergriff und gehen der Sache fortan auf den Grund. Unterst\u00FCtzung erhalten sie dabei von dem zwar etwas in die Jahre gekommenen, aber immer noch recht schlagfertigen General Joe Colton, seines Zeichens ehemaliger Gr\u00FCnder der Elite-Einheit G.I. Joe.",
+          "poster_path": "/SQWhh0CGgcZZQmgdohdS3qEuyK.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            12,
+            53
+          ],
+          "popularity": 5.5912,
+          "release_date": "2013-03-27",
+          "video": false,
+          "vote_average": 5.651,
+          "vote_count": 5660
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cDtefl7KGnKrDziEUXetMnztvqr.jpg",
+          "id": 1573,
+          "title": "Stirb langsam 2",
+          "original_title": "Die Hard 2",
+          "overview": "Det. Lt. John McClane wartet am Dulles Airport in Washington D.C. auf seine Frau Holly, die mit einem Flieger aus Los Angeles anreist, um mit ihm Weihnachten zu verbringen. Das Wetter ist miserabel: Schneest\u00FCrme. Aber die meteorologischen Widrigkeiten sind nicht der Grund daf\u00FCr, dass Hollys Maschine in der Luft bleiben muss. Der s\u00FCdamerikanische Drogen-Boss und Diktator Esperanza soll zur gleichen Zeit an die US-Beh\u00F6rden ausgeliefert werden. Aber Esperanza hat seine Flucht l\u00E4ngst penibel vorbereitet. Unter F\u00FChrung des ehemaligen Colonels Stuart, der inzwischen als Terrorist arbeitet, hat eine Spezialtruppe den Flughafen in ihre Gewalt gebracht. Die K\u00E4mpfer kontrollieren auch den Funkverkehr und die Computerzentrale, um Esperanza zur Flucht verhelfen zu k\u00F6nnen. Einmal mehr muss McClane als Einmann-Spezialeinheit die Lage bereinigen.",
+          "poster_path": "/mdB97eGzcIbQtpxyQuWq25a38v4.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 10.6652,
+          "release_date": "1990-07-03",
+          "video": false,
+          "vote_average": 6.961,
+          "vote_count": 6174
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8oeXbjMtaYYGgjJl9RJNe7umkuS.jpg",
+          "id": 87827,
+          "title": "Life of Pi - Schiffbruch mit Tiger",
+          "original_title": "Life of Pi",
+          "overview": "Wie man 227 Tage auf hoher See mit einem Bengalischen Tiger unbeschadet \u00FCberstehen kann, das zeigt Schiffbruch mit Tiger. Piscine Molitor Patel, kurz Pi, ist ein junger Inder, der mit seiner Familie in Pondicherry lebt, wo sein Vater einen Zoo besitzt. Als sie aus politischen Gr\u00FCnden nach Kanada auswandern m\u00FCssen, wird der Zoo verkauft und mit ihm ein Gro\u00DFteil der Tiere. Den Rest nimmt die Familie mit an Bord eines Frachters, der sie in die neue Heimat bringen soll. Doch auf der \u00DCberfahrt kommt es zu einer Havarie und nur Pi kann sich als einziger \u00DCberlebender in ein Beiboot retten. Mit vier nicht-menschlichen Ausnahmen: Weitere \u201EPassagiere\u201C im Rettungsboot sind eine Hy\u00E4ne, ein am Bein verletztes Zebra, ein Orang-Utan und ein ausgewachsener Tiger namens Richard Parker. Wie und unter welchen Opfern Pi diese entbehrungsreiche Odyssee \u00FCberlebt, davon berichtet der mittlerweile erwachsene Pi.",
+          "poster_path": "/eeLve6g5O99vIPXhhAxY6QE2v6r.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            18
+          ],
+          "popularity": 4.6961,
+          "release_date": "2012-11-20",
+          "video": false,
+          "vote_average": 7.405,
+          "vote_count": 13516
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vBuw223bR0jeI3GHMfCjNBCGo6.jpg",
+          "id": 119283,
+          "title": "Parker",
+          "original_title": "Parker",
+          "overview": "Parker ist nicht nur ein erfolgreicher Dieb, er ist obendrein auch ein moralischer Dieb. Denn Parker hat genau zwei Regeln: Stiehl niemals von armen Leuten und verletze keine unschuldigen Menschen. Bis jetzt fuhr er damit auch sehr gut. Doch dann begeht Parker den Fehler, mit den falschen Leuten einen Juwelenraub zu planen. Diese, allen voran der fiese Melander, sind nicht so moralisch wie er. Der Coup verl\u00E4uft ganz anders, als Parker es sich vorgestellt hat und am Ende bleibt er schwer verletzt und dem Tode nahe am Ort des Verbrechens, auch die Juwelen sind weg. Mit letzter Kraft entkommt Parker, l\u00E4sst jedoch alle in dem Glauben, er w\u00E4re tot. Doch er plant bereits einen Racheakt, der seinesgleichen sucht - daf\u00FCr ben\u00F6tigt er die Hilfe von Leslie.",
+          "poster_path": "/sfY9AQvDG7MW1n9ppgGp6cXhtkJ.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80
+          ],
+          "popularity": 3.8943,
+          "release_date": "2013-01-23",
+          "video": false,
+          "vote_average": 6.075,
+          "vote_count": 3183
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3sndNmvdF0R8AeyCmVoNv8LKtNy.jpg",
+          "id": 70160,
+          "title": "Die Tribute von Panem - The Hunger Games",
+          "original_title": "The Hunger Games",
+          "overview": "Die Tribute von Panem bringt uns in eine ferne Zukunft. Die Vereinigten Staaten sind schon lange im Staub der Geschichte versunken. Das Volk leidet unter schrecklichen Hungersn\u00F6ten, da Jahrhunderte von Kriegen und Naturkatstrophen nur Staub und Verzweiflung zur\u00FCckgelassen haben. Um die Bev\u00F6lkerung an die blutigen Folgen eines fr\u00FCheren Aufstandes zu erinnern, inszeniert die Regierung eine grausame Show: Jedes Jahr werden in jedem Distrikt ein Junge und ein M\u00E4dchen zwischen 13 und 18 Jahren ausgelost, welche als Tribute von Panem an den Hunger-Games teilnehmen m\u00FCssen. Dort m\u00FCssen die 24 Kandidaten mehrere Tage lang auf Leben und Tod gegeneinander k\u00E4mpfen, bis es am Ende nur noch einen \u00DCberlebenden gibt. Um ihre Schwester aus ihrer Tributspflicht zu l\u00F6sen, meldet sich die 16j\u00E4hrige Katniss freiwillig f\u00FCr die Hunger Games.",
+          "poster_path": "/8o3MlFkqI9O8PXRXDApyoN4HNPc.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            28,
+            53
+          ],
+          "popularity": 7.1828,
+          "release_date": "2012-03-12",
+          "video": false,
+          "vote_average": 7.221,
+          "vote_count": 22851
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9jih8et3fkd0Zdo4NHf3cnPj05Z.jpg",
+          "id": 158011,
+          "title": "The Call - Leg nicht auf!",
+          "original_title": "The Call",
+          "overview": "Jordan Turner arbeitet als Operator bei der Polizeinotrufnummer 911 von Los Angeles. Eines Tages f\u00FChrt ein fataler Fehler von Jordan dazu, dass ein M\u00E4dchen w\u00E4hrend seines Notrufs von einem Einbrecher get\u00F6tet wird. Sechs Monate nach dem Vorfall versucht Jordan noch immer, diese grausame Erfahrung zu verarbeiten, als sie erneut vor eine \u00E4hnliche Situation gestellt wird. Die junge Casey ruft aus dem Kofferraum eines Autos an, nachdem sie von einem Unbekannten entf\u00FChrt wurde. Zahlreiche Versuche Jordans, dem Teenager am Telefon zu helfen, schlagen fehl. Als ihre Kollegen auch noch die Spur des Fluchtfahrzeugs verlieren, muss Jordan handeln. Denn mit jeder Sekunde, die verstreicht, sinkt die Wahrscheinlichkeit, Casey lebend retten zu k\u00F6nnen. Jordan beschlie\u00DFt, ihren Platz am Telefon zu verlassen und auf eigene Faust zu ermitteln. Sie ahnt nicht, in welche Gefahr sie sich damit begibt...",
+          "poster_path": "/n3dlwfHdo3jOiFqhg2l0JRlOLXD.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            80,
+            53
+          ],
+          "popularity": 2.4986,
+          "release_date": "2013-03-14",
+          "video": false,
+          "vote_average": 6.793,
+          "vote_count": 2990
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oqxCzAO8sn1rSco2Pc19DlitgEn.jpg",
+          "id": 82992,
+          "title": "Fast \u0026 Furious 6",
+          "original_title": "Fast \u0026 Furious 6",
+          "overview": "Nach ihrem gro\u00DFen Rio-Coup haben sich Dominic Toretto, Brian O\u0027Conner und ihre Crew \u00FCber die ganze Welt verstreut. Durch die erbeuteten 100 Millionen Dollar sind sie zwar reich, leben jedoch st\u00E4ndig auf der Flucht. An eine R\u00FCckkehr in ihre Heimat ist nicht zu denken. FBI-Agent Luke Hobbs ist derweil auf der Jagd nach einer Organisation von zum T\u00F6ten ausgebildeten Rennfahrern. Die S\u00F6ldner agieren in \u00FCber zw\u00F6lf L\u00E4ndern. Ihre Befehle erhalten sie von dem \u00FCbergeordneten Bandenf\u00FChrer Owen Shaw. Unterst\u00FCtzung erh\u00E4lt der Boss von Letty, der totgeglaubten gro\u00DFen Liebe von Dom. Hobbs wei\u00DF, dass er die kriminelle Bande nur stoppen kann, wenn er sie auf der Stra\u00DFe besiegt. Daf\u00FCr braucht er die Hilfe von Dom und bietet diesem an, sich seinem Elite-Team in London anzuschlie\u00DFen. Als Belohnung w\u00FCrden Dom und seine Partner von ihren Verbrechen freigesprochen werden.",
+          "poster_path": "/fkZDVrBzI5jAzYl9KcYp4ScsrYa.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "popularity": 1.0567,
+          "release_date": "2013-05-21",
+          "video": false,
+          "vote_average": 6.816,
+          "vote_count": 10960
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gd2vQT8uMf1FAsiC0OdewL7XUFR.jpg",
+          "id": 146216,
+          "title": "R.E.D. 2 - Noch \u00C4lter. H\u00E4rter. Besser.",
+          "original_title": "RED 2",
+          "overview": "Frank Moses ist ein ehemaliger CIA-Agent und genie\u00DFt den Ruhestand. Auf der Beisetzung seines fr\u00FCheren Kollegen Marvin Boggs wird er vom FBI festgenommen und zum Thema \u2018Nightshade\u2019 befragt. Es geht dabei um eine Nuklearwaffe, die vor 25 unter mysteri\u00F6sen Umst\u00E4nden verschwand. Niemand wei\u00DF, wo sich die Waffe heute befindet. Das Verh\u00F6r wird jedoch unterbrochen, seine Kidnapper werden ermordet und pl\u00F6tzlich taucht der totgeglaubte Marvin wieder auf. Die beiden M\u00E4nner wollen die Hintergr\u00FCnde zum Thema Nightshade ergr\u00FCnden und ihre Jagd f\u00FChrt sie schlie\u00DFlich nach London, Genua und Moskau. Auch ihre Ex-Kollegin Victoria unterst\u00FCtzt die beiden Agenten bei ihrer gef\u00E4hrlichen Suche nach der Wahrheit. Doch sie sind nicht die einzigen, die Interesse an der Nuklearwaffe haben. Und dann taucht auch noch die verf\u00FChrerische Katja, eine alte Bekannte von Frank, auf.",
+          "poster_path": "/80AdcQoZL1rZtTaCP19bJP0zVMQ.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            35,
+            80,
+            53
+          ],
+          "popularity": 8.1079,
+          "release_date": "2013-07-18",
+          "video": false,
+          "vote_average": 6.529,
+          "vote_count": 4212
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/80seex5P196f7pff3R8xqwd2Zo.jpg",
+          "id": 134411,
+          "title": "Snitch - Ein riskanter Deal",
+          "original_title": "Snitch",
+          "overview": "Als der 17-j\u00E4hrige Jason ein Paket mit Ecstasy-Pillen entgegennimmt, das ihm ein \u201Eguter Freund\u0022 zugeschickt hat, soll er wegen Drogenhandels f\u00FCr zehn Jahre hinter Gitter -- das Mindeststrafma\u00DF f\u00FCr Drogendelikte in den USA! Um ihn vor dieser drakonischen Strafe zu bewahren, vereinbart sein alarmierter Vater John mit der resoluten Staatsanw\u00E4ltin einen sogenannten \u201ESnitch\u0022: Sollte es John gelingen, einen der Drogenbosse ans Messer zu liefern, kommt sein Sohn frei.",
+          "poster_path": "/t928e9q8Mxjw0tQvQ3q0LiuAGAz.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            53,
+            18,
+            28
+          ],
+          "popularity": 2.5002,
+          "release_date": "2013-02-21",
+          "video": false,
+          "vote_average": 6.123,
+          "vote_count": 2430
+        }
+      ],
+      "total_pages": 2,
+      "total_results": 40
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=23323",
+      "x-memc": "HIT",
+      "x-memc-key": "a953544df2c7bb77cce1c103abdd623f245e6dd0fd1d65d8fc14d7a1983ebb56",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00220715a49f3cf221fb4190ccdc0e90a567\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "Guid": "53d8d9db-e921-7f43-9ffa-07d9dce3cd25",
+  "UpdatedAt": "2025-12-24T11:53:35.6413146Z",
+  "Title": "Proxy Mapping for GET /3/movie/top_rated",
+  "Description": "Proxy Mapping for GET /3/movie/top_rated",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/top_rated",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/zfbjgQE1uSd9wiPTX4VzsLi0rGG.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 278,
+          "original_language": "en",
+          "original_title": "The Shawshank Redemption",
+          "overview": "Das Shawshank Gef\u00E4ngnis in den 30ern: der wegen Mordes an seiner Frau verurteilte Andy Dufresne kommt als Neuling lebensl\u00E4nglich hinter Gittern. Zur\u00FCckhaltend wie er ist, ist er st\u00E4ndig das Ziel sexueller Angriffe, doch als er als Banker durchblicken l\u00E4\u00DFt, da\u00DF er finanziell f\u00FCr den Direktor und die W\u00E4rter eine Menge tun kann, ist f\u00FCr seine Sicherheit gesorgt. Langsam aber sicher freundet er sich mit dem Langzeitinsassen Red an, baut die Gef\u00E4ngnisbibliothek auf und r\u00FCckt nie von seiner \u00DCberzeugung ab, unschuldig zu sein. Viele Jahre vergehen, bis etwas geschieht, was sogar Reds Leben f\u00FCr immer ver\u00E4ndern wird...",
+          "popularity": 36.179,
+          "poster_path": "/78Pb6FMLMfpm1jUOKTniwREYgAN.jpg",
+          "release_date": "1994-09-23",
+          "title": "Die Verurteilten",
+          "video": false,
+          "vote_average": 8.714,
+          "vote_count": 29390
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/39rtAdg3yx6IDxRg0ZLXefv0aPY.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 238,
+          "original_language": "en",
+          "original_title": "The Godfather",
+          "overview": "Don Vito Corleone ist der Kopf einer der einflu\u00DFreichsten Mafia-Familien New Yorks. Als die anderen Familien der Stadt beschlie\u00DFen, neben Gl\u00FCcksspiel und Schutzgelderpressungen nun auch den Handel mit Drogen als Erwerbsquelle zu nutzen und sich Don Corleone diesem Vorhaben nicht anschlie\u00DFen m\u00F6chte, wird er zum Ziel eines hinterh\u00E4ltigen Mordanschlags. Nun steht Vitos Sohn Michael in der Verantwortung, in die Fu\u00DFstapfen seines Vaters zu treten, obwohl er mit den Gesch\u00E4ften der Familie bis dato nichts zu tun haben wollte.",
+          "popularity": 35.4978,
+          "poster_path": "/gno4N8BtCWWbZuc50SCTSFsg4aK.jpg",
+          "release_date": "1972-03-14",
+          "title": "Der Pate",
+          "video": false,
+          "vote_average": 8.685,
+          "vote_count": 22177
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/14icRpwdgpHEHxt7Cn5hr2RQEsF.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 240,
+          "original_language": "en",
+          "original_title": "The Godfather Part II",
+          "overview": "Michael Corleone ist jetzt der Pate seiner Familie und f\u00FChrt diese Aufgabe mit der n\u00F6tigen Gnadenlosigkeit aus. Als er in Las Vegas und auf Kuba expandieren will, weil ihm die alten Gesch\u00E4ftsideen nichts mehr einbringen, treten Schwierigkeiten auf. Um diese zu kl\u00E4ren, veranla\u00DFt Michael eine gro\u00DFe S\u00E4uberungsaktion, die auch vor den Familienmitgliedern nicht halt macht.",
+          "popularity": 14.8413,
+          "poster_path": "/olZYvNYplnexE9sLmHg0Fc7rDWC.jpg",
+          "release_date": "1974-12-20",
+          "title": "Der Pate - Teil II",
+          "video": false,
+          "vote_average": 8.571,
+          "vote_count": 13404
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zb6fM1CX41D9rF9hdgclu0peUmy.jpg",
+          "genre_ids": [
+            18,
+            36,
+            10752
+          ],
+          "id": 424,
+          "original_language": "en",
+          "original_title": "Schindler\u0027s List",
+          "overview": "Von einer wahren Begebenheit inspiriert, erz\u00E4hlt Schindlers Liste die Geschichte des Industriellen Oskar Schindler, der w\u00E4hrend des Zweiten Weltkriegs versucht, sich in Krakau eine Existenz aufzubauen. Aus finanziellen Gr\u00FCnden besch\u00E4ftigt er nur Juden und leiht sich Geld von ihnen um eine Emaillefabrik zu gr\u00FCnden, die ihm letztlich gro\u00DFen Reichtum beschert. Als die Brutalit\u00E4t des Holocaust Krakau erreicht, riskiert er nicht nur sein Verm\u00F6gen, sondern auch sein Leben um seine Arbeiter vor der Deportation zu bewahren.",
+          "popularity": 12.9015,
+          "poster_path": "/lJiLP05Pm72fVEKVH3Z2bNNYHQv.jpg",
+          "release_date": "1993-12-15",
+          "title": "Schindlers Liste",
+          "video": false,
+          "vote_average": 8.566,
+          "vote_count": 16926
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w4bTBXcqXc2TUyS5Fc4h67uWbPn.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 389,
+          "original_language": "en",
+          "original_title": "12 Angry Men",
+          "overview": "Zw\u00F6lf Geschworene verhandeln im Juryraum in br\u00FCtender Hitze \u00FCber das Schicksal eines Jungen, der angeklagt ist, seinen Vater get\u00F6tet zu haben. Als das Urteil \u0022Schuldig\u0022 beinahe feststeht, formuliert der Geschworene Nr. 8 seine Zweifel. Gegen den teils erbitterten Widerstand der Mehrheit entwickelt er nach und nach mit ruhiger Logik seine Argumente. Der Kampf der Meinungen setzt unerwartete Vorurteile und Charakterz\u00FCge der zw\u00F6lf M\u00E4nner frei, deren Gewissenspr\u00FCfungen f\u00FCr den Angeklagten ausfallen.",
+          "popularity": 11.5041,
+          "poster_path": "/iwTxk2SWQBxCR3tnDnLOqxHn01u.jpg",
+          "release_date": "1957-04-10",
+          "title": "Die zw\u00F6lf Geschworenen",
+          "video": false,
+          "vote_average": 8.549,
+          "vote_count": 9595
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ukfI9QkU1aIhOhKXYWE9n3z1mFR.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            14
+          ],
+          "id": 129,
+          "original_language": "ja",
+          "original_title": "\u5343\u3068\u5343\u5C0B\u306E\u795E\u96A0\u3057",
+          "overview": "Als die kleine Chihiro mit ihren Eltern w\u00E4hrend eines Ausflugs einen dunklen Tunnel durchquert, ahnt sie noch nicht, was sie auf der anderen Seite erwarten wird. Denn dort liegt eine f\u00FCr Menschen normalerweise unsichtbare Stadt der Geister. Zu allem \u00DCbel muss Chihiro dann auch noch feststellen, dass sich ihre Eltern in Schweine verwandelt haben und sie selbst pl\u00F6tzlich unsichtbar zu werden scheint...",
+          "popularity": 18.9343,
+          "poster_path": "/wWNLsGvKqhi6cNWul0uvhqbQ4kl.jpg",
+          "release_date": "2001-07-20",
+          "title": "Chihiros Reise ins Zauberland",
+          "video": false,
+          "vote_average": 8.533,
+          "vote_count": 17730
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dGOZdWOB8OpZFVziEOUFhox5wz9.jpg",
+          "genre_ids": [
+            18,
+            28,
+            80,
+            53
+          ],
+          "id": 155,
+          "original_language": "en",
+          "original_title": "The Dark Knight",
+          "overview": "Gemeinsam mit Bezirksstaatsanwalt Harvey Dent und Lieutenant James Gordon versucht der im Fledermauskost\u00FCm agierende Milliard\u00E4r Bruce Wayne dem Verbrechen in Gotham City Einhalt zu gebieten. Wie aus dem Nichts taucht pl\u00F6tzlich ein psychotischer Superverbrecher auf - der Joker. In seiner wahnhaften Vision m\u00F6chte er die Stadt in Chaos und Anarchie st\u00FCrzen und Batman scheint der einzige, der ihn stoppen kann. Bis es zum endg\u00FCltigen Show-Down kommt, wird aber viel Blut flie\u00DFen und auch Menschen die Bruce Wayne nahe stehen, k\u00F6nnten Opfer werden.",
+          "popularity": 27.9719,
+          "poster_path": "/z1DfRQf2CgnROyhVZ6ch8FbWt71.jpg",
+          "release_date": "2008-07-16",
+          "title": "The Dark Knight",
+          "video": false,
+          "vote_average": 8.524,
+          "vote_count": 34855
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zQDFHYNVVVp9OAYSixYAG1SyX1l.jpg",
+          "genre_ids": [
+            35,
+            18,
+            10749
+          ],
+          "id": 19404,
+          "original_language": "hi",
+          "original_title": "\u0926\u093F\u0932\u0935\u093E\u0932\u0947 \u0926\u0941\u0932\u094D\u0939\u0928\u093F\u092F\u093E \u0932\u0947 \u091C\u093E\u092F\u0947\u0902\u0917\u0947",
+          "overview": "Eine Europareise mit romantischen Folgen: Auf seiner Interrailtour begegnet Raj Simran, einem M\u00E4dchen aus gutem Hause. Seinen Ann\u00E4herungsversuchen geht sie zun\u00E4chst erfolgreich aus dem Weg, denn immerhin ist Simran bereits einem Anderen versprochen. Doch in der Schweiz, auf fahrenden Z\u00FCgen und duftenden Almwiesen, erliegt sie seinem Charme, und bald ist klar: Sie geh\u00F6ren zusammen. Nur Simrans Familie stellt sich ihrem Gl\u00FCck entgegen. \u0022Dilwale Dulhania Le Jayenge\u0022 markiert die Geburtsstunde des Leinwandtraumpaars Shah Rukh Khan und Kajol und gilt unumstritten als Meilenstein indischer Film- und Kulturgeschichte. Neben des ausgepr\u00E4gt zelebrierten Schweiz-Mythos kommen hier alle wichtigen Grundzutaten soliden Bollywoodkinos zusammen und machen den Film zu einer der erfolgreichsten indischen Produktionen aller Zeiten, die selbst heute noch in den Kinos Indiens zu sehen ist.",
+          "popularity": 5.3452,
+          "poster_path": "/mZTE5SrxAEhgeM3sWLXNhRTjiGc.jpg",
+          "release_date": "1995-10-20",
+          "title": "Dilwale Dulhania Le Jayenge - Wer zuerst kommt, kriegt die Braut",
+          "video": false,
+          "vote_average": 8.5,
+          "vote_count": 4522
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/b6HWTOxn1xevvyHU2K9ICvaRU6g.jpg",
+          "genre_ids": [
+            14,
+            18,
+            80
+          ],
+          "id": 497,
+          "original_language": "en",
+          "original_title": "The Green Mile",
+          "overview": "Paul Edgecomb und seine Kollegen sind W\u00E4rter im Todestrakt eines Gef\u00E4ngnisses in den 30ern. Paul versieht seinen Job zwar immer noch mit der gr\u00F6\u00DFtm\u00F6glichen Menschlichkeit, doch er wird zunehmend zynischer, da er st\u00E4ndig Menschen sterben sieht. Au\u00DFerdem ist er krank. Da kommt ein neuer Delinquent in den Trakt: John Coffey, ein farbiger Riese von friedlichster Bauart, der im Dunkeln Angst hat. Wie sich herausstellt, hat Coffey heilende F\u00E4higkeiten, die auch Paul kennenlernt. Zunehmend ger\u00E4t er in Zweifel, ob dieser Gigant sterben soll, vor allem da er die Morde, wegen der er verurteilt ist, nicht begangen zu haben scheint. Doch der Stuhl wartet und Coffeys Gabe droht f\u00FCr immer zu verschwinden ...",
+          "popularity": 16.5361,
+          "poster_path": "/frsZNikjMbp1gfidAl3zm1PAMHk.jpg",
+          "release_date": "1999-12-10",
+          "title": "The Green Mile",
+          "video": false,
+          "vote_average": 8.503,
+          "vote_count": 18630
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hiKmpZMGZsrkA3cdce8a7Dpos1j.jpg",
+          "genre_ids": [
+            35,
+            53,
+            18
+          ],
+          "id": 496243,
+          "original_language": "ko",
+          "original_title": "\uAE30\uC0DD\uCDA9",
+          "overview": "Familie Kim ist ganz unten angekommen: Vater, Mutter, Sohn und Tochter hausen in einem gr\u00FCnlich-schummrigen Keller und sind sich f\u00FCr keinen Aushilfsjob zu schade. Erst als der J\u00FCngste eine Anstellung als Nachhilfelehrer in der todschicken Villa der Familie Park antritt, steigen die Kims ein ins Karussell der Klassenk\u00E4mpfe. Mit findigen Tricksereien, bemerkenswertem Talent und gro\u00DFem Mannschaftsgeist gelingt es ihnen, die bisherigen Bediensteten der Familie Park nach und nach loszuwerden. Bald schon sind die Kims unverzichtbar f\u00FCr ihre neuen Herrschaften. Doch dann l\u00F6st ein unerwarteter Zwischenfall eine Kette von Ereignissen aus, die so unvorhersehbar wie unfassbar sind.",
+          "popularity": 20.7403,
+          "poster_path": "/hoqe3leVhHBgboB6G1bv1kB8K4p.jpg",
+          "release_date": "2019-05-30",
+          "title": "Parasite",
+          "video": false,
+          "vote_average": 8.495,
+          "vote_count": 19832
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
+          "genre_ids": [
+            12,
+            14,
+            28
+          ],
+          "id": 122,
+          "original_language": "en",
+          "original_title": "The Lord of the Rings: The Return of the King",
+          "overview": "Saurons Heer will Minas Tirith angreifen, die in Felsen errichtete Hauptstadt von Gondor. Angesichts der Bedrohlichkeit des feindlichen Heeres wiegt es umso schwerer, dass Gondors K\u00F6nig fehlt und nur der schw\u00E4chliche Truchsess Denethor \u00FCber das einst m\u00E4chtige K\u00F6nigreich wacht. Wird Aragorn die Kraft aufbringen, jene Aufgabe zu \u00FCbernehmen, f\u00FCr die sein Schicksal ihn bestimmt hat? W\u00E4hrend Gandalf verzweifelt versucht, die mutlosen K\u00E4mpfer von Gondor zu motivieren, sammelt Th\u00E9oden die Krieger von Rohan, um am Kampf teilzunehmen. Aber obwohl sie tapfer und leidenschaftlich Widerstand leisten, haben die Streitkr\u00E4fte der Menschen dem \u00FCberw\u00E4ltigenden Ansturm der feindlichen Legionen gegen das K\u00F6nigreich kaum etwas entgegenzusetzen. Jeder Sieg fordert gro\u00DFe Opfer. Trotz der starken Verluste stellen sich die Gef\u00E4hrten der gr\u00F6\u00DFten Schlacht ihres Lebens - vereint durch ein einziges Ziel: Sauron muss so lange abgelenkt werden, bis Frodo den Ring vernichtet hat...",
+          "popularity": 20.6783,
+          "poster_path": "/uFjlP9U9UOZAzGB25HUtmlEpXbc.jpg",
+          "release_date": "2003-12-17",
+          "title": "Der Herr der Ringe - Die R\u00FCckkehr des K\u00F6nigs",
+          "video": false,
+          "vote_average": 8.491,
+          "vote_count": 25759
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+          "genre_ids": [
+            53,
+            80,
+            35
+          ],
+          "id": 680,
+          "original_language": "en",
+          "original_title": "Pulp Fiction",
+          "overview": "Vincent Vega und Jules Winnfield holen f\u00FCr ihren Boss Marsellus Wallace eine schwarze Aktentasche aus einer Wohnung ab. Drei Jungs, die ihnen dabei im Weg stehen, lassen ihr Leben. Die Killer machen sich mit einem vierten Jungen als Geisel auf den Weg ins Hauptquartier. Doch als das Auto \u00FCber eine Stra\u00DFenerh\u00F6hung schaukelt, erschie\u00DFt Vincent aus Versehen die Geisel. Um den blutverspritzten Wagen zu reinigen, machen die beiden einen Abstecher zu Jules\u0027s Freund Jimmie, wo auf Befehl vom Boss ein Spezialist f\u00FCr schwierige Auftr\u00E4ge zu ihnen st\u00F6\u00DFt: The Wolf...",
+          "popularity": 21.2114,
+          "poster_path": "/hOg9USqmQmglmr5kGvpyg1XkhqN.jpg",
+          "release_date": "1994-09-10",
+          "title": "Pulp Fiction",
+          "video": false,
+          "vote_average": 8.487,
+          "vote_count": 29412
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8x9iKH8kWA0zdkgNdpAew7OstYe.jpg",
+          "genre_ids": [
+            16,
+            10749,
+            18
+          ],
+          "id": 372058,
+          "original_language": "ja",
+          "original_title": "\u541B\u306E\u540D\u306F\u3002",
+          "overview": "Mitsuha lebt gemeinsam mit ihrer kleinen Schwester Yotsuha bei ihrer Gro\u00DFmutter in einer l\u00E4ndlichen Kleinstadt Japans. Insgeheim beklagt sie ihr abgeschiedenes Dasein in der Provinz und w\u00FCnscht sich ein aufregendes Leben in der Gro\u00DFstadt. Taki w\u00FCrde sich freuen, so beschaulich aufzuwachsen, denn er wohnt in der Millionen-Metropole Tokio, verbringt viel Zeit mit seinen Freunden und jobbt neben der Schule in einem italienischen Restaurant. Eines Tages scheint Mitsuha einen Traum zu haben, in dem sie sich als Junge in Tokio wiederfindet. Parallel macht Taki eine \u00E4hnliche Erfahrung: Er findet sich als M\u00E4dchen in einer Kleinstadt in den Bergen wieder, wo er noch nie zuvor war. Doch wie kommt es zu dieser schicksalhaften Verstrickung und welches Geheimnis verbirgt sich wirklich hinter den Tr\u00E4umen der beiden Teenager?",
+          "popularity": 18.3691,
+          "poster_path": "/7bAtBUQRC1M4zaIlihesBPTAJ8a.jpg",
+          "release_date": "2016-08-26",
+          "title": "Your Name. - Gestern, heute und f\u00FCr immer",
+          "video": false,
+          "vote_average": 8.479,
+          "vote_count": 12168
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/Adrip2Jqzw56KeuV2nAxucKMNXA.jpg",
+          "genre_ids": [
+            37
+          ],
+          "id": 429,
+          "original_language": "it",
+          "original_title": "Il buono, il brutto, il cattivo",
+          "overview": "Ein mysteri\u00F6ser Fremder, der mexikanische Revolversch\u00FCtze Tuco und Sentenza, ein sadistischer Krimineller, sind auf der Jagd nach einer Geldkassette. Inhalt: 200.000 Dollar. Die drei Desperados haben untereinander nichts gemeinsam - werden aber zu Komplizen, wenn es die Situation erfordert. Doch jeder verfolgt nur ein Ziel: die Geldkassette. Und keiner von ihnen ist bereit, zu teilen...",
+          "popularity": 11.8812,
+          "poster_path": "/yFfRQOFHGhJ5DKheExHyIPbpLyF.jpg",
+          "release_date": "1966-12-22",
+          "title": "Zwei glorreiche Halunken",
+          "video": false,
+          "vote_average": 8.5,
+          "vote_count": 9294
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5XNQBqnBwPA9yT0jZ0p3s8bbLh0.jpg",
+          "genre_ids": [
+            12,
+            18,
+            878
+          ],
+          "id": 157336,
+          "original_language": "en",
+          "original_title": "Interstellar",
+          "overview": "Was Wissenschaftler, Politiker und Aktivisten seit Jahrzehnten prophezeien, ist eingetreten: Die Menschheit steht kurz davor, an einer globalen Nahrungsknappheit zugrunde zu gehen. Die einzige Hoffnung der Weltbev\u00F6lkerung besteht in einem geheimen Projekt der US-Regierung, das von dem findigen Wissenschaftler Professor Brand geleitet wird. Der Plan sieht vor, eine Expedition in ein anderes Sternensystem zu starten, wo bewohnbare Planeten, Rohstoffe und vor allem Leben vermutet werden. Der Ingenieur und ehemalige NASA-Pilot Cooper und Brands Tochter Amelia f\u00FChren die Besatzung an, die sich auf eine Reise ins Ungewisse begibt: Wurml\u00F6cher sind so gut wie unerforscht und niemand kann mit Sicherheit sagen, was die Crew auf der anderen Seite erwartet. Ebenso ist unsicher, ob und wann Cooper und Brand wieder auf die Erde zur\u00FCckkehren. Coopers Kinder, Tochter Murph und Sohn Tom, m\u00FCssen mit Schwiegervater Donald zur\u00FCckbleiben und auf seine Wiederkehr hoffen...",
+          "popularity": 46.3929,
+          "poster_path": "/hHdhfkkzt0Mwec33Ux177Z7CO8w.jpg",
+          "release_date": "2014-11-05",
+          "title": "Interstellar",
+          "video": false,
+          "vote_average": 8.464,
+          "vote_count": 38446
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+          "genre_ids": [
+            35,
+            18,
+            10749
+          ],
+          "id": 13,
+          "original_language": "en",
+          "original_title": "Forrest Gump",
+          "overview": "Von seiner Mutter r\u00FCckhaltlos unterst\u00FCtzt, macht sich der geistig ein wenig zur\u00FCckgebliebene Forrest Gump in die Welt auf. Er bringt Elvis seinen Tanzstil bei, findet in der jungen Jenny eine echte Freundin, wird aufgrund seines Laufverm\u00F6gens ein Football-Star, steht im Vietnamkrieg seinen Mann, rettet seinen Vorgesetzten Dan Taylor vor dem sicheren Tod und wird schlie\u00DFlich im Shrimps-Business zum Million\u00E4r. Doch all die Zeit kann er seine gro\u00DFe Liebe Jenny nicht vergessen.",
+          "popularity": 23.0188,
+          "poster_path": "/zUWRCzac72YuO9k5kEWSe0aGbs7.jpg",
+          "release_date": "1994-06-23",
+          "title": "Forrest Gump",
+          "video": false,
+          "vote_average": 8.462,
+          "vote_count": 28975
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7TF4p86ZafnxFuNqWdhpHXFO244.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 769,
+          "original_language": "en",
+          "original_title": "GoodFellas",
+          "overview": "Jimmy und Tommy k\u00F6nnen machen, was sie wollen. Sie sind Mitglieder der New Yorker Quartier-Mafia, brauchen auf niemanden R\u00FCcksicht zu nehmen und verdienen eine Menge Geld. Henry Hill ist von diesem Leben fasziniert und arbeitet daran, es ebenfalls f\u00FChren zu k\u00F6nnen. Er wird in die Mafia aufgenommen und macht Karriere - schon bald organisiert er selbst Bank\u00FCberf\u00E4lle. Wer dabei im Weg steht, wird \u0022wegger\u00E4umt\u0022, umgebracht. Dabei sind Jimmy und vor allem Tommy nicht zimperlich. Sie verstehen ihr Handwerk, einschlie\u00DFlich Mord, und kennen weder Pardon noch Gewissen...",
+          "popularity": 14.7734,
+          "poster_path": "/9HJ5o6PYEa03UwnJhQ2thO8CFPW.jpg",
+          "release_date": "1990-09-12",
+          "title": "GoodFellas",
+          "video": false,
+          "vote_average": 8.453,
+          "vote_count": 13844
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qvZ91FwMq6O47VViAr8vZNQz3WI.jpg",
+          "genre_ids": [
+            28,
+            18
+          ],
+          "id": 346,
+          "original_language": "ja",
+          "original_title": "\u4E03\u4EBA\u306E\u4F8D",
+          "overview": "Japan im 16. Jahrhundert. Einmal im Jahr f\u00E4llt eine R\u00E4uberbande in abgelegenes Provinznest ein und klaut den dort ans\u00E4\u00DFigen Bauern alle Vorr\u00E4te und Wertsachen. Um dem Einhalt zu gebieten, wenden sich diese hilfesuchend an umhervagabundierende Samurai. Sieben Wanderkrieger entschlie\u00DFen sich aus unterschiedlichsten Motiven, den Landwirten beizustehen. Gemeinsam machen sie sich daran, das Dorf in eine Festung und die Agronomen in Hilfssoldaten umzur\u00FCsten, und schlie\u00DFlich weicht auch ihre urspr\u00FCngliche S\u00F6ldnermentalit\u00E4t einem aufrichtigen Gef\u00FChl der Solidarit\u00E4t.",
+          "popularity": 7.5788,
+          "poster_path": "/zhPyobDDr7qT4kQXXDokNINnh9E.jpg",
+          "release_date": "1954-04-26",
+          "title": "Die sieben Samurai",
+          "video": false,
+          "vote_average": 8.45,
+          "vote_count": 4053
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aHaqZpOL7UyVu0nKqp3SMz0o2E1.jpg",
+          "genre_ids": [
+            16,
+            18,
+            10752
+          ],
+          "id": 12477,
+          "original_language": "ja",
+          "original_title": "\u706B\u5782\u308B\u306E\u5893",
+          "overview": "Japan, 1945. Das Land steht kurz vor der Kapitulation. T\u00E4glich werfen amerikanische Flieger Bomben vom Himmel und setzen ganze Landstriche in Brand. Im Inferno eines solchen Angriffs verlieren der vierzehnj\u00E4hrige Seita und die vierj\u00E4hrige Setsuko ihre Mutter. Ohne den Vater, der bei der Marine ist und von dem sie seit Langem nichts mehr geh\u00F6rt haben, sind die Kinder pl\u00F6tzlich auf sich alleine gestellt. Ihrer Tante, bei der sie zun\u00E4chst unterkommen, sind die zus\u00E4tzlichen hungrigen M\u00E4uler in der herrschenden Hungersnot alles andere als willkommen. So ziehen die Geschwister in einen verlassenen Bunker und versuchen dort, auf eigene Faust zu \u00FCberleben. Allem Leid zum Trotz setzt Seita alles daran, seiner kleinen Schwester eine m\u00F6glichst unbeschwerte Kindheit zu bieten und tats\u00E4chlich verbringen die zwei einige gl\u00FCckliche Wochen. Doch die furchtbare Realit\u00E4t des unerbittlichen Krieges holt die beiden bald ein\u00A0\u2026",
+          "popularity": 0.0081,
+          "poster_path": "/kyDMWzQ28LvGh165vx1tyhZ7v4G.jpg",
+          "release_date": "1988-04-16",
+          "title": "Die letzten Gl\u00FChw\u00FCrmchen",
+          "video": false,
+          "vote_average": 8.446,
+          "vote_count": 6235
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6aNKD81RHR1DqUUa8kOZ1TBY1Lp.jpg",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "id": 637,
+          "original_language": "it",
+          "original_title": "La vita \u00E8 bella",
+          "overview": "Die Geschichte eines italienischen Buchh\u00E4ndlers j\u00FCdischer Abstammung, der in seiner eigenen M\u00E4rchenwelt lebt. Doch seine kreative Vorstellungskraft wird vor eine bittere Herausforderung gestellt, als er mit seiner ganzen Familie w\u00E4hrend des Holocaust in ein Konzentrationslager deportiert wird. Kurzerhand erkl\u00E4rt er seinem kleinen Sohn, dass alles nur ein Spiel sei.",
+          "popularity": 8.0228,
+          "poster_path": "/ule20QbkvWHv2T2UkC0qr9M5IxR.jpg",
+          "release_date": "1997-12-20",
+          "title": "Das Leben ist sch\u00F6n",
+          "video": false,
+          "vote_average": 8.441,
+          "vote_count": 13678
+        }
+      ],
+      "total_pages": 528,
+      "total_results": 10544
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=27290",
+      "x-memc": "HIT",
+      "x-memc-key": "5fa74236adc4c787ca2308c1a9449830a220a48734aa9e920b86d4e654ad1dfd",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00227b02951c9860bee804bb424707f75d39\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "Guid": "e753bd12-3083-eb45-95eb-89cf49d5a9db",
+  "UpdatedAt": "2025-12-24T11:53:34.9540063Z",
+  "Title": "Proxy Mapping for GET /3/keyword/33705/movies",
+  "Description": "Proxy Mapping for GET /3/keyword/33705/movies",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/keyword/33705/movies",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 33705,
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/aD7FXrm2GErTmzrIFBntPyhAqS9.jpg",
+          "genre_ids": [
+            53,
+            28
+          ],
+          "id": 1087891,
+          "original_language": "en",
+          "original_title": "The Amateur",
+          "overview": "After his life is turned upside down when his wife is killed in a London terrorist attack, a brilliant but introverted CIA decoder takes matters into his own hands when his supervisors refuse to take action.",
+          "popularity": 12.5338,
+          "poster_path": "/SNEoUInCa5fAgwuEBMIMBGvkkh.jpg",
+          "release_date": "2025-04-09",
+          "title": "The Amateur",
+          "video": false,
+          "vote_average": 6.977,
+          "vote_count": 1399
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eDtsTxALld2gPw9lO1hQIJXqMHu.jpg",
+          "genre_ids": [
+            12,
+            28,
+            53
+          ],
+          "id": 954,
+          "original_language": "en",
+          "original_title": "Mission: Impossible",
+          "overview": "When Ethan Hunt, the leader of a crack espionage team whose perilous operation has gone awry with no explanation, discovers that a mole has penetrated the CIA, he\u0027s surprised to learn that he\u0027s the prime suspect. To clear his name, Hunt now must ferret out the real double agent and, in the process, even the score.",
+          "popularity": 8.7148,
+          "poster_path": "/l5uxY5m5OInWpcExIpKG6AR3rgL.jpg",
+          "release_date": "1996-05-22",
+          "title": "Mission: Impossible",
+          "video": false,
+          "vote_average": 7.016,
+          "vote_count": 9676
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dGRGes6Yw0vK1IymLatHBXGvvpS.jpg",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "id": 9576,
+          "original_language": "en",
+          "original_title": "Tootsie",
+          "overview": "When struggling, out of work actor Michael Dorsey secretly adopts a female alter ego \u2013 Dorothy Michaels \u2013 in order to land a part in a daytime drama, he unwittingly becomes a feminist icon and ends up in a romantic pickle.",
+          "popularity": 8.1676,
+          "poster_path": "/ngyCzZwb9y5sMUCig5JQT4Y33Q.jpg",
+          "release_date": "1982-12-17",
+          "title": "Tootsie",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 1864
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tYwkQigtc8afw0XeEogSSG0YcYQ.jpg",
+          "genre_ids": [
+            28,
+            12,
+            53,
+            10752
+          ],
+          "id": 1369,
+          "original_language": "en",
+          "original_title": "Rambo: First Blood Part II",
+          "overview": "John Rambo is released from prison by the government for a top-secret covert mission to the last place on Earth he\u0027d want to return - the jungles of Vietnam.",
+          "popularity": 7.0922,
+          "poster_path": "/pzPdwOitmTleVE3YPMfIQgLh84p.jpg",
+          "release_date": "1985-05-21",
+          "title": "Rambo: First Blood Part II",
+          "video": false,
+          "vote_average": 6.651,
+          "vote_count": 4170
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gd2vQT8uMf1FAsiC0OdewL7XUFR.jpg",
+          "genre_ids": [
+            28,
+            35,
+            80,
+            53
+          ],
+          "id": 146216,
+          "original_language": "en",
+          "original_title": "RED 2",
+          "overview": "Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.",
+          "popularity": 8.1079,
+          "poster_path": "/tbksijr6g340yFWRgI4JfwrtM9h.jpg",
+          "release_date": "2013-07-18",
+          "title": "RED 2",
+          "video": false,
+          "vote_average": 6.529,
+          "vote_count": 4212
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eVHVwP71el20fofkCHo78ebQv7Q.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35,
+            80
+          ],
+          "id": 343668,
+          "original_language": "en",
+          "original_title": "Kingsman: The Golden Circle",
+          "overview": "When an attack on the Kingsman headquarters takes place and a new villain rises, Eggsy and Merlin are forced to work together with the American agency known as the Statesman to save the world.",
+          "popularity": 6.717,
+          "poster_path": "/34xBL6BXNYFqtHO9zhcgoakS4aP.jpg",
+          "release_date": "2017-09-20",
+          "title": "Kingsman: The Golden Circle",
+          "video": false,
+          "vote_average": 6.951,
+          "vote_count": 10874
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qFVv6qw6LqotUQofdwKSvxJfLnu.jpg",
+          "genre_ids": [
+            80,
+            28,
+            53
+          ],
+          "id": 254904,
+          "original_language": "en",
+          "original_title": "The November Man",
+          "overview": "An ex-CIA operative is brought back in on a very personal mission and finds himself pitted against his former pupil in a deadly game involving high level CIA officials and the Russian president-elect.",
+          "popularity": 6.1869,
+          "poster_path": "/4ejNFbCgLMDAuy7jFQmc7cr6UAW.jpg",
+          "release_date": "2014-08-27",
+          "title": "The November Man",
+          "video": false,
+          "vote_average": 6.11,
+          "vote_count": 1554
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oq3IOr7QvEmei0eXsXacqaMPqlV.jpg",
+          "genre_ids": [
+            28,
+            35,
+            12
+          ],
+          "id": 4327,
+          "original_language": "en",
+          "original_title": "Charlie\u0027s Angels",
+          "overview": "The captivating crime-fighting trio who are masters of disguise, espionage and martial arts are back! When a devious mastermind embroils them in a plot to destroy individual privacy, the Angels, aided by their loyal sidekick Bosley, set out to bring down the bad guys. But when a terrible secret is revealed, it makes the Angels targets for assassination.",
+          "popularity": 7.5216,
+          "poster_path": "/iHTmZs0BmkwMCYi8rhvMWC5G4EM.jpg",
+          "release_date": "2000-11-02",
+          "title": "Charlie\u0027s Angels",
+          "video": false,
+          "vote_average": 5.851,
+          "vote_count": 4382
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vBDHS8bdo5vzqaaqviMupznoRaN.jpg",
+          "genre_ids": [
+            28,
+            12,
+            80,
+            53
+          ],
+          "id": 11679,
+          "original_language": "en",
+          "original_title": "xXx: State of the Union",
+          "overview": "Darius Stone\u0027s criminal record and extreme sports obsession make him the perfect candidate to be the newest XXX agent. He must save the U.S. government from a deadly conspiracy led by five-star general and Secretary of Defense George Deckert.",
+          "popularity": 6.2238,
+          "poster_path": "/9Bmvsv11yf4eIHRePul7sFO1Oh.jpg",
+          "release_date": "2005-04-27",
+          "title": "xXx: State of the Union",
+          "video": false,
+          "vote_average": 5.1,
+          "vote_count": 1959
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yD4FojKumGSeA0Z8m49VZ8GKUuJ.jpg",
+          "genre_ids": [
+            28
+          ],
+          "id": 464889,
+          "original_language": "en",
+          "original_title": "Sniper: Ultimate Kill",
+          "overview": "For the first time, Brandon Beckett, Richard Miller and Sgt. Thomas Beckett join forces in Colombia to take down a brutal drug cartel. When a deadly sniper with advanced, never-before-seen weaponry targets local Special Agent Kate Estrada, our elite team is in for the ultimate battle in this explosive, game-changing action thriller.",
+          "popularity": 6.8894,
+          "poster_path": "/kdahBLqWeEuDsM4fCBrXw8oCNRm.jpg",
+          "release_date": "2017-10-03",
+          "title": "Sniper: Ultimate Kill",
+          "video": false,
+          "vote_average": 6.4,
+          "vote_count": 367
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/24DZfupDlhXeTchmcOkoGRhP5Vg.jpg",
+          "genre_ids": [
+            12,
+            28,
+            53
+          ],
+          "id": 955,
+          "original_language": "en",
+          "original_title": "Mission: Impossible II",
+          "overview": "With computer genius Luther Stickell at his side and a beautiful thief on his mind, agent Ethan Hunt races across Australia and Spain to stop a former IMF agent from unleashing a genetically engineered biological weapon called Chimera. This mission, should Hunt choose to accept it, plunges him into the center of an international crisis of terrifying magnitude.",
+          "popularity": 7.2981,
+          "poster_path": "/hfnrual76gPeNFduhD4xzHWpfTw.jpg",
+          "release_date": "2000-05-24",
+          "title": "Mission: Impossible II",
+          "video": false,
+          "vote_average": 6.136,
+          "vote_count": 7310
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/27Mj3rFYP3xqFy7lnz17vEd8Ms.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 725201,
+          "original_language": "en",
+          "original_title": "The Gray Man",
+          "overview": "When a shadowy CIA agent uncovers damning agency secrets, he\u0027s hunted across the globe by a sociopathic rogue operative who\u0027s put a bounty on his head.",
+          "popularity": 6.4794,
+          "poster_path": "/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg",
+          "release_date": "2022-07-13",
+          "title": "The Gray Man",
+          "video": false,
+          "vote_average": 6.919,
+          "vote_count": 4027
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eY9Fv5KcqC5gg9vhkjLSbG77JHA.jpg",
+          "genre_ids": [
+            80,
+            35,
+            18
+          ],
+          "id": 509874,
+          "original_language": "en",
+          "original_title": "Lying and Stealing",
+          "overview": "Hoping to leave his criminal lifestyle behind him, a successful art thief teams up with a sexy con woman to pull off the ultimate heist and set himself free.",
+          "popularity": 5.0369,
+          "poster_path": "/ovqZDpefLSIfSXBlMnPVaUDKMCy.jpg",
+          "release_date": "2019-07-12",
+          "title": "Lying and Stealing",
+          "video": false,
+          "vote_average": 5.852,
+          "vote_count": 369
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nfhMm5o8BiihmeXjuJAd3s0gqaq.jpg",
+          "genre_ids": [
+            878,
+            28,
+            12,
+            53
+          ],
+          "id": 460648,
+          "original_language": "zh",
+          "original_title": "\u673A\u5668\u4E4B\u8840",
+          "overview": "Jackie Chan stars as a hardened special forces agent who fights to protect a young woman from a sinister criminal gang. At the same time, he feels a special connection to the young woman, like they met in a different life.",
+          "popularity": 5.1186,
+          "poster_path": "/vL1KMUr0Jj6kEZ5YPZO7VQBZMLl.jpg",
+          "release_date": "2017-12-18",
+          "title": "Bleeding Steel",
+          "video": false,
+          "vote_average": 5.938,
+          "vote_count": 545
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/amzkecDZgbsrBqgMGAurLJPzSea.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 263241,
+          "original_language": "de",
+          "original_title": "Der Blaue",
+          "overview": "In this German political drama, an ex-Stasi agent encounters an old friend whom he may have betrayed after his friend tried to escape East Germany. The former East German agent is Otto Skrodt who after many years is about to be promoted in the highest government ranks. He is anxious to maintain a squeaky clean image. His daughter is Isabelle. The young and friendly Kalle returns after spending many years in jail for his escape attempts. He doesn\u0027t know exactly who blew the whistle, but his friend Skrodt is definitely under suspicion. Kalle returns to ostensibly renew the friendship and to see Isabelle whom he loves. The duplicitous friendship between the two men becomes the main focus of the story which features interesting plot twists at the end.",
+          "popularity": 5.5866,
+          "poster_path": "/5QQ81gJbQSgQY4YrggbIe67scGq.jpg",
+          "release_date": "1994-02-21",
+          "title": "The Blue One",
+          "video": false,
+          "vote_average": 3.583,
+          "vote_count": 6
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/o37Ajo7Ii9L9qi5tGxxAWodyCWt.jpg",
+          "genre_ids": [
+            35,
+            28,
+            53
+          ],
+          "id": 629028,
+          "original_language": "ko",
+          "original_title": "\uBBF8\uC158 \uD30C\uC11C\uBE14",
+          "overview": "Chinese secret agent Da-hee receives intel that a large number of illegal firearms are being smuggled into Korea and is sent to investigate the case. She meets Su-han, who is supposed to help her with the case, but due to his lackluster skills they fight over trivial things. But as their witnesses are suddenly murdered, the two of them quickly become the prime suspects.",
+          "popularity": 4.1683,
+          "poster_path": "/l2VrjVMJvyYizizmTkro22GLLnt.jpg",
+          "release_date": "2021-02-17",
+          "title": "Mission: Possible",
+          "video": false,
+          "vote_average": 7.503,
+          "vote_count": 187
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1iwpwlP9SafsCxMKieZVlxCjYaa.jpg",
+          "genre_ids": [
+            28,
+            35
+          ],
+          "id": 10905,
+          "original_language": "en",
+          "original_title": "The Man with One Red Shoe",
+          "overview": "A man is mistaken as a spy by the CIA when he arrives at the airport with one red shoe.",
+          "popularity": 5.1233,
+          "poster_path": "/lD44uiCKnLVCKiEnB0urtqIR0nE.jpg",
+          "release_date": "1985-07-18",
+          "title": "The Man with One Red Shoe",
+          "video": false,
+          "vote_average": 5.683,
+          "vote_count": 292
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pO1SnM5a1fEsYrFaVZW78Wb0zRJ.jpg",
+          "genre_ids": [
+            16,
+            12,
+            10751,
+            35,
+            10770
+          ],
+          "id": 677638,
+          "original_language": "en",
+          "original_title": "We Bare Bears: The Movie",
+          "overview": "When Grizz, Panda, and Ice Bear\u0027s love of food trucks and viral videos get out of hand, the brothers are now chased away from their home and embark on a trip to Canada, where they can live in peace.",
+          "popularity": 4.3127,
+          "poster_path": "/kPzcvxBwt7kEISB9O4jJEuBn72t.jpg",
+          "release_date": "2020-06-30",
+          "title": "We Bare Bears: The Movie",
+          "video": false,
+          "vote_average": 7.839,
+          "vote_count": 836
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kwZvgDGG0gZdhOuV0fjEm32PYep.jpg",
+          "genre_ids": [
+            28,
+            12,
+            18,
+            53
+          ],
+          "id": 10355,
+          "original_language": "ko",
+          "original_title": "\uC26C\uB9AC",
+          "overview": "North Korea\u0027s 8th Special Forces hijack a shipment of CTX, a potent new liquid explosive, and threatens South Korea as part of a plot to re-unify the two countries. Ryu and Lee, special agents of O.P.,  South Korea\u0027s secret intelligence service, attempt to track down the terrorists and find the CTX. Meanwhile Hee, the 8th\u0027s ultra-bad female sniper, resurfaces to wreak havoc and haunt Ryu.",
+          "popularity": 3.7917,
+          "poster_path": "/7rmye0ThMHMT2VhZj7zdyCcHQVe.jpg",
+          "release_date": "1999-02-13",
+          "title": "Shiri",
+          "video": false,
+          "vote_average": 6.4,
+          "vote_count": 178
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zTXMEdV26OiM6rTfZfKjjoHS3yH.jpg",
+          "genre_ids": [
+            28,
+            35,
+            80
+          ],
+          "id": 4292,
+          "original_language": "en",
+          "original_title": "Eat the Rich",
+          "overview": "Alex is a disgruntled waiter at a snobby exclusive restaurant who falls on hard times. Forced to deal with the contempt and disgust of the upper class, Alex \u0026 cohorts attempt to go on a rampage. Meanwhile, General Karprov and Spider plot to involve the inept anarchists into their plans to derail the prime-minister-to-be\u0027s campaign.",
+          "popularity": 4.2317,
+          "poster_path": "/yFGWfpzH1sR4sL1T7J0Kae59UE9.jpg",
+          "release_date": "1987-10-23",
+          "title": "Eat the Rich",
+          "video": false,
+          "vote_average": 6.171,
+          "vote_count": 35
+        }
+      ],
+      "total_pages": 7,
+      "total_results": 124
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=17313",
+      "x-memc": "HIT",
+      "x-memc-key": "6347596faed91621f4f6cb532e717f19978811ebbef18ae3bb884d4c4528fc61",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002276ab9cc5773243ab3195f803fe5e899c\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

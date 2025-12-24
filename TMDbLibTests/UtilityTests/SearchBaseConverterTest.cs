@@ -19,15 +19,15 @@ public class SearchBaseConverterTest : TestBase
     [Fact]
     public async Task SearchBaseConverter_Movie()
     {
-        SearchMovie original = new SearchMovie
+        var original = new SearchMovie
         {
             OriginalTitle = "Hello world"
         };
 
-        string json = Serializer.SerializeToString(original);
-        SearchMovie result = Serializer.DeserializeFromString<SearchBase>(json) as SearchMovie;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<SearchBase>(json) as SearchMovie;
 
-        Assert.Equal(original.OriginalTitle, result.OriginalTitle);
+        Assert.Equal(original.OriginalTitle, result?.OriginalTitle);
         await Verify(new
         {
             json,
@@ -41,16 +41,16 @@ public class SearchBaseConverterTest : TestBase
     [Fact]
     public async Task SearchBaseConverter_Tv()
     {
-        SearchTv original = new SearchTv
+        var original = new SearchTv
         {
             OriginalName = "Hello world"
         };
 
-        string json = Serializer.SerializeToString(original);
-        SearchTv result = Serializer.DeserializeFromString<SearchBase>(json) as SearchTv;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<SearchBase>(json) as SearchTv;
 
-        Assert.Equal(original.MediaType, result.MediaType);
-        Assert.Equal(original.OriginalName, result.OriginalName);
+        Assert.Equal(original.MediaType, result?.MediaType);
+        Assert.Equal(original.OriginalName, result?.OriginalName);
         await Verify(new
         {
             json,
@@ -64,16 +64,16 @@ public class SearchBaseConverterTest : TestBase
     [Fact]
     public async Task SearchBaseConverter_Person()
     {
-        SearchPerson original = new SearchPerson
+        var original = new SearchPerson
         {
             Name = "Hello world"
         };
 
-        string json = Serializer.SerializeToString(original);
-        SearchPerson result = Serializer.DeserializeFromString<SearchBase>(json) as SearchPerson;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<SearchBase>(json) as SearchPerson;
 
-        Assert.Equal(original.MediaType, result.MediaType);
-        Assert.Equal(original.Name, result.Name);
+        Assert.Equal(original.MediaType, result?.MediaType);
+        Assert.Equal(original.Name, result?.Name);
         await Verify(new
         {
             json,
@@ -88,7 +88,7 @@ public class SearchBaseConverterTest : TestBase
     public async Task TestSearchBaseConverter()
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMultiAsync("Jobs", i));
-        SearchContainer<SearchBase> result = await TMDbClient.SearchMultiAsync("Jobs");
+        var result = await TMDbClient.SearchMultiAsync("Jobs");
 
         Assert.NotNull(result);
         Assert.NotNull(result.Results);

@@ -1,0 +1,271 @@
+{
+  "Guid": "c81c17d0-42ee-4e40-b868-91b8a89a025d",
+  "UpdatedAt": "2025-12-24T11:53:34.6365364Z",
+  "Title": "Proxy Mapping for GET /3/movie/19995/lists",
+  "Description": "Proxy Mapping for GET /3/movie/19995/lists",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/19995/lists",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 19995,
+      "page": 1,
+      "results": [
+        {
+          "description": "Last updated: 24/12/2025 09:02",
+          "favorite_count": 0,
+          "id": 8550268,
+          "item_count": 10,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Disney UK Top 10 Movies",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8570770,
+          "item_count": 159,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "klam Film ",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8168597,
+          "item_count": 18046,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "movies",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8543704,
+          "item_count": 10,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Mr. Wise",
+          "poster_path": null
+        },
+        {
+          "description": "Movies (and the occasional tv show) I love, that are not necessarily actually any good.",
+          "favorite_count": 0,
+          "id": 8579925,
+          "item_count": 324,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Crusoe Ink",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8238235,
+          "item_count": 15356,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "My Movie Library",
+          "poster_path": null
+        },
+        {
+          "description": "Live-action movies I have seen at some point in my life.",
+          "favorite_count": 0,
+          "id": 113214,
+          "item_count": 419,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Live-Action Movies",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 103747,
+          "item_count": 1377,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Grandma",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8250820,
+          "item_count": 1198,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "watched",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8544061,
+          "item_count": 398,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Movies",
+          "poster_path": null
+        },
+        {
+          "description": "As the title says.",
+          "favorite_count": 0,
+          "id": 8574911,
+          "item_count": 1120,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Movies I have watched",
+          "poster_path": null
+        },
+        {
+          "description": "Cain Cinema features a 4K UHD picture on a 120\u0022 (16:9) screen, and a 7.2.4 Dolby Atmos audio experience. ",
+          "favorite_count": 0,
+          "id": 7081593,
+          "item_count": 2024,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Now Showing at Cain Cinema",
+          "poster_path": null
+        },
+        {
+          "description": "Vu au cin\u00E9ma",
+          "favorite_count": 0,
+          "id": 8577199,
+          "item_count": 87,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Cin\u00E9ma",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8521004,
+          "item_count": 163,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "2025",
+          "poster_path": null
+        },
+        {
+          "description": "\u003C3",
+          "favorite_count": 0,
+          "id": 101542,
+          "item_count": 1329,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Vaached\u2764",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8291513,
+          "item_count": 191,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "General",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8197238,
+          "item_count": 488,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Foreign Films",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8218341,
+          "item_count": 1034,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Watched",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8242202,
+          "item_count": 512,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Movies Seen",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8562949,
+          "item_count": 57,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "ty",
+          "poster_path": null
+        }
+      ],
+      "total_pages": 94,
+      "total_results": 1866
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=27388",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "65408aa66d656eb9034c69c144104ab3466152aaf4207fa66e580c5db0b81da5",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00221e2c27dd5162ebda5c6a49811782994a\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

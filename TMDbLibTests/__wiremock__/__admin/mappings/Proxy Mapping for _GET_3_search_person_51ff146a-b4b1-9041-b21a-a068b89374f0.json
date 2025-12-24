@@ -1,0 +1,148 @@
+{
+  "Guid": "51ff146a-b4b1-9041-b21a-a068b89374f0",
+  "UpdatedAt": "2025-12-24T11:53:34.4102501Z",
+  "Title": "Proxy Mapping for GET /3/search/person",
+  "Description": "Proxy Mapping for GET /3/search/person",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/person",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "Bryan Cranston",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "include_adult",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "false",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 17419,
+          "known_for_department": "Acting",
+          "name": "Bryan Cranston",
+          "original_name": "Bryan Cranston",
+          "popularity": 4.7952,
+          "profile_path": "/npIIZJGSrcJIJ6yHdmbqO6Jzo5I.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+              "id": 1396,
+              "name": "Breaking Bad",
+              "original_name": "Breaking Bad",
+              "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+              "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                80
+              ],
+              "popularity": 150.5089,
+              "first_air_date": "2008-01-20",
+              "vote_average": 8.9,
+              "vote_count": 16729,
+              "origin_country": [
+                "US"
+              ]
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/oNPoo0xR9CMNYoHX8PIyVJNbQiq.jpg",
+              "id": 399174,
+              "title": "Isle of Dogs",
+              "original_title": "Isle of Dogs",
+              "overview": "In the future, an outbreak of canine flu leads the mayor of a Japanese city to banish all dogs to an island used as a garbage dump. The outcasts must soon embark on an epic journey when a 12-year-old boy arrives on the island to find his beloved pet.",
+              "poster_path": "/m2q7oCHyH38y5bUiPWs6BI3T8Di.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                12,
+                35,
+                16
+              ],
+              "popularity": 6.0561,
+              "release_date": "2018-03-23",
+              "video": false,
+              "vote_average": 7.844,
+              "vote_count": 5211
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/oeEiUwvqHxWT0XqD3YlViaiJOVD.jpg",
+              "id": 64690,
+              "title": "Drive",
+              "original_title": "Drive",
+              "overview": "Driver is a skilled Hollywood stuntman who moonlights as a getaway driver for criminals. Though he projects an icy exterior, lately he\u0027s been warming up to a pretty neighbor named Irene and her young son, Benicio. When Irene\u0027s husband gets out of jail, he enlists Driver\u0027s help in a million-dollar heist. The job goes horribly wrong, and Driver must risk his life to protect Irene and Benicio from the vengeful masterminds behind the robbery.",
+              "poster_path": "/602vevIURmpDfzbnv5Ubi6wIkQm.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                53,
+                80
+              ],
+              "popularity": 8.6898,
+              "release_date": "2011-09-15",
+              "video": false,
+              "vote_average": 7.583,
+              "vote_count": 13241
+            }
+          ]
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 1
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=18654",
+      "x-memc": "HIT",
+      "x-memc-key": "ddf543f796eccbbc597e2d00e1eba4fc8bef9bff026912b21791502e103320e8",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00229dc9fb8cc1fa6590d718ae698b30794c\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

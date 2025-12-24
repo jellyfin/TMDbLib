@@ -1,0 +1,459 @@
+{
+  "Guid": "436d7892-e2b6-8b43-b717-75f546d8130f",
+  "UpdatedAt": "2025-12-24T11:53:35.4534257Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964/similar",
+  "Description": "Proxy Mapping for GET /3/movie/47964/similar",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964/similar",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/pe3cTrUeAHHLycZVEmFjT9kEV7a.jpg",
+          "genre_ids": [
+            28
+          ],
+          "id": 646315,
+          "original_language": "ko",
+          "original_title": "\uC804\uC124\uC758 \uB77C\uC774\uD0C0",
+          "overview": "A man who used to be called Lighter cleans up his act from his days as a gangster and struggles to start over.",
+          "popularity": 20.9581,
+          "poster_path": "/h5fCwKCnKAKxdX6onTnrU6MeYe8.jpg",
+          "release_date": "2019-10-29",
+          "title": "The Legendary Lighter",
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/a0xTB1vBxMGt6LGG4N7k1wO9lfL.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35
+          ],
+          "id": 458897,
+          "original_language": "en",
+          "original_title": "Charlie\u0027s Angels",
+          "overview": "Elena Houghlin is a scientist, engineer and inventor of Calisto -- a sustainable energy source that will revolutionize the way people use power. It will be ready as soon as she works out the last issue, if not it could be turned into a dangerous weapon. But when the cutting edge technology is pushed to an investor before she can do that, Elena turns to the Townsend Agency for help. Now, it\u0027s up to the Angels -- Jane, Sabina, and the newly recruited Elena -- to retrieve Calisto before it can be transformed into a weapon of mass destruction.",
+          "popularity": 4.2001,
+          "poster_path": "/1DPUFG6QnGqzpvEaDEv7TaepycM.jpg",
+          "release_date": "2019-11-14",
+          "title": "Charlie\u0027s Angels",
+          "video": false,
+          "vote_average": 6.393,
+          "vote_count": 3086
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            18,
+            28,
+            53
+          ],
+          "id": 1231204,
+          "original_language": "ta",
+          "original_title": "\u0B87\u0BA8\u0BCD\u0BA4\u0BBF\u0BAF\u0BA9\u0BCD III: War Mode",
+          "overview": "Banished by the very people who sought his return to end corruption, Senapathy\u0027s two track mission converges into a single track as he takes upon eradicating corruption into his own hands.",
+          "popularity": 0.1922,
+          "poster_path": "/lOjkiJXiMHPjMRX5PjPsi5Db5eT.jpg",
+          "release_date": "",
+          "title": "Indian 3: War Mode",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xQzDpV5edHLmCM3n15pcatHynOd.jpg",
+          "genre_ids": [
+            878,
+            28,
+            14
+          ],
+          "id": 3115,
+          "original_language": "ja",
+          "original_title": "\u30B4\u30B8\u30E9\u30FB\u30A8\u30D3\u30E9\u30FB\u30E2\u30B9\u30E9\u3000\u5357\u6D77\u306E\u5927\u6C7A\u95D8",
+          "overview": "Searching for his brother, Ryota stows away on a boat belonging to a criminal alongside two other teenagers. The group shipwrecks on Letchi island and discover the Infant Island natives have been enslaved by a terrorist organization controlling a crustacean monster. Finding a sleeping Godzilla, they decide to awaken him to defeat the terrorists and liberate the natives.",
+          "popularity": 5.0964,
+          "poster_path": "/rYGsvMKjIBU5CAQrfHOv9xIfYhn.jpg",
+          "release_date": "1966-12-17",
+          "title": "Ebirah, Horror of the Deep",
+          "video": false,
+          "vote_average": 6.294,
+          "vote_count": 206
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6BQis8u6Q8U5J4EHqdyRRIE0njI.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            12,
+            16,
+            28
+          ],
+          "id": 274862,
+          "original_language": "en",
+          "original_title": "The Lego Ninjago Movie",
+          "overview": "Six young ninjas are tasked with defending their island home of Ninjago. By night, they\u2019re gifted warriors using their skill and awesome fleet of vehicles to fight villains and monsters. By day, they\u2019re ordinary teens struggling against their greatest enemy....high school.",
+          "popularity": 5.1065,
+          "poster_path": "/vUo0pNXGhp2ffTJxiStWt6fHL7F.jpg",
+          "release_date": "2017-09-21",
+          "title": "The Lego Ninjago Movie",
+          "video": false,
+          "vote_average": 6.516,
+          "vote_count": 1135
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/MMSI9WzRmOdqXarevQ3Kqnytrx.jpg",
+          "genre_ids": [
+            12,
+            28,
+            53,
+            878
+          ],
+          "id": 8810,
+          "original_language": "en",
+          "original_title": "Mad Max 2",
+          "overview": "Max Rockatansky returns as the heroic loner who drives the dusty roads of a postapocalyptic Australian Outback in an unending search for gasoline. Arrayed against him and the other scraggly defendants of a fuel-depot encampment are the bizarre warriors commanded by the charismatic Lord Humungus, a violent leader whose scruples are as barren as the surrounding landscape.",
+          "popularity": 8.2803,
+          "poster_path": "/l1KVEhkGDpWRzQ0VqIhZqDDuOim.jpg",
+          "release_date": "1981-12-24",
+          "title": "Mad Max 2",
+          "video": false,
+          "vote_average": 7.389,
+          "vote_count": 4023
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9EpgaLS44zlXoTSAOhGiJmkIA4B.jpg",
+          "genre_ids": [
+            28,
+            27,
+            878
+          ],
+          "id": 8814,
+          "original_language": "en",
+          "original_title": "Doom",
+          "overview": "A team of space marines known as the Rapid Response Tactical Squad, led by Sarge, is sent to a science facility on Mars after somebody reports a security breach. There, they learn that the alert came after a test subject, a mass murderer purposefully injected with alien DNA, broke free and began killing people. Dr. Grimm, who is related to team member Reaper, informs them all that the chromosome can mutate humans into monsters -- and is highly infectious.",
+          "popularity": 2.8374,
+          "poster_path": "/y50lH061yWOvEstoZRn7lYs0huk.jpg",
+          "release_date": "2005-10-20",
+          "title": "Doom",
+          "video": false,
+          "vote_average": 5.184,
+          "vote_count": 2358
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/70tmPOoCJCciWaM1vDvXAi4w3Bc.jpg",
+          "genre_ids": [
+            28,
+            18,
+            9648,
+            53
+          ],
+          "id": 8834,
+          "original_language": "en",
+          "original_title": "Conspiracy Theory",
+          "overview": "A man obsessed with conspiracy theories becomes a target after one of his theories turns out to be true. Unfortunately, in order to save himself, he has to figure out which theory it is.",
+          "popularity": 2.4534,
+          "poster_path": "/sTyTKZVikQU6g50HE8HR1tBSRxj.jpg",
+          "release_date": "1997-08-08",
+          "title": "Conspiracy Theory",
+          "video": false,
+          "vote_average": 6.619,
+          "vote_count": 1567
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5EkowLSlfQT50KbeHzhvbdyaIoI.jpg",
+          "genre_ids": [
+            28,
+            80,
+            18,
+            53
+          ],
+          "id": 8838,
+          "original_language": "en",
+          "original_title": "Mercury Rising",
+          "overview": "Renegade FBI agent Art Jeffries protects a nine-year-old autistic boy who has cracked the government\u0027s new \u0022unbreakable\u0022 code.",
+          "popularity": 3.0473,
+          "poster_path": "/uB8qfwqvJA2adiVOwsN5clZS4Lo.jpg",
+          "release_date": "1998-04-03",
+          "title": "Mercury Rising",
+          "video": false,
+          "vote_average": 6.29,
+          "vote_count": 1602
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ihBDaN7OwT7D9DVri8SmxCnuRLB.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 8845,
+          "original_language": "en",
+          "original_title": "Under Siege",
+          "overview": "A disgruntled ex-CIA operative, his assistant and their assembled group of terrorists seize a battleship with nuclear blackmail in mind. They\u0027ve planned for every contingency but ignore the ship\u0027s cook, former Navy SEAL Casey Ryback\u2014an error that could be fatal.",
+          "popularity": 3.3304,
+          "poster_path": "/myHxm9p8fhEsXyaLO6DawYJKolg.jpg",
+          "release_date": "1992-10-08",
+          "title": "Under Siege",
+          "video": false,
+          "vote_average": 6.29,
+          "vote_count": 1652
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7rfcRXbFD0xr8NteNq1hwXUd4Af.jpg",
+          "genre_ids": [
+            12,
+            18,
+            28,
+            10749,
+            10751
+          ],
+          "id": 8856,
+          "original_language": "en",
+          "original_title": "The Karate Kid Part II",
+          "overview": "Summoned by his dying father, Miyagi returns to his homeland of Okinawa, with Daniel, after a 40-year exile. There he must confront Yukie, the love of his youth, and Sato, his former best friend turned vengeful rival. Sato is bent on a fight to the death, even if it means the destruction of their village. Daniel finds his own love in Yukia\u0027s niece, Kumiko, and his own enemy in Sato\u0027s nephew, the vicious Chozen. Now, far away from the tournaments, cheering crowds and safety of home, Daniel will face his greatest challenge ever when the cost of honor is life itself.",
+          "popularity": 4.7843,
+          "poster_path": "/7Lut6dOvB8wPRuHhHpJ3S3zXder.jpg",
+          "release_date": "1986-06-18",
+          "title": "The Karate Kid Part II",
+          "video": false,
+          "vote_average": 6.333,
+          "vote_count": 2393
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tFmrdnfXM0p6ihMTFpptYOKEfSl.jpg",
+          "genre_ids": [
+            28,
+            80,
+            18,
+            53
+          ],
+          "id": 8867,
+          "original_language": "en",
+          "original_title": "The Punisher",
+          "overview": "The avenging angel of Marvel Comics fame comes brilliantly to life in this searing action-adventure thriller! Dolph Lundgren stars as Frank Castle, a veteran cop who loses his entire family to a mafia car bomb. His ex-partner believes Castle survived the blast and became the Punisher, living in the sewers and exacting vigilante violence against mob bosses throughout the city. When the populace is caught in the midst of a gang war that he caused, Castle must again emerge from the shadows and save the innocent.",
+          "popularity": 2.2315,
+          "poster_path": "/tA0O0hYyHX7Hl2Fl8VEtGtfBtjI.jpg",
+          "release_date": "1989-10-05",
+          "title": "The Punisher",
+          "video": false,
+          "vote_average": 5.8,
+          "vote_count": 648
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vjwuT8EzWY96W6nrJKZNI2WJU87.jpg",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "id": 8909,
+          "original_language": "en",
+          "original_title": "Wanted",
+          "overview": "Doormat Wesley Gibson is an office worker whose life is going nowhere. He meets an attractive woman named Fox and discovers that his recently murdered father - whom Wesley never knew - belonged to the Fraternity, a secret society of assassins which takes its orders from Fate itself. Fox and Sloan, the Fraternity\u0027s leader, teach Wesley, through intense training, to tap into dormant powers and hone his innate killing skills. Though he enjoys his newfound abilities, he begins to suspect that there is more to the Fraternity than meets the eye.",
+          "popularity": 8.6443,
+          "poster_path": "/cbDMsV4VJAL2xJ2JXdWWjmUXZkT.jpg",
+          "release_date": "2008-06-19",
+          "title": "Wanted",
+          "video": false,
+          "vote_average": 6.521,
+          "vote_count": 7394
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/opkt6IK1Os5gAwhlpu27bCZCk8K.jpg",
+          "genre_ids": [
+            878,
+            28,
+            9648,
+            18,
+            53
+          ],
+          "id": 8452,
+          "original_language": "en",
+          "original_title": "The 6th Day",
+          "overview": "A world of the very near future in which cattle, fish, and even the family pet can be cloned. But cloning humans is illegal - that is until family man Adam Gibson comes home from work one day to find a clone has replaced him. Taken from his family and plunged into a sinister world he doesn\u0027t understand, Gibson must not only save himself from the assassins who must destroy him to protect their secret, but uncover who and what is behind the horrible things happening to him.",
+          "popularity": 2.8631,
+          "poster_path": "/rODFJOFiPk1UVCe4pmBza8T6feO.jpg",
+          "release_date": "2000-11-17",
+          "title": "The 6th Day",
+          "video": false,
+          "vote_average": 5.992,
+          "vote_count": 2175
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sAFqN4bDfGUBgS6h323F7YcwqPe.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 8460,
+          "original_language": "en",
+          "original_title": "The Skulls II",
+          "overview": "After joining the Skulls, Ryan Sommers (Robin Dunne) is warned not to betray any secrets about the organization or its high-powered members. However, when Ryan witnesses a murder within the Skulls\u0027 private chambers, he finds that the closer he gets to revealing the truth - the more dangerous life becomes.",
+          "popularity": 0.4196,
+          "poster_path": "/h6atL0SP5qg6TXOXy9DklZgObn2.jpg",
+          "release_date": "2002-04-09",
+          "title": "The Skulls II",
+          "video": false,
+          "vote_average": 4.703,
+          "vote_count": 79
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tbzWgnaqhFwN5mCIiwbgN5oiw0V.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35,
+            878,
+            37
+          ],
+          "id": 8487,
+          "original_language": "en",
+          "original_title": "Wild Wild West",
+          "overview": "Legless Southern inventor Dr. Arliss Loveless plans to rekindle the Civil War by assassinating President Ulysses S. Grant. Only two men can stop him: gunfighter James West and master-of-disguise and inventor Artemus Gordon. The two must team up to thwart Loveless\u0027 plans.",
+          "popularity": 5.6869,
+          "poster_path": "/mCdo7nykEVCa25bjnkwgyX35fjm.jpg",
+          "release_date": "1999-06-30",
+          "title": "Wild Wild West",
+          "video": false,
+          "vote_average": 5.31,
+          "vote_count": 3466
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e77VeVcrXhxfCdJWD9rameYn7Qn.jpg",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "id": 8536,
+          "original_language": "en",
+          "original_title": "Superman II",
+          "overview": "Three Kryptonian criminals led by General Zod team up with Lex Luthor to conquer Earth, forcing a depowered Superman to regain his strength and stop them.",
+          "popularity": 4.2927,
+          "poster_path": "/3xk5cno9BHcnwc97XO9k21aI1Zi.jpg",
+          "release_date": "1980-12-12",
+          "title": "Superman II",
+          "video": false,
+          "vote_average": 6.747,
+          "vote_count": 2438
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ooPtDdWP2nuYCoyLJAVwdthf5dN.jpg",
+          "genre_ids": [
+            27,
+            53,
+            9648
+          ],
+          "id": 8555,
+          "original_language": "en",
+          "original_title": "Creep",
+          "overview": "Trapped in a London subway station, a woman who\u0027s being pursued by a potential attacker heads into the unknown labyrinth of tunnels beneath the city\u0027s streets",
+          "popularity": 4.855,
+          "poster_path": "/w5oxV6MDEfL48FMK9BmYTD2wQRm.jpg",
+          "release_date": "2004-08-10",
+          "title": "Creep",
+          "video": false,
+          "vote_average": 5.992,
+          "vote_count": 809
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x4dH86KvLTGlIBMQb7kNTB0svy5.jpg",
+          "genre_ids": [
+            12,
+            28,
+            35,
+            37
+          ],
+          "id": 8584,
+          "original_language": "en",
+          "original_title": "Shanghai Noon",
+          "overview": "Chon Wang, a clumsy imperial guard, trails Princess Pei Pei when she\u0027s kidnapped from the Forbidden City and transported to America. Wang follows her captors to Nevada, where he teams up with an unlikely partner, outcast outlaw Roy O\u0027Bannon, and tries to spring the princess from her imprisonment.",
+          "popularity": 7.4195,
+          "poster_path": "/b0WwWRcDiDahkah5vZ0KjB4N9ZZ.jpg",
+          "release_date": "2000-05-26",
+          "title": "Shanghai Noon",
+          "video": false,
+          "vote_average": 6.415,
+          "vote_count": 2675
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gxSVZCUlDd8upT1G2wdrUdz2hxG.jpg",
+          "genre_ids": [
+            28,
+            80,
+            35
+          ],
+          "id": 8961,
+          "original_language": "en",
+          "original_title": "Bad Boys II",
+          "overview": "Detectives Marcus Burnett and Mike Lowrey of the Miami Narcotics Task Force are tasked with stopping the flow of the drug Ecstasy into Miami. They track the drugs to the whacked-out Cuban drug lord Johnny Tapia, who is also involved in a bloody war with Russian and Haitian mobsters. If that isn\u0027t bad enough, there\u0027s tension between the two detectives when Marcus discovers that playboy Mike is secretly romancing Marcus\u2019 sister, Syd.",
+          "popularity": 9.492,
+          "poster_path": "/yCvB5fG5aEPqa1St7ihY6KEAsHD.jpg",
+          "release_date": "2003-07-18",
+          "title": "Bad Boys II",
+          "video": false,
+          "vote_average": 6.654,
+          "vote_count": 5765
+        }
+      ],
+      "total_pages": 5108,
+      "total_results": 102156
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=18555",
+      "x-memc": "HIT",
+      "x-memc-key": "3ee1ab6a1c524ecd3b48d7a7c4b5aa37fa235d9ae4bf3287201bb2d917f20dc4",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00223a5bde3ae3050e17d784b5e07639bdad\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

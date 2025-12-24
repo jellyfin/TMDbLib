@@ -1,0 +1,491 @@
+{
+  "Guid": "d2e26b1c-4341-1948-bb0b-75a96a694797",
+  "UpdatedAt": "2025-12-24T11:53:34.8425003Z",
+  "Title": "Proxy Mapping for GET /3/tv/on_the_air",
+  "Description": "Proxy Mapping for GET /3/tv/on_the_air",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/on_the_air",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
+          "genre_ids": [
+            10765,
+            9648,
+            10759
+          ],
+          "id": 66732,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Stranger Things",
+          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+          "popularity": 529.3398,
+          "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+          "first_air_date": "2016-07-15",
+          "name": "Stranger Things",
+          "vote_average": 8.6,
+          "vote_count": 19642
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
+          "genre_ids": [
+            10759,
+            18,
+            10765
+          ],
+          "id": 106379,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Fallout",
+          "overview": "The story of haves and have-nots in a world in which there\u0027s almost nothing left to have. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind \u2014 and are shocked to discover an incredibly complex, gleefully weird, and highly violent universe waiting for them.",
+          "popularity": 208.1718,
+          "poster_path": "/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
+          "first_air_date": "2024-04-10",
+          "name": "Fallout",
+          "vote_average": 8.183,
+          "vote_count": 2235
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ckPbbcJOcL43mJBrROTMrtOBIYK.jpg",
+          "genre_ids": [
+            18,
+            10759
+          ],
+          "id": 240459,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Spartacus: House of Ashur",
+          "overview": "In a world where he survived the events of Spartacus (2010), Ashur clawed his way to power, owning the same ludus that once owned him. Allying with a fierce gladiatrix, Ashur ignites a new kind of spectacle that offends the elite.",
+          "popularity": 138.695,
+          "poster_path": "/vNByuzy60v31nmUVPMA8oAtneUK.jpg",
+          "first_air_date": "2025-12-05",
+          "name": "Spartacus: House of Ashur",
+          "vote_average": 6.244,
+          "vote_count": 90
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jvTeRgjFsp66xj8SWxhr7O2J4ud.jpg",
+          "genre_ids": [
+            10751,
+            16,
+            35
+          ],
+          "id": 456,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Simpsons",
+          "overview": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+          "popularity": 145.4962,
+          "poster_path": "/uWpG7GqfKGQqX4YMAo3nv5OrglV.jpg",
+          "first_air_date": "1989-12-17",
+          "name": "The Simpsons",
+          "vote_average": 8.011,
+          "vote_count": 10495
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/opxjwbFSadDgVmZtrLTlWJsUxrB.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 283123,
+          "origin_country": [
+            "TR"
+          ],
+          "original_language": "tr",
+          "original_name": "E\u015Fref R\u00FCya",
+          "overview": "As a child, E\u015Fref fell in love from afar with a girl he called \u201CR\u00FCya\u201D and spent years searching for her, only to become a powerful mafia figure along the way. Meanwhile, Nisan, an idealistic musician, finds herself in grave danger after performing at a wedding held at E\u015Fref\u2019s hotel. E\u015Fref falls for Nisan, unaware that she is both the long-lost R\u00FCya he has been chasing for years and a police informant. Trapped in a whirlwind of love, betrayal, and power struggles, E\u015Fref is forced into a brutal reckoning\u2014both with his criminal empire and his own emotions.",
+          "popularity": 100.7385,
+          "poster_path": "/jwrN5QA07dm8sKuUFInP2MRLPfb.jpg",
+          "first_air_date": "2025-03-19",
+          "name": "Esref\u0027s Dream",
+          "vote_average": 7.045,
+          "vote_count": 22
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qVmgq1KXBp6BF2EqYPPaUG9iUGy.jpg",
+          "genre_ids": [
+            80,
+            18,
+            9648
+          ],
+          "id": 764,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Midsomer Murders",
+          "overview": "The peacefulness of the Midsomer community is shattered by violent crimes, suspects are placed under suspicion, and it is up to a veteran DCI and his young sergeant to calmly and diligently eliminate the innocent and ruthlessly pursue the guilty. ",
+          "popularity": 97.8414,
+          "poster_path": "/31wojXBSLT6LYTUMyc6BiyXqUyP.jpg",
+          "first_air_date": "1997-03-23",
+          "name": "Midsomer Murders",
+          "vote_average": 7.5,
+          "vote_count": 337
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/QbRbCULZVBcrN2uydpmIOQLV5O.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 301507,
+          "origin_country": [
+            "CA"
+          ],
+          "original_language": "en",
+          "original_name": "Heated Rivalry",
+          "overview": "Two of the biggest stars in Major League Hockey are bound by ambition, rivalry, and a magnetic pull neither of them fully understands. What begins as a secret fling between two fresh faced rookies evolves into a years-long journey of love, denial, and self-discovery. Over the next eight years, as they chase glory on the ice, they struggle to navigate their feelings for each other. Torn between the sport they live for and the love they can\u2019t ignore, they must decide if there\u2019s room in their fiercely competitive world for something as fragile \u2013 and powerful \u2013 as real love.",
+          "popularity": 80.887,
+          "poster_path": "/epgr7n61vVIniyAghz2GYj22DkC.jpg",
+          "first_air_date": "2025-11-28",
+          "name": "Heated Rivalry",
+          "vote_average": 8.36,
+          "vote_count": 50
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qoBCcx25NbiEFcTlYUXfeNjb2q5.jpg",
+          "genre_ids": [
+            10765,
+            18
+          ],
+          "id": 294968,
+          "origin_country": [
+            "ES"
+          ],
+          "original_language": "es",
+          "original_name": "Los Protegidos: Un nuevo poder",
+          "overview": "",
+          "popularity": 66.9581,
+          "poster_path": "/znq1gVSpGj9pmuhmkRoLbQgLr9A.jpg",
+          "first_air_date": "2025-12-14",
+          "name": "Los Protegidos: Un nuevo poder",
+          "vote_average": 7.6,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/s0w8JbuNNxL1YgaHeDWih12C3jG.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10759,
+            10765
+          ],
+          "id": 63926,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30EF\u30F3\u30D1\u30F3\u30DE\u30F3",
+          "overview": "The most powerful superhero in the world can kill anyone with one blow. But nothing can challenge him, so he struggles with ennui and depression.",
+          "popularity": 71.947,
+          "poster_path": "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg",
+          "first_air_date": "2015-10-05",
+          "name": "One-Punch Man",
+          "vote_average": 8.4,
+          "vote_count": 3944
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/q71au2YjcwXBMZKNzNgjK7RZ3Hs.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 157741,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Landman",
+          "overview": "Set in the proverbial boomtowns of West-Texas and a modern-day tale of fortune-seeking in the world of oil rigs, the series is an upstairs/downstairs story of roughnecks and wildcat billionaires that are fueling a boom so big it\u2019s reshaping our climate, our economy and our geopolitics.",
+          "popularity": 64.7394,
+          "poster_path": "/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
+          "first_air_date": "2024-11-17",
+          "name": "Landman",
+          "vote_average": 8.048,
+          "vote_count": 336
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uoIOfRNmu47P2fET2KnrYHt3TH.jpg",
+          "genre_ids": [
+            18,
+            10759
+          ],
+          "id": 272418,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Robin Hood",
+          "overview": "A modern reimagining of the classic tale. After the Norman invasion of England, Rob, a Saxon forester\u2019s son, and Marian, a Norman lord\u2019s daughter, fall in love and unite to fight for justice, challenge corruption, and restore peace to the land.",
+          "popularity": 56.7271,
+          "poster_path": "/3teWChNzKJdbfen46IdeKTygdZa.jpg",
+          "first_air_date": "2025-11-02",
+          "name": "Robin Hood",
+          "vote_average": 7.6,
+          "vote_count": 76
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/n69QxkZ0RRc6PMNnxD9U0MZnLzl.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 4656,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Raw",
+          "overview": "A regularly scheduled, live, year-round program featuring some of the biggest WWE Superstars.",
+          "popularity": 56.8328,
+          "poster_path": "/pv5WNnLUo7mpT8k901Lo8UovrqI.jpg",
+          "first_air_date": "1993-01-11",
+          "name": "Raw",
+          "vote_average": 6.8,
+          "vote_count": 346
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lysUnU6V0VfcthDbviuVlIqgHOR.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            35
+          ],
+          "id": 120089,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "SPY\u00D7FAMILY",
+          "overview": "A spy, an assassin and a telepath come together to pose as a family, each for their own reasons, while hiding their true identities from each other.",
+          "popularity": 49.0867,
+          "poster_path": "/7NAvPYPAu7MeHwP8E9sn81PqsRh.jpg",
+          "first_air_date": "2022-04-09",
+          "name": "SPY x FAMILY",
+          "vote_average": 8.518,
+          "vote_count": 2141
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/39bifj2FNytJ2m1cqOBcWMTKgmV.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 97951,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Mayor of Kingstown",
+          "overview": "In a small Michigan town where the business of incarceration is the only thriving industry, the McClusky family are the power brokers between the police, criminals, inmates, prison guards and politicians in a city completely dependent on prisons and the prisoners they contain.",
+          "popularity": 48.7651,
+          "poster_path": "/6rWIip9MZELAA0SKii5WqsBDCYW.jpg",
+          "first_air_date": "2021-11-14",
+          "name": "Mayor of Kingstown",
+          "vote_average": 7.868,
+          "vote_count": 551
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sAxx25ijwYQ8xsT56wu2IzvIRss.jpg",
+          "genre_ids": [
+            10759,
+            10765,
+            18,
+            10751
+          ],
+          "id": 103540,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Percy Jackson and the Olympians",
+          "overview": "Percy Jackson is on a dangerous quest. Outrunning monsters and outwitting gods, he must journey across America to return Zeus\u0027s master bolt and stop an all-out war. With the help of his friends Annabeth and Grover, Percy\u0027s journey will lead him closer to the answers he seeks: how to fit into a world where he feels out of place, and who he\u0027s destined to be.",
+          "popularity": 48.8362,
+          "poster_path": "/40eFcTzZier3DWLqldsP5VHxeoD.jpg",
+          "first_air_date": "2023-12-19",
+          "name": "Percy Jackson and the Olympians",
+          "vote_average": 7.3,
+          "vote_count": 640
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/b4D9I3nz4Iya8Pd566PpOvz9q6O.jpg",
+          "genre_ids": [
+            18,
+            10759,
+            9648
+          ],
+          "id": 302463,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "es",
+          "original_name": "Dinast\u00EDa Casillas",
+          "overview": "",
+          "popularity": 49.0582,
+          "poster_path": "/xbBJBKssJr85OzAJNSuWdkh5p4v.jpg",
+          "first_air_date": "2025-10-07",
+          "name": "Dinast\u00EDa Casillas",
+          "vote_average": 8.35,
+          "vote_count": 214
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xnU9b4IehJ08Ikz3sweABtY5IwU.jpg",
+          "genre_ids": [
+            16,
+            35
+          ],
+          "id": 32726,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Bob\u0027s Burgers",
+          "overview": "Bob\u0027s Burgers follows a third-generation restaurateur, Bob, as he runs Bob\u0027s Burgers with the help of his wife and their three kids. Bob and his quirky family have big ideas about burgers, but fall short on service and sophistication. Despite the greasy counters, lousy location and a dearth of customers, Bob and his family are determined to make Bob\u0027s Burgers \u0022grand re-re-re-opening\u0022 a success.",
+          "popularity": 44.0845,
+          "poster_path": "/iIHsQe3Qjs3NH62HdamyQEPeqTR.jpg",
+          "first_air_date": "2011-01-09",
+          "name": "Bob\u0027s Burgers",
+          "vote_average": 7.831,
+          "vote_count": 1038
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8dbKQrdVR5HD7PVWjTPawnTYCPT.jpg",
+          "genre_ids": [
+            35,
+            80,
+            18,
+            9648
+          ],
+          "id": 41956,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Death in Paradise",
+          "overview": "A brilliant but idiosyncratic British detective and his resourceful local team solve baffling murder mysteries on the fictional Caribbean island of Saint-Marie.",
+          "popularity": 43.5479,
+          "poster_path": "/u7t6vCyqAdD5hE4eEfTrZmVljDi.jpg",
+          "first_air_date": "2011-10-25",
+          "name": "Death in Paradise",
+          "vote_average": 7.478,
+          "vote_count": 299
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/usLRh1bcbL0Q9X8zf6rL4OV1qrA.jpg",
+          "genre_ids": [
+            10759,
+            10765,
+            18
+          ],
+          "id": 2661,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u4EEE\u9762\u30E9\u30A4\u30C0\u30FC",
+          "overview": "Takeshi Hongo is a promising young man with a passion for motorcycle racing. However, his dreams are suddenly ruined when he gets kidnapped by Shocker, the evil secret organization planning to dominate the world. After being remodeled into a cyborg, Takeshi escapes and swears to protect the world from the inhuman monsters.",
+          "popularity": 82.8277,
+          "poster_path": "/lv3OlrXyTNg4Dz0JrtopOmMziNs.jpg",
+          "first_air_date": "1971-04-03",
+          "name": "Kamen Rider",
+          "vote_average": 6.457,
+          "vote_count": 92
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/khHpr9W9cZ7mlQGvabC2IeG69pg.jpg",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 254482,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u957F\u5B89\u4E8C\u5341\u56DB\u8BA1",
+          "overview": "Xie Huai\u0027an, son of the Huben Army\u0027s creator, survives his family\u0027s massacre. After ten long years in hiding, he returns to Chang\u0027an disguised as a lowly registrar, moving step by step through jianghu clashes and palace power plays in a tense battle of wits to avenge his family and safeguard the realm.",
+          "popularity": 33.252,
+          "poster_path": "/vMwB4BNicfWJl0JhU7YQApcoiHE.jpg",
+          "first_air_date": "2025-12-12",
+          "name": "The Vendetta of An",
+          "vote_average": 7.8,
+          "vote_count": 5
+        }
+      ],
+      "total_pages": 47,
+      "total_results": 928
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=25257",
+      "x-memc": "HIT",
+      "x-memc-key": "59997a0c4ae78c5a753d057ec6c1111b70581fc272e4df82f370da2e68cf6a1e",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022d8b1c04e601c9c936e8bed4db4eff685\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

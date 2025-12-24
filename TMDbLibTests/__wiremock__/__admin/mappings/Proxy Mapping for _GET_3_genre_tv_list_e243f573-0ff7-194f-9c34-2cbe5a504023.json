@@ -1,0 +1,123 @@
+{
+  "Guid": "e243f573-0ff7-194f-9c34-2cbe5a504023",
+  "UpdatedAt": "2025-12-24T11:53:34.5926502Z",
+  "Title": "Proxy Mapping for GET /3/genre/tv/list",
+  "Description": "Proxy Mapping for GET /3/genre/tv/list",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/genre/tv/list",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "da",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "genres": [
+        {
+          "id": 10759,
+          "name": "Action og eventyr"
+        },
+        {
+          "id": 16,
+          "name": "Animation"
+        },
+        {
+          "id": 35,
+          "name": "Komedie"
+        },
+        {
+          "id": 80,
+          "name": "Kriminalitet"
+        },
+        {
+          "id": 99,
+          "name": "Documentary"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10751,
+          "name": "Familie"
+        },
+        {
+          "id": 10762,
+          "name": "B\u00F8rn"
+        },
+        {
+          "id": 9648,
+          "name": "Mysterium"
+        },
+        {
+          "id": 10763,
+          "name": "Nyhed"
+        },
+        {
+          "id": 10764,
+          "name": "Virkelighed "
+        },
+        {
+          "id": 10765,
+          "name": "Sci-fi og Fantasy"
+        },
+        {
+          "id": 10766,
+          "name": "S\u00E6be"
+        },
+        {
+          "id": 10767,
+          "name": "Snakke"
+        },
+        {
+          "id": 10768,
+          "name": "Krig \u0026 Politik"
+        },
+        {
+          "id": 37,
+          "name": "Western"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=24870",
+      "x-memc": "HIT",
+      "x-memc-key": "b795e11e85eda19981d9da103437317d701c1348e33bfd107a541dd2723472a7",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u002292d11e08ccfdcd45a39a6d41635a07ec\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

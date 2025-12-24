@@ -1,0 +1,156 @@
+{
+  "Guid": "b996d0df-4ed2-3a42-a696-8459aa4355e0",
+  "UpdatedAt": "2025-12-24T11:53:34.5586588Z",
+  "Title": "Proxy Mapping for GET /3/person/30084/tagged_images",
+  "Description": "Proxy Mapping for GET /3/person/30084/tagged_images",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/30084/tagged_images",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 30084,
+      "page": 0,
+      "results": [
+        {
+          "aspect_ratio": 0.692,
+          "file_path": "/kMmeA68BBA6zcwaAcrcL3oICAY6.jpg",
+          "height": 578,
+          "id": "525710e219c295731c0335d0",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 1.466,
+          "vote_count": 5,
+          "width": 400,
+          "image_type": "poster",
+          "media": {
+            "id": 4690,
+            "name": "Season 1",
+            "overview": "As the first season begins, FBI Special Agent Olivia Dunham is called in to investigate a mysterious outbreak that nearly kills her partner. The only person with any answers is an institutionalized scientist, Dr. Walter Bishop who can only be released under the care of his estranged son. Together, the three discover that the answer to this mystery is only a small piece of a much larger, more shocking truth.",
+            "poster_path": "/r8lP3kSnAE01YBNOHymXnqT6dd4.jpg",
+            "media_type": "tv_season",
+            "vote_average": 7.6,
+            "air_date": "2008-09-09",
+            "season_number": 1,
+            "show_id": 1705,
+            "episode_count": 20
+          },
+          "media_type": "season"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/nFnzrITZI8kdC0oIvlNwzIxHO9c.jpg",
+          "height": 3000,
+          "id": "6111432f01e4d10048a43ea2",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 0.166,
+          "vote_count": 1,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/aGLAJddCYwKhnGZeJdtOEhBGYsr.jpg",
+            "id": 130842,
+            "name": "The Newsreader",
+            "original_name": "The Newsreader",
+            "overview": "An unconventional relationship in a world on the cusp of change; a star newsreader and an ambitious bisexual reporter join forces in a ruthless 1986 newsroom, as events unfold that will change their lives.",
+            "poster_path": "/aHl6HgHcFLfe68E7uiq8NRDCXOv.jpg",
+            "media_type": "tv",
+            "original_language": "en",
+            "genre_ids": [
+              18
+            ],
+            "popularity": 5.1289,
+            "first_air_date": "2021-08-15",
+            "vote_average": 7.6,
+            "vote_count": 40,
+            "origin_country": [
+              "AU"
+            ]
+          },
+          "media_type": "tv"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/azUv12ax8j5rBIGTFRapEJ8i3B5.jpg",
+          "height": 3000,
+          "id": "65200bf6967cc73428cebeef",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 0.166,
+          "vote_count": 1,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/aGLAJddCYwKhnGZeJdtOEhBGYsr.jpg",
+            "id": 130842,
+            "name": "The Newsreader",
+            "original_name": "The Newsreader",
+            "overview": "An unconventional relationship in a world on the cusp of change; a star newsreader and an ambitious bisexual reporter join forces in a ruthless 1986 newsroom, as events unfold that will change their lives.",
+            "poster_path": "/aHl6HgHcFLfe68E7uiq8NRDCXOv.jpg",
+            "media_type": "tv",
+            "original_language": "en",
+            "genre_ids": [
+              18
+            ],
+            "popularity": 5.1289,
+            "first_air_date": "2021-08-15",
+            "vote_average": 7.6,
+            "vote_count": 40,
+            "origin_country": [
+              "AU"
+            ]
+          },
+          "media_type": "tv"
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 3
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=17351",
+      "x-memc": "HIT",
+      "x-memc-key": "c6b1383f2a27e4794c0193c2b345b65c6f88a2b892068d7392fd0a9038d69f72",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022ad275dcde00627cc32bb6589f1f8f533\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "Guid": "2ff9b2ac-a733-c042-b136-1e6d999e7177",
+  "UpdatedAt": "2025-12-24T11:53:35.7644206Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/content_ratings",
+  "Description": "Proxy Mapping for GET /3/tv/1396/content_ratings",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/content_ratings",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "results": [
+        {
+          "descriptors": [],
+          "iso_3166_1": "DE",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "GB",
+          "rating": "18"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "US",
+          "rating": "TV-MA"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "FR",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "RU",
+          "rating": "18\u002B"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "KR",
+          "rating": "19"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "BR",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "NL",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "PT",
+          "rating": "18"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "HU",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "LT",
+          "rating": "N-14"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "ES",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "SG",
+          "rating": "M18"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "IN",
+          "rating": "A"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "MX",
+          "rating": "C"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "TR",
+          "rating": "18\u002B"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "MX",
+          "rating": "B-15"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "AU",
+          "rating": "MA 15\u002B"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "ES",
+          "rating": "18"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "DK",
+          "rating": "15"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "PT",
+          "rating": "12AP"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "BR",
+          "rating": "18"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "SE",
+          "rating": "Fr\u00E5n 15 \u00E5r"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "CA",
+          "rating": "14\u002B"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "AT",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "IE",
+          "rating": "18"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "CH",
+          "rating": "16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "CZ",
+          "rating": "18\u002B"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "RO",
+          "rating": "AP"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "FI",
+          "rating": "K16"
+        },
+        {
+          "descriptors": [],
+          "iso_3166_1": "NO",
+          "rating": "15"
+        }
+      ],
+      "id": 1396
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "d7cb730684185102d0189d8e22a70e0c99f7ceba69d998264d5b47878ca20a61",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=20393",
+      "ETag": "W/\u00224065c3b234cfdd449baea64b1848e814\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

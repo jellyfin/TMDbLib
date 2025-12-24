@@ -59,7 +59,7 @@ public class ClientTvSeasonTests : TestBase
         // Test the custom parsing code for Account State rating
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-        TvSeason season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
+        var season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
         if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
         {
             await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
@@ -71,7 +71,7 @@ public class ClientTvSeasonTests : TestBase
         }
         Assert.NotNull(season.AccountStates);
         Assert.True(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.HasValue);
-        Assert.True(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.Value - 5) < double.Epsilon);
+        Assert.True(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating!.Value - 5) < double.Epsilon);
     }
 
     /// <summary>

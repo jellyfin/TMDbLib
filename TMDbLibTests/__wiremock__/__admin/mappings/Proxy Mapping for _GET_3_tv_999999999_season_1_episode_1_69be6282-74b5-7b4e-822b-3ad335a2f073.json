@@ -1,0 +1,44 @@
+{
+  "Guid": "69be6282-74b5-7b4e-822b-3ad335a2f073",
+  "UpdatedAt": "2025-12-24T11:53:34.8343747Z",
+  "Title": "Proxy Mapping for GET /3/tv/999999999/season/1/episode/1",
+  "Description": "Proxy Mapping for GET /3/tv/999999999/season/1/episode/1",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/999999999/season/1/episode/1",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 404,
+    "BodyAsJson": {
+      "success": false,
+      "status_code": 34,
+      "status_message": "The resource you requested could not be found."
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-az": "us-east-1b",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Error from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

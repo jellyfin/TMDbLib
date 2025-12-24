@@ -1,0 +1,723 @@
+{
+  "Guid": "c9652785-430d-244e-857e-6af813b71701",
+  "UpdatedAt": "2025-12-24T11:53:34.7215413Z",
+  "Title": "Proxy Mapping for GET /3/search/multi",
+  "Description": "Proxy Mapping for GET /3/search/multi",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/multi",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "Arrow",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "include_adult",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "false",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/wAFuDJfZJrnh6a1wf1Vt7PqYBvR.jpg",
+          "id": 1412,
+          "name": "Arrow",
+          "original_name": "Arrow",
+          "overview": "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.",
+          "poster_path": "/u8ZHFj1jC384JEkTt3vNg1DfWEb.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            80,
+            18,
+            10759
+          ],
+          "popularity": 55.3331,
+          "first_air_date": "2012-10-10",
+          "vote_average": 6.829,
+          "vote_count": 6187,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1139952,
+          "title": "Arrow",
+          "original_title": "Arrow",
+          "overview": "Silent abstract video art piece using image processing by Chicago artist Cindy Neal.",
+          "poster_path": "/lBV210R59zoQTZ6u897st0ywVo7.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            16
+          ],
+          "popularity": 0.0937,
+          "release_date": "2012-01-01",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 616026,
+          "title": "Arrow",
+          "original_title": "Arrow",
+          "overview": "Two stories are interconnected in this brief film: Mike, a teenager at Wisconsin Museum of Music, is surrounded by Native American collectibles. Elsewhere, Winfield, a young Native American dancer, bids farewell to his community.",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.163,
+          "release_date": "2019-07-12",
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 280224,
+          "name": "Arrow",
+          "original_name": "Arrow",
+          "overview": "Her name is Sona, and her Arrow helps her find things.",
+          "poster_path": null,
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.1022,
+          "first_air_date": "2009-04-26",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lu34GoIkOhpvmgSvrFtDdXkIItI.jpg",
+          "id": 96942,
+          "name": "BACK ARROW",
+          "original_name": "\u30D0\u30C3\u30AF\u30FB\u30A2\u30ED\u30A6",
+          "overview": "Lingalind is a land enclosed by the Wall. The Wall covers, protects, cultivates, and nurtures the land. One day in Edger, a village on the outskirts of Lingalind, a mysterious man named Back Arrow appears. Arrow has lost his memory, but he claims that all he knows is that \u201CI came from outside the Wall.\u201D",
+          "poster_path": "/w3RUD613FuVRRiS1g9IALhKdhVe.jpg",
+          "media_type": "tv",
+          "original_language": "ja",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "popularity": 5.4447,
+          "first_air_date": "2021-01-09",
+          "vote_average": 6.8,
+          "vote_count": 20,
+          "origin_country": [
+            "JP"
+          ]
+        },
+        {
+          "adult": false,
+          "id": 2358865,
+          "name": "Zorya Arrow",
+          "original_name": "Zorya Arrow",
+          "media_type": "person",
+          "popularity": 0.0456,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/1Qq7XJDBhpLaYB1Zai7d9dc17lU.jpg",
+              "id": 614510,
+              "title": "Hue Quilted Windowpane",
+              "original_title": "Hue Quilted Windowpane",
+              "overview": "A lonely woman who falls in love with the man of her dreams; Elvis Presley. Elvis appears to Edi on her living room television and whispers sweet nothings that only she can hear. He even dazzles her with a real cubic zirconia ring. But when he promises to come to visit Edi, she must wait to see if the man of her dreams will appear in reality.",
+              "poster_path": null,
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 0.4803,
+              "release_date": "2016-07-26",
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 743412,
+              "title": "Scopophobia",
+              "original_title": "Scopophobia",
+              "overview": "In movies women\u2019s bodies are often seen in small pieces. Close ups of full lips, sexy eyes, long legs, etc, are cut together to suggest a convincing whole. But what if we took the pieces apart and found they didn\u2019t belong to the same person?",
+              "poster_path": "/z5uzlgibbbdbnB3eIDw84dFSkTK.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35
+              ],
+              "popularity": 0.2155,
+              "release_date": "2020-09-15",
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/aac2TKo8nhT76h8ESBagggxslE4.jpg",
+              "id": 1049805,
+              "title": "Arutinae",
+              "original_title": "Arutinae",
+              "overview": "Melding dream-logic and wry mystery, Arutinae melts the seams between sleeping and waking worlds. We follow up-and-coming indie musician Billie Christie on a pilgrimage to the former home of her musical idol, Inge Shielke, in the lakeside village of Matlock. Here, Billie meets the matriarch of an eccentric local family who presides over the lake\u0027s secrets\u2014a polluted portal to the parallel world of Arutinae.",
+              "poster_path": "/23hsFUPib29UFcgzhlry6JvlwVR.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                9648,
+                18,
+                10749,
+                878
+              ],
+              "popularity": 0.5667,
+              "release_date": "2023-07-29",
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 2951672,
+          "name": "H. Web Arrowsmith",
+          "original_name": "H. Web Arrowsmith",
+          "media_type": "person",
+          "popularity": 0.051,
+          "gender": 2,
+          "known_for_department": "Art",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/fg5GcstgP9H8OCNS0MjOMp6MH8R.jpg",
+              "id": 6357,
+              "name": "The Twilight Zone",
+              "original_name": "The Twilight Zone",
+              "overview": "An anthology series containing drama, psychological thriller, fantasy, science fiction, suspense, and/or horror, often concluding with a macabre or unexpected twist.",
+              "poster_path": "/7uY4pCOxbEdv4M8jTE4uMPVoSIW.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                10765,
+                9648,
+                18
+              ],
+              "popularity": 19.2781,
+              "first_air_date": "1959-10-02",
+              "vote_average": 8.469,
+              "vote_count": 974,
+              "origin_country": [
+                "US"
+              ]
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fnsjKsDlQhWaGOGVZ6d0py4qPGq.jpg",
+          "id": 234165,
+          "title": "Cupid\u0027s Arrow",
+          "original_title": "Cupid\u0027s Arrow",
+          "overview": "An innocent college couple unknowingly become involved in their Professor\u0027s illicit research into the manipulation of love and his recreation of the elusive \u0022Cupid\u0027s Arrow\u0022.",
+          "poster_path": "/8OHeyFabgELR1QwvuPvaqE3xV9n.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "popularity": 2.1397,
+          "release_date": "2010-01-01",
+          "video": false,
+          "vote_average": 5.8,
+          "vote_count": 10
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qRzl8DYICpUuZadfXTv116UHd84.jpg",
+          "id": 67020,
+          "name": "Strike Witches: Operation Victory Arrow",
+          "original_name": "\u30B9\u30C8\u30E9\u30A4\u30AF\u30A6\u30A3\u30C3\u30C1\u30FC\u30BA Operation Victory Arrow",
+          "overview": "Operation Victory Arrow takes place in the time between the end of Operation Mars in the second season and the movie. Their are three 30-minute short stories that show the lives of some of the members who returned to their homes after season 2.",
+          "poster_path": "/r5zb0jYAjcSNESIZ2olWwbKSIBk.jpg",
+          "media_type": "tv",
+          "original_language": "ja",
+          "genre_ids": [
+            16
+          ],
+          "popularity": 1.1123,
+          "first_air_date": "2014-09-20",
+          "vote_average": 5.0,
+          "vote_count": 3,
+          "origin_country": [
+            "JP"
+          ]
+        },
+        {
+          "adult": false,
+          "id": 2489486,
+          "name": "Chloe Arrowsmith",
+          "original_name": "Chloe Arrowsmith",
+          "media_type": "person",
+          "popularity": 0.3259,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/eP3grhCTlLFHnbkA5E8l5IbcfAg.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/tintsaQ0WLzZsTMkTiqtMB3rfc8.jpg",
+              "id": 522627,
+              "title": "The Gentlemen",
+              "original_title": "The Gentlemen",
+              "overview": "American expat Mickey Pearson has built a highly profitable marijuana empire in London. When word gets out that he\u2019s looking to cash out of the business forever it triggers plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+              "poster_path": "/jtrhTYB7xSrJxR1vusu99nvnZ1g.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                80
+              ],
+              "popularity": 9.1644,
+              "release_date": "2020-01-01",
+              "video": false,
+              "vote_average": 7.669,
+              "vote_count": 6316
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/x5cFIXZMRnqtyPyeRrSEF5cuIK9.jpg",
+              "id": 37234,
+              "title": "Sex \u0026 Drugs \u0026 Rock \u0026 Roll",
+              "original_title": "Sex \u0026 Drugs \u0026 Rock \u0026 Roll",
+              "overview": "A biography of Ian Dury, who was stricken with polio at a young age and defied expectations by becoming one of the founders of the punk-rock scene in Britain in the 1970s.",
+              "poster_path": "/A8iKHHVRyJPL7Gq58eiTkSI53vJ.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 1.7532,
+              "release_date": "2010-01-08",
+              "video": false,
+              "vote_average": 6.29,
+              "vote_count": 60
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/wzMQ6GVCtIiG4hQi2bAQFqVyW79.jpg",
+              "id": 158914,
+              "title": "The Look of Love",
+              "original_title": "The Look of Love",
+              "overview": "Paul Raymond builds a porn, entertainment and real estate empire that makes him the wealthiest man in Britain, but drugs doom his beloved daughter, Debbie.",
+              "poster_path": "/y0z11oO94cBIcI2zzGeuxfrPQuw.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                18
+              ],
+              "popularity": 3.7685,
+              "release_date": "2013-04-26",
+              "video": false,
+              "vote_average": 5.552,
+              "vote_count": 125
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zlpKUEE4A5LjaTmEz37pw2VZQug.jpg",
+          "id": 553835,
+          "title": "Is It Wrong to Try to Pick Up Girls in a Dungeon?: Arrow of the Orion",
+          "original_title": "\u5287\u5834\u7248 \u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u51FA\u4F1A\u3044\u3092\u6C42\u3081\u308B\u306E\u306F\u9593\u9055\u3063\u3066\u3044\u308B\u3060\u308D\u3046\u304B -\u30AA\u30EA\u30AA\u30F3\u306E\u77E2-",
+          "overview": "In the city of Orario, beneath an impossibly tall tower, lies the dungeon. Only adventurers who form partnerships with the gods themselves have any hope of defeating the monsters that lie within. But the dungeon is not the only place where monsters exist. Far from Orario, in the ruins of an ancient city, a new threat arises. To counter this threat, the goddess Artemis has come to Orario in search of a champion\u2014but it\u2019s not Ais Wallenstein (the legendary Sword Princess) nor Ottar (the strongest warrior to ever enter the dungeon) that she chooses. Rather it is Bell Cranel, a newbie adventurer partnered with a low-tier goddess.",
+          "poster_path": "/78x3RRydNXvdB8BhJAwZz42g1Q1.jpg",
+          "media_type": "movie",
+          "original_language": "ja",
+          "genre_ids": [
+            16,
+            28,
+            12,
+            35,
+            14,
+            10749
+          ],
+          "popularity": 4.323,
+          "release_date": "2019-02-15",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 279
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mw2lH8j684K18YKrKwBcV09pGH9.jpg",
+          "id": 44465,
+          "name": "Arrow Emblem: Grand Prix no taka",
+          "original_name": "\u30A2\u30ED\u30FC\u30A8\u30F3\u30D6\u30EC\u30E0 \u30B0\u30E9\u30F3\u30D7\u30EA\u306E\u9DF9",
+          "overview": "Takaya Todoroki\u0027s dreams of becoming an F1 driver are halted when he crashes his self-built car, but a masked man offers him a second chance, and so Takaya takes on the challenge of establishing his talent with the new Katori Motors team.",
+          "poster_path": "/jJvyBWMLekrHgRVlc5E2Zzn6XqH.jpg",
+          "media_type": "tv",
+          "original_language": "ja",
+          "genre_ids": [
+            16,
+            18
+          ],
+          "popularity": 2.6811,
+          "first_air_date": "1977-09-22",
+          "vote_average": 8.0,
+          "vote_count": 2,
+          "origin_country": [
+            "JP"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sUnJT97Fp9uHkwwhuIzAxtxs3wO.jpg",
+          "id": 379088,
+          "title": "Attack on Titan: Crimson Bow and Arrow",
+          "original_title": "\u5287\u5834\u7248\u300C\u9032\u6483\u306E\u5DE8\u4EBA\u300D\u524D\u7DE8\u301C\u7D05\u84EE\u306E\u5F13\u77E2\u301C",
+          "overview": "When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the humans\u0027 safe zone.",
+          "poster_path": "/k4E04qJvSTQYUPOpYp5YYvdrdcc.jpg",
+          "media_type": "movie",
+          "original_language": "ja",
+          "genre_ids": [
+            16,
+            28,
+            12,
+            14
+          ],
+          "popularity": 2.8369,
+          "release_date": "2014-11-22",
+          "video": true,
+          "vote_average": 8.0,
+          "vote_count": 496
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1173253,
+          "title": "Minami Kuribayashi  1st Tour 2007 fantastic arrow",
+          "original_title": "\u6817\u6797\u307F\u306A\u5B9F  1st Tour 2007 fantastic arrow",
+          "overview": "Concert film includes footage of her February 2007 \u0022Minami Kuribayashi Live Tour 2007 fantastic arrow\u0022 performance at the Nakano Sun Plaza.",
+          "poster_path": "/h2zJOI0boKEjeCEffoDISerk4uv.jpg",
+          "media_type": "movie",
+          "original_language": "ja",
+          "genre_ids": [
+            10402
+          ],
+          "popularity": 0.1515,
+          "release_date": "2008-02-27",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "id": 3623505,
+          "name": "Arrow Meister",
+          "original_name": "Arrow Meister",
+          "media_type": "person",
+          "popularity": 0.0193,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/9TL90eOg7KfaJOqYSgimZ6yXnRJ.jpg",
+              "id": 508101,
+              "title": "Plus One",
+              "original_title": "Plus One",
+              "overview": "Longtime single friends, Ben and Alice, agree to be each other\u0027s respective plus one at every wedding they\u0027re invited to, during a busy summer of wedding fever.",
+              "poster_path": "/4w3bCp5UkLeemdq8MBNlyA3Zl2J.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                10749
+              ],
+              "popularity": 0.9661,
+              "release_date": "2019-06-14",
+              "video": false,
+              "vote_average": 6.856,
+              "vote_count": 390
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 2106623,
+          "name": "Gabrielle Arrowsmith",
+          "original_name": "Gabrielle Arrowsmith",
+          "media_type": "person",
+          "popularity": 0.0286,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 542191,
+              "title": "Ahockalypse",
+              "original_title": "Ahockalypse",
+              "overview": "After winning one championship, Jonsey must survive the zombie apocalypse.",
+              "poster_path": "/kvL5wEfq9zp4tfxqRahVeZbQUYc.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                14,
+                27,
+                12
+              ],
+              "popularity": 1.629,
+              "release_date": "2018-08-31",
+              "video": false,
+              "vote_average": 5.1,
+              "vote_count": 7
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 737819,
+              "title": "Weightier Matters",
+              "original_title": "Weightier Matters",
+              "overview": "A single mom-to-be tries to get back on her feet while competing in a televised singer-songwriter contest.",
+              "poster_path": "/njtuOVQrNZ35YgiDQOsaiJ3H7PD.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [],
+              "popularity": 0.6204,
+              "release_date": "2019-12-31",
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 3908948,
+          "name": "Kyle Arrowsmith",
+          "original_name": "Kyle Arrowsmith",
+          "media_type": "person",
+          "popularity": 0.0379,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 1083496,
+              "title": "Sex Scene",
+              "original_title": "Sex Scene",
+              "overview": "A short film exploring sex and what we get out of it: security, validation, ownership? Do we all perceive sex differently? A teenage couple openly discuss their attitudes towards sex and towards each other during, each trying to cultivate a perfect individual experience whilst failing to acknowledge the other\u0027s needs and insecurities.",
+              "poster_path": null,
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                35
+              ],
+              "popularity": 0.0168,
+              "release_date": "2009-01-01",
+              "video": false,
+              "vote_average": 2.0,
+              "vote_count": 2
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 1776308,
+          "name": "Joe ArrowSmith",
+          "original_name": "Joe ArrowSmith",
+          "media_type": "person",
+          "popularity": 0.0261,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/lQpSTG3T1ZmoUEJlr2CUEvPH0fo.jpg",
+              "id": 60087,
+              "title": "Black Heat",
+              "original_title": "Black Heat",
+              "overview": "Kicks Carter is a streetwise policeman whose beat is Las Vegas. A crime gang is running guns, selling drugs, loan-sharking, and running a prostitution ring out of an upscale hotel in the city and Kicks is trying to put them out of business. But the interference of a woman reporter is making his job more difficult.",
+              "poster_path": "/vWQyl8rWZlTelNnyE7MT2HMHfiV.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                80,
+                18
+              ],
+              "popularity": 5.6528,
+              "release_date": "1976-06-01",
+              "video": false,
+              "vote_average": 4.091,
+              "vote_count": 11
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/6vsdyZMAPn3fBvlpmGJUNatx6P0.jpg",
+              "id": 446884,
+              "title": "Jessi\u0027s Girls",
+              "original_title": "Jessi\u0027s Girls",
+              "overview": "A young Mormon couple is attacked by a bunch of outlaws. They kill the man and the woman is raped several times and left for dead in the desert. With the last ounce of her strength she gets to the hut of an old hermit who nurses her back to health and teaches her how to shoot. The woman then frees three female criminals and seeks vengeance on the outlaws.",
+              "poster_path": "/zeiPLQAfGCEzjQUayKVo2twJS3g.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                37
+              ],
+              "popularity": 1.7723,
+              "release_date": "1975-04-01",
+              "video": false,
+              "vote_average": 5.2,
+              "vote_count": 17
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/w8rZfsez63IwJV6f0MFKYQ2LJmV.jpg",
+              "id": 112087,
+              "title": "The Wild Party",
+              "original_title": "The Wild Party",
+              "overview": "An aging silent movie comic star throws a lavish party to try and save his failing career.",
+              "poster_path": "/7VMuAmnjost7sfnBUqfx8AALQK8.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                18
+              ],
+              "popularity": 2.4206,
+              "release_date": "1975-03-01",
+              "video": false,
+              "vote_average": 4.738,
+              "vote_count": 21
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 3285098,
+          "name": "Arrow Bandian",
+          "original_name": "Arrow Bandian",
+          "media_type": "person",
+          "popularity": 0.0357,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 305165,
+              "title": "Kingbreaker",
+              "original_title": "Kingbreaker",
+              "overview": "Hank lives two completely different lives concealing one from another. By day he\u0027s Hank, a family man with a marriage on the rocks with his wife Miriam that thinks he\u0027s having an affair, but by night Hank turns into \u0022Tom Dunn\u0022, a sadistic, quirky, cold-blooded hit man for hire with a strict code of conduct. As Tom continues to take increasingly risky but lucrative jobs from his handler Jackie that are passed down down to him from his mysterious boss Walter all while his marriage is falling apart, Tom is pushed to his limits when he discoverers he\u0027s actually working for the Mexican Drug Cartel sending his two lives on a collision course into one another.",
+              "poster_path": "/qGkxAfzdQw0hW3LX9YUALfYkiIi.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [],
+              "popularity": 0.0942,
+              "release_date": "2010-01-01",
+              "video": false,
+              "vote_average": 5.0,
+              "vote_count": 2
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l9KInBleoVHFB2TXxChn6pjlDxz.jpg",
+          "id": 79224,
+          "title": "War of the Arrows",
+          "original_title": "\uCD5C\uC885\uBCD1\uAE30 \uD65C",
+          "overview": "After the death of their father, two siblings are raised by their father\u0027s best friend. However, when one gets kidnapped just before her wedding, the other rises against the Manchus.",
+          "poster_path": "/iOTRRHt9GNbUfQhV3MhMCznjrPI.jpg",
+          "media_type": "movie",
+          "original_language": "ko",
+          "genre_ids": [
+            18,
+            28,
+            36
+          ],
+          "popularity": 5.5275,
+          "release_date": "2011-08-10",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 274
+        }
+      ],
+      "total_pages": 16,
+      "total_results": 311
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "c569ac1e221786acbd507941f4d0e54066475f42d21f72aa91e2794e7c2c8f42",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=26321",
+      "ETag": "W/\u00221f8c3542a58d1b80d2f44aa51fadae7f\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

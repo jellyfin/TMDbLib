@@ -1,0 +1,112 @@
+{
+  "Guid": "5c83bfb2-3cb8-0f40-bc08-23e2d2df335f",
+  "UpdatedAt": "2025-12-24T11:53:34.9684968Z",
+  "Title": "Proxy Mapping for GET /3/movie/1087891/keywords",
+  "Description": "Proxy Mapping for GET /3/movie/1087891/keywords",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1087891/keywords",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1087891,
+      "keywords": [
+        {
+          "id": 591,
+          "name": "central intelligence agency (cia)"
+        },
+        {
+          "id": 818,
+          "name": "based on novel or book"
+        },
+        {
+          "id": 10685,
+          "name": "escape"
+        },
+        {
+          "id": 1936,
+          "name": "blackmail"
+        },
+        {
+          "id": 9748,
+          "name": "revenge"
+        },
+        {
+          "id": 33705,
+          "name": "agent"
+        },
+        {
+          "id": 41336,
+          "name": "government assassin"
+        },
+        {
+          "id": 162300,
+          "name": "government cover-up"
+        },
+        {
+          "id": 181635,
+          "name": "government conspiracy"
+        },
+        {
+          "id": 208397,
+          "name": "death of wife"
+        },
+        {
+          "id": 217282,
+          "name": "spy thriller"
+        },
+        {
+          "id": 281585,
+          "name": "inspirational"
+        },
+        {
+          "id": 303918,
+          "name": "computer hacker"
+        },
+        {
+          "id": 314730,
+          "name": "suspenseful"
+        },
+        {
+          "id": 325809,
+          "name": "enthusiastic"
+        },
+        {
+          "id": 335521,
+          "name": "terrorist"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "25609d393168dc1ecd1e2e38712ea369b8f1c41ec195c2918c0b7acca5b11190",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=12344",
+      "ETag": "W/\u002241feb7b6f0cfd5adb6ec85a7535d4e45\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

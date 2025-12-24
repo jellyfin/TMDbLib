@@ -1,0 +1,135 @@
+{
+  "Guid": "a824c4b0-c3dd-8647-a6ff-c63f217b09b1",
+  "UpdatedAt": "2025-12-24T11:53:34.6349252Z",
+  "Title": "Proxy Mapping for GET /3/genre/movie/list",
+  "Description": "Proxy Mapping for GET /3/genre/movie/list",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/genre/movie/list",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "da",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 12,
+          "name": "Eventyr"
+        },
+        {
+          "id": 16,
+          "name": "Animation"
+        },
+        {
+          "id": 35,
+          "name": "Komedie"
+        },
+        {
+          "id": 80,
+          "name": "Kriminalitet"
+        },
+        {
+          "id": 99,
+          "name": "Documentary"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10751,
+          "name": "Familie"
+        },
+        {
+          "id": 14,
+          "name": "Fantasy"
+        },
+        {
+          "id": 36,
+          "name": "Historie "
+        },
+        {
+          "id": 27,
+          "name": "Gyser"
+        },
+        {
+          "id": 10402,
+          "name": "Musik"
+        },
+        {
+          "id": 9648,
+          "name": "Mysterium"
+        },
+        {
+          "id": 10749,
+          "name": "Romantik"
+        },
+        {
+          "id": 878,
+          "name": "Sci-fi"
+        },
+        {
+          "id": 10770,
+          "name": "TV film"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        },
+        {
+          "id": 10752,
+          "name": "Krig"
+        },
+        {
+          "id": 37,
+          "name": "Western"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=18347",
+      "x-memc": "HIT",
+      "x-memc-key": "5e66d6ae1a3fb24b894b085cf75372543c65f11b8ab35b489fe9a2109f212c73",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022e871667a56af0b8de315305830c3870a\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

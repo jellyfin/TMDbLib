@@ -1,0 +1,73 @@
+{
+  "Guid": "8bbef4bf-cbce-474e-9428-5ef8ac5fc58a",
+  "UpdatedAt": "2025-12-24T11:53:34.6086808Z",
+  "Title": "Proxy Mapping for GET /3/person/62",
+  "Description": "Proxy Mapping for GET /3/person/62",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/62",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "da",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "also_known_as": [
+        "Walter Bruce Willis"
+      ],
+      "biography": "En amerikansk skuespiller og producer.  Han begyndte sin karriere i diverse amerikanske tv-shows i 1980\u2019erne og har efterf\u00F8lgende b\u00E5de medvirket i tv-serier og film. Han er dog prim\u00E6rt kendt for sine roller i en lang r\u00E6kke Hollywood spillefilm som inkluderer b\u00E5de komedie- drama- og actionroller.\n\nHan er kendt for sin rolle som John McClane i Die Hard filmene.\n\nWillis blev f\u00F8dt i Idar-Oberstein i det tidligere vesttyskland, s\u00F8n af moderen Marlene Willis som stammede fra Kessel i Tyskland og var bankansat samt faderen David Willis, en amerikansk soldat.\n\nWillis er den \u00E6ldste af 4 b\u00F8rn.\n\nVed pr\u00E6mieren til filmen Shakeout m\u00F8dte Willis skuespillerinden Demi Moore. De blev efterf\u00F8lgende gift 21. november 1987 og fik 3 d\u00F8tre sammen f\u00F8r de efterf\u00F8lgende blev skilt 18. oktober 2000.\n\nEfter skilsmissen datede Willis Maria Bravo Rosado and Emily Sandberg. Han blev forlovet med Brooke Burns indtil de gik hvert til sit i 2004 efter 10 m\u00E5neder sammen.  Willis blev gift med Emma Heming 21. Marts 2009.",
+      "birthday": "1955-03-19",
+      "deathday": null,
+      "gender": 2,
+      "homepage": null,
+      "id": 62,
+      "imdb_id": "nm0000246",
+      "known_for_department": "Acting",
+      "name": "Bruce Willis",
+      "place_of_birth": "Idar-Oberstein, West Germany [now Germany]",
+      "popularity": 5.9637,
+      "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg"
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "c898c52a569080532cb648d73172689acfee4e0b39720e230484d9c51da5c18a",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=25975",
+      "ETag": "W/\u0022bbde86f003707af9ad6a1eff78f3f161\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

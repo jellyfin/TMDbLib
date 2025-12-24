@@ -1,0 +1,92 @@
+{
+  "Guid": "46bf75ee-e54b-9249-b84e-ba2c17731c25",
+  "UpdatedAt": "2025-12-24T11:53:34.8335351Z",
+  "Title": "Proxy Mapping for GET /3/search/collection",
+  "Description": "Proxy Mapping for GET /3/search/collection",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/collection",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "007",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/fw6YfVOmK0tVtaSUGb3GvLzEmvK.jpg",
+          "id": 141084,
+          "name": "Happily N\u0027Ever After Collection",
+          "original_language": "en",
+          "original_name": "Happily N\u0027Ever After Collection",
+          "overview": "A collection of animated movies based on fairytales.",
+          "poster_path": "/bT90AIpfy1jJnXpdFVkptfRmlEH.jpg"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dOSECZImeyZldoq0ObieBE0lwie.jpg",
+          "id": 645,
+          "name": "James Bond Collection",
+          "original_language": "en",
+          "original_name": "James Bond Collection",
+          "overview": "The James Bond Collection is a legendary spy film series based on Ian Fleming\u2019s novels, following MI6 agent 007, James Bond, as he takes on global threats with style, gadgets, and charm. Produced by EON Productions, the franchise spans 25 official films (1962\u20132021) and has featured six actors, from Sean Connery to Daniel Craig. Known for its thrilling action, iconic villains, Bond girls, and unforgettable theme songs, the series remains a cornerstone of the spy genre. With espionage, luxury cars, and shaken-not-stirred martinis, Bond continues to captivate audiences worldwide.",
+          "poster_path": "/ofwSiqOFShhunAIYYdSMHMJQSx2.jpg"
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 2
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "086e3cb2ff8f6837aa2d4889e54be9c8f82c2693d066e20a6b9fd815c2a86f83",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=22734",
+      "ETag": "W/\u0022b9ce7e651fe257ab9e1c41e196c3b6dc\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

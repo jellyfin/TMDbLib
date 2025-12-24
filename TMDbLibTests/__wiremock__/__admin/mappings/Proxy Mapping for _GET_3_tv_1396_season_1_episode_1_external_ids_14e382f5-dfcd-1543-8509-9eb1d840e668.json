@@ -1,0 +1,52 @@
+{
+  "Guid": "14e382f5-dfcd-1543-8509-9eb1d840e668",
+  "UpdatedAt": "2025-12-24T11:53:34.8677324Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/external_ids",
+  "Description": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/external_ids",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/season/1/episode/1/external_ids",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 62085,
+      "imdb_id": "tt0959621",
+      "freebase_mid": "/m/03mb620",
+      "freebase_id": null,
+      "tvdb_id": 349232,
+      "tvrage_id": 637041,
+      "wikidata_id": "Q14625947"
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "d29dc62182f75bd3f8ad1f94d9a8e65f1fee130525100ec4d2da537b6862bb6f",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=25070",
+      "ETag": "W/\u00228536e593b01fb4e807c03eef5231a572\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

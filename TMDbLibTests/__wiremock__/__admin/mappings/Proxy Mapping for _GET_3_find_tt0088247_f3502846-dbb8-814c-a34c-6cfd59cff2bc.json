@@ -1,0 +1,84 @@
+{
+  "Guid": "f3502846-dbb8-814c-a34c-6cfd59cff2bc",
+  "UpdatedAt": "2025-12-24T11:53:34.6150881Z",
+  "Title": "Proxy Mapping for GET /3/find/tt0088247",
+  "Description": "Proxy Mapping for GET /3/find/tt0088247",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/find/tt0088247",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "external_source",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "imdb_id",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "movie_results": [
+        {
+          "adult": false,
+          "backdrop_path": "/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg",
+          "id": 218,
+          "title": "The Terminator",
+          "original_title": "The Terminator",
+          "overview": "In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \u0022Terminator\u0022 back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?",
+          "poster_path": "/hzXSE66v6KthZ8nPoLZmsi2G05j.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53,
+            878
+          ],
+          "popularity": 22.2468,
+          "release_date": "1984-10-26",
+          "video": false,
+          "vote_average": 7.674,
+          "vote_count": 14078
+        }
+      ],
+      "person_results": [],
+      "tv_results": [],
+      "tv_episode_results": [],
+      "tv_season_results": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "cd2ff5acc8e25e455a3352733c56d3ecb5dfc72f53c44cd1898e7b37eb255c56",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=24683",
+      "ETag": "W/\u0022e1fe50fd6863a2b1979af9605af0739b\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

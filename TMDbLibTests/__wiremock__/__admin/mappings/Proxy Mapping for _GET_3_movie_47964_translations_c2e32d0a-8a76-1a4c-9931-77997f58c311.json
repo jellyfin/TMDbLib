@@ -1,0 +1,620 @@
+{
+  "Guid": "c2e32d0a-8a76-1a4c-9931-77997f58c311",
+  "UpdatedAt": "2025-12-24T11:53:35.0798177Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964/translations",
+  "Description": "Proxy Mapping for GET /3/movie/47964/translations",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964/translations",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 47964,
+      "translations": [
+        {
+          "iso_3166_1": "DE",
+          "iso_639_1": "de",
+          "name": "Deutsch",
+          "english_name": "German",
+          "data": {
+            "homepage": "",
+            "overview": "Als ein gef\u00FCrchteter russischer F\u00FChrer aus der Gefangenschaft ausbricht und John McClanes Sohn Jack in die Ereignisse verwickelt wird, reist John nach Russland. Dort will er mittels frecher Spr\u00FCche und Waffeneinsatz seinen Spross, mit dem er bislang wenig Kontakt hatte, aus der Gefahrenzone retten. Wie sich herausstellt, ist sein Sohn jedoch alles andere als der von John McClane erwartete Waschlappen geworden. Hier ist der Apfel nicht weit vom Stamm gefallen, denn ohne Johns Wissen wurde Jack zu einem kaltschn\u00E4uzigen CIA-Agenten ausgebildet und ist ebenso hart im Nehmen wie sein alter Herr. Mit von der Partie ist ein Russe namens Komorov, hinter dem die gesamte russische Unterwelt her ist. Gemeinsam sieht sich das taffe Vater-Sohn-Duo mit Unterst\u00FCtzung von Komorov der halben Sowjet-Armee gegen\u00FCber, die einen Machtwechsel in Russland anstrebt\u2026",
+            "runtime": 98,
+            "tagline": "Wie der Vater, so der Sohn",
+            "title": "Stirb langsam - Ein guter Tag zum Sterben"
+          }
+        },
+        {
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "name": "English",
+          "english_name": "English",
+          "data": {
+            "homepage": "http://www.diehardmovie.com/",
+            "overview": "Iconoclastic, take-no-prisoners cop John McClane, finds himself for the first time on foreign soil after traveling to Moscow to help his wayward son Jack - unaware that Jack is really a highly-trained CIA operative out to stop a nuclear weapons heist. With the Russian underworld in pursuit, and battling a countdown to war, the two McClanes discover that their opposing methods make them unstoppable heroes.",
+            "runtime": 98,
+            "tagline": "Yippee Ki-Yay Mother Russia.",
+            "title": ""
+          }
+        },
+        {
+          "iso_3166_1": "RU",
+          "iso_639_1": "ru",
+          "name": "P\u0443\u0441\u0441\u043A\u0438\u0439",
+          "english_name": "Russian",
+          "data": {
+            "homepage": "",
+            "overview": "\u0414\u0436\u043E\u043D \u041C\u0430\u043A\u043A\u043B\u0435\u0439\u043D \u043F\u0440\u0438\u0431\u044B\u0432\u0430\u0435\u0442 \u0432 \u041C\u043E\u0441\u043A\u0432\u0443, \u0447\u0442\u043E\u0431\u044B \u0432\u044B\u0437\u0432\u043E\u043B\u0438\u0442\u044C \u0438\u0437 \u0442\u044E\u0440\u044C\u043C\u044B \u0441\u0432\u043E\u0435\u0433\u043E \u043D\u0435\u043F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0443\u0435\u043C\u043E\u0433\u043E \u0441\u044B\u043D\u0430, \u043D\u043E \u0445\u043E\u043B\u043E\u0434\u043D\u0430\u044F \u0433\u043E\u043B\u043E\u0432\u0430 \u0438 \u0436\u0435\u043B\u0435\u0437\u043D\u044B\u0435 \u043C\u0443\u0441\u043A\u0443\u043B\u044B \u0432\u044F\u0437\u043D\u0443\u0442 \u0432 \u043F\u0430\u0443\u0442\u0438\u043D\u0435 \u0440\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u043E\u0439 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438. \u0414\u0435\u043B\u043E, \u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u0432\u043B\u0438\u043F \u041C\u0430\u043A\u043A\u043B\u0435\u0439\u043D-\u043C\u043B\u0430\u0434\u0448\u0438\u0439, \u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043D\u0430\u0441\u0442\u043E\u043B\u044C\u043A\u043E \u00AB\u043E\u043F\u0430\u0441\u043D\u043E\u0439 \u0442\u0440\u044F\u0441\u0438\u043D\u043E\u0439\u00BB, \u0447\u0442\u043E \u043E\u0442\u0446\u0443 \u0438 \u0441\u044B\u043D\u0443, \u0447\u0442\u043E\u0431\u044B \u0432\u044B\u0436\u0438\u0442\u044C \u0438 \u0432 \u043E\u0447\u0435\u0440\u0435\u0434\u043D\u043E\u0439 \u0440\u0430\u0437 \u0441\u043F\u0430\u0441\u0442\u0438 \u043C\u0438\u0440, \u043F\u0440\u0438\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u0438\u0442\u044C \u0441\u0432\u043E\u0438 \u0443\u0441\u0438\u043B\u0438\u044F, \u0437\u0430\u0431\u044B\u0432 \u043F\u0440\u0435\u0436\u043D\u0438\u0435, \u043A\u0430\u0437\u0430\u043B\u043E\u0441\u044C \u0431\u044B, \u043D\u0435\u043F\u0440\u0435\u043E\u0434\u043E\u043B\u0438\u043C\u044B\u0435 \u0440\u0430\u0437\u043D\u043E\u0433\u043B\u0430\u0441\u0438\u044F.",
+            "runtime": 97,
+            "tagline": "\u042F\u0431\u043B\u043E\u043A\u043E \u043E\u0442 \u044F\u0431\u043B\u043E\u043D\u0438...",
+            "title": "\u041A\u0440\u0435\u043F\u043A\u0438\u0439 \u043E\u0440\u0435\u0448\u0435\u043A: \u0425\u043E\u0440\u043E\u0448\u0438\u0439 \u0434\u0435\u043D\u044C, \u0447\u0442\u043E\u0431\u044B \u0443\u043C\u0435\u0440\u0435\u0442\u044C"
+          }
+        },
+        {
+          "iso_3166_1": "BG",
+          "iso_639_1": "bg",
+          "name": "\u0431\u044A\u043B\u0433\u0430\u0440\u0441\u043A\u0438 \u0435\u0437\u0438\u043A",
+          "english_name": "Bulgarian",
+          "data": {
+            "homepage": "",
+            "overview": "\u041C\u043B\u0430\u0434\u0438\u044F\u0442 \u0441\u0438\u043D \u043D\u0430 \u0414\u0436\u043E\u043D \u041C\u0430\u043A\u043B\u0435\u0439\u043D, \u0414\u0436\u0430\u043A, \u0435 \u0437\u0430\u0431\u044A\u0440\u043A\u0430\u043D \u0432 \u0434\u0440\u044A\u0437\u043A\u043E \u0431\u044F\u0433\u0441\u0442\u0432\u043E \u043E\u0442 \u0441\u0442\u0440\u043E\u0433\u043E \u043E\u0445\u0440\u0430\u043D\u044F\u0432\u0430\u043D \u0437\u0430\u0442\u0432\u043E\u0440, \u0438 \u0441\u0435 \u043F\u0440\u0435\u0432\u0440\u044A\u0449\u0430 \u0432 \u043C\u0438\u0448\u0435\u043D\u0430 \u043D\u0430 \u043F\u0440\u0435\u0441\u0442\u044A\u043F\u043D\u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u0438 \u0438 \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0438 \u0441\u043B\u0443\u0436\u0431\u0438. \u0412\u044A\u043F\u0440\u0435\u043A\u0438 \u0447\u0435 \u043D\u0435 \u0435 \u0432\u0438\u0436\u0434\u0430\u043B \u0414\u0436\u0430\u043A \u043E\u0442 \u0433\u043E\u0434\u0438\u043D\u0438, \u041C\u0430\u043A\u043B\u0435\u0439\u043D \u0441\u0435 \u0437\u0430\u043F\u044A\u0442\u0432\u0430 \u043A\u044A\u043C \u0420\u0443\u0441\u0438\u044F \u0441 \u043D\u0430\u0434\u0435\u0436\u0434\u0430\u0442\u0430 \u0434\u0430 \u0433\u043E \u0438\u0437\u043C\u044A\u043A\u043D\u0435 \u043E\u0442 \u0441\u044A\u0437\u0434\u0430\u043B\u0430\u0442\u0430 \u0441\u0435 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u044F.",
+            "runtime": 0,
+            "tagline": "\u041A\u0430\u043A\u044A\u0432\u0442\u043E \u0431\u0430\u0449\u0430\u0442\u0430, \u0442\u0430\u043A\u044A\u0432 \u0438 \u0441\u0438\u043D\u044A\u0442.",
+            "title": "\u0423\u043C\u0438\u0440\u0430\u0439 \u0442\u0440\u0443\u0434\u043D\u043E: \u0414\u0435\u043D\u044F\u0442 \u043D\u0430\u0441\u0442\u044A\u043F\u0438"
+          }
+        },
+        {
+          "iso_3166_1": "IT",
+          "iso_639_1": "it",
+          "name": "Italiano",
+          "english_name": "Italian",
+          "data": {
+            "homepage": "http://www.diehardmovie.com/",
+            "overview": "McClane arriva a Mosca per rintracciare il figlio che non vede da tempo, Jack (Jai Courtney), ma rimane stupito quando scopre che lui lavora sotto copertura per proteggere un informatore del governo, Komarov. Con la loro vita appesa a un filo, i McClane sono costretti a superare ogni contrasto per portare al sicuro Komarov e impedire un crimine disastroso nel luogo pi\u00F9 desolato sulla faccia della Terra, Chernobyl.",
+            "runtime": 97,
+            "tagline": "Tale padre. Tale figlio. Stesso inferno.",
+            "title": "Die Hard - Un buon giorno per morire"
+          }
+        },
+        {
+          "iso_3166_1": "HU",
+          "iso_639_1": "hu",
+          "name": "Magyar",
+          "english_name": "Hungarian",
+          "data": {
+            "homepage": "",
+            "overview": "Igazi New York-i zsaru: kopott, f\u00E1radt, de a humora \u00E9s a b\u00E1tors\u00E1ga a legv\u00E1ratlanabb helyzetekben sem hagyja cserben. John McClane hadnagy (Bruce Willis) megtudja, hogy a fia, Jack (Jai Courtney) bajba ker\u00FClt Moszkv\u00E1ban, \u00E9s b\u00E1r r\u00E9g\u00F3ta nem besz\u00E9lnek egym\u00E1ssal, haboz\u00E1s n\u00E9lk\u00FCl a seg\u00EDts\u00E9g\u00E9re siet - \u00E9s term\u00E9szetesen a k\u00FCzdelem legk\u00F6zep\u00E9ben tal\u00E1lja mag\u00E1t.  McClane t\u00F6bbnyire v\u00E9letlen\u00FCl keveredik a terrorist\u00E1k \u00FAtj\u00E1ba, a fia viszont mindig tudja, mit csin\u00E1l: \u00E9s \u0151 sem ijed meg k\u00F6nnyen. K\u00E9t gener\u00E1ci\u00F3 egy\u00FCtt sz\u00E1ll szembe a lehetetlennel: New Yorkt\u00F3l Moszkv\u00E1ig \u00E9s tov\u00E1bb, eg\u00E9szen Csernobilig.",
+            "runtime": 101,
+            "tagline": "A v\u00E9r nem v\u00E1lik v\u00EDzz\u00E9",
+            "title": "Die Hard 5. - Dr\u00E1g\u00E1bb, mint az \u00E9leted"
+          }
+        },
+        {
+          "iso_3166_1": "ES",
+          "iso_639_1": "es",
+          "name": "Espa\u00F1ol",
+          "english_name": "Spanish",
+          "data": {
+            "homepage": "",
+            "overview": "Conservando la destreza y la actitud perseverante caracter\u00EDsticas de las anteriores entregas, que le han convertido en el mayor rival de todos los criminales que atentan contra la libertad de la humanidad y que han permitiendo la salvaci\u00F3n de \u00E9sta en distintas situaciones y circunstancias, John McClane deber\u00E1 viajar a Rusia para rescatar a su hijo que se encuentra encerrado en una prisi\u00F3n bajo las \u00F3rdenes de un d\u00E9spota l\u00EDder ruso.  Padre e hijo tendr\u00E1n que unir fuerzas para luchar contra su adversario, conseguir liberarse y mantenerse con vida. As\u00ED, los protagonistas se ver\u00E1n envueltos en una sucesi\u00F3n de extrema hostilidad que no solo pondr\u00E1 su vida en peligro, tambi\u00E9n la del resto de ciudadanos. Su deber ser\u00E1 hacer todo lo posible por conservar algo tan esencial en la sociedad actual como es la democracia, una libertad de la que el perverso y autoritario l\u00EDder antagonista querr\u00E1 apoderarse.",
+            "runtime": 97,
+            "tagline": "Padre e hijo juntos en el infierno",
+            "title": "La jungla: Un buen d\u00EDa para morir"
+          }
+        },
+        {
+          "iso_3166_1": "CZ",
+          "iso_639_1": "cs",
+          "name": "\u010Cesk\u00FD",
+          "english_name": "Czech",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane tentokr\u00E1te p\u0159ij\u00ED\u017Ed\u00ED do Moskvy, aby tady na\u0161el sv\u00E9ho syna Jacka, kter\u00FD se mu pon\u011Bkud odcizil. Johna ale \u010Dek\u00E1 p\u0159ekvapen\u00ED, zjist\u00ED, \u017Ee i kdy\u017E jejich vztah otec - syn m\u00E1 k ide\u00E1lu hodn\u011B daleko, jablko nepadlo daleko od stromu. Jack toti\u017E v Moskv\u011B p\u016Fsob\u00ED jako tajn\u00FD agent, chr\u00E1n\u00EDc\u00ED inform\u00E1tora z vl\u00E1dn\u00EDch \u0159ad, Komarovova. Otec a syn McClaneovi jsou nuceni p\u0159ekonat osobn\u00ED neshody a nasadit vlastn\u00ED krky, aby dostali Komarovova do bezpe\u010D\u00ED a odvr\u00E1tili hrozbu katastrof\u00E1ln\u00EDho zlo\u010Dinu v bez\u00FAt\u011B\u0161n\u00E9m m\u00EDst\u011B na\u0161\u00ED planety \u2013 v \u010Cernobylu. Do hry tak vstupuje obchod s plutoniem, ru\u0161t\u00ED oligarchov\u00E9, brut\u00E1ln\u00ED moskevsk\u00E9 podsv\u011Bt\u00ED a tak\u00E9 r\u016Fzn\u00E9 p\u0159edstavy Johna a Jacka McClaneov\u00FDch, jak za t\u011Bchto okolnost\u00ED prosadit z\u00E1kon. A nav\u00EDc se Jack McClane jako tajn\u00FD agent v Moskv\u011B skv\u011Ble vyzn\u00E1 i domluv\u00ED, kde\u017Eto John je naprosto ztracen\u00FD. A to mu na dobr\u00E9 n\u00E1lad\u011B rozhodn\u011B nep\u0159id\u00E1v\u00E1.",
+            "runtime": 105,
+            "tagline": "Jak\u00FD otec, takov\u00FD syn.",
+            "title": "Smrtonosn\u00E1 past: Op\u011Bt v akci"
+          }
+        },
+        {
+          "iso_3166_1": "PT",
+          "iso_639_1": "pt",
+          "name": "Portugu\u00EAs",
+          "english_name": "Portuguese",
+          "data": {
+            "homepage": "",
+            "overview": "Ap\u00F3s alguns anos sem ter not\u00EDcias do seu filho, John McClane descobre que ele est\u00E1 preso na R\u00FAssia, acusado de homic\u00EDdio, e parte para o ver. Ao chegar a Moscovo, por\u00E9m, encontra-o em fuga do tribunal onde ia ser julgado, na companhia de Yuri Komorov, um terrorista que alega ter informa\u00E7\u00F5es comprometedoras que podem comprometer um pol\u00EDtico e oligarca russo, Chagarin. Pai e filho embarcam, assim, numa teia de conspira\u00E7\u00F5es em que podem acabar mortos, \u00E0 medida que se reaproximam novamente.",
+            "runtime": 100,
+            "tagline": "Pai e filho. No c\u00E9u ou no inferno.",
+            "title": "Die Hard: Nunca \u00E9 Bom Dia para Morrer"
+          }
+        },
+        {
+          "iso_3166_1": "NL",
+          "iso_639_1": "nl",
+          "name": "Nederlands",
+          "english_name": "Dutch",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane reist af naar Rusland om zijn vervreemde zoon te helpen. Die is betrokken bij de gevangenisuitbraak van een Russische leider die een staatsgreep wil plegen. Vader en zoon moeten alles op alles zetten om zichzelf en elkaar in leven te houden en de werelddemocratie te beschermen.",
+            "runtime": 97,
+            "tagline": "",
+            "title": "A Good Day to Die Hard"
+          }
+        },
+        {
+          "iso_3166_1": "FR",
+          "iso_639_1": "fr",
+          "name": "Fran\u00E7ais",
+          "english_name": "French",
+          "data": {
+            "homepage": "http://www.foxfrance.com/die-hard-belle-journee-pour-mourir",
+            "overview": "John McClane, le flic sans \u00E9tat d\u2019\u00E2me, est vraiment au mauvais endroit au mauvais moment, \u00E0 Moscou, pour aider son fils Jack qu\u2019il ne voit plus. Entre la mafia russe qui veut leur faire la peau et leur combat pour \u00E9viter le d\u00E9clenchement d\u2019une guerre, les McClane d\u00E9couvrent que leurs m\u00E9thodes pourtant bien diff\u00E9rentes font d\u2019eux des h\u00E9ros que rien ne peut arr\u00EAter.",
+            "runtime": 96,
+            "tagline": "Dans la famille, ils ont le sang chaud.",
+            "title": "Die Hard : Belle journ\u00E9e pour mourir"
+          }
+        },
+        {
+          "iso_3166_1": "TR",
+          "iso_639_1": "tr",
+          "name": "T\u00FCrk\u00E7e",
+          "english_name": "Turkish",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane 20 seneden fazlad\u0131r New York emniyet g\u00FC\u00E7lerine ba\u011Fl\u0131 olarak hizmet veren ve ter\u00F6rist gruplar\u0131 yok etmesiyle \u00FCnl\u00FC bir polistir. Bu y\u00FCzden de d\u00FCnyan\u0131n d\u00F6rt bir k\u00F6\u015Fesindeki ter\u00F6ristlerin ba\u015F d\u00FC\u015Fman\u0131d\u0131r. Rus mafya lideri hapisten ka\u00E7\u0131nca McClane, rotas\u0131n\u0131 Rusya\u0027ya \u00E7evirir; Rus yeralt\u0131 d\u00FCnyas\u0131 ile olan tek ba\u011Flant\u0131s\u0131 ise Komorov ad\u0131nda bir Rus\u0027tur. Fakat Amerikal\u0131lar\u0131 pek de sevmeyen bu \u00FClkede, gizli g\u00F6rev esnas\u0131nda kar\u015F\u0131s\u0131nda o\u011Flu Jack\u0027i g\u00F6r\u00FCnce daha da \u015Fa\u015F\u0131racakt\u0131r. John, o\u011Flunun sand\u0131\u011F\u0131ndan daha yetenekli oldu\u011Funu ve Rus mafyas\u0131n\u0131 k\u00F6\u015Feye k\u0131st\u0131rmak \u00FCzere oldu\u011Funu fark eder. Ayn\u0131 d\u00F6nemde Sovyet Ordu Kuvvetleri de kontrol\u00FC ele ge\u00E7irmeye \u00E7al\u0131\u015Fmaktad\u0131rlar. Baba o\u011Ful, ka\u00E7ak mafya liderine kar\u015F\u0131 sert ve delice bir sava\u015Fa giri\u015Feceklerdir.",
+            "runtime": 0,
+            "tagline": "Baba - O\u011Ful Cehenneme Kar\u015F\u0131",
+            "title": "Zor \u00D6l\u00FCm: \u00D6lmek \u0130\u00E7in G\u00FCzel Bir G\u00FCn"
+          }
+        },
+        {
+          "iso_3166_1": "DK",
+          "iso_639_1": "da",
+          "name": "Dansk",
+          "english_name": "Danish",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane\u0027s voksne s\u00F8n er havnet i et russisk f\u00E6ngsel, s\u00E5 farmand s\u00E6tter kurs mod Moskva for at f\u00E5 ham ud. Det bliver en familiesammenf\u00F8ring, Rusland sent vil glemme. McClane junior er nemlig p\u00E5 farlig mission for CIA, og snart g\u00E5r den vilde jagt gennem Moskvas gader.",
+            "runtime": 97,
+            "tagline": "",
+            "title": ""
+          }
+        },
+        {
+          "iso_3166_1": "SE",
+          "iso_639_1": "sv",
+          "name": "svenska",
+          "english_name": "Swedish",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane \u00E4r tillbaka och \u00E4ven den h\u00E4r g\u00E5ngen hamnar den h\u00E5rdnackade New York-polisen p\u00E5 fel plats vid fel tillf\u00E4lle, efter att ha rest till Moskva f\u00F6r att hj\u00E4lpa sin son Jack . John och Jack har inte ett helt okomplicerat far- och son-f\u00F6rh\u00E5llande, och det faktum att Jack \u00E4r minst lika envis som sin pappa f\u00F6renklar inte saken. Men med Moskvas undre v\u00E4rld efter sig och med tiden emot sig f\u00F6r att stoppa ett krigsutbrott, m\u00E5ste de trots detta samarbeta och tv\u00E5 McClanes visar sig vara en sv\u00E5rslagen kombination\u2026",
+            "runtime": 97,
+            "tagline": "",
+            "title": ""
+          }
+        },
+        {
+          "iso_3166_1": "TH",
+          "iso_639_1": "th",
+          "name": "\u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22",
+          "english_name": "Thai",
+          "data": {
+            "homepage": "",
+            "overview": "\u0E1A\u0E23\u0E39\u0E0B \u0E27\u0E34\u0E25\u0E25\u0E34\u0E2A\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E23\u0E31\u0E1A\u0E1A\u0E17\u0E1A\u0E32\u0E17 \u0E08\u0E2D\u0E2B\u0E4C\u0E19 \u0E41\u0E21\u0E47\u0E04\u0E40\u0E04\u0E25\u0E19 \u0E15\u0E33\u0E23\u0E27\u0E08\u0E2A\u0E32\u0E22\u0E25\u0E31\u0E1A\u0E17\u0E35\u0E48\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E0A\u0E37\u0E48\u0E2D\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E43\u0E2B\u0E49\u0E40\u0E02\u0E32\u0E43\u0E19\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C \u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07 A Good Day to Die Hard \u0E40\u0E02\u0E32\u0E15\u0E49\u0E2D\u0E07\u0E21\u0E35\u0E2A\u0E48\u0E27\u0E19\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E1E\u0E31\u0E19\u0E01\u0E31\u0E1A\u0E40\u0E1A\u0E37\u0E49\u0E2D\u0E07\u0E2B\u0E25\u0E31\u0E07\u0E01\u0E32\u0E23\u0E17\u0E38\u0E08\u0E23\u0E34\u0E15\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E2A\u0E32\u0E2B\u0E31\u0E2A\u0E41\u0E25\u0E30\u0E01\u0E32\u0E23\u0E25\u0E49\u0E32\u0E07\u0E41\u0E04\u0E49\u0E19\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E43\u0E19\u0E23\u0E31\u0E2A\u0E40\u0E0B\u0E35\u0E22 \u0E41\u0E21\u0E47\u0E04\u0E40\u0E04\u0E25\u0E19\u0E40\u0E14\u0E34\u0E19\u0E17\u0E32\u0E07\u0E21\u0E32\u0E17\u0E35\u0E48\u0E21\u0E2D\u0E2A\u0E42\u0E04\u0E27\u0E4C\u0E2A\u0E30\u0E01\u0E14\u0E23\u0E2D\u0E22\u0E15\u0E32\u0E21 \u0E41\u0E08\u0E47\u0E04 (\u0E44\u0E08 \u0E04\u0E2D\u0E23\u0E4C\u0E17\u0E19\u0E35\u0E22\u0E4C) \u0E25\u0E39\u0E01\u0E0A\u0E32\u0E22\u0E17\u0E35\u0E48\u0E44\u0E21\u0E48\u0E04\u0E48\u0E2D\u0E22\u0E25\u0E07\u0E23\u0E2D\u0E22\u0E01\u0E31\u0E19 \u0E41\u0E25\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E15\u0E01\u0E43\u0E08\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E1E\u0E1A\u0E27\u0E48\u0E32\u0E40\u0E02\u0E32\u0E17\u0E33\u0E07\u0E32\u0E19\u0E43\u0E2B\u0E49\u0E1C\u0E39\u0E49\u0E2D\u0E22\u0E39\u0E48\u0E20\u0E32\u0E22\u0E43\u0E15\u0E49\u0E01\u0E32\u0E23\u0E14\u0E39\u0E41\u0E25\u0E02\u0E2D\u0E07\u0E23\u0E31\u0E10\u0E1A\u0E32\u0E25 \u0E42\u0E04\u0E21\u0E32\u0E23\u0E2D\u0E1F \u0E0B\u0E36\u0E48\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E1C\u0E39\u0E49\u0E01\u0E33\u0E04\u0E27\u0E32\u0E21\u0E25\u0E31\u0E1A \u0E43\u0E19\u0E0A\u0E48\u0E27\u0E07\u0E27\u0E34\u0E01\u0E24\u0E15\u0E34\u0E2B\u0E19\u0E35\u0E15\u0E32\u0E22\u0E1E\u0E48\u0E2D\u0E25\u0E39\u0E01\u0E41\u0E21\u0E47\u0E04\u0E40\u0E04\u0E25\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E1E\u0E31\u0E01\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E04\u0E27\u0E32\u0E21\u0E44\u0E21\u0E48\u0E25\u0E07\u0E23\u0E2D\u0E22\u0E01\u0E31\u0E19\u0E44\u0E27\u0E49\u0E01\u0E48\u0E2D\u0E19 \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E1B\u0E01\u0E1B\u0E49\u0E2D\u0E07\u0E42\u0E04\u0E21\u0E32\u0E23\u0E2D\u0E1F\u0E43\u0E2B\u0E49\u0E1B\u0E25\u0E2D\u0E14\u0E20\u0E31\u0E22\u0E41\u0E25\u0E30\u0E2A\u0E01\u0E31\u0E14\u0E2D\u0E32\u0E0A\u0E0D\u0E32\u0E01\u0E23\u0E23\u0E21\u0E17\u0E35\u0E48\u0E2D\u0E32\u0E08\u0E40\u0E01\u0E34\u0E14\u0E02\u0E36\u0E49\u0E19\u0E43\u0E19 \u0E40\u0E0A\u0E2D\u0E23\u0E4C\u0E42\u0E19\u0E1A\u0E34\u0E25 \u0E0B\u0E36\u0E48\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E16\u0E32\u0E19\u0E17\u0E35\u0E48\u0E23\u0E01\u0E23\u0E49\u0E32\u0E07\u0E27\u0E48\u0E32\u0E07\u0E40\u0E1B\u0E25\u0E48\u0E32\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E02\u0E2D\u0E07\u0E42\u0E25\u0E01",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u0E14\u0E32\u0E22 \u0E2E\u0E32\u0E23\u0E4C\u0E14 5 : \u0E27\u0E31\u0E19\u0E14\u0E35\u0E21\u0E2B\u0E32\u0E27\u0E34\u0E19\u0E32\u0E28 \u0E04\u0E19\u0E2D\u0E36\u0E14\u0E15\u0E32\u0E22\u0E22\u0E32\u0E01"
+          }
+        },
+        {
+          "iso_3166_1": "CN",
+          "iso_639_1": "zh",
+          "name": "\u666E\u901A\u8BDD",
+          "english_name": "Mandarin",
+          "data": {
+            "homepage": "",
+            "overview": "\u3000\u3000\u7531\u5E03\u9C81\u65AF\u00B7\u5A01\u5229\u65AF\u6240\u9970\u6F14\u7684\u8D85\u7EA7\u0022\u5E73\u51E1\u82F1\u96C4\u0022\u7EA6\u7FF0\u9EA6\u514B\u83B1\u6069\u53C8\u56DE\u6765\u4E86\u3002\u8FD9\u6B21\u4ED6\u4E3A\u4E86\u53BB\u4FC4\u7F57\u65AF\u6551\u60F9\u4E8B\u7684\u513F\u5B50\u6770\u514B\u51FA\u76D1\u72F1\uFF0C\u5411\u8B66\u5BDF\u5C40\u544A\u4E86\u5047\uFF0C\u4EE5\u6E38\u5BA2\u8EAB\u4EFD\u6765\u5230\u4FC4\u7F57\u65AF\u9996\u90FD\u83AB\u65AF\u79D1\u3002\u5230\u4E86\u83AB\u65AF\u79D1\uFF0C\u4ED6\u610F\u5916\u53D1\u73B0\u6770\u514B\u5728\u5F53\u5730\u4E3A\u7F8E\u56FD\u4E2D\u60C5\u5C40\u6267\u884C\u7740\u4E00\u9879\u60CA\u5929\u4EFB\u52A1\uFF1A\u4FDD\u62A4\u88AB\u902E\u6355\u7684\u4FC4\u7F57\u65AF\u5927\u4EA8\u5E76\u5E26\u4ED6\u5230\u4E2D\u60C5\u5C40\u6307\u5B9A\u5730\u70B9\u4EA4\u4EBA\u3002\u53EF\u7531\u4E8E\u8001\u7238\u7EA6\u7FF0\u7684\u51FA\u73B0\uFF0C\u6770\u514B\u9519\u8FC7\u4E86\u5B8C\u6210\u7B2C\u4E00\u65B9\u6848\u4EFB\u52A1\u7684\u65F6\u673A\uFF0C\u53EA\u597D\u8DD1\u5230\u5907\u7528\u5B89\u5168\u623F\uFF0C\u4F46\u662F\u4E5F\u5F88\u5FEB\u66B4\u9732\u906D\u5230\u4F0F\u51FB\u3002\u968F\u540E\uFF0C\u4E09\u4EBA\u4E0E\u5927\u4EA8\u7684\u72EC\u5973\u7EA6\u597D\u53BB\u53D6\u85CF\u6709\u63ED\u53D1\u5F53\u5C40\u67D0\u9AD8\u5C42\u8FDB\u884C\u6838\u6B66\u4EA4\u6613\u7F6A\u8BC1\u6587\u4EF6\u7684\u94A5\u5319\u3002\u7136\u800C\uFF0C\u8FD9\u6B21\u89C1\u9762\u5DEE\u70B9\u8981\u4E86\u7236\u5B50\u4FE9\u7684\u547D\uFF0C\u5927\u4EA8\u7684\u5973\u513F\u4E3A\u4E86\u94B1\uFF0C\u7ADF\u7136\u7ED1\u67B6\u4EB2\u7239\u51FA\u5356\u4E86\u4ED6\u4EEC\u3002\u800C\u968F\u7740\u4E8B\u6001\u7684\u53D1\u5C55\uFF0C\u4ED6\u4EEC\u53D1\u73B0\u8FD9\u4E00\u5207\u7684\u5E55\u540E\u64CD\u4F5C\u8005\u5C45\u7136\u662F\u5927\u4EA8\u672C\u4EBA\uFF0C\u5176\u771F\u6B63\u76EE\u7684\u662F\u8981\u8D29\u5356\u6838\u6B66\u539F\u6599\u3002\u751F\u6B7B\u5173\u5934\uFF0C\u8FD9\u5BF9\u539F\u672C\u5C31\u610F\u89C1\u4E0D\u548C\u7684\u7236\u5B50\u5FC5\u987B\u4E00\u8D77\u51FA\u751F\u5165\u6B7B\uFF0C\u51B2\u51FA\u5371\u9669\u3002\u5373\u4F7F\u4E2A\u6027\u8FE5\u5F02\uFF0C\u51B2\u7A81\u4E0D\u65AD\uFF0C\u5374\u4E5F\u56E0\u4E3A\u8840\u6D53\u4E8E\u6C34\u7684\u4EB2\u60C5\u5F00\u59CB\u65E0\u95F4\u5408\u4F5C\uFF0C\u5171\u540C\u9762\u4E34\u4E00\u89E6\u5373\u53D1\u7684\u707E\u96BE\u3002\u6700\u7EC8\uFF0C\u7236\u5B50\u4FE9\u4EBA\u7ECF\u8FC7\u4E0E\u6050\u6016\u5206\u5B50\u7684\u6B8A\u6B7B\u640F\u6597\uFF0C\u5C06\u5176\u4E00\u7F51\u6253\u5C3D\uFF0C\u907F\u514D\u4E86\u6838\u6B66\u539F\u6599\u7684\u5916\u6D41\u3002",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u864E\u80C6\u9F99\u5A015"
+          }
+        },
+        {
+          "iso_3166_1": "PL",
+          "iso_639_1": "pl",
+          "name": "Polski",
+          "english_name": "Polish",
+          "data": {
+            "homepage": "",
+            "overview": "Bruce Willis wraca do gry jako John McClane, dzielny nowojorski gliniarz, kt\u00F3ry ma talent do zjawiania si\u0119 w niew\u0142a\u015Bciwym miejscu o niew\u0142a\u015Bciwym czasie. Najnowsze k\u0142opoty czekaj\u0105 go w Rosji, gdzie pojecha\u0142 w poszukiwaniu syna Jacka (Jai Courtney), z kt\u00F3rym od lat pozostawa\u0142 w konflikcie. Okazuje si\u0119, \u017Ce Jack przebywa w moskiewskim wi\u0119zieniu. Udaje mu si\u0119 z niego zbiec, ale na tym misja si\u0119 nie ko\u0144czy. Obaj, ojciec i syn, \u0142\u0105cz\u0105 si\u0142y, by udaremni\u0107 kradzie\u017C broni nuklearnej, co mog\u0142oby doprowadzi\u0107 do wybuchu III Wojny \u015Awiatowej.  Gwa\u0142towne zwroty akcji, niezwykle widowiskowe wybuchy i po\u015Bcigi samochodowe, gwarantuj\u0105 rozrywk\u0119 wszystkim mi\u0142o\u015Bnikom nieustraszonego Johna McClane\u2019a.",
+            "runtime": 97,
+            "tagline": "",
+            "title": "Szklana pu\u0142apka 5"
+          }
+        },
+        {
+          "iso_3166_1": "IL",
+          "iso_639_1": "he",
+          "name": "\u05E2\u05B4\u05D1\u05B0\u05E8\u05B4\u05D9\u05EA",
+          "english_name": "Hebrew",
+          "data": {
+            "homepage": "",
+            "overview": "\u05DC\u05D0\u05D7\u05E8 \u05E9\u05D2\u0027\u05E7, \u05D1\u05E0\u05D5 \u05D4\u05D1\u05DB\u05D5\u05E8 \u05E9\u05DC \u05D2\u0027\u05D5\u05DF \u05DE\u05E7\u05DC\u05D9\u05D9\u05DF \u05E0\u05DB\u05E0\u05E1 \u05DC\u05E6\u05E8\u05D5\u05EA \u05D1\u05DE\u05D5\u05E1\u05E7\u05D1\u05D4, \u05D2\u0027\u05D5\u05DF \u05E2\u05D5\u05E9\u05D4 \u05D4\u05DB\u05DC \u05E2\u05DC \u05DE\u05E0\u05EA \u05DC\u05D4\u05E6\u05D9\u05DC \u05D0\u05EA \u05D1\u05E0\u05D5 \u05D4\u05D1\u05DB\u05D5\u05E8. \u05DC\u05DE\u05E8\u05D5\u05EA \u05E9\u05D2\u0027\u05E7 \u05D5\u05D2\u0027\u05D5\u05DF \u05D7\u05D9\u05D9\u05DD \u05D1\u05E0\u05E4\u05E8\u05D3 \u05D5\u05D1\u05E2\u05D9\u05E7\u05E8 \u05DC\u05D0\u05D5\u05E8 \u05D4\u05E2\u05D5\u05D1\u05D3\u05D4 \u05E9\u05D2\u0027\u05E7 \u05D4\u05EA\u05DB\u05D7\u05E9 \u05DC\u05D0\u05D1\u05D9\u05D5 \u05D1\u05DE\u05E9\u05DA \u05E9\u05E0\u05D9\u05DD \u05E8\u05D1\u05D5\u05EA, \u05E2\u05DC \u05D4\u05E9\u05E0\u05D9\u05D9\u05DD \u05DC\u05E2\u05D1\u05D5\u05D3 \u05D1\u05D9\u05D7\u05D3 \u05DB\u05D3\u05D9 \u05DC\u05E9\u05DE\u05D5\u05E8 \u05E2\u05DC \u05D7\u05D9\u05D9\u05D4\u05DD \u05D5\u05E2\u05DC \u05D4\u05D1\u05D9\u05D8\u05D7\u05D5\u05DF \u05D4\u05E2\u05D5\u05DC\u05DE\u05D9 \u05D2\u05DD \u05D0\u05DD \u05D6\u05D4 \u05D0\u05D5\u05DE\u05E8 \u05E9\u05D4\u05DD \u05E6\u05E8\u05D9\u05DB\u05D9\u05DD \u05DC\u05D4\u05E9\u05D0\u05D9\u05E8 \u05D0\u05EA \u05D4\u05D1\u05E2\u05D9\u05D5\u05EA \u05D4\u05DE\u05E9\u05E4\u05D7\u05EA\u05D9\u05D5\u05EA \u05E9\u05DC\u05D4\u05DD \u05D1\u05E6\u05D3. \u05DC\u05D0\u05D7\u05E8 \u05DC\u05D0 \u05DE\u05D0\u05D8 \u05D0\u05E7\u05E9\u05DF \u05D4\u05E9\u05E0\u05D9\u05D9\u05DD \u05DE\u05E1\u05DB\u05DC\u05D9\u05DD \u05D0\u05EA \u05DE\u05D6\u05D9\u05DE\u05D4 \u05E9\u05DC \u05D4\u05D2\u05E0\u05E8\u05DC \u05D4\u05E8\u05D5\u05E1\u05D9 \u05D0\u05E9\u05E8 \u05EA\u05D9\u05DB\u05E0\u05DF \u05DC\u05D4\u05EA\u05E0\u05E7\u05E9 \u05D1\u05D7\u05D9\u05D9\u05D5 \u05E9\u05DC \u05E0\u05E9\u05D9\u05D0 \u05D0\u05E8\u05D4\u0022\u05D1.",
+            "runtime": 98,
+            "tagline": "\u05D4\u05EA\u05E4\u05D5\u05D7 \u05DC\u05D0 \u05E0\u05D5\u05E4\u05DC \u05E8\u05D7\u05D5\u05E7 \u05DE\u05D4\u05D2\u05D9\u05D4\u05D9\u05E0\u05D5\u05DD",
+            "title": "\u05DE\u05EA \u05DC\u05D7\u05D9\u05D5\u05EA \u05D1\u05D9\u05D5\u05DD \u05D8\u05D5\u05D1"
+          }
+        },
+        {
+          "iso_3166_1": "FI",
+          "iso_639_1": "fi",
+          "name": "suomi",
+          "english_name": "Finnish",
+          "data": {
+            "homepage": "",
+            "overview": "Ensimm\u00E4ist\u00E4 kertaa New Yorkin kovispoliisi McClane l\u00F6yt\u00E4\u00E4 itsens\u00E4 kansainv\u00E4liselt\u00E4 maaper\u00E4lt\u00E4 - Moskovasta. T\u00E4ll\u00E4 kertaa h\u00E4n joutuu kohtaamaan el\u00E4m\u00E4ns\u00E4 suurimman haasteen, oman poikansa Jackin, jota ei ole n\u00E4hnyt vuosiin. Eik\u00E4 omena ole kauas puusta pudonnut: Jack on jopa kovempi ja tiukka-asenteisempi kuin is\u00E4ns\u00E4. Nyt heid\u00E4n on unohdettava henkil\u00F6kohtaiset ja ammatilliset eronsa, ja toimittava yhdess\u00E4 pysy\u00E4kseen elossa. Heid\u00E4n on pys\u00E4ytett\u00E4v\u00E4 Moskovan alamaailma, joka pit\u00E4\u00E4 hallussaan ydinaseita.",
+            "runtime": 97,
+            "tagline": "",
+            "title": ""
+          }
+        },
+        {
+          "iso_3166_1": "SK",
+          "iso_639_1": "sk",
+          "name": "Sloven\u010Dina",
+          "english_name": "Slovak",
+          "data": {
+            "homepage": "",
+            "overview": "Policajn\u00FD detekt\u00EDv John McClane tentoraz prich\u00E1dza do Moskvy, aby tu na\u0161iel svojho syna Jacka, ktor\u00FD sa mu takpovediac odcudzil. Johna v\u0161ak \u010Dak\u00E1 prekvapenie, ke\u010F zist\u00ED, \u017Ee hoci ich vz\u0165ah otec - syn m\u00E1 od ide\u00E1lu dos\u0165 \u010Faleko, jablko nepadlo \u010Faleko od stromu. Jack toti\u017E v Moskve p\u00F4sob\u00ED ako tajn\u00FD agent, chr\u00E1niaci inform\u00E1tora z radov vl\u00E1dy, Komarovova. Otec a syn McClaneovci s\u00FA n\u00FAten\u00ED prekona\u0165 osobn\u00E9 nezhody a nasadi\u0165 vlastn\u00E9 krky, aby dostali Komarovova do bezpe\u010Dia a odvr\u00E1tili hrozbu katastrof\u00E1lneho zlo\u010Dinu na bez\u00FAte\u0161nom mieste na\u0161ej plan\u00E9ty \u2013 v \u010Cernobyle. Do hry tak vstupuje obchod s plut\u00F3niom, rusk\u00ED oligarchovia, brut\u00E1lne moskovsk\u00E9 podsvetie a tie\u017E r\u00F4zne predstavy Johna a Jacka McClaneovcov ako za t\u00FDchto okolnost\u00ED presadi\u0165 z\u00E1kon. Navy\u0161e sa Jack McClane ako tajn\u00FD agent v Moskve v\u00FDborne vyzn\u00E1 aj dohovor\u00ED, naopak John je \u00FAplne straten\u00FD.",
+            "runtime": 105,
+            "tagline": "Ak\u00FD otec, tak\u00FD syn",
+            "title": "Smrtonosn\u00E1 pasca: Op\u00E4\u0165 v akcii"
+          }
+        },
+        {
+          "iso_3166_1": "GR",
+          "iso_639_1": "el",
+          "name": "\u03B5\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC",
+          "english_name": "Greek",
+          "data": {
+            "homepage": "",
+            "overview": "\u039F \u03B1\u03C3\u03C4\u03C5\u03BD\u03BF\u03BC\u03B9\u03BA\u03CC\u03C2 John McClane \u03B1\u03BD\u03C4\u03B9\u03BC\u03AD\u03C4\u03C9\u03C0\u03BF\u03C2 \u03BC\u03B5 \u03C4\u03B7 \u03BC\u03B5\u03B3\u03B1\u03BB\u03CD\u03C4\u03B5\u03C1\u03B7 \u03C0\u03C1\u03CC\u03BA\u03BB\u03B7\u03C3\u03B7 \u03C3\u03C4\u03B7\u03BD \u03BA\u03B1\u03C1\u03B9\u03AD\u03C1\u03B1 \u03C4\u03BF\u03C5. \u03A4\u03B1\u03BE\u03B9\u03B4\u03B5\u03CD\u03B5\u03B9 \u03BC\u03AD\u03C7\u03C1\u03B9 \u03C4\u03B7 \u039C\u03CC\u03C3\u03C7\u03B1 \u03B3\u03B9\u03B1 \u03BD\u03B1 \u03AD\u03C1\u03B8\u03B5\u03B9 \u03C0\u03C1\u03CC\u03C3\u03C9\u03C0\u03BF \u03BC\u03B5 \u03C0\u03C1\u03CC\u03C3\u03C9\u03C0\u03BF \u03BC\u03B5 \u03C4\u03BF\u03BD \u03B1\u03C0\u03BF\u03BE\u03B5\u03BD\u03C9\u03BC\u03AD\u03BD\u03BF \u03BA\u03B1\u03B9 \u03B4\u03CD\u03C3\u03C4\u03C1\u03BF\u03C0\u03BF \u03B3\u03B9\u03BF \u03C4\u03BF\u03C5 Jack \u03C0\u03BF\u03C5 \u03B6\u03B5\u03B9 \u03B5\u03BA\u03B5\u03AF. \u0391\u03C5\u03C4\u03CC \u03C0\u03BF\u03C5 \u03B4\u03B5\u03BD \u03B3\u03BD\u03C9\u03C1\u03AF\u03B6\u03B5\u03B9 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C0\u03C9\u03C2 \u03BF \u03B3\u03B9\u03BF\u03C2 \u03C4\u03BF\u03C5 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03AD\u03BD\u03B1\u03C2 \u03AC\u03C1\u03C4\u03B9\u03B1 \u03B5\u03BA\u03C0\u03B1\u03B9\u03B4\u03B5\u03C5\u03BC\u03AD\u03BD\u03BF\u03C2 \u03C0\u03C1\u03AC\u03BA\u03C4\u03BF\u03C1\u03B1\u03C2 \u03C4\u03B7\u03C2 CIA \u03BC\u03B5 \u03B1\u03C0\u03BF\u03C3\u03C4\u03BF\u03BB\u03AE \u03BD\u03B1 \u03C3\u03C4\u03B1\u03BC\u03B1\u03C4\u03AE\u03C3\u03B5\u03B9 \u03BC\u03B9\u03B1 \u03BC\u03B5\u03B3\u03AC\u03BB\u03B7 \u03BB\u03B7\u03C3\u03C4\u03B5\u03AF\u03B1 \u03C0\u03C5\u03C1\u03B7\u03BD\u03B9\u03BA\u03CE\u03BD \u03CC\u03C0\u03BB\u03C9\u03BD. \u039F\u03B9 \u03B4\u03C5\u03BF McClanes \u03BC\u03AC\u03C7\u03BF\u03BD\u03C4\u03B1\u03B9 \u03BA\u03B1\u03B9 \u03BA\u03B1\u03C4\u03B1\u03B4\u03B9\u03CE\u03BA\u03BF\u03C5\u03BD \u03C4\u03BF\u03BD \u03C1\u03C9\u03C3\u03B9\u03BA\u03CC \u03C5\u03C0\u03CC\u03BA\u03BF\u03C3\u03BC\u03BF \u03B1\u03BD\u03B1\u03BA\u03B1\u03BB\u03CD\u03C0\u03C4\u03BF\u03BD\u03C4\u03B1\u03C2 \u03BC\u03B5\u03B8\u03CC\u03B4\u03BF\u03C5\u03C2 \u03C0\u03BF\u03C5 \u03B8\u03B1 \u03C4\u03BF\u03C5\u03C2 \u03BA\u03AC\u03BD\u03BF\u03C5\u03BD \u03B1\u03BD\u03AF\u03BA\u03B7\u03C4\u03BF\u03C5\u03C2.",
+            "runtime": 98,
+            "tagline": "\u0397 \u03BA\u03CC\u03BB\u03B1\u03C3\u03B7 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03BF\u03B9\u03BA\u03BF\u03B3\u03B5\u03BD\u03B5\u03B9\u03B1\u03BA\u03AE \u03C5\u03C0\u03CC\u03B8\u03B5\u03C3\u03B7.",
+            "title": "\u03A0\u03BF\u03BB\u03CD \u03A3\u03BA\u03BB\u03B7\u03C1\u03CC\u03C2 \u03B3\u03B9\u03B1 \u03BD\u03B1 \u03A0\u03B5\u03B8\u03AC\u03BD\u03B5\u03B9 \u03A3\u03AE\u03BC\u03B5\u03C1\u03B1"
+          }
+        },
+        {
+          "iso_3166_1": "NO",
+          "iso_639_1": "no",
+          "name": "Norsk",
+          "english_name": "Norwegian",
+          "data": {
+            "homepage": "",
+            "overview": "Ogs\u00E5 denne gangen havner den hardnakkede New York-politimannen, John McClane, p\u00E5 feil plass til feil tid etter \u00E5 ha reist til Moskva for \u00E5 hjelpe sin s\u00F8nn Jack. John og Jack har ikke et helt ukomplisert far-og s\u00F8nn forhold, og det faktum at Jack er minst lik sta som sin far forenkler ikke saken. Med Moskvas underverden etter seg og med tiden i mot seg for \u00E5 stoppe et krigsutbrudd, oppdager de to McClanes at deres forskjellige metoder gj\u00F8r dem til et uovervinnelig team.",
+            "runtime": 98,
+            "tagline": "",
+            "title": "A Good Day to Die Hard"
+          }
+        },
+        {
+          "iso_3166_1": "JP",
+          "iso_639_1": "ja",
+          "name": "\u65E5\u672C\u8A9E",
+          "english_name": "Japanese",
+          "data": {
+            "homepage": "",
+            "overview": "\u97F3\u4FE1\u4E0D\u901A\u3060\u3063\u305F\u606F\u5B50\u306E\u30B8\u30E3\u30C3\u30AF\u304C\u3001\u30ED\u30B7\u30A2\u3067\u8B66\u5BDF\u6C99\u6C70\u3092\u8D77\u3053\u3057\u3066\u8EAB\u67C4\u3092\u62D8\u675F\u3055\u308C\u305F\u3053\u3068\u3092\u77E5\u308B\u3002\u30DE\u30AF\u30EC\u30FC\u30F3\u306F\u5A18\u30EB\u30FC\u30B7\u30FC\u306B\u898B\u9001\u3089\u308C\u306A\u304C\u3089\u30ED\u30B7\u30A2\u3078\u3068\u6E21\u308B\u3002\u3068\u3053\u308D\u304C\u3001\u30B8\u30E3\u30C3\u30AF\u304C\u51FA\u5EF7\u3059\u308B\u306F\u305A\u3060\u3063\u305F\u88C1\u5224\u6240\u306F\u7A81\u5982\u7206\u7834\u3055\u308C\u30012\u4EBA\u306F\u5927\u6DF7\u4E71\u306E\u4E2D\u3067\u518D\u4F1A\u3092\u679C\u305F\u3059\u3002\u3060\u304C\u3001\u30B8\u30E3\u30C3\u30AF\u306F\u30DE\u30AF\u30EC\u30FC\u30F3\u3092\u7A81\u304D\u96E2\u3057\u3066\u305D\u306E\u5834\u304B\u3089\u8ECA\u3067\u53BB\u308B\u3002\u305D\u308C\u3092\u8FFD\u3046\u8B0E\u306E\u6B66\u88C5\u96C6\u56E3\u3002\u72B6\u6CC1\u3092\u7406\u89E3\u3067\u304D\u3066\u3044\u306A\u304B\u3063\u305F\u304C\u30DE\u30AF\u30EC\u30FC\u30F3\u306F\u30B8\u30E3\u30C3\u30AF\u3089\u3092\u8FFD\u8DE1\u3059\u308B\u3002\u58EE\u7D76\u306A\u30AB\u30FC\u30C1\u30A7\u30A4\u30B9\u306E\u672B\u3001\u30DE\u30AF\u30EC\u30FC\u30F3\u306F\u6B66\u88C5\u96C6\u56E3\u306E\u8ECA\u3092\u5927\u7834\u3055\u305B\u3066\u3001\u30B8\u30E3\u30C3\u30AF\u3068\u5408\u6D41\u3059\u308B\u3002\u305D\u306E\u5F8C\u3001\u30B8\u30E3\u30C3\u30AF\u304C\u96A0\u308C\u5BB6\u3068\u79F0\u3059\u308B\u5EFA\u7269\u306B\u5230\u7740\u3002\u305D\u3053\u3067\u3001\u30B8\u30E3\u30C3\u30AF\u304CCIA\u306E\u4EBA\u9593\u3067\u3042\u308B\u3053\u3068\u3092\u77E5\u308B\u3002\u5B89\u5168\u304B\u3068\u601D\u308F\u308C\u305F\u304C\u3001\u8B0E\u306E\u6B66\u88C5\u96C6\u56E3\u306B\u8972\u6483\u3055\u308C\u308B\u3002\u305D\u308C\u3092\u4F55\u3068\u304B\u9000\u3051\u3066\u96A0\u308C\u5BB6\u304B\u3089\u8131\u51FA\u3059\u308B\u3002  \u304B\u304F\u3057\u3066\u3001\u30DE\u30AF\u30EC\u30FC\u30F3\u306F\u3044\u3064\u3082\u306E\u3088\u3046\u306B\u611A\u75F4\u308A\u306A\u304C\u3089\u3082\u3001\u30B8\u30E3\u30C3\u30AF\u3068\u5171\u306B\u4F55\u3089\u304B\u306E\u76EE\u7684\u306E\u305F\u3081\u306B\u884C\u52D5\u3092\u958B\u59CB\u3059\u308B\u3002",
+            "runtime": 98,
+            "tagline": "\u904B\u306E\u60AA\u3055\u306F\u3001\u907A\u4F1D\u3059\u308B\u3002",
+            "title": "\u30C0\u30A4\u30FB\u30CF\u30FC\u30C9\uFF0F\u30E9\u30B9\u30C8\u30FB\u30C7\u30A4"
+          }
+        },
+        {
+          "iso_3166_1": "KR",
+          "iso_639_1": "ko",
+          "name": "\uD55C\uAD6D\uC5B4/\uC870\uC120\uB9D0",
+          "english_name": "Korean",
+          "data": {
+            "homepage": "",
+            "overview": "\uBBF8\uAD6D \uC804\uCCB4\uB97C \uB204\uBE44\uBA70 \uC6B0\uC5F0\uCC2E\uAC8C \uD14C\uB7EC\uB97C \uC9C4\uC555\uD574\uC628 \uB274\uC695 \uACBD\uCC30 \uC874 \uB9E5\uD074\uB808\uC778. \uD558\uB098\uBFD0\uC778 \uC544\uB4E4 \uC7AD\uC774 \uB7EC\uC2DC\uC544\uC5D0\uC11C \uC0AC\uAC74\uC5D0 \uD718\uB9D0\uB838\uB2E4\uB294 \uC18C\uC2DD\uC744 \uB4E3\uACE0 \uB09C\uC0DD \uCC98\uC74C \uD574\uC678\uB85C \uB0A0\uC544\uAC04\uB2E4.  \uD558\uC9C0\uB9CC \uC7AD\uC744 \uB9CC\uB098\uB7EC \uAC00\uB358 \uC911 \uB208 \uC55E\uC5D0\uC11C \uB300\uD615 \uD3ED\uD0C4 \uD14C\uB7EC\uAC00 \uBC1C\uC0DD\uD558\uACE0, \uC804\uC7C1\uD130\uB97C \uBC29\uBD88\uCF00 \uD558\uB294 \uADF9\uD55C \uC0C1\uD669 \uC18D\uC5D0 \uC7AC\uD68C\uD55C \uB9E5\uD074\uB808\uC778 \uBD80\uC790. \uAC8C\uB2E4\uAC00 \uC544\uB4E4 \uC7AD\uC740 \uBAA8\uC2A4\uD06C\uBC14\uC5D0\uC11C \uC791\uC804\uC744 \uC218\uD589 \uC911\uC778 CIA \uC694\uC6D0\uC784\uC744 \uC54C\uAC8C \uB41C\uB2E4. \uB3C4\uC2EC \uACF3\uACF3\uC5D0\uC11C\uB294 \uB2E4\uC2DC\uAE08 \uBB34\uC7A5 \uD14C\uB7EC\uB2E8\uC758 \uACF5\uACA9\uC774 \uC774\uC5B4\uC9C0\uACE0, \uACE0\uC9D1\uC2A4\uB7FD\uACE0 \uBB3C\uBD88 \uC548 \uAC00\uB9AC\uB294 \uC544\uB4E4\uB85C \uC778\uD574 \uC774\uBC88\uC5D0\uB3C4 \uC5C4\uCCAD\uB09C \uC0AC\uAC74\uC5D0 \uD718\uB9D0\uB9AC\uAC8C \uB41C \uC874 \uB9E5\uD074\uB808\uC778\uC740 \uB9C8\uCE68\uB0B4 \uC7AD\uACFC \uD798\uC744 \uD569\uCCD0 \uC5ED\uB300 \uCD5C\uC545\uC758 \uD14C\uB7EC\uB9AC\uC2A4\uD2B8\uC5D0 \uB9DE\uC11C\uAC8C \uB418\uB294\uB370...",
+            "runtime": 96,
+            "tagline": "\uB9E5\uD074\uB808\uC778 x \uB9E5\uD074\uB808\uC778\uC758 \uAD6D\uC81C \uD14C\uB7EC \uC9C4\uC555\uC774 \uC2DC\uC791\uB410\uB2E4",
+            "title": "\uB2E4\uC774 \uD558\uB4DC: \uAD7F \uB370\uC774 \uD22C \uB2E4\uC774"
+          }
+        },
+        {
+          "iso_3166_1": "RO",
+          "iso_639_1": "ro",
+          "name": "Rom\u00E2n\u0103",
+          "english_name": "Romanian",
+          "data": {
+            "homepage": "",
+            "overview": "McLane se confrunt\u0103 cu cea mai mare provocare de p\u00E2n\u0103 acum, una cu ramifica\u021Bii \u00EEn toat\u0103 lumea, c\u0103ci fiul s\u0103u \u00EEnstr\u0103inat, Jack, este prins \u00EEn i\u021Bele unei complicate pove\u0219ti \u00EEn care este implicat \u0219i un mafiot rus, tat\u0103 \u0219i fiu f\u0103c\u00E2nd din acest punct tot posibilul pentru a-\u0219i proteja unul-altuia vie\u021Bile \u0219i de a elimina pericolul ce amenin\u021B\u0103 \u00EEns\u0103\u0219i democra\u021Bia.",
+            "runtime": 98,
+            "tagline": "A\u0219a tat\u0103. A\u0219a fiu. A\u0219a infern.",
+            "title": "\u0218i mai greu de ucis"
+          }
+        },
+        {
+          "iso_3166_1": "UA",
+          "iso_639_1": "uk",
+          "name": "\u0423\u043A\u0440\u0430\u0457\u043D\u0441\u044C\u043A\u0438\u0439",
+          "english_name": "Ukrainian",
+          "data": {
+            "homepage": "",
+            "overview": "\u0414\u0436\u043E\u043D \u041C\u0430\u043A\u041A\u043B\u0435\u0439\u043D \u043F\u0440\u0438\u0431\u0443\u0432\u0430\u0454 \u0432 \u041C\u043E\u0441\u043A\u0432\u0443, \u0449\u043E\u0431 \u0432\u0438\u0437\u0432\u043E\u043B\u0438\u0442\u0438 \u0437 \u0432\u0027\u044F\u0437\u043D\u0438\u0446\u0456 \u0441\u0432\u043E\u0433\u043E \u043D\u0435\u043F\u0435\u0440\u0435\u0434\u0431\u0430\u0447\u0443\u0432\u0430\u043D\u043E\u0433\u043E \u0441\u0438\u043D\u0430, \u0430\u043B\u0435 \u0445\u043E\u043B\u043E\u0434\u043D\u0430 \u0433\u043E\u043B\u043E\u0432\u0430 \u0456 \u0437\u0430\u043B\u0456\u0437\u043D\u0456 \u043C\u0027\u044F\u0437\u0438 \u0433\u0440\u0443\u0437\u043D\u0443\u0442\u044C \u0432 \u043F\u0430\u0432\u0443\u0442\u0438\u043D\u0456 \u0440\u043E\u0441\u0456\u0439\u0441\u044C\u043A\u043E\u0457 \u0434\u0456\u0439\u0441\u043D\u043E\u0441\u0442\u0456. \u0421\u043F\u0440\u0430\u0432\u0430, \u0432 \u044F\u043A\u0443 \u0432\u0441\u0442\u0440\u044F\u0433 \u041C\u0430\u043A\u041A\u043B\u0435\u0439\u043D-\u043C\u043E\u043B\u043E\u0434\u0448\u0438\u0439, \u0432\u0438\u044F\u0432\u043B\u044F\u0454\u0442\u044C\u0441\u044F \u043D\u0430\u0441\u0442\u0456\u043B\u044C\u043A\u0438 \u00AB\u043D\u0435\u0431\u0435\u0437\u043F\u0435\u0447\u043D\u043E\u044E \u0442\u0440\u044F\u0441\u043E\u0432\u0438\u043D\u043E\u044E\u00BB, \u0449\u043E \u0431\u0430\u0442\u044C\u043A\u043E\u0432\u0456 \u0456 \u0441\u0438\u043D\u043E\u0432\u0456, \u0449\u043E\u0431 \u0432\u0438\u0436\u0438\u0442\u0438 \u0456 \u0432 \u0447\u0435\u0440\u0433\u043E\u0432\u0438\u0439 \u0440\u0430\u0437 \u0432\u0440\u044F\u0442\u0443\u0432\u0430\u0442\u0438 \u0441\u0432\u0456\u0442, \u0434\u043E\u0432\u043E\u0434\u0438\u0442\u044C\u0441\u044F \u043E\u0431\u0027\u0454\u0434\u043D\u0430\u0442\u0438 \u0441\u0432\u043E\u0457 \u0437\u0443\u0441\u0438\u043B\u043B\u044F, \u0437\u0430\u0431\u0443\u0432\u0448\u0438 \u043A\u043E\u043B\u0438\u0448\u043D\u0456, \u0437\u0434\u0430\u0432\u0430\u043B\u043E\u0441\u044F \u0431, \u043D\u0435\u0437\u0434\u043E\u043B\u0430\u043D\u043D\u0456 \u0440\u043E\u0437\u0431\u0456\u0436\u043D\u043E\u0441\u0442\u0456...",
+            "runtime": 0,
+            "tagline": "\u042F\u043A \u0431\u0430\u0442\u044C\u043A\u043E. \u042F\u043A \u0441\u0438\u043D. \u042F\u043A \u043F\u0435\u043A\u043B\u043E.",
+            "title": "\u041C\u0456\u0446\u043D\u0438\u0439 \u0433\u043E\u0440\u0456\u0448\u043E\u043A: \u0413\u0430\u0440\u043D\u0438\u0439 \u0434\u0435\u043D\u044C, \u0430\u0431\u0438 \u043F\u043E\u043C\u0435\u0440\u0442\u0438"
+          }
+        },
+        {
+          "iso_3166_1": "ID",
+          "iso_639_1": "id",
+          "name": "Bahasa indonesia",
+          "english_name": "Indonesian",
+          "data": {
+            "homepage": "",
+            "overview": "Ikonoklastik, polisi tanpa tahanan John McClane, menemukan dirinya untuk pertama kalinya di tanah asing setelah bepergian ke Moskow untuk membantu putranya yang bandel Jack - tidak menyadari bahwa Jack benar-benar seorang agen CIA yang sangat terlatih untuk menghentikan pencurian senjata nuklir. Dengan dunia bawah Rusia dalam pengejaran, dan berjuang dalam hitungan mundur untuk perang, kedua McClanes menemukan bahwa metode mereka yang berlawanan membuat mereka menjadi pahlawan yang tak terhentikan.",
+            "runtime": 0,
+            "tagline": "",
+            "title": ""
+          }
+        },
+        {
+          "iso_3166_1": "HR",
+          "iso_639_1": "hr",
+          "name": "Hrvatski",
+          "english_name": "Croatian",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane putuje u Rusiju kako bi pomogao naizgled zalutalome sinu Jacku. No na kraju saznaje da je Jack tajni CIA agent te zajedno krenu u borbu protiv podzemlja.",
+            "runtime": 0,
+            "tagline": "",
+            "title": "Umri mu\u0161ki: Dobar dan za umiranje"
+          }
+        },
+        {
+          "iso_3166_1": "BR",
+          "iso_639_1": "pt",
+          "name": "Portugu\u00EAs",
+          "english_name": "Portuguese",
+          "data": {
+            "homepage": "",
+            "overview": "O policial John McClane n\u00E3o tem boa rela\u00E7\u00E3o com seu filho. Os dois precisam deixar de lado suas diferen\u00E7as para livrar o rapaz de uma acusa\u00E7\u00E3o e proteger um terrorista que diz ter um dossi\u00EA contra um potencial candidato \u00E0 presid\u00EAncia da R\u00FAssia.",
+            "runtime": 98,
+            "tagline": "Pai e filho. No c\u00E9u ou inferno.",
+            "title": "Duro de Matar: Um Bom Dia para Morrer"
+          }
+        },
+        {
+          "iso_3166_1": "SA",
+          "iso_639_1": "ar",
+          "name": "\u0627\u0644\u0639\u0631\u0628\u064A\u0629",
+          "english_name": "Arabic",
+          "data": {
+            "homepage": "",
+            "overview": "\u062A\u062F\u0648\u0631 \u0627\u062D\u062F\u0627\u062B \u0641\u064A\u0644\u0645 \u062D\u0648\u0644 \u062A\u0644\u0643 \u0627\u0644\u0645\u0631\u0629\u060C \u0627\u0644\u0634\u0631\u0637\u064A \u062C\u0648\u0646 \u0645\u0627\u0643\u0644\u064A\u0646 (\u0628\u0631\u0648\u0633 \u0648\u064A\u0644\u0632) \u064A\u062C\u062F \u0646\u0641\u0633\u0647 \u0641\u064A \u0645\u0648\u0633\u0643\u0648 \u0644\u0645\u0633\u0627\u0639\u062F\u0647 \u0627\u0628\u0646\u0647 \u0022\u062C\u0627\u0643\u0022\u060C \u0645\u062D\u0627\u0648\u0644\u0627 \u062A\u0642\u062F\u064A\u0645 \u0645\u0633\u0627\u0639\u062F\u0627\u062A \u0643\u062B\u064A\u0631\u0629 \u0644\u0625\u0646\u0642\u0627\u0630\u0647\u060C \u0648\u0625\u0630\u0627 \u0628\u0647 \u064A\u0643\u062A\u0634\u0641 \u0623\u0646 \u062C\u0627\u0643 \u0623\u062D\u062F \u0639\u0645\u0644\u0627\u0621 \u062C\u0647\u0627\u0632 \u0627\u0644\u0645\u062E\u0627\u0628\u0631\u0627\u062A \u0627\u0644\u0645\u0631\u0643\u0632\u064A\u0629 \u0627\u0644\u0623\u0645\u0631\u064A\u0643\u064A\u0629\u060C \u0648\u0623\u0646\u0647 \u0642\u062F \u062A\u0644\u0642\u0649 \u062A\u062F\u0631\u064A\u0628\u0627\u062A \u0639\u0627\u0644\u064A\u0629 \u0644\u0648\u0642\u0641 \u0633\u0631\u0642\u0629 \u0627\u0644\u0623\u0633\u0644\u062D\u0629 \u0627\u0644\u0646\u0648\u0648\u064A\u0629\u060C \u0641\u064A\u062A\u0645\u0643\u0646 \u0645\u0627\u0643\u0644\u064A\u0646 \u0648\u062C\u0627\u0643 \u0645\u0646 \u062A\u0643\u0648\u064A\u0646 \u062B\u0646\u0627\u0646\u064A \u0630\u064A \u0623\u0633\u0644\u0648\u0628 \u0645\u0639\u064A\u0646 \u0644\u062A\u062D\u0642\u064A\u0642 \u0647\u062F\u0641\u0647\u0645\u0627.",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u0627\u0644\u0634\u0631\u0633 \u0627\u0644\u0639\u0646\u064A\u062F :\u064A\u0648\u0645 \u062C\u064A\u062F \u0644\u0644\u0645\u0648\u062A \u0627\u0644\u0635\u0639\u0628"
+          }
+        },
+        {
+          "iso_3166_1": "CA",
+          "iso_639_1": "fr",
+          "name": "Fran\u00E7ais",
+          "english_name": "French",
+          "data": {
+            "homepage": "",
+            "overview": "Inquiet pour son fils, le d\u00E9tective John McClane se rend \u00E0 Moscou pour tenter de le tirer d\u0027une impasse. Il d\u00E9couvre alors que sa prog\u00E9niture travaille en fait pour la CIA et a re\u00E7u pour mission de prot\u00E9ger un prisonnier politique qui aurait en sa possession des documents pouvant incriminer un important homme d\u0027\u00E9tat. Les hommes de main de ce dernier cherchent pour leur part \u00E0 capturer le d\u00E9tenu en libert\u00E9 avant que ces \u00E9l\u00E9ments ne soient rendus publics. De leur c\u00F4t\u00E9, le p\u00E8re et le fils, faisant d\u00E9sormais \u00E9quipe, sortent l\u0027artillerie lourde pour mener la vie dure aux criminels.",
+            "runtime": 96,
+            "tagline": "Dans la famille, ils ont le sang chaud.",
+            "title": "Une belle journ\u00E9e pour crever"
+          }
+        },
+        {
+          "iso_3166_1": "TW",
+          "iso_639_1": "zh",
+          "name": "\u666E\u901A\u8BDD",
+          "english_name": "Mandarin",
+          "data": {
+            "homepage": "",
+            "overview": "\u7336\u5982\u672C\u7247\u82F1\u6587\u7247\u540D\u300C\u6B7B\u4E0D\u4E86\u300D\u7684\u5E03\u9B6F\u65AF\u5A01\u5229\uFF0C\u5C07\u518D\u5EA6\u65BD\u5C55\u8D85\u7D1A\u300C\u5E73\u51E1\u82F1\u96C4\u300D\u7D04\u7FF0\u9EA5\u514B\u9023\u7684\u6E3E\u8EAB\u7D55\u6280\uFF0C\u9996\u5EA6\u8D70\u51FA\u7F8E\u570B\u524D\u5F80\u5145\u6EFF\u7570\u570B\u60C5\u8ABF\u7684\u4FC4\u7F85\u65AF\u83AB\u65AF\u79D1\uFF0C\u4E26\u5728\u7570\u570B\u9047\u5230\u8207\u4ED6\u611F\u60C5\u6F38\u884C\u6F38\u9060\u7684\u5152\u5B50\u5091\u514B\u9EA5\u514B\u9023(\u5091\u5BC7\u7279\u5C3C\u98FE)\uFF0C\u5E0C\u671B\u5C07\u95D6\u798D\u7684\u5152\u5B50\u5091\u514B\u5E36\u56DE\u7F8E\u570B\u7684\u7D04\u7FF0\u9EA5\u514B\u9023\uFF0C\u610F\u5916\u767C\u73FE\u5152\u5B50\u6B63\u7368\u81EA\u5728\u7576\u5730\u70BA\u7F8E\u570BCIA\u57F7\u884C\u4E00\u9805\u91CD\u5927\u4EFB\u52D9\uFF0C\u6C92\u60F3\u5230\u60F9\u60F1\u4E00\u6D77\u7968\u570B\u969B\u6050\u6016\u4EFD\u5B50\uFF0C\u539F\u672C\u5C31\u5931\u548C\u800C\u81F4\u4F7F\u610F\u898B\u5206\u6B67\u7684\u4ED6\u5011\uFF0C\u5FC5\u9808\u70BA\u6B64\u806F\u624B\u5316\u89E3\u4E00\u5834\u53EF\u80FD\u767C\u751F\u7684\u6838\u6B66\u5371\u6A5F\u3002  \u9019\u5C0D\u706B\u7206\u7236\u5B50\u5728\u51FA\u751F\u5165\u6B7B\u4E4B\u4E2D\uFF0C\u5FC5\u9808\u6D88\u5F2D\u5F7C\u6B64\u8FE5\u7570\u7684\u500B\u6027\uFF0C\u904E\u7A0B\u4E2D\u5E38\u56E0\u89C0\u9EDE\u4E0D\u540C\u800C\u5C0E\u81F4\u885D\u7A81\u4E0D\u65B7\u767C\u751F\uFF0C\u4ED6\u5011\u662F\u5426\u80FD\u85C9\u7531\u8840\u6FC3\u65BC\u6C34\u7684\u89AA\u60C5\u5316\u89E3\u7D1B\u722D\uFF1F\u4E26\u4E14\u5718\u7D50\u4E00\u81F4\u5C0D\u6297\u6050\u6016\u5206\u5B50\uFF0C\u5171\u540C\u651C\u624B\u62EF\u6551\u4EBA\u6C11\u5016\u514D\u65BC\u96E3\uFF1F\u4ED6\u5011\u5C07\u5728\u4E00\u9023\u4E32\u9A5A\u96AA\u7206\u7834\u3001\u98DB\u8ECA\u3001\u7FFB\u8ECA\u3001\u69CD\u6230\u3001\u6838\u6B66\u5371\u6A5F\u4E4B\u4E2D\uFF0C\u5C55\u958B\u9019\u5834\u8FD1\u4E4E\u7A92\u606F\u7684\u4EA1\u547D\u5192\u96AA\u2026\u2026",
+            "runtime": 97,
+            "tagline": "",
+            "title": "\u7D42\u6975\u8B66\u63A2\uFF1A\u8DE8\u570B\u6551\u63F4"
+          }
+        },
+        {
+          "iso_3166_1": "IR",
+          "iso_639_1": "fa",
+          "name": "\u0641\u0627\u0631\u0633\u06CC",
+          "english_name": "Persian",
+          "data": {
+            "homepage": "",
+            "overview": "\u062C\u0627\u0646 \u0645\u06A9 \u06A9\u0644\u06CC\u0646 \u0628\u0631\u0627\u06CC \u06A9\u0645\u06A9 \u0628\u0647 \u067E\u0633\u0631 \u0646\u0627\u0641\u0631\u0645\u0627\u0646\u0634 \u062C\u06A9\u060C \u0628\u0647 \u0631\u0648\u0633\u06CC\u0647 \u0633\u0641\u0631 \u0645\u06CC\u200C\u06A9\u0646\u062F \u0627\u0645\u0627 \u0645\u062A\u0648\u062C\u0647 \u0645\u06CC\u200C\u0634\u0648\u062F \u06A9\u0647 \u062C\u06A9 \u06CC\u06A9 \u0645\u0623\u0645\u0648\u0631 \u0633\u06CC \u0622\u06CC \u0627\u06CC \u0627\u0633\u062A \u06A9\u0647 \u0642\u0635\u062F \u062F\u0627\u0631\u062F \u0627\u0632 \u062F\u0632\u062F\u06CC \u06CC\u06A9 \u0627\u0633\u0644\u062D\u0647 \u0627\u062A\u0645\u06CC \u062C\u0644\u0648\u06AF\u06CC\u0631\u06CC \u06A9\u0646\u062F. \u0627\u06CC\u0646 \u0645\u0633\u0626\u0644\u0647 \u0628\u0627\u0639\u062B \u0645\u06CC\u200C\u0634\u0648\u062F \u062A\u0627 \u067E\u0633\u0631 \u0648 \u067E\u062F\u0631 \u0647\u0645\u0631\u0627\u0647 \u0634\u0648\u0646\u062F \u062A\u0627 \u062C\u0644\u0648\u06CC \u0627\u06CC\u0646 \u0646\u06CC\u0631\u0648\u0647\u0627\u06CC \u0632\u06CC\u0631\u0632\u0645\u06CC\u0646\u06CC \u0631\u0627 \u0628\u06AF\u06CC\u0631\u0646\u062F...",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u06CC\u06A9 \u0631\u0648\u0632 \u062E\u0648\u0628 \u0628\u0631\u0627\u06CC \u062C\u0627\u0646 \u0633\u062E\u062A"
+          }
+        },
+        {
+          "iso_3166_1": "MX",
+          "iso_639_1": "es",
+          "name": "Espa\u00F1ol",
+          "english_name": "Spanish",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane, un polic\u00EDa de la ciudad de Nueva York, y su hijo deben dejar de lado sus diferencias para trabajar juntos y evitar que el hampa de Mosc\u00FA controle unas armas nucleares",
+            "runtime": 102,
+            "tagline": "De tal padre, tal hijo... hasta en el infierno",
+            "title": "Duro de matar: Un buen d\u00EDa para morir"
+          }
+        },
+        {
+          "iso_3166_1": "LV",
+          "iso_639_1": "lv",
+          "name": "Latvie\u0161u",
+          "english_name": "Latvian",
+          "data": {
+            "homepage": "",
+            "overview": "Neuzveicamais D\u017Eons Makleins ir atgriezies! Lai samekl\u0113tu un izpest\u012Btu no cietuma savu d\u0113lu D\u017Eeku, Makleins dodas uz Maskavu pat nenojau\u0161ot, ka D\u017Eeks ir slepens CIP a\u0123ents, kur\u0161 iefiltr\u0113jies Krievijas krimin\u0101laj\u0101 pasaul\u0113, lai nov\u0113rstu kodoliero\u010Du z\u0101dz\u012Bbu.",
+            "runtime": 0,
+            "tagline": "",
+            "title": "Ciet\u0101kais rieksts"
+          }
+        },
+        {
+          "iso_3166_1": "RS",
+          "iso_639_1": "sr",
+          "name": "Srpski",
+          "english_name": "Serbian",
+          "data": {
+            "homepage": "",
+            "overview": "\u0411\u0440\u0443\u0441 \u0412\u0438\u043B\u0438\u0441 \u0458\u0435 \u043F\u043E\u043D\u043E\u0432\u043E \u0443 \u043A\u0443\u043B\u0442\u043D\u043E\u0458 \u0443\u043B\u043E\u0437\u0438 \u040F\u043E\u043D\u0430 \u041C\u0435\u043A\u043B\u0435\u0458\u043D\u0430, \u201E\u043F\u0440\u0430\u0432\u043E\u0433\u201C \u0445\u0435\u0440\u043E\u0458\u0430 \u0441\u0430 \u0443\u043C\u0435\u045B\u0435\u043C \u0438 \u0441\u0442\u0430\u0432\u043E\u043C \u0434\u0430 \u0443\u0432\u0435\u043A \u043E\u0441\u0442\u0430\u043D\u0435 \u0458\u0435\u0434\u0438\u043D\u0438 \u043F\u0440\u0435\u0436\u0438\u0432\u0435\u043B\u0438. \u041E\u0432\u043E\u0433 \u043F\u0443\u0442\u0430, \u043F\u043E\u043B\u0438\u0446\u0430\u0458\u0430\u0446 \u043A\u043E\u0458\u0438 \u043D\u0435 \u0443\u0437\u0438\u043C\u0430 \u0442\u0430\u043E\u0446\u0435 \u043D\u0430\u043B\u0430\u0437\u0438 \u0441\u0435 \u043D\u0430 \u043F\u043E\u0433\u0440\u0435\u0448\u043D\u043E\u043C \u043C\u0435\u0441\u0442\u0443, \u043D\u0430\u043A\u043E\u043D \u0448\u0442\u043E \u0434\u043E\u0452\u0435 \u0443 \u041C\u043E\u0441\u043A\u0432\u0443 \u0434\u0430 \u043F\u043E\u043C\u043E\u0433\u043D\u0435 \u043E\u0442\u0443\u0452\u0435\u043D\u043E\u043C \u0441\u0438\u043D\u0443 \u040F\u0435\u043A\u0443. \u0414\u043E\u043A \u0440\u0443\u0441\u043A\u043E \u043F\u043E\u0434\u0437\u0435\u043C\u0459\u0435 \u0432\u0440\u0448\u0459\u0430 \u0438 \u043F\u0440\u0438\u043F\u0440\u0435\u043C\u0430 \u0440\u0430\u0442, \u0434\u0432\u0430 \u041C\u0435\u043A\u043B\u0435\u0458\u043D\u0430 \u043E\u0442\u043A\u0440\u0438\u0432\u0430\u0458\u0443 \u0434\u0430 \u0438\u0445 \u043A\u043E\u043C\u0431\u0438\u043D\u0430\u0446\u0438\u0458\u0430 \u045A\u0438\u0445\u043E\u0432\u0438\u0445 \u043F\u043E\u0442\u043F\u0443\u043D\u043E \u0441\u0443\u043F\u0440\u043E\u0442\u043D\u0438\u0445 \u043C\u0435\u0442\u043E\u0434\u0430 \u0447\u0438\u043D\u0438 \u043D\u0435\u0437\u0430\u0443\u0441\u0442\u0430\u0432\u0459\u0438\u0432\u0438\u043C \u0445\u0435\u0440\u043E\u0458\u0438\u043C\u0430.",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u0414\u043E\u0431\u0430\u0440 \u0434\u0430\u043D \u0434\u0430 \u0441\u0435 \u0443\u043C\u0440\u0435 \u043C\u0443\u0448\u043A\u0438"
+          }
+        },
+        {
+          "iso_3166_1": "LT",
+          "iso_639_1": "lt",
+          "name": "Lietuvi\u0173",
+          "english_name": "Lithuanian",
+          "data": {
+            "homepage": "",
+            "overview": "Kad gal\u0117t\u0173 Maskvoje pad\u0117ti savo nenusp\u0117jamam s\u016Bnui D\u017Eekui, D\u017Eonas Makleinas pirm\u0105 kart\u0105 ry\u017Etasi vykti \u012F sve\u010Di\u0105 \u0161al\u012F, ne\u012Ftardamas, kad D\u017Eekas i\u0161 tikr\u0173j\u0173 yra profesionalus C\u017DV agentas, kurio u\u017Eduotis - padaryti gal\u0105 atomini\u0173 ginkl\u0173 vagystei. Iki tikro karo tiksint sekund\u0117ms, abu Makleinai veikdami savo, atrodyt\u0173, nesuderinamais metodais, kovoja su rus\u0173 nusikalt\u0117liais ir tampa nesustabdomais didvyriais.",
+            "runtime": 0,
+            "tagline": "",
+            "title": "Kietas rie\u0161ut\u0117lis. Puiki diena mirti"
+          }
+        },
+        {
+          "iso_3166_1": "HK",
+          "iso_639_1": "zh",
+          "name": "\u666E\u901A\u8BDD",
+          "english_name": "Mandarin",
+          "data": {
+            "homepage": "",
+            "overview": "\u5C0A\u9EA5\u5805\u4E00\u5411\u8207\u5EFF\u6B72\u51FA\u982D\u7684\u5152\u5B50\u300C\u5C0F\u5C0A\u9EA5\u5805\u300D\u95DC\u4FC2\u758F\u96E2\uFF0C\u4F46\u4F5C\u70BA\u4ED6\u7684\u7236\u89AA\uFF0C\u7121\u8AD6\u600E\u6A23\u68D8\u624B\u60E1\u52A3\uFF0C\u9762\u5C0D\u9006\u6230\u6642\u4E5F\u6703\u6490\u5230\u76E1\uFF0C\u6BBA\u5230\u5E95\uFF01\u5152\u5B50\u5728\u6771\u6B50\u95D6\u4E0B\u5927\u798D\uFF0C\u75BE\u60E1\u5982\u4EC7\u7684\u8001\u5C0A\u7B2C\u4E00\u6642\u9593\u98DB\u5954\u5230\u83AB\u65AF\u79D1\uFF0C\u7D50\u679C\u51B7\u4E0D\u52DD\u9632\u4E0B\uFF0C\u88AB\u7576\u5730\u6050\u6016\u4EFD\u5B50\u7D81\u67B6\u2500\u2500\u4E8B\u4EF6\u7ADF\u8207\u767C\u52D5\u7B2C\u4E09\u6B21\u4E16\u754C\u5927\u6230\u6709\u95DC\uFF01\u70BA\u9632\u5168\u7403\u767C\u751F\u4E0D\u53EF\u6536\u62FE\u7684\u52D5\u4E82\uFF0C\u5169\u4F4D\u5C0A\u9EA5\u5805\u540C\u5FC3\u4E26\u80A9\u5354\u529B\uFF0C\u518D\u4E00\u6B21\u6210\u70BA\u62EF\u6551\u4E16\u754C\u7684\u65B0\u82F1\u96C4\uFF01",
+            "runtime": 0,
+            "tagline": "\u6253\u6B7B\u4E0D\u96E2\u7236\u5B50\u5175 \u706B\u8FA3ACTION\u8D85\u72E0\u52C1",
+            "title": "\u864E\u81BD\u9F8D\u5A01\uFF1A\u64C7\u65E5\u958B\u6230"
+          }
+        },
+        {
+          "iso_3166_1": "VN",
+          "iso_639_1": "vi",
+          "name": "Ti\u1EBFng Vi\u1EC7t",
+          "english_name": "Vietnamese",
+          "data": {
+            "homepage": "",
+            "overview": "Ti\u1EBFp n\u1ED1i th\u00E0nh c\u00F4ng t\u1EEB nh\u1EEFng ph\u1EA7n tr\u01B0\u1EDBc, Die Hard quay tr\u1EDF l\u1EA1i v\u1EDBi b\u1ED1i c\u1EA3nh \u1EDF Moscow - Nga. Cha con th\u00E1m t\u1EED McClane \u0111\u01B0\u1EE3c h\u1ED9i ng\u1ED9 sau nhi\u1EC1u n\u0103m xa c\u00E1ch nh\u01B0ng l\u1EA1i trong m\u1ED9t ho\u00E0n c\u1EA3nh h\u1EBFt s\u1EE9c \u00E9o le. Hai cha con h\u1ECD ph\u1EA3i g\u00E1c b\u1ECF nh\u1EEFng b\u1EA5t \u0111\u1ED3ng, s\u00E1t c\u00E1nh chi\u1EBFn \u0111\u1EA5u c\u00F9ng nhau \u0111\u1EC3 t\u1ED3n t\u1EA1i.",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u0110\u01B0\u01A1ng \u0110\u1EA7u Th\u1EED Th\u00E1ch 5"
+          }
+        },
+        {
+          "iso_3166_1": "GE",
+          "iso_639_1": "ka",
+          "name": "\u10E5\u10D0\u10E0\u10D7\u10E3\u10DA\u10D8",
+          "english_name": "Georgian",
+          "data": {
+            "homepage": "",
+            "overview": "",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u10D9\u10D4\u10E0\u10D9\u10D4\u10E2\u10D8 \u10D9\u10D0\u10D9\u10D0\u10DA\u10D8 5"
+          }
+        },
+        {
+          "iso_3166_1": "ES",
+          "iso_639_1": "ca",
+          "name": "Catal\u00E0",
+          "english_name": "Catalan",
+          "data": {
+            "homepage": "",
+            "overview": "Conservant la destresa i l\u0027actitud perseverant caracter\u00EDstiques dels anteriors lliuraments, que l\u0027han convertit en el rival m\u00E9s gran de tots els criminals que atempten contra la llibertat de la humanitat i que han permetent la salvaci\u00F3 d\u0027aquesta en diferents situacions i circumst\u00E0ncies, John McClane haur\u00E0 de viatjar a R\u00FAssia per rescatar el seu fill que est\u00E0 tancat en una pres\u00F3 sota les ordres d\u0027un d\u00E8spota l\u00EDder rus. Pare i fill hauran d\u0027unir forces per lluitar contra el seu adversari, aconseguir alliberar-se i mantenir-se amb vida. Aix\u00ED, els protagonistes es veuran embolicats en una successi\u00F3 d\u0027extrema hostilitat que no nom\u00E9s posar\u00E0 la vida en perill, tamb\u00E9 la de la resta de ciutadans. El seu deure ser\u00E0 fer tot el possible per conservar una cosa tan essencial a la societat actual com \u00E9s la democr\u00E0cia, una llibertat de la qual el pervers i autoritari l\u00EDder antagonista voldr\u00E0 apoderar-se.",
+            "runtime": 0,
+            "tagline": "Pare i fill junts a l\u0027infern",
+            "title": "La jungla: Un bon dia per morir"
+          }
+        },
+        {
+          "iso_3166_1": "AT",
+          "iso_639_1": "de",
+          "name": "Deutsch",
+          "english_name": "German",
+          "data": {
+            "homepage": "",
+            "overview": "Als ein gef\u00FCrchteter russischer F\u00FChrer aus der Gefangenschaft ausbricht und John McClanes Sohn Jack in die Ereignisse verwickelt wird, reist John nach Russland. Dort will er mittels frecher Spr\u00FCche und Waffeneinsatz seinen Spross, mit dem er bislang wenig Kontakt hatte, aus der Gefahrenzone retten. Wie sich herausstellt, ist sein Sohn jedoch alles andere als der von John McClane erwartete Waschlappen geworden. Hier ist der Apfel nicht weit vom Stamm gefallen, denn ohne Johns Wissen wurde Jack zu einem kaltschn\u00E4uzigen CIA-Agenten ausgebildet und ist ebenso hart im Nehmen wie sein alter Herr. Mit von der Partie ist ein Russe namens Komorov, hinter dem die gesamte russische Unterwelt her ist. Gemeinsam sieht sich das taffe Vater-Sohn-Duo mit Unterst\u00FCtzung von Komorov der halben Sowjet-Armee gegen\u00FCber, die einen Machtwechsel in Russland anstrebt.",
+            "runtime": 98,
+            "tagline": "",
+            "title": "Stirb langsam - Ein guter Tag zum Sterben"
+          }
+        },
+        {
+          "iso_3166_1": "SI",
+          "iso_639_1": "sl",
+          "name": "Sloven\u0161\u010Dina",
+          "english_name": "Slovenian",
+          "data": {
+            "homepage": "",
+            "overview": "John McClane prispe v Moskvo, da izsledi svojega odtujenega sina Jacka. Osupel izve, da fant tajno varuje vladnega ovaduha Komarova. McClanova tako spet nosita ko\u017Eo naprodaj in morata pozabiti na stare zamere, \u010De ho\u010Deta Komarova spraviti na varno in prepre\u010Diti zlo\u010Din z morebiti katastrofalnimi posledicami na najbolj zapu\u0161\u010Denem kraju na svetu \u2013 v \u010Cernobilu.",
+            "runtime": 0,
+            "tagline": "O\u010De. Sin. Pekel.",
+            "title": "Umri pokon\u010Dno: Dober dan za smrt"
+          }
+        },
+        {
+          "iso_3166_1": "IN",
+          "iso_639_1": "hi",
+          "name": "\u0939\u093F\u0928\u094D\u0926\u0940",
+          "english_name": "Hindi",
+          "data": {
+            "homepage": "",
+            "overview": "",
+            "runtime": 0,
+            "tagline": "",
+            "title": "\u0905 \u0917\u0941\u0921 \u0921\u0947 \u091F\u0942 \u0921\u093E\u0908 \u0939\u093E\u0930\u094D\u0921"
+          }
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "982d79aa5e5a756c3aec888638ef77f149f287abde45ca637d580bf57bf13552",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=26219",
+      "ETag": "W/\u0022f2e797fe9e15fc729213f20ccb58f28f\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

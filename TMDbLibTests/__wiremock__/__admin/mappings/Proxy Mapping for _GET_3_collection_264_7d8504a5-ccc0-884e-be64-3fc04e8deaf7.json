@@ -1,0 +1,117 @@
+{
+  "Guid": "7d8504a5-ccc0-884e-be64-3fc04e8deaf7",
+  "UpdatedAt": "2025-12-24T11:53:35.0608323Z",
+  "Title": "Proxy Mapping for GET /3/collection/264",
+  "Description": "Proxy Mapping for GET /3/collection/264",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/collection/264",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 264,
+      "name": "Back to the Future Collection",
+      "original_language": "en",
+      "original_name": "Back to the Future Collection",
+      "overview": "An American science fiction\u2013comedy film series that follows the adventures of a high school student, Marty McFly and an eccentric scientist, Dr Emmett L. Brown as they use a DeLorean time machine to time travel to different periods in the history of Hill Valley, California.",
+      "poster_path": "/5Xsu2o5IsZRuuxCEVZ9nVve21FP.jpg",
+      "backdrop_path": "/c9C9Pg2QctyjZHRmS0P8rZg1OTA.jpg",
+      "parts": [
+        {
+          "adult": false,
+          "backdrop_path": "/pZCLGHynFPOv8dve6u9waxknLth.jpg",
+          "id": 105,
+          "title": "Back to the Future",
+          "original_title": "Back to the Future",
+          "overview": "Eighties teenager Marty McFly is accidentally sent back in time to 1955, inadvertently disrupting his parents\u0027 first meeting and attracting his mother\u0027s romantic interest. Marty must repair the damage to history by rekindling his parents\u0027 romance and - with the help of his eccentric inventor friend Doc Brown - return to 1985.",
+          "poster_path": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            35,
+            878
+          ],
+          "popularity": 17.4226,
+          "release_date": "1985-07-03",
+          "video": false,
+          "vote_average": 8.322,
+          "vote_count": 21169
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w6tPctxWAsHoQXeKxxNOT6lYKpx.jpg",
+          "id": 165,
+          "title": "Back to the Future Part II",
+          "original_title": "Back to the Future Part II",
+          "overview": "Marty and Doc are at it again as the time-traveling duo head to 2015 to nip some McFly family woes in the bud. But things go awry thanks to bully Biff Tannen and a pesky sports almanac. In a last-ditch attempt to set things straight, Marty finds himself bound for 1955 and face to face with his teenage parents -- again.",
+          "poster_path": "/YBawEsTkUZBDajKbd5LiHkmMGf.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            35,
+            878
+          ],
+          "popularity": 7.2296,
+          "release_date": "1989-11-22",
+          "video": false,
+          "vote_average": 7.774,
+          "vote_count": 13534
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vKp3NvqBkcjHkCHSGi6EbcP7g4J.jpg",
+          "id": 196,
+          "title": "Back to the Future Part III",
+          "original_title": "Back to the Future Part III",
+          "overview": "The final installment finds Marty digging the trusty DeLorean out of a mineshaft and looking for Doc in the Wild West of 1885. But when their time machine breaks down, the travelers are stranded in a land of spurs. More problems arise when Doc falls for pretty schoolteacher Clara Clayton, and Marty tangles with Buford Tannen.",
+          "poster_path": "/crzoVQnMzIrRfHtQw0tLBirNfVg.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            35,
+            878
+          ],
+          "popularity": 5.9065,
+          "release_date": "1990-05-25",
+          "video": false,
+          "vote_average": 7.491,
+          "vote_count": 11188
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "13ad4705c33348c7dcf5cbeed24c74911c95447ccd032bf2e7760ef214431626",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=22107",
+      "ETag": "W/\u00229552c6efeae976f7f3fca560ba0b686c\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}
