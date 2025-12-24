@@ -338,4 +338,70 @@ public class DiscoverTv : DiscoverBase<SearchTv>
         Parameters["language"] = language;
         return this;
     }
+
+    /// <summary>
+    /// Only include TV shows that are available on all of the specified watch providers (e.g., Netflix, Amazon Prime Video, Disney+).
+    /// This method performs an AND query.
+    /// </summary>
+    /// <param name="providerIds">The watch provider IDs to filter by.</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    /// <remarks>Use in conjunction with <see cref="WhereWatchRegionIs"/> to specify the region.</remarks>
+    public DiscoverTv IncludeWithAllOfWatchProviders(IEnumerable<int> providerIds)
+    {
+        Parameters["with_watch_providers"] = string.Join(",", providerIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
+        return this;
+    }
+
+    /// <summary>
+    /// Only include TV shows that are available on any of the specified watch providers (e.g., Netflix, Amazon Prime Video, Disney+).
+    /// This method performs an OR query.
+    /// </summary>
+    /// <param name="providerIds">The watch provider IDs to filter by.</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    /// <remarks>Use in conjunction with <see cref="WhereWatchRegionIs"/> to specify the region.</remarks>
+    public DiscoverTv IncludeWithAnyOfWatchProviders(IEnumerable<int> providerIds)
+    {
+        Parameters["with_watch_providers"] = string.Join("|", providerIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
+        return this;
+    }
+
+    /// <summary>
+    /// Specifies the watch region for watch provider or monetization type filtering using an ISO 3166-1 code (e.g., "US", "GB", "DE").
+    /// This is required when using <see cref="IncludeWithAllOfWatchProviders(IEnumerable{int})"/>,
+    /// <see cref="IncludeWithAnyOfWatchProviders(IEnumerable{int})"/>, <see cref="WhereAllWatchMonetizationTypesMatch(WatchMonetizationType[])"/>,
+    /// or <see cref="WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType[])"/>.
+    /// </summary>
+    /// <param name="region">The ISO 3166-1 region code.</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    public DiscoverTv WhereWatchRegionIs(string region)
+    {
+        Parameters["watch_region"] = region;
+        return this;
+    }
+
+    /// <summary>
+    /// Only include TV shows available with all of the specified monetization types.
+    /// This method performs an AND query.
+    /// </summary>
+    /// <param name="monetizationTypes">The monetization types to filter by (flatrate, free, ads, rent, buy).</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    /// <remarks>Use in conjunction with <see cref="WhereWatchRegionIs"/> to specify the region.</remarks>
+    public DiscoverTv WhereAllWatchMonetizationTypesMatch(params WatchMonetizationType[] monetizationTypes)
+    {
+        Parameters["with_watch_monetization_types"] = string.Join(",", monetizationTypes.Select(s => s.GetDescription()));
+        return this;
+    }
+
+    /// <summary>
+    /// Only include TV shows available with any of the specified monetization types.
+    /// This method performs an OR query.
+    /// </summary>
+    /// <param name="monetizationTypes">The monetization types to filter by (flatrate, free, ads, rent, buy).</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    /// <remarks>Use in conjunction with <see cref="WhereWatchRegionIs"/> to specify the region.</remarks>
+    public DiscoverTv WhereAnyWatchMonetizationTypesMatch(params WatchMonetizationType[] monetizationTypes)
+    {
+        Parameters["with_watch_monetization_types"] = string.Join("|", monetizationTypes.Select(s => s.GetDescription()));
+        return this;
+    }
 }
