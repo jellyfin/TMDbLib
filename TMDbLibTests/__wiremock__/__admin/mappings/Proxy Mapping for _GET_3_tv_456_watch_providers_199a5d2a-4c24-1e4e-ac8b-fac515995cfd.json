@@ -1,0 +1,1107 @@
+{
+  "Guid": "199a5d2a-4c24-1e4e-ac8b-fac515995cfd",
+  "UpdatedAt": "2025-12-24T18:45:22.6767787Z",
+  "Title": "Proxy Mapping for GET /3/tv/456/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/456/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/456/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 456,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 15
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/xoFyQOXR3qINRsdnCQyd7jGx8Wo.jpg",
+              "provider_id": 326,
+              "provider_name": "CTV",
+              "display_priority": 43
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/qcTTC6rFBIVaCLzu0EKwuyrBlSR.jpg",
+              "provider_id": 2536,
+              "provider_name": "Oneplay",
+              "display_priority": 35
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 130
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 22
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 21
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 31
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg",
+              "provider_id": 1838,
+              "provider_name": "Tivify",
+              "display_priority": 52
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=FR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 10
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 19
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 28
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=IE",
+          "ads": [
+            {
+              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 15
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/9YJY5OwsIPMoX3xC3TdtZVbKBpE.jpg",
+              "provider_id": 614,
+              "provider_name": "VI movies and tv",
+              "display_priority": 35
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/2hBbMVUI2G4GAGRAD0RZCZqDMUh.jpg",
+              "provider_id": 359,
+              "provider_name": "Mediaset Infinity",
+              "display_priority": 11
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 24
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 12
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 23
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 22
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 21
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 25
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 23
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 25
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 13
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
+              "provider_id": 2528,
+              "provider_name": "YouTube TV",
+              "display_priority": 36
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/m4KUe3UoTnLgN4g6txYMnBqeUI5.jpg",
+              "provider_id": 123,
+              "provider_name": "FXNow",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 25
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=17401",
+      "x-memc": "HIT",
+      "x-memc-key": "9bc209e3dcf1b54fe5e4f9b545916fc1e7daac680420620dd507b9d90d7b6067",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00229017049874c63ee5de909df893070938\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "Guid": "b293101d-77c6-3841-aa7e-7be3b3549b0c",
-  "UpdatedAt": "2025-12-24T11:53:34.6983604Z",
+  "UpdatedAt": "2025-12-24T18:45:16.4397513Z",
   "Title": "Proxy Mapping for GET /3/tv/latest",
   "Description": "Proxy Mapping for GET /3/tv/latest",
   "Priority": -2000000,
@@ -23,24 +23,44 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "adult": false,
-      "backdrop_path": "/uNR3oku5TGEm33ZYBuVUfdaFoyT.jpg",
-      "created_by": [],
-      "episode_run_time": [],
+      "backdrop_path": "/yfkGJWL59kxgImIgETa4P1M2rFJ.jpg",
+      "created_by": [
+        {
+          "id": 2672178,
+          "credit_id": "694c32874935b2e332fb1f23",
+          "name": "Shaqielle Khan",
+          "original_name": "Shaqielle Khan",
+          "gender": 0,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        40
+      ],
       "first_air_date": "2025-12-24",
-      "genres": [],
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        }
+      ],
       "homepage": "",
-      "id": 309086,
-      "in_production": false,
+      "id": 309105,
+      "in_production": true,
       "languages": [
-        "ko"
+        "ur"
       ],
       "last_air_date": null,
       "last_episode_to_air": null,
-      "name": "\uCCAD\uB144 \uAE40\uB300\uAC74",
+      "name": "Muamma",
       "next_episode_to_air": {
-        "id": 6784380,
-        "name": "Episode 1",
-        "overview": "",
+        "id": 6784835,
+        "name": "Episode 01",
+        "overview": "Muamma is a gripping psychological suspense drama by HUM TV that explores the fragile nature of trust, emotional manipulation, and the hidden power dynamics within human relationships.\n\nSet inside an old, imposing house owned by Jahan Ara, the story unfolds as different tenants enter her world each burdened with personal trauma, marital conflicts, and unspoken desires. What appears to be a calm domestic setting slowly transforms into a psychological battlefield, where kindness carries hidden motives and relationships begin to fracture under silent pressure.\n\nMuamma challenges perceptions of innocence and guilt, revealing how unresolved trauma and emotional blind spots can lead to dangerous outcomes. With its slow-burn tension, layered storytelling, and haunting atmosphere, the drama keeps viewers questioning what is real and what is carefully constructed illusion.",
         "vote_average": 0.0,
         "vote_count": 0,
         "air_date": "2025-12-24",
@@ -49,27 +69,39 @@
         "production_code": "",
         "runtime": null,
         "season_number": 1,
-        "show_id": 309086,
+        "show_id": 309105,
         "still_path": null
       },
       "networks": [],
       "number_of_episodes": 1,
       "number_of_seasons": 1,
       "origin_country": [
-        "KR"
+        "PK"
       ],
-      "original_language": "ko",
-      "original_name": "\uCCAD\uB144 \uAE40\uB300\uAC74",
-      "overview": "",
+      "original_language": "ur",
+      "original_name": "Muamma",
+      "overview": "Muamma is a gripping psychological suspense drama by HUM TV that explores the fragile nature of trust, emotional manipulation, and the hidden power dynamics within human relationships.\n\nSet inside an old, imposing house owned by Jahan Ara, the story unfolds as different tenants enter her world each burdened with personal trauma, marital conflicts, and unspoken desires. What appears to be a calm domestic setting slowly transforms into a psychological battlefield, where kindness carries hidden motives and relationships begin to fracture under silent pressure.\n\nMuamma challenges perceptions of innocence and guilt, revealing how unresolved trauma and emotional blind spots can lead to dangerous outcomes. With its slow-burn tension, layered storytelling, and haunting atmosphere, the drama keeps viewers questioning what is real and what is carefully constructed illusion.",
       "popularity": 0.0,
-      "poster_path": "/hW8eQtE4HGI8doV1RKzGUoQLZiy.jpg",
-      "production_companies": [],
-      "production_countries": [],
+      "poster_path": "/8JluesbmaJGzXyxpnfZZwd8fspR.jpg",
+      "production_companies": [
+        {
+          "id": 82940,
+          "logo_path": null,
+          "name": "Momina Duraid Productions",
+          "origin_country": "PK"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "PK",
+          "name": "Pakistan"
+        }
+      ],
       "seasons": [
         {
           "air_date": "2025-12-24",
-          "episode_count": 3,
-          "id": 490987,
+          "episode_count": 1,
+          "id": 491025,
           "name": "Season 1",
           "overview": "",
           "poster_path": null,
@@ -79,12 +111,12 @@
       ],
       "spoken_languages": [
         {
-          "english_name": "Korean",
-          "iso_639_1": "ko",
-          "name": "\uD55C\uAD6D\uC5B4/\uC870\uC120\uB9D0"
+          "english_name": "Urdu",
+          "iso_639_1": "ur",
+          "name": "\u0627\u0631\u062F\u0648"
         }
       ],
-      "status": "Ended",
+      "status": "Returning Series",
       "tagline": "",
       "type": "Scripted",
       "vote_average": 0.0,
@@ -95,17 +127,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "Cache-Control": "public, max-age=0",
       "x-memc": "MISS",
       "x-memc-key": "5451c9912b0d6936b14e2d06bac42307565a426031725cbd9581bf704399476f",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=0",
-      "ETag": "W/\u0022a64a60342601fdea2c26d9a4ec31af00\u0022",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00220370a9d32e8d6cf1070a12dffe3c2fb3\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

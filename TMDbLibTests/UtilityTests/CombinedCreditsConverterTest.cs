@@ -27,8 +27,8 @@ public class CombinedCreditsConverterTest : TestBase
             Character = "John McClane"
         };
 
-        string json = Serializer.SerializeToString(original);
-        CombinedCreditsCastMovie result = Serializer.DeserializeFromString<CombinedCreditsCastBase>(json) as CombinedCreditsCastMovie;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<CombinedCreditsCastBase>(json) as CombinedCreditsCastMovie;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalTitle, result.OriginalTitle);
@@ -56,8 +56,8 @@ public class CombinedCreditsConverterTest : TestBase
             Character = "Walter White"
         };
 
-        string json = Serializer.SerializeToString(original);
-        CombinedCreditsCastTv result = Serializer.DeserializeFromString<CombinedCreditsCastBase>(json) as CombinedCreditsCastTv;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<CombinedCreditsCastBase>(json) as CombinedCreditsCastTv;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalName, result.OriginalName);
@@ -86,8 +86,8 @@ public class CombinedCreditsConverterTest : TestBase
             Job = "Director"
         };
 
-        string json = Serializer.SerializeToString(original);
-        CombinedCreditsCrewMovie result = Serializer.DeserializeFromString<CombinedCreditsCrewBase>(json) as CombinedCreditsCrewMovie;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<CombinedCreditsCrewBase>(json) as CombinedCreditsCrewMovie;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalTitle, result.OriginalTitle);
@@ -117,8 +117,8 @@ public class CombinedCreditsConverterTest : TestBase
             Job = "Executive Producer"
         };
 
-        string json = Serializer.SerializeToString(original);
-        CombinedCreditsCrewTv result = Serializer.DeserializeFromString<CombinedCreditsCrewBase>(json) as CombinedCreditsCrewTv;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<CombinedCreditsCrewBase>(json) as CombinedCreditsCrewTv;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalName, result.OriginalName);

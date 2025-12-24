@@ -24,7 +24,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
     /// Parameters to exclude from the signature calculation.
     /// These are dynamic values that change between requests but shouldn't affect mapping identity.
     /// </summary>
-    private static readonly HashSet<string> ExcludedParams = new(StringComparer.OrdinalIgnoreCase)
+    private static readonly HashSet<string> _excludedParams = new(StringComparer.OrdinalIgnoreCase)
     {
         "request_token",   // Authentication tokens are dynamically generated
         "session_id",      // Session IDs change per session
@@ -219,7 +219,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
                     ? matchers[0]?["Pattern"]?.GetValue<string>() ?? ""
                     : "";
 
-                if (name != null && !ExcludedParams.Contains(name))
+                if (name != null && !_excludedParams.Contains(name))
                 {
                     parameters[name] = value;
                 }
@@ -300,7 +300,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
         for (var i = paramsArray.Count - 1; i >= 0; i--)
         {
             var paramName = paramsArray[i]?["Name"]?.GetValue<string>();
-            if (paramName != null && ExcludedParams.Contains(paramName))
+            if (paramName != null && _excludedParams.Contains(paramName))
             {
                 paramsArray.RemoveAt(i);
             }

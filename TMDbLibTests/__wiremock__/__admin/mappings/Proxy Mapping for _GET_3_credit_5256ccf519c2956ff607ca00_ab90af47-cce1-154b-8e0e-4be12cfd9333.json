@@ -1,6 +1,6 @@
 {
   "Guid": "ab90af47-cce1-154b-8e0e-4be12cfd9333",
-  "UpdatedAt": "2025-12-24T11:53:35.0136705Z",
+  "UpdatedAt": "2025-12-24T18:45:17.9935666Z",
   "Title": "Proxy Mapping for GET /3/credit/5256ccf519c2956ff607ca00",
   "Description": "Proxy Mapping for GET /3/credit/5256ccf519c2956ff607ca00",
   "Priority": -2000000,
@@ -42,7 +42,7 @@
         ],
         "popularity": 109.3949,
         "first_air_date": "2004-11-16",
-        "vote_average": 8.582,
+        "vote_average": 8.6,
         "vote_count": 7217,
         "origin_country": [
           "US"
@@ -179,17 +179,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
+      "Cache-Control": "public, max-age=24709",
+      "x-memc": "MISS, STORE",
       "x-memc-key": "d4dc0a871c6d4f5ec976fa76f6ec9afc0af0806ed7c3a8140ed0994ea35932a6",
       "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=24508",
-      "ETag": "W/\u0022f304d4e7cb2941e0f7e59f0a15431736\u0022",
+      "ETag": "W/\u0022df85e4599e21b7539dff83669c6eca49\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

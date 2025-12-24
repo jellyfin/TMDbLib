@@ -1,6 +1,6 @@
 {
   "Guid": "b78fc1ea-e016-334f-8251-b41a2f29a359",
-  "UpdatedAt": "2025-12-24T11:53:34.7755227Z",
+  "UpdatedAt": "2025-12-24T18:45:17.9704875Z",
   "Title": "Proxy Mapping for GET /3/watch/providers/movie",
   "Description": "Proxy Mapping for GET /3/watch/providers/movie",
   "Priority": -2000000,
@@ -174,7 +174,7 @@
             "ZA": 3,
             "ZW": 1
           },
-          "display_priority": 1,
+          "display_priority": 3,
           "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
           "provider_name": "Google Play Movies",
           "provider_id": 3
@@ -322,7 +322,7 @@
             "ZM": 0,
             "ZW": 4
           },
-          "display_priority": 4,
+          "display_priority": 0,
           "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
           "provider_name": "Netflix",
           "provider_id": 8
@@ -515,7 +515,7 @@
             "ZM": 17,
             "ZW": 9
           },
-          "display_priority": 9,
+          "display_priority": 31,
           "logo_path": "/x570VpH2C9EKDf1riP83rYc5dnL.jpg",
           "provider_name": "MUBI",
           "provider_id": 11
@@ -754,7 +754,7 @@
             "ZW": 0,
             "ZM": 7
           },
-          "display_priority": 0,
+          "display_priority": 4,
           "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
           "provider_name": "ShowMax",
           "provider_id": 55
@@ -1004,7 +1004,7 @@
             "ZA": 6,
             "US": 58
           },
-          "display_priority": 6,
+          "display_priority": 58,
           "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
           "provider_name": "GuideDoc",
           "provider_id": 100
@@ -1208,7 +1208,7 @@
             "ZW": 2,
             "LU": 16
           },
-          "display_priority": 2,
+          "display_priority": 1,
           "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
           "provider_name": "Amazon Prime Video",
           "provider_id": 119
@@ -1964,7 +1964,7 @@
             "YE": 3,
             "ZM": 2
           },
-          "display_priority": 2,
+          "display_priority": 3,
           "logo_path": "/gP67NRy1ShUJilrzMsbOmEmdmcv.jpg",
           "provider_name": "Zee5",
           "provider_id": 232
@@ -2522,7 +2522,7 @@
             "ZA": 9,
             "ZM": 3
           },
-          "display_priority": 3,
+          "display_priority": 9,
           "logo_path": "/6KEQzITx2RrCAQt5Nw9WrL1OI8z.jpg",
           "provider_name": "Sun Nxt",
           "provider_id": 309
@@ -2837,7 +2837,7 @@
             "VE": 1,
             "UY": 25
           },
-          "display_priority": 1,
+          "display_priority": 25,
           "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
           "provider_name": "Disney Plus",
           "provider_id": 337
@@ -4592,7 +4592,7 @@
             "LI": 26,
             "LU": 9
           },
-          "display_priority": 9,
+          "display_priority": 26,
           "logo_path": "/78IXtvIZfol9aJhFoNAUYDxIB25.jpg",
           "provider_name": "filmfriend",
           "provider_id": 542
@@ -6634,7 +6634,7 @@
             "ZM": 9,
             "ZA": 22
           },
-          "display_priority": 9,
+          "display_priority": 22,
           "logo_path": "/4bsFc5AgxDNdDeS1NIjVRviARhB.jpg",
           "provider_name": "IROKOTV",
           "provider_id": 704
@@ -8548,7 +8548,7 @@
             "GG": 85,
             "IN": 77
           },
-          "display_priority": 47,
+          "display_priority": 36,
           "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
           "provider_name": "MGM Plus Amazon Channel",
           "provider_id": 2141
@@ -9163,7 +9163,7 @@
             "LU": 11,
             "LI": 28
           },
-          "display_priority": 11,
+          "display_priority": 28,
           "logo_path": "/AeebTPbgU6JeJ2OkptaFjeCsmvQ.jpg",
           "provider_name": "Moconomy Amazon Channel",
           "provider_id": 2261
@@ -9495,7 +9495,7 @@
             "VE": 29,
             "YE": 27
           },
-          "display_priority": 6,
+          "display_priority": 28,
           "logo_path": "/uCMLyl8jGIbInVyDeCeV6kpciFm.jpg",
           "provider_name": "JustWatchTV",
           "provider_id": 2285
@@ -9537,7 +9537,7 @@
             "LU": 15,
             "LI": 32
           },
-          "display_priority": 15,
+          "display_priority": 182,
           "logo_path": "/4zKrTkGhbh1KjFksg3gVPsZiPt2.jpg",
           "provider_name": "Fernsehen mit Herz Amazon Channel",
           "provider_id": 2289
@@ -12274,17 +12274,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "Cache-Control": "public, max-age=13622",
       "x-memc": "HIT",
       "x-memc-key": "ca47520bd852300f51ac0f3c6b69368921e93d454a14e4fb55cc7f05d62beeb9",
       "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=23377",
-      "ETag": "W/\u002240505e3913cab02933fd38c1f4694b2d\u0022",
+      "ETag": "W/\u0022c7a6c7e776b7502efa37380e20991efe\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

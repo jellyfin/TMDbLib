@@ -28,12 +28,12 @@ public class TestConfig
     /// <summary>
     /// User session ID required for authenticated tests.
     /// </summary>
-    public readonly string UserSessionId = "c413282cdadad9af972c06d9b13096a8b13ab1c1";
+    public static string UserSessionId => "c413282cdadad9af972c06d9b13096a8b13ab1c1";
 
     /// <summary>
     /// Guest session ID used for guest session tests.
     /// </summary>
-    public readonly string GuestTestSessionId = "d425468da2781d6799ba14c05f7327e7";
+    public static string GuestTestSessionId => "d425468da2781d6799ba14c05f7327e7";
 
     /// <summary>
     /// Gets the configured TMDbClient instance for API calls.
@@ -43,19 +43,19 @@ public class TestConfig
     /// <summary>
     /// The username for the test account.
     /// </summary>
-    public string Username = "TMDbTestAccount";
+    public static string Username => "TMDbTestAccount";
 
     /// <summary>
     /// The password for the test account.
     /// </summary>
-    public string Password = "TJX6vP7bPC%!ZrJwAqtCU5FshHEKAwzr6YvR3%CU9s7BrjqUWmjC8AMuXju*eTEu524zsxDQK5ySY6EmjAC3e54B%WvkS9FNPE3K";
+    public static string Password => "TJX6vP7bPC%!ZrJwAqtCU5FshHEKAwzr6YvR3%CU9s7BrjqUWmjC8AMuXju*eTEu524zsxDQK5ySY6EmjAC3e54B%WvkS9FNPE3K";
 
     /// <summary>
     /// Gets the current mock server mode from environment variable.
     /// </summary>
     public static MockServerMode Mode => GetMode();
 
-    private static readonly Lazy<WireMockServer> Server = new(CreateServer);
+    private static readonly Lazy<WireMockServer> _server = new(CreateServer);
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TestConfig"/> class.
@@ -77,7 +77,7 @@ public class TestConfig
         }
         else
         {
-            Client = new TMDbClient(APIKey, false, $"localhost:{Server.Value.Port}", serializer: serializer, proxy: proxy);
+            Client = new TMDbClient(APIKey, false, $"localhost:{_server.Value.Port}", serializer: serializer, proxy: proxy);
         }
 
         Client.MaxRetryCount = 1;

@@ -1,0 +1,4431 @@
+{
+  "Guid": "b5879549-a921-384c-84bb-4a81a5bf6819",
+  "UpdatedAt": "2025-12-24T18:45:27.0969572Z",
+  "Title": "Proxy Mapping for GET /3/movie/109451/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/109451/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/109451/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 109451,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 31
+            }
+          ]
+        },
+        "AE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 14
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            }
+          ]
+        },
+        "AO": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AO",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AR",
+          "rent": [
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 35
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/4M5eg8esiDLHff90xFg18GfIzw4.jpg",
+              "provider_id": 2481,
+              "provider_name": "CineMix\u002B Amazon Channel",
+              "display_priority": 140
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AU",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/sSfxJXq7s8oHf3XWd0FtqagPDsF.jpg",
+              "provider_id": 21,
+              "provider_name": "Stan",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/kwVegvKCinXTPuzZmYT1J3i1HJz.jpg",
+              "provider_id": 175,
+              "provider_name": "Netflix Kids",
+              "display_priority": 24
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=AZ",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 23
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/kwftIxtjuCAROIcdd53UEjzSmca.jpg",
+              "provider_id": 1857,
+              "provider_name": "Telenet",
+              "display_priority": 31
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BF",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BO",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BR",
+          "rent": [
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 49
+            },
+            {
+              "logo_path": "/9kcTsX2laYclN4bFiMH3RuhZel2.jpg",
+              "provider_id": 2156,
+              "provider_name": "Telecine Amazon Channel",
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 83
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 13
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BY",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=BZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 9
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CA",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/cQjWvOiKRPeSuWRNGegcBjyqVbR.jpg",
+              "provider_id": 469,
+              "provider_name": "Club Illico",
+              "display_priority": 51
+            },
+            {
+              "logo_path": "/esiLBRzDUwodjfN8gA4qj7l3ZF7.jpg",
+              "provider_id": 1794,
+              "provider_name": "Starz Amazon Channel",
+              "display_priority": 93
+            },
+            {
+              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
+              "provider_id": 2604,
+              "provider_name": "Crave Amazon Channel",
+              "display_priority": 144
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 37
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CL",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 7
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CO",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 60
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ]
+        },
+        "CU": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CV",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CY",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=CZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 28
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 28
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/qcTTC6rFBIVaCLzu0EKwuyrBlSR.jpg",
+              "provider_id": 2536,
+              "provider_name": "Oneplay",
+              "display_priority": 35
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=DE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/4M5eg8esiDLHff90xFg18GfIzw4.jpg",
+              "provider_id": 2481,
+              "provider_name": "CineMix\u002B Amazon Channel",
+              "display_priority": 201
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=DK",
+          "rent": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=EC",
+          "rent": [
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 5
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=EE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=ES",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=FI",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/eglAxQEXSO13p6gNf3HKymrIu7y.jpg",
+              "provider_id": 540,
+              "provider_name": "Elisa Viihde",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/eglAxQEXSO13p6gNf3HKymrIu7y.jpg",
+              "provider_id": 540,
+              "provider_name": "Elisa Viihde",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/7QzLA6rsML2rKxhuagWlDl7Zxlm.jpg",
+              "provider_id": 553,
+              "provider_name": "Telia Play",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4LnuoJ2E5nTWCvXnlGFaUNH324v.jpg",
+              "provider_id": 685,
+              "provider_name": "Cine\u002B OCS Amazon Channel ",
+              "display_priority": 43
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/kwVegvKCinXTPuzZmYT1J3i1HJz.jpg",
+              "provider_id": 175,
+              "provider_name": "Netflix Kids",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/6sJLsWk4TZHz1EffmTRSkaDehkh.jpg",
+              "provider_id": 591,
+              "provider_name": "Now TV Cinema",
+              "display_priority": 58
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=GH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=GR",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 23
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ]
+        },
+        "GY": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=GY",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=HK",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=HU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 26
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 26
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=ID",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/kwVegvKCinXTPuzZmYT1J3i1HJz.jpg",
+              "provider_id": 175,
+              "provider_name": "Netflix Kids",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/6sJLsWk4TZHz1EffmTRSkaDehkh.jpg",
+              "provider_id": 591,
+              "provider_name": "Now TV Cinema",
+              "display_priority": 43
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=IL",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/i7FaDWpD2xoIWB5lyF191cykfck.jpg",
+              "provider_id": 2180,
+              "provider_name": "Sony Pictures Amazon Channel",
+              "display_priority": 54
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 10
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/ayHY6wKxvCKj2PU8eRPFxnPc6B0.jpg",
+              "provider_id": 515,
+              "provider_name": "MX Player",
+              "display_priority": 23
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/gP67NRy1ShUJilrzMsbOmEmdmcv.jpg",
+              "provider_id": 232,
+              "provider_name": "Zee5",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=IS",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 23
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=IT",
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 22
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=JP",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
+              "provider_id": 84,
+              "provider_name": "U-NEXT",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/7BSGPU2svm8AX9ozbP3Xt8cdp9L.jpg",
+              "provider_id": 2494,
+              "provider_name": "dAnime Amazon Channel",
+              "display_priority": 46
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ]
+        },
+        "KW": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 10
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=LT",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/7QzLA6rsML2rKxhuagWlDl7Zxlm.jpg",
+              "provider_id": 553,
+              "provider_name": "Telia Play",
+              "display_priority": 12
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=LU",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=LV",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LY": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=LY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=ML",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MT",
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 73
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 20
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 20
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MY",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=MZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=NI",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
+              "provider_id": 563,
+              "provider_name": "KPN",
+              "display_priority": 29
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/lnOkJKyFl87mzqNebAbE8ADdHoB.jpg",
+              "provider_id": 71,
+              "provider_name": "Path\u00E9 Thuis",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
+              "provider_id": 697,
+              "provider_name": "meJane",
+              "display_priority": 39
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/lnOkJKyFl87mzqNebAbE8ADdHoB.jpg",
+              "provider_id": 71,
+              "provider_name": "Path\u00E9 Thuis",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
+              "provider_id": 697,
+              "provider_name": "meJane",
+              "display_priority": 39
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=NO",
+          "rent": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=NZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/kwVegvKCinXTPuzZmYT1J3i1HJz.jpg",
+              "provider_id": 175,
+              "provider_name": "Netflix Kids",
+              "display_priority": 10
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=PH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=PL",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/mBliLuM0AbkRPGDoVa7IGxwC59b.jpg",
+              "provider_id": 2102,
+              "provider_name": "Premiery Canal\u002B",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 35
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
+              "provider_id": 505,
+              "provider_name": "Player",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/2YCt92ETw8xLXxhkURtMjZnzfKT.jpg",
+              "provider_id": 2363,
+              "provider_name": "Polsat Box Go",
+              "display_priority": 47
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=PT",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=PY",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 29
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=RU",
+          "ads": [
+            {
+              "logo_path": "/yyMxS08v80D96O7NtL9supa5sn7.jpg",
+              "provider_id": 557,
+              "provider_name": "More TV",
+              "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 20
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=SA",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 18
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=SE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=SG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=SI",
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 36
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 36
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 10
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=TH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=TW",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=TZ",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 17
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 17
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=UA",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=UG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 3
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 27
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=ZA",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/movie/109451-cloudy-with-a-chance-of-meatballs-2/watch?locale=ZW",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=14971",
+      "x-memc": "HIT",
+      "x-memc-key": "b6db3ec15a5f3cc445e7374eb96119088730f4f3cde0c10b78f62f07e6658df3",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00224cf1ca79792f9ac21933194b6d2f8761\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

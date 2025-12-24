@@ -1,6 +1,6 @@
 {
   "Guid": "3b52ff12-1c3b-0b41-bbc1-fd76d43c001e",
-  "UpdatedAt": "2025-12-24T11:53:34.7897954Z",
+  "UpdatedAt": "2025-12-24T18:45:16.1757281Z",
   "Title": "Proxy Mapping for GET /3/search/multi",
   "Description": "Proxy Mapping for GET /3/search/multi",
   "Priority": -2000000,
@@ -56,39 +56,6 @@
     "BodyAsJson": {
       "page": 2,
       "results": [
-        {
-          "adult": false,
-          "id": 3041272,
-          "name": "Norbert Jobst",
-          "original_name": "Norbert Jobst",
-          "media_type": "person",
-          "popularity": 0.0414,
-          "gender": 0,
-          "known_for_department": "Costume \u0026 Make-Up",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/mOvik71sf6PHAgEcpTeQunKXUzW.jpg",
-              "id": 30029,
-              "title": "Angel\u0027s Flight",
-              "original_title": "Angel\u0027s Flight",
-              "overview": "A series of murders involving a stripper are investigated by a hard-drinking reporter.",
-              "poster_path": "/76VOkVcWXDRSDwFI2areI9Tirs4.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18
-              ],
-              "popularity": 2.0247,
-              "release_date": "1965-01-01",
-              "video": false,
-              "vote_average": 4.333,
-              "vote_count": 9
-            }
-          ]
-        },
         {
           "adult": false,
           "id": 2887053,
@@ -750,6 +717,25 @@
           "video": false,
           "vote_average": 7.0,
           "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tw6OWtgvbMBSHBudaOiHttLeZyP.jpg",
+          "id": 306813,
+          "title": "A Man for All Jobs...",
+          "original_title": "\u0386\u03BD\u03B8\u03C1\u03C9\u03C0\u03BF\u03C2 \u03B3\u03B9\u03B1 \u038C\u03BB\u03B5\u03C2 \u03C4\u03B9\u03C2 \u0394\u03BF\u03C5\u03BB\u03B5\u03B9\u03AD\u03C2...",
+          "overview": "A cynical young man, Giorgos, who believes that in this life you need to steer clear of principles and attachments, clashes with his father, captain Manolis and abandons the management of the family\u2019s shipyard. Determined to build his life again, he gets a job as a waiter in a large hotel and believes that he can also get rich by taking advantage of the sorrows and the loneliness of the wealthy.",
+          "poster_path": "/mJh4OBA9y5ZCvHUzpiklE3IbDcd.jpg",
+          "media_type": "movie",
+          "original_language": "el",
+          "genre_ids": [
+            35
+          ],
+          "popularity": 2.481,
+          "release_date": "1966-01-10",
+          "video": false,
+          "vote_average": 5.333,
+          "vote_count": 9
         }
       ],
       "total_pages": 40,
@@ -760,17 +746,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=10898",
-      "x-memc": "HIT",
+      "Cache-Control": "public, max-age=26794",
+      "x-memc": "MISS, STORE",
       "x-memc-key": "0db4c7acbd370ad58bfb8025efa28380915db2d9838a54f037aa420d1b68205e",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u00226e3b1b34cc6c9a0a7bdcae02e392311d\u0022",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00221270272d95708c398c47d7540fed9637\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

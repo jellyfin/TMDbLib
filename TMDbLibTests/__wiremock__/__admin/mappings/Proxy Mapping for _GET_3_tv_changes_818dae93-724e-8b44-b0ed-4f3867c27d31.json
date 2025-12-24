@@ -1,6 +1,6 @@
 {
   "Guid": "818dae93-724e-8b44-b0ed-4f3867c27d31",
-  "UpdatedAt": "2025-12-24T11:53:34.4102453Z",
+  "UpdatedAt": "2025-12-24T18:45:17.8072653Z",
   "Title": "Proxy Mapping for GET /3/tv/changes",
   "Description": "Proxy Mapping for GET /3/tv/changes",
   "Priority": -2000000,
@@ -437,25 +437,25 @@
         }
       ],
       "page": 1,
-      "total_pages": 24,
-      "total_results": 2359
+      "total_pages": 29,
+      "total_results": 2827
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "Cache-Control": "public, max-age=344",
       "x-memc": "HIT",
       "x-memc-key": "164ca1e803d94581d9c0b670be0db519015a6ae33996b7bc12833c91c7d6626a",
       "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=580",
-      "ETag": "W/\u00226600eb9037fb252aa0a74d78e2bb1d4d\u0022",
+      "ETag": "W/\u0022a6b7396e8a5a211f90cb06527ce1a40d\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -1,6 +1,6 @@
 {
   "Guid": "f8732a67-7777-6847-b178-6f6857ca01af",
-  "UpdatedAt": "2025-12-24T11:53:34.4832412Z",
+  "UpdatedAt": "2025-12-24T18:45:17.7095026Z",
   "Title": "Proxy Mapping for GET /3/movie/latest",
   "Description": "Proxy Mapping for GET /3/movie/latest",
   "Priority": -2000000,
@@ -26,33 +26,38 @@
       "backdrop_path": null,
       "belongs_to_collection": null,
       "budget": 0,
-      "genres": [],
-      "homepage": "",
-      "id": 1603461,
-      "imdb_id": null,
-      "origin_country": [
-        "BR"
+      "genres": [
+        {
+          "id": 99,
+          "name": "Documentary"
+        }
       ],
-      "original_language": "en",
-      "original_title": "The Birth of Urana REMIX",
-      "overview": "Originally a text, it was reformulated as a single-channel video-installation. Jota Momba\u00E7a\u2019s video work expands the world of an imaginary and dystopian story. The protagonist escapes from a colonial, militant and authoritarian force by digging deep into the earth, and, in doing so, initiates a material process of transition and an integrated relationship with earthly matter itself. Momba\u00E7a envisions a body that breaks free from colonial boundaries and the appropriate figurations of gender, sexuality and humanity that keep us separate from the natural world. The narration of the story, which is divided into five chapters, unfolds through a combination of phrases and images. These elements merge to form a sweeping current, blending sounds and colours with various degrees of intensity. Like a melodic accompaniment, the narrative rhythm guides the pace, at times slow and at times fast.",
+      "homepage": "",
+      "id": 1603638,
+      "imdb_id": "tt5986348",
+      "origin_country": [
+        "TR"
+      ],
+      "original_language": "tr",
+      "original_title": "\u0130zzet G\u00FCnay Belgeseli",
+      "overview": "",
       "popularity": 0.0,
-      "poster_path": "/o8YrQaNszVJ5uY58b7OxfeBFQEQ.jpg",
+      "poster_path": null,
       "production_companies": [],
       "production_countries": [],
-      "release_date": "2020-03-24",
+      "release_date": "",
       "revenue": 0,
-      "runtime": 21,
+      "runtime": 0,
       "spoken_languages": [
         {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
+          "english_name": "Turkish",
+          "iso_639_1": "tr",
+          "name": "T\u00FCrk\u00E7e"
         }
       ],
       "status": "Released",
       "tagline": "",
-      "title": "The Birth of Urana REMIX",
+      "title": "\u0130zzet G\u00FCnay Belgeseli",
       "video": false,
       "vote_average": 0.0,
       "vote_count": 0
@@ -62,17 +67,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "Cache-Control": "public, max-age=0",
       "x-memc": "MISS",
       "x-memc-key": "2486f371919290448476c712019e749588a041d4758e1e1ad54830bbb7bffc74",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=0",
-      "ETag": "W/\u0022fc21aef626ab827c080b4e2a44da940a\u0022",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u002284d9cec63303834ead7777af6fceaffc\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

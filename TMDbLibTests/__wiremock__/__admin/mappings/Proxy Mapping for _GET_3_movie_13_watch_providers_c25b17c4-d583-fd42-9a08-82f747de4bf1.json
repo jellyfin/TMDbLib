@@ -1,0 +1,5273 @@
+{
+  "Guid": "c25b17c4-d583-fd42-9a08-82f747de4bf1",
+  "UpdatedAt": "2025-12-24T18:45:27.2836259Z",
+  "Title": "Proxy Mapping for GET /3/movie/13/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/13/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/13/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 13,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 31
+            }
+          ]
+        },
+        "AE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 14
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "AO": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AO",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AR",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 46
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 41
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AT",
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 68
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 47
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 48
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 154
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AU",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/sSfxJXq7s8oHf3XWd0FtqagPDsF.jpg",
+              "provider_id": 21,
+              "provider_name": "Stan",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 50
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 82
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/7QX5OdsQZrXGNBKq9SPzoPV9OYQ.jpg",
+              "provider_id": 385,
+              "provider_name": "BINGE",
+              "display_priority": 85
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/8fIieu3ZfmTPu8eozZbtgATcPO5.jpg",
+              "provider_id": 82,
+              "provider_name": "10",
+              "display_priority": 22
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=AZ",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BF",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BO",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BR",
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 82
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 72
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 13
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BY",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 94
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 122
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 123
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CH",
+          "buy": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/l5SFTF3l9l1KSgZJM7foAppUenz.jpg",
+              "provider_id": 622,
+              "provider_name": "UPC TV",
+              "display_priority": 32
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 42
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 40
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 52
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CO",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 60
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 41
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 53
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 60
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ]
+        },
+        "CU": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CU",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CV",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CY",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 28
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 28
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=DE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 130
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 88
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/ddwrbKxlX8n7TasdvrauFijCmEm.jpg",
+              "provider_id": 383,
+              "provider_name": "TV 2",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/s38BRDYN1fP3Ll9bptNaE5JXFkL.jpg",
+              "provider_id": 2624,
+              "provider_name": "TV2 Skyshowtime",
+              "display_priority": 53
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 23
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=EC",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 34
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=EE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=EG",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=ES",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 51
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/c7SqVo4DFrbK3RwhGbxvQ9SRco2.jpg",
+              "provider_id": 338,
+              "provider_name": "Ruutu",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/wRMEDOZ8iAEEHXIY2VyckvT0K8I.jpg",
+              "provider_id": 2029,
+              "provider_name": "MTV Katsomo",
+              "display_priority": 38
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/eglAxQEXSO13p6gNf3HKymrIu7y.jpg",
+              "provider_id": 540,
+              "provider_name": "Elisa Viihde",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/7QzLA6rsML2rKxhuagWlDl7Zxlm.jpg",
+              "provider_id": 553,
+              "provider_name": "Telia Play",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/eglAxQEXSO13p6gNf3HKymrIu7y.jpg",
+              "provider_id": 540,
+              "provider_name": "Elisa Viihde",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=FJ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
+              "provider_id": 1754,
+              "provider_name": "TF1\u002B",
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 59
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 60
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 61
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 84
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/br0wtjMDSjMahkhzn5XAXYWyr3V.jpg",
+              "provider_id": 138,
+              "provider_name": "FILMO",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/s7mg9n4UHrcdJQL78JmaU6oAdHt.jpg",
+              "provider_id": 59,
+              "provider_name": "Bbox VOD",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/br0wtjMDSjMahkhzn5XAXYWyr3V.jpg",
+              "provider_id": 138,
+              "provider_name": "FILMO",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 76
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 87
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 99
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 120
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 121
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/4tJBhJcuF1ZstI5Yqu82G0yroLa.jpg",
+              "provider_id": 235,
+              "provider_name": "YouTube Free",
+              "display_priority": 168
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 65
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=GH",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=GR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=GT",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=HK",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=HN",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=HR",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=HU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 26
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 26
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=ID",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=IE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 45
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 46
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 58
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=IL",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=IN",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 10
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 73
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=IS",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 23
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=IT",
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 36
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 36
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 50
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
+              "provider_id": 84,
+              "provider_name": "U-NEXT",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 72
+            },
+            {
+              "logo_path": "/4KZlGfHQEza2dBf3HVk4oWmh611.jpg",
+              "provider_id": 589,
+              "provider_name": "TELETOON\u002B Amazon Channel",
+              "display_priority": 74
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=KR",
+          "buy": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 26
+            }
+          ]
+        },
+        "KW": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=LT",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/7QzLA6rsML2rKxhuagWlDl7Zxlm.jpg",
+              "provider_id": 553,
+              "provider_name": "Telia Play",
+              "display_priority": 12
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 19
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 19
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=LV",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LY": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=LY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MD",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=ML",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MU",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MX",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 72
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 20
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 63
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MY",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=MZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=NI",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 12
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
+              "provider_id": 563,
+              "provider_name": "KPN",
+              "display_priority": 29
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=NO",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=NZ",
+          "rent": [
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 29
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PE",
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 36
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            }
+          ]
+        },
+        "PF": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PF",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PG": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PG",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ]
+        },
+        "PK": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PL",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 35
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/mBliLuM0AbkRPGDoVa7IGxwC59b.jpg",
+              "provider_id": 2102,
+              "provider_name": "Premiery Canal\u002B",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
+              "provider_id": 505,
+              "provider_name": "Player",
+              "display_priority": 10
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 27
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 21
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 21
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=RU",
+          "ads": [
+            {
+              "logo_path": "/yyMxS08v80D96O7NtL9supa5sn7.jpg",
+              "provider_id": 557,
+              "provider_name": "More TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/3EJQtj4m83kRh7bV9BF6KWmPiKp.jpg",
+              "provider_id": 577,
+              "provider_name": "TvIgle",
+              "display_priority": 18
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 20
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 27
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jy4yvY3szonb0p6rtMXvF5stuX9.jpg",
+              "provider_id": 497,
+              "provider_name": "Tele2 Play",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/5lKPs5yrjeKHFrXh9RIvzyJJzSd.jpg",
+              "provider_id": 1944,
+              "provider_name": "TV4 Play",
+              "display_priority": 40
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SG",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SI",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 24
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 24
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TR",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/c8ryDZroFQtuyRVPBwXq5PLpTWV.jpg",
+              "provider_id": 1904,
+              "provider_name": "TV\u002B",
+              "display_priority": 9
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TW",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
+              "provider_id": 159,
+              "provider_name": "Catchplay",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
+              "provider_id": 159,
+              "provider_name": "Catchplay",
+              "display_priority": 13
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=TZ",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 17
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 17
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=UG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=US",
+          "free": [
+            {
+              "logo_path": "/rcBwnERpNfPfWB5DaSTyEMCZbCA.jpg",
+              "provider_id": 191,
+              "provider_name": "Kanopy",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 155
+            },
+            {
+              "logo_path": "/5wym1C0jAvJeGirPdgVpcW0CCuy.jpg",
+              "provider_id": 2616,
+              "provider_name": "Paramount Plus Essential",
+              "display_priority": 366
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 367
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            },
+            {
+              "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 127
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=UY",
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=ZA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/movie/13-forrest-gump/watch?locale=ZW",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=19042",
+      "x-memc": "HIT",
+      "x-memc-key": "b90ebe9b30c8ba0d5bddbe89b027dd950be85a9ec8be7cf906c8bba863026650",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00224ab6de80225f87d51bf2b0cc82a2a920\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

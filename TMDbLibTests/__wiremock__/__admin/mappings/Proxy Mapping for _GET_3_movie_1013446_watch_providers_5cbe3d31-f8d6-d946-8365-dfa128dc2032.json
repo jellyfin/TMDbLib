@@ -1,0 +1,393 @@
+{
+  "Guid": "5cbe3d31-f8d6-d946-8365-dfa128dc2032",
+  "UpdatedAt": "2025-12-24T18:45:16.7034854Z",
+  "Title": "Proxy Mapping for GET /3/movie/1013446/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1013446/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1013446/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1013446,
+      "results": {
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 51
+            },
+            {
+              "logo_path": "/2ino0WmHA4GROB7NYKzT6PGqLcb.jpg",
+              "provider_id": 528,
+              "provider_name": "AMC\u002B Amazon Channel",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/oTQdXIqM9iewlN4MC2nhKB0gHw.jpg",
+              "provider_id": 1854,
+              "provider_name": "AMC Plus Apple TV Channel ",
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/kLfq0I2MwiUFUY9yI1GwOeKxX8f.jpg",
+              "provider_id": 2049,
+              "provider_name": "Shudder Apple TV Channel",
+              "display_priority": 62
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=BE",
+          "rent": [
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 14
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 14
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/acANFKCTLQuvDPjJAb5SnmzJaT6.jpg",
+              "provider_id": 311,
+              "provider_name": "Be TV Go",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/2ino0WmHA4GROB7NYKzT6PGqLcb.jpg",
+              "provider_id": 528,
+              "provider_name": "AMC\u002B Amazon Channel",
+              "display_priority": 86
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 87
+            },
+            {
+              "logo_path": "/oTQdXIqM9iewlN4MC2nhKB0gHw.jpg",
+              "provider_id": 1854,
+              "provider_name": "AMC Plus Apple TV Channel ",
+              "display_priority": 97
+            },
+            {
+              "logo_path": "/kLfq0I2MwiUFUY9yI1GwOeKxX8f.jpg",
+              "provider_id": 2049,
+              "provider_name": "Shudder Apple TV Channel",
+              "display_priority": 106
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=FR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/br0wtjMDSjMahkhzn5XAXYWyr3V.jpg",
+              "provider_id": 138,
+              "provider_name": "FILMO",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/br0wtjMDSjMahkhzn5XAXYWyr3V.jpg",
+              "provider_id": 138,
+              "provider_name": "FILMO",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 67
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 66
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 12
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=LU",
+          "buy": [
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 19
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 19
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=NL",
+          "rent": [
+            {
+              "logo_path": "/mj1iZQtWmq9s0LmPhZ7KjUtgVja.jpg",
+              "provider_id": 451,
+              "provider_name": "Picl",
+              "display_priority": 19
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 32
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1013446-reflet-dans-un-diamant-mort/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/oTQdXIqM9iewlN4MC2nhKB0gHw.jpg",
+              "provider_id": 1854,
+              "provider_name": "AMC Plus Apple TV Channel ",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/2ino0WmHA4GROB7NYKzT6PGqLcb.jpg",
+              "provider_id": 528,
+              "provider_name": "AMC\u002B Amazon Channel",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/kLfq0I2MwiUFUY9yI1GwOeKxX8f.jpg",
+              "provider_id": 2049,
+              "provider_name": "Shudder Apple TV Channel",
+              "display_priority": 189
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=11590",
+      "x-memc": "HIT",
+      "x-memc-key": "a940288f7355171556f3f1f18dfd28670efeef6d0c90f819d74cb43549047b9a",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022324b3d795b25d0cd1a5206a3c006fae3\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

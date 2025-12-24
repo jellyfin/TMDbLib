@@ -130,7 +130,7 @@ public class ClientListsTests : TestBase
             var config = new TestConfig();
             var client = config.Client;
 
-            client.SetSessionInformationAsync(config.UserSessionId, SessionType.UserSession).GetAwaiter().GetResult();
+            client.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession).GetAwaiter().GetResult();
 
             // Yes, this is only the first page, but that's fine.
             // Eventually we'll delete all remaining lists

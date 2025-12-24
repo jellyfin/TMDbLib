@@ -1,0 +1,423 @@
+{
+  "Guid": "df6c4c4d-e8f5-2746-8f11-551869e7fe83",
+  "UpdatedAt": "2025-12-24T18:45:30.5516668Z",
+  "Title": "Proxy Mapping for GET /3/tv/64356/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/64356/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/64356/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 64356,
+      "results": {
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/gR8rrj71VCLjlF1LJpplo72MXf0.jpg",
+              "provider_id": 575,
+              "provider_name": "OnDemandKorea",
+              "display_priority": 22
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 141
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 92
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 47
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 78
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 135
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 68
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 202
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 43
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 80
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 49
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 92
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 153
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 27
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 37
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 31
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 54
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 85
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 70
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=MY",
+          "ads": [
+            {
+              "logo_path": "/o7WsYI2r1llIf9h6JTGVX9yTHPx.jpg",
+              "provider_id": 158,
+              "provider_name": "Viu",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/o7WsYI2r1llIf9h6JTGVX9yTHPx.jpg",
+              "provider_id": 158,
+              "provider_name": "Viu",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 60
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 45
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 45
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/73uV3YooOA8gD9YQTXFj2XakZWA.jpg",
+              "provider_id": 344,
+              "provider_name": "Rakuten Viki",
+              "display_priority": 17
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=PH",
+          "ads": [
+            {
+              "logo_path": "/o7WsYI2r1llIf9h6JTGVX9yTHPx.jpg",
+              "provider_id": 158,
+              "provider_name": "Viu",
+              "display_priority": 6
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 53
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 39
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 27
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 52
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/64356/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/gR8rrj71VCLjlF1LJpplo72MXf0.jpg",
+              "provider_id": 575,
+              "provider_name": "OnDemandKorea",
+              "display_priority": 138
+            },
+            {
+              "logo_path": "/hStl3hxyHcqhh5BnfHU4bUsypGd.jpg",
+              "provider_id": 2413,
+              "provider_name": "Kocowa Amazon Channel",
+              "display_priority": 271
+            },
+            {
+              "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
+              "provider_id": 464,
+              "provider_name": "Kocowa",
+              "display_priority": 341
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=16989",
+      "x-memc": "HIT",
+      "x-memc-key": "4dd149622dfdd5a69b4c8ada084597ac02389d00cdaab6767e564d72155b5195",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00221fed483502d6aea3b9b22667715ae540\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}
