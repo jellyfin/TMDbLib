@@ -143,6 +143,21 @@ public partial class TMDbClient
     }
 
     /// <summary>
+    /// Retrieves a list of changes made to a specific TV show.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb ID of the TV show.</param>
+    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
+    /// <param name="startDate">The start date for filtering changes.</param>
+    /// <param name="endDate">The end date for filtering changes.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A list of changes made to the TV show.</returns>
+    public async Task<IList<Change>> GetTvShowChangesAsync(int tvShowId, int page = 0, DateTime? startDate = null, DateTime? endDate = null, CancellationToken cancellationToken = default)
+    {
+        ChangesContainer changesContainer = await GetChangesInternal<ChangesContainer>("tv", page, tvShowId, startDate, endDate, cancellationToken).ConfigureAwait(false);
+        return changesContainer.Changes;
+    }
+
+    /// <summary>
     /// Retrieves a list of changes made to a specific TV season.
     /// </summary>
     /// <param name="seasonId">The TMDb ID of the TV season.</param>
