@@ -14,7 +14,7 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T> GetTvSeasonMethodInternal<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null, CancellationToken cancellationToken = default)
+    private async Task<T> GetTvSeasonMethodInternal<T>(int tvShowId, int seasonNumber, TvSeasonMethods tvShowMethod, string dateFormat = null, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
         where T : new()
     {
         RestRequest req = _client.Create("tv/{id}/season/{season_number}/{method}");
@@ -30,6 +30,11 @@ public partial class TMDbClient
         if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
+        }
+
+        if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+        {
+            req.AddParameter("include_image_language", includeImageLanguage);
         }
 
         T response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -189,11 +194,12 @@ public partial class TMDbClient
     /// If specified the api will attempt to return a localized result. ex: en,it,es.
     /// For images this means that the image might contain language specifc text.
     /// </param>
+    /// <param name="includeImageLanguage">If you want to include a fallback language (especially useful for backdrops) you can use the include_image_language parameter. This should be a comma separated value like so: include_image_language=en,null.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>Poster images for the season.</returns>
-    public async Task<PosterImages> GetTvSeasonImagesAsync(int tvShowId, int seasonNumber, string language = null, CancellationToken cancellationToken = default)
+    public async Task<PosterImages> GetTvSeasonImagesAsync(int tvShowId, int seasonNumber, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
-        return await GetTvSeasonMethodInternal<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetTvSeasonMethodInternal<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, includeImageLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -218,6 +224,6 @@ public partial class TMDbClient
     /// <returns>A container with translation information for the season.</returns>
     public async Task<TranslationsContainer> GetTvSeasonTranslationsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
-        return await GetTvSeasonMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, TvSeasonMethods.Translations, null, null, cancellationToken).ConfigureAwait(false);
+        return await GetTvSeasonMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, TvSeasonMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 }

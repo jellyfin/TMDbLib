@@ -608,11 +608,12 @@ public sealed partial class TMDbClient
     /// Retrieves videos (trailers, teasers, clips, etc.) associated with a movie.
     /// </summary>
     /// <param name="movieId">The TMDb id of the movie.</param>
+    /// <param name="language">Language to filter the video results.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with video information for the movie.</returns>
-    public async Task<ResultContainer<Video>> GetMovieVideosAsync(int movieId, CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<Video>> GetMovieVideosAsync(int movieId, string language = null, CancellationToken cancellationToken = default)
     {
-        return await GetMovieMethodInternal<ResultContainer<Video>>(movieId, MovieMethods.Videos, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetMovieMethodInternal<ResultContainer<Video>>(movieId, MovieMethods.Videos, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
