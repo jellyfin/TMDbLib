@@ -156,6 +156,11 @@ public partial class TMDbClient
             {
                 item.MovieCredits.Id = item.Id;
             }
+
+            if (item.CombinedCredits is not null)
+            {
+                item.CombinedCredits.Id = item.Id;
+            }
         }
 
         return item;
@@ -292,5 +297,28 @@ public partial class TMDbClient
     public async Task<TranslationsContainer> GePersonTranslationsAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<TranslationsContainer>(personId, PersonMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Retrieves combined movie and TV credits for a person using the default language.
+    /// </summary>
+    /// <param name="personId">The TMDb id of the person.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>Combined credits including both movie and TV cast/crew roles for the person.</returns>
+    public async Task<CombinedCredits> GetPersonCombinedCreditsAsync(int personId, CancellationToken cancellationToken = default)
+    {
+        return await GetPersonCombinedCreditsAsync(personId, DefaultLanguage, cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Retrieves combined movie and TV credits for a person with specific language settings.
+    /// </summary>
+    /// <param name="personId">The TMDb id of the person.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>Combined credits including both movie and TV cast/crew roles for the person.</returns>
+    public async Task<CombinedCredits> GetPersonCombinedCreditsAsync(int personId, string language, CancellationToken cancellationToken = default)
+    {
+        return await GetPersonMethodInternal<CombinedCredits>(personId, PersonMethods.CombinedCredits, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 }

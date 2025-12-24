@@ -23,6 +23,7 @@ public class ClientPersonTests : TestBase
         {
             [PersonMethods.MovieCredits] = person => person.MovieCredits,
             [PersonMethods.TvCredits] = person => person.TvCredits,
+            [PersonMethods.CombinedCredits] = person => person.CombinedCredits,
             [PersonMethods.ExternalIds] = person => person.ExternalIds,
             [PersonMethods.Images] = person => person.Images,
             [PersonMethods.TaggedImages] = person => person.TaggedImages,
@@ -118,6 +119,40 @@ public class ClientPersonTests : TestBase
             cast,
             crew
         });
+    }
+
+    /// <summary>
+    /// Tests that combined credits for a person can be retrieved.
+    /// </summary>
+    [Fact]
+    public async Task TestGetPersonCombinedCreditsAsync()
+    {
+        var item = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis);
+
+        Assert.NotNull(item);
+        Assert.NotEmpty(item.Cast);
+
+        // Verify we get valid combined credit data with proper types
+        var movieCast = item.Cast.OfType<CombinedCreditsCastMovie>().First();
+        Assert.NotNull(movieCast.CreditId);
+        Assert.NotNull(movieCast.Title);
+
+        // TV credits may or may not have entries
+        var tvCast = item.Cast.OfType<CombinedCreditsCastTv>().FirstOrDefault();
+        if (tvCast != null)
+        {
+            Assert.NotNull(tvCast.CreditId);
+        }
+
+        // Crew may or may not have entries
+        if (item.Crew.Count > 0)
+        {
+            var movieCrew = item.Crew.OfType<CombinedCreditsCrewMovie>().FirstOrDefault();
+            if (movieCrew != null)
+            {
+                Assert.NotNull(movieCrew.CreditId);
+            }
+        }
     }
 
     /// <summary>
