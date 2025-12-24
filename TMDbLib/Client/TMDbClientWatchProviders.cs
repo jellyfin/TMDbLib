@@ -13,15 +13,15 @@ public partial class TMDbClient
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A list of regions/countries with watch provider data available.</returns>
     /// <remarks>Uses <see cref="DefaultLanguage"/> to translate data.</remarks>
-    public async Task<ResultContainer<WatchProviderRegion>> GetWatchProviderRegionsAsync(CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<WatchProviderRegion>?> GetWatchProviderRegionsAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("watch/providers/regions");
+        var req = _client.Create("watch/providers/regions");
         if (DefaultLanguage is not null)
         {
             req.AddParameter("language", DefaultLanguage);
         }
 
-        ResultContainer<WatchProviderRegion> response = await req.GetOfT<ResultContainer<WatchProviderRegion>>(cancellationToken).ConfigureAwait(false);
+        var response = await req.GetOfT<ResultContainer<WatchProviderRegion>>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -32,9 +32,9 @@ public partial class TMDbClient
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A list of watch providers for movies.</returns>
     /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
-    public async Task<ResultContainer<WatchProviderItem>> GetMovieWatchProvidersAsync(CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<WatchProviderItem>?> GetMovieWatchProvidersAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("watch/providers/movie");
+        var req = _client.Create("watch/providers/movie");
         if (DefaultLanguage is not null)
         {
             req.AddParameter("language", DefaultLanguage);
@@ -45,7 +45,7 @@ public partial class TMDbClient
             req.AddParameter("watch_region", DefaultCountry);
         }
 
-        ResultContainer<WatchProviderItem> response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
+        var response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -56,9 +56,9 @@ public partial class TMDbClient
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A list of watch providers for TV shows.</returns>
     /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
-    public async Task<ResultContainer<WatchProviderItem>> GetTvWatchProvidersAsync(CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<WatchProviderItem>?> GetTvWatchProvidersAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("watch/providers/tv");
+        var req = _client.Create("watch/providers/tv");
         if (DefaultLanguage is not null)
         {
             req.AddParameter("language", DefaultLanguage);
@@ -69,7 +69,7 @@ public partial class TMDbClient
             req.AddParameter("watch_region", DefaultCountry);
         }
 
-        ResultContainer<WatchProviderItem> response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
+        var response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }

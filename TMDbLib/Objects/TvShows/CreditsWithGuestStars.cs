@@ -12,5 +12,5 @@ public class CreditsWithGuestStars : Credits
     /// Gets or sets the list of guest stars for the episode.
     /// </summary>
     [JsonProperty("guest_stars")]
-    public List<Cast> GuestStars { get; set; }
+    public List<Cast>? GuestStars { get; set; }
 }

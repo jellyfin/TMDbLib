@@ -14,9 +14,9 @@ public partial class TMDbClient
     /// <param name="language">Language to localize the results in.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The detailed review information.</returns>
-    public async Task<Review> GetReviewAsync(string reviewId, string language = null, CancellationToken cancellationToken = default)
+    public async Task<Review?> GetReviewAsync(string reviewId, string? language = null, CancellationToken cancellationToken = default)
     {
-        RestRequest request = _client.Create("review/{reviewId}");
+        var request = _client.Create("review/{reviewId}");
         request.AddUrlSegment("reviewId", reviewId);
 
         if (language is not null)
@@ -27,7 +27,7 @@ public partial class TMDbClient
         // TODO: Dateformat?
         // request.DateFormat = "yyyy-MM-dd";
 
-        Review resp = await request.GetOfT<Review>(cancellationToken).ConfigureAwait(false);
+        var resp = await request.GetOfT<Review>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }

@@ -11,7 +11,7 @@ public class ListStatus
     /// Gets or sets the list ID.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the item is present in the list.

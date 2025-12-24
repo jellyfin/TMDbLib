@@ -11,5 +11,5 @@ public class NetworkWithLogo : NetworkBase
     /// Gets or sets the logo image path.
     /// </summary>
     [JsonProperty("logo_path")]
-    public string LogoPath { get; set; }
+    public string? LogoPath { get; set; }
 }

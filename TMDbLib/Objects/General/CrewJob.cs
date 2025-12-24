@@ -11,13 +11,13 @@ public class CrewJob
     /// Gets or sets the job title.
     /// </summary>
     [JsonProperty("job")]
-    public string Job { get; set; }
+    public string? Job { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID for this job.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes associated with this job.

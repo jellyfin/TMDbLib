@@ -1,5 +1,3 @@
-#pragma warning disable CA2201 // Do not raise reserved exception types
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +61,8 @@ public class ClientAccountTests : TestBase
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
         var result = await TMDbClient.AccountGetListsAsync();
-
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
         Assert.NotEmpty(result.Results);
 
         var single = result.Results.Single(s => s.Id == 1724);
@@ -96,6 +95,8 @@ public class ClientAccountTests : TestBase
 
         // Requires that you have marked at least one movie as favorite else this test will fail
         var movies = await TMDbClient.AccountGetFavoriteMoviesAsync();
+        Assert.NotNull(movies);
+        Assert.NotNull(movies.Results);
         var movie = movies.Results.Single(s => s.Id == IdHelper.Avatar);
 
         await Verify(movie, x => x.IgnoreProperty<SearchMovie>(n => n.VoteCount, n => n.Popularity));
@@ -114,6 +115,7 @@ public class ClientAccountTests : TestBase
 
         // Account may or may not have favorites
         Assert.NotNull(tvShows);
+        Assert.NotNull(tvShows.Results);
         if (tvShows.Results.Count > 0)
         {
             var tvShow = tvShows.Results.First();
@@ -133,6 +135,8 @@ public class ClientAccountTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetMovieWatchlistAsync(i));
 
         var watchlist = await TMDbClient.AccountGetMovieWatchlistAsync();
+        Assert.NotNull(watchlist);
+        Assert.NotNull(watchlist.Results);
         var movie = watchlist.Results.Single(s => s.Id == 100042);
 
         await Verify(movie);
@@ -150,6 +154,8 @@ public class ClientAccountTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetTvWatchlistAsync(i));
 
         var tvShows = await TMDbClient.AccountGetTvWatchlistAsync();
+        Assert.NotNull(tvShows);
+        Assert.NotNull(tvShows.Results);
         var tvShow = tvShows.Results.Single(s => s.Id == 2691);
 
         await Verify(tvShow);
@@ -167,6 +173,8 @@ public class ClientAccountTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
 
         var movies = await TMDbClient.AccountGetFavoriteMoviesAsync();
+        Assert.NotNull(movies);
+        Assert.NotNull(movies.Results);
         var movie = movies.Results.Single(s => s.Id == IdHelper.Avatar);
 
         await Verify(movie);
@@ -184,6 +192,8 @@ public class ClientAccountTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowsAsync(i));
 
         var tvShows = await TMDbClient.AccountGetRatedTvShowsAsync();
+        Assert.NotNull(tvShows);
+        Assert.NotNull(tvShows.Results);
         var tvShow = tvShows.Results.Single(s => s.Id == IdHelper.BigBangTheory);
 
         await Verify(tvShow);
@@ -205,6 +215,7 @@ public class ClientAccountTests : TestBase
 
         // Account may or may not have rated episodes
         Assert.NotNull(tvEpisodes);
+        Assert.NotNull(tvEpisodes.Results);
         if (tvEpisodes.Results.Count > 0)
         {
             var tvEpisode = tvEpisodes.Results.First();
@@ -228,7 +239,7 @@ public class ClientAccountTests : TestBase
         }
         if (await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
         {
-            throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
+            throw new InvalidOperationException($"Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
         }
         // Try to mark is as a favorite
         Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
@@ -259,7 +270,7 @@ public class ClientAccountTests : TestBase
         }
         if (await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
         {
-            throw new Exception($"Test movie '{IdHelper.Terminator}' was already marked as favorite. Unable to perform test correctly");
+            throw new InvalidOperationException($"Test movie '{IdHelper.Terminator}' was already marked as favorite. Unable to perform test correctly");
         }
         // Try to mark is as a favorite
         Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
@@ -290,7 +301,7 @@ public class ClientAccountTests : TestBase
         }
         if (await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
         {
-            throw new Exception($"Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
+            throw new InvalidOperationException($"Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
         }
         // Try to add an item to the watchlist
         Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
@@ -321,7 +332,7 @@ public class ClientAccountTests : TestBase
         }
         if (await DoesWatchListContainSpecificMovie(IdHelper.Terminator))
         {
-            throw new Exception($"Test movie '{IdHelper.Terminator}' was already on watchlist. Unable to perform test correctly");
+            throw new InvalidOperationException($"Test movie '{IdHelper.Terminator}' was already on watchlist. Unable to perform test correctly");
         }
         // Try to add an item to the watchlist
         Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
@@ -337,19 +348,35 @@ public class ClientAccountTests : TestBase
     }
     private async Task<bool> DoesFavoriteListContainSpecificTvShow(int tvId)
     {
-        return await DoesListContainSpecificMovie(tvId, async page => (await TMDbClient.AccountGetFavoriteTvAsync(page)).Results.Select(s => s.Id));
+        return await DoesListContainSpecificMovie(tvId, async page =>
+        {
+            var result = await TMDbClient.AccountGetFavoriteTvAsync(page);
+            return result?.Results?.Select(s => s.Id) ?? Enumerable.Empty<int>();
+        });
     }
     private async Task<bool> DoesWatchListContainSpecificTvShow(int tvId)
     {
-        return await DoesListContainSpecificMovie(tvId, async page => (await TMDbClient.AccountGetTvWatchlistAsync(page)).Results.Select(s => s.Id));
+        return await DoesListContainSpecificMovie(tvId, async page =>
+        {
+            var result = await TMDbClient.AccountGetTvWatchlistAsync(page);
+            return result?.Results?.Select(s => s.Id) ?? Enumerable.Empty<int>();
+        });
     }
     private async Task<bool> DoesFavoriteListContainSpecificMovie(int movieId)
     {
-        return await DoesListContainSpecificMovie(movieId, async page => (await TMDbClient.AccountGetFavoriteMoviesAsync(page)).Results.Select(s => s.Id));
+        return await DoesListContainSpecificMovie(movieId, async page =>
+        {
+            var result = await TMDbClient.AccountGetFavoriteMoviesAsync(page);
+            return result?.Results?.Select(s => s.Id) ?? Enumerable.Empty<int>();
+        });
     }
     private async Task<bool> DoesWatchListContainSpecificMovie(int movieId)
     {
-        return await DoesListContainSpecificMovie(movieId, async page => (await TMDbClient.AccountGetMovieWatchlistAsync(page)).Results.Select(s => s.Id));
+        return await DoesListContainSpecificMovie(movieId, async page =>
+        {
+            var result = await TMDbClient.AccountGetMovieWatchlistAsync(page);
+            return result?.Results?.Select(s => s.Id) ?? Enumerable.Empty<int>();
+        });
     }
     private async Task<bool> DoesListContainSpecificMovie(int movieId, Func<int, Task<IEnumerable<int>>> listGetter)
     {

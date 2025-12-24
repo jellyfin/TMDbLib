@@ -1,5 +1,3 @@
-#pragma warning disable CA2201 // Do not raise reserved exception types
-
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
@@ -16,7 +14,7 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter
         throw new NotSupportedException();
     }
 
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
         // Sometimes the genre_ids is an empty object, instead of an array
         // In these instances, convert it from:
@@ -42,11 +40,17 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter
             return null;
         }
 
-        throw new Exception("Unable to convert list of integers");
+        throw new InvalidOperationException("Unable to convert list of integers");
     }
 
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
+        if (value is null)
+        {
+            writer.WriteNull();
+            return;
+        }
+
         // Pass-through
         serializer.Serialize(writer, value);
     }

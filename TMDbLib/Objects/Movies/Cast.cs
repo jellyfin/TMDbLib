@@ -18,13 +18,13 @@ public class Cast
     /// Gets or sets the character name.
     /// </summary>
     [JsonProperty("character")]
-    public string Character { get; set; }
+    public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the person ID.
@@ -36,7 +36,7 @@ public class Cast
     /// Gets or sets the person name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the order in the cast.
@@ -48,7 +48,7 @@ public class Cast
     /// Gets or sets the profile image path.
     /// </summary>
     [JsonProperty("profile_path")]
-    public string ProfilePath { get; set; }
+    public string? ProfilePath { get; set; }
 
     /// <summary>
     /// Gets or sets the gender.
@@ -66,13 +66,13 @@ public class Cast
     /// Gets or sets the department the person is known for.
     /// </summary>
     [JsonProperty("known_for_department")]
-    public string KnownForDepartment { get; set; }
+    public string? KnownForDepartment { get; set; }
 
     /// <summary>
     /// Gets or sets the original name.
     /// </summary>
     [JsonProperty("original_name")]
-    public string OriginalName { get; set; }
+    public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the popularity score.

@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="message">The error message.</param>
         /// <param name="statusMessage">The TMDb status message.</param>
-        public APIException(string message, TMDbStatusMessage statusMessage) : base(message)
+        public APIException(string message, TMDbStatusMessage? statusMessage) : base(message)
         {
             StatusMessage = statusMessage;
         }
@@ -18,6 +18,6 @@
         /// <summary>
         /// Gets the status message returned by the TMDb API.
         /// </summary>
-        public TMDbStatusMessage StatusMessage { get; }
+        public TMDbStatusMessage? StatusMessage { get; }
     }
 }

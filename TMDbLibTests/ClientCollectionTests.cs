@@ -14,11 +14,11 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientCollectionTests : TestBase
 {
-    private static readonly Dictionary<CollectionMethods, Func<Collection, object>> Methods;
+    private static readonly Dictionary<CollectionMethods, Func<Collection, object?>> Methods;
 
     static ClientCollectionTests()
     {
-        Methods = new Dictionary<CollectionMethods, Func<Collection, object>>
+        Methods = new Dictionary<CollectionMethods, Func<Collection, object?>>
         {
             [CollectionMethods.Images] = collection => collection.Images
         };
@@ -30,10 +30,11 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsExtrasNone()
     {
-        Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
+        var collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
+        Assert.NotNull(collection);
 
         // Test all extras, ensure none of them exist
-        foreach (Func<Collection, object> selector in Methods.Values)
+        foreach (var selector in Methods.Values)
         {
             Assert.Null(selector(collection));
         }
@@ -45,7 +46,7 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionMissing()
     {
-        Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.MissingID);
+        var collection = await TMDbClient.GetCollectionAsync(IdHelper.MissingID);
 
         Assert.Null(collection);
     }
@@ -56,7 +57,8 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsParts()
     {
-        Collection collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
+        var collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
+        Assert.NotNull(collection);
 
         await Verify(collection);
     }
@@ -67,7 +69,12 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsExtrasExclusive()
     {
-        await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, extras));
+        await TestMethodsHelper.TestGetExclusive(Methods, async extras =>
+        {
+            var result = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, extras);
+            Assert.NotNull(result);
+            return result;
+        });
     }
 
     /// <summary>
@@ -76,7 +83,12 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsExtrasAll()
     {
-        await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, combined), async collection => await Verify(collection));
+        await TestMethodsHelper.TestGetAll(Methods, async combined =>
+        {
+            var result = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, combined);
+            Assert.NotNull(result);
+            return result;
+        }, async collection => await Verify(collection));
     }
 
     /// <summary>
@@ -85,7 +97,8 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsImagesAsync()
     {
-        ImagesWithId images = await TMDbClient.GetCollectionImagesAsync(IdHelper.BackToTheFutureCollection);
+        var images = await TMDbClient.GetCollectionImagesAsync(IdHelper.BackToTheFutureCollection);
+        Assert.NotNull(images);
 
         TestImagesHelpers.TestImagePaths(images);
     }

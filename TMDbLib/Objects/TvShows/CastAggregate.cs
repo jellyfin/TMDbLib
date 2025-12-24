@@ -12,7 +12,7 @@ public class CastAggregate : CastBase
     /// Gets or sets the list of roles played by the cast member.
     /// </summary>
     [JsonProperty("roles")]
-    public List<CastRole> Roles { get; set; }
+    public List<CastRole>? Roles { get; set; }
 
     /// <summary>
     /// Gets or sets the total number of episodes the cast member appeared in.

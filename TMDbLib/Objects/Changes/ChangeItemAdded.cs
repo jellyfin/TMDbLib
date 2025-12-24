@@ -19,5 +19,5 @@ public class ChangeItemAdded : ChangeItemBase
     /// Gets or sets the value that was added.
     /// </summary>
     [JsonProperty("value")]
-    public object Value { get; set; }
+    public object? Value { get; set; }
 }

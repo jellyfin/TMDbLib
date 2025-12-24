@@ -17,11 +17,11 @@ public class SearchCompany
     /// Gets or sets the logo image path.
     /// </summary>
     [JsonProperty("logo_path")]
-    public string LogoPath { get; set; }
+    public string? LogoPath { get; set; }
 
     /// <summary>
     /// Gets or sets the company name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }

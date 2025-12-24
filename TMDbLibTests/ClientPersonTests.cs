@@ -15,11 +15,11 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientPersonTests : TestBase
 {
-    private static readonly Dictionary<PersonMethods, Func<Person, object>> Methods;
+    private static readonly Dictionary<PersonMethods, Func<Person, object?>> Methods;
 
     static ClientPersonTests()
     {
-        Methods = new Dictionary<PersonMethods, Func<Person, object>>
+        Methods = new Dictionary<PersonMethods, Func<Person, object?>>
         {
             [PersonMethods.MovieCredits] = person => person.MovieCredits,
             [PersonMethods.TvCredits] = person => person.TvCredits,
@@ -38,9 +38,10 @@ public class ClientPersonTests : TestBase
     public async Task TestPersonsExtrasNoneAsync()
     {
         var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis);
+        Assert.NotNull(person);
 
         // Test all extras, ensure none of them exist
-        foreach (Func<Person, object> selector in Methods.Values)
+        foreach (var selector in Methods.Values)
         {
             Assert.Null(selector(person));
         }
@@ -53,7 +54,12 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestPersonsExtrasExclusive()
     {
-        await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetPersonAsync(IdHelper.BruceWillis, extras));
+        await TestMethodsHelper.TestGetExclusive(Methods, async extras =>
+        {
+            var result = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, extras);
+            Assert.NotNull(result);
+            return result;
+        });
     }
 
     /// <summary>
@@ -62,7 +68,16 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestPersonsExtrasAllAsync()
     {
-        await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetPersonAsync(IdHelper.FrankSinatra, combined), async person => await Verify(person));
+        await TestMethodsHelper.TestGetAll(Methods, async combined =>
+        {
+            var result = await TMDbClient.GetPersonAsync(IdHelper.FrankSinatra, combined);
+            Assert.NotNull(result);
+            return result;
+        }, async person =>
+        {
+            Assert.NotNull(person);
+            await Verify(person);
+        });
     }
 
     /// <summary>
@@ -85,6 +100,7 @@ public class ClientPersonTests : TestBase
         var item = await TMDbClient.GetPersonTvCreditsAsync(IdHelper.BruceWillis);
 
         Assert.NotNull(item);
+        Assert.NotNull(item.Cast);
         Assert.NotEmpty(item.Cast);
 
         // Verify we get valid TV credit data
@@ -92,6 +108,7 @@ public class ClientPersonTests : TestBase
         Assert.NotNull(cast.CreditId);
 
         // Crew may or may not have entries
+        Assert.NotNull(item.Crew);
         if (item.Crew.Count > 0)
         {
             var crew = item.Crew.First();
@@ -108,6 +125,8 @@ public class ClientPersonTests : TestBase
         var item = await TMDbClient.GetPersonMovieCreditsAsync(IdHelper.BruceWillis);
 
         Assert.NotNull(item);
+        Assert.NotNull(item.Cast);
+        Assert.NotNull(item.Crew);
         Assert.NotEmpty(item.Cast);
         Assert.NotEmpty(item.Crew);
 
@@ -130,6 +149,7 @@ public class ClientPersonTests : TestBase
         var item = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis);
 
         Assert.NotNull(item);
+        Assert.NotNull(item.Cast);
         Assert.NotEmpty(item.Cast);
 
         // Verify we get valid combined credit data with proper types
@@ -139,16 +159,17 @@ public class ClientPersonTests : TestBase
 
         // TV credits may or may not have entries
         var tvCast = item.Cast.OfType<CombinedCreditsCastTv>().FirstOrDefault();
-        if (tvCast != null)
+        if (tvCast is not null)
         {
             Assert.NotNull(tvCast.CreditId);
         }
 
         // Crew may or may not have entries
+        Assert.NotNull(item.Crew);
         if (item.Crew.Count > 0)
         {
             var movieCrew = item.Crew.OfType<CombinedCreditsCrewMovie>().FirstOrDefault();
-            if (movieCrew != null)
+            if (movieCrew is not null)
             {
                 Assert.NotNull(movieCrew.CreditId);
             }
@@ -174,6 +195,8 @@ public class ClientPersonTests : TestBase
     {
         var latestChanges = await TMDbClient.GetPeopleChangesAsync();
 
+        Assert.NotNull(latestChanges);
+        Assert.NotNull(latestChanges.Results);
         Assert.NotEmpty(latestChanges.Results);
     }
 
@@ -184,7 +207,9 @@ public class ClientPersonTests : TestBase
     public async Task TestGetPersonImagesAsync()
     {
         var images = await TMDbClient.GetPersonImagesAsync(IdHelper.BruceWillis);
+        Assert.NotNull(images);
 
+        Assert.NotNull(images.Profiles);
         var image = images.Profiles.Single(s => s.FilePath == "/cPP5y15p6iU83MxQ3tEcbr5hqNR.jpg");
         await Verify(image);
 
@@ -198,7 +223,9 @@ public class ClientPersonTests : TestBase
     public async Task TestPersonsTaggedImagesAsync()
     {
         var images = await TMDbClient.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, 1);
+        Assert.NotNull(images);
 
+        Assert.NotNull(images.Results);
         Assert.NotEmpty(images.Results);
 
         TestImagesHelpers.TestImagePaths(images.Results);
@@ -216,7 +243,9 @@ public class ClientPersonTests : TestBase
     public async Task TestPersonsListAsync()
     {
         var list = await TMDbClient.GetPersonPopularListAsync();
+        Assert.NotNull(list);
 
+        Assert.NotNull(list.Results);
         Assert.NotEmpty(list.Results);
     }
 
@@ -238,6 +267,7 @@ public class ClientPersonTests : TestBase
     public async Task TestGetTranslatedPersonAsync()
     {
         var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, "da");
+        Assert.NotNull(person);
 
         await Verify(person);
     }

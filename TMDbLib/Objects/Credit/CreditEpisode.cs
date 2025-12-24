@@ -24,13 +24,13 @@ public class CreditEpisode
     /// Gets or sets the name of the episode.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview of the episode.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the season number the episode belongs to.
@@ -42,5 +42,5 @@ public class CreditEpisode
     /// Gets or sets the still image path for the episode.
     /// </summary>
     [JsonProperty("still_path")]
-    public string StillPath { get; set; }
+    public string? StillPath { get; set; }
 }

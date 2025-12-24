@@ -149,7 +149,7 @@ public class TestConfig
 
     private static string GetMappingsPath()
     {
-        for (var dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory); dir != null; dir = dir.Parent)
+        for (var dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory); dir is not null; dir = dir.Parent)
         {
             if (File.Exists(Path.Combine(dir.FullName, "TMDbLibTests.csproj")))
             {

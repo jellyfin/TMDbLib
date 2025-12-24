@@ -18,5 +18,5 @@ public class PosterImages
     /// Gets or sets the list of poster images.
     /// </summary>
     [JsonProperty("posters")]
-    public List<ImageData> Posters { get; set; }
+    public List<ImageData>? Posters { get; set; }
 }

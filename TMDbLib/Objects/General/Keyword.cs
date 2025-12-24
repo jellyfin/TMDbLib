@@ -17,5 +17,5 @@ public class Keyword
     /// Gets or sets the name of the keyword.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }

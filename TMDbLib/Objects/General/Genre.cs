@@ -17,5 +17,5 @@ public class Genre
     /// Gets or sets the name of the genre.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }

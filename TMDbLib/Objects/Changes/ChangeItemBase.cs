@@ -19,14 +19,14 @@ public abstract class ChangeItemBase
     /// Gets or sets the unique identifier for the change item.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets a language code, e.g. en
     /// This field is not always set.
     /// </summary>
     [JsonProperty("iso_639_1")]
-    public string Iso_639_1 { get; set; }
+    public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the UTC timestamp when the change occurred.

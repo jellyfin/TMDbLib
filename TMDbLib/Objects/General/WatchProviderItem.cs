@@ -17,7 +17,7 @@ public class WatchProviderItem
     /// Gets or sets the logo path for the provider.
     /// </summary>
     [JsonProperty("logo_path")]
-    public string LogoPath { get; set; }
+    public string? LogoPath { get; set; }
 
     /// <summary>
     /// Gets or sets the provider ID.
@@ -29,5 +29,5 @@ public class WatchProviderItem
     /// Gets or sets the provider name.
     /// </summary>
     [JsonProperty("provider_name")]
-    public string ProviderName { get; set; }
+    public string? ProviderName { get; set; }
 }

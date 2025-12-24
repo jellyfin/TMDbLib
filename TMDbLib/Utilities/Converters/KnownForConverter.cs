@@ -12,9 +12,9 @@ internal class KnownForConverter : JsonCreationConverter<KnownForBase>
         return objectType == typeof(KnownForBase);
     }
 
-    protected override KnownForBase GetInstance(JObject jObject)
+    protected override KnownForBase? GetInstance(JObject jObject)
     {
-        MediaType mediaType = jObject["media_type"].ToObject<MediaType>();
+        var mediaType = jObject["media_type"]?.ToObject<MediaType>();
 
         switch (mediaType)
         {
@@ -22,6 +22,8 @@ internal class KnownForConverter : JsonCreationConverter<KnownForBase>
                 return new KnownForMovie();
             case MediaType.Tv:
                 return new KnownForTv();
+            case null:
+                return null;
             default:
                 throw new ArgumentOutOfRangeException();
         }

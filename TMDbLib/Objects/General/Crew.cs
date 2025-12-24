@@ -11,11 +11,11 @@ public class Crew : CrewBase
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the job title.
     /// </summary>
     [JsonProperty("job")]
-    public string Job { get; set; }
+    public string? Job { get; set; }
 }

@@ -11,11 +11,11 @@ public class Network : NetworkBase
     /// Gets or sets the headquarters location of the network.
     /// </summary>
     [JsonProperty("headquarters")]
-    public string Headquarters { get; set; }
+    public string? Headquarters { get; set; }
 
     /// <summary>
     /// Gets or sets the homepage URL of the network.
     /// </summary>
     [JsonProperty("homepage")]
-    public string Homepage { get; set; }
+    public string? Homepage { get; set; }
 }

@@ -11,7 +11,7 @@ public class TranslationData
     /// Gets or sets the translated name or title.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     // Private hack to ensure two properties (name, title) are deserialized into Name.
     // Tv Shows and Movies will use different names for their translation data.
@@ -25,7 +25,7 @@ public class TranslationData
     /// Gets or sets the translated overview or biography.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     // Private hack to ensure two properties (overview, biography) are deserialized into Overview.
     // Most of the entities have an overview, but people have a biography.
@@ -39,13 +39,13 @@ public class TranslationData
     /// Gets or sets the translated homepage URL.
     /// </summary>
     [JsonProperty("homepage")]
-    public string HomePage { get; set; }
+    public string? HomePage { get; set; }
 
     /// <summary>
     /// Gets or sets the translated tagline.
     /// </summary>
     [JsonProperty("tagline")]
-    public string Tagline { get; set; }
+    public string? Tagline { get; set; }
 
     /// <summary>
     /// Gets or sets the runtime in minutes.

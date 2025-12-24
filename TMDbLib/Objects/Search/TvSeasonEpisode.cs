@@ -21,7 +21,7 @@ public class TvSeasonEpisode
     /// Gets or sets the list of crew members for the episode.
     /// </summary>
     [JsonProperty("crew")]
-    public List<Crew> Crew { get; set; }
+    public List<Crew>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the episode number.
@@ -33,13 +33,13 @@ public class TvSeasonEpisode
     /// Gets or sets the episode type.
     /// </summary>
     [JsonProperty("episode_type")]
-    public string EpisodeType { get; set; }
+    public string? EpisodeType { get; set; }
 
     /// <summary>
     /// Gets or sets the list of guest stars for the episode.
     /// </summary>
     [JsonProperty("guest_stars")]
-    public List<Cast> GuestStars { get; set; }
+    public List<Cast>? GuestStars { get; set; }
 
     /// <summary>
     /// Gets or sets the TMDb ID of the episode.
@@ -51,19 +51,19 @@ public class TvSeasonEpisode
     /// Gets or sets the name of the episode.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview text of the episode.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the production code of the episode.
     /// </summary>
     [JsonProperty("production_code")]
-    public string ProductionCode { get; set; }
+    public string? ProductionCode { get; set; }
 
     /// <summary>
     /// Gets or sets the runtime of the episode in minutes.
@@ -81,7 +81,7 @@ public class TvSeasonEpisode
     /// Gets or sets the still image path.
     /// </summary>
     [JsonProperty("still_path")]
-    public string StillPath { get; set; }
+    public string? StillPath { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score.

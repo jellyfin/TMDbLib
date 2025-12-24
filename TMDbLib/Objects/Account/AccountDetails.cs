@@ -11,7 +11,7 @@ public class AccountDetails
     /// Gets or sets the avatar information.
     /// </summary>
     [JsonProperty("avatar")]
-    public Avatar Avatar { get; set; }
+    public Avatar? Avatar { get; set; }
 
     /// <summary>
     /// Gets or sets the account ID.
@@ -29,23 +29,23 @@ public class AccountDetails
     /// Gets or sets a country code, e.g. US.
     /// </summary>
     [JsonProperty("iso_3166_1")]
-    public string Iso_3166_1 { get; set; }
+    public string? Iso_3166_1 { get; set; }
 
     /// <summary>
     /// Gets or sets a language code, e.g. en.
     /// </summary>
     [JsonProperty("iso_639_1")]
-    public string Iso_639_1 { get; set; }
+    public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the account name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the username.
     /// </summary>
     [JsonProperty("username")]
-    public string Username { get; set; }
+    public string? Username { get; set; }
 }

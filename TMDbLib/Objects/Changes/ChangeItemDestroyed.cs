@@ -19,5 +19,5 @@ public class ChangeItemDestroyed : ChangeItemBase
     /// Gets or sets the value that was destroyed.
     /// </summary>
     [JsonProperty("value")]
-    public object Value { get; set; }
+    public object? Value { get; set; }
 }

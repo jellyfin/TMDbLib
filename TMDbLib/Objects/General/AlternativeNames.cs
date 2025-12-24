@@ -18,5 +18,5 @@ public class AlternativeNames
     /// Gets or sets the list of alternative names.
     /// </summary>
     [JsonProperty("results")]
-    public List<AlternativeName> Results { get; set; }
+    public List<AlternativeName>? Results { get; set; }
 }

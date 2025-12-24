@@ -21,7 +21,7 @@ public class KnownForMovie : KnownForBase
     /// Gets or sets the original title of the movie.
     /// </summary>
     [JsonProperty("original_title")]
-    public string OriginalTitle { get; set; }
+    public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the release date of the movie.
@@ -33,7 +33,7 @@ public class KnownForMovie : KnownForBase
     /// Gets or sets the title of the movie.
     /// </summary>
     [JsonProperty("title")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether this is a video release.

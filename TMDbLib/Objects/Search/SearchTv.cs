@@ -28,17 +28,17 @@ public class SearchTv : SearchMovieTvBase
     /// Gets or sets the name of the TV show.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the original name of the TV show.
     /// </summary>
     [JsonProperty("original_name")]
-    public string OriginalName { get; set; }
+    public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets country ISO code ex. US.
     /// </summary>
     [JsonProperty("origin_country")]
-    public List<string> OriginCountry { get; set; }
+    public List<string>? OriginCountry { get; set; }
 }

@@ -14,7 +14,7 @@ public abstract class DiscoverBase<T>
 {
     private readonly TMDbClient _client;
     private readonly string _endpoint;
-    private readonly SimpleNamedValueCollection parameters;
+    private readonly SimpleNamedValueCollection _parameters;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DiscoverBase{T}"/> class.
@@ -25,13 +25,13 @@ public abstract class DiscoverBase<T>
     {
         _endpoint = endpoint;
         _client = client;
-        parameters = [];
+        _parameters = [];
     }
 
     /// <summary>
     /// Gets the collection of query parameters for the discover operation.
     /// </summary>
-    protected SimpleNamedValueCollection Parameters => parameters;
+    protected SimpleNamedValueCollection Parameters => _parameters;
 
     /// <summary>
     /// Executes the discover query using the default language.
@@ -39,7 +39,7 @@ public abstract class DiscoverBase<T>
     /// <param name="page">The page number to retrieve (default is 0).</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A task representing the asynchronous operation, containing the search results.</returns>
-    public async Task<SearchContainer<T>> Query(int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<T>?> Query(int page = 0, CancellationToken cancellationToken = default)
     {
         return await Query(_client.DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
@@ -51,7 +51,7 @@ public abstract class DiscoverBase<T>
     /// <param name="page">The page number to retrieve (default is 0).</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A task representing the asynchronous operation, containing the search results.</returns>
-    public async Task<SearchContainer<T>> Query(string language, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<T>?> Query(string? language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await _client.DiscoverPerformAsync<T>(_endpoint, language, page, Parameters, cancellationToken).ConfigureAwait(false);
     }

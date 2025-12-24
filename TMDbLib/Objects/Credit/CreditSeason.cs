@@ -18,7 +18,7 @@ public class CreditSeason
     /// Gets or sets the poster path for the season.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.

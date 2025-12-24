@@ -92,20 +92,24 @@ public class ClientDiscoverTests : TestBase
     [Fact]
     public async Task TestDiscoverMoviesLanguageAsync()
     {
-        SearchContainer<SearchMovie> query = await TMDbClient.DiscoverMoviesAsync()
+        var query = await TMDbClient.DiscoverMoviesAsync()
             .WhereOriginalLanguageIs("en-US")
             .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
             .Query();
 
-        SearchContainer<SearchMovie> queryDanish = await TMDbClient.DiscoverMoviesAsync()
+        var queryDanish = await TMDbClient.DiscoverMoviesAsync()
             .WhereLanguageIs("da-DK")
             .WhereOriginalLanguageIs("en-US")
             .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
             .Query();
 
         // Should be the same identities, but different titles
+        Assert.NotNull(query);
+        Assert.NotNull(queryDanish);
         Assert.Equal(query.TotalResults, queryDanish.TotalResults);
 
+        Assert.NotNull(query.Results);
+        Assert.NotNull(queryDanish.Results);
         for (int i = 0; i < query.Results.Count; i++)
         {
             SearchMovie a = query.Results[i];
@@ -128,15 +132,17 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        SearchContainer<SearchMovie> results = await query.Query();
+        var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
         // Verify all results have at least one of the filtered providers
         foreach (SearchMovie movie in results.Results)
         {
-            List<int> providerIds = await GetMovieProviderIdsAsync(movie.Id, "US");
+            var providerIds = await GetMovieProviderIdsAsync(movie.Id, "US");
             Assert.True(
                 providerIds.Any(id => filteredProviderIds.Contains(id)),
                 $"Movie {movie.Id} ({movie.Title}): Expected at least one of [{string.Join(", ", filteredProviderIds)}] but got [{string.Join(", ", providerIds)}]");
@@ -159,15 +165,17 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        SearchContainer<SearchMovie> results = await query.Query();
+        var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
         // Verify all results have at least one of the filtered providers
         foreach (SearchMovie movie in results.Results)
         {
-            List<int> providerIds = await GetMovieProviderIdsAsync(movie.Id, "US");
+            var providerIds = await GetMovieProviderIdsAsync(movie.Id, "US");
             Assert.True(
                 providerIds.Any(id => filteredProviderIds.Contains(id)),
                 $"Movie {movie.Id} ({movie.Title}): Expected at least one of [{string.Join(", ", filteredProviderIds)}] but got [{string.Join(", ", providerIds)}]");
@@ -184,8 +192,10 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate)
             .WhereWatchRegionIs("US");
 
-        SearchContainer<SearchMovie> results = await query.Query();
+        var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
@@ -211,6 +221,8 @@ public class ClientDiscoverTests : TestBase
 
         var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
@@ -241,6 +253,8 @@ public class ClientDiscoverTests : TestBase
 
         var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
@@ -248,7 +262,8 @@ public class ClientDiscoverTests : TestBase
         foreach (var movie in results.Results)
         {
             var providers = await GetMovieWatchProvidersAsync(movie.Id, "US");
-            Assert.NotNull(providers?.FlatRate);
+            Assert.NotNull(providers);
+            Assert.NotNull(providers.FlatRate);
             Assert.True(
                 providers.FlatRate.Any(p => filteredProviderIds.Contains(p.ProviderId ?? 0)),
                 $"Movie {movie.Id} ({movie.Title}): Expected Netflix in flatrate providers but found [{string.Join(", ", providers.FlatRate.Select(p => p.ProviderId))}]");
@@ -267,15 +282,17 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        SearchContainer<SearchTv> results = await query.Query();
+        var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
         // Verify all results have at least one of the filtered providers
         foreach (SearchTv tvShow in results.Results)
         {
-            List<int> providerIds = await GetTvShowProviderIdsAsync(tvShow.Id, "US");
+            var providerIds = await GetTvShowProviderIdsAsync(tvShow.Id, "US");
             Assert.True(
                 providerIds.Any(id => filteredProviderIds.Contains(id)),
                 $"TV Show {tvShow.Id} ({tvShow.Name}): Expected at least one of [{string.Join(", ", filteredProviderIds)}] but got [{string.Join(", ", providerIds)}]");
@@ -298,15 +315,17 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        SearchContainer<SearchTv> results = await query.Query();
+        var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
         // Verify all results have at least one of the filtered providers
         foreach (SearchTv tvShow in results.Results)
         {
-            List<int> providerIds = await GetTvShowProviderIdsAsync(tvShow.Id, "US");
+            var providerIds = await GetTvShowProviderIdsAsync(tvShow.Id, "US");
             Assert.True(
                 providerIds.Any(id => filteredProviderIds.Contains(id)),
                 $"TV Show {tvShow.Id} ({tvShow.Name}): Expected at least one of [{string.Join(", ", filteredProviderIds)}] but got [{string.Join(", ", providerIds)}]");
@@ -323,8 +342,10 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate)
             .WhereWatchRegionIs("US");
 
-        SearchContainer<SearchTv> results = await query.Query();
+        var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
@@ -350,6 +371,8 @@ public class ClientDiscoverTests : TestBase
 
         var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
@@ -380,6 +403,8 @@ public class ClientDiscoverTests : TestBase
 
         var results = await query.Query();
 
+        Assert.NotNull(results);
+        Assert.NotNull(results.Results);
         Assert.NotEmpty(results.Results);
         Assert.True(results.TotalResults > 0);
 
@@ -387,7 +412,8 @@ public class ClientDiscoverTests : TestBase
         foreach (var tvShow in results.Results)
         {
             var providers = await GetTvShowWatchProvidersAsync(tvShow.Id, "US");
-            Assert.NotNull(providers?.FlatRate);
+            Assert.NotNull(providers);
+            Assert.NotNull(providers.FlatRate);
             Assert.True(
                 providers.FlatRate.Any(p => filteredProviderIds.Contains(p.ProviderId ?? 0)),
                 $"TV Show {tvShow.Id} ({tvShow.Name}): Expected Netflix in flatrate providers but found [{string.Join(", ", providers.FlatRate.Select(p => p.ProviderId))}]");
@@ -419,6 +445,10 @@ public class ClientDiscoverTests : TestBase
     {
         var watchProviders = await TMDbClient.GetMovieWatchProvidersAsync(movieId);
 
+        Assert.NotNull(watchProviders);
+        if (watchProviders.Results is null)
+            return null;
+
         watchProviders.Results.TryGetValue(region, out var regionProviders);
         return regionProviders;
     }
@@ -430,6 +460,10 @@ public class ClientDiscoverTests : TestBase
     {
         var watchProviders = await TMDbClient.GetTvShowWatchProvidersAsync(tvShowId);
 
+        Assert.NotNull(watchProviders);
+        if (watchProviders.Results is null)
+            return null;
+
         watchProviders.Results.TryGetValue(region, out var regionProviders);
         return regionProviders;
     }
@@ -439,18 +473,18 @@ public class ClientDiscoverTests : TestBase
     /// </summary>
     private static List<int> GetProviderIds(WatchProviders? providers)
     {
-        List<int> ids = new();
+        List<int> ids = [];
 
-        if (providers?.FlatRate != null)
-            ids.AddRange(providers.FlatRate.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId!.Value));
-        if (providers?.Rent != null)
-            ids.AddRange(providers.Rent.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId!.Value));
-        if (providers?.Buy != null)
-            ids.AddRange(providers.Buy.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId!.Value));
-        if (providers?.Free != null)
-            ids.AddRange(providers.Free.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId!.Value));
-        if (providers?.Ads != null)
-            ids.AddRange(providers.Ads.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId!.Value));
+        if (providers?.FlatRate is not null)
+            ids.AddRange(providers.FlatRate.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId.GetValueOrDefault()));
+        if (providers?.Rent is not null)
+            ids.AddRange(providers.Rent.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId.GetValueOrDefault()));
+        if (providers?.Buy is not null)
+            ids.AddRange(providers.Buy.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId.GetValueOrDefault()));
+        if (providers?.Free is not null)
+            ids.AddRange(providers.Free.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId.GetValueOrDefault()));
+        if (providers?.Ads is not null)
+            ids.AddRange(providers.Ads.Where(p => p.ProviderId.HasValue).Select(p => p.ProviderId.GetValueOrDefault()));
 
         return ids;
     }
