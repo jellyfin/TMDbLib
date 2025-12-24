@@ -1,0 +1,72 @@
+{
+  "Guid": "d4e37bfc-95d0-4947-a5ee-d7920d4e19b1",
+  "UpdatedAt": "2025-12-24T11:53:34.8631876Z",
+  "Title": "Proxy Mapping for GET /3/search/collection",
+  "Description": "Proxy Mapping for GET /3/search/collection",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/collection",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "James Bond",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/dOSECZImeyZldoq0ObieBE0lwie.jpg",
+          "id": 645,
+          "name": "James Bond Collection",
+          "original_language": "en",
+          "original_name": "James Bond Collection",
+          "overview": "The James Bond Collection is a legendary spy film series based on Ian Fleming\u2019s novels, following MI6 agent 007, James Bond, as he takes on global threats with style, gadgets, and charm. Produced by EON Productions, the franchise spans 25 official films (1962\u20132021) and has featured six actors, from Sean Connery to Daniel Craig. Known for its thrilling action, iconic villains, Bond girls, and unforgettable theme songs, the series remains a cornerstone of the spy genre. With espionage, luxury cars, and shaken-not-stirred martinis, Bond continues to captivate audiences worldwide.",
+          "poster_path": "/ofwSiqOFShhunAIYYdSMHMJQSx2.jpg"
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 1
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "6e943c62b1f2b4ab1cc091c23dbc7c5ff8d2ba3947cf0ae99526dc6313ea5a02",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=22928",
+      "ETag": "W/\u0022d4995adf5698e7c2e796ac86c084aef5\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

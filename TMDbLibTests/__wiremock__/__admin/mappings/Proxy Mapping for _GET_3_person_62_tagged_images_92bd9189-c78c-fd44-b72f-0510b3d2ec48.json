@@ -1,0 +1,400 @@
+{
+  "Guid": "92bd9189-c78c-fd44-b72f-0510b3d2ec48",
+  "UpdatedAt": "2025-12-24T11:53:34.6368538Z",
+  "Title": "Proxy Mapping for GET /3/person/62/tagged_images",
+  "Description": "Proxy Mapping for GET /3/person/62/tagged_images",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/62/tagged_images",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 62,
+      "page": 0,
+      "results": [
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/vSPkbcDvXT5LKdc2rzZjxqWAPLm.jpg",
+          "height": 1200,
+          "id": "58d35267c3a368123400b01b",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 5.044,
+          "vote_count": 23,
+          "width": 800,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/vDFhaKEMKPIUePtQH2nOwSHfgPy.jpg",
+            "id": 9374,
+            "title": "Death Becomes Her",
+            "original_title": "Death Becomes Her",
+            "overview": "Madeline is married to Ernest, who was once her arch-rival Helen\u0027s fianc\u00E9. After recovering from a mental breakdown, Helen vows to kill Madeline and steal back Ernest. Unfortunately for everyone, the introduction of a magic potion causes things to be a great deal more complicated than a mere murder plot.",
+            "poster_path": "/kkWxyyyWFK5KNk9WVwQuGEC9H9H.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              14,
+              27
+            ],
+            "popularity": 5.0325,
+            "release_date": "1992-07-30",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 2866
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/r4FvRHW1J9FAOnCYchZ7QanQ04e.jpg",
+          "height": 1500,
+          "id": "5985f9b8c3a3683287000dca",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 2.066,
+          "vote_count": 5,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/xfdIjDRBKbddojhUbmheLoLQXQN.jpg",
+            "id": 2069,
+            "title": "The Whole Nine Yards",
+            "original_title": "The Whole Nine Yards",
+            "overview": "After a mobster agrees to cooperate with an FBI investigation in order to stay out of prison, he\u0027s relocated by the authorities to a life of suburban anonymity as part of a witness protection program. It\u0027s not long before a couple of his new neighbours figure out his true identity and come knocking to see if he\u0027d be up for one more hit\u2014suburban style.",
+            "poster_path": "/rDV7ntPLY0ZDBT722Odsi80nFrn.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              80
+            ],
+            "popularity": 6.229,
+            "release_date": "2000-02-18",
+            "video": false,
+            "vote_average": 6.458,
+            "vote_count": 2003
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/yFihWxQcmqcaBR31QM6Y8gT6aYV.jpg",
+          "height": 1000,
+          "id": "5b03e83a0e0a2643540080fc",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 4.722,
+          "vote_count": 36,
+          "width": 667,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+            "id": 562,
+            "title": "Die Hard",
+            "original_title": "Die Hard",
+            "overview": "NYPD cop John McClane\u0027s plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her offices Christmas Party, the entire building is overtaken by a group of terrorists. With little help from the LAPD, wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.",
+            "poster_path": "/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              53
+            ],
+            "popularity": 28.9381,
+            "release_date": "1988-07-15",
+            "video": false,
+            "vote_average": 7.8,
+            "vote_count": 11853
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg",
+          "height": 3000,
+          "id": "5c437b94c3a36819fd22fda1",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 7.25,
+          "vote_count": 38,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/rzsMWXQ7GaN60wIpg3yf01iBmXy.jpg",
+            "id": 450465,
+            "title": "Glass",
+            "original_title": "Glass",
+            "overview": "In a series of escalating encounters, former security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities. Meanwhile, the shadowy presence of Elijah Price emerges as an orchestrator who holds secrets critical to both men.",
+            "poster_path": "/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              53,
+              18,
+              878
+            ],
+            "popularity": 6.0824,
+            "release_date": "2019-01-16",
+            "video": false,
+            "vote_average": 6.662,
+            "vote_count": 8871
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/wUEizkONxPZmIWQ2lnMttW0suXH.jpg",
+          "height": 1500,
+          "id": "5e9c885ccf4b8b001dc9d118",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 4.572,
+          "vote_count": 14,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/cDtefl7KGnKrDziEUXetMnztvqr.jpg",
+            "id": 1573,
+            "title": "Die Hard 2",
+            "original_title": "Die Hard 2",
+            "overview": "One year after his heroics in Los Angeles, John McClane is an off-duty cop who is the wrong guy in the wrong place at the wrong time. On a snowy Christmas Eve, as he waits for his wife\u0027s plane to land at Washington Dulles International Airport, terrorists take over the air traffic control system in a plot to free a South American army general and drug smuggler being flown into the US to face drug charges. It\u0027s now up to McClane to take on the terrorists, while coping with an inept airport police chief, an uncooperative anti-terrorist squad, and the life of his wife and everyone else trapped in planes circling overhead.",
+            "poster_path": "/ybki0UWO3OPhaM6MSniuKC7sy1R.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              53
+            ],
+            "popularity": 10.6652,
+            "release_date": "1990-07-03",
+            "video": false,
+            "vote_average": 6.961,
+            "vote_count": 6174
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.701,
+          "file_path": "/jNfL8De5IDVIuUYsrNnmPxCQkz8.jpg",
+          "height": 1426,
+          "id": "5ec0b54b8e2e00002119c0d0",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 1.75,
+          "vote_count": 2,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/jEMYEoQw7jF0aoKRgaa1TbHojUT.jpg",
+            "id": 4244,
+            "title": "The Kid",
+            "original_title": "The Kid",
+            "overview": "Powerful businessman Russ Duritz is self-absorbed and immersed in his work. But by the magic of the moon, he meets Rusty, a chubby, charming 8-year-old version of himself who can\u0027t believe he could turn out so badly \u2013 with no life and no dog. With Rusty\u0027s help, Russ is able to reconcile the person he used to dream of being with the man he\u0027s actually become.",
+            "poster_path": "/kMRZhiF08nDiO5aRb81Np5a4d6p.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              14,
+              35,
+              10751
+            ],
+            "popularity": 1.951,
+            "release_date": "2000-07-07",
+            "video": false,
+            "vote_average": 6.744,
+            "vote_count": 1079
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/A885WHVvtvaJXgzRMBE6VQqZDIM.jpg",
+          "height": 3000,
+          "id": "5f10c1b12495ab00323977f4",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 7.542,
+          "vote_count": 8,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/86L8wqGMDbwURPni2t7FQ0nDjsH.jpg",
+            "id": 724989,
+            "title": "Hard Kill",
+            "original_title": "Hard Kill",
+            "overview": "The work of billionaire tech CEO Donovan Chalmers is so valuable that he hires mercenaries to protect it, and a terrorist group kidnaps his daughter just to get it.",
+            "poster_path": "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              12,
+              53
+            ],
+            "popularity": 5.2616,
+            "release_date": "2020-09-04",
+            "video": false,
+            "vote_average": 5.0,
+            "vote_count": 653
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg",
+          "height": 3000,
+          "id": "5f28b20dd8cc4a00391b1060",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 9.064,
+          "vote_count": 21,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/86L8wqGMDbwURPni2t7FQ0nDjsH.jpg",
+            "id": 724989,
+            "title": "Hard Kill",
+            "original_title": "Hard Kill",
+            "overview": "The work of billionaire tech CEO Donovan Chalmers is so valuable that he hires mercenaries to protect it, and a terrorist group kidnaps his daughter just to get it.",
+            "poster_path": "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              12,
+              53
+            ],
+            "popularity": 5.2616,
+            "release_date": "2020-09-04",
+            "video": false,
+            "vote_average": 5.0,
+            "vote_count": 653
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/gt3iyguaCIw8DpQZI1LIN5TohM2.jpg",
+          "height": 2250,
+          "id": "5f67516ce18e3f00390a13e4",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 4.458,
+          "vote_count": 11,
+          "width": 1500,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/mKIkGoyuR71qz6FdiEiOjxvBQcS.jpg",
+            "id": 63,
+            "title": "Twelve Monkeys",
+            "original_title": "Twelve Monkeys",
+            "overview": "In the year 2035, convict James Cole reluctantly volunteers to be sent back in time to discover the origin of a deadly virus that wiped out nearly all of the earth\u0027s population and forced the survivors into underground communities. But when Cole is mistakenly sent to 1990 instead of 1996, he\u0027s arrested and locked up in a mental hospital. There he meets psychiatrist Dr. Kathryn Railly and the son of a famous virus expert who may hold the key to the Army of the 12 Monkeys; thought to be responsible for unleashing the killer disease.",
+            "poster_path": "/gt3iyguaCIw8DpQZI1LIN5TohM2.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              878,
+              53,
+              9648
+            ],
+            "popularity": 6.6776,
+            "release_date": "1995-12-29",
+            "video": false,
+            "vote_average": 7.601,
+            "vote_count": 8818
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.675,
+          "file_path": "/apEiTjuZ3bfpNKUMbyUOxUhiXsr.jpg",
+          "height": 1600,
+          "id": "67b26499317838d2949fa544",
+          "iso_3166_1": "HR",
+          "iso_639_1": "hr",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1080,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/uYa9EvkWgmE3EhcSdEAOzRqiydw.jpg",
+            "id": 826749,
+            "title": "Fortress",
+            "original_title": "Fortress",
+            "overview": "The story revolves around a top-secret resort for retired U.S. intelligence officers. A group of criminals led by Balzary breach the compound, hellbent on revenge on Robert, forcing the retired officer and his son to save the day.",
+            "poster_path": "/sR6OQUvOnQ0OrRLo7hhonaQhuaE.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              53,
+              80
+            ],
+            "popularity": 3.2015,
+            "release_date": "2021-12-17",
+            "video": false,
+            "vote_average": 5.7,
+            "vote_count": 356
+          },
+          "media_type": "movie"
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 10
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=26123",
+      "x-memc": "HIT",
+      "x-memc-key": "63b776471c96a8b696000db9d72e92af1933ea7382ab097148de04b50778ce4d",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00224945a53d1346a212eb4ae4ea615d0109\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

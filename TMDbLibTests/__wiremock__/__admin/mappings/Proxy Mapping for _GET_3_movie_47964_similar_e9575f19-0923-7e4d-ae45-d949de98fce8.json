@@ -1,0 +1,471 @@
+{
+  "Guid": "e9575f19-0923-7e4d-ae45-d949de98fce8",
+  "UpdatedAt": "2025-12-24T11:53:35.4678034Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964/similar",
+  "Description": "Proxy Mapping for GET /3/movie/47964/similar",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964/similar",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/pe3cTrUeAHHLycZVEmFjT9kEV7a.jpg",
+          "genre_ids": [
+            28
+          ],
+          "id": 646315,
+          "original_language": "ko",
+          "original_title": "\uC804\uC124\uC758 \uB77C\uC774\uD0C0",
+          "overview": "",
+          "popularity": 20.9581,
+          "poster_path": "/h5fCwKCnKAKxdX6onTnrU6MeYe8.jpg",
+          "release_date": "2019-10-29",
+          "title": "\uC804\uC124\uC758 \uB77C\uC774\uD0C0",
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/a0xTB1vBxMGt6LGG4N7k1wO9lfL.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35
+          ],
+          "id": 458897,
+          "original_language": "en",
+          "original_title": "Charlie\u0027s Angels",
+          "overview": "Elena ist eine brillante Wissenschaftlerin und Ingenieurin, die die nachhaltige Energiequelle \u201ECalisto\u201C entwickelt hat. Nachdem ihre Chefs die Quelle auf den Markt gebracht haben, bemerkt Elena, dass ihr System einen Fehler aufweist: In den falschen H\u00E4nden kann es als gef\u00E4hrliche Waffe eingesetzt werden. Doch leider stellt sich die Firma, f\u00FCr die Elena arbeitet, als kriminelle Organisation heraus, die gar nicht daran denkt, das Produkt aus den H\u00E4nden zu geben. Daraufhin wendet sich Elena hilfesuchend an die Townsend-Agency. Die Agentur ist mit ihren \u0022Engel\u0022 genannten Agentinnen \u00FCber die Zeit so erfolgreich geworden, dass das Unternehmen expandierte und mehrere Gruppen mit tapferen Engeln an verschiedenen Standorten postiert hat. Angeleitet werden die Frauen von Vermittlern, die alle auf den Namen \u0022Bosley\u0022 h\u00F6ren und ihren Agentinnen die weltweit h\u00E4rtesten Jobs an Land ziehen. Elena schlie\u00DFt sich mit den Engeln Sabina und Jane zusammen, um die Welt vor einer Katastrophe zu bewahren.",
+          "popularity": 4.2001,
+          "poster_path": "/dww4s7635Bqe6cgR7YdjCgq5PvD.jpg",
+          "release_date": "2019-11-14",
+          "title": "3 Engel f\u00FCr Charlie",
+          "video": false,
+          "vote_average": 6.393,
+          "vote_count": 3086
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            18,
+            28,
+            53
+          ],
+          "id": 1231204,
+          "original_language": "ta",
+          "original_title": "\u0B87\u0BA8\u0BCD\u0BA4\u0BBF\u0BAF\u0BA9\u0BCD III: War Mode",
+          "overview": "",
+          "popularity": 0.1922,
+          "poster_path": "/lOjkiJXiMHPjMRX5PjPsi5Db5eT.jpg",
+          "release_date": "",
+          "title": "\u0B87\u0BA8\u0BCD\u0BA4\u0BBF\u0BAF\u0BA9\u0BCD III: War Mode",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xQzDpV5edHLmCM3n15pcatHynOd.jpg",
+          "genre_ids": [
+            878,
+            28,
+            14
+          ],
+          "id": 3115,
+          "original_language": "ja",
+          "original_title": "\u30B4\u30B8\u30E9\u30FB\u30A8\u30D3\u30E9\u30FB\u30E2\u30B9\u30E9\u3000\u5357\u6D77\u306E\u5927\u6C7A\u95D8",
+          "overview": "Auf der Suche nach seinem Bruder ger\u00E4t Ryota, zusammen mit seinen Freunden auf die Insel Letchi.  Dort finden sie eine geheime Fabrik, in der eine Geheimorganisation hochmoderne Kampfmittel herstellt, um damit die Weltherrschaft zu erlangen.  Als die drei Freunde entdeckt werden, erwecken sie auf ihrer Flucht eine Riesenechse mit einem umgebauten Blitzableiter.  Diese zerst\u00F6rt die Anlage, doch die Flucht von der Insel scheint unm\u00F6glich, da der Strand von einer Riesenkrabbe und einer gigantischen Libelle bev\u00F6lkert wird...",
+          "popularity": 5.0964,
+          "poster_path": "/d2vIUfeoe6iyVeXUBjNKAVyi0Y5.jpg",
+          "release_date": "1966-12-17",
+          "title": "Frankenstein und die Ungeheuer aus dem Meer",
+          "video": false,
+          "vote_average": 6.294,
+          "vote_count": 206
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6BQis8u6Q8U5J4EHqdyRRIE0njI.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            12,
+            16,
+            28
+          ],
+          "id": 274862,
+          "original_language": "en",
+          "original_title": "The Lego Ninjago Movie",
+          "overview": "In diesem NINJAGO - Kinoabenteuer ist der Kampf um NINJAGO City entbrannt. Das bedeutet den Einsatz des jungen Lloyd alias Der Gr\u00FCne Ninja und seiner Freunde, die insgeheim gro\u00DFe Krieger sind. Unter der Leitung des weisen Spr\u00FCcheklopfers und Meisters Wu bek\u00E4mpfen sie den b\u00F6sen Warlord Garmadon, den schlimmsten B\u00F6sewicht \u00FCberhaupt, der zuf\u00E4llig auch Lloyds Vater ist. So kommt es zum Duell Mech gegen Mech, aber auch Vater gegen Sohn: Im gigantischen Showdown wird sich zeigen, ob sich dieses ebenso ungest\u00FCme wie undisziplinierte Team aus modernen Ninjas bew\u00E4hrt. Denn sie alle m\u00FCssen erst noch lernen, ihre Egos zu z\u00FCgeln, um gemeinsam zu agieren und so ihre innere Kraft zu entfalten.",
+          "popularity": 5.1065,
+          "poster_path": "/kDPtYmmcz0u2k5ifnJ0l1unO5o9.jpg",
+          "release_date": "2017-09-21",
+          "title": "The Lego Ninjago Movie",
+          "video": false,
+          "vote_average": 6.516,
+          "vote_count": 1135
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/MMSI9WzRmOdqXarevQ3Kqnytrx.jpg",
+          "genre_ids": [
+            12,
+            28,
+            53,
+            878
+          ],
+          "id": 8810,
+          "original_language": "en",
+          "original_title": "Mad Max 2",
+          "overview": "Das Ende der Zivilisation steht bevor. Brutale Motorrad-Gangs diktieren das Geschehen. F\u00FCr einen Tropfen Benzin, sind sie bereit zu t\u00F6ten. Auch die Familie des Ex-Polizisten Max wurde ermordet. Auf der Suche nach Benzin gelangt er zu einer hei\u00DF umk\u00E4mpften Raffinerie, zu der er sich Zugang verschafft. Die Leute dort planen den Ausbruch mit einem riesigen Benzintank, um irgendwo ein neues Leben zu beginnen. Max soll daf\u00FCr einen Sattelschlepper besorgen und ihn samt Tank steuern. Als sich die Tore \u00F6ffnen, beginnt eine h\u00F6llische Jagd auf Leben und Tod.",
+          "popularity": 8.2803,
+          "poster_path": "/c0LcCMUcMMImdYYbfHchfTUF29j.jpg",
+          "release_date": "1981-12-24",
+          "title": "Mad Max II - Der Vollstrecker",
+          "video": false,
+          "vote_average": 7.389,
+          "vote_count": 4023
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9EpgaLS44zlXoTSAOhGiJmkIA4B.jpg",
+          "genre_ids": [
+            28,
+            27,
+            878
+          ],
+          "id": 8814,
+          "original_language": "en",
+          "original_title": "Doom",
+          "overview": "Funkstille. Der Kontakt mit der Mars-Station ist abgebrochen. Seit Tagen kein Lebenszeichen. In der letzten \u00FCbermittelten Nachricht war von einer Quarant\u00E4ne der Stufe 5 die Rede. Ein missgl\u00FCcktes Experiment? Eine bis an die Z\u00E4hne bewaffnete Spezialeinheit unter dem Kommando des draufg\u00E4ngerischen Sarge wird in die unterirdischen Tunnel geschickt, um mit automatischen Waffen und Explosivgeschossen Licht ins Dunkel zu bringen. Doch in den ausgestorbenen Korridoren lauert eine Legion blutr\u00FCnstiger Mutanten, deren erbarmungslose Brutalit\u00E4t die jeder bekannten Lebensform \u00FCbertrifft ...",
+          "popularity": 2.8374,
+          "poster_path": "/hJkVZdtpxe6TG5zEU4UVQeNkhlo.jpg",
+          "release_date": "2005-10-20",
+          "title": "Doom - Der Film",
+          "video": false,
+          "vote_average": 5.184,
+          "vote_count": 2358
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/70tmPOoCJCciWaM1vDvXAi4w3Bc.jpg",
+          "genre_ids": [
+            28,
+            18,
+            9648,
+            53
+          ],
+          "id": 8834,
+          "original_language": "en",
+          "original_title": "Conspiracy Theory",
+          "overview": "Wo immer er kann, verbreitet der New Yorker Taxifahrer Jerry Fletcher seine abstrusen Verschw\u00F6rungstheorien. Doch eines Tages scheint er mit einer seiner schrulligen Visionen einen wunden Punkt des amerikanischen Geheimdienstes getroffen zu haben. Jahrelang hat ihm keiner ein Wort geglaubt, jetzt ist alle Welt hinter ihm her. Jerry hat nur eine Chance: Die ganze Wahrheit mu\u00DF ans Licht...",
+          "popularity": 2.4534,
+          "poster_path": "/yAbS9gWpdiURizOOKNAuUi5UuBK.jpg",
+          "release_date": "1997-08-08",
+          "title": "Fletcher\u0027s Visionen",
+          "video": false,
+          "vote_average": 6.619,
+          "vote_count": 1567
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5EkowLSlfQT50KbeHzhvbdyaIoI.jpg",
+          "genre_ids": [
+            28,
+            80,
+            18,
+            53
+          ],
+          "id": 8838,
+          "original_language": "en",
+          "original_title": "Mercury Rising",
+          "overview": "Weil der siebenj\u00E4hrige Simon einen neuen Top-Secret-Code geknackt hat, muss Art Jeffries, FBI-Mitarbeiter im Innendienst, gegen skrupellose Bundesagenten antreten, um das Leben des autistischen Jungen zu sch\u00FCtzen. F\u00FCr Simon ist die angeblich absolut sichere Verschl\u00FCsselungsmethode Mercury so leicht zu lesen wie f\u00FCr andere Kinder ein Comic. Diese F\u00E4higkeit macht den neuen Milliarden-Dollar-Geheimschl\u00FCssel verletzlich, insbesondere wenn Feinde der Vereinigten Staaten von Simons F\u00E4higkeiten Wind bekommen und ihn entf\u00FChren. Projektleiter Nick Kudro befiehlt, das \u0027Sicherheitsrisiko\u0027 zu eliminieren, aber er hat dabei nicht mit Jeffries gerechnet. Auf der Flucht vor kaltbl\u00FCtigen Attent\u00E4tern erkennt Jeffries schnell, dass er niemandem vertrauen kann. W\u00E4hrend die Uhr unaufhaltsam tickt, wird ihm klar, dass seine Feinde nur mit Hilfe von Simons besonderer Gabe aufgehalten werden k\u00F6nnen.",
+          "popularity": 3.0473,
+          "poster_path": "/gxDcdpPsBoCJr7WqiuvWkuK23ye.jpg",
+          "release_date": "1998-04-03",
+          "title": "Das Mercury Puzzle",
+          "video": false,
+          "vote_average": 6.29,
+          "vote_count": 1602
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ihBDaN7OwT7D9DVri8SmxCnuRLB.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 8845,
+          "original_language": "en",
+          "original_title": "Under Siege",
+          "overview": "Das amerikanische Kriegsschiff USS Missouri befindet sich auf seiner letzten Fahrt. Die Mannschaft trifft die letzten Vorbereitungen f\u00FCr eine \u00DCberraschungsfeier anl\u00E4sslich des Geburtstags von Captain Adams. Es wurde sogar eine Band organisiert, doch wie sich schon bald herausstellen soll, will es der \u201CS\u00E4nger\u201D Strannix nicht nur musikalisch kr\u00E4ftig rocken lassen. Zusammen mit dem abtr\u00FCnnigen Offizier Commander Krill bringt er das Schiff inklusive atomarer Langstreckenwaffen unter seine Kontrolle. Dabei hat er jedoch nicht mit dem Schiffskoch Casey Rybeck gerechnet, der als Ex-Navy-Seal den Terroristen das Leben schwer macht\u2026",
+          "popularity": 3.3304,
+          "poster_path": "/4STzUYAGnPNsnMBvY1aykk278QX.jpg",
+          "release_date": "1992-10-08",
+          "title": "Alarmstufe: Rot",
+          "video": false,
+          "vote_average": 6.29,
+          "vote_count": 1652
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7rfcRXbFD0xr8NteNq1hwXUd4Af.jpg",
+          "genre_ids": [
+            12,
+            18,
+            28,
+            10749,
+            10751
+          ],
+          "id": 8856,
+          "original_language": "en",
+          "original_title": "The Karate Kid Part II",
+          "overview": "Nach \u00FCber 40 Jahren kehrt Meister Miyagi nach Japan zur\u00FCck. An seiner Seite sein Sch\u00FCler und Freund Daniel. Der Grund f\u00FCr die Reise nach Okinawa: Miyagis alter Vater liegt im Sterben und m\u00F6chte seinen Sohn noch einmal sehen. Au\u00DFer von seinem Vater wird Miyagi von zwei anderen Menschen erwartet: von Yukie, der Jugendliebe, die ihm \u00FCber all die Jahre hinweg die Treue gehalten hat und von Sato, dem ehemals besten Freund und jetzigen Erzfeind, der noch eine alte Rechnung mit Miyagi offen hat und ihn zum Zweikampf fordert. Auch f\u00FCr Daniel wird es kein friedlicher Urlaub. Er findet heraus, dass der Sato-Clan die Bauern mit falschen Gewichten betr\u00FCgt und muss gegen eine ganze Gang von durchtrainierten Karate-K\u00E4mpfern antreten\u00A0\u2026",
+          "popularity": 4.7843,
+          "poster_path": "/gCkjQqYhycAvG2XfkpJqa8r42mI.jpg",
+          "release_date": "1986-06-18",
+          "title": "Karate Kid II - Entscheidung in Okinawa",
+          "video": false,
+          "vote_average": 6.333,
+          "vote_count": 2393
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tFmrdnfXM0p6ihMTFpptYOKEfSl.jpg",
+          "genre_ids": [
+            28,
+            80,
+            18,
+            53
+          ],
+          "id": 8867,
+          "original_language": "en",
+          "original_title": "The Punisher",
+          "overview": "Fr\u00FCher war der Mann, den man jetzt Punisher nennt, ein Polizist namens Frank Castle. Die Mafia hat seine Familie get\u00F6tet, er selbst \u00FCberlebte den Anschlag, wurde aber f\u00FCr tot erkl\u00E4rt. Nun lebt er in der Kanalisation und schl\u00E4gt zur\u00FCck: \u00DCberall, wo er kann, t\u00F6tet er Verbrecher. 125 Morde in 5 Jahren gehen auf sein Konto. Seine Aktionen haben die Mafia-Familien mit der Zeit sehr geschw\u00E4cht und deshalb will Gianni Franco, der Oberste eines der Clans, die Kontrolle \u00FCber alle ergreifen. Das bringt jedoch die Yakuza, Asiens st\u00E4rkstes Verbrechersyndikat, auf den Plan. Diese wollen auch die vollst\u00E4ndige Herrschaft in der Welt des Verbrechens und entschliessen sich die Kinder der Gangster aus Francos Familie zu entf\u00FChren. Nun kommt der Punisher zum Zug und k\u00E4mpft um das Leben der Kinder. Unterst\u00FCtzt wird er dabei von Franco, dem Mann, der seine Familie auf dem Gewissen hat.",
+          "popularity": 2.2315,
+          "poster_path": "/xS1q3nAhYmf3elTn5izYnUuBXuk.jpg",
+          "release_date": "1989-10-05",
+          "title": "The Punisher",
+          "video": false,
+          "vote_average": 5.8,
+          "vote_count": 648
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vjwuT8EzWY96W6nrJKZNI2WJU87.jpg",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "id": 8909,
+          "original_language": "en",
+          "original_title": "Wanted",
+          "overview": "Wesley Gibson ist ein langweiliger Durchschnittstyp, der gute Gr\u00FCnde hat, sein Leben zu hassen: seine Chefin schikaniert ihn pausenlos und seine Freundin schl\u00E4ft mit seinem besten Freund. Doch dann trifft er die aufregende Fox, ger\u00E4t mitten in eine Schie\u00DFerei und erf\u00E4hrt, dass sein verschollener Vater gerade erst brutal ermordet wurde. Wes lernt die Bruderschaft kennen, einen m\u00E4chtigen Geheimbund, der die Geschicke der Menschheit lenkt. Das fr\u00FChere Weichei entwickelt durch Fox\u2019 knallharte Ausbildung blitzschnelle Reflexe und \u00FCbermenschliche Geschicklichkeit. Schlie\u00DFlich tritt Wes in die Fu\u00DFstapfen seines Vaters, um Rache zu nehmen. Doch auch die Bruderschaft hat eine dunkle Seite und Wes muss entscheiden, wer eigentlich \u00FCber sein Leben bestimmen soll \u2026",
+          "popularity": 8.6443,
+          "poster_path": "/5sRq7I1FTJ6Ux9uAR35A4zub5vK.jpg",
+          "release_date": "2008-06-19",
+          "title": "Wanted",
+          "video": false,
+          "vote_average": 6.521,
+          "vote_count": 7394
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/opkt6IK1Os5gAwhlpu27bCZCk8K.jpg",
+          "genre_ids": [
+            878,
+            28,
+            9648,
+            18,
+            53
+          ],
+          "id": 8452,
+          "original_language": "en",
+          "original_title": "The 6th Day",
+          "overview": "Helikopterpilot Adam Gibson staunt nicht schlecht, als er eines Tages nach getaner Arbeit auf der heimischen Hausmatte steht und feststellen muss, dass bereits ein Doppelg\u00E4nger den Posten als Familienvater eingenommen und seinen frischgebackenen Geburtstagskuchen angeschnitten hat. Als dann auch noch postwendend unbekannte B\u00F6sewichte nach seinem Leben trachten, zieht der begreiflicherweise erregte B\u00FCrger auf einen fulminanten Rachefeldzug - und f\u00F6rdert eine umfassende Verschw\u00F6rung in Kreisen kriminellen Humangenetiker zutage.",
+          "popularity": 2.8631,
+          "poster_path": "/8lcRogKaw18Fk1oH88Mwo7YsnIe.jpg",
+          "release_date": "2000-11-17",
+          "title": "The 6th Day",
+          "video": false,
+          "vote_average": 5.992,
+          "vote_count": 2175
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sAFqN4bDfGUBgS6h323F7YcwqPe.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 8460,
+          "original_language": "en",
+          "original_title": "The Skulls II",
+          "overview": "Der studierende Ryan Sommers tritt dem Geheimbund \u0022The Skulls\u0022 bei, wovon er sich bessere Karrierechancen verspricht. Sp\u00E4ter sieht er eine Frau, die vom Dach des Geb\u00E4udes der Organisation herunterf\u00E4llt. Der Tod der Frau wird in der \u00D6ffentlichkeit als ein Verkehrsunfall dargestellt. Die Freundin von Sommers, Ali, beschuldigt ihn der Misshandlung und verl\u00E4sst ihn. Die gemeinsam mit Ali wohnende Kelly hilft Sommers, seine Unschuld zu beweisen.",
+          "popularity": 0.4196,
+          "poster_path": "/h6atL0SP5qg6TXOXy9DklZgObn2.jpg",
+          "release_date": "2002-04-09",
+          "title": "The Skulls II",
+          "video": false,
+          "vote_average": 4.703,
+          "vote_count": 79
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tbzWgnaqhFwN5mCIiwbgN5oiw0V.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35,
+            878,
+            37
+          ],
+          "id": 8487,
+          "original_language": "en",
+          "original_title": "Wild Wild West",
+          "overview": "Die Vereinigten Staaten im Wilden Westen von 1869: Die beiden Regierungsagenten James West und Artemus Gordon werden vom US-Pr\u00E4sidenten damit beauftragt das mysteri\u00F6se Verschwinden von Amerikas Top-Wissenschaftlern aufzukl\u00E4ren. Gemeinsam mit dem Lokf\u00FChrer Coleman und der unbekannten Sch\u00F6nheit Rita Escobar fahren sie auf der Suche nach den Vermissten in einem Spezial-Zug durch die Pr\u00E4rie. Es dauert nicht lange, bis sie auf den Drahtzieher der Entf\u00FChrungen sto\u00DFen: Der wahnsinnige Million\u00E4r Dr. Arliss Loveless. Der verr\u00FCckte Erfinder, der durch eine Kriegsverletzung an einen dampbetriebenen Rollstuhl gefesselt ist, plant mit seinen futuristischen Waffen die USA zu zerst\u00F6ren und das Land anschlie\u00DFend unter den ehemaligen Kolonialm\u00E4chten aufzuteilen. Nur James und Artemus k\u00F6nnen den Exzentriker jetzt noch aufhalten...",
+          "popularity": 5.6869,
+          "poster_path": "/uBAM9PZv7PKKovnve2o1vb6ASkk.jpg",
+          "release_date": "1999-06-30",
+          "title": "Wild Wild West",
+          "video": false,
+          "vote_average": 5.31,
+          "vote_count": 3466
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e77VeVcrXhxfCdJWD9rameYn7Qn.jpg",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "id": 8536,
+          "original_language": "en",
+          "original_title": "Superman II",
+          "overview": "Zweiter Teil der erfolgreichen Comicverfilmungen. Terroristen besetzen den Eiffelturm und drohen, eine Wasserstoffbombe zu z\u00FCnden. Superman schafft es, die Bombe im Weltall zu entsorgen. Die Explosion befreit General Zod, Ursa und Non, die in der Phantomzone gefangen waren. Clark Kent, der inzwischen f\u00FCr Lois Lane seine Superkr\u00E4fte aufgegeben hat, nimmt den Kampf gegen die Verbrecher auf.",
+          "popularity": 4.2927,
+          "poster_path": "/3xk5cno9BHcnwc97XO9k21aI1Zi.jpg",
+          "release_date": "1980-12-12",
+          "title": "Superman II - Allein gegen alle",
+          "video": false,
+          "vote_average": 6.747,
+          "vote_count": 2438
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ooPtDdWP2nuYCoyLJAVwdthf5dN.jpg",
+          "genre_ids": [
+            27,
+            53,
+            9648
+          ],
+          "id": 8555,
+          "original_language": "en",
+          "original_title": "Creep",
+          "overview": "Auf dem Weg zu einem hochkar\u00E4tigen PR-Event nickt die ebenso attraktive wie selbstbewusste Modelagentin Kate leicht angetrunken auf einem U-Bahnhof ein. Als sie durch ein Ger\u00E4usch aufschreckt, ist die letzte Bahn weg, sind s\u00E4mtliche Ausg\u00E4nge verriegelt. V\u00F6llig auf sich selbst gestellt, wird die junge Frau mit dem gr\u00F6\u00DFten Albtraum ihres Lebens konfrontiert. In Londons Underground treibt n\u00E4mlich eine mysteri\u00F6se Bestie ihr m\u00F6rderisches Unwesen, dem in der Folge mehrere Menschen h\u00F6chst blutig zum Opfer fallen.",
+          "popularity": 4.855,
+          "poster_path": "/e0LUG6eEF8fp5Cf8x76HAj3mNn2.jpg",
+          "release_date": "2004-08-10",
+          "title": "Creep",
+          "video": false,
+          "vote_average": 5.992,
+          "vote_count": 809
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x4dH86KvLTGlIBMQb7kNTB0svy5.jpg",
+          "genre_ids": [
+            12,
+            28,
+            35,
+            37
+          ],
+          "id": 8584,
+          "original_language": "en",
+          "original_title": "Shanghai Noon",
+          "overview": "Die chinesische Prinzessin Pei Pei wird im Jahre 1881 von dem Schurken Lo Fung entf\u00FChrt. Ihr Leibw\u00E4chter Chong Wang macht sich auf, um sie zu befreien. Unterwegs gesellt sich der Wanderer Roy zu ihm, und gemeinsam schlagen sie sich durch den Wilden Westen, meistern Begegnungen mit brutalen Kopfj\u00E4gern, Indianern und Chinesen\u2026",
+          "popularity": 7.4195,
+          "poster_path": "/G8SxYhfIaM1WJlUV9Ae5cGMD42.jpg",
+          "release_date": "2000-05-26",
+          "title": "Shang-High Noon",
+          "video": false,
+          "vote_average": 6.415,
+          "vote_count": 2675
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gxSVZCUlDd8upT1G2wdrUdz2hxG.jpg",
+          "genre_ids": [
+            28,
+            80,
+            35
+          ],
+          "id": 8961,
+          "original_language": "en",
+          "original_title": "Bad Boys II",
+          "overview": "Die Drogenfahnder Mike Lowrey und Marcus Burnett \u00FCbernehmen als Mitglieder einer Sondereinheit des Miami Police Departments den Auftrag, die gr\u00F6\u00DFte bisher entdeckte Lieferung von Ecstasy nach Miami zu unterbinden. Ihre Untersuchungen f\u00FChren sie auf die Spur einer weitreichenden Verschw\u00F6rung, in die ein gef\u00E4hrlicher Gangsterboss verwickelt ist. Dessen Ambitionen, den Drogenhandel in der Stadt unter seine Kontrolle zu bringen, haben bereits einen blutigen Krieg in der Unterwelt entfacht. Das freundschaftliche Arbeitsverh\u00E4ltnis von Mike und Marcus wird dabei auf eine schwere Probe gestellt, als sich Mike f\u00FCr Syd, die Schwester von Marcus, zu interessieren beginnt. Und bevor beide nicht das Pers\u00F6nliche vom Beruflichen trennen k\u00F6nnen, laufen die beiden Gefahr, ihren Auftrag v\u00F6llig zu vermasseln \u2013 und dadurch auch noch Syds Leben aufs Spiel zu setzen.",
+          "popularity": 9.492,
+          "poster_path": "/oOjkZQeeNRjXPqAO6znN8uKVZmG.jpg",
+          "release_date": "2003-07-18",
+          "title": "Bad Boys II",
+          "video": false,
+          "vote_average": 6.654,
+          "vote_count": 5765
+        }
+      ],
+      "total_pages": 5108,
+      "total_results": 102157
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=23290",
+      "x-memc": "HIT",
+      "x-memc-key": "93d906ef30a671ff7effbdbe1721abe94f609623dc95dbf2e4c9e1a7b240375d",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022c3b0d825f03b5263217e1209ad0c89c8\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

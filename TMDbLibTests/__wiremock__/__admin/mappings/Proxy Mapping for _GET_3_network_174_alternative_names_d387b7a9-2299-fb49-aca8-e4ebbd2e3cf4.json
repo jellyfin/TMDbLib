@@ -1,0 +1,52 @@
+{
+  "Guid": "d387b7a9-2299-fb49-aca8-e4ebbd2e3cf4",
+  "UpdatedAt": "2025-12-24T11:53:34.7327327Z",
+  "Title": "Proxy Mapping for GET /3/network/174/alternative_names",
+  "Description": "Proxy Mapping for GET /3/network/174/alternative_names",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/network/174/alternative_names",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 174,
+      "results": [
+        {
+          "name": "American Movie Classics",
+          "type": "1984\u20132002"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "53e169d304977ffc67e01e8bc4a7a0082079b6df6f477ad81c5e8f1d71a9d66c",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=27466",
+      "ETag": "W/\u0022e389ed86e3b3780bff989dfcc2cf1c7e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

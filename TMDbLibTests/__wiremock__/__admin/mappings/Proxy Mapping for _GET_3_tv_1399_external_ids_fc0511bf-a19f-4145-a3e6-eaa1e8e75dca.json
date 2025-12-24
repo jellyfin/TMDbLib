@@ -1,0 +1,55 @@
+{
+  "Guid": "fc0511bf-a19f-4145-a3e6-eaa1e8e75dca",
+  "UpdatedAt": "2025-12-24T11:53:34.5178892Z",
+  "Title": "Proxy Mapping for GET /3/tv/1399/external_ids",
+  "Description": "Proxy Mapping for GET /3/tv/1399/external_ids",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1399/external_ids",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1399,
+      "imdb_id": "tt0944947",
+      "freebase_mid": "/m/0524b41",
+      "freebase_id": "/en/game_of_thrones",
+      "tvdb_id": 121361,
+      "tvrage_id": 24493,
+      "wikidata_id": "Q23572",
+      "facebook_id": "GameOfThrones",
+      "instagram_id": "gameofthrones",
+      "twitter_id": "GameOfThrones"
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "e4c277a7b1b6289499e4967e421a2928ffadaee8c6577af86e9dca9af2af277a",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=18219",
+      "ETag": "W/\u0022b8c9cebc1a0c24b30471309df189a0e0\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

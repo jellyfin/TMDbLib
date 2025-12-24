@@ -1,0 +1,629 @@
+{
+  "Guid": "9d227013-006f-894d-aec1-f2e969dc6006",
+  "UpdatedAt": "2025-12-24T11:53:34.4102415Z",
+  "Title": "Proxy Mapping for GET /3/person/31/tagged_images",
+  "Description": "Proxy Mapping for GET /3/person/31/tagged_images",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/31/tagged_images",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 31,
+      "page": 0,
+      "results": [
+        {
+          "aspect_ratio": 1.778,
+          "file_path": "/zOfyeSOWa5SPPs82lszeNrMUzH9.jpg",
+          "height": 1080,
+          "id": "574e9546c3a3687ff1001ba0",
+          "iso_3166_1": "XX",
+          "iso_639_1": "xx",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1920,
+          "image_type": "still",
+          "media": {
+            "id": 1196876,
+            "name": "Jimmy Fallon \u0026 Miley Cyrus",
+            "overview": "Maya Rudolph and Martin Short star with Kenan Thompson and special guests Miley Cyrus, Larry David, Jimmy Fallon and Tom Hanks.",
+            "media_type": "tv_episode",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "air_date": "2016-05-31",
+            "episode_number": 1,
+            "episode_type": "standard",
+            "production_code": "",
+            "runtime": 41,
+            "season_number": 1,
+            "show_id": 66623,
+            "still_path": "/klKL4vXaFmicRVMcAwGYRVNx78w.jpg"
+          },
+          "media_type": "episode"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/qJfF5nNa7QF3BsdDbrCepwkCIXs.jpg",
+          "height": 1500,
+          "id": "58eabbf09251414b28039d19",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/bYSzeJpAHOBMRNJStaubwWwKI72.jpg",
+            "id": 207932,
+            "title": "Inferno",
+            "original_title": "Inferno",
+            "overview": "After waking up in a hospital with amnesia, professor Robert Langdon and a doctor must race against time to foil a deadly global plot.",
+            "poster_path": "/cnqvFvjAaV28F1tU7986VVg0WP7.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              9648,
+              53,
+              28
+            ],
+            "popularity": 4.1174,
+            "release_date": "2016-10-13",
+            "video": false,
+            "vote_average": 6.084,
+            "vote_count": 6486
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/gTXR4jM9B4LFSXON92qxJCGTZI1.jpg",
+          "height": 3000,
+          "id": "595b7283c3a368253c04b899",
+          "iso_3166_1": "VN",
+          "iso_639_1": "vi",
+          "vote_average": 3.334,
+          "vote_count": 2,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/2NGBchckkORvJ94ojJWQDqgVvEX.jpg",
+            "id": 339988,
+            "title": "The Circle",
+            "original_title": "The Circle",
+            "overview": "A young tech worker takes a job at a powerful Internet corporation, quickly rises up the company\u0027s ranks, and soon finds herself in a perilous situation concerning privacy, surveillance and freedom. She comes to learn that her decisions and actions will determine the future of humanity.",
+            "poster_path": "/bQVqd5rWrx5GbXhJNuvKy4Viz6j.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              18,
+              53,
+              878
+            ],
+            "popularity": 2.3449,
+            "release_date": "2017-04-27",
+            "video": false,
+            "vote_average": 5.521,
+            "vote_count": 4523
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/n8wkXaN5Ox7EvAZqkt0mK7f4aqi.jpg",
+          "height": 3000,
+          "id": "5a6722f6c3a3680d0a00a4b5",
+          "iso_3166_1": "PL",
+          "iso_639_1": "pl",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/AbZZz3QwbCrF1hpJfvtl0uZBGGN.jpg",
+            "id": 270010,
+            "title": "A Hologram for the King",
+            "original_title": "A Hologram for the King",
+            "overview": "Alan Clay, a struggling American businessman, travels to Saudi Arabia to sell a new technology to the King, only to be challenged by endless Middle Eastern bureaucracy, a perpetually absent monarch, and a suspicious growth on his back.",
+            "poster_path": "/wmjWGb2tqtOA4XPnK1tpIfzRtSQ.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              18
+            ],
+            "popularity": 1.3962,
+            "release_date": "2016-04-22",
+            "video": false,
+            "vote_average": 5.85,
+            "vote_count": 1198
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/h4XG3g6uMMPIBPjAoQhC2QIMdkl.jpg",
+          "height": 3000,
+          "id": "5ac72e68c3a36834d7024e25",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 2.876,
+          "vote_count": 16,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/h5jqLrIv1tlszezv2UEWq9KBuoj.jpg",
+            "id": 446354,
+            "title": "The Post",
+            "original_title": "The Post",
+            "overview": "A cover-up that spanned four U.S. Presidents pushed the country\u0027s first female newspaper publisher and a hard-driving editor to join an unprecedented battle between journalist and government. Inspired by true events.",
+            "poster_path": "/h4XG3g6uMMPIBPjAoQhC2QIMdkl.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              18,
+              36
+            ],
+            "popularity": 3.7235,
+            "release_date": "2017-12-22",
+            "video": false,
+            "vote_average": 7.003,
+            "vote_count": 4791
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+          "height": 1500,
+          "id": "5b0d1773c3a368427f005d0d",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 5.25,
+          "vote_count": 25,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+            "id": 13,
+            "title": "Forrest Gump",
+            "original_title": "Forrest Gump",
+            "overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events\u2014in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
+            "poster_path": "/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              18,
+              10749
+            ],
+            "popularity": 23.0188,
+            "release_date": "1994-06-23",
+            "video": false,
+            "vote_average": 8.462,
+            "vote_count": 28975
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/1wY4psJ5NVEhCuOYROwLH2XExM2.jpg",
+          "height": 1500,
+          "id": "5b235d740e0a265b5d0031d9",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 4.656,
+          "vote_count": 16,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/rW2xRFlJRbTnBJlQTSjQmjevIwb.jpg",
+            "id": 857,
+            "title": "Saving Private Ryan",
+            "original_title": "Saving Private Ryan",
+            "overview": "As U.S. troops storm the beaches of Normandy, three brothers lie dead on the battlefield, with a fourth trapped behind enemy lines. Ranger captain John Miller and seven men are tasked with penetrating German-held territory and bringing the boy home.",
+            "poster_path": "/uqx37cS8cpHg8U35f9U5IBlrCV3.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              10752,
+              18,
+              36
+            ],
+            "popularity": 13.8489,
+            "release_date": "1998-07-24",
+            "video": false,
+            "vote_average": 8.221,
+            "vote_count": 16718
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/yiWWUa1mB55dfd0QpGHsFsge67I.jpg",
+          "height": 1288,
+          "id": "5d660ffc58361b001021b778",
+          "iso_3166_1": "CN",
+          "iso_639_1": "zh",
+          "vote_average": 3.852,
+          "vote_count": 17,
+          "width": 859,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+            "id": 13,
+            "title": "Forrest Gump",
+            "original_title": "Forrest Gump",
+            "overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events\u2014in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
+            "poster_path": "/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              18,
+              10749
+            ],
+            "popularity": 23.0188,
+            "release_date": "1994-06-23",
+            "video": false,
+            "vote_average": 8.462,
+            "vote_count": 28975
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/23IsAAvjeiScLmK7WIlJTxJKlQO.jpg",
+          "height": 2100,
+          "id": "5e3a2b14ac8e6b0011c93b21",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 6.2,
+          "vote_count": 10,
+          "width": 1400,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/cSJMk9Jar8SibFXL8JAF9p2fhKu.jpg",
+            "id": 501907,
+            "title": "A Beautiful Day in the Neighborhood",
+            "original_title": "A Beautiful Day in the Neighborhood",
+            "overview": "An award-winning cynical journalist, Lloyd Vogel, begrudgingly accepts an assignment to write an Esquire profile piece on the beloved television icon Fred Rogers. After his encounter with Rogers, Vogel\u0027s perspective on life is transformed.",
+            "poster_path": "/p9vCAVhDK375XyobVcKqzqzsUHE.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              36,
+              10751,
+              18
+            ],
+            "popularity": 1.9217,
+            "release_date": "2019-09-07",
+            "video": false,
+            "vote_average": 6.955,
+            "vote_count": 1699
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/7xpFXAOjgzFPE3vyVerFGfrXhFK.jpg",
+          "height": 3000,
+          "id": "5eb2941fbf0f63001d8027ae",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 5.25,
+          "vote_count": 24,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/kb2FuXGruaPA6ErjOpcifpCyPyY.jpg",
+            "id": 11287,
+            "title": "A League of Their Own",
+            "original_title": "A League of Their Own",
+            "overview": "As America\u0027s stock of athletic young men is depleted during World War II, a professional all-female baseball league springs up in the Midwest, funded by publicity-hungry candy maker Walter Harvey. Competitive sisters Dottie Hinson and Kit Keller spar with each other, scout Ernie Capadino and grumpy has-been coach Jimmy Dugan on their way to fame.",
+            "poster_path": "/7xpFXAOjgzFPE3vyVerFGfrXhFK.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              18
+            ],
+            "popularity": 3.0164,
+            "release_date": "1992-07-01",
+            "video": false,
+            "vote_average": 7.217,
+            "vote_count": 1482
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/dP1KjMbZEBLO76Sg4W5Klyol3jk.jpg",
+          "height": 2100,
+          "id": "5eb4c5fdcc277c00216846c2",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 1.75,
+          "vote_count": 4,
+          "width": 1400,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/qZ8t05qidOjhSSsaByxxpu6CKOH.jpg",
+            "id": 2565,
+            "title": "Joe Versus the Volcano",
+            "original_title": "Joe Versus the Volcano",
+            "overview": "Hypochondriac Joe Banks finds out he has six months to live, quits his dead end job, musters the courage to ask his co-worker out on a date, and is then hired to jump into a volcano by a mysterious visitor.",
+            "poster_path": "/fwjMUuDZUxedfsUpVQKQN8cYfzB.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              10749
+            ],
+            "popularity": 1.5066,
+            "release_date": "1990-03-09",
+            "video": false,
+            "vote_average": 5.785,
+            "vote_count": 564
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/rpnzj8vWlodopqNnwOPHQmP5gCI.jpg",
+          "height": 1500,
+          "id": "5eb4ccc6ccb15f0021850ef3",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/2C2kUFxhs5u2G9xeg4KQ0FZvFFA.jpg",
+            "id": 10466,
+            "title": "The Money Pit",
+            "original_title": "The Money Pit",
+            "overview": "After being evicted from their Manhattan apartment, a couple buy what looks like the home of their dreams\u2014only to find themselves saddled with a bank-account-draining nightmare. Struggling to keep their relationship together as their rambling mansion falls to pieces around them, the two watch in hilarious horror as everything\u2014including the kitchen sink\u2014disappears into the Money Pit.",
+            "poster_path": "/bohhidIi1WWU5NNYF9l5wLQu3Ii.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              10749
+            ],
+            "popularity": 2.4563,
+            "release_date": "1986-03-26",
+            "video": false,
+            "vote_average": 6.512,
+            "vote_count": 1201
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/vrVPAcv2njVdnkqhBwGBc7UxCjz.jpg",
+          "height": 1500,
+          "id": "5eb9ab84bbe1dd002186ac59",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 2.278,
+          "vote_count": 3,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/pyeknyOKRLBd4ROOeYL6kV103ov.jpg",
+            "id": 11974,
+            "title": "The \u0027Burbs",
+            "original_title": "The \u0027Burbs",
+            "overview": "When secretive new neighbors move in next door, suburbanite Ray Peterson and his friends let their paranoia get the best of them as they start to suspect the newcomers of evildoings and commence an investigation. But it\u0027s hardly how Ray, who much prefers drinking beer, reading his newspaper and watching a ball game on the tube expected to spend his vacation.",
+            "poster_path": "/jwYKzJS0C3A711hmg1G4ptI0InF.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              27,
+              53
+            ],
+            "popularity": 2.8267,
+            "release_date": "1989-02-17",
+            "video": false,
+            "vote_average": 6.761,
+            "vote_count": 1315
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/epQDVKTf0tol6LhGGY5iYxpw1ne.jpg",
+          "height": 2100,
+          "id": "5ec8b9a9e635710020cf18c4",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 0.166,
+          "vote_count": 1,
+          "width": 1400,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/3Epsjs0q4gbkusvAVcCBUCwnjeo.jpg",
+            "id": 8358,
+            "title": "Cast Away",
+            "original_title": "Cast Away",
+            "overview": "Chuck Noland, a top international manager for FedEx, and Kelly, a Ph.D. student, are in love and heading towards marriage. Then Chuck\u0027s plane to Malaysia crashes at sea during a terrible storm. He\u0027s the only survivor, and finds himself marooned on a desolate island. With no way to escape, Chuck must find ways to survive in his new home.",
+            "poster_path": "/7lLJgKnAicAcR5UEuo8xhSMj18w.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              12,
+              18
+            ],
+            "popularity": 9.5751,
+            "release_date": "2000-12-22",
+            "video": false,
+            "vote_average": 7.66,
+            "vote_count": 11947
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.75,
+          "file_path": "/jvDdMkuwJPRbKXD5sRHM8oZQ3Nj.jpg",
+          "height": 2666,
+          "id": "6772775c63f90f8f669273df",
+          "iso_3166_1": "HR",
+          "iso_639_1": "hr",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/ggC3Brchf4RqPitEh7cROFoeAWn.jpg",
+            "id": 640,
+            "title": "Catch Me If You Can",
+            "original_title": "Catch Me If You Can",
+            "overview": "A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks as a Pan Am pilot, doctor, and legal prosecutor. An FBI agent makes it his mission to put him behind bars. But Frank not only eludes capture, he revels in the pursuit.",
+            "poster_path": "/sdYgEkKCDPWNU6KnoL4qd8xZ4w7.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              18,
+              80
+            ],
+            "popularity": 18.3005,
+            "release_date": "2002-12-16",
+            "video": false,
+            "vote_average": 7.977,
+            "vote_count": 16579
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/mMGMTkN7o73QTIydH7Fa32Td3TV.jpg",
+          "height": 3000,
+          "id": "6832fbc6fca5da67032b6ec6",
+          "iso_3166_1": "HR",
+          "iso_639_1": "hr",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/ihdFypo7MyfJvDSjK7Sbnsjhu8H.jpg",
+            "id": 109424,
+            "title": "Captain Phillips",
+            "original_title": "Captain Phillips",
+            "overview": "The true story of Captain Richard Phillips and the 2009 hijacking by Somali pirates of the US-flagged MV Maersk Alabama, the first American cargo ship to be hijacked in two hundred years.",
+            "poster_path": "/8Td0kkocW6sD3uRpzwfMfkqMWhx.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              18,
+              53
+            ],
+            "popularity": 4.9241,
+            "release_date": "2013-10-10",
+            "video": false,
+            "vote_average": 7.538,
+            "vote_count": 7273
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/ojweIbdwulucd6TPWrL6n5D4QEX.jpg",
+          "height": 3000,
+          "id": "68330b21c4355807d3037008",
+          "iso_3166_1": "HR",
+          "iso_639_1": "hr",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/cSJMk9Jar8SibFXL8JAF9p2fhKu.jpg",
+            "id": 501907,
+            "title": "A Beautiful Day in the Neighborhood",
+            "original_title": "A Beautiful Day in the Neighborhood",
+            "overview": "An award-winning cynical journalist, Lloyd Vogel, begrudgingly accepts an assignment to write an Esquire profile piece on the beloved television icon Fred Rogers. After his encounter with Rogers, Vogel\u0027s perspective on life is transformed.",
+            "poster_path": "/p9vCAVhDK375XyobVcKqzqzsUHE.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              36,
+              10751,
+              18
+            ],
+            "popularity": 1.9217,
+            "release_date": "2019-09-07",
+            "video": false,
+            "vote_average": 6.955,
+            "vote_count": 1699
+          },
+          "media_type": "movie"
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 17
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=20840",
+      "x-memc": "HIT",
+      "x-memc-key": "6ae44c13d5e5169ab8f454deb3ffa0a73c2cb6aef96db910b996ad6a286e76f1",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022ef8b38bec29f511d3ad9113892cf27e0\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

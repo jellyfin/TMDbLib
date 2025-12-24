@@ -38,7 +38,8 @@ internal static class PropertyHelpers
         {
             throw new ArgumentException($"Expression '{propertyLambda}' refers to a field, not a property.");
         }
-        if (type != propInfo.ReflectedType &&
+        if (propInfo.ReflectedType != null &&
+            type != propInfo.ReflectedType &&
             !type.IsSubclassOf(propInfo.ReflectedType))
         {
             throw new ArgumentException($"Expression '{propertyLambda}' refers to a property that is not from type {type}.");

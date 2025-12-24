@@ -1,0 +1,502 @@
+{
+  "Guid": "dd5a615a-2b2f-cc47-a673-3e95f8be3c7e",
+  "UpdatedAt": "2025-12-24T11:53:34.7806074Z",
+  "Title": "Proxy Mapping for GET /3/tv/top_rated",
+  "Description": "Proxy Mapping for GET /3/tv/top_rated",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/top_rated",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 2,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/3GQKYh6Trm8pxd2AypovoYQf4Ay.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 85937,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u9B3C\u6EC5\u306E\u5203",
+          "overview": "After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he\u0027s lost.",
+          "popularity": 13.9665,
+          "poster_path": "/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg",
+          "first_air_date": "2019-04-06",
+          "name": "Demon Slayer: Kimetsu no Yaiba",
+          "vote_average": 8.638,
+          "vote_count": 7008
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gDDwXPs53PYNVM8LASxXOxtxmX5.jpg",
+          "genre_ids": [
+            35,
+            10751,
+            10766
+          ],
+          "id": 72637,
+          "origin_country": [
+            "AR"
+          ],
+          "original_language": "es",
+          "original_name": "O11CE",
+          "overview": "The series revolves around Gabo, a soccer-loving teenager who, upon receiving a scholarship from the prestigious Sports Academic Institute (IAD) of Buenos Aires, will see his dream of playing at Los Halcones Dorados, the renowned amateur team of the school, and also his longing to become a professional footballer.",
+          "popularity": 11.7353,
+          "poster_path": "/d4vPg3QsTJJh6C5MHARTb5CyqOu.jpg",
+          "first_air_date": "2017-06-19",
+          "name": "Once",
+          "vote_average": 8.637,
+          "vote_count": 1499
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uHMjELRJMsrKbGBlT6ZQgUcOjtX.jpg",
+          "genre_ids": [
+            16,
+            35,
+            18,
+            10759
+          ],
+          "id": 42705,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u306F\u3058\u3081\u306E\u4E00\u6B69",
+          "overview": "Makunouchi Ippo is an ordinary high school student in Japan. Since he spends most of his time away from school helping his mother run the family business, he doesn\u0027t get to enjoy his younger years like most teenagers. Always a target for bullying at school (the family fishing business grants him a distinct odor), Ippo\u0027s life is one of hardship. One of these after-school bullying sessions turns Ippo\u0027s life around for the better, as he is saved by a boxer named Takamura. He decides to follow in Takamura\u0027s footsteps and train to become a boxer, giving his life direction and purpose. Ippo\u0027s path to perfecting his pugilistic prowess is just beginning...",
+          "popularity": 17.8371,
+          "poster_path": "/1LApB9C9kEkh2ZU2vzAhurNDipl.jpg",
+          "first_air_date": "2000-10-03",
+          "name": "Fighting Spirit",
+          "vote_average": 8.6,
+          "vote_count": 1148
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7CVy5uTj3JNF8wqb2VnfQdjL07V.jpg",
+          "genre_ids": [
+            35,
+            10765,
+            10762
+          ],
+          "id": 3498,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Wizards of Waverly Place",
+          "overview": "Alex, Justin and Max Russo are not your ordinary kids - they\u0027re wizards in training! While their parents run the Waverly Sub Station,\u00A0the siblings struggle to balance their ordinary lives while learning to master their extraordinary powers.",
+          "popularity": 9.6958,
+          "poster_path": "/spVI8Zns4Ep30zzxcoO7f7nwfck.jpg",
+          "first_air_date": "2007-10-12",
+          "name": "Wizards of Waverly Place",
+          "vote_average": 8.629,
+          "vote_count": 1155
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5iWJwQPBusPTV7G7n5TABNRP7tO.jpg",
+          "genre_ids": [
+            16,
+            35
+          ],
+          "id": 31132,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Regular Show",
+          "overview": "The surreal misadventures of two best friends - a blue jay and a raccoon - as they seek to liven up their mundane jobs as groundskeepers at the local park.",
+          "popularity": 37.0461,
+          "poster_path": "/88dAGv0ywrLJKCynkH226dBwe0i.jpg",
+          "first_air_date": "2010-09-06",
+          "name": "Regular Show",
+          "vote_average": 8.6,
+          "vote_count": 2158
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tuCU2yVRM2iZxFkpqlPUyvd6tSu.jpg",
+          "genre_ids": [
+            16,
+            35,
+            18,
+            10765
+          ],
+          "id": 94954,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Hazbin Hotel",
+          "overview": "In attempt to find a non-violent alternative for reducing Hell\u0027s overpopulation, the daughter of Lucifer opens a rehabilitation hotel that offers a group of misfit demons a chance at redemption.",
+          "popularity": 31.9309,
+          "poster_path": "/aVYHMW8pdzJ9qG1OGRMKyGy9xor.jpg",
+          "first_air_date": "2024-01-18",
+          "name": "Hazbin Hotel",
+          "vote_average": 8.6,
+          "vote_count": 1482
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ccV1IW9PedwxoPRgTIsMyitft3A.jpg",
+          "genre_ids": [
+            16,
+            9648,
+            35,
+            10759,
+            18
+          ],
+          "id": 95269,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u5730\u7E1B\u5C11\u5E74\u82B1\u5B50\u304F\u3093",
+          "overview": "To be united with her crush, a hopeless romantic summons the ghost in the girls\u0027 bathroom at her school. But she\u0027s shocked when the ghost is a boy!",
+          "popularity": 13.713,
+          "poster_path": "/dkCOZgUiJONrRelavbk5f5pYnyK.jpg",
+          "first_air_date": "2020-01-10",
+          "name": "Toilet-Bound Hanako-kun",
+          "vote_average": 8.6,
+          "vote_count": 756
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mOlEbXcb6ufRJKogI35KqsSlCfB.jpg",
+          "genre_ids": [
+            16,
+            9648,
+            10765
+          ],
+          "id": 13916,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "DEATH NOTE",
+          "overview": "Light Yagami is an ace student with great prospects\u2014and he\u2019s bored out of his mind. But all that changes when he finds the Death Note, a notebook dropped by a rogue Shinigami death god. Any human whose name is written in the notebook dies, and Light has vowed to use the power of the Death Note to rid the world of evil. But will Light succeed in his noble goal, or will the Death Note turn him into the very thing he fights against?",
+          "popularity": 19.7889,
+          "poster_path": "/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
+          "first_air_date": "2006-10-04",
+          "name": "Death Note",
+          "vote_average": 8.624,
+          "vote_count": 4638
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dfmPbyeZZSz3bekeESvMJaH91gS.jpg",
+          "genre_ids": [
+            16,
+            10765,
+            10759,
+            18
+          ],
+          "id": 95557,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "INVINCIBLE",
+          "overview": "Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father\u2019s tutelage.",
+          "popularity": 60.2466,
+          "poster_path": "/jBn4LWlgdsf6xIUYhYBwpctBVsj.jpg",
+          "first_air_date": "2021-03-25",
+          "name": "INVINCIBLE",
+          "vote_average": 8.618,
+          "vote_count": 5204
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mGcfMh6BndPUdKVvC5nLGKyZMa9.jpg",
+          "genre_ids": [
+            99,
+            10751
+          ],
+          "id": 68595,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Planet Earth II",
+          "overview": "David Attenborough presents a documentary series exploring how animals meet the challenges of surviving in the most iconic habitats on earth.",
+          "popularity": 5.0194,
+          "poster_path": "/5maYKYzWpE68ycxGh1luu4P2LOS.jpg",
+          "first_air_date": "2016-11-06",
+          "name": "Planet Earth II",
+          "vote_average": 8.621,
+          "vote_count": 879
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zBfnpI8883yeQkXK2kpLavHv9Yw.jpg",
+          "genre_ids": [
+            10759,
+            16,
+            18
+          ],
+          "id": 89456,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Primal",
+          "overview": "A caveman forms a bond with a dinosaur as they struggle to survive in a hostile world.",
+          "popularity": 7.4684,
+          "poster_path": "/ebupzTwgP8nBy0T5J3abqTqUMjK.jpg",
+          "first_air_date": "2019-10-08",
+          "name": "Primal",
+          "vote_average": 8.6,
+          "vote_count": 1478
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cH39aJg9VlEaYo6yY37Iah8RAaz.jpg",
+          "genre_ids": [
+            10759,
+            16,
+            10765
+          ],
+          "id": 65930,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u50D5\u306E\u30D2\u30FC\u30ED\u30FC\u30A2\u30AB\u30C7\u30DF\u30A2",
+          "overview": "After he saves a bully from a Villain, a normal student is granted a superpower that allows him to attend a high school training academy for Heroes.",
+          "popularity": 19.7054,
+          "poster_path": "/phuYuzqWW9ru8EA3HVjE9W2Rr3M.jpg",
+          "first_air_date": "2016-04-03",
+          "name": "My Hero Academia",
+          "vote_average": 8.619,
+          "vote_count": 5149
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hjJ5XDKP7XY2ADUuMdHM5NsC32s.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 1430,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Cosmos: A Personal Voyage",
+          "overview": "Carl Sagan covers a wide range of scientific subjects, including the origin of life and a perspective of our place in the universe.",
+          "popularity": 4.5938,
+          "poster_path": "/nOGArjE0WMkzY2GW1taJm8l9gxD.jpg",
+          "first_air_date": "1980-09-28",
+          "name": "Cosmos: A Personal Voyage",
+          "vote_average": 8.613,
+          "vote_count": 408
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cJKGfZHkMFtbVA4m2kwmdGk8uHp.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10765
+          ],
+          "id": 100,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "I Am Not an Animal",
+          "overview": "I Am Not An Animal is an animated comedy series about the only six talking animals in the world, whose cosseted existence in a vivisection unit is turned upside down when they are liberated by animal rights activists.",
+          "popularity": 1.6832,
+          "poster_path": "/zXhtWhYtlJVyyp5MdT7ggMJn5si.jpg",
+          "first_air_date": "2004-05-10",
+          "name": "I Am Not an Animal",
+          "vote_average": 8.6,
+          "vote_count": 785
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xMNH87maNLt9n2bMDYeI6db5VFm.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 127532,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u4FFA\u3060\u3051\u30EC\u30D9\u30EB\u30A2\u30C3\u30D7\u306A\u4EF6",
+          "overview": "They say whatever doesn\u2019t kill you makes you stronger, but that\u2019s not the case for the world\u2019s weakest hunter Sung Jinwoo. After being brutally slaughtered by monsters in a high-ranking dungeon, Jinwoo came back with the System, a program only he could see, that\u2019s leveling him up in every way. Now, he\u2019s inspired to discover the secrets behind his powers and the dungeon that spawned them.",
+          "popularity": 54.0353,
+          "poster_path": "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg",
+          "first_air_date": "2024-01-07",
+          "name": "Solo Leveling",
+          "vote_average": 8.613,
+          "vote_count": 1469
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dI2O0d5Dkk8tpuTvCkUKQw3LNMv.jpg",
+          "genre_ids": [
+            35,
+            10759,
+            16,
+            10765
+          ],
+          "id": 57706,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u3089\u3093\u307E1/2",
+          "overview": "Ranma Saotome, a teenage martial artist, and his father Genma travel to the \u0027cursed training ground\u0027 of Jusenkyo in China. There, despite the warnings of the Chinese guard, they fall into the cursed springs. From now on, whenever Ranma is doused in cold water, he turns into a girl and a cute, well-built redhead at that. Hot water changes him back into a man again, but only until the next time. To make matters worse, his father engages him to Akane Tendo, a girl who hates boys.",
+          "popularity": 28.1387,
+          "poster_path": "/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg",
+          "first_air_date": "1989-04-15",
+          "name": "Ranma \u00BD",
+          "vote_average": 8.609,
+          "vote_count": 1481
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/layPSOJGckJv3PXZDIVluMq69mn.jpg",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "id": 1438,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Wire",
+          "overview": "Told from the points of view of both the Baltimore homicide and narcotics detectives and their targets, the series captures a universe in which the national war on drugs has become a permanent, self-sustaining bureaucracy, and distinctions between good and evil are routinely obliterated.",
+          "popularity": 38.4532,
+          "poster_path": "/4lbclFySvugI51fwsyxBTOm4DqK.jpg",
+          "first_air_date": "2002-06-02",
+          "name": "The Wire",
+          "vote_average": 8.6,
+          "vote_count": 2514
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3mBtXzyOIzh5zJNEgHqIIYTPb6n.jpg",
+          "genre_ids": [
+            16,
+            35,
+            18
+          ],
+          "id": 60863,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30CF\u30A4\u30AD\u30E5\u30FC!!",
+          "overview": "Inspired by a small-statured pro volleyball player, Shouyou Hinata creates a volleyball team in his last year of middle school. Unfortunately the team is matched up against the \u0022King of the Court\u0022 Tobio Kageyama\u0027s team in their first tournament and inevitably lose. After the crushing defeat, Hinata vows to surpass Kageyama. After entering high school, Hinata joins the volleyball team only to find that Tobio has also joined.",
+          "popularity": 18.8593,
+          "poster_path": "/8WEr48swcqe89Zsy5sdrGCASlIg.jpg",
+          "first_air_date": "2014-04-06",
+          "name": "Haikyu!!",
+          "vote_average": 8.607,
+          "vote_count": 1450
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nqtLRhsa03iY82jbDsAkGEa9Pdz.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 77696,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uB2EC\uB824\uB77C \uBC29\uD0C4!",
+          "overview": "Run BTS! is a variety web series starring BTS, broadcasting intermittent for free viewing on Weverse and YouTube, was formerly offered weekly for free viewing on V LIVE.",
+          "popularity": 7.7087,
+          "poster_path": "/guNo600nrTIIh88C9i6HFlCAhE.jpg",
+          "first_air_date": "2015-08-01",
+          "name": "Run BTS!",
+          "vote_average": 8.606,
+          "vote_count": 371
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9BeUFOmnq9rI6hXUAG9xEvPvao9.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10759,
+            10751
+          ],
+          "id": 80040,
+          "origin_country": [
+            "ES"
+          ],
+          "original_language": "es",
+          "original_name": "Desaf\u00EDo Champions Sendokai",
+          "overview": "",
+          "popularity": 1.9155,
+          "poster_path": "/8dBMIQ2r8FdLABrZeGklAUAUYCH.jpg",
+          "first_air_date": "2013-04-09",
+          "name": "Desaf\u00EDo Champions Sendokai",
+          "vote_average": 8.603,
+          "vote_count": 232
+        }
+      ],
+      "total_pages": 117,
+      "total_results": 2334
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "e108f9e945f655e6cdf7ae1cba296831ea40fbdf584bff04072bd9472a447c6c",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=21265",
+      "ETag": "W/\u00221d247a33c6b8740ecfbfc9a29f757370\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

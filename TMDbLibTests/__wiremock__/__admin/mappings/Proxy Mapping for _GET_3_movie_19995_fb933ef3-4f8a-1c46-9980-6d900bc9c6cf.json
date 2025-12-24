@@ -1,0 +1,338 @@
+{
+  "Guid": "fb933ef3-4f8a-1c46-9980-6d900bc9c6cf",
+  "UpdatedAt": "2025-12-24T11:53:35.1502475Z",
+  "Title": "Proxy Mapping for GET /3/movie/19995",
+  "Description": "Proxy Mapping for GET /3/movie/19995",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/19995",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de-DE",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "include_image_language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "append_to_response",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "images",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
+      "belongs_to_collection": {
+        "id": 87096,
+        "name": "Avatar Filmreihe",
+        "poster_path": "/4uB3oFsOsr0ktHgn8NHkcTUbw4R.jpg",
+        "backdrop_path": "/6qkJLRCZp9Y3ovXti5tSuhH0DpO.jpg"
+      },
+      "budget": 237000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 12,
+          "name": "Abenteuer"
+        },
+        {
+          "id": 14,
+          "name": "Fantasy"
+        },
+        {
+          "id": 878,
+          "name": "Science Fiction"
+        }
+      ],
+      "homepage": "https://www.avataraufbruchnachpandora.de",
+      "id": 19995,
+      "imdb_id": "tt0499549",
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_title": "Avatar",
+      "overview": "Ex-Marine Jake Sully nimmt auf dem Planeten Pandora an einem Experiment unter der Leitung der Wissenschaftlerin Dr. Grace Augustine teil. Als er sich im genetisch manipulierten K\u00F6rper der Ureinwohner in die sch\u00F6ne Neytiri verliebt, ger\u00E4t er zwischen die Fronten eines skrupellosen Konzerns und dem naturverbundenen Volk der Na\u0027vi. Jake muss sich entscheiden, auf welcher Seite er steht - in einem ungleichen Kampf, in dem es um das Schicksal einer einzigartigen Welt geht ...",
+      "popularity": 111.795,
+      "poster_path": "/8VV4YUwOGxgolFZTo2SgNwsfznR.jpg",
+      "production_companies": [
+        {
+          "id": 444,
+          "logo_path": null,
+          "name": "Dune Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 574,
+          "logo_path": "/8wdmrfGcDx3TJxYiiDksLzAW4pB.png",
+          "name": "Lightstorm Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 25,
+          "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+          "name": "20th Century Fox",
+          "origin_country": "US"
+        },
+        {
+          "id": 133789,
+          "logo_path": "/bJdeIb1ET3BkyodAASVDq1x3mls.png",
+          "name": "Ingenious Film Partners",
+          "origin_country": "GB"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        },
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        }
+      ],
+      "release_date": "2009-12-16",
+      "revenue": 2923706026,
+      "runtime": 162,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Espa\u00F1ol"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Betritt die Welt von Pandora",
+      "title": "Avatar - Aufbruch nach Pandora",
+      "video": false,
+      "vote_average": 7.597,
+      "vote_count": 33011,
+      "images": {
+        "backdrops": [
+          {
+            "aspect_ratio": 1.778,
+            "height": 1080,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/4U9fN2jsQ94GQfDGeLEe8UaReRO.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1920
+          },
+          {
+            "aspect_ratio": 1.778,
+            "height": 1080,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/7UsIKwPIrRIEAv9rvLaXZGeqiy8.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1920
+          },
+          {
+            "aspect_ratio": 1.778,
+            "height": 1440,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/9VNyqp97EmxPBTIxpxNwqwMeVfr.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 2560
+          }
+        ],
+        "logos": [
+          {
+            "aspect_ratio": 3.591,
+            "height": 1173,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/38NKS7T0WE1PBw2TcKolsy9TK3R.png",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 4212
+          }
+        ],
+        "posters": [
+          {
+            "aspect_ratio": 0.667,
+            "height": 1500,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/8VV4YUwOGxgolFZTo2SgNwsfznR.jpg",
+            "vote_average": 2.278,
+            "vote_count": 3,
+            "width": 1000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 3000,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/nhe9qH3LstbftALgZGJs6LqFEQa.jpg",
+            "vote_average": 1.75,
+            "vote_count": 2,
+            "width": 2000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1500,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/h3HXrV36ejgQakWxfIzEefYn6zq.jpg",
+            "vote_average": 1.75,
+            "vote_count": 2,
+            "width": 1000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 3000,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/u3lDeN1l2YD1WNKhxiAwXZ4S4ii.jpg",
+            "vote_average": 1.75,
+            "vote_count": 2,
+            "width": 2000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 750,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/hPiAJMxoS4bAOW4pe6uVs4nRTKO.jpg",
+            "vote_average": 0.166,
+            "vote_count": 1,
+            "width": 500
+          },
+          {
+            "aspect_ratio": 0.713,
+            "height": 2524,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/y7uH89VW2hkhsnUr2Bwnc6asHJr.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1800
+          },
+          {
+            "aspect_ratio": 0.709,
+            "height": 1411,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/8IFoiStnQN8YDpAP2DUnZWOkZpK.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 3000,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/ocDPQqV1Iquk0Hu7MEmlKKEPxAD.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 2000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 2250,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/jYyCoS57P1WjUoJnYmCpVxEDzNG.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1500
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1500,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/fp3CFrt7EuIEhcz1EBD5Ty3szT6.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1500,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/8xuy0QUBzqHRdi20LYCqhI8L8cS.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1500,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/xNFlgMCNKKzEzSnBZldT2znDZro.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1000
+          }
+        ]
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=25338",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022744ce7dffcc8d0ef85853518340f1797\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -254,9 +254,9 @@ public class ClientTvShowTests : TestBase
 
         TestImagesHelpers.TestImagePaths(resp.Images);
 
-        ImageData backdrop = null;
+        ImageData? backdrop = null;
         var poster = resp.Images.Posters.Single(s => s.FilePath == "/30erzlzIOtOK3k3T3BAl1GiVMP1.jpg");
-        ImageData logo = null;
+        ImageData? logo = null;
 
         await Verify(new
         {

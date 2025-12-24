@@ -1,0 +1,46 @@
+{
+  "Guid": "efb01a52-9f29-1e4c-8abf-5c867ce163d6",
+  "UpdatedAt": "2025-12-24T11:53:34.7848404Z",
+  "Title": "Proxy Mapping for GET /3/tv/season/490987/changes",
+  "Description": "Proxy Mapping for GET /3/tv/season/490987/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/season/490987/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "changes": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "7e6df60ac5765baf6eb07848dce4d6577db7ac38cf4198619b15bef292fb8f56",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=600",
+      "ETag": "W/\u00221c7b0be7cfcb529d61df7c7b50baa91e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

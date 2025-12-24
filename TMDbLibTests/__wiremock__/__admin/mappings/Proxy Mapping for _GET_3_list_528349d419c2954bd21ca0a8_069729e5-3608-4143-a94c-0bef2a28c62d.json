@@ -1,0 +1,44 @@
+{
+  "Guid": "069729e5-3608-4143-a94c-0bef2a28c62d",
+  "UpdatedAt": "2025-12-24T11:53:34.9131887Z",
+  "Title": "Proxy Mapping for GET /3/list/528349d419c2954bd21ca0a8",
+  "Description": "Proxy Mapping for GET /3/list/528349d419c2954bd21ca0a8",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/list/528349d419c2954bd21ca0a8",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 404,
+    "BodyAsJson": {
+      "success": false,
+      "status_code": 34,
+      "status_message": "The resource you requested could not be found."
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-az": "us-east-1b",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Error from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "Guid": "5788629f-84ee-7f45-be9e-8f5d5a98267f",
+  "UpdatedAt": "2025-12-24T11:53:34.8169458Z",
+  "Title": "Proxy Mapping for GET /3/tv/top_rated",
+  "Description": "Proxy Mapping for GET /3/tv/top_rated",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/top_rated",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 1396,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Breaking Bad",
+          "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+          "popularity": 150.5089,
+          "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+          "first_air_date": "2008-01-20",
+          "name": "Breaking Bad",
+          "vote_average": 8.935,
+          "vote_count": 16729
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sYXLeu5usz6yEz0k00FYvtEdodD.jpg",
+          "genre_ids": [
+            16,
+            10759
+          ],
+          "id": 94605,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Arcane",
+          "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.",
+          "popularity": 24.8363,
+          "poster_path": "/wwbHr8MPErMbmiYNaxDgTWyewOX.jpg",
+          "first_air_date": "2021-11-06",
+          "name": "Arcane",
+          "vote_average": 8.752,
+          "vote_count": 5543
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7oBGhqJIghRBvOwo5Qe0yM0cnMc.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 246,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Avatar: The Last Airbender",
+          "overview": "In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.",
+          "popularity": 17.1831,
+          "poster_path": "/yaGt4GIutpbXHsv48tWceWg6s56.jpg",
+          "first_air_date": "2005-02-21",
+          "name": "Avatar: The Last Airbender",
+          "vote_average": 8.75,
+          "vote_count": 4596
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/emGCHnRPru5LLWcKbSFzUEUisac.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            18,
+            10765
+          ],
+          "id": 209867,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u846C\u9001\u306E\u30D5\u30EA\u30FC\u30EC\u30F3",
+          "overview": "Decades after her party defeated the Demon King, an old friend\u0027s funeral launches the elf wizard Frieren on a journey of self-discovery.",
+          "popularity": 35.0097,
+          "poster_path": "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg",
+          "first_air_date": "2023-09-29",
+          "name": "Frieren: Beyond Journey\u0027s End",
+          "vote_average": 8.7,
+          "vote_count": 594
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oVfucXvhutTpYExG9k06NJqnpT9.jpg",
+          "genre_ids": [
+            10759,
+            35,
+            16
+          ],
+          "id": 37854,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30EF\u30F3\u30D4\u30FC\u30B9",
+          "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \u0022One Piece\u0022 behind. Whoever claims the \u0022One Piece\u0022 will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \u0022Devil Fruit,\u0022 decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he\u0027s surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
+          "popularity": 35.48,
+          "poster_path": "/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg",
+          "first_air_date": "1999-10-20",
+          "name": "One Piece",
+          "vote_average": 8.718,
+          "vote_count": 5075
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mwczMJeoQrsPERcyP1e900jo3Jv.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 219246,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uD3ED\uC2F9 \uC18D\uC558\uC218\uB2E4",
+          "overview": "In Jeju, a spirited girl and a steadfast boy\u0027s island story blossoms into a lifelong tale of setbacks and triumphs \u2014 proving love endures across time.",
+          "popularity": 19.7268,
+          "poster_path": "/1VC3sEFxYXYDqQUCAnvWfUsYg1s.jpg",
+          "first_air_date": "2025-03-07",
+          "name": "When Life Gives You Tangerines",
+          "vote_average": 8.696,
+          "vote_count": 436
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/A6tMQAo6t6eRFCPhsrShmxZLqFB.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 31911,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u92FC\u306E\u932C\u91D1\u8853\u5E2B FULLMETAL ALCHEMIST",
+          "overview": "Disregard for alchemy\u2019s laws ripped half of Edward Elric\u2019s limbs from his body and left his brother Alphonse\u2019s soul clinging to a suit of armor. To restore what was lost, the brothers seek the Philosopher\u2019s Stone. Enemies and allies \u2013 the corrupt military, the Homunculi, and foreign alchemists \u2013 will alter the Elric brothers course, but their purpose will remain unchanged and their bond unbreakable.",
+          "popularity": 19.1183,
+          "poster_path": "/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+          "first_air_date": "2009-04-05",
+          "name": "Fullmetal Alchemist: Brotherhood",
+          "vote_average": 8.705,
+          "vote_count": 2309
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/t15KHp3iNfHVQBNIaqUGW12xQA4.jpg",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "id": 60059,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Better Call Saul",
+          "overview": "Six years before Saul Goodman meets Walter White. We meet him when the man who will become Saul Goodman is known as Jimmy McGill, a small-time lawyer searching for his destiny, and, more immediately, hustling to make ends meet. Working alongside, and, often, against Jimmy, is \u201Cfixer\u201D Mike Ehrmantraut. The series tracks Jimmy\u2019s transformation into Saul Goodman, the man who puts \u201Ccriminal\u201D in \u201Ccriminal lawyer\u0022.",
+          "popularity": 53.7505,
+          "poster_path": "/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+          "first_air_date": "2015-02-08",
+          "name": "Better Call Saul",
+          "vote_average": 8.698,
+          "vote_count": 6051
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3URK0z9PzpVNJrGE7XOuyy6KFzk.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 87108,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Chernobyl",
+          "overview": "The true story of one of the worst man-made catastrophes in history: the catastrophic nuclear accident at Chernobyl. A tale of the brave men and women who sacrificed to save Europe from unimaginable disaster.",
+          "popularity": 23.086,
+          "poster_path": "/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+          "first_air_date": "2019-05-06",
+          "name": "Chernobyl",
+          "vote_average": 8.694,
+          "vote_count": 7354
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3siv3RaQrdr2tQiv9jHq71sLlzo.jpg",
+          "genre_ids": [
+            18,
+            10751,
+            10759
+          ],
+          "id": 85077,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Chosen",
+          "overview": "The life of Christ through the eyes of those who encountered him.",
+          "popularity": 32.7437,
+          "poster_path": "/dqVUFuNrMFWt7uGNWlpo91VKYOI.jpg",
+          "first_air_date": "2019-04-21",
+          "name": "The Chosen",
+          "vote_average": 8.692,
+          "vote_count": 706
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9In9QgVJx7PlFOAgVHCKKSbo605.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10765,
+            10759
+          ],
+          "id": 60625,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Rick and Morty",
+          "overview": "Rick is a mentally-unbalanced but scientifically gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty\u0027s already unstable family life, these events cause Morty much distress at home and school.",
+          "popularity": 56.9714,
+          "poster_path": "/WGRQ8FpjkDTzivQJ43t94bOuY0.jpg",
+          "first_air_date": "2013-12-02",
+          "name": "Rick and Morty",
+          "vote_average": 8.683,
+          "vote_count": 10555
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vRAM2el4bAygzUWfwXdt34E71Ee.jpg",
+          "genre_ids": [
+            16,
+            10765,
+            10759,
+            35
+          ],
+          "id": 131378,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Adventure Time: Fionna \u0026 Cake",
+          "overview": "Fionna and Cake \u2013 with the help of the former Ice King, Simon Petrikov - embark on a multiverse-hopping adventure and journey of self-discovery. All the while a powerful new antagonist determined to track them down and erase them from existence, lurks in the shadows.",
+          "popularity": 21.3504,
+          "poster_path": "/fi1b6U1kp73xheECzqwzMn8u3mX.jpg",
+          "first_air_date": "2023-08-31",
+          "name": "Adventure Time: Fionna \u0026 Cake",
+          "vote_average": 8.7,
+          "vote_count": 279
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rqbCbjB19amtOtFQbb3K2lgm2zv.jpg",
+          "genre_ids": [
+            16,
+            10765,
+            10759
+          ],
+          "id": 1429,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u9032\u6483\u306E\u5DE8\u4EBA",
+          "overview": "100 years ago, the last remnants of humanity were forced to retreat behind the towering walls of a fortified city to escape the massive, man-eating Titans that roamed the land outside their fortress. Only the members of the Scouting Legion dared to stray beyond the safety of the walls \u2013 but even those brave warriors seldom returned alive. Those within the city clung to the illusion of a peaceful existence until the day that dream was shattered, and their slim chance at survival was reduced to one horrifying choice: kill \u2013 or be devoured!",
+          "popularity": 21.8716,
+          "poster_path": "/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",
+          "first_air_date": "2013-04-07",
+          "name": "Attack on Titan",
+          "vote_average": 8.668,
+          "vote_count": 7135
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/z3BkMbCy5ajZPMyKEUwsPHuz2cV.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 250307,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Pitt",
+          "overview": "The staff of Pittsburgh\u0027s Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
+          "popularity": 26.7502,
+          "poster_path": "/6fMGktEDXMZZPACJ5cWkVQ6TSte.jpg",
+          "first_air_date": "2025-01-09",
+          "name": "The Pitt",
+          "vote_average": 8.7,
+          "vote_count": 321
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6U0e6OHklJAcMAuIoGXjTBS5zsI.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 46298,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "HUNTER\u00D7HUNTER",
+          "overview": "To fulfill his dreams of becoming a legendary Hunter like his dad, a young boy must pass a rigorous examination and find his missing father.",
+          "popularity": 37.0234,
+          "poster_path": "/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg",
+          "first_air_date": "2011-10-02",
+          "name": "Hunter x Hunter",
+          "vote_average": 8.663,
+          "vote_count": 1991
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bGqKaVROpz7pWUNuBxgU8hbcXYn.jpg",
+          "genre_ids": [
+            16,
+            10765,
+            18,
+            10759,
+            35,
+            10762
+          ],
+          "id": 92685,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Owl House",
+          "overview": "An animated fantasy-comedy series that follows Luz, a self-assured teenage girl who accidentally stumbles upon a portal to a magical world where she befriends a rebellious witch, Eda, and an adorably tiny warrior, King. Despite not having magical abilities, Luz pursues her dream of becoming a witch by serving as Eda\u0027s apprentice at the Owl House and ultimately finds a new family in an unlikely setting.",
+          "popularity": 15.7842,
+          "poster_path": "/zqjSex7DZn7p4dU7mMktdJ8zQV5.jpg",
+          "first_air_date": "2020-01-10",
+          "name": "The Owl House",
+          "vote_average": 8.659,
+          "vote_count": 1736
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ywQtHG17LZhAFZyZtBflhtFMtJ7.jpg",
+          "genre_ids": [
+            18,
+            10751
+          ],
+          "id": 70785,
+          "origin_country": [
+            "CA"
+          ],
+          "original_language": "en",
+          "original_name": "Anne with an E",
+          "overview": "A coming-of-age story about an outsider who, against all odds and numerous challenges, fights for love and acceptance and for her place in the world. The series centers on a young orphaned girl in the late 1890s, who, after an abusive childhood spent in orphanages and the homes of strangers, is mistakenly sent to live with an elderly woman and her aging brother. Over time, 13-year-old Anne will transform their lives and eventually the small town in which they live with her unique spirit, fierce intellect and brilliant imagination.",
+          "popularity": 14.985,
+          "poster_path": "/6P6tXhjT5tK3qOXzxF9OMLlG7iz.jpg",
+          "first_air_date": "2017-03-19",
+          "name": "Anne with an E",
+          "vote_average": 8.655,
+          "vote_count": 4841
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dEANXnVRmFkSD8jcJlZ0oy8EnB1.jpg",
+          "genre_ids": [
+            16,
+            35
+          ],
+          "id": 42573,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30B9\u30E9\u30E0\u30C0\u30F3\u30AF",
+          "overview": "Sakuragi Hanamichi is a junior high punk used to getting into fights and being rejected by girls but upon entering high school he meets the girl of his dreams, Haruko Akagi. He will do anything in order to win her heart including joining the school basketball team that is aiming to conquer the nation lead by Haruko\u0027s brother. The problem is that Sakuragi has never played basketball before and a freshman sensation is stealing the spotlight and Haruko\u0027s affection from him.",
+          "popularity": 14.9062,
+          "poster_path": "/gpkM8VeiYyQuEg9qkAoNplktwe4.jpg",
+          "first_air_date": "1993-10-16",
+          "name": "Slam Dunk",
+          "vote_average": 8.646,
+          "vote_count": 940
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lNpkvX2s8LGB0mjGODMT4o6Up7j.jpg",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "id": 1398,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Sopranos",
+          "overview": "The story of New Jersey-based Italian-American mobster Tony Soprano and the difficulties he faces as he tries to balance the conflicting requirements of his home life and the criminal organization he heads. Those difficulties are often highlighted through his ongoing professional relationship with psychiatrist Jennifer Melfi. The show features Tony\u0027s family members and Mafia associates in prominent roles and story arcs, most notably his wife Carmela and his cousin and prot\u00E9g\u00E9 Christopher Moltisanti.",
+          "popularity": 60.3137,
+          "poster_path": "/rTc7ZXdroqjkKivFPvCPX0Ru7uw.jpg",
+          "first_air_date": "1999-01-10",
+          "name": "The Sopranos",
+          "vote_average": 8.6,
+          "vote_count": 3213
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cttisz5q4LHwyRYlIj9S7oQa27v.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10765
+          ],
+          "id": 62741,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u795E\u69D8\u306F\u3058\u3081\u307E\u3057\u305F",
+          "overview": "Nanami was just a normal high school girl down on her luck until a stranger\u2019s lips marked her as the new Land God and turned her world upside down. Now, she\u2019s figuring out the duties of a deity with the help of Tomoe, a reformed fox demon who reluctantly becomes her familiar in a contract sealed with a kiss. The new responsibilities\u2014and boys\u2014are a lot to handle, like the crow demon masquerading as a gorgeous pop idol and the adorable snake spirit who\u2019s chosen the newly minted god to be his bride. As the headstrong Tomoe tries to whip her into shape, Nanami finds that love just might have cute, pointed fox ears. With romance in the air, will the human deity be able to prove herself worthy of her new title?",
+          "popularity": 11.4168,
+          "poster_path": "/5E7GL8KxpFemEFl3Lv8Fu4RuSwa.jpg",
+          "first_air_date": "2012-10-02",
+          "name": "Kamisama Kiss",
+          "vote_average": 8.642,
+          "vote_count": 989
+        }
+      ],
+      "total_pages": 117,
+      "total_results": 2334
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=24547",
+      "x-memc": "HIT",
+      "x-memc-key": "8dd1e02c26a46a43616be6019b73104a4130a7c9a30986f44f852c406c879533",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002255447b1fd216151f3c31571c7396171b\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -107,12 +107,12 @@ public class ClientTvEpisodeTests : TestBase
     [Fact]
     public async Task TestTvEpisodeSeparateExtrasCreditsAsync()
     {
-        CreditsWithGuestStars credits = await TMDbClient.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1);
+        var credits = await TMDbClient.GetTvEpisodeCreditsAsync(IdHelper.BreakingBad, 1, 1);
         Assert.NotNull(credits);
 
-        Cast guestStarItem = credits.GuestStars.FirstOrDefault(s => s.Id == 92495);
-        Cast castItem = credits.Cast.FirstOrDefault(s => s.Id == 17419);
-        Crew crewItem = credits.Crew.FirstOrDefault(s => s.Id == 1280071);
+        var guestStarItem = credits.GuestStars.FirstOrDefault(s => s.Id == 92495);
+        var castItem = credits.Cast.FirstOrDefault(s => s.Id == 17419);
+        var crewItem = credits.Crew.FirstOrDefault(s => s.Id == 1280071);
 
         await Verify(new
         {

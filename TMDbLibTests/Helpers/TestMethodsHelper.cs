@@ -48,7 +48,7 @@ public static class TestMethodsHelper
     /// <param name="getterMethod">A function that fetches data for a given enum value.</param>
     /// <param name="extraAction">An optional additional action to perform on the result.</param>
     /// <returns>A task representing the asynchronous test operation.</returns>
-    public static async Task TestGetAll<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod, Func<TResult, Task> extraAction = null) where TEnum : Enum
+    public static async Task TestGetAll<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod, Func<TResult, Task>? extraAction = null) where TEnum : Enum
     {
         int combinedEnumInt = 0;
         foreach (TEnum key in methodSelectors.Keys)

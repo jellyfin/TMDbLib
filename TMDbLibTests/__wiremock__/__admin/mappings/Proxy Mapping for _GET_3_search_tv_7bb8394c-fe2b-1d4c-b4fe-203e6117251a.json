@@ -1,0 +1,81 @@
+{
+  "Guid": "7bb8394c-fe2b-1d4c-b4fe-203e6117251a",
+  "UpdatedAt": "2025-12-24T11:53:34.7837959Z",
+  "Title": "Proxy Mapping for GET /3/search/tv",
+  "Description": "Proxy Mapping for GET /3/search/tv",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/tv",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "Breaking Bad",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "include_adult",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "false",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 2,
+      "results": [],
+      "total_pages": 1,
+      "total_results": 5
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "a6934a19449fc1ac48a70e5b992d78a4f1d6b22b9145b94b343fee0b3036dcba",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=26775",
+      "ETag": "W/\u00227e106293441e1bbe3f659ed1a0251601\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

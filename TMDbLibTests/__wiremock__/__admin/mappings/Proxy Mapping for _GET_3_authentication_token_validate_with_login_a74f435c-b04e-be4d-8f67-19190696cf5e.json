@@ -1,0 +1,67 @@
+{
+  "Guid": "a74f435c-b04e-be4d-8f67-19190696cf5e",
+  "UpdatedAt": "2025-12-24T11:53:35.480176Z",
+  "Title": "Proxy Mapping for GET /3/authentication/token/validate_with_login",
+  "Description": "Proxy Mapping for GET /3/authentication/token/validate_with_login",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/authentication/token/validate_with_login",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "username",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "bla",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "password",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "bla",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 401,
+    "BodyAsJson": {
+      "success": false,
+      "status_code": 30,
+      "status_message": "Invalid username and/or password: You did not provide a valid login."
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=0",
+      "x-az": "us-east-1b",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Error from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "Guid": "99ccabba-ad24-ec40-9421-74a73ba130e3",
+  "UpdatedAt": "2025-12-24T11:53:34.7080972Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
+  "Description": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964/alternative_titles",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "country",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "CA",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 47964,
+      "titles": [
+        {
+          "iso_3166_1": "CA",
+          "title": "Une Belle journ\u00E9e pour crever",
+          "type": ""
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "7cc116251db51703aea86c09318171ee0e943068af0d25b9cf4e3d8cad45dc10",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=25802",
+      "ETag": "W/\u0022836fb2bd919a2df8e37bb3913822680b\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

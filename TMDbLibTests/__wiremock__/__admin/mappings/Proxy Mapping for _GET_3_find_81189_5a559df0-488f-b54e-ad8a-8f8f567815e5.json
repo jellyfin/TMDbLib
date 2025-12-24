@@ -1,0 +1,85 @@
+{
+  "Guid": "5a559df0-488f-b54e-ad8a-8f8f567815e5",
+  "UpdatedAt": "2025-12-24T11:53:34.6726Z",
+  "Title": "Proxy Mapping for GET /3/find/81189",
+  "Description": "Proxy Mapping for GET /3/find/81189",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/find/81189",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "external_source",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "tvdb_id",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "movie_results": [],
+      "person_results": [],
+      "tv_results": [
+        {
+          "adult": false,
+          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "id": 1396,
+          "name": "Breaking Bad",
+          "original_name": "Breaking Bad",
+          "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+          "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "popularity": 150.5089,
+          "first_air_date": "2008-01-20",
+          "vote_average": 8.935,
+          "vote_count": 16730,
+          "origin_country": [
+            "US"
+          ]
+        }
+      ],
+      "tv_episode_results": [],
+      "tv_season_results": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=27699",
+      "x-memc": "HIT",
+      "x-memc-key": "66967817ed603853c2efd7be890f544b769d50b618c3eafc680e6e4f34941447",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00220e3753d3d4a0aafef16f7645ad21fb17\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

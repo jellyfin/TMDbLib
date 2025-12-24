@@ -1,0 +1,80 @@
+{
+  "Guid": "b513eba2-0dd3-244e-b308-ad500f297f8e",
+  "UpdatedAt": "2025-12-24T11:53:34.6793786Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
+  "Description": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964/alternative_titles",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "country",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "US",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 47964,
+      "titles": [
+        {
+          "iso_3166_1": "US",
+          "title": "Die Hard 5",
+          "type": "informal title"
+        },
+        {
+          "iso_3166_1": "US",
+          "title": "Duro de matar 5",
+          "type": ""
+        },
+        {
+          "iso_3166_1": "US",
+          "title": "Die Hard 5: A Good Day to Die Hard",
+          "type": "working title"
+        },
+        {
+          "iso_3166_1": "US",
+          "title": "Die Hard V: A Good Day to Die Hard",
+          "type": "alternative title"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "597225f4e0c4f341398ad9690a7b1790e3485183feee53110ddd8cffd827d594",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=24200",
+      "ETag": "W/\u0022f9b7c937d209db1716c768978d429555\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "Guid": "abd3dcd6-7caf-9145-b016-04240ab555cb",
+  "UpdatedAt": "2025-12-24T11:53:34.5855106Z",
+  "Title": "Proxy Mapping for GET /3/company/25/movies",
+  "Description": "Proxy Mapping for GET /3/company/25/movies",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/company/25/movies",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "it",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 25,
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
+          "genre_ids": [
+            28,
+            12,
+            14,
+            878
+          ],
+          "id": 19995,
+          "original_language": "en",
+          "original_title": "Avatar",
+          "overview": "Jake Sully \u00E8 un marine costretto su una sedia a rotelle che accetta di trasferirsi sul pianeta Pandora in sostituzione del fratello morto, la cui missione era quella di esplorare il pianeta. Essendo l\u0027atmosfera del pianeta tossica per gli umani sono stati creati degli esseri simili ai nativi Na\u0027vi che possono essere \u0027guidati\u0027 dagli umani. Pandora \u00E8 un enorme giacimento di un minerale prezioso per la Terra dove le fonti di energia sono azzerate. Gli indigeni Na\u0027vi non hanno intenzione di essere colonizzati. Il compito iniziale dell\u0027avatar di Jake sar\u00E0 quello di conoscerne usi e costumi e di farsi accettare all\u0027interno delle comunit\u00E0 indigene. Jake conosce cos\u00EC Neytiri, una guerriera Na\u0027vi figlia del capo trib\u00F9. Da lei impara a divenire un guerriero molto diverso dal marine che \u00E8 stato e se ne innamora ricambiato.",
+          "popularity": 111.795,
+          "poster_path": "/qLQgNd5NcPgEJBN6V9fg14YdIE7.jpg",
+          "release_date": "2009-12-16",
+          "title": "Avatar",
+          "video": false,
+          "vote_average": 7.597,
+          "vote_count": 33011
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dGiPJO75b9GmXqxvusbKlcYrDcg.jpg",
+          "genre_ids": [
+            35,
+            10751,
+            12
+          ],
+          "id": 772,
+          "original_language": "en",
+          "original_title": "Home Alone 2: Lost in New York",
+          "overview": "Per le feste di Natale il piccolo Kevin dovrebbe partire per la California insieme alla sua famiglia. Purtroppo il bambino sbaglia aereo e finisce a New York. Inizialmente si diverte a fare shopping con la carta di credito di suo padre, ma poi incontra i due ladruncoli che lo avevano assediato a casa sua nel precedente episodio.",
+          "popularity": 49.7405,
+          "poster_path": "/eYKQJmrEyANdUcE7nJ7PQ6XARaO.jpg",
+          "release_date": "1992-11-15",
+          "title": "Mamma, ho riperso l\u0027aereo - Mi sono smarrito a New York",
+          "video": false,
+          "vote_average": 6.77,
+          "vote_count": 10268
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xXCuto8YVp5RFqBJ7yKmVmLOWpF.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 597,
+          "original_language": "en",
+          "original_title": "Titanic",
+          "overview": "Rose ha diciassette anni, una madre egoista, un fidanzato facoltoso e una vita pianificata. Imbarcata sul Titanic e insoddisfatta della propria subalternit\u00E0 al futuro sposo incontra Jack, romantico disegnatore della terza classe che ha vinto a poker un biglietto per l\u0027America. Contro le convenzioni e il destino, che chieder\u00E0 il conto in una notte senza luna, Rose e Jack si innamorano, spiegando il loro spirito come i motori del pi\u00F9 grande transatlantico del mondo. Lanciato nella sua prima traversata oceanica il Titanic \u00E8 colpito al cuore da un iceberg, \u0027affondando\u0027 millecinquecento persone e il futuro dei due giovani amanti. Ottantaquattro anni dopo l\u0027ultracentenaria Rose, scampata al naufragio e sopravvissuta a Jack, racconter\u00E0 a un gruppo di scienziati la meraviglia di un amore interclassista e la stupidit\u00E0 di un mondo diviso in classi. Un mondo che il Titanic inabisser\u00E0 in un oceano nero il 15 aprile del 1912.",
+          "popularity": 31.2881,
+          "poster_path": "/3d0FyEPzva7zWRxBA56lbpZ0ko1.jpg",
+          "release_date": "1997-11-18",
+          "title": "Titanic",
+          "video": false,
+          "vote_average": 7.9,
+          "vote_count": 26563
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/70cezTFUmtijJLqnZw02gQlKVKJ.jpg",
+          "genre_ids": [
+            878,
+            28,
+            12,
+            53
+          ],
+          "id": 106,
+          "original_language": "en",
+          "original_title": "Predator",
+          "overview": "Un commando di soldati americani specialisti in guerriglia viene inviato nella giungla del centro america per distruggere un gruppo di guerriglieri. La missione viene rapidamente eseguita, ma sulla via del ritorno il commando diviene il bersaglio di un terrificante essere invisibile, il quale attacca gli uomini, li uccide e li squarta. In breve tempo Dutch, il comandante del gruppo rimane solo a fronteggiare quello che si rivela essere un cacciatore alieno dotato di armi e tecnologia superiori. Il coraggio, l\u0027addestramento e un po\u0027 di fortuna consentiranno all\u0027uomo di individuare i punti deboli del mostro.",
+          "popularity": 28.5803,
+          "poster_path": "/quBFT8L0Soxd4Ls6Ok9DtZniIj7.jpg",
+          "release_date": "1987-06-12",
+          "title": "Predator",
+          "video": false,
+          "vote_average": 7.542,
+          "vote_count": 8710
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 562,
+          "original_language": "en",
+          "original_title": "Die Hard",
+          "overview": "Durante la tradizionale festa di natale, un gruppo di terroristi prende in ostaggio i dipendenti di una multinazionale giapponese all\u0027interno di un modernissimo grattacielo. John McClane, poliziotto, per\u00F2 sfugge ai terroristi e grazie all\u0027aiuto dei nascondigli naturali del grattacielo conduce una battaglia solitaria per portare in salvo gli ostaggi, tra i quali si trova anche la moglie.",
+          "popularity": 28.9381,
+          "poster_path": "/xnl0dQUHLPvJl6ezNIs9S88E22H.jpg",
+          "release_date": "1988-07-15",
+          "title": "Trappola di cristallo",
+          "video": false,
+          "vote_average": 7.804,
+          "vote_count": 11854
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5TiwfWEaPSwD20uwXjCTUqpQX70.jpg",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "id": 550,
+          "original_language": "en",
+          "original_title": "Fight Club",
+          "overview": "Un uomo di trent\u0027anni \u00E8 insofferente su tutto e la notte non riesce pi\u00F9 a dormire. In cerca di qualche luogo dove scaricare la propria ansia si mette a frequentare quei corsi dove gruppi di malati gravi si riuniscono e confessano agli altri le rispettive situazioni. Mentre si lascia andare alla commozione e al pianto di fronte a quello che vede, l\u0027uomo fa la conoscenza prima di Marla Singer poi di Tyler Durden. Lei \u00E8 una ragazza a sua volta alla deriva, incapace di scelte o decisioni; lui \u00E8 un tipo deciso e vigoroso con un\u0027idea precisa in testa. Tyler fa saltare per aria l\u0027appartamento dell\u0027uomo e i due vanno a vivere insieme in una casa fatiscente. Deciso a coinvolgerlo nel suo progetto, Tyler lo fa entrare in un \u0027Fight Club\u0027, uno stanzone sotterraneo dove ci si riunisce per picchiarsi e in questo modo sentirsi di nuovo vivi...",
+          "popularity": 24.5954,
+          "poster_path": "/rtNLQ8HbPElzEfrHjrzSr07prKT.jpg",
+          "release_date": "1999-10-15",
+          "title": "Fight Club",
+          "video": false,
+          "vote_average": 8.438,
+          "vote_count": 31119
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2w4xG178RpB4MDAIfTkqAuSJzec.jpg",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "id": 11,
+          "original_language": "en",
+          "original_title": "Star Wars",
+          "overview": "In un lontano Impero Galattico \u00E8 in atto una rivolta contro i suoi dispotici capi, tra i quali il pi\u00F9 cattivo \u00E8 Lord Darth Vader. Prima di cadere nelle sue mani, la principessa Leila Organa, rappresentante dei ribelli, riesce ad affidare a due robot i piani della \u0022Morte Nera\u0022 - la potentissima base spaziale di Darth Vader, capace di disintegrare un intero pianeta - e un appello al vecchio generale Obi-Wan Kenobi, che abita sul pianeta Tatooine, perch\u00E9 accorra in aiuto dei rivoltosi. Il messaggio viene raccolto dal giovane Luke Skywalker che, rintracciato Obi Wan Kenobi, parte con lui in soccorso della principessa a bordo di un\u0027astronave guidata dal mercenario Han Solo e dal suo secondo Chewbacca.",
+          "popularity": 22.5412,
+          "poster_path": "/uteN8YA4Yddm4mDVPH7QwvOZia1.jpg",
+          "release_date": "1977-05-25",
+          "title": "Guerre stellari",
+          "video": false,
+          "vote_average": 8.203,
+          "vote_count": 21740
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eTlcNXGv32zkVI7ZDHhfeaKHXKQ.jpg",
+          "genre_ids": [
+            28,
+            9648,
+            878,
+            53
+          ],
+          "id": 198663,
+          "original_language": "en",
+          "original_title": "The Maze Runner",
+          "overview": "Basato sul celebre best seller, Maze Runner \u00E8 ambientato in un mondo post-apocalittico, nel quale Thomas \u00E8 rinchiuso in una comunit\u00E0 di ragazzi, dopo che la sua memoria \u00E8 stata cancellata. Dopo aver scoperto di essere rinchiusi in un labirinto, Thomas si unir\u00E0 ai suoi amici \u0022runners\u0022 non solo per scappare dal labirinto, ma anche per risolvere il mistero e svelare il segreto su chi li ha portati l\u00EC, e perch\u00E9.",
+          "popularity": 20.0711,
+          "poster_path": "/jUbxPjUpRFh7wQ64wUIwV63rTAY.jpg",
+          "release_date": "2014-09-10",
+          "title": "Maze Runner - Il labirinto",
+          "video": false,
+          "vote_average": 7.191,
+          "vote_count": 17741
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rnn6sGMGPpM8VfVmCMFxsjKvz7q.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            12
+          ],
+          "id": 9279,
+          "original_language": "en",
+          "original_title": "Jingle All the Way",
+          "overview": "Sotto Natale un importante uomo d\u0027affari, subissato dal lavoro e dai clienti, non trova il tempo di occuparsi della famiglia e di mantenere una promessa fatta al figlioletto: regalargli Turbo Man, giocattolo esaurito da tempo in tutti i negozi. Lo ostacolano un infido vicino di casa, bambini terribili, un poliziotto pedante. Per riacquistare la fiducia e il rispetto dei suoi cari deve trasformarsi in effetto speciale.",
+          "popularity": 19.6302,
+          "poster_path": "/9Bk3ZdusDClIbqDcNcMIL5MnaPH.jpg",
+          "release_date": "1996-11-21",
+          "title": "Una promessa \u00E8 una promessa",
+          "video": false,
+          "vote_average": 6.057,
+          "vote_count": 2843
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4DZxWNSAyksN6N3JkvpJ53Yq6zU.jpg",
+          "genre_ids": [
+            28,
+            18,
+            878
+          ],
+          "id": 263115,
+          "original_language": "en",
+          "original_title": "Logan",
+          "overview": "El Paso, 2029. Sono 25 anni che non nascono pi\u00F9 mutanti e quelli che sono sopravvissuti sono degli emarginati, in via di estinzione. Logan/Wolverine vive facendo lo chaffeur e la sua capacit\u00E0 di rigenerazione non funziona pi\u00F9 come un tempo, mentre il Professor X ha novant\u0027anni e il controllo dei suoi poteri psichici \u00E8 sempre meno sicuro. Quando una donna messicana cerca Logan per presentargli una bambina misteriosa di nome Laura, nuove attenzioni e nuovi guai cominciano a raggiungere i mutanti.",
+          "popularity": 15.2498,
+          "poster_path": "/kHA8Ru0xKTa6ZW4UQWjsVwgtEHi.jpg",
+          "release_date": "2017-02-28",
+          "title": "Logan - The Wolverine",
+          "video": false,
+          "vote_average": 7.819,
+          "vote_count": 20000
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hHYoUYgto562dcQRjVuuVlosBKz.jpg",
+          "genre_ids": [
+            35,
+            18,
+            10751
+          ],
+          "id": 11881,
+          "original_language": "en",
+          "original_title": "Miracle on 34th Street",
+          "overview": "Da un racconto di Valentine Davies. Ingaggiato dai grandi magazzini Macy\u0027s di New York per fare Santa Claus (Babbo Natale), Kris Kringle (Gwenn) pretende di esserlo veramente. Lo prendono per matto, ma dovranno ricredersi, persino in tribunale.",
+          "popularity": 19.5756,
+          "poster_path": "/7xGrHDUJMU4SKRbIsTdHR8Yz1KB.jpg",
+          "release_date": "1947-06-04",
+          "title": "Il miracolo della 34\u00AA strada",
+          "video": false,
+          "vote_average": 7.361,
+          "vote_count": 807
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oHsiqHajO9v8YTuonvcMCkxtpSq.jpg",
+          "genre_ids": [
+            35,
+            10751
+          ],
+          "id": 9714,
+          "original_language": "en",
+          "original_title": "Home Alone 3",
+          "overview": "Ancora un bambino, solo in casa perch\u00E9 affetto da morbillo che ingaggia un\u0027ingegnosa lotta con un quartetto di ladri che, per\u00F2, sono spie industriali a caccia di un microchip da dieci milioni di dollari, nascosto in un\u0027automobilina telecomandata",
+          "popularity": 15.7342,
+          "poster_path": "/s1PwvbnNicaxT6wdlMZJqrW0yQt.jpg",
+          "release_date": "1997-12-12",
+          "title": "Mamma, ho preso il morbillo",
+          "video": false,
+          "vote_average": 5.274,
+          "vote_count": 3178
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/y9M9xO78SHf43pK5TOgfOeQRHXj.jpg",
+          "genre_ids": [
+            18,
+            10751,
+            10402,
+            10749
+          ],
+          "id": 15121,
+          "original_language": "en",
+          "original_title": "The Sound of Music",
+          "overview": "Maria, una giovane novizia piena di brio, lascia il convento per diventare la governante dei sette figli del Capitano Von Trapp, un vedovo le cui regole severe non lasciano spazio a musica e allegria.",
+          "popularity": 11.3328,
+          "poster_path": "/yhrbGKcwsJ76UtpKYacNxV9eMF2.jpg",
+          "release_date": "1965-03-29",
+          "title": "Tutti insieme appassionatamente",
+          "video": false,
+          "vote_average": 7.724,
+          "vote_count": 3495
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/o0zPARvs47f0UhAJuUqdQsyQaji.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            12
+          ],
+          "id": 8355,
+          "original_language": "en",
+          "original_title": "Ice Age: Dawn of the Dinosaurs",
+          "overview": "Manny e Ellie stanno per avere un bambino e la novit\u00E0 sembra sconvolgere qualche equilibrio. Diego sente di non avere pi\u00F9 lo smalto di una volta mentre Sid desidera sperimentare la \u0022maternit\u00E0\u0022 a tutti i costi, anche se si tratta di dover badare a tre cuccioli di dinosauro nati da uova trovate per caso. Una nuova avventura al salvataggio proprio di Sid e l\u0027incontro con un nuovo personaggio (Buck) serviranno a riunire il branco.",
+          "popularity": 15.2476,
+          "poster_path": "/4qJWIZZi7mbCvjXqPcyWxdhcQ4c.jpg",
+          "release_date": "2009-06-26",
+          "title": "L\u0027era glaciale 3 - L\u0027alba dei dinosauri",
+          "video": false,
+          "vote_average": 6.763,
+          "vote_count": 8673
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8pwIhymsxfAVjrAE7syDjQULn37.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            12
+          ],
+          "id": 425,
+          "original_language": "en",
+          "original_title": "Ice Age",
+          "overview": "All\u0027inizio dell\u0027 Era Glaciale, tre creature assolutamente mal assortite si ritrovarono coinvolte per caso in una straordinaria avventura. Sid, un bradipo chiacchierone, Manny, un mammouth triste e malinconico, e Diego, un tigre dai denti a sciabola, si riuniscono anche se contro voglia per per aiutare un bambino a tornare da suo padre.",
+          "popularity": 14.3129,
+          "poster_path": "/dSWZ3oXT7ggTKvcD3noqYhKwTUa.jpg",
+          "release_date": "2002-03-14",
+          "title": "L\u0027era glaciale",
+          "video": false,
+          "vote_average": 7.367,
+          "vote_count": 13942
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iWak7wT0j6ycCc8lKr4NBz9c7n5.jpg",
+          "genre_ids": [
+            9648,
+            53,
+            18
+          ],
+          "id": 210577,
+          "original_language": "en",
+          "original_title": "Gone Girl",
+          "overview": "Da poco trasferirtisi in una piccola cittadina del Missouri da New York, Nick Dunne (Ben Affleck) e la moglie Amy (Rosamunde Pike) stanno attraversando un periodo difficile, con un matrimonio in crisi per via della difficolt\u00E0 della donna ad abituarsi alla nuova esistenza. Il giorno del quinto anniversario di nozze, Amy scompare e il primo ad essere sospettato della sua scomparsa \u00E8 Nick ma la realt\u00E0 \u00E8 ben diversa da come appare a prima vista.",
+          "popularity": 13.2269,
+          "poster_path": "/6VHGi1nlslwztqGOCrlQlNvell2.jpg",
+          "release_date": "2014-10-01",
+          "title": "L\u0027amore bugiardo - Gone Girl",
+          "video": false,
+          "vote_average": 7.889,
+          "vote_count": 19486
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kP8rK9dGS1pr0HrnmXfIi2heWjo.jpg",
+          "genre_ids": [
+            18,
+            28,
+            12,
+            36,
+            10752
+          ],
+          "id": 1495,
+          "original_language": "en",
+          "original_title": "Kingdom of Heaven",
+          "overview": "Balian \u00E8 un maniscalco che ha perso la famiglia e che ha rischiato di perdere anche la fede. Le guerre di religione che sconvolgono la remota Terra Santa gli sembrano lontane anni luce. Ma il destino bussa alla porta di Balian sotto le spoglie di un grande cavaliere, Godfrey di Ibelin...",
+          "popularity": 12.6974,
+          "poster_path": "/eBANLMsnquFkKzf28l93SunsksU.jpg",
+          "release_date": "2005-05-03",
+          "title": "Le crociate - Kingdom of Heaven",
+          "video": false,
+          "vote_average": 7.005,
+          "vote_count": 4700
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rFj9IKlL75B2pXhZA60jkNWvxeW.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35
+          ],
+          "id": 293660,
+          "original_language": "en",
+          "original_title": "Deadpool",
+          "overview": "Tratto dal fumetto sul pi\u00F9 irriverente anti-eroe dell\u2019universo Marvel, il film racconta la storia del mercenario Wade Wilson, ex agente operativo delle Special Forces, che, dopo essere stato sottoposto a un terribile esperimento, acquisisce l\u2019eccezionale potere del Fattore Rigenerante e abbraccia una nuova identit\u00E0. Con la sua nuova abilit\u00E0 di guarire rapidamente e un pungente senso dell\u2019umorismo, Deadpool andr\u00E0 a caccia dell\u2019uomo che gli ha quasi rovinato la vita.",
+          "popularity": 13.3092,
+          "poster_path": "/zoSiiUUzg2ny6uzuil7PbP13z53.jpg",
+          "release_date": "2016-02-09",
+          "title": "Deadpool",
+          "video": false,
+          "vote_average": 7.623,
+          "vote_count": 32158
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oU0lGpUukjNOgZeuIqueNM3QiBE.jpg",
+          "genre_ids": [
+            14,
+            18,
+            10751
+          ],
+          "id": 10510,
+          "original_language": "en",
+          "original_title": "Miracle on 34th Street",
+          "overview": "Assunto da un grande magazzino per fare Babbo Natale, l\u0027anziano Kris Kringle convince i suoi datori di lavoro di esserlo veramente, ma viene trascinato in tribunale dalla concorrenza.",
+          "popularity": 12.4481,
+          "poster_path": "/dL4bTIyaeJkI4y6ZjjJuqiL0dBF.jpg",
+          "release_date": "1994-11-18",
+          "title": "Miracolo nella 34\u00AA strada",
+          "video": false,
+          "vote_average": 6.744,
+          "vote_count": 1109
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qvcOovScPoRalRxDy50rYSYFree.jpg",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "id": 10591,
+          "original_language": "en",
+          "original_title": "The Girl Next Door",
+          "overview": "Matthew ha diciotto anni, \u00E8 un secchione e frequenta due amici alquanto sfigati. Quando la bella Danielle diviene la sua vicina di casa, Matthew non trova di meglio che innamorarsene perdutamente. La fanciulla apparentemente innocente e acqua e sapone, divertita dall\u0027impacciato corteggiamento, nasconde un segreto dietro il suo dolce visino. Danielle \u00E8 una pornostar.",
+          "popularity": 12.3607,
+          "poster_path": "/gozRLkN3tHGkGP0pmmx4izw8Ewt.jpg",
+          "release_date": "2004-04-09",
+          "title": "La ragazza della porta accanto",
+          "video": false,
+          "vote_average": 6.734,
+          "vote_count": 3856
+        }
+      ],
+      "total_pages": 85,
+      "total_results": 1687
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=27742",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "d522c8026a97050319e6607466ece29a1ba67b60568af2e207a20491f26d93f6",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022740d0c1916e4676f6858886fc76dd859\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

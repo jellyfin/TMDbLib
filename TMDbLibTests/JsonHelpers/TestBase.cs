@@ -72,9 +72,9 @@ public abstract class TestBase
             serializerSettings.Converters.Insert(0, new ArgonEnumStringValueConverter());
         });
 
-        WebProxy proxy = null;
+        WebProxy? proxy = null;
 
-        TestConfig = new TestConfig(serializer: null, proxy: proxy);
+        TestConfig = new TestConfig(proxy: proxy);
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public abstract class TestBase
     /// <param name="obj">The object to verify.</param>
     /// <param name="configure">Optional action to configure verify settings.</param>
     /// <returns>A task representing the asynchronous verification operation.</returns>
-    protected Task Verify<T>(T obj, Action<VerifySettings> configure = null)
+    protected Task Verify<T>(T obj, Action<VerifySettings>? configure = null)
     {
         var settings = VerifySettings;
 
@@ -99,7 +99,7 @@ public abstract class TestBase
     /// <summary>
     /// Argon-compatible enum converter that uses TMDbLib's EnumMemberCache for proper string values.
     /// </summary>
-    class ArgonEnumStringValueConverter : JsonConverter
+    class ArgonEnumStringValueConverter : Argon.JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
@@ -107,7 +107,7 @@ public abstract class TestBase
             writer.WriteValue(str);
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             var val = EnumMemberCache.GetValue(reader.Value as string, objectType);
             return val;
@@ -184,7 +184,7 @@ public abstract class TestBase
         /// <summary>
         /// Converter that writes any value as a string placeholder.
         /// </summary>
-        class PlaceholderConverter : JsonConverter
+        class PlaceholderConverter : Argon.JsonConverter
         {
             private readonly string _placeholder;
 
@@ -202,7 +202,7 @@ public abstract class TestBase
                 }
             }
 
-            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
             {
                 return reader.Value;
             }
@@ -213,7 +213,7 @@ public abstract class TestBase
         /// <summary>
         /// Converter that writes non-empty values as "&lt;non-empty&gt;".
         /// </summary>
-        class NonEmptyConverter : JsonConverter
+        class NonEmptyConverter : Argon.JsonConverter
         {
             public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
             {
@@ -228,7 +228,7 @@ public abstract class TestBase
                 }
             }
 
-            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
             {
                 return reader.Value;
             }
@@ -275,21 +275,21 @@ public abstract class TestBase
             }
 
             // Skip ignored properties (dynamic values that change over time)
-            if (IgnoredProperties.Contains(member.Name) || IgnoredProperties.Contains(property.PropertyName))
+            if (IgnoredProperties.Contains(member.Name) || (property.PropertyName != null && IgnoredProperties.Contains(property.PropertyName)))
             {
                 property.Ignored = true;
                 return property;
             }
 
             // Apply <non-empty> transformation for image paths and dimensions
-            if (NonEmptyProperties.Contains(member.Name) || NonEmptyProperties.Contains(property.PropertyName))
+            if (NonEmptyProperties.Contains(member.Name) || (property.PropertyName != null && NonEmptyProperties.Contains(property.PropertyName)))
             {
                 property.Converter = new NonEmptyConverter();
                 return property;
             }
 
             // Apply {Scrubbed} transformation for ID properties
-            if (IsIdProperty(member.Name) || IsIdProperty(property.PropertyName))
+            if (IsIdProperty(member.Name) || IsIdProperty(property.PropertyName!))
             {
                 property.Converter = new PlaceholderConverter("{Scrubbed}");
             }
@@ -307,8 +307,7 @@ public abstract class TestBase
             // For array contracts, wrap with sorting converter
             if (contract is JsonArrayContract arrayContract)
             {
-                var existingConverter = arrayContract.Converter;
-                arrayContract.Converter = new SortingListConverter(existingConverter);
+                arrayContract.Converter = new SortingListConverter(arrayContract.Converter);
             }
 
             return contract;
@@ -319,13 +318,10 @@ public abstract class TestBase
         /// <summary>
         /// Converter that sorts lists during serialization.
         /// </summary>
-        class SortingListConverter : JsonConverter
+        class SortingListConverter : Argon.JsonConverter
         {
-            private readonly JsonConverter _innerConverter;
-
-            public SortingListConverter(JsonConverter innerConverter)
+            public SortingListConverter(Argon.JsonConverter? innerConverter)
             {
-                _innerConverter = innerConverter;
             }
 
             public override bool CanConvert(Type objectType)
@@ -335,7 +331,7 @@ public abstract class TestBase
 
             public override bool CanRead => false;
 
-            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
             {
                 throw new NotImplementedException("SortingListConverter should only be used for serialization");
             }
@@ -360,7 +356,7 @@ public abstract class TestBase
                         var innerType = objType.GetGenericArguments().First();
 
                         // Determine which comparer to use
-                        IComparer comparer = null;
+                        IComparer? comparer = null;
                         if (innerType.IsValueType)
                             comparer = Comparer.Default;
                         else
@@ -428,7 +424,7 @@ public abstract class TestBase
             /// <param name="x">The first object to compare.</param>
             /// <param name="y">The second object to compare.</param>
             /// <returns>A value indicating the relative order of the objects.</returns>
-            public int Compare(object x, object y)
+            public int Compare(object? x, object? y)
             {
                 var valX = _property.GetValue(x);
                 var valY = _property.GetValue(y);

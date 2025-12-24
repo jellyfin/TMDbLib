@@ -20,14 +20,14 @@ public class ChangeItemConverterTest : TestBase
     [Fact]
     public async Task ChangeItemConverter_ChangeItemAdded()
     {
-        ChangeItemAdded original = new ChangeItemAdded
+        var original = new ChangeItemAdded
         {
             Iso_639_1 = "en",
             Value = "Hello world"
         };
 
-        string json = Serializer.SerializeToString(original);
-        ChangeItemAdded result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemAdded;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemAdded;
 
         await Verify(new
         {
@@ -42,13 +42,13 @@ public class ChangeItemConverterTest : TestBase
     [Fact]
     public async Task ChangeItemConverter_ChangeItemCreated()
     {
-        ChangeItemCreated original = new ChangeItemCreated
+        var original = new ChangeItemCreated
         {
             Iso_639_1 = "en"
         };
 
-        string json = Serializer.SerializeToString(original);
-        ChangeItemCreated result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemCreated;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemCreated;
 
         await Verify(new
         {
@@ -63,14 +63,14 @@ public class ChangeItemConverterTest : TestBase
     [Fact]
     public async Task ChangeItemConverter_ChangeItemDeleted()
     {
-        ChangeItemDeleted original = new ChangeItemDeleted
+        var original = new ChangeItemDeleted
         {
             Iso_639_1 = "en",
             OriginalValue = "Hello world"
         };
 
-        string json = Serializer.SerializeToString(original);
-        ChangeItemDeleted result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemDeleted;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemDeleted;
 
         await Verify(new
         {
@@ -85,15 +85,15 @@ public class ChangeItemConverterTest : TestBase
     [Fact]
     public async Task ChangeItemConverter_ChangeItemUpdated()
     {
-        ChangeItemUpdated original = new ChangeItemUpdated
+        var original = new ChangeItemUpdated
         {
             Iso_639_1 = "en",
             OriginalValue = "Hello world",
             Value = "Hello world 1234"
         };
 
-        string json = Serializer.SerializeToString(original);
-        ChangeItemUpdated result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemUpdated;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<ChangeItemBase>(json) as ChangeItemUpdated;
 
         await Verify(new
         {
@@ -108,10 +108,10 @@ public class ChangeItemConverterTest : TestBase
     [Fact]
     public async Task TestChangeItemConverter()
     {
-        Movie latestMovie = await TMDbClient.GetMovieLatestAsync();
-        IList<Change> changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id);
+        var latestMovie = await TMDbClient.GetMovieLatestAsync();
+        var changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id);
 
-        List<ChangeItemBase> changeItems = changes.SelectMany(s => s.Items).ToList();
+        var changeItems = changes.SelectMany(s => s.Items).ToList();
 
         // The latest movie may or may not have changes - skip if empty
         if (changeItems.Count == 0)
@@ -119,11 +119,11 @@ public class ChangeItemConverterTest : TestBase
             return; // Skip test if no changes available
         }
 
-        ChangeAction[] actions = [ChangeAction.Added, ChangeAction.Created, ChangeAction.Updated, ChangeAction.Deleted];
+        var actions = new[] { ChangeAction.Added, ChangeAction.Created, ChangeAction.Updated, ChangeAction.Deleted };
 
         Assert.All(changeItems, item => Assert.Contains(item.Action, actions));
 
-        IEnumerable<ChangeItemBase> items = changeItems.Where(s => s.Action == ChangeAction.Added);
+        var items = changeItems.Where(s => s.Action == ChangeAction.Added);
         Assert.All(items, item => Assert.IsType<ChangeItemAdded>(item));
 
         items = changeItems.Where(s => s.Action == ChangeAction.Updated);

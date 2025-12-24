@@ -1,0 +1,456 @@
+{
+  "Guid": "b6339a0e-2e1c-de46-aa56-138d8b566337",
+  "UpdatedAt": "2025-12-24T11:53:35.8156688Z",
+  "Title": "Proxy Mapping for GET /3/movie/upcoming",
+  "Description": "Proxy Mapping for GET /3/movie/upcoming",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/upcoming",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "dates": {
+        "maximum": "2026-01-21",
+        "minimum": "2025-12-31"
+      },
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg",
+          "genre_ids": [
+            878,
+            12,
+            14
+          ],
+          "id": 83533,
+          "original_language": "en",
+          "original_title": "Avatar: Fire and Ash",
+          "overview": "In the wake of the devastating war against the RDA and the loss of their eldest son, Jake Sully and Neytiri face a new threat on Pandora: the Ash People, a violent and power-hungry Na\u0027vi tribe led by the ruthless Varang. Jake\u0027s family must fight for their survival and the future of Pandora in a conflict that pushes them to their emotional and physical limits.",
+          "popularity": 559.9652,
+          "poster_path": "/gDVgC9jd917NdAcqBdRRDUYi4Tq.jpg",
+          "release_date": "2025-12-17",
+          "title": "Avatar: Fire and Ash",
+          "video": false,
+          "vote_average": 7.37,
+          "vote_count": 545
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yCatt8lmp3oRFEcOZF8KHhsiASQ.jpg",
+          "genre_ids": [
+            28,
+            10752
+          ],
+          "id": 1223601,
+          "original_language": "fi",
+          "original_title": "Sisu 2",
+          "overview": "Returning to the house where his family was brutally murdered during the war, \u2018the man who refuses to die\u2019 dismantles it, loads it on a truck, and is determined to rebuild it somewhere safe in their honor. When the commander who killed his family comes back hellbent on finishing the job, a relentless, eye-popping cross-country chase ensues.",
+          "popularity": 326.0945,
+          "poster_path": "/jNsttCWZyPtW66MjhUozBzVsRb7.jpg",
+          "release_date": "2025-10-21",
+          "title": "Sisu: Road to Revenge",
+          "video": false,
+          "vote_average": 7.558,
+          "vote_count": 260
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ae0p8SqtMNNxbmbUHyCaE20D2aQ.jpg",
+          "genre_ids": [
+            9648,
+            53
+          ],
+          "id": 1368166,
+          "original_language": "en",
+          "original_title": "The Housemaid",
+          "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dangerous\u2014a sexy, seductive game of secrets, scandal, and power.",
+          "popularity": 80.5845,
+          "poster_path": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+          "release_date": "2025-12-18",
+          "title": "The Housemaid",
+          "video": false,
+          "vote_average": 8.125,
+          "vote_count": 33
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pAyImoslSnpMgjRwhaS5ZEdl8UI.jpg",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "id": 1448560,
+          "original_language": "en",
+          "original_title": "Wildcat",
+          "overview": "An ex-black ops team reunite to pull off a desperate heist in order to save the life of their leader\u2019s eight-year-old daughter.",
+          "popularity": 57.84,
+          "poster_path": "/h893ImjM6Fsv5DFhKJdlZFZIJno.jpg",
+          "release_date": "2025-11-19",
+          "title": "Wildcat",
+          "video": false,
+          "vote_average": 6.3,
+          "vote_count": 51
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dEkFlZzj2cb5F7SShvqkL54E4lr.jpg",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "id": 1033148,
+          "original_language": "en",
+          "original_title": "Die My Love",
+          "overview": "Grace and her partner Jackson move into an old country house. She pursues her dream of writing, and the couple welcome a baby soon after. However, with Jackson frequently absent, and the pressures of domestic life weighing on her, Grace begins to unravel, leaving a path of destruction in her wake.",
+          "popularity": 51.5598,
+          "poster_path": "/kajpShbFhOdpl6yCrLezMrr9tB4.jpg",
+          "release_date": "2025-10-06",
+          "title": "Die My Love",
+          "video": false,
+          "vote_average": 6.375,
+          "vote_count": 204
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qFxULMQeFTdo2dcuviEdwks3CIO.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1286185,
+          "original_language": "en",
+          "original_title": "The Carpenter\u0027s Son",
+          "overview": "A remote village in Roman-era Egypt explodes into spiritual warfare when a carpenter, his wife and their child are targeted by supernatural forces.",
+          "popularity": 51.9323,
+          "poster_path": "/tXEtdZjoaHqjDjSxZJWwDVjIfx9.jpg",
+          "release_date": "2025-11-13",
+          "title": "The Carpenter\u0027s Son",
+          "video": false,
+          "vote_average": 5.2,
+          "vote_count": 23
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kVSUUWiXoNwq2wVCZ4Mcqkniqvr.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            12,
+            16
+          ],
+          "id": 991494,
+          "original_language": "en",
+          "original_title": "The SpongeBob Movie: Search for SquarePants",
+          "overview": "Desperate to be a big guy, SpongeBob sets out to prove his bravery to Mr. Krabs by following The Flying Dutchman \u2013 a mysterious swashbuckling ghost pirate \u2013 on a seafaring adventure that takes him to the deepest depths of the deep sea, where no Sponge has gone before.",
+          "popularity": 53.6244,
+          "poster_path": "/n92wqmgHhMU0Mzc49AzRUhyhQ65.jpg",
+          "release_date": "2025-12-16",
+          "title": "The SpongeBob Movie: Search for SquarePants",
+          "video": false,
+          "vote_average": 7.071,
+          "vote_count": 14
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/i1Aa25l2TtKwp528wM5g2MK4ER6.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 1134463,
+          "original_language": "es",
+          "original_title": "Dreams",
+          "overview": "Romance blossoms between a wealthy socialite and a Mexican ballet dancer, intertwining their contrasting lives and cultures.",
+          "popularity": 43.4911,
+          "poster_path": "/k18RLaw3Z7kx82lK9V3FzNyJgiH.jpg",
+          "release_date": "2025-07-10",
+          "title": "Dreams",
+          "video": false,
+          "vote_average": 5.6,
+          "vote_count": 12
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ajzEWXl1z75Mx6lOj9lToHt5t6Z.jpg",
+          "genre_ids": [
+            36,
+            18
+          ],
+          "id": 1214931,
+          "original_language": "en",
+          "original_title": "Nuremberg",
+          "overview": "In postwar Germany, an American psychiatrist must determine whether Nazi prisoners are fit to go on trial for war crimes, and finds himself in a complex battle of intellect and ethics with Hermann G\u00F6ring, Hitler\u0027s right-hand man.",
+          "popularity": 42.1306,
+          "poster_path": "/sxu8TsG7k06ymWL98ELEIE1EMZV.jpg",
+          "release_date": "2025-11-06",
+          "title": "Nuremberg",
+          "video": false,
+          "vote_average": 7.185,
+          "vote_count": 128
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iMxWTPRqWJJKVW7KYBlmirSeazw.jpg",
+          "genre_ids": [
+            10749,
+            35
+          ],
+          "id": 1429520,
+          "original_language": "en",
+          "original_title": "Sidelined 2: Intercepted",
+          "overview": "Freshman star quarterback Drayton struggles with the weight of expectations after a devastating setback, while dancer Dallas begins to question the future she thought she wanted. As their high school relationship begins to unravel under the pressures of distance and self-discovery, they\u2019ll learn that the bravest versions of themselves emerge when they let life redirect them.",
+          "popularity": 36.326,
+          "poster_path": "/sEIP1pTVXa8BJaYSuVeVG3wFN10.jpg",
+          "release_date": "2025-11-27",
+          "title": "Sidelined 2: Intercepted",
+          "video": false,
+          "vote_average": 7.429,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/93yXJVBBC04mhgv5FlZRT8Zyofp.jpg",
+          "genre_ids": [
+            12,
+            35,
+            27
+          ],
+          "id": 1234731,
+          "original_language": "en",
+          "original_title": "Anaconda",
+          "overview": "A group of friends facing mid-life crises head to the rainforest with the intention of remaking their favorite movie from their youth, only to find themselves in a fight for their lives against natural disasters, giant snakes and violent criminals.",
+          "popularity": 35.0664,
+          "poster_path": "/5MDnvvkOqthhE5gQebzkcOhD1p5.jpg",
+          "release_date": "2025-12-24",
+          "title": "Anaconda",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 6
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zhoMwQofjgVec5Sin05hWECJtVQ.jpg",
+          "genre_ids": [
+            18,
+            53,
+            80
+          ],
+          "id": 1456349,
+          "original_language": "fa",
+          "original_title": "\u06CC\u06A9 \u062A\u0635\u0627\u062F\u0641 \u0633\u0627\u062F\u0647",
+          "overview": "Vahid, an Azerbaijani auto mechanic, was once imprisoned by Iranian authorities. During his sentence, he was interrogated blindfolded. One day, a man named Eqbal enters his workshop. His prosthetic leg creaks, and Vahid thinks he recognizes one of his former torturers.",
+          "popularity": 32.3791,
+          "poster_path": "/eNYGj2DG3n8OrVPTfYunpPW9uas.jpg",
+          "release_date": "2025-09-27",
+          "title": "It Was Just an Accident",
+          "video": false,
+          "vote_average": 7.19,
+          "vote_count": 210
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5lQ4euO30sDin5nCifvi0vURFNd.jpg",
+          "genre_ids": [
+            28,
+            35,
+            10751
+          ],
+          "id": 1248226,
+          "original_language": "en",
+          "original_title": "Playdate",
+          "overview": "When out-of-work accountant Brian joins stay-at-home dad Jeff for a playdate with their sons, he expects a laid-back afternoon. Instead, they\u0027re chased by mercenaries, and Brian\u2014totally unprepared\u2014must survive one absurd obstacle after another.",
+          "popularity": 29.8934,
+          "poster_path": "/fGodXWqJkkkbSebPIlxLSygV8GY.jpg",
+          "release_date": "2025-11-05",
+          "title": "Playdate",
+          "video": false,
+          "vote_average": 6.163,
+          "vote_count": 407
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uIXIQUDXUxvhjfKvpUnXTiVfvuB.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1127628,
+          "original_language": "en",
+          "original_title": "The Thing with Feathers",
+          "overview": "After a tragic loss, a grieving father tries to raise his young sons whilst dealing with an unlikely, unpredictable, and uninvited houseguest.",
+          "popularity": 22.8676,
+          "poster_path": "/j3kM0tMW7EQaOrit0JW9NvoPPrp.jpg",
+          "release_date": "2025-10-17",
+          "title": "The Thing with Feathers",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fTrQsdMS2MUw00RnzH0r3JWHhts.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1197306,
+          "original_language": "en",
+          "original_title": "A Working Man",
+          "overview": "Levon Cade left behind a decorated military career in the black ops to live a simple life working construction. But when his boss\u0027s daughter, who is like family to him, is taken by human traffickers, his search to bring her home uncovers a world of corruption far greater than he ever could have imagined.",
+          "popularity": 27.5785,
+          "poster_path": "/6FRFIogh3zFnVWn7Z6zcYnIbRcX.jpg",
+          "release_date": "2025-03-26",
+          "title": "A Working Man",
+          "video": false,
+          "vote_average": 6.705,
+          "vote_count": 1687
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jBOhqsbzEL7Ks3NWy98iI7YDzBh.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 1317288,
+          "original_language": "en",
+          "original_title": "Marty Supreme",
+          "overview": "In 1950s New York City, Marty Mauser, a young man with a dream no one respects, goes to hell and back in pursuit of greatness.",
+          "popularity": 30.7281,
+          "poster_path": "/1DMkADrM4BF6fi1gEjXZ89rROKR.jpg",
+          "release_date": "2025-12-19",
+          "title": "Marty Supreme",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e3lmJ6sI7aItMv3sXHnKZCeppCx.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            18,
+            35
+          ],
+          "id": 1167307,
+          "original_language": "en",
+          "original_title": "David",
+          "overview": "From the songs of his mother\u2019s heart to the whispers of a faithful God, David\u2019s story begins in quiet devotion. When the giant Goliath rises to terrorize a nation, a young shepherd armed with only a sling, a few stones, and unshakable faith steps forward. Pursued by power and driven by purpose, his journey tests the limits of loyalty, love, and courage\u2014culminating in a battle not just for a crown, but for the soul of a kingdom.",
+          "popularity": 25.5943,
+          "poster_path": "/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",
+          "release_date": "2025-12-14",
+          "title": "David",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1ktHy4yBupG3JzYoFsQ8DFoqZh4.jpg",
+          "genre_ids": [
+            80,
+            53,
+            18
+          ],
+          "id": 639988,
+          "original_language": "ko",
+          "original_title": "\uC5B4\uCA54\uC218\uAC00\uC5C6\uB2E4",
+          "overview": "After being laid off and humiliated by a ruthless job market, a veteran paper mill manager descends into violence in a desperate bid to reclaim his dignity.",
+          "popularity": 24.1949,
+          "poster_path": "/vc2S0dvgpsM0XfSiXZDMVkRCSSU.jpg",
+          "release_date": "2025-09-24",
+          "title": "No Other Choice",
+          "video": false,
+          "vote_average": 7.538,
+          "vote_count": 117
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yt9m5CiU2MZkQoNl1kqLPODNR4t.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 858024,
+          "original_language": "en",
+          "original_title": "Hamnet",
+          "overview": "The powerful story of love and loss that inspired the creation of Shakespeare\u0027s timeless masterpiece, Hamlet.",
+          "popularity": 18.4461,
+          "poster_path": "/71KNp6RiOQTbs8Fn1DagrFQrZmx.jpg",
+          "release_date": "2025-11-26",
+          "title": "Hamnet",
+          "video": false,
+          "vote_average": 8.176,
+          "vote_count": 17
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x2RS3uTcsJJ9IfjNPcgDmukoEcQ.jpg",
+          "genre_ids": [
+            12,
+            14,
+            28
+          ],
+          "id": 120,
+          "original_language": "en",
+          "original_title": "The Lord of the Rings: The Fellowship of the Ring",
+          "overview": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+          "popularity": 24.4414,
+          "poster_path": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+          "release_date": "2001-12-18",
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "video": false,
+          "vote_average": 8.426,
+          "vote_count": 26705
+        }
+      ],
+      "total_pages": 36,
+      "total_results": 720
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=19380",
+      "x-memc": "HIT",
+      "x-memc-key": "9cfe1ac240b8e96f9a1ecac3131a62e9a2909e88df716a9cd8c22c8a2e906fa6",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002205f6fe79a80da6b56ffa427193a70696\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

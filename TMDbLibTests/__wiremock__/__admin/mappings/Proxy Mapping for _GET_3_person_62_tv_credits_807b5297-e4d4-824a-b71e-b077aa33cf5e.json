@@ -1,0 +1,962 @@
+{
+  "Guid": "807b5297-e4d4-824a-b71e-b077aa33cf5e",
+  "UpdatedAt": "2025-12-24T11:53:35.2759625Z",
+  "Title": "Proxy Mapping for GET /3/person/62/tv_credits",
+  "Description": "Proxy Mapping for GET /3/person/62/tv_credits",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/62/tv_credits",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "cast": [
+        {
+          "adult": false,
+          "backdrop_path": "/rf2uHKzPniVL5LvSVxg5ACxv4cS.jpg",
+          "genre_ids": [
+            35,
+            10751,
+            18
+          ],
+          "id": 52,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "That \u002770s Show",
+          "overview": "Crank up the 8-track and flash back to a time when platform shoes and puka shells were all the rage in this hilarious retro-sitcom. For Eric, Kelso, Jackie, Hyde, Donna and Fez, a group of high school teens who spend most of their time hanging out in Eric\u2019s basement, life in the \u201870s isn\u2019t always so groovy. But between trying to figure out the meaning of life, avoiding their parents, and dealing with out-of-control hormones, they\u2019ve learned one thing for sure: they\u2019ll always get by with a little help from their friends.",
+          "popularity": 22.3144,
+          "poster_path": "/laEZvTqM80UaplUaDSCCbWhlyEV.jpg",
+          "first_air_date": "1998-08-23",
+          "name": "That \u002770s Show",
+          "vote_average": 7.938,
+          "vote_count": 1521,
+          "character": "Vic",
+          "credit_id": "5253335319c29579400261e1",
+          "episode_count": 1,
+          "first_credit_air_date": "2005-11-16"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bEjFkaFctIXgCUeYn4ei3ECULQi.jpg",
+          "genre_ids": [
+            35
+          ],
+          "id": 500,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Mad About You",
+          "overview": "Young, urban newlyweds Paul and Jamie Buchman try to sustain their marital bliss while sidestepping the hurdles of love in the \u002790s.",
+          "popularity": 15.4833,
+          "poster_path": "/vvnslQjc1LnERuroGVh8bPdBi2r.jpg",
+          "first_air_date": "1992-09-23",
+          "name": "Mad About You",
+          "vote_average": 6.694,
+          "vote_count": 242,
+          "character": "Bruce Willis",
+          "credit_id": "52537bea19c295794019330b",
+          "episode_count": 1,
+          "first_credit_air_date": "1997-05-20"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cvwKsMZoaJOsdVuQXAvGODbnTUz.jpg",
+          "genre_ids": [
+            10767
+          ],
+          "id": 217,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Inside the Actors Studio",
+          "overview": "James Lipton sits down with some of the world\u0027s most accomplished actors and directors for penetrating, fascinating interviews.",
+          "popularity": 0.4845,
+          "poster_path": "/a6O7gKJQe5HWaMujYvdMYaj9PnO.jpg",
+          "first_air_date": "1994-08-14",
+          "name": "Inside the Actors Studio",
+          "vote_average": 7.5,
+          "vote_count": 57,
+          "character": "Self",
+          "credit_id": "5253462c19c29579400c90d3",
+          "episode_count": 1,
+          "first_credit_air_date": "2001-10-28"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3jMCaxKK4r5A5gu196dCCrk5d6X.jpg",
+          "genre_ids": [
+            35,
+            10767
+          ],
+          "id": 562,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Ellen DeGeneres Show",
+          "overview": "The Ellen DeGeneres Show, often shortened to just Ellen, is an American television talk show hosted by comedian/actress Ellen DeGeneres.",
+          "popularity": 8.0899,
+          "poster_path": "/PhUYIGUUk1RzWq2Aw3TqH65McE.jpg",
+          "first_air_date": "2003-09-08",
+          "name": "The Ellen DeGeneres Show",
+          "vote_average": 5.63,
+          "vote_count": 165,
+          "character": "Self",
+          "credit_id": "525386ba19c2957940210979",
+          "episode_count": 1,
+          "first_credit_air_date": "2005-03-08"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qLMfcvdCcCGD2BNLH8b6ZCBuO7D.jpg",
+          "genre_ids": [
+            10763,
+            35
+          ],
+          "id": 2224,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Daily Show",
+          "overview": "The World\u0027s Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+          "popularity": 41.0669,
+          "poster_path": "/ixcfyK7it6FjRM36Te4OdblAq4X.jpg",
+          "first_air_date": "1996-07-22",
+          "name": "The Daily Show",
+          "vote_average": 6.405,
+          "vote_count": 611,
+          "character": "Self",
+          "credit_id": "52572a6f760ee3776a2cb7b9",
+          "episode_count": 3,
+          "first_credit_air_date": "2004-04-06"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
+          "genre_ids": [
+            35
+          ],
+          "id": 1668,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Friends",
+          "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
+          "popularity": 78.6868,
+          "poster_path": "/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
+          "first_air_date": "1994-09-22",
+          "name": "Friends",
+          "vote_average": 8.422,
+          "vote_count": 8741,
+          "character": "Paul Stevens",
+          "credit_id": "5257104819c295731c029cdf",
+          "episode_count": 3,
+          "first_credit_air_date": "2000-04-27"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iK7tPi9j4d34g5p6bNKmGVba95K.jpg",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "id": 1908,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Miami Vice",
+          "overview": "The story of the Miami Police Department\u0027s vice squad and its efforts to end drug trafficking and prostitution, centered on the unlikely partnership of Sonny Crockett and Ricardo Tubbs - who first meet when Tubbs is undercover in a drug cartel.",
+          "popularity": 22.2221,
+          "poster_path": "/b5kLqC6eDiA17nq3jr1Vi340Kns.jpg",
+          "first_air_date": "1984-09-16",
+          "name": "Miami Vice",
+          "vote_average": 7.5,
+          "vote_count": 476,
+          "character": "Tony Amato",
+          "credit_id": "525719bb760ee3776a1835d3",
+          "episode_count": 1,
+          "first_credit_air_date": "1984-11-09"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fy9fhl09shpTLjw4IEqqmVMYM28.jpg",
+          "genre_ids": [
+            10765,
+            18,
+            9648
+          ],
+          "id": 1918,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Twilight Zone",
+          "overview": "This 1980s revival of the classic sci-fi series features a similar style to the original anthology series. Each episode tells a tale (sometimes two or three) rooted in horror or suspense, often with a surprising twist at the end. Episodes usually feature elements of drama and comedy.",
+          "popularity": 13.8174,
+          "poster_path": "/5OYHoUEKE3RJMqiHcJ8XA5kB7bw.jpg",
+          "first_air_date": "1985-09-27",
+          "name": "The Twilight Zone",
+          "vote_average": 7.756,
+          "vote_count": 240,
+          "character": "Peter Novins (segment \u0022Shatterday\u0022)",
+          "credit_id": "52571a7f760ee3776a193248",
+          "episode_count": 1,
+          "first_credit_air_date": "1985-09-27"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mSn5IrrLB6drP1gfwydYAakZG7Y.jpg",
+          "genre_ids": [
+            35,
+            18,
+            9648,
+            80
+          ],
+          "id": 1998,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Moonlighting",
+          "overview": "After being duped and going bankrupt, model Maddie is convinced by David to become a partner in a detective agency. Together they solve various cases, while getting comfortable with each other.",
+          "popularity": 15.6444,
+          "poster_path": "/yOetTNRQLPmlfO0k5377yhHZyC3.jpg",
+          "first_air_date": "1985-03-03",
+          "name": "Moonlighting",
+          "vote_average": 7.525,
+          "vote_count": 378,
+          "character": "David Addison",
+          "credit_id": "52571e7f19c2957114107d48",
+          "episode_count": 66,
+          "first_credit_air_date": "1985-03-03"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7I5VX5Vr1jrUvikA7mTje97dT2e.jpg",
+          "genre_ids": [
+            10767
+          ],
+          "id": 2221,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The View",
+          "overview": "ABC Daytime\u0027s morning chatfest, currently featuring Whoopi Goldberg, Joy Behar, Sunny Hostin, Sara Haines, Alyssa Farah Griffin, and Ana Navarro discussing the most exciting events of the day. Hot topics in the news, the best experts in their field, celebrity interviews and general entertainment are all part of The View.",
+          "popularity": 13.1839,
+          "poster_path": "/pEUNIxCMh2jFjUj7u09f4O5CcR4.jpg",
+          "first_air_date": "1997-08-11",
+          "name": "The View",
+          "vote_average": 4.3,
+          "vote_count": 106,
+          "character": "Self",
+          "credit_id": "525728a9760ee3776a29c129",
+          "episode_count": 4,
+          "first_credit_air_date": "2004-04-09"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gpNkUDzIkrVJpVmbNWWdhxfqhpy.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 3739,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "E! True Hollywood Story",
+          "overview": "E! True Hollywood Story is an American documentary series on E! that deals with famous Hollywood celebrities, movies, TV shows and also well-known public figures. Among the topics covered on the program include salacious re-tellings of Hollywood secrets, show-biz scandals, celebrity murders and mysteries, porn-star biographies, and \u0022where-are-they-now?\u0022 investigations of former child stars. It frequently features in-depth interviews, actual courtroom footage, and dramatic reenactments. When aired on the E! network, episodes will be updated to reflect the current life or status of the subject.",
+          "popularity": 0.9509,
+          "poster_path": "/zuXXivVEjOkMswJvNFFRmJW0bTZ.jpg",
+          "first_air_date": "1996-08-21",
+          "name": "E! True Hollywood Story",
+          "vote_average": 8.1,
+          "vote_count": 79,
+          "character": "Self",
+          "credit_id": "5257562f19c29531db13d527",
+          "episode_count": 1,
+          "first_credit_air_date": "2006-05-07"
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            10763
+          ],
+          "id": 3167,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Early Show",
+          "overview": "The Early Show is an American morning television show which was broadcast by CBS from New York City from 1999 to 2012. The program aired live from 7 to 9 a.m. Eastern Time Monday through Friday in the Eastern time zone; most affiliates in the Central, Mountain, and Pacific time zones aired the show on tape-delay from 7 to 9 a.m. local time. The Saturday edition aired live from 7 to 9 a.m. Eastern Time as well, but a number of affiliates did not carry it or aired it later on tape-delay. It premiered on November 1, 1999, and was the newest of the major networks\u0027 morning shows, although CBS has made several attempts to program in the morning slot since 1954. The show aired as a division of CBS News.\n\nThe Early Show, like many of its predecessors, traditionally ran last in the ratings to its rivals, NBC\u0027s Today and ABC\u0027s Good Morning America. Much like NBC\u0027s The Today Show and The Tonight Show, the title The Early Show was analogous to that of CBS\u0027s late-night talk show, The Late Show.",
+          "popularity": 0.942,
+          "poster_path": "/iJvwr7kL0Q7BtrYC38KQ5baPw7g.jpg",
+          "first_air_date": "1999-11-01",
+          "name": "The Early Show",
+          "vote_average": 6.2,
+          "vote_count": 8,
+          "character": "Self - Guest",
+          "credit_id": "52574da2760ee36aaa16db7c",
+          "episode_count": 2,
+          "first_credit_air_date": "2006-05-22"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/q9unI9oHyLUNK97RQPYAGjFs4Xu.jpg",
+          "genre_ids": [
+            35,
+            10767
+          ],
+          "id": 4573,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Late Night with Conan O\u0027Brien",
+          "overview": "Stepping into the late-late slot vacated by David Letterman, Conan O\u0027Brien stars in a show that far outdoes its competition in sheer strangeness. Along with the celebrity interviews and musical numbers typical of late-night talk shows, this program make frequent use of odd walk-on characters and frequent \u0022visits\u0022 from celebrity guests.",
+          "popularity": 10.1812,
+          "poster_path": "/gJZ1rhLLFpatuAeylJoUI82DKC7.jpg",
+          "first_air_date": "1993-09-13",
+          "name": "Late Night with Conan O\u0027Brien",
+          "vote_average": 7.199,
+          "vote_count": 148,
+          "character": "Self - Guest",
+          "credit_id": "5257711a760ee36aaa49068e",
+          "episode_count": 2,
+          "first_credit_air_date": "2005-03-10"
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 16016,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Where Are They Now?",
+          "overview": "Where Are They Now? was a television series on VH1 that featured past celebrities and updated on their current professional and personal status. Each episode was dedicated to another genre.\n\nThough not always in sequence, some episodes were a continuation of the motif of episodes from the past. Those episodes sometimes had Roman numerals in their title to signify their sequel status.",
+          "popularity": 3.862,
+          "poster_path": "/cgDCIh7ZPsAU3coXPbx8e8tfQaI.jpg",
+          "first_air_date": "1999-06-07",
+          "name": "Where Are They Now?",
+          "vote_average": 7.5,
+          "vote_count": 2,
+          "character": "Self",
+          "credit_id": "52583c1e760ee36aaa9a6949",
+          "episode_count": 1,
+          "first_credit_air_date": "2000-09-21"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nyGJjd9ALDpGFHEaGoZ1DLB0zUE.jpg",
+          "genre_ids": [],
+          "id": 28464,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Emmy Awards",
+          "overview": "An annual awards  ceremony honoring the best in U.S. prime time television programming as chosen by the Academy of Television Arts \u0026 Sciences.",
+          "popularity": 1.4657,
+          "poster_path": "/guW6wHjF0eVOfsS7NEfq2ZWSLDm.jpg",
+          "first_air_date": "1949-01-25",
+          "name": "The Emmy Awards",
+          "vote_average": 7.9,
+          "vote_count": 8,
+          "character": "Self",
+          "credit_id": "52588ea8760ee346614e907a",
+          "episode_count": 1,
+          "first_credit_air_date": "1987-09-20"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sw88XQ9O4BozRo5VCAIkseVRjiq.jpg",
+          "genre_ids": [
+            35,
+            10767
+          ],
+          "id": 39754,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Between Two Ferns with Zach Galifianakis",
+          "overview": "Host Zach Galifianakis conducts celebrity interviews sitting with his guests between two potted ferns.",
+          "popularity": 5.408,
+          "poster_path": "/puvJM8LPlp5YttZByZ259A87XQT.jpg",
+          "first_air_date": "2008-01-04",
+          "name": "Between Two Ferns with Zach Galifianakis",
+          "vote_average": 7.521,
+          "vote_count": 120,
+          "character": "Self",
+          "credit_id": "52595afd760ee34661916802",
+          "episode_count": 1,
+          "first_credit_air_date": "2010-10-11"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sSAX59Kf01lBRkBW4UcIL4kIoIm.jpg",
+          "genre_ids": [
+            35,
+            10763
+          ],
+          "id": 1667,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Saturday Night Live",
+          "overview": "A late-night live television sketch comedy and variety show created by Lorne Michaels. The show\u0027s comedy sketches, which parody contemporary culture and politics, are performed by a large and varying cast of repertory and newer cast members. Each episode is hosted by a celebrity guest, who usually delivers an opening monologue and performs in sketches with the cast, and features performances by a musical guest.",
+          "popularity": 28.8951,
+          "poster_path": "/s1cZBqbMwAF3w8S3Yo0j5nr2Yuo.jpg",
+          "first_air_date": "1975-10-11",
+          "name": "Saturday Night Live",
+          "vote_average": 7.0,
+          "vote_count": 474,
+          "character": "Self - Host",
+          "credit_id": "61ace139aafebd009516824f",
+          "episode_count": 2,
+          "first_credit_air_date": "1989-09-30"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7tUCwRjHxiEbTQeEtbWUPu8bRY0.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 2851,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "America\u0027s Game: The Super Bowl Champions",
+          "overview": "America\u0027s Game: The Super Bowl Champions is an annual documentary series created by NFL Films (broadcast on the NFL Network and CBS). Each of its 55 (and counting) installments profile the National Football League\u0027s annual Super Bowl champion through highlights, interviews with players and coaches, and a celebrity narrator.\n\nA spin-off debuted on September 18, 2008, titled America\u0027s Game: The Missing Rings which chronicled five of the best teams to never win the Super Bowl.",
+          "popularity": 2.7315,
+          "poster_path": "/73StQRlVU2yXgeTYdOV5WcyWWZg.jpg",
+          "first_air_date": "2006-11-17",
+          "name": "America\u0027s Game: The Super Bowl Champions",
+          "vote_average": 8.0,
+          "vote_count": 2,
+          "character": "Narrator (voice)",
+          "credit_id": "64ec0b8a4e674200fdc9d7f1",
+          "episode_count": 3,
+          "first_credit_air_date": "2006-12-15"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7jEnft2CLNbILWAiBRIBrXNN7Qh.jpg",
+          "genre_ids": [
+            10767,
+            35
+          ],
+          "id": 498,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Late Show with David Letterman",
+          "overview": "Late Show with David Letterman is an American late-night talk show hosted by David Letterman on CBS. The show debuted on August 30, 1993, and is produced by Letterman\u0027s production company, Worldwide Pants Incorporated and CBS Television Studios. The show\u0027s music director and band-leader of the house band, the CBS Orchestra, is Paul Shaffer. The head writer is Matt Roberts and the announcer is Alan Kalter. Of the major U.S. late-night programs, Late Show ranks second in cumulative average viewers over time and third in number of episodes over time. The show leads other late night shows in ad revenue with $271 million in 2009.\n\nIn most U.S. markets the show airs at 11:35 p.m. Eastern/Pacific time, but is recorded Monday through Wednesday at 4:30 p.m., and Thursdays at 3:30 p.m and 6:00 p.m. The second Thursday episode usually airs on Friday of that week.\n\nIn 2002, Late Show with David Letterman was ranked No. 7 on TV Guide\u0027s 50 Greatest TV Shows of All Time. CBS has a contract with Worldwide Pants to continue the show through 2014; by then, Letterman will surpass Johnny Carson as the longest tenured late-night talk show host.",
+          "popularity": 16.3937,
+          "poster_path": "/fTBC5EpsgKmli9VQcJMtqQ08Qj4.jpg",
+          "first_air_date": "1993-08-30",
+          "name": "Late Show with David Letterman",
+          "vote_average": 6.4,
+          "vote_count": 159,
+          "character": "Self",
+          "credit_id": "6256e9a358efd30050fefa06",
+          "episode_count": 1,
+          "first_credit_air_date": "2001-10-11"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2Qg2fViQzWenpUaMjhv0kNhCbE9.jpg",
+          "genre_ids": [
+            18,
+            35,
+            10765
+          ],
+          "id": 71738,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Orville",
+          "overview": "Follow the crew of the not-so-functional exploratory ship in the Earth\u0027s interstellar fleet, 400 years in the future.",
+          "popularity": 17.7229,
+          "poster_path": "/78xnHh9H5wYcUeZoB0bt1UgInAW.jpg",
+          "first_air_date": "2017-09-10",
+          "name": "The Orville",
+          "vote_average": 7.6,
+          "vote_count": 1312,
+          "character": "Groogen (voice)",
+          "credit_id": "629945be65e0a20066c11b0f",
+          "episode_count": 1,
+          "first_credit_air_date": "2019-02-14"
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            10767
+          ],
+          "id": 80515,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Reichen Show",
+          "overview": "A list of celebrity interviews and sensational topics.",
+          "popularity": 6.0037,
+          "poster_path": "/x9fDBKqmmHHUvcaal1Tzw6iqTW.jpg",
+          "first_air_date": "2005-11-11",
+          "name": "The Reichen Show",
+          "vote_average": 4.8,
+          "vote_count": 5,
+          "character": "Self - Guest",
+          "credit_id": "5b379ebf9251413c9d02d615",
+          "episode_count": 1,
+          "first_credit_air_date": "2006-01-31"
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            10763
+          ],
+          "id": 89139,
+          "origin_country": [
+            "DE"
+          ],
+          "original_language": "de",
+          "original_name": "Goldene Kamera",
+          "overview": "",
+          "popularity": 3.9379,
+          "poster_path": null,
+          "first_air_date": "1984-02-03",
+          "name": "Goldene Kamera",
+          "vote_average": 5.7,
+          "vote_count": 3,
+          "character": "Self",
+          "credit_id": "5cd41b100e0a265e0060ef4b",
+          "episode_count": 1,
+          "first_credit_air_date": "2005-02-09"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7RizgNN3qH1vjDbhWrJKFoxPfrT.jpg",
+          "genre_ids": [
+            99,
+            10765
+          ],
+          "id": 79003,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "James Cameron\u0027s Story of Science Fiction",
+          "overview": "Explore the evolution of sci-fi from its origins as a small genre with a cult following to the blockbuster pop-cultural phenomenon we know today. In each episode, James Cameron introduces one of the \u201CBig Questions\u201D that humankind has contemplated throughout the ages and reaches back into sci-fi\u2019s past to better understand how our favorite films, TV shows, books, and video games were born.",
+          "popularity": 2.2349,
+          "poster_path": "/qhanotOZnOdgmCZonug5anT0mFo.jpg",
+          "first_air_date": "2018-04-29",
+          "name": "James Cameron\u0027s Story of Science Fiction",
+          "vote_average": 6.8,
+          "vote_count": 47,
+          "character": "Self",
+          "credit_id": "5d2599dd37b3a9747d52e484",
+          "episode_count": 1,
+          "first_credit_air_date": "2018-05-27"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x21Ln8mcX0qTTKhImxX7ncrOrCn.jpg",
+          "genre_ids": [
+            16,
+            10762,
+            35,
+            10751
+          ],
+          "id": 13297,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Bruno the Kid",
+          "overview": "A boy genius goes on dangerous missions as the world\u0027s youngest spy, while trying to keep his side job hidden from his parents and classmates.",
+          "popularity": 1.1934,
+          "poster_path": "/wyemhKThUnZBXGF08clWSCcnWtO.jpg",
+          "first_air_date": "1996-09-23",
+          "name": "Bruno the Kid",
+          "vote_average": 6.0,
+          "vote_count": 4,
+          "character": "Bruno the Kid (voice)",
+          "credit_id": "660dcabad6dbba0163708d94",
+          "episode_count": 36,
+          "first_credit_air_date": "1996-09-23"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mQYdERQ3flDX5s1jb7Jc2KHrK8C.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 93219,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Movies That Made Us",
+          "overview": "These blockbusters brought us together and gave us the time of our lives. Meet the actors, directors and industry insiders who made them happen.",
+          "popularity": 9.5934,
+          "poster_path": "/l7p40cVratmPTdWrx4UFjZbANKF.jpg",
+          "first_air_date": "2019-11-29",
+          "name": "The Movies That Made Us",
+          "vote_average": 7.192,
+          "vote_count": 125,
+          "character": "Det. John McClane (archive footage)",
+          "credit_id": "661a498d69eb90017cb81f77",
+          "episode_count": 1,
+          "first_credit_air_date": "2019-11-29"
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 33833,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "HBO First Look",
+          "overview": "HBO First Look is an American television show on HBO that chronicles up and coming movies. It first started in 1992 with a documentary on A League of Their Own starring Tom Hanks, and still airs today. The series shows behind-the-scenes looks at the filming and interviews with the actors. The show is part documentary and part advertisement. It airs on HBO with no set schedule.",
+          "popularity": 8.7025,
+          "poster_path": "/zoHqOyAHREbYu9SokTtLXoNMH2h.jpg",
+          "first_air_date": "1992-06-12",
+          "name": "HBO First Look",
+          "vote_average": 4.9,
+          "vote_count": 10,
+          "character": "",
+          "credit_id": "5f9b8e209b6e4700349cc0e6",
+          "episode_count": 1,
+          "first_credit_air_date": null
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 33833,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "HBO First Look",
+          "overview": "HBO First Look is an American television show on HBO that chronicles up and coming movies. It first started in 1992 with a documentary on A League of Their Own starring Tom Hanks, and still airs today. The series shows behind-the-scenes looks at the filming and interviews with the actors. The show is part documentary and part advertisement. It airs on HBO with no set schedule.",
+          "popularity": 8.7025,
+          "poster_path": "/zoHqOyAHREbYu9SokTtLXoNMH2h.jpg",
+          "first_air_date": "1992-06-12",
+          "name": "HBO First Look",
+          "vote_average": 4.9,
+          "vote_count": 10,
+          "character": "Self",
+          "credit_id": "5f921e2bb0cd20003780fc91",
+          "episode_count": 1,
+          "first_credit_air_date": "2006-02-15"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kCcH5XGInPxDuhwfZJUBUFb0JUi.jpg",
+          "genre_ids": [
+            10763,
+            10767
+          ],
+          "id": 42265,
+          "origin_country": [
+            "DE"
+          ],
+          "original_language": "de",
+          "original_name": "Taff",
+          "overview": "Taff is a tabloid news magazine airing on the German television network, ProSieben.",
+          "popularity": 7.0234,
+          "poster_path": "/2XJlnWPmoNLuaa85ol8Xe3GXYVm.jpg",
+          "first_air_date": "1997-03-11",
+          "name": "Taff",
+          "vote_average": 3.2,
+          "vote_count": 4,
+          "character": "self",
+          "credit_id": "5fd62bf4091e62003f5a2b8f",
+          "episode_count": 1,
+          "first_credit_air_date": "2003-06-11"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xCMs3IxaGqKSc5cwngRUlhmjbwl.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 1480,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Ally McBeal",
+          "overview": "Ally McBeal is a young lawyer working at the Boston law firm Cage and Fish.  Ally\u0027s lives and loves are eccentric, humorous, dramatic with an incredibly overactive imagination that\u0027s working overtime!",
+          "popularity": 7.9074,
+          "poster_path": "/weS8htxS2j0EQ6jorK3WOR1dZpH.jpg",
+          "first_air_date": "1997-09-08",
+          "name": "Ally McBeal",
+          "vote_average": 6.563,
+          "vote_count": 340,
+          "character": "Dr. Nickle (uncredited)",
+          "credit_id": "5ffd3fdda3b5e60041395add",
+          "episode_count": 1,
+          "first_credit_air_date": "1999-01-18"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rDH6nurRs1XobsOZGQY4bj4Vrvh.jpg",
+          "genre_ids": [
+            10764,
+            10767
+          ],
+          "id": 45,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Top Gear",
+          "overview": "This fast-paced and stunt-filled motor show tests whether cars, both mundane and extraordinary, live up to their manufacturers\u0027 claims. The long-running show travels to locations around the world, performing extreme stunts and challenges to see what the featured cars are capable of doing. The current hosts are Paddy Mcguinness, Chris Harris and Andrew \u0022Freddie\u0022 Flintoff.",
+          "popularity": 23.5424,
+          "poster_path": "/aqM6QnuhSXzjHlKbXyKUqxaGiWu.jpg",
+          "first_air_date": "2002-10-20",
+          "name": "Top Gear",
+          "vote_average": 7.542,
+          "vote_count": 829,
+          "character": "Self",
+          "credit_id": "67179f441e90c7703f494834",
+          "episode_count": 1,
+          "first_credit_air_date": "2013-02-17"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dpkuoYHx30upqQjijxrOue1IpXO.jpg",
+          "genre_ids": [
+            35
+          ],
+          "id": 41,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Dolly",
+          "overview": "Dolly is a television variety show that ran on ABC during the 1987-1988 season featuring Dolly Parton.",
+          "popularity": 1.7449,
+          "poster_path": "/wjHJL6RcrNpIJvKjGcMpsBILvhg.jpg",
+          "first_air_date": "1987-09-27",
+          "name": "Dolly",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "character": "Self",
+          "credit_id": "677d35586d7ca00e7873031e",
+          "episode_count": 1,
+          "first_credit_air_date": "1987-10-11"
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 294870,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "The Entertainment Biz",
+          "overview": "A vivid six-part portrait of the global entertainment industry.",
+          "popularity": 1.1897,
+          "poster_path": null,
+          "first_air_date": "1998-02-15",
+          "name": "The Entertainment Biz",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "character": "Self",
+          "credit_id": "685f5775650778ad1a155dd3",
+          "episode_count": 2,
+          "first_credit_air_date": "1998-03-01"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gMMnf8VRg3Z98WaFmOLr9Jk8pIs.jpg",
+          "genre_ids": [
+            35,
+            10767
+          ],
+          "id": 63770,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Late Show with Stephen Colbert",
+          "overview": "Stephen Colbert brings his signature satire and comedy to The Late Show with Stephen Colbert, the #1 show in late night, where he talks with an eclectic mix of guests about what is new and relevant in the worlds of politics, entertainment, business, music, technology, and more. Featuring bandleader Jon Batiste with his band Stay Human, the Emmy Award-nominated show is broadcast from the historic Ed Sullivan Theater.",
+          "popularity": 29.4998,
+          "poster_path": "/9jkThAGYj2yp8jsS6Nriy5mzKFT.jpg",
+          "first_air_date": "2015-09-08",
+          "name": "The Late Show with Stephen Colbert",
+          "vote_average": 6.2,
+          "vote_count": 334,
+          "character": "Self",
+          "credit_id": "6923bb5f1799ef973e0ba943",
+          "episode_count": 1,
+          "first_credit_air_date": "2015-12-10"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jiSlSDL0PZsd3DeW9832lk7eBsE.jpg",
+          "genre_ids": [],
+          "id": 71494,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Golden Globe Awards",
+          "overview": "An annual awards ceremony recognizing excellence in film and television, both domestic and foreign, bestowed by the Hollywood Foreign Press Association.",
+          "popularity": 16.7873,
+          "poster_path": "/gYG3SHNKui9ps9RfN4u9MMwpy10.jpg",
+          "first_air_date": "1944-01-20",
+          "name": "Golden Globe Awards",
+          "vote_average": 7.2,
+          "vote_count": 17,
+          "character": "Self",
+          "credit_id": "692697bcba50be62612452f3",
+          "episode_count": 1,
+          "first_credit_air_date": "1997-01-19"
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 307657,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The 52nd Annual Emmy Awards",
+          "overview": "Emmy awards show in 2000 celebrating the previous year of shows.",
+          "popularity": 1.2335,
+          "poster_path": null,
+          "first_air_date": "2020-09-10",
+          "name": "The 52nd Annual Emmy Awards",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "character": "Self - Presenter",
+          "credit_id": "6935083c6aaa7f04b748eab0",
+          "episode_count": 1,
+          "first_credit_air_date": "2020-09-10"
+        }
+      ],
+      "crew": [
+        {
+          "adult": false,
+          "backdrop_path": "/52ZwPISbTjXJznyrLmRf8lV2yoT.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 62864,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Touching Evil",
+          "overview": "Returning from a year-long psychological leave of absence after surviving an almost-fatal gunshot wound to the head, Detective David Creegan is assigned to the FBI\u0027s Organized and Serial Crime Unit \u2013 a rapid-response, elite crime investigation squad \u2013 where he and his new partner, Detective Susan Branca, find themselves committed to saving lives and solving cases. In spite of his inability to abide by common sense and the laws he\u0027s sworn to uphold, Creegan, with the help of Branca, works on hunting down the most vicious criminals on the streets.",
+          "popularity": 1.1179,
+          "poster_path": "/3dmBxixICLqLPeXqWTR0Js3kcM1.jpg",
+          "first_air_date": "2004-03-12",
+          "name": "Touching Evil",
+          "vote_average": 6.8,
+          "vote_count": 13,
+          "credit_id": "556e2726925141421d0013b0",
+          "department": "Production",
+          "episode_count": 13,
+          "first_credit_air_date": "2004-03-12",
+          "job": "Executive Producer"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x21Ln8mcX0qTTKhImxX7ncrOrCn.jpg",
+          "genre_ids": [
+            16,
+            10762,
+            35,
+            10751
+          ],
+          "id": 13297,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Bruno the Kid",
+          "overview": "A boy genius goes on dangerous missions as the world\u0027s youngest spy, while trying to keep his side job hidden from his parents and classmates.",
+          "popularity": 1.1934,
+          "poster_path": "/wyemhKThUnZBXGF08clWSCcnWtO.jpg",
+          "first_air_date": "1996-09-23",
+          "name": "Bruno the Kid",
+          "vote_average": 6.0,
+          "vote_count": 4,
+          "credit_id": "68ab13786fa7bc3adba9a0c9",
+          "department": "Production",
+          "episode_count": 36,
+          "first_credit_air_date": "1996-09-23",
+          "job": "Executive Producer"
+        }
+      ],
+      "id": 62
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "9c66744d63bcde13bd457fe728b2e05f28b67dc3612e52492de3aab3eb781c22",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=20148",
+      "ETag": "W/\u0022b2e9b8539d157fd5ed84752be9ce5a89\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

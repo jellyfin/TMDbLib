@@ -1,0 +1,429 @@
+{
+  "Guid": "9bfd1ac3-f980-464a-86eb-0d2855f92dfc",
+  "UpdatedAt": "2025-12-24T11:53:34.9530957Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/credits",
+  "Description": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/credits",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/season/1/episode/1/credits",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "cast": [
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 17419,
+          "known_for_department": "Acting",
+          "name": "Bryan Cranston",
+          "original_name": "Bryan Cranston",
+          "popularity": 4.7952,
+          "profile_path": "/npIIZJGSrcJIJ6yHdmbqO6Jzo5I.jpg",
+          "character": "Walter White",
+          "credit_id": "52542282760ee313280017f9",
+          "order": 0
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 84497,
+          "known_for_department": "Acting",
+          "name": "Aaron Paul",
+          "original_name": "Aaron Paul",
+          "popularity": 4.289,
+          "profile_path": "/8Ac9uuoYwZoYVAIJfRLzzLsGGJn.jpg",
+          "character": "Jesse Pinkman",
+          "credit_id": "52542282760ee31328001845",
+          "order": 1
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 134531,
+          "known_for_department": "Acting",
+          "name": "Anna Gunn",
+          "original_name": "Anna Gunn",
+          "popularity": 2.9767,
+          "profile_path": "/adppyeu1a4REN3khtgmXusrapFi.jpg",
+          "character": "Skyler White",
+          "credit_id": "52542282760ee3132800181b",
+          "order": 2
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 209674,
+          "known_for_department": "Acting",
+          "name": "RJ Mitte",
+          "original_name": "RJ Mitte",
+          "popularity": 2.1429,
+          "profile_path": "/sNPA92ZrssYhlaB1UA2pWcLD9db.jpg",
+          "character": "Walter White Jr.",
+          "credit_id": "52542284760ee313280018a9",
+          "order": 3
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 14329,
+          "known_for_department": "Acting",
+          "name": "Dean Norris",
+          "original_name": "Dean Norris",
+          "popularity": 5.8794,
+          "profile_path": "/mKRrEbsxAX3ro700HsViFArRM7l.jpg",
+          "character": "Hank Schrader",
+          "credit_id": "52542283760ee3132800187b",
+          "order": 4
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1217934,
+          "known_for_department": "Acting",
+          "name": "Betsy Brandt",
+          "original_name": "Betsy Brandt",
+          "popularity": 2.2155,
+          "profile_path": "/xAnuzyjdMbQq9L1c4JNwXL52Wm4.jpg",
+          "character": "Marie Schrader",
+          "credit_id": "52542283760ee31328001891",
+          "order": 5
+        }
+      ],
+      "crew": [
+        {
+          "department": "Writing",
+          "job": "Writer",
+          "credit_id": "52542275760ee313280006ce",
+          "adult": false,
+          "gender": 2,
+          "id": 66633,
+          "known_for_department": "Writing",
+          "name": "Vince Gilligan",
+          "original_name": "Vince Gilligan",
+          "popularity": 4.1471,
+          "profile_path": "/z3E0DhBg1V1PZVEtS9vfFPzOWYB.jpg"
+        },
+        {
+          "department": "Directing",
+          "job": "Director",
+          "credit_id": "52542275760ee313280006e8",
+          "adult": false,
+          "gender": 2,
+          "id": 66633,
+          "known_for_department": "Writing",
+          "name": "Vince Gilligan",
+          "original_name": "Vince Gilligan",
+          "popularity": 4.1471,
+          "profile_path": "/z3E0DhBg1V1PZVEtS9vfFPzOWYB.jpg"
+        },
+        {
+          "job": "Director of Photography",
+          "department": "Camera",
+          "credit_id": "52b7029219c29533d00dd2c1",
+          "adult": false,
+          "gender": 2,
+          "id": 2483,
+          "known_for_department": "Camera",
+          "name": "John Toll",
+          "original_name": "John Toll",
+          "popularity": 0.5291,
+          "profile_path": "/cfL9A6tC7L5Ps5fq1o3WpVKGMb1.jpg"
+        },
+        {
+          "job": "Editor",
+          "department": "Editing",
+          "credit_id": "52b702ea19c2955402183a66",
+          "adult": false,
+          "gender": 1,
+          "id": 1280071,
+          "known_for_department": "Editing",
+          "name": "Lynne Willingham",
+          "original_name": "Lynne Willingham",
+          "popularity": 0.5709,
+          "profile_path": null
+        },
+        {
+          "job": "Art Direction",
+          "department": "Art",
+          "credit_id": "62feade5cf4a640080998241",
+          "adult": false,
+          "gender": 2,
+          "id": 1018092,
+          "known_for_department": "Art",
+          "name": "James F. Oberlander",
+          "original_name": "James F. Oberlander",
+          "popularity": 0.1273,
+          "profile_path": null
+        },
+        {
+          "job": "Associate Producer",
+          "department": "Production",
+          "credit_id": "6418a04de7414600b96bf1bd",
+          "adult": false,
+          "gender": 1,
+          "id": 1808170,
+          "known_for_department": "Production",
+          "name": "Gina Scheerer",
+          "original_name": "Gina Scheerer",
+          "popularity": 0.1414,
+          "profile_path": null
+        },
+        {
+          "job": "Property Master",
+          "department": "Art",
+          "credit_id": "690e579da5ef06b8d24c7498",
+          "adult": false,
+          "gender": 2,
+          "id": 2054474,
+          "known_for_department": "Art",
+          "name": "Paul Breuninger",
+          "original_name": "Paul Breuninger",
+          "popularity": 0.0862,
+          "profile_path": null
+        }
+      ],
+      "guest_stars": [
+        {
+          "character": "Steven Gomez",
+          "credit_id": "5271b489760ee35b3e0881a7",
+          "order": 8,
+          "adult": false,
+          "gender": 2,
+          "id": 61535,
+          "known_for_department": "Acting",
+          "name": "Steven Michael Quezada",
+          "original_name": "Steven Michael Quezada",
+          "popularity": 0.9618,
+          "profile_path": "/pVYrDkwI6GWvCNL2kJhpDJfBFyd.jpg"
+        },
+        {
+          "character": "Jock",
+          "credit_id": "52542275760ee313280006b4",
+          "order": 500,
+          "adult": false,
+          "gender": 2,
+          "id": 1216132,
+          "known_for_department": "Acting",
+          "name": "Aaron Hill",
+          "original_name": "Aaron Hill",
+          "popularity": 0.9315,
+          "profile_path": "/rNp31SeoVqSQU6OZWxZUhGwAgyq.jpg"
+        },
+        {
+          "character": "Dr. Belknap",
+          "credit_id": "52725cb1760ee3044d0b9984",
+          "order": 502,
+          "adult": false,
+          "gender": 2,
+          "id": 161591,
+          "known_for_department": "Acting",
+          "name": "Gregory Chase",
+          "original_name": "Gregory Chase",
+          "popularity": 0.2955,
+          "profile_path": "/gNdodev00CROpXuAh5EFmkWTVOo.jpg"
+        },
+        {
+          "character": "Krazy-8",
+          "credit_id": "52725845760ee3046b09426e",
+          "order": 504,
+          "adult": false,
+          "gender": 2,
+          "id": 1046460,
+          "known_for_department": "Acting",
+          "name": "Max Arciniega",
+          "original_name": "Max Arciniega",
+          "popularity": 1.0252,
+          "profile_path": "/eqKAJKPpt41KpsLIkkBnAY4HMAL.jpg"
+        },
+        {
+          "character": "Bogdan Wolynetz",
+          "credit_id": "5272587a760ee3045009ddec",
+          "order": 575,
+          "adult": false,
+          "gender": 2,
+          "id": 1223197,
+          "known_for_department": "Acting",
+          "name": "Marius Stan",
+          "original_name": "Marius Stan",
+          "popularity": 0.3373,
+          "profile_path": "/zX8fpNkyKEtQX3zTvks1hVhrOz7.jpg"
+        },
+        {
+          "character": "Carmen Molina",
+          "credit_id": "52542273760ee31328000676",
+          "order": 643,
+          "adult": false,
+          "gender": 1,
+          "id": 115688,
+          "known_for_department": "Acting",
+          "name": "Carmen Serano",
+          "original_name": "Carmen Serano",
+          "popularity": 1.2383,
+          "profile_path": "/nzJEe2UqvvMIBJZP1aeFEj4EunN.jpg"
+        },
+        {
+          "character": "Chad\u0027s Girlfriend",
+          "credit_id": "56846abbc3a36836280008d4",
+          "order": 651,
+          "adult": false,
+          "gender": 1,
+          "id": 1223192,
+          "known_for_department": "Art",
+          "name": "Roberta Marquez Seret",
+          "original_name": "Roberta Marquez Seret",
+          "popularity": 0.1099,
+          "profile_path": null
+        },
+        {
+          "character": "Chad",
+          "credit_id": "63012a1a33a376007a442d63",
+          "order": 675,
+          "adult": false,
+          "gender": 0,
+          "id": 3670896,
+          "known_for_department": "Acting",
+          "name": "Evan Bobrick",
+          "original_name": "Evan Bobrick",
+          "popularity": 0.0486,
+          "profile_path": null
+        },
+        {
+          "character": "E.M.T",
+          "credit_id": "63012a3d97eab4007d00192b",
+          "order": 676,
+          "adult": false,
+          "gender": 2,
+          "id": 36135,
+          "known_for_department": "Acting",
+          "name": "Christopher Dempsey",
+          "original_name": "Christopher Dempsey",
+          "popularity": 0.1463,
+          "profile_path": "/pTngvks30p74j40TaniMkg4tbhn.jpg"
+        },
+        {
+          "character": "Irving",
+          "credit_id": "63012a5c33a376007f87247b",
+          "order": 677,
+          "adult": false,
+          "gender": 0,
+          "id": 2969089,
+          "known_for_department": "Production",
+          "name": "Allan Pacheco",
+          "original_name": "Allan Pacheco",
+          "popularity": 0.0737,
+          "profile_path": null
+        },
+        {
+          "character": "Chemistry Student",
+          "credit_id": "63012a655f4b73007faa4261",
+          "order": 678,
+          "adult": false,
+          "gender": 0,
+          "id": 3670897,
+          "known_for_department": "Acting",
+          "name": "Jason Byrd",
+          "original_name": "Jason Byrd",
+          "popularity": 0.0522,
+          "profile_path": null
+        },
+        {
+          "character": "Sexy Neighbor",
+          "credit_id": "63012a7e33a376007f872481",
+          "order": 679,
+          "adult": false,
+          "gender": 0,
+          "id": 219124,
+          "known_for_department": "Acting",
+          "name": "Linda Speciale",
+          "original_name": "Linda Speciale",
+          "popularity": 0.2826,
+          "profile_path": null
+        },
+        {
+          "character": "Jock\u0027s Friend #1",
+          "credit_id": "63012a8bfb5299007d660bc8",
+          "order": 680,
+          "adult": false,
+          "gender": 0,
+          "id": 3212534,
+          "known_for_department": "Acting",
+          "name": "Jes\u00FAs Ram\u00EDrez",
+          "original_name": "Jes\u00FAs Ram\u00EDrez",
+          "popularity": 0.0918,
+          "profile_path": "/1EfPZxdFNNi3LFLR9laLcVROAko.jpg"
+        },
+        {
+          "character": "Jock\u0027s Friend #2",
+          "credit_id": "63012ac4c2f44b007d249b54",
+          "order": 681,
+          "adult": false,
+          "gender": 0,
+          "id": 3670906,
+          "known_for_department": "Acting",
+          "name": "Joshua S. Patton",
+          "original_name": "Joshua S. Patton",
+          "popularity": 0.1175,
+          "profile_path": null
+        },
+        {
+          "character": "Emilio Koyama",
+          "credit_id": "631aff1f62f335007ed32cb3",
+          "order": 703,
+          "adult": false,
+          "gender": 2,
+          "id": 92495,
+          "known_for_department": "Acting",
+          "name": "John Koyama",
+          "original_name": "John Koyama",
+          "popularity": 0.3033,
+          "profile_path": "/AwtHbt8qO7D3EFonG5lqml8xgwb.jpg"
+        },
+        {
+          "character": "DEA Agent #1 (uncredited)",
+          "credit_id": "655bb4fa10923000ab494163",
+          "order": 848,
+          "adult": false,
+          "gender": 2,
+          "id": 1335375,
+          "known_for_department": "Crew",
+          "name": "Ed Duran",
+          "original_name": "Ed Duran",
+          "popularity": 0.2777,
+          "profile_path": "/mzPJkVKg7ve3whmvyf2TyDIuewr.jpg"
+        }
+      ],
+      "id": 62085
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "a0da4c7173cb1512a885f2bdfca790c2e81d295af091b1d469546e2e734c7b34",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=24953",
+      "ETag": "W/\u0022c1e92bd6cf2a548cc84d8ee26f679ddb\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

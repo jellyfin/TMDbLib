@@ -1,0 +1,499 @@
+{
+  "Guid": "3022c766-bf17-0a43-b0fd-02fd3c9d614e",
+  "UpdatedAt": "2025-12-24T11:53:34.8124544Z",
+  "Title": "Proxy Mapping for GET /3/trending/tv/week",
+  "Description": "Proxy Mapping for GET /3/trending/tv/week",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/trending/tv/week",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
+          "id": 106379,
+          "name": "Fallout",
+          "original_name": "Fallout",
+          "overview": "The story of haves and have-nots in a world in which there\u0027s almost nothing left to have. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind \u2014 and are shocked to discover an incredibly complex, gleefully weird, and highly violent universe waiting for them.",
+          "poster_path": "/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            10759,
+            18,
+            10765
+          ],
+          "popularity": 208.1718,
+          "first_air_date": "2024-04-10",
+          "vote_average": 8.18,
+          "vote_count": 2236,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vNCNUxNHHgP0WsA19hxztUsG3yG.jpg",
+          "id": 225171,
+          "name": "Pluribus",
+          "original_name": "Pluribus",
+          "overview": "The most miserable person on Earth must save the world from happiness.",
+          "poster_path": "/nrM2xFUfKJJEmZzd5d7kohT2G0C.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            10765,
+            35
+          ],
+          "popularity": 104.2788,
+          "first_air_date": "2025-11-06",
+          "vote_average": 7.944,
+          "vote_count": 276,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
+          "id": 66732,
+          "name": "Stranger Things",
+          "original_name": "Stranger Things",
+          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+          "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            10765,
+            9648,
+            10759
+          ],
+          "popularity": 529.3398,
+          "first_air_date": "2016-07-15",
+          "vote_average": 8.6,
+          "vote_count": 19642,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8b5yXvmWSOl64Abk1wMYhzs4OnP.jpg",
+          "id": 211089,
+          "name": "Strange Tales of Tang Dynasty",
+          "original_name": "\u5510\u671D\u8BE1\u4E8B\u5F55",
+          "overview": "General Lu Lingfeng and Detective Su Wuming uncover supernatural mysteries and hidden conspiracies threatening the empire during Emperor Xuanzong\u2019s reign.",
+          "poster_path": "/nyhBueT07zQS7wWLYFDNO8LdO3N.jpg",
+          "media_type": "tv",
+          "original_language": "zh",
+          "genre_ids": [
+            9648,
+            80,
+            18,
+            10759
+          ],
+          "popularity": 49.0215,
+          "first_air_date": "2022-09-27",
+          "vote_average": 8.233,
+          "vote_count": 45,
+          "origin_country": [
+            "CN"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg",
+          "id": 200875,
+          "name": "IT: Welcome to Derry",
+          "original_name": "IT: Welcome to Derry",
+          "overview": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried evil lurking. As the kids set out to determine what\u0027s really going on, a rising unease prompts several townspeople to work together to restore peace \u2013 all while a U.S. military operation seeks to exploit Derry for its own objectives.",
+          "poster_path": "/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "popularity": 277.6787,
+          "first_air_date": "2025-10-26",
+          "vote_average": 8.254,
+          "vote_count": 1006,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/42RCEkRkfvafglUsXD6kN1S9nwP.jpg",
+          "id": 246473,
+          "name": "Made in Korea",
+          "original_name": "\uBA54\uC774\uB4DC \uC778 \uCF54\uB9AC\uC544",
+          "overview": "In 1970s South Korea, follow two men on opposite sides of power \u2014 one driven by ambition, the other by justice. As their worlds collide, greed, loyalty, and survival intertwine in a battle that will shape a nation.",
+          "poster_path": "/q9ZRQN98L2OvYP00mIlv4oPPfOU.jpg",
+          "media_type": "tv",
+          "original_language": "ko",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "popularity": 4.114,
+          "first_air_date": "2025-12-24",
+          "vote_average": 8.0,
+          "vote_count": 2,
+          "origin_country": [
+            "KR"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2YGizLQTsT7eIJ1gU7pJS1pgmqJ.jpg",
+          "id": 308508,
+          "name": "Strange Chronicles of Tang",
+          "original_name": "\u5510\u8BE1\u5947\u8C2D",
+          "overview": "",
+          "poster_path": "/vLj74PM5xATIy7RTa3dERe0mzp8.jpg",
+          "media_type": "tv",
+          "original_language": "zh",
+          "genre_ids": [
+            9648,
+            10759
+          ],
+          "popularity": 21.0635,
+          "first_air_date": "2025-12-17",
+          "vote_average": 7.25,
+          "vote_count": 4,
+          "origin_country": [
+            "CN"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "id": 1396,
+          "name": "Breaking Bad",
+          "original_name": "Breaking Bad",
+          "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+          "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "popularity": 150.5089,
+          "first_air_date": "2008-01-20",
+          "vote_average": 8.935,
+          "vote_count": 16730,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oVfucXvhutTpYExG9k06NJqnpT9.jpg",
+          "id": 37854,
+          "name": "One Piece",
+          "original_name": "\u30EF\u30F3\u30D4\u30FC\u30B9",
+          "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \u0022One Piece\u0022 behind. Whoever claims the \u0022One Piece\u0022 will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \u0022Devil Fruit,\u0022 decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he\u0027s surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
+          "poster_path": "/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg",
+          "media_type": "tv",
+          "original_language": "ja",
+          "genre_ids": [
+            10759,
+            35,
+            16
+          ],
+          "popularity": 35.48,
+          "first_air_date": "1999-10-20",
+          "vote_average": 8.718,
+          "vote_count": 5075,
+          "origin_country": [
+            "JP"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sAxx25ijwYQ8xsT56wu2IzvIRss.jpg",
+          "id": 103540,
+          "name": "Percy Jackson and the Olympians",
+          "original_name": "Percy Jackson and the Olympians",
+          "overview": "Percy Jackson is on a dangerous quest. Outrunning monsters and outwitting gods, he must journey across America to return Zeus\u0027s master bolt and stop an all-out war. With the help of his friends Annabeth and Grover, Percy\u0027s journey will lead him closer to the answers he seeks: how to fit into a world where he feels out of place, and who he\u0027s destined to be.",
+          "poster_path": "/40eFcTzZier3DWLqldsP5VHxeoD.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            10759,
+            10765,
+            18,
+            10751
+          ],
+          "popularity": 48.8362,
+          "first_air_date": "2023-12-19",
+          "vote_average": 7.3,
+          "vote_count": 640,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jXTZaHarR9TZiMoQwiQWsGYXqnS.jpg",
+          "id": 82596,
+          "name": "Emily in Paris",
+          "original_name": "Emily in Paris",
+          "overview": "New passions. New fashions. New Emily? A plucky American marketing whiz spreads her wings in life and love after landing her dream job in Paris.",
+          "poster_path": "/c0bkO416OU7YGdOFktk45H8REgL.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "popularity": 59.8352,
+          "first_air_date": "2020-10-02",
+          "vote_average": 7.6,
+          "vote_count": 1481,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9OUDNZjZOgJiFTjXfOtUBy90FUH.jpg",
+          "id": 259886,
+          "name": "The War Between the Land and the Sea",
+          "original_name": "The War Between the Land and the Sea",
+          "overview": "When a fearsome and ancient species emerges from the ocean, dramatically revealing themselves to humanity, an international crisis is triggered. With the entire population at risk, UNIT step into action as the land and sea wage war.",
+          "poster_path": "/4wDU61HtpXbcwpgCy1xnodxKRYN.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            10765,
+            18
+          ],
+          "popularity": 68.5126,
+          "first_air_date": "2025-12-07",
+          "vote_average": 7.031,
+          "vote_count": 65,
+          "origin_country": [
+            "GB"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7K7wbQIpkzif4fMhDHsCweXFS42.jpg",
+          "id": 219080,
+          "name": "The Mighty Nein",
+          "original_name": "The Mighty Nein",
+          "overview": "When a powerful arcane relic known as \u0027The Beacon\u0027 falls into nefarious hands, a group of fugitives and outcasts, bound by secrets and scars, must learn to work together to save the realm and stop reality as they know it from unraveling.",
+          "poster_path": "/qJTZanXDiJKABLNGRM9LmSg8YT7.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            16,
+            10765,
+            10759
+          ],
+          "popularity": 27.991,
+          "first_air_date": "2025-11-19",
+          "vote_average": 7.6,
+          "vote_count": 21,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/QbRbCULZVBcrN2uydpmIOQLV5O.jpg",
+          "id": 301507,
+          "name": "Heated Rivalry",
+          "original_name": "Heated Rivalry",
+          "overview": "Two of the biggest stars in Major League Hockey are bound by ambition, rivalry, and a magnetic pull neither of them fully understands. What begins as a secret fling between two fresh faced rookies evolves into a years-long journey of love, denial, and self-discovery. Over the next eight years, as they chase glory on the ice, they struggle to navigate their feelings for each other. Torn between the sport they live for and the love they can\u2019t ignore, they must decide if there\u2019s room in their fiercely competitive world for something as fragile \u2013 and powerful \u2013 as real love.",
+          "poster_path": "/epgr7n61vVIniyAghz2GYj22DkC.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 80.887,
+          "first_air_date": "2025-11-28",
+          "vote_average": 8.36,
+          "vote_count": 50,
+          "origin_country": [
+            "CA"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ckPbbcJOcL43mJBrROTMrtOBIYK.jpg",
+          "id": 240459,
+          "name": "Spartacus: House of Ashur",
+          "original_name": "Spartacus: House of Ashur",
+          "overview": "In a world where he survived the events of Spartacus (2010), Ashur clawed his way to power, owning the same ludus that once owned him. Allying with a fierce gladiatrix, Ashur ignites a new kind of spectacle that offends the elite.",
+          "poster_path": "/vNByuzy60v31nmUVPMA8oAtneUK.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            10759
+          ],
+          "popularity": 138.695,
+          "first_air_date": "2025-12-05",
+          "vote_average": 6.244,
+          "vote_count": 90,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
+          "id": 1668,
+          "name": "Friends",
+          "original_name": "Friends",
+          "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
+          "poster_path": "/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            35
+          ],
+          "popularity": 78.6868,
+          "first_air_date": "1994-09-22",
+          "vote_average": 8.422,
+          "vote_count": 8741,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/s0w8JbuNNxL1YgaHeDWih12C3jG.jpg",
+          "id": 63926,
+          "name": "One-Punch Man",
+          "original_name": "\u30EF\u30F3\u30D1\u30F3\u30DE\u30F3",
+          "overview": "The most powerful superhero in the world can kill anyone with one blow. But nothing can challenge him, so he struggles with ennui and depression.",
+          "poster_path": "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg",
+          "media_type": "tv",
+          "original_language": "ja",
+          "genre_ids": [
+            16,
+            35,
+            10759,
+            10765
+          ],
+          "popularity": 71.947,
+          "first_air_date": "2015-10-05",
+          "vote_average": 8.4,
+          "vote_count": 3944,
+          "origin_country": [
+            "JP"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nrcsXRU6u056rtl520M0iiBta6o.jpg",
+          "id": 302919,
+          "name": "The End of an Era",
+          "original_name": "The End of an Era",
+          "overview": "A behind-the-scenes docuseries event chronicling the development, impact, and inner workings that created the phenomenon that was Taylor Swift | The Eras Tour, as well as providing an intimate look at Taylor\u0027s life as her tour made headlines and thrilled fans around the world. The series also spotlights performers, family members, and friends \u2014 including Gracie Abrams, Sabrina Carpenter, Ed Sheeran, and Florence Welch \u2014 offering never-before-seen insight into what it took to create a phenomenon.",
+          "poster_path": "/8qEyRXQMC3L77fjY924qcoxaaVs.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            99
+          ],
+          "popularity": 14.8059,
+          "first_air_date": "2025-12-12",
+          "vote_average": 8.778,
+          "vote_count": 18,
+          "origin_country": [
+            "GB",
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/q71au2YjcwXBMZKNzNgjK7RZ3Hs.jpg",
+          "id": 157741,
+          "name": "Landman",
+          "original_name": "Landman",
+          "overview": "Set in the proverbial boomtowns of West-Texas and a modern-day tale of fortune-seeking in the world of oil rigs, the series is an upstairs/downstairs story of roughnecks and wildcat billionaires that are fueling a boom so big it\u2019s reshaping our climate, our economy and our geopolitics.",
+          "poster_path": "/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 64.7394,
+          "first_air_date": "2024-11-17",
+          "vote_average": 8.048,
+          "vote_count": 336,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lysUnU6V0VfcthDbviuVlIqgHOR.jpg",
+          "id": 120089,
+          "name": "SPY x FAMILY",
+          "original_name": "SPY\u00D7FAMILY",
+          "overview": "A spy, an assassin and a telepath come together to pose as a family, each for their own reasons, while hiding their true identities from each other.",
+          "poster_path": "/7NAvPYPAu7MeHwP8E9sn81PqsRh.jpg",
+          "media_type": "tv",
+          "original_language": "ja",
+          "genre_ids": [
+            16,
+            10759,
+            35
+          ],
+          "popularity": 49.0867,
+          "first_air_date": "2022-04-09",
+          "vote_average": 8.518,
+          "vote_count": 2141,
+          "origin_country": [
+            "JP"
+          ]
+        }
+      ],
+      "total_pages": 500,
+      "total_results": 10000
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=492",
+      "x-memc": "HIT",
+      "x-memc-key": "0601bde58c40af2edd6769bbdbb51a85c63d87eef2a64e839833955cf4f030b6",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00221da7b31eb64cc71da73affaab3a5b4e9\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

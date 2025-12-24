@@ -1,0 +1,474 @@
+{
+  "Guid": "b80395df-7a34-2d43-aa37-e9e38d76dc26",
+  "UpdatedAt": "2025-12-24T11:53:34.6529765Z",
+  "Title": "Proxy Mapping for GET /3/discover/movie",
+  "Description": "Proxy Mapping for GET /3/discover/movie",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/movie",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "with_release_type",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 2,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
+          "genre_ids": [
+            28,
+            12,
+            14,
+            878
+          ],
+          "id": 19995,
+          "original_language": "en",
+          "original_title": "Avatar",
+          "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+          "popularity": 111.795,
+          "poster_path": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+          "release_date": "2009-12-16",
+          "title": "Avatar",
+          "video": false,
+          "vote_average": 7.597,
+          "vote_count": 33011
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg",
+          "genre_ids": [
+            16,
+            28,
+            10749,
+            14
+          ],
+          "id": 1218925,
+          "original_language": "ja",
+          "original_title": "\u5287\u5834\u7248 \u30C1\u30A7\u30F3\u30BD\u30FC\u30DE\u30F3 \u30EC\u30BC\u7BC7",
+          "overview": "In a brutal war between devils, hunters, and secret enemies, a mysterious girl named Reze has stepped into Denji\u0027s world, and he faces his deadliest battle yet, fueled by love in a world where survival knows no rules.",
+          "popularity": 100.138,
+          "poster_path": "/pHyxb2RV5wLlboAwm9ZJ9qTVEDw.jpg",
+          "release_date": "2025-09-19",
+          "title": "Chainsaw Man - The Movie: Reze Arc",
+          "video": false,
+          "vote_average": 8.296,
+          "vote_count": 471
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/k3xS5HuixDQXRFg4eX9vLohuGjP.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1162858,
+          "original_language": "en",
+          "original_title": "The Other",
+          "overview": "Unable to conceive, a couple seeks to build a family with a young orphan, survivor of tragic childhood. But their act of love turns to horror when they realize the violence in their foster\u0027s past has returned to destroy the new family.",
+          "popularity": 91.9191,
+          "poster_path": "/kE6FV8Lc9Aqir6OlgaNgnbFcy9E.jpg",
+          "release_date": "2025-04-26",
+          "title": "The Other",
+          "video": false,
+          "vote_average": 5.671,
+          "vote_count": 38
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lZYMXx74pWmbj5Q5jp1QaMvmuuR.jpg",
+          "genre_ids": [
+            28,
+            14,
+            53
+          ],
+          "id": 1180831,
+          "original_language": "no",
+          "original_title": "Troll 2",
+          "overview": "When a dangerous new troll unleashes devastation across their homeland, Nora, Andreas and Major Kris embark on their most perilous mission yet.",
+          "popularity": 89.2163,
+          "poster_path": "/p6xAExLNFbHcLfvSuvLPoM8aqZU.jpg",
+          "release_date": "2025-11-30",
+          "title": "Troll 2",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 300
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ebyxeBh56QNXxSJgTnmz7fXAlwk.jpg",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "id": 1242898,
+          "original_language": "en",
+          "original_title": "Predator: Badlands",
+          "overview": "Cast out from his clan, a young Predator finds an unlikely ally in a damaged android and embarks on a treacherous journey in search of the ultimate adversary.",
+          "popularity": 96.0706,
+          "poster_path": "/pHpq9yNUIo6aDoCXEBzjSolywgz.jpg",
+          "release_date": "2025-11-05",
+          "title": "Predator: Badlands",
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 671
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+          "genre_ids": [
+            16,
+            28,
+            14
+          ],
+          "id": 1311031,
+          "original_language": "ja",
+          "original_title": "\u5287\u5834\u7248\u300C\u9B3C\u6EC5\u306E\u5203\u300D\u7121\u9650\u57CE\u7DE8 \u7B2C\u4E00\u7AE0 \u7317\u7AA9\u5EA7\u518D\u6765",
+          "overview": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
+          "popularity": 90.872,
+          "poster_path": "/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
+          "release_date": "2025-07-18",
+          "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+          "video": false,
+          "vote_average": 7.634,
+          "vote_count": 610
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/me3SisKfnxwBP69aOVKAVMw9vDM.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1149167,
+          "original_language": "en",
+          "original_title": "High Rollers",
+          "overview": "A master thief must pull off a dangerous casino heist when his nemesis kidnaps his lover. Caught between rival criminals and FBI pursuit, he risks all to save her and score big.",
+          "popularity": 78.6243,
+          "poster_path": "/hHowAaChDjwueySmwVbsjHmpWa.jpg",
+          "release_date": "2025-03-14",
+          "title": "High Rollers",
+          "video": false,
+          "vote_average": 6.608,
+          "vote_count": 88
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1dqFuNiutgBdNF9d5QOQBWHHvft.jpg",
+          "genre_ids": [
+            28,
+            80,
+            35,
+            53
+          ],
+          "id": 1217602,
+          "original_language": "en",
+          "original_title": "London Calling",
+          "overview": "After fleeing the UK from a job gone wrong, a down on his luck hitman is forced to babysit the son of his new crime boss and show him how to become a man.",
+          "popularity": 73.4136,
+          "poster_path": "/cpQ4VxBJO7vGV3IUdKzSNf4tH9V.jpg",
+          "release_date": "2025-09-18",
+          "title": "London Calling",
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 57
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w57nxiBIODAYHLRs1xmrCY9zEFe.jpg",
+          "genre_ids": [
+            28,
+            18,
+            14
+          ],
+          "id": 1083637,
+          "original_language": "kn",
+          "original_title": "\u0C95\u0CBE\u0C82\u0CA4\u0CBE\u0CB0: \u0C85\u0CA7\u0CCD\u0CAF\u0CBE\u0CAF - \u0CE7",
+          "overview": "During the Kadamba reign, King Vijayendra, the ruler of the fictional feudatory land of Bangra, meets his final fate while venturing into the mystical forest of Kantara. Witnessing this, his son Rajashekara seals the borders of their realm. Later, Prince Kulashekara reopens them through a brutal massacre. The protagonist, Berme, in search of prosperity, crosses the divide and ignites a conflict of faith, power, and destiny between the Kingdom and Nature.",
+          "popularity": 77.5767,
+          "poster_path": "/zBvw25afDn93embB8L7FzvTT2xq.jpg",
+          "release_date": "2025-10-01",
+          "title": "Kantara - A Legend: Chapter 1",
+          "video": false,
+          "vote_average": 7.038,
+          "vote_count": 53
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tm87rqU4zCiDIJKJDHmmhFSjXiX.jpg",
+          "genre_ids": [
+            80,
+            28
+          ],
+          "id": 1468057,
+          "original_language": "zh",
+          "original_title": "\u89D2\u982D\uFF0D\u9B25\u9663\u6B38",
+          "overview": "Michael and his right-hand man Scorpion, who find themselves embroiled in their father Ko\u0027s turf war against rival gangs in Taipei, setting off a conflict between old and new generations of gangsters. The film is the latest installment in the Gatao franchise, following the narrative of a young successor trying to expand his power while navigating the volatile underworld.",
+          "popularity": 82.504,
+          "poster_path": "/tc5z5OADIYlOZLn0xNNM32c0Cq5.jpg",
+          "release_date": "2025-08-21",
+          "title": "GATAO: Big Brothers",
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2OHa6ukEq3Hce7Pc2kvu8wkmMFY.jpg",
+          "genre_ids": [
+            28,
+            12,
+            53,
+            80,
+            18
+          ],
+          "id": 7451,
+          "original_language": "en",
+          "original_title": "xXx",
+          "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \u0022recruits\u0022 him to go on a mission, he\u0027s not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+          "popularity": 79.1846,
+          "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+          "release_date": "2002-08-09",
+          "title": "xXx",
+          "video": false,
+          "vote_average": 5.976,
+          "vote_count": 4699
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uLBJtONQwHoGc61vbIfoC6a9gUp.jpg",
+          "genre_ids": [
+            10752,
+            18,
+            36,
+            28
+          ],
+          "id": 152760,
+          "original_language": "en",
+          "original_title": "The Monuments Men",
+          "overview": "Based on the true story of the greatest treasure hunt in history, The Monuments Men is an action drama focusing on seven over-the-hill, out-of-shape museum directors, artists, architects, curators, and art historians who went to the front lines of WWII to rescue the world\u2019s artistic masterpieces from Nazi thieves and return them to their rightful owners.  With the art hidden behind enemy lines, how could these guys hope to succeed?",
+          "popularity": 55.1394,
+          "poster_path": "/wiWAg4mKV2S4vImPxsPRIdj2R2B.jpg",
+          "release_date": "2014-01-24",
+          "title": "The Monuments Men",
+          "video": false,
+          "vote_average": 6.063,
+          "vote_count": 3730
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg",
+          "genre_ids": [
+            18,
+            14,
+            27
+          ],
+          "id": 1062722,
+          "original_language": "en",
+          "original_title": "Frankenstein",
+          "overview": "Dr. Victor Frankenstein, a brilliant but egotistical scientist, brings a creature to life in a monstrous experiment that ultimately leads to the undoing of both the creator and his tragic creation.",
+          "popularity": 76.6845,
+          "poster_path": "/g4JtvGlQO7DByTI6frUobqvSL3R.jpg",
+          "release_date": "2025-10-17",
+          "title": "Frankenstein",
+          "video": false,
+          "vote_average": 7.718,
+          "vote_count": 2348
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ae0p8SqtMNNxbmbUHyCaE20D2aQ.jpg",
+          "genre_ids": [
+            9648,
+            53
+          ],
+          "id": 1368166,
+          "original_language": "en",
+          "original_title": "The Housemaid",
+          "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dangerous\u2014a sexy, seductive game of secrets, scandal, and power.",
+          "popularity": 80.5845,
+          "poster_path": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+          "release_date": "2025-12-18",
+          "title": "The Housemaid",
+          "video": false,
+          "vote_average": 8.176,
+          "vote_count": 34
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lf8IZ86ajGpgbuyHCZrXUeAMmvy.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 1033462,
+          "original_language": "zh",
+          "original_title": "749\u5C40",
+          "overview": "A traumatized young man with physical abnormalities is forced to join a mysterious bureau to confront a disaster spreading across the earth caused by an unknown creature. He embarks on an adventure uncovering mysteries about his life.",
+          "popularity": 71.6192,
+          "poster_path": "/flykCMw22y6yv8vKnBjmsW3pneo.jpg",
+          "release_date": "2024-10-01",
+          "title": "Bureau 749",
+          "video": false,
+          "vote_average": 6.292,
+          "vote_count": 65
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8btfz81bOJ2lC7cujYBTw03wzg3.jpg",
+          "genre_ids": [
+            16,
+            14,
+            12,
+            28
+          ],
+          "id": 980477,
+          "original_language": "zh",
+          "original_title": "\u54EA\u5412\u4E4B\u9B54\u7AE5\u95F9\u6D77",
+          "overview": "After a catastrophic event leaves their bodies destroyed, Ne Zha and Ao Bing are granted a fragile second chance at life. As tensions rise between the dragon clans and celestial forces, the two must undergo a series of perilous trials that will test their bond, challenge their identities, and decide the fate of both mortals and immortals.",
+          "popularity": 71.2735,
+          "poster_path": "/cb5NyNrqiCNNoDkA8FfxHAtypdG.jpg",
+          "release_date": "2025-01-29",
+          "title": "Ne Zha 2",
+          "video": false,
+          "vote_average": 8.088,
+          "vote_count": 515
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yRYgvo2crAeHzqKwXMVtEaDx7Qq.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1291608,
+          "original_language": "hi",
+          "original_title": "\u0927\u0941\u0930\u0902\u0927\u0930",
+          "overview": "An Indian intelligence mission unfolds over ten years as an undercover agent enters Karachi\u0027s criminal and political world to dismantle dangerous cross-border terror networks.",
+          "popularity": 70.9732,
+          "poster_path": "/8FHOtUpNIk5ZPEay2N2EY5lrxkv.jpg",
+          "release_date": "2025-12-05",
+          "title": "Dhurandhar",
+          "video": false,
+          "vote_average": 6.3,
+          "vote_count": 106
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zpEWFNqoN8Qg1SzMMHmaGyOBTdW.jpg",
+          "genre_ids": [
+            53,
+            80,
+            28
+          ],
+          "id": 1054867,
+          "original_language": "en",
+          "original_title": "One Battle After Another",
+          "overview": "Washed-up revolutionary Bob exists in a state of stoned paranoia, surviving off-grid with his spirited, self-reliant daughter, Willa. When his evil nemesis resurfaces after 16 years and she goes missing, the former radical scrambles to find her, father and daughter both battling the consequences of his past.",
+          "popularity": 74.8135,
+          "poster_path": "/r4uXvqCeco0KmO0CjlhXuTEFuSE.jpg",
+          "release_date": "2025-09-23",
+          "title": "One Battle After Another",
+          "video": false,
+          "vote_average": 7.483,
+          "vote_count": 1990
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qLAMT52DRM3vzqYtcRJ4hBAOYgd.jpg",
+          "genre_ids": [
+            27,
+            14,
+            10749
+          ],
+          "id": 1246049,
+          "original_language": "fr",
+          "original_title": "Dracula",
+          "overview": "When a 15th-century prince denounces God after the devastating loss of his wife, he inherits an eternal curse: he becomes Dracula. Condemned to wander the centuries, he defies fate and death itself, guided by a single hope \u2014 to be reunited with his lost love.",
+          "popularity": 70.1904,
+          "poster_path": "/ykyRfv7JDofLxXLAwtLXaSuaFfM.jpg",
+          "release_date": "2025-07-30",
+          "title": "Dracula",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 650
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mPtPJzBkwksUoMEKpkZqxBrlKpZ.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1422096,
+          "original_language": "en",
+          "original_title": "Good Boy",
+          "overview": "A loyal dog moves to a rural family home with his owner Todd, only to discover supernatural forces lurking in the shadows. As dark entities threaten his human companion, the brave pup must fight to protect the one he loves most.",
+          "popularity": 63.2047,
+          "poster_path": "/pvMHRi09ur2L1drXh2dXFtuMFgl.jpg",
+          "release_date": "2025-10-01",
+          "title": "Good Boy",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 393
+        }
+      ],
+      "total_pages": 54306,
+      "total_results": 1086113
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=26273",
+      "x-memc": "HIT",
+      "x-memc-key": "3d4c1df2d6c507a38ac90d91a8a635254d22e87f92f95026ffc2aad19872b52c",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022c48734910fb62c8afc7e970a87eb9d5f\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

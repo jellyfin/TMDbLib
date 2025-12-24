@@ -1,0 +1,461 @@
+{
+  "Guid": "1ae06b2a-0ffe-5444-a305-caa43fccd7eb",
+  "UpdatedAt": "2025-12-24T11:53:34.66622Z",
+  "Title": "Proxy Mapping for GET /3/movie/now_playing",
+  "Description": "Proxy Mapping for GET /3/movie/now_playing",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/now_playing",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "de",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "dates": {
+        "maximum": "2025-12-31",
+        "minimum": "2025-11-19"
+      },
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg",
+          "genre_ids": [
+            878,
+            12,
+            14
+          ],
+          "id": 83533,
+          "original_language": "en",
+          "original_title": "Avatar: Fire and Ash",
+          "overview": "Nach dem verheerenden Krieg gegen die RDA und dem Verlust ihres \u00E4ltesten Sohnes sehen sich Jake Sully und Neytiri mit einer neuen Bedrohung auf Pandora konfrontiert: dem Aschvolk, einem gewaltt\u00E4tigen und machthungrigen Na\u0027vi-Stamm unter der F\u00FChrung des skrupellosen Varang. Jakes Familie muss in einem Konflikt, der sie an ihre emotionalen und physischen Grenzen bringt, um ihr \u00DCberleben und die Zukunft von Pandora k\u00E4mpfen. *Der Film enth\u00E4lt Sequenzen, die sich auf photosensitive Menschen oder Menschen mit photosensitiver Epilepsie auswirken k\u00F6nnten.",
+          "popularity": 559.9652,
+          "poster_path": "/nB8gjQdI6RPczGcJ5mzCgAdjdH8.jpg",
+          "release_date": "2025-12-17",
+          "title": "Avatar: Fire and Ash",
+          "video": false,
+          "vote_average": 7.369,
+          "vote_count": 544
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ufqytAlziHq5pljKByGJ8IKhtEZ.jpg",
+          "genre_ids": [
+            53,
+            80,
+            9648
+          ],
+          "id": 425274,
+          "original_language": "en",
+          "original_title": "Now You See Me: Now You Don\u0027t",
+          "overview": "Die urspr\u00FCnglichen Vier Reiter verb\u00FCnden sich mit einer neuen Generation von Illusionisten, um es mit der m\u00E4chtigen Diamantenerbin Veronika Vanderberg aufzunehmen, die ein kriminelles Imperium leitet, das auf Geldw\u00E4sche und Menschenhandel basiert. Die alten und neuen Magier m\u00FCssen ihre Differenzen \u00FCberwinden, um gemeinsam ihren bisher ambitioniertesten Coup zu landen.",
+          "popularity": 375.3153,
+          "poster_path": "/9Udi4U0u5No1OQJ0DYubsSzFipb.jpg",
+          "release_date": "2025-11-12",
+          "title": "Die Unfassbaren 3 - Now you see me",
+          "video": false,
+          "vote_average": 6.478,
+          "vote_count": 600
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yCatt8lmp3oRFEcOZF8KHhsiASQ.jpg",
+          "genre_ids": [
+            28,
+            10752
+          ],
+          "id": 1223601,
+          "original_language": "fi",
+          "original_title": "Sisu 2",
+          "overview": "\u201EDer Mann, der nicht sterben will\u201C kehrt in das Haus zur\u00FCck, in dem seine Familie w\u00E4hrend des Krieges brutal ermordet wurde. Er zerlegt es in seine Einzelteile, verl\u00E4dt es auf einen Lastwagen und ist fest entschlossen, es an einem sicheren Ort zu Ehren seiner Familie wieder aufzubauen. Doch als der Kommandant der Roten Armee zur\u00FCckkehrt, der seine Familie get\u00F6tet hat \u2013 fest entschlossen, die Arbeit zu Ende zu bringen \u2013 beginnt eine unerbittliche, atemberaubende Verfolgungsjagd quer durch das Land.",
+          "popularity": 326.0945,
+          "poster_path": "/jy2uelnalM9laKbfW0iIFV4FKVs.jpg",
+          "release_date": "2025-10-21",
+          "title": "Sisu: Road to Revenge",
+          "video": false,
+          "vote_average": 7.558,
+          "vote_count": 260
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5h2EsPKNDdB3MAtOk9MB9Ycg9Rz.jpg",
+          "genre_ids": [
+            16,
+            35,
+            12,
+            10751,
+            9648
+          ],
+          "id": 1084242,
+          "original_language": "en",
+          "original_title": "Zootopia 2",
+          "overview": "In Walt Disney Animation Studios\u0027 ZOOMANIA 2 geraten die tierischen Detektive Judy Hopps und Nick Wilde auf die r\u00E4tselhafte Spur eines geheimnisvollen Reptils, das in Zoomania auftaucht und die Metropole v\u00F6llig auf den Kopf stellt: Gary De\u0027Snake! Um den Fall zu l\u00F6sen, m\u00FCssen die beiden Undercover in v\u00F6llig unbekannte Stadtteile vordringen \u2013 und dabei wird ihre wachsende Partnerschaft auf eine harte Probe stellt.",
+          "popularity": 329.3201,
+          "poster_path": "/q4RqhHz21kwRyemR9gePrTstSSe.jpg",
+          "release_date": "2025-11-26",
+          "title": "Zoomania 2",
+          "video": false,
+          "vote_average": 7.662,
+          "vote_count": 710
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bZlismAr366jWFiZNKzY3x3AN5X.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1228246,
+          "original_language": "en",
+          "original_title": "Five Nights at Freddy\u0027s 2",
+          "overview": "Sie sind nicht mehr nur bei Freddy\u2019s \u2026 Seit den albtraumhaften Geschehnissen in Freddy\u2019s Pizzeria ist ein Jahr vergangen. Die Geschichten dar\u00FCber, was sich dort genau abgespielt hat, haben sich l\u00E4ngst zu einem lokalen Mythos verkl\u00E4rt \u2013 ein Mythos, der so popul\u00E4r ist, dass die Stadt nun sogar das erste \u201EFazfest\u201C abhalten will. Der ehemalige Wachmann Mike und die Polizistin Vanessa haben Mikes elfj\u00E4hriger Schwester Abby die Wahrheit \u00FCber das Schicksal ihrer animatronischen Freunde bislang verschwiegen. Eines Tages schleicht sich Abby heimlich davon, um sich mit Freddy, Bonnie, Chica und Foxy zu treffen. Sie ahnt nicht, dass sie damit eine Reihe von schrecklichen Ereignissen in Gang setzt, die dunkle Geheimnisse \u00FCber den Ursprung von Freddy\u2019s Pizzeria enth\u00FCllen \u2013 und einen Schrecken entfesseln, der seit Jahrzehnten verborgen lag. uwu",
+          "popularity": 249.8545,
+          "poster_path": "/byFxrm3IS9wErulqpqDIsaLaTeG.jpg",
+          "release_date": "2025-12-03",
+          "title": "Five Nights at Freddy\u0027s 2",
+          "video": false,
+          "vote_average": 6.3,
+          "vote_count": 221
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/AePlQ3osZShJmbNj8tzQ3NoMTQF.jpg",
+          "genre_ids": [
+            28,
+            53,
+            9648
+          ],
+          "id": 1013446,
+          "original_language": "fr",
+          "original_title": "Reflet dans un diamant mort",
+          "overview": "Als die mysteri\u00F6se Frau aus dem Nachbarzimmer verschwindet, wird ein charmanter 70-j\u00E4hriger Ex-Spion, der in einem Luxushotel an der C\u00F4te d\u0027Azur lebt, mit den D\u00E4monen und Lieblingen einer schillernden Vergangenheit konfrontiert, in der Filmemachen, Erinnerungen und Wahnsinn aufeinanderprallen.",
+          "popularity": 239.5594,
+          "poster_path": "/tOlsvqqEnPjxiVKvYYarGhcguZz.jpg",
+          "release_date": "2025-06-25",
+          "title": "Reflection In A Dead Diamond",
+          "video": false,
+          "vote_average": 6.011,
+          "vote_count": 47
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aHj7d7wSLqrg5cjAcgHhiGr97Ih.jpg",
+          "genre_ids": [
+            28,
+            53,
+            878
+          ],
+          "id": 798645,
+          "original_language": "en",
+          "original_title": "The Running Man",
+          "overview": "In einer nahen Zukunft, ist The Running Man die meistgesehene Show im Fernsehen. Ein t\u00F6dlicher Wettbewerb, in dem die Mitspieler, die man Runner nennt, 30 Tage lang \u00FCberleben m\u00FCssen, w\u00E4hrend sie von Profikillern gejagt werden. Dabei wird jede ihrer Bewegungen einem blutr\u00FCnstigen Publikum live \u00FCbertragen. Jeder Tag, den sie durchhalten, wird mit mehr Geld belohnt. Ben Richards stammt aus der Arbeiterklasse und versucht verzweifelt, seine kranke Tochter zu retten. Daher l\u00E4sst er sich von Dan Killian, dem charmanten, aber r\u00FCcksichtslosen Produzenten der Show, als letzte Hoffnung \u00FCberreden, bei dem Spiel mitzumachen. Bens Trotz, Instinkte und Mut machen ihn bald unerwartet zum Fan-Favoriten \u2013 und zu einer Bedrohung f\u00FCr das gesamte System. W\u00E4hrend die Einschaltquoten durch die Decke gehen, steigt auch die Gefahr und Ben muss nicht nur die J\u00E4ger \u00FCberlisten, sondern auch eine ganze Nation, die s\u00FCchtig danach ist, ihn scheitern zu sehen.",
+          "popularity": 165.481,
+          "poster_path": "/s9vQpHl2ZHOHbsgoznaNr2eaIjZ.jpg",
+          "release_date": "2025-11-11",
+          "title": "The Running Man",
+          "video": false,
+          "vote_average": 6.835,
+          "vote_count": 726
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
+          "genre_ids": [
+            53,
+            9648,
+            35
+          ],
+          "id": 812583,
+          "original_language": "en",
+          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
+          "overview": "Der Detektiv Benoit Blanc arbeitet mit einem jungen Priester zusammen, um ein absolut unm\u00F6gliches Verbrechen in einer Kirche mit dunkler Vergangenheit zu l\u00F6sen.",
+          "popularity": 170.5348,
+          "poster_path": "/bIeHhOqCQysfed98TKjZhRWRc7x.jpg",
+          "release_date": "2025-11-26",
+          "title": "Wake Up Dead Man: A Knives Out Mystery",
+          "video": false,
+          "vote_average": 7.199,
+          "vote_count": 1024
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x3s2lEGNguUnQ5YH3Goq7Ud7Lcn.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1491902,
+          "original_language": "en",
+          "original_title": "Bang: storm of bullets",
+          "overview": "Seit seiner Jugend arbeitet William Bang f\u00FCr einen der m\u00E4chtigsten, ganz sicher aber den skrupellosesten Gangsterboss Morgan der Stadt. Sein Job als dessen Probleml\u00F6ser, Auftragsm\u00F6rder und genereller Mann f\u00FCrs Grobe ist alles, was William je kannte \u2013 weshalb er seine Arbeit auch nie in Frage gestellt hat, sondern einfach machte, was man ihm sagte. Als ihm eines Tages selbst aus n\u00E4chster N\u00E4he mehrfach in die Brust geschossen wird, ist er klinisch tot. Im Krankenhaus k\u00F6nnen sie ihn dank eines exakt zum richtigen Zeitpunkt eintreffenden Spenderherzens allerdings doch noch reanimieren. Danach ist William ein anderer Mensch. Er beginnt zu reflektieren und den Wert seines sowie jeden anderen Lebens zu sch\u00E4tzen. Er geht zu Morgan und erkl\u00E4rt ihm, dass er nicht mehr f\u00FCr ihn morden k\u00F6nne. Doch der Verbrecher ist nicht bereit, seinen besten Mann einfach in den Ruhestand gehen zu lassen \u2026",
+          "popularity": 166.4193,
+          "poster_path": "/vI9HvUS3fSym7COOtgvpYELRjQJ.jpg",
+          "release_date": "2025-07-11",
+          "title": "Bang - Storm of Bullets",
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 17
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gtuXARxjGdfsGFqEwggBB8zUJza.jpg",
+          "genre_ids": [
+            35,
+            28
+          ],
+          "id": 1589891,
+          "original_language": "es",
+          "original_title": "La hora de los valientes",
+          "overview": "Ein Psychoanalytiker im Gemeindedienst hilft einem von Untreue gezeichneten Kriminalbeamten. Gemeinsam stellen sie sich Gefahren und entdecken zweite Chancen.",
+          "popularity": 141.974,
+          "poster_path": "/8ZoDrAbrsSLDVjXsyvOlwjJakUK.jpg",
+          "release_date": "2025-12-18",
+          "title": "Die Stunde der Mutigen",
+          "video": false,
+          "vote_average": 7.722,
+          "vote_count": 27
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4BtL2vvEufDXDP4u6xQjjQ1Y2aT.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1419406,
+          "original_language": "zh",
+          "original_title": "\u6355\u98CE\u8FFD\u5F71",
+          "overview": "Die Polizei von Macau holt einen erfahrenen Polizeibeamten aus dem Ruhestand zur\u00FCck, um eine gef\u00E4hrliche Bande professioneller Diebe zu fassen.",
+          "popularity": 126.9026,
+          "poster_path": "/o25Tk1FYQi2BLk0OEAvx2h69QvB.jpg",
+          "release_date": "2025-08-16",
+          "title": "Shadow Chase - Im Netz der Diebe",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 171
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eJ0HooOOD1uzI39CfOQNWIiWKlJ.jpg",
+          "genre_ids": [
+            28,
+            18,
+            53
+          ],
+          "id": 1387382,
+          "original_language": "en",
+          "original_title": "Hunting Season",
+          "overview": "Als ein zur\u00FCckgezogen lebender \u00DCberlebensk\u00FCnstler und seine Tochter eine mysteri\u00F6se, verletzte Frau aus einem Fluss retten, werden sie in einem t\u00F6dlichen Netz aus Gewalt und Rache verstrickt, das sie zwingt, sich einem brutalen Verbrecher zu stellen, um zu \u00FCberleben.",
+          "popularity": 112.4496,
+          "poster_path": "/cbryTyaWdqrKpQCw6K7zm2jrB5v.jpg",
+          "release_date": "2025-12-05",
+          "title": "Hunting Season",
+          "video": false,
+          "vote_average": 6.9,
+          "vote_count": 56
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg",
+          "genre_ids": [
+            16,
+            28,
+            10749,
+            14
+          ],
+          "id": 1218925,
+          "original_language": "ja",
+          "original_title": "\u5287\u5834\u7248 \u30C1\u30A7\u30F3\u30BD\u30FC\u30DE\u30F3 \u30EC\u30BC\u7BC7",
+          "overview": "Denji wurde zum \u201EKettens\u00E4genmann\u201C, einem Jungen mit dem Herzen eines Teufels, und geh\u00F6rt nun zu den Teufelsj\u00E4gern der Spezialabteilung 4. Nach einer Verabredung mit Makima, der Frau seiner Tr\u00E4ume, sucht Denji Schutz vor dem Regen. Dort lernt er Reze kennen, ein M\u00E4dchen, das in einem Caf\u00E9 arbeitet.",
+          "popularity": 100.138,
+          "poster_path": "/zgibwu2MWsUfwUwVPkRbOzGTxX2.jpg",
+          "release_date": "2025-09-19",
+          "title": "Chainsaw Man - The Movie: Reze Arc",
+          "video": false,
+          "vote_average": 8.293,
+          "vote_count": 470
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lZYMXx74pWmbj5Q5jp1QaMvmuuR.jpg",
+          "genre_ids": [
+            28,
+            14,
+            53
+          ],
+          "id": 1180831,
+          "original_language": "no",
+          "original_title": "Troll 2",
+          "overview": "Als ein gef\u00E4hrlicher neuer Troll ihre Heimat verw\u00FCstet, brechen Nora, Andreas und Major Kris zu ihrer bislang gef\u00E4hrlichsten Mission auf.",
+          "popularity": 89.2163,
+          "poster_path": "/plyEn5uDNXXDYihF8Z7YOe2PVKE.jpg",
+          "release_date": "2025-11-30",
+          "title": "Troll 2",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 300
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ae0p8SqtMNNxbmbUHyCaE20D2aQ.jpg",
+          "genre_ids": [
+            9648,
+            53
+          ],
+          "id": 1368166,
+          "original_language": "en",
+          "original_title": "The Housemaid",
+          "overview": "Millie ist eine Frau, die sich abm\u00FCht und erleichtert ist, als Hausm\u00E4dchen bei Nina und Andrew, einem gehobenen, wohlhabenden Paar, einen Neuanfang zu machen. Bald erf\u00E4hrt sie, dass die Geheimnisse der Familie viel gef\u00E4hrlicher sind als ihre eigenen.",
+          "popularity": 80.5845,
+          "poster_path": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+          "release_date": "2025-12-18",
+          "title": "The Housemaid - Wenn sie w\u00FCsste",
+          "video": false,
+          "vote_average": 8.125,
+          "vote_count": 33
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yRYgvo2crAeHzqKwXMVtEaDx7Qq.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1291608,
+          "original_language": "hi",
+          "original_title": "\u0927\u0941\u0930\u0902\u0927\u0930",
+          "overview": "Dhurandhar spielt in der Welt des indischen Geheimdienstes und folgt einem Geheimagenten auf einer hochriskanten Mission, die auf historischen Ereignissen basiert. Der Film verbindet rasante Actionsequenzen, Shakespeare\u0027sche Verratstaten und komplexe Spionagetechniken und konzentriert sich dabei auf das Leben unbekannter M\u00E4nner.",
+          "popularity": 70.9732,
+          "poster_path": "/8FHOtUpNIk5ZPEay2N2EY5lrxkv.jpg",
+          "release_date": "2025-12-05",
+          "title": "Dhurandhar",
+          "video": false,
+          "vote_average": 6.3,
+          "vote_count": 106
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zpEWFNqoN8Qg1SzMMHmaGyOBTdW.jpg",
+          "genre_ids": [
+            53,
+            80,
+            28
+          ],
+          "id": 1054867,
+          "original_language": "en",
+          "original_title": "One Battle After Another",
+          "overview": "Vor 16 Jahren hat die Widerstandsgruppe namens \u201EFrench 75\u201C auf einen Schlag 200 H\u00E4ftlinge aus den F\u00E4ngen des skrupellosen United States Immigration and Customs Enforcement \u2013 kurz: ICE \u2013 befreit. Danach verschwanden die Widerst\u00E4ndler, darunter auch der von allen nur Ghetto Pat genannte Bob Ferguson, von der Bildfl\u00E4che. Heute ist Bob getrieben von Paranoia, denn er f\u00FCrchtet, dass es der damalige ICE-Colonel Steven J. Lockjaw immer noch auf ihn abgesehen hat.",
+          "popularity": 74.8135,
+          "poster_path": "/5k2WV1i6jcnbPmRhoXSEQWQGT9u.jpg",
+          "release_date": "2025-09-23",
+          "title": "One Battle After Another",
+          "video": false,
+          "vote_average": 7.483,
+          "vote_count": 1990
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qLAMT52DRM3vzqYtcRJ4hBAOYgd.jpg",
+          "genre_ids": [
+            27,
+            14,
+            10749
+          ],
+          "id": 1246049,
+          "original_language": "fr",
+          "original_title": "Dracula",
+          "overview": "Die Geschichte von Prinz Vladimir aus dem 15. Jahrhundert, der nach dem Tod seiner geliebten Frau Gott verflucht und in einen Vampir verwandelt wird. Sp\u00E4ter, im London des 19. Jahrhunderts, entdeckt er die Doppelg\u00E4ngerin seiner Frau und verdammt sich selbst, indem er ihr nachstellt.",
+          "popularity": 70.1904,
+          "poster_path": "/qEQoidfAB5yNVpgTh43AlfFtbOz.jpg",
+          "release_date": "2025-07-30",
+          "title": "Dracula - Die Auferstehung",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 650
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mPtPJzBkwksUoMEKpkZqxBrlKpZ.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1422096,
+          "original_language": "en",
+          "original_title": "Good Boy",
+          "overview": "Ein treuer Hund zieht mit seinem Besitzer Todd in ein l\u00E4ndliches Familienhaus, entdeckt dort aber \u00FCbernat\u00FCrliche Kr\u00E4fte, die im Schatten lauern. Als dunkle Wesen seinen menschlichen Begleiter bedrohen, muss der tapfere Welpe k\u00E4mpfen, um seinen Liebsten zu besch\u00FCtzen.",
+          "popularity": 63.2047,
+          "poster_path": "/fLCA0C6GxQGEM7OFvEC1hmigYDJ.jpg",
+          "release_date": "2025-10-01",
+          "title": "Good Boy - Trust His Instincts",
+          "video": false,
+          "vote_average": 6.76,
+          "vote_count": 392
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gtKglOSEq3d4MgQE4VsrT1sRkd0.jpg",
+          "genre_ids": [
+            16,
+            28
+          ],
+          "id": 1539104,
+          "original_language": "ja",
+          "original_title": "\u5287\u5834\u7248 \u546A\u8853\u5EFB\u6226\u300C\u6E0B\u8C37\u4E8B\u5909 \u7279\u5225\u7DE8\u96C6\u7248\u300D\u00D7\u300C\u6B7B\u6EC5\u56DE\u6E38 \u5148\u884C\u4E0A\u6620\u300D",
+          "overview": "Inmitten der gesch\u00E4ftigen Halloween-Massen senkt sich pl\u00F6tzlich ein Schleier \u00FCber das gesch\u00E4ftige Shibuya-Gebiet und h\u00E4lt zahllose Zivilisten gefangen. Satoru Gojo, der st\u00E4rkste Jujutsu-Zauberer, mischt sich in das Chaos ein. Doch ihm lauern Fl\u00FCche und Geister, die ihn einsperren wollen. Yuji Itadori st\u00FCrzt sich mit seinen Klassenkameraden und anderen erstklassigen Jujutsu-Zauberern in einen beispiellosen Zusammenprall von Fl\u00FCchen \u2013 den Shibuya-Zwischenfall.",
+          "popularity": 64.2848,
+          "poster_path": "/tYoxQKNEGvvhkgjppummOAfij9P.jpg",
+          "release_date": "2025-11-07",
+          "title": "Jujutsu Kaisen: Execution \u2013 Der Shibuya-Vorfall \u0026 Die Metzel-Spiele",
+          "video": false,
+          "vote_average": 5.3,
+          "vote_count": 68
+        }
+      ],
+      "total_pages": 260,
+      "total_results": 5189
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=13907",
+      "x-memc": "HIT",
+      "x-memc-key": "4f0daaf4691793612d1856816537d9b0329456e902b996bd1415c66a7c0cdf4e",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022515b38abc0576b81164c3ce485077004\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

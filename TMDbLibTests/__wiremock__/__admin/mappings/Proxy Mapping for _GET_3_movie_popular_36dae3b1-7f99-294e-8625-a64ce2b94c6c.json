@@ -1,0 +1,455 @@
+{
+  "Guid": "36dae3b1-7f99-294e-8625-a64ce2b94c6c",
+  "UpdatedAt": "2025-12-24T11:53:35.5507382Z",
+  "Title": "Proxy Mapping for GET /3/movie/popular",
+  "Description": "Proxy Mapping for GET /3/movie/popular",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/popular",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg",
+          "genre_ids": [
+            878,
+            12,
+            14
+          ],
+          "id": 83533,
+          "original_language": "en",
+          "original_title": "Avatar: Fire and Ash",
+          "overview": "In the wake of the devastating war against the RDA and the loss of their eldest son, Jake Sully and Neytiri face a new threat on Pandora: the Ash People, a violent and power-hungry Na\u0027vi tribe led by the ruthless Varang. Jake\u0027s family must fight for their survival and the future of Pandora in a conflict that pushes them to their emotional and physical limits.",
+          "popularity": 559.9652,
+          "poster_path": "/gDVgC9jd917NdAcqBdRRDUYi4Tq.jpg",
+          "release_date": "2025-12-17",
+          "title": "Avatar: Fire and Ash",
+          "video": false,
+          "vote_average": 7.367,
+          "vote_count": 546
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3jMN1k8b0Ptd9eMoeftUyDGJdCh.jpg",
+          "genre_ids": [
+            878,
+            12,
+            18
+          ],
+          "id": 982843,
+          "original_language": "ko",
+          "original_title": "\uB300\uD64D\uC218",
+          "overview": "When a raging flood traps a researcher and her young son, a call to a crucial mission puts their escape \u2014 and the future of humanity \u2014 on the line.",
+          "popularity": 482.8501,
+          "poster_path": "/1tUOZQDgZaGqZtrB21MieiXARL2.jpg",
+          "release_date": "2025-09-18",
+          "title": "The Great Flood",
+          "video": false,
+          "vote_average": 6.144,
+          "vote_count": 202
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ufqytAlziHq5pljKByGJ8IKhtEZ.jpg",
+          "genre_ids": [
+            53,
+            80,
+            9648
+          ],
+          "id": 425274,
+          "original_language": "en",
+          "original_title": "Now You See Me: Now You Don\u0027t",
+          "overview": "The original Four Horsemen reunite with a new generation of illusionists to take on powerful diamond heiress Veronika Vanderberg, who leads a criminal empire built on money laundering and trafficking. The new and old magicians must overcome their differences to work together on their most ambitious heist yet.",
+          "popularity": 375.3153,
+          "poster_path": "/oD3Eey4e4Z259XLm3eD3WGcoJAh.jpg",
+          "release_date": "2025-11-12",
+          "title": "Now You See Me: Now You Don\u0027t",
+          "video": false,
+          "vote_average": 6.49,
+          "vote_count": 602
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yCatt8lmp3oRFEcOZF8KHhsiASQ.jpg",
+          "genre_ids": [
+            28,
+            10752
+          ],
+          "id": 1223601,
+          "original_language": "fi",
+          "original_title": "Sisu 2",
+          "overview": "Returning to the house where his family was brutally murdered during the war, \u2018the man who refuses to die\u2019 dismantles it, loads it on a truck, and is determined to rebuild it somewhere safe in their honor. When the commander who killed his family comes back hellbent on finishing the job, a relentless, eye-popping cross-country chase ensues.",
+          "popularity": 326.0945,
+          "poster_path": "/jNsttCWZyPtW66MjhUozBzVsRb7.jpg",
+          "release_date": "2025-10-21",
+          "title": "Sisu: Road to Revenge",
+          "video": false,
+          "vote_average": 7.552,
+          "vote_count": 261
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5h2EsPKNDdB3MAtOk9MB9Ycg9Rz.jpg",
+          "genre_ids": [
+            16,
+            35,
+            12,
+            10751,
+            9648
+          ],
+          "id": 1084242,
+          "original_language": "en",
+          "original_title": "Zootopia 2",
+          "overview": "After cracking the biggest case in Zootopia\u0027s history, rookie cops Judy Hopps and Nick Wilde find themselves on the twisting trail of a great mystery when Gary De\u0027Snake arrives and turns the animal metropolis upside down. To crack the case, Judy and Nick must go undercover to unexpected new parts of town, where their growing partnership is tested like never before.",
+          "popularity": 329.3201,
+          "poster_path": "/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg",
+          "release_date": "2025-11-26",
+          "title": "Zootopia 2",
+          "video": false,
+          "vote_average": 7.662,
+          "vote_count": 710
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4mZ06VpfpAPuaUPn1SEV0brbbxe.jpg",
+          "genre_ids": [
+            878,
+            28
+          ],
+          "id": 1196067,
+          "original_language": "en",
+          "original_title": "Worldbreaker",
+          "overview": "Five years ago, a tear in the fabric of reality brought creatures to our world from an alternate dimension bent on our destruction. A father hides his daughter on an island to keep her safe while he prepares her for survival and the battles to come. But when the world is about to break, no place is safe.",
+          "popularity": 219.7148,
+          "poster_path": "/7K8w6mdrJp0oaSoKWGyjSZ4Zv2z.jpg",
+          "release_date": "2025-10-30",
+          "title": "Worldbreaker",
+          "video": false,
+          "vote_average": 6.074,
+          "vote_count": 27
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bZlismAr366jWFiZNKzY3x3AN5X.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1228246,
+          "original_language": "en",
+          "original_title": "Five Nights at Freddy\u0027s 2",
+          "overview": "One year since the supernatural nightmare at Freddy Fazbear\u0027s Pizza, the stories about what transpired there have been twisted into a campy local legend, inspiring the town\u0027s first ever Fazfest. With the truth kept from her, Abby sneaks out to reconnect with Freddy, Bonnie, Chica, and Foxy, setting into motion a terrifying series of events that will reveal dark secrets about the real origin of Freddy\u0027s, and unleash a decades-hidden horror.",
+          "popularity": 249.8545,
+          "poster_path": "/udAxQEORq2I5wxI97N2TEqdhzBE.jpg",
+          "release_date": "2025-12-03",
+          "title": "Five Nights at Freddy\u0027s 2",
+          "video": false,
+          "vote_average": 6.25,
+          "vote_count": 222
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/AePlQ3osZShJmbNj8tzQ3NoMTQF.jpg",
+          "genre_ids": [
+            28,
+            53,
+            9648
+          ],
+          "id": 1013446,
+          "original_language": "fr",
+          "original_title": "Reflet dans un diamant mort",
+          "overview": "When the mysterious woman in the room next door disappears, a debonair 70-year-old ex-spy living in a luxury hotel on the C\u00F4te d\u0027Azur is confronted by the demons and darlings of a lurid past in which moviemaking, memories and madness collide.",
+          "popularity": 239.5594,
+          "poster_path": "/5CdRxBu7jRDHjthkAL8vE0GdKUD.jpg",
+          "release_date": "2025-06-25",
+          "title": "Reflection in a Dead Diamond",
+          "video": false,
+          "vote_average": 6.011,
+          "vote_count": 47
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hvut2slhhgJ31UNa9Df7jFfAS0x.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1336189,
+          "original_language": "en",
+          "original_title": "Delivery Run",
+          "overview": "A food delivery driver gets caught in a deadly chase in the icy Minnesota wilderness, pursued by a crazed snowplow driver for unknown reasons, facing life-threatening situations and forced to outsmart his relentless pursuer alone.",
+          "popularity": 211.3254,
+          "poster_path": "/eCA5maHDlZtXNTtiLXenwnEw7tc.jpg",
+          "release_date": "2025-09-10",
+          "title": "Delivery Run",
+          "video": false,
+          "vote_average": 5.25,
+          "vote_count": 18
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aHj7d7wSLqrg5cjAcgHhiGr97Ih.jpg",
+          "genre_ids": [
+            28,
+            53,
+            878
+          ],
+          "id": 798645,
+          "original_language": "en",
+          "original_title": "The Running Man",
+          "overview": "Desperate to save his sick daughter, working-class Ben Richards is convinced by The Running Man\u0027s charming but ruthless producer to enter the deadly competition game as a last resort. But Ben\u0027s defiance, instincts, and grit turn him into an unexpected fan favorite \u2014 and a threat to the entire system. As ratings skyrocket, so does the danger, and Ben must outwit not just the Hunters, but a nation addicted to watching him fall.",
+          "popularity": 165.481,
+          "poster_path": "/dKL78O9zxczVgjtNcQ9UkbYLzqX.jpg",
+          "release_date": "2025-11-11",
+          "title": "The Running Man",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 726
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hyc9gq0Oq5THKak7tB7oqC2Rd6z.jpg",
+          "genre_ids": [
+            37,
+            12,
+            80
+          ],
+          "id": 1195518,
+          "original_language": "en",
+          "original_title": "The Unholy Trinity",
+          "overview": "Set against the turbulent backdrop of 1870s Montana, in the moments before the execution of Isaac Broadway, he gives his estranged son, Henry, an impossible task: murder the man who framed him for a crime he didn\u2019t commit. Intent on fulfilling his promise, Henry travels to the remote town of Trinity, where an unexpected turn of events traps him in town and leaves him caught between Gabriel Dove, the town\u2019s upstanding new sheriff, and a mysterious figure named St. Christopher.",
+          "popularity": 190.5957,
+          "poster_path": "/waU3o5qRPNA9bIC59DIsDppll11.jpg",
+          "release_date": "2025-06-13",
+          "title": "The Unholy Trinity",
+          "video": false,
+          "vote_average": 6.176,
+          "vote_count": 102
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
+          "genre_ids": [
+            53,
+            9648,
+            35
+          ],
+          "id": 812583,
+          "original_language": "en",
+          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
+          "overview": "When young priest Jud Duplenticy is sent to assist charismatic firebrand Monsignor Jefferson Wicks, it\u2019s clear that all is not well in the pews. After a sudden and seemingly impossible murder rocks the town, the lack of an obvious suspect prompts local police chief Geraldine Scott to join forces with renowned detective Benoit Blanc to unravel a mystery that defies all logic.",
+          "popularity": 170.5348,
+          "poster_path": "/qCOGGi8JBVEZMc3DVby8rUivyXz.jpg",
+          "release_date": "2025-11-26",
+          "title": "Wake Up Dead Man: A Knives Out Mystery",
+          "video": false,
+          "vote_average": 7.203,
+          "vote_count": 1027
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
+          "genre_ids": [
+            878,
+            53
+          ],
+          "id": 755898,
+          "original_language": "en",
+          "original_title": "War of the Worlds",
+          "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
+          "popularity": 154.5233,
+          "poster_path": "/yvirUYrva23IudARHn3mMGVxWqM.jpg",
+          "release_date": "2025-07-29",
+          "title": "War of the Worlds",
+          "video": false,
+          "vote_average": 4.251,
+          "vote_count": 790
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x3s2lEGNguUnQ5YH3Goq7Ud7Lcn.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1491902,
+          "original_language": "en",
+          "original_title": "Bang: storm of bullets",
+          "overview": "Follows a ruthless hitman who, after narrowly escaping a fatal attempt on his life, betrays his gang in an effort to find forgiveness but ends up becoming a target himself.",
+          "popularity": 166.4193,
+          "poster_path": "/8SUzKOqe2ectvhYdSnR7Vq2F3n1.jpg",
+          "release_date": "2025-07-11",
+          "title": "Bang",
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 17
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gtuXARxjGdfsGFqEwggBB8zUJza.jpg",
+          "genre_ids": [
+            35,
+            28
+          ],
+          "id": 1589891,
+          "original_language": "es",
+          "original_title": "La hora de los valientes",
+          "overview": "A psychoanalyst on community service aids an agent shattered by infidelity; together, they will confront danger and discover second chances.",
+          "popularity": 141.974,
+          "poster_path": "/qKKG22O5pFxqglG0oMjWTjQWCNl.jpg",
+          "release_date": "2025-12-18",
+          "title": "A Time for Bravery",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 27
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vJ1z82bLSfg71sQcJ370N4TpWqf.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1438030,
+          "original_language": "en",
+          "original_title": "Slaughterhouse 2",
+          "overview": "Unlike Buddy Bacon in the original \u0027Slaughterhouse\u0027 his brother Cleavon left the blood-splattered pig farm for a better life. But just like his father, Cleavon has a mute son who has a passion for home-reared, flame-grilled Wonder Jerky. Anyone who strays into Bacon\u0027s ranch, of abandoned Americana cars, will soon become part of the Wonder Jerky success story.",
+          "popularity": 130.021,
+          "poster_path": "/wkZgGYcCQIzX8zvMAHpzg4hFhLF.jpg",
+          "release_date": "2024-10-23",
+          "title": "Slaughterhouse 2",
+          "video": false,
+          "vote_average": 8.0,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4BtL2vvEufDXDP4u6xQjjQ1Y2aT.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1419406,
+          "original_language": "zh",
+          "original_title": "\u6355\u98CE\u8FFD\u5F71",
+          "overview": "Macau Police brings the tracking expert police officer out of retirement to help catch a dangerous group of professional thieves.",
+          "popularity": 126.9026,
+          "poster_path": "/e0RU6KpdnrqFxDKlI3NOqN8nHL6.jpg",
+          "release_date": "2025-08-16",
+          "title": "The Shadow\u0027s Edge",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 171
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/min9ZUDZbiguTiQ7yz1Hbqk78HT.jpg",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "id": 533533,
+          "original_language": "en",
+          "original_title": "TRON: Ares",
+          "overview": "A highly sophisticated Program called Ares is sent from the digital world into the real world on a dangerous mission, marking humankind\u0027s first encounter with A.I. beings.",
+          "popularity": 121.2538,
+          "poster_path": "/chpWmskl3aKm1aTZqUHRCtviwPy.jpg",
+          "release_date": "2025-10-08",
+          "title": "TRON: Ares",
+          "video": false,
+          "vote_average": 6.574,
+          "vote_count": 807
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eJ0HooOOD1uzI39CfOQNWIiWKlJ.jpg",
+          "genre_ids": [
+            28,
+            18,
+            53
+          ],
+          "id": 1387382,
+          "original_language": "en",
+          "original_title": "Hunting Season",
+          "overview": "When a reclusive survivalist and his daughter rescue a mysterious, wounded woman from a river, they become entangled in a deadly web of violence and revenge, forcing them to confront a brutal criminal to survive.",
+          "popularity": 112.4496,
+          "poster_path": "/cbryTyaWdqrKpQCw6K7zm2jrB5v.jpg",
+          "release_date": "2025-12-05",
+          "title": "Hunting Season",
+          "video": false,
+          "vote_average": 6.956,
+          "vote_count": 57
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cd8YDn7M0lfaHhZdU6MvCDxPalP.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 76600,
+          "original_language": "en",
+          "original_title": "Avatar: The Way of Water",
+          "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+          "popularity": 114.6909,
+          "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+          "release_date": "2022-12-14",
+          "title": "Avatar: The Way of Water",
+          "video": false,
+          "vote_average": 7.608,
+          "vote_count": 13252
+        }
+      ],
+      "total_pages": 54305,
+      "total_results": 1086099
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=23337",
+      "x-memc": "HIT",
+      "x-memc-key": "2f758009570fe2db9166b6053e2300308beb52a0a10f53d6d9f2aad432c19d1e",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00221e97381a943739ac565fb6ed91c510c1\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

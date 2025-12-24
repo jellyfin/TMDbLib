@@ -1,0 +1,480 @@
+{
+  "Guid": "a86966e7-1263-9141-9738-96b73e5316c4",
+  "UpdatedAt": "2025-12-24T11:53:34.7686439Z",
+  "Title": "Proxy Mapping for GET /3/trending/all/week",
+  "Description": "Proxy Mapping for GET /3/trending/all/week",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/trending/all/week",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg",
+          "id": 83533,
+          "title": "Avatar: Fire and Ash",
+          "original_title": "Avatar: Fire and Ash",
+          "overview": "In the wake of the devastating war against the RDA and the loss of their eldest son, Jake Sully and Neytiri face a new threat on Pandora: the Ash People, a violent and power-hungry Na\u0027vi tribe led by the ruthless Varang. Jake\u0027s family must fight for their survival and the future of Pandora in a conflict that pushes them to their emotional and physical limits.",
+          "poster_path": "/g96wHxU7EnoIFwemb2RgohIXrgW.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            14
+          ],
+          "popularity": 559.9652,
+          "release_date": "2025-12-17",
+          "video": false,
+          "vote_average": 7.381,
+          "vote_count": 565
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
+          "id": 106379,
+          "name": "Fallout",
+          "original_name": "Fallout",
+          "overview": "The story of haves and have-nots in a world in which there\u0027s almost nothing left to have. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind \u2014 and are shocked to discover an incredibly complex, gleefully weird, and highly violent universe waiting for them.",
+          "poster_path": "/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            10759,
+            18,
+            10765
+          ],
+          "popularity": 208.1718,
+          "first_air_date": "2024-04-10",
+          "vote_average": 8.18,
+          "vote_count": 2236,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vNCNUxNHHgP0WsA19hxztUsG3yG.jpg",
+          "id": 225171,
+          "name": "Pluribus",
+          "original_name": "Pluribus",
+          "overview": "The most miserable person on Earth must save the world from happiness.",
+          "poster_path": "/nrM2xFUfKJJEmZzd5d7kohT2G0C.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            10765,
+            35
+          ],
+          "popularity": 104.2788,
+          "first_air_date": "2025-11-06",
+          "vote_average": 7.944,
+          "vote_count": 276,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3jMN1k8b0Ptd9eMoeftUyDGJdCh.jpg",
+          "id": 982843,
+          "title": "The Great Flood",
+          "original_title": "\uB300\uD64D\uC218",
+          "overview": "When a raging flood traps a researcher and her young son, a call to a crucial mission puts their escape \u2014 and the future of humanity \u2014 on the line.",
+          "poster_path": "/7bLr0xljlMz8Xa8sufcZFhg8gh6.jpg",
+          "media_type": "movie",
+          "original_language": "ko",
+          "genre_ids": [
+            878,
+            12,
+            18
+          ],
+          "popularity": 482.8501,
+          "release_date": "2025-09-18",
+          "video": false,
+          "vote_average": 6.116,
+          "vote_count": 207
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
+          "id": 66732,
+          "name": "Stranger Things",
+          "original_name": "Stranger Things",
+          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+          "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            10765,
+            9648,
+            10759
+          ],
+          "popularity": 529.3398,
+          "first_air_date": "2016-07-15",
+          "vote_average": 8.596,
+          "vote_count": 19643,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
+          "id": 812583,
+          "title": "Wake Up Dead Man: A Knives Out Mystery",
+          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
+          "overview": "When young priest Jud Duplenticy is sent to assist charismatic firebrand Monsignor Jefferson Wicks, it\u2019s clear that all is not well in the pews. After a sudden and seemingly impossible murder rocks the town, the lack of an obvious suspect prompts local police chief Geraldine Scott to join forces with renowned detective Benoit Blanc to unravel a mystery that defies all logic.",
+          "poster_path": "/qCOGGi8JBVEZMc3DVby8rUivyXz.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            53,
+            9648,
+            35
+          ],
+          "popularity": 170.5348,
+          "release_date": "2025-11-26",
+          "video": false,
+          "vote_average": 7.201,
+          "vote_count": 1029
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fuacZLpnohQtLD0AhtCErcPVL98.jpg",
+          "id": 1259102,
+          "title": "Eternity",
+          "original_title": "Eternity",
+          "overview": "In an afterlife where souls have one week to decide where to spend eternity, Joan is faced with the impossible choice between the man she spent her life with and her first love, who died young and has waited decades for her to arrive.",
+          "poster_path": "/o8pg20G67BGmQvRkXwstNre062J.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            10749,
+            35,
+            18
+          ],
+          "popularity": 64.648,
+          "release_date": "2025-11-26",
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 79
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ufqytAlziHq5pljKByGJ8IKhtEZ.jpg",
+          "id": 425274,
+          "title": "Now You See Me: Now You Don\u0027t",
+          "original_title": "Now You See Me: Now You Don\u0027t",
+          "overview": "The original Four Horsemen reunite with a new generation of illusionists to take on powerful diamond heiress Veronika Vanderberg, who leads a criminal empire built on money laundering and trafficking. The new and old magicians must overcome their differences to work together on their most ambitious heist yet.",
+          "poster_path": "/oD3Eey4e4Z259XLm3eD3WGcoJAh.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            53,
+            80,
+            9648
+          ],
+          "popularity": 375.3153,
+          "release_date": "2025-11-12",
+          "video": false,
+          "vote_average": 6.492,
+          "vote_count": 604
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bZlismAr366jWFiZNKzY3x3AN5X.jpg",
+          "id": 1228246,
+          "title": "Five Nights at Freddy\u0027s 2",
+          "original_title": "Five Nights at Freddy\u0027s 2",
+          "overview": "One year since the supernatural nightmare at Freddy Fazbear\u0027s Pizza, the stories about what transpired there have been twisted into a campy local legend, inspiring the town\u0027s first ever Fazfest. With the truth kept from her, Abby sneaks out to reconnect with Freddy, Bonnie, Chica, and Foxy, setting into motion a terrifying series of events that will reveal dark secrets about the real origin of Freddy\u0027s, and unleash a decades-hidden horror.",
+          "poster_path": "/2LGb8KyIbPlUTG6pr6WKZnTP5yR.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "popularity": 249.8545,
+          "release_date": "2025-12-03",
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 224
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yCatt8lmp3oRFEcOZF8KHhsiASQ.jpg",
+          "id": 1223601,
+          "title": "Sisu: Road to Revenge",
+          "original_title": "Sisu 2",
+          "overview": "Returning to the house where his family was brutally murdered during the war, \u2018the man who refuses to die\u2019 dismantles it, loads it on a truck, and is determined to rebuild it somewhere safe in their honor. When the commander who killed his family comes back hellbent on finishing the job, a relentless, eye-popping cross-country chase ensues.",
+          "poster_path": "/jNsttCWZyPtW66MjhUozBzVsRb7.jpg",
+          "media_type": "movie",
+          "original_language": "fi",
+          "genre_ids": [
+            28,
+            10752
+          ],
+          "popularity": 326.0945,
+          "release_date": "2025-10-21",
+          "video": false,
+          "vote_average": 7.6,
+          "vote_count": 261
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zdva2LmrzZ0OdTI27ayzKPw0wkF.jpg",
+          "id": 1084242,
+          "title": "Zootopia 2",
+          "original_title": "Zootopia 2",
+          "overview": "After cracking the biggest case in Zootopia\u0027s history, rookie cops Judy Hopps and Nick Wilde find themselves on the twisting trail of a great mystery when Gary De\u0027Snake arrives and turns the animal metropolis upside down. To crack the case, Judy and Nick must go undercover to unexpected new parts of town, where their growing partnership is tested like never before.",
+          "poster_path": "/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            16,
+            35,
+            12,
+            10751,
+            9648
+          ],
+          "popularity": 329.3201,
+          "release_date": "2025-11-26",
+          "video": false,
+          "vote_average": 7.66,
+          "vote_count": 711
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8b5yXvmWSOl64Abk1wMYhzs4OnP.jpg",
+          "id": 211089,
+          "name": "Strange Tales of Tang Dynasty",
+          "original_name": "\u5510\u671D\u8BE1\u4E8B\u5F55",
+          "overview": "General Lu Lingfeng and Detective Su Wuming uncover supernatural mysteries and hidden conspiracies threatening the empire during Emperor Xuanzong\u2019s reign.",
+          "poster_path": "/nyhBueT07zQS7wWLYFDNO8LdO3N.jpg",
+          "media_type": "tv",
+          "original_language": "zh",
+          "genre_ids": [
+            9648,
+            80,
+            18,
+            10759
+          ],
+          "popularity": 49.0215,
+          "first_air_date": "2022-09-27",
+          "vote_average": 8.233,
+          "vote_count": 45,
+          "origin_country": [
+            "CN"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tH50NI7Y7KnyTN6BfIGq6Nx9wu1.jpg",
+          "id": 1435092,
+          "title": "Goodbye June",
+          "original_title": "Goodbye June",
+          "overview": "Four siblings\u0027 lives change drastically when their ailing mother takes a turn for the worse over the holiday season.",
+          "poster_path": "/ygsMOnttVCekvJZgvmnvaemxPHA.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 6.4557,
+          "release_date": "2025-12-12",
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ajzEWXl1z75Mx6lOj9lToHt5t6Z.jpg",
+          "id": 1214931,
+          "title": "Nuremberg",
+          "original_title": "Nuremberg",
+          "overview": "In postwar Germany, an American psychiatrist must determine whether Nazi prisoners are fit to go on trial for war crimes, and finds himself in a complex battle of intellect and ethics with Hermann G\u00F6ring, Hitler\u0027s right-hand man.",
+          "poster_path": "/sxu8TsG7k06ymWL98ELEIE1EMZV.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            36,
+            18
+          ],
+          "popularity": 42.1306,
+          "release_date": "2025-11-06",
+          "video": false,
+          "vote_average": 7.143,
+          "vote_count": 130
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg",
+          "id": 200875,
+          "name": "IT: Welcome to Derry",
+          "original_name": "IT: Welcome to Derry",
+          "overview": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried evil lurking. As the kids set out to determine what\u0027s really going on, a rising unease prompts several townspeople to work together to restore peace \u2013 all while a U.S. military operation seeks to exploit Derry for its own objectives.",
+          "poster_path": "/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "popularity": 277.6787,
+          "first_air_date": "2025-10-26",
+          "vote_average": 8.254,
+          "vote_count": 1006,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aHj7d7wSLqrg5cjAcgHhiGr97Ih.jpg",
+          "id": 798645,
+          "title": "The Running Man",
+          "original_title": "The Running Man",
+          "overview": "Desperate to save his sick daughter, working-class Ben Richards is convinced by The Running Man\u0027s charming but ruthless producer to enter the deadly competition game as a last resort. But Ben\u0027s defiance, instincts, and grit turn him into an unexpected fan favorite \u2014 and a threat to the entire system. As ratings skyrocket, so does the danger, and Ben must outwit not just the Hunters, but a nation addicted to watching him fall.",
+          "poster_path": "/dKL78O9zxczVgjtNcQ9UkbYLzqX.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53,
+            878
+          ],
+          "popularity": 165.481,
+          "release_date": "2025-11-11",
+          "video": false,
+          "vote_average": 6.833,
+          "vote_count": 729
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2OHa6ukEq3Hce7Pc2kvu8wkmMFY.jpg",
+          "id": 7451,
+          "title": "xXx",
+          "original_title": "xXx",
+          "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \u0022recruits\u0022 him to go on a mission, he\u0027s not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+          "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            53,
+            80,
+            18
+          ],
+          "popularity": 79.1846,
+          "release_date": "2002-08-09",
+          "video": false,
+          "vote_average": 5.976,
+          "vote_count": 4699
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/42RCEkRkfvafglUsXD6kN1S9nwP.jpg",
+          "id": 246473,
+          "name": "Made in Korea",
+          "original_name": "\uBA54\uC774\uB4DC \uC778 \uCF54\uB9AC\uC544",
+          "overview": "In 1970s South Korea, follow two men on opposite sides of power \u2014 one driven by ambition, the other by justice. As their worlds collide, greed, loyalty, and survival intertwine in a battle that will shape a nation.",
+          "poster_path": "/q9ZRQN98L2OvYP00mIlv4oPPfOU.jpg",
+          "media_type": "tv",
+          "original_language": "ko",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "popularity": 4.114,
+          "first_air_date": "2025-12-24",
+          "vote_average": 8.0,
+          "vote_count": 2,
+          "origin_country": [
+            "KR"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ae0p8SqtMNNxbmbUHyCaE20D2aQ.jpg",
+          "id": 1368166,
+          "title": "The Housemaid",
+          "original_title": "The Housemaid",
+          "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dangerous\u2014a sexy, seductive game of secrets, scandal, and power.",
+          "poster_path": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            9648,
+            53
+          ],
+          "popularity": 80.5845,
+          "release_date": "2025-12-18",
+          "video": false,
+          "vote_average": 8.176,
+          "vote_count": 34
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2YGizLQTsT7eIJ1gU7pJS1pgmqJ.jpg",
+          "id": 308508,
+          "name": "Strange Chronicles of Tang",
+          "original_name": "\u5510\u8BE1\u5947\u8C2D",
+          "overview": "",
+          "poster_path": "/vLj74PM5xATIy7RTa3dERe0mzp8.jpg",
+          "media_type": "tv",
+          "original_language": "zh",
+          "genre_ids": [
+            9648,
+            10759
+          ],
+          "popularity": 21.0635,
+          "first_air_date": "2025-12-17",
+          "vote_average": 7.25,
+          "vote_count": 4,
+          "origin_country": [
+            "CN"
+          ]
+        }
+      ],
+      "total_pages": 500,
+      "total_results": 10000
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=529",
+      "x-memc": "HIT",
+      "x-memc-key": "585fd1f6e672bc71871ba46104d1810d9bb93fc841c1324175d815a2719bb114",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00223ad4954276a8a026d21a87fca74b72a2\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

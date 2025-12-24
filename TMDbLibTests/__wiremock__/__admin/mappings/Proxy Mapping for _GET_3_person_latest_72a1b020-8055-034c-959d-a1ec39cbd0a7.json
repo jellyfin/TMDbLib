@@ -1,0 +1,59 @@
+{
+  "Guid": "72a1b020-8055-034c-959d-a1ec39cbd0a7",
+  "UpdatedAt": "2025-12-24T11:53:34.9071816Z",
+  "Title": "Proxy Mapping for GET /3/person/latest",
+  "Description": "Proxy Mapping for GET /3/person/latest",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/latest",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "also_known_as": [],
+      "biography": "",
+      "birthday": null,
+      "deathday": null,
+      "gender": 0,
+      "homepage": null,
+      "id": 5896046,
+      "imdb_id": null,
+      "known_for_department": null,
+      "name": "Toshiyuki Daitoku and De Cat",
+      "place_of_birth": null,
+      "popularity": 0.0,
+      "profile_path": null
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=0",
+      "x-memc": "MISS",
+      "x-memc-key": "f219ec1f5e79dc86b9e17e93e3d76c3f1cba31fcaf0bfddb397f76da5abeaffd",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022bafa9755c150f738842c096b2ec09dc5\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

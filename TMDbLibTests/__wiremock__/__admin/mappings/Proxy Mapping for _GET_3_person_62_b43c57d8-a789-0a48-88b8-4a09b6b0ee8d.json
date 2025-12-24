@@ -1,0 +1,335 @@
+{
+  "Guid": "b43c57d8-a789-0a48-88b8-4a09b6b0ee8d",
+  "UpdatedAt": "2025-12-24T11:53:35.4293392Z",
+  "Title": "Proxy Mapping for GET /3/person/62",
+  "Description": "Proxy Mapping for GET /3/person/62",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/62",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "append_to_response",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "images",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "also_known_as": [
+        "Walter Bruce Willis"
+      ],
+      "biography": "Walter Bruce Willis (born March 19, 1955) is an American retired actor. His career began on the off-Broadway stage in the 1970s, and he then achieved fame with a leading role on the comedy-drama series \u201CMoonlighting\u201D (1985\u20131989). He went on to appear in over 70 films, gaining widespread recognition as an action hero after his portrayal of John McClane in the \u201CDie Hard\u201D franchise (1988\u20132013) and other subsequent roles.\n\nWillis\u0027s other credits include \u201CThe Last Boy Scout\u201D (1991), \u201CPulp Fiction\u201D (1994), \u201C12 Monkeys\u201D (1995), \u201CLast Man Standing\u201D (1996), \u201CThe Fifth Element\u201D (1997), \u201CArmageddon\u201D (1998), \u201CThe Sixth Sense\u201D (1999), \u201CHart\u0027s War\u201D (2002), \u201CTears of the Sun\u201D (2003), \u201CHostage\u201D (2005), \u201CLucky Number Slevin\u201D (2006), \u201CSurrogates\u201D (2009), \u201CMoonrise Kingdom\u201D (2012), \u201CRock the Kasbah\u201D (2015), and \u201CMotherless Brooklyn\u201D (2019).\n\nAs a singer, Willis released his debut album The Return of Bruno in 1987, followed by two more successful albums in 1989 and 2001. He made his Broadway debut in the stage adaptation of Misery in 2015. Willis has received numerous accolades during his career, including a Golden Globe, two Primetime Emmy Awards, and two People\u0027s Choice Awards. He received a star on the Hollywood Walk of Fame in 2006.\n\nIn March 2022, Willis announced that he was retiring from acting after being diagnosed with aphasia, which affects his ability to communicate. In February 2023, Willis\u0027 family announced that they had received a more accurate diagnosis and he had been diagnosed with frontotemporal dementia.",
+      "birthday": "1955-03-19",
+      "deathday": null,
+      "gender": 2,
+      "homepage": null,
+      "id": 62,
+      "imdb_id": "nm0000246",
+      "known_for_department": "Acting",
+      "name": "Bruce Willis",
+      "place_of_birth": "Idar-Oberstein, West Germany [now Germany]",
+      "popularity": 5.9637,
+      "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
+      "images": {
+        "profiles": [
+          {
+            "aspect_ratio": 0.667,
+            "height": 900,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
+            "vote_average": 4.776,
+            "vote_count": 20,
+            "width": 600
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 750,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/A1XBu3CffBpSK8HEIJM8q7Mn4lz.jpg",
+            "vote_average": 4.75,
+            "vote_count": 38,
+            "width": 500
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 656,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/2jbMZCksnFlEdCZhEvh6GmU4GQl.jpg",
+            "vote_average": 4.722,
+            "vote_count": 9,
+            "width": 437
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 3000,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/d5krxAkPaEzs57Dvdm41Iv972Gp.jpg",
+            "vote_average": 3.826,
+            "vote_count": 20,
+            "width": 2000
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 2000,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/dIK5wftjG8XZaCv5xyojB2Gd8dg.jpg",
+            "vote_average": 3.5,
+            "vote_count": 19,
+            "width": 1333
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 960,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/g7iLU7K5ZtwzlLi3uHaqq8XCThj.jpg",
+            "vote_average": 3.334,
+            "vote_count": 2,
+            "width": 640
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1116,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/x7Bhl45KZH4rphQpGK6tYhS2vZ5.jpg",
+            "vote_average": 3.334,
+            "vote_count": 2,
+            "width": 744
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 578,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/vRo6l9Vb7OLxVSQ7RrJ1LLPs9av.jpg",
+            "vote_average": 3.334,
+            "vote_count": 1,
+            "width": 385
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 1478,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/idgIcwZGTlDSlCM42iJlsHCehI3.jpg",
+            "vote_average": 3.334,
+            "vote_count": 1,
+            "width": 985
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 740,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/d6WnHi44Ixudj3L6w2loWbPnpFN.jpg",
+            "vote_average": 3.214,
+            "vote_count": 14,
+            "width": 493
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 590,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/rP0RNlY7uj76Twsk09PQ45aBNvw.jpg",
+            "vote_average": 1.75,
+            "vote_count": 2,
+            "width": 393
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1000,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/g0c5td8hXRwIKDACkns71ts9Jy1.jpg",
+            "vote_average": 1.562,
+            "vote_count": 9,
+            "width": 667
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 450,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/7UiCn2srvVfYjyORa8CldFW8lOX.jpg",
+            "vote_average": 1.13,
+            "vote_count": 9,
+            "width": 300
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1433,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/vMiYcAAFug2JwOEwtSiWpsMVdWH.jpg",
+            "vote_average": 0.904,
+            "vote_count": 7,
+            "width": 956
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1500,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/cPP5y15p6iU83MxQ3tEcbr5hqNR.jpg",
+            "vote_average": 0.904,
+            "vote_count": 7,
+            "width": 1000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1536,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/ufUJGyDYnnW9SKvkf8AmYOi9Y8O.jpg",
+            "vote_average": 0.166,
+            "vote_count": 1,
+            "width": 1024
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 1064,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/nInm9t12fqL9Z7qZaIStjZVJCLu.jpg",
+            "vote_average": 0.166,
+            "vote_count": 1,
+            "width": 709
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 768,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/xiO2hWLWlQyAzCSfxFhtf4pxR2K.jpg",
+            "vote_average": 0.0,
+            "vote_count": 1,
+            "width": 512
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 1024,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/anFpWYrBQeoNMzObbjYKVwfwf08.jpg",
+            "vote_average": 0.0,
+            "vote_count": 1,
+            "width": 682
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 980,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/3Sd5ZSn1kELthfEkljtcau342EX.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 653
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 450,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/khUXnsD45DPTWXLxh4WyLXSBmdg.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 300
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 550,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/fKUKHz7FiFJlY8TeEOVnOSDt2iW.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 367
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 508,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/noHB571r3lZynKKgYyPji3JlzXE.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 339
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 450,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/hoLt94Dim8DUeMxgL6PXVXpxGik.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 300
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 590,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/mEVoLBcShTV8mYb4mo0aFlzWfnV.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 393
+          },
+          {
+            "aspect_ratio": 0.666,
+            "height": 656,
+            "iso_3166_1": null,
+            "iso_639_1": null,
+            "file_path": "/e616WLgh8PJJGyBHujLnJL6DLdL.jpg",
+            "vote_average": 0.0,
+            "vote_count": 1,
+            "width": 437
+          }
+        ]
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=22714",
+      "ETag": "W/\u0022a7cbfd327cab1d16893b08b095dd7d7c\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

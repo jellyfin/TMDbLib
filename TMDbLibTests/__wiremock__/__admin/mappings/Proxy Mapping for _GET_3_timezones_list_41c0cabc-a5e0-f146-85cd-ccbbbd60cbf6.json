@@ -1,0 +1,1462 @@
+{
+  "Guid": "41c0cabc-a5e0-f146-85cd-ccbbbd60cbf6",
+  "UpdatedAt": "2025-12-24T11:53:34.4100627Z",
+  "Title": "Proxy Mapping for GET /3/timezones/list",
+  "Description": "Proxy Mapping for GET /3/timezones/list",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/timezones/list",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": [
+      {
+        "AD": [
+          "Europe/Andorra"
+        ]
+      },
+      {
+        "AE": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "AF": [
+          "Asia/Kabul"
+        ]
+      },
+      {
+        "AG": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "AI": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "AL": [
+          "Europe/Tirane"
+        ]
+      },
+      {
+        "AM": [
+          "Asia/Yerevan"
+        ]
+      },
+      {
+        "AO": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "AQ": [
+          "Antarctica/Casey",
+          "Antarctica/Davis",
+          "Antarctica/Mawson",
+          "Antarctica/Palmer",
+          "Antarctica/Rothera",
+          "Antarctica/Troll",
+          "Antarctica/Vostok",
+          "Pacific/Auckland",
+          "Pacific/Port_Moresby",
+          "Asia/Riyadh",
+          "Asia/Singapore"
+        ]
+      },
+      {
+        "AR": [
+          "America/Argentina/Buenos_Aires",
+          "America/Argentina/Cordoba",
+          "America/Argentina/Salta",
+          "America/Argentina/Jujuy",
+          "America/Argentina/Tucuman",
+          "America/Argentina/Catamarca",
+          "America/Argentina/La_Rioja",
+          "America/Argentina/San_Juan",
+          "America/Argentina/Mendoza",
+          "America/Argentina/San_Luis",
+          "America/Argentina/Rio_Gallegos",
+          "America/Argentina/Ushuaia"
+        ]
+      },
+      {
+        "AS": [
+          "Pacific/Pago_Pago"
+        ]
+      },
+      {
+        "AT": [
+          "Europe/Vienna"
+        ]
+      },
+      {
+        "AU": [
+          "Australia/Lord_Howe",
+          "Antarctica/Macquarie",
+          "Australia/Hobart",
+          "Australia/Melbourne",
+          "Australia/Sydney",
+          "Australia/Broken_Hill",
+          "Australia/Brisbane",
+          "Australia/Lindeman",
+          "Australia/Adelaide",
+          "Australia/Darwin",
+          "Australia/Perth",
+          "Australia/Eucla",
+          "Asia/Tokyo"
+        ]
+      },
+      {
+        "AW": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "AX": [
+          "Europe/Helsinki"
+        ]
+      },
+      {
+        "AZ": [
+          "Asia/Baku"
+        ]
+      },
+      {
+        "BA": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "BB": [
+          "America/Barbados"
+        ]
+      },
+      {
+        "BD": [
+          "Asia/Dhaka"
+        ]
+      },
+      {
+        "BE": [
+          "Europe/Brussels"
+        ]
+      },
+      {
+        "BF": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "BG": [
+          "Europe/Sofia"
+        ]
+      },
+      {
+        "BH": [
+          "Asia/Qatar"
+        ]
+      },
+      {
+        "BI": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "BJ": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "BL": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "BM": [
+          "Atlantic/Bermuda"
+        ]
+      },
+      {
+        "BN": [
+          "Asia/Kuching"
+        ]
+      },
+      {
+        "BO": [
+          "America/La_Paz"
+        ]
+      },
+      {
+        "BQ": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "BR": [
+          "America/Noronha",
+          "America/Belem",
+          "America/Fortaleza",
+          "America/Recife",
+          "America/Araguaina",
+          "America/Maceio",
+          "America/Bahia",
+          "America/Sao_Paulo",
+          "America/Campo_Grande",
+          "America/Cuiaba",
+          "America/Santarem",
+          "America/Porto_Velho",
+          "America/Boa_Vista",
+          "America/Manaus",
+          "America/Eirunepe",
+          "America/Rio_Branco"
+        ]
+      },
+      {
+        "BS": [
+          "America/Toronto"
+        ]
+      },
+      {
+        "BT": [
+          "Asia/Thimphu"
+        ]
+      },
+      {
+        "BV": []
+      },
+      {
+        "BW": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "BY": [
+          "Europe/Minsk"
+        ]
+      },
+      {
+        "BZ": [
+          "America/Belize"
+        ]
+      },
+      {
+        "CA": [
+          "America/St_Johns",
+          "America/Halifax",
+          "America/Glace_Bay",
+          "America/Moncton",
+          "America/Goose_Bay",
+          "America/Toronto",
+          "America/Iqaluit",
+          "America/Winnipeg",
+          "America/Resolute",
+          "America/Rankin_Inlet",
+          "America/Regina",
+          "America/Swift_Current",
+          "America/Edmonton",
+          "America/Cambridge_Bay",
+          "America/Inuvik",
+          "America/Dawson_Creek",
+          "America/Fort_Nelson",
+          "America/Whitehorse",
+          "America/Dawson",
+          "America/Vancouver",
+          "America/Panama",
+          "America/Puerto_Rico",
+          "America/Phoenix"
+        ]
+      },
+      {
+        "CC": [
+          "Asia/Yangon"
+        ]
+      },
+      {
+        "CD": [
+          "Africa/Maputo",
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "CF": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "CG": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "CH": [
+          "Europe/Zurich"
+        ]
+      },
+      {
+        "CI": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "CK": [
+          "Pacific/Rarotonga"
+        ]
+      },
+      {
+        "CL": [
+          "America/Santiago",
+          "America/Coyhaique",
+          "America/Punta_Arenas",
+          "Pacific/Easter"
+        ]
+      },
+      {
+        "CM": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "CN": [
+          "Asia/Shanghai",
+          "Asia/Urumqi"
+        ]
+      },
+      {
+        "CO": [
+          "America/Bogota"
+        ]
+      },
+      {
+        "CR": [
+          "America/Costa_Rica"
+        ]
+      },
+      {
+        "CU": [
+          "America/Havana"
+        ]
+      },
+      {
+        "CV": [
+          "Atlantic/Cape_Verde"
+        ]
+      },
+      {
+        "CW": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "CX": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "CY": [
+          "Asia/Nicosia",
+          "Asia/Famagusta"
+        ]
+      },
+      {
+        "CZ": [
+          "Europe/Prague"
+        ]
+      },
+      {
+        "DE": [
+          "Europe/Berlin",
+          "Europe/Zurich"
+        ]
+      },
+      {
+        "DJ": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "DK": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "DM": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "DO": [
+          "America/Santo_Domingo"
+        ]
+      },
+      {
+        "DZ": [
+          "Africa/Algiers"
+        ]
+      },
+      {
+        "EC": [
+          "America/Guayaquil",
+          "Pacific/Galapagos"
+        ]
+      },
+      {
+        "EE": [
+          "Europe/Tallinn"
+        ]
+      },
+      {
+        "EG": [
+          "Africa/Cairo"
+        ]
+      },
+      {
+        "EH": [
+          "Africa/El_Aaiun"
+        ]
+      },
+      {
+        "ER": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "ES": [
+          "Europe/Madrid",
+          "Africa/Ceuta",
+          "Atlantic/Canary"
+        ]
+      },
+      {
+        "ET": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "FI": [
+          "Europe/Helsinki"
+        ]
+      },
+      {
+        "FJ": [
+          "Pacific/Fiji"
+        ]
+      },
+      {
+        "FK": [
+          "Atlantic/Stanley"
+        ]
+      },
+      {
+        "FM": [
+          "Pacific/Kosrae",
+          "Pacific/Port_Moresby",
+          "Pacific/Guadalcanal"
+        ]
+      },
+      {
+        "FO": [
+          "Atlantic/Faroe"
+        ]
+      },
+      {
+        "FR": [
+          "Europe/Paris"
+        ]
+      },
+      {
+        "GA": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "GB": [
+          "Europe/London"
+        ]
+      },
+      {
+        "GD": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "GE": [
+          "Asia/Tbilisi"
+        ]
+      },
+      {
+        "GF": [
+          "America/Cayenne"
+        ]
+      },
+      {
+        "GG": [
+          "Europe/London"
+        ]
+      },
+      {
+        "GH": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "GI": [
+          "Europe/Gibraltar"
+        ]
+      },
+      {
+        "GL": [
+          "America/Nuuk",
+          "America/Danmarkshavn",
+          "America/Scoresbysund",
+          "America/Thule"
+        ]
+      },
+      {
+        "GM": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "GN": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "GP": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "GQ": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "GR": [
+          "Europe/Athens"
+        ]
+      },
+      {
+        "GS": [
+          "Atlantic/South_Georgia"
+        ]
+      },
+      {
+        "GT": [
+          "America/Guatemala"
+        ]
+      },
+      {
+        "GU": [
+          "Pacific/Guam"
+        ]
+      },
+      {
+        "GW": [
+          "Africa/Bissau"
+        ]
+      },
+      {
+        "GY": [
+          "America/Guyana"
+        ]
+      },
+      {
+        "HK": [
+          "Asia/Hong_Kong"
+        ]
+      },
+      {
+        "HM": []
+      },
+      {
+        "HN": [
+          "America/Tegucigalpa"
+        ]
+      },
+      {
+        "HR": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "HT": [
+          "America/Port-au-Prince"
+        ]
+      },
+      {
+        "HU": [
+          "Europe/Budapest"
+        ]
+      },
+      {
+        "ID": [
+          "Asia/Jakarta",
+          "Asia/Pontianak",
+          "Asia/Makassar",
+          "Asia/Jayapura"
+        ]
+      },
+      {
+        "IE": [
+          "Europe/Dublin"
+        ]
+      },
+      {
+        "IL": [
+          "Asia/Jerusalem"
+        ]
+      },
+      {
+        "IM": [
+          "Europe/London"
+        ]
+      },
+      {
+        "IN": [
+          "Asia/Kolkata"
+        ]
+      },
+      {
+        "IO": [
+          "Indian/Chagos"
+        ]
+      },
+      {
+        "IQ": [
+          "Asia/Baghdad"
+        ]
+      },
+      {
+        "IR": [
+          "Asia/Tehran"
+        ]
+      },
+      {
+        "IS": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "IT": [
+          "Europe/Rome"
+        ]
+      },
+      {
+        "JE": [
+          "Europe/London"
+        ]
+      },
+      {
+        "JM": [
+          "America/Jamaica"
+        ]
+      },
+      {
+        "JO": [
+          "Asia/Amman"
+        ]
+      },
+      {
+        "JP": [
+          "Asia/Tokyo"
+        ]
+      },
+      {
+        "KE": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "KG": [
+          "Asia/Bishkek"
+        ]
+      },
+      {
+        "KH": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "KI": [
+          "Pacific/Tarawa",
+          "Pacific/Kanton",
+          "Pacific/Kiritimati"
+        ]
+      },
+      {
+        "KM": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "KN": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "KP": [
+          "Asia/Pyongyang"
+        ]
+      },
+      {
+        "KR": [
+          "Asia/Seoul"
+        ]
+      },
+      {
+        "KW": [
+          "Asia/Riyadh"
+        ]
+      },
+      {
+        "KY": [
+          "America/Panama"
+        ]
+      },
+      {
+        "KZ": [
+          "Asia/Almaty",
+          "Asia/Qyzylorda",
+          "Asia/Qostanay",
+          "Asia/Aqtobe",
+          "Asia/Aqtau",
+          "Asia/Atyrau",
+          "Asia/Oral"
+        ]
+      },
+      {
+        "LA": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "LB": [
+          "Asia/Beirut"
+        ]
+      },
+      {
+        "LC": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "LI": [
+          "Europe/Zurich"
+        ]
+      },
+      {
+        "LK": [
+          "Asia/Colombo"
+        ]
+      },
+      {
+        "LR": [
+          "Africa/Monrovia"
+        ]
+      },
+      {
+        "LS": [
+          "Africa/Johannesburg"
+        ]
+      },
+      {
+        "LT": [
+          "Europe/Vilnius"
+        ]
+      },
+      {
+        "LU": [
+          "Europe/Brussels"
+        ]
+      },
+      {
+        "LV": [
+          "Europe/Riga"
+        ]
+      },
+      {
+        "LY": [
+          "Africa/Tripoli"
+        ]
+      },
+      {
+        "MA": [
+          "Africa/Casablanca"
+        ]
+      },
+      {
+        "MC": [
+          "Europe/Paris"
+        ]
+      },
+      {
+        "MD": [
+          "Europe/Chisinau"
+        ]
+      },
+      {
+        "ME": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "MF": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "MG": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "MH": [
+          "Pacific/Kwajalein",
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "MK": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "ML": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "MM": [
+          "Asia/Yangon"
+        ]
+      },
+      {
+        "MN": [
+          "Asia/Ulaanbaatar",
+          "Asia/Hovd"
+        ]
+      },
+      {
+        "MO": [
+          "Asia/Macau"
+        ]
+      },
+      {
+        "MP": [
+          "Pacific/Guam"
+        ]
+      },
+      {
+        "MQ": [
+          "America/Martinique"
+        ]
+      },
+      {
+        "MR": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "MS": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "MT": [
+          "Europe/Malta"
+        ]
+      },
+      {
+        "MU": [
+          "Indian/Mauritius"
+        ]
+      },
+      {
+        "MV": [
+          "Indian/Maldives"
+        ]
+      },
+      {
+        "MW": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "MX": [
+          "America/Mexico_City",
+          "America/Cancun",
+          "America/Merida",
+          "America/Monterrey",
+          "America/Matamoros",
+          "America/Chihuahua",
+          "America/Ciudad_Juarez",
+          "America/Ojinaga",
+          "America/Mazatlan",
+          "America/Bahia_Banderas",
+          "America/Hermosillo",
+          "America/Tijuana"
+        ]
+      },
+      {
+        "MY": [
+          "Asia/Kuching",
+          "Asia/Singapore"
+        ]
+      },
+      {
+        "MZ": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "NA": [
+          "Africa/Windhoek"
+        ]
+      },
+      {
+        "NC": [
+          "Pacific/Noumea"
+        ]
+      },
+      {
+        "NE": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "NF": [
+          "Pacific/Norfolk"
+        ]
+      },
+      {
+        "NG": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "NI": [
+          "America/Managua"
+        ]
+      },
+      {
+        "NL": [
+          "Europe/Brussels"
+        ]
+      },
+      {
+        "NO": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "NP": [
+          "Asia/Kathmandu"
+        ]
+      },
+      {
+        "NR": [
+          "Pacific/Nauru"
+        ]
+      },
+      {
+        "NU": [
+          "Pacific/Niue"
+        ]
+      },
+      {
+        "NZ": [
+          "Pacific/Auckland",
+          "Pacific/Chatham"
+        ]
+      },
+      {
+        "OM": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "PA": [
+          "America/Panama"
+        ]
+      },
+      {
+        "PE": [
+          "America/Lima"
+        ]
+      },
+      {
+        "PF": [
+          "Pacific/Tahiti",
+          "Pacific/Marquesas",
+          "Pacific/Gambier"
+        ]
+      },
+      {
+        "PG": [
+          "Pacific/Port_Moresby",
+          "Pacific/Bougainville"
+        ]
+      },
+      {
+        "PH": [
+          "Asia/Manila"
+        ]
+      },
+      {
+        "PK": [
+          "Asia/Karachi"
+        ]
+      },
+      {
+        "PL": [
+          "Europe/Warsaw"
+        ]
+      },
+      {
+        "PM": [
+          "America/Miquelon"
+        ]
+      },
+      {
+        "PN": [
+          "Pacific/Pitcairn"
+        ]
+      },
+      {
+        "PR": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "PS": [
+          "Asia/Gaza",
+          "Asia/Hebron"
+        ]
+      },
+      {
+        "PT": [
+          "Europe/Lisbon",
+          "Atlantic/Madeira",
+          "Atlantic/Azores"
+        ]
+      },
+      {
+        "PW": [
+          "Pacific/Palau"
+        ]
+      },
+      {
+        "PY": [
+          "America/Asuncion"
+        ]
+      },
+      {
+        "QA": [
+          "Asia/Qatar"
+        ]
+      },
+      {
+        "RE": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "RO": [
+          "Europe/Bucharest"
+        ]
+      },
+      {
+        "RS": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "RU": [
+          "Europe/Kaliningrad",
+          "Europe/Moscow",
+          "Europe/Simferopol",
+          "Europe/Kirov",
+          "Europe/Volgograd",
+          "Europe/Astrakhan",
+          "Europe/Saratov",
+          "Europe/Ulyanovsk",
+          "Europe/Samara",
+          "Asia/Yekaterinburg",
+          "Asia/Omsk",
+          "Asia/Novosibirsk",
+          "Asia/Barnaul",
+          "Asia/Tomsk",
+          "Asia/Novokuznetsk",
+          "Asia/Krasnoyarsk",
+          "Asia/Irkutsk",
+          "Asia/Chita",
+          "Asia/Yakutsk",
+          "Asia/Khandyga",
+          "Asia/Vladivostok",
+          "Asia/Ust-Nera",
+          "Asia/Magadan",
+          "Asia/Sakhalin",
+          "Asia/Srednekolymsk",
+          "Asia/Kamchatka",
+          "Asia/Anadyr"
+        ]
+      },
+      {
+        "RW": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "SA": [
+          "Asia/Riyadh"
+        ]
+      },
+      {
+        "SB": [
+          "Pacific/Guadalcanal"
+        ]
+      },
+      {
+        "SC": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "SD": [
+          "Africa/Khartoum"
+        ]
+      },
+      {
+        "SE": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "SG": [
+          "Asia/Singapore"
+        ]
+      },
+      {
+        "SH": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "SI": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "SJ": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "SK": [
+          "Europe/Prague"
+        ]
+      },
+      {
+        "SL": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "SM": [
+          "Europe/Rome"
+        ]
+      },
+      {
+        "SN": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "SO": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "SR": [
+          "America/Paramaribo"
+        ]
+      },
+      {
+        "SS": [
+          "Africa/Juba"
+        ]
+      },
+      {
+        "ST": [
+          "Africa/Sao_Tome"
+        ]
+      },
+      {
+        "SV": [
+          "America/El_Salvador"
+        ]
+      },
+      {
+        "SX": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "SY": [
+          "Asia/Damascus"
+        ]
+      },
+      {
+        "SZ": [
+          "Africa/Johannesburg"
+        ]
+      },
+      {
+        "TC": [
+          "America/Grand_Turk"
+        ]
+      },
+      {
+        "TD": [
+          "Africa/Ndjamena"
+        ]
+      },
+      {
+        "TF": [
+          "Asia/Dubai",
+          "Indian/Maldives"
+        ]
+      },
+      {
+        "TG": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "TH": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "TJ": [
+          "Asia/Dushanbe"
+        ]
+      },
+      {
+        "TK": [
+          "Pacific/Fakaofo"
+        ]
+      },
+      {
+        "TL": [
+          "Asia/Dili"
+        ]
+      },
+      {
+        "TM": [
+          "Asia/Ashgabat"
+        ]
+      },
+      {
+        "TN": [
+          "Africa/Tunis"
+        ]
+      },
+      {
+        "TO": [
+          "Pacific/Tongatapu"
+        ]
+      },
+      {
+        "TR": [
+          "Europe/Istanbul"
+        ]
+      },
+      {
+        "TT": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "TV": [
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "TW": [
+          "Asia/Taipei"
+        ]
+      },
+      {
+        "TZ": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "UA": [
+          "Europe/Kyiv",
+          "Europe/Simferopol"
+        ]
+      },
+      {
+        "UG": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "UM": [
+          "Pacific/Pago_Pago",
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "US": [
+          "America/New_York",
+          "America/Detroit",
+          "America/Kentucky/Louisville",
+          "America/Kentucky/Monticello",
+          "America/Indiana/Indianapolis",
+          "America/Indiana/Vincennes",
+          "America/Indiana/Winamac",
+          "America/Indiana/Marengo",
+          "America/Indiana/Petersburg",
+          "America/Indiana/Vevay",
+          "America/Chicago",
+          "America/Indiana/Tell_City",
+          "America/Indiana/Knox",
+          "America/Menominee",
+          "America/North_Dakota/Center",
+          "America/North_Dakota/New_Salem",
+          "America/North_Dakota/Beulah",
+          "America/Denver",
+          "America/Boise",
+          "America/Phoenix",
+          "America/Los_Angeles",
+          "America/Anchorage",
+          "America/Juneau",
+          "America/Sitka",
+          "America/Metlakatla",
+          "America/Yakutat",
+          "America/Nome",
+          "America/Adak",
+          "Pacific/Honolulu"
+        ]
+      },
+      {
+        "UY": [
+          "America/Montevideo"
+        ]
+      },
+      {
+        "UZ": [
+          "Asia/Samarkand",
+          "Asia/Tashkent"
+        ]
+      },
+      {
+        "VA": [
+          "Europe/Rome"
+        ]
+      },
+      {
+        "VC": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "VE": [
+          "America/Caracas"
+        ]
+      },
+      {
+        "VG": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "VI": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "VN": [
+          "Asia/Ho_Chi_Minh",
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "VU": [
+          "Pacific/Efate"
+        ]
+      },
+      {
+        "WF": [
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "WS": [
+          "Pacific/Apia"
+        ]
+      },
+      {
+        "YE": [
+          "Asia/Riyadh"
+        ]
+      },
+      {
+        "YT": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "ZA": [
+          "Africa/Johannesburg"
+        ]
+      },
+      {
+        "ZM": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "ZW": [
+          "Africa/Maputo"
+        ]
+      }
+    ],
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "0d0528dd7d131ccfd2180219699de898c902b9665fd3b4d38d76660e40b47573",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=28647",
+      "ETag": "W/\u0022f2385f2819b7dd90f7591324725817a7\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

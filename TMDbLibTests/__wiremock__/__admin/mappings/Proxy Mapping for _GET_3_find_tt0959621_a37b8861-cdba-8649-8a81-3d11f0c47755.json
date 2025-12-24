@@ -1,0 +1,79 @@
+{
+  "Guid": "a37b8861-cdba-8649-8a81-3d11f0c47755",
+  "UpdatedAt": "2025-12-24T11:53:34.5763413Z",
+  "Title": "Proxy Mapping for GET /3/find/tt0959621",
+  "Description": "Proxy Mapping for GET /3/find/tt0959621",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/find/tt0959621",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "external_source",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "imdb_id",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "movie_results": [],
+      "person_results": [],
+      "tv_results": [],
+      "tv_episode_results": [
+        {
+          "id": 62085,
+          "name": "Pilot",
+          "overview": "When an unassuming high school chemistry teacher discovers he has a rare form of lung cancer, he decides to team up with a former student and create a top of the line crystal meth in a used RV, to provide for his family once he is gone.",
+          "media_type": "tv_episode",
+          "vote_average": 8.46,
+          "vote_count": 449,
+          "air_date": "2008-01-20",
+          "episode_number": 1,
+          "episode_type": "standard",
+          "production_code": "",
+          "runtime": 59,
+          "season_number": 1,
+          "show_id": 1396,
+          "still_path": "/ydlY3iPfeOAvu8gVqrxPoMvzNCn.jpg"
+        }
+      ],
+      "tv_season_results": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=11558",
+      "x-memc": "HIT",
+      "x-memc-key": "3a3fae6599ffe1a8baa08e2c66cc306908fd824a54bc63d197f06ba036bc08ee",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022e0866433124c4561936c2cb5b290b189\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

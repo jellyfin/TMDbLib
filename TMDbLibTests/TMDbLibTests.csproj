@@ -4,6 +4,7 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,11 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.9.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" PrivateAssets="All" />
     <PackageReference Include="Verify.Xunit" Version="31.9.0" />
     <PackageReference Include="Verify.NewtonsoftJson" Version="1.1.0" />
+    <PackageReference Include="WireMock.Net" Version="1.19.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>

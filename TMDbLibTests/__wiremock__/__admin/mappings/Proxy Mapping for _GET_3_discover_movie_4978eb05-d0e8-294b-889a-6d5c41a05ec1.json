@@ -1,0 +1,476 @@
+{
+  "Guid": "4978eb05-d0e8-294b-889a-6d5c41a05ec1",
+  "UpdatedAt": "2025-12-24T11:53:34.7083772Z",
+  "Title": "Proxy Mapping for GET /3/discover/movie",
+  "Description": "Proxy Mapping for GET /3/discover/movie",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/movie",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "vote_count.gte",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1000",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "vote_average.gte",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/cd8YDn7M0lfaHhZdU6MvCDxPalP.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 76600,
+          "original_language": "en",
+          "original_title": "Avatar: The Way of Water",
+          "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+          "popularity": 114.6909,
+          "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+          "release_date": "2022-12-14",
+          "title": "Avatar: The Way of Water",
+          "video": false,
+          "vote_average": 7.608,
+          "vote_count": 13252
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
+          "genre_ids": [
+            28,
+            12,
+            14,
+            878
+          ],
+          "id": 19995,
+          "original_language": "en",
+          "original_title": "Avatar",
+          "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+          "popularity": 111.795,
+          "poster_path": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+          "release_date": "2009-12-16",
+          "title": "Avatar",
+          "video": false,
+          "vote_average": 7.597,
+          "vote_count": 33011
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2OHa6ukEq3Hce7Pc2kvu8wkmMFY.jpg",
+          "genre_ids": [
+            28,
+            12,
+            53,
+            80,
+            18
+          ],
+          "id": 7451,
+          "original_language": "en",
+          "original_title": "xXx",
+          "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \u0022recruits\u0022 him to go on a mission, he\u0027s not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+          "popularity": 79.1846,
+          "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+          "release_date": "2002-08-09",
+          "title": "xXx",
+          "video": false,
+          "vote_average": 5.976,
+          "vote_count": 4699
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uLBJtONQwHoGc61vbIfoC6a9gUp.jpg",
+          "genre_ids": [
+            10752,
+            18,
+            36,
+            28
+          ],
+          "id": 152760,
+          "original_language": "en",
+          "original_title": "The Monuments Men",
+          "overview": "Based on the true story of the greatest treasure hunt in history, The Monuments Men is an action drama focusing on seven over-the-hill, out-of-shape museum directors, artists, architects, curators, and art historians who went to the front lines of WWII to rescue the world\u2019s artistic masterpieces from Nazi thieves and return them to their rightful owners.  With the art hidden behind enemy lines, how could these guys hope to succeed?",
+          "popularity": 55.1394,
+          "poster_path": "/wiWAg4mKV2S4vImPxsPRIdj2R2B.jpg",
+          "release_date": "2014-01-24",
+          "title": "The Monuments Men",
+          "video": false,
+          "vote_average": 6.063,
+          "vote_count": 3730
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg",
+          "genre_ids": [
+            18,
+            14,
+            27
+          ],
+          "id": 1062722,
+          "original_language": "en",
+          "original_title": "Frankenstein",
+          "overview": "Dr. Victor Frankenstein, a brilliant but egotistical scientist, brings a creature to life in a monstrous experiment that ultimately leads to the undoing of both the creator and his tragic creation.",
+          "popularity": 76.6845,
+          "poster_path": "/g4JtvGlQO7DByTI6frUobqvSL3R.jpg",
+          "release_date": "2025-10-17",
+          "title": "Frankenstein",
+          "video": false,
+          "vote_average": 7.718,
+          "vote_count": 2348
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zpEWFNqoN8Qg1SzMMHmaGyOBTdW.jpg",
+          "genre_ids": [
+            53,
+            80,
+            28
+          ],
+          "id": 1054867,
+          "original_language": "en",
+          "original_title": "One Battle After Another",
+          "overview": "Washed-up revolutionary Bob exists in a state of stoned paranoia, surviving off-grid with his spirited, self-reliant daughter, Willa. When his evil nemesis resurfaces after 16 years and she goes missing, the former radical scrambles to find her, father and daughter both battling the consequences of his past.",
+          "popularity": 74.8135,
+          "poster_path": "/r4uXvqCeco0KmO0CjlhXuTEFuSE.jpg",
+          "release_date": "2025-09-23",
+          "title": "One Battle After Another",
+          "video": false,
+          "vote_average": 7.483,
+          "vote_count": 1990
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+          "genre_ids": [
+            16,
+            12,
+            10751,
+            35
+          ],
+          "id": 269149,
+          "original_language": "en",
+          "original_title": "Zootopia",
+          "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia\u0027s police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.",
+          "popularity": 64.4071,
+          "poster_path": "/hlK0e0wAQ3VLuJcsfIYPvb4JVud.jpg",
+          "release_date": "2016-02-11",
+          "title": "Zootopia",
+          "video": false,
+          "vote_average": 7.757,
+          "vote_count": 17334
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w3Bi0wygeFQctn6AqFTwhGNXRwL.jpg",
+          "genre_ids": [
+            14,
+            10402,
+            35,
+            16
+          ],
+          "id": 803796,
+          "original_language": "en",
+          "original_title": "KPop Demon Hunters",
+          "overview": "When K-pop superstars Rumi, Mira and Zoey aren\u0027t selling out stadiums, they\u0027re using their secret powers to protect their fans from supernatural threats.",
+          "popularity": 66.2629,
+          "poster_path": "/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg",
+          "release_date": "2025-06-20",
+          "title": "KPop Demon Hunters",
+          "video": false,
+          "vote_average": 8.18,
+          "vote_count": 2073
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qVGpxnjrGlHaSTCqTQI6viBDSfp.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 346364,
+          "original_language": "en",
+          "original_title": "It",
+          "overview": "In a small town in Maine, seven children known as The Losers Club come face to face with life problems, bullies and a monster that takes the shape of a clown called Pennywise.",
+          "popularity": 55.9228,
+          "poster_path": "/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg",
+          "release_date": "2017-09-06",
+          "title": "It",
+          "video": false,
+          "vote_average": 7.238,
+          "vote_count": 19918
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xPNDRM50a58uvv1il2GVZrtWjkZ.jpg",
+          "genre_ids": [
+            28,
+            53,
+            12
+          ],
+          "id": 575265,
+          "original_language": "en",
+          "original_title": "Mission: Impossible - The Final Reckoning",
+          "overview": "Ethan Hunt and team continue their search for the terrifying AI known as the Entity \u2014 which has infiltrated intelligence networks all over the globe \u2014 with the world\u0027s governments and a mysterious ghost from Hunt\u0027s past on their trail. Joined by new allies and armed with the means to shut the Entity down for good, Hunt is in a race against time to prevent the world as we know it from changing forever.",
+          "popularity": 61.1509,
+          "poster_path": "/z53D72EAOxGRqdr7KXXWp9dJiDe.jpg",
+          "release_date": "2025-05-17",
+          "title": "Mission: Impossible - The Final Reckoning",
+          "video": false,
+          "vote_average": 7.244,
+          "vote_count": 2237
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8moTOzunF7p40oR5XhlDvJckOSW.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 474350,
+          "original_language": "en",
+          "original_title": "It Chapter Two",
+          "overview": "27 years after overcoming the malevolent supernatural entity Pennywise, the former members of the Losers\u0027 Club, who have grown up and moved away from Derry, are brought back together by a devastating phone call.",
+          "popularity": 52.1159,
+          "poster_path": "/zfE0R94v1E8cuKAerbskfD3VfUt.jpg",
+          "release_date": "2019-09-04",
+          "title": "It Chapter Two",
+          "video": false,
+          "vote_average": 6.838,
+          "vote_count": 9330
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mXLVA0YL6tcXi6SJSuAh9ONXFj5.jpg",
+          "genre_ids": [
+            878,
+            12,
+            10751,
+            14
+          ],
+          "id": 601,
+          "original_language": "en",
+          "original_title": "E.T. the Extra-Terrestrial",
+          "overview": "An alien is left behind on Earth and saved by the 10-year-old Elliott who decides to keep him hidden in his home. While a task force hunts for the extra-terrestrial, Elliott, his brother, and his little sister Gertie form an emotional bond with their new friend, and try to help him find his way home.",
+          "popularity": 42.879,
+          "poster_path": "/an0nD6uq6byfxXCfk6lQBzdL2J1.jpg",
+          "release_date": "1982-06-11",
+          "title": "E.T. the Extra-Terrestrial",
+          "video": false,
+          "vote_average": 7.512,
+          "vote_count": 11696
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sy0vo1cmpKqwPRiMUiJ45jyLsX7.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            14
+          ],
+          "id": 8871,
+          "original_language": "en",
+          "original_title": "How the Grinch Stole Christmas",
+          "overview": "The Grinch decides to rob Whoville of Christmas - but a dash of kindness from little Cindy Lou Who and her family may be enough to melt his heart...",
+          "popularity": 56.4803,
+          "poster_path": "/1WZbbPApEivA421gCOluuzMMKCk.jpg",
+          "release_date": "2000-11-17",
+          "title": "How the Grinch Stole Christmas",
+          "video": false,
+          "vote_average": 6.778,
+          "vote_count": 8022
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hBvaanw3RfMEs1m1blY7xwRXzul.jpg",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "id": 617126,
+          "original_language": "en",
+          "original_title": "The Fantastic 4: First Steps",
+          "overview": "Against the vibrant backdrop of a 1960s-inspired, retro-futuristic world, Marvel\u0027s First Family is forced to balance their roles as heroes with the strength of their family bond, while defending Earth from a ravenous space god called Galactus and his enigmatic Herald, Silver Surfer.",
+          "popularity": 54.433,
+          "poster_path": "/pZPJsaFKWheTOerVhLnpP8TPp4B.jpg",
+          "release_date": "2025-07-23",
+          "title": "The Fantastic 4: First Steps",
+          "video": false,
+          "vote_average": 7.011,
+          "vote_count": 2680
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yRBc6WY3r1Fz5Cjd6DhSvzqunED.jpg",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "id": 1061474,
+          "original_language": "en",
+          "original_title": "Superman",
+          "overview": "Superman, a journalist in Metropolis, embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent.",
+          "popularity": 54.616,
+          "poster_path": "/ldyfo0BKmz5rWtJJKCvwaNS4cJT.jpg",
+          "release_date": "2025-07-09",
+          "title": "Superman",
+          "video": false,
+          "vote_average": 7.391,
+          "vote_count": 4029
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dGiPJO75b9GmXqxvusbKlcYrDcg.jpg",
+          "genre_ids": [
+            35,
+            10751,
+            12
+          ],
+          "id": 772,
+          "original_language": "en",
+          "original_title": "Home Alone 2: Lost in New York",
+          "overview": "Instead of flying to Florida with his folks, Kevin ends up alone in New York, where he gets a hotel room with his dad\u0027s credit card\u2014despite problems from a clerk and meddling bellboy. But when Kevin runs into his old nemeses, the Wet Bandits, he\u0027s determined to foil their plans to rob a toy store on Christmas Eve.",
+          "popularity": 49.7405,
+          "poster_path": "/9CAkQ9nfrDaIAyncWndwg0tfC8g.jpg",
+          "release_date": "1992-11-15",
+          "title": "Home Alone 2: Lost in New York",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 10267
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "id": 24428,
+          "original_language": "en",
+          "original_title": "The Avengers",
+          "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+          "popularity": 49.8791,
+          "poster_path": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+          "release_date": "2012-04-25",
+          "title": "The Avengers",
+          "video": false,
+          "vote_average": 7.881,
+          "vote_count": 34579
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5XNQBqnBwPA9yT0jZ0p3s8bbLh0.jpg",
+          "genre_ids": [
+            12,
+            18,
+            878
+          ],
+          "id": 157336,
+          "original_language": "en",
+          "original_title": "Interstellar",
+          "overview": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+          "popularity": 46.3929,
+          "poster_path": "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+          "release_date": "2014-11-05",
+          "title": "Interstellar",
+          "video": false,
+          "vote_average": 8.464,
+          "vote_count": 38446
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fQOV47FHTJdaSuSUNlzP3zXUZWE.jpg",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "id": 1234821,
+          "original_language": "en",
+          "original_title": "Jurassic World Rebirth",
+          "overview": "Five years after the events of Jurassic World Dominion, covert operations expert Zora Bennett is contracted to lead a skilled team on a top-secret mission to secure genetic material from the world\u0027s three most massive dinosaurs. When Zora\u0027s operation intersects with a civilian family whose boating expedition was capsized, they all find themselves stranded on an island where they come face-to-face with a sinister, shocking discovery that\u0027s been hidden from the world for decades.",
+          "popularity": 45.6692,
+          "poster_path": "/1RICxzeoNCAO5NpcRMIgg1XT6fm.jpg",
+          "release_date": "2025-07-01",
+          "title": "Jurassic World Rebirth",
+          "video": false,
+          "vote_average": 6.372,
+          "vote_count": 2640
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7NRGAtu8E4343NSKwhkgmVRDINw.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 507089,
+          "original_language": "en",
+          "original_title": "Five Nights at Freddy\u0027s",
+          "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear\u0027s Pizzeria. But he soon discovers that nothing at Freddy\u0027s is what it seems.",
+          "popularity": 44.1137,
+          "poster_path": "/4dKRTUylqwXQ4VJz0BS84fqW2wa.jpg",
+          "release_date": "2023-10-25",
+          "title": "Five Nights at Freddy\u0027s",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 4746
+        }
+      ],
+      "total_pages": 234,
+      "total_results": 4668
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=24259",
+      "x-memc": "HIT",
+      "x-memc-key": "067234e1a0490c15725eb28a0a2e584593ec17eb3704fb6e874a9f1e28aa8942",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00222103cea6930c88630ffb252e1b1d93e6\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

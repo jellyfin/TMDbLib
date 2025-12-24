@@ -1,0 +1,92 @@
+{
+  "Guid": "877f8a49-31e7-8e4d-a1cd-673037d8b1d3",
+  "UpdatedAt": "2025-12-24T11:53:34.6518522Z",
+  "Title": "Proxy Mapping for GET /3/find/30272",
+  "Description": "Proxy Mapping for GET /3/find/30272",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/find/30272",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "external_source",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "tvdb_id",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "movie_results": [],
+      "person_results": [],
+      "tv_results": [],
+      "tv_episode_results": [
+        {
+          "id": 202650,
+          "name": "The Bishop Warms Up",
+          "overview": "Now that the Dean has replaced the annual hymn service with a music festival, there is a need to house the boys\u0027 choir. Due to local bylaws, it is down to the Bishop to put them up in his home but he has just had a new central heating system fitted and it makes for a sleepless night for all!",
+          "media_type": "tv_episode",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "air_date": "1971-05-13",
+          "episode_number": 1,
+          "episode_type": "standard",
+          "production_code": "",
+          "runtime": 30,
+          "season_number": 5,
+          "show_id": 2635,
+          "still_path": null
+        }
+      ],
+      "tv_season_results": [
+        {
+          "id": 3572,
+          "name": "Season 1",
+          "overview": "High school chemistry teacher Walter White\u0027s life is suddenly transformed by a dire medical diagnosis. Street-savvy former student Jesse Pinkman \u0022teaches\u0022 Walter a new trade.",
+          "poster_path": "/1BP4xYv9ZG4ZVHkL7ocOziBbSYH.jpg",
+          "media_type": "tv_season",
+          "vote_average": 8.3,
+          "air_date": "2008-01-20",
+          "season_number": 1,
+          "show_id": 1396,
+          "episode_count": 7
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "e1bddcfd30d20c591cca687de49a34d8fc804b107521982857e704818651d48e",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=24103",
+      "ETag": "W/\u0022fa06ee3f8c3e20e8cbc8605123a841eb\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

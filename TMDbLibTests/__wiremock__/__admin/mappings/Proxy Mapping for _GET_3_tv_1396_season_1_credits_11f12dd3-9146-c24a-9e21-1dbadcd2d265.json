@@ -1,0 +1,362 @@
+{
+  "Guid": "11f12dd3-9146-c24a-9e21-1dbadcd2d265",
+  "UpdatedAt": "2025-12-24T11:53:34.8173715Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/season/1/credits",
+  "Description": "Proxy Mapping for GET /3/tv/1396/season/1/credits",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/season/1/credits",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "cast": [
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 17419,
+          "known_for_department": "Acting",
+          "name": "Bryan Cranston",
+          "original_name": "Bryan Cranston",
+          "popularity": 4.7952,
+          "profile_path": "/npIIZJGSrcJIJ6yHdmbqO6Jzo5I.jpg",
+          "character": "Walter White",
+          "credit_id": "52542282760ee313280017f9",
+          "order": 0
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 84497,
+          "known_for_department": "Acting",
+          "name": "Aaron Paul",
+          "original_name": "Aaron Paul",
+          "popularity": 4.289,
+          "profile_path": "/8Ac9uuoYwZoYVAIJfRLzzLsGGJn.jpg",
+          "character": "Jesse Pinkman",
+          "credit_id": "52542282760ee31328001845",
+          "order": 1
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 134531,
+          "known_for_department": "Acting",
+          "name": "Anna Gunn",
+          "original_name": "Anna Gunn",
+          "popularity": 2.9767,
+          "profile_path": "/adppyeu1a4REN3khtgmXusrapFi.jpg",
+          "character": "Skyler White",
+          "credit_id": "52542282760ee3132800181b",
+          "order": 2
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 209674,
+          "known_for_department": "Acting",
+          "name": "RJ Mitte",
+          "original_name": "RJ Mitte",
+          "popularity": 2.1429,
+          "profile_path": "/sNPA92ZrssYhlaB1UA2pWcLD9db.jpg",
+          "character": "Walter White Jr.",
+          "credit_id": "52542284760ee313280018a9",
+          "order": 3
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 14329,
+          "known_for_department": "Acting",
+          "name": "Dean Norris",
+          "original_name": "Dean Norris",
+          "popularity": 5.8794,
+          "profile_path": "/mKRrEbsxAX3ro700HsViFArRM7l.jpg",
+          "character": "Hank Schrader",
+          "credit_id": "52542283760ee3132800187b",
+          "order": 4
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1217934,
+          "known_for_department": "Acting",
+          "name": "Betsy Brandt",
+          "original_name": "Betsy Brandt",
+          "popularity": 2.2155,
+          "profile_path": "/xAnuzyjdMbQq9L1c4JNwXL52Wm4.jpg",
+          "character": "Marie Schrader",
+          "credit_id": "52542283760ee31328001891",
+          "order": 5
+        }
+      ],
+      "crew": [
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 24951,
+          "known_for_department": "Production",
+          "name": "Peter Gould",
+          "original_name": "Peter Gould",
+          "popularity": 1.4507,
+          "profile_path": "/a2dJSpUiXQ2NAxqSzztr6WsnhOJ.jpg",
+          "credit_id": "69472d6f94041a01928120a0",
+          "department": "Writing",
+          "job": "Story Editor"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1223193,
+          "known_for_department": "Writing",
+          "name": "George Mastras",
+          "original_name": "George Mastras",
+          "popularity": 0.2986,
+          "profile_path": "/2K0NELbA0Ow45ECudbO2eFc1Fe4.jpg",
+          "credit_id": "69472d286d365600fafb0e92",
+          "department": "Writing",
+          "job": "Story Editor"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1223200,
+          "known_for_department": "Production",
+          "name": "Stewart Lyons",
+          "original_name": "Stewart Lyons",
+          "popularity": 0.0905,
+          "profile_path": "/dCAN4EMn8rsqALwDIjf9aNjuVTm.jpg",
+          "credit_id": "64189cd9e74146007c82fbfc",
+          "department": "Production",
+          "job": "Co-Producer"
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1223199,
+          "known_for_department": "Production",
+          "name": "Melissa Bernstein",
+          "original_name": "Melissa Bernstein",
+          "popularity": 0.8639,
+          "profile_path": "/rSztwqMUIko8RkmwjxBse1XDW3g.jpg",
+          "credit_id": "64189dbaa14bef00fd7d4bca",
+          "department": "Production",
+          "job": "Co-Producer"
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1223201,
+          "known_for_department": "Production",
+          "name": "Karen Moore",
+          "original_name": "Karen Moore",
+          "popularity": 0.2275,
+          "profile_path": null,
+          "credit_id": "5254228c760ee31328001c37",
+          "department": "Production",
+          "job": "Producer"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 21640,
+          "known_for_department": "Art",
+          "name": "Robb Wilson King",
+          "original_name": "Robb Wilson King",
+          "popularity": 0.2676,
+          "profile_path": null,
+          "credit_id": "52b7020b19c295223b0a46e8",
+          "department": "Art",
+          "job": "Production Design"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 4065206,
+          "known_for_department": "Crew",
+          "name": "Martin Ch\u00E1vez",
+          "original_name": "Martin Ch\u00E1vez",
+          "popularity": 0.0502,
+          "profile_path": null,
+          "credit_id": "64634bf20f365501190773a4",
+          "department": "Crew",
+          "job": "Thanks"
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 35583,
+          "known_for_department": "Costume \u0026 Make-Up",
+          "name": "Kathleen Detoro",
+          "original_name": "Kathleen Detoro",
+          "popularity": 0.2244,
+          "profile_path": null,
+          "credit_id": "52b7034f19c2955402184de6",
+          "department": "Costume \u0026 Make-Up",
+          "job": "Costume Design"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 143921,
+          "known_for_department": "Sound",
+          "name": "Jeffrey Perkins",
+          "original_name": "Jeffrey Perkins",
+          "popularity": 0.2492,
+          "profile_path": null,
+          "credit_id": "68dc79d76c365b970d5313ce",
+          "department": "Sound",
+          "job": "Sound Re-Recording Mixer"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1440228,
+          "known_for_department": "Sound",
+          "name": "Eric Justen",
+          "original_name": "Eric Justen",
+          "popularity": 1.4092,
+          "profile_path": "/6XH9DhMhbWctzYRjMOHSXlNh9Es.jpg",
+          "credit_id": "68dc6b335afb57f2ce5315dd",
+          "department": "Sound",
+          "job": "Sound Re-Recording Mixer"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1537690,
+          "known_for_department": "Crew",
+          "name": "Al Goto",
+          "original_name": "Al Goto",
+          "popularity": 0.3522,
+          "profile_path": "/lYFqF3KN3ZDymD2u1QgTiTGhAvb.jpg",
+          "credit_id": "6450485343501100ea397cba",
+          "department": "Crew",
+          "job": "Stunt Coordinator"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1537682,
+          "known_for_department": "Sound",
+          "name": "Nick Forshager",
+          "original_name": "Nick Forshager",
+          "popularity": 0.204,
+          "profile_path": null,
+          "credit_id": "644986702fdec604e4a1236a",
+          "department": "Sound",
+          "job": "Supervising Sound Editor"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1069688,
+          "known_for_department": "Sound",
+          "name": "Thomas Golubi\u0107",
+          "original_name": "Thomas Golubi\u0107",
+          "popularity": 0.2717,
+          "profile_path": "/umzkpmX3p3GdrSutAHFX7Rij0Sm.jpg",
+          "credit_id": "64634e45e3fa2f00e404a628",
+          "department": "Sound",
+          "job": "Music Supervisor"
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 6479,
+          "known_for_department": "Production",
+          "name": "Sharon Bialy",
+          "original_name": "Sharon Bialy",
+          "popularity": 0.5116,
+          "profile_path": "/uOex6LpaQYncD0sQfVYD1frI5uJ.jpg",
+          "credit_id": "6444663ccee2f6049f36d7d3",
+          "department": "Production",
+          "job": "Casting"
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 959387,
+          "known_for_department": "Production",
+          "name": "Sherry Thomas",
+          "original_name": "Sherry Thomas",
+          "popularity": 0.4024,
+          "profile_path": null,
+          "credit_id": "64446643cee2f604f336e877",
+          "department": "Production",
+          "job": "Casting"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1280070,
+          "known_for_department": "Sound",
+          "name": "Dave Porter",
+          "original_name": "Dave Porter",
+          "popularity": 0.757,
+          "profile_path": "/flRW9QknVtU8HG7lLjMvflbhl2a.jpg",
+          "credit_id": "52b7008819c29559eb03dd72",
+          "department": "Sound",
+          "job": "Original Music Composer"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 66633,
+          "known_for_department": "Writing",
+          "name": "Vince Gilligan",
+          "original_name": "Vince Gilligan",
+          "popularity": 4.1471,
+          "profile_path": "/z3E0DhBg1V1PZVEtS9vfFPzOWYB.jpg",
+          "credit_id": "52542287760ee31328001af1",
+          "department": "Production",
+          "job": "Executive Producer"
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 5162,
+          "known_for_department": "Production",
+          "name": "Mark Johnson",
+          "original_name": "Mark Johnson",
+          "popularity": 0.4564,
+          "profile_path": "/gLuXkOQjqB81aHMGJ2OtYzEpHQu.jpg",
+          "credit_id": "52542287760ee31328001b69",
+          "department": "Production",
+          "job": "Executive Producer"
+        }
+      ],
+      "id": 3572
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=10789",
+      "x-memc": "HIT",
+      "x-memc-key": "6ca93501b130be3bbd28cc9e0a9e9364d30c87f0349e5076a8678f1ce9072fbf",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00228cd69feb8d8378f4dfe2ce012d1abb71\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

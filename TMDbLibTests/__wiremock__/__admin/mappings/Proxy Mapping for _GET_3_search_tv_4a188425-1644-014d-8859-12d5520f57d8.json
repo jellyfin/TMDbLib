@@ -1,0 +1,177 @@
+{
+  "Guid": "4a188425-1644-014d-8859-12d5520f57d8",
+  "UpdatedAt": "2025-12-24T11:53:34.8164346Z",
+  "Title": "Proxy Mapping for GET /3/search/tv",
+  "Description": "Proxy Mapping for GET /3/search/tv",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/tv",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "Breaking Bad",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "include_adult",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "false",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 1396,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Breaking Bad",
+          "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+          "popularity": 150.5089,
+          "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+          "first_air_date": "2008-01-20",
+          "name": "Breaking Bad",
+          "vote_average": 8.9,
+          "vote_count": 16729
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 232533,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u7EDD\u547D\u5366\u5E08",
+          "overview": "During the Ming Dynasty, the emperor sets out for Xinjiang to advocate peace. Shortly after his absence, mysterious occurrences plague the palace and Daoist Tian Mu Tong is called to cast out demons. Together with eunuch Xiao Mo Gu and Jin Yi Wei leader Yun Xiang Rong, Mu Tong uncovers deep dark secrets and conspiracies hidden within conspiracies.",
+          "popularity": 0.3879,
+          "poster_path": "/n8dKkbPkdEPFCFmjNvrUl1gUAYr.jpg",
+          "first_air_date": "2016-04-11",
+          "name": "Breaking Bad Fortune Teller",
+          "vote_average": 7.5,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pXdkJvhBcPf8oEj831ASMkLPXKT.jpg",
+          "genre_ids": [
+            16,
+            80,
+            35,
+            10751
+          ],
+          "id": 302540,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Bad Guys: Breaking In",
+          "overview": "How did the Bad Guys break into the bad guy business in the first place? Find out in this hilarious prequel series set before the hit films.",
+          "popularity": 8.0724,
+          "poster_path": "/12ybD4BvgSpmhSjknFPvf1Nu7CC.jpg",
+          "first_air_date": "2025-11-06",
+          "name": "The Bad Guys: Breaking In",
+          "vote_average": 6.7,
+          "vote_count": 21
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            35,
+            80,
+            18
+          ],
+          "id": 297997,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Breaking Bad: Original Minisodes",
+          "overview": "Breaking Bad: Original Minisodes is a web series based on the television series Breaking Bad. A total of 17 \u0022minisodes\u0022, which are more comedy-oriented than most full episodes, were released over the course of three years.",
+          "popularity": 0.3339,
+          "poster_path": "/fFNbRUleJQ9GkCfJunU4yXuNbma.jpg",
+          "first_air_date": "2009-02-17",
+          "name": "Breaking Bad: Original Minisodes",
+          "vote_average": 6.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 308197,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Breaking Bad - E01-dj smith",
+          "overview": "Walter White is a brilliant but unfulfilled chemist whose life has become a quiet tragedy of missed opportunities and financial strain. When he is diagnosed with inoperable lung cancer, he fears leaving his family destitute. In a moment of desperate inspiration, he uses his expertise not for good, but for profit. He enlists a small-time ex-student, Jesse Pinkman, as his streetwise partner to build a crystal meth empire. This movie is locally translated by DJ Smith",
+          "popularity": 0.0363,
+          "poster_path": null,
+          "first_air_date": "",
+          "name": "Breaking Bad - E01-dj smith",
+          "vote_average": 0.0,
+          "vote_count": 0
+        }
+      ],
+      "total_pages": 1,
+      "total_results": 5
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=21815",
+      "x-memc": "HIT",
+      "x-memc-key": "b61977be62f220c600f836c7e51a59201acf73d40fe1fb83e7e960617680d390",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00225964960f4e8f00379a4271464f1c15c2\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

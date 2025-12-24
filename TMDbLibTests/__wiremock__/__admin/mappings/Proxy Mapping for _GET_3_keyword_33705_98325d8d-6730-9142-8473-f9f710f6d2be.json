@@ -1,0 +1,47 @@
+{
+  "Guid": "98325d8d-6730-9142-8473-f9f710f6d2be",
+  "UpdatedAt": "2025-12-24T11:53:34.8904781Z",
+  "Title": "Proxy Mapping for GET /3/keyword/33705",
+  "Description": "Proxy Mapping for GET /3/keyword/33705",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/keyword/33705",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 33705,
+      "name": "agent"
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "373fa336dfc9786854941ebe5c788c8607be3feaefb78ba5c1ba845df12baf52",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=25862",
+      "ETag": "W/\u00229d524004564f9aa35bee3ebb90098a1d\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "Guid": "2a7230a7-937b-b24a-9366-ea7a3411ccdd",
+  "UpdatedAt": "2025-12-24T11:53:34.4100653Z",
+  "Title": "Proxy Mapping for GET /3/trending/person/week",
+  "Description": "Proxy Mapping for GET /3/trending/person/week",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/trending/person/week",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "id": 1253360,
+          "name": "Pedro Pascal",
+          "original_name": "Pedro Pascal",
+          "media_type": "person",
+          "popularity": 11.7939,
+          "gender": 2,
+          "known_for_department": "Acting",
+          "profile_path": "/9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg"
+        },
+        {
+          "adult": false,
+          "id": 3026,
+          "name": "Rob Reiner",
+          "original_name": "Rob Reiner",
+          "media_type": "person",
+          "popularity": 16.8231,
+          "gender": 2,
+          "known_for_department": "Directing",
+          "profile_path": "/rcmPU3YlhHQVzZlV197qhmRsgEL.jpg"
+        },
+        {
+          "adult": false,
+          "id": 4169,
+          "name": "Dave Chappelle",
+          "original_name": "Dave Chappelle",
+          "media_type": "person",
+          "popularity": 3.5264,
+          "gender": 2,
+          "known_for_department": "Acting",
+          "profile_path": "/hDVe67wjmjtbOTzDrFaJfcobcE.jpg"
+        },
+        {
+          "adult": false,
+          "id": 5330762,
+          "name": "\u51EA\u5149",
+          "original_name": "\u51EA\u5149",
+          "media_type": "person",
+          "popularity": 0.8669,
+          "gender": 0,
+          "known_for_department": null,
+          "profile_path": "/rrzF4vO9axxsATv9OoObuBdH1aR.jpg"
+        },
+        {
+          "adult": false,
+          "id": 5531949,
+          "name": "Saika Kawakita",
+          "original_name": "\u6CB3\u5317\u5F69\u4F3D",
+          "media_type": "person",
+          "popularity": 1.1687,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/3q5zJ5Ae6zWKgAU7FOziu0LDYr0.jpg"
+        },
+        {
+          "adult": false,
+          "id": 1622390,
+          "name": "Lee Chae-dam",
+          "original_name": "Lee Chae-dam",
+          "media_type": "person",
+          "popularity": 5.0443,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/7wMyr6F3yzvbSpu2XMxSW3vObED.jpg"
+        },
+        {
+          "adult": false,
+          "id": 62,
+          "name": "Bruce Willis",
+          "original_name": "Bruce Willis",
+          "media_type": "person",
+          "popularity": 5.9637,
+          "gender": 2,
+          "known_for_department": "Acting",
+          "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg"
+        },
+        {
+          "adult": false,
+          "id": 14812,
+          "name": "Jeanne Moreau",
+          "original_name": "Jeanne Moreau",
+          "media_type": "person",
+          "popularity": 1.081,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/lsIlRbcStJev5n1mypIeUUYKWuy.jpg"
+        },
+        {
+          "adult": false,
+          "id": 3424435,
+          "name": "Yoo Ji-hyun",
+          "original_name": "Yoo Ji-hyun",
+          "media_type": "person",
+          "popularity": 4.833,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/8qBnfSVKcf742nRQk9NCgadqNPc.jpg"
+        },
+        {
+          "adult": false,
+          "id": 2710789,
+          "name": "Seung Ha",
+          "original_name": "\uCC44\uC2B9\uD558",
+          "media_type": "person",
+          "popularity": 2.2399,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/nvSJiHakYrDa3CedKSVOEsbLLX8.jpg"
+        },
+        {
+          "adult": false,
+          "id": 500,
+          "name": "Tom Cruise",
+          "original_name": "Tom Cruise",
+          "media_type": "person",
+          "popularity": 12.8749,
+          "gender": 2,
+          "known_for_department": "Acting",
+          "profile_path": "/3mShHjSQR7NXOVbdTu5rT2Qd0MN.jpg"
+        },
+        {
+          "adult": false,
+          "id": 212208,
+          "name": "Taylor Swift",
+          "original_name": "Taylor Swift",
+          "media_type": "person",
+          "popularity": 2.6261,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/2HkD0V51IAXxWyVOi88nQIG2AQ8.jpg"
+        },
+        {
+          "adult": false,
+          "id": 525,
+          "name": "Christopher Nolan",
+          "original_name": "Christopher Nolan",
+          "media_type": "person",
+          "popularity": 9.9728,
+          "gender": 2,
+          "known_for_department": "Directing",
+          "profile_path": "/xuAIuYSmsUzKlUMBFGVZaWsY3DZ.jpg"
+        },
+        {
+          "adult": false,
+          "id": 65705,
+          "name": "Dr. Seuss",
+          "original_name": "Dr. Seuss",
+          "media_type": "person",
+          "popularity": 0.7339,
+          "gender": 2,
+          "known_for_department": "Writing",
+          "profile_path": "/610hjTL3wQsgXaOPKTJ1bTQzgnG.jpg"
+        },
+        {
+          "adult": false,
+          "id": 5556098,
+          "name": "\u6CB3\u5317\u5F69\u82B1",
+          "original_name": "\u6CB3\u5317\u5F69\u82B1",
+          "media_type": "person",
+          "popularity": 0.601,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null
+        },
+        {
+          "adult": false,
+          "id": 2710,
+          "name": "James Cameron",
+          "original_name": "James Cameron",
+          "media_type": "person",
+          "popularity": 7.6609,
+          "gender": 2,
+          "known_for_department": "Directing",
+          "profile_path": "/9NAZnTjBQ9WcXAQEzZpKy4vdQto.jpg"
+        },
+        {
+          "adult": false,
+          "id": 115440,
+          "name": "Sydney Sweeney",
+          "original_name": "Sydney Sweeney",
+          "media_type": "person",
+          "popularity": 22.7304,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/uDnIdU4KGjQg7liFvb9wnALvg95.jpg"
+        },
+        {
+          "adult": false,
+          "id": 3904236,
+          "name": "Azi Acosta",
+          "original_name": "Azi Acosta",
+          "media_type": "person",
+          "popularity": 6.7567,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/ANDA47GMfwbCtHfKafl09rcv6c.jpg"
+        },
+        {
+          "adult": false,
+          "id": 2472212,
+          "name": "Sae Bom",
+          "original_name": "Sae Bom",
+          "media_type": "person",
+          "popularity": 1.6142,
+          "gender": 1,
+          "known_for_department": "Acting",
+          "profile_path": "/mM43mwxU8YAbRFJPFEwoFYV0CQO.jpg"
+        },
+        {
+          "adult": false,
+          "id": 86654,
+          "name": "Austin Butler",
+          "original_name": "Austin Butler",
+          "media_type": "person",
+          "popularity": 4.6332,
+          "gender": 2,
+          "known_for_department": "Acting",
+          "profile_path": "/aGZKvPmjopFfbehunaXXzeZ8eXy.jpg"
+        }
+      ],
+      "total_pages": 500,
+      "total_results": 10000
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=521",
+      "x-memc": "HIT",
+      "x-memc-key": "e0ce000319985e9e2592882b1ab69272de26174f16f4fda55ba81a3b89026c74",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022f38337c900e3982067cb0cf2d376161c\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

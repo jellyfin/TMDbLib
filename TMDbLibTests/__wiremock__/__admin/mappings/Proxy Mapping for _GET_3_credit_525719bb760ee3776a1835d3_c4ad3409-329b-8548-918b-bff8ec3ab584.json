@@ -1,0 +1,116 @@
+{
+  "Guid": "c4ad3409-329b-8548-918b-bff8ec3ab584",
+  "UpdatedAt": "2025-12-24T11:53:34.9860956Z",
+  "Title": "Proxy Mapping for GET /3/credit/525719bb760ee3776a1835d3",
+  "Description": "Proxy Mapping for GET /3/credit/525719bb760ee3776a1835d3",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/credit/525719bb760ee3776a1835d3",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "credit_type": "cast",
+      "department": "Acting",
+      "job": "Actor",
+      "media": {
+        "adult": false,
+        "backdrop_path": "/iK7tPi9j4d34g5p6bNKmGVba95K.jpg",
+        "id": 1908,
+        "name": "Miami Vice",
+        "original_name": "Miami Vice",
+        "overview": "The story of the Miami Police Department\u0027s vice squad and its efforts to end drug trafficking and prostitution, centered on the unlikely partnership of Sonny Crockett and Ricardo Tubbs - who first meet when Tubbs is undercover in a drug cartel.",
+        "poster_path": "/b5kLqC6eDiA17nq3jr1Vi340Kns.jpg",
+        "media_type": "tv",
+        "original_language": "en",
+        "genre_ids": [
+          80,
+          18
+        ],
+        "popularity": 22.2221,
+        "first_air_date": "1984-09-16",
+        "vote_average": 7.5,
+        "vote_count": 476,
+        "origin_country": [
+          "US"
+        ],
+        "character": "Tony Amato",
+        "episodes": [
+          {
+            "id": 124339,
+            "name": "No Exit",
+            "overview": "Crockett and Tubbs reluctantly help government agents in their pursuit of a dangerous arms dealer.",
+            "media_type": "tv_episode",
+            "vote_average": 7.889,
+            "vote_count": 9,
+            "air_date": "1984-11-09",
+            "episode_number": 7,
+            "episode_type": "standard",
+            "production_code": "59508",
+            "runtime": 49,
+            "season_number": 1,
+            "show_id": 1908,
+            "still_path": "/zJZDnnNGO0ciOQ9SUdEGLLCE4r0.jpg"
+          }
+        ],
+        "seasons": [
+          {
+            "id": 5510,
+            "name": "Season 1",
+            "overview": "The cops. The cars. The clothes. The explosive, groundbreaking detective show that redefined the word \u0022cool\u0022. Set against the seamy and steamy Miami underworld, ride shotgun with suave Vice cops Sonny Crockett and Rico Tubbs as they battle a never-ending gallery of criminals. Set to an electrifying soundtrack, every episode crackles with excitement and stylish flair.",
+            "poster_path": "/ggKwkZzWVZshb7JyDv9puFfRYMQ.jpg",
+            "media_type": "tv_season",
+            "vote_average": 6.6,
+            "air_date": "1984-09-16",
+            "season_number": 1,
+            "show_id": 1908,
+            "episode_count": 22
+          }
+        ]
+      },
+      "media_type": "tv",
+      "id": "525719bb760ee3776a1835d3",
+      "person": {
+        "adult": false,
+        "id": 62,
+        "name": "Bruce Willis",
+        "original_name": "Bruce Willis",
+        "media_type": "person",
+        "popularity": 5.9637,
+        "gender": 2,
+        "known_for_department": "Acting",
+        "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg"
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=26479",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "7e71a45d4786bbc61ad0e6a36402c447065c57366e70876798d097ecbb0e74e8",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00229cdbca808326658c7a6dab12ab2ddf27\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

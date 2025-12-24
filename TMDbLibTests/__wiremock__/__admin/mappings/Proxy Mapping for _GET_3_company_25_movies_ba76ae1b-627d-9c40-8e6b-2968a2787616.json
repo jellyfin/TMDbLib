@@ -1,0 +1,466 @@
+{
+  "Guid": "ba76ae1b-627d-9c40-8e6b-2968a2787616",
+  "UpdatedAt": "2025-12-24T11:53:34.5708272Z",
+  "Title": "Proxy Mapping for GET /3/company/25/movies",
+  "Description": "Proxy Mapping for GET /3/company/25/movies",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/company/25/movies",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 25,
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
+          "genre_ids": [
+            28,
+            12,
+            14,
+            878
+          ],
+          "id": 19995,
+          "original_language": "en",
+          "original_title": "Avatar",
+          "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+          "popularity": 111.795,
+          "poster_path": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+          "release_date": "2009-12-16",
+          "title": "Avatar",
+          "video": false,
+          "vote_average": 7.597,
+          "vote_count": 33011
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dGiPJO75b9GmXqxvusbKlcYrDcg.jpg",
+          "genre_ids": [
+            35,
+            10751,
+            12
+          ],
+          "id": 772,
+          "original_language": "en",
+          "original_title": "Home Alone 2: Lost in New York",
+          "overview": "Instead of flying to Florida with his folks, Kevin ends up alone in New York, where he gets a hotel room with his dad\u0027s credit card\u2014despite problems from a clerk and meddling bellboy. But when Kevin runs into his old nemeses, the Wet Bandits, he\u0027s determined to foil their plans to rob a toy store on Christmas Eve.",
+          "popularity": 49.7405,
+          "poster_path": "/9CAkQ9nfrDaIAyncWndwg0tfC8g.jpg",
+          "release_date": "1992-11-15",
+          "title": "Home Alone 2: Lost in New York",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 10267
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xXCuto8YVp5RFqBJ7yKmVmLOWpF.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 597,
+          "original_language": "en",
+          "original_title": "Titanic",
+          "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fianc\u00E9. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic\u0027s departure through to its death\u2014on its first and last voyage\u2014on April 15, 1912.",
+          "popularity": 31.2881,
+          "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+          "release_date": "1997-11-18",
+          "title": "Titanic",
+          "video": false,
+          "vote_average": 7.902,
+          "vote_count": 26562
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/70cezTFUmtijJLqnZw02gQlKVKJ.jpg",
+          "genre_ids": [
+            878,
+            28,
+            12,
+            53
+          ],
+          "id": 106,
+          "original_language": "en",
+          "original_title": "Predator",
+          "overview": "A team of elite commandos on a secret mission in a Central American jungle come to find themselves hunted by an extraterrestrial warrior.",
+          "popularity": 28.5803,
+          "poster_path": "/k3mW4qfJo6SKqe6laRyNGnbB9n5.jpg",
+          "release_date": "1987-06-12",
+          "title": "Predator",
+          "video": false,
+          "vote_average": 7.542,
+          "vote_count": 8710
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 562,
+          "original_language": "en",
+          "original_title": "Die Hard",
+          "overview": "NYPD cop John McClane\u0027s plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her offices Christmas Party, the entire building is overtaken by a group of terrorists. With little help from the LAPD, wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.",
+          "popularity": 28.9381,
+          "poster_path": "/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
+          "release_date": "1988-07-15",
+          "title": "Die Hard",
+          "video": false,
+          "vote_average": 7.8,
+          "vote_count": 11853
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5TiwfWEaPSwD20uwXjCTUqpQX70.jpg",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "id": 550,
+          "original_language": "en",
+          "original_title": "Fight Club",
+          "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \u0022fight clubs\u0022 forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+          "popularity": 24.5954,
+          "poster_path": "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+          "release_date": "1999-10-15",
+          "title": "Fight Club",
+          "video": false,
+          "vote_average": 8.438,
+          "vote_count": 31119
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2w4xG178RpB4MDAIfTkqAuSJzec.jpg",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "id": 11,
+          "original_language": "en",
+          "original_title": "Star Wars",
+          "overview": "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
+          "popularity": 22.5412,
+          "poster_path": "/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
+          "release_date": "1977-05-25",
+          "title": "Star Wars",
+          "video": false,
+          "vote_average": 8.203,
+          "vote_count": 21740
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eTlcNXGv32zkVI7ZDHhfeaKHXKQ.jpg",
+          "genre_ids": [
+            28,
+            9648,
+            878,
+            53
+          ],
+          "id": 198663,
+          "original_language": "en",
+          "original_title": "The Maze Runner",
+          "overview": "A teenager with no memory of his past finds himself among a group of boys living in a walled enclosure surrounded by a massive, ever-changing maze. As he struggles to adapt to their rules and society, he begins to uncover clues that may lead to escape and the truth behind their confinement.",
+          "popularity": 20.0711,
+          "poster_path": "/ode14q7WtDugFDp78fo9lCsmay9.jpg",
+          "release_date": "2014-09-10",
+          "title": "The Maze Runner",
+          "video": false,
+          "vote_average": 7.191,
+          "vote_count": 17741
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rnn6sGMGPpM8VfVmCMFxsjKvz7q.jpg",
+          "genre_ids": [
+            10751,
+            35,
+            12
+          ],
+          "id": 9279,
+          "original_language": "en",
+          "original_title": "Jingle All the Way",
+          "overview": "Howard Langston, a salesman for a mattress company, is constantly kept busy at his job, disappointing his son. After he misses his son\u0027s karate exposition, Howard vows to make it up to him by buying an action figure of his son\u0027s favorite television hero for Christmas. Unfortunately for Howard, it is Christmas Eve, and every store is sold out of Turbo Man. Now, Howard must travel all over town and compete with everybody else to find a Turbo Man action figure.",
+          "popularity": 19.6302,
+          "poster_path": "/6QLkeLXPIxiihuX5enHHNEuCCzy.jpg",
+          "release_date": "1996-11-21",
+          "title": "Jingle All the Way",
+          "video": false,
+          "vote_average": 6.056,
+          "vote_count": 2842
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4DZxWNSAyksN6N3JkvpJ53Yq6zU.jpg",
+          "genre_ids": [
+            28,
+            18,
+            878
+          ],
+          "id": 263115,
+          "original_language": "en",
+          "original_title": "Logan",
+          "overview": "In the near future, a weary Logan cares for an ailing Professor X in a hideout on the Mexican border. But Logan\u0027s attempts to hide from the world and his legacy are upended when a young mutant arrives, pursued by dark forces.",
+          "popularity": 15.2498,
+          "poster_path": "/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg",
+          "release_date": "2017-02-28",
+          "title": "Logan",
+          "video": false,
+          "vote_average": 7.819,
+          "vote_count": 20000
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hHYoUYgto562dcQRjVuuVlosBKz.jpg",
+          "genre_ids": [
+            35,
+            18,
+            10751
+          ],
+          "id": 11881,
+          "original_language": "en",
+          "original_title": "Miracle on 34th Street",
+          "overview": "Kris Kringle, seemingly the embodiment of Santa Claus, is asked to portray the jolly old fellow at Macy\u0027s following his performance in the Thanksgiving Day parade. His portrayal is so complete that many begin to question if he truly is Santa Claus, while others question his sanity.",
+          "popularity": 19.5756,
+          "poster_path": "/vehuIm3y6BeMI7mYjxzaA1H8M0k.jpg",
+          "release_date": "1947-06-04",
+          "title": "Miracle on 34th Street",
+          "video": false,
+          "vote_average": 7.361,
+          "vote_count": 807
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oHsiqHajO9v8YTuonvcMCkxtpSq.jpg",
+          "genre_ids": [
+            35,
+            10751
+          ],
+          "id": 9714,
+          "original_language": "en",
+          "original_title": "Home Alone 3",
+          "overview": "9-year-old Alex Pruitt is home alone with the chicken pox. Turns out, due to a mix-up among nefarious spies, Alex was given a toy car concealing a top-secret microchip. Now Alex must fend off the spies as they try to break into his house to get it back.",
+          "popularity": 15.7342,
+          "poster_path": "/6uOadrCfle0n2LOOxHbgWEdnrm2.jpg",
+          "release_date": "1997-12-12",
+          "title": "Home Alone 3",
+          "video": false,
+          "vote_average": 5.3,
+          "vote_count": 3177
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/y9M9xO78SHf43pK5TOgfOeQRHXj.jpg",
+          "genre_ids": [
+            18,
+            10751,
+            10402,
+            10749
+          ],
+          "id": 15121,
+          "original_language": "en",
+          "original_title": "The Sound of Music",
+          "overview": "In the years before World War II, a tomboyish postulant at an Austrian abbey is hired as a governess in the home of a widowed naval captain with seven children, and brings a new love of life and music into the home.",
+          "popularity": 11.3328,
+          "poster_path": "/c6CrUZypAsBCaRWX0M3RVRDbhNS.jpg",
+          "release_date": "1965-03-29",
+          "title": "The Sound of Music",
+          "video": false,
+          "vote_average": 7.724,
+          "vote_count": 3495
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/o0zPARvs47f0UhAJuUqdQsyQaji.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            12
+          ],
+          "id": 8355,
+          "original_language": "en",
+          "original_title": "Ice Age: Dawn of the Dinosaurs",
+          "overview": "Times are changing for Manny the moody mammoth, Sid the motor mouthed sloth and Diego the crafty saber-toothed tiger. Life heats up for our heroes when they meet some new and none-too-friendly neighbors \u2013 the mighty dinosaurs.",
+          "popularity": 15.2476,
+          "poster_path": "/cXOLaxcNjNAYmEx1trZxOTKhK3Q.jpg",
+          "release_date": "2009-06-26",
+          "title": "Ice Age: Dawn of the Dinosaurs",
+          "video": false,
+          "vote_average": 6.763,
+          "vote_count": 8673
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8pwIhymsxfAVjrAE7syDjQULn37.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            12
+          ],
+          "id": 425,
+          "original_language": "en",
+          "original_title": "Ice Age",
+          "overview": "Manny the mammoth, Sid the loquacious sloth, and Diego the sabre-toothed tiger go on a comical quest to return a human baby back to his father, across a world on the brink of an ice age.",
+          "popularity": 14.3129,
+          "poster_path": "/gLhHHZUzeseRXShoDyC4VqLgsNv.jpg",
+          "release_date": "2002-03-14",
+          "title": "Ice Age",
+          "video": false,
+          "vote_average": 7.367,
+          "vote_count": 13942
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iWak7wT0j6ycCc8lKr4NBz9c7n5.jpg",
+          "genre_ids": [
+            9648,
+            53,
+            18
+          ],
+          "id": 210577,
+          "original_language": "en",
+          "original_title": "Gone Girl",
+          "overview": "With his wife\u0027s disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it\u0027s suspected that he may not be innocent.",
+          "popularity": 13.2269,
+          "poster_path": "/ts996lKsxvjkO2yiYG0ht4qAicO.jpg",
+          "release_date": "2014-10-01",
+          "title": "Gone Girl",
+          "video": false,
+          "vote_average": 7.889,
+          "vote_count": 19486
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kP8rK9dGS1pr0HrnmXfIi2heWjo.jpg",
+          "genre_ids": [
+            18,
+            28,
+            12,
+            36,
+            10752
+          ],
+          "id": 1495,
+          "original_language": "en",
+          "original_title": "Kingdom of Heaven",
+          "overview": "After his wife dies, a blacksmith named Balian is thrust into royalty, political intrigue and bloody holy wars during the Crusades.",
+          "popularity": 12.6974,
+          "poster_path": "/rNaBe4TwbMef71sgscqabpGKsxh.jpg",
+          "release_date": "2005-05-03",
+          "title": "Kingdom of Heaven",
+          "video": false,
+          "vote_average": 7.005,
+          "vote_count": 4700
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rFj9IKlL75B2pXhZA60jkNWvxeW.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35
+          ],
+          "id": 293660,
+          "original_language": "en",
+          "original_title": "Deadpool",
+          "overview": "The origin story of former Special Forces operative turned mercenary Wade Wilson, who, after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.",
+          "popularity": 13.3092,
+          "poster_path": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+          "release_date": "2016-02-09",
+          "title": "Deadpool",
+          "video": false,
+          "vote_average": 7.623,
+          "vote_count": 32158
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oU0lGpUukjNOgZeuIqueNM3QiBE.jpg",
+          "genre_ids": [
+            14,
+            18,
+            10751
+          ],
+          "id": 10510,
+          "original_language": "en",
+          "original_title": "Miracle on 34th Street",
+          "overview": "Six-year-old Susan Walker has doubts about childhood\u0027s most enduring miracle\u2014Santa Claus. Her mother told her the secret about Santa a long time ago, but, after meeting a special department store Santa who\u0027s convinced he\u0027s the real thing, Susan is given the most precious gift of all\u2014something to believe in.",
+          "popularity": 12.4481,
+          "poster_path": "/iUTPKkljdEjPlcPPYgbUz7APnHu.jpg",
+          "release_date": "1994-11-18",
+          "title": "Miracle on 34th Street",
+          "video": false,
+          "vote_average": 6.744,
+          "vote_count": 1109
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qvcOovScPoRalRxDy50rYSYFree.jpg",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "id": 10591,
+          "original_language": "en",
+          "original_title": "The Girl Next Door",
+          "overview": "Exceptionally ambitious high schooler Matthew has aspirations for a career in politics when he falls in love with his gorgeous 19-year-old neighbor, Danielle. But Matthew\u0027s bright future is jeopardized when he finds Danielle was once a porn star. As Danielle\u0027s past catches up with her, Matthew\u0027s love for her forces him to re-evaluate his goals.",
+          "popularity": 12.3607,
+          "poster_path": "/6uJw7DiPTCDC7VKjMH3FQuA72sc.jpg",
+          "release_date": "2004-04-09",
+          "title": "The Girl Next Door",
+          "video": false,
+          "vote_average": 6.734,
+          "vote_count": 3855
+        }
+      ],
+      "total_pages": 85,
+      "total_results": 1687
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=27169",
+      "x-memc": "HIT",
+      "x-memc-key": "05810e08811b771aaf8b9ae69afaef665c6e4962d471b19d584301bcb719b211",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022ed816152776e4efda6e16f07f15cea55\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

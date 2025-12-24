@@ -1,0 +1,559 @@
+{
+  "Guid": "c4fb51c4-baf6-2749-9f75-b580ce7c282e",
+  "UpdatedAt": "2025-12-24T11:53:35.6564948Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964/releases",
+  "Description": "Proxy Mapping for GET /3/movie/47964/releases",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964/releases",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 47964,
+      "countries": [
+        {
+          "certification": "R",
+          "descriptors": [],
+          "iso_3166_1": "US",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "DE",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "BG",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "AR",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "AZ",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "BY",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "11",
+          "descriptors": [],
+          "iso_3166_1": "DK",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "15A",
+          "descriptors": [],
+          "iso_3166_1": "IE",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "KZ",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "M/12",
+          "descriptors": [],
+          "iso_3166_1": "PT",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "18\u002B",
+          "descriptors": [],
+          "iso_3166_1": "RU",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "15",
+          "descriptors": [],
+          "iso_3166_1": "SE",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "12A",
+          "descriptors": [],
+          "iso_3166_1": "GB",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "LT",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "18",
+          "descriptors": [],
+          "iso_3166_1": "BE",
+          "primary": false,
+          "release_date": "2013-02-13"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "FR",
+          "primary": false,
+          "release_date": "2013-02-20"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "NL",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "18",
+          "descriptors": [],
+          "iso_3166_1": "NO",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "IS",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "12",
+          "descriptors": [],
+          "iso_3166_1": "ES",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "M",
+          "descriptors": [],
+          "iso_3166_1": "AU",
+          "primary": false,
+          "release_date": "2013-03-20"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "PL",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "HU",
+          "primary": false,
+          "release_date": "2013-02-13"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "HK",
+          "primary": false,
+          "release_date": "2013-02-07"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "SG",
+          "primary": false,
+          "release_date": "2013-02-07"
+        },
+        {
+          "certification": "\u8F1412",
+          "descriptors": [],
+          "iso_3166_1": "TW",
+          "primary": false,
+          "release_date": "2013-02-08"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "VE",
+          "primary": false,
+          "release_date": "2013-02-12"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "PH",
+          "primary": false,
+          "release_date": "2013-02-13"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "BO",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "BA",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "14A",
+          "descriptors": [],
+          "iso_3166_1": "CA",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "CL",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "CR",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "HR",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "SV",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "EE",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "\u039A-15",
+          "descriptors": [],
+          "iso_3166_1": "GR",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "HN",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "JP",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "KW",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "MX",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "M",
+          "descriptors": [],
+          "iso_3166_1": "NZ",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "NI",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "PA",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "PE",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "PR",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "MK",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "SI",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "UA",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "CO",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "EC",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "K-12",
+          "descriptors": [],
+          "iso_3166_1": "FI",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "GT",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "LV",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "18",
+          "descriptors": [],
+          "iso_3166_1": "RO",
+          "primary": false,
+          "release_date": "2013-02-15"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "UY",
+          "primary": false,
+          "release_date": "2013-02-16"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "IN",
+          "primary": false,
+          "release_date": "2013-02-22"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "DO",
+          "primary": false,
+          "release_date": "2013-02-28"
+        },
+        {
+          "certification": "15\u002B",
+          "descriptors": [],
+          "iso_3166_1": "CZ",
+          "primary": false,
+          "release_date": "2013-03-14"
+        },
+        {
+          "certification": "\u0E1913\u002B",
+          "descriptors": [],
+          "iso_3166_1": "TH",
+          "primary": false,
+          "release_date": "2013-02-13"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "CN",
+          "primary": false,
+          "release_date": "2013-03-13"
+        },
+        {
+          "certification": "15",
+          "descriptors": [],
+          "iso_3166_1": "KR",
+          "primary": false,
+          "release_date": "2013-02-06"
+        },
+        {
+          "certification": "12",
+          "descriptors": [],
+          "iso_3166_1": "SK",
+          "primary": false,
+          "release_date": "2013-03-14"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "IT",
+          "primary": false,
+          "release_date": "2013-02-14"
+        },
+        {
+          "certification": "12",
+          "descriptors": [],
+          "iso_3166_1": "BR",
+          "primary": false,
+          "release_date": "2013-02-22"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "CZ",
+          "primary": false,
+          "release_date": "2013-06-19"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "NL",
+          "primary": false,
+          "release_date": "2013-06-19"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "NL",
+          "primary": false,
+          "release_date": "2017-08-30"
+        },
+        {
+          "certification": "16",
+          "descriptors": [],
+          "iso_3166_1": "DE",
+          "primary": false,
+          "release_date": "2013-06-28"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "FR",
+          "primary": false,
+          "release_date": "2013-06-26"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "FR",
+          "primary": false,
+          "release_date": "2021-02-23"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "GR",
+          "primary": false,
+          "release_date": "2013-06-13"
+        },
+        {
+          "certification": "",
+          "descriptors": [],
+          "iso_3166_1": "VN",
+          "primary": false,
+          "release_date": "2013-02-10"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "ed18b836eeeb852f48ceb0638d9376357556bb5c719d99d3e98e92fa6e81e1f3",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=26424",
+      "ETag": "W/\u002265f98d8763416d5450a414755ef272ae\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

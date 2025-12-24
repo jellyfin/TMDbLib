@@ -1,0 +1,74 @@
+{
+  "Guid": "719def11-5d9a-bd44-8fde-d3e985d3340b",
+  "UpdatedAt": "2025-12-24T11:53:35.4542974Z",
+  "Title": "Proxy Mapping for GET /3/person/62",
+  "Description": "Proxy Mapping for GET /3/person/62",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/62",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "append_to_response",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "changes",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "also_known_as": [
+        "Walter Bruce Willis"
+      ],
+      "biography": "Walter Bruce Willis (born March 19, 1955) is an American retired actor. His career began on the off-Broadway stage in the 1970s, and he then achieved fame with a leading role on the comedy-drama series \u201CMoonlighting\u201D (1985\u20131989). He went on to appear in over 70 films, gaining widespread recognition as an action hero after his portrayal of John McClane in the \u201CDie Hard\u201D franchise (1988\u20132013) and other subsequent roles.\n\nWillis\u0027s other credits include \u201CThe Last Boy Scout\u201D (1991), \u201CPulp Fiction\u201D (1994), \u201C12 Monkeys\u201D (1995), \u201CLast Man Standing\u201D (1996), \u201CThe Fifth Element\u201D (1997), \u201CArmageddon\u201D (1998), \u201CThe Sixth Sense\u201D (1999), \u201CHart\u0027s War\u201D (2002), \u201CTears of the Sun\u201D (2003), \u201CHostage\u201D (2005), \u201CLucky Number Slevin\u201D (2006), \u201CSurrogates\u201D (2009), \u201CMoonrise Kingdom\u201D (2012), \u201CRock the Kasbah\u201D (2015), and \u201CMotherless Brooklyn\u201D (2019).\n\nAs a singer, Willis released his debut album The Return of Bruno in 1987, followed by two more successful albums in 1989 and 2001. He made his Broadway debut in the stage adaptation of Misery in 2015. Willis has received numerous accolades during his career, including a Golden Globe, two Primetime Emmy Awards, and two People\u0027s Choice Awards. He received a star on the Hollywood Walk of Fame in 2006.\n\nIn March 2022, Willis announced that he was retiring from acting after being diagnosed with aphasia, which affects his ability to communicate. In February 2023, Willis\u0027 family announced that they had received a more accurate diagnosis and he had been diagnosed with frontotemporal dementia.",
+      "birthday": "1955-03-19",
+      "deathday": null,
+      "gender": 2,
+      "homepage": null,
+      "id": 62,
+      "imdb_id": "nm0000246",
+      "known_for_department": "Acting",
+      "name": "Bruce Willis",
+      "place_of_birth": "Idar-Oberstein, West Germany [now Germany]",
+      "popularity": 5.9637,
+      "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
+      "changes": {
+        "changes": []
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=22714",
+      "ETag": "W/\u002209dea35a81367676f569dd4ba27e0a5f\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

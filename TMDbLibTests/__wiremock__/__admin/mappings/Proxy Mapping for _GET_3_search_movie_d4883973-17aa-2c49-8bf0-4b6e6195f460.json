@@ -1,0 +1,459 @@
+{
+  "Guid": "d4883973-17aa-2c49-8bf0-4b6e6195f460",
+  "UpdatedAt": "2025-12-24T11:53:34.9572606Z",
+  "Title": "Proxy Mapping for GET /3/search/movie",
+  "Description": "Proxy Mapping for GET /3/search/movie",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/movie",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "007",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "include_adult",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "false",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 1124694,
+          "original_language": "en",
+          "original_title": "#007",
+          "overview": "Super-8mm film by Yonay Boix \u0026 Ariadna Onofri.",
+          "popularity": 0.3254,
+          "poster_path": "/zqG3eXZ5UHuxMPHnhgFamlnvt2O.jpg",
+          "release_date": "2021-01-01",
+          "title": "#007",
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            10770,
+            18
+          ],
+          "id": 1009542,
+          "original_language": "sh",
+          "original_title": "Medved 007",
+          "overview": "A satirical story about small town forester who finds himself in trouble when the local authorities announce the visit of a high state official, who is supposed to go on bear hunt as a sign of welcome. The trouble is, no bears were around for decades...",
+          "popularity": 2.4108,
+          "poster_path": null,
+          "release_date": "1986-04-10",
+          "title": "Bear 007",
+          "video": true,
+          "vote_average": 1.5,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            80,
+            35
+          ],
+          "id": 227230,
+          "original_language": "en",
+          "original_title": "\u0E40\u0E08\u0E21\u0E2A\u0E4C\u0E41\u0E1A\u0E19 007 \u0E19\u0E49\u0E33\u0E1E\u0E23\u0E34\u0E01\u0E44\u0E17\u0E22\u0E40\u0E19\u0E37\u0E49\u0E2D\u0E41\u0E17\u0E49",
+          "overview": "James Bond spoof about an accident proned Pattaya bike cabbie who must complete a secret mission.",
+          "popularity": 1.5054,
+          "poster_path": null,
+          "release_date": "1980-01-01",
+          "title": "James Band 007 The Real Thai Pepper",
+          "video": false,
+          "vote_average": 4.6,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 919451,
+          "original_language": "en",
+          "original_title": "\u7279\u5DE5\u5B66\u59D0007",
+          "overview": "Two talented teenage schoolboys are experimenting at school in order to develop a drug to combat a terminal illness.",
+          "popularity": 1.4725,
+          "poster_path": "/piqte0yO5rjpHzMt7HBNBBY4seJ.jpg",
+          "release_date": "2017-03-29",
+          "title": "Sister 007",
+          "video": false,
+          "vote_average": 8.5,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            35
+          ],
+          "id": 649110,
+          "original_language": "el",
+          "original_title": "\u0395\u03B9\u03C3\u03C0\u03C1\u03AC\u03BA\u03C4\u03C9\u03C1 007",
+          "overview": "An honest employee saves some valuable documents when a fire breaks out in the factory where he works, at the risk of his life. But the secrets hidden in these documents are capable of destroying the relationship between his two bosses.",
+          "popularity": 3.1969,
+          "poster_path": "/oFBT2dUSyUM1M1wd66lMUOasqyt.jpg",
+          "release_date": "1966-01-01",
+          "title": "Conductor 007",
+          "video": false,
+          "vote_average": 4.9,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mjwt3MkRBz2dkISyeUBp8n4KFQ.jpg",
+          "genre_ids": [
+            99,
+            10402,
+            10770
+          ],
+          "id": 1028506,
+          "original_language": "en",
+          "original_title": "The Sound of 007",
+          "overview": "Pull back the curtain on the remarkable history of six decades of James Bond music,  from Sean Connery\u2019s Dr No through to Daniel Craig\u2019s final outing in No Time to Die.",
+          "popularity": 0.7895,
+          "poster_path": "/wHsfL0ub95Xr6GK6tJUpmVnrT1J.jpg",
+          "release_date": "2022-10-04",
+          "title": "The Sound of 007",
+          "video": false,
+          "vote_average": 7.118,
+          "vote_count": 51
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fUBq0P7T0SiWjTTRspMWU49c84J.jpg",
+          "genre_ids": [
+            10770,
+            35,
+            10751,
+            28,
+            80
+          ],
+          "id": 155898,
+          "original_language": "de",
+          "original_title": "Nina Undercover - Agentin mit Kids",
+          "overview": "Nina Wenzel used to be an undercover agent. After her sister\u0027s death five years ago Nina gets child custody of the three orphans and quits her dangerous job. In her new family-life she manages to retain some of her skills. When Wolf Geiger, the last person Nina imprisoned, escapes, Nina\u0027s old skills are needed again.",
+          "popularity": 1.8639,
+          "poster_path": "/ctTWtNs3H2OR9Xxq4jU5HfUkqU4.jpg",
+          "release_date": "2011-05-26",
+          "title": "Mother 007",
+          "video": false,
+          "vote_average": 4.056,
+          "vote_count": 9
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/noNezcOIYoay6iHuxVqgy5nn53.jpg",
+          "genre_ids": [
+            16,
+            12,
+            878
+          ],
+          "id": 931992,
+          "original_language": "ko",
+          "original_title": "\uCCA0\uC778 007",
+          "overview": "Four young heroes are gathered together by Dr. M in order to fight against the evil leader Black Butterfly and the mysterious alien that she takes her orders from. The Black Butterfly syndicate aims to steal an important element known as \u0022Element Q\u0022. The team members of the M Special Forces can merge their mechas together to create Iron Man 007, a super-strong fighting robot.",
+          "popularity": 0.7367,
+          "poster_path": "/enrEIFWIgWZ2FvalAIP3MgrsXvo.jpg",
+          "release_date": "1976-12-13",
+          "title": "Iron Man 007",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            18,
+            12,
+            35,
+            80,
+            9648,
+            53
+          ],
+          "id": 1501117,
+          "original_language": "zh",
+          "original_title": "\u738B\u54E5\u67F3\u54E5007",
+          "overview": "Hotel owner Brother Liu (Ai Chai-Choi) and Brother Wang (Li Kuan-Chang), an employee of the Space Toys Company, are close friends who both share a passion for judo. Brother Liu, facing financial difficulties due to poor hotel management and creditors at his doorstep, was at a loss when a hotel in Thailand offered him a position to take over its operations. Brother Wang was also assigned by his company to expand business in Southeast Asia. Before departing, the chairman warned Brother Wang to be wary of commercial spies. On that day, Wang and Liu met, each harboring their own agendas, and bid each other farewell. The two happened to meet on the plane and could only tell each other they would disembark in Hong Kong and then transfer to Thailand. At that moment, an intelligence battle was unfolding in Hong Kong, and the international intelligence agents \u201C008\u201D and \u201C009,\u201D who were about to arrive in Hong Kong, happened to look exactly like Wang and Liu...",
+          "popularity": 0.0412,
+          "poster_path": null,
+          "release_date": "1967-02-08",
+          "title": "Brother Wang \u0026 Brother Liu 007",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sggePNDec9AS840VO0G0UqXSaUD.jpg",
+          "genre_ids": [
+            10402,
+            99,
+            10770
+          ],
+          "id": 1032354,
+          "original_language": "en",
+          "original_title": "The Sound of 007: Live from the Royal Albert Hall",
+          "overview": "Celebrates 60 years of the Bond film franchise. The concert is curated by the legendary Bond composer David Arnold and will feature special guest artists all putting their own interpretation on classic theme songs, backed by the Royal Philharmonic Concert Orchestra. The date marks the anniversary of the premiere of the first 007 film, Dr. No.",
+          "popularity": 0.3053,
+          "poster_path": "/aBLJMrdm8gunOoZ2iWFsEIXzMMn.jpg",
+          "release_date": "2022-10-05",
+          "title": "The Sound of 007: Live from the Royal Albert Hall",
+          "video": false,
+          "vote_average": 5.8,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 423101,
+          "original_language": "en",
+          "original_title": "Highly Classified: The World of 007",
+          "overview": "His world is full of glamour, mystery and intrigue and now you get to be a part of it! Let gadget wizard Q (Desmond Llewelyn) be your guide to the ubiquitous lifestyle and thrilling adventures of the world\u0027s most notorious secret agent. The undercover team will take you behind-the-scenes as they infiltrate the highly classified worlds of the man everyone knows as Bond -- James Bond. Hosted by Desmond Llewelyn who plays Secret Service gadget master Q. Boasts rare behind-the-scenes footage of spectacular stunts and explosive action sequences. Reveals the special effects magic behind the remotely-driven BMW, the rooftop motorcycle chase and death-defying skysrcaper jump. Interviews with Tomorrow Never Dies\u0027 director Roger Spottiswoode and stars Pierce Brosnan, Jonathan Pryce, Michelle Yeoh, Teri Hatcher and Judi Dench.",
+          "popularity": 0.3665,
+          "poster_path": "/kfE7hRnSvmZLFSZmDpKCYwtTotK.jpg",
+          "release_date": "1998-01-01",
+          "title": "Highly Classified: The World of 007",
+          "video": false,
+          "vote_average": 4.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99,
+            10770
+          ],
+          "id": 368155,
+          "original_language": "en",
+          "original_title": "Happy Anniversary 007: 25 Years of James Bond",
+          "overview": "An hour documentary on the history of Bond for the 25th anniversary of the film series.",
+          "popularity": 0.3283,
+          "poster_path": "/7YqTYxzukFJzwlfrxpqqd32Vecj.jpg",
+          "release_date": "1987-05-13",
+          "title": "Happy Anniversary 007: 25 Years of James Bond",
+          "video": false,
+          "vote_average": 6.3,
+          "vote_count": 8
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99,
+            10770
+          ],
+          "id": 200761,
+          "original_language": "en",
+          "original_title": "The Secrets of 007",
+          "overview": "Behind-the-scenes look at more than three decades of the James Bond feature film series.",
+          "popularity": 0.3349,
+          "poster_path": "/lqRFYK5OAPnK2iTWqZtk2UepLpV.jpg",
+          "release_date": "1997-12-04",
+          "title": "The Secrets of 007",
+          "video": false,
+          "vote_average": 7.9,
+          "vote_count": 9
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99,
+            10770
+          ],
+          "id": 372239,
+          "original_language": "en",
+          "original_title": "Now Pay Attention 007: A Tribute to Actor Desmond Llewelyn",
+          "overview": "",
+          "popularity": 0.1069,
+          "poster_path": "/fQCS8Ax6tLePm3hvoPGEd7IEvCR.jpg",
+          "release_date": "2000-01-22",
+          "title": "Now Pay Attention 007: A Tribute to Actor Desmond Llewelyn",
+          "video": false,
+          "vote_average": 5.7,
+          "vote_count": 6
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/46xUoAdPtTe8Nly33FVXeD1YFLJ.jpg",
+          "genre_ids": [
+            28,
+            35
+          ],
+          "id": 284275,
+          "original_language": "it",
+          "original_title": "Dick Smart 2.007",
+          "overview": "Lady Lorraine Lister, a financer of expensive experiments, has discovered a way to obtain pure diamonds by the means of a radiation device. She hires five renowned scientists to participate in additional experiments regarding this new contrivance. However, it soon happens that the device is stolen, and the scientists mysteriously disappear! Agent Dick Smart is called in by the CIA to track down the scientists and recover the device. With the help of incredible gadgets and lots of bravado, he manages to locate the source of an underground operation in Rio De Janeiro: an operation headed by a mysterious man with a speaking device fastened to his throat.",
+          "popularity": 4.1392,
+          "poster_path": "/m8h69lh3lrwmITsqqVGoEcAv6rL.jpg",
+          "release_date": "1967-03-09",
+          "title": "Dick Smart 2.007",
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9LdXJxOCUC2D83S9QAj6xhZjrBu.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 423145,
+          "original_language": "en",
+          "original_title": "Ian Fleming: 007\u0027s Creator",
+          "overview": "John Cork and his compatriots from the Ian Fleming Foundation, who have created outstanding documentaries for most of MGM\u0027s 007 DVDs, provide a fine overview of the life and times of James Bond\u0027s creator. Rather than using voice-over narrative, Cork and company tell this story entirely through the recollections of Fleming\u0027s family, friends and colleagues, combining new interviews with archival footage (including conversations with Fleming himself).",
+          "popularity": 2.3627,
+          "poster_path": "/uKgZXrhAgkPFAd3EcAnK3F04Zom.jpg",
+          "release_date": "2000-01-01",
+          "title": "Ian Fleming: 007\u0027s Creator",
+          "video": false,
+          "vote_average": 6.9,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 416413,
+          "original_language": "en",
+          "original_title": "Electric Blue 007",
+          "overview": "Introduced by Seka the Platinum Princess, EB007 is a \u0022Bond Girl Spectacular.\u0022 Featured among the usual crop of centerfold models are five Bond girls, including Ursula Andress and Lalla Dean, who made quite a splash as \u0022uncredited girl in pool\u0022 in For Your Eyes Only (1981), in the buff. In addition, there\u0027s nudity from singer / actress Hazel O\u0027Connor plus appearances from Peter Cook and Dudley Moore.",
+          "popularity": 1.5124,
+          "poster_path": "/tZ1CtKb4JGheBWUYQ9C8d4yCgmi.jpg",
+          "release_date": "1982-01-01",
+          "title": "Electric Blue 007",
+          "video": true,
+          "vote_average": 7.7,
+          "vote_count": 10
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 604593,
+          "original_language": "en",
+          "original_title": "The Bond Sound: The Music of 007",
+          "overview": "Documentary discussing the many songs featured in the James Bond films",
+          "popularity": 0.2805,
+          "poster_path": "/yPWYwqZou2lsJGW7BmYtywtY6Bt.jpg",
+          "release_date": "2000-10-17",
+          "title": "The Bond Sound: The Music of 007",
+          "video": true,
+          "vote_average": 6.4,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            10751
+          ],
+          "id": 380712,
+          "original_language": "en",
+          "original_title": "Nooma Luggage 007",
+          "overview": "Maybe a friend turned their back on you. Maybe someone you loved betrayed you. We all have wounds and we end up carrying around these things that people have done to us for weeks, months, and sometimes even years. It isn\u0027t always easy to forgive these people and after a while these hurts can get really heavy. So the only way to feel better seems to be somehow getting back at the people that hurt us, to get revenge. But does revenge ever truly satisfy? Maybe forgiving isn\u0027t something you do for someone else to let them off the hook. Maybe forgiveness is about you. God didn\u0027t create you to carry these wounds around. God created you to be free.",
+          "popularity": 1.2888,
+          "poster_path": "/yyGu3NuRsnw9iFr288thj1QGsy4.jpg",
+          "release_date": "2005-07-01",
+          "title": "Nooma Luggage 007",
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 703083,
+          "original_language": "en",
+          "original_title": "Lesson #007: Close Quarters Combat",
+          "overview": "Short documentary about the staging and filming of the elevator fight sequence from the James Bond movie \u0022Diamonds are Forever\u0022.",
+          "popularity": 0.0416,
+          "poster_path": null,
+          "release_date": "1971-01-01",
+          "title": "Lesson #007: Close Quarters Combat",
+          "video": false,
+          "vote_average": 4.8,
+          "vote_count": 3
+        }
+      ],
+      "total_pages": 7,
+      "total_results": 121
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "44b5bac6630edd0e840aef17576880f4aab50c4099df8badc68c2af2f012f4d9",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=26299",
+      "ETag": "W/\u00224bc7f1d43928c9125e1ad713c842d47a\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

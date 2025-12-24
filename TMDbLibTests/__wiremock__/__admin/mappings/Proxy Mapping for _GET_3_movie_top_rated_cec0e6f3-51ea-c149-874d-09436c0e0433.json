@@ -1,0 +1,452 @@
+{
+  "Guid": "cec0e6f3-51ea-c149-874d-09436c0e0433",
+  "UpdatedAt": "2025-12-24T11:53:35.6312582Z",
+  "Title": "Proxy Mapping for GET /3/movie/top_rated",
+  "Description": "Proxy Mapping for GET /3/movie/top_rated",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/top_rated",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 2,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/5TiwfWEaPSwD20uwXjCTUqpQX70.jpg",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "id": 550,
+          "original_language": "en",
+          "original_title": "Fight Club",
+          "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \u0022fight clubs\u0022 forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+          "popularity": 24.5954,
+          "poster_path": "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+          "release_date": "1999-10-15",
+          "title": "Fight Club",
+          "video": false,
+          "vote_average": 8.438,
+          "vote_count": 31119
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e3hG3uadtcP0pYdRa5ch4ysQW76.jpg",
+          "genre_ids": [
+            28,
+            18,
+            36
+          ],
+          "id": 14537,
+          "original_language": "ja",
+          "original_title": "\u5207\u8179",
+          "overview": "Down-on-his-luck veteran Tsugumo Hanshir\u014D enters the courtyard of the prosperous House of Iyi. Unemployed, and with no family, he hopes to find a place to commit seppuku\u2014and a worthy second to deliver the coup de gr\u00E2ce in his suicide ritual. The senior counselor for the Iyi clan questions the ronin\u2019s resolve and integrity, suspecting Hanshir\u014D of seeking charity rather than an honorable end. What follows is a pair of interlocking stories which lay bare the difference between honor and respect, and promises to examine the legendary foundations of the Samurai code.",
+          "popularity": 4.339,
+          "poster_path": "/3nPwMd3KviJWaHzG9fZCqlwWMas.jpg",
+          "release_date": "1962-09-15",
+          "title": "Harakiri",
+          "video": false,
+          "vote_average": 8.434,
+          "vote_count": 1135
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zoVeIgKzGJzpdG6Gwnr7iOYfIMU.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 11216,
+          "original_language": "it",
+          "original_title": "Nuovo Cinema Paradiso",
+          "overview": "A filmmaker recalls his childhood, when he fell in love with the movies at his village\u0027s theater and formed a deep friendship with the theater\u0027s projectionist.",
+          "popularity": 6.9206,
+          "poster_path": "/gCI2AeMV4IHSewhJkzsur5MEp6R.jpg",
+          "release_date": "1988-11-17",
+          "title": "Cinema Paradiso",
+          "video": false,
+          "vote_average": 8.427,
+          "vote_count": 4674
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uvitbjFU4JqvMwIkMWHp69bmUzG.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 598,
+          "original_language": "pt",
+          "original_title": "Cidade de Deus",
+          "overview": "In the poverty-stricken favelas of Rio de Janeiro in the 1970s, two young men choose different paths. Rocket is a budding photographer who documents the increasing drug-related violence of his neighborhood, while Jos\u00E9 \u201CZ\u00E9\u201D Pequeno is an ambitious drug dealer diving into a dangerous life of crime.",
+          "popularity": 7.6861,
+          "poster_path": "/k7eYdWvhYQyRQoU2TB2A2Xu2TfD.jpg",
+          "release_date": "2002-08-30",
+          "title": "City of God",
+          "video": false,
+          "vote_average": 8.4,
+          "vote_count": 7909
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x2RS3uTcsJJ9IfjNPcgDmukoEcQ.jpg",
+          "genre_ids": [
+            12,
+            14,
+            28
+          ],
+          "id": 120,
+          "original_language": "en",
+          "original_title": "The Lord of the Rings: The Fellowship of the Ring",
+          "overview": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+          "popularity": 24.4414,
+          "poster_path": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+          "release_date": "2001-12-18",
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "video": false,
+          "vote_average": 8.426,
+          "vote_count": 26705
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bxSBOAD8AuMHYMdW3jso9npAkgt.jpg",
+          "genre_ids": [
+            10751,
+            18
+          ],
+          "id": 667257,
+          "original_language": "es",
+          "original_title": "Cosas imposibles",
+          "overview": "After the death of her abusive husband, Matilde finds her new best friend in Miguel, her young, insecure, and disoriented neighbor.",
+          "popularity": 4.603,
+          "poster_path": "/t2Ew8NZ8Ci2kqmoecZUNQUFDJnQ.jpg",
+          "release_date": "2021-06-17",
+          "title": "Impossible Things",
+          "video": false,
+          "vote_average": 8.425,
+          "vote_count": 418
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vzXQEAmXIEWAtPCgB81bAS6EJCy.jpg",
+          "genre_ids": [
+            27,
+            53,
+            9648
+          ],
+          "id": 539,
+          "original_language": "en",
+          "original_title": "Psycho",
+          "overview": "When larcenous real estate clerk Marion Crane goes on the lam with a wad of cash and hopes of starting a new life, she ends up at the notorious Bates Motel, where manager Norman Bates cares for his housebound mother.",
+          "popularity": 9.4699,
+          "poster_path": "/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg",
+          "release_date": "1960-06-22",
+          "title": "Psycho",
+          "video": false,
+          "vote_average": 8.4,
+          "vote_count": 10680
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/alQqTpmEkxSLgajfEYTsTH6nAKB.jpg",
+          "genre_ids": [
+            35,
+            18,
+            14,
+            10749
+          ],
+          "id": 40096,
+          "original_language": "pt",
+          "original_title": "O Auto da Compadecida",
+          "overview": "The lively Jo\u00E3o Grilo and the sly Chic\u00F3 are poor guys living in the hinterland who cheat a bunch of people in a small town in Northeastern Brazil. When they die, they have to be judged by Christ, the Devil and the Virgin Mary before they are admitted to paradise.",
+          "popularity": 4.8386,
+          "poster_path": "/ctfNJw6gofTjQvhOZeH8QKt0O2x.jpg",
+          "release_date": "2000-09-15",
+          "title": "A Dog\u0027s Will",
+          "video": false,
+          "vote_average": 8.419,
+          "vote_count": 1194
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6Oa3zTiluBz2W8D2ou1MY16dUiF.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 510,
+          "original_language": "en",
+          "original_title": "One Flew Over the Cuckoo\u0027s Nest",
+          "overview": "A petty criminal fakes insanity to serve his sentence in a mental ward rather than prison. He soon finds himself as a leader to the other patients\u2014and an enemy to the cruel, domineering nurse who runs the ward.",
+          "popularity": 8.74,
+          "poster_path": "/kjWsMh72V6d8KRLV4EOoSJLT1H7.jpg",
+          "release_date": "1975-11-19",
+          "title": "One Flew Over the Cuckoo\u0027s Nest",
+          "video": false,
+          "vote_average": 8.412,
+          "vote_count": 11082
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kWYfW2Re0rUDE6IHhy4CRuKWeFr.jpg",
+          "genre_ids": [
+            12,
+            14,
+            28
+          ],
+          "id": 121,
+          "original_language": "en",
+          "original_title": "The Lord of the Rings: The Two Towers",
+          "overview": "Frodo Baggins and the other members of the Fellowship continue on their sacred quest to destroy the One Ring--but on separate paths. Their destinies lie at two towers--Orthanc Tower in Isengard, where the corrupt wizard Saruman awaits, and Sauron\u0027s fortress at Barad-dur, deep within the dark lands of Mordor. Frodo and Sam are trekking to Mordor to destroy the One Ring of Power while Gimli, Legolas and Aragorn search for the orc-captured Merry and Pippin. All along, nefarious wizard Saruman awaits the Fellowship members at the Orthanc Tower in Isengard.",
+          "popularity": 21.6824,
+          "poster_path": "/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
+          "release_date": "2002-12-18",
+          "title": "The Lord of the Rings: The Two Towers",
+          "video": false,
+          "vote_average": 8.41,
+          "vote_count": 23183
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nIkcTtuhmkl1GZO2LfZi7SwFz7F.jpg",
+          "genre_ids": [
+            10749,
+            18
+          ],
+          "id": 696374,
+          "original_language": "en",
+          "original_title": "Gabriel\u0027s Inferno",
+          "overview": "An intriguing and sinful exploration of seduction, forbidden love, and redemption, Gabriel\u0027s Inferno is a captivating and wildly passionate tale of one man\u0027s escape from his own personal hell as he tries to earn the impossible--forgiveness and love.",
+          "popularity": 3.7741,
+          "poster_path": "/oyG9TL7FcRP4EZ9Vid6uKzwdndz.jpg",
+          "release_date": "2020-05-29",
+          "title": "Gabriel\u0027s Inferno",
+          "video": false,
+          "vote_average": 8.4,
+          "vote_count": 2438
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4Nx40jwpoTHPjCWNGoaZ6kaoGxa.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 255709,
+          "original_language": "ko",
+          "original_title": "\uC18C\uC6D0",
+          "overview": "After 8-year-old So-won narrowly survives a brutal sexual assault, her family labors to help her heal while coping with their own rage and grief.",
+          "popularity": 2.7289,
+          "poster_path": "/x9yjkm9gIz5qI5fJMUTfBnWiB2o.jpg",
+          "release_date": "2013-10-02",
+          "title": "Hope",
+          "video": false,
+          "vote_average": 8.4,
+          "vote_count": 811
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xlDUjb0Q5Dv6jPQRF5VE4IMjIy.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 311,
+          "original_language": "en",
+          "original_title": "Once Upon a Time in America",
+          "overview": "A former Prohibition-era Jewish gangster returns to the Lower East Side of Manhattan over thirty years later, where he once again must confront the ghosts and regrets of his old life.",
+          "popularity": 9.3382,
+          "poster_path": "/i0enkzsL5dPeneWnjl1fCWm6L7k.jpg",
+          "release_date": "1984-05-23",
+          "title": "Once Upon a Time in America",
+          "video": false,
+          "vote_average": 8.395,
+          "vote_count": 5813
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8mnXR9rey5uQ08rZAvzojKWbDQS.jpg",
+          "genre_ids": [
+            16,
+            28,
+            12,
+            878
+          ],
+          "id": 324857,
+          "original_language": "en",
+          "original_title": "Spider-Man: Into the Spider-Verse",
+          "overview": "Struggling to find his place in the world while juggling school and family, Brooklyn teenager Miles Morales is unexpectedly bitten by a radioactive spider and develops unfathomable powers just like the one and only Spider-Man. While wrestling with the implications of his new abilities, Miles discovers a super collider created by the madman Wilson \u0022Kingpin\u0022 Fisk, causing others from across the Spider-Verse to be inadvertently transported to his dimension.",
+          "popularity": 16.3596,
+          "poster_path": "/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
+          "release_date": "2018-12-06",
+          "title": "Spider-Man: Into the Spider-Verse",
+          "video": false,
+          "vote_average": 8.395,
+          "vote_count": 16681
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aJCtkxLLzkk1pECehVjKHA2lBgw.jpg",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "id": 1891,
+          "original_language": "en",
+          "original_title": "The Empire Strikes Back",
+          "overview": "The epic saga continues as Luke Skywalker, in hopes of defeating the evil Galactic Empire, learns the ways of the Jedi from aging master Yoda. But Darth Vader is more determined than ever to capture Luke. Meanwhile, rebel leader Princess Leia, cocky Han Solo, Chewbacca, and droids C-3PO and R2-D2 are thrown into various stages of capture, betrayal and despair.",
+          "popularity": 7.8137,
+          "poster_path": "/nNAeTmF4CtdSgMDplXTDPOpYzsX.jpg",
+          "release_date": "1980-05-20",
+          "title": "The Empire Strikes Back",
+          "video": false,
+          "vote_average": 8.394,
+          "vote_count": 17899
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pjy0T63vIFYvxRSJ3ZtjB4tmWV4.jpg",
+          "genre_ids": [
+            14,
+            16,
+            12
+          ],
+          "id": 4935,
+          "original_language": "ja",
+          "original_title": "\u30CF\u30A6\u30EB\u306E\u52D5\u304F\u57CE",
+          "overview": "Sophie, a young milliner, is turned into an elderly woman by a witch who enters her shop and curses her. She encounters a wizard named Howl and gets caught up in his resistance to fighting for the king.",
+          "popularity": 13.1597,
+          "poster_path": "/13kOl2v0nD2OLbVSHnHk8GUFEhO.jpg",
+          "release_date": "2004-09-09",
+          "title": "Howl\u0027s Moving Castle",
+          "video": false,
+          "vote_average": 8.39,
+          "vote_count": 10674
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5lAMQMWpXMsirvtLLvW7cJgEPkU.jpg",
+          "genre_ids": [
+            16,
+            18,
+            10749
+          ],
+          "id": 378064,
+          "original_language": "ja",
+          "original_title": "\u6620\u753B \u8072\u306E\u5F62",
+          "overview": "Shouya Ishida starts bullying the new girl in class, Shouko Nishimiya, because she is deaf. But as the teasing continues, the rest of the class starts to turn on Shouya for his lack of compassion. When they leave elementary school, Shouko and Shouya do not speak to each other again... until an older, wiser Shouya, tormented by his past behaviour, decides he must see Shouko once more. He wants to atone for his sins, but is it already too late...?",
+          "popularity": 9.7672,
+          "poster_path": "/tuFaWiqX0TXoWu7DGNcmX3UW7sT.jpg",
+          "release_date": "2016-09-17",
+          "title": "A Silent Voice: The Movie",
+          "video": false,
+          "vote_average": 8.386,
+          "vote_count": 4290
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hkKTtlHjiVUW5XRfkQfl3FmJUfX.jpg",
+          "genre_ids": [
+            80,
+            9648,
+            53
+          ],
+          "id": 807,
+          "original_language": "en",
+          "original_title": "Se7en",
+          "overview": "Two homicide detectives are on a desperate hunt for a serial killer whose crimes are based on the \u0022seven deadly sins\u0022 in this dark and haunting film that takes viewers from the tortured remains of one victim to the next. The seasoned Det. Somerset researches each sin in an effort to get inside the killer\u0027s mind, while his novice partner, Mills, scoffs at his efforts to unravel the case.",
+          "popularity": 14.7867,
+          "poster_path": "/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg",
+          "release_date": "1995-09-22",
+          "title": "Se7en",
+          "video": false,
+          "vote_average": 8.378,
+          "vote_count": 22385
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1XqIhsqnAozznGhxlGdI0GPcCro.jpg",
+          "genre_ids": [
+            18,
+            10752
+          ],
+          "id": 423,
+          "original_language": "en",
+          "original_title": "The Pianist",
+          "overview": "The true story of pianist W\u0142adys\u0142aw Szpilman\u0027s experiences in Warsaw during the Nazi occupation. When the Jews of the city find themselves forced into a ghetto, Szpilman finds work playing in a caf\u00E9; and when his family is deported in 1942, he stays behind, works for a while as a laborer, and eventually goes into hiding in the ruins of the war-torn city.",
+          "popularity": 8.5416,
+          "poster_path": "/2hFvxCCWrTmCYwfy7yum0GKRi3Y.jpg",
+          "release_date": "2002-09-17",
+          "title": "The Pianist",
+          "video": false,
+          "vote_average": 8.378,
+          "vote_count": 9807
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1kuYEvLkX2nTkbfzN6X0w0xQFQU.jpg",
+          "genre_ids": [
+            18,
+            10402
+          ],
+          "id": 244786,
+          "original_language": "en",
+          "original_title": "Whiplash",
+          "overview": "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost, even his humanity.",
+          "popularity": 14.3182,
+          "poster_path": "/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
+          "release_date": "2014-10-10",
+          "title": "Whiplash",
+          "video": false,
+          "vote_average": 8.376,
+          "vote_count": 16137
+        }
+      ],
+      "total_pages": 528,
+      "total_results": 10544
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=27535",
+      "x-memc": "HIT",
+      "x-memc-key": "352373134a33bafa72c2c30617e0253a385a4733fa8b2cfbf654ccd4864cbdf7",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00223df49f193ac05c95b9c272f4c04a4d2c\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "Guid": "1ca35e72-a067-2343-8921-42366bb50f81",
+  "UpdatedAt": "2025-12-24T11:53:34.9403315Z",
+  "Title": "Proxy Mapping for GET /3/search/company",
+  "Description": "Proxy Mapping for GET /3/search/company",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/search/company",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "query",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "Disney",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "id": 3166,
+          "logo_path": "/vyyv4Gy9nPqAZKElPm2izLlEaVS.png",
+          "name": "Walt Disney Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 5391,
+          "logo_path": "/o5AcK10ViutenSa4XTD18ClCEWe.png",
+          "name": "DisneyToon Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 15935,
+          "logo_path": "/25xmKjrZS3TJMYa1RvxZ2qcMHHX.png",
+          "name": "Walt Disney Imagineering",
+          "origin_country": "US"
+        },
+        {
+          "id": 81026,
+          "logo_path": null,
+          "name": "The Walt Disney Company Italia",
+          "origin_country": "IT"
+        },
+        {
+          "id": 40148,
+          "logo_path": null,
+          "name": "Walt Disney Animation Japan",
+          "origin_country": "JP"
+        },
+        {
+          "id": 171657,
+          "logo_path": null,
+          "name": "Walt Disney Studio",
+          "origin_country": "US"
+        },
+        {
+          "id": 101999,
+          "logo_path": null,
+          "name": "The Walt Disney Company CIS",
+          "origin_country": "RU"
+        },
+        {
+          "id": 112779,
+          "logo_path": null,
+          "name": "Walt Disney Animation",
+          "origin_country": "FR"
+        },
+        {
+          "id": 158079,
+          "logo_path": "/xuJoMk8XFP90SLtPzMy33oRO056.png",
+          "name": "Walt Disney World Resorts",
+          "origin_country": "US"
+        },
+        {
+          "id": 158526,
+          "logo_path": "/tzsMJBJZINu7GHzrpYzpReWhh66.png",
+          "name": "Walt Disney Animation Studios",
+          "origin_country": "CA"
+        },
+        {
+          "id": 88716,
+          "logo_path": null,
+          "name": "Walt Disney Germany",
+          "origin_country": ""
+        },
+        {
+          "id": 91233,
+          "logo_path": "/hLmapAiZLpxTtnWt9UXhEeUXvhp.png",
+          "name": "Disney Digital Network",
+          "origin_country": ""
+        },
+        {
+          "id": 135745,
+          "logo_path": "/uVLvZaUx7lw1K5d2dfOjYrbcpKd.png",
+          "name": "The Walt Disney Company France",
+          "origin_country": "FR"
+        },
+        {
+          "id": 52126,
+          "logo_path": null,
+          "name": "Disney Media Productions",
+          "origin_country": ""
+        },
+        {
+          "id": 107038,
+          "logo_path": "/vQWGWxJQXcK0qyZd26orU7ScUKe.png",
+          "name": "Disney Theatrical Group",
+          "origin_country": "US"
+        },
+        {
+          "id": 107039,
+          "logo_path": "/kkuLBOtli6Ym7LNt5VyZHyOYMgZ.png",
+          "name": "Disney Broadcast Production",
+          "origin_country": ""
+        },
+        {
+          "id": 71124,
+          "logo_path": null,
+          "name": "Walt Disney Pictures Kids",
+          "origin_country": ""
+        },
+        {
+          "id": 112149,
+          "logo_path": null,
+          "name": "The Walt Disney Company Korea",
+          "origin_country": "KR"
+        },
+        {
+          "id": 13571,
+          "logo_path": "/lE1lyDlZcxOzhguXQgTZwpVZ1xd.png",
+          "name": "Disney Educational Productions",
+          "origin_country": ""
+        },
+        {
+          "id": 6125,
+          "logo_path": "/tzsMJBJZINu7GHzrpYzpReWhh66.png",
+          "name": "Walt Disney Animation Studios",
+          "origin_country": "US"
+        }
+      ],
+      "total_pages": 4,
+      "total_results": 71
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "4f90c0eb66129f3b7f011a71c8f8ab884c7b17579d9f73da40367c2722c5aa40",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=27291",
+      "ETag": "W/\u00229ffd3b6f8402dfd421201fa01e61a5be\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "Guid": "a378aa59-1214-a645-8dc0-b75310167b33",
+  "UpdatedAt": "2025-12-24T11:53:34.8766467Z",
+  "Title": "Proxy Mapping for GET /3/tv/airing_today",
+  "Description": "Proxy Mapping for GET /3/tv/airing_today",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/airing_today",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
+          "genre_ids": [
+            10759,
+            18,
+            10765
+          ],
+          "id": 106379,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Fallout",
+          "overview": "The story of haves and have-nots in a world in which there\u0027s almost nothing left to have. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind \u2014 and are shocked to discover an incredibly complex, gleefully weird, and highly violent universe waiting for them.",
+          "popularity": 208.1718,
+          "poster_path": "/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
+          "first_air_date": "2024-04-10",
+          "name": "Fallout",
+          "vote_average": 8.183,
+          "vote_count": 2235
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/opxjwbFSadDgVmZtrLTlWJsUxrB.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 283123,
+          "origin_country": [
+            "TR"
+          ],
+          "original_language": "tr",
+          "original_name": "E\u015Fref R\u00FCya",
+          "overview": "As a child, E\u015Fref fell in love from afar with a girl he called \u201CR\u00FCya\u201D and spent years searching for her, only to become a powerful mafia figure along the way. Meanwhile, Nisan, an idealistic musician, finds herself in grave danger after performing at a wedding held at E\u015Fref\u2019s hotel. E\u015Fref falls for Nisan, unaware that she is both the long-lost R\u00FCya he has been chasing for years and a police informant. Trapped in a whirlwind of love, betrayal, and power struggles, E\u015Fref is forced into a brutal reckoning\u2014both with his criminal empire and his own emotions.",
+          "popularity": 100.7385,
+          "poster_path": "/jwrN5QA07dm8sKuUFInP2MRLPfb.jpg",
+          "first_air_date": "2025-03-19",
+          "name": "Esref\u0027s Dream",
+          "vote_average": 7.045,
+          "vote_count": 22
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sAxx25ijwYQ8xsT56wu2IzvIRss.jpg",
+          "genre_ids": [
+            10759,
+            10765,
+            18,
+            10751
+          ],
+          "id": 103540,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Percy Jackson and the Olympians",
+          "overview": "Percy Jackson is on a dangerous quest. Outrunning monsters and outwitting gods, he must journey across America to return Zeus\u0027s master bolt and stop an all-out war. With the help of his friends Annabeth and Grover, Percy\u0027s journey will lead him closer to the answers he seeks: how to fit into a world where he feels out of place, and who he\u0027s destined to be.",
+          "popularity": 48.8362,
+          "poster_path": "/40eFcTzZier3DWLqldsP5VHxeoD.jpg",
+          "first_air_date": "2023-12-19",
+          "name": "Percy Jackson and the Olympians",
+          "vote_average": 7.3,
+          "vote_count": 640
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/khHpr9W9cZ7mlQGvabC2IeG69pg.jpg",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 254482,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u957F\u5B89\u4E8C\u5341\u56DB\u8BA1",
+          "overview": "Xie Huai\u0027an, son of the Huben Army\u0027s creator, survives his family\u0027s massacre. After ten long years in hiding, he returns to Chang\u0027an disguised as a lowly registrar, moving step by step through jianghu clashes and palace power plays in a tense battle of wits to avenge his family and safeguard the realm.",
+          "popularity": 33.252,
+          "poster_path": "/vMwB4BNicfWJl0JhU7YQApcoiHE.jpg",
+          "first_air_date": "2025-12-12",
+          "name": "The Vendetta of An",
+          "vote_average": 7.8,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cTFQKu8CLftXHUCIBGksfL8uhf3.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 281013,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uD0A4\uC2A4\uB294 \uAD1C\uD788 \uD574\uC11C!",
+          "overview": "A passionate fling in Jeju ends abruptly \u2014 until fate reunites an heir and a young woman when she joins his company, disguised as a married mother.",
+          "popularity": 36.3926,
+          "poster_path": "/qY3ltlWUB7u3ENocrMOkbGCGYnt.jpg",
+          "first_air_date": "2025-11-12",
+          "name": "Dynamite Kiss",
+          "vote_average": 8.571,
+          "vote_count": 28
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/s1dTt4M31q2HwD5Fkl1tf5tQzJg.jpg",
+          "genre_ids": [
+            10766
+          ],
+          "id": 206559,
+          "origin_country": [
+            "ZA"
+          ],
+          "original_language": "af",
+          "original_name": "Binnelanders",
+          "overview": "A South African Afrikaans soap opera. It is set in and around the fictional private hospital, Binneland Kliniek, in Pretoria, and the storyline follows the trials, trauma and tribulations of the staff and patients of the hospital.",
+          "popularity": 31.1288,
+          "poster_path": "/3bzECfllho8PphdYujLUIuhncJD.jpg",
+          "first_air_date": "2005-10-13",
+          "name": "Binnelanders",
+          "vote_average": 5.528,
+          "vote_count": 106
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/47cdJm6WGJqCsdE6QvPh6fLKwuo.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 213402,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u3068\u3093\u3067\u3082\u30B9\u30AD\u30EB\u3067\u7570\u4E16\u754C\u653E\u6D6A\u30E1\u30B7",
+          "overview": "Tsuyoshi Mukohda, an ordinary salaryman, is suddenly transported to another world one day. The unique skill he gains upon arrival in this world is the seemingly useless \u0022Online Grocery.\u0022 Mukohda is discouraged at first, but the modern foods he\u0027s able to bring to his new world using this skill prove to have some unbelievable effects!",
+          "popularity": 32.232,
+          "poster_path": "/cXc3yiQ5RrimzfucovjO83RTrnq.jpg",
+          "first_air_date": "2023-01-11",
+          "name": "Campfire Cooking in Another World with My Absurd Skill",
+          "vote_average": 8.3,
+          "vote_count": 265
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gTPfMUXFIgG6HZeR5hif2fvGzOv.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 271548,
+          "origin_country": [
+            "TR"
+          ],
+          "original_language": "tr",
+          "original_name": "Sahipsizler",
+          "overview": "A story of six siblings\u2014Azize, Cemo, Zeliha, Fidan, Samet, and Bal\u0131m\u2014who, after suddenly losing their parents, struggle to stay united and survive. The roots of their tragedy trace back to their parents, Bala and R\u0131fat, whose forbidden love began in a village in Mardin. R\u0131fat, a teacher, falls in love with Bala, but Yavuz, the wealthy and obsessive son of Mardin\u2019s richest family, kidnaps her. Despite his abuse, Bala escapes with R\u0131fat, and they build a secluded life in the forest, raising six children in peace. However, Yavuz\u2019s revenge shatters their world when he finds and attacks them. Fleeing to Istanbul, the siblings face the dangers of the city while seeking refuge with \u201CUncle Aslan,\u201D their father\u2019s trusted friend. The story highlights resilience, as the older siblings are forced to grow up quickly to protect their younger brothers and sisters in the face of overwhelming challenges.",
+          "popularity": 31.3484,
+          "poster_path": "/l0g0CAq7VjoKslVE9JZZQFMI9Tt.jpg",
+          "first_air_date": "2024-11-13",
+          "name": "6 of Us",
+          "vote_average": 5.5,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mbSSCIbNpeyNJqKAKkWgdvYsQ8F.jpg",
+          "genre_ids": [
+            18,
+            9648,
+            10766
+          ],
+          "id": 212907,
+          "origin_country": [
+            "ES"
+          ],
+          "original_language": "es",
+          "original_name": "La promesa",
+          "overview": "In 1913 Spain, a woman gets a job at the palace of La Promesa as a reward for saving the marquesses\u0027 son - but nobody knows that she has her own plans, which involve avenging her mother\u0027s death and finding her missing brother.",
+          "popularity": 26.2137,
+          "poster_path": "/y656ZhHU2Hh3bmC5vBtMa2vKpUM.jpg",
+          "first_air_date": "2023-01-12",
+          "name": "La promesa",
+          "vote_average": 7.7,
+          "vote_count": 68
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l61sjSZCsf99abjlnt2ToG442ol.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 108255,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "All Creatures Great \u0026 Small",
+          "overview": "The heartwarming and humorous adventures of a young country vet in the Yorkshire Dales in the 1930s. A remake of the 1978 series.",
+          "popularity": 22.657,
+          "poster_path": "/hchdfgmviL9qzJ3OVd0LOkh1b5F.jpg",
+          "first_air_date": "2020-09-01",
+          "name": "All Creatures Great \u0026 Small",
+          "vote_average": 8.182,
+          "vote_count": 140
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qwoFxyMtArLpZZzG3mmRDEjGgCM.jpg",
+          "genre_ids": [
+            18,
+            10766
+          ],
+          "id": 239526,
+          "origin_country": [
+            "ES"
+          ],
+          "original_language": "es",
+          "original_name": "Sue\u00F1os de libertad",
+          "overview": "Bego\u00F1a Montes is a woman who lives trapped in a toxic marriage and seeks the long-awaited freedom in Spain in 1958.",
+          "popularity": 25.1668,
+          "poster_path": "/ohItaiKnas60gxQrfQCrCToWmGW.jpg",
+          "first_air_date": "2024-02-25",
+          "name": "Dreams of Liberty",
+          "vote_average": 6.1,
+          "vote_count": 16
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/55tcKzl0gZ0lR1q7TrVJm0h9lkT.jpg",
+          "genre_ids": [
+            10764,
+            10751
+          ],
+          "id": 2912,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Jeopardy!",
+          "overview": "America\u0027s favorite quiz show where contestants are presented with general knowledge clues in the form of answers, and must phrase their responses in question form.",
+          "popularity": 24.0862,
+          "poster_path": "/hfz0IgebqGENG6ZnuqKQKMFk2vy.jpg",
+          "first_air_date": "1984-09-10",
+          "name": "Jeopardy!",
+          "vote_average": 6.9,
+          "vote_count": 150
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2pi53UfC61zRYDU7BOlNoEG3myo.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 304774,
+          "origin_country": [
+            "TR"
+          ],
+          "original_language": "tr",
+          "original_name": "Sekizinci Aile",
+          "overview": "A textile family\u0027s rise to global power brings struggles to maintain their position, while facing betrayals and twists of fate in this tale of ambition and survival.",
+          "popularity": 23.6798,
+          "poster_path": "/y8NmGRfD3GuhhR8bTj7rXWkOMqk.jpg",
+          "first_air_date": "2025-11-19",
+          "name": "The Eighth Family",
+          "vote_average": 8.3,
+          "vote_count": 3
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hUz0UHWSVd6e1g3I6vT4shAsnoY.jpg",
+          "genre_ids": [
+            10766,
+            18,
+            80
+          ],
+          "id": 1871,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "EastEnders",
+          "overview": "The everyday lives of working-class residents of Albert Square, a traditional Victorian square of terrace houses surrounding a park in the East End of London\u0027s Walford borough.",
+          "popularity": 24.4838,
+          "poster_path": "/z4jgyI5TpoRZiJTNchkVkMrGQyz.jpg",
+          "first_air_date": "1985-02-19",
+          "name": "EastEnders",
+          "vote_average": 4.1,
+          "vote_count": 218
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1rIQ1IHv6ULVbrR5Qcnc4x27du.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 278577,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u9A84\u9633\u4F3C\u6211",
+          "overview": "The story focuses on the real and delicate growth process of Nie Xiguang, a lively, cheerful and energetic female college student, as she walks out of campus and enters the workplace.",
+          "popularity": 21.4498,
+          "poster_path": "/cFBlFzOwh4C8wpuR4sYBIitvNiw.jpg",
+          "first_air_date": "2025-12-22",
+          "name": "Shine on Me",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5APjn4LnV5wWk5DXq7ZewT6zzP1.jpg",
+          "genre_ids": [
+            10766
+          ],
+          "id": 291,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Coronation Street",
+          "overview": "The residents of Coronation Street are ordinary, working-class people, and the show follows them through regular social and family interactions at home, in the workplace, and in their local pub, the Rovers Return Inn. Britain\u0027s longest-running soap.",
+          "popularity": 21.8077,
+          "poster_path": "/5x1HXqYqPyYw7oc7Isu1lvVmwRP.jpg",
+          "first_air_date": "1960-12-09",
+          "name": "Coronation Street",
+          "vote_average": 5.3,
+          "vote_count": 115
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lCyVptIB3CgO0ls9o0PvT50xshn.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            18,
+            10765
+          ],
+          "id": 198182,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "Shen Yin Wang Zuo",
+          "overview": "Six thousand years ago, the Demon God appeared and creatures were turned into demons. The mankind created six Temples to fight the demons. Long Haochen joins the Knights Temple. As he grows, an adventure unfolds. He wins the recognition of others and fights with the Six Temples against the demons for the sake of human beings. He sacrifices himself to protect the people. Could Long win the Throne of Seal and be granted the highest honor in the Knights\u0027 Temple? All remained to be revealed.",
+          "popularity": 21.8127,
+          "poster_path": "/ehRRWs1EfeYiX4ysLLapWeKG4Pq.jpg",
+          "first_air_date": "2022-04-28",
+          "name": "Throne of Seal",
+          "vote_average": 8.8,
+          "vote_count": 26
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aizbHLcKVWvJ7jxkflJzTu5Z8GE.jpg",
+          "genre_ids": [
+            10766
+          ],
+          "id": 81329,
+          "origin_country": [
+            "FR"
+          ],
+          "original_language": "fr",
+          "original_name": "Un si grand soleil",
+          "overview": "Claire is surprised when she gets arrested for the murder of her childhood friend after she returns to Montpellier.",
+          "popularity": 19.8807,
+          "poster_path": "/t6jVlbPMtZOJoAOfeoR4yQmnjXM.jpg",
+          "first_air_date": "2018-08-27",
+          "name": "Chronicles of the Sun",
+          "vote_average": 6.579,
+          "vote_count": 126
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4fl55dOJ3d5Du1jZMQ3Ut7DyJmu.jpg",
+          "genre_ids": [
+            10759,
+            18
+          ],
+          "id": 91555,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "All Elite Wrestling: Dynamite",
+          "overview": "A world-class roster of diverse male and female wrestlers give fans a new wrestling experience for the first time in 20 years.",
+          "popularity": 18.0801,
+          "poster_path": "/gPNWVCp0zrHRmwfovUpUQO44sts.jpg",
+          "first_air_date": "2019-10-02",
+          "name": "All Elite Wrestling: Dynamite",
+          "vote_average": 7.919,
+          "vote_count": 80
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fBe7YuZH03raDtrp2ooHtAICOJm.jpg",
+          "genre_ids": [
+            10763,
+            35
+          ],
+          "id": 13008,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "TMZ",
+          "overview": "Based on the popular gossip website, this entertainment newsmagazine delivers daily updates on Hollywood\u0027s rich, beautiful and screwed-up. The program often shows highlights of the day\u0027s staff meeting during which reporters pitch ideas for stories to air that day.",
+          "popularity": 18.9773,
+          "poster_path": "/qotUEfomNK4r1ZVPVNAbXHon8Oh.jpg",
+          "first_air_date": "2007-09-10",
+          "name": "TMZ",
+          "vote_average": 4.9,
+          "vote_count": 22
+        }
+      ],
+      "total_pages": 12,
+      "total_results": 221
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=24143",
+      "x-memc": "HIT",
+      "x-memc-key": "719caacc0ffeb23d682951577d8b0d5b4f22ab070a2035c6ad9b192a245090d9",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00228bf7db2b0d82eaf9c7f2f6ae0c9bdba9\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "Guid": "ef1945ea-9c5d-184a-a7b7-992da0814c36",
+  "UpdatedAt": "2025-12-24T11:53:35.1948345Z",
+  "Title": "Proxy Mapping for GET /3/discover/movie",
+  "Description": "Proxy Mapping for GET /3/discover/movie",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/movie",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "da-DK",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "with_original_language",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "en-US",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "primary_release_date.gte",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2017-01-01",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [],
+      "total_pages": 1,
+      "total_results": 0
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "MISS",
+      "x-memc-key": "c5c8cec33763d5cb218d0fe34d819fa31b2460817e636086ce4a8400aee8cfe7",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=0",
+      "ETag": "W/\u00220e23279b004381f72a34159d5c7dfd1f\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

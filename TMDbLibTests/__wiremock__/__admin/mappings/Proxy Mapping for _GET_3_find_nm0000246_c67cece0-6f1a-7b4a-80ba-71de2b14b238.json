@@ -1,0 +1,138 @@
+{
+  "Guid": "c67cece0-6f1a-7b4a-80ba-71de2b14b238",
+  "UpdatedAt": "2025-12-24T11:53:34.6927848Z",
+  "Title": "Proxy Mapping for GET /3/find/nm0000246",
+  "Description": "Proxy Mapping for GET /3/find/nm0000246",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/find/nm0000246",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "external_source",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "imdb_id",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "movie_results": [],
+      "person_results": [
+        {
+          "adult": false,
+          "id": 62,
+          "name": "Bruce Willis",
+          "original_name": "Bruce Willis",
+          "media_type": "person",
+          "popularity": 5.9637,
+          "gender": 2,
+          "known_for_department": "Acting",
+          "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/paUKxrbN2ww0JeT2JtvgAuaGlPf.jpg",
+              "id": 745,
+              "title": "The Sixth Sense",
+              "original_title": "The Sixth Sense",
+              "overview": "Following an unexpected tragedy, child psychologist Malcolm Crowe meets a nine year old boy named Cole Sear, who is hiding a dark secret.",
+              "poster_path": "/vOyfUXNFSnaTk7Vk5AjpsKTUWsu.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                9648,
+                53,
+                18
+              ],
+              "popularity": 8.4993,
+              "release_date": "1999-08-06",
+              "video": false,
+              "vote_average": 7.947,
+              "vote_count": 12432
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+              "id": 562,
+              "title": "Die Hard",
+              "original_title": "Die Hard",
+              "overview": "NYPD cop John McClane\u0027s plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her offices Christmas Party, the entire building is overtaken by a group of terrorists. With little help from the LAPD, wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.",
+              "poster_path": "/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                53
+              ],
+              "popularity": 28.9381,
+              "release_date": "1988-07-15",
+              "video": false,
+              "vote_average": 7.8,
+              "vote_count": 11853
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/dwN0kPGrLbFRxyL3F3J3t4ShQx.jpg",
+              "id": 18,
+              "title": "The Fifth Element",
+              "original_title": "Le Cinqui\u00E8me \u00C9l\u00E9ment",
+              "overview": "In 2257, a taxi driver is unintentionally given the task of saving a young girl who is part of the key that will ensure the survival of humanity.",
+              "poster_path": "/fPtlCO1yQtnoLHOwKtWz7db6RGU.jpg",
+              "media_type": "movie",
+              "original_language": "fr",
+              "genre_ids": [
+                878,
+                28,
+                12
+              ],
+              "popularity": 18.6551,
+              "release_date": "1997-05-02",
+              "video": false,
+              "vote_average": 7.6,
+              "vote_count": 11328
+            }
+          ]
+        }
+      ],
+      "tv_results": [],
+      "tv_episode_results": [],
+      "tv_season_results": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=26420",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "ebed5563eadcd6e39c63af50f99687cdbf9912846f584f6185f3ea133179aee9",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022da226b3017db12534feebf4e57097837\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

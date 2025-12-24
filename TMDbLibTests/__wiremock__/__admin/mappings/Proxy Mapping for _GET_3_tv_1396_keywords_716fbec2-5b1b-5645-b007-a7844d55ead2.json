@@ -1,0 +1,172 @@
+{
+  "Guid": "716fbec2-5b1b-5645-b007-a7844d55ead2",
+  "UpdatedAt": "2025-12-24T11:53:35.3779362Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/keywords",
+  "Description": "Proxy Mapping for GET /3/tv/1396/keywords",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/keywords",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1396,
+      "results": [
+        {
+          "name": "new mexico",
+          "id": 1508
+        },
+        {
+          "name": "drug dealer",
+          "id": 2231
+        },
+        {
+          "name": "narcissism",
+          "id": 5857
+        },
+        {
+          "name": "psychopath",
+          "id": 6259
+        },
+        {
+          "name": "terminal illness",
+          "id": 6564
+        },
+        {
+          "name": "outlaw",
+          "id": 9503
+        },
+        {
+          "name": "dark comedy",
+          "id": 10123
+        },
+        {
+          "name": "cancer",
+          "id": 10163
+        },
+        {
+          "name": "tragedy",
+          "id": 10614
+        },
+        {
+          "name": "drugs",
+          "id": 14964
+        },
+        {
+          "name": "criminal",
+          "id": 15009
+        },
+        {
+          "name": "meth lab",
+          "id": 15484
+        },
+        {
+          "name": "drug lord",
+          "id": 18026
+        },
+        {
+          "name": "high school teacher",
+          "id": 41525
+        },
+        {
+          "name": "dea agent",
+          "id": 156805
+        },
+        {
+          "name": "neo-western",
+          "id": 168713
+        },
+        {
+          "name": "narcissist",
+          "id": 185959
+        },
+        {
+          "name": "albuquerque, new mexico",
+          "id": 191005
+        },
+        {
+          "name": "criminal lawyer",
+          "id": 191199
+        },
+        {
+          "name": "fall from grace",
+          "id": 199660
+        },
+        {
+          "name": "cartel",
+          "id": 206594
+        },
+        {
+          "name": "mexican cartel",
+          "id": 217064
+        },
+        {
+          "name": "male egos",
+          "id": 217104
+        },
+        {
+          "name": "crystal meth",
+          "id": 239108
+        },
+        {
+          "name": "dark",
+          "id": 259094
+        },
+        {
+          "name": "methamphetamine",
+          "id": 281692
+        },
+        {
+          "name": "gritty",
+          "id": 286125
+        },
+        {
+          "name": "thriller",
+          "id": 316362
+        },
+        {
+          "name": "baffled",
+          "id": 325776
+        },
+        {
+          "name": "violent",
+          "id": 342828
+        },
+        {
+          "name": "tortured genius",
+          "id": 360934
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "9f53f066f7707b585c2e726db0a7fdaa30ba53a2d75c1330803f52d2b2bd8515",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=11983",
+      "ETag": "W/\u0022f29a4aa4f851da782a0b0ec092d65643\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

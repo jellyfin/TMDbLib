@@ -1,0 +1,462 @@
+{
+  "Guid": "3e1eb8fc-2b7d-084c-a85d-e326b917bd09",
+  "UpdatedAt": "2025-12-24T11:53:34.5701915Z",
+  "Title": "Proxy Mapping for GET /3/person/changes",
+  "Description": "Proxy Mapping for GET /3/person/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/person/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "1",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "results": [
+        {
+          "id": 1187781,
+          "adult": false
+        },
+        {
+          "id": 5892023,
+          "adult": false
+        },
+        {
+          "id": 5091885,
+          "adult": false
+        },
+        {
+          "id": 3626351,
+          "adult": false
+        },
+        {
+          "id": 5893526,
+          "adult": false
+        },
+        {
+          "id": 5593957,
+          "adult": null
+        },
+        {
+          "id": 5593958,
+          "adult": null
+        },
+        {
+          "id": 5593959,
+          "adult": null
+        },
+        {
+          "id": 5593960,
+          "adult": null
+        },
+        {
+          "id": 5593961,
+          "adult": null
+        },
+        {
+          "id": 5593962,
+          "adult": null
+        },
+        {
+          "id": 5593965,
+          "adult": null
+        },
+        {
+          "id": 5593966,
+          "adult": null
+        },
+        {
+          "id": 5593969,
+          "adult": null
+        },
+        {
+          "id": 5593970,
+          "adult": null
+        },
+        {
+          "id": 5593973,
+          "adult": null
+        },
+        {
+          "id": 5593978,
+          "adult": null
+        },
+        {
+          "id": 5593979,
+          "adult": null
+        },
+        {
+          "id": 5593986,
+          "adult": null
+        },
+        {
+          "id": 5593996,
+          "adult": null
+        },
+        {
+          "id": 5593998,
+          "adult": null
+        },
+        {
+          "id": 5594007,
+          "adult": null
+        },
+        {
+          "id": 5594019,
+          "adult": null
+        },
+        {
+          "id": 5594029,
+          "adult": null
+        },
+        {
+          "id": 5594032,
+          "adult": null
+        },
+        {
+          "id": 5890015,
+          "adult": null
+        },
+        {
+          "id": 5890019,
+          "adult": null
+        },
+        {
+          "id": 5890020,
+          "adult": null
+        },
+        {
+          "id": 5890021,
+          "adult": null
+        },
+        {
+          "id": 5890022,
+          "adult": null
+        },
+        {
+          "id": 5890023,
+          "adult": null
+        },
+        {
+          "id": 5890025,
+          "adult": null
+        },
+        {
+          "id": 5890027,
+          "adult": null
+        },
+        {
+          "id": 5890029,
+          "adult": null
+        },
+        {
+          "id": 5890030,
+          "adult": null
+        },
+        {
+          "id": 5890031,
+          "adult": null
+        },
+        {
+          "id": 5890032,
+          "adult": null
+        },
+        {
+          "id": 5890035,
+          "adult": null
+        },
+        {
+          "id": 5890036,
+          "adult": null
+        },
+        {
+          "id": 5890037,
+          "adult": null
+        },
+        {
+          "id": 5890041,
+          "adult": null
+        },
+        {
+          "id": 5273301,
+          "adult": null
+        },
+        {
+          "id": 5889578,
+          "adult": null
+        },
+        {
+          "id": 4147700,
+          "adult": false
+        },
+        {
+          "id": 4984298,
+          "adult": false
+        },
+        {
+          "id": 5467793,
+          "adult": false
+        },
+        {
+          "id": 1092916,
+          "adult": false
+        },
+        {
+          "id": 5883910,
+          "adult": false
+        },
+        {
+          "id": 5892013,
+          "adult": false
+        },
+        {
+          "id": 5893527,
+          "adult": false
+        },
+        {
+          "id": 1450749,
+          "adult": false
+        },
+        {
+          "id": 1166686,
+          "adult": false
+        },
+        {
+          "id": 1633306,
+          "adult": false
+        },
+        {
+          "id": 2581796,
+          "adult": false
+        },
+        {
+          "id": 3172815,
+          "adult": false
+        },
+        {
+          "id": 3172817,
+          "adult": false
+        },
+        {
+          "id": 3172818,
+          "adult": false
+        },
+        {
+          "id": 4105148,
+          "adult": false
+        },
+        {
+          "id": 4911890,
+          "adult": false
+        },
+        {
+          "id": 5832450,
+          "adult": false
+        },
+        {
+          "id": 5893268,
+          "adult": false
+        },
+        {
+          "id": 5893528,
+          "adult": false
+        },
+        {
+          "id": 5893529,
+          "adult": false
+        },
+        {
+          "id": 5893530,
+          "adult": false
+        },
+        {
+          "id": 5893531,
+          "adult": false
+        },
+        {
+          "id": 5890899,
+          "adult": null
+        },
+        {
+          "id": 3920309,
+          "adult": false
+        },
+        {
+          "id": 5893532,
+          "adult": false
+        },
+        {
+          "id": 5893533,
+          "adult": false
+        },
+        {
+          "id": 5893534,
+          "adult": false
+        },
+        {
+          "id": 936670,
+          "adult": false
+        },
+        {
+          "id": 5893535,
+          "adult": false
+        },
+        {
+          "id": 5893536,
+          "adult": false
+        },
+        {
+          "id": 5893537,
+          "adult": false
+        },
+        {
+          "id": 1476863,
+          "adult": false
+        },
+        {
+          "id": 5888654,
+          "adult": null
+        },
+        {
+          "id": 5888886,
+          "adult": null
+        },
+        {
+          "id": 2220156,
+          "adult": false
+        },
+        {
+          "id": 1786725,
+          "adult": false
+        },
+        {
+          "id": 5888632,
+          "adult": null
+        },
+        {
+          "id": 5888636,
+          "adult": null
+        },
+        {
+          "id": 5888637,
+          "adult": null
+        },
+        {
+          "id": 5893538,
+          "adult": null
+        },
+        {
+          "id": 5893539,
+          "adult": null
+        },
+        {
+          "id": 5893540,
+          "adult": false
+        },
+        {
+          "id": 59620,
+          "adult": false
+        },
+        {
+          "id": 5893541,
+          "adult": false
+        },
+        {
+          "id": 3075258,
+          "adult": false
+        },
+        {
+          "id": 2311745,
+          "adult": false
+        },
+        {
+          "id": 1372369,
+          "adult": false
+        },
+        {
+          "id": 2091480,
+          "adult": false
+        },
+        {
+          "id": 5406480,
+          "adult": false
+        },
+        {
+          "id": 2773026,
+          "adult": false
+        },
+        {
+          "id": 5893542,
+          "adult": false
+        },
+        {
+          "id": 5893543,
+          "adult": false
+        },
+        {
+          "id": 5893544,
+          "adult": false
+        },
+        {
+          "id": 5719518,
+          "adult": false
+        },
+        {
+          "id": 5893545,
+          "adult": false
+        },
+        {
+          "id": 18697,
+          "adult": false
+        },
+        {
+          "id": 5459859,
+          "adult": false
+        }
+      ],
+      "page": 1,
+      "total_pages": 43,
+      "total_results": 4254
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "b59b7160a5ed9a0fd745502ce4bff9a1e121e4f6192a8077f167eb10a378b039",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=489",
+      "ETag": "W/\u0022524d8067033a3a76e033793f56b351cd\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

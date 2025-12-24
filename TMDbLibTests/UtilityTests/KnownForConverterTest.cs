@@ -20,15 +20,15 @@ public class KnownForConverterTest : TestBase
     [Fact]
     public async Task KnownForConverter_Movie()
     {
-        KnownForMovie original = new KnownForMovie
+        var original = new KnownForMovie
         {
             OriginalTitle = "Hello world"
         };
 
-        string json = Serializer.SerializeToString(original);
-        KnownForMovie result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForMovie;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForMovie;
 
-        Assert.Equal(original.Title, result.Title);
+        Assert.Equal(original.Title, result?.Title);
         await Verify(new
         {
             json,
@@ -42,15 +42,15 @@ public class KnownForConverterTest : TestBase
     [Fact]
     public async Task KnownForConverter_Tv()
     {
-        KnownForTv original = new KnownForTv
+        var original = new KnownForTv
         {
             OriginalName = "Hello world"
         };
 
-        string json = Serializer.SerializeToString(original);
-        KnownForTv result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForTv;
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<KnownForBase>(json) as KnownForTv;
 
-        Assert.Equal(original.OriginalName, result.OriginalName);
+        Assert.Equal(original.OriginalName, result?.OriginalName);
         await Verify(new
         {
             json,
@@ -65,11 +65,11 @@ public class KnownForConverterTest : TestBase
     public async Task TestJsonKnownForConverter()
     {
         // Search for a person who is known for both TV and movies
-        SearchContainer<SearchPerson> result = await TMDbClient.SearchPersonAsync("Bryan Cranston");
+        var result = await TMDbClient.SearchPersonAsync("Bryan Cranston");
 
         Assert.NotNull(result?.Results);
 
-        List<KnownForBase> knownForList = result.Results.SelectMany(s => s.KnownFor).ToList();
+        var knownForList = result.Results.SelectMany(s => s.KnownFor).ToList();
         Assert.NotEmpty(knownForList);
 
         // Verify proper deserialization - at least one of each type should be present
@@ -77,7 +77,7 @@ public class KnownForConverterTest : TestBase
         Assert.Contains(knownForList, item => item.MediaType == MediaType.Movie && item is KnownForMovie);
 
         // TV shows may or may not be present depending on the API response
-        bool hasTv = knownForList.Any(item => item.MediaType == MediaType.Tv && item is KnownForTv);
+        var hasTv = knownForList.Any(item => item.MediaType == MediaType.Tv && item is KnownForTv);
         if (hasTv)
         {
             Assert.Contains(knownForList, item => item.MediaType == MediaType.Tv && item is KnownForTv);

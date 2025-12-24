@@ -1,0 +1,158 @@
+{
+  "Guid": "106ab425-5f16-bb4f-96db-9160ee64df2d",
+  "UpdatedAt": "2025-12-24T11:53:34.9428064Z",
+  "Title": "Proxy Mapping for GET /3/movie/47964",
+  "Description": "Proxy Mapping for GET /3/movie/47964",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/47964",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "adult": false,
+      "backdrop_path": "/wFUkS5cnMf3I8ysIPWzIXpTsuR7.jpg",
+      "belongs_to_collection": {
+        "id": 1570,
+        "name": "Die Hard Collection",
+        "poster_path": "/xhnb5lVfwE7NHycdPNdIxHx7kZi.jpg",
+        "backdrop_path": "/nKShbIW0wJnSbl3t8uPje0QhTb7.jpg"
+      },
+      "budget": 92000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        }
+      ],
+      "homepage": "http://www.diehardmovie.com/",
+      "id": 47964,
+      "imdb_id": "tt1606378",
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_title": "A Good Day to Die Hard",
+      "overview": "Iconoclastic, take-no-prisoners cop John McClane, finds himself for the first time on foreign soil after traveling to Moscow to help his wayward son Jack - unaware that Jack is really a highly-trained CIA operative out to stop a nuclear weapons heist. With the Russian underworld in pursuit, and battling a countdown to war, the two McClanes discover that their opposing methods make them unstoppable heroes.",
+      "popularity": 4.8277,
+      "poster_path": "/qJ0csDXAVFMsNn0cRcjy6W6PxAK.jpg",
+      "production_companies": [
+        {
+          "id": 2735,
+          "logo_path": null,
+          "name": "Mid Atlantic Films",
+          "origin_country": "HU"
+        },
+        {
+          "id": 290,
+          "logo_path": "/jrgCuaQsY9ouP5ILZf4Dq4ZOkIX.png",
+          "name": "Ingenious Media",
+          "origin_country": "GB"
+        },
+        {
+          "id": 444,
+          "logo_path": null,
+          "name": "Dune Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 10893,
+          "logo_path": null,
+          "name": "Big Screen Productions",
+          "origin_country": "GB"
+        },
+        {
+          "id": 12292,
+          "logo_path": "/5J93SHsuvIV32AE9oSbMi02pqw9.png",
+          "name": "Temple Hill Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 22213,
+          "logo_path": "/qx9K6bFWJupwde0xQDwOvXkOaL8.png",
+          "name": "TSG Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 34396,
+          "logo_path": "/k96j6gimBKUKFFp1SGX8VyTk6eZ.png",
+          "name": "Giant Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 34397,
+          "logo_path": null,
+          "name": "Origo Film Group",
+          "origin_country": ""
+        },
+        {
+          "id": 25,
+          "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+          "name": "20th Century Fox",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2013-02-06",
+      "revenue": 304654182,
+      "runtime": 98,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Russian",
+          "iso_639_1": "ru",
+          "name": "P\u0443\u0441\u0441\u043A\u0438\u0439"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Yippee Ki-Yay Mother Russia.",
+      "title": "A Good Day to Die Hard",
+      "video": false,
+      "vote_average": 5.3,
+      "vote_count": 6609
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=28413",
+      "x-memc": "HIT",
+      "x-memc-key": "63636206f0cc70f470646fc5b1d233a89c68062c6a17ea55d788149266a50d85",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00228cf06ab24a4d3542e36dbd9388bec89b\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

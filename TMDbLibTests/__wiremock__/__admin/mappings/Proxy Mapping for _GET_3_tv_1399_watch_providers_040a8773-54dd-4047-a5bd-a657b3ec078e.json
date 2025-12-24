@@ -1,0 +1,1604 @@
+{
+  "Guid": "040a8773-54dd-4047-a5bd-a657b3ec078e",
+  "UpdatedAt": "2025-12-24T11:53:35.3917125Z",
+  "Title": "Proxy Mapping for GET /3/tv/1399/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/1399/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1399/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1399,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 23
+            }
+          ]
+        },
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=AE",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 7
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/nr5UBW4IGKgBwmhpTMOfcvnX2vX.jpg",
+              "provider_id": 467,
+              "provider_name": "DIRECTV GO",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 35
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 7
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 94
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 27
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 23
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/kwftIxtjuCAROIcdd53UEjzSmca.jpg",
+              "provider_id": 1857,
+              "provider_name": "Telenet",
+              "display_priority": 31
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 21
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 29
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 9
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
+              "provider_id": 2604,
+              "provider_name": "Crave Amazon Channel",
+              "display_priority": 144
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CH",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ytApMa9fThUQUFTn696AeNBrB8f.jpg",
+              "provider_id": 210,
+              "provider_name": "Sky",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CI": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CI",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 19
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/nr5UBW4IGKgBwmhpTMOfcvnX2vX.jpg",
+              "provider_id": 467,
+              "provider_name": "DIRECTV GO",
+              "display_priority": 11
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/nr5UBW4IGKgBwmhpTMOfcvnX2vX.jpg",
+              "provider_id": 467,
+              "provider_name": "DIRECTV GO",
+              "display_priority": 12
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
+              "provider_id": 30,
+              "provider_name": "WOW",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/35XbldCPO3ztCREajGbfhf7827w.jpg",
+              "provider_id": 2660,
+              "provider_name": "Wow Fiction Amazon Channel",
+              "display_priority": 226
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 130
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 39
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 5
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 20
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 2472,
+              "provider_name": "HBO Max  Amazon Channel",
+              "display_priority": 81
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=FI",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/eglAxQEXSO13p6gNf3HKymrIu7y.jpg",
+              "provider_id": 540,
+              "provider_name": "Elisa Viihde",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 41
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=FR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 78
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 2472,
+              "provider_name": "HBO Max  Amazon Channel",
+              "display_priority": 91
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 44
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "GQ": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=GQ",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GY": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=GY",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 33
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 28
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/9YJY5OwsIPMoX3xC3TdtZVbKBpE.jpg",
+              "provider_id": 614,
+              "provider_name": "VI movies and tv",
+              "display_priority": 35
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 7
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=IT",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 36
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 22
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 31
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=JP",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
+              "provider_id": 84,
+              "provider_name": "U-NEXT",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/zA1rTWwNDx96pwkHUuvVWWkdpPa.jpg",
+              "provider_id": 2284,
+              "provider_name": "HBO Max on U-Next",
+              "display_priority": 27
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 10
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 25
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MD",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 25
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MG": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MG",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 26
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=ML",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 5
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/nr5UBW4IGKgBwmhpTMOfcvnX2vX.jpg",
+              "provider_id": 467,
+              "provider_name": "DIRECTV GO",
+              "display_priority": 21
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 19
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 21
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 13
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=NL",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 48
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
+              "provider_id": 578,
+              "provider_name": "Strim",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 40
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=NZ",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 31
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/nr5UBW4IGKgBwmhpTMOfcvnX2vX.jpg",
+              "provider_id": 467,
+              "provider_name": "DIRECTV GO",
+              "display_priority": 12
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 32
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
+              "provider_id": 505,
+              "provider_name": "Player",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 32
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 29
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 31
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 23
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 28
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dNaqCdDy4wsIzjZoYwvLRiOK4Tx.jpg",
+              "provider_id": 116,
+              "provider_name": "Amediateka",
+              "display_priority": 1
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3EJQtj4m83kRh7bV9BF6KWmPiKp.jpg",
+              "provider_id": 577,
+              "provider_name": "TvIgle",
+              "display_priority": 18
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
+              "provider_id": 629,
+              "provider_name": "OSN\u002B",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 44
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 28
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 37
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 10
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 29
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 6
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 12
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/nr5UBW4IGKgBwmhpTMOfcvnX2vX.jpg",
+              "provider_id": 467,
+              "provider_name": "DIRECTV GO",
+              "display_priority": 8
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 27
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/tv/1399-game-of-thrones/watch?locale=ZW",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=22876",
+      "x-memc": "HIT",
+      "x-memc-key": "8df05b405983d79ffcb2efde3fa89640e9af329c9172027566cb71db34a8a3f0",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00225a54401630e02b7de98c7c59760cca7b\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

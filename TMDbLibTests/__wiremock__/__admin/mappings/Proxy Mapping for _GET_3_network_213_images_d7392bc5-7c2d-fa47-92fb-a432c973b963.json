@@ -1,0 +1,68 @@
+{
+  "Guid": "d7392bc5-7c2d-fa47-92fb-a432c973b963",
+  "UpdatedAt": "2025-12-24T11:53:34.8773631Z",
+  "Title": "Proxy Mapping for GET /3/network/213/images",
+  "Description": "Proxy Mapping for GET /3/network/213/images",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/network/213/images",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 213,
+      "logos": [
+        {
+          "aspect_ratio": 3.7313432835820897,
+          "file_path": "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
+          "height": 268,
+          "id": "5a7a61b5c3a36821980020ff",
+          "file_type": ".svg",
+          "vote_average": 3.334,
+          "vote_count": 2,
+          "width": 1000
+        },
+        {
+          "aspect_ratio": 3.7045454545454546,
+          "file_path": "/Ai3sZtq7afD07waB615luFR4GRZ.png",
+          "height": 220,
+          "id": "67e244987b7313b5aef04a81",
+          "file_type": ".png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 815
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "84faae8ab4c9a4f7d6951c442ee903a5f7c6a5f69e4f6ddc245439b03616723c",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=26399",
+      "ETag": "W/\u0022b18765caa90495afb8ffc1d95214bb7a\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "Guid": "41472a18-7d81-dd4f-a932-0cb76c3e6e67",
+  "UpdatedAt": "2025-12-24T11:53:34.5775258Z",
+  "Title": "Proxy Mapping for GET /3/genre/tv/list",
+  "Description": "Proxy Mapping for GET /3/genre/tv/list",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/genre/tv/list",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "genres": [
+        {
+          "id": 10759,
+          "name": "Action \u0026 Adventure"
+        },
+        {
+          "id": 16,
+          "name": "Animation"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        },
+        {
+          "id": 80,
+          "name": "Crime"
+        },
+        {
+          "id": 99,
+          "name": "Documentary"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10751,
+          "name": "Family"
+        },
+        {
+          "id": 10762,
+          "name": "Kids"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        },
+        {
+          "id": 10763,
+          "name": "News"
+        },
+        {
+          "id": 10764,
+          "name": "Reality"
+        },
+        {
+          "id": 10765,
+          "name": "Sci-Fi \u0026 Fantasy"
+        },
+        {
+          "id": 10766,
+          "name": "Soap"
+        },
+        {
+          "id": 10767,
+          "name": "Talk"
+        },
+        {
+          "id": 10768,
+          "name": "War \u0026 Politics"
+        },
+        {
+          "id": 37,
+          "name": "Western"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "x-memc": "HIT",
+      "x-memc-key": "314babb90fea557c80f971aad69f9c465d442e89a5a392d64ba8fac40fdea467",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=21037",
+      "ETag": "W/\u0022c9414e40a9e909888e1e74fd911cf7d1\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P5",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

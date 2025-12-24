@@ -18,14 +18,14 @@ public class ClientCertificationsTests : TestBase
     [Fact]
     public async Task TestCertificationsListMovieAsync()
     {
-        CertificationsContainer result = await TMDbClient.GetMovieCertificationsAsync();
+        var result = await TMDbClient.GetMovieCertificationsAsync();
         Assert.NotEmpty(result.Certifications);
 
-        List<CertificationItem> certUs = result.Certifications["US"];
+        var certUs = result.Certifications["US"];
         Assert.NotEmpty(certUs);
 
         // Use a common US rating that's likely to exist
-        CertificationItem rating = certUs.FirstOrDefault(s => s.Certification == "PG-13")
+        var rating = certUs.FirstOrDefault(s => s.Certification == "PG-13")
             ?? certUs.First();
 
         await Verify(rating);
@@ -37,13 +37,13 @@ public class ClientCertificationsTests : TestBase
     [Fact]
     public async Task TestCertificationsListTvAsync()
     {
-        CertificationsContainer result = await TMDbClient.GetTvCertificationsAsync();
+        var result = await TMDbClient.GetTvCertificationsAsync();
         Assert.NotEmpty(result.Certifications);
 
-        List<CertificationItem> certUs = result.Certifications["US"];
+        var certUs = result.Certifications["US"];
         Assert.NotEmpty(certUs);
 
-        CertificationItem ratingNr = certUs.SingleOrDefault(s => s.Certification == "NR");
+        var ratingNr = certUs.SingleOrDefault(s => s.Certification == "NR");
 
         await Verify(ratingNr);
     }
