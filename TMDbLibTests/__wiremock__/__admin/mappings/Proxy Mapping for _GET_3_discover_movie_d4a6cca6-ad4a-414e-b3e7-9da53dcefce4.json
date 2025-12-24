@@ -1,0 +1,466 @@
+{
+  "Guid": "d4a6cca6-ad4a-414e-b3e7-9da53dcefce4",
+  "UpdatedAt": "2025-12-24T18:45:28.8139576Z",
+  "Title": "Proxy Mapping for GET /3/discover/movie",
+  "Description": "Proxy Mapping for GET /3/discover/movie",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/movie",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "with_watch_providers",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "8",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "watch_region",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "US",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/3jMN1k8b0Ptd9eMoeftUyDGJdCh.jpg",
+          "genre_ids": [
+            878,
+            12,
+            18
+          ],
+          "id": 982843,
+          "original_language": "ko",
+          "original_title": "\uB300\uD64D\uC218",
+          "overview": "When a raging flood traps a researcher and her young son, a call to a crucial mission puts their escape \u2014 and the future of humanity \u2014 on the line.",
+          "popularity": 482.8501,
+          "poster_path": "/7bLr0xljlMz8Xa8sufcZFhg8gh6.jpg",
+          "release_date": "2025-09-18",
+          "title": "The Great Flood",
+          "video": false,
+          "vote_average": 6.115,
+          "vote_count": 208
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
+          "genre_ids": [
+            53,
+            9648,
+            35
+          ],
+          "id": 812583,
+          "original_language": "en",
+          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
+          "overview": "When young priest Jud Duplenticy is sent to assist charismatic firebrand Monsignor Jefferson Wicks, it\u2019s clear that all is not well in the pews. After a sudden and seemingly impossible murder rocks the town, the lack of an obvious suspect prompts local police chief Geraldine Scott to join forces with renowned detective Benoit Blanc to unravel a mystery that defies all logic.",
+          "popularity": 170.5348,
+          "poster_path": "/qCOGGi8JBVEZMc3DVby8rUivyXz.jpg",
+          "release_date": "2025-11-26",
+          "title": "Wake Up Dead Man: A Knives Out Mystery",
+          "video": false,
+          "vote_average": 7.201,
+          "vote_count": 1031
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gtuXARxjGdfsGFqEwggBB8zUJza.jpg",
+          "genre_ids": [
+            35,
+            28
+          ],
+          "id": 1589891,
+          "original_language": "es",
+          "original_title": "La hora de los valientes",
+          "overview": "A psychoanalyst on community service aids an agent shattered by infidelity; together, they will confront danger and discover second chances.",
+          "popularity": 141.974,
+          "poster_path": "/qKKG22O5pFxqglG0oMjWTjQWCNl.jpg",
+          "release_date": "2025-12-18",
+          "title": "A Time for Bravery",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 27
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lZYMXx74pWmbj5Q5jp1QaMvmuuR.jpg",
+          "genre_ids": [
+            28,
+            14,
+            53
+          ],
+          "id": 1180831,
+          "original_language": "no",
+          "original_title": "Troll 2",
+          "overview": "When a dangerous new troll unleashes devastation across their homeland, Nora, Andreas and Major Kris embark on their most perilous mission yet.",
+          "popularity": 89.2163,
+          "poster_path": "/p6xAExLNFbHcLfvSuvLPoM8aqZU.jpg",
+          "release_date": "2025-11-30",
+          "title": "Troll 2",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 300
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg",
+          "genre_ids": [
+            18,
+            14,
+            27
+          ],
+          "id": 1062722,
+          "original_language": "en",
+          "original_title": "Frankenstein",
+          "overview": "Dr. Victor Frankenstein, a brilliant but egotistical scientist, brings a creature to life in a monstrous experiment that ultimately leads to the undoing of both the creator and his tragic creation.",
+          "popularity": 76.6845,
+          "poster_path": "/g4JtvGlQO7DByTI6frUobqvSL3R.jpg",
+          "release_date": "2025-10-17",
+          "title": "Frankenstein",
+          "video": false,
+          "vote_average": 7.718,
+          "vote_count": 2348
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w3Bi0wygeFQctn6AqFTwhGNXRwL.jpg",
+          "genre_ids": [
+            14,
+            10402,
+            35,
+            16
+          ],
+          "id": 803796,
+          "original_language": "en",
+          "original_title": "KPop Demon Hunters",
+          "overview": "When K-pop superstars Rumi, Mira and Zoey aren\u0027t selling out stadiums, they\u0027re using their secret powers to protect their fans from supernatural threats.",
+          "popularity": 66.2629,
+          "poster_path": "/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg",
+          "release_date": "2025-06-20",
+          "title": "KPop Demon Hunters",
+          "video": false,
+          "vote_average": 8.179,
+          "vote_count": 2074
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hsuT5b5EcDAVCY3Oe0Iyez2lTES.jpg",
+          "genre_ids": [
+            10749,
+            18
+          ],
+          "id": 1400032,
+          "original_language": "ja",
+          "original_title": "10DANCE",
+          "overview": "Two dancers, opposites in all but their art, agree to train together for a competition. At first, they clash, but soon become drawn to each other.",
+          "popularity": 48.3943,
+          "poster_path": "/sLNy9Npu1YoK1ednpXUlUt9vCBj.jpg",
+          "release_date": "2025-12-17",
+          "title": "10Dance",
+          "video": false,
+          "vote_average": 6.864,
+          "vote_count": 33
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tql3kTLmF2FFeSVIlafFJiZfcfk.jpg",
+          "genre_ids": [
+            53,
+            9648,
+            80,
+            18
+          ],
+          "id": 1415974,
+          "original_language": "hi",
+          "original_title": "\u0930\u093E\u0924 \u0905\u0915\u0947\u0932\u0940 \u0939\u0948 - \u0926 \u092C\u0902\u0938\u0932 \u092E\u0930\u094D\u0921\u0930\u094D\u0938",
+          "overview": "When members of the Bansal family are found murdered, Inspector Jatil Yadav uncovers a trail of greed, betrayal and secrets tied to a deadly conspiracy.",
+          "popularity": 44.1564,
+          "poster_path": "/8EpDSwnjMBc9dmTPEYBF4Bixmwf.jpg",
+          "release_date": "2025-12-18",
+          "title": "Raat Akeli Hai - The Bansal Murders",
+          "video": false,
+          "vote_average": 7.286,
+          "vote_count": 7
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tRdorrIjlybrGsebXOzgF7vRyYy.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1469354,
+          "original_language": "en",
+          "original_title": "Border Hunters",
+          "overview": "After his police officer brother is killed by a drug dealer who flees to the protection of his cartel-connected uncle in Mexico, an American man with a diverse law enforcement/military background goes south of the border to get revenge",
+          "popularity": 40.3943,
+          "poster_path": "/6TNFZnJ5CU0uFQxGaO9dbqriiI7.jpg",
+          "release_date": "2025-10-20",
+          "title": "Border Hunters",
+          "video": false,
+          "vote_average": 7.033,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xXCuto8YVp5RFqBJ7yKmVmLOWpF.jpg",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "id": 597,
+          "original_language": "en",
+          "original_title": "Titanic",
+          "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fianc\u00E9. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic\u0027s departure through to its death\u2014on its first and last voyage\u2014on April 15, 1912.",
+          "popularity": 31.2881,
+          "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+          "release_date": "1997-11-18",
+          "title": "Titanic",
+          "video": false,
+          "vote_average": 7.9,
+          "vote_count": 26563
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7cQjb8cRbRjF5tM5gOCnqsvC0iT.jpg",
+          "genre_ids": [
+            53
+          ],
+          "id": 1561955,
+          "original_language": "ta",
+          "original_title": "\u0BB8\u0BCD\u0B9F\u0BC0\u0BAA\u0BA9\u0BCD",
+          "overview": "A psychiatrist evaluating a self-confessed serial killer unravels a twisted web of trauma, deceit, and psychological manipulation\u2014only to question if the killer is truly guilty or just another victim in a larger, darker game.",
+          "popularity": 26.1341,
+          "poster_path": "/yUURUJzeSTc47T2VeNw7nZwZ8VJ.jpg",
+          "release_date": "2025-12-05",
+          "title": "Stephen",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 7
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dKqa850uvbNSCaQCV4Im1XlzEtQ.jpg",
+          "genre_ids": [
+            35,
+            80,
+            9648
+          ],
+          "id": 661374,
+          "original_language": "en",
+          "original_title": "Glass Onion: A Knives Out Mystery",
+          "overview": "World-famous detective Benoit Blanc heads to Greece to peel back the layers of a mystery surrounding a tech billionaire and his eclectic crew of friends.",
+          "popularity": 23.8291,
+          "poster_path": "/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg",
+          "release_date": "2022-11-23",
+          "title": "Glass Onion: A Knives Out Mystery",
+          "video": false,
+          "vote_average": 7.035,
+          "vote_count": 6321
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7Nwnmyzrtd0FkcRyPqmdzTPppQa.jpg",
+          "genre_ids": [
+            80,
+            18,
+            35
+          ],
+          "id": 106646,
+          "original_language": "en",
+          "original_title": "The Wolf of Wall Street",
+          "overview": "A New York stockbroker refuses to cooperate in a large securities fraud case involving corruption on Wall Street, corporate banking world and mob infiltration. Based on Jordan Belfort\u0027s autobiography.",
+          "popularity": 26.2326,
+          "poster_path": "/kW9LmvYHAaS9iA0tHmZVq8hQYoq.jpg",
+          "release_date": "2013-12-25",
+          "title": "The Wolf of Wall Street",
+          "video": false,
+          "vote_average": 8.026,
+          "vote_count": 25279
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/k1pJslKr4aDayw9kWwWnlC3MIP3.jpg",
+          "genre_ids": [
+            16,
+            14,
+            12
+          ],
+          "id": 615453,
+          "original_language": "zh",
+          "original_title": "\u54EA\u5412\u4E4B\u9B54\u7AE5\u964D\u4E16",
+          "overview": "A young boy is born as the reincarnation of a demonic power, into a society that hates and fears him. Destined by prophecy to bring destruction to the world, Nezha must choose between good and evil to see if he can change his fate.",
+          "popularity": 24.0726,
+          "poster_path": "/phM9bb6s9c60LA8qwsdk7U1N2cS.jpg",
+          "release_date": "2019-07-26",
+          "title": "Ne Zha",
+          "video": false,
+          "vote_average": 7.882,
+          "vote_count": 750
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg",
+          "genre_ids": [
+            28,
+            53,
+            878
+          ],
+          "id": 218,
+          "original_language": "en",
+          "original_title": "The Terminator",
+          "overview": "In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \u0022Terminator\u0022 back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?",
+          "popularity": 22.2468,
+          "poster_path": "/hzXSE66v6KthZ8nPoLZmsi2G05j.jpg",
+          "release_date": "1984-10-26",
+          "title": "The Terminator",
+          "video": false,
+          "vote_average": 7.674,
+          "vote_count": 14078
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/z8tNyAAnGk2d1XmO1L4i34UmP19.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1367575,
+          "original_language": "en",
+          "original_title": "A Line of Fire",
+          "overview": "After working as a secret agent in the FBI for ten years, Jack \u0027Cash\u0027 Conry left it all behind after his wife passed in order to dedicate himself to his two daughters. Despite a fulfilling life at home, Cash misses the chance to make an impact and has been considering a return to the force. The decision is made for him when his old partner\u2019s niece Jamie calls him for help, launching Cash right back into a world of danger, corruption and intrigue.",
+          "popularity": 23.8232,
+          "poster_path": "/jSG2mg1998DUAam6X9EA6SeJmqD.jpg",
+          "release_date": "2025-12-11",
+          "title": "A Line of Fire",
+          "video": false,
+          "vote_average": 4.6,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vWriOBVlgW0XWdgbOiijhyLW7B8.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            35
+          ],
+          "id": 109451,
+          "original_language": "en",
+          "original_title": "Cloudy with a Chance of Meatballs 2",
+          "overview": "After the disastrous food storm in the first film, Flint and his friends are forced to leave the town. Flint accepts the invitation from his idol Chester V to join The Live Corp Company, which has been tasked to clean the island, and where the best inventors in the world create technologies for the betterment of mankind. When Flint discovers that his machine still operates and now creates mutant food beasts like living pickles, hungry tacodiles, shrimpanzees and apple pie-thons, he and his friends must return to save the world.",
+          "popularity": 23.6697,
+          "poster_path": "/ss5NcK2NWFg2YcKKYXLrk8q1myS.jpg",
+          "release_date": "2013-09-26",
+          "title": "Cloudy with a Chance of Meatballs 2",
+          "video": false,
+          "vote_average": 6.451,
+          "vote_count": 3395
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uT895WNwm0aIJRtGizcQhrejWUo.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 76341,
+          "original_language": "en",
+          "original_title": "Mad Max: Fury Road",
+          "overview": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order.",
+          "popularity": 20.7716,
+          "poster_path": "/hA2ple9q4qnwxp3hKVNhroipsir.jpg",
+          "release_date": "2015-05-13",
+          "title": "Mad Max: Fury Road",
+          "video": false,
+          "vote_average": 7.629,
+          "vote_count": 23588
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bXZcSDQoyXlzzUw9qxjZjiUSYov.jpg",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "id": 1441563,
+          "original_language": "en",
+          "original_title": "My Secret Santa",
+          "overview": "A single mom needs a job. A ski resort needs a Santa. Disguised as a St. Nick lookalike, can Taylor fool a charming hotel heir into ho-ho-hiring her?",
+          "popularity": 20.9206,
+          "poster_path": "/tpOAzBasKPsKwsUtPZOx1Mzuqq3.jpg",
+          "release_date": "2025-12-02",
+          "title": "My Secret Santa",
+          "video": false,
+          "vote_average": 6.254,
+          "vote_count": 132
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+          "genre_ids": [
+            53,
+            80,
+            35
+          ],
+          "id": 680,
+          "original_language": "en",
+          "original_title": "Pulp Fiction",
+          "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster\u0027s moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+          "popularity": 21.2114,
+          "poster_path": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+          "release_date": "1994-09-10",
+          "title": "Pulp Fiction",
+          "video": false,
+          "vote_average": 8.487,
+          "vote_count": 29412
+        }
+      ],
+      "total_pages": 225,
+      "total_results": 4487
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=2257",
+      "x-memc": "HIT",
+      "x-memc-key": "8690e60150d7086655bde2e1349f1f500f0c410c08641ebd0aad31d326fa85a0",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022cf8be2e6931610a34ac616d72a9af565\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

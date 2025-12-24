@@ -1,0 +1,1409 @@
+{
+  "Guid": "4cd50925-dbde-8840-8465-d0aea0248427",
+  "UpdatedAt": "2025-12-24T18:45:19.9489809Z",
+  "Title": "Proxy Mapping for GET /3/movie/1149167/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1149167/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1149167/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1149167,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=BE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 122
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 123
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ]
+        },
+        "CI": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=CI",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 19
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=DE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 130
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=DK",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=EG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=GB",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "GQ": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=GQ",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=IT",
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=JP",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
+              "provider_id": 84,
+              "provider_name": "U-NEXT",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "MG": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=MG",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=ML",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 5
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 19
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 21
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=NL",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
+              "provider_id": 697,
+              "provider_name": "meJane",
+              "display_priority": 39
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
+              "provider_id": 697,
+              "provider_name": "meJane",
+              "display_priority": 39
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
+              "provider_id": 563,
+              "provider_name": "KPN",
+              "display_priority": 29
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
+              "provider_id": 578,
+              "provider_name": "Strim",
+              "display_priority": 27
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=NZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 32
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/yFjeEJFQqalphfmYivOYyatPVEd.jpg",
+              "provider_id": 2101,
+              "provider_name": "CANAL\u002B",
+              "display_priority": 33
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/mBliLuM0AbkRPGDoVa7IGxwC59b.jpg",
+              "provider_id": 2102,
+              "provider_name": "Premiery Canal\u002B",
+              "display_priority": 34
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=SE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=TW",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 6
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 127
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/movie/1149167-high-rollers/watch?locale=ZW",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=14842",
+      "x-memc": "HIT",
+      "x-memc-key": "071ce0da7416fc7ba7c53e34b100a78e4d49cdcc174b9b0a5eba991905581bec",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002288537a21be8436b5eeb43b1771ac1d0e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

@@ -1,0 +1,3148 @@
+{
+  "Guid": "ea6140e8-7121-df41-ae6d-8b6359834c11",
+  "UpdatedAt": "2025-12-24T18:45:18.8079283Z",
+  "Title": "Proxy Mapping for GET /3/movie/76600/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/76600/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/76600/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 76600,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=AT",
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=AZ",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 15
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 13
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CV",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CY",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=CZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 28
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 28
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 130
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=DK",
+          "buy": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 22
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=EC",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=EE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 21
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=EG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 31
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=FI",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=GB",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=GH",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 19
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=HN",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 28
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=HU",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 26
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 26
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 49
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=IL",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=IN",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 10
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/9YJY5OwsIPMoX3xC3TdtZVbKBpE.jpg",
+              "provider_id": 614,
+              "provider_name": "VI movies and tv",
+              "display_priority": 35
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=IS",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 23
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=IT",
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 24
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 12
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 23
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=LT",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 22
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=LU",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 21
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=MX",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 11
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 40
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=MZ",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 1
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=NL",
+          "buy": [
+            {
+              "logo_path": "/lnOkJKyFl87mzqNebAbE8ADdHoB.jpg",
+              "provider_id": 71,
+              "provider_name": "Path\u00E9 Thuis",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
+              "provider_id": 697,
+              "provider_name": "meJane",
+              "display_priority": 39
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/lnOkJKyFl87mzqNebAbE8ADdHoB.jpg",
+              "provider_id": 71,
+              "provider_name": "Path\u00E9 Thuis",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
+              "provider_id": 697,
+              "provider_name": "meJane",
+              "display_priority": 39
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
+              "provider_id": 563,
+              "provider_name": "KPN",
+              "display_priority": 29
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=NO",
+          "rent": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=NZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 25
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=PE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=PL",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/mBliLuM0AbkRPGDoVa7IGxwC59b.jpg",
+              "provider_id": 2102,
+              "provider_name": "Premiery Canal\u002B",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 35
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
+              "provider_id": 505,
+              "provider_name": "Player",
+              "display_priority": 10
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=RO",
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 21
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=SI",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 23
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 25
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=TR",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 13
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=UA",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=UG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 25
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=VE",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/movie/76600-avatar-the-way-of-water/watch?locale=ZA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 3
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=12024",
+      "x-memc": "HIT",
+      "x-memc-key": "a851fbbf3e3bfef5bd02549e8053ac2b4b247530c0381342f5e9e71e67e68c7b",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022240cf1669afba0166814368c03fa3489\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

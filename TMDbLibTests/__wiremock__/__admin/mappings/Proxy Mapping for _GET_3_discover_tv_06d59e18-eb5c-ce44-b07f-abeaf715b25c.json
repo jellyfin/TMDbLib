@@ -1,0 +1,502 @@
+{
+  "Guid": "06d59e18-eb5c-ce44-b07f-abeaf715b25c",
+  "UpdatedAt": "2025-12-24T18:45:30.2362998Z",
+  "Title": "Proxy Mapping for GET /3/discover/tv",
+  "Description": "Proxy Mapping for GET /3/discover/tv",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/tv",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "with_watch_monetization_types",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "flatrate|free",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "watch_region",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "US",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
+          "genre_ids": [
+            10765,
+            9648,
+            10759
+          ],
+          "id": 66732,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Stranger Things",
+          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+          "popularity": 529.3398,
+          "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+          "first_air_date": "2016-07-15",
+          "name": "Stranger Things",
+          "vote_average": 8.596,
+          "vote_count": 19646
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 200875,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "IT: Welcome to Derry",
+          "overview": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried evil lurking. As the kids set out to determine what\u0027s really going on, a rising unease prompts several townspeople to work together to restore peace \u2013 all while a U.S. military operation seeks to exploit Derry for its own objectives.",
+          "popularity": 277.6787,
+          "poster_path": "/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
+          "first_air_date": "2025-10-26",
+          "name": "IT: Welcome to Derry",
+          "vote_average": 8.254,
+          "vote_count": 1006
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
+          "genre_ids": [
+            10759,
+            18,
+            10765
+          ],
+          "id": 106379,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Fallout",
+          "overview": "The story of haves and have-nots in a world in which there\u0027s almost nothing left to have. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind \u2014 and are shocked to discover an incredibly complex, gleefully weird, and highly violent universe waiting for them.",
+          "popularity": 208.1718,
+          "poster_path": "/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
+          "first_air_date": "2024-04-10",
+          "name": "Fallout",
+          "vote_average": 8.179,
+          "vote_count": 2238
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ro0tlgnsco4SwbdAgmscLkSlMSL.jpg",
+          "genre_ids": [
+            18,
+            9648,
+            10765
+          ],
+          "id": 1622,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Supernatural",
+          "overview": "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their \u002767 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+          "popularity": 182.1035,
+          "poster_path": "/u40gJarLPlIkwouKlzGdobQOV9k.jpg",
+          "first_air_date": "2005-09-13",
+          "name": "Supernatural",
+          "vote_average": 8.303,
+          "vote_count": 8120
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wCBgNbukU0eaTCdJrtX4wMpjfgx.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 279041,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u53CC\u8F68",
+          "overview": "After her parents\u0027 divorce, Jiang Mu reunites with her adopted brother Jin Chao, now a hardened young man living a dangerous life in Thailand. Despite their growing distance, Jiang Mu\u0027s unwavering love helps bridge the gap between them, leading to a journey of healing and redemption as they fight to rebuild their bond and face their struggles together.",
+          "popularity": 168.6798,
+          "poster_path": "/tnN7OcVOfIhJATSquVzvMoxLPoR.jpg",
+          "first_air_date": "2025-12-12",
+          "name": "Speed and Love",
+          "vote_average": 7.3,
+          "vote_count": 6
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2m1Mu0xPj4SikiqkaolTRUcNtWH.jpg",
+          "genre_ids": [
+            80,
+            18,
+            35
+          ],
+          "id": 79744,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Rookie",
+          "overview": "Starting over isn\u0027t easy, especially for small-town guy John Nolan who, after a life-altering incident, is pursuing his dream of being an LAPD officer. As the force\u0027s oldest rookie, he\u2019s met with skepticism from some higher-ups who see him as just a walking midlife crisis.",
+          "popularity": 157.4868,
+          "poster_path": "/bL1mwXDnH5fCxqc4S2n40hoVyoe.jpg",
+          "first_air_date": "2018-10-16",
+          "name": "The Rookie",
+          "vote_average": 8.51,
+          "vote_count": 2806
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jP0Rhj9OTPDAwQlHQwOLFDdeE8t.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1416,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Grey\u0027s Anatomy",
+          "overview": "Follows the personal and professional lives of a group of doctors at Seattle\u2019s Grey Sloan Memorial Hospital.",
+          "popularity": 153.3691,
+          "poster_path": "/hjJkrLXhWvGHpLeLBDFznpBTY1S.jpg",
+          "first_air_date": "2005-03-27",
+          "name": "Grey\u0027s Anatomy",
+          "vote_average": 8.2,
+          "vote_count": 10715
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 1396,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Breaking Bad",
+          "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+          "popularity": 150.5089,
+          "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+          "first_air_date": "2008-01-20",
+          "name": "Breaking Bad",
+          "vote_average": 8.935,
+          "vote_count": 16731
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jvTeRgjFsp66xj8SWxhr7O2J4ud.jpg",
+          "genre_ids": [
+            10751,
+            16,
+            35
+          ],
+          "id": 456,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Simpsons",
+          "overview": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+          "popularity": 145.4962,
+          "poster_path": "/uWpG7GqfKGQqX4YMAo3nv5OrglV.jpg",
+          "first_air_date": "1989-12-17",
+          "name": "The Simpsons",
+          "vote_average": 8.011,
+          "vote_count": 10495
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2wgk47yrb2WnXAdSBLFX9EiU882.jpg",
+          "genre_ids": [
+            80,
+            18,
+            9648
+          ],
+          "id": 2734,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Law \u0026 Order: Special Victims Unit",
+          "overview": "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+          "popularity": 142.983,
+          "poster_path": "/iofokHZoUB4Qhik4PflvJl8TT6a.jpg",
+          "first_air_date": "1999-09-20",
+          "name": "Law \u0026 Order: Special Victims Unit",
+          "vote_average": 7.937,
+          "vote_count": 4077
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ckPbbcJOcL43mJBrROTMrtOBIYK.jpg",
+          "genre_ids": [
+            18,
+            10759
+          ],
+          "id": 240459,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Spartacus: House of Ashur",
+          "overview": "In a world where he survived the events of Spartacus (2010), Ashur clawed his way to power, owning the same ludus that once owned him. Allying with a fierce gladiatrix, Ashur ignites a new kind of spectacle that offends the elite.",
+          "popularity": 138.695,
+          "poster_path": "/vNByuzy60v31nmUVPMA8oAtneUK.jpg",
+          "first_air_date": "2025-12-05",
+          "name": "Spartacus: House of Ashur",
+          "vote_average": 6.244,
+          "vote_count": 90
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2eIlCirgcvEwmCSYh2wDfz5Sxvz.jpg",
+          "genre_ids": [
+            18,
+            80,
+            9648
+          ],
+          "id": 46952,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Blacklist",
+          "overview": "Raymond \u0022Red\u0022 Reddington, one of the FBI\u0027s most wanted fugitives, surrenders in person at FBI Headquarters in Washington, D.C. He claims that he and the FBI have the same interests: bringing down dangerous criminals and terrorists. In the last two decades, he\u0027s made a list of criminals and terrorists that matter the most but the FBI cannot find because it does not know they exist. Reddington calls this \u0022The Blacklist\u0022. Reddington will co-operate, but insists that he will speak only to Elizabeth Keen, a rookie FBI profiler.",
+          "popularity": 123.7509,
+          "poster_path": "/4HTfd1PhgFUenJxVuBDNdLmdr0c.jpg",
+          "first_air_date": "2013-09-23",
+          "name": "The Blacklist",
+          "vote_average": 7.638,
+          "vote_count": 3441
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yUOFocKDW7MCC5isx4FK8A68QFp.jpg",
+          "genre_ids": [
+            9648,
+            10759,
+            18
+          ],
+          "id": 4607,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Lost",
+          "overview": "Stripped of everything, the survivors of a horrific plane crash  must work together to stay alive. But the island holds many secrets.",
+          "popularity": 118.3523,
+          "poster_path": "/og6S0aTZU6YUJAbqxeKjCa3kY1E.jpg",
+          "first_air_date": "2004-09-22",
+          "name": "Lost",
+          "vote_average": 7.946,
+          "vote_count": 4803
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4P2gbaCGdZyP4i95TmmA6nS9HJh.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 64356,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uC288\uD37C\uB9E8\uC774 \uB3CC\uC544\uC654\uB2E4",
+          "overview": "An up-close look at celebrity dads who have to take care of their kids for the next 48 hours without any help. Will it be a dad-tastrophe, or can they finish their wives\u0027 to-do lists while having fun with their kids?",
+          "popularity": 117.0256,
+          "poster_path": "/qjBx2RCnyyBPgu9qBV7j3UiXjeo.jpg",
+          "first_air_date": "2013-11-03",
+          "name": "The Return of Superman",
+          "vote_average": 7.7,
+          "vote_count": 16
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/r0Q6eeN9L1ORL9QsV0Sg8ZV3vnv.jpg",
+          "genre_ids": [
+            18,
+            35,
+            9648
+          ],
+          "id": 1408,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "House",
+          "overview": "Dr. Gregory House, a drug-addicted, unconventional, misanthropic medical genius, leads a team of diagnosticians at the fictional Princeton\u2013Plainsboro Teaching Hospital in New Jersey.",
+          "popularity": 109.3949,
+          "poster_path": "/3Cz7ySOQJmqiuTdrc6CY0r65yDI.jpg",
+          "first_air_date": "2004-11-16",
+          "name": "House",
+          "vote_average": 8.6,
+          "vote_count": 7217
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zZqpAXxVSBtxV9qPBcscfXBcL2w.jpg",
+          "genre_ids": [
+            10765,
+            18,
+            10759
+          ],
+          "id": 1399,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Game of Thrones",
+          "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night\u0027s Watch, is all that stands between the realms of men and icy horrors beyond.",
+          "popularity": 108.1124,
+          "poster_path": "/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
+          "first_air_date": "2011-04-17",
+          "name": "Game of Thrones",
+          "vote_average": 8.459,
+          "vote_count": 25951
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5s9XHTB9SLPdg3mNU6BlSLnZ9Qq.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 34307,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Shameless",
+          "overview": "Chicagoan Frank Gallagher is the proud single dad of six smart, industrious, independent kids, who without him would be... perhaps better off. When Frank\u0027s not at the bar spending what little money they have, he\u0027s passed out on the floor. But the kids have found ways to grow up in spite of him. They may not be like any family you know, but they make no apologies for being exactly who they are.",
+          "popularity": 107.2823,
+          "poster_path": "/ifo31fMWLmyOVpdak9K0kY4jldQ.jpg",
+          "first_air_date": "2011-01-09",
+          "name": "Shameless",
+          "vote_average": 8.164,
+          "vote_count": 3135
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/c1aBrG5s5xFa6Tbnihu2Hhj4t2q.jpg",
+          "genre_ids": [
+            80,
+            18,
+            10759
+          ],
+          "id": 4614,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "NCIS",
+          "overview": "From murder and espionage to terrorism and stolen submarines, a team of special agents investigates any crime that has any connection to Navy and Marine Corps personnel, regardless of rank or position.",
+          "popularity": 106.9142,
+          "poster_path": "/mBcu8d6x6zB1el3MPNl7cZQEQ31.jpg",
+          "first_air_date": "2003-09-23",
+          "name": "NCIS",
+          "vote_average": 7.62,
+          "vote_count": 2425
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/391ixi0wVbFtFLQnOy8ZncWv2io.jpg",
+          "genre_ids": [
+            18,
+            10768,
+            80
+          ],
+          "id": 1407,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Homeland",
+          "overview": "CIA officer Carrie Mathison is tops in her field despite being bipolar, which makes her volatile and unpredictable. With the help of her long-time mentor Saul Berenson, Carrie fearlessly risks everything, including her personal well-being and even sanity, at every turn.",
+          "popularity": 106.11,
+          "poster_path": "/6GAvS2e6VIRsms9FpVt33PsCoEW.jpg",
+          "first_air_date": "2011-10-02",
+          "name": "Homeland",
+          "vote_average": 7.6,
+          "vote_count": 2430
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vNCNUxNHHgP0WsA19hxztUsG3yG.jpg",
+          "genre_ids": [
+            18,
+            10765,
+            35
+          ],
+          "id": 225171,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Pluribus",
+          "overview": "The most miserable person on Earth must save the world from happiness.",
+          "popularity": 104.2788,
+          "poster_path": "/nrM2xFUfKJJEmZzd5d7kohT2G0C.jpg",
+          "first_air_date": "2025-11-06",
+          "name": "Pluribus",
+          "vote_average": 8.0,
+          "vote_count": 286
+        }
+      ],
+      "total_pages": 1282,
+      "total_results": 25640
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=23036",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "5ff69f6182e844b098734e2529db96504afdb2310e97e46875f7297ef1c7e327",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022ff5516c4cde871cf86b6c115540d991e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

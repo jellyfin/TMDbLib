@@ -1,6 +1,6 @@
 {
   "Guid": "56cb5452-0338-3544-acc0-45e75b96879d",
-  "UpdatedAt": "2025-12-24T11:53:34.4102563Z",
+  "UpdatedAt": "2025-12-24T18:45:15.9381013Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/images",
   "Description": "Proxy Mapping for GET /3/tv/1396/images",
   "Priority": -2000000,
@@ -817,17 +817,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=20462",
       "x-memc": "HIT",
       "x-memc-key": "5b96d4f98361d863404f1a011a4caf70d02c83312049f69605d7fa63f11bf942",
       "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=12317",
       "ETag": "W/\u0022f7232c9e0d3701504cbf5f7062695aa3\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

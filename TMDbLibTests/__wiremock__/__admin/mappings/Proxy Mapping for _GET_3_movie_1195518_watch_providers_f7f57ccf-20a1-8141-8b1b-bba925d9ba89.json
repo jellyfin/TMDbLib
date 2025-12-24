@@ -1,0 +1,1209 @@
+{
+  "Guid": "f7f57ccf-20a1-8141-8b1b-bba925d9ba89",
+  "UpdatedAt": "2025-12-24T18:45:17.1321571Z",
+  "Title": "Proxy Mapping for GET /3/movie/1195518/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1195518/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1195518/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1195518,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=AT",
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 82
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 83
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=BE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 14
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 14
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 122
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 123
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 82
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=CH",
+          "buy": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=DE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/82hFfWsPYtyskBrnkL8Y36vHcVf.jpg",
+              "provider_id": 133,
+              "provider_name": "Videobuster",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/yTwdlHzReo6l9HLWrZqEaEUECBt.jpg",
+              "provider_id": 349,
+              "provider_name": "Kino on Demand",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/4JfSo3RoLuGtvY3jyjaVtxcwp2A.jpg",
+              "provider_id": 2207,
+              "provider_name": "Verleihshop",
+              "display_priority": 129
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 130
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/82hFfWsPYtyskBrnkL8Y36vHcVf.jpg",
+              "provider_id": 133,
+              "provider_name": "Videobuster",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/4JfSo3RoLuGtvY3jyjaVtxcwp2A.jpg",
+              "provider_id": 2207,
+              "provider_name": "Verleihshop",
+              "display_priority": 129
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=DK",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=EG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=ES",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=FI",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 78
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 2472,
+              "provider_name": "HBO Max  Amazon Channel",
+              "display_priority": 91
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 103
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 76
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 120
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 121
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 65
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 45
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 46
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 58
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=LU",
+          "buy": [
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 19
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jzWBemDX69VRYhudQA44IESMxQ1.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 19
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 25
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=NO",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=NZ",
+          "rent": [
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=SE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1195518-the-unholy-trinity/watch?locale=US",
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 127
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=20582",
+      "x-memc": "HIT",
+      "x-memc-key": "d2b1857de60d89d2a54671f45d321ae941376298baa75962a9d8fff89070fa84",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022f789eacb97fa715ca557d8c35f25c7c3\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

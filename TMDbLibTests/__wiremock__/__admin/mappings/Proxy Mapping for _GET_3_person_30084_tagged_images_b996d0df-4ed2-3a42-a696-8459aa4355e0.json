@@ -1,6 +1,6 @@
 {
   "Guid": "b996d0df-4ed2-3a42-a696-8459aa4355e0",
-  "UpdatedAt": "2025-12-24T11:53:34.5586588Z",
+  "UpdatedAt": "2025-12-24T18:45:16.6292717Z",
   "Title": "Proxy Mapping for GET /3/person/30084/tagged_images",
   "Description": "Proxy Mapping for GET /3/person/30084/tagged_images",
   "Priority": -2000000,
@@ -139,17 +139,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=17351",
       "x-memc": "HIT",
       "x-memc-key": "c6b1383f2a27e4794c0193c2b345b65c6f88a2b892068d7392fd0a9038d69f72",
       "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=8284",
       "ETag": "W/\u0022ad275dcde00627cc32bb6589f1f8f533\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -1,0 +1,757 @@
+{
+  "Guid": "d69a88d9-e964-9b4c-a570-68802a25dd31",
+  "UpdatedAt": "2025-12-24T18:45:20.5987719Z",
+  "Title": "Proxy Mapping for GET /3/movie/980477/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/980477/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/980477/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 980477,
+      "results": {
+        "AR": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=AR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=BO",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=BR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
+              "provider_id": 484,
+              "provider_name": "Claro tv\u002B",
+              "display_priority": 21
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 122
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 123
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=CL",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=CO",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 60
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 60
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=CR",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=EC",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=GT",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=HN",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=IN",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=MX",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=MY",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=NZ",
+          "rent": [
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=PE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=PH",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 32
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=PY",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/r7cgAhlSLI4r80P1Si9P0jOevrr.jpg",
+              "provider_id": 570,
+              "provider_name": "Premier",
+              "display_priority": 17
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=TH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/980477/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 12
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 127
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=21468",
+      "x-memc": "HIT",
+      "x-memc-key": "8c8d1a72f0747cc0cfd50aef29e881212b06547575701e53a123f03c9ae48672",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022fe7a30a55524d17ff6d5ad9b33e81f46\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

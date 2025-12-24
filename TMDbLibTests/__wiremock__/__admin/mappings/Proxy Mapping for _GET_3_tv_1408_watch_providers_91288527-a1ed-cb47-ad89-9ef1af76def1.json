@@ -1,0 +1,3124 @@
+{
+  "Guid": "91288527-a1ed-cb47-ad89-9ef1af76def1",
+  "UpdatedAt": "2025-12-24T18:45:23.1831184Z",
+  "Title": "Proxy Mapping for GET /3/tv/1408/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/1408/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1408/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1408,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 31
+            }
+          ]
+        },
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "AO": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AO",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 35
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 61
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 154
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 68
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AU",
+          "ads": [
+            {
+              "logo_path": "/uU4gqmoX0koF8L5yJSlfaaFd9Tz.jpg",
+              "provider_id": 246,
+              "provider_name": "7plus",
+              "display_priority": 18
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 50
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 95
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 23
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BF",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 49
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/4ABGBjAMtRrYUrr0w3QfanuiaoB.jpg",
+              "provider_id": 1889,
+              "provider_name": "Universal\u002B Amazon Channel",
+              "display_priority": 89
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 12
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 9
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 94
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 112
+            }
+          ]
+        },
+        "CD": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CH",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/ytApMa9fThUQUFTn696AeNBrB8f.jpg",
+              "provider_id": 210,
+              "provider_name": "Sky",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CI": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CY",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/qcTTC6rFBIVaCLzu0EKwuyrBlSR.jpg",
+              "provider_id": 2536,
+              "provider_name": "Oneplay",
+              "display_priority": 35
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 114
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=DK",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/s38BRDYN1fP3Ll9bptNaE5JXFkL.jpg",
+              "provider_id": 2624,
+              "provider_name": "TV2 Skyshowtime",
+              "display_priority": 53
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 5
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=ES",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 51
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 82
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/c7SqVo4DFrbK3RwhGbxvQ9SRco2.jpg",
+              "provider_id": 338,
+              "provider_name": "Ruutu",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=FJ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 59
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 93
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GB",
+          "ads": [
+            {
+              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 10
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 87
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GQ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GY": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=GY",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=IE",
+          "ads": [
+            {
+              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 15
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=IL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/9YJY5OwsIPMoX3xC3TdtZVbKBpE.jpg",
+              "provider_id": 614,
+              "provider_name": "VI movies and tv",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 73
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 87
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/2hBbMVUI2G4GAGRAD0RZCZqDMUh.jpg",
+              "provider_id": 359,
+              "provider_name": "Mediaset Infinity",
+              "display_priority": 11
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 22
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 72
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 26
+            }
+          ]
+        },
+        "KW": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 10
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 16
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "LY": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=LY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MG",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=ML",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MW": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MW",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/4ABGBjAMtRrYUrr0w3QfanuiaoB.jpg",
+              "provider_id": 1889,
+              "provider_name": "Universal\u002B Amazon Channel",
+              "display_priority": 59
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 73
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 13
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=NL",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
+              "provider_id": 578,
+              "provider_name": "Strim",
+              "display_priority": 27
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/kZRT6tkMn7zzRy8PjPuB3g3TItL.jpg",
+              "provider_id": 395,
+              "provider_name": "TVNZ\u002B",
+              "display_priority": 11
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 7
+            }
+          ]
+        },
+        "PF": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PF",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PG",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 32
+            }
+          ]
+        },
+        "PK": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PT",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 29
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=RU",
+          "ads": [
+            {
+              "logo_path": "/3EJQtj4m83kRh7bV9BF6KWmPiKp.jpg",
+              "provider_id": 577,
+              "provider_name": "TvIgle",
+              "display_priority": 18
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 21
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SE",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 10
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 38
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/2aGrp1xw3qhwCYvNGAJZPdjfeeX.jpg",
+              "provider_id": 386,
+              "provider_name": "Peacock Premium",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 206
+            },
+            {
+              "logo_path": "/drPlq5beqXtBaP7MNs8W616YRhm.jpg",
+              "provider_id": 387,
+              "provider_name": "Peacock Premium Plus",
+              "display_priority": 217
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 3
+            }
+          ]
+        },
+        "VA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=VA",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 27
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/tv/1408-house/watch?locale=ZW",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=7629",
+      "x-memc": "HIT",
+      "x-memc-key": "daa92a42cf3baeaac8d38501641d8e56a12fc7091ba85d17284cc50b23e453fa",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022506805bb08ffac745a97c4dd9cbc46af\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

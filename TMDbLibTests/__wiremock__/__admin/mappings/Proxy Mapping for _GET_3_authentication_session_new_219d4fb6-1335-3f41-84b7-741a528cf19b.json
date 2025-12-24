@@ -1,6 +1,6 @@
 {
   "Guid": "219d4fb6-1335-3f41-84b7-741a528cf19b",
-  "UpdatedAt": "2025-12-24T11:53:35.595705Z",
+  "UpdatedAt": "2025-12-24T18:45:17.9137711Z",
   "Title": "Proxy Mapping for GET /3/authentication/session/new",
   "Description": "Proxy Mapping for GET /3/authentication/session/new",
   "Priority": -2000000,
@@ -34,13 +34,13 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "Cache-Control": "public, max-age=0",
-      "x-az": "us-east-1b",
+      "x-az": "us-east-1a",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Error from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }
