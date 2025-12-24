@@ -18,12 +18,6 @@ public class KnownForMovie : KnownForBase
     }
 
     /// <summary>
-    /// Gets or sets a value indicating whether the movie is adult content.
-    /// </summary>
-    [JsonProperty("adult")]
-    public bool Adult { get; set; }
-
-    /// <summary>
     /// Gets or sets the original title of the movie.
     /// </summary>
     [JsonProperty("original_title")]
@@ -42,8 +36,8 @@ public class KnownForMovie : KnownForBase
     public string Title { get; set; }
 
     /// <summary>
-    /// Gets or sets a value indicating whether the movie is a video.
+    /// Gets or sets a value indicating whether this is a video release.
     /// </summary>
     [JsonProperty("video")]
-    public bool Vide { get; set; }
+    public bool Video { get; set; }
 }
