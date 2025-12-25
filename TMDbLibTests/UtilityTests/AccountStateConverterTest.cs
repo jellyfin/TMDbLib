@@ -27,8 +27,8 @@ public class AccountStateConverterTest : TestBase
             rated = new { value = 5 }
         };
 
-        string json = Serializer.SerializeToString(original);
-        AccountState result = Serializer.DeserializeFromString<AccountState>(json);
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<AccountState>(json);
 
         Verify(new
         {
@@ -46,8 +46,8 @@ public class AccountStateConverterTest : TestBase
         // { "rated": false }
         var original = new { rated = false };
 
-        string json = Serializer.SerializeToString(original);
-        AccountState result = Serializer.DeserializeFromString<AccountState>(json);
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<AccountState>(json);
 
         Verify(new
         {
@@ -64,8 +64,9 @@ public class AccountStateConverterTest : TestBase
     public async Task TestAccountStateConverterAccountState()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-        AccountState accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.Avatar);
+        var accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.Avatar);
 
+        Assert.NotNull(accountState);
         await Verify(accountState);
     }
 
@@ -77,15 +78,16 @@ public class AccountStateConverterTest : TestBase
     public async Task TestAccountStateConverterTvEpisodeAccountState()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-        ResultContainer<TvEpisodeAccountStateWithNumber> season = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1);
+        var season = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1);
+        Assert.NotNull(season);
+        Assert.NotNull(season.Results);
 
         // Episode 1 has a rating
-        TvEpisodeAccountStateWithNumber episodeA = season.Results.Single(s => s.EpisodeNumber == 1);
-
+        var episodeA = season.Results.Single(s => s.EpisodeNumber == 1);
         Assert.NotNull(episodeA.Rating);
 
         // Episode 2 has no rating
-        TvEpisodeAccountStateWithNumber episodeB = season.Results.Single(s => s.EpisodeNumber == 2);
+        var episodeB = season.Results.Single(s => s.EpisodeNumber == 2);
         Assert.Null(episodeB.Rating);
 
         await Verify(new

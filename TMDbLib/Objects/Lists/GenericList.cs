@@ -13,11 +13,11 @@ public class GenericList : TMDbList<string>
     /// Gets or sets the username of the list creator.
     /// </summary>
     [JsonProperty("created_by")]
-    public string CreatedBy { get; set; }
+    public string? CreatedBy { get; set; }
 
     /// <summary>
     /// Gets or sets the list of items in the list.
     /// </summary>
     [JsonProperty("items")]
-    public List<SearchBase> Items { get; set; }
+    public List<SearchBase>? Items { get; set; }
 }

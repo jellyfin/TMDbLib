@@ -19,5 +19,5 @@ public class ResultContainer<T>
     /// Gets or sets the list of results.
     /// </summary>
     [JsonProperty("results")]
-    public List<T> Results { get; set; }
+    public List<T>? Results { get; set; }
 }

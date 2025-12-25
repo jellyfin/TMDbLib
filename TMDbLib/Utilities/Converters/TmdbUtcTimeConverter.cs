@@ -20,9 +20,15 @@ public class TmdbUtcTimeConverter : DateTimeConverterBase
     /// <param name="existingValue">The existing value of object being read.</param>
     /// <param name="serializer">The calling serializer.</param>
     /// <returns>The parsed DateTime value.</returns>
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        return DateTime.ParseExact(reader.Value.ToString(), Format, null);
+        var stringValue = reader.Value?.ToString();
+        if (string.IsNullOrEmpty(stringValue))
+        {
+            return null;
+        }
+
+        return DateTime.ParseExact(stringValue, Format, null);
     }
 
     /// <summary>
@@ -31,8 +37,15 @@ public class TmdbUtcTimeConverter : DateTimeConverterBase
     /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
     /// <param name="value">The value to write.</param>
     /// <param name="serializer">The calling serializer.</param>
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        writer.WriteValue(((DateTime)value).ToString(Format, CultureInfo.InvariantCulture));
+        if (value is DateTime dateTime)
+        {
+            writer.WriteValue(dateTime.ToString(Format, CultureInfo.InvariantCulture));
+        }
+        else
+        {
+            writer.WriteNull();
+        }
     }
 }

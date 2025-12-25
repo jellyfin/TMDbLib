@@ -109,9 +109,11 @@ public class ChangeItemConverterTest : TestBase
     public async Task TestChangeItemConverter()
     {
         var latestMovie = await TMDbClient.GetMovieLatestAsync();
-        var changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id);
+        Assert.NotNull(latestMovie);
 
-        var changeItems = changes.SelectMany(s => s.Items).ToList();
+        var changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id);
+        Assert.NotNull(changes);
+        var changeItems = changes.SelectMany(s => s.Items ?? []).ToList();
 
         // The latest movie may or may not have changes - skip if empty
         if (changeItems.Count == 0)

@@ -12,5 +12,5 @@ public class Timezones
     /// Gets or sets the dictionary of timezones, where the key is the country code and the value is a list of timezone identifiers.
     /// </summary>
     [JsonProperty("list")]
-    public Dictionary<string, List<string>> List { get; set; }
+    public Dictionary<string, List<string>>? List { get; set; }
 }

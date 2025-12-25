@@ -12,20 +12,21 @@ internal class ChangeItemConverter : JsonConverter
         return objectType == typeof(ChangeItemBase);
     }
 
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        JObject jObject = JObject.Load(reader);
+        var jObject = JObject.Load(reader);
 
-        ChangeItemBase result;
-        if (jObject["action"] == null)
+        ChangeItemBase? result;
+        if (jObject["action"] is null)
         {
             // We cannot determine the correct type, let's hope we were provided one
-            result = (ChangeItemBase)Activator.CreateInstance(objectType);
+            var instance = Activator.CreateInstance(objectType);
+            result = instance as ChangeItemBase;
         }
         else
         {
             // Determine the type based on the media_type
-            ChangeAction mediaType = jObject["action"].ToObject<ChangeAction>();
+            var mediaType = jObject["action"]?.ToObject<ChangeAction>();
 
             switch (mediaType)
             {
@@ -50,16 +51,24 @@ internal class ChangeItemConverter : JsonConverter
         }
 
         // Populate the result
-        using JsonReader jsonReader = jObject.CreateReader();
-        serializer.Populate(jsonReader, result);
+        if (result is not null)
+        {
+            using var jsonReader = jObject.CreateReader();
+            serializer.Populate(jsonReader, result);
+        }
 
         return result;
     }
 
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        JToken jToken = JToken.FromObject(value);
+        if (value is null)
+        {
+            writer.WriteNull();
+            return;
+        }
 
+        var jToken = JToken.FromObject(value);
         serializer.Serialize(writer, jToken);
     }
 }

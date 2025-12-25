@@ -1,6 +1,6 @@
 {
   "Guid": "536fcfd2-2097-6a4f-85fb-d7e3e58216f1",
-  "UpdatedAt": "2025-12-24T11:53:34.9797338Z",
+  "UpdatedAt": "2025-12-24T18:45:21.5385689Z",
   "Title": "Proxy Mapping for GET /3/search/movie",
   "Description": "Proxy Mapping for GET /3/search/movie",
   "Priority": -2000000,
@@ -85,17 +85,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=22998",
       "x-memc": "MISS, STORE",
       "x-memc-key": "415fa5fd4194728fd29b42a6cb8a7f98d48f65fee6f0a2ad0454703099014e7c",
       "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=22981",
       "ETag": "W/\u00223d52b2c84dd7de303aea0ae17125248f\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

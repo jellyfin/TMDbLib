@@ -17,17 +17,17 @@ public class ProductionCompany
     /// Gets or sets the name of the production company.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the logo path for the production company.
     /// </summary>
     [JsonProperty("logo_path")]
-    public string LogoPath { get; set; }
+    public string? LogoPath { get; set; }
 
     /// <summary>
     /// Gets or sets the origin country of the production company.
     /// </summary>
     [JsonProperty("origin_country")]
-    public string OriginCountry { get; set; }
+    public string? OriginCountry { get; set; }
 }

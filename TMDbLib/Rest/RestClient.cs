@@ -11,16 +11,16 @@ internal sealed class RestClient : IDisposable
 {
     private int _maxRetryCount;
 
-    public RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy proxy = null)
+    public RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy? proxy = null)
         : this(baseUrl, serializer, proxy, null)
     {
     }
 
-    internal RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy proxy, HttpMessageHandler httpMessageHandler)
+    internal RestClient(Uri baseUrl, ITMDbSerializer serializer, IWebProxy? proxy, HttpMessageHandler? httpMessageHandler)
     {
         BaseUrl = baseUrl;
         Serializer = serializer;
-        DefaultQueryString = new List<KeyValuePair<string, string>>();
+        DefaultQueryString = [];
 
         MaxRetryCount = 0;
         Proxy = proxy;
@@ -31,7 +31,7 @@ internal sealed class RestClient : IDisposable
         }
         else
         {
-            HttpClientHandler handler = new HttpClientHandler();
+            var handler = new HttpClientHandler();
             if (proxy is not null)
             {
                 // Blazor apparently throws on the Proxy setter.
@@ -49,7 +49,7 @@ internal sealed class RestClient : IDisposable
 
     internal Encoding Encoding { get; } = new UTF8Encoding(false);
 
-    internal IWebProxy Proxy { get; private set; }
+    internal IWebProxy? Proxy { get; private set; }
 
     internal HttpClient HttpClient { get; private set; }
 
@@ -59,14 +59,7 @@ internal sealed class RestClient : IDisposable
 
         set
         {
-#if NETSTANDARD2_0
-            if (value < 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(value));
-            }
-#else
             ArgumentOutOfRangeException.ThrowIfNegative(value);
-#endif
             _maxRetryCount = value;
         }
     }

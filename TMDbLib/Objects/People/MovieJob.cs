@@ -18,13 +18,13 @@ public class MovieJob
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the department name.
     /// </summary>
     [JsonProperty("department")]
-    public string Department { get; set; }
+    public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the movie ID.
@@ -36,19 +36,19 @@ public class MovieJob
     /// Gets or sets the job title.
     /// </summary>
     [JsonProperty("job")]
-    public string Job { get; set; }
+    public string? Job { get; set; }
 
     /// <summary>
     /// Gets or sets the original title.
     /// </summary>
     [JsonProperty("original_title")]
-    public string OriginalTitle { get; set; }
+    public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the release date.
@@ -60,5 +60,5 @@ public class MovieJob
     /// Gets or sets the movie title.
     /// </summary>
     [JsonProperty("title")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 }

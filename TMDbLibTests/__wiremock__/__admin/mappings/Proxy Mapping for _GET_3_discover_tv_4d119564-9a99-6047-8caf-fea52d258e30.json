@@ -1,0 +1,498 @@
+{
+  "Guid": "4d119564-9a99-6047-8caf-fea52d258e30",
+  "UpdatedAt": "2025-12-24T18:45:29.8182025Z",
+  "Title": "Proxy Mapping for GET /3/discover/tv",
+  "Description": "Proxy Mapping for GET /3/discover/tv",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/tv",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "with_watch_providers",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "8|119",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "watch_region",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "US",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
+          "genre_ids": [
+            10765,
+            9648,
+            10759
+          ],
+          "id": 66732,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Stranger Things",
+          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+          "popularity": 529.3398,
+          "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+          "first_air_date": "2016-07-15",
+          "name": "Stranger Things",
+          "vote_average": 8.596,
+          "vote_count": 19646
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jP0Rhj9OTPDAwQlHQwOLFDdeE8t.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1416,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Grey\u0027s Anatomy",
+          "overview": "Follows the personal and professional lives of a group of doctors at Seattle\u2019s Grey Sloan Memorial Hospital.",
+          "popularity": 153.3691,
+          "poster_path": "/hjJkrLXhWvGHpLeLBDFznpBTY1S.jpg",
+          "first_air_date": "2005-03-27",
+          "name": "Grey\u0027s Anatomy",
+          "vote_average": 8.2,
+          "vote_count": 10715
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 1396,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Breaking Bad",
+          "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+          "popularity": 150.5089,
+          "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+          "first_air_date": "2008-01-20",
+          "name": "Breaking Bad",
+          "vote_average": 8.935,
+          "vote_count": 16731
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2eIlCirgcvEwmCSYh2wDfz5Sxvz.jpg",
+          "genre_ids": [
+            18,
+            80,
+            9648
+          ],
+          "id": 46952,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Blacklist",
+          "overview": "Raymond \u0022Red\u0022 Reddington, one of the FBI\u0027s most wanted fugitives, surrenders in person at FBI Headquarters in Washington, D.C. He claims that he and the FBI have the same interests: bringing down dangerous criminals and terrorists. In the last two decades, he\u0027s made a list of criminals and terrorists that matter the most but the FBI cannot find because it does not know they exist. Reddington calls this \u0022The Blacklist\u0022. Reddington will co-operate, but insists that he will speak only to Elizabeth Keen, a rookie FBI profiler.",
+          "popularity": 123.7509,
+          "poster_path": "/4HTfd1PhgFUenJxVuBDNdLmdr0c.jpg",
+          "first_air_date": "2013-09-23",
+          "name": "The Blacklist",
+          "vote_average": 7.638,
+          "vote_count": 3441
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5s9XHTB9SLPdg3mNU6BlSLnZ9Qq.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 34307,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Shameless",
+          "overview": "Chicagoan Frank Gallagher is the proud single dad of six smart, industrious, independent kids, who without him would be... perhaps better off. When Frank\u0027s not at the bar spending what little money they have, he\u0027s passed out on the floor. But the kids have found ways to grow up in spite of him. They may not be like any family you know, but they make no apologies for being exactly who they are.",
+          "popularity": 107.2823,
+          "poster_path": "/ifo31fMWLmyOVpdak9K0kY4jldQ.jpg",
+          "first_air_date": "2011-01-09",
+          "name": "Shameless",
+          "vote_average": 8.164,
+          "vote_count": 3135
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/c1aBrG5s5xFa6Tbnihu2Hhj4t2q.jpg",
+          "genre_ids": [
+            80,
+            18,
+            10759
+          ],
+          "id": 4614,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "NCIS",
+          "overview": "From murder and espionage to terrorism and stolen submarines, a team of special agents investigates any crime that has any connection to Navy and Marine Corps personnel, regardless of rank or position.",
+          "popularity": 106.9142,
+          "poster_path": "/mBcu8d6x6zB1el3MPNl7cZQEQ31.jpg",
+          "first_air_date": "2003-09-23",
+          "name": "NCIS",
+          "vote_average": 7.62,
+          "vote_count": 2425
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/391ixi0wVbFtFLQnOy8ZncWv2io.jpg",
+          "genre_ids": [
+            18,
+            10768,
+            80
+          ],
+          "id": 1407,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Homeland",
+          "overview": "CIA officer Carrie Mathison is tops in her field despite being bipolar, which makes her volatile and unpredictable. With the help of her long-time mentor Saul Berenson, Carrie fearlessly risks everything, including her personal well-being and even sanity, at every turn.",
+          "popularity": 106.11,
+          "poster_path": "/6GAvS2e6VIRsms9FpVt33PsCoEW.jpg",
+          "first_air_date": "2011-10-02",
+          "name": "Homeland",
+          "vote_average": 7.6,
+          "vote_count": 2430
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rAOjnEFTuNysY7bot8zonhImGMh.jpg",
+          "genre_ids": [
+            10759,
+            18,
+            10765
+          ],
+          "id": 1402,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Walking Dead",
+          "overview": "Sheriff\u0027s deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+          "popularity": 83.1204,
+          "poster_path": "/ng3cMtxYKt1OSQYqFlnKWnVsqNO.jpg",
+          "first_air_date": "2010-10-31",
+          "name": "The Walking Dead",
+          "vote_average": 8.089,
+          "vote_count": 17379
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gFkHcIh7iE5G0oVOgpmY8ONQjhl.jpg",
+          "genre_ids": [
+            18,
+            10765
+          ],
+          "id": 60735,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Flash",
+          "overview": "After being struck by lightning, CSI investigator Barry Allen awakens from a nine-month coma to discover he has been  granted the gift of super speed.  Teaming up with S.T.A.R. Labs, Barry takes on the persona of The Flash, the Fastest  Man Alive, to protect his city.",
+          "popularity": 79.0137,
+          "poster_path": "/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
+          "first_air_date": "2014-10-07",
+          "name": "The Flash",
+          "vote_average": 7.768,
+          "vote_count": 11453
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lHe8iwM4Cdm6RSEiara4PN8ZcBd.jpg",
+          "genre_ids": [
+            10759,
+            18,
+            10768
+          ],
+          "id": 44217,
+          "origin_country": [
+            "CA"
+          ],
+          "original_language": "en",
+          "original_name": "Vikings",
+          "overview": "The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar\u0027s band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.",
+          "popularity": 78.5937,
+          "poster_path": "/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg",
+          "first_air_date": "2013-03-03",
+          "name": "Vikings",
+          "vote_average": 8.093,
+          "vote_count": 7410
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1vhKauCQAq32u53X8n9qI896e6.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 46296,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Spartacus",
+          "overview": "Torn from his homeland and the woman he loves, Spartacus is condemned to the brutal world of the arena where blood and death are primetime entertainment.",
+          "popularity": 76.3939,
+          "poster_path": "/c2GKN4VHCj1dnjFMANRpGkCVBae.jpg",
+          "first_air_date": "2010-01-22",
+          "name": "Spartacus",
+          "vote_average": 8.028,
+          "vote_count": 2778
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/foGkPxpw9h8zln81j63mix5B7m8.jpg",
+          "genre_ids": [
+            18,
+            10759
+          ],
+          "id": 71912,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Witcher",
+          "overview": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
+          "popularity": 71.4569,
+          "poster_path": "/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
+          "first_air_date": "2019-12-20",
+          "name": "The Witcher",
+          "vote_average": 7.964,
+          "vote_count": 6443
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ncftkNAjIz2PBbUMY7T0CHVJP8d.jpg",
+          "genre_ids": [
+            80,
+            10765
+          ],
+          "id": 63174,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Lucifer",
+          "overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals.\u00A0But the longer he\u0027s away from the underworld, the greater the threat that the worst of humanity could escape.",
+          "popularity": 70.8625,
+          "poster_path": "/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
+          "first_air_date": "2016-01-25",
+          "name": "Lucifer",
+          "vote_average": 8.438,
+          "vote_count": 15223
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/or0E36KfzJYZwqXeiCfm1JgepKF.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 37680,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Suits",
+          "overview": "While running from a drug deal gone bad, Mike Ross, a brilliant young college-dropout, slips into a job interview with one of New York City\u0027s best legal closers, Harvey Specter. Tired of cookie-cutter law school grads, Harvey takes a gamble by hiring Mike on the spot after he recognizes his raw talent and photographic memory.",
+          "popularity": 70.6859,
+          "poster_path": "/vQiryp6LioFxQThywxbC6TuoDjy.jpg",
+          "first_air_date": "2011-06-23",
+          "name": "Suits",
+          "vote_average": 8.221,
+          "vote_count": 5467
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lSffVt0etoSLyl2hsTREdJ1CnQ1.jpg",
+          "genre_ids": [
+            35,
+            10751
+          ],
+          "id": 279601,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Man vs Baby",
+          "overview": "As Christmas approaches, a blundering-all-the-way dad juggles housesitting a posh London penthouse with an unexpected pickle: caring for a lost baby.",
+          "popularity": 70.2456,
+          "poster_path": "/x7UZVTEr26H5yCSVQoKTeBdvUvg.jpg",
+          "first_air_date": "2025-12-11",
+          "name": "Man vs Baby",
+          "vote_average": 6.84,
+          "vote_count": 98
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/n3Brk7roueE9HOwVmYlJx5j462g.jpg",
+          "genre_ids": [
+            10759,
+            80,
+            18
+          ],
+          "id": 2288,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Prison Break",
+          "overview": "Due to a political conspiracy, an innocent man is sent to death row and his only hope is his brother, who makes it his mission to deliberately get himself sent to the same prison in order to break the both of them out, from the inside out.",
+          "popularity": 64.4179,
+          "poster_path": "/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg",
+          "first_air_date": "2005-08-29",
+          "name": "Prison Break",
+          "vote_average": 8.074,
+          "vote_count": 5702
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lH22EnM0ofC7GsVGU8dAA2RXV1c.jpg",
+          "genre_ids": [
+            10759,
+            16,
+            10762
+          ],
+          "id": 65334,
+          "origin_country": [
+            "FR"
+          ],
+          "original_language": "fr",
+          "original_name": "Miraculous, les aventures de Ladybug et Chat Noir",
+          "overview": "Marinette and Adrien, two Parisian teenagers, are entrusted with powerful jewels in order to transform into superheroes Ladybug and Cat Noir. But neither hero knows the other\u0027s true identity \u2014 or that they\u0027re classmates!",
+          "popularity": 63.3146,
+          "poster_path": "/acrtAy8gmxcsEvrDP09MpMSCeDZ.jpg",
+          "first_air_date": "2015-10-19",
+          "name": "Miraculous: Tales of Ladybug \u0026 Cat Noir",
+          "vote_average": 8.043,
+          "vote_count": 4536
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l8v3gJDlASN0lNn51gR8zQJsu5O.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 60574,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Peaky Blinders",
+          "overview": "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
+          "popularity": 61.2047,
+          "poster_path": "/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
+          "first_air_date": "2013-09-12",
+          "name": "Peaky Blinders",
+          "vote_average": 8.525,
+          "vote_count": 10679
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/AeJgnEXaFcsGzU5Y4Nrq9WggAQ5.jpg",
+          "genre_ids": [
+            10765,
+            9648,
+            35
+          ],
+          "id": 119051,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Wednesday",
+          "overview": "Smart, sarcastic and a little dead inside, Wednesday Addams investigates twisted mysteries while making new friends \u2014 and foes \u2014 at Nevermore Academy.",
+          "popularity": 60.6734,
+          "poster_path": "/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
+          "first_air_date": "2022-11-23",
+          "name": "Wednesday",
+          "vote_average": 8.367,
+          "vote_count": 10147
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jXTZaHarR9TZiMoQwiQWsGYXqnS.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 82596,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Emily in Paris",
+          "overview": "New passions. New fashions. New Emily? A plucky American marketing whiz spreads her wings in life and love after landing her dream job in Paris.",
+          "popularity": 59.8352,
+          "poster_path": "/c0bkO416OU7YGdOFktk45H8REgL.jpg",
+          "first_air_date": "2020-10-02",
+          "name": "Emily in Paris",
+          "vote_average": 7.6,
+          "vote_count": 1481
+        }
+      ],
+      "total_pages": 162,
+      "total_results": 3225
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=27674",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "3fd77dc9df6e79d46143ad44d4f1047c428b3a29663ed312263b920e9d3671ba",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022a2983e116957afb78d436a7d2aa3de9d\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

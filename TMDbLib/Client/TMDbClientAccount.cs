@@ -31,12 +31,12 @@ public partial class TMDbClient
         TvWatchlist,
     }
 
-    private async Task<SearchContainer<T>> GetAccountListInternal<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string language, AccountListsMethods method, CancellationToken cancellationToken = default)
+    private async Task<SearchContainer<T>?> GetAccountListInternal<T>(int page, AccountSortBy sortBy, SortOrder sortOrder, string? language, AccountListsMethods method, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
 
-        RestRequest request = _client.Create("account/{accountId}/" + method.GetDescription());
-        request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
+        var request = _client.Create("account/{accountId}/" + method.GetDescription());
+        request.AddUrlSegment("accountId", ActiveAccount!.Id.ToString(CultureInfo.InvariantCulture));
         AddSessionId(request, SessionType.UserSession);
 
         if (page > 1)
@@ -60,7 +60,7 @@ public partial class TMDbClient
             request.AddParameter("language", language);
         }
 
-        SearchContainer<T> response = await request.GetOfT<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
+        var response = await request.GetOfT<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -79,17 +79,17 @@ public partial class TMDbClient
     {
         RequireSessionId(SessionType.UserSession);
 
-        RestRequest request = _client.Create("account/{accountId}/favorite");
-        request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
+        var request = _client.Create("account/{accountId}/favorite");
+        request.AddUrlSegment("accountId", ActiveAccount!.Id.ToString(CultureInfo.InvariantCulture));
         request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
         AddSessionId(request, SessionType.UserSession);
 
-        PostReply response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);
+        var response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);
 
         // status code 1 = "Success" - Returned when adding a movie as favorite for the first time
         // status code 13 = "The item/record was deleted successfully" - When removing an item as favorite, no matter if it exists or not
         // status code 12 = "The item/record was updated successfully" - Used when an item is already marked as favorite and trying to do so doing again
-        return response.StatusCode == 1 || response.StatusCode == 12 || response.StatusCode == 13;
+        return response?.StatusCode == 1 || response?.StatusCode == 12 || response?.StatusCode == 13;
     }
 
     /// <summary>
@@ -106,17 +106,17 @@ public partial class TMDbClient
     {
         RequireSessionId(SessionType.UserSession);
 
-        RestRequest request = _client.Create("account/{accountId}/watchlist");
-        request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
+        var request = _client.Create("account/{accountId}/watchlist");
+        request.AddUrlSegment("accountId", ActiveAccount!.Id.ToString(CultureInfo.InvariantCulture));
         request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
         AddSessionId(request, SessionType.UserSession);
 
-        PostReply response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);
+        var response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);
 
         // status code 1 = "Success"
         // status code 13 = "The item/record was deleted successfully" - When removing an item from the watchlist, no matter if it exists or not
         // status code 12 = "The item/record was updated successfully" - Used when an item is already on the watchlist and trying to add it again
-        return response.StatusCode == 1 || response.StatusCode == 12 || response.StatusCode == 13;
+        return response?.StatusCode == 1 || response?.StatusCode == 12 || response?.StatusCode == 13;
     }
 
     /// <summary>
@@ -126,14 +126,14 @@ public partial class TMDbClient
     /// <returns>The account details for the current session.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<AccountDetails> AccountGetDetailsAsync(CancellationToken cancellationToken = default)
+    public async Task<AccountDetails?> AccountGetDetailsAsync(CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
 
-        RestRequest request = _client.Create("account");
+        var request = _client.Create("account");
         AddSessionId(request, SessionType.UserSession);
 
-        AccountDetails response = await request.GetOfT<AccountDetails>(cancellationToken).ConfigureAwait(false);
+        var response = await request.GetOfT<AccountDetails>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -149,11 +149,11 @@ public partial class TMDbClient
     /// <returns>A search container with favorite movies.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<SearchMovie>> AccountGetFavoriteMoviesAsync(
+    public async Task<SearchContainer<SearchMovie>?> AccountGetFavoriteMoviesAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null,
+            string? language = null,
             CancellationToken cancellationToken = default)
     {
         return await GetAccountListInternal<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteMovies, cancellationToken).ConfigureAwait(false);
@@ -170,11 +170,11 @@ public partial class TMDbClient
     /// <returns>A search container with favorite TV shows.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<SearchTv>> AccountGetFavoriteTvAsync(
+    public async Task<SearchContainer<SearchTv>?> AccountGetFavoriteTvAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null,
+            string? language = null,
             CancellationToken cancellationToken = default)
     {
         return await GetAccountListInternal<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.FavoriteTv, cancellationToken).ConfigureAwait(false);
@@ -190,12 +190,12 @@ public partial class TMDbClient
     /// <returns>A search container with account lists.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<AccountList>> AccountGetListsAsync(int page = 1, string language = null, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<AccountList>?> AccountGetListsAsync(int page = 1, string? language = null, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
 
-        RestRequest request = _client.Create("account/{accountId}/lists");
-        request.AddUrlSegment("accountId", ActiveAccount.Id.ToString(CultureInfo.InvariantCulture));
+        var request = _client.Create("account/{accountId}/lists");
+        request.AddUrlSegment("accountId", ActiveAccount!.Id.ToString(CultureInfo.InvariantCulture));
         AddSessionId(request, SessionType.UserSession);
 
         if (page > 1)
@@ -209,7 +209,7 @@ public partial class TMDbClient
             request.AddQueryString("language", language);
         }
 
-        SearchContainer<AccountList> response = await request.GetOfT<SearchContainer<AccountList>>(cancellationToken).ConfigureAwait(false);
+        var response = await request.GetOfT<SearchContainer<AccountList>>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -225,11 +225,11 @@ public partial class TMDbClient
     /// <returns>A search container with movies from the watchlist.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<SearchMovie>> AccountGetMovieWatchlistAsync(
+    public async Task<SearchContainer<SearchMovie>?> AccountGetMovieWatchlistAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null,
+            string? language = null,
             CancellationToken cancellationToken = default)
     {
         return await GetAccountListInternal<SearchMovie>(page, sortBy, sortOrder, language, AccountListsMethods.MovieWatchlist, cancellationToken).ConfigureAwait(false);
@@ -246,11 +246,11 @@ public partial class TMDbClient
     /// <returns>A search container with rated movies.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<SearchMovieWithRating>> AccountGetRatedMoviesAsync(
+    public async Task<SearchContainer<SearchMovieWithRating>?> AccountGetRatedMoviesAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null,
+            string? language = null,
             CancellationToken cancellationToken = default)
     {
         return await GetAccountListInternal<SearchMovieWithRating>(page, sortBy, sortOrder, language, AccountListsMethods.RatedMovies, cancellationToken).ConfigureAwait(false);
@@ -267,11 +267,11 @@ public partial class TMDbClient
     /// <returns>A search container with rated TV show episodes.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<AccountSearchTvEpisode>> AccountGetRatedTvShowEpisodesAsync(
+    public async Task<SearchContainer<AccountSearchTvEpisode>?> AccountGetRatedTvShowEpisodesAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null,
+            string? language = null,
             CancellationToken cancellationToken = default)
     {
         return await GetAccountListInternal<AccountSearchTvEpisode>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTvEpisodes, cancellationToken).ConfigureAwait(false);
@@ -288,11 +288,11 @@ public partial class TMDbClient
     /// <returns>A search container with rated TV shows.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<AccountSearchTv>> AccountGetRatedTvShowsAsync(
+    public async Task<SearchContainer<AccountSearchTv>?> AccountGetRatedTvShowsAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null,
+            string? language = null,
             CancellationToken cancellationToken = default)
     {
         return await GetAccountListInternal<AccountSearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.RatedTv, cancellationToken).ConfigureAwait(false);
@@ -309,11 +309,11 @@ public partial class TMDbClient
     /// <returns>A search container with TV shows from the watchlist.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<SearchTv>> AccountGetTvWatchlistAsync(
+    public async Task<SearchContainer<SearchTv>?> AccountGetTvWatchlistAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
             SortOrder sortOrder = SortOrder.Undefined,
-            string language = null,
+            string? language = null,
             CancellationToken cancellationToken = default)
     {
         return await GetAccountListInternal<SearchTv>(page, sortBy, sortOrder, language, AccountListsMethods.TvWatchlist, cancellationToken).ConfigureAwait(false);

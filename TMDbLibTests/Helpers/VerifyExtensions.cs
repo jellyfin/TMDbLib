@@ -21,9 +21,9 @@ internal static partial class VerifyExtensions
     /// <returns>The JSON property name if available, otherwise the property name.</returns>
     private static string GetPropertyName<T>(Expression<Func<T, object>> expression)
     {
-        PropertyInfo prop = PropertyHelpers.GetPropertyInfo(expression);
+        var prop = PropertyHelpers.GetPropertyInfo(expression);
+        var jsonPropAttribute = prop.GetCustomAttribute<JsonPropertyAttribute>();
 
-        JsonPropertyAttribute? jsonPropAttribute = prop.GetCustomAttribute<JsonPropertyAttribute>();
         return jsonPropAttribute?.PropertyName ?? prop.Name;
     }
 
@@ -35,11 +35,12 @@ internal static partial class VerifyExtensions
     /// <returns>The modified Verify settings.</returns>
     public static VerifySettings IgnoreProperty(this VerifySettings settings, params string[] properties)
     {
-        foreach (string propName in properties)
+        foreach (var propName in properties)
         {
-            string searchString = $" {propName}: ";
+            var searchString = $" {propName}: ";
             settings.ScrubLines(x => x.Contains(searchString, StringComparison.OrdinalIgnoreCase));
         }
+
         return settings;
     }
 
@@ -52,7 +53,7 @@ internal static partial class VerifyExtensions
     /// <returns>The modified Verify settings.</returns>
     public static VerifySettings IgnoreProperty<T>(this VerifySettings settings, params Expression<Func<T, object>>[] properties)
     {
-        string[] propNames = properties.Select(GetPropertyName).ToArray();
+        var propNames = properties.Select(GetPropertyName).ToArray();
 
         return settings.IgnoreProperty(propNames);
     }
@@ -67,28 +68,32 @@ internal static partial class VerifyExtensions
     /// <returns>The modified Verify settings.</returns>
     public static VerifySettings SimplifyProperty(this VerifySettings settings, params string[] properties)
     {
-        foreach (string propName in properties)
+        foreach (var propName in properties)
         {
             settings.ScrubLinesWithReplace(original =>
             {
-                Match match = _propRegex.Match(original);
+                var match = _propRegex.Match(original);
                 if (!match.Success)
                 {
                     return original;
                 }
+
                 if (!string.Equals(match.Groups["name"].Value, propName, StringComparison.OrdinalIgnoreCase))
                 {
                     return original;
                 }
-                string newValue = match.Groups["value"].Value;
+
+                var newValue = match.Groups["value"].Value;
                 if (newValue.Length > 0)
                 {
                     newValue = "<non-empty>";
                 }
+
                 return match.Groups["pre"].Value + match.Groups["name"].Value + ": " + newValue +
                        match.Groups["post"].Value;
             });
         }
+
         return settings;
     }
 
@@ -101,7 +106,7 @@ internal static partial class VerifyExtensions
     /// <returns>The modified Verify settings.</returns>
     public static VerifySettings SimplifyProperty<T>(this VerifySettings settings, params Expression<Func<T, object>>[] properties)
     {
-        string[] propNames = properties.Select(GetPropertyName).ToArray();
+        var propNames = properties.Select(GetPropertyName).ToArray();
 
         return settings.SimplifyProperty(propNames);
     }

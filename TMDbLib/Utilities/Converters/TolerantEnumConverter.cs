@@ -18,8 +18,8 @@ public class TolerantEnumConverter : JsonConverter
     /// <returns>True if this converter can convert the type; otherwise, false.</returns>
     public override bool CanConvert(Type objectType)
     {
-        Type type = IsNullableType(objectType) ? Nullable.GetUnderlyingType(objectType) : objectType;
-        return type.GetTypeInfo().IsEnum;
+        var type = IsNullableType(objectType) ? Nullable.GetUnderlyingType(objectType) : objectType;
+        return type is not null && type.GetTypeInfo().IsEnum;
     }
 
     /// <summary>
@@ -30,22 +30,27 @@ public class TolerantEnumConverter : JsonConverter
     /// <param name="existingValue">The existing value of object being read.</param>
     /// <param name="serializer">The calling serializer.</param>
     /// <returns>The parsed enum value, or a default value if parsing fails.</returns>
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        bool isNullable = IsNullableType(objectType);
-        Type enumType = isNullable ? Nullable.GetUnderlyingType(objectType) : objectType;
+        var isNullable = IsNullableType(objectType);
+        var enumType = isNullable ? Nullable.GetUnderlyingType(objectType) : objectType;
 
-        string[] names = Enum.GetNames(enumType);
+        if (enumType is null)
+        {
+            return null;
+        }
+
+        var names = Enum.GetNames(enumType);
 
         if (reader.TokenType == JsonToken.String)
         {
-            string enumText = reader.Value.ToString();
+            var enumText = reader.Value?.ToString();
 
             if (!string.IsNullOrEmpty(enumText))
             {
-                string match = names.FirstOrDefault(n => string.Equals(n, enumText, StringComparison.OrdinalIgnoreCase));
+                var match = names.FirstOrDefault(n => string.Equals(n, enumText, StringComparison.OrdinalIgnoreCase));
 
-                if (match != null)
+                if (match is not null)
                 {
                     return Enum.Parse(enumType, match);
                 }
@@ -53,8 +58,8 @@ public class TolerantEnumConverter : JsonConverter
         }
         else if (reader.TokenType == JsonToken.Integer)
         {
-            int enumVal = Convert.ToInt32(reader.Value, CultureInfo.InvariantCulture);
-            int[] values = (int[])Enum.GetValues(enumType);
+            var enumVal = Convert.ToInt32(reader.Value, CultureInfo.InvariantCulture);
+            var values = (int[])Enum.GetValues(enumType);
             if (values.Contains(enumVal))
             {
                 return Enum.Parse(enumType, enumVal.ToString(CultureInfo.InvariantCulture));
@@ -63,7 +68,7 @@ public class TolerantEnumConverter : JsonConverter
 
         if (!isNullable)
         {
-            string defaultName = names.FirstOrDefault(n => string.Equals(n, "Unknown", StringComparison.OrdinalIgnoreCase)) ?? names.First();
+            var defaultName = names.FirstOrDefault(n => string.Equals(n, "Unknown", StringComparison.OrdinalIgnoreCase)) ?? names.First();
 
             return Enum.Parse(enumType, defaultName);
         }
@@ -77,8 +82,14 @@ public class TolerantEnumConverter : JsonConverter
     /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
     /// <param name="value">The value to write.</param>
     /// <param name="serializer">The calling serializer.</param>
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
+        if (value is null)
+        {
+            writer.WriteNull();
+            return;
+        }
+
         writer.WriteValue(value.ToString());
     }
 

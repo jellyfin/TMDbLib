@@ -12,7 +12,7 @@ public class Releases
     /// Gets or sets the list of country-specific release information.
     /// </summary>
     [JsonProperty("countries")]
-    public List<Country> Countries { get; set; }
+    public List<Country>? Countries { get; set; }
 
     /// <summary>
     /// Gets or sets the movie ID.

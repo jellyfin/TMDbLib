@@ -19,14 +19,15 @@ public class CustomDatetimeFormatConverterTest : TestBase
     public void CustomDatetimeFormatConverter_Data()
     {
         // Use a fixed date to ensure deterministic test output
-        Token original = new Token
+        var original = new Token
         {
             ExpiresAt = new DateTime(2020, 1, 15, 12, 30, 45, DateTimeKind.Utc)
         };
 
-        string json = Serializer.SerializeToString(original);
-        Token result = Serializer.DeserializeFromString<Token>(json);
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<Token>(json);
 
+        Assert.NotNull(result);
         Assert.Equal(original.ExpiresAt, result.ExpiresAt);
 
         Verify(new
@@ -42,10 +43,14 @@ public class CustomDatetimeFormatConverterTest : TestBase
     [Fact]
     public async Task TestCustomDatetimeFormatConverter()
     {
-        Token token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
+        var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
 
-        DateTime low = DateTime.UtcNow.AddHours(-2);
-        DateTime high = DateTime.UtcNow.AddHours(2);
+        Assert.NotNull(token);
+        // Verify the datetime was parsed correctly - should be a reasonable date
+        // Accept any date after the first time the responses were recorded up toa few days in the future
+        // This handles both playback mode (recorded date) and live mode (~1 hour from now)
+        var low = new DateTime(2025, 12, 24, 0, 0, 0, DateTimeKind.Utc);
+        var high = DateTime.UtcNow.AddDays(2);
 
         Assert.InRange(token.ExpiresAt, low, high);
     }

@@ -19,16 +19,10 @@ public class TMDbAPIProxy : IWebProxy
     /// </summary>
     /// <param name="proxyUri">The URI of the proxy server.</param>
     /// <param name="credentials">The credentials to use for authenticating with the proxy server. Optional.</param>
-    public TMDbAPIProxy(Uri proxyUri, ICredentials credentials = null)
+    public TMDbAPIProxy(Uri proxyUri, ICredentials? credentials = null)
     {
-#if NETSTANDARD2_0
-        if (proxyUri is null)
-        {
-            throw new ArgumentNullException(nameof(proxyUri));
-        }
-#else
         ArgumentNullException.ThrowIfNull(proxyUri);
-#endif
+
         _proxyUri = proxyUri;
         Credentials = credentials;
     }
@@ -36,7 +30,7 @@ public class TMDbAPIProxy : IWebProxy
     /// <summary>
     /// Gets or sets the credentials to use for authenticating in the proxy server.
     /// </summary>
-    public ICredentials Credentials { get; set; }
+    public ICredentials? Credentials { get; set; }
 
     /// <summary>
     /// Gets the proxy server <see cref="Uri"/> to be used when accessing <paramref name="destination"/>.

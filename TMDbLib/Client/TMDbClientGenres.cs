@@ -14,7 +14,7 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A list of movie genres with IDs and names.</returns>
-    public async Task<List<Genre>> GetMovieGenresAsync(CancellationToken cancellationToken = default)
+    public async Task<List<Genre>?> GetMovieGenresAsync(CancellationToken cancellationToken = default)
     {
         return await GetMovieGenresAsync(DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
@@ -25,9 +25,9 @@ public partial class TMDbClient
     /// <param name="language">The ISO 639-1 language code for genre names. Defaults to the client's DefaultLanguage.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A list of movie genres with IDs and names.</returns>
-    public async Task<List<Genre>> GetMovieGenresAsync(string language, CancellationToken cancellationToken = default)
+    public async Task<List<Genre>?> GetMovieGenresAsync(string? language, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("genre/movie/list");
+        var req = _client.Create("genre/movie/list");
 
         language ??= DefaultLanguage;
         if (!string.IsNullOrWhiteSpace(language))
@@ -35,9 +35,10 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        using RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
+        using var resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
+        var container = await resp.GetDataObject().ConfigureAwait(false);
 
-        return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
+        return container?.Genres;
     }
 
     /// <summary>
@@ -45,7 +46,7 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A list of TV genres with IDs and names.</returns>
-    public async Task<List<Genre>> GetTvGenresAsync(CancellationToken cancellationToken = default)
+    public async Task<List<Genre>?> GetTvGenresAsync(CancellationToken cancellationToken = default)
     {
         return await GetTvGenresAsync(DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
@@ -56,9 +57,9 @@ public partial class TMDbClient
     /// <param name="language">The ISO 639-1 language code for genre names. Defaults to the client's DefaultLanguage.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A list of TV genres with IDs and names.</returns>
-    public async Task<List<Genre>> GetTvGenresAsync(string language, CancellationToken cancellationToken = default)
+    public async Task<List<Genre>?> GetTvGenresAsync(string? language, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("genre/tv/list");
+        var req = _client.Create("genre/tv/list");
 
         language ??= DefaultLanguage;
         if (!string.IsNullOrWhiteSpace(language))
@@ -66,8 +67,9 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        using RestResponse<GenreContainer> resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
+        using var resp = await req.Get<GenreContainer>(cancellationToken).ConfigureAwait(false);
+        var container = await resp.GetDataObject().ConfigureAwait(false);
 
-        return (await resp.GetDataObject().ConfigureAwait(false)).Genres;
+        return container?.Genres;
     }
 }

@@ -87,12 +87,12 @@ public abstract class TestBase
     protected Task Verify<T>(T obj, Action<VerifySettings>? configure = null)
     {
         var settings = VerifySettings;
-
         if (configure is not null)
         {
             settings = new VerifySettings(VerifySettings);
             configure(settings);
         }
+
         return Verifier.Verify(obj, settings);
     }
 
@@ -192,7 +192,7 @@ public abstract class TestBase
 
             public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
             {
-                if (value == null)
+                if (value is null)
                 {
                     writer.WriteNull();
                 }
@@ -217,7 +217,7 @@ public abstract class TestBase
         {
             public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
             {
-                if (value == null)
+                if (value is null)
                 {
                     writer.WriteNull();
                 }
@@ -260,11 +260,11 @@ public abstract class TestBase
             var jsonPropertyAttr = member.GetCustomAttributes(true)
                 .FirstOrDefault(a => a.GetType().FullName == "Newtonsoft.Json.JsonPropertyAttribute");
 
-            if (jsonPropertyAttr != null)
+            if (jsonPropertyAttr is not null)
             {
                 // Get the PropertyName from the attribute using reflection
                 var propertyNameProp = jsonPropertyAttr.GetType().GetProperty("PropertyName");
-                if (propertyNameProp != null)
+                if (propertyNameProp is not null)
                 {
                     var name = propertyNameProp.GetValue(jsonPropertyAttr) as string;
                     if (!string.IsNullOrEmpty(name))
@@ -275,21 +275,21 @@ public abstract class TestBase
             }
 
             // Skip ignored properties (dynamic values that change over time)
-            if (IgnoredProperties.Contains(member.Name) || (property.PropertyName != null && IgnoredProperties.Contains(property.PropertyName)))
+            if (IgnoredProperties.Contains(member.Name) || (property.PropertyName is not null && IgnoredProperties.Contains(property.PropertyName)))
             {
                 property.Ignored = true;
                 return property;
             }
 
             // Apply <non-empty> transformation for image paths and dimensions
-            if (NonEmptyProperties.Contains(member.Name) || (property.PropertyName != null && NonEmptyProperties.Contains(property.PropertyName)))
+            if (NonEmptyProperties.Contains(member.Name) || (property.PropertyName is not null && NonEmptyProperties.Contains(property.PropertyName)))
             {
                 property.Converter = new NonEmptyConverter();
                 return property;
             }
 
             // Apply {Scrubbed} transformation for ID properties
-            if (IsIdProperty(member.Name) || IsIdProperty(property.PropertyName!))
+            if (IsIdProperty(member.Name) || (property.PropertyName is not null && IsIdProperty(property.PropertyName)))
             {
                 property.Converter = new PlaceholderConverter("{Scrubbed}");
             }
@@ -339,7 +339,7 @@ public abstract class TestBase
             public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
             {
                 var items = value as IEnumerable;
-                if (items == null)
+                if (items is null)
                 {
                     writer.WriteNull();
                     return;
@@ -358,13 +358,15 @@ public abstract class TestBase
                         // Determine which comparer to use
                         IComparer? comparer = null;
                         if (innerType.IsValueType)
+                        {
                             comparer = Comparer.Default;
+                        }
                         else
                         {
                             foreach (var fieldName in _sortFieldsInOrder)
                             {
                                 var prop = innerType.GetProperty(fieldName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
-                                if (prop != null)
+                                if (prop is not null)
                                 {
                                     comparer = new CompareObjectOnProperty(prop);
                                     break;
@@ -372,7 +374,7 @@ public abstract class TestBase
                             }
                         }
 
-                        if (comparer != null && !IsSorted(itemList, comparer))
+                        if (comparer is not null && !IsSorted(itemList, comparer))
                         {
                             itemList.Sort((x, y) => comparer.Compare(x, y));
                         }
@@ -385,6 +387,7 @@ public abstract class TestBase
                 {
                     serializer.Serialize(writer, item);
                 }
+
                 writer.WriteEndArray();
             }
 
@@ -396,8 +399,11 @@ public abstract class TestBase
                     var b = list[i];
 
                     if (comparer.Compare(a, b) > 0)
+                    {
                         return false;
+                    }
                 }
+
                 return true;
             }
         }
@@ -429,12 +435,20 @@ public abstract class TestBase
                 var valX = _property.GetValue(x);
                 var valY = _property.GetValue(y);
 
-                if (valX == null && valY == null)
+                if (valX is null && valY is null)
+                {
                     return 0;
-                if (valX == null)
+                }
+
+                if (valX is null)
+                {
                     return -1;
-                if (valY == null)
+                }
+
+                if (valY is null)
+                {
                     return 1;
+                }
 
                 return Comparer.Default.Compare(valX, valY);
             }

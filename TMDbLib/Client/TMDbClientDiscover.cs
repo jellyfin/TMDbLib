@@ -20,9 +20,9 @@ public partial class TMDbClient
         return new DiscoverMovie(this);
     }
 
-    internal async Task<SearchContainer<T>> DiscoverPerformAsync<T>(string endpoint, string language, int page, SimpleNamedValueCollection parameters, CancellationToken cancellationToken = default)
+    internal async Task<SearchContainer<T>?> DiscoverPerformAsync<T>(string endpoint, string? language, int page, SimpleNamedValueCollection parameters, CancellationToken cancellationToken = default)
     {
-        RestRequest request = _client.Create(endpoint);
+        var request = _client.Create(endpoint);
 
         if (page != 1 && page > 1)
         {
@@ -34,12 +34,12 @@ public partial class TMDbClient
             request.AddParameter("language", language);
         }
 
-        foreach (KeyValuePair<string, string> pair in parameters)
+        foreach (var pair in parameters)
         {
             request.AddParameter(pair.Key, pair.Value);
         }
 
-        SearchContainer<T> response = await request.GetOfT<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
+        var response = await request.GetOfT<SearchContainer<T>>(cancellationToken).ConfigureAwait(false);
         return response;
     }
 

@@ -11,13 +11,13 @@ public class ExternalIds
     /// Gets or sets the Freebase ID.
     /// </summary>
     [JsonProperty("freebase_id")]
-    public string FreebaseId { get; set; }
+    public string? FreebaseId { get; set; }
 
     /// <summary>
     /// Gets or sets the Freebase MID.
     /// </summary>
     [JsonProperty("freebase_mid")]
-    public string FreebaseMid { get; set; }
+    public string? FreebaseMid { get; set; }
 
     /// <summary>
     /// Gets or sets the TMDb ID.
@@ -29,11 +29,11 @@ public class ExternalIds
     /// Gets or sets the TVRage ID.
     /// </summary>
     [JsonProperty("tvrage_id")]
-    public string TvrageId { get; set; }
+    public string? TvrageId { get; set; }
 
     /// <summary>
     /// Gets or sets the Wikidata ID.
     /// </summary>
     [JsonProperty("wikidata_id")]
-    public string WikidataId { get; set; }
+    public string? WikidataId { get; set; }
 }

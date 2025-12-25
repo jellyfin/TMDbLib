@@ -17,11 +17,11 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientTvShowTests : TestBase
 {
-    private static readonly Dictionary<TvShowMethods, Func<TvShow, object>> Methods;
+    private static readonly Dictionary<TvShowMethods, Func<TvShow, object?>> Methods;
 
     static ClientTvShowTests()
     {
-        Methods = new Dictionary<TvShowMethods, Func<TvShow, object>>
+        Methods = new Dictionary<TvShowMethods, Func<TvShow, object?>>
         {
             [TvShowMethods.Credits] = tvShow => tvShow.Credits,
             [TvShowMethods.Images] = tvShow => tvShow.Images,
@@ -45,11 +45,12 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowExtrasNoneAsync()
     {
         var tvShow = await TMDbClient.GetTvShowAsync(IdHelper.BreakingBad);
+        Assert.NotNull(tvShow);
 
         await Verify(tvShow);
 
         // Test all extras, ensure none of them are populated
-        foreach (Func<TvShow, object> selector in Methods.Values)
+        foreach (var selector in Methods.Values)
         {
             Assert.Null(selector(tvShow));
         }
@@ -67,7 +68,12 @@ public class ClientTvShowTests : TestBase
         // Account states will only show up if we've done something
         await TMDbClient.TvShowSetRatingAsync(IdHelper.KeepingUpAppearances, 5);
 
-        await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetTvShowAsync(IdHelper.KeepingUpAppearances, combined), show => Verify(show));
+        await TestMethodsHelper.TestGetAll(Methods, async combined =>
+        {
+            var result = await TMDbClient.GetTvShowAsync(IdHelper.KeepingUpAppearances, combined);
+            Assert.NotNull(result);
+            return result;
+        }, show => Verify(show));
     }
 
     /// <summary>
@@ -132,7 +138,9 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowSeparateExtrasKeywordsAsync()
     {
         var keywords = await TMDbClient.GetTvShowKeywordsAsync(IdHelper.BreakingBad);
+        Assert.NotNull(keywords);
 
+        Assert.NotNull(keywords.Results);
         var single = keywords.Results.Single(s => s.Id == 15484);
 
         await Verify(single);
@@ -145,6 +153,8 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowSeparateExtrasTranslationsAsync()
     {
         var translations = await TMDbClient.GetTvShowTranslationsAsync(IdHelper.BreakingBad);
+        Assert.NotNull(translations);
+        Assert.NotNull(translations.Translations);
 
         var single = translations.Translations.Single(s => s.Iso_3166_1 == "DK");
 
@@ -158,7 +168,9 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowSeparateExtrasVideosAsync()
     {
         var videos = await TMDbClient.GetTvShowVideosAsync(IdHelper.BreakingBad);
+        Assert.NotNull(videos);
 
+        Assert.NotNull(videos.Results);
         var single = videos.Results.Single(s => s.Id == "5759db2fc3a3683e7c003df7");
 
         await Verify(single);
@@ -175,6 +187,7 @@ public class ClientTvShowTests : TestBase
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
         var show = await TMDbClient.GetTvShowAsync(IdHelper.BigBangTheory, TvShowMethods.AccountStates);
+        Assert.NotNull(show);
         if (show.AccountStates is null || !show.AccountStates.Rating.HasValue)
         {
             await TMDbClient.TvShowSetRatingAsync(IdHelper.BigBangTheory, 5);
@@ -183,6 +196,7 @@ public class ClientTvShowTests : TestBase
             await Task.Delay(2000);
 
             show = await TMDbClient.GetTvShowAsync(IdHelper.BigBangTheory, TvShowMethods.AccountStates);
+            Assert.NotNull(show);
         }
         Assert.NotNull(show.AccountStates);
         Assert.True(show.AccountStates.Rating.HasValue);
@@ -196,9 +210,13 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowSeparateExtrasImagesAsync()
     {
         var images = await TMDbClient.GetTvShowImagesAsync(IdHelper.BreakingBad);
+        Assert.NotNull(images);
 
         TestImagesHelpers.TestImagePaths(images);
 
+        Assert.NotNull(images.Backdrops);
+        Assert.NotNull(images.Posters);
+        Assert.NotNull(images.Logos);
         var backdrop = images.Backdrops.Single(s => s.FilePath == "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg");
         var poster = images.Posters.Single(s => s.FilePath == "/ggFHVNu6YYI5L9pCfOacjizRGt.jpg");
         var logo = images.Logos.Single(s => s.FilePath == "/chw44B2VnLha8iiTdyZcIW0ZELC.png");
@@ -218,9 +236,13 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowGetImagesWithImageLanguageAsync()
     {
         var images = await TMDbClient.GetTvShowImagesAsync(IdHelper.BreakingBad, "en-US", "en");
+        Assert.NotNull(images);
 
         TestImagesHelpers.TestImagePaths(images);
 
+        Assert.NotNull(images.Backdrops);
+        Assert.NotNull(images.Posters);
+        Assert.NotNull(images.Logos);
         var backdrop = images.Backdrops.Single(s => s.FilePath == "/otCnAN1edreRudT5E2OHk8beiDu.jpg");
         var poster = images.Posters.Single(s => s.FilePath == "/ggFHVNu6YYI5L9pCfOacjizRGt.jpg");
         var logo = images.Logos.Single(s => s.FilePath == "/bM2bNffZlZ2UxZqwHaxr5VS3UUI.svg");
@@ -240,6 +262,7 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowGetTvShowWithEpisodeGroups()
     {
         var resp = await TMDbClient.GetTvShowAsync(IdHelper.Seinfeld, TvShowMethods.EpisodeGroups);
+        Assert.NotNull(resp);
 
         await Verify(resp.EpisodeGroups);
     }
@@ -251,9 +274,12 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowGetTvShowWithImageLanguageAsync()
     {
         var resp = await TMDbClient.GetTvShowAsync(IdHelper.BreakingBad, includeImageLanguage: "pt", extraMethods: TvShowMethods.Images);
+        Assert.NotNull(resp);
+        Assert.NotNull(resp.Images);
 
         TestImagesHelpers.TestImagePaths(resp.Images);
 
+        Assert.NotNull(resp.Images.Posters);
         ImageData? backdrop = null;
         var poster = resp.Images.Posters.Single(s => s.FilePath == "/30erzlzIOtOK3k3T3BAl1GiVMP1.jpg");
         ImageData? logo = null;
@@ -275,7 +301,9 @@ public class ClientTvShowTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.GetTvShowPopularAsync(i));
 
         var result = await TMDbClient.GetTvShowPopularAsync();
+        Assert.NotNull(result);
 
+        Assert.NotNull(result.Results);
         Assert.NotEmpty(result.Results);
         Assert.NotNull(result.Results[0].Name);
         Assert.NotNull(result.Results[0].OriginalName);
@@ -292,6 +320,7 @@ public class ClientTvShowTests : TestBase
     {
         // TODO: Is this test obsolete?
         var tvShow = await TMDbClient.GetTvShowAsync(1668);
+        Assert.NotNull(tvShow);
 
         await Verify(tvShow);
     }
@@ -303,6 +332,7 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowVideosAsync()
     {
         var tvShow = await TMDbClient.GetTvShowAsync(1668, TvShowMethods.Videos);
+        Assert.NotNull(tvShow);
 
         await Verify(tvShow);
     }
@@ -314,8 +344,8 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowGetMovieWatchProviders()
     {
         var resp = await TMDbClient.GetTvShowWatchProvidersAsync(IdHelper.GameOfThrones);
-
         Assert.NotNull(resp);
+        Assert.NotNull(resp.Results);
 
         var watchProvidersByRegion = resp.Results;
         Assert.NotNull(watchProvidersByRegion);
@@ -330,6 +360,7 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowTranslationsAsync()
     {
         var translations = await TMDbClient.GetTvShowTranslationsAsync(IdHelper.BreakingBad);
+        Assert.NotNull(translations);
 
         await Verify(translations);
     }
@@ -341,7 +372,9 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowSimilarsAsync()
     {
         var tvShows = await TMDbClient.GetTvShowSimilarAsync(IdHelper.BreakingBad);
+        Assert.NotNull(tvShows);
 
+        Assert.NotNull(tvShows.Results);
         Assert.NotEmpty(tvShows.Results);
 
         // Just verify we get valid TV show data
@@ -357,7 +390,9 @@ public class ClientTvShowTests : TestBase
     public async Task TestTvShowRecommendationsAsync()
     {
         var tvShows = await TMDbClient.GetTvShowRecommendationsAsync(IdHelper.BreakingBad);
+        Assert.NotNull(tvShows);
 
+        Assert.NotNull(tvShows.Results);
         Assert.NotEmpty(tvShows.Results);
 
         // Just verify we get valid TV show data
@@ -375,6 +410,8 @@ public class ClientTvShowTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.GetTvShowTopRatedAsync(i));
 
         var result = await TMDbClient.GetTvShowTopRatedAsync();
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
         Assert.NotNull(result.Results[0].Name);
         Assert.NotNull(result.Results[0].OriginalName);
         Assert.NotNull(result.Results[0].FirstAirDate);
@@ -401,7 +438,9 @@ public class ClientTvShowTests : TestBase
         await TestHelpers.SearchPagesAsync<SearchContainerWithId<ReviewBase>, ReviewBase>(i => TMDbClient.GetTvShowReviewsAsync(IdHelper.BreakingBad, page: i));
 
         var reviews = await TMDbClient.GetTvShowReviewsAsync(IdHelper.BreakingBad);
+        Assert.NotNull(reviews);
 
+        Assert.NotNull(reviews.Results);
         var single = reviews.Results.Single(s => s.Id == "5accdbe6c3a3687e2702d058");
 
         await Verify(single);
@@ -440,6 +479,7 @@ public class ClientTvShowTests : TestBase
         {
             var accountState = await TMDbClient.GetTvShowAccountStateAsync(IdHelper.BreakingBad);
 
+            Assert.NotNull(accountState);
             Assert.Equal(IdHelper.BreakingBad, accountState.Id);
             Assert.Equal(shouldBe, accountState.Favorite);
         });
@@ -466,6 +506,7 @@ public class ClientTvShowTests : TestBase
         {
             var accountState = await TMDbClient.GetTvShowAccountStateAsync(IdHelper.BreakingBad);
 
+            Assert.NotNull(accountState);
             Assert.Equal(IdHelper.BreakingBad, accountState.Id);
             Assert.Equal(shouldBe, accountState.Watchlist);
         });
@@ -488,6 +529,7 @@ public class ClientTvShowTests : TestBase
 
         // Verify the rating was set
         var accountState = await TMDbClient.GetTvShowAccountStateAsync(IdHelper.BreakingBad);
+        Assert.NotNull(accountState);
         Assert.Equal(IdHelper.BreakingBad, accountState.Id);
         Assert.NotNull(accountState.Rating);
     }

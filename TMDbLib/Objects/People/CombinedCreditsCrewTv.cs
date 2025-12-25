@@ -22,13 +22,13 @@ public class CombinedCreditsCrewTv : CombinedCreditsCrewBase
     /// Gets or sets the TV show name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the original TV show name.
     /// </summary>
     [JsonProperty("original_name")]
-    public string OriginalName { get; set; }
+    public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the first air date.
@@ -40,7 +40,7 @@ public class CombinedCreditsCrewTv : CombinedCreditsCrewBase
     /// Gets or sets the origin country codes.
     /// </summary>
     [JsonProperty("origin_country")]
-    public List<string> OriginCountry { get; set; }
+    public List<string>? OriginCountry { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes.

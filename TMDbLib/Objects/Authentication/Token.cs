@@ -16,7 +16,7 @@ public class Token
     /// </summary>
     // This field is populated by custom code
     [JsonIgnore]
-    public string AuthenticationCallback { get; set; }
+    public string? AuthenticationCallback { get; set; }
 
     /// <summary>
     /// Gets or sets the date / time before which the token must be used, else it will expire. Time is expressed as local time.
@@ -29,7 +29,7 @@ public class Token
     /// Gets or sets the request token.
     /// </summary>
     [JsonProperty("request_token")]
-    public string RequestToken { get; set; }
+    public string? RequestToken { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the token request was successful.

@@ -16,13 +16,13 @@ namespace TestApplication;
 /// <summary>
 /// Sample application demonstrating TMDbLib usage.
 /// </summary>
-public class Program
+internal class Program
 {
     private static async Task Main(string[] args)
     {
         // Instantiate a new client, all that's needed is an API key, but it's possible to
         // also specify if SSL should be used, and if another server address should be used.
-        using TMDbClient client = new TMDbClient("c6b31d1cdad6a56a23f0c913e2482a31");
+        using var client = new TMDbClient("c6b31d1cdad6a56a23f0c913e2482a31");
 
         // We need the config from TMDb in case we want to get stuff like images
         // The config needs to be fetched for each new client we create, but we can cache it to a file (as in this example).
@@ -41,24 +41,24 @@ public class Program
     }
     private static async Task FetchConfig(TMDbClient client)
     {
-        FileInfo configJson = new FileInfo("config.json");
+        var configJson = new FileInfo("config.json");
 
         Console.WriteLine("Config file: " + configJson.FullName + ", Exists: " + configJson.Exists);
 
         if (configJson.Exists && configJson.LastWriteTimeUtc >= DateTime.UtcNow.AddHours(-1))
         {
             Console.WriteLine("Using stored config");
-            string json = await File.ReadAllTextAsync(configJson.FullName, Encoding.UTF8, CancellationToken.None).ConfigureAwait(false);
+            var json = await File.ReadAllTextAsync(configJson.FullName, Encoding.UTF8, CancellationToken.None).ConfigureAwait(false);
 
-            client.SetConfig(TMDbJsonSerializer.Instance.DeserializeFromString<TMDbConfig>(json));
+            client.SetConfig(TMDbJsonSerializer.Instance.DeserializeFromString<TMDbConfig>(json)!);
         }
         else
         {
             Console.WriteLine("Getting new config");
-            TMDbConfig config = await client.GetConfigAsync();
+            var config = await client.GetConfigAsync();
 
             Console.WriteLine("Storing config");
-            string json = TMDbJsonSerializer.Instance.SerializeToString(config);
+            var json = TMDbJsonSerializer.Instance.SerializeToString(config);
             await File.WriteAllTextAsync(configJson.FullName, json, Encoding.UTF8, CancellationToken.None).ConfigureAwait(false);
         }
         Spacer();
@@ -79,21 +79,27 @@ public class Program
         // Note: Each method normally corresponds to a property on the resulting object. If you haven't requested the information, the property will most likely be null.
 
         // Also note, that while we could have used 'client.GetMovieImagesAsync()' - it was better to do it like this because we also wanted the Title of the movie.
-        Movie movie = await client.GetMovieAsync(MovieId, MovieMethods.Images);
+        var movie = await client.GetMovieAsync(MovieId, MovieMethods.Images);
+
+        if (movie is null)
+        {
+            Console.WriteLine("Movie not found");
+            return;
+        }
 
         Console.WriteLine("Fetching images for '" + movie.Title + "'");
 
         // Images come in three forms, each dispayed below
         Console.WriteLine("Displaying Backdrops");
-        await ProcessImages(client, movie.Images.Backdrops.Take(3), client.Config.Images.BackdropSizes);
+        await ProcessImages(client, movie.Images!.Backdrops!.Take(3), client.Config.Images!.BackdropSizes!);
         Console.WriteLine();
 
         Console.WriteLine("Displaying Posters");
-        await ProcessImages(client, movie.Images.Posters.Take(3), client.Config.Images.PosterSizes);
+        await ProcessImages(client, movie.Images!.Posters!.Take(3), client.Config.Images!.PosterSizes!);
         Console.WriteLine();
 
         Console.WriteLine("Displaying Logos");
-        await ProcessImages(client, movie.Images.Logos.Take(3), client.Config.Images.LogoSizes);
+        await ProcessImages(client, movie.Images!.Logos!.Take(3), client.Config.Images!.LogoSizes!);
         Console.WriteLine();
 
         Spacer();
@@ -103,8 +109,8 @@ public class Program
         // Displays basic information about each image, as well as all the possible adresses for it.
         // All images should be available in all the sizes provided by the configuration.
 
-        List<ImageData> imagesLst = images.ToList();
-        List<string> sizesLst = sizes.ToList();
+        var imagesLst = images.ToList();
+        var sizesLst = sizes.ToList();
 
         foreach (ImageData imageData in imagesLst)
         {
@@ -116,7 +122,7 @@ public class Program
             // There's always the "original" size if you're in doubt which to choose.
             foreach (string size in sizesLst)
             {
-                Uri imageUri = client.GetImageUrl(size, imageData.FilePath);
+                var imageUri = client.GetImageUrl(size, imageData.FilePath!);
                 Console.WriteLine("\t -> " + imageUri);
             }
             Console.WriteLine();
@@ -124,25 +130,31 @@ public class Program
         // Download an image for testing, uses the internal HttpClient in the API.
         Console.WriteLine("Downloading image for the first url, as a test");
 
-        Uri testUrl = client.GetImageUrl(sizesLst.First(), imagesLst.First().FilePath);
-        byte[] bts = await client.GetImageBytesAsync(sizesLst.First(), imagesLst.First().FilePath);
+        var testUrl = client.GetImageUrl(sizesLst.First(), imagesLst.First().FilePath!);
+        var bts = await client.GetImageBytesAsync(sizesLst.First(), imagesLst.First().FilePath!);
 
         Console.WriteLine($"Downloaded {testUrl}: {bts.Length} bytes");
     }
     private static async Task FetchMovieExample(TMDbClient client)
     {
-        string query = "Thor";
+        var query = "Thor";
 
         // This example shows the fetching of a movie.
         // Say the user searches for "Thor" in order to find "Thor: The Dark World" or "Thor"
-        SearchContainer<SearchMovie> results = await client.SearchMovieAsync(query);
+        var results = await client.SearchMovieAsync(query);
 
         // The results is a list, currently on page 1 because we didn't specify any page.
+        if (results is null)
+        {
+            Console.WriteLine("Searched for movies: '" + query + "', no results found");
+            return;
+        }
+
         Console.WriteLine("Searched for movies: '" + query + "', found " + results.TotalResults + " results in " +
                           results.TotalPages + " pages");
 
         // Let's iterate the first few hits
-        foreach (SearchMovie result in results.Results.Take(3))
+        foreach (SearchMovie result in results.Results!.Take(3))
         {
             // Print out each hit
             Console.WriteLine(result.Id + ": " + result.Title);

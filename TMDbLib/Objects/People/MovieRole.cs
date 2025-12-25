@@ -18,13 +18,13 @@ public class MovieRole
     /// Gets or sets the backdrop image path.
     /// </summary>
     [JsonProperty("backdrop_path")]
-    public string BackdropPath { get; set; }
+    public string? BackdropPath { get; set; }
 
     /// <summary>
     /// Gets or sets the genre IDs.
     /// </summary>
     [JsonProperty("genre_ids")]
-    public int[] GenreIds { get; set; }
+    public int[]? GenreIds { get; set; }
 
     /// <summary>
     /// Gets or sets the movie ID.
@@ -36,19 +36,19 @@ public class MovieRole
     /// Gets or sets the original language code.
     /// </summary>
     [JsonProperty("original_language")]
-    public string OriginalLanguage { get; set; }
+    public string? OriginalLanguage { get; set; }
 
     /// <summary>
     /// Gets or sets the original title.
     /// </summary>
     [JsonProperty("original_title")]
-    public string OriginalTitle { get; set; }
+    public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the movie overview.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the popularity score.
@@ -60,7 +60,7 @@ public class MovieRole
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the release date.
@@ -72,7 +72,7 @@ public class MovieRole
     /// Gets or sets the movie title.
     /// </summary>
     [JsonProperty("title")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the movie has video content.
@@ -96,13 +96,13 @@ public class MovieRole
     /// Gets or sets the character name played in the movie.
     /// </summary>
     [JsonProperty("character")]
-    public string Character { get; set; }
+    public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the order in the cast.

@@ -12,13 +12,13 @@ public class TvJob
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the department name.
     /// </summary>
     [JsonProperty("department")]
-    public string Department { get; set; }
+    public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes.
@@ -42,23 +42,23 @@ public class TvJob
     /// Gets or sets the job title.
     /// </summary>
     [JsonProperty("job")]
-    public string Job { get; set; }
+    public string? Job { get; set; }
 
     /// <summary>
     /// Gets or sets the TV show name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the original name.
     /// </summary>
     [JsonProperty("original_name")]
-    public string OriginalName { get; set; }
+    public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 }

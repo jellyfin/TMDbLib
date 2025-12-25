@@ -14,33 +14,42 @@ internal class TaggedImageConverter : JsonConverter
         return objectType == typeof(TaggedImage);
     }
 
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        JObject jObject = JObject.Load(reader);
+        var jObject = JObject.Load(reader);
 
-        TaggedImage result = new TaggedImage();
+        var result = new TaggedImage();
 
         using (JsonReader jsonReader = jObject.CreateReader())
         {
-            serializer.Populate(jsonReader, result);
+            serializer.Populate(jsonReader, result!);
         }
 
-        JToken mediaJson = jObject["media"];
-        result.Media = result.MediaType switch
+        var mediaJson = jObject["media"];
+        if (mediaJson is not null)
         {
-            MediaType.Movie => mediaJson.ToObject<SearchMovie>(),
-            MediaType.Tv => mediaJson.ToObject<SearchTv>(),
-            MediaType.Episode => mediaJson.ToObject<SearchTvEpisode>(),
-            MediaType.Season => mediaJson.ToObject<SearchTvSeason>(),
-            _ => throw new ArgumentOutOfRangeException(),
-        };
+            result.Media = result.MediaType switch
+            {
+                MediaType.Movie => mediaJson.ToObject<SearchMovie>(),
+                MediaType.Tv => mediaJson.ToObject<SearchTv>(),
+                MediaType.Episode => mediaJson.ToObject<SearchTvEpisode>(),
+                MediaType.Season => mediaJson.ToObject<SearchTvSeason>(),
+                _ => throw new ArgumentOutOfRangeException(),
+            };
+        }
+
         return result;
     }
 
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        JToken jToken = JToken.FromObject(value);
+        if (value is null)
+        {
+            writer.WriteNull();
+            return;
+        }
 
+        var jToken = JToken.FromObject(value);
         jToken.WriteTo(writer);
     }
 }

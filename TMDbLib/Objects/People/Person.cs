@@ -22,13 +22,13 @@ public class Person
     /// Gets or sets the list of alternative names.
     /// </summary>
     [JsonProperty("also_known_as")]
-    public List<string> AlsoKnownAs { get; set; }
+    public List<string>? AlsoKnownAs { get; set; }
 
     /// <summary>
     /// Gets or sets the biography.
     /// </summary>
     [JsonProperty("biography")]
-    public string Biography { get; set; }
+    public string? Biography { get; set; }
 
     /// <summary>
     /// Gets or sets the birthday.
@@ -41,7 +41,7 @@ public class Person
     /// Gets or sets the change history.
     /// </summary>
     [JsonProperty("changes")]
-    public ChangesContainer Changes { get; set; }
+    public ChangesContainer? Changes { get; set; }
 
     /// <summary>
     /// Gets or sets the date of death.
@@ -54,7 +54,7 @@ public class Person
     /// Gets or sets the external IDs.
     /// </summary>
     [JsonProperty("external_ids")]
-    public ExternalIdsPerson ExternalIds { get; set; }
+    public ExternalIdsPerson? ExternalIds { get; set; }
 
     /// <summary>
     /// Gets or sets the gender.
@@ -66,7 +66,7 @@ public class Person
     /// Gets or sets the homepage URL.
     /// </summary>
     [JsonProperty("homepage")]
-    public string Homepage { get; set; }
+    public string? Homepage { get; set; }
 
     /// <summary>
     /// Gets or sets the TMDb person ID.
@@ -78,31 +78,31 @@ public class Person
     /// Gets or sets the profile images.
     /// </summary>
     [JsonProperty("images")]
-    public ProfileImages Images { get; set; }
+    public ProfileImages? Images { get; set; }
 
     /// <summary>
     /// Gets or sets the IMDb ID.
     /// </summary>
     [JsonProperty("imdb_id")]
-    public string ImdbId { get; set; }
+    public string? ImdbId { get; set; }
 
     /// <summary>
     /// Gets or sets the movie credits.
     /// </summary>
     [JsonProperty("movie_credits")]
-    public MovieCredits MovieCredits { get; set; }
+    public MovieCredits? MovieCredits { get; set; }
 
     /// <summary>
     /// Gets or sets the person name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the place of birth.
     /// </summary>
     [JsonProperty("place_of_birth")]
-    public string PlaceOfBirth { get; set; }
+    public string? PlaceOfBirth { get; set; }
 
     /// <summary>
     /// Gets or sets the popularity score.
@@ -114,35 +114,35 @@ public class Person
     /// Gets or sets the department the person is known for.
     /// </summary>
     [JsonProperty("known_for_department")]
-    public string KnownForDepartment { get; set; }
+    public string? KnownForDepartment { get; set; }
 
     /// <summary>
     /// Gets or sets the profile image path.
     /// </summary>
     [JsonProperty("profile_path")]
-    public string ProfilePath { get; set; }
+    public string? ProfilePath { get; set; }
 
     /// <summary>
     /// Gets or sets the tagged images.
     /// </summary>
     [JsonProperty("tagged_images")]
-    public SearchContainer<TaggedImage> TaggedImages { get; set; }
+    public SearchContainer<TaggedImage>? TaggedImages { get; set; }
 
     /// <summary>
     /// Gets or sets the TV credits.
     /// </summary>
     [JsonProperty("tv_credits")]
-    public TvCredits TvCredits { get; set; }
+    public TvCredits? TvCredits { get; set; }
 
     /// <summary>
     /// Gets or sets the combined movie and TV credits.
     /// </summary>
     [JsonProperty("combined_credits")]
-    public CombinedCredits CombinedCredits { get; set; }
+    public CombinedCredits? CombinedCredits { get; set; }
 
     /// <summary>
     /// Gets or sets the translations.
     /// </summary>
     [JsonProperty("translations")]
-    public TranslationsContainer Translations { get; set; }
+    public TranslationsContainer? Translations { get; set; }
 }

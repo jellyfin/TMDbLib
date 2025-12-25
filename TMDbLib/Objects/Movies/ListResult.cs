@@ -12,7 +12,7 @@ public class ListResult
     /// Gets or sets the list description.
     /// </summary>
     [JsonProperty("description")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// Gets or sets the favorite count.
@@ -24,13 +24,13 @@ public class ListResult
     /// Gets or sets the list ID.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets a language code, e.g. en.
     /// </summary>
     [JsonProperty("iso_639_1")]
-    public string Iso_639_1 { get; set; }
+    public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the item count in the list.
@@ -48,11 +48,11 @@ public class ListResult
     /// Gets or sets the list name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 }

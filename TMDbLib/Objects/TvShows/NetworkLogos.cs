@@ -19,5 +19,5 @@ public class NetworkLogos
     /// Gets or sets the list of logo images.
     /// </summary>
     [JsonProperty("logos")]
-    public List<ImageData> Logos { get; set; }
+    public List<ImageData>? Logos { get; set; }
 }

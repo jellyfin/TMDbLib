@@ -13,10 +13,10 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T> GetCompanyMethodInternal<T>(int companyId, CompanyMethods companyMethod, int page = 0, string language = null, CancellationToken cancellationToken = default)
+    private async Task<T?> GetCompanyMethodInternal<T>(int companyId, CompanyMethods companyMethod, int page = 0, string? language = null, CancellationToken cancellationToken = default)
         where T : new()
     {
-        RestRequest req = _client.Create("company/{companyId}/{method}");
+        var req = _client.Create("company/{companyId}/{method}");
         req.AddUrlSegment("companyId", companyId.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("method", companyMethod.GetDescription());
 
@@ -31,7 +31,7 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -43,12 +43,12 @@ public partial class TMDbClient
     /// <param name="extraMethods">Additional data to include in the response using the append_to_response pattern.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>The company object.</returns>
-    public async Task<Company> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default)
+    public async Task<Company?> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("company/{companyId}");
+        var req = _client.Create("company/{companyId}");
         req.AddUrlSegment("companyId", companyId.ToString(CultureInfo.InvariantCulture));
 
-        string appends = string.Join(
+        var appends = string.Join(
             ",",
             Enum.GetValues(typeof(CompanyMethods))
                                          .OfType<CompanyMethods>()
@@ -63,7 +63,7 @@ public partial class TMDbClient
 
         // req.DateFormat = "yyyy-MM-dd";
 
-        Company resp = await req.GetOfT<Company>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<Company>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -75,7 +75,7 @@ public partial class TMDbClient
     /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A search container with movies produced by the company.</returns>
-    public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainerWithId<SearchMovie>?> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetCompanyMoviesAsync(companyId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
@@ -88,7 +88,7 @@ public partial class TMDbClient
     /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A search container with movies produced by the company.</returns>
-    public async Task<SearchContainerWithId<SearchMovie>> GetCompanyMoviesAsync(int companyId, string language, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainerWithId<SearchMovie>?> GetCompanyMoviesAsync(int companyId, string? language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetCompanyMethodInternal<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language, cancellationToken).ConfigureAwait(false);
     }

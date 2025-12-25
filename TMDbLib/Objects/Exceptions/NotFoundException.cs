@@ -9,7 +9,7 @@
         /// Initializes a new instance of the <see cref="NotFoundException"/> class.
         /// </summary>
         /// <param name="statusMessage">The TMDb status message.</param>
-        public NotFoundException(TMDbStatusMessage statusMessage)
+        public NotFoundException(TMDbStatusMessage? statusMessage)
                         : base("The requested item was not found", statusMessage)
         {
         }

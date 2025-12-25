@@ -11,5 +11,5 @@ public class Gravatar
     /// Gets or sets the Gravatar hash value.
     /// </summary>
     [JsonProperty("hash")]
-    public string Hash { get; set; }
+    public string? Hash { get; set; }
 }

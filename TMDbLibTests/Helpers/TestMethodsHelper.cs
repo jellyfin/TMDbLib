@@ -20,19 +20,19 @@ public static class TestMethodsHelper
     /// <param name="methodSelectors">A dictionary mapping enum values to functions that extract the corresponding data from the result.</param>
     /// <param name="getterMethod">A function that fetches data for a given enum value.</param>
     /// <returns>A task representing the asynchronous test operation.</returns>
-    public static async Task TestGetExclusive<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod) where TEnum : Enum
+    public static async Task TestGetExclusive<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object?>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod) where TEnum : Enum
     {
         // Test each method
-        foreach (TEnum method in methodSelectors.Keys)
+        foreach (var method in methodSelectors.Keys)
         {
             // Fetch data
-            TResult item = await getterMethod(method);
+            var item = await getterMethod(method);
 
             // Ensure we have the piece we're looking for
             Assert.NotNull(methodSelectors[method](item));
 
             // .. And none of the others
-            foreach (TEnum otherMethod in methodSelectors.Keys.Except([method]))
+            foreach (var otherMethod in methodSelectors.Keys.Except([method]))
             {
                 Assert.Null(methodSelectors[otherMethod](item));
             }
@@ -48,22 +48,23 @@ public static class TestMethodsHelper
     /// <param name="getterMethod">A function that fetches data for a given enum value.</param>
     /// <param name="extraAction">An optional additional action to perform on the result.</param>
     /// <returns>A task representing the asynchronous test operation.</returns>
-    public static async Task TestGetAll<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod, Func<TResult, Task>? extraAction = null) where TEnum : Enum
+    public static async Task TestGetAll<TEnum, TResult>(Dictionary<TEnum, Func<TResult, object?>> methodSelectors, Func<TEnum, Task<TResult>> getterMethod, Func<TResult, Task>? extraAction = null) where TEnum : Enum
     {
-        int combinedEnumInt = 0;
-        foreach (TEnum key in methodSelectors.Keys)
+        var combinedEnumInt = 0;
+        foreach (var key in methodSelectors.Keys)
         {
             combinedEnumInt |= Convert.ToInt32(key, CultureInfo.InvariantCulture);
         }
-        TEnum combinedEnum = (TEnum)Enum.ToObject(typeof(TEnum), combinedEnumInt);
 
-        TResult item = await getterMethod(combinedEnum);
+        var combinedEnum = (TEnum)Enum.ToObject(typeof(TEnum), combinedEnumInt);
+        var item = await getterMethod(combinedEnum);
 
         // Ensure we have all the pieces
-        foreach (TEnum method in methodSelectors.Keys)
+        foreach (var method in methodSelectors.Keys)
         {
             Assert.NotNull(methodSelectors[method](item));
         }
+
         // Execute any additional tests
         if (extraAction is not null)
         {

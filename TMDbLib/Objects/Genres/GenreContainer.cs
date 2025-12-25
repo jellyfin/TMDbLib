@@ -13,5 +13,5 @@ public class GenreContainer
     /// Gets or sets the list of genres.
     /// </summary>
     [JsonProperty("genres")]
-    public List<Genre> Genres { get; set; }
+    public List<Genre>? Genres { get; set; }
 }

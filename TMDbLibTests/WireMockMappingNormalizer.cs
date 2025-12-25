@@ -36,10 +36,10 @@ public static class WireMockMappingNormalizer
             {
                 var json = File.ReadAllText(file);
                 var node = JsonNode.Parse(json);
-                if (node == null) continue;
+                if (node is null) continue;
 
                 var signature = ExtractRequestSignature(node);
-                if (signature == null)
+                if (signature is null)
                 {
                     result.Skipped.Add(file);
                     continue;
@@ -97,13 +97,13 @@ public static class WireMockMappingNormalizer
     private static string? ExtractRequestSignature(JsonNode node)
     {
         var request = node["Request"];
-        if (request == null) return null;
+        if (request is null) return null;
 
         var sb = new StringBuilder();
 
         // Method
         var methods = request["Methods"]?.AsArray();
-        if (methods != null && methods.Count > 0)
+        if (methods is not null && methods.Count > 0)
         {
             sb.Append(methods[0]?.GetValue<string>() ?? "GET");
         }
@@ -115,7 +115,7 @@ public static class WireMockMappingNormalizer
 
         // Path
         var pathMatchers = request["Path"]?["Matchers"]?.AsArray();
-        if (pathMatchers != null && pathMatchers.Count > 0)
+        if (pathMatchers is not null && pathMatchers.Count > 0)
         {
             sb.Append(pathMatchers[0]?["Pattern"]?.GetValue<string>() ?? "");
         }
@@ -124,17 +124,17 @@ public static class WireMockMappingNormalizer
         // Query parameters (sorted for consistency)
         var parameters = new SortedDictionary<string, string>(StringComparer.Ordinal);
         var paramsArray = request["Params"]?.AsArray();
-        if (paramsArray != null)
+        if (paramsArray is not null)
         {
             foreach (var param in paramsArray)
             {
                 var name = param?["Name"]?.GetValue<string>();
                 var matchers = param?["Matchers"]?.AsArray();
-                var value = matchers != null && matchers.Count > 0
+                var value = matchers is not null && matchers.Count > 0
                     ? matchers[0]?["Pattern"]?.GetValue<string>() ?? ""
                     : "";
 
-                if (name != null)
+                if (name is not null)
                 {
                     parameters[name] = value;
                 }
@@ -175,7 +175,7 @@ public static class WireMockMappingNormalizer
     private static void RemoveDynamicHeaders(JsonNode node)
     {
         var headers = node["Response"]?["Headers"];
-        if (headers == null) return;
+        if (headers is null) return;
 
         // Headers that change between recordings and shouldn't affect matching
         var dynamicHeaders = new[]
@@ -191,7 +191,7 @@ public static class WireMockMappingNormalizer
 
         foreach (var header in dynamicHeaders)
         {
-            if (headers[header] != null)
+            if (headers[header] is not null)
             {
                 headers.AsObject().Remove(header);
             }
@@ -203,7 +203,7 @@ public static class WireMockMappingNormalizer
     /// </summary>
     public static string GetDefaultMappingsDirectory()
     {
-        for (var dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory); dir != null; dir = dir.Parent)
+        for (var dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory); dir is not null; dir = dir.Parent)
         {
             if (File.Exists(Path.Combine(dir.FullName, "TMDbLibTests.csproj")))
             {

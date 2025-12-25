@@ -18,10 +18,10 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T> GetTvShowMethodInternal<T>(int id, TvShowMethods tvShowMethod, string dateFormat = null, string language = null, string includeMediaLanguage = null, int page = 0, CancellationToken cancellationToken = default)
+    private async Task<T?> GetTvShowMethodInternal<T>(int id, TvShowMethods tvShowMethod, string? dateFormat = null, string? language = null, string? includeMediaLanguage = null, int page = 0, CancellationToken cancellationToken = default)
         where T : new()
     {
-        RestRequest req = _client.Create("tv/{id}/{method}");
+        var req = _client.Create("tv/{id}/{method}");
         req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
@@ -48,14 +48,14 @@ public partial class TMDbClient
                 includeMediaLanguage);
         }
 
-        T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
 
-    private async Task<SearchContainer<SearchTv>> GetTvShowListInternal(int page, string language, string tvShowListType, CancellationToken cancellationToken = default)
+    private async Task<SearchContainer<SearchTv>?> GetTvShowListInternal(int page, string? language, string tvShowListType, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("tv/" + tvShowListType);
+        var req = _client.Create("tv/" + tvShowListType);
 
         language ??= DefaultLanguage;
         if (!string.IsNullOrWhiteSpace(language))
@@ -68,7 +68,7 @@ public partial class TMDbClient
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        SearchContainer<SearchTv> response = await req.GetOfT<SearchContainer<SearchTv>>(cancellationToken).ConfigureAwait(false);
+        var response = await req.GetOfT<SearchContainer<SearchTv>>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -78,11 +78,10 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The latest TV show added to TMDb.</returns>
-    public async Task<TvShow> GetLatestTvShowAsync(CancellationToken cancellationToken = default)
+    public async Task<TvShow?> GetLatestTvShowAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("tv/latest");
-
-        TvShow resp = await req.GetOfT<TvShow>(cancellationToken).ConfigureAwait(false);
+        var req = _client.Create("tv/latest");
+        var resp = await req.GetOfT<TvShow>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -95,18 +94,16 @@ public partial class TMDbClient
     /// <returns>The account state information for the specified TV show, including favorite and watchlist status.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<AccountState> GetTvShowAccountStateAsync(int tvShowId, CancellationToken cancellationToken = default)
+    public async Task<AccountState?> GetTvShowAccountStateAsync(int tvShowId, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
 
-        RestRequest req = _client.Create("tv/{tvShowId}/{method}");
+        var req = _client.Create("tv/{tvShowId}/{method}");
         req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("method", TvShowMethods.AccountStates.GetDescription());
         AddSessionId(req, SessionType.UserSession);
 
-        using RestResponse<AccountState> response = await req.Get<AccountState>(cancellationToken).ConfigureAwait(false);
-
-        return await response.GetDataObject().ConfigureAwait(false);
+        return await req.GetOfT<AccountState>(cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -115,7 +112,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the TV show.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The alternative titles for the TV show.</returns>
-    public async Task<ResultContainer<AlternativeTitle>> GetTvShowAlternativeTitlesAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<AlternativeTitle>?> GetTvShowAlternativeTitlesAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<AlternativeTitle>>(id, TvShowMethods.AlternativeTitles, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -129,14 +126,14 @@ public partial class TMDbClient
     /// <param name="includeImageLanguage">If specified the api will attempt to return localized image results eg. en,it,es.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The requested Tv Show.</returns>
-    public async Task<TvShow> GetTvShowAsync(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
+    public async Task<TvShow?> GetTvShowAsync(int id, TvShowMethods extraMethods = TvShowMethods.Undefined, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
         if (extraMethods.HasFlag(TvShowMethods.AccountStates))
         {
             RequireSessionId(SessionType.UserSession);
         }
 
-        RestRequest req = _client.Create("tv/{id}");
+        var req = _client.Create("tv/{id}");
         req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
 
         if (extraMethods.HasFlag(TvShowMethods.AccountStates))
@@ -155,7 +152,7 @@ public partial class TMDbClient
             req.AddParameter("include_image_language", includeImageLanguage);
         }
 
-        string appends = string.Join(
+        var appends = string.Join(
             ",",
             Enum.GetValues(typeof(TvShowMethods))
                                          .OfType<TvShowMethods>()
@@ -168,14 +165,14 @@ public partial class TMDbClient
             req.AddParameter("append_to_response", appends);
         }
 
-        using RestResponse<TvShow> response = await req.Get<TvShow>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<TvShow>(cancellationToken).ConfigureAwait(false);
 
         if (!response.IsValid)
         {
             return null;
         }
 
-        TvShow item = await response.GetDataObject().ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
         // No data to patch up so return
         if (item is null)
@@ -208,7 +205,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the TV show.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with content rating information organized by country.</returns>
-    public async Task<ResultContainer<ContentRating>> GetTvShowContentRatingsAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<ContentRating>?> GetTvShowContentRatingsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<ContentRating>>(id, TvShowMethods.ContentRatings, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -220,7 +217,7 @@ public partial class TMDbClient
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>Credits information including cast and crew for the TV show.</returns>
-    public async Task<Credits> GetTvShowCreditsAsync(int id, string language = null, CancellationToken cancellationToken = default)
+    public async Task<Credits?> GetTvShowCreditsAsync(int id, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<Credits>(id, TvShowMethods.Credits, "yyyy-MM-dd", language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -232,7 +229,7 @@ public partial class TMDbClient
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A task representing the asynchronous operation, with the aggregate credits as the result.</returns>
-    public async Task<CreditsAggregate> GetAggregateCredits(int id, string language = null, CancellationToken cancellationToken = default)
+    public async Task<CreditsAggregate?> GetAggregateCredits(int id, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<CreditsAggregate>(id, TvShowMethods.CreditsAggregate, language: language, page: 0, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -243,7 +240,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the target tv show.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>External IDs for the TV show from various sources like IMDb, TVDB, Facebook, Twitter, etc.</returns>
-    public async Task<ExternalIdsTvShow> GetTvShowExternalIdsAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<ExternalIdsTvShow?> GetTvShowExternalIdsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ExternalIdsTvShow>(id, TvShowMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -259,7 +256,7 @@ public partial class TMDbClient
     /// <param name="includeImageLanguage">If you want to include a fallback language (especially useful for backdrops) you can use the include_image_language parameter. This should be a comma separated value like so: include_image_language=en,null.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>Images for the TV show including posters, backdrops, and logos.</returns>
-    public async Task<ImagesWithId> GetTvShowImagesAsync(int id, string language = null, string includeImageLanguage = null, CancellationToken cancellationToken = default)
+    public async Task<ImagesWithId?> GetTvShowImagesAsync(int id, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ImagesWithId>(id, TvShowMethods.Images, language: language, includeMediaLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -272,7 +269,7 @@ public partial class TMDbClient
     /// <param name="page">The page number of results to retrieve.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A search container with TV show reviews.</returns>
-    public async Task<SearchContainerWithId<ReviewBase>> GetTvShowReviewsAsync(int id, string language = null, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainerWithId<ReviewBase>?> GetTvShowReviewsAsync(int id, string? language = null, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SearchContainerWithId<ReviewBase>>(id, TvShowMethods.Reviews, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -283,7 +280,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the TV show.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with the keywords for the TV show.</returns>
-    public async Task<ResultContainer<Keyword>> GetTvShowKeywordsAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<Keyword>?> GetTvShowKeywordsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<Keyword>>(id, TvShowMethods.Keywords, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -296,7 +293,7 @@ public partial class TMDbClient
     /// <param name="timezone">Only relevant for list type AiringToday.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A task representing the asynchronous operation, with a paged list of TV shows as the result.</returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, int page = 0, string timezone = null, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowListAsync(TvShowListType list, int page = 0, string? timezone = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowListAsync(list, DefaultLanguage, page, timezone, cancellationToken).ConfigureAwait(false);
     }
@@ -310,9 +307,9 @@ public partial class TMDbClient
     /// <param name="timezone">Only relevant for list type AiringToday.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A task representing the asynchronous operation, with a paged list of TV shows as the result.</returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowListAsync(TvShowListType list, string language, int page = 0, string timezone = null, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowListAsync(TvShowListType list, string? language, int page = 0, string? timezone = null, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("tv/{method}");
+        var req = _client.Create("tv/{method}");
         req.AddUrlSegment("method", list.GetDescription());
 
         if (page > 0)
@@ -331,7 +328,7 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        SearchContainer<SearchTv> resp = await req.GetOfT<SearchContainer<SearchTv>>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<SearchContainer<SearchTv>>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -346,7 +343,7 @@ public partial class TMDbClient
     /// Returns the basic information about a tv show.
     /// For additional data use the main GetTvShowAsync method using the tv show id as parameter.
     /// </returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowPopularAsync(int page = -1, string language = null, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowPopularAsync(int page = -1, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowListInternal(page, language, "popular", cancellationToken).ConfigureAwait(false);
     }
@@ -358,7 +355,7 @@ public partial class TMDbClient
     /// <param name="page">The page number of results to retrieve.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A search container with similar TV shows.</returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowSimilarAsync(int id, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowSimilarAsync(int id, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowSimilarAsync(id, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
@@ -371,7 +368,7 @@ public partial class TMDbClient
     /// <param name="page">The page number of results to retrieve.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A search container with similar TV shows.</returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowSimilarAsync(int id, string language, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowSimilarAsync(int id, string? language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SearchContainer<SearchTv>>(id, TvShowMethods.Similar, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -383,7 +380,7 @@ public partial class TMDbClient
     /// <param name="page">The page number of results to retrieve.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A search container with recommended TV shows.</returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowRecommendationsAsync(int id, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowRecommendationsAsync(int id, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowRecommendationsAsync(id, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
@@ -396,7 +393,7 @@ public partial class TMDbClient
     /// <param name="page">The page number of results to retrieve.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A search container with recommended TV shows.</returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowRecommendationsAsync(int id, string language, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowRecommendationsAsync(int id, string? language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SearchContainer<SearchTv>>(id, TvShowMethods.Recommendations, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -411,7 +408,7 @@ public partial class TMDbClient
     /// Returns the basic information about a tv show.
     /// For additional data use the main GetTvShowAsync method using the tv show id as parameter.
     /// </returns>
-    public async Task<SearchContainer<SearchTv>> GetTvShowTopRatedAsync(int page = -1, string language = null, CancellationToken cancellationToken = default)
+    public async Task<SearchContainer<SearchTv>?> GetTvShowTopRatedAsync(int page = -1, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowListInternal(page, language, "top_rated", cancellationToken).ConfigureAwait(false);
     }
@@ -422,7 +419,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the TV show.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with translation information for the TV show.</returns>
-    public async Task<TranslationsContainerTv> GetTvShowTranslationsAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<TranslationsContainerTv?> GetTvShowTranslationsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<TranslationsContainerTv>(id, TvShowMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -434,7 +431,7 @@ public partial class TMDbClient
     /// <param name="includeMediaLanguage">If specified the api will attempt to return localized video results.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with video information for the TV show.</returns>
-    public async Task<ResultContainer<Video>> GetTvShowVideosAsync(int id, string includeMediaLanguage = null, CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<Video>?> GetTvShowVideosAsync(int id, string? includeMediaLanguage = null, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<Video>>(id, TvShowMethods.Videos, includeMediaLanguage: includeMediaLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -445,7 +442,7 @@ public partial class TMDbClient
     /// <param name="id">The TMDb id of the TV show.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with watch provider information organized by region.</returns>
-    public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>> GetTvShowWatchProvidersAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>?> GetTvShowWatchProvidersAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<SingleResultContainer<Dictionary<string, WatchProviders>>>(id, TvShowMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -462,17 +459,16 @@ public partial class TMDbClient
     {
         RequireSessionId(SessionType.GuestSession);
 
-        RestRequest req = _client.Create("tv/{tvShowId}/rating");
+        var req = _client.Create("tv/{tvShowId}/rating");
         req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
         AddSessionId(req);
 
-        using RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
 
         // status code 13 = "The item/record was deleted successfully."
-        PostReply item = await response.GetDataObject().ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
-        // TODO: Original code had a check for item=null
-        return item.StatusCode == 13;
+        return item is not null && item.StatusCode == 13;
     }
 
     /// <summary>
@@ -488,19 +484,18 @@ public partial class TMDbClient
     {
         RequireSessionId(SessionType.GuestSession);
 
-        RestRequest req = _client.Create("tv/{tvShowId}/rating");
+        var req = _client.Create("tv/{tvShowId}/rating");
         req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
         AddSessionId(req);
 
         req.SetBody(new { value = rating });
 
-        using RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
         // status code 1 = "Success"
         // status code 12 = "The item/record was updated successfully" - Used when an item was previously rated by the user
-        PostReply item = await response.GetDataObject().ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
-        // TODO: Original code had a check for item=null
-        return item.StatusCode == 1 || item.StatusCode == 12;
+        return item is not null && (item.StatusCode == 1 || item.StatusCode == 12);
     }
 }

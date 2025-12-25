@@ -24,10 +24,14 @@ public class ClientSearchTests : TestBase
         // Search pr. Year
         // 1962: First James Bond movie, "Dr. No"
         var result = await TMDbClient.SearchMovieAsync("007", year: 1962);
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 646);
 
         await Verify(item);
 
+        Assert.NotNull(item.BackdropPath);
+        Assert.NotNull(item.PosterPath);
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
 
@@ -40,10 +44,14 @@ public class ClientSearchTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchCollectionAsync("007", i));
 
         var result = await TMDbClient.SearchCollectionAsync("James Bond");
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 645);
 
         await Verify(item);
 
+        Assert.NotNull(item.BackdropPath);
+        Assert.NotNull(item.PosterPath);
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
 
@@ -56,10 +64,13 @@ public class ClientSearchTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchPersonAsync("Willis", i));
 
         var result = await TMDbClient.SearchPersonAsync("Willis");
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 62);
 
         await Verify(item);
 
+        Assert.NotNull(item.ProfilePath);
         TestImagesHelpers.TestImagePaths([item.ProfilePath]);
     }
 
@@ -72,12 +83,15 @@ public class ClientSearchTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchCompanyAsync("Disney", i));
 
         var result = await TMDbClient.SearchCompanyAsync("Disney");
-        var item = result.Results.FirstOrDefault(s => s.Name.Contains("Disney", StringComparison.OrdinalIgnoreCase));
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
+        var item = result.Results.FirstOrDefault(s => s.Name != null && s.Name.Contains("Disney", StringComparison.OrdinalIgnoreCase));
 
         Assert.NotNull(item);
+        Assert.NotNull(item.Name);
         await Verify(item);
 
-        if (item.LogoPath != null)
+        if (item.LogoPath is not null)
         {
             TestImagesHelpers.TestImagePaths([item.LogoPath]);
         }
@@ -92,9 +106,12 @@ public class ClientSearchTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchKeywordAsync("plot", i));
 
         var result = await TMDbClient.SearchKeywordAsync("plot");
-        var item = result.Results.FirstOrDefault(s => s.Name.Contains("plot", StringComparison.OrdinalIgnoreCase));
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
+        var item = result.Results.FirstOrDefault(s => s.Name != null && s.Name.Contains("plot", StringComparison.OrdinalIgnoreCase));
 
         Assert.NotNull(item);
+        Assert.NotNull(item.Name);
         await Verify(item);
     }
 
@@ -107,10 +124,14 @@ public class ClientSearchTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchTvShowAsync("Breaking Bad", i));
 
         var result = await TMDbClient.SearchTvShowAsync("Breaking Bad");
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 1396);
 
         await Verify(item);
 
+        Assert.NotNull(item.BackdropPath);
+        Assert.NotNull(item.PosterPath);
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
 
@@ -123,10 +144,14 @@ public class ClientSearchTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMultiAsync("Arrow", i));
 
         var result = await TMDbClient.SearchMultiAsync("Arrow");
+        Assert.NotNull(result);
+        Assert.NotNull(result.Results);
         var item = result.Results.OfType<SearchTv>().Single(s => s.Id == 1412);
 
         await Verify(item);
 
+        Assert.NotNull(item.BackdropPath);
+        Assert.NotNull(item.PosterPath);
         TestImagesHelpers.TestImagePaths([item.BackdropPath, item.PosterPath]);
     }
 }

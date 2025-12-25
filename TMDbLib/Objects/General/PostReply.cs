@@ -8,5 +8,5 @@ internal class PostReply
     public int StatusCode { get; set; }
 
     [JsonProperty("status_message")]
-    public string StatusMessage { get; set; }
+    public string? StatusMessage { get; set; }
 }

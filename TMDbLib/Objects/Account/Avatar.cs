@@ -11,5 +11,5 @@ public class Avatar
     /// Gets or sets the Gravatar information.
     /// </summary>
     [JsonProperty("gravatar")]
-    public Gravatar Gravatar { get; set; }
+    public Gravatar? Gravatar { get; set; }
 }

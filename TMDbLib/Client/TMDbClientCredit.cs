@@ -13,7 +13,7 @@ public partial class TMDbClient
     /// <param name="id">The unique credit ID.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>The credit object with information about the person and their role.</returns>
-    public async Task<Credit> GetCreditsAsync(string id, CancellationToken cancellationToken = default)
+    public async Task<Credit?> GetCreditsAsync(string id, CancellationToken cancellationToken = default)
     {
         return await GetCreditsAsync(id, DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
@@ -25,9 +25,9 @@ public partial class TMDbClient
     /// <param name="language">The ISO 639-1 language code for the credit text. If empty, uses the client's DefaultLanguage.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>The credit object with information about the person and their role.</returns>
-    public async Task<Credit> GetCreditsAsync(string id, string language, CancellationToken cancellationToken = default)
+    public async Task<Credit?> GetCreditsAsync(string id, string? language, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("credit/{id}");
+        var req = _client.Create("credit/{id}");
 
         if (!string.IsNullOrEmpty(language))
         {
@@ -36,7 +36,7 @@ public partial class TMDbClient
 
         req.AddUrlSegment("id", id);
 
-        Credit resp = await req.GetOfT<Credit>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<Credit>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }

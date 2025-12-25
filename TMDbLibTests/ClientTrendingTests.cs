@@ -18,7 +18,9 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingMoviesAsync()
     {
-        SearchContainer<SearchMovie> movies = await TMDbClient.GetTrendingMoviesAsync(TimeWindow.Week);
+        var movies = await TMDbClient.GetTrendingMoviesAsync(TimeWindow.Week);
+        Assert.NotNull(movies);
+        Assert.NotNull(movies.Results);
         Assert.NotEmpty(movies.Results);
     }
 
@@ -28,7 +30,9 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingTvAsync()
     {
-        SearchContainer<SearchTv> tv = await TMDbClient.GetTrendingTvAsync(TimeWindow.Week);
+        var tv = await TMDbClient.GetTrendingTvAsync(TimeWindow.Week);
+        Assert.NotNull(tv);
+        Assert.NotNull(tv.Results);
         Assert.NotEmpty(tv.Results);
     }
 
@@ -38,7 +42,9 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingPeopleAsync()
     {
-        SearchContainer<SearchPerson> people = await TMDbClient.GetTrendingPeopleAsync(TimeWindow.Week);
+        var people = await TMDbClient.GetTrendingPeopleAsync(TimeWindow.Week);
+        Assert.NotNull(people);
+        Assert.NotNull(people.Results);
         Assert.NotEmpty(people.Results);
     }
 
@@ -48,7 +54,9 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingAllAsync()
     {
-        SearchContainer<SearchBase> all = await TMDbClient.GetTrendingAllAsync(TimeWindow.Week);
+        var all = await TMDbClient.GetTrendingAllAsync(TimeWindow.Week);
+        Assert.NotNull(all);
+        Assert.NotNull(all.Results);
         Assert.NotEmpty(all.Results);
     }
 }

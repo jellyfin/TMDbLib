@@ -16,7 +16,7 @@ public class UtilsTest : TestBase
     [Fact]
     public void EnumDescriptionNonEnumTest()
     {
-        EnumTestStruct @struct = new EnumTestStruct();
+        var @struct = new EnumTestStruct();
 
         Assert.Throws<ArgumentException>(() => @struct.GetDescription());
     }
@@ -27,8 +27,8 @@ public class UtilsTest : TestBase
     [Fact]
     public void EnumDescriptionNonDescriptionTest()
     {
-        EnumTestEnum @enum = EnumTestEnum.A;
-        string s = @enum.GetDescription();
+        var @enum = EnumTestEnum.A;
+        var s = @enum.GetDescription();
 
         Assert.Equal("A", s);
     }
@@ -39,8 +39,8 @@ public class UtilsTest : TestBase
     [Fact]
     public void EnumDescriptionTest()
     {
-        EnumTestEnum @enum = EnumTestEnum.B;
-        string s = @enum.GetDescription();
+        var @enum = EnumTestEnum.B;
+        var s = @enum.GetDescription();
 
         Assert.Equal("B-Description", s);
     }

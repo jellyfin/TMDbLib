@@ -19,9 +19,12 @@ public class ClientCertificationsTests : TestBase
     public async Task TestCertificationsListMovieAsync()
     {
         var result = await TMDbClient.GetMovieCertificationsAsync();
+        Assert.NotNull(result);
+        Assert.NotNull(result.Certifications);
         Assert.NotEmpty(result.Certifications);
 
         var certUs = result.Certifications["US"];
+        Assert.NotNull(certUs);
         Assert.NotEmpty(certUs);
 
         // Use a common US rating that's likely to exist
@@ -38,9 +41,12 @@ public class ClientCertificationsTests : TestBase
     public async Task TestCertificationsListTvAsync()
     {
         var result = await TMDbClient.GetTvCertificationsAsync();
+        Assert.NotNull(result);
+        Assert.NotNull(result.Certifications);
         Assert.NotEmpty(result.Certifications);
 
         var certUs = result.Certifications["US"];
+        Assert.NotNull(certUs);
         Assert.NotEmpty(certUs);
 
         var ratingNr = certUs.SingleOrDefault(s => s.Certification == "NR");

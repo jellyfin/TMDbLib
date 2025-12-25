@@ -20,7 +20,7 @@ public partial class TMDbClient
     /// <param name="id">The id of the object you wish to located.</param>
     /// <returns>A list of all objects in TMDb that matched your id.</returns>
     /// <param name="cancellationToken">A cancellation token.</param>
-    public Task<FindContainer> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default)
+    public Task<FindContainer?> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default)
     {
         return FindAsync(source, id, null, cancellationToken);
     }
@@ -37,9 +37,9 @@ public partial class TMDbClient
     /// <returns>A list of all objects in TMDb that matched your id.</returns>
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
-    public async Task<FindContainer> FindAsync(FindExternalSource source, string id, string language, CancellationToken cancellationToken = default)
+    public async Task<FindContainer?> FindAsync(FindExternalSource source, string id, string? language, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("find/{id}");
+        var req = _client.Create("find/{id}");
 
         req.AddUrlSegment("id", WebUtility.UrlEncode(id));
         req.AddParameter("external_source", source.GetDescription());
@@ -50,7 +50,7 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        FindContainer resp = await req.GetOfT<FindContainer>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<FindContainer>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }

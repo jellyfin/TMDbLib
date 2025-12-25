@@ -12,11 +12,11 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A container with movie certifications organized by country.</returns>
-    public async Task<CertificationsContainer> GetMovieCertificationsAsync(CancellationToken cancellationToken = default)
+    public async Task<CertificationsContainer?> GetMovieCertificationsAsync(CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("certification/movie/list");
 
-        CertificationsContainer resp = await req.GetOfT<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -26,11 +26,11 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A container with TV certifications organized by country.</returns>
-    public async Task<CertificationsContainer> GetTvCertificationsAsync(CancellationToken cancellationToken = default)
+    public async Task<CertificationsContainer?> GetTvCertificationsAsync(CancellationToken cancellationToken = default)
     {
         RestRequest req = _client.Create("certification/tv/list");
 
-        CertificationsContainer resp = await req.GetOfT<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<CertificationsContainer>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }

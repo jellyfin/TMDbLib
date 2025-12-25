@@ -16,7 +16,7 @@ public class ClientWatchProvidersTests : TestBase
     [Fact]
     public async Task TestGetRegions()
     {
-        ResultContainer<WatchProviderRegion> watchProviderRegions = await TMDbClient.GetWatchProviderRegionsAsync();
+        var watchProviderRegions = await TMDbClient.GetWatchProviderRegionsAsync();
 
         await Verify(watchProviderRegions);
     }
@@ -27,7 +27,7 @@ public class ClientWatchProvidersTests : TestBase
     [Fact]
     public async Task TestGetMovieWatchProviders()
     {
-        ResultContainer<WatchProviderItem> watchProviders = await TMDbClient.GetMovieWatchProvidersAsync();
+        var watchProviders = await TMDbClient.GetMovieWatchProvidersAsync();
 
         await Verify(watchProviders);
     }
@@ -38,7 +38,7 @@ public class ClientWatchProvidersTests : TestBase
     [Fact]
     public async Task TestGetTvWatchProviders()
     {
-        ResultContainer<WatchProviderItem> watchProviders = await TMDbClient.GetTvWatchProvidersAsync();
+        var watchProviders = await TMDbClient.GetTvWatchProvidersAsync();
 
         await Verify(watchProviders);
     }

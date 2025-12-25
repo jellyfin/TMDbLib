@@ -20,17 +20,18 @@ public class TaggedImageConverterTest : TestBase
     [Fact]
     public async Task TaggedImageConverter_Movie()
     {
-        SearchMovie originalMedia = new SearchMovie { OriginalTitle = "Hello world" };
+        var originalMedia = new SearchMovie { OriginalTitle = "Hello world" };
 
-        TaggedImage original = new TaggedImage
+        var original = new TaggedImage
         {
             MediaType = originalMedia.MediaType,
             Media = originalMedia
         };
 
-        string json = Serializer.SerializeToString(original);
-        TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json);
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<TaggedImage>(json);
 
+        Assert.NotNull(result);
         Assert.IsType<SearchMovie>(result.Media);
         await Verify(new
         {
@@ -45,17 +46,18 @@ public class TaggedImageConverterTest : TestBase
     [Fact]
     public async Task TaggedImageConverter_Tv()
     {
-        SearchTv originalMedia = new SearchTv { OriginalName = "Hello world" };
+        var originalMedia = new SearchTv { OriginalName = "Hello world" };
 
-        TaggedImage original = new TaggedImage
+        var original = new TaggedImage
         {
             MediaType = MediaType.Tv,
             Media = originalMedia
         };
 
-        string json = Serializer.SerializeToString(original);
-        TaggedImage result = Serializer.DeserializeFromString<TaggedImage>(json);
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString<TaggedImage>(json);
 
+        Assert.NotNull(result);
         Assert.IsType<SearchTv>(result.Media);
         await Verify(new
         {
@@ -74,7 +76,7 @@ public class TaggedImageConverterTest : TestBase
     public async Task TestJsonTaggedImageConverter(int personId)
     {
         // Get images
-        SearchContainerWithId<TaggedImage> result = await TMDbClient.GetPersonTaggedImagesAsync(personId, 1);
+        var result = await TMDbClient.GetPersonTaggedImagesAsync(personId, 1);
 
         Assert.NotNull(result);
         Assert.NotNull(result.Results);

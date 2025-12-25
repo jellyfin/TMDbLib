@@ -22,5 +22,5 @@ public interface ITMDbSerializer
     /// <param name="source">The source stream to read from.</param>
     /// <param name="type">The type of the object to deserialize.</param>
     /// <returns>The deserialized object.</returns>
-    object Deserialize(Stream source, Type type);
+    object? Deserialize(Stream source, Type type);
 }

@@ -13,13 +13,13 @@ public class CombinedCredits
     /// Gets or sets the list of combined cast roles (both movie and TV).
     /// </summary>
     [JsonProperty("cast", ItemConverterType = typeof(CombinedCreditsCastConverter))]
-    public List<CombinedCreditsCastBase> Cast { get; set; }
+    public List<CombinedCreditsCastBase>? Cast { get; set; }
 
     /// <summary>
     /// Gets or sets the list of combined crew jobs (both movie and TV).
     /// </summary>
     [JsonProperty("crew", ItemConverterType = typeof(CombinedCreditsCrewConverter))]
-    public List<CombinedCreditsCrewBase> Crew { get; set; }
+    public List<CombinedCreditsCrewBase>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the person ID.

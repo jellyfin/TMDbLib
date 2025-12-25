@@ -1,0 +1,475 @@
+{
+  "Guid": "96756c2d-a67b-dc43-837d-c710fac11599",
+  "UpdatedAt": "2025-12-24T18:45:31.9719678Z",
+  "Title": "Proxy Mapping for GET /3/discover/movie",
+  "Description": "Proxy Mapping for GET /3/discover/movie",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/discover/movie",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Params": [
+      {
+        "Name": "with_watch_monetization_types",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "flatrate",
+            "IgnoreCase": false
+          }
+        ]
+      },
+      {
+        "Name": "watch_region",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "US",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "page": 1,
+      "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/3jMN1k8b0Ptd9eMoeftUyDGJdCh.jpg",
+          "genre_ids": [
+            878,
+            12,
+            18
+          ],
+          "id": 982843,
+          "original_language": "ko",
+          "original_title": "\uB300\uD64D\uC218",
+          "overview": "When a raging flood traps a researcher and her young son, a call to a crucial mission puts their escape \u2014 and the future of humanity \u2014 on the line.",
+          "popularity": 482.8501,
+          "poster_path": "/7bLr0xljlMz8Xa8sufcZFhg8gh6.jpg",
+          "release_date": "2025-09-18",
+          "title": "The Great Flood",
+          "video": false,
+          "vote_average": 6.115,
+          "vote_count": 209
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/AePlQ3osZShJmbNj8tzQ3NoMTQF.jpg",
+          "genre_ids": [
+            28,
+            53,
+            9648
+          ],
+          "id": 1013446,
+          "original_language": "fr",
+          "original_title": "Reflet dans un diamant mort",
+          "overview": "When the mysterious woman in the room next door disappears, a debonair 70-year-old ex-spy living in a luxury hotel on the C\u00F4te d\u0027Azur is confronted by the demons and darlings of a lurid past in which moviemaking, memories and madness collide.",
+          "popularity": 239.5594,
+          "poster_path": "/5CdRxBu7jRDHjthkAL8vE0GdKUD.jpg",
+          "release_date": "2025-06-25",
+          "title": "Reflection in a Dead Diamond",
+          "video": false,
+          "vote_average": 6.011,
+          "vote_count": 47
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hyc9gq0Oq5THKak7tB7oqC2Rd6z.jpg",
+          "genre_ids": [
+            37,
+            12,
+            80
+          ],
+          "id": 1195518,
+          "original_language": "en",
+          "original_title": "The Unholy Trinity",
+          "overview": "Set against the turbulent backdrop of 1870s Montana, in the moments before the execution of Isaac Broadway, he gives his estranged son, Henry, an impossible task: murder the man who framed him for a crime he didn\u2019t commit. Intent on fulfilling his promise, Henry travels to the remote town of Trinity, where an unexpected turn of events traps him in town and leaves him caught between Gabriel Dove, the town\u2019s upstanding new sheriff, and a mysterious figure named St. Christopher.",
+          "popularity": 190.5957,
+          "poster_path": "/waU3o5qRPNA9bIC59DIsDppll11.jpg",
+          "release_date": "2025-06-13",
+          "title": "The Unholy Trinity",
+          "video": false,
+          "vote_average": 6.176,
+          "vote_count": 102
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
+          "genre_ids": [
+            53,
+            9648,
+            35
+          ],
+          "id": 812583,
+          "original_language": "en",
+          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
+          "overview": "When young priest Jud Duplenticy is sent to assist charismatic firebrand Monsignor Jefferson Wicks, it\u2019s clear that all is not well in the pews. After a sudden and seemingly impossible murder rocks the town, the lack of an obvious suspect prompts local police chief Geraldine Scott to join forces with renowned detective Benoit Blanc to unravel a mystery that defies all logic.",
+          "popularity": 170.5348,
+          "poster_path": "/qCOGGi8JBVEZMc3DVby8rUivyXz.jpg",
+          "release_date": "2025-11-26",
+          "title": "Wake Up Dead Man: A Knives Out Mystery",
+          "video": false,
+          "vote_average": 7.205,
+          "vote_count": 1033
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
+          "genre_ids": [
+            878,
+            53
+          ],
+          "id": 755898,
+          "original_language": "en",
+          "original_title": "War of the Worlds",
+          "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
+          "popularity": 154.5233,
+          "poster_path": "/yvirUYrva23IudARHn3mMGVxWqM.jpg",
+          "release_date": "2025-07-29",
+          "title": "War of the Worlds",
+          "video": false,
+          "vote_average": 4.251,
+          "vote_count": 790
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gtuXARxjGdfsGFqEwggBB8zUJza.jpg",
+          "genre_ids": [
+            35,
+            28
+          ],
+          "id": 1589891,
+          "original_language": "es",
+          "original_title": "La hora de los valientes",
+          "overview": "A psychoanalyst on community service aids an agent shattered by infidelity; together, they will confront danger and discover second chances.",
+          "popularity": 141.974,
+          "poster_path": "/qKKG22O5pFxqglG0oMjWTjQWCNl.jpg",
+          "release_date": "2025-12-18",
+          "title": "A Time for Bravery",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 27
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cd8YDn7M0lfaHhZdU6MvCDxPalP.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 76600,
+          "original_language": "en",
+          "original_title": "Avatar: The Way of Water",
+          "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+          "popularity": 114.6909,
+          "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+          "release_date": "2022-12-14",
+          "title": "Avatar: The Way of Water",
+          "video": false,
+          "vote_average": 7.608,
+          "vote_count": 13256
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
+          "genre_ids": [
+            28,
+            12,
+            14,
+            878
+          ],
+          "id": 19995,
+          "original_language": "en",
+          "original_title": "Avatar",
+          "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+          "popularity": 111.795,
+          "poster_path": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+          "release_date": "2009-12-16",
+          "title": "Avatar",
+          "video": false,
+          "vote_average": 7.597,
+          "vote_count": 33015
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/k3xS5HuixDQXRFg4eX9vLohuGjP.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1162858,
+          "original_language": "en",
+          "original_title": "The Other",
+          "overview": "Unable to conceive, a couple seeks to build a family with a young orphan, survivor of tragic childhood. But their act of love turns to horror when they realize the violence in their foster\u0027s past has returned to destroy the new family.",
+          "popularity": 91.9191,
+          "poster_path": "/kE6FV8Lc9Aqir6OlgaNgnbFcy9E.jpg",
+          "release_date": "2025-04-26",
+          "title": "The Other",
+          "video": false,
+          "vote_average": 5.671,
+          "vote_count": 38
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lZYMXx74pWmbj5Q5jp1QaMvmuuR.jpg",
+          "genre_ids": [
+            28,
+            14,
+            53
+          ],
+          "id": 1180831,
+          "original_language": "no",
+          "original_title": "Troll 2",
+          "overview": "When a dangerous new troll unleashes devastation across their homeland, Nora, Andreas and Major Kris embark on their most perilous mission yet.",
+          "popularity": 89.2163,
+          "poster_path": "/p6xAExLNFbHcLfvSuvLPoM8aqZU.jpg",
+          "release_date": "2025-11-30",
+          "title": "Troll 2",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 300
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2OHa6ukEq3Hce7Pc2kvu8wkmMFY.jpg",
+          "genre_ids": [
+            28,
+            12,
+            53,
+            80,
+            18
+          ],
+          "id": 7451,
+          "original_language": "en",
+          "original_title": "xXx",
+          "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \u0022recruits\u0022 him to go on a mission, he\u0027s not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+          "popularity": 79.1846,
+          "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+          "release_date": "2002-08-09",
+          "title": "xXx",
+          "video": false,
+          "vote_average": 5.976,
+          "vote_count": 4699
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/me3SisKfnxwBP69aOVKAVMw9vDM.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1149167,
+          "original_language": "en",
+          "original_title": "High Rollers",
+          "overview": "A master thief must pull off a dangerous casino heist when his nemesis kidnaps his lover. Caught between rival criminals and FBI pursuit, he risks all to save her and score big.",
+          "popularity": 78.6243,
+          "poster_path": "/hHowAaChDjwueySmwVbsjHmpWa.jpg",
+          "release_date": "2025-03-14",
+          "title": "High Rollers",
+          "video": false,
+          "vote_average": 6.608,
+          "vote_count": 88
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w57nxiBIODAYHLRs1xmrCY9zEFe.jpg",
+          "genre_ids": [
+            28,
+            18,
+            14
+          ],
+          "id": 1083637,
+          "original_language": "kn",
+          "original_title": "\u0C95\u0CBE\u0C82\u0CA4\u0CBE\u0CB0: \u0C85\u0CA7\u0CCD\u0CAF\u0CBE\u0CAF - \u0CE7",
+          "overview": "During the Kadamba reign, King Vijayendra, the ruler of the fictional feudatory land of Bangra, meets his final fate while venturing into the mystical forest of Kantara. Witnessing this, his son Rajashekara seals the borders of their realm. Later, Prince Kulashekara reopens them through a brutal massacre. The protagonist, Berme, in search of prosperity, crosses the divide and ignites a conflict of faith, power, and destiny between the Kingdom and Nature.",
+          "popularity": 77.5767,
+          "poster_path": "/zBvw25afDn93embB8L7FzvTT2xq.jpg",
+          "release_date": "2025-10-01",
+          "title": "Kantara - A Legend: Chapter 1",
+          "video": false,
+          "vote_average": 7.038,
+          "vote_count": 53
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg",
+          "genre_ids": [
+            18,
+            14,
+            27
+          ],
+          "id": 1062722,
+          "original_language": "en",
+          "original_title": "Frankenstein",
+          "overview": "Dr. Victor Frankenstein, a brilliant but egotistical scientist, brings a creature to life in a monstrous experiment that ultimately leads to the undoing of both the creator and his tragic creation.",
+          "popularity": 76.6845,
+          "poster_path": "/g4JtvGlQO7DByTI6frUobqvSL3R.jpg",
+          "release_date": "2025-10-17",
+          "title": "Frankenstein",
+          "video": false,
+          "vote_average": 7.718,
+          "vote_count": 2349
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zpEWFNqoN8Qg1SzMMHmaGyOBTdW.jpg",
+          "genre_ids": [
+            53,
+            80,
+            28
+          ],
+          "id": 1054867,
+          "original_language": "en",
+          "original_title": "One Battle After Another",
+          "overview": "Washed-up revolutionary Bob exists in a state of stoned paranoia, surviving off-grid with his spirited, self-reliant daughter, Willa. When his evil nemesis resurfaces after 16 years and she goes missing, the former radical scrambles to find her, father and daughter both battling the consequences of his past.",
+          "popularity": 74.8135,
+          "poster_path": "/r4uXvqCeco0KmO0CjlhXuTEFuSE.jpg",
+          "release_date": "2025-09-23",
+          "title": "One Battle After Another",
+          "video": false,
+          "vote_average": 7.479,
+          "vote_count": 1993
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1dqFuNiutgBdNF9d5QOQBWHHvft.jpg",
+          "genre_ids": [
+            28,
+            80,
+            35,
+            53
+          ],
+          "id": 1217602,
+          "original_language": "en",
+          "original_title": "London Calling",
+          "overview": "After fleeing the UK from a job gone wrong, a down on his luck hitman is forced to babysit the son of his new crime boss and show him how to become a man.",
+          "popularity": 73.4136,
+          "poster_path": "/cpQ4VxBJO7vGV3IUdKzSNf4tH9V.jpg",
+          "release_date": "2025-09-18",
+          "title": "London Calling",
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 57
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8btfz81bOJ2lC7cujYBTw03wzg3.jpg",
+          "genre_ids": [
+            16,
+            14,
+            12,
+            28
+          ],
+          "id": 980477,
+          "original_language": "zh",
+          "original_title": "\u54EA\u5412\u4E4B\u9B54\u7AE5\u95F9\u6D77",
+          "overview": "After a catastrophic event leaves their bodies destroyed, Ne Zha and Ao Bing are granted a fragile second chance at life. As tensions rise between the dragon clans and celestial forces, the two must undergo a series of perilous trials that will test their bond, challenge their identities, and decide the fate of both mortals and immortals.",
+          "popularity": 71.2735,
+          "poster_path": "/cb5NyNrqiCNNoDkA8FfxHAtypdG.jpg",
+          "release_date": "2025-01-29",
+          "title": "Ne Zha 2",
+          "video": false,
+          "vote_average": 8.088,
+          "vote_count": 515
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w3Bi0wygeFQctn6AqFTwhGNXRwL.jpg",
+          "genre_ids": [
+            14,
+            10402,
+            35,
+            16
+          ],
+          "id": 803796,
+          "original_language": "en",
+          "original_title": "KPop Demon Hunters",
+          "overview": "When K-pop superstars Rumi, Mira and Zoey aren\u0027t selling out stadiums, they\u0027re using their secret powers to protect their fans from supernatural threats.",
+          "popularity": 66.2629,
+          "poster_path": "/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg",
+          "release_date": "2025-06-20",
+          "title": "KPop Demon Hunters",
+          "video": false,
+          "vote_average": 8.178,
+          "vote_count": 2075
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+          "genre_ids": [
+            16,
+            12,
+            10751,
+            35
+          ],
+          "id": 269149,
+          "original_language": "en",
+          "original_title": "Zootopia",
+          "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia\u0027s police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.",
+          "popularity": 64.4071,
+          "poster_path": "/hlK0e0wAQ3VLuJcsfIYPvb4JVud.jpg",
+          "release_date": "2016-02-11",
+          "title": "Zootopia",
+          "video": false,
+          "vote_average": 7.757,
+          "vote_count": 17334
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mPtPJzBkwksUoMEKpkZqxBrlKpZ.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1422096,
+          "original_language": "en",
+          "original_title": "Good Boy",
+          "overview": "A loyal dog moves to a rural family home with his owner Todd, only to discover supernatural forces lurking in the shadows. As dark entities threaten his human companion, the brave pup must fight to protect the one he loves most.",
+          "popularity": 63.2047,
+          "poster_path": "/pvMHRi09ur2L1drXh2dXFtuMFgl.jpg",
+          "release_date": "2025-10-01",
+          "title": "Good Boy",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 393
+        }
+      ],
+      "total_pages": 3933,
+      "total_results": 78647
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=15715",
+      "x-memc": "HIT",
+      "x-memc-key": "78f9e551db3476121cc325d0fdd366f710548b23f1e051805341b24985a658da",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002248326ef4c526ab4bef118a892056e498\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

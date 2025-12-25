@@ -13,10 +13,10 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T> GetCollectionMethodInternal<T>(int collectionId, CollectionMethods collectionMethod, string language = null, CancellationToken cancellationToken = default)
+    private async Task<T?> GetCollectionMethodInternal<T>(int collectionId, CollectionMethods collectionMethod, string? language = null, CancellationToken cancellationToken = default)
         where T : new()
     {
-        RestRequest req = _client.Create("collection/{collectionId}/{method}");
+        var req = _client.Create("collection/{collectionId}/{method}");
         req.AddUrlSegment("collectionId", collectionId.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("method", collectionMethod.GetDescription());
 
@@ -25,7 +25,7 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        T resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -37,7 +37,7 @@ public partial class TMDbClient
     /// <param name="extraMethods">Additional data to include in the response using the append_to_response pattern.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>The collection object, or null if not found.</returns>
-    public async Task<Collection> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
+    public async Task<Collection?> GetCollectionAsync(int collectionId, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
     {
         return await GetCollectionAsync(collectionId, DefaultLanguage, null, extraMethods, cancellationToken).ConfigureAwait(false);
     }
@@ -51,9 +51,9 @@ public partial class TMDbClient
     /// <param name="extraMethods">Additional data to include in the response using the append_to_response pattern.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>The collection object, or null if not found.</returns>
-    public async Task<Collection> GetCollectionAsync(int collectionId, string language, string includeImageLanguages, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
+    public async Task<Collection?> GetCollectionAsync(int collectionId, string? language, string? includeImageLanguages, CollectionMethods extraMethods = CollectionMethods.Undefined, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("collection/{collectionId}");
+        var req = _client.Create("collection/{collectionId}");
         req.AddUrlSegment("collectionId", collectionId.ToString(CultureInfo.InvariantCulture));
 
         language ??= DefaultLanguage;
@@ -68,7 +68,7 @@ public partial class TMDbClient
             req.AddParameter("include_image_language", includeImageLanguages);
         }
 
-        string appends = string.Join(
+        var appends = string.Join(
             ",",
             Enum.GetValues(typeof(CollectionMethods))
                                          .OfType<CollectionMethods>()
@@ -83,14 +83,14 @@ public partial class TMDbClient
 
         // req.DateFormat = "yyyy-MM-dd";
 
-        using RestResponse<Collection> response = await req.Get<Collection>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<Collection>(cancellationToken).ConfigureAwait(false);
 
         if (!response.IsValid)
         {
             return null;
         }
 
-        Collection item = await response.GetDataObject().ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
         if (item is not null)
         {
@@ -107,7 +107,7 @@ public partial class TMDbClient
     /// <param name="language">The ISO 639-1 language code for filtering images. If null, uses the client's DefaultLanguage.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>An object containing the collection's images (posters and backdrops).</returns>
-    public async Task<ImagesWithId> GetCollectionImagesAsync(int collectionId, string language = null, CancellationToken cancellationToken = default)
+    public async Task<ImagesWithId?> GetCollectionImagesAsync(int collectionId, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
     }
@@ -118,7 +118,7 @@ public partial class TMDbClient
     /// <param name="collectionId">The TMDb ID of the collection.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A container with all available translations for the collection.</returns>
-    public async Task<TranslationsContainer> GetCollectionTranslationsAsync(int collectionId, CancellationToken cancellationToken = default)
+    public async Task<TranslationsContainer?> GetCollectionTranslationsAsync(int collectionId, CancellationToken cancellationToken = default)
     {
         return await GetCollectionMethodInternal<TranslationsContainer>(collectionId, CollectionMethods.Translations, null, cancellationToken).ConfigureAwait(false);
     }

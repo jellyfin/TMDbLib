@@ -18,5 +18,5 @@ public class TranslationsContainerTv
     /// Gets or sets the list of translations.
     /// </summary>
     [JsonProperty("translations")]
-    public List<Translation> Translations { get; set; }
+    public List<Translation>? Translations { get; set; }
 }

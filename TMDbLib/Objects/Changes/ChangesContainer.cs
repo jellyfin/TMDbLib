@@ -12,5 +12,5 @@ public class ChangesContainer
     /// Gets or sets the list of changes.
     /// </summary>
     [JsonProperty("changes")]
-    public List<Change> Changes { get; set; }
+    public List<Change>? Changes { get; set; }
 }

@@ -12,11 +12,11 @@ public class Job
     /// Gets or sets the department name.
     /// </summary>
     [JsonProperty("department")]
-    public string Department { get; set; }
+    public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the list of job titles in this department.
     /// </summary>
     [JsonProperty("jobs")]
-    public List<string> Jobs { get; set; }
+    public List<string>? Jobs { get; set; }
 }

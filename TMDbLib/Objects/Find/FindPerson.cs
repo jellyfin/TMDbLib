@@ -19,5 +19,5 @@ public class FindPerson : SearchPerson
     /// Gets or sets the department the person is known for.
     /// </summary>
     [JsonProperty("known_for_department")]
-    public string KnownForDepartment { get; set; }
+    public string? KnownForDepartment { get; set; }
 }

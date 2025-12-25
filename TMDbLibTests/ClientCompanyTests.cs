@@ -16,11 +16,11 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientCompanyTests : TestBase
 {
-    private static readonly Dictionary<CompanyMethods, Func<Company, object>> Methods;
+    private static readonly Dictionary<CompanyMethods, Func<Company, object?>> Methods;
 
     static ClientCompanyTests()
     {
-        Methods = new Dictionary<CompanyMethods, Func<Company, object>>
+        Methods = new Dictionary<CompanyMethods, Func<Company, object?>>
         {
             [CompanyMethods.Movies] = company => company.Movies
         };
@@ -32,10 +32,11 @@ public class ClientCompanyTests : TestBase
     [Fact]
     public async Task TestCompaniesExtrasNoneAsync()
     {
-        Company company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+        var company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+        Assert.NotNull(company);
 
         // Test all extras, ensure none of them exist
-        foreach (Func<Company, object> selector in Methods.Values)
+        foreach (var selector in Methods.Values)
         {
             Assert.Null(selector(company));
         }
@@ -47,7 +48,12 @@ public class ClientCompanyTests : TestBase
     [Fact]
     public async Task TestCompaniesExtrasExclusive()
     {
-        await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, extras));
+        await TestMethodsHelper.TestGetExclusive(Methods, async extras =>
+        {
+            var result = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, extras);
+            Assert.NotNull(result);
+            return result;
+        });
     }
 
     /// <summary>
@@ -56,9 +62,16 @@ public class ClientCompanyTests : TestBase
     [Fact]
     public async Task TestCompaniesExtrasAllAsync()
     {
-        await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combined), async company =>
+        await TestMethodsHelper.TestGetAll(Methods, async combined =>
+        {
+            var result = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combined);
+            Assert.NotNull(result);
+            return result;
+        }, async company =>
         {
             // Reduce testdata
+            Assert.NotNull(company.Movies);
+            Assert.NotNull(company.Movies.Results);
             company.Movies.Results = company.Movies.Results.OrderBy(s => s.Id).Take(1).ToList();
 
             await Verify(company, settings => settings.IgnoreProperty(nameof(company.Movies.TotalPages), nameof(company.Movies.TotalResults)));
@@ -71,7 +84,7 @@ public class ClientCompanyTests : TestBase
     [Fact]
     public async Task TestCompanyMissingAsync()
     {
-        Company company = await TMDbClient.GetCompanyAsync(IdHelper.MissingID);
+        var company = await TMDbClient.GetCompanyAsync(IdHelper.MissingID);
 
         Assert.Null(company);
     }
@@ -83,10 +96,16 @@ public class ClientCompanyTests : TestBase
     public async Task TestCompaniesMoviesAsync()
     {
         //GetCompanyMoviesAsync(int id, string language, int page = -1)
-        SearchContainerWithId<SearchMovie> resp = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox);
-        SearchContainerWithId<SearchMovie> respPage2 = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2);
-        SearchContainerWithId<SearchMovie> respItalian = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it");
+        var resp = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox);
+        var respPage2 = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2);
+        var respItalian = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it");
 
+        Assert.NotNull(resp);
+        Assert.NotNull(respPage2);
+        Assert.NotNull(respItalian);
+        Assert.NotNull(resp.Results);
+        Assert.NotNull(respPage2.Results);
+        Assert.NotNull(respItalian.Results);
         Assert.NotEmpty(resp.Results);
         Assert.NotEmpty(respPage2.Results);
         Assert.NotEmpty(respItalian.Results);
@@ -111,7 +130,9 @@ public class ClientCompanyTests : TestBase
         await TMDbClient.GetConfigAsync();
 
         // Test image url generator
-        Company company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+        var company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+        Assert.NotNull(company);
+        Assert.NotNull(company.LogoPath);
 
         Uri url = TMDbClient.GetImageUrl("original", company.LogoPath);
         Uri urlSecure = TMDbClient.GetImageUrl("original", company.LogoPath, true);

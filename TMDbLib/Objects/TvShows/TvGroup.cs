@@ -12,13 +12,13 @@ public class TvGroup
     /// Gets or sets the group ID.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the group.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the display order of the group.
@@ -30,7 +30,7 @@ public class TvGroup
     /// Gets or sets the list of episodes in the group.
     /// </summary>
     [JsonProperty("episodes")]
-    public List<TvGroupEpisode> Episodes { get; set; }
+    public List<TvGroupEpisode>? Episodes { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the group is locked from editing.

@@ -18,11 +18,11 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>The API configuration including image sizes and base URLs.</returns>
-    public async Task<APIConfiguration> GetAPIConfiguration(CancellationToken cancellationToken = default)
+    public async Task<APIConfiguration?> GetAPIConfiguration(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("configuration");
+        var req = _client.Create("configuration");
 
-        using RestResponse<APIConfiguration> response = await req.Get<APIConfiguration>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<APIConfiguration>(cancellationToken).ConfigureAwait(false);
 
         return await response.GetDataObject().ConfigureAwait(false);
     }
@@ -32,11 +32,11 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A list of countries with ISO 3166-1 codes and English names.</returns>
-    public async Task<List<Country>> GetCountriesAsync(CancellationToken cancellationToken = default)
+    public async Task<List<Country>?> GetCountriesAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("configuration/countries");
+        var req = _client.Create("configuration/countries");
 
-        using RestResponse<List<Country>> response = await req.Get<List<Country>>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<List<Country>>(cancellationToken).ConfigureAwait(false);
 
         return await response.GetDataObject().ConfigureAwait(false);
     }
@@ -46,11 +46,11 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A list of languages with ISO 639-1 codes and English names.</returns>
-    public async Task<List<Language>> GetLanguagesAsync(CancellationToken cancellationToken = default)
+    public async Task<List<Language>?> GetLanguagesAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("configuration/languages");
+        var req = _client.Create("configuration/languages");
 
-        using RestResponse<List<Language>> response = await req.Get<List<Language>>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<List<Language>>(cancellationToken).ConfigureAwait(false);
 
         return await response.GetDataObject().ConfigureAwait(false);
     }
@@ -60,11 +60,11 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A list of ISO 639-1 language codes for primary translations.</returns>
-    public async Task<List<string>> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default)
+    public async Task<List<string>?> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("configuration/primary_translations");
+        var req = _client.Create("configuration/primary_translations");
 
-        using RestResponse<List<string>> response = await req.Get<List<string>>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<List<string>>(cancellationToken).ConfigureAwait(false);
 
         return await response.GetDataObject().ConfigureAwait(false);
     }
@@ -74,29 +74,29 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A timezones object containing timezones grouped by ISO 3166-1 country codes.</returns>
-    public async Task<Timezones> GetTimezonesAsync(CancellationToken cancellationToken = default)
+    public async Task<Timezones?> GetTimezonesAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("timezones/list");
+        var req = _client.Create("timezones/list");
 
-        using RestResponse<List<Dictionary<string, List<string>>>> resp = await req.Get<List<Dictionary<string, List<string>>>>(cancellationToken).ConfigureAwait(false);
+        using var resp = await req.Get<List<Dictionary<string, List<string>>>>(cancellationToken).ConfigureAwait(false);
 
-        List<Dictionary<string, List<string>>> item = await resp.GetDataObject().ConfigureAwait(false);
+        var item = await resp.GetDataObject().ConfigureAwait(false);
 
         if (item is null)
         {
             return null;
         }
 
-        Timezones result = new Timezones
+        var result = new Timezones
         {
             List = []
         };
 
-        foreach (Dictionary<string, List<string>> dictionary in item)
+        foreach (var dictionary in item)
         {
-            KeyValuePair<string, List<string>> item1 = dictionary.First();
+            var item1 = dictionary.First();
 
-            result.List[item1.Key] = item1.Value;
+            result.List[item1.Key] = item1.Value ?? [];
         }
 
         return result;
@@ -107,11 +107,11 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>Valid jobs and their departments.</returns>
-    public async Task<List<Job>> GetJobsAsync(CancellationToken cancellationToken = default)
+    public async Task<List<Job>?> GetJobsAsync(CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("configuration/jobs");
+        var req = _client.Create("configuration/jobs");
 
-        using RestResponse<List<Job>> response = await req.Get<List<Job>>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<List<Job>>(cancellationToken).ConfigureAwait(false);
 
         return await response.GetDataObject().ConfigureAwait(false);
     }

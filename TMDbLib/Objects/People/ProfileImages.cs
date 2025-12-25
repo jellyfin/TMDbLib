@@ -19,5 +19,5 @@ public class ProfileImages
     /// Gets or sets the list of profile images.
     /// </summary>
     [JsonProperty("profiles")]
-    public List<ImageData> Profiles { get; set; }
+    public List<ImageData>? Profiles { get; set; }
 }

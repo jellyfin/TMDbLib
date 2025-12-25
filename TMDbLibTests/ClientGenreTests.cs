@@ -20,10 +20,10 @@ public class ClientGenreTests : TestBase
     public async Task TestGenreTvListAsync()
     {
         // Default language
-        List<Genre> genres = await TMDbClient.GetTvGenresAsync();
+        var genres = await TMDbClient.GetTvGenresAsync();
 
         // Another language
-        List<Genre> genresDanish = await TMDbClient.GetTvGenresAsync("da");
+        var genresDanish = await TMDbClient.GetTvGenresAsync("da");
 
         await Verify(new
         {
@@ -32,6 +32,8 @@ public class ClientGenreTests : TestBase
         });
 
         // At least one should be different
+        Assert.NotNull(genres);
+        Assert.NotNull(genresDanish);
         Genre actionEn = genres.Single(s => s.Id == IdHelper.ActionAdventureTvGenre);
         Genre actionDa = genresDanish.Single(s => s.Id == IdHelper.ActionAdventureTvGenre);
 
@@ -45,10 +47,10 @@ public class ClientGenreTests : TestBase
     public async Task TestGenreMovieListAsync()
     {
         // Default language
-        List<Genre> genres = await TMDbClient.GetMovieGenresAsync();
+        var genres = await TMDbClient.GetMovieGenresAsync();
 
         // Another language
-        List<Genre> genresDanish = await TMDbClient.GetMovieGenresAsync("da");
+        var genresDanish = await TMDbClient.GetMovieGenresAsync("da");
 
         await Verify(new
         {
@@ -57,6 +59,8 @@ public class ClientGenreTests : TestBase
         });
 
         // At least one should be different
+        Assert.NotNull(genres);
+        Assert.NotNull(genresDanish);
         Genre actionEn = genres.Single(s => s.Id == IdHelper.AdventureMovieGenre);
         Genre actionDa = genresDanish.Single(s => s.Id == IdHelper.AdventureMovieGenre);
 

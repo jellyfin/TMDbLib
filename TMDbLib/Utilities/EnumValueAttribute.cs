@@ -12,7 +12,7 @@ public sealed class EnumValueAttribute : Attribute
     /// Initializes a new instance of the <see cref="EnumValueAttribute"/> class.
     /// </summary>
     /// <param name="value">The custom string value for the enum field.</param>
-    public EnumValueAttribute(string value)
+    public EnumValueAttribute(string? value)
     {
         Value = value;
     }
@@ -20,5 +20,5 @@ public sealed class EnumValueAttribute : Attribute
     /// <summary>
     /// Gets the custom string value for the enum field.
     /// </summary>
-    public string Value { get; }
+    public string? Value { get; }
 }

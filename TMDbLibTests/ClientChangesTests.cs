@@ -13,15 +13,22 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientChangesTests : TestBase
 {
+    // Fixed date for deterministic WireMock playback (recorded 2025-12-24)
+    private static readonly DateTime FixedEndDate = new(2025, 11, 24, 0, 0, 0, DateTimeKind.Utc);
+
     /// <summary>
     /// Tests that retrieving movie changes returns results and newer changes are present.
     /// </summary>
     [Fact]
     public async Task TestChangesMoviesAsync()
     {
-        SearchContainer<ChangesListItem> page1 = await TMDbClient.GetMoviesChangesAsync(1);
-        SearchContainer<ChangesListItem> oldChanges = await TMDbClient.GetMoviesChangesAsync(endDate: DateTime.UtcNow.AddMonths(-1));
+        var page1 = await TMDbClient.GetMoviesChangesAsync(1);
+        var oldChanges = await TMDbClient.GetMoviesChangesAsync(endDate: FixedEndDate);
 
+        Assert.NotNull(page1);
+        Assert.NotNull(page1.Results);
+        Assert.NotNull(oldChanges);
+        Assert.NotNull(oldChanges.Results);
         Assert.NotEmpty(page1.Results);
         Assert.NotEmpty(oldChanges.Results);
 
@@ -35,9 +42,13 @@ public class ClientChangesTests : TestBase
     [Fact]
     public async Task TestChangesPeopleAsync()
     {
-        SearchContainer<ChangesListItem> page1 = await TMDbClient.GetPeopleChangesAsync(1);
-        SearchContainer<ChangesListItem> oldChanges = await TMDbClient.GetPeopleChangesAsync(endDate: DateTime.UtcNow.AddMonths(-1));
+        var page1 = await TMDbClient.GetPeopleChangesAsync(1);
+        var oldChanges = await TMDbClient.GetPeopleChangesAsync(endDate: FixedEndDate);
 
+        Assert.NotNull(page1);
+        Assert.NotNull(page1.Results);
+        Assert.NotNull(oldChanges);
+        Assert.NotNull(oldChanges.Results);
         Assert.NotEmpty(page1.Results);
         Assert.NotEmpty(oldChanges.Results);
 
@@ -51,9 +62,13 @@ public class ClientChangesTests : TestBase
     [Fact]
     public async Task TestChangesTvShowsAsync()
     {
-        SearchContainer<ChangesListItem> page1 = await TMDbClient.GetTvChangesAsync(1);
-        SearchContainer<ChangesListItem> oldChanges = await TMDbClient.GetTvChangesAsync(endDate: DateTime.UtcNow.AddMonths(-1));
+        var page1 = await TMDbClient.GetTvChangesAsync(1);
+        var oldChanges = await TMDbClient.GetTvChangesAsync(endDate: FixedEndDate);
 
+        Assert.NotNull(page1);
+        Assert.NotNull(page1.Results);
+        Assert.NotNull(oldChanges);
+        Assert.NotNull(oldChanges.Results);
         Assert.NotEmpty(page1.Results);
         Assert.NotEmpty(oldChanges.Results);
 

@@ -18,5 +18,5 @@ public class StillImages
     /// Gets or sets the list of still images.
     /// </summary>
     [JsonProperty("stills")]
-    public List<ImageData> Stills { get; set; }
+    public List<ImageData>? Stills { get; set; }
 }

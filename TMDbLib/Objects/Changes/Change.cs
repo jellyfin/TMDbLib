@@ -12,11 +12,11 @@ public class Change
     /// Gets or sets the list of change items.
     /// </summary>
     [JsonProperty("items")]
-    public List<ChangeItemBase> Items { get; set; }
+    public List<ChangeItemBase>? Items { get; set; }
 
     /// <summary>
     /// Gets or sets the key identifying which property was changed.
     /// </summary>
     [JsonProperty("key")]
-    public string Key { get; set; }
+    public string? Key { get; set; }
 }

@@ -18,25 +18,25 @@ public class Credit
     /// Gets or sets the department for crew credits.
     /// </summary>
     [JsonProperty("department")]
-    public string Department { get; set; }
+    public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the unique identifier for this credit.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the job title for crew credits.
     /// </summary>
     [JsonProperty("job")]
-    public string Job { get; set; }
+    public string? Job { get; set; }
 
     /// <summary>
     /// Gets or sets the media item associated with this credit.
     /// </summary>
     [JsonProperty("media")]
-    public CreditMedia Media { get; set; }
+    public CreditMedia? Media { get; set; }
 
     /// <summary>
     /// Gets or sets the type of media (movie or TV show).
@@ -48,5 +48,5 @@ public class Credit
     /// Gets or sets the person associated with this credit.
     /// </summary>
     [JsonProperty("person")]
-    public CreditPerson Person { get; set; }
+    public CreditPerson? Person { get; set; }
 }

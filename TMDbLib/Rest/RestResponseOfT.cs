@@ -10,16 +10,22 @@ internal class RestResponse<T> : RestResponse
 {
     private readonly RestClient _client;
 
-    public RestResponse(HttpResponseMessage response, RestClient client)
+    public RestResponse(HttpResponseMessage? response, RestClient client)
         : base(response)
     {
         _client = client;
     }
 
-    public async Task<T> GetDataObject()
+    public async Task<T?> GetDataObject()
     {
-        using Stream content = await GetContent().ConfigureAwait(false);
+        if (!IsValid)
+        {
+            return default;
+        }
 
-        return (T)_client.Serializer.Deserialize(content, typeof(T));
+        using Stream content = await GetContent().ConfigureAwait(false);
+        var result = _client.Serializer.Deserialize(content, typeof(T));
+
+        return result is T typed ? typed : default;
     }
 }

@@ -12,9 +12,9 @@ internal class CombinedCreditsCrewConverter : JsonCreationConverter<CombinedCred
         return objectType == typeof(CombinedCreditsCrewBase);
     }
 
-    protected override CombinedCreditsCrewBase GetInstance(JObject jObject)
+    protected override CombinedCreditsCrewBase? GetInstance(JObject jObject)
     {
-        MediaType mediaType = jObject["media_type"].ToObject<MediaType>();
+        var mediaType = jObject["media_type"]?.ToObject<MediaType>();
 
         switch (mediaType)
         {
@@ -22,6 +22,8 @@ internal class CombinedCreditsCrewConverter : JsonCreationConverter<CombinedCred
                 return new CombinedCreditsCrewMovie();
             case MediaType.Tv:
                 return new CombinedCreditsCrewTv();
+            case null:
+                return null;
             default:
                 throw new ArgumentOutOfRangeException();
         }

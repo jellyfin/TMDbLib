@@ -13,20 +13,20 @@ internal class SearchBaseConverter : JsonConverter
         return objectType == typeof(SearchBase);
     }
 
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        JObject jObject = JObject.Load(reader);
+        var jObject = JObject.Load(reader);
 
-        SearchBase result;
-        if (jObject["media_type"] == null)
+        SearchBase? result;
+        if (jObject["media_type"] is null)
         {
             // We cannot determine the correct type, let's hope we were provided one
-            result = (SearchBase)Activator.CreateInstance(objectType);
+            result = Activator.CreateInstance(objectType) as SearchBase;
         }
         else
         {
             // Determine the type based on the media_type
-            MediaType mediaType = jObject["media_type"].ToObject<MediaType>();
+            var mediaType = jObject["media_type"]!.ToObject<MediaType>();
 
             result = mediaType switch
             {
@@ -43,16 +43,24 @@ internal class SearchBaseConverter : JsonConverter
         }
 
         // Populate the result
-        using JsonReader jsonReader = jObject.CreateReader();
-        serializer.Populate(jsonReader, result);
+        if (result is not null)
+        {
+            using var jsonReader = jObject.CreateReader();
+            serializer.Populate(jsonReader, result);
+        }
 
         return result;
     }
 
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        JToken jToken = JToken.FromObject(value);
+        if (value is null)
+        {
+            writer.WriteNull();
+            return;
+        }
 
+        var jToken = JToken.FromObject(value);
         jToken.WriteTo(writer);
     }
 }

@@ -11,19 +11,19 @@ public class AuthorDetails
     /// Gets or sets the author's display name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the author's username.
     /// </summary>
     [JsonProperty("username")]
-    public string Username { get; set; }
+    public string? Username { get; set; }
 
     /// <summary>
     /// Gets or sets the avatar image path.
     /// </summary>
     [JsonProperty("avatar_path")]
-    public string AvatarPath { get; set; }
+    public string? AvatarPath { get; set; }
 
     /// <summary>
     /// Gets or sets the rating given by the author.

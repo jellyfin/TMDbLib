@@ -1,6 +1,6 @@
 {
   "Guid": "678a3498-c2ff-af4c-8080-fbef70e36fee",
-  "UpdatedAt": "2025-12-24T11:53:35.135675Z",
+  "UpdatedAt": "2025-12-24T18:45:16.645066Z",
   "Title": "Proxy Mapping for GET /3/authentication/guest_session/new",
   "Description": "Proxy Mapping for GET /3/authentication/guest_session/new",
   "Priority": -2000000,
@@ -23,8 +23,8 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "success": true,
-      "guest_session_id": "5509daa5f22f7e6365df8527fcb83ea6",
-      "expires_at": "2025-12-25 11:53:35 UTC"
+      "guest_session_id": "ae3787c45ee77bf7200e233b07b2b8ce",
+      "expires_at": "2025-12-25 18:45:16 UTC"
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
@@ -32,14 +32,14 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "Cache-Control": "public, max-age=0",
-      "x-az": "us-east-1b",
-      "ETag": "W/\u0022ddbbc8d4f357d7c96f914eea1702e5fb\u0022",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022b86c2789ab054d1c5b8047e036513dea\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

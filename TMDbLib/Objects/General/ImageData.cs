@@ -17,7 +17,7 @@ public class ImageData
     /// Gets or sets the file path for the image.
     /// </summary>
     [JsonProperty("file_path")]
-    public string FilePath { get; set; }
+    public string? FilePath { get; set; }
 
     /// <summary>
     /// Gets or sets the height of the image in pixels.
@@ -29,13 +29,13 @@ public class ImageData
     /// Gets or sets the language code, e.g. en.
     /// </summary>
     [JsonProperty("iso_639_1")]
-    public string Iso_639_1 { get; set; }
+    public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the country code for the image.
     /// </summary>
     [JsonProperty("iso_3166_1")]
-    public string Iso_3166_1 { get; set; }
+    public string? Iso_3166_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score for the image.

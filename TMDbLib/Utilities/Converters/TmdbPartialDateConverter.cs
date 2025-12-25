@@ -27,9 +27,9 @@ public class TmdbPartialDateConverter : JsonConverter
     /// <param name="existingValue">The existing value of object being read.</param>
     /// <param name="serializer">The calling serializer.</param>
     /// <returns>The parsed DateTime value, or null if parsing fails.</returns>
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        string str = reader.Value as string;
+        var str = reader.Value as string;
         if (string.IsNullOrEmpty(str))
         {
             return null;
@@ -49,9 +49,15 @@ public class TmdbPartialDateConverter : JsonConverter
     /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
     /// <param name="value">The value to write.</param>
     /// <param name="serializer">The calling serializer.</param>
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        DateTime? date = value as DateTime?;
-        writer.WriteValue(date?.ToString(CultureInfo.InvariantCulture));
+        var date = value as DateTime?;
+        if (date is null)
+        {
+            writer.WriteNull();
+            return;
+        }
+
+        writer.WriteValue(date.Value.ToString(CultureInfo.InvariantCulture));
     }
 }

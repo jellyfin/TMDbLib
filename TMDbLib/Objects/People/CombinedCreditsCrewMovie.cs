@@ -27,7 +27,7 @@ public class CombinedCreditsCrewMovie : CombinedCreditsCrewBase
     /// Gets or sets the original title.
     /// </summary>
     [JsonProperty("original_title")]
-    public string OriginalTitle { get; set; }
+    public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the release date.
@@ -39,7 +39,7 @@ public class CombinedCreditsCrewMovie : CombinedCreditsCrewBase
     /// Gets or sets the movie title.
     /// </summary>
     [JsonProperty("title")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the movie has video content.

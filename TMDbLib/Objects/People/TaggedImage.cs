@@ -19,7 +19,7 @@ public class TaggedImage
     /// Gets or sets the file path.
     /// </summary>
     [JsonProperty("file_path")]
-    public string FilePath { get; set; }
+    public string? FilePath { get; set; }
 
     /// <summary>
     /// Gets or sets the height in pixels.
@@ -31,25 +31,25 @@ public class TaggedImage
     /// Gets or sets the image ID.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the image type.
     /// </summary>
     [JsonProperty("image_type")]
-    public string ImageType { get; set; } // TODO: Turn into enum
+    public string? ImageType { get; set; } // TODO: Turn into enum
 
     /// <summary>
     /// Gets or sets a language code, e.g. en.
     /// </summary>
     [JsonProperty("iso_639_1")]
-    public string Iso_639_1 { get; set; }
+    public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the media item this image is from.
     /// </summary>
     [JsonProperty("media")]
-    public SearchBase Media { get; set; }
+    public SearchBase? Media { get; set; }
 
     /// <summary>
     /// Gets or sets the media type.

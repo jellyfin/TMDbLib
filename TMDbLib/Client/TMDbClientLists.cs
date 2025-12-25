@@ -21,14 +21,7 @@ public partial class TMDbClient
         }
 
         // Movie Id is expected by the API and can not be null
-#if NETSTANDARD2_0
-        if (movieId <= 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(movieId));
-        }
-#else
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(movieId);
-#endif
 
         RestRequest req = _client.Create("list/{listId}/{method}");
         req.AddUrlSegment("listId", listId);
@@ -41,10 +34,9 @@ public partial class TMDbClient
 
         // Status code 12 = "The item/record was updated successfully"
         // Status code 13 = "The item/record was deleted successfully"
-        PostReply item = await response.GetDataObject().ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
-        // TODO: Previous code checked for item=null
-        return item.StatusCode == 12 || item.StatusCode == 13;
+        return item is not null && (item.StatusCode == 12 || item.StatusCode == 13);
     }
 
     /// <summary>
@@ -54,7 +46,7 @@ public partial class TMDbClient
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The requested list with its details and items.</returns>
-    public async Task<GenericList> GetListAsync(string listId, string language = null, CancellationToken cancellationToken = default)
+    public async Task<GenericList?> GetListAsync(string listId, string? language = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(listId))
         {
@@ -70,7 +62,7 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        GenericList resp = await req.GetOfT<GenericList>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<GenericList>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -88,22 +80,17 @@ public partial class TMDbClient
         {
             throw new ArgumentNullException(nameof(listId));
         }
-#if NETSTANDARD2_0
-        if (movieId <= 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(movieId));
-        }
-#else
-        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(movieId);
-#endif
 
-        RestRequest req = _client.Create("list/{listId}/item_status");
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(movieId);
+
+        var req = _client.Create("list/{listId}/item_status");
         req.AddUrlSegment("listId", listId);
         req.AddParameter("movie_id", movieId.ToString(CultureInfo.InvariantCulture));
 
-        using RestResponse<ListStatus> response = await req.Get<ListStatus>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<ListStatus>(cancellationToken).ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
-        return (await response.GetDataObject().ConfigureAwait(false)).ItemPresent;
+        return item?.ItemPresent ?? false;
     }
 
     /// <summary>
@@ -137,18 +124,17 @@ public partial class TMDbClient
             throw new ArgumentNullException(nameof(listId));
         }
 
-        RestRequest request = _client.Create("list/{listId}/clear");
+        var request = _client.Create("list/{listId}/clear");
         request.AddUrlSegment("listId", listId);
         request.AddParameter("confirm", "true");
         AddSessionId(request, SessionType.UserSession);
 
-        using RestResponse<PostReply> response = await request.Post<PostReply>(cancellationToken).ConfigureAwait(false);
+        using var response = await request.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
         // Status code 12 = "The item/record was updated successfully"
-        PostReply item = await response.GetDataObject().ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
-        // TODO: Previous code checked for item=null
-        return item.StatusCode == 12;
+        return item is not null && item.StatusCode == 12;
     }
 
     /// <summary>
@@ -161,7 +147,7 @@ public partial class TMDbClient
     /// <returns>The ID of the newly created list.</returns>
     /// <remarks>Requires a valid user session.</remarks>
     /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<string> ListCreateAsync(string name, string description = "", string language = null, CancellationToken cancellationToken = default)
+    public async Task<string?> ListCreateAsync(string name, string description = "", string? language = null, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
 
@@ -176,7 +162,7 @@ public partial class TMDbClient
             description = string.Empty;
         }
 
-        RestRequest req = _client.Create("list");
+        var req = _client.Create("list");
         AddSessionId(req, SessionType.UserSession);
 
         language ??= DefaultLanguage;
@@ -189,9 +175,10 @@ public partial class TMDbClient
             req.SetBody(new { name, description });
         }
 
-        using RestResponse<ListCreateReply> response = await req.Post<ListCreateReply>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Post<ListCreateReply>(cancellationToken).ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
-        return (await response.GetDataObject().ConfigureAwait(false)).ListId;
+        return item?.ListId;
     }
 
     /// <summary>
@@ -211,17 +198,16 @@ public partial class TMDbClient
             throw new ArgumentNullException(nameof(listId));
         }
 
-        RestRequest req = _client.Create("list/{listId}");
+        var req = _client.Create("list/{listId}");
         req.AddUrlSegment("listId", listId);
         AddSessionId(req, SessionType.UserSession);
 
-        using RestResponse<PostReply> response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Delete<PostReply>(cancellationToken).ConfigureAwait(false);
 
         // Status code 13 = success
-        PostReply item = await response.GetDataObject().ConfigureAwait(false);
+        var item = await response.GetDataObject().ConfigureAwait(false);
 
-        // TODO: Previous code checked for item=null
-        return item.StatusCode == 13;
+        return item is not null && item.StatusCode == 13;
     }
 
     /// <summary>

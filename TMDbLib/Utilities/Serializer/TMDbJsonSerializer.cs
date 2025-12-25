@@ -40,8 +40,8 @@ public class TMDbJsonSerializer : ITMDbSerializer
     /// <param name="type">The type of the object.</param>
     public void Serialize(Stream target, object obj, Type type)
     {
-        using StreamWriter sw = new StreamWriter(target, _encoding, 4096, true);
-        using JsonTextWriter jw = new JsonTextWriter(sw);
+        using var sw = new StreamWriter(target, _encoding, 4096, true);
+        using var jw = new JsonTextWriter(sw);
 
         _serializer.Serialize(jw, obj, type);
     }
@@ -52,10 +52,10 @@ public class TMDbJsonSerializer : ITMDbSerializer
     /// <param name="source">The source stream to read from.</param>
     /// <param name="type">The type of the object to deserialize.</param>
     /// <returns>The deserialized object.</returns>
-    public object Deserialize(Stream source, Type type)
+    public object? Deserialize(Stream source, Type type)
     {
-        using StreamReader sr = new StreamReader(source, _encoding, false, 4096, true);
-        using JsonTextReader jr = new JsonTextReader(sr);
+        using var sr = new StreamReader(source, _encoding, false, 4096, true);
+        using var jr = new JsonTextReader(sr);
 
         return _serializer.Deserialize(jr, type);
     }

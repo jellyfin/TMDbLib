@@ -12,31 +12,31 @@ public class ReviewBase
     /// Gets or sets the author username.
     /// </summary>
     [JsonProperty("author")]
-    public string Author { get; set; }
+    public string? Author { get; set; }
 
     /// <summary>
     /// Gets or sets the detailed author information.
     /// </summary>
     [JsonProperty("author_details")]
-    public AuthorDetails AuthorDetails { get; set; }
+    public AuthorDetails? AuthorDetails { get; set; }
 
     /// <summary>
     /// Gets or sets the review content.
     /// </summary>
     [JsonProperty("content")]
-    public string Content { get; set; }
+    public string? Content { get; set; }
 
     /// <summary>
     /// Gets or sets the review ID.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the URL to the full review.
     /// </summary>
     [JsonProperty("url")]
-    public string Url { get; set; }
+    public string? Url { get; set; }
 
     /// <summary>
     /// Gets or sets the creation date.

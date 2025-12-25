@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
@@ -63,7 +62,7 @@ public class ClientTests : TestBase
     {
         var config = new TMDbConfig
         {
-            ChangeKeys = new List<string>()
+            ChangeKeys = []
         };
         config.ChangeKeys.Add("a");
         config.Images = new ConfigImageTypes

@@ -19,5 +19,5 @@ public class ChangeItemDeleted : ChangeItemBase
     /// Gets or sets the original value before deletion.
     /// </summary>
     [JsonProperty("original_value")]
-    public object OriginalValue { get; set; }
+    public object? OriginalValue { get; set; }
 }

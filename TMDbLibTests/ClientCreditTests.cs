@@ -18,9 +18,12 @@ public class ClientCreditTests : TestBase
     [Fact]
     public async Task TestGetCreditTv()
     {
-        Credit result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
+        var result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
+        Assert.NotNull(result);
+        Assert.NotNull(result.Media);
 
         // Episode must exist
+        Assert.NotNull(result.Media.Episodes);
         Assert.Contains(result.Media.Episodes, s => s.Name == "No Exit");
 
         await Verify(result);
@@ -32,7 +35,7 @@ public class ClientCreditTests : TestBase
     [Fact]
     public async Task TestMissingCredit()
     {
-        Credit result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
+        var result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
 
         Assert.Null(result);
     }
@@ -43,9 +46,12 @@ public class ClientCreditTests : TestBase
     [Fact]
     public async Task TestGetCreditSeasons()
     {
-        Credit result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse);
+        var result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse);
+        Assert.NotNull(result);
+        Assert.NotNull(result.Media);
 
         // Season must exist
+        Assert.NotNull(result.Media.Seasons);
         Assert.Contains(result.Media.Seasons, s => s.SeasonNumber == 1);
 
         await Verify(result);

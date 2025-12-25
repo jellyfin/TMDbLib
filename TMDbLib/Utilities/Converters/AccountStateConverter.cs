@@ -16,9 +16,9 @@ internal class AccountStateConverter : JsonConverter
                 objectType == typeof(TvEpisodeAccountStateWithNumber);
     }
 
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        JObject jObject = JObject.Load(reader);
+        var jObject = JObject.Load(reader);
 
         // Sometimes the AccountState.Rated is an object with a value in it
         // In these instances, convert it from:
@@ -28,7 +28,7 @@ internal class AccountStateConverter : JsonConverter
         //  "rating": 5
         //  "rating": null
 
-        JToken obj = jObject["rated"];
+        var obj = jObject["rated"]!;
         if (obj.Type == JTokenType.Boolean)
         {
             // It's "False", so the rating is not set
@@ -38,34 +38,42 @@ internal class AccountStateConverter : JsonConverter
         else if (obj.Type == JTokenType.Object)
         {
             // Read out the value
-            double rating = obj["value"].ToObject<double>();
+            var rating = obj["value"]?.ToObject<double>();
             jObject.Remove("rated");
             jObject.Add("rating", rating);
         }
 
-        object result = Activator.CreateInstance(objectType);
+        var result = Activator.CreateInstance(objectType);
 
         // Populate the result
-        using JsonReader jsonReader = jObject.CreateReader();
-        serializer.Populate(jsonReader, result);
+        if (result is not null)
+        {
+            using var jsonReader = jObject.CreateReader();
+            serializer.Populate(jsonReader, result);
+        }
 
         return result;
     }
 
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        JObject jToken = JObject.FromObject(value);
+        if (value is null)
+        {
+            writer.WriteNull();
+            return;
+        }
 
-        JValue obj = (JValue)jToken["rating"];
+        var jToken = JObject.FromObject(value);
+        var ratingToken = jToken["rating"];
         jToken.Remove("rating");
 
-        if (obj.Value == null)
+        if (ratingToken is JValue obj && obj.Value is not null)
         {
-            jToken["rated"] = null;
+            jToken["rated"] = JToken.FromObject(new { value = obj });
         }
         else
         {
-            jToken["rated"] = JToken.FromObject(new { value = obj });
+            jToken["rated"] = null;
         }
 
         jToken.WriteTo(writer);
