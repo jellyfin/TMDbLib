@@ -1,0 +1,481 @@
+{
+  "Guid": "d3ed7fa3-8744-3041-ae1d-83501f5b5c76",
+  "UpdatedAt": "2025-12-24T18:45:22.4017901Z",
+  "Title": "Proxy Mapping for GET /3/tv/240459/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/240459/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/240459/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 240459,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 61
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/sSfxJXq7s8oHf3XWd0FtqagPDsF.jpg",
+              "provider_id": 21,
+              "provider_name": "Stan",
+              "display_priority": 10
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 37
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 55
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/esiLBRzDUwodjfN8gA4qj7l3ZF7.jpg",
+              "provider_id": 1794,
+              "provider_name": "Starz Amazon Channel",
+              "display_priority": 93
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 35
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 36
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 114
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=ES",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 68
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/8qSG9LtUhBQIWy2Fr6fzeW7gBdd.jpg",
+              "provider_id": 1967,
+              "provider_name": "Molotov TV",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/4LnuoJ2E5nTWCvXnlGFaUNH324v.jpg",
+              "provider_id": 685,
+              "provider_name": "Cine\u002B OCS Amazon Channel ",
+              "display_priority": 43
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=GB",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 105
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=GG",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 71
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 16
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=MX",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 47
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 48
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 47
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=NZ",
+          "ads": [
+            {
+              "logo_path": "/vcsLhyNRm528LzfVqQJDddusP27.jpg",
+              "provider_id": 440,
+              "provider_name": "ThreeNow",
+              "display_priority": 15
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 4
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/240459-spartacus-house-of-ashur/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/1C5EVCWyQD798CE1DFfcm6oAbxP.jpg",
+              "provider_id": 1855,
+              "provider_name": "Starz Apple TV Channel",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/9laPF1MAiUxlqM8T98F3Gj0bhzd.jpg",
+              "provider_id": 634,
+              "provider_name": "Starz Roku Premium Channel",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/yIKwylTLP1u8gl84Is7FItpYLGL.jpg",
+              "provider_id": 43,
+              "provider_name": "Starz",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            },
+            {
+              "logo_path": "/esiLBRzDUwodjfN8gA4qj7l3ZF7.jpg",
+              "provider_id": 1794,
+              "provider_name": "Starz Amazon Channel",
+              "display_priority": 154
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=15972",
+      "x-memc": "HIT",
+      "x-memc-key": "9705a620a48f1e4cc1f01ec45c34fa90c7ff9943aa7f9b6636e5d52b13552968",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022b749d8794c6e2419673acebe6c4491ef\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

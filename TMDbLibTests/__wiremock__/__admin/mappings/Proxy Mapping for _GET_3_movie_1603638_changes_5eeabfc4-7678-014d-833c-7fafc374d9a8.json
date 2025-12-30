@@ -1,15 +1,15 @@
 {
-  "Guid": "efb01a52-9f29-1e4c-8abf-5c867ce163d6",
-  "UpdatedAt": "2025-12-24T11:53:34.7848404Z",
-  "Title": "Proxy Mapping for GET /3/tv/season/490987/changes",
-  "Description": "Proxy Mapping for GET /3/tv/season/490987/changes",
+  "Guid": "5eeabfc4-7678-014d-833c-7fafc374d9a8",
+  "UpdatedAt": "2025-12-24T18:45:18.0205166Z",
+  "Title": "Proxy Mapping for GET /3/movie/1603638/changes",
+  "Description": "Proxy Mapping for GET /3/movie/1603638/changes",
   "Priority": -2000000,
   "Request": {
     "Path": {
       "Matchers": [
         {
           "Name": "WildcardMatcher",
-          "Pattern": "/3/tv/season/490987/changes",
+          "Pattern": "/3/movie/1603638/changes",
           "IgnoreCase": false
         }
       ]
@@ -29,17 +29,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "MISS, STORE",
-      "x-memc-key": "7e6df60ac5765baf6eb07848dce4d6577db7ac38cf4198619b15bef292fb8f56",
-      "x-az": "us-east-1a",
       "Cache-Control": "public, max-age=600",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "f36e6fcac0a1396cc0ac9387db300d9fe698460e587eb22441d6f709af6834e2",
+      "x-az": "us-east-1c",
       "ETag": "W/\u00221c7b0be7cfcb529d61df7c7b50baa91e\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

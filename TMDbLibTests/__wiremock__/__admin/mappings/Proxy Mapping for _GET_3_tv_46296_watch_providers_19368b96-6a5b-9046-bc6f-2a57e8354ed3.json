@@ -1,0 +1,2207 @@
+{
+  "Guid": "19368b96-6a5b-9046-bc6f-2a57e8354ed3",
+  "UpdatedAt": "2025-12-24T18:45:24.5935702Z",
+  "Title": "Proxy Mapping for GET /3/tv/46296/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/46296/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/46296/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 46296,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 31
+            }
+          ]
+        },
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 6
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AO": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/jmR0t1kjzHcyV7raynzMbF87J9d.jpg",
+              "provider_id": 298,
+              "provider_name": "RTL\u002B",
+              "display_priority": 49
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 61
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 154
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/sSfxJXq7s8oHf3XWd0FtqagPDsF.jpg",
+              "provider_id": 21,
+              "provider_name": "Stan",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 50
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 37
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 55
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 12
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/esiLBRzDUwodjfN8gA4qj7l3ZF7.jpg",
+              "provider_id": 1794,
+              "provider_name": "Starz Amazon Channel",
+              "display_priority": 93
+            }
+          ]
+        },
+        "CI": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CL",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 35
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 36
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CU": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/qcTTC6rFBIVaCLzu0EKwuyrBlSR.jpg",
+              "provider_id": 2536,
+              "provider_name": "Oneplay",
+              "display_priority": 35
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/jmR0t1kjzHcyV7raynzMbF87J9d.jpg",
+              "provider_id": 298,
+              "provider_name": "RTL\u002B",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/5Qe65kN95Z0CytOaG3I8bytdW7A.jpg",
+              "provider_id": 1892,
+              "provider_name": "RTL Crime Amazon Channel",
+              "display_priority": 95
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 114
+            },
+            {
+              "logo_path": "/8o737RzF49I8kOHe9ua3tLORIEf.jpg",
+              "provider_id": 2578,
+              "provider_name": "RTL\u002B Max Amazon Channel",
+              "display_priority": 221
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 106
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 130
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 19
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 51
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 68
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/o4OqlMLb3ZjhK7OwR4qvxiZKOXf.jpg",
+              "provider_id": 2358,
+              "provider_name": "Lionsgate\u002B Amazon Channels",
+              "display_priority": 44
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 54
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=FJ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=FR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/4LnuoJ2E5nTWCvXnlGFaUNH324v.jpg",
+              "provider_id": 685,
+              "provider_name": "Cine\u002B OCS Amazon Channel ",
+              "display_priority": 43
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=GB",
+          "ads": [
+            {
+              "logo_path": "/4ee4wGJs6Us4vc6971WRkDUnn5m.jpg",
+              "provider_id": 333,
+              "provider_name": "5",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 87
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GQ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=GQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/e2hCUg2Z3sJ6yWF9NLU24SIKeWa.jpg",
+              "provider_id": 561,
+              "provider_name": "Lionsgate Play",
+              "display_priority": 33
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=IL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/e2hCUg2Z3sJ6yWF9NLU24SIKeWa.jpg",
+              "provider_id": 561,
+              "provider_name": "Lionsgate Play",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/p8i1zUcZYQ7qU6RrGvGbDItvcx4.jpg",
+              "provider_id": 2053,
+              "provider_name": "Lionsgate Play Apple TV Channel",
+              "display_priority": 46
+            },
+            {
+              "logo_path": "/yVbjPWEbsStanRAxwKMDARVOvsn.jpg",
+              "provider_id": 2074,
+              "provider_name": "Lionsgate Play Amazon Channel",
+              "display_priority": 48
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 71
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=JP",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/vJUUqbfHPXC3TBPJ5IxoKlzaUl2.jpg",
+              "provider_id": 2517,
+              "provider_name": "BS10 STAR CHANNEL EX Amazon Channel",
+              "display_priority": 67
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 26
+            }
+          ]
+        },
+        "KW": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 16
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LY": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=LY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MD",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=ML",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MX",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/zLYr7OPvpskMA4S79E3vlCi71iC.jpg",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/foWKiK4ikpdM72OGN2B8jjyy6OY.jpg",
+              "provider_id": 2142,
+              "provider_name": "MGM\u002B Apple TV Channel",
+              "display_priority": 47
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 48
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/e2hCUg2Z3sJ6yWF9NLU24SIKeWa.jpg",
+              "provider_id": 561,
+              "provider_name": "Lionsgate Play",
+              "display_priority": 27
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 10
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 47
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=NZ",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/o4OqlMLb3ZjhK7OwR4qvxiZKOXf.jpg",
+              "provider_id": 2358,
+              "provider_name": "Lionsgate\u002B Amazon Channels",
+              "display_priority": 37
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/vcsLhyNRm528LzfVqQJDddusP27.jpg",
+              "provider_id": 440,
+              "provider_name": "ThreeNow",
+              "display_priority": 15
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PK": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PL",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/rZG2UBzS8ysl2kloSbrm9w4Mth2.jpg",
+              "provider_id": 2214,
+              "provider_name": "CDA Premium",
+              "display_priority": 42
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PT",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 18
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SE",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/jy4yvY3szonb0p6rtMXvF5stuX9.jpg",
+              "provider_id": 497,
+              "provider_name": "Tele2 Play",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/o4OqlMLb3ZjhK7OwR4qvxiZKOXf.jpg",
+              "provider_id": 2358,
+              "provider_name": "Lionsgate\u002B Amazon Channels",
+              "display_priority": 47
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 34
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
+              "provider_id": 159,
+              "provider_name": "Catchplay",
+              "display_priority": 13
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/wQzSN83BnWVgO7xEh0SeTVqtrFv.jpg",
+              "provider_id": 207,
+              "provider_name": "The Roku Channel",
+              "display_priority": 25
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/1C5EVCWyQD798CE1DFfcm6oAbxP.jpg",
+              "provider_id": 1855,
+              "provider_name": "Starz Apple TV Channel",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/yIKwylTLP1u8gl84Is7FItpYLGL.jpg",
+              "provider_id": 43,
+              "provider_name": "Starz",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 155
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/27WMfRN7pQE3j5Khm8fPM7vYyLV.jpg",
+              "provider_id": 2077,
+              "provider_name": "Plex Channel",
+              "display_priority": 128
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/tv/46296-spartacus/watch?locale=ZW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=5763",
+      "x-memc": "HIT",
+      "x-memc-key": "879af6262c70cc04aa92be28212a8f64fb1df5f2cf39dd69d0aac87f964c637e",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022692f0aa7594f5614b005e401d2daa494\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

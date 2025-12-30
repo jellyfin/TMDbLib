@@ -1,0 +1,755 @@
+{
+  "Guid": "1aaf1342-240e-b545-af77-a167b74175e5",
+  "UpdatedAt": "2025-12-24T18:45:21.2322914Z",
+  "Title": "Proxy Mapping for GET /3/movie/1422096/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1422096/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1422096/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1422096,
+      "results": {
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=AU",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 51
+            },
+            {
+              "logo_path": "/2ino0WmHA4GROB7NYKzT6PGqLcb.jpg",
+              "provider_id": 528,
+              "provider_name": "AMC\u002B Amazon Channel",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/oTQdXIqM9iewlN4MC2nhKB0gHw.jpg",
+              "provider_id": 1854,
+              "provider_name": "AMC Plus Apple TV Channel ",
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/kLfq0I2MwiUFUY9yI1GwOeKxX8f.jpg",
+              "provider_id": 2049,
+              "provider_name": "Shudder Apple TV Channel",
+              "display_priority": 62
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
+              "provider_id": 484,
+              "provider_name": "Claro tv\u002B",
+              "display_priority": 21
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/2ino0WmHA4GROB7NYKzT6PGqLcb.jpg",
+              "provider_id": 528,
+              "provider_name": "AMC\u002B Amazon Channel",
+              "display_priority": 86
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 87
+            },
+            {
+              "logo_path": "/oTQdXIqM9iewlN4MC2nhKB0gHw.jpg",
+              "provider_id": 1854,
+              "provider_name": "AMC Plus Apple TV Channel ",
+              "display_priority": 97
+            },
+            {
+              "logo_path": "/kLfq0I2MwiUFUY9yI1GwOeKxX8f.jpg",
+              "provider_id": 2049,
+              "provider_name": "Shudder Apple TV Channel",
+              "display_priority": 106
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=CY",
+          "flatrate": [
+            {
+              "logo_path": "/fPeKpIa1yVXDp3ZUUTdNnD78m7m.jpg",
+              "provider_id": 2557,
+              "provider_name": "Cinobo",
+              "display_priority": 7
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/kO2SWXvDCHAquaUuTJBuZkTBAuU.jpg",
+              "provider_id": 63,
+              "provider_name": "Filmin",
+              "display_priority": 7
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=FR",
+          "rent": [
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/8qSG9LtUhBQIWy2Fr6fzeW7gBdd.jpg",
+              "provider_id": 1967,
+              "provider_name": "Molotov TV",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/vBbNBDZnpnhgHe5ZO9CVur4DmkG.jpg",
+              "provider_id": 1736,
+              "provider_name": "Shadowz Amazon Channel",
+              "display_priority": 53
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/11Yzww3g6lYZznKrom3cSrKP4St.jpg",
+              "provider_id": 239,
+              "provider_name": "Universcine",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 85
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 67
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 66
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/fPeKpIa1yVXDp3ZUUTdNnD78m7m.jpg",
+              "provider_id": 2557,
+              "provider_name": "Cinobo",
+              "display_priority": 14
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 12
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=IN",
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=IT",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 36
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 36
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=MX",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=NZ",
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 32
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 59
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
+              "provider_id": 505,
+              "provider_name": "Player",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/2YCt92ETw8xLXxhkURtMjZnzfKT.jpg",
+              "provider_id": 2363,
+              "provider_name": "Polsat Box Go",
+              "display_priority": 47
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/mhsYsVY18PVcVh76y2XFrodqbBD.jpg",
+              "provider_id": 2658,
+              "provider_name": "TVP",
+              "display_priority": 65
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/mBliLuM0AbkRPGDoVa7IGxwC59b.jpg",
+              "provider_id": 2102,
+              "provider_name": "Premiery Canal\u002B",
+              "display_priority": 34
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=RU",
+          "buy": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1422096-good-boy/watch?locale=US",
+          "rent": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/oTQdXIqM9iewlN4MC2nhKB0gHw.jpg",
+              "provider_id": 1854,
+              "provider_name": "AMC Plus Apple TV Channel ",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/2ino0WmHA4GROB7NYKzT6PGqLcb.jpg",
+              "provider_id": 528,
+              "provider_name": "AMC\u002B Amazon Channel",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+              "provider_id": 526,
+              "provider_name": "AMC\u002B",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/vEtdiYRPRbDCp1Tcn3BEPF1Ni76.jpg",
+              "provider_id": 99,
+              "provider_name": "Shudder",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/qb6Lj5BhNJavdmRVDzAqAjd4Tj3.jpg",
+              "provider_id": 204,
+              "provider_name": "Shudder Amazon Channel",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/mjsNfr0lswbRx9hbEFkgqJkBjFt.jpg",
+              "provider_id": 368,
+              "provider_name": "IndieFlix",
+              "display_priority": 104
+            },
+            {
+              "logo_path": "/kLfq0I2MwiUFUY9yI1GwOeKxX8f.jpg",
+              "provider_id": 2049,
+              "provider_name": "Shudder Apple TV Channel",
+              "display_priority": 189
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=16444",
+      "x-memc": "HIT",
+      "x-memc-key": "a53bc7b8d2843470ba3c76dae96862b6277c0ec5b1a939ad966d5e1f7d82afcf",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022041bf04e2cbe973ecbc019be05b4b4cc\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

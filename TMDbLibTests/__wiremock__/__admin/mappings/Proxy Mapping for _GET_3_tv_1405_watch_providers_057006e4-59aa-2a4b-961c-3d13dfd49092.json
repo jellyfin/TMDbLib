@@ -1,0 +1,2466 @@
+{
+  "Guid": "057006e4-59aa-2a4b-961c-3d13dfd49092",
+  "UpdatedAt": "2025-12-24T18:45:23.8567778Z",
+  "Title": "Proxy Mapping for GET /3/tv/1405/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/1405/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1405/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1405,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 21
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "AO": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 32
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 47
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 48
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 154
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 53
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 82
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 83
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
+              "provider_id": 484,
+              "provider_name": "Claro tv\u002B",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 72
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 94
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 95
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 122
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 123
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 44
+            }
+          ]
+        },
+        "CI": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 19
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 22
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 88
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 92
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/s38BRDYN1fP3Ll9bptNaE5JXFkL.jpg",
+              "provider_id": 2624,
+              "provider_name": "TV2 Skyshowtime",
+              "display_priority": 53
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 23
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 27
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 24
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 28
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 51
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/c7SqVo4DFrbK3RwhGbxvQ9SRco2.jpg",
+              "provider_id": 338,
+              "provider_name": "Ruutu",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 60
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 61
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 63
+            },
+            {
+              "logo_path": "/nBrPDnOWhullZrtcYM0qWpm4xNH.jpg",
+              "provider_id": 345,
+              "provider_name": "Canal\u002B S\u00E9ries",
+              "display_priority": 72
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 84
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=GB",
+          "ads": [
+            {
+              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 76
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 87
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 88
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 120
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 121
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 65
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "GQ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=GQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 45
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 46
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 15
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 5
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 23
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 53
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 24
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 26
+            }
+          ]
+        },
+        "KW": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LY": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=LY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MD",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MG",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=ML",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 5
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 63
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 19
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 21
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 12
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
+              "provider_id": 578,
+              "provider_name": "Strim",
+              "display_priority": 27
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 29
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 6
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 28
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/5z8dpQN27kybhn21EVLZcJPpMEo.jpg",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dNaqCdDy4wsIzjZoYwvLRiOK4Tx.jpg",
+              "provider_id": 116,
+              "provider_name": "Amediateka",
+              "display_priority": 1
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 27
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 6
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jy4yvY3szonb0p6rtMXvF5stuX9.jpg",
+              "provider_id": 497,
+              "provider_name": "Tele2 Play",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 28
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 24
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/gaDNJ1xISHBBq9LQXwwe8PPSRHD.jpg",
+              "provider_id": 1826,
+              "provider_name": "TOD TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 6
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 367
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/ywIoxSjoYJGUIbR6BfxUiCHdPi3.jpg",
+              "provider_id": 633,
+              "provider_name": "Paramount\u002B Roku Premium Channel",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 367
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 26
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 7
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/tv/1405-dexter/watch?locale=ZW",
+          "flatrate": [
+            {
+              "logo_path": "/ilR8XFZOr3e3wETQ4ZXLjXQXrts.jpg",
+              "provider_id": 55,
+              "provider_name": "ShowMax",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=22425",
+      "x-memc": "HIT",
+      "x-memc-key": "48a7e5f1954a8da4005ee954ff8463842fc0622a25620ff4efd105bf72a764f5",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022df6b1e08802b0957e02dc414d4c0db86\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

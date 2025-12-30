@@ -1,6 +1,6 @@
 {
   "Guid": "8e3dc547-f75a-d042-9a96-09dc16b351ca",
-  "UpdatedAt": "2025-12-24T11:53:34.8519291Z",
+  "UpdatedAt": "2025-12-24T18:45:16.340847Z",
   "Title": "Proxy Mapping for GET /3/tv/1399/screened_theatrically",
   "Description": "Proxy Mapping for GET /3/tv/1399/screened_theatrically",
   "Priority": -2000000,
@@ -25,9 +25,9 @@
       "id": 1399,
       "results": [
         {
-          "id": 63103,
-          "episode_number": 10,
-          "season_number": 4
+          "id": 63080,
+          "episode_number": 9,
+          "season_number": 3
         },
         {
           "id": 63102,
@@ -35,9 +35,9 @@
           "season_number": 4
         },
         {
-          "id": 63080,
-          "episode_number": 9,
-          "season_number": 3
+          "id": 63103,
+          "episode_number": 10,
+          "season_number": 4
         },
         {
           "id": 1054979,
@@ -56,17 +56,17 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "Cache-Control": "public, max-age=22103",
       "x-memc": "HIT",
       "x-memc-key": "5a809fcaa10e9a59bcec16afbc07a6514e4fe5a297703b931fcaf6fc72ca366d",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=25475",
-      "ETag": "W/\u0022e50b839cc88e88a1c8fc3f63ee65572f\u0022",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022204ba3fb24fe78f4ca5dc2e04b4e3b07\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P5",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

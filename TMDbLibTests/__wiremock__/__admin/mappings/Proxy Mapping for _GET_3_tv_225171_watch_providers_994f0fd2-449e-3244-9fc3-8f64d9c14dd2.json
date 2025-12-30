@@ -1,0 +1,1908 @@
+{
+  "Guid": "994f0fd2-449e-3244-9fc3-8f64d9c14dd2",
+  "UpdatedAt": "2025-12-24T18:45:23.7314501Z",
+  "Title": "Proxy Mapping for GET /3/tv/225171/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/225171/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/225171/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 225171,
+      "results": {
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=AE",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=AR",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=AT",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 136
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 84
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BE",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 53
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BG",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BH",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 27
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 27
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BM",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 25
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 25
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BO",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
+              "provider_id": 484,
+              "provider_name": "Claro tv\u002B",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 74
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BY",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CA",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 124
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CH",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 15
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 15
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CL",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 47
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 47
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CR",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CV",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CY",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=CZ",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 24
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 197
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=DO",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 29
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 29
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=EC",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=EE",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=EG",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 74
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=FI",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 55
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=FJ",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=GB",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 119
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=GG",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=GH",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 16
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 16
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=HU",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=ID",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=IL",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=IN",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 68
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 77
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=JO",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 28
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 28
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=JP",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 29
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=KR",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qHThQdkJuROK0k5QTCrknaNukWe.jpg",
+              "provider_id": 1883,
+              "provider_name": "TVING",
+              "display_priority": 29
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=LB",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 26
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 26
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=LT",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=LU",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=MD",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=MU",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=MX",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 65
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=MZ",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 68
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 40
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=OM",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 27
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=PA",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=PL",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 58
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 27
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 27
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=SA",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 60
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=SK",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 34
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 29
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 29
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=TH",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 9
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=TT",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 10
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 15
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 15
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 12
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 220
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/225171-pluribus/watch?locale=ZA",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 8
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=4974",
+      "x-memc": "HIT",
+      "x-memc-key": "fbfa7a206a03ab611ffd2a0f1d483440f4b4c6bea65b5096908a143e817146c5",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022c3927f1e3afea0f30f3e3f2dfe983fc4\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

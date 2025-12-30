@@ -1,0 +1,1788 @@
+{
+  "Guid": "6d2cb919-9cdf-2046-8ac8-1c0cfc48e334",
+  "UpdatedAt": "2025-12-24T18:45:23.4668516Z",
+  "Title": "Proxy Mapping for GET /3/tv/4614/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/4614/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/4614/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 4614,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 21
+            }
+          ]
+        },
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=AE",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 14
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=AR",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 24
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 46
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 47
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 48
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 52
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 68
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=AU",
+          "ads": [
+            {
+              "logo_path": "/uU4gqmoX0koF8L5yJSlfaaFd9Tz.jpg",
+              "provider_id": 246,
+              "provider_name": "7plus",
+              "display_priority": 18
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/8fIieu3ZfmTPu8eozZbtgATcPO5.jpg",
+              "provider_id": 82,
+              "provider_name": "10",
+              "display_priority": 22
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 53
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 82
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 83
+            },
+            {
+              "logo_path": "/7QX5OdsQZrXGNBKq9SPzoPV9OYQ.jpg",
+              "provider_id": 385,
+              "provider_name": "BINGE",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 95
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 13
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=BO",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=BR",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 32
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
+              "provider_id": 484,
+              "provider_name": "Claro tv\u002B",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 72
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/djTJ7pAkIhmPaN3eTA6wTUrphNG.jpg",
+              "provider_id": 606,
+              "provider_name": "StackTV Amazon Channel",
+              "display_priority": 74
+            },
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 91
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 95
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 122
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 123
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/o2qiZykonJuLglxwBbtUbHu4wIO.jpg",
+              "provider_id": 449,
+              "provider_name": "Global TV",
+              "display_priority": 46
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/ytApMa9fThUQUFTn696AeNBrB8f.jpg",
+              "provider_id": 210,
+              "provider_name": "Sky",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 44
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 40
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 21
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 41
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/qcTTC6rFBIVaCLzu0EKwuyrBlSR.jpg",
+              "provider_id": 2536,
+              "provider_name": "Oneplay",
+              "display_priority": 35
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
+              "provider_id": 30,
+              "provider_name": "WOW",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 88
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 92
+            },
+            {
+              "logo_path": "/35XbldCPO3ztCREajGbfhf7827w.jpg",
+              "provider_id": 2660,
+              "provider_name": "Wow Fiction Amazon Channel",
+              "display_priority": 226
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 12
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=DO",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 17
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 23
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 27
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 24
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=EC",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 31
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/jse4MOi92Jgetym7nbXFZZBI6LK.jpg",
+              "provider_id": 2241,
+              "provider_name": "Movistar Plus\u002B",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg",
+              "provider_id": 1838,
+              "provider_name": "Tivify",
+              "display_priority": 52
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/zXlrphHQ0EiLTYZcDdVtDxmsjk5.jpg",
+              "provider_id": 62,
+              "provider_name": "Atres Player",
+              "display_priority": 13
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/c7SqVo4DFrbK3RwhGbxvQ9SRco2.jpg",
+              "provider_id": 338,
+              "provider_name": "Ruutu",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/c7SqVo4DFrbK3RwhGbxvQ9SRco2.jpg",
+              "provider_id": 338,
+              "provider_name": "Ruutu",
+              "display_priority": 5
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8qSG9LtUhBQIWy2Fr6fzeW7gBdd.jpg",
+              "provider_id": 1967,
+              "provider_name": "Molotov TV",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 60
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 61
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 63
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 93
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/tmYzlEKeiWStvXwC1QdpXIASpN4.jpg",
+              "provider_id": 147,
+              "provider_name": "M6\u002B",
+              "display_priority": 11
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 76
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 88
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 120
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 121
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/4ee4wGJs6Us4vc6971WRkDUnn5m.jpg",
+              "provider_id": 333,
+              "provider_name": "5",
+              "display_priority": 34
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 65
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 84
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 29
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 21
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 45
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 46
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 58
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 73
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 50
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 53
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
+              "provider_id": 84,
+              "provider_name": "U-NEXT",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/4KZlGfHQEza2dBf3HVk4oWmh611.jpg",
+              "provider_id": 589,
+              "provider_name": "TELETOON\u002B Amazon Channel",
+              "display_priority": 74
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 4
+            }
+          ]
+        },
+        "KW": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=MX",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 63
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=NI",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 12
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 10
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
+              "provider_id": 578,
+              "provider_name": "Strim",
+              "display_priority": 27
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 29
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 18
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PE",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 30
+            }
+          ]
+        },
+        "PF": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PF",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 6
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 28
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 21
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 18
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 27
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jy4yvY3szonb0p6rtMXvF5stuX9.jpg",
+              "provider_id": 497,
+              "provider_name": "Tele2 Play",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/iTzW2q9e1Kk10l2s934SDgPSJNm.jpg",
+              "provider_id": 627,
+              "provider_name": "Voyo",
+              "display_priority": 41
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 23
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=SV",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 18
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 28
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 24
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/gaDNJ1xISHBBq9LQXwwe8PPSRHD.jpg",
+              "provider_id": 1826,
+              "provider_name": "TOD TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=US",
+          "free": [
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/ywIoxSjoYJGUIbR6BfxUiCHdPi3.jpg",
+              "provider_id": 633,
+              "provider_name": "Paramount\u002B Roku Premium Channel",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
+              "provider_id": 2528,
+              "provider_name": "YouTube TV",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 155
+            },
+            {
+              "logo_path": "/5wym1C0jAvJeGirPdgVpcW0CCuy.jpg",
+              "provider_id": 2616,
+              "provider_name": "Paramount Plus Essential",
+              "display_priority": 366
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 367
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=UY",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=VE",
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 18
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 26
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/tv/4614-ncis/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "Cache-Control": "public, max-age=4293",
+      "x-memc": "HIT",
+      "x-memc-key": "a4a3548c6dd97b4527b354c2810b40926e50b26a663ad80e1fe6b153a2827ff3",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022cea829e2bcdd3a9a87582e43ac9f5aba\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P3",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}
