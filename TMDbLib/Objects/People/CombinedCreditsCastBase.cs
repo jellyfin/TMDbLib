@@ -26,38 +26,38 @@ public abstract class CombinedCreditsCastBase
     /// Gets or sets the character name.
     /// </summary>
     [JsonProperty("character")]
-    public string Character { get; set; }
+    public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the backdrop image path.
     /// </summary>
     [JsonProperty("backdrop_path")]
-    public string BackdropPath { get; set; }
+    public string? BackdropPath { get; set; }
 
     /// <summary>
     /// Gets or sets the genre IDs.
     /// </summary>
     [JsonProperty("genre_ids")]
     [JsonConverter(typeof(TmdbIntArrayAsObjectConverter))]
-    public List<int> GenreIds { get; set; }
+    public List<int>? GenreIds { get; set; }
 
     /// <summary>
     /// Gets or sets the original language code.
     /// </summary>
     [JsonProperty("original_language")]
-    public string OriginalLanguage { get; set; }
+    public string? OriginalLanguage { get; set; }
 
     /// <summary>
     /// Gets or sets the overview.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the popularity score.
@@ -69,7 +69,7 @@ public abstract class CombinedCreditsCastBase
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score.

@@ -20,10 +20,10 @@ internal class RestRequest
     private readonly RestClient _client;
     private readonly string _endpoint;
 
-    private object _bodyObj;
+    private object? _bodyObj;
 
-    private List<KeyValuePair<string, string>> _queryString;
-    private List<KeyValuePair<string, string>> _urlSegment;
+    private List<KeyValuePair<string, string>>? _queryString;
+    private List<KeyValuePair<string, string>>? _urlSegment;
 
     public RestRequest(RestClient client, string endpoint)
     {
@@ -57,7 +57,7 @@ internal class RestRequest
     {
         if (_queryString is null)
         {
-            _queryString = new List<KeyValuePair<string, string>>();
+            _queryString = [];
         }
 
         _queryString.Add(new KeyValuePair<string, string>(key, value));
@@ -69,7 +69,7 @@ internal class RestRequest
     {
         if (_urlSegment is null)
         {
-            _urlSegment = new List<KeyValuePair<string, string>>();
+            _urlSegment = [];
         }
 
         _urlSegment.Add(new KeyValuePair<string, string>(key, value));
@@ -96,90 +96,86 @@ internal class RestRequest
 
     public async Task<RestResponse> Delete(CancellationToken cancellationToken)
     {
-        HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
+        var resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
         return new RestResponse(resp);
     }
 
     public async Task<RestResponse<T>> Delete<T>(CancellationToken cancellationToken)
     {
-        HttpResponseMessage resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
+        var resp = await SendInternal(HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
 
         return new RestResponse<T>(resp, _client);
     }
 
     public async Task<RestResponse> Get(CancellationToken cancellationToken)
     {
-        HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
+        var resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
         return new RestResponse(resp);
     }
 
     public async Task<RestResponse<T>> Get<T>(CancellationToken cancellationToken)
     {
-        HttpResponseMessage resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
+        var resp = await SendInternal(HttpMethod.Get, cancellationToken).ConfigureAwait(false);
 
         return new RestResponse<T>(resp, _client);
     }
 
     public async Task<RestResponse> Post(CancellationToken cancellationToken)
     {
-        HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
+        var resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
         return new RestResponse(resp);
     }
 
     public async Task<RestResponse<T>> Post<T>(CancellationToken cancellationToken)
     {
-        HttpResponseMessage resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
+        var resp = await SendInternal(HttpMethod.Post, cancellationToken).ConfigureAwait(false);
 
         return new RestResponse<T>(resp, _client);
     }
 
     private HttpRequestMessage PrepRequest(HttpMethod method)
     {
-        StringBuilder queryStringSb = new StringBuilder();
+        var queryStringSb = new StringBuilder();
 
         // Query String
-        if (_queryString != null)
+        if (_queryString is not null)
         {
-            foreach (KeyValuePair<string, string> pair in _queryString)
+            foreach (var pair in _queryString)
             {
                 AppendQueryString(queryStringSb, pair);
             }
         }
 
-        foreach (KeyValuePair<string, string> pair in _client.DefaultQueryString)
+        foreach (var pair in _client.DefaultQueryString)
         {
             AppendQueryString(queryStringSb, pair);
         }
 
         // Url
         string endpoint = _endpoint;
-        if (_urlSegment != null)
+        if (_urlSegment is not null)
         {
-            foreach (KeyValuePair<string, string> pair in _urlSegment)
+            foreach (var pair in _urlSegment)
             {
-#if NETSTANDARD2_0
-                endpoint = endpoint.Replace("{" + pair.Key + "}", pair.Value);
-#else
                 endpoint = endpoint.Replace("{" + pair.Key + "}", pair.Value, StringComparison.OrdinalIgnoreCase);
-#endif
             }
         }
 
         // Build
-        UriBuilder builder = new UriBuilder(new Uri(_client.BaseUrl, endpoint))
+        var builder = new UriBuilder(new Uri(_client.BaseUrl, endpoint))
         {
             Query = queryStringSb.ToString()
         };
 
-        HttpRequestMessage req = new HttpRequestMessage(method, builder.Uri);
+        var req = new HttpRequestMessage(method, builder.Uri);
 
         // Body
-        if (method == HttpMethod.Post && _bodyObj != null)
+        if (method == HttpMethod.Post && _bodyObj is not null)
         {
-            byte[] bodyBytes = _client.Serializer.SerializeToBytes(_bodyObj);
+            var bodyBytes = _client.Serializer.SerializeToBytes(_bodyObj);
 
             req.Content = new ByteArrayContent(bodyBytes);
             req.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -188,24 +184,24 @@ internal class RestRequest
         return req;
     }
 
-    private async Task<HttpResponseMessage> SendInternal(HttpMethod method, CancellationToken cancellationToken)
+    private async Task<HttpResponseMessage?> SendInternal(HttpMethod method, CancellationToken cancellationToken)
     {
         // Account for the following settings:
         // - MaxRetryCount                          Max times to retry
 
-        int timesToTry = _client.MaxRetryCount + 1;
+        var timesToTry = _client.MaxRetryCount + 1;
 
-        RetryConditionHeaderValue retryHeader;
-        TMDbStatusMessage statusMessage;
+        RetryConditionHeaderValue? retryHeader = null;
+        TMDbStatusMessage? statusMessage = null;
 
         Debug.Assert(timesToTry >= 1, "Times to try must be at least 1");
 
         do
         {
-            using HttpRequestMessage req = PrepRequest(method);
-            HttpResponseMessage resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+            using var req = PrepRequest(method);
+            var resp = await _client.HttpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
 
-            bool isJson = resp.Content.Headers.ContentType.MediaType.Equals("application/json", StringComparison.OrdinalIgnoreCase);
+            var isJson = resp.Content.Headers.ContentType?.MediaType?.Equals("application/json", StringComparison.OrdinalIgnoreCase) ?? false;
 
             if (resp.IsSuccessStatusCode && isJson)
             {
@@ -216,11 +212,7 @@ internal class RestRequest
 
             if (isJson)
             {
-#if NETSTANDARD2_0
-                statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync().ConfigureAwait(false));
-#else
                 statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false));
-#endif
             }
             else
             {
@@ -232,7 +224,7 @@ internal class RestRequest
                 case (HttpStatusCode)429:
                     // The previous result was a ratelimit, read the Retry-After header and wait the allotted time
                     retryHeader = resp.Headers.RetryAfter;
-                    TimeSpan? retryAfter = retryHeader?.Delta.Value;
+                    var retryAfter = retryHeader?.Delta;
 
                     if (retryAfter.HasValue && retryAfter.Value.TotalSeconds > 0)
                     {

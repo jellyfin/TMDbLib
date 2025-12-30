@@ -19,7 +19,7 @@ internal static class PropertyHelpers
     /// <exception cref="ArgumentException">Thrown when the expression does not represent a valid property access.</exception>
     public static PropertyInfo GetPropertyInfo<TSource, TProperty>(Expression<Func<TSource, TProperty>> propertyLambda)
     {
-        Type type = typeof(TSource);
+        var type = typeof(TSource);
 
         MemberExpression member;
         if (propertyLambda.Body is MemberExpression asMember)
@@ -34,16 +34,19 @@ internal static class PropertyHelpers
         {
             throw new ArgumentException($"Expression '{propertyLambda}' refers to a method, not a property.");
         }
+
         if (member.Member is not PropertyInfo propInfo)
         {
             throw new ArgumentException($"Expression '{propertyLambda}' refers to a field, not a property.");
         }
-        if (propInfo.ReflectedType != null &&
+
+        if (propInfo.ReflectedType is not null &&
             type != propInfo.ReflectedType &&
             !type.IsSubclassOf(propInfo.ReflectedType))
         {
             throw new ArgumentException($"Expression '{propertyLambda}' refers to a property that is not from type {type}.");
         }
+
         return propInfo;
     }
 }

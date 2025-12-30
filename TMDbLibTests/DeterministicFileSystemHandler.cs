@@ -72,14 +72,14 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
             return;
         }
 
-        if (node == null)
+        if (node is null)
         {
             _inner.WriteMappingFile(path, text);
             return;
         }
 
         var signature = ExtractRequestSignature(node);
-        if (signature == null)
+        if (signature is null)
         {
             _inner.WriteMappingFile(path, text);
             return;
@@ -177,7 +177,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
     private static string? ExtractRequestSignature(JsonNode node)
     {
         var request = node["Request"];
-        if (request == null)
+        if (request is null)
         {
             return null;
         }
@@ -186,7 +186,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
 
         // Method
         var methods = request["Methods"]?.AsArray();
-        if (methods != null && methods.Count > 0)
+        if (methods is not null && methods.Count > 0)
         {
             sb.Append(methods[0]?.GetValue<string>() ?? "GET");
         }
@@ -199,7 +199,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
 
         // Path
         var pathMatchers = request["Path"]?["Matchers"]?.AsArray();
-        if (pathMatchers != null && pathMatchers.Count > 0)
+        if (pathMatchers is not null && pathMatchers.Count > 0)
         {
             sb.Append(pathMatchers[0]?["Pattern"]?.GetValue<string>() ?? "");
         }
@@ -209,17 +209,17 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
         // Query parameters (sorted for consistency)
         var parameters = new SortedDictionary<string, string>(StringComparer.Ordinal);
         var paramsArray = request["Params"]?.AsArray();
-        if (paramsArray != null)
+        if (paramsArray is not null)
         {
             foreach (var param in paramsArray)
             {
                 var name = param?["Name"]?.GetValue<string>();
                 var matchers = param?["Matchers"]?.AsArray();
-                var value = matchers != null && matchers.Count > 0
+                var value = matchers is not null && matchers.Count > 0
                     ? matchers[0]?["Pattern"]?.GetValue<string>() ?? ""
                     : "";
 
-                if (name != null && !_excludedParams.Contains(name))
+                if (name is not null && !_excludedParams.Contains(name))
                 {
                     parameters[name] = value;
                 }
@@ -262,7 +262,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
     private static void RemoveDynamicHeaders(JsonNode node)
     {
         var headers = node["Response"]?["Headers"];
-        if (headers == null)
+        if (headers is null)
         {
             return;
         }
@@ -281,7 +281,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
 
         foreach (var header in dynamicHeaders)
         {
-            if (headers[header] != null)
+            if (headers[header] is not null)
             {
                 headers.AsObject().Remove(header);
             }
@@ -291,7 +291,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
     private static void RemoveExcludedParamsFromRequest(JsonNode node)
     {
         var paramsArray = node["Request"]?["Params"]?.AsArray();
-        if (paramsArray == null)
+        if (paramsArray is null)
         {
             return;
         }
@@ -300,7 +300,7 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
         for (var i = paramsArray.Count - 1; i >= 0; i--)
         {
             var paramName = paramsArray[i]?["Name"]?.GetValue<string>();
-            if (paramName != null && _excludedParams.Contains(paramName))
+            if (paramName is not null && _excludedParams.Contains(paramName))
             {
                 paramsArray.RemoveAt(i);
             }

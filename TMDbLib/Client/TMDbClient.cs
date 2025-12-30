@@ -1,5 +1,3 @@
-﻿#pragma warning disable CA2201 // Do not raise reserved exception types
-
 using System;
 using System.Globalization;
 using System.Net;
@@ -26,9 +24,9 @@ public partial class TMDbClient : IDisposable
     private const string ProductionUrl = "api.themoviedb.org";
 
     private readonly ITMDbSerializer _serializer;
-    private readonly HttpMessageHandler _httpMessageHandler;
-    private RestClient _client;
-    private TMDbConfig _config;
+    private readonly HttpMessageHandler? _httpMessageHandler;
+    private RestClient _client = null!;
+    private TMDbConfig? _config;
     private bool _disposed;
 
     /// <summary>
@@ -39,7 +37,7 @@ public partial class TMDbClient : IDisposable
     /// <param name="baseUrl">The base URL for the TMDb API.</param>
     /// <param name="serializer">The JSON serializer to use. If null, the default serializer will be used.</param>
     /// <param name="proxy">The web proxy to use for requests. Optional.</param>
-    public TMDbClient(string apiKey, bool useSsl = true, string baseUrl = ProductionUrl, ITMDbSerializer serializer = null, IWebProxy proxy = null)
+    public TMDbClient(string apiKey, bool useSsl = true, string baseUrl = ProductionUrl, ITMDbSerializer? serializer = null, IWebProxy? proxy = null)
         : this(apiKey, useSsl, baseUrl, serializer, proxy, null)
     {
     }
@@ -53,7 +51,7 @@ public partial class TMDbClient : IDisposable
     /// <param name="serializer">The JSON serializer to use. If null, the default serializer will be used.</param>
     /// <param name="proxy">The web proxy to use for requests. Optional.</param>
     /// <param name="httpMessageHandler">The HTTP message handler to use for requests. Optional, primarily for testing.</param>
-    internal TMDbClient(string apiKey, bool useSsl, string baseUrl, ITMDbSerializer serializer, IWebProxy proxy, HttpMessageHandler httpMessageHandler)
+    internal TMDbClient(string apiKey, bool useSsl, string baseUrl, ITMDbSerializer? serializer, IWebProxy? proxy, HttpMessageHandler? httpMessageHandler)
     {
         DefaultLanguage = null;
         DefaultImageLanguage = null;
@@ -73,12 +71,12 @@ public partial class TMDbClient : IDisposable
     /// Gets the account details of the user account associated with the current user session.
     /// </summary>
     /// <remarks>This value is automaticly populated when setting a user session.</remarks>
-    public AccountDetails ActiveAccount { get; private set; }
+    public AccountDetails? ActiveAccount { get; private set; }
 
     /// <summary>
     /// Gets the API key used for authentication with TMDb.
     /// </summary>
-    public string ApiKey { get; private set; }
+    public string ApiKey { get; private set; } = null!;
 
     /// <summary>
     /// Gets the TMDb API configuration.
@@ -93,7 +91,7 @@ public partial class TMDbClient : IDisposable
                 throw new InvalidOperationException("Call GetConfig() or SetConfig() first");
             }
 
-            return _config;
+            return _config!;
         }
         private set => _config = value;
     }
@@ -101,17 +99,17 @@ public partial class TMDbClient : IDisposable
     /// <summary>
     /// Gets or sets the ISO 3166-1 code. Ex. US.
     /// </summary>
-    public string DefaultCountry { get; set; }
+    public string? DefaultCountry { get; set; }
 
     /// <summary>
     /// Gets or sets the ISO 639-1 code. Ex en.
     /// </summary>
-    public string DefaultLanguage { get; set; }
+    public string? DefaultLanguage { get; set; }
 
     /// <summary>
     /// Gets or sets the ISO 639-1 code. Ex en.
     /// </summary>
-    public string DefaultImageLanguage { get; set; }
+    public string? DefaultImageLanguage { get; set; }
 
     /// <summary>
     /// Gets a value indicating whether the client has loaded TMDb configuration.
@@ -150,7 +148,7 @@ public partial class TMDbClient : IDisposable
     /// Gets the session id that will be used when TMDb requires authentication.
     /// </summary>
     /// <remarks>Use 'SetSessionInformation' to assign this value.</remarks>
-    public string SessionId { get; private set; }
+    public string? SessionId { get; private set; }
 
     /// <summary>
     /// Gets the type of the session id, this will determine the level of access that is granted on the API.
@@ -168,7 +166,7 @@ public partial class TMDbClient : IDisposable
     /// For convenience, this library also offers a <see cref="IWebProxy"/> implementation.
     /// Check <see cref="Utilities.TMDbAPIProxy"/> for more information.
     /// </remarks>
-    public IWebProxy WebProxy { get; private set; }
+    public IWebProxy? WebProxy { get; private set; }
 
     /// <summary>
     /// Used internally to assign a session id to a request. If no valid session is found, an exception is thrown.
@@ -184,7 +182,7 @@ public partial class TMDbClient : IDisposable
             // Either
             // - We needed ANY session ID and had a Guest session id
             // - We needed a Guest session id and had it
-            req.AddParameter("guest_session_id", SessionId, parameterType);
+            req.AddParameter("guest_session_id", SessionId!, parameterType);
             return;
         }
 
@@ -194,7 +192,7 @@ public partial class TMDbClient : IDisposable
             // Either
             // - We needed ANY session ID and had a User session id
             // - We needed a User session id and had it
-            req.AddParameter("session_id", SessionId, parameterType);
+            req.AddParameter("session_id", SessionId!, parameterType);
             return;
         }
 
@@ -209,8 +207,8 @@ public partial class TMDbClient : IDisposable
     /// <exception cref="Exception">Thrown when unable to retrieve configuration from the API.</exception>
     public async Task<TMDbConfig> GetConfigAsync()
     {
-        TMDbConfig config = await _client.Create("configuration").GetOfT<TMDbConfig>(CancellationToken.None).ConfigureAwait(false)
-            ?? throw new Exception("Unable to retrieve configuration");
+        var config = await _client.Create("configuration").GetOfT<TMDbConfig>(CancellationToken.None).ConfigureAwait(false)
+            ?? throw new InvalidOperationException("Unable to retrieve configuration");
 
         // Store config
         Config = config;
@@ -229,7 +227,8 @@ public partial class TMDbClient : IDisposable
     /// <exception cref="InvalidOperationException">Thrown when configuration has not been loaded. Call GetConfigAsync() first.</exception>
     public Uri GetImageUrl(string size, string filePath, bool useSsl = false)
     {
-        string baseUrl = useSsl ? Config.Images.SecureBaseUrl : Config.Images.BaseUrl;
+        var images = Config.Images ?? throw new InvalidOperationException("Image configuration not available");
+        var baseUrl = useSsl ? images.SecureBaseUrl : images.BaseUrl;
         return new Uri(baseUrl + size + filePath);
     }
 
@@ -245,16 +244,12 @@ public partial class TMDbClient : IDisposable
     /// <exception cref="HttpRequestException">Thrown when the HTTP request fails.</exception>
     public async Task<byte[]> GetImageBytesAsync(string size, string filePath, bool useSsl = false, CancellationToken token = default)
     {
-        Uri url = GetImageUrl(size, filePath, useSsl);
+        var url = GetImageUrl(size, filePath, useSsl);
 
-        using HttpResponseMessage response = await _client.HttpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead, token).ConfigureAwait(false);
+        using var response = await _client.HttpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead, token).ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
 
-#if NETSTANDARD2_0
-        return await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
-#else
         return await response.Content.ReadAsByteArrayAsync(token).ConfigureAwait(false);
-#endif
     }
 
     private void Initialize(string baseUrl, bool useSsl, string apiKey)
@@ -281,7 +276,7 @@ public partial class TMDbClient : IDisposable
             baseUrl = baseUrl.Substring("https://".Length);
         }
 
-        string httpScheme = useSsl ? "https" : "http";
+        var httpScheme = useSsl ? "https" : "http";
 
         _client?.Dispose();
         _client = new RestClient(new Uri(string.Format(CultureInfo.InvariantCulture, "{0}://{1}/{2}/", httpScheme, baseUrl, ApiVersion)), _serializer, WebProxy, _httpMessageHandler);

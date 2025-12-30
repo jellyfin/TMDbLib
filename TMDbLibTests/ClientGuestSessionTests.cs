@@ -31,8 +31,10 @@ public class ClientGuestSessionTests : TestBase
             Assert.True(await TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 1));
         }, async shouldBeSet =>
         {
-            SearchContainer<TvEpisodeWithRating> ratings = await TMDbClient.GetGuestSessionRatedTvEpisodesAsync();
+            var ratings = await TMDbClient.GetGuestSessionRatedTvEpisodesAsync();
 
+            Assert.NotNull(ratings);
+            Assert.NotNull(ratings.Results);
             if (shouldBeSet)
             {
                 Assert.Contains(ratings.Results, x => x.ShowId == IdHelper.BreakingBad && x.SeasonNumber == 1 && x.EpisodeNumber == 1);
@@ -61,8 +63,10 @@ public class ClientGuestSessionTests : TestBase
             Assert.True(await TMDbClient.TvShowRemoveRatingAsync(IdHelper.House));
         }, async shouldBeSet =>
         {
-            SearchContainer<SearchTvShowWithRating> ratings = await TMDbClient.GetGuestSessionRatedTvAsync();
+            var ratings = await TMDbClient.GetGuestSessionRatedTvAsync();
 
+            Assert.NotNull(ratings);
+            Assert.NotNull(ratings.Results);
             if (shouldBeSet)
             {
                 Assert.Contains(ratings.Results, x => x.Id == IdHelper.House);
@@ -91,8 +95,10 @@ public class ClientGuestSessionTests : TestBase
             Assert.True(await TMDbClient.MovieRemoveRatingAsync(IdHelper.Terminator));
         }, async shouldBeSet =>
         {
-            SearchContainer<SearchMovieWithRating> ratings = await TMDbClient.GetGuestSessionRatedMoviesAsync();
+            var ratings = await TMDbClient.GetGuestSessionRatedMoviesAsync();
 
+            Assert.NotNull(ratings);
+            Assert.NotNull(ratings.Results);
             if (shouldBeSet)
             {
                 Assert.Contains(ratings.Results, x => x.Id == IdHelper.Terminator);

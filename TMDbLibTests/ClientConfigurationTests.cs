@@ -22,7 +22,8 @@ public class ClientConfigurationTests : TestBase
     [Fact]
     public async Task TestConfigurationAsync()
     {
-        APIConfiguration result = await TMDbClient.GetAPIConfiguration();
+        var result = await TMDbClient.GetAPIConfiguration();
+        Assert.NotNull(result);
 
         await Verify(result);
     }
@@ -33,7 +34,8 @@ public class ClientConfigurationTests : TestBase
     [Fact]
     public async Task TestPrimaryTranslationsAsync()
     {
-        List<string> result = await TMDbClient.GetPrimaryTranslationsAsync();
+        var result = await TMDbClient.GetPrimaryTranslationsAsync();
+        Assert.NotNull(result);
 
         Assert.Contains("da-DK", result);
     }
@@ -44,10 +46,10 @@ public class ClientConfigurationTests : TestBase
     [Fact]
     public async Task TestCountryListAsync()
     {
-        List<Country> result = await TMDbClient.GetCountriesAsync();
-
+        var result = await TMDbClient.GetCountriesAsync();
+        Assert.NotNull(result);
         Assert.NotEmpty(result);
-        Country single = result.Single(s => s.EnglishName == "Denmark");
+        var single = result.Single(s => s.EnglishName == "Denmark");
 
         await Verify(single);
     }
@@ -58,10 +60,10 @@ public class ClientConfigurationTests : TestBase
     [Fact]
     public async Task TestLanguageListAsync()
     {
-        List<Language> result = await TMDbClient.GetLanguagesAsync();
-
+        var result = await TMDbClient.GetLanguagesAsync();
+        Assert.NotNull(result);
         Assert.NotEmpty(result);
-        Language single = result.Single(s => s.Name == "Dansk");
+        var single = result.Single(s => s.Name == "Dansk");
 
         await Verify(single);
     }
@@ -72,10 +74,11 @@ public class ClientConfigurationTests : TestBase
     [Fact]
     public async Task TestTimezonesListAsync()
     {
-        Timezones result = await TMDbClient.GetTimezonesAsync();
-
+        var result = await TMDbClient.GetTimezonesAsync();
+        Assert.NotNull(result);
+        Assert.NotNull(result.List);
         Assert.NotEmpty(result.List);
-        List<string> single = result.List["DK"];
+        var single = result.List["DK"];
 
         await Verify(single);
     }
@@ -86,10 +89,10 @@ public class ClientConfigurationTests : TestBase
     [Fact]
     public async Task TestJobListAsync()
     {
-        List<Job> jobs = await TMDbClient.GetJobsAsync();
-
+        var jobs = await TMDbClient.GetJobsAsync();
+        Assert.NotNull(jobs);
         Assert.NotEmpty(jobs);
-        Job single = jobs.Single(s => s.Department == "Writing");
+        var single = jobs.Single(s => s.Department == "Writing");
 
         await Verify(single);
     }

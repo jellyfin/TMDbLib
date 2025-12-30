@@ -18,11 +18,11 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientTvSeasonTests : TestBase
 {
-    private static readonly Dictionary<TvSeasonMethods, Func<TvSeason, object>> Methods;
+    private static readonly Dictionary<TvSeasonMethods, Func<TvSeason, object?>> Methods;
 
     static ClientTvSeasonTests()
     {
-        Methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object>>
+        Methods = new Dictionary<TvSeasonMethods, Func<TvSeason, object?>>
         {
             [TvSeasonMethods.Credits] = tvSeason => tvSeason.Credits,
             [TvSeasonMethods.Images] = tvSeason => tvSeason.Images,
@@ -38,12 +38,13 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonExtrasNoneAsync()
     {
-        TvSeason tvSeason = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1);
+        var tvSeason = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1);
 
+        Assert.NotNull(tvSeason);
         await Verify(tvSeason);
 
         // Test all extras, ensure none of them are populated
-        foreach (Func<TvSeason, object> selector in Methods.Values)
+        foreach (var selector in Methods.Values)
         {
             Assert.Null(selector(tvSeason));
         }
@@ -60,7 +61,8 @@ public class ClientTvSeasonTests : TestBase
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
         var season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
-        if (season.AccountStates == null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
+        Assert.NotNull(season);
+        if (season.AccountStates?.Results is null || season.AccountStates.Results.All(s => s.EpisodeNumber != 1))
         {
             await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.BigBangTheory, 1, 1, 5);
 
@@ -68,10 +70,13 @@ public class ClientTvSeasonTests : TestBase
             await Task.Delay(2000);
 
             season = await TMDbClient.GetTvSeasonAsync(IdHelper.BigBangTheory, 1, TvSeasonMethods.AccountStates);
+            Assert.NotNull(season);
         }
         Assert.NotNull(season.AccountStates);
-        Assert.True(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating.HasValue);
-        Assert.True(Math.Abs(season.AccountStates.Results.Single(s => s.EpisodeNumber == 1).Rating!.Value - 5) < double.Epsilon);
+        Assert.NotNull(season.AccountStates.Results);
+        var episode1State = season.AccountStates.Results.Single(s => s.EpisodeNumber == 1);
+        Assert.True(episode1State.Rating.HasValue);
+        Assert.True(Math.Abs(episode1State.Rating.Value - 5) < double.Epsilon);
     }
 
     /// <summary>
@@ -86,7 +91,12 @@ public class ClientTvSeasonTests : TestBase
         // Account states will only show up if we've done something
         await TMDbClient.TvEpisodeSetRatingAsync(IdHelper.FullerHouse, 1, 1, 5);
 
-        await TestMethodsHelper.TestGetAll(Methods, combined => TMDbClient.GetTvSeasonAsync(IdHelper.FullerHouse, 1, combined), season => Verify(season));
+        await TestMethodsHelper.TestGetAll(Methods, async combined =>
+        {
+            var result = await TMDbClient.GetTvSeasonAsync(IdHelper.FullerHouse, 1, combined);
+            Assert.NotNull(result);
+            return result;
+        }, season => Verify(season));
     }
 
     /// <summary>
@@ -98,7 +108,12 @@ public class ClientTvSeasonTests : TestBase
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-        await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, extras));
+        await TestMethodsHelper.TestGetExclusive(Methods, async extras =>
+        {
+            var result = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, extras);
+            Assert.NotNull(result);
+            return result;
+        });
     }
 
     /// <summary>
@@ -107,7 +122,7 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonSeparateExtrasCreditsAsync()
     {
-        Credits credits = await TMDbClient.GetTvSeasonCreditsAsync(IdHelper.BreakingBad, 1);
+        var credits = await TMDbClient.GetTvSeasonCreditsAsync(IdHelper.BreakingBad, 1);
 
         await Verify(credits);
     }
@@ -118,7 +133,7 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonSeparateExtrasExternalIdsAsync()
     {
-        ExternalIdsTvSeason externalIds = await TMDbClient.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1);
+        var externalIds = await TMDbClient.GetTvSeasonExternalIdsAsync(IdHelper.BreakingBad, 1);
 
         await Verify(externalIds);
     }
@@ -129,8 +144,9 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonSeparateExtrasImagesAsync()
     {
-        PosterImages images = await TMDbClient.GetTvSeasonImagesAsync(IdHelper.BreakingBad, 1);
-
+        var images = await TMDbClient.GetTvSeasonImagesAsync(IdHelper.BreakingBad, 1);
+        Assert.NotNull(images);
+        Assert.NotNull(images.Posters);
         Assert.NotEmpty(images.Posters);
         TestImagesHelpers.TestImagePaths(images.Posters);
     }
@@ -141,7 +157,9 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonSeparateExtrasVideosAsync()
     {
-        ResultContainer<Video> videos = await TMDbClient.GetTvSeasonVideosAsync(IdHelper.GameOfThrones, 1);
+        var videos = await TMDbClient.GetTvSeasonVideosAsync(IdHelper.GameOfThrones, 1);
+        Assert.NotNull(videos);
+        Assert.NotNull(videos.Results);
         Video single = videos.Results.Single(s => s.Id == "5c9b7e95c3a36841a341b9c6");
 
         await Verify(single);
@@ -161,8 +179,9 @@ public class ClientTvSeasonTests : TestBase
             () => TMDbClient.TvEpisodeRemoveRatingAsync(IdHelper.BreakingBad, 1, 3),
             async shouldBeSet =>
             {
-                ResultContainer<TvEpisodeAccountStateWithNumber> state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
-
+                var state = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BreakingBad, 1);
+                Assert.NotNull(state);
+                Assert.NotNull(state.Results);
                 if (shouldBeSet)
                 {
                     Assert.Contains(state.Results, x => x.EpisodeNumber == 3 && x.Rating.HasValue);
@@ -180,14 +199,15 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonGetChangesAsync()
     {
-        TvShow latestTvShow = await TMDbClient.GetLatestTvShowAsync();
-        if (latestTvShow.Seasons == null || latestTvShow.Seasons.Count == 0)
+        var latestTvShow = await TMDbClient.GetLatestTvShowAsync();
+        Assert.NotNull(latestTvShow);
+        if (latestTvShow.Seasons is null || latestTvShow.Seasons.Count == 0)
         {
             return; // Skip if no seasons available
         }
 
         int latestSeasonId = latestTvShow.Seasons.Max(s => s.Id);
-        IList<Change> changes = await TMDbClient.GetTvSeasonChangesAsync(latestSeasonId);
+        var changes = await TMDbClient.GetTvSeasonChangesAsync(latestSeasonId);
 
         // Changes may or may not exist depending on recent activity
         Assert.NotNull(changes);
@@ -199,7 +219,7 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonMissingAsync()
     {
-        TvSeason tvSeason = await TMDbClient.GetTvSeasonAsync(IdHelper.MissingID, 1);
+        var tvSeason = await TMDbClient.GetTvSeasonAsync(IdHelper.MissingID, 1);
 
         Assert.Null(tvSeason);
     }
@@ -210,13 +230,15 @@ public class ClientTvSeasonTests : TestBase
     [Fact]
     public async Task TestTvSeasonGetTvSeasonWithImageLanguageAsync()
     {
-        TvSeason resp = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvSeasonMethods.Images);
-
+        var resp = await TMDbClient.GetTvSeasonAsync(IdHelper.BreakingBad, 1, language: "en-US", includeImageLanguage: "en", extraMethods: TvSeasonMethods.Images);
+        Assert.NotNull(resp);
         Assert.NotNull(resp.Images);
+        Assert.NotNull(resp.Images.Posters);
         Assert.NotEmpty(resp.Images.Posters);
 
         // Get first English poster
         ImageData poster = resp.Images.Posters.First();
+        Assert.NotNull(poster);
         Assert.NotNull(poster.FilePath);
     }
 }

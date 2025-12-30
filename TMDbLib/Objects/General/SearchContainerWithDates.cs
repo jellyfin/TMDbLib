@@ -12,5 +12,5 @@ public class SearchContainerWithDates<T> : SearchContainer<T>
     /// Gets or sets the date range for the search results.
     /// </summary>
     [JsonProperty("dates")]
-    public DateRange Dates { get; set; }
+    public DateRange? Dates { get; set; }
 }

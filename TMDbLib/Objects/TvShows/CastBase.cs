@@ -18,7 +18,7 @@ public class CastBase
     /// Gets or sets the name of the person.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the order of the cast member in the credits.
@@ -30,7 +30,7 @@ public class CastBase
     /// Gets or sets the profile image path.
     /// </summary>
     [JsonProperty("profile_path")]
-    public string ProfilePath { get; set; }
+    public string? ProfilePath { get; set; }
 
     /// <summary>
     /// Gets or sets the gender of the person.
@@ -48,13 +48,13 @@ public class CastBase
     /// Gets or sets the department the person is known for.
     /// </summary>
     [JsonProperty("known_for_department")]
-    public string KnownForDepartment { get; set; }
+    public string? KnownForDepartment { get; set; }
 
     /// <summary>
     /// Gets or sets the original name of the person.
     /// </summary>
     [JsonProperty("original_name")]
-    public string OriginalName { get; set; }
+    public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the popularity score of the person.

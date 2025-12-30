@@ -12,7 +12,7 @@ public class CrewAggregate : CrewBase
     /// Gets or sets the list of jobs performed by the crew member.
     /// </summary>
     [JsonProperty("jobs")]
-    public List<CrewJob> Jobs { get; set; }
+    public List<CrewJob>? Jobs { get; set; }
 
     /// <summary>
     /// Gets or sets the total number of episodes the crew member worked on.

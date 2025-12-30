@@ -19,27 +19,27 @@ public static class EnumExtensions
     public static string GetDescription<T>(this T enumerationValue)
         where T : struct
     {
-        Type type = enumerationValue.GetType();
-        TypeInfo typeInfo = type.GetTypeInfo();
+        var type = enumerationValue.GetType();
+        var typeInfo = type.GetTypeInfo();
 
         if (!typeInfo.IsEnum)
         {
             throw new ArgumentException("EnumerationValue must be of Enum type", nameof(enumerationValue));
         }
 
-        IEnumerable<MemberInfo> members = typeof(T).GetTypeInfo().DeclaredMembers;
+        var members = typeof(T).GetTypeInfo().DeclaredMembers;
 
-        string requestedName = enumerationValue.ToString();
+        var requestedName = enumerationValue.ToString();
 
         // Tries to find a DisplayAttribute for a potential friendly name for the enum
-        foreach (MemberInfo member in members)
+        foreach (var member in members)
         {
             if (member.Name != requestedName)
             {
                 continue;
             }
 
-            foreach (CustomAttributeData attributeData in member.CustomAttributes)
+            foreach (var attributeData in member.CustomAttributes)
             {
                 if (attributeData.AttributeType != typeof(EnumValueAttribute))
                 {
@@ -52,15 +52,20 @@ public static class EnumExtensions
                     break;
                 }
 
-                CustomAttributeTypedArgument argument = attributeData.ConstructorArguments.First();
-                string value = argument.Value as string;
-                return value;
+                var argument = attributeData.ConstructorArguments.First();
+
+                if (argument.Value is string stringValue)
+                {
+                    return stringValue;
+                }
+
+                break;
             }
 
             break;
         }
 
         // If we have no description attribute, just return the ToString of the enum
-        return requestedName;
+        return requestedName ?? string.Empty;
     }
 }

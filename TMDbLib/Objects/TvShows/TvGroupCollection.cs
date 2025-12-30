@@ -12,13 +12,13 @@ public class TvGroupCollection
     /// Gets or sets the episode group collection ID.
     /// </summary>
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the episode group collection.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the type of episode grouping.
@@ -30,13 +30,13 @@ public class TvGroupCollection
     /// Gets or sets the description of the episode group collection.
     /// </summary>
     [JsonProperty("description")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// Gets or sets the network that created this grouping.
     /// </summary>
     [JsonProperty("network")]
-    public NetworkWithLogo Network { get; set; }
+    public NetworkWithLogo? Network { get; set; }
 
     /// <summary>
     /// Gets or sets the total number of episodes in the collection.
@@ -54,5 +54,5 @@ public class TvGroupCollection
     /// Gets or sets the list of episode groups.
     /// </summary>
     [JsonProperty("groups")]
-    public List<TvGroup> Groups { get; set; }
+    public List<TvGroup>? Groups { get; set; }
 }

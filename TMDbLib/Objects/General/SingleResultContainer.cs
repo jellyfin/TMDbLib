@@ -18,5 +18,5 @@ public class SingleResultContainer<T>
     /// Gets or sets the result.
     /// </summary>
     [JsonProperty("results")]
-    public T Results { get; set; }
+    public T? Results { get; set; }
 }

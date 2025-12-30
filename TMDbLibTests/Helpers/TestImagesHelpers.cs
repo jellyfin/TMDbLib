@@ -25,10 +25,12 @@ public static partial class TestImagesHelpers
         {
             TestImagePaths(images.Backdrops);
         }
+
         if (images.Posters is not null)
         {
             TestImagePaths(images.Posters);
         }
+
         if (images.Logos is not null)
         {
             TestImagePaths(images.Logos);
@@ -41,6 +43,7 @@ public static partial class TestImagesHelpers
     /// <param name="imagePaths">The collection of image paths to validate.</param>
     public static void TestImagePaths(IEnumerable<string> imagePaths)
     {
+        Assert.NotNull(imagePaths);
         Assert.All(imagePaths, path => Assert.True(MyRegex().IsMatch(path), "path was not a valid image path, was: " + path));
     }
 
@@ -51,7 +54,12 @@ public static partial class TestImagesHelpers
     /// <param name="images">The collection of image data objects to validate.</param>
     public static void TestImagePaths<T>(IEnumerable<T> images) where T : ImageData
     {
-        Assert.All(images, x => Assert.True(MyRegex().IsMatch(x.FilePath), "image.FilePath was not a valid image path, was: " + x.FilePath));
+        Assert.NotNull(images);
+        Assert.All(images, x =>
+        {
+            Assert.NotNull(x.FilePath);
+            Assert.True(MyRegex().IsMatch(x.FilePath), "image.FilePath was not a valid image path, was: " + x.FilePath);
+        });
     }
 
     /// <summary>
@@ -60,6 +68,11 @@ public static partial class TestImagesHelpers
     /// <param name="images">The collection of tagged images to validate.</param>
     public static void TestImagePaths(IEnumerable<TaggedImage> images)
     {
-        Assert.All(images, x => Assert.True(MyRegex().IsMatch(x.FilePath), "image.FilePath was not a valid image path, was: " + x.FilePath));
+        Assert.NotNull(images);
+        Assert.All(images, x =>
+        {
+            Assert.NotNull(x.FilePath);
+            Assert.True(MyRegex().IsMatch(x.FilePath), "image.FilePath was not a valid image path, was: " + x.FilePath);
+        });
     }
 }

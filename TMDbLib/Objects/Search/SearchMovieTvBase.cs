@@ -13,32 +13,32 @@ public class SearchMovieTvBase : SearchBase
     /// Gets or sets the backdrop image path.
     /// </summary>
     [JsonProperty("backdrop_path")]
-    public string BackdropPath { get; set; }
+    public string? BackdropPath { get; set; }
 
     /// <summary>
     /// Gets or sets the list of genre IDs.
     /// </summary>
     [JsonProperty("genre_ids")]
     [JsonConverter(typeof(TmdbIntArrayAsObjectConverter)) /*#307*/]
-    public List<int> GenreIds { get; set; }
+    public List<int>? GenreIds { get; set; }
 
     /// <summary>
     /// Gets or sets the original language code.
     /// </summary>
     [JsonProperty("original_language")]
-    public string OriginalLanguage { get; set; }
+    public string? OriginalLanguage { get; set; }
 
     /// <summary>
     /// Gets or sets the overview text.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score.

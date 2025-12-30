@@ -11,11 +11,11 @@ public class Cast : CastBase
     /// Gets or sets the character name played by the cast member.
     /// </summary>
     [JsonProperty("character")]
-    public string Character { get; set; }
+    public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 }

@@ -7,63 +7,63 @@ namespace TMDbLib.Utilities;
 
 internal static class EnumMemberCache
 {
-    private static readonly Dictionary<Type, Dictionary<object, string>> MemberCache;
+    private static readonly Dictionary<Type, Dictionary<object, string?>> _memberCache = [];
 
-    static EnumMemberCache()
-    {
-        MemberCache = new Dictionary<Type, Dictionary<object, string>>();
-    }
-
-    private static Dictionary<object, string> GetOrPrepareCache(Type type)
+    private static Dictionary<object, string?> GetOrPrepareCache(Type type)
     {
         if (!type.GetTypeInfo().IsEnum)
         {
             throw new ArgumentException();
         }
 
-        Dictionary<object, string> cache;
-        lock (MemberCache)
+        Dictionary<object, string?>? cache;
+        lock (_memberCache)
         {
-            if (MemberCache.TryGetValue(type, out cache))
+            if (_memberCache.TryGetValue(type, out cache))
             {
                 return cache;
             }
         }
 
-        cache = new Dictionary<object, string>();
+        cache = [];
 
-        foreach (FieldInfo fieldInfo in type.GetTypeInfo().DeclaredMembers.OfType<FieldInfo>().Where(s => s.IsStatic))
+        foreach (var fieldInfo in type.GetTypeInfo().DeclaredMembers.OfType<FieldInfo>().Where(s => s.IsStatic))
         {
-            object value = fieldInfo.GetValue(null);
-            CustomAttributeData attrib = fieldInfo.CustomAttributes.FirstOrDefault(s => s.AttributeType == typeof(EnumValueAttribute));
+            var value = fieldInfo.GetValue(null);
+            if (value is null)
+            {
+                continue;
+            }
 
-            if (attrib == null)
+            var attrib = fieldInfo.CustomAttributes.FirstOrDefault(s => s.AttributeType == typeof(EnumValueAttribute));
+
+            if (attrib is null)
             {
                 cache[value] = value.ToString();
             }
             else
             {
-                CustomAttributeTypedArgument arg = attrib.ConstructorArguments.FirstOrDefault();
-                string enumValue = arg.Value as string;
+                var arg = attrib.ConstructorArguments.FirstOrDefault();
+                var enumValue = arg.Value as string;
 
                 cache[value] = enumValue;
             }
         }
 
-        lock (MemberCache)
+        lock (_memberCache)
         {
-            MemberCache[type] = cache;
+            _memberCache[type] = cache;
         }
 
         return cache;
     }
 
-    public static T GetValue<T>(string input)
+    public static T? GetValue<T>(string input)
     {
-        Type valueType = typeof(T);
-        Dictionary<object, string> cache = GetOrPrepareCache(valueType);
+        var valueType = typeof(T);
+        var cache = GetOrPrepareCache(valueType);
 
-        foreach (KeyValuePair<object, string> pair in cache)
+        foreach (var pair in cache)
         {
             if (StringComparer.OrdinalIgnoreCase.Equals(pair.Value, input))
             {
@@ -74,11 +74,11 @@ internal static class EnumMemberCache
         return default;
     }
 
-    public static object GetValue(string input, Type type)
+    public static object? GetValue(string? input, Type type)
     {
-        Dictionary<object, string> cache = GetOrPrepareCache(type);
+        var cache = GetOrPrepareCache(type);
 
-        foreach (KeyValuePair<object, string> pair in cache)
+        foreach (var pair in cache)
         {
             if (StringComparer.OrdinalIgnoreCase.Equals(pair.Value, input))
             {
@@ -89,10 +89,15 @@ internal static class EnumMemberCache
         return null;
     }
 
-    public static string GetString(object value)
+    public static string? GetString(object? value)
     {
-        Type valueType = value.GetType();
-        Dictionary<object, string> cache = GetOrPrepareCache(valueType);
+        if (value is null)
+        {
+            return null;
+        }
+
+        var valueType = value.GetType();
+        var cache = GetOrPrepareCache(valueType);
 
         cache.TryGetValue(value, out var str);
 

@@ -17,5 +17,5 @@ public class TMDbStatusMessage
     /// Gets or sets the status message text.
     /// </summary>
     [JsonProperty("status_message")]
-    public string StatusMessage { get; set; }
+    public string? StatusMessage { get; set; }
 }

@@ -12,13 +12,13 @@ public class MovieCredits
     /// Gets or sets the list of cast roles.
     /// </summary>
     [JsonProperty("cast")]
-    public List<MovieRole> Cast { get; set; }
+    public List<MovieRole>? Cast { get; set; }
 
     /// <summary>
     /// Gets or sets the list of crew jobs.
     /// </summary>
     [JsonProperty("crew")]
-    public List<MovieJob> Crew { get; set; }
+    public List<MovieJob>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the person ID.

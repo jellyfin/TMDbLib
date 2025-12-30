@@ -23,7 +23,7 @@ public class GuestSession
     /// Gets or sets the guest session ID.
     /// </summary>
     [JsonProperty("guest_session_id")]
-    public string GuestSessionId { get; set; }
+    public string? GuestSessionId { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the guest session creation was successful.

@@ -11,13 +11,13 @@ public class CastRole
     /// Gets or sets the character name.
     /// </summary>
     [JsonProperty("character")]
-    public string Character { get; set; }
+    public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes for this role.

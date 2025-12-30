@@ -12,13 +12,13 @@ public class TvRole
     /// Gets or sets the character name.
     /// </summary>
     [JsonProperty("character")]
-    public string Character { get; set; }
+    public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
     [JsonProperty("credit_id")]
-    public string CreditId { get; set; }
+    public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes.
@@ -42,17 +42,17 @@ public class TvRole
     /// Gets or sets the TV show name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the original name.
     /// </summary>
     [JsonProperty("original_name")]
-    public string OriginalName { get; set; }
+    public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 }

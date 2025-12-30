@@ -81,6 +81,8 @@ public class ClientAuthenticationTests : TestBase
     public async Task TestAuthenticationGetUserSessionApiUserValidationSuccessAsync()
     {
         var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
+        Assert.NotNull(token);
+        Assert.NotNull(token.RequestToken);
 
         await TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, TestConfig.Username, TestConfig.Password);
     }
@@ -92,6 +94,8 @@ public class ClientAuthenticationTests : TestBase
     public async Task TestAuthenticationGetUserSessionApiUserValidationInvalidLoginAsync()
     {
         var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
+        Assert.NotNull(token);
+        Assert.NotNull(token.RequestToken);
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => TMDbClient.AuthenticationValidateUserTokenAsync(token.RequestToken, "bla", "bla"));
     }

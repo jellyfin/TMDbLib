@@ -15,12 +15,12 @@ public partial class TMDbClient
     /// <param name="keywordId">The TMDb ID of the keyword.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>The keyword object with ID and name.</returns>
-    public async Task<Keyword> GetKeywordAsync(int keywordId, CancellationToken cancellationToken = default)
+    public async Task<Keyword?> GetKeywordAsync(int keywordId, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("keyword/{keywordId}");
+        var req = _client.Create("keyword/{keywordId}");
         req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
 
-        Keyword resp = await req.GetOfT<Keyword>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<Keyword>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
@@ -32,7 +32,7 @@ public partial class TMDbClient
     /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A search container with movies tagged with the specified keyword.</returns>
-    public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainerWithId<SearchMovie>?> GetKeywordMoviesAsync(int keywordId, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetKeywordMoviesAsync(keywordId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
@@ -45,9 +45,9 @@ public partial class TMDbClient
     /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     /// <returns>A search container with movies tagged with the specified keyword.</returns>
-    public async Task<SearchContainerWithId<SearchMovie>> GetKeywordMoviesAsync(int keywordId, string language, int page = 0, CancellationToken cancellationToken = default)
+    public async Task<SearchContainerWithId<SearchMovie>?> GetKeywordMoviesAsync(int keywordId, string? language, int page = 0, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("keyword/{keywordId}/movies");
+        var req = _client.Create("keyword/{keywordId}/movies");
         req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
 
         language ??= DefaultLanguage;
@@ -61,7 +61,7 @@ public partial class TMDbClient
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        SearchContainerWithId<SearchMovie> resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }

@@ -15,12 +15,12 @@ public partial class TMDbClient
     /// <param name="networkId">The id of the network object to retrieve.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The network information including name and headquarters.</returns>
-    public async Task<Network> GetNetworkAsync(int networkId, CancellationToken cancellationToken = default)
+    public async Task<Network?> GetNetworkAsync(int networkId, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("network/{networkId}");
+        var req = _client.Create("network/{networkId}");
         req.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
-        Network response = await req.GetOfT<Network>(cancellationToken).ConfigureAwait(false);
+        var response = await req.GetOfT<Network>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -31,12 +31,12 @@ public partial class TMDbClient
     /// <param name="networkId">The TMDb id of the network.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A collection of logos for the network.</returns>
-    public async Task<NetworkLogos> GetNetworkImagesAsync(int networkId, CancellationToken cancellationToken = default)
+    public async Task<NetworkLogos?> GetNetworkImagesAsync(int networkId, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("network/{networkId}/images");
+        var req = _client.Create("network/{networkId}/images");
         req.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
-        NetworkLogos response = await req.GetOfT<NetworkLogos>(cancellationToken).ConfigureAwait(false);
+        var response = await req.GetOfT<NetworkLogos>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
@@ -47,12 +47,12 @@ public partial class TMDbClient
     /// <param name="networkId">The TMDb id of the network.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>Alternative names for the network in different languages or markets.</returns>
-    public async Task<AlternativeNames> GetNetworkAlternativeNamesAsync(int networkId, CancellationToken cancellationToken = default)
+    public async Task<AlternativeNames?> GetNetworkAlternativeNamesAsync(int networkId, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("network/{networkId}/alternative_names");
+        var req = _client.Create("network/{networkId}/alternative_names");
         req.AddUrlSegment("networkId", networkId.ToString(CultureInfo.InvariantCulture));
 
-        AlternativeNames response = await req.GetOfT<AlternativeNames>(cancellationToken).ConfigureAwait(false);
+        var response = await req.GetOfT<AlternativeNames>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }

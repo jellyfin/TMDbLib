@@ -19,11 +19,11 @@ public class ChangeItemUpdated : ChangeItemBase
     /// Gets or sets the original value before the update.
     /// </summary>
     [JsonProperty("original_value")]
-    public object OriginalValue { get; set; }
+    public object? OriginalValue { get; set; }
 
     /// <summary>
     /// Gets or sets the new value after the update.
     /// </summary>
     [JsonProperty("value")]
-    public object Value { get; set; }
+    public object? Value { get; set; }
 }

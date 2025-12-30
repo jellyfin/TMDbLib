@@ -12,13 +12,13 @@ public class TvCredits
     /// Gets or sets the list of TV cast roles.
     /// </summary>
     [JsonProperty("cast")]
-    public List<TvRole> Cast { get; set; }
+    public List<TvRole>? Cast { get; set; }
 
     /// <summary>
     /// Gets or sets the list of TV crew jobs.
     /// </summary>
     [JsonProperty("crew")]
-    public List<TvJob> Crew { get; set; }
+    public List<TvJob>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the person ID.

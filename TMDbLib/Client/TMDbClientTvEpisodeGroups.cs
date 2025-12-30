@@ -14,9 +14,9 @@ public partial class TMDbClient
     /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The requested collection of tv episode groups.</returns>
-    public async Task<TvGroupCollection> GetTvEpisodeGroupsAsync(string id, string language = null, CancellationToken cancellationToken = default)
+    public async Task<TvGroupCollection?> GetTvEpisodeGroupsAsync(string id, string? language = null, CancellationToken cancellationToken = default)
     {
-        RestRequest req = _client.Create("tv/episode_group/{id}");
+        var req = _client.Create("tv/episode_group/{id}");
         req.AddUrlSegment("id", id);
 
         language ??= DefaultLanguage;
@@ -25,7 +25,7 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
-        using RestResponse<TvGroupCollection> response = await req.Get<TvGroupCollection>(cancellationToken).ConfigureAwait(false);
+        using var response = await req.Get<TvGroupCollection>(cancellationToken).ConfigureAwait(false);
 
         if (!response.IsValid)
         {

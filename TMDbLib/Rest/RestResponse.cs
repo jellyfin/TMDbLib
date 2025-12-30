@@ -4,35 +4,39 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest;
 
 internal class RestResponse : IDisposable
 {
-    private readonly HttpResponseMessage response;
+    private readonly HttpResponseMessage? _response;
 
-    public RestResponse(HttpResponseMessage response)
+    public RestResponse(HttpResponseMessage? response)
     {
-        this.response = response;
+        _response = response;
     }
 
-    public bool IsValid => response != null;
+    public bool IsValid => _response is not null;
 
-    public HttpStatusCode StatusCode => response.StatusCode;
+    public HttpStatusCode StatusCode => _response?.StatusCode ?? HttpStatusCode.NotFound;
 
     public async Task<Stream> GetContent()
     {
-        return await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+        if (_response is null)
+        {
+            throw new InvalidOperationException("Cannot get content from a null response");
+        }
+
+        return await _response.Content.ReadAsStreamAsync().ConfigureAwait(false);
     }
 
-    public string GetHeader(string name, string @default = null)
+    public string? GetHeader(string name, string? @default = null)
     {
-        return response.Headers.GetValues(name).FirstOrDefault() ?? @default;
+        return _response?.Headers.GetValues(name).FirstOrDefault() ?? @default;
     }
 
     public virtual void Dispose()
     {
-        response?.Dispose();
+        _response?.Dispose();
     }
 }

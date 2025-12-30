@@ -66,10 +66,10 @@ public class KnownForConverterTest : TestBase
     {
         // Search for a person who is known for both TV and movies
         var result = await TMDbClient.SearchPersonAsync("Bryan Cranston");
-
         Assert.NotNull(result?.Results);
 
-        var knownForList = result.Results.SelectMany(s => s.KnownFor).ToList();
+        Assert.NotNull(result.Results);
+        var knownForList = result.Results.SelectMany(s => s.KnownFor ?? []).ToList();
         Assert.NotEmpty(knownForList);
 
         // Verify proper deserialization - at least one of each type should be present

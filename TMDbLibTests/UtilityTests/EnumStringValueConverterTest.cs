@@ -20,9 +20,9 @@ public class EnumStringValueConverterTest : TestBase
     /// <returns>A collection of object arrays containing each enum member.</returns>
     public static IEnumerable<object[]> GetEnumMembers(Type type)
     {
-        Array values = Enum.GetValues(type);
+        var values = Enum.GetValues(type);
 
-        foreach (Enum value in values)
+        foreach (var value in values)
         {
             yield return new object[] { value };
         }
@@ -36,8 +36,8 @@ public class EnumStringValueConverterTest : TestBase
     [MemberData(nameof(GetEnumMembers), typeof(MediaType))]
     public void EnumStringValueConverter_Data(object original)
     {
-        string json = Serializer.SerializeToString(original);
-        object result = Serializer.DeserializeFromString(json, original.GetType());
+        var json = Serializer.SerializeToString(original);
+        var result = Serializer.DeserializeFromString(json, original.GetType());
 
         Assert.IsType(original.GetType(), result);
         Assert.Equal(original, result);

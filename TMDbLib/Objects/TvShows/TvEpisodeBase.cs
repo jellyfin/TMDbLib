@@ -18,19 +18,19 @@ public class TvEpisodeBase : TvEpisodeInfo
     /// Gets or sets the name of the episode.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview text of the episode.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the production code of the episode.
     /// </summary>
     [JsonProperty("production_code")]
-    public string ProductionCode { get; set; }
+    public string? ProductionCode { get; set; }
 
     /// <summary>
     /// Gets or sets the TV show ID.
@@ -42,7 +42,7 @@ public class TvEpisodeBase : TvEpisodeInfo
     /// Gets or sets the still image path.
     /// </summary>
     [JsonProperty("still_path")]
-    public string StillPath { get; set; }
+    public string? StillPath { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score.
@@ -66,5 +66,5 @@ public class TvEpisodeBase : TvEpisodeInfo
     /// Gets or sets the episode type.
     /// </summary>
     [JsonProperty("episode_type")]
-    public string EpisodeType { get; set; }
+    public string? EpisodeType { get; set; }
 }

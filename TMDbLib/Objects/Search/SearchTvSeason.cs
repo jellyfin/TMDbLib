@@ -33,19 +33,19 @@ public class SearchTvSeason : SearchBase
     /// Gets or sets the name of the season.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview text of the season.
     /// </summary>
     [JsonProperty("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
     [JsonProperty("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.

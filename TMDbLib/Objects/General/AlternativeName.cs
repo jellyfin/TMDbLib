@@ -11,11 +11,11 @@ public class AlternativeName
     /// Gets or sets the alternative name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the type of the alternative name.
     /// </summary>
     [JsonProperty("type")]
-    public string Type { get; set; }
+    public string? Type { get; set; }
 }

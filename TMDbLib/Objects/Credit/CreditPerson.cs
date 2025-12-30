@@ -17,5 +17,5 @@ public class CreditPerson
     /// Gets or sets the person's name.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }

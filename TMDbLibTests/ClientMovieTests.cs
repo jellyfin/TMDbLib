@@ -17,11 +17,11 @@ namespace TMDbLibTests;
 /// </summary>
 public class ClientMovieTests : TestBase
 {
-    private static readonly Dictionary<MovieMethods, Func<Movie, object>> Methods;
+    private static readonly Dictionary<MovieMethods, Func<Movie, object?>> Methods;
 
     static ClientMovieTests()
     {
-        Methods = new Dictionary<MovieMethods, Func<Movie, object>>
+        Methods = new Dictionary<MovieMethods, Func<Movie, object?>>
         {
             [MovieMethods.AlternativeTitles] = movie => movie.AlternativeTitles,
             [MovieMethods.Credits] = movie => movie.Credits,
@@ -49,11 +49,12 @@ public class ClientMovieTests : TestBase
     public async Task TestMoviesExtrasNone()
     {
         var movie = await TMDbClient.GetMovieAsync(IdHelper.AGoodDayToDieHard);
+        Assert.NotNull(movie);
 
         await Verify(movie);
 
         // Test all extras, ensure none of them exist
-        foreach (Func<Movie, object> selector in Methods.Values)
+        foreach (var selector in Methods.Values)
         {
             Assert.Null(selector(movie));
         }
@@ -68,7 +69,12 @@ public class ClientMovieTests : TestBase
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-        await TestMethodsHelper.TestGetExclusive(Methods, extras => TMDbClient.GetMovieAsync(IdHelper.AGoodDayToDieHard, extras));
+        await TestMethodsHelper.TestGetExclusive(Methods, async extras =>
+        {
+            var result = await TMDbClient.GetMovieAsync(IdHelper.AGoodDayToDieHard, extras);
+            Assert.NotNull(result);
+            return result;
+        });
     }
 
     /// <summary>
@@ -77,7 +83,7 @@ public class ClientMovieTests : TestBase
     [Fact]
     public async Task TestMoviesImdbExtrasAllAsync()
     {
-        var tmpMethods = new Dictionary<MovieMethods, Func<Movie, object>>(Methods);
+        var tmpMethods = new Dictionary<MovieMethods, Func<Movie, object?>>(Methods);
         tmpMethods.Remove(MovieMethods.Videos);
         // Remove methods that may not always have data
         tmpMethods.Remove(MovieMethods.Changes);
@@ -147,6 +153,8 @@ public class ClientMovieTests : TestBase
     {
         var resp = await TMDbClient.GetMovieCreditsAsync(IdHelper.AGoodDayToDieHard);
         Assert.NotNull(resp);
+        Assert.NotNull(resp.Cast);
+        Assert.NotNull(resp.Crew);
 
         var cast = resp.Cast.Single(s => s.CreditId == "52fe4751c3a36847f812f049");
         var crew = resp.Crew.Single(s => s.CreditId == "5336b04a9251417db4000c80");
@@ -157,8 +165,8 @@ public class ClientMovieTests : TestBase
             crew
         });
 
-        TestImagesHelpers.TestImagePaths(resp.Cast.Select(s => s.ProfilePath).Where(s => s != null));
-        TestImagesHelpers.TestImagePaths(resp.Crew.Select(s => s.ProfilePath).Where(s => s != null));
+        TestImagesHelpers.TestImagePaths(resp.Cast.Select(s => s.ProfilePath).OfType<string>());
+        TestImagesHelpers.TestImagePaths(resp.Crew.Select(s => s.ProfilePath).OfType<string>());
     }
 
     /// <summary>
@@ -179,8 +187,12 @@ public class ClientMovieTests : TestBase
     public async Task TestMoviesGetMovieImages()
     {
         var resp = await TMDbClient.GetMovieImagesAsync(IdHelper.AGoodDayToDieHard);
+        Assert.NotNull(resp);
 
         TestImagesHelpers.TestImagePaths(resp);
+        Assert.NotNull(resp.Backdrops);
+        Assert.NotNull(resp.Posters);
+        Assert.NotNull(resp.Logos);
 
         var backdrop = resp.Backdrops.Single(s => s.FilePath == "/js3J4SBiRfLvmRzaHoTA2tpKROw.jpg");
         var poster = resp.Posters.Single(s => s.FilePath == "/c4G6lW5hAWmwveThfLSqs52yHB1.jpg");
@@ -201,8 +213,12 @@ public class ClientMovieTests : TestBase
     public async Task TestMoviesGetMovieImagesWithImageLanguage()
     {
         var images = await TMDbClient.GetMovieImagesAsync(IdHelper.AGoodDayToDieHard, "en-US", "en");
+        Assert.NotNull(images);
 
         TestImagesHelpers.TestImagePaths(images);
+        Assert.NotNull(images.Backdrops);
+        Assert.NotNull(images.Posters);
+        Assert.NotNull(images.Logos);
 
         var backdrop = images.Backdrops.Single(s => s.FilePath == "/js3J4SBiRfLvmRzaHoTA2tpKROw.jpg");
         var poster = images.Posters.Single(s => s.FilePath == "/9Zq88w35f1PpM22TIbf2amtjHD6.jpg");
@@ -223,11 +239,15 @@ public class ClientMovieTests : TestBase
     public async Task TestMoviesGetMovieWithImageLanguage()
     {
         var resp = await TMDbClient.GetMovieAsync(IdHelper.Avatar, "de-DE", "de", MovieMethods.Images);
+        Assert.NotNull(resp);
         var images = resp.Images;
+        Assert.NotNull(images);
 
         TestImagesHelpers.TestImagePaths(images);
 
         // Verify images are returned with valid paths
+        Assert.NotNull(images.Backdrops);
+        Assert.NotNull(images.Posters);
         Assert.NotEmpty(images.Backdrops);
         Assert.NotEmpty(images.Posters);
         Assert.NotNull(images.Backdrops.First().FilePath);
@@ -278,6 +298,7 @@ public class ClientMovieTests : TestBase
         Assert.NotNull(resp);
 
         var watchProvidersByRegion = resp.Results;
+        Assert.NotNull(watchProvidersByRegion);
         Assert.NotEmpty(watchProvidersByRegion);
 
         // Not making further assertions since this data is highly dynamic.
@@ -303,6 +324,10 @@ public class ClientMovieTests : TestBase
         var resp = await TMDbClient.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard);
         var respGerman = await TMDbClient.GetMovieSimilarAsync(IdHelper.AGoodDayToDieHard, "de");
 
+        Assert.NotNull(resp);
+        Assert.NotNull(respGerman);
+        Assert.NotNull(resp.Results);
+        Assert.NotNull(respGerman.Results);
         Assert.NotEmpty(resp.Results);
         Assert.NotEmpty(respGerman.Results);
 
@@ -323,6 +348,11 @@ public class ClientMovieTests : TestBase
         var resp = await TMDbClient.GetMovieRecommendationsAsync(IdHelper.AGoodDayToDieHard);
         var respGerman = await TMDbClient.GetMovieRecommendationsAsync(IdHelper.AGoodDayToDieHard, "de");
 
+        Assert.NotNull(resp);
+        Assert.NotNull(respGerman);
+        Assert.NotNull(resp.Results);
+        Assert.NotNull(respGerman.Results);
+
         var single = resp.Results.Single(s => s.Id == 1571);
         var singleGerman = respGerman.Results.Single(s => s.Id == 1571);
 
@@ -341,6 +371,9 @@ public class ClientMovieTests : TestBase
     {
         var resp = await TMDbClient.GetMovieReviewsAsync(IdHelper.AGoodDayToDieHard);
 
+        Assert.NotNull(resp);
+        Assert.NotNull(resp.Results);
+
         var single = resp.Results.Single(s => s.Id == "5ae9d7ae0e0a26394e008aeb");
 
         await Verify(single);
@@ -356,7 +389,9 @@ public class ClientMovieTests : TestBase
 
         var resp = await TMDbClient.GetMovieListsAsync(IdHelper.AGoodDayToDieHard);
 
+        Assert.NotNull(resp);
         Assert.Equal(IdHelper.AGoodDayToDieHard, resp.Id);
+        Assert.NotNull(resp.Results);
         Assert.NotEmpty(resp.Results);
     }
 
@@ -366,7 +401,9 @@ public class ClientMovieTests : TestBase
     [Fact]
     public async Task TestMoviesGetMovieChangesAsync()
     {
-        var changes = await TMDbClient.GetMovieChangesAsync(IdHelper.Avatar, startDate: DateTime.UtcNow.AddYears(-1));
+        // Fixed date for deterministic WireMock playback (recorded 2025-12-24)
+        var fixedStartDate = new DateTime(2024, 12, 24, 0, 0, 0, DateTimeKind.Utc);
+        var changes = await TMDbClient.GetMovieChangesAsync(IdHelper.Avatar, startDate: fixedStartDate);
 
         // Changes may or may not exist depending on recent activity
         Assert.NotNull(changes);
@@ -391,6 +428,8 @@ public class ClientMovieTests : TestBase
         await TestHelpers.SearchPagesAsync(page => TMDbClient.GetMoviePopularListAsync(page: page));
 
         var list = await TMDbClient.GetMoviePopularListAsync("de");
+        Assert.NotNull(list);
+        Assert.NotNull(list.Results);
         Assert.NotEmpty(list.Results);
     }
 
@@ -403,6 +442,8 @@ public class ClientMovieTests : TestBase
         await TestHelpers.SearchPagesAsync(page => TMDbClient.GetMovieTopRatedListAsync(page: page));
 
         var list = await TMDbClient.GetMovieTopRatedListAsync("de");
+        Assert.NotNull(list);
+        Assert.NotNull(list.Results);
         Assert.NotEmpty(list.Results);
     }
 
@@ -415,6 +456,8 @@ public class ClientMovieTests : TestBase
         await TestHelpers.SearchPagesAsync<SearchContainerWithDates<SearchMovie>, SearchMovie>(page => TMDbClient.GetMovieNowPlayingListAsync(page: page));
 
         var list = await TMDbClient.GetMovieNowPlayingListAsync("de");
+        Assert.NotNull(list);
+        Assert.NotNull(list.Results);
         Assert.NotEmpty(list.Results);
     }
 
@@ -427,6 +470,8 @@ public class ClientMovieTests : TestBase
         await TestHelpers.SearchPagesAsync<SearchContainerWithDates<SearchMovie>, SearchMovie>(page => TMDbClient.GetMovieUpcomingListAsync(page: page));
 
         var list = await TMDbClient.GetMovieUpcomingListAsync("de");
+        Assert.NotNull(list);
+        Assert.NotNull(list.Results);
         Assert.NotEmpty(list.Results);
     }
 
@@ -446,6 +491,7 @@ public class ClientMovieTests : TestBase
             {
                 var accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.MadMaxFuryRoad);
 
+                Assert.NotNull(accountState);
                 Assert.Equal(shouldBeSet, accountState.Favorite);
             });
     }
@@ -466,6 +512,7 @@ public class ClientMovieTests : TestBase
             {
                 var accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.MadMaxFuryRoad);
 
+                Assert.NotNull(accountState);
                 Assert.Equal(shouldBeSet, accountState.Watchlist);
             });
     }
@@ -486,6 +533,7 @@ public class ClientMovieTests : TestBase
             {
                 var accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.MadMaxFuryRoad);
 
+                Assert.NotNull(accountState);
                 Assert.Equal(shouldBeSet, accountState.Rating.HasValue);
             });
     }
@@ -527,8 +575,9 @@ public class ClientMovieTests : TestBase
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
         var movie = await TMDbClient.GetMovieAsync(IdHelper.TheDarkKnightRises, MovieMethods.AccountStates);
+        Assert.NotNull(movie);
 
-        if (movie.AccountStates?.Rating == null)
+        if (movie.AccountStates?.Rating is null)
         {
             await TMDbClient.MovieSetRatingAsync(IdHelper.TheDarkKnightRises, 5);
 
@@ -536,6 +585,7 @@ public class ClientMovieTests : TestBase
             await Task.Delay(2000);
 
             movie = await TMDbClient.GetMovieAsync(IdHelper.TheDarkKnightRises, MovieMethods.AccountStates);
+            Assert.NotNull(movie);
         }
         Assert.NotNull(movie.AccountStates);
         Assert.True(movie.AccountStates.Rating.HasValue);

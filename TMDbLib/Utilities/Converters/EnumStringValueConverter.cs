@@ -6,16 +6,21 @@ namespace TMDbLib.Utilities.Converters;
 
 internal class EnumStringValueConverter : JsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        string str = EnumMemberCache.GetString(value);
+        if (value is null)
+        {
+            writer.WriteNull();
+            return;
+        }
 
+        var str = EnumMemberCache.GetString(value);
         writer.WriteValue(str);
     }
 
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        object val = EnumMemberCache.GetValue(reader.Value as string, objectType);
+        var val = EnumMemberCache.GetValue(reader.Value as string, objectType);
 
         return val;
     }

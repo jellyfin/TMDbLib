@@ -11,7 +11,7 @@ public class UserSession
     /// Gets or sets the session ID.
     /// </summary>
     [JsonProperty("session_id")]
-    public string SessionId { get; set; }
+    public string? SessionId { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the session creation was successful.

@@ -12,7 +12,7 @@ public class Review : ReviewBase
     /// Gets or sets a language code, e.g. en.
     /// </summary>
     [JsonProperty("iso_639_1")]
-    public string Iso_639_1 { get; set; }
+    public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the media ID.
@@ -24,7 +24,7 @@ public class Review : ReviewBase
     /// Gets or sets the media title.
     /// </summary>
     [JsonProperty("media_title")]
-    public string MediaTitle { get; set; }
+    public string? MediaTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the media type.

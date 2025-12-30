@@ -16,7 +16,7 @@ public class SimpleNamedValueCollection : IEnumerable<KeyValuePair<string, strin
     /// </summary>
     public SimpleNamedValueCollection()
     {
-        _list = new List<KeyValuePair<string, string>>();
+        _list = [];
     }
 
     /// <summary>
@@ -24,9 +24,20 @@ public class SimpleNamedValueCollection : IEnumerable<KeyValuePair<string, strin
     /// </summary>
     /// <param name="index">The key of the value to get or set.</param>
     /// <returns>The value associated with the specified key.</returns>
-    public string this[string index]
+    public string? this[string index]
     {
-        get => Get(index); set => Add(index, value);
+        get => Get(index);
+        set
+        {
+            if (value is not null)
+            {
+                Add(index, value);
+            }
+            else
+            {
+                Remove(index);
+            }
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()
@@ -64,9 +75,9 @@ public class SimpleNamedValueCollection : IEnumerable<KeyValuePair<string, strin
     /// <param name="key">The key of the value to get.</param>
     /// <param name="default">The default value to return if the key is not found.</param>
     /// <returns>The value associated with the specified key, or the default value if not found.</returns>
-    public string Get(string key, string @default = null)
+    public string? Get(string key, string? @default = null)
     {
-        foreach (KeyValuePair<string, string> pair in _list)
+        foreach (var pair in _list)
         {
             if (pair.Key.Equals(key, StringComparison.OrdinalIgnoreCase))
             {

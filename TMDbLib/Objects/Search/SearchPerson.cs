@@ -28,17 +28,17 @@ public class SearchPerson : SearchBase
     /// Gets or sets the list of movies and TV shows the person is known for.
     /// </summary>
     [JsonProperty("known_for", ItemConverterType = typeof(KnownForConverter))]
-    public List<KnownForBase> KnownFor { get; set; }
+    public List<KnownForBase>? KnownFor { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the person.
     /// </summary>
     [JsonProperty("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the profile image path.
     /// </summary>
     [JsonProperty("profile_path")]
-    public string ProfilePath { get; set; }
+    public string? ProfilePath { get; set; }
 }

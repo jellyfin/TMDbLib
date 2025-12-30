@@ -20,7 +20,7 @@ public class ClientKeywordTests : TestBase
     [Fact]
     public async Task TestGetMovieKeywordsAsync()
     {
-        KeywordsContainer keywords = await TMDbClient.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard);
+        var keywords = await TMDbClient.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard);
 
         await Verify(keywords);
     }
@@ -31,7 +31,7 @@ public class ClientKeywordTests : TestBase
     [Fact]
     public async Task TestGetTvShowKeywordsAsync()
     {
-        ResultContainer<Keyword> keywords = await TMDbClient.GetTvShowKeywordsAsync(IdHelper.BigBangTheory);
+        var keywords = await TMDbClient.GetTvShowKeywordsAsync(IdHelper.BigBangTheory);
 
         await Verify(keywords);
     }
@@ -42,7 +42,7 @@ public class ClientKeywordTests : TestBase
     [Fact]
     public async Task TestKeywordGetSingle()
     {
-        Keyword keyword = await TMDbClient.GetKeywordAsync(IdHelper.AgentKeyword);
+        var keyword = await TMDbClient.GetKeywordAsync(IdHelper.AgentKeyword);
 
         await Verify(keyword);
     }
@@ -53,7 +53,7 @@ public class ClientKeywordTests : TestBase
     [Fact]
     public async Task TestKeywordsMissing()
     {
-        KeywordsContainer keywords = await TMDbClient.GetMovieKeywordsAsync(IdHelper.MissingID);
+        var keywords = await TMDbClient.GetMovieKeywordsAsync(IdHelper.MissingID);
 
         Assert.Null(keywords);
     }
@@ -64,13 +64,17 @@ public class ClientKeywordTests : TestBase
     [Fact]
     public async Task TestKeywordMovies()
     {
-        SearchContainerWithId<SearchMovie> movies = await TMDbClient.GetKeywordMoviesAsync(IdHelper.AgentKeyword);
+        var movies = await TMDbClient.GetKeywordMoviesAsync(IdHelper.AgentKeyword);
 
+        Assert.NotNull(movies);
         Assert.Equal(IdHelper.AgentKeyword, movies.Id);
+        Assert.NotNull(movies.Results);
         Assert.NotEmpty(movies.Results);
 
-        KeywordsContainer movie = await TMDbClient.GetMovieKeywordsAsync(movies.Results.First().Id);
+        var movie = await TMDbClient.GetMovieKeywordsAsync(movies.Results.First().Id);
 
+        Assert.NotNull(movie);
+        Assert.NotNull(movie.Keywords);
         Assert.Contains(movie.Keywords, x => IdHelper.AgentKeyword == x.Id);
     }
 }

@@ -12,11 +12,11 @@ public class ReleaseDatesContainer
     /// Gets or sets a country code, e.g. US.
     /// </summary>
     [JsonProperty("iso_3166_1")]
-    public string Iso_3166_1 { get; set; }
+    public string? Iso_3166_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the list of release dates for this country.
     /// </summary>
     [JsonProperty("release_dates")]
-    public List<ReleaseDateItem> ReleaseDates { get; set; }
+    public List<ReleaseDateItem>? ReleaseDates { get; set; }
 }

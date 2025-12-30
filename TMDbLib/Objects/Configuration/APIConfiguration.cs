@@ -12,11 +12,11 @@ public class APIConfiguration
     /// Gets or sets the image configuration settings.
     /// </summary>
     [JsonProperty("images")]
-    public APIConfigurationImages Images { get; set; }
+    public APIConfigurationImages? Images { get; set; }
 
     /// <summary>
     /// Gets or sets the list of available change keys.
     /// </summary>
     [JsonProperty("change_keys")]
-    public List<string> ChangeKeys { get; set; }
+    public List<string>? ChangeKeys { get; set; }
 }

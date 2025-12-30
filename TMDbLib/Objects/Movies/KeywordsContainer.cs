@@ -19,5 +19,5 @@ public class KeywordsContainer
     /// Gets or sets the list of keywords associated with the movie.
     /// </summary>
     [JsonProperty("keywords")]
-    public List<Keyword> Keywords { get; set; }
+    public List<Keyword>? Keywords { get; set; }
 }

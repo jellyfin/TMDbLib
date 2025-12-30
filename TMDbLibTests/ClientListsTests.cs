@@ -27,7 +27,7 @@ public class ClientListsTests : TestBase
     [Fact]
     public async Task TestGetListAsync()
     {
-        // Get list
+        // Get list (TestListId points to a deleted list, so null is expected)
         var list = await TMDbClient.GetListAsync(TestListId);
 
         await Verify(list);
@@ -40,7 +40,9 @@ public class ClientListsTests : TestBase
     public async Task TestListAsync()
     {
         var movieLists = await TMDbClient.GetMovieListsAsync(IdHelper.Avatar);
+        Assert.NotNull(movieLists);
 
+        Assert.NotNull(movieLists.Results);
         Assert.NotEmpty(movieLists.Results);
         Assert.All(movieLists.Results, x => Assert.Equal(MediaType.Movie, x.ListType));
     }
@@ -68,6 +70,7 @@ public class ClientListsTests : TestBase
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
         var listId = await TMDbClient.ListCreateAsync(listName);
+        Assert.NotNull(listId);
 
         Assert.False(string.IsNullOrWhiteSpace(listId));
 
@@ -75,6 +78,7 @@ public class ClientListsTests : TestBase
 
         Assert.NotNull(newlyAddedList);
         Assert.Equal(listName, newlyAddedList.Name);
+        Assert.NotNull(newlyAddedList.Items);
         Assert.Empty(newlyAddedList.Items);
 
         // Add a movie
@@ -136,7 +140,12 @@ public class ClientListsTests : TestBase
             // Eventually we'll delete all remaining lists
             var lists = client.AccountGetListsAsync().GetAwaiter().GetResult();
 
-            foreach (var list in lists.Results.Where(s => s.Name.StartsWith(EphemeralListPrefix, StringComparison.Ordinal)))
+            if (lists is null || lists.Results is null)
+            {
+                return;
+            }
+
+            foreach (var list in lists.Results.Where(s => s.Name?.StartsWith(EphemeralListPrefix, StringComparison.Ordinal) == true))
             {
                 client.ListDeleteAsync(list.Id.ToString(CultureInfo.InvariantCulture)).GetAwaiter().GetResult();
             }
