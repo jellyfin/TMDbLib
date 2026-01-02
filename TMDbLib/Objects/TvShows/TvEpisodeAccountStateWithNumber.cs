@@ -11,5 +11,5 @@ public class TvEpisodeAccountStateWithNumber : TvEpisodeAccountState
     /// Gets or sets the episode number.
     /// </summary>
     [JsonProperty("episode_number")]
-    public int EpisodeNumber { get; set; }
+    public long EpisodeNumber { get; set; }
 }
