@@ -112,7 +112,7 @@ internal static class HappyEyeballsCallback
 
         var allTasks = new List<Task<Socket>>();
         var pendingTasks = new List<Task<Socket>>();
-        Socket successSocket = null;
+        Socket? successSocket = null;
         var successIndex = -1;
 
         try

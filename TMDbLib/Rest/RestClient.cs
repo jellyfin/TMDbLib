@@ -27,14 +27,15 @@ internal sealed class RestClient : IDisposable
 
         if (httpMessageHandler is null)
         {
-            httpMessageHandler = new HttpMessageHandler();
-        }
+            var handler = new HttpClientHandler();
+            if (proxy is not null)
+            {
+                // Blazor apparently throws on the Proxy setter.
+                // https://github.com/jellyfin/TMDbLib/issues/354
+                handler.Proxy = proxy;
+            }
 
-        if (proxy is not null)
-        {
-            // Blazor apparently throws on the Proxy setter.
-            // https://github.com/jellyfin/TMDbLib/issues/354
-            httpMessageHandler.Proxy = proxy;
+            httpMessageHandler = handler;
         }
 
         HttpClient = new HttpClient(httpMessageHandler);
