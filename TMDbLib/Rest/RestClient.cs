@@ -27,11 +27,13 @@ internal sealed class RestClient : IDisposable
 
         if (httpMessageHandler is null)
         {
-            var handler = new HttpClientHandler();
+            var handler = new SocketsHttpHandler
+            {
+                ConnectCallback = HappyEyeballsCallback.ConnectAsync
+            };
+
             if (proxy is not null)
             {
-                // Blazor apparently throws on the Proxy setter.
-                // https://github.com/jellyfin/TMDbLib/issues/354
                 handler.Proxy = proxy;
             }
 
