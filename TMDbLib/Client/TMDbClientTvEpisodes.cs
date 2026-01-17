@@ -80,7 +80,7 @@ public partial class TMDbClient
     /// <param name="includeImageLanguage">If specified the api will attempt to return localized image results eg. en,it,es.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>The requested TV episode with its details and any requested additional data.</returns>
-    public async Task<TvEpisode?> GetTvEpisodeAsync(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
+    public async Task<TvEpisode?> GetTvEpisodeAsync(int tvShowId, int seasonNumber, long episodeNumber, TvEpisodeMethods extraMethods = TvEpisodeMethods.Undefined, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
         if (extraMethods.HasFlag(TvEpisodeMethods.AccountStates))
         {

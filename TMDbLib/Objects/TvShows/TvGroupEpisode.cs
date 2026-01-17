@@ -11,5 +11,5 @@ public class TvGroupEpisode : TvEpisodeBase
     /// Gets or sets the order of the episode within the group.
     /// </summary>
     [JsonProperty("order")]
-    public int Order { get; set; }
+    public long Order { get; set; }
 }
