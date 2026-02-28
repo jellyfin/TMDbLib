@@ -24,9 +24,6 @@ public partial class TMDbClient
             request.AddQueryString("language", language);
         }
 
-        // TODO: Dateformat?
-        // request.DateFormat = "yyyy-MM-dd";
-
         var resp = await request.GetOfT<Review>(cancellationToken).ConfigureAwait(false);
 
         return resp;

@@ -21,7 +21,7 @@ public sealed partial class TMDbClient
     private async Task<T?> GetMovieMethodInternal<T>(
         int movieId,
         MovieMethods movieMethod,
-        string? dateFormat = null,
+        string dateFormat = "yyyy-MM-dd",
         string? country = null,
         string? language = null,
         string? includeImageLanguage = null,
@@ -58,12 +58,12 @@ public sealed partial class TMDbClient
 
         if (startDate.HasValue)
         {
-            req.AddParameter("start_date", startDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            req.AddParameter("start_date", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         if (endDate is not null)
         {
-            req.AddParameter("end_date", endDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            req.AddParameter("end_date", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         var response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -479,7 +479,7 @@ public sealed partial class TMDbClient
     /// <returns>Release information for the movie.</returns>
     public async Task<Releases?> GetMovieReleasesAsync(int movieId, CancellationToken cancellationToken = default)
     {
-        return await GetMovieMethodInternal<Releases>(movieId, MovieMethods.Releases, dateFormat: "yyyy-MM-dd", cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetMovieMethodInternal<Releases>(movieId, MovieMethods.Releases, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -529,7 +529,7 @@ public sealed partial class TMDbClient
     /// <returns>A search container with similar movies.</returns>
     public async Task<SearchContainer<SearchMovie>?> GetMovieSimilarAsync(int movieId, string? language, int page = 0, CancellationToken cancellationToken = default)
     {
-        return await GetMovieMethodInternal<SearchContainer<SearchMovie>>(movieId, MovieMethods.Similar, page: page, language: language, dateFormat: "yyyy-MM-dd", cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetMovieMethodInternal<SearchContainer<SearchMovie>>(movieId, MovieMethods.Similar, page: page, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
