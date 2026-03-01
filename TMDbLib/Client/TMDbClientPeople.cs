@@ -16,7 +16,7 @@ public partial class TMDbClient
     private async Task<T?> GetPersonMethodInternal<T>(
         int personId,
         PersonMethods personMethod,
-        string? dateFormat = null,
+        string dateFormat = "yyyy-MM-dd",
         string? country = null,
         string? language = null,
         int page = 0,
@@ -51,12 +51,12 @@ public partial class TMDbClient
 
         if (startDate.HasValue)
         {
-            req.AddParameter("startDate", startDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            req.AddParameter("startDate", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         if (endDate is not null)
         {
-            req.AddParameter("endDate", endDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            req.AddParameter("endDate", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -72,9 +72,6 @@ public partial class TMDbClient
     public async Task<Person?> GetLatestPersonAsync(CancellationToken cancellationToken = default)
     {
         var req = _client.Create("person/latest");
-
-        // TODO: Dateformat?
-        // req.DateFormat = "yyyy-MM-dd";
 
         var resp = await req.GetOfT<Person>(cancellationToken).ConfigureAwait(false);
 
@@ -126,9 +123,6 @@ public partial class TMDbClient
         {
             req.AddParameter("append_to_response", appends);
         }
-
-        // TODO: Dateformat?
-        // req.DateFormat = "yyyy-MM-dd";
 
         using var response = await req.Get<Person>(cancellationToken).ConfigureAwait(false);
 
@@ -208,9 +202,6 @@ public partial class TMDbClient
         {
             req.AddParameter("language", language);
         }
-
-        // TODO: Dateformat?
-        // req.DateFormat = "yyyy-MM-dd";
 
         var resp = await req.GetOfT<SearchContainer<SearchPerson>>(cancellationToken).ConfigureAwait(false);
 

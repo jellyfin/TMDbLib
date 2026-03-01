@@ -61,8 +61,6 @@ public partial class TMDbClient
             req.AddParameter("append_to_response", appends);
         }
 
-        // req.DateFormat = "yyyy-MM-dd";
-
         var resp = await req.GetOfT<Company>(cancellationToken).ConfigureAwait(false);
 
         return resp;

@@ -140,7 +140,7 @@ public partial class TMDbClient
     /// <returns>A search container with movie results.</returns>
     public async Task<SearchContainer<SearchMovie>?> SearchMovieAsync(string query, string? language, int page = 0, bool includeAdult = false, int year = 0, string? region = null, int primaryReleaseYear = 0, CancellationToken cancellationToken = default)
     {
-        return await SearchMethodInternal<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, "yyyy-MM-dd", region, primaryReleaseYear, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await SearchMethodInternal<SearchContainer<SearchMovie>>("movie", query, page, language, includeAdult, year, region: region, primaryReleaseYear: primaryReleaseYear, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -171,7 +171,7 @@ public partial class TMDbClient
     /// <returns>A search container with mixed results including movies, TV shows, and people.</returns>
     public async Task<SearchContainer<SearchBase>?> SearchMultiAsync(string query, string? language, int page = 0, bool includeAdult = false, int year = 0, string? region = null, CancellationToken cancellationToken = default)
     {
-        return await SearchMethodInternal<SearchContainer<SearchBase>>("multi", query, page, language, includeAdult, year, "yyyy-MM-dd", region, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await SearchMethodInternal<SearchContainer<SearchBase>>("multi", query, page, language, includeAdult, year, region: region, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>

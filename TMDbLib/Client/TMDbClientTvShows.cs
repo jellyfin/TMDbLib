@@ -219,7 +219,7 @@ public partial class TMDbClient
     /// <returns>Credits information including cast and crew for the TV show.</returns>
     public async Task<Credits?> GetTvShowCreditsAsync(int id, string? language = null, CancellationToken cancellationToken = default)
     {
-        return await GetTvShowMethodInternal<Credits>(id, TvShowMethods.Credits, "yyyy-MM-dd", language, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetTvShowMethodInternal<Credits>(id, TvShowMethods.Credits, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
