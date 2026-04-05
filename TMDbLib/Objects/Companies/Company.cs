@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 
@@ -12,54 +12,54 @@ public class Company
     /// <summary>
     /// Gets or sets the company description.
     /// </summary>
-    [JsonProperty("description")]
+    [JsonPropertyName("description")]
     public string? Description { get; set; }
 
     /// <summary>
     /// Gets or sets the headquarters location.
     /// </summary>
-    [JsonProperty("headquarters")]
+    [JsonPropertyName("headquarters")]
     public string? Headquarters { get; set; }
 
     /// <summary>
     /// Gets or sets the company homepage URL.
     /// </summary>
-    [JsonProperty("homepage")]
+    [JsonPropertyName("homepage")]
     public string? Homepage { get; set; }
 
     /// <summary>
     /// Gets or sets the company ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the logo image path.
     /// </summary>
-    [JsonProperty("logo_path")]
+    [JsonPropertyName("logo_path")]
     public string? LogoPath { get; set; }
 
     /// <summary>
     /// Gets or sets the movies associated with the company. This property is populated when the Movies method is requested.
     /// </summary>
-    [JsonProperty("movies")]
+    [JsonPropertyName("movies")]
     public SearchContainer<SearchMovie>? Movies { get; set; }
 
     /// <summary>
     /// Gets or sets the company name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the parent company information.
     /// </summary>
-    [JsonProperty("parent_company")]
+    [JsonPropertyName("parent_company")]
     public SearchCompany? ParentCompany { get; set; }
 
     /// <summary>
     /// Gets or sets the country of origin code.
     /// </summary>
-    [JsonProperty("origin_country")]
+    [JsonPropertyName("origin_country")]
     public string? OriginCountry { get; set; }
 }

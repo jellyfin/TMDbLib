@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -10,6 +10,6 @@ public class ExternalIdsTvSeason : ExternalIds
     /// <summary>
     /// Gets or sets the TVDb ID.
     /// </summary>
-    [JsonProperty("tvdb_id")]
-    public string? TvdbId { get; set; }
+    [JsonPropertyName("tvdb_id")]
+    public int? TvdbId { get; set; }
 }

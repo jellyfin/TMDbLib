@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
+using Argon;
 using VerifyTests;
 
 namespace TMDbLibTests.Helpers;

@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Account;
 
@@ -10,6 +10,6 @@ public class Avatar
     /// <summary>
     /// Gets or sets the Gravatar information.
     /// </summary>
-    [JsonProperty("gravatar")]
+    [JsonPropertyName("gravatar")]
     public Gravatar? Gravatar { get; set; }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,12 +11,12 @@ public class DateRange
     /// <summary>
     /// Gets or sets the maximum date in the range.
     /// </summary>
-    [JsonProperty("maximum")]
+    [JsonPropertyName("maximum")]
     public DateTime Maximum { get; set; }
 
     /// <summary>
     /// Gets or sets the minimum date in the range.
     /// </summary>
-    [JsonProperty("minimum")]
+    [JsonPropertyName("minimum")]
     public DateTime Minimum { get; set; }
 }

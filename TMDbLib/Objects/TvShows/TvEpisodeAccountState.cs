@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -10,6 +11,6 @@ public class TvEpisodeAccountState : TvAccountState
     /// <summary>
     /// Gets or sets the TMDb if for the related movie.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

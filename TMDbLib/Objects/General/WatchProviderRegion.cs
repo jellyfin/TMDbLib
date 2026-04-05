@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -10,18 +10,18 @@ public class WatchProviderRegion
     /// <summary>
     /// Gets or sets a country code, e.g. US.
     /// </summary>
-    [JsonProperty("iso_3166_1")]
+    [JsonPropertyName("iso_3166_1")]
     public string? Iso_3166_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the English name of the region.
     /// </summary>
-    [JsonProperty("english_name")]
+    [JsonPropertyName("english_name")]
     public string? EnglishName { get; set; }
 
     /// <summary>
     /// Gets or sets the native name of the region.
     /// </summary>
-    [JsonProperty("native_name")]
+    [JsonPropertyName("native_name")]
     public string? NativeName { get; set; }
 }

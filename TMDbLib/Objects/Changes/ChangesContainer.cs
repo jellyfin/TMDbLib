@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Changes;
 
@@ -11,6 +11,6 @@ public class ChangesContainer
     /// <summary>
     /// Gets or sets the list of changes.
     /// </summary>
-    [JsonProperty("changes")]
+    [JsonPropertyName("changes")]
     public List<Change>? Changes { get; set; }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -12,12 +12,12 @@ public class ResultContainer<T>
     /// <summary>
     /// Gets or sets the TMDb ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the list of results.
     /// </summary>
-    [JsonProperty("results")]
+    [JsonPropertyName("results")]
     public List<T>? Results { get; set; }
 }

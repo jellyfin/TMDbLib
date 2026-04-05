@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -10,12 +10,12 @@ public class Crew : CrewBase
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
-    [JsonProperty("credit_id")]
+    [JsonPropertyName("credit_id")]
     public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the job title.
     /// </summary>
-    [JsonProperty("job")]
+    [JsonPropertyName("job")]
     public string? Job { get; set; }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using TMDbLib.Objects.Find;
 using TMDbLib.Objects.General;
 using TMDbLib.Utilities.Converters;
 
@@ -21,24 +22,24 @@ public class SearchPerson : SearchBase
     /// <summary>
     /// Gets or sets a value indicating whether the person is associated with adult content.
     /// </summary>
-    [JsonProperty("adult")]
+    [JsonPropertyName("adult")]
     public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the list of movies and TV shows the person is known for.
     /// </summary>
-    [JsonProperty("known_for", ItemConverterType = typeof(KnownForConverter))]
+    [JsonPropertyName("known_for")]
     public List<KnownForBase>? KnownFor { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the person.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the profile image path.
     /// </summary>
-    [JsonProperty("profile_path")]
+    [JsonPropertyName("profile_path")]
     public string? ProfilePath { get; set; }
 }

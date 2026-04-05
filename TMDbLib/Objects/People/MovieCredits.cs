@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.People;
 
@@ -11,18 +11,18 @@ public class MovieCredits
     /// <summary>
     /// Gets or sets the list of cast roles.
     /// </summary>
-    [JsonProperty("cast")]
+    [JsonPropertyName("cast")]
     public List<MovieRole>? Cast { get; set; }
 
     /// <summary>
     /// Gets or sets the list of crew jobs.
     /// </summary>
-    [JsonProperty("crew")]
+    [JsonPropertyName("crew")]
     public List<MovieJob>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the person ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

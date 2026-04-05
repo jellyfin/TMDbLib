@@ -1,28 +1,29 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
 /// <summary>
 /// Represents a collection of images for a media item.
 /// </summary>
+[JsonDerivedType(typeof(ImagesWithId))]
 public class Images
 {
     /// <summary>
     /// Gets or sets the list of backdrop images.
     /// </summary>
-    [JsonProperty("backdrops")]
+    [JsonPropertyName("backdrops")]
     public List<ImageData>? Backdrops { get; set; }
 
     /// <summary>
     /// Gets or sets the list of poster images.
     /// </summary>
-    [JsonProperty("posters")]
+    [JsonPropertyName("posters")]
     public List<ImageData>? Posters { get; set; }
 
     /// <summary>
     /// Gets or sets the list of logo images.
     /// </summary>
-    [JsonProperty("logos")]
+    [JsonPropertyName("logos")]
     public List<ImageData>? Logos { get; set; }
 }

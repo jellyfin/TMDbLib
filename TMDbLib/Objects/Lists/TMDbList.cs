@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Lists;
 
@@ -11,42 +11,42 @@ public abstract class TMDbList<TId>
     /// <summary>
     /// Gets or sets the description of the list.
     /// </summary>
-    [JsonProperty("description")]
+    [JsonPropertyName("description")]
     public string? Description { get; set; }
 
     /// <summary>
     /// Gets or sets the number of times the list has been favorited.
     /// </summary>
-    [JsonProperty("favorite_count")]
+    [JsonPropertyName("favorite_count")]
     public int FavoriteCount { get; set; }
 
     /// <summary>
     /// Gets or sets the list ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public TId? Id { get; set; }
 
     /// <summary>
     /// Gets or sets a language code, e.g. en.
     /// </summary>
-    [JsonProperty("iso_639_1")]
+    [JsonPropertyName("iso_639_1")]
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the number of items in the list.
     /// </summary>
-    [JsonProperty("item_count")]
+    [JsonPropertyName("item_count")]
     public int ItemCount { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the list.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the poster path for the list.
     /// </summary>
-    [JsonProperty("poster_path")]
+    [JsonPropertyName("poster_path")]
     public string? PosterPath { get; set; }
 }

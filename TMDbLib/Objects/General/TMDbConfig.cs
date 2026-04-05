@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,12 +11,12 @@ public class TMDbConfig
     /// <summary>
     /// Gets or sets the list of change keys.
     /// </summary>
-    [JsonProperty("change_keys")]
+    [JsonPropertyName("change_keys")]
     public List<string>? ChangeKeys { get; set; }
 
     /// <summary>
     /// Gets or sets the image configuration.
     /// </summary>
-    [JsonProperty("images")]
+    [JsonPropertyName("images")]
     public ConfigImageTypes? Images { get; set; }
 }

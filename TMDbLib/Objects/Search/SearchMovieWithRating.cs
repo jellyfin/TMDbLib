@@ -1,4 +1,6 @@
-﻿namespace TMDbLib.Objects.Search
+﻿using System.Text.Json.Serialization;
+
+namespace TMDbLib.Objects.Search
 {
     /// <summary>
     /// Represents a movie search result with a user rating.
@@ -8,6 +10,7 @@
         /// <summary>
         /// Gets or sets the user rating for the movie.
         /// </summary>
+        [JsonPropertyName("rating")]
         public double Rating { get; set; }
     }
 }

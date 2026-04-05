@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Movies;
@@ -12,12 +12,12 @@ public class AlternativeTitles
     /// <summary>
     /// Gets or sets the movie ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the list of alternative titles.
     /// </summary>
-    [JsonProperty("titles")]
+    [JsonPropertyName("titles")]
     public List<AlternativeTitle>? Titles { get; set; }
 }

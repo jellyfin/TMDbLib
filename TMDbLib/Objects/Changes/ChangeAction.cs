@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
 using TMDbLib.Utilities.Converters;
 
@@ -7,7 +7,7 @@ namespace TMDbLib.Objects.Changes;
 /// <summary>
 /// Specifies the type of change action that occurred.
 /// </summary>
-[JsonConverter(typeof(EnumStringValueConverter))]
+[JsonConverter(typeof(TolerantEnumConverterFactory<ChangeAction>))]
 public enum ChangeAction
 {
     /// <summary>

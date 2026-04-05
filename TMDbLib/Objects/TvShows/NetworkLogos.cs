@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.TvShows;
@@ -12,12 +12,12 @@ public class NetworkLogos
     /// <summary>
     /// Gets or sets the network ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the list of logo images.
     /// </summary>
-    [JsonProperty("logos")]
+    [JsonPropertyName("logos")]
     public List<ImageData>? Logos { get; set; }
 }

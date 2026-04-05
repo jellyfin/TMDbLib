@@ -19,7 +19,7 @@ public static class SerializerExtensions
     public static void Serialize<T>(this ITMDbSerializer serializer, Stream target, T @object)
         where T : notnull
     {
-        serializer.Serialize(target, @object, typeof(T));
+        serializer.Serialize(target, @object);
     }
 
     /// <summary>
@@ -34,7 +34,7 @@ public static class SerializerExtensions
     {
         using var ms = new MemoryStream();
 
-        serializer.Serialize(ms, @object, typeof(T));
+        serializer.Serialize(ms, @object);
 
         return ms.ToArray();
     }
@@ -51,7 +51,7 @@ public static class SerializerExtensions
     {
         using var ms = new MemoryStream();
 
-        serializer.Serialize(ms, @object, typeof(T));
+        serializer.Serialize(ms, @object);
 
         ms.Seek(0, SeekOrigin.Begin);
 
@@ -69,7 +69,7 @@ public static class SerializerExtensions
     /// <returns>The deserialized object.</returns>
     public static T? Deserialize<T>(this ITMDbSerializer serializer, Stream source)
     {
-        var result = serializer.Deserialize(source, typeof(T));
+        var result = serializer.Deserialize<T>(source);
         return result is T typed ? typed : default;
     }
 

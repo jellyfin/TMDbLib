@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
+using TMDbLib.Objects.RestRequests;
 using TMDbLib.Rest;
 
 namespace TMDbLib.Client;
@@ -28,7 +29,7 @@ public partial class TMDbClient
         req.AddUrlSegment("method", method);
         AddSessionId(req, SessionType.UserSession);
 
-        req.SetBody(new { media_id = movieId });
+        req.SetBody(new MovieIdIBody(movieId));
 
         using RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
@@ -168,17 +169,17 @@ public partial class TMDbClient
         language ??= DefaultLanguage;
         if (!string.IsNullOrWhiteSpace(language))
         {
-            req.SetBody(new { name, description, language });
+            req.SetBody(new ListCreateIBody(name, description, language));
         }
         else
         {
-            req.SetBody(new { name, description });
+            req.SetBody(new ListCreateIBody(name, description));
         }
 
         using var response = await req.Post<ListCreateReply>(cancellationToken).ConfigureAwait(false);
         var item = await response.GetDataObject().ConfigureAwait(false);
 
-        return item?.ListId;
+        return item?.ListId?.ToString(CultureInfo.InvariantCulture);
     }
 
     /// <summary>

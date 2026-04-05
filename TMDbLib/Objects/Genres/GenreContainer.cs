@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Genres;
@@ -12,6 +12,6 @@ public class GenreContainer
     /// <summary>
     /// Gets or sets the list of genres.
     /// </summary>
-    [JsonProperty("genres")]
+    [JsonPropertyName("genres")]
     public List<Genre>? Genres { get; set; }
 }

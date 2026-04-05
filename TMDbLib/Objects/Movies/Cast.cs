@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.Movies;
@@ -11,72 +11,72 @@ public class Cast
     /// <summary>
     /// Gets or sets the cast ID.
     /// </summary>
-    [JsonProperty("cast_id")]
+    [JsonPropertyName("cast_id")]
     public int CastId { get; set; }
 
     /// <summary>
     /// Gets or sets the character name.
     /// </summary>
-    [JsonProperty("character")]
+    [JsonPropertyName("character")]
     public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
-    [JsonProperty("credit_id")]
+    [JsonPropertyName("credit_id")]
     public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the person ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the person name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the order in the cast.
     /// </summary>
-    [JsonProperty("order")]
+    [JsonPropertyName("order")]
     public int Order { get; set; }
 
     /// <summary>
     /// Gets or sets the profile image path.
     /// </summary>
-    [JsonProperty("profile_path")]
+    [JsonPropertyName("profile_path")]
     public string? ProfilePath { get; set; }
 
     /// <summary>
     /// Gets or sets the gender.
     /// </summary>
-    [JsonProperty("gender")]
+    [JsonPropertyName("gender")]
     public PersonGender Gender { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the person is an adult performer.
     /// </summary>
-    [JsonProperty("adult")]
+    [JsonPropertyName("adult")]
     public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the department the person is known for.
     /// </summary>
-    [JsonProperty("known_for_department")]
+    [JsonPropertyName("known_for_department")]
     public string? KnownForDepartment { get; set; }
 
     /// <summary>
     /// Gets or sets the original name.
     /// </summary>
-    [JsonProperty("original_name")]
+    [JsonPropertyName("original_name")]
     public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the popularity score.
     /// </summary>
-    [JsonProperty("popularity")]
+    [JsonPropertyName("popularity")]
     public float Popularity { get; set; }
 }

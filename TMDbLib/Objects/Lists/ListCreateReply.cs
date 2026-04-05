@@ -1,18 +1,18 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Lists;
 
 internal class ListCreateReply
 {
-    [JsonProperty("list_id")]
-    public string? ListId { get; set; }
+    [JsonPropertyName("list_id")]
+    public int? ListId { get; set; }
 
-    [JsonProperty("status_code")]
+    [JsonPropertyName("status_code")]
     public int StatusCode { get; set; }
 
-    [JsonProperty("status_message")]
+    [JsonPropertyName("status_message")]
     public string? StatusMessage { get; set; }
 
-    [JsonProperty("success")]
+    [JsonPropertyName("success")]
     public bool Success { get; set; }
 }

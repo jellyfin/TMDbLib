@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,12 +11,12 @@ public class AlternativeNames
     /// <summary>
     /// Gets or sets the TMDb ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the list of alternative names.
     /// </summary>
-    [JsonProperty("results")]
+    [JsonPropertyName("results")]
     public List<AlternativeName>? Results { get; set; }
 }

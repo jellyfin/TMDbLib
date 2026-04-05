@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Changes;
 
@@ -11,12 +11,12 @@ public class Change
     /// <summary>
     /// Gets or sets the list of change items.
     /// </summary>
-    [JsonProperty("items")]
+    [JsonPropertyName("items")]
     public List<ChangeItemBase>? Items { get; set; }
 
     /// <summary>
     /// Gets or sets the key identifying which property was changed.
     /// </summary>
-    [JsonProperty("key")]
+    [JsonPropertyName("key")]
     public string? Key { get; set; }
 }

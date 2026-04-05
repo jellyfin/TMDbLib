@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Account;
 
@@ -10,6 +10,6 @@ public class Gravatar
     /// <summary>
     /// Gets or sets the Gravatar hash value.
     /// </summary>
-    [JsonProperty("hash")]
+    [JsonPropertyName("hash")]
     public string? Hash { get; set; }
 }

@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Objects.Exceptions;
+using TMDbLib.Objects.RestRequests;
+using TMDbLib.Utilities.JsonSerializerContexts;
 using TMDbLib.Utilities.Serializer;
 
 namespace TMDbLib.Rest;
@@ -20,7 +20,7 @@ internal class RestRequest
     private readonly RestClient _client;
     private readonly string _endpoint;
 
-    private object? _bodyObj;
+    private IBody? _body;
 
     private List<KeyValuePair<string, string>>? _queryString;
     private List<KeyValuePair<string, string>>? _urlSegment;
@@ -165,17 +165,14 @@ internal class RestRequest
         }
 
         // Build
-        var builder = new UriBuilder(new Uri(_client.BaseUrl, endpoint))
-        {
-            Query = queryStringSb.ToString()
-        };
+        var builder = new UriBuilder(new Uri(_client.BaseUrl, endpoint)) { Query = queryStringSb.ToString() };
 
         var req = new HttpRequestMessage(method, builder.Uri);
 
         // Body
-        if (method == HttpMethod.Post && _bodyObj is not null)
+        if (method == HttpMethod.Post && _body is not null)
         {
-            var bodyBytes = _client.Serializer.SerializeToBytes(_bodyObj);
+            var bodyBytes = _client.Serializer.SerializeToBytes(_body);
 
             req.Content = new ByteArrayContent(bodyBytes);
             req.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -212,7 +209,15 @@ internal class RestRequest
 
             if (isJson)
             {
-                statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false));
+                var stream = await resp.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                try
+                {
+                    statusMessage = await JsonSerializer.DeserializeAsync(stream, TmdbJsonSerializerContext.Default.TMDbStatusMessage, cancellationToken: cancellationToken).ConfigureAwait(false);
+                }
+                finally
+                {
+                    await stream.DisposeAsync().ConfigureAwait(false);
+                }
             }
             else
             {
@@ -261,16 +266,15 @@ internal class RestRequest
             resp.Dispose();
 #pragma warning restore IDISP016, IDISP017
             throw new GeneralHttpException(resp.StatusCode);
-        }
-        while (timesToTry-- > 0);
+        } while (timesToTry-- > 0);
 
         // We never reached a success
         throw new RequestLimitExceededException(statusMessage, retryHeader?.Date, retryHeader?.Delta);
     }
 
-    public RestRequest SetBody(object obj)
+    public RestRequest SetBody(IBody iBody)
     {
-        _bodyObj = obj;
+        _body = iBody;
 
         return this;
     }

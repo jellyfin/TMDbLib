@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Xunit;
-using TMDbLib.Objects.Reviews;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System.Globalization;

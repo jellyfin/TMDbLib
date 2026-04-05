@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
 using TMDbLib.Utilities.Converters;
 
@@ -7,7 +7,7 @@ namespace TMDbLib.Objects.General;
 /// <summary>
 /// Represents the type of media.
 /// </summary>
-[JsonConverter(typeof(EnumStringValueConverter))]
+[JsonConverter(typeof(TolerantEnumConverterFactory<MediaType>))]
 public enum MediaType
 {
     /// <summary>

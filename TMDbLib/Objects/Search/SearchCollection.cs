@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Search;
 
@@ -12,7 +12,7 @@ public class SearchCollection : SearchBase
     // Property to hold additional data from the JSON (populated by JSON deserialization)
 #pragma warning disable CS0649 // Field is assigned by JSON deserialization
     [JsonExtensionData]
-    private IDictionary<string, JToken>? _additionalData;
+    private IDictionary<string, JsonElement>? _additionalData;
 #pragma warning restore CS0649
     private string? _name;
     private string? _originalName;
@@ -20,19 +20,19 @@ public class SearchCollection : SearchBase
     /// <summary>
     /// Gets or sets a value indicating whether the collection contains adult content.
     /// </summary>
-    [JsonProperty("adult")]
+    [JsonPropertyName("adult")]
     public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the backdrop image path.
     /// </summary>
-    [JsonProperty("backdrop_path")]
+    [JsonPropertyName("backdrop_path")]
     public string? BackdropPath { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the collection.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name
     {
         get
@@ -40,7 +40,7 @@ public class SearchCollection : SearchBase
             // If _name is not set, attempt to retrieve the "title" property from additional data
             if (_name is null && _additionalData is not null && _additionalData.TryGetValue("title", out var nameToken))
             {
-                return nameToken.ToString();
+                return nameToken.GetString();
             }
 
             return _name;
@@ -51,13 +51,13 @@ public class SearchCollection : SearchBase
     /// <summary>
     /// Gets or sets the original language code.
     /// </summary>
-    [JsonProperty("original_language")]
+    [JsonPropertyName("original_language")]
     public string? OriginalLanguage { get; set; }
 
     /// <summary>
     /// Gets or sets the original name of the collection.
     /// </summary>
-    [JsonProperty("original_name")]
+    [JsonPropertyName("original_name")]
     public string? OriginalName
     {
         get
@@ -77,12 +77,12 @@ public class SearchCollection : SearchBase
     /// <summary>
     /// Gets or sets the overview text of the collection.
     /// </summary>
-    [JsonProperty("overview")]
+    [JsonPropertyName("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
-    [JsonProperty("poster_path")]
+    [JsonPropertyName("poster_path")]
     public string? PosterPath { get; set; }
 }

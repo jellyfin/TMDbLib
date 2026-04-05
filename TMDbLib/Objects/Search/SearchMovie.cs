@@ -1,6 +1,7 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Search;
 
@@ -20,30 +21,31 @@ public class SearchMovie : SearchMovieTvBase
     /// <summary>
     /// Gets or sets a value indicating whether the movie is adult content.
     /// </summary>
-    [JsonProperty("adult")]
+    [JsonPropertyName("adult")]
     public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the original title of the movie.
     /// </summary>
-    [JsonProperty("original_title")]
+    [JsonPropertyName("original_title")]
     public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the release date of the movie.
     /// </summary>
-    [JsonProperty("release_date")]
+    [JsonPropertyName("release_date")]
+    [JsonConverter(typeof(IsoDateTimeConverterFactory))]
     public DateTime? ReleaseDate { get; set; }
 
     /// <summary>
     /// Gets or sets the title of the movie.
     /// </summary>
-    [JsonProperty("title")]
+    [JsonPropertyName("title")]
     public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the movie is a video.
     /// </summary>
-    [JsonProperty("video")]
+    [JsonPropertyName("video")]
     public bool Video { get; set; }
 }

@@ -1,4 +1,5 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -10,6 +11,6 @@ public class TvEpisodeAccountStateWithNumber : TvEpisodeAccountState
     /// <summary>
     /// Gets or sets the episode number.
     /// </summary>
-    [JsonProperty("episode_number")]
+    [JsonPropertyName("episode_number")]
     public long EpisodeNumber { get; set; }
 }

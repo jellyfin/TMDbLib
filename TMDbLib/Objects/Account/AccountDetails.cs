@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Account;
 
@@ -10,42 +10,42 @@ public class AccountDetails
     /// <summary>
     /// Gets or sets the avatar information.
     /// </summary>
-    [JsonProperty("avatar")]
+    [JsonPropertyName("avatar")]
     public Avatar? Avatar { get; set; }
 
     /// <summary>
     /// Gets or sets the account ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether adult content is included.
     /// </summary>
-    [JsonProperty("include_adult")]
+    [JsonPropertyName("include_adult")]
     public bool IncludeAdult { get; set; }
 
     /// <summary>
     /// Gets or sets a country code, e.g. US.
     /// </summary>
-    [JsonProperty("iso_3166_1")]
+    [JsonPropertyName("iso_3166_1")]
     public string? Iso_3166_1 { get; set; }
 
     /// <summary>
     /// Gets or sets a language code, e.g. en.
     /// </summary>
-    [JsonProperty("iso_639_1")]
+    [JsonPropertyName("iso_639_1")]
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the account name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the username.
     /// </summary>
-    [JsonProperty("username")]
+    [JsonPropertyName("username")]
     public string? Username { get; set; }
 }

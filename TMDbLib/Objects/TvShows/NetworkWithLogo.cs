@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -10,6 +10,6 @@ public class NetworkWithLogo : NetworkBase
     /// <summary>
     /// Gets or sets the logo image path.
     /// </summary>
-    [JsonProperty("logo_path")]
+    [JsonPropertyName("logo_path")]
     public string? LogoPath { get; set; }
 }

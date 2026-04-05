@@ -14,7 +14,7 @@ public interface ITMDbSerializer
     /// <param name="target">The target stream to write to.</param>
     /// <param name="obj">The object to serialize.</param>
     /// <param name="type">The type of the object.</param>
-    void Serialize(Stream target, object obj, Type type);
+    void Serialize<T>(Stream target, T obj);
 
     /// <summary>
     /// Deserializes an object from a stream.
@@ -22,5 +22,7 @@ public interface ITMDbSerializer
     /// <param name="source">The source stream to read from.</param>
     /// <param name="type">The type of the object to deserialize.</param>
     /// <returns>The deserialized object.</returns>
+    T? Deserialize<T>(Stream source);
+
     object? Deserialize(Stream source, Type type);
 }

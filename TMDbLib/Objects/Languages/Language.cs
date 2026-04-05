@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Languages;
 
@@ -10,18 +10,18 @@ public class Language
     /// <summary>
     /// Gets or sets the ISO 639-1 language code.
     /// </summary>
-    [JsonProperty("iso_639_1")]
+    [JsonPropertyName("iso_639_1")]
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the English name of the language.
     /// </summary>
-    [JsonProperty("english_name")]
+    [JsonPropertyName("english_name")]
     public string? EnglishName { get; set; }
 
     /// <summary>
     /// Gets or sets the native name of the language.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 }

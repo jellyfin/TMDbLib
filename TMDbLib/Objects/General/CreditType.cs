@@ -1,10 +1,13 @@
-﻿using TMDbLib.Utilities;
+﻿using System.Text.Json.Serialization;
+using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.General;
 
 /// <summary>
 /// Represents the type of credit.
 /// </summary>
+[JsonConverter(typeof(TolerantEnumConverterFactory<CreditType>))]
 public enum CreditType
 {
     /// <summary>

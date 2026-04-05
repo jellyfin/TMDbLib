@@ -24,7 +24,7 @@ public abstract class TestBase
     /// Registers necessary module initializers.
     /// </summary>
     [ModuleInitializer]
-    public static void Init() => VerifyNewtonsoftJson.Initialize();
+    public static void Init() => VerifySystemJson.Initialize();
 
     /// <summary>
     /// Gets the Verify settings used for all tests in this class.
@@ -62,7 +62,7 @@ public abstract class TestBase
         VerifySettings.AddExtraSettings(serializerSettings =>
         {
             // Use custom contract resolver that:
-            // 1. Reads Newtonsoft.Json [JsonProperty] attributes for property names
+            // 1. Reads Newtonsoft.Json [JsonPropertyName] attributes for property names
             // 2. Uses camelCase for properties without explicit names
             // 3. Sorts collections for consistent output
             serializerSettings.ContractResolver = new DataSortingContractResolver();
@@ -103,7 +103,7 @@ public abstract class TestBase
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var str = EnumMemberCache.GetString(value);
+            var str = EnumMemberCache.GetString(value.GetType());
             writer.WriteValue(str);
         }
 

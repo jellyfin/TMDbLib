@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using TMDbLib.Client;
 using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Lists;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using System.Globalization;

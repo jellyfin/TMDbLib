@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Configuration;
 
@@ -11,12 +11,12 @@ public class APIConfiguration
     /// <summary>
     /// Gets or sets the image configuration settings.
     /// </summary>
-    [JsonProperty("images")]
+    [JsonPropertyName("images")]
     public APIConfigurationImages? Images { get; set; }
 
     /// <summary>
     /// Gets or sets the list of available change keys.
     /// </summary>
-    [JsonProperty("change_keys")]
+    [JsonPropertyName("change_keys")]
     public List<string>? ChangeKeys { get; set; }
 }

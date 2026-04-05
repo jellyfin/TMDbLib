@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Search;
@@ -20,24 +20,24 @@ public class KnownForMovie : KnownForBase
     /// <summary>
     /// Gets or sets the original title of the movie.
     /// </summary>
-    [JsonProperty("original_title")]
+    [JsonPropertyName("original_title")]
     public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the release date of the movie.
     /// </summary>
-    [JsonProperty("release_date")]
+    [JsonPropertyName("release_date")]
     public DateTime? ReleaseDate { get; set; }
 
     /// <summary>
     /// Gets or sets the title of the movie.
     /// </summary>
-    [JsonProperty("title")]
+    [JsonPropertyName("title")]
     public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether this is a video release.
     /// </summary>
-    [JsonProperty("video")]
+    [JsonPropertyName("video")]
     public bool Video { get; set; }
 }

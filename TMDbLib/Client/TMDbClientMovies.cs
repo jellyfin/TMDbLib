@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.RestRequests;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
@@ -196,11 +197,10 @@ public sealed partial class TMDbClient
 
         var appends = string.Join(
             ",",
-            Enum.GetValues(typeof(MovieMethods))
-                                         .OfType<MovieMethods>()
-                                         .Except([MovieMethods.Undefined])
-                                         .Where(s => extraMethods.HasFlag(s))
-                                         .Select(s => s.GetDescription()));
+            Enum.GetValues<MovieMethods>()
+                .Except([MovieMethods.Undefined])
+                .Where(s => extraMethods.HasFlag(s))
+                .Select(s => s.GetDescription()));
 
         if (appends != string.Empty)
         {
@@ -670,7 +670,7 @@ public sealed partial class TMDbClient
         req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
         AddSessionId(req);
 
-        req.SetBody(new { value = rating });
+        req.SetBody(new RatingIBody(rating));
 
         using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 

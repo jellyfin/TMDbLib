@@ -1,52 +1,53 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Reviews;
 
 /// <summary>
 /// Represents the base class for a review.
 /// </summary>
+[JsonDerivedType(typeof(Review))]
 public class ReviewBase
 {
     /// <summary>
     /// Gets or sets the author username.
     /// </summary>
-    [JsonProperty("author")]
+    [JsonPropertyName("author")]
     public string? Author { get; set; }
 
     /// <summary>
     /// Gets or sets the detailed author information.
     /// </summary>
-    [JsonProperty("author_details")]
+    [JsonPropertyName("author_details")]
     public AuthorDetails? AuthorDetails { get; set; }
 
     /// <summary>
     /// Gets or sets the review content.
     /// </summary>
-    [JsonProperty("content")]
+    [JsonPropertyName("content")]
     public string? Content { get; set; }
 
     /// <summary>
     /// Gets or sets the review ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the URL to the full review.
     /// </summary>
-    [JsonProperty("url")]
+    [JsonPropertyName("url")]
     public string? Url { get; set; }
 
     /// <summary>
     /// Gets or sets the creation date.
     /// </summary>
-    [JsonProperty("created_at")]
+    [JsonPropertyName("created_at")]
     public DateTime CreatedAt { get; set; }
 
     /// <summary>
     /// Gets or sets the last update date.
     /// </summary>
-    [JsonProperty("updated_at")]
+    [JsonPropertyName("updated_at")]
     public DateTime UpdatedAt { get; set; }
 }

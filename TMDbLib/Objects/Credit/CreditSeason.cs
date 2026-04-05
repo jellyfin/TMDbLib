@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Credit;
 
@@ -11,18 +11,18 @@ public class CreditSeason
     /// <summary>
     /// Gets or sets the air date of the season.
     /// </summary>
-    [JsonProperty("air_date")]
+    [JsonPropertyName("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the poster path for the season.
     /// </summary>
-    [JsonProperty("poster_path")]
+    [JsonPropertyName("poster_path")]
     public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.
     /// </summary>
-    [JsonProperty("season_number")]
+    [JsonPropertyName("season_number")]
     public int SeasonNumber { get; set; }
 }

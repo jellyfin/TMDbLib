@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -10,18 +10,18 @@ public class CastRole
     /// <summary>
     /// Gets or sets the character name.
     /// </summary>
-    [JsonProperty("character")]
+    [JsonPropertyName("character")]
     public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
-    [JsonProperty("credit_id")]
+    [JsonPropertyName("credit_id")]
     public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes for this role.
     /// </summary>
-    [JsonProperty("episode_count")]
+    [JsonPropertyName("episode_count")]
     public int EpisodeCount { get; set; }
 }

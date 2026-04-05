@@ -2,7 +2,6 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
-
   <ItemGroup>
     <!-- Analyzers -->
     <PackageVersion Include="ConfigureAwaitChecker.Analyzer" Version="5.0.0.1" />
@@ -10,17 +9,13 @@
     <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
     <PackageVersion Include="SmartAnalyzers.MultithreadingAnalyzer" Version="1.1.31" />
     <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.556" />
-
     <!-- Build/Release dependencies -->
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.201" />
     <PackageVersion Include="MinVer" Version="7.0.0" />
-
     <!-- Core dependencies -->
-    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
-
     <!-- Test dependencies -->
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
-    <PackageVersion Include="Verify.NewtonsoftJson" Version="1.1.0" />
+    <PackageVersion Include="Verify.SystemJson" Version="1.4.1" />
     <PackageVersion Include="Verify.Xunit" Version="31.12.5" />
     <PackageVersion Include="WireMock.Net" Version="1.25.0" />
     <PackageVersion Include="xunit" Version="2.9.3" />

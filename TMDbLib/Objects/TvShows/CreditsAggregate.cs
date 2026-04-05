@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.TvShows;
@@ -12,18 +12,18 @@ public class CreditsAggregate
     /// <summary>
     /// Gets or sets the list of aggregated cast members.
     /// </summary>
-    [JsonProperty("cast")]
+    [JsonPropertyName("cast")]
     public List<CastAggregate>? Cast { get; set; }
 
     /// <summary>
     /// Gets or sets the list of aggregated crew members.
     /// </summary>
-    [JsonProperty("crew")]
+    [JsonPropertyName("crew")]
     public List<CrewAggregate>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the TMDb ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

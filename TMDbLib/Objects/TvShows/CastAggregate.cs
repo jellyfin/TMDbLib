@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -11,12 +11,12 @@ public class CastAggregate : CastBase
     /// <summary>
     /// Gets or sets the list of roles played by the cast member.
     /// </summary>
-    [JsonProperty("roles")]
+    [JsonPropertyName("roles")]
     public List<CastRole>? Roles { get; set; }
 
     /// <summary>
     /// Gets or sets the total number of episodes the cast member appeared in.
     /// </summary>
-    [JsonProperty("total_episode_count")]
+    [JsonPropertyName("total_episode_count")]
     public int TotalEpisodeCount { get; set; }
 }

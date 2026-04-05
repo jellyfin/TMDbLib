@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using TMDbLib.Utilities.JsonSerializerContexts;
 
 namespace TMDbLib.Utilities;
 
@@ -17,55 +17,17 @@ public static class EnumExtensions
     /// <param name="enumerationValue">The enum value.</param>
     /// <returns>The description string from the attribute, or the enum value name.</returns>
     public static string GetDescription<T>(this T enumerationValue)
-        where T : struct
+        where T : struct, Enum
     {
-        var type = enumerationValue.GetType();
-        var typeInfo = type.GetTypeInfo();
-
-        if (!typeInfo.IsEnum)
+        if (!typeof(T).IsEnum)
         {
             throw new ArgumentException("EnumerationValue must be of Enum type", nameof(enumerationValue));
         }
 
-        var members = typeof(T).GetTypeInfo().DeclaredMembers;
+        var field = typeof(T).GetField(enumerationValue.ToString());
 
-        var requestedName = enumerationValue.ToString();
-
-        // Tries to find a DisplayAttribute for a potential friendly name for the enum
-        foreach (var member in members)
-        {
-            if (member.Name != requestedName)
-            {
-                continue;
-            }
-
-            foreach (var attributeData in member.CustomAttributes)
-            {
-                if (attributeData.AttributeType != typeof(EnumValueAttribute))
-                {
-                    continue;
-                }
-
-                // Pull out the Value
-                if (!attributeData.ConstructorArguments.Any())
-                {
-                    break;
-                }
-
-                var argument = attributeData.ConstructorArguments.First();
-
-                if (argument.Value is string stringValue)
-                {
-                    return stringValue;
-                }
-
-                break;
-            }
-
-            break;
-        }
-
+        var attributeData = field?.GetCustomAttribute<EnumValueAttribute>();
         // If we have no description attribute, just return the ToString of the enum
-        return requestedName ?? string.Empty;
+        return attributeData?.Value ?? enumerationValue.ToString();
     }
 }

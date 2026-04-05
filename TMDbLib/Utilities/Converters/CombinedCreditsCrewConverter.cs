@@ -1,31 +1,33 @@
 using System;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
+using TMDbLib.Utilities.JsonSerializerContexts;
 
 namespace TMDbLib.Utilities.Converters;
 
-internal class CombinedCreditsCrewConverter : JsonCreationConverter<CombinedCreditsCrewBase>
+internal class CombinedCreditsCrewConverter : JsonConverter<CombinedCreditsCrewBase>
 {
-    public override bool CanConvert(Type objectType)
+    public override CombinedCreditsCrewBase? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return objectType == typeof(CombinedCreditsCrewBase);
+        using JsonDocument document = JsonDocument.ParseValue(ref reader);
+        if (!document.RootElement.TryGetProperty("media_type", out JsonElement mediaTypeElement))
+        {
+            return null;
+        }
+
+        var mediaType = mediaTypeElement.Deserialize(TmdbJsonSerializerContext.Default.MediaType);
+        return mediaType switch
+        {
+            MediaType.Movie => document.Deserialize(TmdbJsonSerializerContext.Default.CombinedCreditsCrewMovie),
+            MediaType.Tv => document.Deserialize(TmdbJsonSerializerContext.Default.CombinedCreditsCrewTv),
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 
-    protected override CombinedCreditsCrewBase? GetInstance(JObject jObject)
+    public override void Write(Utf8JsonWriter writer, CombinedCreditsCrewBase value, JsonSerializerOptions options)
     {
-        var mediaType = jObject["media_type"]?.ToObject<MediaType>();
-
-        switch (mediaType)
-        {
-            case MediaType.Movie:
-                return new CombinedCreditsCrewMovie();
-            case MediaType.Tv:
-                return new CombinedCreditsCrewTv();
-            case null:
-                return null;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+        JsonSerializer.Serialize(writer, value, value.GetType(), TmdbJsonSerializerContext.Default);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
@@ -10,6 +11,8 @@ namespace TMDbLib.Objects.Discover;
 /// Base class for discover functionality providing common query operations.
 /// </summary>
 /// <typeparam name="T">The type of search result items.</typeparam>
+[JsonDerivedType(typeof(DiscoverTv))]
+[JsonDerivedType(typeof(DiscoverMovie))]
 public abstract class DiscoverBase<T>
 {
     private readonly TMDbClient _client;

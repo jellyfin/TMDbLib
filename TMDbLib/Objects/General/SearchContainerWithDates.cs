@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,6 +11,6 @@ public class SearchContainerWithDates<T> : SearchContainer<T>
     /// <summary>
     /// Gets or sets the date range for the search results.
     /// </summary>
-    [JsonProperty("dates")]
+    [JsonPropertyName("dates")]
     public DateRange? Dates { get; set; }
 }

@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -10,12 +10,12 @@ public class Cast : CastBase
     /// <summary>
     /// Gets or sets the character name played by the cast member.
     /// </summary>
-    [JsonProperty("character")]
+    [JsonPropertyName("character")]
     public string? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
-    [JsonProperty("credit_id")]
+    [JsonPropertyName("credit_id")]
     public string? CreditId { get; set; }
 }

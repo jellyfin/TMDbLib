@@ -10,7 +10,7 @@ namespace TMDbLibTests.UtilityTests;
 /// <summary>
 /// Contains tests for the custom datetime format converter.
 /// </summary>
-public class CustomDatetimeFormatConverterTest : TestBase
+public class CustomDatetimeFormatConverterFactoryTest : TestBase
 {
     /// <summary>
     /// Tests that the custom datetime format converter correctly serializes and deserializes datetime values.

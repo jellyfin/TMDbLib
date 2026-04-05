@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.People;
@@ -12,18 +12,18 @@ public class CombinedCredits
     /// <summary>
     /// Gets or sets the list of combined cast roles (both movie and TV).
     /// </summary>
-    [JsonProperty("cast", ItemConverterType = typeof(CombinedCreditsCastConverter))]
+    [JsonPropertyName("cast")]
     public List<CombinedCreditsCastBase>? Cast { get; set; }
 
     /// <summary>
     /// Gets or sets the list of combined crew jobs (both movie and TV).
     /// </summary>
-    [JsonProperty("crew", ItemConverterType = typeof(CombinedCreditsCrewConverter))]
+    [JsonPropertyName("crew")]
     public List<CombinedCreditsCrewBase>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the person ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

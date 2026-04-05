@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -12,24 +12,24 @@ public class SearchContainer<T>
     /// <summary>
     /// Gets or sets the current page number.
     /// </summary>
-    [JsonProperty("page")]
+    [JsonPropertyName("page")]
     public int Page { get; set; }
 
     /// <summary>
     /// Gets or sets the list of results.
     /// </summary>
-    [JsonProperty("results")]
+    [JsonPropertyName("results")]
     public List<T>? Results { get; set; }
 
     /// <summary>
     /// Gets or sets the total number of pages.
     /// </summary>
-    [JsonProperty("total_pages")]
+    [JsonPropertyName("total_pages")]
     public int TotalPages { get; set; }
 
     /// <summary>
     /// Gets or sets the total number of results.
     /// </summary>
-    [JsonProperty("total_results")]
+    [JsonPropertyName("total_results")]
     public int TotalResults { get; set; }
 }

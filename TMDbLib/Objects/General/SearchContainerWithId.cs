@@ -1,4 +1,6 @@
-﻿namespace TMDbLib.Objects.General
+﻿using System.Text.Json.Serialization;
+
+namespace TMDbLib.Objects.General
 {
     /// <summary>
     /// Represents a search container that includes an ID property.
@@ -9,6 +11,7 @@
         /// <summary>
         /// Gets or sets the TMDb ID.
         /// </summary>
+        [JsonPropertyName("id")]
         public int Id { get; set; }
     }
 }

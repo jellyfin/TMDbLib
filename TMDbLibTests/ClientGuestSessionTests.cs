@@ -1,9 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Xunit;
 using TMDbLib.Objects.Authentication;
-using TMDbLib.Objects.General;
-using TMDbLib.Objects.Search;
-using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 

@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.People;
@@ -20,30 +20,30 @@ public class CombinedCreditsCrewMovie : CombinedCreditsCrewBase
     /// <summary>
     /// Gets or sets a value indicating whether the content is adult.
     /// </summary>
-    [JsonProperty("adult")]
+    [JsonPropertyName("adult")]
     public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the original title.
     /// </summary>
-    [JsonProperty("original_title")]
+    [JsonPropertyName("original_title")]
     public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the release date.
     /// </summary>
-    [JsonProperty("release_date")]
+    [JsonPropertyName("release_date")]
     public DateTime? ReleaseDate { get; set; }
 
     /// <summary>
     /// Gets or sets the movie title.
     /// </summary>
-    [JsonProperty("title")]
+    [JsonPropertyName("title")]
     public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the movie has video content.
     /// </summary>
-    [JsonProperty("video")]
+    [JsonPropertyName("video")]
     public bool Video { get; set; }
 }

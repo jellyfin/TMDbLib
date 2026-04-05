@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Search;
 
@@ -10,18 +10,18 @@ public class SearchCompany
     /// <summary>
     /// Gets or sets the company ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the logo image path.
     /// </summary>
-    [JsonProperty("logo_path")]
+    [JsonPropertyName("logo_path")]
     public string? LogoPath { get; set; }
 
     /// <summary>
     /// Gets or sets the company name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 }

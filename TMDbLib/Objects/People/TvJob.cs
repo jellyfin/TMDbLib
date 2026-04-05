@@ -1,5 +1,6 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.People;
 
@@ -11,54 +12,56 @@ public class TvJob
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
-    [JsonProperty("credit_id")]
+    [JsonPropertyName("credit_id")]
     public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the department name.
     /// </summary>
-    [JsonProperty("department")]
+    [JsonPropertyName("department")]
     public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes.
     /// </summary>
-    [JsonProperty("episode_count")]
+    [JsonPropertyName("episode_count")]
     public int EpisodeCount { get; set; }
 
     /// <summary>
     /// Gets or sets the first air date.
     /// </summary>
-    [JsonProperty("first_air_date")]
+    [JsonPropertyName("first_air_date")]
+    [JsonConverter(typeof(TmdbPartialDateConverter))]
+
     public DateTime? FirstAirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the TV show ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the job title.
     /// </summary>
-    [JsonProperty("job")]
+    [JsonPropertyName("job")]
     public string? Job { get; set; }
 
     /// <summary>
     /// Gets or sets the TV show name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the original name.
     /// </summary>
-    [JsonProperty("original_name")]
+    [JsonPropertyName("original_name")]
     public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
-    [JsonProperty("poster_path")]
+    [JsonPropertyName("poster_path")]
     public string? PosterPath { get; set; }
 }

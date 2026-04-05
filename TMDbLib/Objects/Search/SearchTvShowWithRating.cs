@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Search;
 
@@ -10,6 +10,6 @@ public class SearchTvShowWithRating : SearchTv
     /// <summary>
     /// Gets or sets the user rating for the TV show.
     /// </summary>
-    [JsonProperty("rating")]
+    [JsonPropertyName("rating")]
     public double Rating { get; set; }
 }

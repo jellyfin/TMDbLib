@@ -1,35 +1,18 @@
 ﻿using System;
 using System.Globalization;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
 /// JSON converter for partial or incomplete date values that may not parse correctly.
 /// </summary>
-public class TmdbPartialDateConverter : JsonConverter
+public class TmdbPartialDateConverter : JsonConverter<DateTime?>
 {
-    /// <summary>
-    /// Determines whether this instance can convert the specified object type.
-    /// </summary>
-    /// <param name="objectType">Type of the object.</param>
-    /// <returns>True if this converter can convert the type; otherwise, false.</returns>
-    public override bool CanConvert(Type objectType)
+    public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return objectType == typeof(DateTime?);
-    }
-
-    /// <summary>
-    /// Reads the JSON representation of the object.
-    /// </summary>
-    /// <param name="reader">The <see cref="JsonReader"/> to read from.</param>
-    /// <param name="objectType">Type of the object.</param>
-    /// <param name="existingValue">The existing value of object being read.</param>
-    /// <param name="serializer">The calling serializer.</param>
-    /// <returns>The parsed DateTime value, or null if parsing fails.</returns>
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
-    {
-        var str = reader.Value as string;
+        var str = reader.GetString();
         if (string.IsNullOrEmpty(str))
         {
             return null;
@@ -43,21 +26,14 @@ public class TmdbPartialDateConverter : JsonConverter
         return result;
     }
 
-    /// <summary>
-    /// Writes the JSON representation of the object.
-    /// </summary>
-    /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
-    /// <param name="value">The value to write.</param>
-    /// <param name="serializer">The calling serializer.</param>
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
     {
-        var date = value as DateTime?;
-        if (date is null)
+        if (!value.HasValue)
         {
-            writer.WriteNull();
+            writer.WriteNullValue();
             return;
         }
 
-        writer.WriteValue(date.Value.ToString(CultureInfo.InvariantCulture));
+        writer.WriteStringValue(value.Value.ToString(CultureInfo.InvariantCulture));
     }
 }

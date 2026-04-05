@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Reviews;
 
@@ -10,24 +10,24 @@ public class AuthorDetails
     /// <summary>
     /// Gets or sets the author's display name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the author's username.
     /// </summary>
-    [JsonProperty("username")]
+    [JsonPropertyName("username")]
     public string? Username { get; set; }
 
     /// <summary>
     /// Gets or sets the avatar image path.
     /// </summary>
-    [JsonProperty("avatar_path")]
+    [JsonPropertyName("avatar_path")]
     public string? AvatarPath { get; set; }
 
     /// <summary>
     /// Gets or sets the rating given by the author.
     /// </summary>
-    [JsonProperty("rating")]
+    [JsonPropertyName("rating")]
     public double? Rating { get; set; }
 }

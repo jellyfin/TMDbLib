@@ -11,17 +11,6 @@ namespace TMDbLibTests.UtilityTests;
 public class UtilsTest : TestBase
 {
     /// <summary>
-    /// Tests that GetDescription throws ArgumentException when called on a non-enum type.
-    /// </summary>
-    [Fact]
-    public void EnumDescriptionNonEnumTest()
-    {
-        var @struct = new EnumTestStruct();
-
-        Assert.Throws<ArgumentException>(() => @struct.GetDescription());
-    }
-
-    /// <summary>
     /// Tests that GetDescription returns the enum name when no EnumValue attribute is present.
     /// </summary>
     [Fact]

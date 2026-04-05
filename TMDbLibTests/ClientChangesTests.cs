@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using TMDbLib.Objects.Changes;
-using TMDbLib.Objects.General;
 using Xunit;
 using TMDbLibTests.JsonHelpers;
 

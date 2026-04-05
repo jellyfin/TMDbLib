@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,36 +11,36 @@ public class WatchProviders
     /// <summary>
     /// Gets or sets the link to the watch providers page.
     /// </summary>
-    [JsonProperty("link")]
+    [JsonPropertyName("link")]
     public string? Link { get; set; }
 
     /// <summary>
     /// Gets or sets the list of flat rate (subscription) providers.
     /// </summary>
-    [JsonProperty("flatrate")]
+    [JsonPropertyName("flatrate")]
     public List<WatchProviderItem>? FlatRate { get; set; }
 
     /// <summary>
     /// Gets or sets the list of rental providers.
     /// </summary>
-    [JsonProperty("rent")]
+    [JsonPropertyName("rent")]
     public List<WatchProviderItem>? Rent { get; set; }
 
     /// <summary>
     /// Gets or sets the list of purchase providers.
     /// </summary>
-    [JsonProperty("buy")]
+    [JsonPropertyName("buy")]
     public List<WatchProviderItem>? Buy { get; set; }
 
     /// <summary>
     /// Gets or sets the list of free providers.
     /// </summary>
-    [JsonProperty("free")]
+    [JsonPropertyName("free")]
     public List<WatchProviderItem>? Free { get; set; }
 
     /// <summary>
     /// Gets or sets the list of ad-supported providers.
     /// </summary>
-    [JsonProperty("ads")]
+    [JsonPropertyName("ads")]
     public List<WatchProviderItem>? Ads { get; set; }
 }

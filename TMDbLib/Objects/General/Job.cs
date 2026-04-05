@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,12 +11,12 @@ public class Job
     /// <summary>
     /// Gets or sets the department name.
     /// </summary>
-    [JsonProperty("department")]
+    [JsonPropertyName("department")]
     public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the list of job titles in this department.
     /// </summary>
-    [JsonProperty("jobs")]
+    [JsonPropertyName("jobs")]
     public List<string>? Jobs { get; set; }
 }

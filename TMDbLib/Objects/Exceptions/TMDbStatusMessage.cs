@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Exceptions;
 
@@ -10,12 +10,12 @@ public class TMDbStatusMessage
     /// <summary>
     /// Gets or sets the status code.
     /// </summary>
-    [JsonProperty("status_code")]
+    [JsonPropertyName("status_code")]
     public int StatusCode { get; set; }
 
     /// <summary>
     /// Gets or sets the status message text.
     /// </summary>
-    [JsonProperty("status_message")]
+    [JsonPropertyName("status_message")]
     public string? StatusMessage { get; set; }
 }

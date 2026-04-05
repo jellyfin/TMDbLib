@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.People;
 
@@ -11,54 +11,54 @@ public class MovieJob
     /// <summary>
     /// Gets or sets a value indicating whether the movie is adult content.
     /// </summary>
-    [JsonProperty("adult")]
+    [JsonPropertyName("adult")]
     public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the credit ID.
     /// </summary>
-    [JsonProperty("credit_id")]
+    [JsonPropertyName("credit_id")]
     public string? CreditId { get; set; }
 
     /// <summary>
     /// Gets or sets the department name.
     /// </summary>
-    [JsonProperty("department")]
+    [JsonPropertyName("department")]
     public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the movie ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the job title.
     /// </summary>
-    [JsonProperty("job")]
+    [JsonPropertyName("job")]
     public string? Job { get; set; }
 
     /// <summary>
     /// Gets or sets the original title.
     /// </summary>
-    [JsonProperty("original_title")]
+    [JsonPropertyName("original_title")]
     public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
-    [JsonProperty("poster_path")]
+    [JsonPropertyName("poster_path")]
     public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the release date.
     /// </summary>
-    [JsonProperty("release_date")]
+    [JsonPropertyName("release_date")]
     public DateTime? ReleaseDate { get; set; }
 
     /// <summary>
     /// Gets or sets the movie title.
     /// </summary>
-    [JsonProperty("title")]
+    [JsonPropertyName("title")]
     public string? Title { get; set; }
 }

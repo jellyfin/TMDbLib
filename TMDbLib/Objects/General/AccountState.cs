@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.General;
 
@@ -10,24 +11,25 @@ public class AccountState
     /// <summary>
     /// Gets or sets a value indicating whether the related movie is favorited for the current user session.
     /// </summary>
-    [JsonProperty("favorite")]
+    [JsonPropertyName("favorite")]
     public bool Favorite { get; set; }
 
     /// <summary>
     /// Gets or sets the TMDb id for the related movie.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the user's rating for the media item.
     /// </summary>
-    [JsonProperty("rating")]
+    [JsonPropertyName("rated")]
+    [JsonConverter(typeof(TmdbRatingConverterFactory))]
     public double? Rating { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the related movie is on the current user's watchlist.
     /// </summary>
-    [JsonProperty("watchlist")]
+    [JsonPropertyName("watchlist")]
     public bool Watchlist { get; set; }
 }

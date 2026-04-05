@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.People;
@@ -12,12 +12,12 @@ public class ProfileImages
     /// <summary>
     /// Gets or sets the person ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the list of profile images.
     /// </summary>
-    [JsonProperty("profiles")]
+    [JsonPropertyName("profiles")]
     public List<ImageData>? Profiles { get; set; }
 }

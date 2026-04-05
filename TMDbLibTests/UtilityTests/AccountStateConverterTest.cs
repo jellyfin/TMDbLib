@@ -1,4 +1,7 @@
+using System.IO;
 using System.Linq;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
@@ -27,7 +30,7 @@ public class AccountStateConverterTest : TestBase
             rated = new { value = 5 }
         };
 
-        var json = Serializer.SerializeToString(original);
+        var json = JsonSerializer.Serialize(original);
         var result = Serializer.DeserializeFromString<AccountState>(json);
 
         Verify(new
@@ -46,7 +49,7 @@ public class AccountStateConverterTest : TestBase
         // { "rated": false }
         var original = new { rated = false };
 
-        var json = Serializer.SerializeToString(original);
+        var json = JsonSerializer.Serialize(original);
         var result = Serializer.DeserializeFromString<AccountState>(json);
 
         Verify(new

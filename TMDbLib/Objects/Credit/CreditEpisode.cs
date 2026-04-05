@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Credit;
 
@@ -11,36 +11,36 @@ public class CreditEpisode
     /// <summary>
     /// Gets or sets the air date of the episode.
     /// </summary>
-    [JsonProperty("air_date")]
+    [JsonPropertyName("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the episode number.
     /// </summary>
-    [JsonProperty("episode_number")]
+    [JsonPropertyName("episode_number")]
     public long EpisodeNumber { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the episode.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview of the episode.
     /// </summary>
-    [JsonProperty("overview")]
+    [JsonPropertyName("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the season number the episode belongs to.
     /// </summary>
-    [JsonProperty("season_number")]
+    [JsonPropertyName("season_number")]
     public int SeasonNumber { get; set; }
 
     /// <summary>
     /// Gets or sets the still image path for the episode.
     /// </summary>
-    [JsonProperty("still_path")]
+    [JsonPropertyName("still_path")]
     public string? StillPath { get; set; }
 }

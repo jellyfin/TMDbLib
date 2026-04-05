@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Authentication;
 
@@ -10,12 +10,12 @@ public class UserSession
     /// <summary>
     /// Gets or sets the session ID.
     /// </summary>
-    [JsonProperty("session_id")]
+    [JsonPropertyName("session_id")]
     public string? SessionId { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the session creation was successful.
     /// </summary>
-    [JsonProperty("success")]
+    [JsonPropertyName("success")]
     public bool Success { get; set; }
 }

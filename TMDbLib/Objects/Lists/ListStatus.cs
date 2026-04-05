@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Lists;
 
@@ -10,12 +10,12 @@ public class ListStatus
     /// <summary>
     /// Gets or sets the list ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the item is present in the list.
     /// </summary>
-    [JsonProperty("item_present")]
+    [JsonPropertyName("item_present")]
     public bool ItemPresent { get; set; }
 }

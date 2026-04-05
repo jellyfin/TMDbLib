@@ -1,6 +1,4 @@
 ﻿using System.Threading.Tasks;
-using TMDbLib.Objects.General;
-using TMDbLib.Objects.Search;
 using TMDbLib.Objects.Trending;
 using TMDbLibTests.JsonHelpers;
 using Xunit;

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Movies;
 
@@ -11,12 +11,12 @@ public class Releases
     /// <summary>
     /// Gets or sets the list of country-specific release information.
     /// </summary>
-    [JsonProperty("countries")]
+    [JsonPropertyName("countries")]
     public List<Country>? Countries { get; set; }
 
     /// <summary>
     /// Gets or sets the movie ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

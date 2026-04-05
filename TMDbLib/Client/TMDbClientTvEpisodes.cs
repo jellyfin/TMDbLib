@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.RestRequests;
 using TMDbLib.Objects.TvShows;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
@@ -111,11 +112,10 @@ public partial class TMDbClient
 
         var appends = string.Join(
             ",",
-            Enum.GetValues(typeof(TvEpisodeMethods))
-                                         .OfType<TvEpisodeMethods>()
-                                         .Except([TvEpisodeMethods.Undefined])
-                                         .Where(s => extraMethods.HasFlag(s))
-                                         .Select(s => s.GetDescription()));
+            Enum.GetValues<TvEpisodeMethods>()
+                .Except([TvEpisodeMethods.Undefined])
+                .Where(s => extraMethods.HasFlag(s))
+                .Select(s => s.GetDescription()));
 
         if (appends != string.Empty)
         {
@@ -298,7 +298,7 @@ public partial class TMDbClient
 
         AddSessionId(req);
 
-        req.SetBody(new { value = rating });
+        req.SetBody(new RatingIBody(rating));
 
         using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 

@@ -1,6 +1,6 @@
 ﻿using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Movies;
 
@@ -12,31 +12,31 @@ public class ReleaseDateItem
     /// <summary>
     /// Gets or sets the certification rating.
     /// </summary>
-    [JsonProperty("certification")]
+    [JsonPropertyName("certification")]
     public string? Certification { get; set; }
 
     /// <summary>
     /// Gets or sets a language code, e.g. en.
     /// </summary>
-    [JsonProperty("iso_639_1")]
+    [JsonPropertyName("iso_639_1")]
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets additional notes about the release.
     /// </summary>
-    [JsonProperty("note")]
+    [JsonPropertyName("note")]
     public string? Note { get; set; }
 
     /// <summary>
     /// Gets or sets the release date.
     /// </summary>
-    [JsonProperty("release_date")]
-    [JsonConverter(typeof(IsoDateTimeConverter))]
+    [JsonPropertyName("release_date")]
+    [JsonConverter(typeof(IsoDateTimeConverterFactory))]
     public DateTime ReleaseDate { get; set; }
 
     /// <summary>
     /// Gets or sets the release type.
     /// </summary>
-    [JsonProperty("type")]
+    [JsonPropertyName("type")]
     public ReleaseDateType Type { get; set; }
 }
