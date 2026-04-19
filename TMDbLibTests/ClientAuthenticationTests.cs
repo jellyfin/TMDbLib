@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using TMDbLibTests.Exceptions;
 using Xunit;
-using Xunit.Abstractions;
 using TMDbLibTests.JsonHelpers;
 
 namespace TMDbLibTests;
