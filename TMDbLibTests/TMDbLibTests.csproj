@@ -16,11 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FsCheck.Xunit.v3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <PackageReference Include="Verify.Xunit" />
+    <PackageReference Include="Verify.XunitV3" />
     <PackageReference Include="Verify.NewtonsoftJson" />
     <PackageReference Include="WireMock.Net" />
-    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.v3" />
     <PackageReference Include="xunit.runner.visualstudio" PrivateAssets="All" />
   </ItemGroup>
 
