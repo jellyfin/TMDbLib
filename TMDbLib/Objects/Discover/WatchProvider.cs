@@ -1,4 +1,4 @@
-namespace TMDbLib.Objects.General;
+namespace TMDbLib.Objects.Discover;
 
 /// <summary>
 /// Containswatch provider IDs for use with Discover filtering.
@@ -8,7 +8,7 @@ namespace TMDbLib.Objects.General;
 /// <remarks>
 /// These IDs represent the base platform providers. Many platforms have additional
 /// "channel" variants (e.g., "Paramount+ Amazon Channel") which have different IDs.
-/// Available provider IDs change over time, last updated: 2025-12-23.
+/// Available provider IDs change over time, last updated: 2026-04-10.
 /// </remarks>
 public static class WatchProvider
 {
@@ -38,20 +38,26 @@ public static class WatchProvider
         /// <summary>Amazon Prime Video.</summary>
         public const int PrimeVideo = 119;
 
+        /// <summary>Amazon Prime Video (alternate regional ID).</summary>
+        public const int PrimeVideoAlt = 9;
+
         /// <summary>Amazon Video (purchase/rental).</summary>
         public const int Video = 10;
+
+        /// <summary>Amazon Arthaus Channel (curated art-house cinema, German-speaking regions).</summary>
+        public const int ArthausChannel = 533;
 
         /// <summary>Amazon Prime Video Free with Ads.</summary>
         public const int PrimeVideoFreeWithAds = 613;
 
-        /// <summary>Amazon Prime Video with Ads.</summary>
-        public const int PrimeVideoWithAds = 2100;
-
         /// <summary>Amazon MX Player.</summary>
         public const int MXPlayer = 1898;
 
+        /// <summary>Amazon Prime Video with Ads.</summary>
+        public const int PrimeVideoWithAds = 2100;
+
         /// <summary>All Amazon provider IDs (excluding channel add-ons).</summary>
-        public static readonly int[] All = [PrimeVideo, Video, PrimeVideoFreeWithAds, PrimeVideoWithAds, MXPlayer];
+        public static readonly int[] All = [PrimeVideoAlt, Video, PrimeVideo, ArthausChannel, PrimeVideoFreeWithAds, MXPlayer, PrimeVideoWithAds];
     }
 
     /// <summary>
@@ -59,17 +65,17 @@ public static class WatchProvider
     /// </summary>
     public static class Disney
     {
-        /// <summary>Disney+ streaming service.</summary>
-        public const int Plus = 337;
-
         /// <summary>Disney+ alternate regional ID.</summary>
         public const int PlusAlt = 122;
+
+        /// <summary>Disney+ streaming service.</summary>
+        public const int Plus = 337;
 
         /// <summary>DisneyNow.</summary>
         public const int Now = 508;
 
         /// <summary>All Disney provider IDs.</summary>
-        public static readonly int[] All = [Plus, PlusAlt, Now];
+        public static readonly int[] All = [PlusAlt, Plus, Now];
     }
 
     /// <summary>
@@ -77,20 +83,17 @@ public static class WatchProvider
     /// </summary>
     public static class Max
     {
-        /// <summary>Max (formerly HBO Max) streaming service.</summary>
-        public const int Standard = 1899;
-
         /// <summary>HBO Max Amazon Channel.</summary>
         public const int AmazonChannel = 1825;
 
-        /// <summary>HBO Max Amazon Channel alternate.</summary>
-        public const int AmazonChannelAlt = 2472;
+        /// <summary>Max (formerly HBO Max) streaming service.</summary>
+        public const int Standard = 1899;
 
         /// <summary>HBO Max on U-NEXT (Japan).</summary>
         public const int OnUNext = 2284;
 
-        /// <summary>All Max/HBO Max provider IDs.</summary>
-        public static readonly int[] All = [Standard, AmazonChannel, AmazonChannelAlt, OnUNext];
+        /// <summary>All Max provider IDs.</summary>
+        public static readonly int[] All = [AmazonChannel, Standard, OnUNext];
     }
 
     /// <summary>
@@ -110,6 +113,9 @@ public static class WatchProvider
     /// </summary>
     public static class Apple
     {
+        /// <summary>Apple TV Store (purchase/rental).</summary>
+        public const int TVStore = 2;
+
         /// <summary>Apple TV+ streaming service.</summary>
         public const int TV = 350;
 
@@ -117,7 +123,7 @@ public static class WatchProvider
         public const int TVAmazonChannel = 2243;
 
         /// <summary>All Apple provider IDs.</summary>
-        public static readonly int[] All = [TV, TVAmazonChannel];
+        public static readonly int[] All = [TVStore, TV, TVAmazonChannel];
     }
 
     /// <summary>
@@ -125,8 +131,20 @@ public static class WatchProvider
     /// </summary>
     public static class Paramount
     {
+        /// <summary>Paramount Pictures.</summary>
+        public const int Pictures = 187;
+
         /// <summary>Paramount+ streaming service.</summary>
         public const int Plus = 531;
+
+        /// <summary>Paramount+ Amazon Channel.</summary>
+        public const int PlusAmazonChannel = 582;
+
+        /// <summary>Paramount+ Roku Premium Channel.</summary>
+        public const int PlusRokuChannel = 633;
+
+        /// <summary>Paramount+ Apple TV Channel.</summary>
+        public const int PlusAppleTVChannel = 1853;
 
         /// <summary>Paramount+ Premium tier.</summary>
         public const int PlusPremium = 2303;
@@ -137,20 +155,8 @@ public static class WatchProvider
         /// <summary>Paramount+ Essential tier.</summary>
         public const int PlusEssential = 2616;
 
-        /// <summary>Paramount+ Amazon Channel.</summary>
-        public const int PlusAmazonChannel = 582;
-
-        /// <summary>Paramount+ Apple TV Channel.</summary>
-        public const int PlusAppleTVChannel = 1853;
-
-        /// <summary>Paramount+ Roku Premium Channel.</summary>
-        public const int PlusRokuChannel = 633;
-
-        /// <summary>Paramount Pictures.</summary>
-        public const int Pictures = 187;
-
         /// <summary>All Paramount provider IDs.</summary>
-        public static readonly int[] All = [Plus, PlusPremium, PlusBasicWithAds, PlusEssential, PlusAmazonChannel, PlusAppleTVChannel, PlusRokuChannel, Pictures];
+        public static readonly int[] All = [Pictures, Plus, PlusAmazonChannel, PlusRokuChannel, PlusAppleTVChannel, PlusPremium, PlusBasicWithAds, PlusEssential];
     }
 
     /// <summary>
@@ -161,11 +167,11 @@ public static class WatchProvider
         /// <summary>Google Play Movies.</summary>
         public const int PlayMovies = 3;
 
-        /// <summary>YouTube.</summary>
-        public const int YouTube = 192;
-
         /// <summary>YouTube Premium.</summary>
         public const int YouTubePremium = 188;
+
+        /// <summary>YouTube.</summary>
+        public const int YouTube = 192;
 
         /// <summary>YouTube Free.</summary>
         public const int YouTubeFree = 235;
@@ -173,8 +179,8 @@ public static class WatchProvider
         /// <summary>YouTube TV.</summary>
         public const int YouTubeTV = 2528;
 
-        /// <summary>All Google and YouTube provider IDs.</summary>
-        public static readonly int[] All = [PlayMovies, YouTube, YouTubePremium, YouTubeFree, YouTubeTV];
+        /// <summary>All Google provider IDs.</summary>
+        public static readonly int[] All = [PlayMovies, YouTubePremium, YouTube, YouTubeFree, YouTubeTV];
     }
 
     /// <summary>
@@ -188,7 +194,7 @@ public static class WatchProvider
         /// <summary>Fandango at Home Free.</summary>
         public const int Free = 332;
 
-        /// <summary>All Fandango at Home provider IDs.</summary>
+        /// <summary>All FandangoAtHome provider IDs.</summary>
         public static readonly int[] All = [Standard, Free];
     }
 
@@ -200,29 +206,32 @@ public static class WatchProvider
         /// <summary>Sky Go.</summary>
         public const int Go = 29;
 
-        /// <summary>Sky.</summary>
-        public const int Standard = 210;
-
-        /// <summary>Sky Store.</summary>
-        public const int Store = 130;
-
-        /// <summary>Sky X.</summary>
-        public const int X = 321;
+        /// <summary>WOW - German Sky streaming.</summary>
+        public const int WOW = 30;
 
         /// <summary>Now TV.</summary>
         public const int NowTV = 39;
 
+        /// <summary>Sky Store.</summary>
+        public const int Store = 130;
+
+        /// <summary>Sky.</summary>
+        public const int Standard = 210;
+
+        /// <summary>Sky X.</summary>
+        public const int X = 321;
+
         /// <summary>Now TV Cinema.</summary>
         public const int NowTVCinema = 591;
-
-        /// <summary>WOW - German Sky streaming.</summary>
-        public const int WOW = 30;
 
         /// <summary>SkyShowtime.</summary>
         public const int Showtime = 1773;
 
+        /// <summary>TV2 SkyShowtime (Scandinavia).</summary>
+        public const int TV2Showtime = 2624;
+
         /// <summary>All Sky provider IDs.</summary>
-        public static readonly int[] All = [Go, Standard, Store, X, NowTV, NowTVCinema, WOW, Showtime];
+        public static readonly int[] All = [Go, WOW, NowTV, Store, Standard, X, NowTVCinema, Showtime, TV2Showtime];
     }
 
     /// <summary>
@@ -278,7 +287,7 @@ public static class WatchProvider
         /// <summary>Pluto TV Live.</summary>
         public const int Live = 1965;
 
-        /// <summary>All Pluto TV provider IDs.</summary>
+        /// <summary>All PlutoTV provider IDs.</summary>
         public static readonly int[] All = [Standard, Live];
     }
 
@@ -293,17 +302,17 @@ public static class WatchProvider
         /// <summary>StarzPlay.</summary>
         public const int Play = 630;
 
+        /// <summary>Starz Roku Premium Channel.</summary>
+        public const int RokuChannel = 634;
+
         /// <summary>Starz Amazon Channel.</summary>
         public const int AmazonChannel = 1794;
 
         /// <summary>Starz Apple TV Channel.</summary>
         public const int AppleTVChannel = 1855;
 
-        /// <summary>Starz Roku Premium Channel.</summary>
-        public const int RokuChannel = 634;
-
         /// <summary>All Starz provider IDs.</summary>
-        public static readonly int[] All = [Standard, Play, AmazonChannel, AppleTVChannel, RokuChannel];
+        public static readonly int[] All = [Standard, Play, RokuChannel, AmazonChannel, AppleTVChannel];
     }
 
     /// <summary>
@@ -317,17 +326,17 @@ public static class WatchProvider
         /// <summary>MGM Plus Amazon Channel.</summary>
         public const int AmazonChannel = 583;
 
+        /// <summary>MGM Plus Roku Premium Channel.</summary>
+        public const int RokuChannel = 636;
+
         /// <summary>MGM Plus Amazon Channel alternate.</summary>
         public const int AmazonChannelAlt = 2141;
 
         /// <summary>MGM Plus Apple TV Channel.</summary>
         public const int AppleTVChannel = 2142;
 
-        /// <summary>MGM Plus Roku Premium Channel.</summary>
-        public const int RokuChannel = 636;
-
-        /// <summary>All MGM Plus provider IDs.</summary>
-        public static readonly int[] All = [Standard, AmazonChannel, AmazonChannelAlt, AppleTVChannel, RokuChannel];
+        /// <summary>All MGMPlus provider IDs.</summary>
+        public static readonly int[] All = [Standard, AmazonChannel, RokuChannel, AmazonChannelAlt, AppleTVChannel];
     }
 
     /// <summary>
@@ -341,17 +350,17 @@ public static class WatchProvider
         /// <summary>AMC+ Amazon Channel.</summary>
         public const int AmazonChannel = 528;
 
-        /// <summary>AMC+ Apple TV Channel.</summary>
-        public const int AppleTVChannel = 1854;
-
         /// <summary>AMC+ Roku Premium Channel.</summary>
         public const int RokuChannel = 635;
+
+        /// <summary>AMC+ Apple TV Channel.</summary>
+        public const int AppleTVChannel = 1854;
 
         /// <summary>AMC Channels Amazon Channel.</summary>
         public const int ChannelsAmazon = 2561;
 
-        /// <summary>All AMC+ provider IDs.</summary>
-        public static readonly int[] All = [Standard, AmazonChannel, AppleTVChannel, RokuChannel, ChannelsAmazon];
+        /// <summary>All AMCPlus provider IDs.</summary>
+        public static readonly int[] All = [Standard, AmazonChannel, RokuChannel, AppleTVChannel, ChannelsAmazon];
     }
 
     /// <summary>
@@ -359,17 +368,20 @@ public static class WatchProvider
     /// </summary>
     public static class DiscoveryPlus
     {
+        /// <summary>Discovery+ alternate regional ID (2).</summary>
+        public const int StandardAlt2 = 510;
+
+        /// <summary>Discovery+ alternate regional ID.</summary>
+        public const int StandardAlt = 520;
+
         /// <summary>Discovery+.</summary>
         public const int Standard = 524;
-
-        /// <summary>Discovery+ alternate.</summary>
-        public const int StandardAlt = 520;
 
         /// <summary>Discovery+ Amazon Channel.</summary>
         public const int AmazonChannel = 584;
 
-        /// <summary>All Discovery+ provider IDs.</summary>
-        public static readonly int[] All = [Standard, StandardAlt, AmazonChannel];
+        /// <summary>All DiscoveryPlus provider IDs.</summary>
+        public static readonly int[] All = [StandardAlt2, StandardAlt, Standard, AmazonChannel];
     }
 
     /// <summary>
@@ -395,7 +407,7 @@ public static class WatchProvider
         /// <summary>Criterion Channel.</summary>
         public const int Standard = 258;
 
-        /// <summary>All Criterion Channel provider IDs.</summary>
+        /// <summary>All CriterionChannel provider IDs.</summary>
         public static readonly int[] All = [Standard];
     }
 
@@ -449,7 +461,7 @@ public static class WatchProvider
         /// <summary>CuriosityStream Apple TV Channel.</summary>
         public const int AppleTVChannel = 2060;
 
-        /// <summary>All Curiosity Stream provider IDs.</summary>
+        /// <summary>All CuriosityStream provider IDs.</summary>
         public static readonly int[] All = [Standard, AmazonChannel, AppleTVChannel];
     }
 
@@ -461,7 +473,7 @@ public static class WatchProvider
         /// <summary>The Roku Channel.</summary>
         public const int Standard = 207;
 
-        /// <summary>All Roku Channel provider IDs.</summary>
+        /// <summary>All RokuChannel provider IDs.</summary>
         public static readonly int[] All = [Standard];
     }
 
@@ -518,7 +530,7 @@ public static class WatchProvider
         /// <summary>Acorn TV Apple TV Channel.</summary>
         public const int AppleTVChannel = 2034;
 
-        /// <summary>All Acorn TV provider IDs.</summary>
+        /// <summary>All AcornTV provider IDs.</summary>
         public static readonly int[] All = [Standard, AmazonChannel, AppleTVChannel];
     }
 
@@ -536,7 +548,7 @@ public static class WatchProvider
         /// <summary>Sundance Now Apple TV Channel.</summary>
         public const int AppleTVChannel = 2048;
 
-        /// <summary>All Sundance Now provider IDs.</summary>
+        /// <summary>All SundanceNow provider IDs.</summary>
         public static readonly int[] All = [Standard, AmazonChannel, AppleTVChannel];
     }
 
@@ -590,7 +602,7 @@ public static class WatchProvider
         /// <summary>BBC iPlayer.</summary>
         public const int Standard = 38;
 
-        /// <summary>All BBC iPlayer provider IDs.</summary>
+        /// <summary>All BBCiPlayer provider IDs.</summary>
         public static readonly int[] All = [Standard];
     }
 
@@ -620,7 +632,7 @@ public static class WatchProvider
         /// <summary>Channel 4 Plus.</summary>
         public const int Plus = 2311;
 
-        /// <summary>All Channel 4 provider IDs.</summary>
+        /// <summary>All Channel4 provider IDs.</summary>
         public static readonly int[] All = [Standard, Plus];
     }
 
@@ -629,17 +641,23 @@ public static class WatchProvider
     /// </summary>
     public static class CanalPlus
     {
-        /// <summary>Canal+.</summary>
-        public const int Standard = 2101;
-
         /// <summary>Canal+ Séries.</summary>
         public const int Series = 345;
+
+        /// <summary>Canal+ alternate regional ID.</summary>
+        public const int StandardAlt = 381;
+
+        /// <summary>Filmtastic bei Canal+ (German-market Canal+ branded service).</summary>
+        public const int Filmtastic = 1929;
+
+        /// <summary>Canal+.</summary>
+        public const int Standard = 2101;
 
         /// <summary>Premiery Canal+.</summary>
         public const int Premiery = 2102;
 
-        /// <summary>All Canal+ provider IDs.</summary>
-        public static readonly int[] All = [Standard, Series, Premiery];
+        /// <summary>All CanalPlus provider IDs.</summary>
+        public static readonly int[] All = [Series, StandardAlt, Filmtastic, Standard, Premiery];
     }
 
     /// <summary>
@@ -650,8 +668,11 @@ public static class WatchProvider
         /// <summary>RTL+.</summary>
         public const int Standard = 298;
 
-        /// <summary>All RTL+ provider IDs.</summary>
-        public static readonly int[] All = [Standard];
+        /// <summary>RTL+ Max Amazon Channel.</summary>
+        public const int RTLMaxAmazonChannel = 2578;
+
+        /// <summary>All RTLPlus provider IDs.</summary>
+        public static readonly int[] All = [Standard, RTLMaxAmazonChannel];
     }
 
     /// <summary>
@@ -680,7 +701,7 @@ public static class WatchProvider
         /// <summary>Rakuten Viki.</summary>
         public const int Viki = 344;
 
-        /// <summary>All Rakuten TV provider IDs.</summary>
+        /// <summary>All RakutenTV provider IDs.</summary>
         public static readonly int[] All = [Standard, Viki];
     }
 
@@ -775,5 +796,77 @@ public static class WatchProvider
 
         /// <summary>All ESPN provider IDs.</summary>
         public static readonly int[] All = [Standard, Plus];
+    }
+
+    /// <summary>
+    /// Showmax provider IDs (Africa).
+    /// </summary>
+    public static class Showmax
+    {
+        /// <summary>Showmax.</summary>
+        public const int Standard = 55;
+
+        /// <summary>All Showmax provider IDs.</summary>
+        public static readonly int[] All = [Standard];
+    }
+
+    /// <summary>
+    /// U-NEXT provider IDs (Japan).
+    /// </summary>
+    public static class UNext
+    {
+        /// <summary>U-NEXT.</summary>
+        public const int Standard = 84;
+
+        /// <summary>All UNext provider IDs.</summary>
+        public static readonly int[] All = [Standard];
+    }
+
+    /// <summary>
+    /// SonyLiv provider IDs (India).
+    /// </summary>
+    public static class SonyLiv
+    {
+        /// <summary>SonyLiv.</summary>
+        public const int Standard = 237;
+
+        /// <summary>All SonyLiv provider IDs.</summary>
+        public static readonly int[] All = [Standard];
+    }
+
+    /// <summary>
+    /// Globoplay provider IDs (Brazil).
+    /// </summary>
+    public static class Globoplay
+    {
+        /// <summary>Globoplay.</summary>
+        public const int Standard = 307;
+
+        /// <summary>All Globoplay provider IDs.</summary>
+        public static readonly int[] All = [Standard];
+    }
+
+    /// <summary>
+    /// ViX provider IDs (Spanish-language streaming, US and Latin America).
+    /// </summary>
+    public static class ViX
+    {
+        /// <summary>ViX.</summary>
+        public const int Standard = 457;
+
+        /// <summary>All ViX provider IDs.</summary>
+        public static readonly int[] All = [Standard];
+    }
+
+    /// <summary>
+    /// iQIYI provider IDs (China).
+    /// </summary>
+    public static class IQIYI
+    {
+        /// <summary>iQIYI.</summary>
+        public const int Standard = 581;
+
+        /// <summary>All IQIYI provider IDs.</summary>
+        public static readonly int[] All = [Standard];
     }
 }
