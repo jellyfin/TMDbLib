@@ -174,6 +174,19 @@ public partial class TMDbClient
     }
 
     /// <summary>
+    /// Returns a credits object for the aggragation of tv season associated with the provided TMDb id.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the target tv show.</param>
+    /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
+    /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A task representing the asynchronous operation, with the aggregate credits as the result.</returns>
+    public async Task<CreditsAggregate?> GetTvSeasonAggregateCredits(int tvShowId, int seasonNumber, string? language = null, CancellationToken cancellationToken = default)
+    {
+        return await GetTvSeasonMethodInternal<CreditsAggregate>(tvShowId, seasonNumber, TvSeasonMethods.CreditsAggregate, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
     /// Returns an object that contains all known exteral id's for the season of the tv show related to the specified TMDB id.
     /// </summary>
     /// <param name="tvShowId">The TMDb id of the target tv show.</param>
