@@ -50,4 +50,10 @@ public enum TvSeasonMethods
     /// </summary>
     [EnumValue("translations")]
     Translations = 32,
+
+    /// <summary>
+    /// Include aggregated credits.
+    /// </summary>
+    [EnumValue("aggregate_credits")]
+    CreditsAggregate = 64,
 }

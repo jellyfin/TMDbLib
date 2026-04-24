@@ -30,6 +30,12 @@ public class TvSeason
     public Credits? Credits { get; set; }
 
     /// <summary>
+    /// Gets or sets the aggregated credits for the TV show.
+    /// </summary>
+    [JsonProperty("aggregate_credits")]
+    public CreditsAggregate? AggregateCredits { get; set; }
+
+    /// <summary>
     /// Gets or sets the list of episodes in the season.
     /// </summary>
     [JsonProperty("episodes")]
