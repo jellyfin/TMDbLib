@@ -298,7 +298,7 @@ public partial class TMDbClient
 
         AddSessionId(req);
 
-        req.SetBody(new RatingIBody(rating));
+        req.SetBody(new RatingBody(rating));
 
         using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 

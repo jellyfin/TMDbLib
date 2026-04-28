@@ -487,7 +487,7 @@ public partial class TMDbClient
         req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
         AddSessionId(req);
 
-        req.SetBody(new RatingIBody(rating));
+        req.SetBody(new RatingBody(rating));
 
         using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 

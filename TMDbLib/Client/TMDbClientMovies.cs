@@ -670,7 +670,7 @@ public sealed partial class TMDbClient
         req.AddUrlSegment("movieId", movieId.ToString(CultureInfo.InvariantCulture));
         AddSessionId(req);
 
-        req.SetBody(new RatingIBody(rating));
+        req.SetBody(new RatingBody(rating));
 
         using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 

@@ -29,7 +29,7 @@ public partial class TMDbClient
         req.AddUrlSegment("method", method);
         AddSessionId(req, SessionType.UserSession);
 
-        req.SetBody(new MovieIdIBody(movieId));
+        req.SetBody(new MovieIdBody(movieId));
 
         using RestResponse<PostReply> response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 
@@ -169,11 +169,11 @@ public partial class TMDbClient
         language ??= DefaultLanguage;
         if (!string.IsNullOrWhiteSpace(language))
         {
-            req.SetBody(new ListCreateIBody(name, description, language));
+            req.SetBody(new ListCreateBody(name, description, language));
         }
         else
         {
-            req.SetBody(new ListCreateIBody(name, description));
+            req.SetBody(new ListCreateBody(name, description));
         }
 
         using var response = await req.Post<ListCreateReply>(cancellationToken).ConfigureAwait(false);

@@ -109,7 +109,7 @@ public partial class TMDbClient
 
         var request = _client.Create("account/{accountId}/watchlist");
         request.AddUrlSegment("accountId", ActiveAccount!.Id.ToString(CultureInfo.InvariantCulture));
-        request.SetBody(new WatchlistIBody(mediaType.GetDescription(), mediaId, isOnWatchlist));
+        request.SetBody(new WatchlistBody(mediaType.GetDescription(), mediaId, isOnWatchlist));
         AddSessionId(request, SessionType.UserSession);
 
         var response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);

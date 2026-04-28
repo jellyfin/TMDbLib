@@ -288,9 +288,9 @@ namespace TMDbLib.Utilities.JsonSerializerContexts;
 
 // RestRequests
 [JsonSerializable(typeof(IBody))]
-[JsonSerializable(typeof(ListCreateIBody))]
-[JsonSerializable(typeof(MovieIdIBody))]
-[JsonSerializable(typeof(RatingIBody))]
+[JsonSerializable(typeof(ListCreateBody))]
+[JsonSerializable(typeof(MovieIdBody))]
+[JsonSerializable(typeof(RatingBody))]
 
 // Arrays
 [JsonSerializable(typeof(int[]))]
