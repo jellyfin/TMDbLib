@@ -125,47 +125,21 @@ namespace TMDbLib.Utilities.Converters
 
         private void UpdateConverters()
         {
-            _isoDateTimeConverter.DateTimeStyles = DateTimeStyles;
-            _isoDateTimeConverter.DateTimeFormat = DateTimeFormat;
-            _isoDateTimeConverter.Culture = Culture;
+            _isoDateTimeConverter.DatetimeStyles = DateTimeStyles;
+            _isoDateTimeConverter.DatetimeFormat = DateTimeFormat;
+            _isoDateTimeConverter.CultureInfo = Culture;
 
-            _isoDateTimeNullableConverter.DateTimeStyles = DateTimeStyles;
-            _isoDateTimeNullableConverter.DateTimeFormat = DateTimeFormat;
-            _isoDateTimeNullableConverter.Culture = Culture;
+            _isoDateTimeNullableConverter.DatetimeStyles = DateTimeStyles;
+            _isoDateTimeNullableConverter.DatetimeFormat = DateTimeFormat;
+            _isoDateTimeNullableConverter.CultureInfo = Culture;
 
-            _isoDateTimeOffsetConverter.DateTimeStyles = DateTimeStyles;
-            _isoDateTimeOffsetConverter.DateTimeFormat = DateTimeFormat;
-            _isoDateTimeOffsetConverter.Culture = Culture;
+            _isoDateTimeOffsetConverter.DatetimeStyles = DateTimeStyles;
+            _isoDateTimeOffsetConverter.DatetimeFormat = DateTimeFormat;
+            _isoDateTimeOffsetConverter.CultureInfo = Culture;
 
-            _isoDateTimeOffsetNullableConverter.DateTimeStyles = DateTimeStyles;
-            _isoDateTimeOffsetNullableConverter.DateTimeFormat = DateTimeFormat;
-            _isoDateTimeOffsetNullableConverter.Culture = Culture;
-        }
-
-        private abstract class DateTimeConverterBase<T> : JsonConverter<T>
-        {
-            /// <value>The date time styles used when converting a date to and from JSON.</value>
-            public DateTimeStyles DateTimeStyles { get; set; } = DateTimeStyles.RoundtripKind;
-
-            /// <summary>
-            /// Gets or sets the date time format used when converting a date to and from JSON.
-            /// </summary>
-            /// <value>The date time format used when converting a date to and from JSON.</value>
-            public string? DateTimeFormat
-            {
-                get => field ?? string.Empty;
-                set => field = string.IsNullOrEmpty(value) ? null : value;
-            }
-
-            /// <summary>
-            /// Gets or sets the culture used when converting a date to and from JSON.
-            /// </summary>
-            /// <value>The culture used when converting a date to and from JSON.</value>
-            public CultureInfo Culture
-            {
-                get => field ?? CultureInfo.CurrentCulture;
-                set;
-            }
+            _isoDateTimeOffsetNullableConverter.DatetimeStyles = DateTimeStyles;
+            _isoDateTimeOffsetNullableConverter.DatetimeFormat = DateTimeFormat;
+            _isoDateTimeOffsetNullableConverter.CultureInfo = Culture;
         }
 
         private sealed class IsoDateTimeConverter : DateTimeConverterBase<DateTime>
@@ -198,23 +172,23 @@ namespace TMDbLib.Utilities.Converters
                     throw new JsonException($"Cannot convert null value to {nameof(DateTime)}");
                 }
 
-                if (!string.IsNullOrEmpty(DateTimeFormat))
+                if (!string.IsNullOrEmpty(DatetimeFormat))
                 {
-                    return DateTime.ParseExact(str, DateTimeFormat, Culture, DateTimeStyles);
+                    return DateTime.ParseExact(str, DatetimeFormat, CultureInfo, DatetimeStyles);
                 }
 
-                return DateTime.Parse(str, Culture, DateTimeStyles);
+                return DateTime.Parse(str, CultureInfo, DatetimeStyles);
             }
 
             public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
             {
-                if ((DateTimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
-                    || (DateTimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
+                if ((DatetimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
+                    || (DatetimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
                 {
                     value = value.ToUniversalTime();
                 }
 
-                writer.WriteStringValue(value.ToString(DateTimeFormat ?? DefaultDateTimeFormat, Culture));
+                writer.WriteStringValue(value.ToString(DatetimeFormat ?? DefaultDateTimeFormat, CultureInfo));
             }
         }
 
@@ -248,12 +222,12 @@ namespace TMDbLib.Utilities.Converters
                     return null;
                 }
 
-                if (!string.IsNullOrEmpty(DateTimeFormat))
+                if (!string.IsNullOrEmpty(DatetimeFormat))
                 {
-                    return DateTime.ParseExact(str, DateTimeFormat, Culture, DateTimeStyles);
+                    return DateTime.ParseExact(str, DatetimeFormat, CultureInfo, DatetimeStyles);
                 }
 
-                return DateTime.Parse(str, Culture, DateTimeStyles);
+                return DateTime.Parse(str, CultureInfo, DatetimeStyles);
             }
 
             public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
@@ -264,13 +238,13 @@ namespace TMDbLib.Utilities.Converters
                     return;
                 }
 
-                if ((DateTimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
-                    || (DateTimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
+                if ((DatetimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
+                    || (DatetimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
                 {
                     value = value.Value.ToUniversalTime();
                 }
 
-                writer.WriteStringValue(value.Value.ToString(DateTimeFormat ?? DefaultDateTimeFormat, Culture));
+                writer.WriteStringValue(value.Value.ToString(DatetimeFormat ?? DefaultDateTimeFormat, CultureInfo));
             }
         }
 
@@ -304,23 +278,23 @@ namespace TMDbLib.Utilities.Converters
                     throw new JsonException($"Cannot convert null value to {nameof(DateTime)}");
                 }
 
-                if (!string.IsNullOrEmpty(DateTimeFormat))
+                if (!string.IsNullOrEmpty(DatetimeFormat))
                 {
-                    return DateTimeOffset.ParseExact(str, DateTimeFormat, Culture, DateTimeStyles);
+                    return DateTimeOffset.ParseExact(str, DatetimeFormat, CultureInfo, DatetimeStyles);
                 }
 
-                return DateTimeOffset.Parse(str, Culture, DateTimeStyles);
+                return DateTimeOffset.Parse(str, CultureInfo, DatetimeStyles);
             }
 
             public override void Write(Utf8JsonWriter writer, DateTimeOffset value, JsonSerializerOptions options)
             {
-                if ((DateTimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
-                    || (DateTimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
+                if ((DatetimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
+                    || (DatetimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
                 {
                     value = value.ToUniversalTime();
                 }
 
-                writer.WriteStringValue(value.ToString(DateTimeFormat ?? DefaultDateTimeFormat, Culture));
+                writer.WriteStringValue(value.ToString(DatetimeFormat ?? DefaultDateTimeFormat, CultureInfo));
             }
         }
 
@@ -354,12 +328,12 @@ namespace TMDbLib.Utilities.Converters
                     return null;
                 }
 
-                if (!string.IsNullOrEmpty(DateTimeFormat))
+                if (!string.IsNullOrEmpty(DatetimeFormat))
                 {
-                    return DateTimeOffset.ParseExact(str, DateTimeFormat, Culture, DateTimeStyles);
+                    return DateTimeOffset.ParseExact(str, DatetimeFormat, CultureInfo, DatetimeStyles);
                 }
 
-                return DateTimeOffset.Parse(str, Culture, DateTimeStyles);
+                return DateTimeOffset.Parse(str, CultureInfo, DatetimeStyles);
             }
 
             public override void Write(Utf8JsonWriter writer, DateTimeOffset? value, JsonSerializerOptions options)
@@ -370,13 +344,13 @@ namespace TMDbLib.Utilities.Converters
                     return;
                 }
 
-                if ((DateTimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
-                    || (DateTimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
+                if ((DatetimeStyles & DateTimeStyles.AdjustToUniversal) == DateTimeStyles.AdjustToUniversal
+                    || (DatetimeStyles & DateTimeStyles.AssumeUniversal) == DateTimeStyles.AssumeUniversal)
                 {
                     value = value.Value.ToUniversalTime();
                 }
 
-                writer.WriteStringValue(value.Value.ToString(DateTimeFormat ?? DefaultDateTimeFormat, Culture));
+                writer.WriteStringValue(value.Value.ToString(DatetimeFormat ?? DefaultDateTimeFormat, CultureInfo));
             }
         }
     }
