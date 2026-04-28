@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 using TMDbLib.Utilities.Converters;
 using TMDbLib.Utilities.JsonSerializerContexts;
 
@@ -12,18 +13,10 @@ namespace TMDbLib.Utilities.Serializer;
 /// </summary>
 public class TMDbJsonSerializer : ITMDbSerializer
 {
-    private readonly JsonSerializerOptions _options;
     private readonly Encoding _encoding = new UTF8Encoding(false);
 
     private TMDbJsonSerializer()
     {
-        _options = new JsonSerializerOptions()
-        {
-            TypeInfoResolver = TmdbJsonSerializerContext.Default,
-            Converters =
-            {
-            }
-        };
     }
 
     /// <summary>
@@ -31,30 +24,27 @@ public class TMDbJsonSerializer : ITMDbSerializer
     /// </summary>
     public static TMDbJsonSerializer Instance { get; } = new();
 
-    /// <summary>
-    /// Serializes an object to a stream.
-    /// </summary>
-    /// <param name="target">The target stream to write to.</param>
-    /// <param name="obj">The object to serialize.</param>
-    /// <param name="type">The type of the object.</param>
+    /// <inheritdoc/>
     public void Serialize<T>(Stream target, T obj)
     {
-        JsonSerializer.Serialize(target, obj, _options);
+        JsonSerializer.Serialize(target, obj, GetTypeInfo<T>());
     }
 
-    /// <summary>
-    /// Deserializes an object from a stream.
-    /// </summary>
-    /// <param name="source">The source stream to read from.</param>
-    /// <param name="type">The type of the object to deserialize.</param>
-    /// <returns>The deserialized object.</returns>
+    /// <inheritdoc/>
     public T? Deserialize<T>(Stream source)
     {
-        return JsonSerializer.Deserialize<T>(source, _options);
+        return JsonSerializer.Deserialize(source, GetTypeInfo<T>());
     }
 
+    /// <inheritdoc/>
     public object? Deserialize(Stream source, Type type)
     {
-        return JsonSerializer.Deserialize(source, type, _options);
+        return JsonSerializer.Deserialize(source, type, TmdbJsonSerializerContext.Default);
+    }
+
+    private JsonTypeInfo<T> GetTypeInfo<T>()
+    {
+        return (JsonTypeInfo<T>?)TmdbJsonSerializerContext.Default.GetTypeInfo(typeof(T))
+               ?? throw new NotSupportedException($"Type '{typeof(T).FullName}' is not registered in {nameof(TmdbJsonSerializerContext)}.");
     }
 }

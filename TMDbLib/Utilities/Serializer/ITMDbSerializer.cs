@@ -11,18 +11,24 @@ public interface ITMDbSerializer
     /// <summary>
     /// Serializes an object to a stream.
     /// </summary>
-    /// <param name="target">The target stream to write to.</param>
+    /// <typeparam name="T">The object type.</typeparam>
+    /// <param name="target">The target stream.</param>
     /// <param name="obj">The object to serialize.</param>
-    /// <param name="type">The type of the object.</param>
     void Serialize<T>(Stream target, T obj);
 
     /// <summary>
-    /// Deserializes an object from a stream.
+    /// Deserializes a stream to an instance of <typeparamref name="T"/>.
     /// </summary>
-    /// <param name="source">The source stream to read from.</param>
-    /// <param name="type">The type of the object to deserialize.</param>
-    /// <returns>The deserialized object.</returns>
+    /// <typeparam name="T">The target type.</typeparam>
+    /// <param name="source">The source stream.</param>
+    /// <returns>The deserialized instance or null.</returns>
     T? Deserialize<T>(Stream source);
 
+    /// <summary>
+    /// Deserializes a stream to an instance of the specified type.
+    /// </summary>
+    /// <param name="source">The source stream.</param>
+    /// <param name="type">The target type.</param>
+    /// <returns>The deserialized instance or null.</returns>
     object? Deserialize(Stream source, Type type);
 }

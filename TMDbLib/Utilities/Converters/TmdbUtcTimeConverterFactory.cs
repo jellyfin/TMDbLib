@@ -11,9 +11,10 @@ namespace TMDbLib.Utilities.Converters;
 /// </summary>
 internal class TmdbUtcTimeConverterFactory : JsonConverterFactory
 {
+    private const string Format = "yyyy-MM-dd HH:mm:ss 'UTC'";
+
     private readonly TmdbUtcTimeConverter _tmdbUtcTimeConverter = new();
     private readonly TmdbUtcNullableTimeConverter _tmdbUtcNullableTimeConverter = new();
-    private const string Format = "yyyy-MM-dd HH:mm:ss 'UTC'";
 
     public override bool CanConvert(Type typeToConvert)
     {

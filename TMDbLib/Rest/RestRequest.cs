@@ -266,7 +266,8 @@ internal class RestRequest
             resp.Dispose();
 #pragma warning restore IDISP016, IDISP017
             throw new GeneralHttpException(resp.StatusCode);
-        } while (timesToTry-- > 0);
+        }
+        while (timesToTry-- > 0);
 
         // We never reached a success
         throw new RequestLimitExceededException(statusMessage, retryHeader?.Date, retryHeader?.Delta);

@@ -10,6 +10,7 @@ namespace TMDbLib.Utilities.Converters;
 /// <summary>
 /// JSON converter for enum values that gracefully handles unrecognized values by falling back to defaults.
 /// </summary>
+/// <typeparam name="TEnum">The enum type to convert.</typeparam>
 internal class TolerantEnumConverterFactory<TEnum> : JsonConverterFactory
     where TEnum : struct, Enum
 {
