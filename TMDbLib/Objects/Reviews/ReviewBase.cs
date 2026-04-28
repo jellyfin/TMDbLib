@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Reviews;
 
@@ -43,11 +44,13 @@ public class ReviewBase
     /// Gets or sets the creation date.
     /// </summary>
     [JsonPropertyName("created_at")]
+    [JsonConverter(typeof(CustomDatetimeFormatConverterFactory))]
     public DateTime CreatedAt { get; set; }
 
     /// <summary>
     /// Gets or sets the last update date.
     /// </summary>
     [JsonPropertyName("updated_at")]
+    [JsonConverter(typeof(CustomDatetimeFormatConverterFactory))]
     public DateTime UpdatedAt { get; set; }
 }
