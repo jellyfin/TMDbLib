@@ -8,7 +8,7 @@ namespace TMDbLib.Utilities.Converters;
 /// <summary>
 /// JSON converter for DateTime values with custom format strings.
 /// </summary>
-public class CustomDatetimeFormatConverterFactory : JsonConverterFactory
+internal class CustomDatetimeFormatConverterFactory : JsonConverterFactory
 {
     private readonly CustomDatetimeFormatConverter _customDatetimeFormatConverter = new();
 

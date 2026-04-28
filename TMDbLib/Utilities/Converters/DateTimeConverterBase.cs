@@ -7,7 +7,7 @@ namespace TMDbLib.Utilities.Converters;
 /// Base class for date/time converters.
 /// </summary>
 /// <typeparam name="T">The type being converted.</typeparam>
-public abstract class DateTimeConverterBase<T> : JsonConverter<T>
+internal abstract class DateTimeConverterBase<T> : JsonConverter<T>
 {
     /// <summary>
     /// Gets or sets the date time styles used when converting a date to and from JSON.

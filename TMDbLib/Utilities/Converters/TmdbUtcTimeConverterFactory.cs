@@ -9,7 +9,7 @@ namespace TMDbLib.Utilities.Converters;
 /// <summary>
 /// JSON converter for UTC datetime values in TMDb's specific format.
 /// </summary>
-public class TmdbUtcTimeConverterFactory : JsonConverterFactory
+internal class TmdbUtcTimeConverterFactory : JsonConverterFactory
 {
     private readonly TmdbUtcTimeConverter _tmdbUtcTimeConverter = new();
     private readonly TmdbUtcNullableTimeConverter _tmdbUtcNullableTimeConverter = new();

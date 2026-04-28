@@ -7,7 +7,7 @@ namespace TMDbLib.Utilities.Converters;
 /// <summary>
 /// JSON converter that treats null integer values as zero.
 /// </summary>
-public class TmdbNullIntAsZero : JsonConverter<int>
+internal class TmdbNullIntAsZero : JsonConverter<int>
 {
     public override int Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {

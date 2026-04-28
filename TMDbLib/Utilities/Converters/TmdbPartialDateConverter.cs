@@ -8,7 +8,7 @@ namespace TMDbLib.Utilities.Converters;
 /// <summary>
 /// JSON converter for partial or incomplete date values that may not parse correctly.
 /// </summary>
-public class TmdbPartialDateConverter : JsonConverter<DateTime?>
+internal class TmdbPartialDateConverter : JsonConverter<DateTime?>
 {
     public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
