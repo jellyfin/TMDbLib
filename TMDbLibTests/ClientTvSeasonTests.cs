@@ -127,6 +127,19 @@ public class ClientTvSeasonTests : TestBase
         await Verify(credits);
     }
 
+
+    /// <summary>
+    /// Tests that aggregate credits can be retrieved for a TV show across all seasons and episodes.
+    /// </summary>
+    [Fact]
+    public async Task TestAggregateCreditsExtractAllAsync()
+    {
+        var credits = await TMDbClient.GetTvSeasonAggregateCredits(IdHelper.BreakingBad, seasonNumber: 1);
+
+        await Verify(credits);
+    }
+
+
     /// <summary>
     /// Tests that external IDs can be retrieved separately for a TV season.
     /// </summary>
