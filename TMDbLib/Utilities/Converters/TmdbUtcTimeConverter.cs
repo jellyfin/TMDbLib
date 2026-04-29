@@ -6,7 +6,11 @@ using Newtonsoft.Json.Converters;
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
-/// JSON converter for UTC datetime values in TMDb's specific format.
+/// JSON converter for UTC datetime values returned by TMDb. Accepts both
+/// "yyyy-MM-dd HH:mm:ss UTC" (used intermittently on the videos and changes
+/// endpoints) and ISO-8601, since TMDb has historically alternated between
+/// the two for the same field. Always serializes in the "UTC"-suffixed form
+/// to preserve existing on-the-wire behavior.
 /// </summary>
 public class TmdbUtcTimeConverter : DateTimeConverterBase
 {
@@ -22,13 +26,30 @@ public class TmdbUtcTimeConverter : DateTimeConverterBase
     /// <returns>The parsed DateTime value.</returns>
     public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
+        // Newtonsoft's reader auto-parses ISO-8601 strings into DateTime when
+        // DateParseHandling = DateTime (the default). Accept that as-is.
+        if (reader.Value is DateTime dt)
+        {
+            return dt;
+        }
+
         var stringValue = reader.Value?.ToString();
         if (string.IsNullOrEmpty(stringValue))
         {
             return null;
         }
 
-        return DateTime.ParseExact(stringValue, Format, null);
+        const DateTimeStyles styles = DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal;
+
+        // TMDb's "yyyy-MM-dd HH:mm:ss UTC" form.
+        if (DateTime.TryParseExact(stringValue, Format, CultureInfo.InvariantCulture, styles, out var exact))
+        {
+            return exact;
+        }
+
+        // Fall back to ISO-8601 / any other parseable form so the converter
+        // remains correct if TMDb reverts the format again.
+        return DateTime.Parse(stringValue, CultureInfo.InvariantCulture, styles);
     }
 
     /// <summary>

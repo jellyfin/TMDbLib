@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.General;
 
@@ -48,6 +49,7 @@ public class Video
     /// Gets or sets the date the video was published.
     /// </summary>
     [JsonProperty("published_at")]
+    [JsonConverter(typeof(TmdbUtcTimeConverter))]
     public DateTime PublishedAt { get; set; }
 
     /// <summary>
