@@ -22,13 +22,30 @@ public class TmdbUtcTimeConverter : DateTimeConverterBase
     /// <returns>The parsed DateTime value.</returns>
     public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
-        var stringValue = reader.Value?.ToString();
+        if (reader.Value is null)
+        {
+            return null;
+        }
+
+        if (reader.Value is DateTime dateTime)
+        {
+            return dateTime;
+        }
+
+        var stringValue = reader.Value.ToString();
         if (string.IsNullOrEmpty(stringValue))
         {
             return null;
         }
 
-        return DateTime.ParseExact(stringValue, Format, null);
+        const DateTimeStyles styles = DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal;
+
+        if (DateTime.TryParseExact(stringValue, Format, CultureInfo.InvariantCulture, styles, out var parsed))
+        {
+            return parsed;
+        }
+
+        return DateTime.Parse(stringValue, CultureInfo.InvariantCulture, styles);
     }
 
     /// <summary>
