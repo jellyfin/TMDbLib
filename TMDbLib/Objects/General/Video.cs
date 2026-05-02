@@ -49,7 +49,7 @@ public class Video
     /// Gets or sets the date the video was published.
     /// </summary>
     [JsonPropertyName("published_at")]
-    [JsonConverter(typeof(CustomDatetimeFormatConverterFactory))]
+    [JsonConverter(typeof(IsoDateTimeConverterFactory))]
     public DateTime PublishedAt { get; set; }
 
     /// <summary>

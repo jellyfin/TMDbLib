@@ -22,7 +22,7 @@ public class Token
     /// Gets or sets the date / time before which the token must be used, else it will expire. Time is expressed as local time.
     /// </summary>
     [JsonPropertyName("expires_at")]
-    [JsonConverter(typeof(CustomDatetimeFormatConverterFactory))]
+    [JsonConverter(typeof(TmdbUtcTimeConverterFactory))]
     public DateTime ExpiresAt { get; set; }
 
     /// <summary>
