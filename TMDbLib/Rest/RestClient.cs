@@ -29,6 +29,7 @@ internal sealed class RestClient : IDisposable
         {
             var handler = new SocketsHttpHandler
             {
+                AutomaticDecompression = DecompressionMethods.All,
                 ConnectCallback = HappyEyeballsCallback.ConnectAsync
             };
 
