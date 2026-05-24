@@ -18,7 +18,7 @@ public class ClientCertificationsTests : TestBase
     [Fact]
     public async Task TestCertificationsListMovieAsync()
     {
-        var result = await TMDbClient.GetMovieCertificationsAsync();
+        var result = await TMDbClient.GetMovieCertificationsAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Certifications);
         Assert.NotEmpty(result.Certifications);
@@ -40,7 +40,7 @@ public class ClientCertificationsTests : TestBase
     [Fact]
     public async Task TestCertificationsListTvAsync()
     {
-        var result = await TMDbClient.GetTvCertificationsAsync();
+        var result = await TMDbClient.GetTvCertificationsAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Certifications);
         Assert.NotEmpty(result.Certifications);

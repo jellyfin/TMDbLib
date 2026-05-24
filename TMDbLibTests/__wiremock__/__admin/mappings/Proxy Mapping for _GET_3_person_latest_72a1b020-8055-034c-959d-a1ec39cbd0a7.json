@@ -1,6 +1,6 @@
 {
   "Guid": "72a1b020-8055-034c-959d-a1ec39cbd0a7",
-  "UpdatedAt": "2025-12-24T18:45:17.4206066Z",
+  "UpdatedAt": "2026-05-24T16:19:44.581008Z",
   "Title": "Proxy Mapping for GET /3/person/latest",
   "Description": "Proxy Mapping for GET /3/person/latest",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -29,10 +42,10 @@
       "deathday": null,
       "gender": 0,
       "homepage": null,
-      "id": 5896704,
+      "id": 6236719,
       "imdb_id": null,
-      "known_for_department": "Directing",
-      "name": "Yurena De Dio",
+      "known_for_department": "Production",
+      "name": "Kedrick Stellway",
       "place_of_birth": null,
       "popularity": 0.0,
       "profile_path": null
@@ -42,17 +55,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
       "Cache-Control": "public, max-age=0",
       "x-memc": "MISS",
       "x-memc-key": "f219ec1f5e79dc86b9e17e93e3d76c3f1cba31fcaf0bfddb397f76da5abeaffd",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002229a7a81dd49d90b2e2076bbc96f10caa\u0022",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022d251527abea00ae5ddf38325954cc6f6\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

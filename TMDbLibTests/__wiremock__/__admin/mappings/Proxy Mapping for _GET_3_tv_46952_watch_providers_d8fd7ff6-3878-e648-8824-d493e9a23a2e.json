@@ -1,6 +1,6 @@
 {
   "Guid": "d8fd7ff6-3878-e648-8824-d493e9a23a2e",
-  "UpdatedAt": "2025-12-24T18:45:22.7975553Z",
+  "UpdatedAt": "2026-05-24T16:19:43.609333Z",
   "Title": "Proxy Mapping for GET /3/tv/46952/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/46952/watch/providers",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -31,7 +44,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 31
+              "display_priority": 0
             }
           ]
         },
@@ -75,7 +88,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -86,7 +99,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -94,75 +107,79 @@
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=AT",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 12
+              "display_priority": 13
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/bh0e83QEvjzttsj8FJcQaYxPR43.jpg",
-              "provider_id": 2134,
-              "provider_name": "AXN Black Amazon Channel",
-              "display_priority": 63
-            },
-            {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 154
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/67FAj8KvIiV5iZMJuPUdMrqMftw.jpg",
+              "provider_id": 321,
+              "provider_name": "Sky X",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/bh0e83QEvjzttsj8FJcQaYxPR43.jpg",
+              "provider_id": 2134,
+              "provider_name": "AXN Black Amazon Channel",
+              "display_priority": 64
             }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=AU",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 50
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/uU4gqmoX0koF8L5yJSlfaaFd9Tz.jpg",
-              "provider_id": 246,
-              "provider_name": "7plus",
-              "display_priority": 18
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 11
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             },
             {
               "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
               "provider_id": 436,
               "provider_name": "Fetch TV",
-              "display_priority": 31
+              "display_priority": 30
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 49
             }
           ]
         },
@@ -173,7 +190,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -201,12 +218,20 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=BE",
+          "ads": [
+            {
+              "logo_path": "/3KaY2AQFkPHlc6QgGQmRbYxnsQa.jpg",
+              "provider_id": 572,
+              "provider_name": "RTL Play",
+              "display_priority": 23
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -250,7 +275,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -278,7 +303,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 12
+              "display_priority": 0
             }
           ]
         },
@@ -289,12 +314,20 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 6
+              "display_priority": 0
             }
           ]
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -303,24 +336,10 @@
               "display_priority": 0
             },
             {
-              "logo_path": "/cQjWvOiKRPeSuWRNGegcBjyqVbR.jpg",
-              "provider_id": 469,
-              "provider_name": "Club Illico",
-              "display_priority": 51
-            },
-            {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 94
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "display_priority": 93
             }
           ]
         },
@@ -334,10 +353,16 @@
               "display_priority": 0
             },
             {
+              "logo_path": "/ytApMa9fThUQUFTn696AeNBrB8f.jpg",
+              "provider_id": 210,
+              "provider_name": "Sky",
+              "display_priority": 7
+            },
+            {
               "logo_path": "/l5SFTF3l9l1KSgZJM7foAppUenz.jpg",
               "provider_id": 622,
               "provider_name": "UPC TV",
-              "display_priority": 32
+              "display_priority": 31
             }
           ],
           "buy": [
@@ -345,7 +370,7 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
@@ -373,7 +398,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -384,7 +409,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -395,7 +420,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -439,7 +464,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 6
+              "display_priority": 0
             }
           ]
         },
@@ -450,7 +475,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -464,33 +489,51 @@
               "display_priority": 0
             },
             {
+              "logo_path": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
+              "provider_id": 30,
+              "provider_name": "WOW",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 14
+            },
+            {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 84
+              "display_priority": 83
             },
             {
               "logo_path": "/bh0e83QEvjzttsj8FJcQaYxPR43.jpg",
               "provider_id": 2134,
               "provider_name": "AXN Black Amazon Channel",
-              "display_priority": 120
+              "display_priority": 118
             },
             {
               "logo_path": "/qqTyjCCJuuARytrY7rNRAKka1VF.jpg",
               "provider_id": 2412,
               "provider_name": "Magenta TV\u002B",
-              "display_priority": 198
+              "display_priority": 192
+            },
+            {
+              "logo_path": "/35XbldCPO3ztCREajGbfhf7827w.jpg",
+              "provider_id": 2660,
+              "provider_name": "Wow Fiction Amazon Channel",
+              "display_priority": 217
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -499,20 +542,12 @@
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 16
+              "display_priority": 17
             }
           ]
         },
         "DK": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=DK",
-          "rent": [
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 15
-            }
-          ],
           "buy": [
             {
               "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
@@ -532,19 +567,21 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 4
-            },
+              "display_priority": 5
+            }
+          ],
+          "rent": [
             {
-              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
-              "provider_id": 1961,
-              "provider_name": "Allente",
-              "display_priority": 37
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
             }
           ]
         },
@@ -613,18 +650,6 @@
               "display_priority": 0
             },
             {
-              "logo_path": "/jse4MOi92Jgetym7nbXFZZBI6LK.jpg",
-              "provider_id": 2241,
-              "provider_name": "Movistar Plus\u002B",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
-              "provider_id": 149,
-              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
-              "display_priority": 6
-            },
-            {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
@@ -645,7 +670,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
@@ -668,33 +693,11 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=FR",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 59
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/s7mg9n4UHrcdJQL78JmaU6oAdHt.jpg",
-              "provider_id": 59,
-              "provider_name": "Bbox VOD",
-              "display_priority": 18
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
@@ -707,61 +710,47 @@
               "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
               "provider_id": 61,
               "provider_name": "Orange VOD",
-              "display_priority": 12
+              "display_priority": 11
             },
             {
               "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
               "provider_id": 2286,
               "provider_name": "VIVA by videofutur",
-              "display_priority": 83
+              "display_priority": 80
             },
             {
               "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
               "provider_id": 2307,
               "provider_name": "Premiere Max",
-              "display_priority": 85
+              "display_priority": 82
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 54
             }
           ]
         },
         "GB": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=GB",
-          "ads": [
-            {
-              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
-              "provider_id": 103,
-              "provider_name": "Channel 4",
-              "display_priority": 10
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
-              "provider_id": 39,
-              "provider_name": "Now TV",
-              "display_priority": 44
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 99
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -770,7 +759,41 @@
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 16
+              "display_priority": 17
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 43
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 98
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 10
             }
           ]
         },
@@ -787,20 +810,20 @@
         },
         "GG": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 83
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 84
             }
           ]
         },
@@ -866,7 +889,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -888,7 +911,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -905,20 +928,6 @@
         },
         "IE": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=IE",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
-              "provider_id": 39,
-              "provider_name": "Now TV",
-              "display_priority": 10
-            }
-          ],
           "buy": [
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
@@ -933,6 +942,26 @@
               "provider_id": 103,
               "provider_name": "Channel 4",
               "display_priority": 15
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 10
             }
           ]
         },
@@ -987,7 +1016,13 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 6
             },
             {
               "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
@@ -1027,26 +1062,26 @@
         },
         "JP": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=JP",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 4
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "display_priority": 8
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ],
           "flatrate": [
@@ -1065,10 +1100,16 @@
           ],
           "rent": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 5
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/9EWAEok40O0HVhV0MYJmlE4LhGy.jpg",
+              "provider_id": 2683,
+              "provider_name": "FOD",
+              "display_priority": 80
             }
           ]
         },
@@ -1162,12 +1203,20 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 7
+              "display_priority": 0
             }
           ]
         },
         "LV": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=LV",
+          "free": [
+            {
+              "logo_path": "/2lNLLJLpPRvLoHTqyVing7JOFSS.jpg",
+              "provider_id": 2701,
+              "provider_name": "LTV7",
+              "display_priority": 37
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1228,7 +1277,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -1239,7 +1288,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -1261,7 +1310,18 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 4
+              "display_priority": 0
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -1283,7 +1343,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 7
+              "display_priority": 0
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -1344,7 +1404,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 10
+              "display_priority": 0
             }
           ]
         },
@@ -1355,7 +1415,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -1366,13 +1426,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
@@ -1389,7 +1449,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1422,7 +1482,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1466,7 +1526,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1477,7 +1537,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1510,7 +1570,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1528,14 +1588,6 @@
         "RU": {
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=RU",
           "flatrate": [
-            {
-              "logo_path": "/r7cgAhlSLI4r80P1Si9P0jOevrr.jpg",
-              "provider_id": 570,
-              "provider_name": "Premier",
-              "display_priority": 17
-            }
-          ],
-          "free": [
             {
               "logo_path": "/r7cgAhlSLI4r80P1Si9P0jOevrr.jpg",
               "provider_id": 570,
@@ -1573,7 +1625,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
@@ -1585,7 +1637,7 @@
               "logo_path": "/jy4yvY3szonb0p6rtMXvF5stuX9.jpg",
               "provider_id": 497,
               "provider_name": "Tele2 Play",
-              "display_priority": 20
+              "display_priority": 19
             }
           ]
         },
@@ -1618,7 +1670,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1673,7 +1725,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -1684,7 +1736,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1706,7 +1758,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -1769,22 +1821,16 @@
           "link": "https://www.themoviedb.org/tv/46952-the-blacklist/watch?locale=US",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 6
-            },
-            {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
@@ -1798,13 +1844,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 2
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 155
+              "display_priority": 154
             }
           ]
         },
@@ -1881,7 +1927,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 4
+              "display_priority": 0
             }
           ]
         }
@@ -1892,18 +1938,14 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=25349",
-      "x-memc": "HIT",
-      "x-memc-key": "42dbda941d0f8dcc915fa9c5572d10b0943e7d869c990ad8ec71c10dd6c843aa",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=17952",
+      "ETag": "W/\u00225571e90afa816568e60b3f36cf596cde\u0022",
       "x-az": "us-east-1c",
-      "ETag": "W/\u0022a894843fcea9779201a26c24cc44702f\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

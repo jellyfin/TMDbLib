@@ -1,6 +1,6 @@
 {
   "Guid": "b996d0df-4ed2-3a42-a696-8459aa4355e0",
-  "UpdatedAt": "2025-12-24T18:45:16.6292717Z",
+  "UpdatedAt": "2026-05-24T16:19:42.667278Z",
   "Title": "Proxy Mapping for GET /3/person/30084/tagged_images",
   "Description": "Proxy Mapping for GET /3/person/30084/tagged_images",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -86,10 +99,11 @@
             "genre_ids": [
               18
             ],
-            "popularity": 5.1289,
+            "popularity": 9.6563,
             "first_air_date": "2021-08-15",
-            "vote_average": 7.6,
-            "vote_count": 40,
+            "softcore": false,
+            "vote_average": 7.5,
+            "vote_count": 48,
             "origin_country": [
               "AU"
             ]
@@ -120,10 +134,11 @@
             "genre_ids": [
               18
             ],
-            "popularity": 5.1289,
+            "popularity": 9.6563,
             "first_air_date": "2021-08-15",
-            "vote_average": 7.6,
-            "vote_count": 40,
+            "softcore": false,
+            "vote_average": 7.5,
+            "vote_count": 48,
             "origin_country": [
               "AU"
             ]
@@ -139,17 +154,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
       "x-memc": "HIT",
       "x-memc-key": "c6b1383f2a27e4794c0193c2b345b65c6f88a2b892068d7392fd0a9038d69f72",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=8284",
-      "ETag": "W/\u0022ad275dcde00627cc32bb6589f1f8f533\u0022",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=28603",
+      "ETag": "W/\u0022abf2f884fec4125fc1ae37bf7967de4f\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

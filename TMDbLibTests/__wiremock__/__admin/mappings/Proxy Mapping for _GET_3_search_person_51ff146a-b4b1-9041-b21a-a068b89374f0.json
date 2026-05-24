@@ -1,6 +1,6 @@
 {
   "Guid": "51ff146a-b4b1-9041-b21a-a068b89374f0",
-  "UpdatedAt": "2025-12-24T18:45:16.0555496Z",
+  "UpdatedAt": "2026-05-24T16:19:42.632207Z",
   "Title": "Proxy Mapping for GET /3/search/person",
   "Description": "Proxy Mapping for GET /3/search/person",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -53,12 +66,12 @@
           "known_for_department": "Acting",
           "name": "Bryan Cranston",
           "original_name": "Bryan Cranston",
-          "popularity": 4.7952,
+          "popularity": 7.7796,
           "profile_path": "/npIIZJGSrcJIJ6yHdmbqO6Jzo5I.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+              "backdrop_path": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
               "id": 1396,
               "name": "Breaking Bad",
               "original_name": "Breaking Bad",
@@ -70,22 +83,23 @@
                 18,
                 80
               ],
-              "popularity": 150.5089,
+              "popularity": 240.6403,
               "first_air_date": "2008-01-20",
-              "vote_average": 8.935,
-              "vote_count": 16731,
+              "softcore": false,
+              "vote_average": 8.944,
+              "vote_count": 17770,
               "origin_country": [
                 "US"
               ]
             },
             {
               "adult": false,
-              "backdrop_path": "/oNPoo0xR9CMNYoHX8PIyVJNbQiq.jpg",
+              "backdrop_path": "/goMGTcitprGu7YD6VZS4lUUwzRA.jpg",
               "id": 399174,
               "title": "Isle of Dogs",
               "original_title": "Isle of Dogs",
               "overview": "In the future, an outbreak of canine flu leads the mayor of a Japanese city to banish all dogs to an island used as a garbage dump. The outcasts must soon embark on an epic journey when a 12-year-old boy arrives on the island to find his beloved pet.",
-              "poster_path": "/m2q7oCHyH38y5bUiPWs6BI3T8Di.jpg",
+              "poster_path": "/c0nUX6Q1ZB0P2t1Jo6EeFSVnOGQ.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
@@ -93,15 +107,16 @@
                 35,
                 16
               ],
-              "popularity": 6.0561,
+              "popularity": 7.9121,
               "release_date": "2018-03-23",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.844,
-              "vote_count": 5211
+              "vote_average": 7.8,
+              "vote_count": 5403
             },
             {
               "adult": false,
-              "backdrop_path": "/oeEiUwvqHxWT0XqD3YlViaiJOVD.jpg",
+              "backdrop_path": "/iymDDg4upZWgpbSeiE1JCjsSPBs.jpg",
               "id": 64690,
               "title": "Drive",
               "original_title": "Drive",
@@ -114,11 +129,12 @@
                 53,
                 80
               ],
-              "popularity": 8.6898,
+              "popularity": 10.8021,
               "release_date": "2011-09-15",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.583,
-              "vote_count": 13241
+              "vote_average": 7.584,
+              "vote_count": 13605
             }
           ]
         }
@@ -131,17 +147,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=11248",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=7354",
       "x-memc": "HIT",
-      "x-memc-key": "ddf543f796eccbbc597e2d00e1eba4fc8bef9bff026912b21791502e103320e8",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u0022f6abc247fee8190c162d9140d27bf11f\u0022",
+      "x-memc-key": "2090d3758265d8cb956b2341c681ecc5d88952c788b2bba45cb01d2185ae20c9",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002299d5ea54d0517eaafeebab53843b7ed0\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

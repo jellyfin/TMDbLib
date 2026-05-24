@@ -1,0 +1,535 @@
+{
+  "Guid": "4836bd23-feae-194b-a18c-ba583fbf3ae2",
+  "UpdatedAt": "2026-05-24T16:19:42.953894Z",
+  "Title": "Proxy Mapping for GET /3/movie/1632181/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1632181/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1632181/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1632181,
+      "results": {
+        "AR": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=AR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=BO",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 20
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 20
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/6S6kGNEmB4iSq83FX2zWTz8aLMN.jpg",
+              "provider_id": 1866,
+              "provider_name": "ViX Premium Amazon Channel",
+              "display_priority": 36
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 30
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=CO",
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/6S6kGNEmB4iSq83FX2zWTz8aLMN.jpg",
+              "provider_id": 1866,
+              "provider_name": "ViX Premium Amazon Channel",
+              "display_priority": 37
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 21
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 21
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=DO",
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 29
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 29
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=GT",
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 21
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 21
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 20
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 20
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/6S6kGNEmB4iSq83FX2zWTz8aLMN.jpg",
+              "provider_id": 1866,
+              "provider_name": "ViX Premium Amazon Channel",
+              "display_priority": 40
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=NI",
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=PA",
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 10
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=PE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 11
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=PY",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 20
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=SV",
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 10
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 77
+            },
+            {
+              "logo_path": "/6S6kGNEmB4iSq83FX2zWTz8aLMN.jpg",
+              "provider_id": 1866,
+              "provider_name": "ViX Premium Amazon Channel",
+              "display_priority": 157
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 77
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=UY",
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 12
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/movie/1632181-socias-por-accidente/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 8
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
+              "provider_id": 457,
+              "provider_name": "VIX ",
+              "display_priority": 8
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "ETag": "W/\u002290aed98910dd2d8b97522b09d3a07e04\u0022",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=22126",
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

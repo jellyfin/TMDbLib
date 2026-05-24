@@ -65,7 +65,7 @@ public class KnownForConverterTest : TestBase
     public async Task TestJsonKnownForConverter()
     {
         // Search for a person who is known for both TV and movies
-        var result = await TMDbClient.SearchPersonAsync("Bryan Cranston");
+        var result = await TMDbClient.SearchPersonAsync("Bryan Cranston", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result?.Results);
 
         Assert.NotNull(result.Results);

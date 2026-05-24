@@ -1,6 +1,6 @@
 {
   "Guid": "715ae5d6-8adc-5349-8e96-0a8d5757ee78",
-  "UpdatedAt": "2025-12-24T18:45:22.5994158Z",
+  "UpdatedAt": "2026-05-24T16:19:42.942475Z",
   "Title": "Proxy Mapping for GET /3/tv/1396",
   "Description": "Proxy Mapping for GET /3/tv/1396",
   "Priority": -2000000,
@@ -17,13 +17,26 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "adult": false,
-      "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+      "backdrop_path": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
       "created_by": [
         {
           "id": 66633,
@@ -31,7 +44,7 @@
           "name": "Vince Gilligan",
           "original_name": "Vince Gilligan",
           "gender": 2,
-          "profile_path": "/z3E0DhBg1V1PZVEtS9vfFPzOWYB.jpg"
+          "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
         }
       ],
       "episode_run_time": [],
@@ -59,8 +72,8 @@
         "id": 62161,
         "name": "Felina",
         "overview": "All bad things must come to an end.",
-        "vote_average": 9.3,
-        "vote_count": 262,
+        "vote_average": 9.293,
+        "vote_count": 290,
         "air_date": "2013-09-29",
         "episode_number": 16,
         "episode_type": "finale",
@@ -88,7 +101,7 @@
       "original_language": "en",
       "original_name": "Breaking Bad",
       "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
-      "popularity": 150.5089,
+      "popularity": 240.6403,
       "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
       "production_companies": [
         {
@@ -123,7 +136,7 @@
           "id": 3577,
           "name": "Specials",
           "overview": "",
-          "poster_path": "/40dT79mDEZwXkQiZNBgSaydQFDP.jpg",
+          "poster_path": "/4RaIvSQgHHHPfaI1jFqaMR8UJWM.jpg",
           "season_number": 0,
           "vote_average": 0.0
         },
@@ -165,7 +178,7 @@
           "overview": "Walt and Jesse must cope with the fallout of their previous actions, both personally and professionally. Tension mounts as Walt faces a true standoff with his employer, Gus, with neither side willing or able to back down. Walt must also adjust to a new relationship with Skyler, whom while still reconciling her relationship with Walt, is committed to properly laundering Walt\u2019s money and ensuring her sister Marie and an ailing Hank are financially stable.",
           "poster_path": "/5ewrnKp4TboU4hTLT5cWO350mHj.jpg",
           "season_number": 4,
-          "vote_average": 8.5
+          "vote_average": 8.6
         },
         {
           "air_date": "2012-07-15",
@@ -178,6 +191,7 @@
           "vote_average": 8.9
         }
       ],
+      "softcore": false,
       "spoken_languages": [
         {
           "english_name": "English",
@@ -198,26 +212,22 @@
       "status": "Ended",
       "tagline": "Change the equation.",
       "type": "Scripted",
-      "vote_average": 8.935,
-      "vote_count": 16730
+      "vote_average": 8.944,
+      "vote_count": 17774
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "ETag": "W/\u002294e86698b7208838a4234c93da48124f\u0022",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=4533",
-      "x-memc": "HIT",
-      "x-memc-key": "c9fa9e299cd346b05442206c1065483ff4aded1c14132a334442512b4cecd4f2",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002221def0059a25cbd0da6ab3033e2eae2f\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=23634",
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

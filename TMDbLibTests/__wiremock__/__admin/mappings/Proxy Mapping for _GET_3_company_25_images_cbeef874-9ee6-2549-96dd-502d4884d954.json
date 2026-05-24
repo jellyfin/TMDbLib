@@ -1,0 +1,82 @@
+{
+  "Guid": "cbeef874-9ee6-2549-96dd-502d4884d954",
+  "UpdatedAt": "2026-05-24T16:19:42.659894Z",
+  "Title": "Proxy Mapping for GET /3/company/25/images",
+  "Description": "Proxy Mapping for GET /3/company/25/images",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/company/25/images",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 25,
+      "logos": [
+        {
+          "aspect_ratio": 1.2727272727272727,
+          "file_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+          "height": 33,
+          "id": "5aa13d540e0a2644e7007f57",
+          "file_type": ".svg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 42
+        },
+        {
+          "aspect_ratio": 1.2139303482587065,
+          "file_path": "/nM2MfoMqzJQRiSynsDabOtFKetD.png",
+          "height": 603,
+          "id": "4f71e77219c2954b52000006",
+          "file_type": ".png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 732
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=17072",
+      "x-memc": "HIT",
+      "x-memc-key": "60be54699ab519ec50efdcd31c41c609e6161125b86a5e9f27a1c7684e68c93e",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022ad944cf5cae2d7f14e36ee35572188c5\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}
