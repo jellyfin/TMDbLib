@@ -56,4 +56,16 @@ public enum TvSeasonMethods
     /// </summary>
     [EnumValue("aggregate_credits")]
     CreditsAggregate = 64,
+
+    /// <summary>
+    /// Include watch providers.
+    /// </summary>
+    [EnumValue("watch/providers")]
+    WatchProviders = 128,
+
+    /// <summary>
+    /// Include changes.
+    /// </summary>
+    [EnumValue("changes")]
+    Changes = 256,
 }

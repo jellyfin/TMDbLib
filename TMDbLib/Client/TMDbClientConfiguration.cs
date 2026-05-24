@@ -76,9 +76,9 @@ public partial class TMDbClient
     /// <returns>A timezones object containing timezones grouped by ISO 3166-1 country codes.</returns>
     public async Task<Timezones?> GetTimezonesAsync(CancellationToken cancellationToken = default)
     {
-        var req = _client.Create("timezones/list");
+        var req = _client.Create("configuration/timezones");
 
-        using var resp = await req.Get<List<Dictionary<string, List<string>>>>(cancellationToken).ConfigureAwait(false);
+        using var resp = await req.Get<List<TimezoneEntry>>(cancellationToken).ConfigureAwait(false);
 
         var item = await resp.GetDataObject().ConfigureAwait(false);
 
@@ -92,11 +92,14 @@ public partial class TMDbClient
             List = []
         };
 
-        foreach (var dictionary in item)
+        foreach (var entry in item)
         {
-            var item1 = dictionary.First();
+            if (string.IsNullOrEmpty(entry.Iso_3166_1))
+            {
+                continue;
+            }
 
-            result.List[item1.Key] = item1.Value ?? [];
+            result.List[entry.Iso_3166_1!] = entry.Zones ?? [];
         }
 
         return result;

@@ -34,7 +34,11 @@ public partial class TMDbClient
 
         if (!string.IsNullOrWhiteSpace(includeImageLanguage))
         {
-            req.AddParameter("include_image_language", includeImageLanguage);
+            // Videos endpoint expects `include_video_language`; only images endpoint uses `include_image_language`.
+            var key = tvShowMethod == TvSeasonMethods.Videos
+                ? "include_video_language"
+                : "include_image_language";
+            req.AddParameter(key, includeImageLanguage);
         }
 
         var response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -58,7 +62,6 @@ public partial class TMDbClient
         var req = _client.Create("tv/{id}/season/{season_number}/account_states");
         req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
-        req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
         AddSessionId(req, SessionType.UserSession);
 
         using var response = await req.Get<ResultContainer<TvEpisodeAccountStateWithNumber>>(cancellationToken).ConfigureAwait(false);

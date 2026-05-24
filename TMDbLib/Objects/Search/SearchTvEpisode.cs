@@ -27,7 +27,13 @@ public class SearchTvEpisode : SearchBase
     /// Gets or sets the episode number.
     /// </summary>
     [JsonProperty("episode_number")]
-    public long EpisodeNumber { get; set; }
+    public int EpisodeNumber { get; set; }
+
+    /// <summary>
+    /// Gets or sets the type of the episode (e.g. standard, finale).
+    /// </summary>
+    [JsonProperty("episode_type")]
+    public string? EpisodeType { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the episode.
@@ -46,6 +52,12 @@ public class SearchTvEpisode : SearchBase
     /// </summary>
     [JsonProperty("production_code")]
     public string? ProductionCode { get; set; }
+
+    /// <summary>
+    /// Gets or sets the runtime in minutes.
+    /// </summary>
+    [JsonProperty("runtime")]
+    public int? Runtime { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.

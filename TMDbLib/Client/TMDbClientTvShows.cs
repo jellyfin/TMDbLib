@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.TvShows;
@@ -283,6 +284,19 @@ public partial class TMDbClient
     public async Task<ResultContainer<Keyword>?> GetTvShowKeywordsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ResultContainer<Keyword>>(id, TvShowMethods.Keywords, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Retrieves the public lists that contain the given TV show.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <param name="language">Language to localize the results in.</param>
+    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <returns>A search container with lists that include this TV show.</returns>
+    public async Task<SearchContainerWithId<ListResult>?> GetTvShowListsAsync(int id, int page = 0, string? language = null, CancellationToken cancellationToken = default)
+    {
+        return await GetTvShowMethodInternal<SearchContainerWithId<ListResult>>(id, TvShowMethods.Lists, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>

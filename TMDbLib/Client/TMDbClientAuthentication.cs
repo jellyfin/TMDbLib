@@ -125,4 +125,55 @@ public partial class TMDbClient
             }
         }
     }
+
+    /// <summary>
+    /// Validates the configured TMDb API key against the v3 authentication endpoint.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>True if the API key is valid; otherwise false.</returns>
+    public async Task<bool> AuthenticationValidateApiKeyAsync(CancellationToken cancellationToken = default)
+    {
+        var request = _client.Create("authentication");
+
+        using var response = await request.Get(cancellationToken).ConfigureAwait(false);
+
+        return response.IsValid;
+    }
+
+    /// <summary>
+    /// Deletes a user session (logs the user out).
+    /// </summary>
+    /// <param name="sessionId">The session ID to invalidate.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>True if the session was successfully deleted; otherwise false.</returns>
+    public async Task<bool> AuthenticationDeleteSessionAsync(string sessionId, CancellationToken cancellationToken = default)
+    {
+        var request = _client.Create("authentication/session");
+        request.SetBody(new { session_id = sessionId });
+
+        using var response = await request.Delete(cancellationToken).ConfigureAwait(false);
+
+        return response.IsValid;
+    }
+
+    /// <summary>
+    /// Converts a v4 access token into a v3 session ID.
+    /// </summary>
+    /// <param name="accessToken">A valid TMDb v4 access token.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A user session object containing the resulting v3 session ID.</returns>
+    public async Task<UserSession?> AuthenticationCreateSessionFromV4Async(string accessToken, CancellationToken cancellationToken = default)
+    {
+        var request = _client.Create("authentication/session/convert/4");
+        request.SetBody(new { access_token = accessToken });
+
+        using var response = await request.Post<UserSession>(cancellationToken).ConfigureAwait(false);
+
+        if (response.StatusCode == HttpStatusCode.Unauthorized)
+        {
+            throw new UnauthorizedAccessException();
+        }
+
+        return await response.GetDataObject().ConfigureAwait(false);
+    }
 }

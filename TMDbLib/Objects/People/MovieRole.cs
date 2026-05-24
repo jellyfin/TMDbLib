@@ -12,7 +12,7 @@ public class MovieRole
     /// Gets or sets a value indicating whether the movie is adult content.
     /// </summary>
     [JsonProperty("adult")]
-    public bool Adult { get; set; } = true;
+    public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the backdrop image path.
@@ -78,7 +78,7 @@ public class MovieRole
     /// Gets or sets a value indicating whether the movie has video content.
     /// </summary>
     [JsonProperty("video")]
-    public bool Video { get; set; } = true;
+    public bool Video { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score.

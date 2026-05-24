@@ -173,7 +173,7 @@ internal class RestRequest
         var req = new HttpRequestMessage(method, builder.Uri);
 
         // Body
-        if (method == HttpMethod.Post && _bodyObj is not null)
+        if ((method == HttpMethod.Post || method == HttpMethod.Delete) && _bodyObj is not null)
         {
             var bodyBytes = _client.Serializer.SerializeToBytes(_bodyObj);
 
