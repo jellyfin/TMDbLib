@@ -3,6 +3,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Objects.Exceptions;
 using TMDbLib.Rest;
 
 namespace TMDbLib.Client;
@@ -38,14 +39,21 @@ public partial class TMDbClient
         var request = _client.Create("authentication/session/new");
         request.AddParameter("request_token", initialRequestToken);
 
-        using RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
-
-        if (response.StatusCode == HttpStatusCode.Unauthorized)
+        try
         {
-            throw new UnauthorizedAccessException();
-        }
+            using RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
 
-        return await response.GetDataObject().ConfigureAwait(false);
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            return await response.GetDataObject().ConfigureAwait(false);
+        }
+        catch (TMDbAuthenticationException ex)
+        {
+            throw new UnauthorizedAccessException(ex.Message, ex);
+        }
     }
 
     /// <summary>
@@ -105,6 +113,10 @@ public partial class TMDbClient
         try
         {
             response = await request.Get(cancellationToken).ConfigureAwait(false);
+        }
+        catch (TMDbAuthenticationException ex)
+        {
+            throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.", ex);
         }
         catch (AggregateException ex)
         {
@@ -167,13 +179,20 @@ public partial class TMDbClient
         var request = _client.Create("authentication/session/convert/4");
         request.SetBody(new { access_token = accessToken });
 
-        using var response = await request.Post<UserSession>(cancellationToken).ConfigureAwait(false);
-
-        if (response.StatusCode == HttpStatusCode.Unauthorized)
+        try
         {
-            throw new UnauthorizedAccessException();
-        }
+            using var response = await request.Post<UserSession>(cancellationToken).ConfigureAwait(false);
 
-        return await response.GetDataObject().ConfigureAwait(false);
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            return await response.GetDataObject().ConfigureAwait(false);
+        }
+        catch (TMDbAuthenticationException ex)
+        {
+            throw new UnauthorizedAccessException(ex.Message, ex);
+        }
     }
 }
