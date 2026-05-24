@@ -258,4 +258,10 @@ public class Movie
     /// </summary>
     [JsonProperty("vote_count")]
     public int VoteCount { get; set; }
+
+    /// <summary>
+    /// Gets or sets the OriginCountry list.
+    /// </summary>
+    [JsonProperty("origin_country")]
+    public List<string>? OriginCountry { get; set; }
 }
