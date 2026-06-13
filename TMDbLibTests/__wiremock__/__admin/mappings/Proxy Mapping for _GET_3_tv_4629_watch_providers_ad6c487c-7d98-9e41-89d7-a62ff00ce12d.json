@@ -1,6 +1,6 @@
 {
   "Guid": "ad6c487c-7d98-9e41-89d7-a62ff00ce12d",
-  "UpdatedAt": "2026-05-24T16:19:43.943005Z",
+  "UpdatedAt": "2026-06-13T13:30:15.580941Z",
   "Title": "Proxy Mapping for GET /3/tv/4629/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/4629/watch/providers",
   "Priority": -2000000,
@@ -78,14 +78,6 @@
         },
         "AR": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=AR",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -105,10 +97,34 @@
               "provider_name": "MGM\u002B Apple TV Channel",
               "display_priority": 39
             }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
           ]
         },
         "AT": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=AT",
+          "ads": [
+            {
+              "logo_path": "/jmR0t1kjzHcyV7raynzMbF87J9d.jpg",
+              "provider_id": 298,
+              "provider_name": "RTL\u002B",
+              "display_priority": 50
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -142,22 +158,6 @@
               "provider_name": "Amazon Video",
               "display_priority": 4
             }
-          ],
-          "ads": [
-            {
-              "logo_path": "/jmR0t1kjzHcyV7raynzMbF87J9d.jpg",
-              "provider_id": 298,
-              "provider_name": "RTL\u002B",
-              "display_priority": 50
-            }
-          ],
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
           ]
         },
         "AU": {
@@ -167,19 +167,19 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 49
+              "display_priority": 50
             },
             {
               "logo_path": "/ny55kYI31jrwSYp2LmCniMCGc03.jpg",
               "provider_id": 588,
               "provider_name": "MGM Amazon Channel",
-              "display_priority": 57
+              "display_priority": 58
             }
           ],
           "buy": [
@@ -187,13 +187,13 @@
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 13
+              "display_priority": 14
             }
           ]
         },
@@ -216,20 +216,20 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=BE",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 33
-            }
-          ],
           "free": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
             }
           ],
           "flatrate": [
@@ -394,6 +394,20 @@
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=CA",
+          "ads": [
+            {
+              "logo_path": "/ss6JfWLwwrIjO1AfEsBy8GYM1EU.jpg",
+              "provider_id": 516,
+              "provider_name": "Noovo",
+              "display_priority": 57
+            },
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 97
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -426,20 +440,6 @@
               "provider_id": 2604,
               "provider_name": "Crave Amazon Channel",
               "display_priority": 140
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/ss6JfWLwwrIjO1AfEsBy8GYM1EU.jpg",
-              "provider_id": 516,
-              "provider_name": "Noovo",
-              "display_priority": 57
-            },
-            {
-              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
-              "provider_id": 300,
-              "provider_name": "Pluto TV",
-              "display_priority": 97
             }
           ]
         },
@@ -486,14 +486,6 @@
         },
         "CL": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=CL",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -519,6 +511,14 @@
               "provider_name": "MGM Plus Amazon Channel",
               "display_priority": 35
             }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
           ]
         },
         "CM": {
@@ -534,14 +534,6 @@
         },
         "CO": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=CO",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -566,6 +558,14 @@
               "provider_id": 2141,
               "provider_name": "MGM Plus Amazon Channel",
               "display_priority": 36
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -618,22 +618,6 @@
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=DE",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/jmR0t1kjzHcyV7raynzMbF87J9d.jpg",
-              "provider_id": 298,
-              "provider_name": "RTL\u002B",
-              "display_priority": 5
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -690,6 +674,22 @@
               "provider_id": 2660,
               "provider_name": "Wow Fiction Amazon Channel",
               "display_priority": 217
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/jmR0t1kjzHcyV7raynzMbF87J9d.jpg",
+              "provider_id": 298,
+              "provider_name": "RTL\u002B",
+              "display_priority": 5
             }
           ]
         },
@@ -762,22 +762,6 @@
         },
         "ES": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=ES",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 32
-            }
-          ],
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -796,6 +780,22 @@
               "provider_id": 2141,
               "provider_name": "MGM Plus Amazon Channel",
               "display_priority": 68
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
             }
           ]
         },
@@ -837,14 +837,6 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=FR",
-          "ads": [
-            {
-              "logo_path": "/tmYzlEKeiWStvXwC1QdpXIASpN4.jpg",
-              "provider_id": 147,
-              "provider_name": "M6\u002B",
-              "display_priority": 10
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -876,7 +868,7 @@
               "logo_path": "/ny55kYI31jrwSYp2LmCniMCGc03.jpg",
               "provider_id": 588,
               "provider_name": "MGM Amazon Channel",
-              "display_priority": 41
+              "display_priority": 40
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -889,6 +881,14 @@
               "provider_id": 193,
               "provider_name": "SFR Play",
               "display_priority": 57
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/tmYzlEKeiWStvXwC1QdpXIASpN4.jpg",
+              "provider_id": 147,
+              "provider_name": "M6\u002B",
+              "display_priority": 10
             }
           ]
         },
@@ -1085,6 +1085,14 @@
         },
         "IE": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1104,32 +1112,35 @@
               "provider_name": "Now TV",
               "display_priority": 10
             }
-          ],
-          "buy": [
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=IL",
+          "flatrate": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 42
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
         "IN": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=IN",
-          "flatrate": [
-            {
-              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
-              "provider_id": 2141,
-              "provider_name": "MGM Plus Amazon Channel",
-              "display_priority": 77
-            }
-          ],
           "free": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg",
+              "provider_id": 2141,
+              "provider_name": "MGM Plus Amazon Channel",
+              "display_priority": 77
             }
           ]
         },
@@ -1157,14 +1168,6 @@
         },
         "IT": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=IT",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1197,6 +1200,14 @@
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 33
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1241,6 +1252,17 @@
         },
         "KE": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=KR",
           "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
@@ -1529,20 +1551,20 @@
         },
         "NL": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=NL",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 34
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ],
           "flatrate": [
@@ -1568,14 +1590,6 @@
         },
         "NO": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=NO",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -1583,10 +1597,26 @@
               "provider_name": "Amazon Video",
               "display_priority": 49
             }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
           ]
         },
         "NZ": {
           "link": "https://www.themoviedb.org/tv/4629-stargate-sg-1/watch?locale=NZ",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1599,14 +1629,6 @@
               "provider_id": 2141,
               "provider_name": "MGM Plus Amazon Channel",
               "display_priority": 36
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 56
             }
           ]
         },
@@ -1691,6 +1713,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1701,7 +1729,7 @@
               "logo_path": "/ny55kYI31jrwSYp2LmCniMCGc03.jpg",
               "provider_id": 588,
               "provider_name": "MGM Amazon Channel",
-              "display_priority": 30
+              "display_priority": 29
             }
           ],
           "buy": [
@@ -1709,7 +1737,7 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 27
+              "display_priority": 26
             }
           ]
         },
@@ -1731,7 +1759,7 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 43
+              "display_priority": 44
             }
           ],
           "flatrate": [
@@ -2047,6 +2075,20 @@
               "display_priority": 35
             }
           ],
+          "ads": [
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 74
+            },
+            {
+              "logo_path": "/gZlCYHPx9a0TRUCEeTvHXBf9ibX.jpg",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 142
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -2113,20 +2155,6 @@
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
               "display_priority": 204
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
-              "provider_id": 300,
-              "provider_name": "Pluto TV",
-              "display_priority": 74
-            },
-            {
-              "logo_path": "/gZlCYHPx9a0TRUCEeTvHXBf9ibX.jpg",
-              "provider_id": 613,
-              "provider_name": "Amazon Prime Video Free with Ads",
-              "display_priority": 142
             }
           ]
         },
@@ -2225,11 +2253,11 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=19581",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "Cache-Control": "public, max-age=19387",
-      "ETag": "W/\u0022c0d087828626e1c9e03bc38784354ccd\u0022",
-      "x-az": "us-east-1a",
+      "ETag": "W/\u0022978334be3e9a5df0e03b949f7007415b\u0022",
+      "x-az": "us-east-1c",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022",

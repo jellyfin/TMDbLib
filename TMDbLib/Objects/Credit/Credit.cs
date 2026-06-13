@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Credit;
@@ -11,42 +11,42 @@ public class Credit
     /// <summary>
     /// Gets or sets the credit type.
     /// </summary>
-    [JsonProperty("credit_type")]
+    [JsonPropertyName("credit_type")]
     public CreditType CreditType { get; set; }
 
     /// <summary>
     /// Gets or sets the crew department.
     /// </summary>
-    [JsonProperty("department")]
+    [JsonPropertyName("department")]
     public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the credit id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the crew job title.
     /// </summary>
-    [JsonProperty("job")]
+    [JsonPropertyName("job")]
     public string? Job { get; set; }
 
     /// <summary>
     /// Gets or sets the media item.
     /// </summary>
-    [JsonProperty("media")]
+    [JsonPropertyName("media")]
     public CreditMedia? Media { get; set; }
 
     /// <summary>
     /// Gets or sets the media type.
     /// </summary>
-    [JsonProperty("media_type")]
+    [JsonPropertyName("media_type")]
     public MediaType MediaType { get; set; }
 
     /// <summary>
     /// Gets or sets the person.
     /// </summary>
-    [JsonProperty("person")]
+    [JsonPropertyName("person")]
     public CreditPerson? Person { get; set; }
 }

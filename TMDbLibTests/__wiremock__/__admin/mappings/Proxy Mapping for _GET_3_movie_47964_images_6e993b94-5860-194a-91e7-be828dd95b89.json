@@ -1,6 +1,6 @@
 {
   "Guid": "6e993b94-5860-194a-91e7-be828dd95b89",
-  "UpdatedAt": "2026-05-24T16:19:43.705254Z",
+  "UpdatedAt": "2026-06-13T13:30:13.938372Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/images",
   "Description": "Proxy Mapping for GET /3/movie/47964/images",
   "Priority": -2000000,
@@ -748,6 +748,16 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 3265
+        },
+        {
+          "aspect_ratio": 2.744,
+          "height": 297,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/hHoQGUsJ2I1tdiiRYLxOlMnLM5t.png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 815
         }
       ],
       "posters": [
@@ -1020,6 +1030,16 @@
           "vote_average": 3.334,
           "vote_count": 1,
           "width": 624
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 1500,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/kD2SqRZFSdFEGzBJ4JBEjtFbBgw.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 1000
         },
         {
           "aspect_ratio": 0.667,
@@ -2107,18 +2127,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "Cache-Control": "public, max-age=570",
+      "Cache-Control": "public, max-age=23407",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u002224e45f9b8fa4b61c5cd009b5f28dae5c\u0022",
       "x-az": "us-east-1c",
-      "ETag": "W/\u002284a72e381c9450827111a82a453f29fd\u0022",
-      "Vary": [
-        "Accept-Encoding",
-        "Origin"
-      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

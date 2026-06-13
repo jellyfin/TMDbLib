@@ -1,6 +1,6 @@
 {
   "Guid": "af8c2ea2-82b0-3849-a515-81793a296b88",
-  "UpdatedAt": "2026-05-24T16:19:43.450288Z",
+  "UpdatedAt": "2026-06-13T13:30:13.734049Z",
   "Title": "Proxy Mapping for GET /3/movie/now_playing",
   "Description": "Proxy Mapping for GET /3/movie/now_playing",
   "Priority": -2000000,
@@ -48,135 +48,90 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "dates": {
-        "maximum": "2026-05-27",
-        "minimum": "2026-04-15"
+        "maximum": "2026-06-17",
+        "minimum": "2026-05-06"
       },
       "page": 1,
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/wMrV8SLne1jHLeYS0lLrA1Tf86P.jpg",
+          "backdrop_path": "/oPsRr7AfNLw6XaPuMpvkWK0bIUA.jpg",
+          "genre_ids": [
+            28,
+            18
+          ],
+          "id": 1057265,
+          "title": "Peddi",
+          "original_language": "te",
+          "original_title": "\u0C2A\u0C46\u0C26\u0C4D\u0C26\u0C3F",
+          "overview": "In 1980s rural Andhra Pradesh, a spirited villager unites his community through sports to defend their pride against a powerful rival.",
+          "popularity": 764.3619,
+          "poster_path": "/kJAJNNBYlbqAcpTDxBNnaILSMTy.jpg",
+          "release_date": "2026-06-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.757,
+          "vote_count": 35
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4k99kV4R1bbbrsnjR205v91Xbin.jpg",
           "genre_ids": [
             27,
-            9648
-          ],
-          "id": 1304313,
-          "title": "Lee Cronin\u0027s The Mummy",
-          "original_language": "en",
-          "original_title": "Lee Cronin\u0027s The Mummy",
-          "overview": "The young daughter of a journalist disappears into the desert without a trace\u2014eight years later, the broken family is shocked when she is returned to them, as what should be a joyful reunion turns into a living nightmare.",
-          "popularity": 710.3831,
-          "poster_path": "/uIb9Tvae5haF0XcQBaPyufmxbb0.jpg",
-          "release_date": "2026-04-15",
-          "softcore": false,
-          "video": false,
-          "vote_average": 8.011,
-          "vote_count": 965
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/qO55CD8tgVL1T4WKn6zYFFiD6lL.jpg",
-          "genre_ids": [
-            28,
-            18,
-            80
-          ],
-          "id": 1439930,
-          "title": "The Punisher: One Last Kill",
-          "original_language": "en",
-          "original_title": "The Punisher: One Last Kill",
-          "overview": "As Frank Castle searches for meaning beyond revenge, an unexpected force pulls him back into the fight.",
-          "popularity": 499.0857,
-          "poster_path": "/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg",
-          "release_date": "2026-05-12",
-          "softcore": false,
-          "video": false,
-          "vote_average": 8.464,
-          "vote_count": 1119
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9Z2uDYXqJrlmePznQQJhL6d92Rq.jpg",
-          "genre_ids": [
-            10751,
-            35,
-            12,
-            14,
-            16
-          ],
-          "id": 1226863,
-          "title": "The Super Mario Galaxy Movie",
-          "original_language": "en",
-          "original_title": "The Super Mario Galaxy Movie",
-          "overview": "Having thwarted Bowser\u0027s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir\u0027s crusade.",
-          "popularity": 397.1744,
-          "poster_path": "/eJGWx219ZcEMVQJhAgMiqo8tYY.jpg",
-          "release_date": "2026-04-01",
-          "softcore": false,
-          "video": false,
-          "vote_average": 7.836,
-          "vote_count": 1650
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/69KkxROnZoJdQAulnY5B7Gx6D7Z.jpg",
-          "genre_ids": [
-            28,
             53
-          ],
-          "id": 1380291,
-          "title": "Tom Clancy\u0027s Jack Ryan: Ghost War",
-          "original_language": "en",
-          "original_title": "Tom Clancy\u0027s Jack Ryan: Ghost War",
-          "overview": "Jack Ryan is reluctantly pulled back into espionage when an international covert mission unravels a deadly conspiracy. Racing against time, he joins CIA allies Mike November \u0026 James Greer and sharp MI6 officer Emma Marlowe to battle a rogue black-ops unit in a high-stakes, deeply personal fight.",
-          "popularity": 458.7113,
-          "poster_path": "/8ehYxUh5MWE41AeE9gkHE8DKzvB.jpg",
-          "release_date": "2026-05-20",
-          "softcore": false,
-          "video": false,
-          "vote_average": 7.195,
-          "vote_count": 208
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/zMwhWailP1WY7sb6AoE6b8ugoy.jpg",
-          "genre_ids": [
-            12,
-            16,
-            10751,
-            14
-          ],
-          "id": 1007757,
-          "title": "Swapped",
-          "original_language": "en",
-          "original_title": "Swapped",
-          "overview": "A small woodland creature and a majestic bird, two natural sworn enemies of the Valley, magically trade places and set off on an adventure of a lifetime to switch back. Their journey soon uncovers a greater threat\u2014one that could endanger not only their species, but the entire valley they call home.",
-          "popularity": 327.5134,
-          "poster_path": "/tHhxWxge06goXU6ZQH1hj7vK8Hd.jpg",
-          "release_date": "2026-05-01",
-          "softcore": false,
-          "video": false,
-          "vote_average": 8.986,
-          "vote_count": 1319
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1pKFDggvtk23zcn1vUcPiKyuHxM.jpg",
-          "genre_ids": [
-            27
           ],
           "id": 1339713,
           "title": "Obsession",
           "original_language": "en",
           "original_title": "Obsession",
           "overview": "After breaking the mysterious \u0022One Wish Willow\u0022 to win his crush\u0027s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
-          "popularity": 257.9027,
-          "poster_path": "/40I66L7QKguTFDPvcLcdiTbAD7I.jpg",
-          "release_date": "2026-04-16",
+          "popularity": 817.0684,
+          "poster_path": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+          "release_date": "2026-05-13",
           "softcore": false,
           "video": false,
           "vote_average": 7.9,
-          "vote_count": 221
+          "vote_count": 713
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l5QgEvlfK6eHPM4YPEk7AArXmh8.jpg",
+          "genre_ids": [
+            10749,
+            35
+          ],
+          "id": 1308553,
+          "title": "Hai Jawani Toh Ishq Hona Hai",
+          "original_language": "hi",
+          "original_title": "\u0939\u0948 \u091C\u0935\u093E\u0928\u0940 \u0924\u094B \u0907\u0936\u094D\u0915 \u0939\u094B\u0928\u093E \u0939\u0948",
+          "overview": "When Jass leaves his marriage over conflicting priorities, a new romance abroad is upended by shocking revelations, forcing him to confront love, loyalty, and the true meaning of commitment.",
+          "popularity": 548.4534,
+          "poster_path": "/vmlJvz6qVzYgei2V74GvnmcuQfW.jpg",
+          "release_date": "2026-06-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.4,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ufSwlnECLoUbBjPrFqEQcWBzHwc.jpg",
+          "genre_ids": [
+            10402,
+            18
+          ],
+          "id": 936075,
+          "title": "Michael",
+          "original_language": "en",
+          "original_title": "Michael",
+          "overview": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world, highlighting both his life off-stage and some of the most iconic performances from his early solo career.",
+          "popularity": 460.9936,
+          "poster_path": "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+          "release_date": "2026-04-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.541,
+          "vote_count": 2009
         },
         {
           "adult": false,
@@ -191,13 +146,217 @@
           "original_language": "en",
           "original_title": "Mortal Kombat II",
           "overview": "The fan favorite champions\u2014now joined by Johnny Cage himself\u2014are pitted against one another in the ultimate, no-holds barred, gory battle to defeat the dark rule of Shao Kahn that threatens the very existence of the Earthrealm and its defenders.",
-          "popularity": 217.9585,
-          "poster_path": "/lIsMeDbwntNXSUVHmWMMRXEZOVc.jpg",
+          "popularity": 439.2321,
+          "poster_path": "/hwRdDFIhaEmpRgoki805YvyyjZf.jpg",
           "release_date": "2026-05-06",
           "softcore": false,
           "video": false,
-          "vote_average": 6.818,
-          "vote_count": 274
+          "vote_average": 8.001,
+          "vote_count": 1097
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6zg7A9ICOthNR2TSXlT51KvXrsA.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 1228710,
+          "title": "The Mandalorian and Grogu",
+          "original_language": "en",
+          "original_title": "The Mandalorian and Grogu",
+          "overview": "The evil Empire has fallen, and Imperial warlords remain scattered throughout the galaxy. As the fledgling New Republic works to protect everything the Rebellion fought for, they have enlisted the help of legendary Mandalorian bounty hunter Din Djarin and his young apprentice Grogu.",
+          "popularity": 323.5333,
+          "poster_path": "/5Vi8dSauVwH1HOsiZceDMbRr1Ca.jpg",
+          "release_date": "2026-05-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.795,
+          "vote_count": 454
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg",
+          "genre_ids": [
+            28,
+            878,
+            53
+          ],
+          "id": 1275779,
+          "title": "Disclosure Day",
+          "original_language": "en",
+          "original_title": "Disclosure Day",
+          "overview": "If you found out we weren\u2019t alone, if someone showed you, proved it to you, would that frighten you?",
+          "popularity": 310.9838,
+          "poster_path": "/3o5YPjDGDTcTDL5ftDA9NwN9dLd.jpg",
+          "release_date": "2026-06-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.144,
+          "vote_count": 174
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1eAuwNBy34kkM3xkl202z4f1NiI.jpg",
+          "genre_ids": [
+            28,
+            14
+          ],
+          "id": 1367220,
+          "title": "Karuppu",
+          "original_language": "ta",
+          "original_title": "\u0B95\u0BB0\u0BC1\u0BAA\u0BCD\u0BAA\u0BC1",
+          "overview": "In a world where justice falters, guardian deity Vettai Karuppu takes the guise of a lawyer to battle a corrupt legal system preying on the powerless.",
+          "popularity": 332.5493,
+          "poster_path": "/4KZXlZ5tTT6ghbW77gS4hSLkCd7.jpg",
+          "release_date": "2026-05-14",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.462,
+          "vote_count": 13
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eQySd26OW7UmCuaeBOL7qy6foMn.jpg",
+          "genre_ids": [
+            28,
+            14,
+            878
+          ],
+          "id": 454639,
+          "title": "Masters of the Universe",
+          "original_language": "en",
+          "original_title": "Masters of the Universe",
+          "overview": "After being separated for 15 years, the Sword of Power leads Prince Adam back to Eternia, where he discovers his home shattered under the fiendish rule of Skeletor. To save his family and his world, Adam must join forces with his closest allies, Teela and Duncan/Man-At-Arms, and embrace his true destiny as He-Man \u2014 the most powerful man in the universe.",
+          "popularity": 293.9049,
+          "poster_path": "/3YMd9Ogae4rDKLWuAZFuse9xhc5.jpg",
+          "release_date": "2026-06-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 184
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xugEpZk9YQ0DIz1aFvH5HGkqpZK.jpg",
+          "genre_ids": [
+            27,
+            9648
+          ],
+          "id": 1304313,
+          "title": "Lee Cronin\u0027s The Mummy",
+          "original_language": "en",
+          "original_title": "Lee Cronin\u0027s The Mummy",
+          "overview": "The young daughter of a journalist disappears into the desert without a trace\u2014eight years later, the broken family is shocked when she is returned to them, as what should be a joyful reunion turns into a living nightmare.",
+          "popularity": 250.2756,
+          "poster_path": "/1q308iixueCU4pFtSYugNOevtNx.jpg",
+          "release_date": "2026-04-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.064,
+          "vote_count": 1779
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ixjsQuOhdx6mKlyeMMzd80WjT6K.jpg",
+          "genre_ids": [
+            10749,
+            35
+          ],
+          "id": 1358005,
+          "title": "Office Romance",
+          "original_language": "en",
+          "original_title": "Office Romance",
+          "overview": "Jackie, President and CEO of Air Cruz, runs a tight ship in her business, including a rigid anti-fraternization policy for all her employees. When a new sexy lawyer begins working for her, that policy becomes very tested.",
+          "popularity": 206.8939,
+          "poster_path": "/1HRUTqEVDmJC4L6tp6zd85MI6uH.jpg",
+          "release_date": "2026-06-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.506,
+          "vote_count": 167
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qcIKxhqGMIj8uujsSoSMZWr8QqU.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1122573,
+          "title": "In the Grey",
+          "original_language": "en",
+          "original_title": "In the Grey",
+          "overview": "A covert team of elite operatives are living in the shadows. When a ruthless despot steals a billion-dollar fortune, they\u0027re sent to take it back\u2014an impossible heist that erupts into a deadly game of strategy, deception and survival.",
+          "popularity": 189.5511,
+          "poster_path": "/dQgIcW6Th08kMRf2HBoYWoFE6OD.jpg",
+          "release_date": "2026-05-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.635,
+          "vote_count": 208
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qO55CD8tgVL1T4WKn6zYFFiD6lL.jpg",
+          "genre_ids": [
+            28,
+            18,
+            80
+          ],
+          "id": 1439930,
+          "title": "The Punisher: One Last Kill",
+          "original_language": "en",
+          "original_title": "The Punisher: One Last Kill",
+          "overview": "As Frank Castle searches for meaning beyond revenge, an unexpected force pulls him back into the fight.",
+          "popularity": 179.3429,
+          "poster_path": "/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg",
+          "release_date": "2026-05-12",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.358,
+          "vote_count": 1568
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aV5YOTVTnO2wYcN2AlNbdgnBYpb.jpg",
+          "genre_ids": [
+            35,
+            53,
+            18
+          ],
+          "id": 1628448,
+          "title": "Maa Behen",
+          "original_language": "hi",
+          "original_title": "\u092E\u093E\u0901 \u092C\u0939\u0928",
+          "overview": "In this dark comedy, a woman calls her estranged daughters in the middle of the night with chilling news \u2014 there\u0027s a dead body in her kitchen.",
+          "popularity": 182.5159,
+          "poster_path": "/rfooTavEjaWh6krAcPpHp1CPj7E.jpg",
+          "release_date": "2026-06-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 7
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xS8tsJ8IvNkzBMu3kq3gZFReh7j.jpg",
+          "genre_ids": [
+            53
+          ],
+          "id": 1293550,
+          "title": "Bandar",
+          "original_language": "hi",
+          "original_title": "\u092C\u0902\u0926\u0930",
+          "overview": "TV star Samar\u0027s life spirals when his ex Gayatri accuses him of rape after he blocks contact with her. Despite his new relationship with Khushi, he faces arrest and encounters a corrupt justice system.",
+          "popularity": 190.5784,
+          "poster_path": "/3TrQUHmnEL2tOYf4KKkXb01BQt2.jpg",
+          "release_date": "2026-06-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 1
         },
         {
           "adult": false,
@@ -212,93 +371,13 @@
           "original_language": "hi",
           "original_title": "\u0927\u0941\u0930\u0902\u0927\u0930: \u0926 \u0930\u093F\u0935\u0947\u0902\u091C",
           "overview": "As rival gangs, corrupt officials and a ruthless Major Iqbal close in, Hamza\u0027s mission for his country spirals into a bloody personal war where the line between patriot and monster disappears in the streets of Lyari.",
-          "popularity": 243.5471,
-          "poster_path": "/ov8vrRLZGoXHpYjSY9Vpv1tHJX7.jpg",
+          "popularity": 161.5366,
+          "poster_path": "/ptTwQES14pr5c3aZvJg56YlYgb1.jpg",
           "release_date": "2026-03-18",
           "softcore": false,
           "video": false,
           "vote_average": 7.3,
-          "vote_count": 86
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/oTE4lNs4PSG5iIWjqaTdCIFJ4Bs.jpg",
-          "genre_ids": [
-            28,
-            53
-          ],
-          "id": 1318447,
-          "title": "Apex",
-          "original_language": "en",
-          "original_title": "Apex",
-          "overview": "A grieving woman pushing her limits on a solo adventure in the Australian wild is ensnared in a twisted game with a cunning killer who thinks she\u0027s prey.",
-          "popularity": 179.6924,
-          "poster_path": "/eTp7gSPkSF3Aw79mNx1NkBP1PZT.jpg",
-          "release_date": "2026-04-24",
-          "softcore": false,
-          "video": false,
-          "vote_average": 6.69,
-          "vote_count": 1188
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/7OedxK0BvSKJ0ZWCPRYADViTBx6.jpg",
-          "genre_ids": [
-            28,
-            12,
-            878
-          ],
-          "id": 1228710,
-          "title": "Star Wars: The Mandalorian and Grogu",
-          "original_language": "en",
-          "original_title": "Star Wars: The Mandalorian and Grogu",
-          "overview": "The evil Empire has fallen, and Imperial warlords remain scattered throughout the galaxy. As the fledgling New Republic works to protect everything the Rebellion fought for, they have enlisted the help of legendary Mandalorian bounty hunter Din Djarin and his young apprentice Grogu.",
-          "popularity": 163.6536,
-          "poster_path": "/5Vi8dSauVwH1HOsiZceDMbRr1Ca.jpg",
-          "release_date": "2026-05-20",
-          "softcore": false,
-          "video": false,
-          "vote_average": 6.637,
-          "vote_count": 146
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/bOy625BjpCskOWnx3tD09MsKVCb.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 1368881,
-          "title": "Ladies First",
-          "original_language": "en",
-          "original_title": "Ladies First",
-          "overview": "An arrogant but charismatic ladies\u0027 man finds his life of money, power and casual flings upended when he wakes up in a parallel world dominated by women.",
-          "popularity": 132.1173,
-          "poster_path": "/kjR56Yv17pbjTVBTMjqepvcus4f.jpg",
-          "release_date": "2026-05-21",
-          "softcore": false,
-          "video": false,
-          "vote_average": 5.4,
-          "vote_count": 61
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hlZGaey4lR9hc4rGxZRAmIEsZOc.jpg",
-          "genre_ids": [
-            28,
-            18
-          ],
-          "id": 1292415,
-          "title": "Beast",
-          "original_language": "en",
-          "original_title": "Beast",
-          "overview": "MMA legend Patton James, now a commercial fisherman, is pulled back into the cage when his brother is in danger. Reuniting with his old coach Sammy, he commits to one final fight in one championship against the brutal champion Xavier Grau.",
-          "popularity": 130.6029,
-          "poster_path": "/7NrvUI3vnW8H3rD7ExKcTL7KRcQ.jpg",
-          "release_date": "2026-04-10",
-          "softcore": false,
-          "video": false,
-          "vote_average": 6.3,
-          "vote_count": 40
+          "vote_count": 114
         },
         {
           "adult": false,
@@ -314,179 +393,91 @@
           "original_language": "zh",
           "original_title": "\u6355\u98CE\u8FFD\u5F71",
           "overview": "Macau Police brings the tracking expert police officer out of retirement to help catch a dangerous group of professional thieves.",
-          "popularity": 128.9398,
+          "popularity": 158.389,
           "poster_path": "/cHKo3m8N1fwvEy2ZEr0xGmmMODV.jpg",
           "release_date": "2025-08-16",
           "softcore": false,
           "video": false,
-          "vote_average": 7.4,
-          "vote_count": 671
+          "vote_average": 7.747,
+          "vote_count": 842
         },
         {
           "adult": false,
-          "backdrop_path": "/eNAFLrd1XAAD4hgdTPjewpzYU4W.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 1320660,
-          "title": "Pati Patni Aur Woh Do",
-          "original_language": "hi",
-          "original_title": "\u092A\u0924\u093F \u092A\u0924\u094D\u0928\u0940 \u0914\u0930 \u0935\u094B \u0926\u094B",
-          "overview": "A seemingly perfect marriage in Prayagraj takes an unexpected turn when one decision leads to a chain of misunderstandings, suspicion, and comedic chaos.",
-          "popularity": 163.8699,
-          "poster_path": "/x0RUPvba4JlCCkyyEZGlQFIFVuF.jpg",
-          "release_date": "2026-05-15",
-          "softcore": false,
-          "video": false,
-          "vote_average": 8.0,
-          "vote_count": 2
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/xBT0oNq6rsTFv4SxG5uGRIEOrq6.jpg",
-          "genre_ids": [
-            10402,
-            18
-          ],
-          "id": 936075,
-          "title": "Michael",
-          "original_language": "en",
-          "original_title": "Michael",
-          "overview": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world, highlighting both his life off-stage and some of the most iconic performances from his early solo career.",
-          "popularity": 121.2725,
-          "poster_path": "/3Qud19bBUrrJAzy0Ilm8gRJlJXP.jpg",
-          "release_date": "2026-04-22",
-          "softcore": false,
-          "video": false,
-          "vote_average": 7.573,
-          "vote_count": 819
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/xA6AM5MvEkieZKlv1Tn3sN23I7i.jpg",
+          "backdrop_path": "/dd31qJxOarrHyGZwYsCzOjobQzP.jpg",
           "genre_ids": [
             28,
-            18,
-            10749
-          ],
-          "id": 1630423,
-          "title": "My Dearest Assassin",
-          "original_language": "th",
-          "original_title": "\u0E40\u0E25\u0E37\u0E2D\u0E14\u0E23\u0E31\u0E01 \u0E19\u0E31\u0E01\u0E06\u0E48\u0E32",
-          "overview": "Hunted for her rare blood type, a caged woman vows to fight alongside the assassin she loves to protect their future when an old enemy resurfaces.",
-          "popularity": 106.2499,
-          "poster_path": "/ul4dQcA68mtSx8J56N5gEcaCCtP.jpg",
-          "release_date": "2026-05-06",
-          "softcore": false,
-          "video": false,
-          "vote_average": 8.627,
-          "vote_count": 197
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tq3h43fZy0H80vzf47MAY7R9Mxo.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751
-          ],
-          "id": 1297842,
-          "title": "GOAT",
-          "original_language": "en",
-          "original_title": "GOAT",
-          "overview": "A small goat with big dreams gets a once-in-a-lifetime shot to join the pros and play roarball, a high-intensity, co-ed, full-contact sport dominated by the fastest, fiercest animals in the world.",
-          "popularity": 118.173,
-          "poster_path": "/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg",
-          "release_date": "2026-02-11",
-          "softcore": false,
-          "video": false,
-          "vote_average": 8.138,
-          "vote_count": 658
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/mHm73HhpvGWfRkXNErcwc15Czrv.jpg",
-          "genre_ids": [
-            80,
-            18,
             53
           ],
-          "id": 1628367,
-          "title": "Kartavya",
-          "original_language": "hi",
-          "original_title": "\u0915\u0930\u094D\u0924\u094D\u0924\u0935\u094D\u092F",
-          "overview": "With his family\u0027s safety at stake and menacing threats closing in, a police officer must decide how far he\u0027ll go to uphold his duty.",
-          "popularity": 115.3451,
-          "poster_path": "/doTwMyAphlDL5Z8WqE3elWWvj8M.jpg",
-          "release_date": "2026-05-15",
+          "id": 1380291,
+          "title": "Tom Clancy\u0027s Jack Ryan: Ghost War",
+          "original_language": "en",
+          "original_title": "Tom Clancy\u0027s Jack Ryan: Ghost War",
+          "overview": "Jack Ryan is reluctantly pulled back into espionage when an international covert mission unravels a deadly conspiracy. Racing against time, he joins CIA allies Mike November \u0026 James Greer and sharp MI6 officer Emma Marlowe to battle a rogue black-ops unit in a high-stakes, deeply personal fight.",
+          "popularity": 150.0464,
+          "poster_path": "/8ehYxUh5MWE41AeE9gkHE8DKzvB.jpg",
+          "release_date": "2026-05-20",
           "softcore": false,
           "video": false,
-          "vote_average": 6.111,
-          "vote_count": 9
+          "vote_average": 7.092,
+          "vote_count": 534
         },
         {
           "adult": false,
-          "backdrop_path": "/9dMp9t0d0nIGhiil8TyqChwiNwA.jpg",
+          "backdrop_path": "/oUozq2XHWifwAVOoS1qHU0qfXqM.jpg",
           "genre_ids": [
-            53,
             27,
-            35
+            9648,
+            878
           ],
-          "id": 1266127,
-          "title": "Ready or Not: Here I Come",
+          "id": 1083381,
+          "title": "Backrooms",
           "original_language": "en",
-          "original_title": "Ready or Not: Here I Come",
-          "overview": "Moments after surviving an all-out attack from the Le Domas family, Grace discovers she\u2019s reached the next level of the nightmarish game \u2014 and this time with her estranged sister Faith at her side. Grace has one chance to survive, keep her sister alive, and claim the High Seat of the Council that controls the world. Four rival families are hunting her for the throne, and whoever wins rules it all.",
-          "popularity": 98.9121,
-          "poster_path": "/13ZcJzSGEqVgDSqsS9U5EkQwPkV.jpg",
-          "release_date": "2026-03-19",
+          "original_title": "Backrooms",
+          "overview": "A strange doorway appears in the basement of a furniture showroom.",
+          "popularity": 138.8373,
+          "poster_path": "/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
+          "release_date": "2026-05-27",
           "softcore": false,
           "video": false,
-          "vote_average": 7.668,
-          "vote_count": 828
+          "vote_average": 6.876,
+          "vote_count": 496
         },
         {
           "adult": false,
-          "backdrop_path": "/bVGHSe47W6oCQL1Q88pvRAet51A.jpg",
+          "backdrop_path": "/n7WeIugzFXXkkCO6ps3GClKvn7V.jpg",
           "genre_ids": [
-            18,
-            9648
+            27
           ],
-          "id": 1330021,
-          "title": "Remarkably Bright Creatures",
+          "id": 1430077,
+          "title": "Hokum",
           "original_language": "en",
-          "original_title": "Remarkably Bright Creatures",
-          "overview": "Through unlikely bonds formed during night shifts at a local aquarium, Tova, an elderly widow, learns of a life-changing discovery that may bring her joy and wonder once again.",
-          "popularity": 96.5828,
-          "poster_path": "/9HcEqn3D4J6b2Z0jK54id9nA0fr.jpg",
-          "release_date": "2026-05-07",
+          "original_title": "Hokum",
+          "overview": "When novelist Ohm Bauman retreats to a remote inn to scatter his parents\u0027 ashes, he is consumed by tales of a witch haunting the honeymoon suite. Disturbing visions and a shocking disappearance forces him to confront dark corners of his past.",
+          "popularity": 132.5827,
+          "poster_path": "/jKPWwsbAM6HKURPYQ1eG8DmKMKn.jpg",
+          "release_date": "2026-04-29",
           "softcore": false,
           "video": false,
-          "vote_average": 8.547,
-          "vote_count": 392
+          "vote_average": 6.671,
+          "vote_count": 214
         }
       ],
-      "total_pages": 310,
-      "total_results": 6193
+      "total_pages": 305,
+      "total_results": 6088
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=21065",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=13032",
-      "x-memc": "HIT",
-      "x-memc-key": "7d6beda3631115f6506708cf2de18fdf8de6c1583f1ab5dfbb560d44504f5d30",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u002279ee3990ef25221b0397ba1243f5f567\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00225f32acc0d58c05f05f63daee40214401\u0022",
+      "x-az": "us-east-1a",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

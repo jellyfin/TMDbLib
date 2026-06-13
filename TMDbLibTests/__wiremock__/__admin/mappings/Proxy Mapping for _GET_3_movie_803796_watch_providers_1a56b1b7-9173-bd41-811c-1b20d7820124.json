@@ -1,6 +1,6 @@
 {
   "Guid": "1a56b1b7-9173-bd41-811c-1b20d7820124",
-  "UpdatedAt": "2026-05-24T16:19:43.121596Z",
+  "UpdatedAt": "2026-06-13T13:30:14.624298Z",
   "Title": "Proxy Mapping for GET /3/movie/803796/watch/providers",
   "Description": "Proxy Mapping for GET /3/movie/803796/watch/providers",
   "Priority": -2000000,
@@ -121,13 +121,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 49
+              "display_priority": 50
             }
           ]
         },
@@ -276,7 +276,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 3
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -1550,18 +1550,16 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=8013",
-      "x-memc": "HIT",
-      "x-memc-key": "c7bafa854f16e8ac1311569672a99e12981233bfccf1adae2887bb68ddec745a",
+      "Cache-Control": "public, max-age=935",
       "x-az": "us-east-1a",
-      "ETag": "W/\u00227f4562e3ac9df43d796b2002d2efbc51\u0022",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u002232dc7866192f6c71c5464ad7f86b2a1f\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "Hit from cloudfront",
+      "X-Cache": "RefreshHit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }

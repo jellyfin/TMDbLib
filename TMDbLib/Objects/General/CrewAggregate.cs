@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.General;
@@ -12,18 +12,18 @@ public class CrewAggregate : TmdbPersonSummary
     /// <summary>
     /// Gets or sets the crew department.
     /// </summary>
-    [JsonProperty("department")]
+    [JsonPropertyName("department")]
     public string? Department { get; set; }
 
     /// <summary>
     /// Gets or sets the jobs performed by the crew member.
     /// </summary>
-    [JsonProperty("jobs")]
+    [JsonPropertyName("jobs")]
     public List<CrewJob>? Jobs { get; set; }
 
     /// <summary>
     /// Gets or sets the total number of episodes the crew member worked on.
     /// </summary>
-    [JsonProperty("total_episode_count")]
+    [JsonPropertyName("total_episode_count")]
     public int TotalEpisodeCount { get; set; }
 }

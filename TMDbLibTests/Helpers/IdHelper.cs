@@ -1,4 +1,4 @@
-﻿namespace TMDbLibTests.Helpers
+namespace TMDbLibTests.Helpers
 {
     /// <summary>
     /// Helper class containing TMDb IDs for use in tests.

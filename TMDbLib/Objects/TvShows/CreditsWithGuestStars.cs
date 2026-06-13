@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -11,6 +11,6 @@ public class CreditsWithGuestStars : Credits
     /// <summary>
     /// Gets or sets the guest stars.
     /// </summary>
-    [JsonProperty("guest_stars")]
+    [JsonPropertyName("guest_stars")]
     public List<Cast>? GuestStars { get; set; }
 }

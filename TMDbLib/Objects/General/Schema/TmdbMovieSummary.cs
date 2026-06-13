@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General.Schema;
 
@@ -20,24 +20,24 @@ public class TmdbMovieSummary : TmdbMediaSummary
     /// <summary>
     /// Gets or sets the original (untranslated) movie title.
     /// </summary>
-    [JsonProperty("original_title")]
+    [JsonPropertyName("original_title")]
     public string? OriginalTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the release date.
     /// </summary>
-    [JsonProperty("release_date")]
+    [JsonPropertyName("release_date")]
     public DateTime? ReleaseDate { get; set; }
 
     /// <summary>
     /// Gets or sets the movie title.
     /// </summary>
-    [JsonProperty("title")]
+    [JsonPropertyName("title")]
     public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the entry is a video release rather than a theatrical movie.
     /// </summary>
-    [JsonProperty("video")]
+    [JsonPropertyName("video")]
     public bool Video { get; set; }
 }

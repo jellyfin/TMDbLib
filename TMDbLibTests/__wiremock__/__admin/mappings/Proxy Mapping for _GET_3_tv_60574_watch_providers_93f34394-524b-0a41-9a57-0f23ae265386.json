@@ -1,6 +1,6 @@
 {
   "Guid": "93f34394-524b-0a41-9a57-0f23ae265386",
-  "UpdatedAt": "2026-05-24T16:19:43.890929Z",
+  "UpdatedAt": "2026-06-13T13:30:15.536658Z",
   "Title": "Proxy Mapping for GET /3/tv/60574/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/60574/watch/providers",
   "Priority": -2000000,
@@ -105,6 +105,14 @@
         },
         "AT": {
           "link": "https://www.themoviedb.org/tv/60574-peaky-blinders/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -120,32 +128,24 @@
               "provider_name": "Amazon Prime Video Free with Ads",
               "display_priority": 55
             }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/60574-peaky-blinders/watch?locale=AU",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            }
-          ],
           "buy": [
             {
               "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
               "provider_id": 436,
               "provider_name": "Fetch TV",
-              "display_priority": 30
+              "display_priority": 31
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             }
           ]
         },
@@ -288,7 +288,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -429,17 +429,6 @@
             }
           ]
         },
-        "DK": {
-          "link": "https://www.themoviedb.org/tv/60574-peaky-blinders/watch?locale=DK",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            }
-          ]
-        },
         "DO": {
           "link": "https://www.themoviedb.org/tv/60574-peaky-blinders/watch?locale=DO",
           "flatrate": [
@@ -542,6 +531,40 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/60574-peaky-blinders/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 87
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 80
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 82
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -579,44 +602,30 @@
               "provider_name": "Premiere Max",
               "display_priority": 82
             }
-          ],
-          "rent": [
-            {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
-              "provider_id": 2286,
-              "provider_name": "VIVA by videofutur",
-              "display_priority": 80
-            },
-            {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
-              "provider_id": 2307,
-              "provider_name": "Premiere Max",
-              "display_priority": 82
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 87
-            }
           ]
         },
         "GB": {
           "link": "https://www.themoviedb.org/tv/60574-peaky-blinders/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -643,26 +652,6 @@
               "provider_id": 38,
               "provider_name": "BBC iPlayer",
               "display_priority": 14
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 17
             }
           ]
         },
@@ -1301,7 +1290,7 @@
               "logo_path": "/mhsYsVY18PVcVh76y2XFrodqbBD.jpg",
               "provider_id": 2658,
               "provider_name": "TVP",
-              "display_priority": 63
+              "display_priority": 62
             }
           ],
           "flatrate": [
@@ -1315,13 +1304,13 @@
               "logo_path": "/3fhcb4cThixkfNpOudnpLcosTCA.jpg",
               "provider_id": 681,
               "provider_name": "Film Total Amazon Channel",
-              "display_priority": 28
+              "display_priority": 27
             },
             {
               "logo_path": "/rZG2UBzS8ysl2kloSbrm9w4Mth2.jpg",
               "provider_id": 2214,
               "provider_name": "CDA Premium",
-              "display_priority": 42
+              "display_priority": 41
             }
           ]
         },
@@ -1708,15 +1697,20 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002249118bee71eebd3ca53918a607144a5f\u0022",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "HIT",
-      "Cache-Control": "public, max-age=21425",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=22429",
+      "x-memc": "HIT",
+      "x-memc-key": "89f267854607bddf1e9ffa614e5ef025",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00224a57a6fde830f153f28ad73f850cd294\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022",
-      "Vary": "Origin"
+      "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }
 }

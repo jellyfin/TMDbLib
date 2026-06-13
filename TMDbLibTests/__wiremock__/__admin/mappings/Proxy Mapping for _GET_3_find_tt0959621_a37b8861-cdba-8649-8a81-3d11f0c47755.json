@@ -1,6 +1,6 @@
 {
   "Guid": "a37b8861-cdba-8649-8a81-3d11f0c47755",
-  "UpdatedAt": "2026-05-24T16:19:42.661229Z",
+  "UpdatedAt": "2026-06-13T13:30:14.408399Z",
   "Title": "Proxy Mapping for GET /3/find/tt0959621",
   "Description": "Proxy Mapping for GET /3/find/tt0959621",
   "Priority": -2000000,
@@ -56,8 +56,8 @@
           "name": "Pilot",
           "overview": "When an unassuming high school chemistry teacher discovers he has a rare form of lung cancer, he decides to team up with a former student and create a top of the line crystal meth in a used RV, to provide for his family once he is gone.",
           "media_type": "tv_episode",
-          "vote_average": 8.479,
-          "vote_count": 508,
+          "vote_average": 8.49,
+          "vote_count": 510,
           "air_date": "2008-01-20",
           "episode_number": 1,
           "episode_type": "standard",
@@ -74,20 +74,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=27604",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=11271",
-      "x-memc": "HIT",
-      "x-memc-key": "3a3fae6599ffe1a8baa08e2c66cc306908fd824a54bc63d197f06ba036bc08ee",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002280c21efd098230fe599ece2d4b35798a\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022c963e7a7c9e1d7d7fc0651d3a3b960af\u0022",
+      "x-az": "us-east-1c",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "Guid": "dfd256b5-2ae8-214d-b73f-eb8e4a03c6c2",
-  "UpdatedAt": "2026-05-24T16:19:42.487189Z",
+  "UpdatedAt": "2026-06-13T13:30:13.573873Z",
   "Title": "Proxy Mapping for GET /3/configuration/primary_translations",
   "Description": "Proxy Mapping for GET /3/configuration/primary_translations",
   "Priority": -2000000,
@@ -184,10 +184,10 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=7373",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "Cache-Control": "public, max-age=1351",
+      "x-az": "us-east-1b",
       "ETag": "W/\u0022f83eef6c174e45d6e90db59c3c50bbfe\u0022",
       "Vary": [
         "Accept-Encoding",

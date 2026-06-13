@@ -1,6 +1,6 @@
 {
   "Guid": "1d6e5aba-7575-de44-b35b-1e5f206bfa30",
-  "UpdatedAt": "2026-05-24T16:19:43.360899Z",
+  "UpdatedAt": "2026-06-13T13:30:14.086222Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/reviews",
   "Description": "Proxy Mapping for GET /3/tv/1396/reviews",
   "Priority": -2000000,
@@ -93,29 +93,38 @@
           "id": "6429b5168de0ae00978d836a",
           "updated_at": "2023-04-03T16:45:23Z",
           "url": "https://www.themoviedb.org/review/6429b5168de0ae00978d836a"
+        },
+        {
+          "author": "mroogway__",
+          "author_details": {
+            "name": "",
+            "username": "mroogway__",
+            "avatar_path": null,
+            "rating": 10.0
+          },
+          "content": "My favorite TV show of all time. Such a timeless masterpiece that never disappoints every rewatch. A MUST WATCH!",
+          "created_at": "2026-05-24T23:04:28Z",
+          "id": "6a1383fc7fb3933370db6053",
+          "updated_at": "2026-05-25T20:23:09Z",
+          "url": "https://www.themoviedb.org/review/6a1383fc7fb3933370db6053"
         }
       ],
       "total_pages": 1,
-      "total_results": 4
+      "total_results": 5
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=20437",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=17190",
-      "x-memc": "HIT",
-      "x-memc-key": "3542da1c00a2bbe223987416ed21bf444695570998a6e8cf86d39a8a199cdaf5",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u002244e43bb611be1fd93b83e955237ce540\u0022",
       "x-az": "us-east-1a",
-      "ETag": "W/\u0022b58cc307785864d0a2b34c8989084755\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

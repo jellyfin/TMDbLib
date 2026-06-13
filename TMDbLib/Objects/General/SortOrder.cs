@@ -1,4 +1,4 @@
-﻿using TMDbLib.Utilities;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.General;
 

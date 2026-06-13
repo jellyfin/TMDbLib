@@ -1,6 +1,6 @@
 {
   "Guid": "f3e9f771-dee9-bf47-9422-364b47973ea6",
-  "UpdatedAt": "2026-05-24T16:19:43.133598Z",
+  "UpdatedAt": "2026-06-13T13:30:14.692516Z",
   "Title": "Proxy Mapping for GET /3/movie/1272837/watch/providers",
   "Description": "Proxy Mapping for GET /3/movie/1272837/watch/providers",
   "Priority": -2000000,
@@ -61,20 +61,20 @@
         },
         "AR": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=AR",
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 35
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 4
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 35
             }
           ]
         },
@@ -88,7 +88,7 @@
               "display_priority": 0
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
@@ -120,7 +120,7 @@
               "display_priority": 18
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
@@ -155,50 +155,50 @@
         },
         "AU": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=AU",
-          "rent": [
-            {
-              "logo_path": "/g2IaWyo6jCY0rIFjb4qgZ0bSmm3.jpg",
-              "provider_id": 2285,
-              "provider_name": "JustWatch TV",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 12
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
-              "provider_id": 436,
-              "provider_name": "Fetch TV",
-              "display_priority": 30
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 13
+              "display_priority": 14
             },
             {
               "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
               "provider_id": 436,
               "provider_name": "Fetch TV",
-              "display_priority": 30
+              "display_priority": 31
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/g2IaWyo6jCY0rIFjb4qgZ0bSmm3.jpg",
+              "provider_id": 2285,
+              "provider_name": "JustWatch TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
             }
           ]
         },
@@ -215,6 +215,14 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -233,14 +241,6 @@
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 33
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
             }
           ],
           "rent": [
@@ -283,16 +283,19 @@
             }
           ]
         },
-        "BO": {
-          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=BO",
+        "BH": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=BH",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 30
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
             }
-          ],
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=BO",
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -300,10 +303,32 @@
               "provider_name": "Apple TV Store",
               "display_priority": 4
             }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
           ]
         },
         "BR": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=BR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 12
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -322,20 +347,6 @@
               "provider_id": 1825,
               "provider_name": "HBO Max Amazon Channel",
               "display_priority": 48
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 12
             }
           ]
         },
@@ -363,18 +374,24 @@
         },
         "CA": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=CA",
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
-              "provider_id": 230,
-              "provider_name": "Crave",
-              "display_priority": 5
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
-              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
-              "provider_id": 2604,
-              "provider_name": "Crave Amazon Channel",
-              "display_priority": 140
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
             }
           ],
           "rent": [
@@ -394,7 +411,7 @@
               "logo_path": "/yFGu4sSzwUMfhwmSsZgez8QhaVl.jpg",
               "provider_id": 331,
               "provider_name": "FlixFling",
-              "display_priority": 28
+              "display_priority": 29
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -409,55 +426,23 @@
               "display_priority": 81
             }
           ],
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
+              "display_priority": 5
             },
             {
-              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
-              "provider_id": 140,
-              "provider_name": "CosmoGo",
-              "display_priority": 18
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 56
+              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
+              "provider_id": 2604,
+              "provider_name": "Crave Amazon Channel",
+              "display_priority": 140
             }
           ]
         },
         "CH": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=CH",
-          "buy": [
-            {
-              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
-              "provider_id": 150,
-              "provider_name": "blue TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 74
-            }
-          ],
           "rent": [
             {
               "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
@@ -478,6 +463,12 @@
               "display_priority": 9
             },
             {
+              "logo_path": "/l5SFTF3l9l1KSgZJM7foAppUenz.jpg",
+              "provider_id": 622,
+              "provider_name": "UPC TV",
+              "display_priority": 31
+            },
+            {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
@@ -490,6 +481,32 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 74
             }
           ]
         },
@@ -573,14 +590,6 @@
         },
         "CR": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=CR",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -588,18 +597,18 @@
               "provider_name": "HBO Max",
               "display_priority": 4
             }
-          ]
-        },
-        "CV": {
-          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=CV",
-          "rent": [
+          ],
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 10
+              "display_priority": 5
             }
-          ],
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=CV",
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -609,6 +618,14 @@
             }
           ],
           "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 10
+            }
+          ],
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -673,20 +690,6 @@
         },
         "DE": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=DE",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 83
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -729,6 +732,20 @@
               "provider_id": 1993,
               "provider_name": "Videoload",
               "display_priority": 104
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 83
             }
           ],
           "rent": [
@@ -854,6 +871,17 @@
             }
           ]
         },
+        "DZ": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
         "EC": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=EC",
           "flatrate": [
@@ -875,6 +903,22 @@
         },
         "EE": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=EE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -882,27 +926,19 @@
               "provider_name": "Netflix",
               "display_priority": 0
             }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            }
           ]
         },
         "EG": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=EG",
-          "rent": [
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 29
+            }
+          ],
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -910,7 +946,7 @@
               "display_priority": 4
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -921,12 +957,18 @@
         },
         "ES": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=ES",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 5
+            },
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 6
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -941,18 +983,12 @@
               "display_priority": 32
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 5
-            },
-            {
-              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
-              "provider_id": 149,
-              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
-              "display_priority": 6
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -1048,44 +1084,6 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=FR",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
-              "provider_id": 58,
-              "provider_name": "Canal VOD",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/umwf1XIMl3VHlkeuZYCUrq5FOoY.jpg",
-              "provider_id": 389,
-              "provider_name": "Sooner",
-              "display_priority": 21
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 37
-            },
-            {
-              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
-              "provider_id": 2601,
-              "provider_name": "Path\u00E9 Home",
-              "display_priority": 56
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -1106,7 +1104,57 @@
               "display_priority": 16
             },
             {
-              "logo_path": "/umwf1XIMl3VHlkeuZYCUrq5FOoY.jpg",
+              "logo_path": "/brt7T1qjJhyKaazaHP2N9r31TRS.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 80
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 82
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/brt7T1qjJhyKaazaHP2N9r31TRS.jpg",
               "provider_id": 389,
               "provider_name": "Sooner",
               "display_priority": 21
@@ -1139,26 +1187,6 @@
         },
         "GB": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=GB",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 17
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -1184,29 +1212,38 @@
               "provider_name": "Sky Store",
               "display_priority": 17
             }
-          ]
-        },
-        "GG": {
-          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=GG",
+          ],
           "rent": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 83
-            }
-          ],
-          "buy": [
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 83
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
             }
           ]
         },
         "GH": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=GH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1216,14 +1253,6 @@
             }
           ],
           "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 12
-            }
-          ],
-          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1245,6 +1274,14 @@
         },
         "GR": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=GR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -1259,14 +1296,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
             }
           ]
         },
@@ -1310,20 +1339,20 @@
               "display_priority": 7
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -1348,7 +1377,7 @@
         },
         "HU": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=HU",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1362,7 +1391,7 @@
               "display_priority": 26
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1393,14 +1422,6 @@
               "display_priority": 7
             }
           ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -1414,11 +1435,19 @@
               "provider_name": "Catchplay",
               "display_priority": 7
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
           ]
         },
         "IE": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=IE",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1444,7 +1473,7 @@
               "display_priority": 42
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1481,20 +1510,20 @@
               "display_priority": 23
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 23
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -1506,14 +1535,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
             }
           ],
           "rent": [
@@ -1535,11 +1556,19 @@
               "provider_name": "Amazon Video",
               "display_priority": 38
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
           ]
         },
         "IS": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=IS",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
@@ -1547,7 +1576,7 @@
               "display_priority": 23
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
@@ -1560,22 +1589,22 @@
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=IT",
           "buy": [
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 4
-            },
-            {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 4
             },
             {
               "logo_path": "/FyDfVwFZGuu2KVv7Kuz4ww7Ra3.jpg",
               "provider_id": 109,
               "provider_name": "Timvision",
-              "display_priority": 13
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -1586,22 +1615,22 @@
           ],
           "rent": [
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 4
-            },
-            {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 4
             },
             {
               "logo_path": "/FyDfVwFZGuu2KVv7Kuz4ww7Ra3.jpg",
               "provider_id": 109,
               "provider_name": "Timvision",
-              "display_priority": 13
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -1622,22 +1651,19 @@
             }
           ]
         },
+        "JO": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
         "JP": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=JP",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
-            }
-          ],
           "rent": [
             {
               "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
@@ -1662,6 +1688,20 @@
               "provider_id": 2683,
               "provider_name": "FOD",
               "display_priority": 80
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
             }
           ]
         },
@@ -1693,6 +1733,17 @@
             }
           ]
         },
+        "KW": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
         "LC": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=LC",
           "flatrate": [
@@ -1717,14 +1768,6 @@
         },
         "LT": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=LT",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1734,6 +1777,14 @@
             }
           ],
           "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1744,14 +1795,6 @@
         },
         "LU": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=LU",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            }
-          ],
           "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -1766,6 +1809,14 @@
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -1793,6 +1844,17 @@
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 4
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
             }
           ]
         },
@@ -1839,14 +1901,6 @@
               "display_priority": 11
             }
           ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 11
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1854,24 +1908,18 @@
               "provider_name": "Netflix",
               "display_priority": 0
             }
-          ]
-        },
-        "MX": {
-          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=MX",
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 11
             }
-          ],
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=MX",
           "flatrate": [
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -1885,16 +1933,30 @@
               "provider_name": "HBO Max Amazon Channel",
               "display_priority": 15
             }
-          ]
-        },
-        "MY": {
-          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=MY",
-          "rent": [
+          ],
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ],
           "buy": [
@@ -1905,12 +1967,12 @@
               "display_priority": 6
             }
           ],
-          "flatrate": [
+          "rent": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             }
           ]
         },
@@ -1924,7 +1986,7 @@
               "display_priority": 0
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1932,7 +1994,7 @@
               "display_priority": 12
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2075,6 +2137,12 @@
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 15
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
             }
           ],
           "rent": [
@@ -2101,11 +2169,31 @@
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 15
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
             }
           ]
         },
         "NZ": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=NZ",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
           "rent": [
             {
               "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
@@ -2131,19 +2219,16 @@
               "provider_name": "Amazon Video",
               "display_priority": 56
             }
-          ],
-          "buy": [
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=OM",
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 56
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
             }
           ]
         },
@@ -2160,14 +2245,6 @@
         },
         "PE": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=PE",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -2175,10 +2252,26 @@
               "provider_name": "HBO Max",
               "display_priority": 7
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
           ]
         },
         "PH": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=PH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -2188,14 +2281,6 @@
             }
           ],
           "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
-          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2228,33 +2313,7 @@
               "logo_path": "/2YCt92ETw8xLXxhkURtMjZnzfKT.jpg",
               "provider_id": 2363,
               "provider_name": "Polsat Box Go",
-              "display_priority": 47
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 27
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 35
-            },
-            {
-              "logo_path": "/4OlZobihZLTpizChDitPeH3PmND.jpg",
-              "provider_id": 2669,
-              "provider_name": "Pilot WP",
-              "display_priority": 64
+              "display_priority": 46
             }
           ],
           "buy": [
@@ -2268,19 +2327,56 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 27
+              "display_priority": 26
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 35
+              "display_priority": 34
             },
             {
               "logo_path": "/4OlZobihZLTpizChDitPeH3PmND.jpg",
               "provider_id": 2669,
               "provider_name": "Pilot WP",
-              "display_priority": 64
+              "display_priority": 63
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/4OlZobihZLTpizChDitPeH3PmND.jpg",
+              "provider_id": 2669,
+              "provider_name": "Pilot WP",
+              "display_priority": 63
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 22
             }
           ]
         },
@@ -2303,7 +2399,7 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 43
+              "display_priority": 44
             }
           ],
           "rent": [
@@ -2323,7 +2419,7 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 43
+              "display_priority": 44
             }
           ]
         },
@@ -2346,9 +2442,20 @@
             }
           ]
         },
+        "QA": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
         "RO": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=RO",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -2362,7 +2469,7 @@
               "display_priority": 34
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -2374,6 +2481,17 @@
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 34
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 27
             }
           ]
         },
@@ -2390,7 +2508,7 @@
         },
         "SE": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=SE",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2422,7 +2540,7 @@
               "display_priority": 38
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2468,7 +2586,7 @@
         },
         "SI": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=SI",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2476,7 +2594,7 @@
               "display_priority": 23
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2550,7 +2668,7 @@
         },
         "TH": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=TH",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2558,7 +2676,7 @@
               "display_priority": 5
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2572,6 +2690,17 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 24
             }
           ]
         },
@@ -2596,12 +2725,12 @@
               "display_priority": 7
             }
           ],
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             },
             {
               "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
@@ -2610,12 +2739,12 @@
               "display_priority": 14
             }
           ],
-          "flatrate": [
+          "rent": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
             },
             {
               "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
@@ -2638,7 +2767,7 @@
         },
         "UA": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=UA",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -2646,7 +2775,7 @@
               "display_priority": 4
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -2700,6 +2829,20 @@
               "display_priority": 35
             }
           ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 154
+            }
+          ],
           "rent": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -2743,20 +2886,6 @@
               "provider_name": "Plex",
               "display_priority": 126
             }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 154
-            }
           ]
         },
         "UY": {
@@ -2781,8 +2910,27 @@
             }
           ]
         },
+        "YE": {
+          "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
+              "provider_id": 1750,
+              "provider_name": "TOD",
+              "display_priority": 23
+            }
+          ]
+        },
         "ZA": {
           "link": "https://www.themoviedb.org/movie/1272837-28-years-later-the-bone-temple/watch?locale=ZA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -2792,14 +2940,6 @@
             }
           ],
           "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 3
-            }
-          ],
-          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2836,11 +2976,11 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=22795",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "Cache-Control": "public, max-age=14222",
-      "ETag": "W/\u0022c99cde031051d82ae99a62114a3efd87\u0022",
-      "x-az": "us-east-1c",
+      "ETag": "W/\u0022e613da85661cd4e3ffccefe16c7c24f2\u0022",
+      "x-az": "us-east-1b",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022",

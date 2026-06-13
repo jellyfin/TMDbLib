@@ -1,6 +1,6 @@
 {
   "Guid": "d7392bc5-7c2d-fa47-92fb-a432c973b963",
-  "UpdatedAt": "2026-05-24T16:19:42.562236Z",
+  "UpdatedAt": "2026-06-13T13:30:13.754013Z",
   "Title": "Proxy Mapping for GET /3/network/213/images",
   "Description": "Proxy Mapping for GET /3/network/213/images",
   "Priority": -2000000,
@@ -65,13 +65,13 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=1901",
       "x-memc": "HIT",
-      "x-memc-key": "84faae8ab4c9a4f7d6951c442ee903a5f7c6a5f69e4f6ddc245439b03616723c",
+      "x-memc-key": "84faae8ab4c9a4f7d6951c442ee903a5",
       "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=18641",
       "ETag": "W/\u0022cc76ba2d269287714edbc98b1440ffff\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
       "X-Cache": "Hit from cloudfront",

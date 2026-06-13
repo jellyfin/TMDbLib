@@ -1,6 +1,6 @@
 {
   "Guid": "b293101d-77c6-3841-aa7e-7be3b3549b0c",
-  "UpdatedAt": "2026-05-24T16:19:43.211392Z",
+  "UpdatedAt": "2026-06-13T13:30:13.486558Z",
   "Title": "Proxy Mapping for GET /3/tv/latest",
   "Description": "Proxy Mapping for GET /3/tv/latest",
   "Priority": -2000000,
@@ -36,63 +36,51 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "adult": false,
-      "backdrop_path": null,
+      "backdrop_path": "/2Mn1cXMoa7Pfqxe8SIfEGA04fbL.jpg",
       "created_by": [],
       "episode_run_time": [],
-      "first_air_date": "",
-      "genres": [
-        {
-          "id": 18,
-          "name": "Drama"
-        }
-      ],
+      "first_air_date": "2008-03-29",
+      "genres": [],
       "homepage": "",
-      "id": 323528,
+      "id": 325395,
       "in_production": true,
-      "languages": [
-        "ko"
-      ],
-      "last_air_date": null,
-      "last_episode_to_air": null,
-      "name": "\uBC31\uB3C4\uC5B4",
+      "languages": [],
+      "last_air_date": "2008-03-29",
+      "last_episode_to_air": {
+        "id": 7383897,
+        "name": "Episode 1",
+        "overview": "",
+        "vote_average": 0.0,
+        "vote_count": 0,
+        "air_date": "2008-03-29",
+        "episode_number": 1,
+        "episode_type": "standard",
+        "production_code": "",
+        "runtime": null,
+        "season_number": 1,
+        "show_id": 325395,
+        "still_path": null
+      },
+      "name": "Przy muzyce po \u015Al\u0105sku",
       "next_episode_to_air": null,
-      "networks": [
-        {
-          "id": 247,
-          "logo_path": "/i9YpTodhXMOAYo0TZrP0UrHeunc.png",
-          "name": "YouTube",
-          "origin_country": ""
-        }
-      ],
+      "networks": [],
       "number_of_episodes": 1,
       "number_of_seasons": 1,
       "origin_country": [
-        "KR"
+        "PL"
       ],
-      "original_language": "ko",
-      "original_name": "\uBC31\uB3C4\uC5B4",
+      "original_language": "pl",
+      "original_name": "Przy muzyce po \u015Al\u0105sku",
       "overview": "",
       "popularity": 0.0,
-      "poster_path": "/fOSPp1q8e3upjFft2CrDCU85YO7.jpg",
-      "production_companies": [
-        {
-          "id": 230376,
-          "logo_path": "/hpGcpSsmhJtRgLlEtgQte88uyC1.png",
-          "name": "SUKFILM",
-          "origin_country": "KR"
-        }
-      ],
-      "production_countries": [
-        {
-          "iso_3166_1": "KR",
-          "name": "South Korea"
-        }
-      ],
+      "poster_path": "/2H8IdlKAhAKT7fZvnNXaGkf0wp2.jpg",
+      "production_companies": [],
+      "production_countries": [],
       "seasons": [
         {
-          "air_date": null,
+          "air_date": "2008-03-29",
           "episode_count": 1,
-          "id": 518344,
+          "id": 522263,
           "name": "Season 1",
           "overview": "",
           "poster_path": null,
@@ -101,16 +89,10 @@
         }
       ],
       "softcore": false,
-      "spoken_languages": [
-        {
-          "english_name": "Korean",
-          "iso_639_1": "ko",
-          "name": "\uD55C\uAD6D\uC5B4/\uC870\uC120\uB9D0"
-        }
-      ],
-      "status": "In Production",
+      "spoken_languages": [],
+      "status": "Returning Series",
       "tagline": "",
-      "type": "Miniseries",
+      "type": "Scripted",
       "vote_average": 0.0,
       "vote_count": 0
     },
@@ -122,9 +104,9 @@
       "X-Gateway-Cache-Status": "MISS",
       "Cache-Control": "public, max-age=0",
       "x-memc": "MISS",
-      "x-memc-key": "5451c9912b0d6936b14e2d06bac42307565a426031725cbd9581bf704399476f",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u002238e6a6057bed0f5cb70a47698a1fb232\u0022",
+      "x-memc-key": "5451c9912b0d6936b14e2d06bac42307",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022035b5bd7e9814921c94c7b5ec0e772b4\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"

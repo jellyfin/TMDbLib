@@ -1,6 +1,6 @@
 {
   "Guid": "465ec52e-5ab3-264c-847e-c48a7541a823",
-  "UpdatedAt": "2026-05-24T16:19:42.754764Z",
+  "UpdatedAt": "2026-06-13T13:30:14.44799Z",
   "Title": "Proxy Mapping for GET /3/company/25/alternative_names",
   "Description": "Proxy Mapping for GET /3/company/25/alternative_names",
   "Priority": -2000000,
@@ -68,19 +68,14 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=24349",
-      "x-memc": "HIT",
-      "x-memc-key": "43905260c9f3adbbe539d504444645f004a9ee55aff7c1f41c091da9c08d9e73",
-      "x-az": "us-east-1c",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=18842",
       "ETag": "W/\u002285c393f25410dcd918c0b0663827a28e\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
+      "x-az": "us-east-1c",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

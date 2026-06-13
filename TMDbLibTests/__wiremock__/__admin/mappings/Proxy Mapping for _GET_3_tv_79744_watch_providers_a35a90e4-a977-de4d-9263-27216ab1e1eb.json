@@ -1,6 +1,6 @@
 {
   "Guid": "a35a90e4-a977-de4d-9263-27216ab1e1eb",
-  "UpdatedAt": "2026-05-24T16:19:44.990072Z",
+  "UpdatedAt": "2026-06-13T13:30:16.768874Z",
   "Title": "Proxy Mapping for GET /3/tv/79744/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/79744/watch/providers",
   "Priority": -2000000,
@@ -120,6 +120,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/4ABGBjAMtRrYUrr0w3QfanuiaoB.jpg",
+              "provider_id": 1889,
+              "provider_name": "Universal\u002B Amazon Channel",
+              "display_priority": 60
             }
           ]
         },
@@ -131,6 +137,26 @@
               "provider_id": 304,
               "provider_name": "Joyn",
               "display_priority": 69
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 13
             }
           ],
           "flatrate": [
@@ -182,36 +208,38 @@
               "provider_name": "Lionsgate\u002B Amazon Channels",
               "display_priority": 158
             }
-          ],
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
-              "provider_id": 20,
-              "provider_name": "maxdome Store",
-              "display_priority": 13
-            }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=AU",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 14
+            }
+          ],
           "ads": [
             {
               "logo_path": "/uU4gqmoX0koF8L5yJSlfaaFd9Tz.jpg",
               "provider_id": 246,
               "provider_name": "7plus",
-              "display_priority": 18
+              "display_priority": 19
             }
           ],
           "flatrate": [
@@ -219,7 +247,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
@@ -231,21 +259,7 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 49
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 12
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 13
+              "display_priority": 50
             }
           ]
         },
@@ -290,14 +304,6 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=BE",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 33
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -310,6 +316,14 @@
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
             }
           ]
         },
@@ -377,14 +391,6 @@
         },
         "BR": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=BR",
-          "ads": [
-            {
-              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
-              "provider_id": 2302,
-              "provider_name": "Mercado Play",
-              "display_priority": 79
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -421,6 +427,14 @@
               "provider_id": 1889,
               "provider_name": "Universal\u002B Amazon Channel",
               "display_priority": 83
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 79
             }
           ]
         },
@@ -471,18 +485,38 @@
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=CA",
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
               "display_priority": 3
+            },
+            {
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
+              "display_priority": 5
             },
             {
               "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
@@ -544,40 +578,10 @@
               "provider_name": "Crave Amazon Channel",
               "display_priority": 140
             }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 56
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/xoFyQOXR3qINRsdnCQyd7jGx8Wo.jpg",
-              "provider_id": 326,
-              "provider_name": "CTV",
-              "display_priority": 43
-            }
           ]
         },
         "CH": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=CH",
-          "buy": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 6
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -603,6 +607,14 @@
               "provider_name": "Sky",
               "display_priority": 7
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
           ]
         },
         "CI": {
@@ -618,14 +630,6 @@
         },
         "CL": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=CL",
-          "ads": [
-            {
-              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
-              "provider_id": 2302,
-              "provider_name": "Mercado Play",
-              "display_priority": 51
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -645,6 +649,14 @@
               "provider_name": "Universal\u002B Amazon Channel",
               "display_priority": 42
             }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 51
+            }
           ]
         },
         "CM": {
@@ -660,6 +672,14 @@
         },
         "CO": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=CO",
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 52
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -678,14 +698,6 @@
               "provider_id": 1889,
               "provider_name": "Universal\u002B Amazon Channel",
               "display_priority": 43
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
-              "provider_id": 2302,
-              "provider_name": "Mercado Play",
-              "display_priority": 52
             }
           ]
         },
@@ -949,14 +961,6 @@
         },
         "ES": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=ES",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 32
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1000,6 +1004,14 @@
               "provider_name": "Lionsgate\u002B Amazon Channels",
               "display_priority": 90
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
+            }
           ]
         },
         "FI": {
@@ -1030,12 +1042,6 @@
               "provider_id": 76,
               "provider_name": "Viaplay",
               "display_priority": 33
-            },
-            {
-              "logo_path": "/wRMEDOZ8iAEEHXIY2VyckvT0K8I.jpg",
-              "provider_id": 2029,
-              "provider_name": "MTV Katsomo",
-              "display_priority": 38
             },
             {
               "logo_path": "/o4OqlMLb3ZjhK7OwR4qvxiZKOXf.jpg",
@@ -1078,6 +1084,14 @@
               "display_priority": 37
             }
           ],
+          "ads": [
+            {
+              "logo_path": "/tmYzlEKeiWStvXwC1QdpXIASpN4.jpg",
+              "provider_id": 147,
+              "provider_name": "M6\u002B",
+              "display_priority": 10
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1098,6 +1112,12 @@
               "display_priority": 7
             },
             {
+              "logo_path": "/8qSG9LtUhBQIWy2Fr6fzeW7gBdd.jpg",
+              "provider_id": 1967,
+              "provider_name": "Molotov TV",
+              "display_priority": 34
+            },
+            {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
@@ -1116,14 +1136,6 @@
               "display_priority": 108
             }
           ],
-          "ads": [
-            {
-              "logo_path": "/tmYzlEKeiWStvXwC1QdpXIASpN4.jpg",
-              "provider_id": 147,
-              "provider_name": "M6\u002B",
-              "display_priority": 10
-            }
-          ],
           "rent": [
             {
               "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
@@ -1135,6 +1147,26 @@
         },
         "GB": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
@@ -1159,26 +1191,6 @@
               "provider_id": 39,
               "provider_name": "Now TV",
               "display_priority": 43
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 17
             }
           ]
         },
@@ -1402,20 +1414,20 @@
         },
         "IN": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=IN",
-          "free": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1449,6 +1461,14 @@
         },
         "IT": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=IT",
+          "ads": [
+            {
+              "logo_path": "/cmURKKdS72Ckr52615xvc2JPsJm.jpg",
+              "provider_id": 222,
+              "provider_name": "Rai Play",
+              "display_priority": 15
+            }
+          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -1475,14 +1495,6 @@
               "provider_id": 2358,
               "provider_name": "Lionsgate\u002B Amazon Channels",
               "display_priority": 99
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/cmURKKdS72Ckr52615xvc2JPsJm.jpg",
-              "provider_id": 222,
-              "provider_name": "Rai Play",
-              "display_priority": 15
             }
           ]
         },
@@ -1533,12 +1545,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
-              "provider_id": 356,
-              "provider_name": "wavve",
-              "display_priority": 4
             },
             {
               "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
@@ -1877,14 +1883,6 @@
         },
         "NL": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=NL",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 34
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1905,16 +1903,18 @@
               "display_priority": 7
             },
             {
-              "logo_path": "/88ssxWDyhabjrwSrbSf87nCDK2y.jpg",
-              "provider_id": 472,
-              "provider_name": "NLZIET",
-              "display_priority": 21
-            },
-            {
               "logo_path": "/o4OqlMLb3ZjhK7OwR4qvxiZKOXf.jpg",
               "provider_id": 2358,
               "provider_name": "Lionsgate\u002B Amazon Channels",
               "display_priority": 77
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
             }
           ]
         },
@@ -1955,6 +1955,14 @@
         },
         "NZ": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=NZ",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -2058,7 +2066,7 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 27
+              "display_priority": 26
             }
           ],
           "flatrate": [
@@ -2108,7 +2116,7 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 43
+              "display_priority": 44
             }
           ]
         },
@@ -2478,14 +2486,6 @@
               "display_priority": 35
             }
           ],
-          "free": [
-            {
-              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
-              "provider_id": 486,
-              "provider_name": "Spectrum On Demand",
-              "display_priority": 121
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
@@ -2515,14 +2515,6 @@
         },
         "UY": {
           "link": "https://www.themoviedb.org/tv/79744-the-rookie/watch?locale=UY",
-          "ads": [
-            {
-              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
-              "provider_id": 2302,
-              "provider_name": "Mercado Play",
-              "display_priority": 34
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -2535,6 +2527,14 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 34
             }
           ]
         },
@@ -2605,10 +2605,10 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "ETag": "W/\u002266a32f09a934b8af8b1f4ba3e6a138bb\u0022",
-      "Cache-Control": "public, max-age=1908",
+      "Cache-Control": "public, max-age=18936",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00223f10254b6faedd536196e032f6299e50\u0022",
       "x-az": "us-east-1c",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",

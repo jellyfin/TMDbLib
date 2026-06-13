@@ -1,6 +1,6 @@
 {
   "Guid": "b37286c7-5224-1f4a-8a87-0025b832a363",
-  "UpdatedAt": "2026-05-24T16:19:42.469719Z",
+  "UpdatedAt": "2026-06-13T13:30:13.315221Z",
   "Title": "Proxy Mapping for GET /3/movie/47964",
   "Description": "Proxy Mapping for GET /3/movie/47964",
   "Priority": -2000000,
@@ -75,7 +75,7 @@
       "original_language": "en",
       "original_title": "A Good Day to Die Hard",
       "overview": "McClane arriva a Mosca per rintracciare il figlio che non vede da tempo, Jack (Jai Courtney), ma rimane stupito quando scopre che lui lavora sotto copertura per proteggere un informatore del governo, Komarov. Con la loro vita appesa a un filo, i McClane sono costretti a superare ogni contrasto per portare al sicuro Komarov e impedire un crimine disastroso nel luogo pi\u00F9 desolato sulla faccia della Terra, Chernobyl.",
-      "popularity": 6.2441,
+      "popularity": 5.0613,
       "poster_path": "/yGot6qzp3pGaqBCaLEY1IayjCLg.jpg",
       "production_companies": [
         {
@@ -159,27 +159,22 @@
       "tagline": "Tale padre. Tale figlio. Stesso inferno.",
       "title": "Die Hard - Un buon giorno per morire",
       "video": false,
-      "vote_average": 5.333,
-      "vote_count": 6744
+      "vote_average": 5.334,
+      "vote_count": 6760
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=20558",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=21901",
-      "x-memc": "HIT",
-      "x-memc-key": "8563164d68140510f809da1a700d1fc840c79cbea90a5b725bb77964814dbac2",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022113418dbf0cdd8c9072ff03443904ade\u0022",
       "x-az": "us-east-1b",
-      "ETag": "W/\u0022aaac4074b57a3a876a6bfa01c8657c1d\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

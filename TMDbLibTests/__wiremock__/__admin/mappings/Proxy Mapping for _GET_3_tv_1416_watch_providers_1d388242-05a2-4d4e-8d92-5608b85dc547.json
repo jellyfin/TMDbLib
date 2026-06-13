@@ -1,6 +1,6 @@
 {
   "Guid": "1d388242-05a2-4d4e-8d92-5608b85dc547",
-  "UpdatedAt": "2026-05-24T16:19:43.553834Z",
+  "UpdatedAt": "2026-06-13T13:30:15.183494Z",
   "Title": "Proxy Mapping for GET /3/tv/1416/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/1416/watch/providers",
   "Priority": -2000000,
@@ -58,14 +58,6 @@
               "display_priority": 69
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -84,6 +76,14 @@
               "provider_id": 20,
               "provider_name": "maxdome Store",
               "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -139,31 +139,11 @@
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
-            },
-            {
-              "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
-              "provider_id": 484,
-              "provider_name": "Claro tv\u002B",
-              "display_priority": 20
             }
           ]
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/1416-grey-s-anatomy/watch?locale=CA",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 56
-            }
-          ],
           "ads": [
             {
               "logo_path": "/xoFyQOXR3qINRsdnCQyd7jGx8Wo.jpg",
@@ -177,7 +157,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 3
             },
             {
               "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
@@ -190,6 +170,20 @@
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
               "display_priority": 93
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
             }
           ]
         },
@@ -275,6 +269,22 @@
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/1416-grey-s-anatomy/watch?locale=DE",
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 11
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -311,22 +321,6 @@
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
               "display_priority": 128
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
-              "provider_id": 304,
-              "provider_name": "Joyn",
-              "display_priority": 10
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
             }
           ]
         },
@@ -393,32 +387,6 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/1416-grey-s-anatomy/watch?locale=FR",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/8qSG9LtUhBQIWy2Fr6fzeW7gBdd.jpg",
-              "provider_id": 1967,
-              "provider_name": "Molotov TV",
-              "display_priority": 34
-            },
-            {
-              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
-              "provider_id": 1754,
-              "provider_name": "TF1\u002B",
-              "display_priority": 51
-            },
-            {
-              "logo_path": "/vo4tm5HBLpctihoSX6bTIG0VB9d.jpg",
-              "provider_id": 193,
-              "provider_name": "SFR Play",
-              "display_priority": 57
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -437,6 +405,26 @@
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 37
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
+              "provider_id": 1754,
+              "provider_name": "TF1\u002B",
+              "display_priority": 51
+            },
+            {
+              "logo_path": "/vo4tm5HBLpctihoSX6bTIG0VB9d.jpg",
+              "provider_id": 193,
+              "provider_name": "SFR Play",
+              "display_priority": 57
             }
           ]
         },
@@ -550,20 +538,20 @@
         },
         "IE": {
           "link": "https://www.themoviedb.org/tv/1416-grey-s-anatomy/watch?locale=IE",
-          "buy": [
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 9
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
             }
           ]
         },
@@ -611,14 +599,6 @@
               "display_priority": 80
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -631,6 +611,14 @@
               "provider_id": 3,
               "provider_name": "Google Play Movies",
               "display_priority": 8
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -680,7 +668,7 @@
         },
         "MY": {
           "link": "https://www.themoviedb.org/tv/1416-grey-s-anatomy/watch?locale=MY",
-          "ads": [
+          "flatrate": [
             {
               "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
               "provider_id": 122,
@@ -688,7 +676,7 @@
               "display_priority": 3
             }
           ],
-          "flatrate": [
+          "ads": [
             {
               "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
               "provider_id": 122,
@@ -782,7 +770,7 @@
               "logo_path": "/mhsYsVY18PVcVh76y2XFrodqbBD.jpg",
               "provider_id": 2658,
               "provider_name": "TVP",
-              "display_priority": 63
+              "display_priority": 62
             }
           ],
           "flatrate": [
@@ -791,12 +779,6 @@
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
-            },
-            {
-              "logo_path": "/2YCt92ETw8xLXxhkURtMjZnzfKT.jpg",
-              "provider_id": 2363,
-              "provider_name": "Polsat Box Go",
-              "display_priority": 47
             }
           ]
         },
@@ -948,14 +930,6 @@
         },
         "US": {
           "link": "https://www.themoviedb.org/tv/1416-grey-s-anatomy/watch?locale=US",
-          "free": [
-            {
-              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
-              "provider_id": 486,
-              "provider_name": "Spectrum On Demand",
-              "display_priority": 121
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -1013,6 +987,14 @@
               "provider_name": "Netflix Standard with Ads",
               "display_priority": 154
             }
+          ],
+          "free": [
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            }
           ]
         },
         "UY": {
@@ -1043,11 +1025,11 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=18785",
+      "Cache-Control": "public, max-age=25431",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "ETag": "W/\u0022a81d030f1b7ab2ad4fbf2c5bce29cf82\u0022",
+      "ETag": "W/\u002207304f20a554c8a08375c92f42016321\u0022",
+      "x-az": "us-east-1b",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022",

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -298,7 +298,8 @@ public partial class TMDbClient
 
         AddSessionId(req);
 
-        req.SetBody(new { value = rating });
+        // Force at least one fractional digit so STJ emits `5.0` rather than `5`, matching the TMDb wire format.
+        req.SetBody(new { value = (decimal)rating + 0.0m });
 
         using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 

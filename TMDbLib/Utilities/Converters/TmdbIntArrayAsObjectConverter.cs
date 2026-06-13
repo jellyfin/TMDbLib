@@ -1,20 +1,16 @@
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
 /// In some cases, TMDb sends a list of integers as an object.
 /// </summary>
-internal class TmdbIntArrayAsObjectConverter : JsonConverter
+internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
 {
-    public override bool CanConvert(Type objectType)
-    {
-        throw new NotSupportedException();
-    }
-
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    public override List<int>? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         // Sometimes the genre_ids is an empty object, instead of an array
         // In these instances, convert it from:
@@ -24,34 +20,33 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter
         //  "genre_ids": []
         //  "genre_ids": [ 1 ]
 
-        if (reader.TokenType == JsonToken.StartArray)
+        if (reader.TokenType == JsonTokenType.Null)
         {
-            return serializer.Deserialize<List<int>>(reader);
+            return null;
         }
 
-        if (reader.TokenType == JsonToken.StartObject)
+        if (reader.TokenType == JsonTokenType.StartArray)
+        {
+            return JsonSerializer.Deserialize<List<int>>(ref reader, options);
+        }
+
+        if (reader.TokenType == JsonTokenType.StartObject)
         {
             reader.Skip();
             return new List<int>();
         }
 
-        if (reader.TokenType == JsonToken.Null)
-        {
-            return null;
-        }
-
         throw new InvalidOperationException("Unable to convert list of integers");
     }
 
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, List<int>? value, JsonSerializerOptions options)
     {
         if (value is null)
         {
-            writer.WriteNull();
+            writer.WriteNullValue();
             return;
         }
 
-        // Pass-through
-        serializer.Serialize(writer, value);
+        JsonSerializer.Serialize(writer, value, options);
     }
 }

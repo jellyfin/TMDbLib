@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using TMDbLib.Objects.TvShows;
+using System.Threading.Tasks;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 

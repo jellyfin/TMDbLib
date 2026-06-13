@@ -1,6 +1,6 @@
 {
   "Guid": "24a9da4d-51d7-3e41-8c5e-4dbd4eed4277",
-  "UpdatedAt": "2026-05-24T16:19:42.902981Z",
+  "UpdatedAt": "2026-06-13T13:30:13.6905Z",
   "Title": "Proxy Mapping for GET /3/person/62/external_ids",
   "Description": "Proxy Mapping for GET /3/person/62/external_ids",
   "Priority": -2000000,
@@ -51,15 +51,13 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=17482",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=13646",
-      "x-memc": "HIT",
-      "x-memc-key": "6cf8b4ac0c6a0e7f8f1146280611da7787903b53a90f5dcdc8274d10fdfdc65c",
-      "x-az": "us-east-1a",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1c",
       "ETag": "W/\u00227f95791cffca474426d9a819f11c59b7\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
       "X-Cache": "Hit from cloudfront",

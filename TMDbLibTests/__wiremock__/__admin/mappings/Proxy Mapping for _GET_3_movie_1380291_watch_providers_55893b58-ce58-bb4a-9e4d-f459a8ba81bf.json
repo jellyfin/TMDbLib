@@ -1,6 +1,6 @@
 {
   "Guid": "55893b58-ce58-bb4a-9e4d-f459a8ba81bf",
-  "UpdatedAt": "2026-05-24T16:19:42.683395Z",
+  "UpdatedAt": "2026-06-13T13:30:13.560343Z",
   "Title": "Proxy Mapping for GET /3/movie/1380291/watch/providers",
   "Description": "Proxy Mapping for GET /3/movie/1380291/watch/providers",
   "Priority": -2000000,
@@ -416,12 +416,6 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
-            },
-            {
-              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
-              "provider_id": 1961,
-              "provider_name": "Allente",
-              "display_priority": 37
             }
           ]
         },
@@ -555,17 +549,6 @@
         },
         "GF": {
           "link": "https://www.themoviedb.org/movie/1380291-tom-clancy-s-jack-ryan-ghost-war/watch?locale=GF",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ]
-        },
-        "GG": {
-          "link": "https://www.themoviedb.org/movie/1380291-tom-clancy-s-jack-ryan-ghost-war/watch?locale=GG",
           "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
@@ -1569,17 +1552,15 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "x-memc": "HIT",
-      "x-memc-key": "cb58f088e6b5d3424c235a5c8929afa36a3421273b313b70c8d2dedb1db628a9",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=0",
-      "ETag": "W/\u0022451a47709c2b4b5171998bd3aa2166fd\u0022",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=25802",
+      "ETag": "W/\u00229d1763086fcc4a80f47e368e3b655344\u0022",
       "Vary": [
         "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
+      "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }

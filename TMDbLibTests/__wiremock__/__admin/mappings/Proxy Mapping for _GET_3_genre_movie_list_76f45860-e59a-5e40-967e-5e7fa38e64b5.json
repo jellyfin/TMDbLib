@@ -1,6 +1,6 @@
 {
   "Guid": "76f45860-e59a-5e40-967e-5e7fa38e64b5",
-  "UpdatedAt": "2026-05-24T16:19:42.423202Z",
+  "UpdatedAt": "2026-06-13T13:30:13.634886Z",
   "Title": "Proxy Mapping for GET /3/genre/movie/list",
   "Description": "Proxy Mapping for GET /3/genre/movie/list",
   "Priority": -2000000,
@@ -118,15 +118,18 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "ETag": "W/\u002298d6f4fb3a0e0c77544a7277f32baebb\u0022",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
       "Cache-Control": "public, max-age=14632",
       "x-az": "us-east-1b",
+      "ETag": "W/\u002298d6f4fb3a0e0c77544a7277f32baebb\u0022",
+      "Vary": [
+        "Accept-Encoding",
+        "Origin"
+      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022",
-      "Vary": "Origin"
+      "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }
 }
