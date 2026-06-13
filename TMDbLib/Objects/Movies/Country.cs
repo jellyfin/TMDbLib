@@ -1,21 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.Movies;
 
 /// <summary>
-/// Represents a country-specific movie release information.
+/// Country-specific movie release information.
 /// </summary>
 public class Country
 {
     /// <summary>
-    /// Gets or sets the certification rating for the movie in this country.
+    /// Gets or sets the certification rating.
     /// </summary>
     [JsonProperty("certification")]
     public string? Certification { get; set; }
 
     /// <summary>
-    /// Gets or sets a country code, e.g. US.
+    /// Gets or sets the release descriptors.
+    /// </summary>
+    [JsonProperty("descriptors")]
+    public List<string>? Descriptors { get; set; }
+
+    /// <summary>
+    /// Gets or sets the country code, e.g. US.
     /// </summary>
     [JsonProperty("iso_3166_1")]
     public string? Iso_3166_1 { get; set; }
@@ -27,7 +34,7 @@ public class Country
     public bool Primary { get; set; }
 
     /// <summary>
-    /// Gets or sets the release date in this country.
+    /// Gets or sets the release date.
     /// </summary>
     [JsonProperty("release_date")]
     public DateTime? ReleaseDate { get; set; }

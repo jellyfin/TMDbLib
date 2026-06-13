@@ -1,6 +1,6 @@
 {
   "Guid": "4172c30e-9432-c040-85c6-437e8cd3aada",
-  "UpdatedAt": "2025-12-24T18:45:19.3057606Z",
+  "UpdatedAt": "2026-05-24T16:19:42.86916Z",
   "Title": "Proxy Mapping for GET /3/tv/airing_today",
   "Description": "Proxy Mapping for GET /3/tv/airing_today",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -38,435 +51,461 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/4fl55dOJ3d5Du1jZMQ3Ut7DyJmu.jpg",
+          "backdrop_path": "/xUC6mdVESvJN2umz8mNxKn89Htf.jpg",
           "genre_ids": [
-            10759,
-            18
-          ],
-          "id": 91555,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "All Elite Wrestling: Dynamite",
-          "overview": "A world-class roster of diverse male and female wrestlers give fans a new wrestling experience for the first time in 20 years.",
-          "popularity": 18.0801,
-          "poster_path": "/gPNWVCp0zrHRmwfovUpUQO44sts.jpg",
-          "first_air_date": "2019-10-02",
-          "name": "All Elite Wrestling: Dynamite",
-          "vote_average": 7.919,
-          "vote_count": 80
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/eAaqNJWPxxzPyJdsKwhIcYp7aHG.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 277052,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u8001\u8205",
-          "overview": "In 1990s China, Er Pang\u2019s uncle, a brilliant Harbin Institute of Technology graduate, embarks on one ambitious venture after another, driven by his boundless curiosity and talent. Despite the many challenges he faces, he finds strength in the unwavering support of family and friends, using his resilience and optimism to realize his dreams.",
-          "popularity": 16.9538,
-          "poster_path": "/q4B85HFCnm7atDt8yeVP1Gbb1b9.jpg",
-          "first_air_date": "2025-12-15",
-          "name": "Uncle",
-          "vote_average": 8.5,
-          "vote_count": 2
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kRDFtW9o2c7pbk1PhjL4ZSIqe0m.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 308290,
-          "origin_country": [
-            "KR"
-          ],
-          "original_language": "ko",
-          "original_name": "\uB7EC\uBE0C: \uD2B8\uB799",
-          "overview": "A romance anthology featuring 10 different love stories, each with its own unique tone and charm. It has an ensemble cast.",
-          "popularity": 14.1702,
-          "poster_path": "/moMLNWOqOi3YeioCOimBV8y4cEQ.jpg",
-          "first_air_date": "2025-12-14",
-          "name": "Love: Track",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/m9vxP7F52vTyFTlMqppxKFOcCPN.jpg",
-          "genre_ids": [],
-          "id": 307423,
-          "origin_country": [
-            "MX"
-          ],
-          "original_language": "en",
-          "original_name": "Dom\u00E9nica Montero",
-          "overview": "A respected and renowned businesswoman and philanthropist, considered one of the most sought-after brides in the country, who is left at the altar on her wedding day. Humiliated, betrayed, and turned into a target of public scrutiny, Dom\u00E9nica decides to flee and take refuge in one of her parents\u2019 old estates. There, marked by pain, she faces new challenges and meets Luis Fernando, the owner of the neighboring estate, who also carries a painful past. Between them, an explosive relationship develops, marked by pride, misunderstandings, and growing attraction, where land disputes intertwine with their shared desire to rebuild, heal, and give new meaning to their lives.",
-          "popularity": 12.6397,
-          "poster_path": "/sxMG0R9HTHvJvyTHYNP9Ij55YxS.jpg",
-          "first_air_date": "2025-12-08",
-          "name": "Dom\u00E9nica Montero",
-          "vote_average": 8.818,
-          "vote_count": 22
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ynd225o8GuCahYGjHtFdEt8Xizm.jpg",
-          "genre_ids": [
-            10766
-          ],
-          "id": 235484,
-          "origin_country": [
-            "ZA"
-          ],
-          "original_language": "af",
-          "original_name": "Suidooster",
-          "overview": "Suidooster is a South African television soap opera produced by Suidooster Films which revolves around a matriarch, her family, friends and the people of Suidooster, a small shopping and business centre in the fictional Cape Town suburb of Ruiterbosch.",
-          "popularity": 12.4612,
-          "poster_path": "/naCgSiacvV685kait6fBvhVhdce.jpg",
-          "first_air_date": "2015-11-16",
-          "name": "Suidooster",
-          "vote_average": 7.2,
-          "vote_count": 23
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hlVfglhjnlCP5tp8hFvTQKQVaMp.jpg",
-          "genre_ids": [
-            10766
-          ],
-          "id": 11890,
-          "origin_country": [
-            "NL"
-          ],
-          "original_language": "nl",
-          "original_name": "Goede Tijden, Slechte Tijden",
-          "overview": "Goede tijden, slechte tijden, also known as GTST, is the longest-running Dutch soap opera,  revolving around the lives of the families Alberts, Sanders, De Jong, Van Houten and Bouwhuis. It all takes place in the fictional town of Meerdijk.",
-          "popularity": 12.3386,
-          "poster_path": "/p1oXgtJ0q0wAcEp3tHA5DpiynxL.jpg",
-          "first_air_date": "1990-10-01",
-          "name": "Goede Tijden, Slechte Tijden",
-          "vote_average": 5.125,
-          "vote_count": 20
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/bsnzAWs9MITfYgsQ8jp1SQ3AyHI.jpg",
-          "genre_ids": [
-            10766,
-            18
-          ],
-          "id": 289996,
-          "origin_country": [
-            "BR"
-          ],
-          "original_language": "pt",
-          "original_name": "Tr\u00EAs Gra\u00E7as",
-          "overview": "Gerluce Maria das Gra\u00E7as is part of a family of single mothers: she is the daughter of L\u00EDgia Maria das Gra\u00E7as and mother of Jo\u00E9lly Maria das Gra\u00E7as. Raised by her mother, who became pregnant as a teenager and was abandoned by her father, Gerluce faces a similar fate with the arrival of her daughter.",
-          "popularity": 12.1253,
-          "poster_path": "/euLl4ntSW4bJE5QnDk90UKGW2Tp.jpg",
-          "first_air_date": "2025-10-20",
-          "name": "Tr\u00EAs Gra\u00E7as",
-          "vote_average": 6.3,
-          "vote_count": 3
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/rALzi6BHoWdXuHjbOhzGjIKfhV4.jpg",
-          "genre_ids": [
+            16,
             35,
-            10764,
-            10767
+            10759
           ],
-          "id": 62974,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "8 Out of 10 Cats Does Countdown",
-          "overview": "Jimmy Carr hosts proceedings as the 8 Out of 10 Cats crew take over the words and numbers quiz.",
-          "popularity": 11.6925,
-          "poster_path": "/184DSdPhc4G9vDyeuiddNPaSzIi.jpg",
-          "first_air_date": "2013-04-12",
-          "name": "8 Out of 10 Cats Does Countdown",
-          "vote_average": 7.3,
-          "vote_count": 94
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/eNjzPQsNNPd8zluKTpv7Axhk8p4.jpg",
-          "genre_ids": [
-            10767
-          ],
-          "id": 1900,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "LIVE with Kelly and Mark",
-          "overview": "A morning talk show with A-list celebrity guests, top-notch performances and one-of-a-kind segments that are unrivaled on daytime television, plus spontaneous, hilarious and unpredictable talk.",
-          "popularity": 11.5634,
-          "poster_path": "/hBkyypWN3EcOzkozatiCm5VeaG.jpg",
-          "first_air_date": "1988-09-05",
-          "name": "LIVE with Kelly and Mark",
-          "vote_average": 5.4,
-          "vote_count": 48
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/65K3llBL0wlW0C3pNaQyjWOdwbp.jpg",
-          "genre_ids": [
-            18,
-            10759,
-            10768
-          ],
-          "id": 302658,
-          "origin_country": [
-            "TR"
-          ],
-          "original_language": "tr",
-          "original_name": "Kurulus: Orhan",
-          "overview": "Kurulu\u015F: Orhan is a Turkish historical drama that follows the life of Orhan Bey, the son of Osman I and the second ruler of the Ottoman Empire. Set in the 14th century, the series portrays Orhan\u2019s transformation from a young warrior into a visionary leader who expands his father\u0027s legacy by conquering key Byzantine cities like Bursa and establishing the foundations of a powerful empire. With political intrigue, epic battles, and complex relationships, the show explores Orhan\u2019s rise amidst internal strife and external threats, continuing the legacy of Kurulu\u015F: Osman with a new generation of characters and high-stakes storytelling.",
-          "popularity": 11.1719,
-          "poster_path": "/1kEgzEvhJmw5eSxuGwn0o1cgHlK.jpg",
-          "first_air_date": "2025-10-29",
-          "name": "Founder: Orhan",
-          "vote_average": 9.5,
-          "vote_count": 2
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kkfqNkGQR5og5sDjJTxTVmI9PW.jpg",
-          "genre_ids": [
-            80,
-            18,
-            10766
-          ],
-          "id": 72879,
-          "origin_country": [
-            "FR"
-          ],
-          "original_language": "fr",
-          "original_name": "Demain nous appartient",
-          "overview": "The story revolves around the people of S\u00E8te, France. Their lives are punctuated by family rivalries, romance and scenes from daily life, but also by plots involving police investigations, secrets and betrayals.",
-          "popularity": 10.5916,
-          "poster_path": "/24rWFf7CeBVwEEmqLYuQexID8I7.jpg",
-          "first_air_date": "2017-07-17",
-          "name": "Tomorrow Is Ours",
-          "vote_average": 6.29,
-          "vote_count": 69
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/3UtKvTXlqLNHoADgkKxdj5QppPN.jpg",
-          "genre_ids": [
-            10764
-          ],
-          "id": 137726,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u6BDB\u96EA\u6C6A",
-          "overview": "Mao Xue Woof is a scene-based reality show variety show with the relationship of original friends as the starting point. The program takes friendship as the link, and takes \u0022Mao Xue Woof\u0027s Home\u0022 as the main shooting scene, telling the real and interesting stories of Mao Bu, Li Xueqin and their friends who meet here every week, tearing apart the status quo of daily life in laughter, showing the rich youth life and spiritual world of young people and recording the real growth. The program is broadcast every week all the year round, bringing companionship and emotional health healing to the hard-working young people in the city.",
-          "popularity": 10.3982,
-          "poster_path": "/kYBvEOxNhD3IfzapT6x1uPnTEFa.jpg",
-          "first_air_date": "2021-11-01",
-          "name": "Mao Xue Woof",
-          "vote_average": 8.8,
-          "vote_count": 5
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/wBu3BErMuZ51H701J8QjmoHdBHr.jpg",
-          "genre_ids": [
-            18,
-            10766
-          ],
-          "id": 116479,
-          "origin_country": [
-            "IN"
-          ],
-          "original_language": "hi",
-          "original_name": "\u0905\u0928\u0941\u092A\u092E\u093E",
-          "overview": "Anupama had to sacrifice a lot to become an ideal wife, daughter-in-law, and mother. After a bitter realisation, she sets out to live on her own terms.",
-          "popularity": 10.3281,
-          "poster_path": "/97iWZDEhpxjM9cnVPLy9Xvlzpik.jpg",
-          "first_air_date": "2020-07-13",
-          "name": "Anupamaa",
-          "vote_average": 4.7,
-          "vote_count": 25
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/cchlQWYrnMPyl1EbjZWCzeAz8l5.jpg",
-          "genre_ids": [
-            18,
-            35
-          ],
-          "id": 36361,
-          "origin_country": [
-            "CZ"
-          ],
-          "original_language": "cs",
-          "original_name": "Ulice",
-          "overview": "Ulice is a Czech soap opera produced and broadcast by Nova. In the Czech language Ulice means street.\n\nThe show describes the lives of the Farsk\u00FD, Jord\u00E1n, Boh\u00E1\u010D, Nikl, and Li\u0161ka families and many other people that live in Prague. Their daily battle against real problems of living in a modern world like divorce, love, betrayal and illness or disease. Ulice often shows crime.",
-          "popularity": 9.8696,
-          "poster_path": "/gFEHva8Csx18hMGJJZ6gi4sFSKR.jpg",
-          "first_air_date": "2005-09-05",
-          "name": "Ulice",
-          "vote_average": 4.6,
-          "vote_count": 33
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/vgeDRVpSUa4Hvovg4C6dgm4dfUW.jpg",
-          "genre_ids": [
-            10766,
-            18
-          ],
-          "id": 112470,
-          "origin_country": [
-            "FR"
-          ],
-          "original_language": "fr",
-          "original_name": "Ici tout commence",
-          "overview": "This television drama series is centered around the prestigious culinary school of renowned chef Auguste Armand. The show follows the lives of students and staff as they navigate the challenges and pressures of the culinary world\u2014delving into their personal and professional lives, revealing secrets, rivalries, and complex relationships.",
-          "popularity": 9.2683,
-          "poster_path": "/x9HeaagUAyyGl1fQ6exQcpELBxP.jpg",
-          "first_air_date": "2020-11-02",
-          "name": "Ici tout commence",
-          "vote_average": 6.8,
-          "vote_count": 90
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/3z4zE7WvIyQYadqxDQ7MCpSRbOG.jpg",
-          "genre_ids": [
-            10766
-          ],
-          "id": 249010,
-          "origin_country": [
-            "ZA"
-          ],
-          "original_language": "af",
-          "original_name": "Kelders van Geheime",
-          "overview": "Kelders van Geheime (Cellars of Secrets) is a South African, Afrikaans-language telenovela based on the wheeling\u0027s and dealings of the community that lives on Soebatskloof (a wine farm in the Cape). The series focuses on three families: the Abrahams, Syster and Marais households. These families will have to stand together, agree (or agree to disagree), and work together to earn their bread and butter \u2013 and a glass of wine.",
-          "popularity": 9.1121,
-          "poster_path": "/r0hqXxOTJ7pTEYQYl7HWrD50ym0.jpg",
-          "first_air_date": "2024-05-06",
-          "name": "Kelders van Geheime",
-          "vote_average": 6.0,
-          "vote_count": 13
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/23AlZs7Teu9Gl4b4EEIQlh0Inb5.jpg",
-          "genre_ids": [
-            10767
-          ],
-          "id": 63706,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "The Last Leg",
-          "overview": "Adam Hills and co-hosts Josh Widdicombe and Alex Brooker provide some offbeat commentary on the significant moments of the past seven days.",
-          "popularity": 8.9008,
-          "poster_path": "/4euDsPzadRhz0m5CZhQlKcgbZGI.jpg",
-          "first_air_date": "2013-01-25",
-          "name": "The Last Leg",
-          "vote_average": 5.654,
-          "vote_count": 26
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/uMVRiXpeqQGu6xKSI4WyNUEke50.jpg",
-          "genre_ids": [
-            10759,
-            18,
-            35
-          ],
-          "id": 121651,
+          "id": 216467,
           "origin_country": [
             "JP"
           ],
           "original_language": "ja",
-          "original_name": "\u30B9\u30BF\u30FC\u30C0\u30E0\u30FB\u30EF\u30FC\u30EB\u30C9\u306E\u30B9\u30BF\u30FC\u30C0\u30E0",
-          "overview": "Stardom World is the VOD network for World Wonder Ring Stardom. WWR Stardom is a Japanese women\u0027s promotion started in 2011 featuring matches of many varieties including high speed octane action, long brutal brawls, and even costume battle royals. In 2019, the promotion was acquired by Bushiroad and has since become one of the top wrestling promotions in Japan.",
-          "popularity": 8.5608,
-          "poster_path": "/zk617qH2L7eWpPL4FvhvDVN8WGz.jpg",
-          "first_air_date": "2011-01-23",
-          "name": "Stardom on Stardom World",
-          "vote_average": 9.5,
-          "vote_count": 2
+          "original_name": "\u591C\u685C\u3055\u3093\u3061\u306E\u5927\u4F5C\u6226",
+          "overview": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret\u2014she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap\u2014marriage! Because in the Yozakura family, family cannot kill family.",
+          "popularity": 38.4973,
+          "poster_path": "/dTtXbR0DenriganfBidZxFLk4Xx.jpg",
+          "first_air_date": "2024-04-07",
+          "softcore": false,
+          "name": "Mission: Yozakura Family",
+          "vote_average": 7.5,
+          "vote_count": 60
         },
         {
           "adult": false,
-          "backdrop_path": "/p0umYdTa7csDT9SkZX8DD52Sy4a.jpg",
+          "backdrop_path": "/xrzle63zw2MduVGmTFeKNXKqUla.jpg",
           "genre_ids": [
-            10764
+            35,
+            18
           ],
-          "id": 2051,
+          "id": 297640,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uC740\uBC00\uD55C \uAC10\uC0AC",
+          "overview": "A romantic comedy about Joo In-ah, a charismatic audit department head with a secret, and Noh Ki-joon, the department\u0027s ace who is suddenly demoted to deal with the company\u0027s scandals.",
+          "popularity": 33.6806,
+          "poster_path": "/5dgTRxtP5g07RSH5LEOl367Fuwi.jpg",
+          "first_air_date": "2026-04-25",
+          "softcore": false,
+          "name": "Filing for Love",
+          "vote_average": 8.5,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ulXewCeBreYuw1fpjpibYQ66RRv.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 72071,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "The Price Is Right",
-          "overview": "\u0022Come on down!\u0022 The Price Is Right features a wide variety of games and contests with the same basic challenge: Guess the prices of everyday (or not-quite-everyday) retail items.\u00A0",
-          "popularity": 8.2158,
-          "poster_path": "/7MSqORrf1RZsmLUTQ2XoEJEtzt5.jpg",
-          "first_air_date": "1972-09-04",
-          "name": "The Price Is Right",
-          "vote_average": 6.3,
-          "vote_count": 90
+          "original_name": "The Chi",
+          "overview": "A relevant, timely and distinctive coming-of-age story following a half dozen interrelated characters in the South Side of Chicago. The story centers on Brandon, an ambitious and confident young man who dreams about opening a restaurant of his own someday, but is conflicted between the promise of a new life and his responsibility to his mother and teenage brother back in the South Side.",
+          "popularity": 31.8805,
+          "poster_path": "/niD8X5pEXpmRUDhSPdDOgI3Gw5Q.jpg",
+          "first_air_date": "2018-01-07",
+          "softcore": false,
+          "name": "The Chi",
+          "vote_average": 7.9,
+          "vote_count": 209
         },
         {
           "adult": false,
-          "backdrop_path": "/aEUfnUIpNTMEDDBuzqp3Ek2yFe6.jpg",
+          "backdrop_path": "/54QqXezmKARpwdnRTzuU68z6kuc.jpg",
+          "genre_ids": [
+            10759,
+            10765,
+            16
+          ],
+          "id": 110181,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u6B66\u795E\u4E3B\u5BB0",
+          "overview": "The protagonist Qin Chen, who was originally the top genius in the military domain, was conspired by the people to fall into the death canyon in the forbidden land of the mainland. Qin Chen, who was inevitably dead, unexpectedly triggered the power of the mysterious ancient sword.\n\nThree hundred years later, in a remote part of the Tianwu mainland, a boy of the same name accidentally inherited Qin Chen\u2019s will. As the beloved grandson of King Dingwu of the Daqi National Army, due to the birth father\u2019s birth, the mother and son were treated coldly in Dingwu\u2019s palace and lived together. In order to rewrite the myth of the strong man in hope of the sun, and to protect everything he loves, Qin Chen resolutely took up the responsibility of maintaining the five kingdoms of the world and set foot on the road of martial arts again.",
+          "popularity": 22.4206,
+          "poster_path": "/tiiDyfu3CXhqJMqD303KjMctNVG.jpg",
+          "first_air_date": "2020-03-07",
+          "softcore": false,
+          "name": "The God of War Dominates",
+          "vote_average": 7.6,
+          "vote_count": 8
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/88pSwy2kARpG8FkxGFQr0qnNjm5.jpg",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 289209,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u5927\u5510\u8FF7\u96FE",
+          "overview": "Disillusioned by Empress Wu\u2019s actions, detective Di Renjie leaves the capital to investigate strange occurrences in Jiangnan. Beneath the empire\u2019s prosperity, he uncovers dark forces and dangerous conspiracies. Using his sharp intellect, Di Renjie must solve mysterious cases where the supernatural and human corruption intertwine.",
+          "popularity": 25.214,
+          "poster_path": "/2Ed5nOzPguk9KCidqar8EOcFV22.jpg",
+          "first_air_date": "2026-05-23",
+          "softcore": false,
+          "name": "The Tang Mist",
+          "vote_average": 9.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4ZXZi107TbfBJFGT4cnqbavQIoc.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 289424,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uBAA8\uB450\uAC00 \uC790\uC2E0\uC758 \uBB34\uAC00\uCE58\uD568\uACFC \uC2F8\uC6B0\uACE0 \uC788\uB2E4",
+          "overview": "An aspiring director hits rock bottom after 20 years chasing his debut \u2014 until he meets an overwhelmed producer who helps him rediscover his self-worth.",
+          "popularity": 24.6042,
+          "poster_path": "/c2jswCrMoqDEBEXwSAlrCWtXdfZ.jpg",
+          "first_air_date": "2026-04-18",
+          "softcore": false,
+          "name": "We Are All Trying Here",
+          "vote_average": 8.6,
+          "vote_count": 16
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qlnDrGpDmvKPQEnpge8yY3XTm0F.jpg",
           "genre_ids": [
             10764
           ],
-          "id": 19956,
+          "id": 13700,
           "origin_country": [
-            "PH"
+            "IN"
           ],
-          "original_language": "tl",
-          "original_name": "Pinoy Big Brother: Celebrity Edition",
-          "overview": "The celebrity edition of the reality game show \u0022Pinoy Big Brother\u0022 features Filipino Celebrity housemates live together, share their stories and build meaningful relationships as they do tasks and challenges supervised by Big Brother. Every week a nomination is done, and the public decides who gets evicted and eventually become the Big Winner of the program.",
-          "popularity": 8.2146,
-          "poster_path": "/aTnlQ8VzDBy6mOnK72ZPogEzD1k.jpg",
-          "first_air_date": "2006-02-05",
-          "name": "Pinoy Big Brother: Celebrity Edition",
-          "vote_average": 10.0,
+          "original_language": "hi",
+          "original_name": "Indian Idol",
+          "overview": "The Indian version of the Pop Idol format.",
+          "popularity": 23.8342,
+          "poster_path": "/jCMw8httzGvjTu0NZjiclqUQD6c.jpg",
+          "first_air_date": "2004-10-28",
+          "softcore": false,
+          "name": "Indian Idol",
+          "vote_average": 5.706,
+          "vote_count": 17
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/68UHE4T9CzlBgI5HuVs5caLeZU7.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 275966,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u5BB6\u4E1A",
+          "overview": "A tribute ink scandal topples the Li family\u2019s long-standing ink business, leaving their legacy in ruins. Years later, Li Zhen, the determined youngest daughter, sets out to restore her family\u0027s name. As she rises in the industry, she joins forces with Luo Wenqian, heir to another fallen clan, to take on a rising rival and face new challenges from foreign markets, fighting to bring Huizhou ink back to its former glory.",
+          "popularity": 21.6704,
+          "poster_path": "/a4mGijfohlzqLFG2ZQz7QQDHUhu.jpg",
+          "first_air_date": "2026-05-17",
+          "softcore": false,
+          "name": "The Heir",
+          "vote_average": 9.0,
           "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cUPmAiNaqcJqqPaALBq5fOhSp7i.jpg",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 281041,
+          "origin_country": [
+            "ES"
+          ],
+          "original_language": "es",
+          "original_name": "La nena",
+          "overview": "Months after the events of The Purple Network, the hunt is not over yet. Following Lucas\u0027s death, Elena Blanco has disappeared. Only Mariajo knows where she is, but she keeps it a secret, even from the rest of the team. The fight against The Network has taken too much of a toll on her, and in a desperate attempt to get her life back on track, she has left the BAC.",
+          "popularity": 19.7405,
+          "poster_path": "/uyUWXnkrdXEdVlnpkHSWtL6D3oS.jpg",
+          "first_air_date": "2026-04-12",
+          "softcore": false,
+          "name": "La nena",
+          "vote_average": 8.8,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vuajwjep1FxphPhMEWKv4bfrCnf.jpg",
+          "genre_ids": [
+            16,
+            35
+          ],
+          "id": 57775,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u3061\u3073\u307E\u308B\u5B50\u3061\u3083\u3093",
+          "overview": "Meet Maruko, a sweet schoolgirl with a hefty dose of curiosity (and occasional laziness!). She sails through life in a cozy town alongside her loving parents, grandparents, and sister. Maruko has a band of loyal friends, including her closest pal, Tama-chan, but her playful and doting grandpa is at the heart of it all. Life is never dull in this charming series.",
+          "popularity": 21.183,
+          "poster_path": "/bfn54AAMuh47IFqeoco0jgeVH1a.jpg",
+          "first_air_date": "1990-01-07",
+          "softcore": false,
+          "name": "Chibi Maruko-chan",
+          "vote_average": 7.8,
+          "vote_count": 24
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/coh0nl5ov1o42fy7f74MDMvme2I.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 211564,
+          "origin_country": [
+            "CA"
+          ],
+          "original_language": "en",
+          "original_name": "Sullivan\u0027s Crossing",
+          "overview": "After Neurosurgeon Maggie Sullivan\u2019s personal and professional life are thrown into turmoil she returns home to Sullivan\u2019s Crossing. While there, Maggie is forced to navigate her complicated present while confronting the painful past she has chosen to ignore for years.",
+          "popularity": 17.3126,
+          "poster_path": "/nYRnuQNR13nEYaXkOZaY0qIWl2K.jpg",
+          "first_air_date": "2023-03-19",
+          "softcore": false,
+          "name": "Sullivan\u0027s Crossing",
+          "vote_average": 8.2,
+          "vote_count": 58
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lwvwHxIzaCj4Af8fQ2p7ukBhnts.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 216487,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u65E0\u9650\u8D85\u8D8A\u73ED",
+          "overview": "\u201CMemories Beyond Horizon\u201D is a Chinese reality TV show , created to spotlight emerging domestic talent in film and TV.  Produced in collaboration with Zhejiang Television, Alibaba\u2019s Youku video service, and Hong Kong\u2019s TVB, the show features veteran film and television figures mentoring a group of 18 artists from both the mainland and Hong Kong. Each episode focuses on reinterpreting iconic scenes from classic Hong Kong films such as \u201CInfernal Affairs\u201D and \u201CNew Dragon Gate Inn\u201D for their acting challenges.\n\nAmong the mentors are renowned Hong Kong directors and actors, including Yee Tung-sing and Francis Ng Chun-yu, while participants include graduates from professional acting schools, industry veterans, and individuals known for modeling, singing, or high-profile relationships.",
+          "popularity": 17.8985,
+          "poster_path": "/bc1MoKzS7UvNKZyPHVQEQwFnbP0.jpg",
+          "first_air_date": "2022-12-17",
+          "softcore": false,
+          "name": "Memories Beyond Horizon",
+          "vote_average": 5.5,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/d4jlYsNCqlO8MPlRj4yLua58Ir0.jpg",
+          "genre_ids": [
+            16,
+            10765,
+            10759
+          ],
+          "id": 236534,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u7267\u795E\u8BB0",
+          "overview": "",
+          "popularity": 17.871,
+          "poster_path": "/k6q3k6lUvjbYdgQyqIGVaY9VlAm.jpg",
+          "first_air_date": "2024-10-27",
+          "softcore": false,
+          "name": "Tales of Herding Gods",
+          "vote_average": 8.2,
+          "vote_count": 12
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nTDL4UmMLDBCeMtYh8F1LZtgmLV.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 259819,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Rooster Fighter",
+          "overview": "Keiji is more than just an ordinary rooster\u2014he\u0027s humanity\u0027s greatest defender! His opponents may be ten stories tall, but nothing is bigger than his stout heart and his fearsome battle cry\u2014Kokekokko!",
+          "popularity": 17.7711,
+          "poster_path": "/iCtbr0sIdaKZjhQH3Wr7hW6A1IU.jpg",
+          "first_air_date": "2026-03-15",
+          "softcore": false,
+          "name": "Rooster Fighter",
+          "vote_average": 8.7,
+          "vote_count": 50
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/i5pSbVLpRKUPfFckfsX0kpHLdWC.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 284110,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u4E3B\u89D2",
+          "overview": "Yi Qin\u0027e is taken to the cultural troupe by her uncle Hu Sanyuan to learn to sing Qinqiang Opera. From then on, her life unfolds with ups and downs. She achieves glorious artistic accomplishments, yet also experiences a profound sense of loneliness beyond ordinary people\u0027s comprehension.",
+          "popularity": 16.1034,
+          "poster_path": "/vnoSyfH40sisQ6jBSap7NB3LD4H.jpg",
+          "first_air_date": "2026-05-10",
+          "softcore": false,
+          "name": "The Lead",
+          "vote_average": 9.2,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iYW7VpKmr7J3VaDb7xaikk89nbm.jpg",
+          "genre_ids": [
+            10767
+          ],
+          "id": 10959,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Later... with Jools Holland",
+          "overview": "Later... with Jools Holland is a contemporary British music television show hosted by Jools Holland.",
+          "popularity": 14.9922,
+          "poster_path": "/d5CQAazlyahqsJlb7WLBvhmHOYE.jpg",
+          "first_air_date": "1992-10-09",
+          "softcore": false,
+          "name": "Later... with Jools Holland",
+          "vote_average": 5.6,
+          "vote_count": 8
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vg4QxGpweriMUGkcXNgjbFDqWFK.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 16395,
+          "origin_country": [
+            "AU"
+          ],
+          "original_language": "en",
+          "original_name": "MasterChef Australia",
+          "overview": "MasterChef Australia is a Logie Award-winning Australian competitive cooking game show based on the original British MasterChef. It is produced by Shine Australia and screens on Network Ten.",
+          "popularity": 14.0828,
+          "poster_path": "/m5akdtbWznF8KpOewKyKw0C36s1.jpg",
+          "first_air_date": "2009-04-27",
+          "softcore": false,
+          "name": "MasterChef Australia",
+          "vote_average": 7.0,
+          "vote_count": 82
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pMCckm5nwNFDXkQDdWukxEqyMSp.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 17380,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Real Housewives of Atlanta",
+          "overview": "Bravo\u0027s cameras turn to the Southern states as the network presents this inside look at the Real Housewives of Atlanta. These women handle the personal dramas that affect their affluent lifestyles with a signature Southern brand of \u201Cstyle\u201D and \u201Cgrace.\u201D",
+          "popularity": 13.6533,
+          "poster_path": "/h5HYOsyc1sJQYjqevaWEaLRjd6E.jpg",
+          "first_air_date": "2008-10-07",
+          "softcore": false,
+          "name": "The Real Housewives of Atlanta",
+          "vote_average": 5.865,
+          "vote_count": 126
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xjg35ysPaaC8tlmlH2tD5J038l3.jpg",
+          "genre_ids": [
+            10764,
+            35
+          ],
+          "id": 114574,
+          "origin_country": [
+            "IN"
+          ],
+          "original_language": "ta",
+          "original_name": "Cooku with Comali",
+          "overview": "Cooku with Comali, also known by the acronym CWC, is an Indian Tamil-language comedy-based cooking competition show aired on Star Vijay and streams on Disney\u002B Hotstar where the contestants are paired each week with comedians (comalis) who are amateur cooks. The first season premiered on 16 November 2019 and ended on 23 February 2020. The second season was premiered on 14 November 2020 and ended on 14 April 2021. The third season was premiered on 22 January 2022 and ended on 24 July 2022. The contestants along with their comalis are challenged every week and judged by Chef Damu and Chef Venkatesh Bhat.",
+          "popularity": 13.2777,
+          "poster_path": "/iuPhRaSQNj1K6fo1g1dVEQx1Q5d.jpg",
+          "first_air_date": "2019-11-16",
+          "softcore": false,
+          "name": "Cooku with Comali",
+          "vote_average": 8.4,
+          "vote_count": 7
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kk2cB8l44jZGTHFpX8oB99bCa75.jpg",
+          "genre_ids": [
+            10759,
+            10765,
+            35,
+            18
+          ],
+          "id": 295434,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u4EEE\u9762\u30E9\u30A4\u30C0\u30FC\u30BC\u30C3\u30C4",
+          "overview": "Baku Yorozu is an an ordinary young man living an uneventful life. But with the power of lucid dreaming, he turns into an unstoppable secret agent. In the dream world, there appears the Nightmare, a monstrous figure bent on bringing bad dreams into the real world. While the line between dream and reality breaks, Baku acquires a mysterious belt, transforming himself into Kamen Rider ZEZTZ! Make your dream come true. Good luck!",
+          "popularity": 13.2121,
+          "poster_path": "/hmx4Oxsg3g1WDA0fffMzMUBh7Y2.jpg",
+          "first_air_date": "2025-09-07",
+          "softcore": false,
+          "name": "Kamen Rider ZEZTZ",
+          "vote_average": 8.7,
+          "vote_count": 10
         }
       ],
-      "total_pages": 12,
-      "total_results": 228
+      "total_pages": 13,
+      "total_results": 259
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=14011",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=15164",
       "x-memc": "HIT",
       "x-memc-key": "e5282d831a7d16c51032b4945a269d5b5a8adc7023a32e58f665d020f24e1051",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u0022562136f3f3abfaa2f001b0dec91578dd\u0022",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00225f1705ebcf4ff79c1e420d4c5480fb06\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

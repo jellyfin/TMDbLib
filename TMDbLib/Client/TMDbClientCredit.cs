@@ -8,23 +8,23 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieves credit information by its unique credit ID.
+    /// Gets credit information by id.
     /// </summary>
-    /// <param name="id">The unique credit ID.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>The credit object with information about the person and their role.</returns>
+    /// <param name="id">The credit id.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The credit details.</returns>
     public async Task<Credit?> GetCreditsAsync(string id, CancellationToken cancellationToken = default)
     {
         return await GetCreditsAsync(id, DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves credit information by its unique credit ID with language option.
+    /// Gets credit information by id in a specific language.
     /// </summary>
-    /// <param name="id">The unique credit ID.</param>
-    /// <param name="language">The ISO 639-1 language code for the credit text. If empty, uses the client's DefaultLanguage.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>The credit object with information about the person and their role.</returns>
+    /// <param name="id">The credit id.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The credit details.</returns>
     public async Task<Credit?> GetCreditsAsync(string id, string? language, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("credit/{id}");

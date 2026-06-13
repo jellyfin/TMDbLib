@@ -1,13 +1,14 @@
 using System;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.Search;
 
 /// <summary>
-/// Represents a TV episode search result.
+/// TV episode search result.
 /// </summary>
-public class SearchTvEpisode : SearchBase
+public class SearchTvEpisode : TmdbEntity
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SearchTvEpisode"/> class.
@@ -18,7 +19,7 @@ public class SearchTvEpisode : SearchBase
     }
 
     /// <summary>
-    /// Gets or sets the air date of the episode.
+    /// Gets or sets the air date.
     /// </summary>
     [JsonProperty("air_date")]
     public DateTime? AirDate { get; set; }
@@ -27,25 +28,37 @@ public class SearchTvEpisode : SearchBase
     /// Gets or sets the episode number.
     /// </summary>
     [JsonProperty("episode_number")]
-    public long EpisodeNumber { get; set; }
+    public int EpisodeNumber { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the episode.
+    /// Gets or sets the episode type (e.g. standard, finale).
+    /// </summary>
+    [JsonProperty("episode_type")]
+    public string? EpisodeType { get; set; }
+
+    /// <summary>
+    /// Gets or sets the episode name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the overview text of the episode.
+    /// Gets or sets the overview.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
-    /// Gets or sets the production code of the episode.
+    /// Gets or sets the production code.
     /// </summary>
     [JsonProperty("production_code")]
     public string? ProductionCode { get; set; }
+
+    /// <summary>
+    /// Gets or sets the runtime in minutes.
+    /// </summary>
+    [JsonProperty("runtime")]
+    public int? Runtime { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.
@@ -54,7 +67,7 @@ public class SearchTvEpisode : SearchBase
     public int SeasonNumber { get; set; }
 
     /// <summary>
-    /// Gets or sets the TV show ID.
+    /// Gets or sets the parent TV show id.
     /// </summary>
     [JsonProperty("show_id")]
     public int ShowId { get; set; }

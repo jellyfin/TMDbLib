@@ -3,12 +3,12 @@
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents basic identifying information for a TV episode.
+/// Basic identifying information for a TV episode.
 /// </summary>
 public class TvEpisodeInfo
 {
     /// <summary>
-    /// Gets or sets the episode ID.
+    /// Gets or sets the episode id.
     /// </summary>
     [JsonProperty("id")]
     public int? Id { get; set; }
@@ -23,5 +23,5 @@ public class TvEpisodeInfo
     /// Gets or sets the episode number.
     /// </summary>
     [JsonProperty("episode_number")]
-    public long EpisodeNumber { get; set; }
+    public int EpisodeNumber { get; set; }
 }

@@ -1,21 +1,28 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents a cast member in a TV show or episode.
+/// Cast member on a TV show or episode.
 /// </summary>
-public class Cast : CastBase
+public class Cast : TmdbPersonSummary, ICastCredit
 {
     /// <summary>
-    /// Gets or sets the character name played by the cast member.
+    /// Gets or sets the character played.
     /// </summary>
     [JsonProperty("character")]
     public string? Character { get; set; }
 
     /// <summary>
-    /// Gets or sets the credit ID.
+    /// Gets or sets the credit id.
     /// </summary>
     [JsonProperty("credit_id")]
     public string? CreditId { get; set; }
+
+    /// <summary>
+    /// Gets or sets the order in the cast list.
+    /// </summary>
+    [JsonProperty("order")]
+    public int? Order { get; set; }
 }

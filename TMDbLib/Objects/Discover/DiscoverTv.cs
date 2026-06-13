@@ -26,7 +26,7 @@ public class DiscoverTv : DiscoverBase<SearchTv>
     }
 
     /// <summary>
-    /// Available options are vote_average.desc, vote_average.asc, first_air_date.desc, first_air_date.asc, popularity.desc, popularity.asc.
+    /// Sets the sort order for the results.
     /// </summary>
     /// <param name="sortBy">The sort option to use.</param>
     /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
@@ -314,7 +314,7 @@ public class DiscoverTv : DiscoverBase<SearchTv>
     /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
     public DiscoverTv WhereKeywordsExclude(IEnumerable<Keyword> keywords)
     {
-        return WhereKeywordsInclude(keywords.Select(s => s.Id));
+        return WhereKeywordsExclude(keywords.Select(s => s.Id));
     }
 
     /// <summary>
@@ -402,6 +402,75 @@ public class DiscoverTv : DiscoverBase<SearchTv>
     public DiscoverTv WhereAnyWatchMonetizationTypesMatch(params WatchMonetizationType[] monetizationTypes)
     {
         Parameters["with_watch_monetization_types"] = string.Join("|", monetizationTypes.Select(s => s.GetDescription()));
+        return this;
+    }
+
+    /// <summary>
+    /// Toggle the inclusion of adult content. By default TMDb excludes it.
+    /// </summary>
+    /// <param name="includeAdult">Whether to include adult content.</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    public DiscoverTv IncludeAdult(bool includeAdult)
+    {
+        Parameters["include_adult"] = includeAdult.ToString().ToLowerInvariant();
+        return this;
+    }
+
+    /// <summary>
+    /// Restrict results to TV shows whose origin country matches the provided ISO 3166-1 code.
+    /// </summary>
+    /// <param name="originCountry">The ISO 3166-1 origin country code (e.g. "US").</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    public DiscoverTv WhereOriginCountryIs(string originCountry)
+    {
+        Parameters["with_origin_country"] = originCountry;
+        return this;
+    }
+
+    /// <summary>
+    /// Restrict results to TV shows with a specific production status.
+    /// </summary>
+    /// <param name="status">A comma-separated list of TMDb status values
+    /// (e.g. "0" for Returning Series, "1" Planned, "2" In Production, "3" Ended, "4" Cancelled, "5" Pilot).</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    public DiscoverTv WhereStatusIs(string status)
+    {
+        Parameters["with_status"] = status;
+        return this;
+    }
+
+    /// <summary>
+    /// Restrict results to TV shows with a specific TMDb type
+    /// (0=Documentary, 1=News, 2=Miniseries, 3=Reality, 4=Scripted, 5=Talk Show, 6=Video).
+    /// </summary>
+    /// <param name="type">A comma-separated list of TMDb type values.</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    public DiscoverTv WhereTypeIs(string type)
+    {
+        Parameters["with_type"] = type;
+        return this;
+    }
+
+    /// <summary>
+    /// Exclude TV shows produced by the specified companies. Comma-separated IDs (AND).
+    /// </summary>
+    /// <param name="companyIds">The company IDs to exclude.</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    public DiscoverTv WhereCompaniesExclude(IEnumerable<int> companyIds)
+    {
+        Parameters["without_companies"] = string.Join(",", companyIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
+        return this;
+    }
+
+    /// <summary>
+    /// Exclude TV shows available on the specified watch providers. Pipe-separated IDs (OR).
+    /// </summary>
+    /// <param name="providerIds">The watch provider IDs to exclude.</param>
+    /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
+    /// <remarks>Use in conjunction with <see cref="WhereWatchRegionIs"/> to specify the region.</remarks>
+    public DiscoverTv ExcludeWatchProviders(IEnumerable<int> providerIds)
+    {
+        Parameters["without_watch_providers"] = string.Join("|", providerIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
         return this;
     }
 }

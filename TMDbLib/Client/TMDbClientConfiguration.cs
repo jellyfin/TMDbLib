@@ -14,9 +14,9 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieves the TMDb API system-wide configuration information.
+    /// Gets the system-wide TMDb API configuration.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The API configuration including image sizes and base URLs.</returns>
     public async Task<APIConfiguration?> GetAPIConfiguration(CancellationToken cancellationToken = default)
     {
@@ -28,13 +28,19 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a list of all countries supported by TMDb.
+    /// Gets the list of supported countries.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A list of countries with ISO 3166-1 codes and English names.</returns>
-    public async Task<List<Country>?> GetCountriesAsync(CancellationToken cancellationToken = default)
+    /// <param name="language">Optional ISO 639-1 language code to localize the <c>native_name</c> field.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The supported countries.</returns>
+    public async Task<List<Country>?> GetCountriesAsync(string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("configuration/countries");
+
+        if (!string.IsNullOrWhiteSpace(language))
+        {
+            req.AddParameter("language", language);
+        }
 
         using var response = await req.Get<List<Country>>(cancellationToken).ConfigureAwait(false);
 
@@ -42,10 +48,10 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a list of all languages supported by TMDb.
+    /// Gets the list of supported languages.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A list of languages with ISO 639-1 codes and English names.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The supported languages.</returns>
     public async Task<List<Language>?> GetLanguagesAsync(CancellationToken cancellationToken = default)
     {
         var req = _client.Create("configuration/languages");
@@ -56,10 +62,10 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a list of primary translation language codes available on TMDb.
+    /// Gets the list of primary translation language codes.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A list of ISO 639-1 language codes for primary translations.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>ISO 639-1 codes for primary translations.</returns>
     public async Task<List<string>?> GetPrimaryTranslationsAsync(CancellationToken cancellationToken = default)
     {
         var req = _client.Create("configuration/primary_translations");
@@ -70,15 +76,15 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a list of timezones organized by country that are used by TMDb.
+    /// Gets the timezones grouped by country.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A timezones object containing timezones grouped by ISO 3166-1 country codes.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>Timezones keyed by ISO 3166-1 country code.</returns>
     public async Task<Timezones?> GetTimezonesAsync(CancellationToken cancellationToken = default)
     {
-        var req = _client.Create("timezones/list");
+        var req = _client.Create("configuration/timezones");
 
-        using var resp = await req.Get<List<Dictionary<string, List<string>>>>(cancellationToken).ConfigureAwait(false);
+        using var resp = await req.Get<List<TimezoneEntry>>(cancellationToken).ConfigureAwait(false);
 
         var item = await resp.GetDataObject().ConfigureAwait(false);
 
@@ -92,21 +98,24 @@ public partial class TMDbClient
             List = []
         };
 
-        foreach (var dictionary in item)
+        foreach (var entry in item)
         {
-            var item1 = dictionary.First();
+            if (string.IsNullOrEmpty(entry.Iso_3166_1))
+            {
+                continue;
+            }
 
-            result.List[item1.Key] = item1.Value ?? [];
+            result.List[entry.Iso_3166_1!] = entry.Zones ?? [];
         }
 
         return result;
     }
 
     /// <summary>
-    /// Retrieves a list of departments and positions within.
+    /// Gets the list of jobs grouped by department.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>Valid jobs and their departments.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The valid jobs and their departments.</returns>
     public async Task<List<Job>?> GetJobsAsync(CancellationToken cancellationToken = default)
     {
         var req = _client.Create("configuration/jobs");

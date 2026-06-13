@@ -18,7 +18,7 @@ public class ClientReviewTests : TestBase
     [Fact]
     public async Task TestReviewFullDetails()
     {
-        var review = await TMDbClient.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId);
+        var review = await TMDbClient.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(review);
     }
@@ -29,7 +29,7 @@ public class ClientReviewTests : TestBase
     [Fact]
     public async Task TestReviewMissing()
     {
-        var review = await TMDbClient.GetReviewAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
+        var review = await TMDbClient.GetReviewAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture), cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Null(review);
     }

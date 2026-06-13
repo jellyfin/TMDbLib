@@ -1,6 +1,6 @@
 {
   "Guid": "97ac83f4-5ff1-7d4d-a44a-5a186c9cf78c",
-  "UpdatedAt": "2025-12-24T18:45:20.3563932Z",
+  "UpdatedAt": "2026-05-24T16:19:43.329225Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/lists",
   "Description": "Proxy Mapping for GET /3/movie/47964/lists",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -38,120 +51,10 @@
       "page": 2,
       "results": [
         {
-          "description": "Films I own on DVD and Blu-Ray.",
-          "favorite_count": 0,
-          "id": 8570792,
-          "item_count": 1401,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Physical Media - Movies",
-          "poster_path": null
-        },
-        {
-          "description": "All of my ratings are the movies that I have seen.",
-          "favorite_count": 0,
-          "id": 8302254,
-          "item_count": 2489,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Movies That I have watched all",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 8190952,
-          "item_count": 3157,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Movies",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 99224,
-          "item_count": 845,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Watched Movies",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 8203599,
-          "item_count": 29755,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "list1",
-          "poster_path": null
-        },
-        {
-          "description": "Netflix Movies",
-          "favorite_count": 0,
-          "id": 44876,
-          "item_count": 1240,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Netflix Movies",
-          "poster_path": null
-        },
-        {
-          "description": "DO NOT DELETE",
-          "favorite_count": 0,
-          "id": 110683,
-          "item_count": 1295,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Plex",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 7095993,
-          "item_count": 295,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Action",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 8236367,
-          "item_count": 1191,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Movies Watched",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 8558044,
-          "item_count": 154,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "teeqo ",
-          "poster_path": null
-        },
-        {
           "description": "",
           "favorite_count": 0,
           "id": 9011,
-          "item_count": 638,
+          "item_count": 643,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
@@ -161,30 +64,8 @@
         {
           "description": "",
           "favorite_count": 0,
-          "id": 33580,
-          "item_count": 1601,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Wanted Mark II",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 8228114,
-          "item_count": 232,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "To Watch",
-          "poster_path": null
-        },
-        {
-          "description": "",
-          "favorite_count": 0,
-          "id": 8576788,
-          "item_count": 9758,
+          "id": 8654213,
+          "item_count": 449,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
@@ -194,89 +75,222 @@
         {
           "description": "",
           "favorite_count": 0,
-          "id": 32979,
-          "item_count": 1018,
+          "id": 8498081,
+          "item_count": 250,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "joe1",
-          "poster_path": null
-        },
-        {
-          "description": "Movies completed watching",
-          "favorite_count": 0,
-          "id": 112418,
-          "item_count": 1157,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Completed Film liste",
+          "name": "???",
           "poster_path": null
         },
         {
           "description": "",
           "favorite_count": 0,
-          "id": 8231961,
-          "item_count": 1637,
+          "id": 8289772,
+          "item_count": 558,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "Movies I\u0027ve Seen",
-          "poster_path": null
-        },
-        {
-          "description": "Yippee Ki Yay, motherf*cker",
-          "favorite_count": 0,
-          "id": 8576992,
-          "item_count": 6,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Die Hard Collection",
+          "name": "Founders TW",
           "poster_path": null
         },
         {
           "description": "",
           "favorite_count": 0,
-          "id": 6695925,
-          "item_count": 1192,
+          "id": 8297084,
+          "item_count": 1023,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "Top Titles from Russia - IMDb",
+          "name": "Watched2",
+          "poster_path": null
+        },
+        {
+          "description": "Movies released in 4K Blu-ray format - 2011-2015",
+          "favorite_count": 0,
+          "id": 8632230,
+          "item_count": 4548,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "BD Release: 2011-2015",
           "poster_path": null
         },
         {
           "description": "",
           "favorite_count": 0,
-          "id": 2695,
-          "item_count": 296,
+          "id": 8653768,
+          "item_count": 52,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "Movies I\u0027ve Watched",
-          "poster_path": "/174RqBoBpaiQXwl5nKGfXrEsX0Q.jpg"
+          "name": "CWQ",
+          "poster_path": null
+        },
+        {
+          "description": "Movie Watched List",
+          "favorite_count": 0,
+          "id": 7113415,
+          "item_count": 1185,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Movies Watched",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8637350,
+          "item_count": 3797,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Action Movies",
+          "poster_path": null
+        },
+        {
+          "description": "A list of all the films I have",
+          "favorite_count": 0,
+          "id": 8642657,
+          "item_count": 777,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "My Film Collection",
+          "poster_path": null
+        },
+        {
+          "description": "Cain Cinema features a 4K UHD picture on a 120\u0022 (16:9) screen, and a 7.2.4 Dolby Atmos audio experience. ",
+          "favorite_count": 0,
+          "id": 7081593,
+          "item_count": 2103,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Now Showing at Cain Cinema",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8653077,
+          "item_count": 2475,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Disney Movies",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8653042,
+          "item_count": 1786,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Reciperr - Adrenaline Rush Mood Movies (1990-2030)",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8266161,
+          "item_count": 1337,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Missing Movies",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8651657,
+          "item_count": 5,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Die Hard",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8640389,
+          "item_count": 157,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "My Action Movies \u0026 Series",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8538407,
+          "item_count": 1511,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Book Adaptations",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 19829,
+          "item_count": 1875,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Movies about everything...",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8264373,
+          "item_count": 699,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "collection",
+          "poster_path": null
+        },
+        {
+          "description": "DO NOT DELETE",
+          "favorite_count": 0,
+          "id": 110683,
+          "item_count": 1298,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Plex",
+          "poster_path": null
         }
       ],
-      "total_pages": 28,
-      "total_results": 559
+      "total_pages": 32,
+      "total_results": 625
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "MISS, STORE",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=15775",
+      "x-memc": "HIT",
       "x-memc-key": "c0907bcd79d951dd2c56d2a167729e30f7823f5d236113854af77405cb3b3a91",
       "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=23561",
-      "ETag": "W/\u0022774fef58512763c8a9e326f93d6a3f00\u0022",
+      "ETag": "W/\u0022712b7c3f785719f3bddc80b24eac0f76\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

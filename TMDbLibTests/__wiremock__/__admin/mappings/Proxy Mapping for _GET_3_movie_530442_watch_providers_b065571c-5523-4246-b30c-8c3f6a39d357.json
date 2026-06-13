@@ -1,0 +1,292 @@
+{
+  "Guid": "b065571c-5523-4246-b30c-8c3f6a39d357",
+  "UpdatedAt": "2026-05-24T16:19:42.982564Z",
+  "Title": "Proxy Mapping for GET /3/movie/530442/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/530442/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/530442/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 530442,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/530442-my-teacher-my-obsession/watch?locale=AT",
+          "ads": [
+            {
+              "logo_path": "/4bKgwiotEIN6wiZNQhQfjp7qPCk.jpg",
+              "provider_id": 28,
+              "provider_name": "Netzkino",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 62
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/530442-my-teacher-my-obsession/watch?locale=AU",
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 64
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/zLYr7OPvpskMA4S79E3vlCi71iC.jpg",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 25
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/530442-my-teacher-my-obsession/watch?locale=CA",
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 8
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/zLYr7OPvpskMA4S79E3vlCi71iC.jpg",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 19
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/530442-my-teacher-my-obsession/watch?locale=DE",
+          "ads": [
+            {
+              "logo_path": "/4bKgwiotEIN6wiZNQhQfjp7qPCk.jpg",
+              "provider_id": 28,
+              "provider_name": "Netzkino",
+              "display_priority": 25
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 112
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/movie/530442-my-teacher-my-obsession/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 5
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/530442-my-teacher-my-obsession/watch?locale=NZ",
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 35
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/530442-my-teacher-my-obsession/watch?locale=US",
+          "free": [
+            {
+              "logo_path": "/spcwROYevucLluqZZ8Fv75UuTBt.jpg",
+              "provider_id": 83,
+              "provider_name": "The CW",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 34
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 332,
+              "provider_name": "Fandango at Home Free",
+              "display_priority": 38
+            },
+            {
+              "logo_path": "/zLYr7OPvpskMA4S79E3vlCi71iC.jpg",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 348
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 204
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 35
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=5767",
+      "ETag": "W/\u00220bfd7a2b268bc62a3a8325ed255b1ab5\u0022",
+      "x-az": "us-east-1a",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

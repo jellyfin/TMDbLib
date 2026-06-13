@@ -1,6 +1,6 @@
 {
   "Guid": "14e382f5-dfcd-1543-8509-9eb1d840e668",
-  "UpdatedAt": "2025-12-24T18:45:16.7714083Z",
+  "UpdatedAt": "2026-05-24T16:19:42.727411Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/external_ids",
   "Description": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1/external_ids",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -35,17 +48,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=12275",
       "x-memc": "HIT",
       "x-memc-key": "d29dc62182f75bd3f8ad1f94d9a8e65f1fee130525100ec4d2da537b6862bb6f",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=18957",
+      "x-az": "us-east-1b",
       "ETag": "W/\u00228536e593b01fb4e807c03eef5231a572\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

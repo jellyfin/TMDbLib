@@ -17,7 +17,7 @@ public class ClientFindTests : TestBase
     [Fact]
     public async Task TestFindImdbMovie()
     {
-        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbTerminatorId);
+        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbTerminatorId, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(result);
     }
@@ -28,7 +28,7 @@ public class ClientFindTests : TestBase
     [Fact]
     public async Task TestFindImdbPerson()
     {
-        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis);
+        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBruceWillis, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(result);
     }
@@ -39,7 +39,7 @@ public class ClientFindTests : TestBase
     [Fact]
     public async Task TestFindImdbTvShowEpisode()
     {
-        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadSeason1Episode1Id);
+        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadSeason1Episode1Id, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(result);
     }
@@ -50,7 +50,7 @@ public class ClientFindTests : TestBase
     [Fact]
     public async Task TestFindImdbTvShowSeasonAsync()
     {
-        var result = await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id);
+        var result = await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadSeason1Id, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(result);
     }
@@ -61,7 +61,7 @@ public class ClientFindTests : TestBase
     [Fact]
     public async Task TestFindTvdbTvShowAsync()
     {
-        var result = await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId);
+        var result = await TMDbClient.FindAsync(FindExternalSource.TvDb, IdHelper.TvdbBreakingBadId, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(result);
     }
@@ -72,7 +72,7 @@ public class ClientFindTests : TestBase
     [Fact]
     public async Task TestFindImdbTvShowAsync()
     {
-        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId);
+        var result = await TMDbClient.FindAsync(FindExternalSource.Imdb, IdHelper.ImdbBreakingBadId, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(result);
     }

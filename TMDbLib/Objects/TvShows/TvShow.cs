@@ -11,7 +11,7 @@ using TMDbLib.Utilities.Converters;
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents a TV show with full details.
+/// TV show with full details.
 /// </summary>
 public class TvShow
 {
@@ -22,13 +22,13 @@ public class TvShow
     public bool Adult { get; set; }
 
     /// <summary>
-    /// Gets or sets the account states for the TV show.
+    /// Gets or sets the account states.
     /// </summary>
     [JsonProperty("account_states")]
     public AccountState? AccountStates { get; set; }
 
     /// <summary>
-    /// Gets or sets the alternative titles for the TV show.
+    /// Gets or sets the alternative titles.
     /// </summary>
     [JsonProperty("alternative_titles")]
     public ResultContainer<AlternativeTitle>? AlternativeTitles { get; set; }
@@ -40,68 +40,68 @@ public class TvShow
     public string? BackdropPath { get; set; }
 
     /// <summary>
-    /// Gets or sets the changes to the TV show.
+    /// Gets or sets the change history.
     /// </summary>
     [JsonProperty("changes")]
     public ChangesContainer? Changes { get; set; }
 
     /// <summary>
-    /// Gets or sets the content ratings for the TV show.
+    /// Gets or sets the content ratings.
     /// </summary>
     [JsonProperty("content_ratings")]
     public ResultContainer<ContentRating>? ContentRatings { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of people who created the TV show.
+    /// Gets or sets the creators.
     /// </summary>
     [JsonProperty("created_by")]
     public List<CreatedBy>? CreatedBy { get; set; }
 
     /// <summary>
-    /// Gets or sets the credits for the TV show.
+    /// Gets or sets the credits.
     /// </summary>
     [JsonProperty("credits")]
     public Credits? Credits { get; set; }
 
     /// <summary>
-    /// Gets or sets the aggregated credits for the TV show.
+    /// Gets or sets the aggregated credits.
     /// </summary>
     [JsonProperty("aggregate_credits")]
     public CreditsAggregate? AggregateCredits { get; set; }
 
     /// <summary>
-    /// Gets or sets the episode groups for the TV show.
+    /// Gets or sets the episode groups.
     /// </summary>
     [JsonProperty("episode_groups")]
     public ResultContainer<TvGroupCollection>? EpisodeGroups { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of episode runtimes in minutes.
+    /// Gets or sets the episode runtimes in minutes.
     /// </summary>
     [JsonProperty("episode_run_time")]
     public List<int>? EpisodeRunTime { get; set; }
 
     /// <summary>
-    /// Gets or sets the external IDs for the TV show.
+    /// Gets or sets the external ids.
     /// </summary>
     [JsonProperty("external_ids")]
     public ExternalIdsTvShow? ExternalIds { get; set; }
 
     /// <summary>
-    /// Gets or sets the first air date of the TV show.
+    /// Gets or sets the first air date.
     /// </summary>
     [JsonProperty("first_air_date")]
     public DateTime? FirstAirDate { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of genre IDs.
+    /// Gets or sets the genre ids.
     /// </summary>
     [JsonProperty("genre_ids")]
     [JsonConverter(typeof(TmdbIntArrayAsObjectConverter)) /*#307*/]
     public List<int>? GenreIds { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of genres.
+    /// Gets or sets the genres.
     /// </summary>
     [JsonProperty("genres")]
     public List<Genre>? Genres { get; set; }
@@ -113,13 +113,13 @@ public class TvShow
     public string? Homepage { get; set; }
 
     /// <summary>
-    /// Gets or sets the TMDb ID.
+    /// Gets or sets the TMDb id.
     /// </summary>
     [JsonProperty("id")]
     public int Id { get; set; }
 
     /// <summary>
-    /// Gets or sets the images for the TV show.
+    /// Gets or sets the images.
     /// </summary>
     [JsonProperty("images")]
     public Images? Images { get; set; }
@@ -131,19 +131,25 @@ public class TvShow
     public bool InProduction { get; set; }
 
     /// <summary>
-    /// Gets or sets the keywords associated with the TV show.
+    /// Gets or sets the keywords.
     /// </summary>
     [JsonProperty("keywords")]
     public ResultContainer<Keyword>? Keywords { get; set; }
 
     /// <summary>
-    /// Gets or sets language ISO code ex. en.
+    /// Gets or sets the language ISO codes, e.g. en.
     /// </summary>
     [JsonProperty("languages")]
     public List<string>? Languages { get; set; }
 
     /// <summary>
-    /// Gets or sets the last air date of the TV show.
+    /// Gets or sets the lists containing this TV show; populated when the Lists method is requested.
+    /// </summary>
+    [JsonProperty("lists")]
+    public SearchContainer<Movies.ListResult>? Lists { get; set; }
+
+    /// <summary>
+    /// Gets or sets the last air date.
     /// </summary>
     [JsonProperty("last_air_date")]
     public DateTime? LastAirDate { get; set; }
@@ -155,7 +161,7 @@ public class TvShow
     public TvEpisodeBase? LastEpisodeToAir { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the TV show.
+    /// Gets or sets the TV show name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }
@@ -167,7 +173,7 @@ public class TvShow
     public TvEpisodeBase? NextEpisodeToAir { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of networks that aired the TV show.
+    /// Gets or sets the networks that aired the TV show.
     /// </summary>
     [JsonProperty("networks")]
     public List<NetworkWithLogo>? Networks { get; set; }
@@ -193,19 +199,19 @@ public class TvShow
     public string? OriginalLanguage { get; set; }
 
     /// <summary>
-    /// Gets or sets the original name of the TV show.
+    /// Gets or sets the original name.
     /// </summary>
     [JsonProperty("original_name")]
     public string? OriginalName { get; set; }
 
     /// <summary>
-    /// Gets or sets country ISO code ex. US.
+    /// Gets or sets the origin country ISO codes, e.g. US.
     /// </summary>
     [JsonProperty("origin_country")]
     public List<string>? OriginCountry { get; set; }
 
     /// <summary>
-    /// Gets or sets the overview text.
+    /// Gets or sets the overview.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }
@@ -223,31 +229,31 @@ public class TvShow
     public string? PosterPath { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of production companies.
+    /// Gets or sets the production companies.
     /// </summary>
     [JsonProperty("production_companies")]
     public List<ProductionCompany>? ProductionCompanies { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of production countries.
+    /// Gets or sets the production countries.
     /// </summary>
     [JsonProperty("production_countries")]
     public List<ProductionCountry>? ProductionCountries { get; set; }
 
     /// <summary>
-    /// Gets or sets the recommendations for similar TV shows.
+    /// Gets or sets the recommendations.
     /// </summary>
     [JsonProperty("recommendations")]
     public SearchContainer<SearchTv>? Recommendations { get; set; }
 
     /// <summary>
-    /// Gets or sets the reviews for the TV show.
+    /// Gets or sets the reviews.
     /// </summary>
     [JsonProperty("reviews")]
     public SearchContainer<ReviewBase>? Reviews { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of seasons.
+    /// Gets or sets the seasons.
     /// </summary>
     [JsonProperty("seasons")]
     public List<SearchTvSeason>? Seasons { get; set; }
@@ -259,13 +265,13 @@ public class TvShow
     public SearchContainer<SearchTv>? Similar { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of spoken languages.
+    /// Gets or sets the spoken languages.
     /// </summary>
     [JsonProperty("spoken_languages")]
     public List<SpokenLanguage>? SpokenLanguages { get; set; }
 
     /// <summary>
-    /// Gets or sets the status of the TV show.
+    /// Gets or sets the status.
     /// </summary>
     [JsonProperty("status")]
     public string? Status { get; set; }
@@ -277,25 +283,25 @@ public class TvShow
     public string? Tagline { get; set; }
 
     /// <summary>
-    /// Gets or sets the translations for the TV show.
+    /// Gets or sets the translations.
     /// </summary>
     [JsonProperty("translations")]
     public TranslationsContainer? Translations { get; set; }
 
     /// <summary>
-    /// Gets or sets the type of the TV show.
+    /// Gets or sets the TV show type.
     /// </summary>
     [JsonProperty("type")]
     public string? Type { get; set; }
 
     /// <summary>
-    /// Gets or sets the videos for the TV show.
+    /// Gets or sets the videos.
     /// </summary>
     [JsonProperty("videos")]
     public ResultContainer<Video>? Videos { get; set; }
 
     /// <summary>
-    /// Gets or sets the watch providers for the TV show.
+    /// Gets or sets the watch providers by country.
     /// </summary>
     [JsonProperty("watch/providers")]
     public SingleResultContainer<Dictionary<string, WatchProviders>>? WatchProviders { get; set; }

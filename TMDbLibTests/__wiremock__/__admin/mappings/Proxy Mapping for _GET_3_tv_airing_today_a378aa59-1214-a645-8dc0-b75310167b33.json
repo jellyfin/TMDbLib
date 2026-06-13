@@ -1,6 +1,6 @@
 {
   "Guid": "a378aa59-1214-a645-8dc0-b75310167b33",
-  "UpdatedAt": "2025-12-24T18:45:18.8782276Z",
+  "UpdatedAt": "2026-05-24T16:19:42.861343Z",
   "Title": "Proxy Mapping for GET /3/tv/airing_today",
   "Description": "Proxy Mapping for GET /3/tv/airing_today",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -38,448 +51,464 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
-          "genre_ids": [
-            10759,
-            18,
-            10765
-          ],
-          "id": 106379,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Fallout",
-          "overview": "The story of haves and have-nots in a world in which there\u0027s almost nothing left to have. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind \u2014 and are shocked to discover an incredibly complex, gleefully weird, and highly violent universe waiting for them.",
-          "popularity": 208.1718,
-          "poster_path": "/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
-          "first_air_date": "2024-04-10",
-          "name": "Fallout",
-          "vote_average": 8.179,
-          "vote_count": 2238
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/opxjwbFSadDgVmZtrLTlWJsUxrB.jpg",
+          "backdrop_path": "/mez2Z3WqlPKNXpi7mWoiiE5guE9.jpg",
           "genre_ids": [
             18
           ],
-          "id": 283123,
-          "origin_country": [
-            "TR"
-          ],
-          "original_language": "tr",
-          "original_name": "E\u015Fref R\u00FCya",
-          "overview": "As a child, E\u015Fref fell in love from afar with a girl he called \u201CR\u00FCya\u201D and spent years searching for her, only to become a powerful mafia figure along the way. Meanwhile, Nisan, an idealistic musician, finds herself in grave danger after performing at a wedding held at E\u015Fref\u2019s hotel. E\u015Fref falls for Nisan, unaware that she is both the long-lost R\u00FCya he has been chasing for years and a police informant. Trapped in a whirlwind of love, betrayal, and power struggles, E\u015Fref is forced into a brutal reckoning\u2014both with his criminal empire and his own emotions.",
-          "popularity": 100.7385,
-          "poster_path": "/jwrN5QA07dm8sKuUFInP2MRLPfb.jpg",
-          "first_air_date": "2025-03-19",
-          "name": "Esref\u0027s Dream",
-          "vote_average": 7.045,
-          "vote_count": 22
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/sAxx25ijwYQ8xsT56wu2IzvIRss.jpg",
-          "genre_ids": [
-            10759,
-            10765,
-            18,
-            10751
-          ],
-          "id": 103540,
+          "id": 85552,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Percy Jackson and the Olympians",
-          "overview": "Percy Jackson is on a dangerous quest. Outrunning monsters and outwitting gods, he must journey across America to return Zeus\u0027s master bolt and stop an all-out war. With the help of his friends Annabeth and Grover, Percy\u0027s journey will lead him closer to the answers he seeks: how to fit into a world where he feels out of place, and who he\u0027s destined to be.",
-          "popularity": 48.8362,
-          "poster_path": "/40eFcTzZier3DWLqldsP5VHxeoD.jpg",
-          "first_air_date": "2023-12-19",
-          "name": "Percy Jackson and the Olympians",
-          "vote_average": 7.3,
-          "vote_count": 640
+          "original_name": "Euphoria",
+          "overview": "A group of high school students navigate love and friendships in a world of drugs, sex, trauma, and social media.",
+          "popularity": 221.548,
+          "poster_path": "/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg",
+          "first_air_date": "2019-06-16",
+          "softcore": false,
+          "name": "Euphoria",
+          "vote_average": 8.289,
+          "vote_count": 10669
         },
         {
           "adult": false,
-          "backdrop_path": "/cTFQKu8CLftXHUCIBGksfL8uhf3.jpg",
+          "backdrop_path": "/wsHj4oHQJoe7DMYaqNFwVoyLiAh.jpg",
           "genre_ids": [
-            18,
-            35
+            35,
+            10764
           ],
-          "id": 281013,
+          "id": 33238,
           "origin_country": [
             "KR"
           ],
           "original_language": "ko",
-          "original_name": "\uD0A4\uC2A4\uB294 \uAD1C\uD788 \uD574\uC11C!",
-          "overview": "A passionate fling in Jeju ends abruptly \u2014 until fate reunites an heir and a young woman when she joins his company, disguised as a married mother.",
-          "popularity": 36.3926,
-          "poster_path": "/qY3ltlWUB7u3ENocrMOkbGCGYnt.jpg",
-          "first_air_date": "2025-11-12",
-          "name": "Dynamite Kiss",
-          "vote_average": 8.571,
-          "vote_count": 28
+          "original_name": "\uB7F0\uB2DD\uB9E8",
+          "overview": "These days, as variety shows are gradually disappearing, this is one of Korea\u2019s representative variety shows that has been responsible for Sunday evenings for over 10 years. This program features numerous stars and members going around various places, playing games, and completing missions. In particular, among the many fun elements of variety shows, this one focuses solely on laughter.\n\nOpen your eyes! Big fun is coming in!\n\nOpen your mouth! Big laughter is coming in!\n\nOpen your heart! Useful lessons are coming in!",
+          "popularity": 206.0859,
+          "poster_path": "/2Wmmu1MkqxJ48J7aySET9EKEjXz.jpg",
+          "first_air_date": "2010-07-11",
+          "softcore": false,
+          "name": "Running Man",
+          "vote_average": 8.2,
+          "vote_count": 209
         },
         {
           "adult": false,
-          "backdrop_path": "/khHpr9W9cZ7mlQGvabC2IeG69pg.jpg",
+          "backdrop_path": "/usLRh1bcbL0Q9X8zf6rL4OV1qrA.jpg",
           "genre_ids": [
-            18,
-            9648
-          ],
-          "id": 254482,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u957F\u5B89\u4E8C\u5341\u56DB\u8BA1",
-          "overview": "Xie Huai\u0027an, son of the Huben Army\u0027s creator, survives his family\u0027s massacre. After ten long years in hiding, he returns to Chang\u0027an disguised as a lowly registrar, moving step by step through jianghu clashes and palace power plays in a tense battle of wits to avenge his family and safeguard the realm.",
-          "popularity": 33.252,
-          "poster_path": "/vMwB4BNicfWJl0JhU7YQApcoiHE.jpg",
-          "first_air_date": "2025-12-12",
-          "name": "The Vendetta of An",
-          "vote_average": 7.8,
-          "vote_count": 5
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/47cdJm6WGJqCsdE6QvPh6fLKwuo.jpg",
-          "genre_ids": [
-            16,
             10759,
-            10765
+            10765,
+            18
           ],
-          "id": 213402,
+          "id": 2661,
           "origin_country": [
             "JP"
           ],
           "original_language": "ja",
-          "original_name": "\u3068\u3093\u3067\u3082\u30B9\u30AD\u30EB\u3067\u7570\u4E16\u754C\u653E\u6D6A\u30E1\u30B7",
-          "overview": "Tsuyoshi Mukohda, an ordinary salaryman, is suddenly transported to another world one day. The unique skill he gains upon arrival in this world is the seemingly useless \u0022Online Grocery.\u0022 Mukohda is discouraged at first, but the modern foods he\u0027s able to bring to his new world using this skill prove to have some unbelievable effects!",
-          "popularity": 32.232,
-          "poster_path": "/cXc3yiQ5RrimzfucovjO83RTrnq.jpg",
-          "first_air_date": "2023-01-11",
-          "name": "Campfire Cooking in Another World with My Absurd Skill",
-          "vote_average": 8.3,
-          "vote_count": 265
+          "original_name": "\u4EEE\u9762\u30E9\u30A4\u30C0\u30FC",
+          "overview": "Takeshi Hongo is a promising young man with a passion for motorcycle racing. However, his dreams are suddenly ruined when he gets kidnapped by Shocker, the evil secret organization planning to dominate the world. After being remodeled into a cyborg, Takeshi escapes and swears to protect the world from the inhuman monsters.",
+          "popularity": 141.573,
+          "poster_path": "/2DIBDFHiKQawz4WPsYekl9DHwyA.jpg",
+          "first_air_date": "1971-04-03",
+          "softcore": false,
+          "name": "Kamen Rider",
+          "vote_average": 6.389,
+          "vote_count": 99
         },
         {
           "adult": false,
-          "backdrop_path": "/gTPfMUXFIgG6HZeR5hif2fvGzOv.jpg",
+          "backdrop_path": "/pvOI0jUuBVigqNTXClGGhIK2dSk.jpg",
           "genre_ids": [
-            18
+            10764
           ],
-          "id": 271548,
+          "id": 154770,
           "origin_country": [
-            "TR"
+            "CN"
           ],
-          "original_language": "tr",
-          "original_name": "Sahipsizler",
-          "overview": "A story of six siblings\u2014Azize, Cemo, Zeliha, Fidan, Samet, and Bal\u0131m\u2014who, after suddenly losing their parents, struggle to stay united and survive. The roots of their tragedy trace back to their parents, Bala and R\u0131fat, whose forbidden love began in a village in Mardin. R\u0131fat, a teacher, falls in love with Bala, but Yavuz, the wealthy and obsessive son of Mardin\u2019s richest family, kidnaps her. Despite his abuse, Bala escapes with R\u0131fat, and they build a secluded life in the forest, raising six children in peace. However, Yavuz\u2019s revenge shatters their world when he finds and attacks them. Fleeing to Istanbul, the siblings face the dangers of the city while seeking refuge with \u201CUncle Aslan,\u201D their father\u2019s trusted friend. The story highlights resilience, as the older siblings are forced to grow up quickly to protect their younger brothers and sisters in the face of overwhelming challenges.",
-          "popularity": 31.3484,
-          "poster_path": "/l0g0CAq7VjoKslVE9JZZQFMI9Tt.jpg",
-          "first_air_date": "2024-11-13",
-          "name": "6 of Us",
-          "vote_average": 5.5,
-          "vote_count": 2
+          "original_language": "zh",
+          "original_name": "\u4F60\u597D\uFF0C\u661F\u671F\u516D",
+          "overview": "\u0022Hello, Saturday\u0022 is the rebranding of the popular Chinese show \u0022Happy Camp\u0022, hosted by He Jiong and with a fixed group of regular celebrity members.\n\nThe program showcases the talent of various stars as well as social topics through creative and diverse content and games. It aims to spread positive energy while keeping up with the current trends and leading youth culture.",
+          "popularity": 100.9276,
+          "poster_path": "/wsTjWy6NE2s3h0neChr0D92ddwI.jpg",
+          "first_air_date": "2022-01-01",
+          "softcore": false,
+          "name": "Hello Saturday",
+          "vote_average": 6.4,
+          "vote_count": 10
         },
         {
           "adult": false,
-          "backdrop_path": "/s1dTt4M31q2HwD5Fkl1tf5tQzJg.jpg",
-          "genre_ids": [
-            10766
-          ],
-          "id": 206559,
-          "origin_country": [
-            "ZA"
-          ],
-          "original_language": "af",
-          "original_name": "Binnelanders",
-          "overview": "A South African Afrikaans soap opera. It is set in and around the fictional private hospital, Binneland Kliniek, in Pretoria, and the storyline follows the trials, trauma and tribulations of the staff and patients of the hospital.",
-          "popularity": 31.1288,
-          "poster_path": "/3bzECfllho8PphdYujLUIuhncJD.jpg",
-          "first_air_date": "2005-10-13",
-          "name": "Binnelanders",
-          "vote_average": 5.528,
-          "vote_count": 106
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/mbSSCIbNpeyNJqKAKkWgdvYsQ8F.jpg",
+          "backdrop_path": "/ihT4s15wPjqXLblKlE6cwBhJVz4.jpg",
           "genre_ids": [
             18,
-            9648,
-            10766
+            80,
+            10759
           ],
-          "id": 212907,
-          "origin_country": [
-            "ES"
-          ],
-          "original_language": "es",
-          "original_name": "La promesa",
-          "overview": "In 1913 Spain, a woman gets a job at the palace of La Promesa as a reward for saving the marquesses\u0027 son - but nobody knows that she has her own plans, which involve avenging her mother\u0027s death and finding her missing brother.",
-          "popularity": 26.2137,
-          "poster_path": "/y656ZhHU2Hh3bmC5vBtMa2vKpUM.jpg",
-          "first_air_date": "2023-01-12",
-          "name": "La promesa",
-          "vote_average": 7.7,
-          "vote_count": 68
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/qwoFxyMtArLpZZzG3mmRDEjGgCM.jpg",
-          "genre_ids": [
-            18,
-            10766
-          ],
-          "id": 239526,
-          "origin_country": [
-            "ES"
-          ],
-          "original_language": "es",
-          "original_name": "Sue\u00F1os de libertad",
-          "overview": "Bego\u00F1a Montes is a woman who lives trapped in a toxic marriage and seeks the long-awaited freedom in Spain in 1958.",
-          "popularity": 25.1668,
-          "poster_path": "/ohItaiKnas60gxQrfQCrCToWmGW.jpg",
-          "first_air_date": "2024-02-25",
-          "name": "Dreams of Liberty",
-          "vote_average": 6.1,
-          "vote_count": 16
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hUz0UHWSVd6e1g3I6vT4shAsnoY.jpg",
-          "genre_ids": [
-            10766,
-            18,
-            80
-          ],
-          "id": 1871,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "EastEnders",
-          "overview": "The everyday lives of working-class residents of Albert Square, a traditional Victorian square of terrace houses surrounding a park in the East End of London\u0027s Walford borough.",
-          "popularity": 24.4838,
-          "poster_path": "/z4jgyI5TpoRZiJTNchkVkMrGQyz.jpg",
-          "first_air_date": "1985-02-19",
-          "name": "EastEnders",
-          "vote_average": 4.1,
-          "vote_count": 218
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/55tcKzl0gZ0lR1q7TrVJm0h9lkT.jpg",
-          "genre_ids": [
-            10764,
-            10751
-          ],
-          "id": 2912,
+          "id": 290856,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Jeopardy!",
-          "overview": "America\u0027s favorite quiz show where contestants are presented with general knowledge clues in the form of answers, and must phrase their responses in question form.",
-          "popularity": 24.0862,
-          "poster_path": "/hfz0IgebqGENG6ZnuqKQKMFk2vy.jpg",
-          "first_air_date": "1984-09-10",
-          "name": "Jeopardy!",
-          "vote_average": 6.9,
-          "vote_count": 150
+          "original_name": "Marshals",
+          "overview": "With the Yellowstone Ranch behind him, Kayce Dutton joins an elite unit of U.S. Marshals, combining his skills as a cowboy and Navy SEAL to bring range justice to Montana, where he and his teammates must balance family, duty and the high psychological cost that comes with serving as the last line of defense in the region\u0027s war on violence.",
+          "popularity": 99.8019,
+          "poster_path": "/nInfaveN1iFpRIcMGNKENoVVUT2.jpg",
+          "first_air_date": "2026-03-01",
+          "softcore": false,
+          "name": "Marshals",
+          "vote_average": 8.0,
+          "vote_count": 217
         },
         {
           "adult": false,
-          "backdrop_path": "/2pi53UfC61zRYDU7BOlNoEG3myo.jpg",
+          "backdrop_path": "/Rseua6cAC83aVDNMExhzxHNqgy.jpg",
           "genre_ids": [
-            18,
-            35
+            10764
           ],
-          "id": 304774,
+          "id": 126398,
           "origin_country": [
-            "TR"
+            "CN"
           ],
-          "original_language": "tr",
-          "original_name": "Sekizinci Aile",
-          "overview": "A textile family\u0027s rise to global power brings struggles to maintain their position, while facing betrayals and twists of fate in this tale of ambition and survival.",
-          "popularity": 23.6798,
-          "poster_path": "/y8NmGRfD3GuhhR8bTj7rXWkOMqk.jpg",
-          "first_air_date": "2025-11-19",
-          "name": "The Eighth Family",
-          "vote_average": 8.75,
-          "vote_count": 4
+          "original_language": "zh",
+          "original_name": "\u4E94\u5341\u516C\u91CC\u6843\u82B1\u575E",
+          "overview": "A social experiment reality show about the cultivation of an ideal community, inviting 15 guests to Taohuawu, 15KM away from the city center, to live together for 21 days, creating an ideal society in their hearts. See how they live, work, and live in harmony in friction and cooperation. It is also a journey to explore the source of material and spiritual consensus.",
+          "popularity": 98.25,
+          "poster_path": "/A3C6crK4GQPNt2f43Vq6l2c845Y.jpg",
+          "first_air_date": "2021-05-23",
+          "softcore": false,
+          "name": "Wonderland",
+          "vote_average": 8.0,
+          "vote_count": 5
         },
         {
           "adult": false,
-          "backdrop_path": "/l61sjSZCsf99abjlnt2ToG442ol.jpg",
+          "backdrop_path": "/9R3tyMeAEvY53Da6fVguBEVlfxE.jpg",
           "genre_ids": [
-            18,
-            35
-          ],
-          "id": 108255,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "All Creatures Great \u0026 Small",
-          "overview": "The heartwarming and humorous adventures of a young country vet in the Yorkshire Dales in the 1930s. A remake of the 1978 series.",
-          "popularity": 22.657,
-          "poster_path": "/hchdfgmviL9qzJ3OVd0LOkh1b5F.jpg",
-          "first_air_date": "2020-09-01",
-          "name": "All Creatures Great \u0026 Small",
-          "vote_average": 8.182,
-          "vote_count": 140
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lCyVptIB3CgO0ls9o0PvT50xshn.jpg",
-          "genre_ids": [
-            16,
             10759,
+            16,
             18,
             10765
           ],
-          "id": 198182,
+          "id": 223911,
           "origin_country": [
             "CN"
           ],
           "original_language": "zh",
-          "original_name": "\u795E\u5370\u738B\u5EA7",
-          "overview": "Six thousand years ago, the Demon God appeared and creatures were turned into demons. The mankind created six Temples to fight the demons. Long Haochen joins the Knights Temple. As he grows, an adventure unfolds. He wins the recognition of others and fights with the Six Temples against the demons for the sake of human beings. He sacrifices himself to protect the people. Could Long win the Throne of Seal and be granted the highest honor in the Knights\u0027 Temple? All remained to be revealed.",
-          "popularity": 21.8127,
-          "poster_path": "/ehRRWs1EfeYiX4ysLLapWeKG4Pq.jpg",
-          "first_air_date": "2022-04-28",
-          "name": "Throne of Seal",
+          "original_name": "\u4ED9\u9006",
+          "overview": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength.",
+          "popularity": 97.4399,
+          "poster_path": "/2jEJSCLFjniFT7z4YvyY9Ywo1lc.jpg",
+          "first_air_date": "2023-09-25",
+          "softcore": false,
+          "name": "Renegade Immortal",
           "vote_average": 8.8,
-          "vote_count": 26
+          "vote_count": 32
         },
         {
           "adult": false,
-          "backdrop_path": "/5APjn4LnV5wWk5DXq7ZewT6zzP1.jpg",
+          "backdrop_path": "/5C5cMYUlmX6BU5YxBqhp7ZpSd3Q.jpg",
           "genre_ids": [
-            10766
+            18,
+            80
           ],
-          "id": 291,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "Coronation Street",
-          "overview": "The residents of Coronation Street are ordinary, working-class people, and the show follows them through regular social and family interactions at home, in the workplace, and in their local pub, the Rovers Return Inn. Britain\u0027s longest-running soap.",
-          "popularity": 21.8077,
-          "poster_path": "/5x1HXqYqPyYw7oc7Isu1lvVmwRP.jpg",
-          "first_air_date": "1960-12-09",
-          "name": "Coronation Street",
-          "vote_average": 5.3,
-          "vote_count": 115
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1rIQ1IHv6ULVbrR5Qcnc4x27du.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 278577,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u9A84\u9633\u4F3C\u6211",
-          "overview": "The story focuses on the real and delicate growth process of Nie Xiguang, a lively, cheerful and energetic female college student, as she walks out of campus and enters the workplace.",
-          "popularity": 21.4498,
-          "poster_path": "/cFBlFzOwh4C8wpuR4sYBIitvNiw.jpg",
-          "first_air_date": "2025-12-22",
-          "name": "Shine on Me",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/aizbHLcKVWvJ7jxkflJzTu5Z8GE.jpg",
-          "genre_ids": [
-            10766
-          ],
-          "id": 81329,
-          "origin_country": [
-            "FR"
-          ],
-          "original_language": "fr",
-          "original_name": "Un si grand soleil",
-          "overview": "Claire is surprised when she gets arrested for the murder of her childhood friend after she returns to Montpellier.",
-          "popularity": 19.8807,
-          "poster_path": "/t6jVlbPMtZOJoAOfeoR4yQmnjXM.jpg",
-          "first_air_date": "2018-08-27",
-          "name": "Chronicles of the Sun",
-          "vote_average": 6.579,
-          "vote_count": 126
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dyFTt1a9ZpFdKE96kPlE9fQvXOJ.jpg",
-          "genre_ids": [
-            10751,
-            35,
-            18
-          ],
-          "id": 91759,
-          "origin_country": [
-            "HK"
-          ],
-          "original_language": "cn",
-          "original_name": "\u611B\u00B7\u56DE\u5BB6\u4E4B\u958B\u5FC3\u901F\u905E",
-          "overview": "Hung Sue Gan starting from the bottom, established his own logistics company, which is now running smoothly. His only concern now are his three daughters. His eldest daughter has immigrated overseas. His second daughter Hung Yeuk Shui has reached the marriageable age, but has no hopes for marriage anytime soon. She is constantly bickering with her younger sister Hung Sum Yue, who is an honour student, over trivial matters, causing their father to not know whether to laugh or cry. Hung Sue Yan, Hung Sue Gan\u0027s brother, moves in with the family, temporarily ending his life as a nomadic photographer. He joins Hung Yeuk Shui\u0027s company and encounters Ko Pak Fei, the director of an online shop. The two appear to be former lovers, making for lots of laughter. Since Hung Sue Yan moved in, a series of strange events have occurred in the family. Upon investigation, the source is traced to Lung Ging Fung, a promising young man who is the son of department store mogul Lung Gam Wai.",
-          "popularity": 19.8113,
-          "poster_path": "/lgD4j9gUGmMckZpWWRJjorWqGVT.jpg",
-          "first_air_date": "2017-02-06",
-          "name": "Come Home Love: Lo and Behold",
-          "vote_average": 5.4,
-          "vote_count": 44
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/fBe7YuZH03raDtrp2ooHtAICOJm.jpg",
-          "genre_ids": [
-            10763,
-            35
-          ],
-          "id": 13008,
+          "id": 211288,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "TMZ",
-          "overview": "Based on the popular gossip website, this entertainment newsmagazine delivers daily updates on Hollywood\u0027s rich, beautiful and screwed-up. The program often shows highlights of the day\u0027s staff meeting during which reporters pitch ideas for stories to air that day.",
-          "popularity": 18.9773,
-          "poster_path": "/qotUEfomNK4r1ZVPVNAbXHon8Oh.jpg",
-          "first_air_date": "2007-09-10",
-          "name": "TMZ",
-          "vote_average": 4.9,
-          "vote_count": 22
+          "original_name": "Tracker",
+          "overview": "Lone-wolf survivalist Colter Shaw roams the country as a \u201Creward seeker,\u201D using his expert tracking skills to help private citizens and law enforcement solve all manner of mysteries while contending with his own fractured family.",
+          "popularity": 95.6943,
+          "poster_path": "/otula4h1ITZ0eV84eg7Lb8u614C.jpg",
+          "first_air_date": "2024-02-11",
+          "softcore": false,
+          "name": "Tracker",
+          "vote_average": 7.513,
+          "vote_count": 279
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sih377ne4tNY0MLSvNuHBfxeVKg.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 112732,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u54C8\u54C8\u54C8\u54C8\u54C8",
+          "overview": "Road-type outdoor reality show. The five-kazakhstan tour group takes time out of the busy and trivial daily life to embark on a journey from east to west across China.",
+          "popularity": 94.612,
+          "poster_path": "/wynP4QFfZNYHW0ETAbKVY9UjSbF.jpg",
+          "first_air_date": "2020-11-06",
+          "softcore": false,
+          "name": "HaHaHaHaHa",
+          "vote_average": 7.0,
+          "vote_count": 7
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/Ao5pBFuWY32cVuh6iYjEjZMEscN.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10765,
+            10759
+          ],
+          "id": 60625,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Rick and Morty",
+          "overview": "Follows a sociopathic genius scientist who drags his inherently timid grandson on adventures across the universe.",
+          "popularity": 88.1233,
+          "poster_path": "/WGRQ8FpjkDTzivQJ43t94bOuY0.jpg",
+          "first_air_date": "2013-12-02",
+          "softcore": false,
+          "name": "Rick and Morty",
+          "vote_average": 8.675,
+          "vote_count": 10852
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hINekSpbcBxjnjGqmIm6I4bz2ab.jpg",
+          "genre_ids": [
+            10767,
+            35
+          ],
+          "id": 22980,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Watch What Happens Live with Andy Cohen",
+          "overview": "Bravo network executive Andy Cohen discusses pop culture topics with celebrities and reality show personalities.",
+          "popularity": 78.6101,
+          "poster_path": "/onSD9UXfJwrMXWhq7UY7hGF2S1h.jpg",
+          "first_air_date": "2009-07-16",
+          "softcore": false,
+          "name": "Watch What Happens Live with Andy Cohen",
+          "vote_average": 5.0,
+          "vote_count": 86
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4Mt7WHox67uJ1yErwTBFcV8KWgG.jpg",
+          "genre_ids": [
+            10759,
+            35,
+            16
+          ],
+          "id": 37854,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30EF\u30F3\u30D4\u30FC\u30B9",
+          "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \u0022One Piece\u0022 behind. Whoever claims the \u0022One Piece\u0022 will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \u0022Devil Fruit,\u0022 decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he\u0027s surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
+          "popularity": 71.187,
+          "poster_path": "/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg",
+          "first_air_date": "1999-10-20",
+          "softcore": false,
+          "name": "One Piece",
+          "vote_average": 8.736,
+          "vote_count": 5307
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aqhB6P6x5wCk4lJqeXvRaD941xM.jpg",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 254486,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u96E8\u9716\u94C3",
+          "overview": "Zhan Zhao, a fourth-ranked imperial guard, embarks on a solo investigation after receiving evidence of a cold case. Along the way, he encounters the strong-willed Miss Huo Linglong and the justice-driven Bai Yutang. The three like-minded companions join forces to uncover clues, uphold justice, and capture criminals. Together, they work to expose a dangerous web of power that has infiltrated both the court and the martial world, ultimately restoring peace to the people.",
+          "popularity": 68.0093,
+          "poster_path": "/jeSvTYUjRtV0xNjEupHpMgrBwsZ.jpg",
+          "first_air_date": "2026-05-13",
+          "softcore": false,
+          "name": "Zhan Zhao Adventures",
+          "vote_average": 6.0,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3EGjqKhVHGsvNHvBIbxmqS17Aal.jpg",
+          "genre_ids": [
+            10767,
+            10763
+          ],
+          "id": 224,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Match of the Day",
+          "overview": "BBC\u0027s football highlights and analysis.\n\n\u0022The longest-running football television programme in the world\u0022 as recognised by Guinness World Records in 2015.",
+          "popularity": 61.5935,
+          "poster_path": "/paRFRd11WlFOxVbGnzjjCBym7FW.jpg",
+          "first_air_date": "1964-08-22",
+          "softcore": false,
+          "name": "Match of the Day",
+          "vote_average": 7.6,
+          "vote_count": 50
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wq5ZykCAFrboIpz36O8pbrJG2dF.jpg",
+          "genre_ids": [
+            16
+          ],
+          "id": 60761,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30C0\u30A4\u30E4\u306EA",
+          "overview": "Scouted for his potential, brash left-handed pitcher Eijun Sawamura joins baseball powerhouse Seido High to become the undisputed ace of the team.",
+          "popularity": 53.6843,
+          "poster_path": "/wh9dA4w0iUMVpY7htFSiLDhLTYJ.jpg",
+          "first_air_date": "2013-10-06",
+          "softcore": false,
+          "name": "Ace of the Diamond",
+          "vote_average": 8.0,
+          "vote_count": 72
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vrLDuQ5L45f7vFWpMT17WopdWx0.jpg",
+          "genre_ids": [
+            10764,
+            10767
+          ],
+          "id": 72896,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uBBF8\uC6B4 \uC6B0\uB9AC \uC0C8\uB07C",
+          "overview": "How much do you know about your grown up son? In Mom\u2019s Diary, the daily lives of the grown up celebrity sons are closely observed by their mothers. Do you know why your son drinks so much these days? How much do you know about your son\u2019s philosophy in his life style? Heart-warming moments of observational communication between a mother and a son can be seen on Mom\u2019s Diary.",
+          "popularity": 50.1303,
+          "poster_path": "/fgeWRIiigNHLxy3qEzM0HqNcFHT.jpg",
+          "first_air_date": "2016-08-26",
+          "softcore": false,
+          "name": "My Little Old Boy",
+          "vote_average": 7.0,
+          "vote_count": 10
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/n4VljCX22hbw3RwfxaY8FX8eLzN.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 245842,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u6756\u3068\u5263\u306E\u30A6\u30A3\u30B9\u30C8\u30EA\u30A2",
+          "overview": "In a world where magic reigns, Will Serfort can\u2019t cast a spell. Though hardworking, Will\u2019s classmates think less of him for it. However, he has a secret strength: his sword. Can Will defy expectations with muscle over magic and blade over wand? Find out in this epic sword-and-sorcery adventure!",
+          "popularity": 47.0151,
+          "poster_path": "/5n0IZQA9MiXn5JBKZibtNhhFSAZ.jpg",
+          "first_air_date": "2024-07-07",
+          "softcore": false,
+          "name": "Wistoria: Wand and Sword",
+          "vote_average": 7.768,
+          "vote_count": 112
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/32iRX9xqNH3ErJN6FowxdtgYmiY.jpg",
+          "genre_ids": [
+            35,
+            10764
+          ],
+          "id": 30801,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "1\uBC15 2\uC77C",
+          "overview": "2 Days \u0026 1 Night is a South Korean reality-variety show with the motto \u0022real wild road variety.\u0022 Its main concept is to recommend various places of interest that viewers can visit in South Korea.",
+          "popularity": 45.9867,
+          "poster_path": "/qezeCEkIKHQM5iwyVeYBuXmYA2h.jpg",
+          "first_air_date": "2007-08-05",
+          "softcore": false,
+          "name": "2 Days and 1 Night",
+          "vote_average": 7.1,
+          "vote_count": 29
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jfeLu7Mk2dy4nAsjS31qtH1N8Ki.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 104716,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u4E58\u98CE\u7834\u6D6A\u7684\u59D0\u59D0",
+          "overview": "A chinese variety show which features 30 female celebrities all over 30 years old who must compete to debut in a seven-member girlsband.",
+          "popularity": 42.2286,
+          "poster_path": "/y3ZzkYM26UZ536SzQIhIcswtdGO.jpg",
+          "first_air_date": "2020-06-12",
+          "softcore": false,
+          "name": "Ride the Wind",
+          "vote_average": 6.9,
+          "vote_count": 11
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xUC6mdVESvJN2umz8mNxKn89Htf.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10759
+          ],
+          "id": 216467,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u591C\u685C\u3055\u3093\u3061\u306E\u5927\u4F5C\u6226",
+          "overview": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret\u2014she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap\u2014marriage! Because in the Yozakura family, family cannot kill family.",
+          "popularity": 38.4973,
+          "poster_path": "/dTtXbR0DenriganfBidZxFLk4Xx.jpg",
+          "first_air_date": "2024-04-07",
+          "softcore": false,
+          "name": "Mission: Yozakura Family",
+          "vote_average": 7.5,
+          "vote_count": 60
         }
       ],
-      "total_pages": 12,
-      "total_results": 230
+      "total_pages": 14,
+      "total_results": 262
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=22892",
-      "x-memc": "HIT",
-      "x-memc-key": "719caacc0ffeb23d682951577d8b0d5b4f22ab070a2035c6ad9b192a245090d9",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=19541",
+      "ETag": "W/\u0022c94b3eae9a1f5879a05bb113f7aa7882\u0022",
       "x-az": "us-east-1c",
-      "ETag": "W/\u002243d18acbc800ef8e495efc3219ace42e\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

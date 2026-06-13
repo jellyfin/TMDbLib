@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.Search;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.People;
 
 /// <summary>
-/// Represents an image tagged with a person.
+/// Image tagged with a person.
 /// </summary>
 public class TaggedImage
 {
@@ -28,7 +28,7 @@ public class TaggedImage
     public int Height { get; set; }
 
     /// <summary>
-    /// Gets or sets the image ID.
+    /// Gets or sets the image id.
     /// </summary>
     [JsonProperty("id")]
     public string? Id { get; set; }
@@ -40,7 +40,7 @@ public class TaggedImage
     public string? ImageType { get; set; } // TODO: Turn into enum
 
     /// <summary>
-    /// Gets or sets a language code, e.g. en.
+    /// Gets or sets the language code, e.g. en.
     /// </summary>
     [JsonProperty("iso_639_1")]
     public string? Iso_639_1 { get; set; }
@@ -49,7 +49,7 @@ public class TaggedImage
     /// Gets or sets the media item this image is from.
     /// </summary>
     [JsonProperty("media")]
-    public SearchBase? Media { get; set; }
+    public TmdbEntity? Media { get; set; }
 
     /// <summary>
     /// Gets or sets the media type.

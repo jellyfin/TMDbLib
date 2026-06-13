@@ -37,7 +37,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestPersonsExtrasNoneAsync()
     {
-        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis);
+        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(person);
 
         // Test all extras, ensure none of them exist
@@ -86,7 +86,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestPersonMissingAsync()
     {
-        var person = await TMDbClient.GetPersonAsync(IdHelper.MissingID);
+        var person = await TMDbClient.GetPersonAsync(IdHelper.MissingID, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Null(person);
     }
@@ -97,7 +97,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestPersonsGetPersonTvCreditsAsync()
     {
-        var item = await TMDbClient.GetPersonTvCreditsAsync(IdHelper.BruceWillis);
+        var item = await TMDbClient.GetPersonTvCreditsAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(item);
         Assert.NotNull(item.Cast);
@@ -122,7 +122,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestGetPersonMovieCreditsAsync()
     {
-        var item = await TMDbClient.GetPersonMovieCreditsAsync(IdHelper.BruceWillis);
+        var item = await TMDbClient.GetPersonMovieCreditsAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(item);
         Assert.NotNull(item.Cast);
@@ -146,7 +146,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestGetPersonCombinedCreditsAsync()
     {
-        var item = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis);
+        var item = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(item);
         Assert.NotNull(item.Cast);
@@ -182,7 +182,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestGetPersonExternalIdsAsync()
     {
-        var item = await TMDbClient.GetPersonExternalIdsAsync(IdHelper.BruceWillis);
+        var item = await TMDbClient.GetPersonExternalIdsAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(item);
     }
@@ -193,7 +193,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestGetChangesPeopleAsync()
     {
-        var latestChanges = await TMDbClient.GetPeopleChangesAsync();
+        var latestChanges = await TMDbClient.GetPeopleChangesAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(latestChanges);
         Assert.NotNull(latestChanges.Results);
@@ -206,7 +206,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestGetPersonImagesAsync()
     {
-        var images = await TMDbClient.GetPersonImagesAsync(IdHelper.BruceWillis);
+        var images = await TMDbClient.GetPersonImagesAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(images);
 
         Assert.NotNull(images.Profiles);
@@ -222,7 +222,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestPersonsTaggedImagesAsync()
     {
-        var images = await TMDbClient.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, 1);
+        var images = await TMDbClient.GetPersonTaggedImagesAsync(IdHelper.BruceWillis, 1, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(images);
 
         Assert.NotNull(images.Results);
@@ -242,7 +242,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestPersonsListAsync()
     {
-        var list = await TMDbClient.GetPersonPopularListAsync();
+        var list = await TMDbClient.GetPersonPopularListAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(list);
 
         Assert.NotNull(list.Results);
@@ -255,7 +255,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestGetLatestPersonAsync()
     {
-        var item = await TMDbClient.GetLatestPersonAsync();
+        var item = await TMDbClient.GetLatestPersonAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(item);
     }
@@ -266,7 +266,7 @@ public class ClientPersonTests : TestBase
     [Fact]
     public async Task TestGetTranslatedPersonAsync()
     {
-        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, "da");
+        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, "da", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(person);
 
         await Verify(person);
