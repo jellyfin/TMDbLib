@@ -22,8 +22,8 @@ public class ClientChangesTests : TestBase
     [Fact]
     public async Task TestChangesMoviesAsync()
     {
-        var page1 = await TMDbClient.GetMoviesChangesAsync(1);
-        var oldChanges = await TMDbClient.GetMoviesChangesAsync(endDate: FixedEndDate);
+        var page1 = await TMDbClient.GetMoviesChangesAsync(1, cancellationToken: TestContext.Current.CancellationToken);
+        var oldChanges = await TMDbClient.GetMoviesChangesAsync(endDate: FixedEndDate, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(page1);
         Assert.NotNull(page1.Results);
@@ -42,8 +42,8 @@ public class ClientChangesTests : TestBase
     [Fact]
     public async Task TestChangesPeopleAsync()
     {
-        var page1 = await TMDbClient.GetPeopleChangesAsync(1);
-        var oldChanges = await TMDbClient.GetPeopleChangesAsync(endDate: FixedEndDate);
+        var page1 = await TMDbClient.GetPeopleChangesAsync(1, cancellationToken: TestContext.Current.CancellationToken);
+        var oldChanges = await TMDbClient.GetPeopleChangesAsync(endDate: FixedEndDate, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(page1);
         Assert.NotNull(page1.Results);
@@ -62,8 +62,8 @@ public class ClientChangesTests : TestBase
     [Fact]
     public async Task TestChangesTvShowsAsync()
     {
-        var page1 = await TMDbClient.GetTvChangesAsync(1);
-        var oldChanges = await TMDbClient.GetTvChangesAsync(endDate: FixedEndDate);
+        var page1 = await TMDbClient.GetTvChangesAsync(1, cancellationToken: TestContext.Current.CancellationToken);
+        var oldChanges = await TMDbClient.GetTvChangesAsync(endDate: FixedEndDate, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(page1);
         Assert.NotNull(page1.Results);

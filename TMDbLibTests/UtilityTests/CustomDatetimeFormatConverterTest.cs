@@ -43,7 +43,7 @@ public class CustomDatetimeFormatConverterTest : TestBase
     [Fact]
     public async Task TestCustomDatetimeFormatConverter()
     {
-        var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync();
+        var token = await TMDbClient.AuthenticationRequestAutenticationTokenAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(token);
         // Verify the datetime was parsed correctly - should be a reasonable date

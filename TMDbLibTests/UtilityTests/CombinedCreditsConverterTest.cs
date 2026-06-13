@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.People;
 using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.Helpers;
@@ -14,8 +15,13 @@ namespace TMDbLibTests.UtilityTests;
 /// </summary>
 public class CombinedCreditsConverterTest : TestBase
 {
+    private static string WrapCast(string itemJson) => $"{{\"cast\": [{itemJson}]}}";
+
+    private static string WrapCrew(string itemJson) => $"{{\"crew\": [{itemJson}]}}";
+
     /// <summary>
-    /// Tests that the CombinedCreditsCast converter correctly deserializes movie cast objects.
+    /// Tests that the CombinedCreditsCast converter correctly deserializes movie cast items
+    /// via the wrapper polymorphism.
     /// </summary>
     [Fact]
     public async Task CombinedCreditsCastConverter_Movie()
@@ -27,8 +33,9 @@ public class CombinedCreditsConverterTest : TestBase
             Character = "John McClane"
         };
 
-        var json = Serializer.SerializeToString(original);
-        var result = Serializer.DeserializeFromString<CombinedCreditsCastBase>(json) as CombinedCreditsCastMovie;
+        var json = WrapCast(Serializer.SerializeToString(original));
+        var container = Serializer.DeserializeFromString<CombinedCredits>(json);
+        var result = container?.Cast?[0] as CombinedCreditsCastMovie;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalTitle, result.OriginalTitle);
@@ -44,7 +51,7 @@ public class CombinedCreditsConverterTest : TestBase
     }
 
     /// <summary>
-    /// Tests that the CombinedCreditsCast converter correctly deserializes TV show cast objects.
+    /// Tests that the CombinedCreditsCast converter correctly deserializes TV show cast items.
     /// </summary>
     [Fact]
     public async Task CombinedCreditsCastConverter_Tv()
@@ -56,8 +63,9 @@ public class CombinedCreditsConverterTest : TestBase
             Character = "Walter White"
         };
 
-        var json = Serializer.SerializeToString(original);
-        var result = Serializer.DeserializeFromString<CombinedCreditsCastBase>(json) as CombinedCreditsCastTv;
+        var json = WrapCast(Serializer.SerializeToString(original));
+        var container = Serializer.DeserializeFromString<CombinedCredits>(json);
+        var result = container?.Cast?[0] as CombinedCreditsCastTv;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalName, result.OriginalName);
@@ -73,7 +81,7 @@ public class CombinedCreditsConverterTest : TestBase
     }
 
     /// <summary>
-    /// Tests that the CombinedCreditsCrew converter correctly deserializes movie crew objects.
+    /// Tests that the CombinedCreditsCrew converter correctly deserializes movie crew items.
     /// </summary>
     [Fact]
     public async Task CombinedCreditsCrewConverter_Movie()
@@ -86,8 +94,9 @@ public class CombinedCreditsConverterTest : TestBase
             Job = "Director"
         };
 
-        var json = Serializer.SerializeToString(original);
-        var result = Serializer.DeserializeFromString<CombinedCreditsCrewBase>(json) as CombinedCreditsCrewMovie;
+        var json = WrapCrew(Serializer.SerializeToString(original));
+        var container = Serializer.DeserializeFromString<CombinedCredits>(json);
+        var result = container?.Crew?[0] as CombinedCreditsCrewMovie;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalTitle, result.OriginalTitle);
@@ -104,7 +113,7 @@ public class CombinedCreditsConverterTest : TestBase
     }
 
     /// <summary>
-    /// Tests that the CombinedCreditsCrew converter correctly deserializes TV show crew objects.
+    /// Tests that the CombinedCreditsCrew converter correctly deserializes TV show crew items.
     /// </summary>
     [Fact]
     public async Task CombinedCreditsCrewConverter_Tv()
@@ -117,8 +126,9 @@ public class CombinedCreditsConverterTest : TestBase
             Job = "Executive Producer"
         };
 
-        var json = Serializer.SerializeToString(original);
-        var result = Serializer.DeserializeFromString<CombinedCreditsCrewBase>(json) as CombinedCreditsCrewTv;
+        var json = WrapCrew(Serializer.SerializeToString(original));
+        var container = Serializer.DeserializeFromString<CombinedCredits>(json);
+        var result = container?.Crew?[0] as CombinedCreditsCrewTv;
 
         Assert.NotNull(result);
         Assert.Equal(original.OriginalName, result.OriginalName);
@@ -135,42 +145,34 @@ public class CombinedCreditsConverterTest : TestBase
     }
 
     /// <summary>
-    /// Verifies that the CombinedCredits converters correctly deserialize different media types from person combined credits API responses.
+    /// Verifies that the CombinedCredits converters correctly deserialize different media types
+    /// from person combined credits responses.
     /// </summary>
     [Fact]
     public async Task TestJsonCombinedCreditsConverter()
     {
-        // Get combined credits for a person who has both movie and TV credits
-        var result = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis);
+        var result = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.NotNull(result.Cast);
         Assert.NotEmpty(result.Cast);
 
-        // Verify proper deserialization - should have at least one movie cast credit
         Assert.Contains(result.Cast, item => item.MediaType == MediaType.Movie && item is CombinedCreditsCastMovie);
 
-        // TV cast may or may not be present depending on the API response
-        var hasTvCast = result.Cast.Any(item => item.MediaType == MediaType.Tv && item is CombinedCreditsCastTv);
-        if (hasTvCast)
+        if (result.Cast.Any(item => item.MediaType == MediaType.Tv))
         {
             Assert.Contains(result.Cast, item => item.MediaType == MediaType.Tv && item is CombinedCreditsCastTv);
         }
 
-        // Verify crew credits
         Assert.NotNull(result.Crew);
         if (result.Crew.Count > 0)
         {
-            // Check for movie crew credits
-            var hasMovieCrew = result.Crew.Any(item => item.MediaType == MediaType.Movie && item is CombinedCreditsCrewMovie);
-            if (hasMovieCrew)
+            if (result.Crew.Any(item => item.MediaType == MediaType.Movie))
             {
                 Assert.Contains(result.Crew, item => item.MediaType == MediaType.Movie && item is CombinedCreditsCrewMovie);
             }
 
-            // Check for TV crew credits
-            var hasTvCrew = result.Crew.Any(item => item.MediaType == MediaType.Tv && item is CombinedCreditsCrewTv);
-            if (hasTvCrew)
+            if (result.Crew.Any(item => item.MediaType == MediaType.Tv))
             {
                 Assert.Contains(result.Crew, item => item.MediaType == MediaType.Tv && item is CombinedCreditsCrewTv);
             }
@@ -183,15 +185,13 @@ public class CombinedCreditsConverterTest : TestBase
     [Fact]
     public async Task TestPersonCombinedCreditsAppendToResponse()
     {
-        // Get person with combined credits appended
-        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, PersonMethods.CombinedCredits);
+        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, PersonMethods.CombinedCredits, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(person);
         Assert.NotNull(person.CombinedCredits);
         Assert.NotNull(person.CombinedCredits.Cast);
         Assert.NotEmpty(person.CombinedCredits.Cast);
 
-        // Verify cast contains properly typed objects
         Assert.Contains(person.CombinedCredits.Cast, item => item is CombinedCreditsCastMovie);
     }
 }

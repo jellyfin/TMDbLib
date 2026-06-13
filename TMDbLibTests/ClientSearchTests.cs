@@ -23,7 +23,7 @@ public class ClientSearchTests : TestBase
 
         // Search pr. Year
         // 1962: First James Bond movie, "Dr. No"
-        var result = await TMDbClient.SearchMovieAsync("007", year: 1962);
+        var result = await TMDbClient.SearchMovieAsync("007", year: 1962, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 646);
@@ -43,7 +43,7 @@ public class ClientSearchTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchCollectionAsync("007", i));
 
-        var result = await TMDbClient.SearchCollectionAsync("James Bond");
+        var result = await TMDbClient.SearchCollectionAsync("James Bond", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 645);
@@ -63,7 +63,7 @@ public class ClientSearchTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchPersonAsync("Willis", i));
 
-        var result = await TMDbClient.SearchPersonAsync("Willis");
+        var result = await TMDbClient.SearchPersonAsync("Willis", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 62);
@@ -82,7 +82,7 @@ public class ClientSearchTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchCompanyAsync("Disney", i));
 
-        var result = await TMDbClient.SearchCompanyAsync("Disney");
+        var result = await TMDbClient.SearchCompanyAsync("Disney", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         var item = result.Results.FirstOrDefault(s => s.Name != null && s.Name.Contains("Disney", StringComparison.OrdinalIgnoreCase));
@@ -105,7 +105,7 @@ public class ClientSearchTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchKeywordAsync("plot", i));
 
-        var result = await TMDbClient.SearchKeywordAsync("plot");
+        var result = await TMDbClient.SearchKeywordAsync("plot", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         var item = result.Results.FirstOrDefault(s => s.Name != null && s.Name.Contains("plot", StringComparison.OrdinalIgnoreCase));
@@ -123,7 +123,7 @@ public class ClientSearchTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchTvShowAsync("Breaking Bad", i));
 
-        var result = await TMDbClient.SearchTvShowAsync("Breaking Bad");
+        var result = await TMDbClient.SearchTvShowAsync("Breaking Bad", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         var item = result.Results.Single(s => s.Id == 1396);
@@ -143,7 +143,7 @@ public class ClientSearchTests : TestBase
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMultiAsync("Arrow", i));
 
-        var result = await TMDbClient.SearchMultiAsync("Arrow");
+        var result = await TMDbClient.SearchMultiAsync("Arrow", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         var item = result.Results.OfType<SearchTv>().Single(s => s.Id == 1412);
