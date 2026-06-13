@@ -1,6 +1,6 @@
 {
   "Guid": "92bd9189-c78c-fd44-b72f-0510b3d2ec48",
-  "UpdatedAt": "2025-12-24T18:45:16.5547068Z",
+  "UpdatedAt": "2026-05-24T16:19:44.388111Z",
   "Title": "Proxy Mapping for GET /3/person/62/tagged_images",
   "Description": "Proxy Mapping for GET /3/person/62/tagged_images",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -63,11 +76,12 @@
               14,
               27
             ],
-            "popularity": 5.0325,
+            "popularity": 5.2557,
             "release_date": "1992-07-30",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.8,
-            "vote_count": 2866
+            "vote_average": 6.78,
+            "vote_count": 2959
           },
           "media_type": "movie"
         },
@@ -84,7 +98,7 @@
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/xfdIjDRBKbddojhUbmheLoLQXQN.jpg",
+            "backdrop_path": "/pqVFdQDe0wbZRKg6GDyx3ghYXag.jpg",
             "id": 2069,
             "title": "The Whole Nine Yards",
             "original_title": "The Whole Nine Yards",
@@ -96,11 +110,12 @@
               35,
               80
             ],
-            "popularity": 6.229,
+            "popularity": 4.1153,
             "release_date": "2000-02-18",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.458,
-            "vote_count": 2003
+            "vote_average": 6.5,
+            "vote_count": 2069
           },
           "media_type": "movie"
         },
@@ -117,11 +132,11 @@
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+            "backdrop_path": "/bvk2AAH64lP2YZs02Q3jskfHT8j.jpg",
             "id": 562,
             "title": "Die Hard",
             "original_title": "Die Hard",
-            "overview": "NYPD cop John McClane\u0027s plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her offices Christmas Party, the entire building is overtaken by a group of terrorists. With little help from the LAPD, wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.",
+            "overview": "High above the city of L.A. a team of terrorists has seized a building, taken hostages, and declared war. One man has manages to escape... An off-duty cop hiding somewhere inside. He\u0027s alone, tired... and the only chance anyone has got.",
             "poster_path": "/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
             "media_type": "movie",
             "original_language": "en",
@@ -129,11 +144,48 @@
               28,
               53
             ],
-            "popularity": 28.9381,
+            "popularity": 12.5141,
             "release_date": "1988-07-15",
+            "softcore": false,
             "video": false,
-            "vote_average": 7.804,
-            "vote_count": 11855
+            "vote_average": 7.811,
+            "vote_count": 12267
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/g0eEEZAqMf98ULQnoiORuazjOpn.jpg",
+          "height": 1500,
+          "id": "5b2124f1c3a36813cf00dd1e",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "vote_average": 1.208,
+          "vote_count": 8,
+          "width": 1000,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/uQqQvmptJLPTcWDrZXn22p7j7s3.jpg",
+            "id": 395990,
+            "title": "Death Wish",
+            "original_title": "Death Wish",
+            "overview": "A mild-mannered father is transformed into a killing machine after his family is torn apart by a violent act.",
+            "poster_path": "/g0eEEZAqMf98ULQnoiORuazjOpn.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              80,
+              53,
+              18
+            ],
+            "popularity": 7.6685,
+            "release_date": "2018-03-01",
+            "softcore": false,
+            "video": false,
+            "vote_average": 6.233,
+            "vote_count": 2802
           },
           "media_type": "movie"
         },
@@ -144,8 +196,8 @@
           "id": "5c437b94c3a36819fd22fda1",
           "iso_3166_1": "US",
           "iso_639_1": "en",
-          "vote_average": 7.25,
-          "vote_count": 38,
+          "vote_average": 7.15,
+          "vote_count": 40,
           "width": 2000,
           "image_type": "poster",
           "media": {
@@ -163,11 +215,12 @@
               18,
               878
             ],
-            "popularity": 6.0824,
+            "popularity": 7.5844,
             "release_date": "2019-01-16",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.662,
-            "vote_count": 8871
+            "vote_average": 6.664,
+            "vote_count": 9068
           },
           "media_type": "movie"
         },
@@ -196,11 +249,12 @@
               28,
               53
             ],
-            "popularity": 10.6652,
+            "popularity": 8.1243,
             "release_date": "1990-07-03",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.961,
-            "vote_count": 6175
+            "vote_average": 6.972,
+            "vote_count": 6393
           },
           "media_type": "movie"
         },
@@ -230,11 +284,12 @@
               35,
               10751
             ],
-            "popularity": 1.951,
+            "popularity": 2.8625,
             "release_date": "2000-07-07",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.744,
-            "vote_count": 1079
+            "vote_average": 6.77,
+            "vote_count": 1115
           },
           "media_type": "movie"
         },
@@ -264,11 +319,12 @@
               12,
               53
             ],
-            "popularity": 5.2616,
+            "popularity": 1.3475,
             "release_date": "2020-09-04",
+            "softcore": false,
             "video": false,
             "vote_average": 5.0,
-            "vote_count": 653
+            "vote_count": 662
           },
           "media_type": "movie"
         },
@@ -298,11 +354,12 @@
               12,
               53
             ],
-            "popularity": 5.2616,
+            "popularity": 1.3475,
             "release_date": "2020-09-04",
+            "softcore": false,
             "video": false,
             "vote_average": 5.0,
-            "vote_count": 653
+            "vote_count": 662
           },
           "media_type": "movie"
         },
@@ -332,11 +389,12 @@
               53,
               9648
             ],
-            "popularity": 6.6776,
+            "popularity": 7.9279,
             "release_date": "1995-12-29",
+            "softcore": false,
             "video": false,
-            "vote_average": 7.601,
-            "vote_count": 8818
+            "vote_average": 7.606,
+            "vote_count": 9103
           },
           "media_type": "movie"
         },
@@ -366,34 +424,72 @@
               53,
               80
             ],
-            "popularity": 3.2015,
+            "popularity": 1.7295,
             "release_date": "2021-12-17",
+            "softcore": false,
             "video": false,
-            "vote_average": 5.7,
-            "vote_count": 356
+            "vote_average": 5.657,
+            "vote_count": 369
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.667,
+          "file_path": "/aggMvGiPhMTptZhwgC70ZpTAlHB.jpg",
+          "height": 1440,
+          "id": "6977e512308aab2608106d34",
+          "iso_3166_1": "HR",
+          "iso_639_1": "hr",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 960,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/uQqQvmptJLPTcWDrZXn22p7j7s3.jpg",
+            "id": 395990,
+            "title": "Death Wish",
+            "original_title": "Death Wish",
+            "overview": "A mild-mannered father is transformed into a killing machine after his family is torn apart by a violent act.",
+            "poster_path": "/g0eEEZAqMf98ULQnoiORuazjOpn.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              28,
+              80,
+              53,
+              18
+            ],
+            "popularity": 7.6685,
+            "release_date": "2018-03-01",
+            "softcore": false,
+            "video": false,
+            "vote_average": 6.233,
+            "vote_count": 2802
           },
           "media_type": "movie"
         }
       ],
       "total_pages": 1,
-      "total_results": 10
+      "total_results": 12
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=20535",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=23430",
       "x-memc": "HIT",
       "x-memc-key": "63b776471c96a8b696000db9d72e92af1933ea7382ab097148de04b50778ce4d",
       "x-az": "us-east-1c",
-      "ETag": "W/\u002246e7af8ad5cee2e388001799f06f3fae\u0022",
+      "ETag": "W/\u0022074f4162048aeb53a26a06613cb0898a\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

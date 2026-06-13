@@ -1,6 +1,6 @@
 {
   "Guid": "87e7bf39-4cbb-9e4c-a8b6-743339ccc74c",
-  "UpdatedAt": "2025-12-24T18:45:18.9508218Z",
+  "UpdatedAt": "2026-05-24T16:19:43.747858Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
   "Description": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "country",
@@ -48,17 +61,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=22769",
+      "x-memc": "MISS, STORE",
       "x-memc-key": "c224baa992ce0a627bc0f949b03a8f52145e9182158bdd949957bd10e27ec7d1",
       "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=28451",
       "ETag": "W/\u0022cc9fd400ea26fd441f3d95741c7551d8\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

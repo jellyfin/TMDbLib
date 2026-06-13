@@ -1,6 +1,6 @@
 {
   "Guid": "fe25028e-ff42-a744-9d4d-595d6dea4042",
-  "UpdatedAt": "2025-12-24T18:45:18.6708139Z",
+  "UpdatedAt": "2026-05-24T16:19:42.61733Z",
   "Title": "Proxy Mapping for GET /3/find/tt0903747",
   "Description": "Proxy Mapping for GET /3/find/tt0903747",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "external_source",
@@ -39,7 +52,7 @@
       "tv_results": [
         {
           "adult": false,
-          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "backdrop_path": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
           "id": 1396,
           "name": "Breaking Bad",
           "original_name": "Breaking Bad",
@@ -51,10 +64,11 @@
             18,
             80
           ],
-          "popularity": 150.5089,
+          "popularity": 240.6403,
           "first_air_date": "2008-01-20",
-          "vote_average": 8.935,
-          "vote_count": 16731,
+          "softcore": false,
+          "vote_average": 8.944,
+          "vote_count": 17769,
           "origin_country": [
             "US"
           ]
@@ -68,17 +82,16 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=11587",
-      "x-memc": "HIT",
-      "x-memc-key": "16874528c37042f23d06a0a5f036fb36c4f9ff8458ec50c8540aef38eaebc2dd",
+      "X-Gateway-Cache-Status": "HIT",
       "x-az": "us-east-1a",
-      "ETag": "W/\u002275cfcb04f216834e041560b3ae2de29f\u0022",
+      "Cache-Control": "public, max-age=0",
+      "ETag": "W/\u00226a499f87a1f1c6e0452e7be7d7a1d17c\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

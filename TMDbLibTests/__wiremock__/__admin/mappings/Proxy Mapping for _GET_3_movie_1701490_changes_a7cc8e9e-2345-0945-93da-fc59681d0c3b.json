@@ -1,0 +1,60 @@
+{
+  "Guid": "a7cc8e9e-2345-0945-93da-fc59681d0c3b",
+  "UpdatedAt": "2026-05-24T16:19:42.641503Z",
+  "Title": "Proxy Mapping for GET /3/movie/1701490/changes",
+  "Description": "Proxy Mapping for GET /3/movie/1701490/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1701490/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "changes": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=600",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "af7cdea528bdf0f463f7e96030213c2f2f092c5ce5efe12a2cd445b805b4386b",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00221c7b0be7cfcb529d61df7c7b50baa91e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

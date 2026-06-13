@@ -1,6 +1,6 @@
 {
   "Guid": "d9bc80a8-8a39-0c43-bf1d-c71eaed5d776",
-  "UpdatedAt": "2025-12-24T18:45:20.1405692Z",
+  "UpdatedAt": "2026-05-24T16:19:42.483492Z",
   "Title": "Proxy Mapping for GET /3/movie/19995/changes",
   "Description": "Proxy Mapping for GET /3/movie/19995/changes",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "start_date",
@@ -116,17 +129,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
+      "X-Gateway-Cache-Status": "MISS",
+      "x-memc": "MISS, STORE",
       "x-memc-key": "d2cf3cb90aafba5ff3f54dfbda1f003899a2c9ff3ff53d1417e6eac04310d492",
       "x-az": "us-east-1a",
       "Cache-Control": "public, max-age=600",
       "ETag": "W/\u002237935d3ac23863fc113b7f0e4b4f06a4\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }
