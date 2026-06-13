@@ -40,13 +40,14 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieve a list by it's id.
+    /// Gets a list by id.
     /// </summary>
-    /// <param name="listId">The id of the list you want to retrieve.</param>
-    /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The requested list with its details and items.</returns>
-    public async Task<GenericList?> GetListAsync(string listId, string? language = null, CancellationToken cancellationToken = default)
+    /// <param name="listId">The id of the list.</param>
+    /// <param name="language">The ISO 639-1 language code (e.g. en, it, es).</param>
+    /// <param name="page">The page number (starting at 1).</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The list with its items.</returns>
+    public async Task<GenericList?> GetListAsync(string listId, string? language = null, int page = 0, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(listId))
         {
@@ -62,18 +63,23 @@ public partial class TMDbClient
             req.AddParameter("language", language);
         }
 
+        if (page >= 1)
+        {
+            req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
+        }
+
         var resp = await req.GetOfT<GenericList>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }
 
     /// <summary>
-    /// Will check if the provided movie id is present in the specified list.
+    /// Checks whether a movie is present in a list.
     /// </summary>
-    /// <param name="listId">Id of the list to check in.</param>
-    /// <param name="movieId">Id of the movie to check for in the list.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>True if the movie is present in the list, false otherwise.</returns>
+    /// <param name="listId">The id of the list.</param>
+    /// <param name="movieId">The id of the movie.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>True if the movie is in the list.</returns>
     public async Task<bool> GetListIsMoviePresentAsync(string listId, int movieId, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(listId))
@@ -94,27 +100,27 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Adds a movie to a specified list.
+    /// Adds a movie to a list.
     /// </summary>
-    /// <param name="listId">The id of the list to add the movie to.</param>
+    /// <param name="listId">The id of the list.</param>
     /// <param name="movieId">The id of the movie to add.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>True if the method was able to add the movie to the list, will retrun false in case of an issue or when the movie was already added to the list.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>True if the movie was added; false if it was already in the list or on failure.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<bool> ListAddMovieAsync(string listId, int movieId, CancellationToken cancellationToken = default)
     {
         return await GetManipulateMediaListAsyncInternal(listId, movieId, "add_item", cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Clears a list, without confirmation.
+    /// Clears all items from a list without confirmation.
     /// </summary>
-    /// <param name="listId">The id of the list to clear.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list.</returns>
+    /// <param name="listId">The id of the list.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>True if the list was cleared.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<bool> ListClearAsync(string listId, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -138,15 +144,15 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Creates a new list for the user associated with the current session.
+    /// Creates a new list for the current user.
     /// </summary>
     /// <param name="name">The name of the new list.</param>
-    /// <param name="description">Optional description for the list.</param>
-    /// <param name="language">Optional language that might indicate the language of the content in the list.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The ID of the newly created list.</returns>
+    /// <param name="description">Optional description.</param>
+    /// <param name="language">Optional ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The id of the new list.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<string?> ListCreateAsync(string name, string description = "", string? language = null, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -182,13 +188,13 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Deletes the specified list that is owned by the user.
+    /// Deletes a list owned by the current user.
     /// </summary>
-    /// <param name="listId">A list id that is owned by the user associated with the current session id.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>True if the list was successfully deleted, false otherwise.</returns>
+    /// <param name="listId">The id of the list.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>True if the list was deleted.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<bool> ListDeleteAsync(string listId, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -211,14 +217,14 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Removes a movie from the specified list.
+    /// Removes a movie from a list.
     /// </summary>
-    /// <param name="listId">The id of the list to add the movie to.</param>
-    /// <param name="movieId">The id of the movie to add.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>True if the method was able to remove the movie from the list, will retrun false in case of an issue or when the movie was not present in the list.</returns>
+    /// <param name="listId">The id of the list.</param>
+    /// <param name="movieId">The id of the movie to remove.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>True if the movie was removed; false if it wasn't in the list or on failure.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<bool> ListRemoveMovieAsync(string listId, int movieId, CancellationToken cancellationToken = default)
     {
         return await GetManipulateMediaListAsyncInternal(listId, movieId, "remove_item", cancellationToken).ConfigureAwait(false);

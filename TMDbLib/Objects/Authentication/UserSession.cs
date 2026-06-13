@@ -3,7 +3,7 @@
 namespace TMDbLib.Objects.Authentication;
 
 /// <summary>
-/// Session object that can be retrieved after the user has correctly authenticated himself on the TMDb site. (using the referal url from the token provided previously).
+/// User session retrieved after the user authenticates on TMDb via the token's referral URL.
 /// </summary>
 public class UserSession
 {

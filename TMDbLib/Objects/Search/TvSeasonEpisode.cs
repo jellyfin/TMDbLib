@@ -7,18 +7,18 @@ using TMDbLib.Objects.TvShows;
 namespace TMDbLib.Objects.Search;
 
 /// <summary>
-/// Represents a TV season episode with full details.
+/// TV season episode with full details.
 /// </summary>
 public class TvSeasonEpisode
 {
     /// <summary>
-    /// Gets or sets the air date of the episode.
+    /// Gets or sets the air date.
     /// </summary>
     [JsonProperty("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of crew members for the episode.
+    /// Gets or sets the crew members.
     /// </summary>
     [JsonProperty("crew")]
     public List<Crew>? Crew { get; set; }
@@ -27,7 +27,7 @@ public class TvSeasonEpisode
     /// Gets or sets the episode number.
     /// </summary>
     [JsonProperty("episode_number")]
-    public long EpisodeNumber { get; set; }
+    public int EpisodeNumber { get; set; }
 
     /// <summary>
     /// Gets or sets the episode type.
@@ -36,37 +36,37 @@ public class TvSeasonEpisode
     public string? EpisodeType { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of guest stars for the episode.
+    /// Gets or sets the guest stars.
     /// </summary>
     [JsonProperty("guest_stars")]
     public List<Cast>? GuestStars { get; set; }
 
     /// <summary>
-    /// Gets or sets the TMDb ID of the episode.
+    /// Gets or sets the TMDb id.
     /// </summary>
     [JsonProperty("id")]
     public int Id { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the episode.
+    /// Gets or sets the episode name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the overview text of the episode.
+    /// Gets or sets the overview.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
-    /// Gets or sets the production code of the episode.
+    /// Gets or sets the production code.
     /// </summary>
     [JsonProperty("production_code")]
     public string? ProductionCode { get; set; }
 
     /// <summary>
-    /// Gets or sets the runtime of the episode in minutes.
+    /// Gets or sets the runtime in minutes.
     /// </summary>
     [JsonProperty("runtime")]
     public int? Runtime { get; set; }

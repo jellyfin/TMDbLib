@@ -8,7 +8,7 @@ using TMDbLib.Utilities.Converters;
 namespace TMDbLib.Objects.People;
 
 /// <summary>
-/// Represents a person with their biographical information and credits.
+/// Person with biographical information and credits.
 /// </summary>
 public class Person
 {
@@ -19,7 +19,7 @@ public class Person
     public bool Adult { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of alternative names.
+    /// Gets or sets the alternative names.
     /// </summary>
     [JsonProperty("also_known_as")]
     public List<string>? AlsoKnownAs { get; set; }
@@ -51,7 +51,7 @@ public class Person
     public DateTime? Deathday { get; set; }
 
     /// <summary>
-    /// Gets or sets the external IDs.
+    /// Gets or sets the external ids.
     /// </summary>
     [JsonProperty("external_ids")]
     public ExternalIdsPerson? ExternalIds { get; set; }
@@ -69,7 +69,7 @@ public class Person
     public string? Homepage { get; set; }
 
     /// <summary>
-    /// Gets or sets the TMDb person ID.
+    /// Gets or sets the TMDb id.
     /// </summary>
     [JsonProperty("id")]
     public int Id { get; set; }
@@ -81,7 +81,7 @@ public class Person
     public ProfileImages? Images { get; set; }
 
     /// <summary>
-    /// Gets or sets the IMDb ID.
+    /// Gets or sets the IMDb id.
     /// </summary>
     [JsonProperty("imdb_id")]
     public string? ImdbId { get; set; }
@@ -93,7 +93,7 @@ public class Person
     public MovieCredits? MovieCredits { get; set; }
 
     /// <summary>
-    /// Gets or sets the person name.
+    /// Gets or sets the name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }

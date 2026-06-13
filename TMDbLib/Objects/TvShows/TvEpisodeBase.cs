@@ -9,31 +9,31 @@ namespace TMDbLib.Objects.TvShows;
 public class TvEpisodeBase : TvEpisodeInfo
 {
     /// <summary>
-    /// Gets or sets the air date of the episode.
+    /// Gets or sets the air date.
     /// </summary>
     [JsonProperty("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the episode.
+    /// Gets or sets the episode name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the overview text of the episode.
+    /// Gets or sets the overview.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
-    /// Gets or sets the production code of the episode.
+    /// Gets or sets the production code.
     /// </summary>
     [JsonProperty("production_code")]
     public string? ProductionCode { get; set; }
 
     /// <summary>
-    /// Gets or sets the TV show ID.
+    /// Gets or sets the parent TV show id.
     /// </summary>
     [JsonProperty("show_id")]
     public int ShowId { get; set; }
@@ -57,7 +57,7 @@ public class TvEpisodeBase : TvEpisodeInfo
     public int VoteCount { get; set; }
 
     /// <summary>
-    /// Gets or sets the runtime of the episode in minutes.
+    /// Gets or sets the runtime in minutes.
     /// </summary>
     [JsonProperty("runtime")]
     public int? Runtime { get; set; }

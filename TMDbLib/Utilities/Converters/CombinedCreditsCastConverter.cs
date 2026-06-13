@@ -1,18 +1,19 @@
 using System;
 using Newtonsoft.Json.Linq;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.People;
 
 namespace TMDbLib.Utilities.Converters;
 
-internal class CombinedCreditsCastConverter : JsonCreationConverter<CombinedCreditsCastBase>
+internal class CombinedCreditsCastConverter : JsonCreationConverter<TmdbMediaSummary>
 {
     public override bool CanConvert(Type objectType)
     {
-        return objectType == typeof(CombinedCreditsCastBase);
+        return objectType == typeof(TmdbMediaSummary);
     }
 
-    protected override CombinedCreditsCastBase? GetInstance(JObject jObject)
+    protected override TmdbMediaSummary? GetInstance(JObject jObject)
     {
         var mediaType = jObject["media_type"]?.ToObject<MediaType>();
 

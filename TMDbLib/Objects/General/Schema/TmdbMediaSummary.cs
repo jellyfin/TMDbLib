@@ -1,38 +1,20 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using TMDbLib.Objects.General;
 using TMDbLib.Utilities.Converters;
 
-namespace TMDbLib.Objects.People;
+namespace TMDbLib.Objects.General.Schema;
 
 /// <summary>
-/// Base class for combined cast credits (movies and TV shows).
+/// Shared shape for any "movie or TV show summary" item TMDb returns.
+/// Movie-only and TV-only fields live on <see cref="TmdbMovieSummary"/> / <see cref="TmdbTvSummary"/>.
 /// </summary>
-public abstract class CombinedCreditsCastBase
+public class TmdbMediaSummary : TmdbEntity
 {
     /// <summary>
-    /// Gets or sets the media type ("movie" or "tv").
+    /// Gets or sets a value indicating whether the media is flagged as adult content.
     /// </summary>
-    [JsonProperty("media_type")]
-    public MediaType MediaType { get; set; }
-
-    /// <summary>
-    /// Gets or sets the ID of the movie or TV show.
-    /// </summary>
-    [JsonProperty("id")]
-    public int Id { get; set; }
-
-    /// <summary>
-    /// Gets or sets the character name.
-    /// </summary>
-    [JsonProperty("character")]
-    public string? Character { get; set; }
-
-    /// <summary>
-    /// Gets or sets the credit ID.
-    /// </summary>
-    [JsonProperty("credit_id")]
-    public string? CreditId { get; set; }
+    [JsonProperty("adult")]
+    public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the backdrop image path.
@@ -44,26 +26,20 @@ public abstract class CombinedCreditsCastBase
     /// Gets or sets the genre IDs.
     /// </summary>
     [JsonProperty("genre_ids")]
-    [JsonConverter(typeof(TmdbIntArrayAsObjectConverter))]
+    [JsonConverter(typeof(TmdbIntArrayAsObjectConverter)) /*#307*/]
     public List<int>? GenreIds { get; set; }
 
     /// <summary>
-    /// Gets or sets the original language code.
+    /// Gets or sets the ISO 639-1 original language code.
     /// </summary>
     [JsonProperty("original_language")]
     public string? OriginalLanguage { get; set; }
 
     /// <summary>
-    /// Gets or sets the overview.
+    /// Gets or sets the overview / synopsis text.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }
-
-    /// <summary>
-    /// Gets or sets the popularity score.
-    /// </summary>
-    [JsonProperty("popularity")]
-    public double Popularity { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
@@ -78,7 +54,7 @@ public abstract class CombinedCreditsCastBase
     public double VoteAverage { get; set; }
 
     /// <summary>
-    /// Gets or sets the vote count.
+    /// Gets or sets the total vote count.
     /// </summary>
     [JsonProperty("vote_count")]
     public int VoteCount { get; set; }

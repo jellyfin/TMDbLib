@@ -2,30 +2,35 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.Search;
 
 namespace TMDbLib.Utilities.Converters;
 
-internal class SearchBaseConverter : JsonConverter
+/// <summary>
+/// Polymorphic converter that maps the <c>media_type</c> discriminator to the correct
+/// concrete <see cref="TmdbEntity"/> subclass for endpoints returning mixed lists
+/// (search/multi, trending/all, list items, tagged_images.media, etc.).
+/// </summary>
+internal class TmdbEntityConverter : JsonConverter
 {
     public override bool CanConvert(Type objectType)
     {
-        return objectType == typeof(SearchBase);
+        return objectType == typeof(TmdbEntity);
     }
 
     public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
     {
         var jObject = JObject.Load(reader);
 
-        SearchBase? result;
+        TmdbEntity? result;
         if (jObject["media_type"] is null)
         {
-            // We cannot determine the correct type, let's hope we were provided one
-            result = Activator.CreateInstance(objectType) as SearchBase;
+            // Discriminator missing — fall back to the requested concrete type.
+            result = Activator.CreateInstance(objectType) as TmdbEntity;
         }
         else
         {
-            // Determine the type based on the media_type
             var mediaType = jObject["media_type"]!.ToObject<MediaType>();
 
             result = mediaType switch
@@ -42,7 +47,6 @@ internal class SearchBaseConverter : JsonConverter
             };
         }
 
-        // Populate the result
         if (result is not null)
         {
             using var jsonReader = jObject.CreateReader();

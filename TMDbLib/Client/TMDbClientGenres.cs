@@ -10,21 +10,21 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieves a list of all movie genres available on TMDb.
+    /// Gets the list of movie genres.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A list of movie genres with IDs and names.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The movie genres.</returns>
     public async Task<List<Genre>?> GetMovieGenresAsync(CancellationToken cancellationToken = default)
     {
         return await GetMovieGenresAsync(DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves a list of all movie genres available on TMDb with language option.
+    /// Gets the list of movie genres in a specific language.
     /// </summary>
-    /// <param name="language">The ISO 639-1 language code for genre names. Defaults to the client's DefaultLanguage.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A list of movie genres with IDs and names.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The movie genres.</returns>
     public async Task<List<Genre>?> GetMovieGenresAsync(string? language, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("genre/movie/list");
@@ -42,21 +42,21 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a list of all TV show genres available on TMDb.
+    /// Gets the list of TV show genres.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A list of TV genres with IDs and names.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The TV genres.</returns>
     public async Task<List<Genre>?> GetTvGenresAsync(CancellationToken cancellationToken = default)
     {
         return await GetTvGenresAsync(DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves a list of all TV show genres available on TMDb with language option.
+    /// Gets the list of TV show genres in a specific language.
     /// </summary>
-    /// <param name="language">The ISO 639-1 language code for genre names. Defaults to the client's DefaultLanguage.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A list of TV genres with IDs and names.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The TV genres.</returns>
     public async Task<List<Genre>?> GetTvGenresAsync(string? language, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("genre/tv/list");

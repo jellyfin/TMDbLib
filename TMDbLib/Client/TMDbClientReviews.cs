@@ -8,12 +8,12 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieves detailed information about a review.
+    /// Gets the details of a review.
     /// </summary>
     /// <param name="reviewId">The id of the review.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The detailed review information.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The review details.</returns>
     public async Task<Review?> GetReviewAsync(string reviewId, string? language = null, CancellationToken cancellationToken = default)
     {
         var request = _client.Create("review/{reviewId}");

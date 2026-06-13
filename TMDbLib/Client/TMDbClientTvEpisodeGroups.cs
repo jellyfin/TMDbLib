@@ -8,12 +8,12 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieve a collection of tv episode groups by id.
+    /// Gets a TV episode group collection by id.
     /// </summary>
-    /// <param name="id">Episode group id.</param>
-    /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The requested collection of tv episode groups.</returns>
+    /// <param name="id">The episode group id.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The episode group collection.</returns>
     public async Task<TvGroupCollection?> GetTvEpisodeGroupsAsync(string id, string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("tv/episode_group/{id}");

@@ -1,13 +1,14 @@
 ﻿using System;
 using Newtonsoft.Json;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.Search;
 
 /// <summary>
-/// Represents a TV season search result.
+/// TV season search result.
 /// </summary>
-public class SearchTvSeason : SearchBase
+public class SearchTvSeason : TmdbEntity
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SearchTvSeason"/> class.
@@ -18,25 +19,25 @@ public class SearchTvSeason : SearchBase
     }
 
     /// <summary>
-    /// Gets or sets the air date of the season.
+    /// Gets or sets the air date.
     /// </summary>
     [JsonProperty("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
-    /// Gets or sets the number of episodes in the season.
+    /// Gets or sets the number of episodes.
     /// </summary>
     [JsonProperty("episode_count")]
     public int EpisodeCount { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the season.
+    /// Gets or sets the season name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the overview text of the season.
+    /// Gets or sets the overview.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }
@@ -52,4 +53,10 @@ public class SearchTvSeason : SearchBase
     /// </summary>
     [JsonProperty("season_number")]
     public int SeasonNumber { get; set; }
+
+    /// <summary>
+    /// Gets or sets the average vote score.
+    /// </summary>
+    [JsonProperty("vote_average")]
+    public double VoteAverage { get; set; }
 }

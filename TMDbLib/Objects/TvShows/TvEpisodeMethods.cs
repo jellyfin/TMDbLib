@@ -4,7 +4,7 @@ using TMDbLib.Utilities;
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Defines the optional data that can be retrieved along with TV episode details.
+/// Additional TV episode data to retrieve from the API.
 /// </summary>
 [Flags]
 public enum TvEpisodeMethods
@@ -50,4 +50,10 @@ public enum TvEpisodeMethods
     /// </summary>
     [EnumValue("translations")]
     Translations = 32,
+
+    /// <summary>
+    /// Include changes.
+    /// </summary>
+    [EnumValue("changes")]
+    Changes = 64,
 }
