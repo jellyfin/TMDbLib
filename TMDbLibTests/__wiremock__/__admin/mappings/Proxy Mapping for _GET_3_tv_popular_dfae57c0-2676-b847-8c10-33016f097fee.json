@@ -1,6 +1,6 @@
 {
   "Guid": "dfae57c0-2676-b847-8c10-33016f097fee",
-  "UpdatedAt": "2025-12-24T18:45:19.6442407Z",
+  "UpdatedAt": "2026-06-13T13:30:13.551812Z",
   "Title": "Proxy Mapping for GET /3/tv/popular",
   "Description": "Proxy Mapping for GET /3/tv/popular",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -38,45 +51,160 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/aSGSxGMTP893DPMCvMl9AdnEICE.jpg",
+          "backdrop_path": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 1396,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Breaking Bad",
+          "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
+          "popularity": 141.528,
+          "poster_path": "/3xnWaLQjelJDDF7LT1WBo6f4BRe.jpg",
+          "first_air_date": "2008-01-20",
+          "softcore": false,
+          "name": "Breaking Bad",
+          "vote_average": 8.947,
+          "vote_count": 17907
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ynSOcgDLZfdLCZfRSYZGiTgYJVo.jpg",
+          "genre_ids": [
+            37,
+            18
+          ],
+          "id": 73586,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Yellowstone",
+          "overview": "Follow the violent world of the Dutton family, who controls the largest contiguous ranch in the United States. Led by their patriarch John Dutton, the family defends their property against constant attack by land developers, an Indian reservation, and America\u2019s first National Park.",
+          "popularity": 152.8941,
+          "poster_path": "/vOYfRZ0NpUK5hG2CB2dJFnYJlGe.jpg",
+          "first_air_date": "2018-06-20",
+          "softcore": false,
+          "name": "Yellowstone",
+          "vote_average": 8.267,
+          "vote_count": 3164
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9In9QgVJx7PlFOAgVHCKKSbo605.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10765,
+            10759
+          ],
+          "id": 60625,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Rick and Morty",
+          "overview": "Follows a sociopathic genius scientist who drags his inherently timid grandson on adventures across the universe.",
+          "popularity": 150.6749,
+          "poster_path": "/owhkU6KRqdXoUQpjV8uyZGPtX58.jpg",
+          "first_air_date": "2013-12-02",
+          "softcore": false,
+          "name": "Rick and Morty",
+          "vote_average": 8.679,
+          "vote_count": 10960
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zrLv7zSQK5SlEg8clCsiitiAHE4.jpg",
+          "genre_ids": [
+            18,
+            10751,
+            10766
+          ],
+          "id": 324245,
+          "origin_country": [
+            "LK"
+          ],
+          "original_language": "si",
+          "original_name": "\u0DAF\u0DD9\u0DC0\u0DD9\u0DB1\u0DD2 \u0D89\u0DB1\u0DD2\u0DB8",
+          "overview": "A humble young cricketer faces a fierce sports and personal rivalry with his wealthy, estranged half-brother. Set against school sports and class divides, their clashing paths trigger deep family secrets, turbulent romances, and an intense struggle for redemption.",
+          "popularity": 88.2129,
+          "poster_path": "/rzd78lppHI4YT3CP3VqUOoAZvmR.jpg",
+          "first_air_date": "2017-02-06",
+          "softcore": false,
+          "name": "Deweni Inima",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wh5agdl3b7fqC7mSjsCkHx4fMAs.jpg",
+          "genre_ids": [
+            37,
+            18
+          ],
+          "id": 299167,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Dutton Ranch",
+          "overview": "Rip Wheeler and Beth Dutton gamble everything on a new life in South Texas, but the promise of building a future far from the ghosts of Yellowstone quickly collides with brutal new realities and a rival ranch that will stop at nothing to protect its empire.",
+          "popularity": 149.7846,
+          "poster_path": "/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
+          "first_air_date": "2026-05-15",
+          "softcore": false,
+          "name": "Dutton Ranch",
+          "vote_average": 9.333,
+          "vote_count": 249
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cvlLBcQWpO9X21jDHhgPJnE2aVq.jpg",
           "genre_ids": [
             80,
             18,
             9648
           ],
-          "id": 1405,
+          "id": 1431,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Dexter",
-          "overview": "Dexter Morgan, a blood spatter pattern analyst for the Miami Metro Police also leads a secret life as a serial killer, hunting down criminals who have slipped through the cracks of justice.",
-          "popularity": 101.8307,
-          "poster_path": "/q8dWfc4JwQuv3HayIZeO84jAXED.jpg",
-          "first_air_date": "2006-10-01",
-          "name": "Dexter",
-          "vote_average": 8.224,
-          "vote_count": 5129
+          "original_name": "CSI: Crime Scene Investigation",
+          "overview": "A Las Vegas team of forensic investigators are trained to solve criminal cases by scouring the crime scene, collecting irrefutable evidence and finding the missing pieces that solve the mystery.",
+          "popularity": 148.4704,
+          "poster_path": "/i5hmoRjHNWady4AtAGICTUXknKH.jpg",
+          "first_air_date": "2000-10-06",
+          "softcore": false,
+          "name": "CSI: Crime Scene Investigation",
+          "vote_average": 7.638,
+          "vote_count": 1386
         },
         {
           "adult": false,
-          "backdrop_path": "/opxjwbFSadDgVmZtrLTlWJsUxrB.jpg",
+          "backdrop_path": "/to5eI3AWbT4spz1K58mIK5HQRbD.jpg",
           "genre_ids": [
             18
           ],
-          "id": 283123,
+          "id": 260592,
           "origin_country": [
-            "TR"
+            "US"
           ],
-          "original_language": "tr",
-          "original_name": "E\u015Fref R\u00FCya",
-          "overview": "As a child, E\u015Fref fell in love from afar with a girl he called \u201CR\u00FCya\u201D and spent years searching for her, only to become a powerful mafia figure along the way. Meanwhile, Nisan, an idealistic musician, finds herself in grave danger after performing at a wedding held at E\u015Fref\u2019s hotel. E\u015Fref falls for Nisan, unaware that she is both the long-lost R\u00FCya he has been chasing for years and a police informant. Trapped in a whirlwind of love, betrayal, and power struggles, E\u015Fref is forced into a brutal reckoning\u2014both with his criminal empire and his own emotions.",
-          "popularity": 100.7385,
-          "poster_path": "/jwrN5QA07dm8sKuUFInP2MRLPfb.jpg",
-          "first_air_date": "2025-03-19",
-          "name": "Esref\u0027s Dream",
-          "vote_average": 7.045,
-          "vote_count": 22
+          "original_language": "en",
+          "original_name": "Every Year After",
+          "overview": "Six summers to fall in love. One moment to fall apart. A week to get it right. A fun, sweeping, romantic story that asks the question, what if your first love actually was your soulmate?",
+          "popularity": 136.6986,
+          "poster_path": "/nZGf0jnSJNXLf8o7iSzzX8qxHX9.jpg",
+          "first_air_date": "2026-06-10",
+          "softcore": false,
+          "name": "Every Year After",
+          "vote_average": 8.0,
+          "vote_count": 12
         },
         {
           "adult": false,
@@ -93,119 +221,257 @@
           "original_language": "en",
           "original_name": "Midsomer Murders",
           "overview": "The peacefulness of the Midsomer community is shattered by violent crimes, suspects are placed under suspicion, and it is up to a veteran DCI and his young sergeant to calmly and diligently eliminate the innocent and ruthlessly pursue the guilty. ",
-          "popularity": 97.8414,
-          "poster_path": "/31wojXBSLT6LYTUMyc6BiyXqUyP.jpg",
+          "popularity": 132.5316,
+          "poster_path": "/pz7tsWxe0TTdfJnWPjZAEnrSl5M.jpg",
           "first_air_date": "1997-03-23",
+          "softcore": false,
           "name": "Midsomer Murders",
-          "vote_average": 7.5,
-          "vote_count": 337
+          "vote_average": 7.489,
+          "vote_count": 356
         },
         {
           "adult": false,
-          "backdrop_path": "/w88B4ooZ2LSYPw5107JOkjvI8PI.jpg",
+          "backdrop_path": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
           "genre_ids": [
-            80,
-            18,
-            9648
-          ],
-          "id": 4057,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Criminal Minds",
-          "overview": "An elite team of FBI profilers analyze the country\u0027s most twisted criminal minds, anticipating their next moves before they strike again. The Behavioral Analysis Unit\u0027s most experienced agent is David Rossi, a founding member of the BAU who returns to help the team solve new cases.",
-          "popularity": 94.8889,
-          "poster_path": "/gigxjNnACiXAfrwoMox5WJFgc0I.jpg",
-          "first_air_date": "2005-09-22",
-          "name": "Criminal Minds",
-          "vote_average": 8.3,
-          "vote_count": 3966
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/w00lfexrsOeR25dO4hsWhbcUnmD.jpg",
-          "genre_ids": [
+            10759,
             9648,
-            10765,
-            80
+            10765
           ],
-          "id": 4087,
+          "id": 66732,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "The X-Files",
-          "overview": "The exploits of FBI Special Agents Fox Mulder and Dana Scully who investigate X-Files: marginalized, unsolved cases involving paranormal phenomena. Mulder believes in the existence of aliens and the paranormal while Scully, a skeptic, is assigned to make scientific analyses of Mulder\u0027s discoveries that debunk Mulder\u0027s work and thus return him to mainstream cases.",
-          "popularity": 94.8863,
-          "poster_path": "/rcBx0p8h51LHceyhquYMxbspJQu.jpg",
-          "first_air_date": "1993-09-10",
-          "name": "The X-Files",
-          "vote_average": 8.374,
-          "vote_count": 3386
+          "original_name": "Stranger Things",
+          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+          "popularity": 131.481,
+          "poster_path": "/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+          "first_air_date": "2016-07-15",
+          "softcore": false,
+          "name": "Stranger Things",
+          "vote_average": 8.564,
+          "vote_count": 21284
         },
         {
           "adult": false,
-          "backdrop_path": "/grR9khLE8TibHjTYZq1jCSSupYk.jpg",
+          "backdrop_path": "/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg",
           "genre_ids": [
-            80,
-            18
-          ],
-          "id": 60622,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Fargo",
-          "overview": "A close-knit anthology series dealing with stories involving malice, violence and murder based in and around Minnesota.",
-          "popularity": 88.8079,
-          "poster_path": "/6U9CPeD8obHzweikFhiLhpc7YBT.jpg",
-          "first_air_date": "2014-04-15",
-          "name": "Fargo",
-          "vote_average": 8.291,
-          "vote_count": 3061
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lgGZ2ysbRyAOi2VgIZpp6k8qILj.jpg",
-          "genre_ids": [
-            16,
             35
           ],
-          "id": 1434,
+          "id": 2316,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Family Guy",
-          "overview": "Sick, twisted, politically incorrect and Freakin\u0027 Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he\u0027s not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
-          "popularity": 86.3148,
-          "poster_path": "/8o8kiBkWFK3gVytHdyzEWUBXVfK.jpg",
-          "first_air_date": "1999-01-31",
-          "name": "Family Guy",
-          "vote_average": 7.386,
-          "vote_count": 4739
+          "original_name": "The Office",
+          "overview": "The everyday lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company.",
+          "popularity": 126.7556,
+          "poster_path": "/7DJKHzAi83BmQrWLrYYOqcoKfhR.jpg",
+          "first_air_date": "2005-03-24",
+          "softcore": false,
+          "name": "The Office",
+          "vote_average": 8.588,
+          "vote_count": 5227
         },
         {
           "adult": false,
-          "backdrop_path": "/tc7canPSAn2X14hYi6Rl3gZm1o4.jpg",
+          "backdrop_path": "/5s9XHTB9SLPdg3mNU6BlSLnZ9Qq.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 34307,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Shameless",
+          "overview": "Chicagoan Frank Gallagher is the proud single dad of six smart, industrious, independent kids, who without him would be... perhaps better off. When Frank\u0027s not at the bar spending what little money they have, he\u0027s passed out on the floor. But the kids have found ways to grow up in spite of him. They may not be like any family you know, but they make no apologies for being exactly who they are.",
+          "popularity": 141.9102,
+          "poster_path": "/ifo31fMWLmyOVpdak9K0kY4jldQ.jpg",
+          "first_air_date": "2011-01-09",
+          "softcore": false,
+          "name": "Shameless",
+          "vote_average": 8.165,
+          "vote_count": 3341
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aSye04zKzWtUP3U6Cl4bOXc5Ih9.jpg",
           "genre_ids": [
             80,
             18
           ],
-          "id": 549,
+          "id": 1911,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Law \u0026 Order",
-          "overview": "In cases ripped from the headlines, police investigate serious and often deadly crimes, weighing the evidence and questioning the suspects until someone is taken into custody. The district attorney\u0027s office then builds a case to convict the perpetrator by proving the person guilty beyond a reasonable doubt. Working together, these expert teams navigate all sides of the complex criminal justice system to make New York a safer place.",
-          "popularity": 83.3096,
-          "poster_path": "/haJ9eHytVO3H3JooMJG1DiWwDNm.jpg",
-          "first_air_date": "1990-09-13",
-          "name": "Law \u0026 Order",
-          "vote_average": 7.367,
-          "vote_count": 650
+          "original_name": "Bones",
+          "overview": "Dr. Temperance Brennan and her\u00A0colleagues at the Jeffersonian\u0027s Medico-Legal Lab assist Special Agent Seeley Booth\u00A0with murder investigations when the remains are so badly decomposed, burned or destroyed that the standard identification methods are useless.",
+          "popularity": 131.4439,
+          "poster_path": "/eyTu5c8LniVciRZIOSHTvvkkgJa.jpg",
+          "first_air_date": "2005-09-13",
+          "softcore": false,
+          "name": "Bones",
+          "vote_average": 8.19,
+          "vote_count": 3497
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/Tji8xJNhFkykZaVzj13rrZb85S.jpg",
+          "genre_ids": [
+            18,
+            9648,
+            10766,
+            35
+          ],
+          "id": 322544,
+          "origin_country": [
+            "LK"
+          ],
+          "original_language": "si",
+          "original_name": "\u0DB4\u0DD2\u0DBB\u0DD2\u0DB8\u0DD2 \u0DC5\u0DB8\u0DBA\u0DD2",
+          "overview": "Set in a chaotic village, the story explores a community deeply divided by class tensions, troubled marriages, and frequent clashes between local thugs and residents. The lives and secrets of these villagers ultimately revolve around a deep, hidden mystery buried within the walls of a prominent local manor house.",
+          "popularity": 115.3338,
+          "poster_path": "/kNNet6WH3KNciV4dKNCyw7NS3Ew.jpg",
+          "first_air_date": "2024-11-11",
+          "softcore": false,
+          "name": "Pirimi Lamai",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2eIlCirgcvEwmCSYh2wDfz5Sxvz.jpg",
+          "genre_ids": [
+            18,
+            80,
+            9648
+          ],
+          "id": 46952,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Blacklist",
+          "overview": "Raymond \u0022Red\u0022 Reddington, one of the FBI\u0027s most wanted fugitives, surrenders in person at FBI Headquarters in Washington, D.C. He claims that he and the FBI have the same interests: bringing down dangerous criminals and terrorists. In the last two decades, he\u0027s made a list of criminals and terrorists that matter the most but the FBI cannot find because it does not know they exist. Reddington calls this \u0022The Blacklist\u0022. Reddington will co-operate, but insists that he will speak only to Elizabeth Keen, a rookie FBI profiler.",
+          "popularity": 127.1472,
+          "poster_path": "/4HTfd1PhgFUenJxVuBDNdLmdr0c.jpg",
+          "first_air_date": "2013-09-23",
+          "softcore": false,
+          "name": "The Blacklist",
+          "vote_average": 7.636,
+          "vote_count": 3586
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/r0Q6eeN9L1ORL9QsV0Sg8ZV3vnv.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1408,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "House",
+          "overview": "Dr. Gregory House, a drug-addicted, unconventional, misanthropic medical genius, leads a team of diagnosticians at the fictional Princeton\u2013Plainsboro Teaching Hospital in New Jersey.",
+          "popularity": 123.652,
+          "poster_path": "/3Cz7ySOQJmqiuTdrc6CY0r65yDI.jpg",
+          "first_air_date": "2004-11-16",
+          "softcore": false,
+          "name": "House",
+          "vote_average": 8.566,
+          "vote_count": 7607
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lH22EnM0ofC7GsVGU8dAA2RXV1c.jpg",
+          "genre_ids": [
+            10759,
+            16,
+            10762
+          ],
+          "id": 65334,
+          "origin_country": [
+            "FR"
+          ],
+          "original_language": "fr",
+          "original_name": "Miraculous, les aventures de Ladybug et Chat Noir",
+          "overview": "Marinette and Adrien, two Parisian teenagers, are entrusted with powerful jewels in order to transform into superheroes Ladybug and Cat Noir. But neither hero knows the other\u0027s true identity \u2014 or that they\u0027re classmates!",
+          "popularity": 121.7217,
+          "poster_path": "/acrtAy8gmxcsEvrDP09MpMSCeDZ.jpg",
+          "first_air_date": "2015-10-19",
+          "softcore": false,
+          "name": "Miraculous: Tales of Ladybug \u0026 Cat Noir",
+          "vote_average": 8.1,
+          "vote_count": 4600
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4wVq9ICc4MI2XcssrumpCOhKLpI.jpg",
+          "genre_ids": [
+            10765,
+            10759,
+            18
+          ],
+          "id": 4604,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Smallville",
+          "overview": "The origins of the world\u2019s greatest hero\u2013from Krypton refugee Kal-el\u2019s arrival on Earth through his tumultuous teen years to Clark Kent\u2019s final steps toward embracing his destiny as the Man of Steel.",
+          "popularity": 116.9553,
+          "poster_path": "/mHZSq8LA5Dt48JjaOZ5tcPXQRVN.jpg",
+          "first_air_date": "2001-10-16",
+          "softcore": false,
+          "name": "Smallville",
+          "vote_average": 8.19,
+          "vote_count": 4469
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4NRBKA8qVzCvuD3WeLieiLGmIjm.jpg",
+          "genre_ids": [
+            16
+          ],
+          "id": 95897,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u304A\u30FC\u3070\u30FC\u3075\u308D\u3049",
+          "overview": "Kazushi Sudou is a university student who is visited by his two childhood friends, the sisters Ayane and Kotone Shirakawa. When Ayane discovers that Kazushi not only forgot to buy her pudding but is also using her special lotion in the bath, she decides to take revenge and join Kazushi in his bath along with Kotone. Will the perverted Kazushi be able to remain indifferent to them both?",
+          "popularity": 121.6268,
+          "poster_path": "/8RtwL5gxUvh9YViqjhNlVRvJpum.jpg",
+          "first_air_date": "2020-01-06",
+          "softcore": false,
+          "name": "Overflow",
+          "vote_average": 7.33,
+          "vote_count": 88
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l2AFzFVPepVDekTcjKSH079biRC.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 112079,
+          "origin_country": [
+            "HK"
+          ],
+          "original_language": "cn",
+          "original_name": "\u72C2\u6F6E",
+          "overview": "Hotel is a TVB television series, premiered on 1 November 1976. Theme song \u0022Hotel\u0022 composition and arrangement by Joseph Koo, lyricist by Wong Jim, sung by Susanna Kwan.",
+          "popularity": 163.7366,
+          "poster_path": "/w5hwoVacFcF6a6YZ8CKHsR2gwH9.jpg",
+          "first_air_date": "1976-10-04",
+          "softcore": false,
+          "name": "Hotel",
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
@@ -222,264 +488,31 @@
           "original_language": "en",
           "original_name": "The Walking Dead",
           "overview": "Sheriff\u0027s deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
-          "popularity": 83.1204,
+          "popularity": 114.2233,
           "poster_path": "/ng3cMtxYKt1OSQYqFlnKWnVsqNO.jpg",
           "first_air_date": "2010-10-31",
+          "softcore": false,
           "name": "The Walking Dead",
-          "vote_average": 8.089,
-          "vote_count": 17379
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/usLRh1bcbL0Q9X8zf6rL4OV1qrA.jpg",
-          "genre_ids": [
-            10759,
-            10765,
-            18
-          ],
-          "id": 2661,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u4EEE\u9762\u30E9\u30A4\u30C0\u30FC",
-          "overview": "Takeshi Hongo is a promising young man with a passion for motorcycle racing. However, his dreams are suddenly ruined when he gets kidnapped by Shocker, the evil secret organization planning to dominate the world. After being remodeled into a cyborg, Takeshi escapes and swears to protect the world from the inhuman monsters.",
-          "popularity": 82.8277,
-          "poster_path": "/lv3OlrXyTNg4Dz0JrtopOmMziNs.jpg",
-          "first_air_date": "1971-04-03",
-          "name": "Kamen Rider",
-          "vote_average": 6.457,
-          "vote_count": 92
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/QbRbCULZVBcrN2uydpmIOQLV5O.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 301507,
-          "origin_country": [
-            "CA"
-          ],
-          "original_language": "en",
-          "original_name": "Heated Rivalry",
-          "overview": "Two of the biggest stars in Major League Hockey are bound by ambition, rivalry, and a magnetic pull neither of them fully understands. What begins as a secret fling between two fresh faced rookies evolves into a years-long journey of love, denial, and self-discovery. Over the next eight years, as they chase glory on the ice, they struggle to navigate their feelings for each other. Torn between the sport they live for and the love they can\u2019t ignore, they must decide if there\u2019s room in their fiercely competitive world for something as fragile \u2013 and powerful \u2013 as real love.",
-          "popularity": 80.887,
-          "poster_path": "/epgr7n61vVIniyAghz2GYj22DkC.jpg",
-          "first_air_date": "2025-11-28",
-          "name": "Heated Rivalry",
-          "vote_average": 8.36,
-          "vote_count": 50
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/z095rHEgB5T91bw19WN849xTr5u.jpg",
-          "genre_ids": [
-            10759
-          ],
-          "id": 107703,
-          "origin_country": [
-            "RU"
-          ],
-          "original_language": "ru",
-          "original_name": "\u0418\u0433\u0440\u0430 \u043D\u0430 \u0432\u044B\u0436\u0438\u0432\u0430\u043D\u0438\u0435",
-          "overview": "Sixteen contestants of a new survival show are taken to the Siberian taiga to compete for the price of one million euros. The rules are simple: no food, personal belongings, electricity, communications and civilization for hundreds of kilometers around. The one remains wins. Soon TV project turns into a deadly game, where LIFE becomes the main prize... What is it? Is it sick TV script? Who is behind this? And who can survive without losing their humanity?",
-          "popularity": 80.5738,
-          "poster_path": "/chLNbjo3QV6Sw47dH5W8ZxArBYb.jpg",
-          "first_air_date": "2020-08-31",
-          "name": "The Big Game",
-          "vote_average": 7.4,
-          "vote_count": 55
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/gFkHcIh7iE5G0oVOgpmY8ONQjhl.jpg",
-          "genre_ids": [
-            18,
-            10765
-          ],
-          "id": 60735,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Flash",
-          "overview": "After being struck by lightning, CSI investigator Barry Allen awakens from a nine-month coma to discover he has been  granted the gift of super speed.  Teaming up with S.T.A.R. Labs, Barry takes on the persona of The Flash, the Fastest  Man Alive, to protect his city.",
-          "popularity": 79.0137,
-          "poster_path": "/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
-          "first_air_date": "2014-10-07",
-          "name": "The Flash",
-          "vote_average": 7.768,
-          "vote_count": 11452
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 1668,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Friends",
-          "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
-          "popularity": 78.6868,
-          "poster_path": "/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
-          "first_air_date": "1994-09-22",
-          "name": "Friends",
-          "vote_average": 8.422,
-          "vote_count": 8741
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lHe8iwM4Cdm6RSEiara4PN8ZcBd.jpg",
-          "genre_ids": [
-            10759,
-            18,
-            10768
-          ],
-          "id": 44217,
-          "origin_country": [
-            "CA"
-          ],
-          "original_language": "en",
-          "original_name": "Vikings",
-          "overview": "The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar\u0027s band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.",
-          "popularity": 78.5937,
-          "poster_path": "/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg",
-          "first_air_date": "2013-03-03",
-          "name": "Vikings",
-          "vote_average": 8.1,
-          "vote_count": 7410
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1vhKauCQAq32u53X8n9qI896e6.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 46296,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Spartacus",
-          "overview": "Torn from his homeland and the woman he loves, Spartacus is condemned to the brutal world of the arena where blood and death are primetime entertainment.",
-          "popularity": 76.3939,
-          "poster_path": "/c2GKN4VHCj1dnjFMANRpGkCVBae.jpg",
-          "first_air_date": "2010-01-22",
-          "name": "Spartacus",
-          "vote_average": 8.028,
-          "vote_count": 2778
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/4AXxajuAz9tHAOe6h5zDg8z1X2s.jpg",
-          "genre_ids": [
-            80,
-            18
-          ],
-          "id": 1911,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Bones",
-          "overview": "Dr. Temperance Brennan and her\u00A0colleagues at the Jeffersonian\u0027s Medico-Legal Lab assist Special Agent Seeley Booth\u00A0with murder investigations when the remains are so badly decomposed, burned or destroyed that the standard identification methods are useless.",
-          "popularity": 74.9415,
-          "poster_path": "/eyTu5c8LniVciRZIOSHTvvkkgJa.jpg",
-          "first_air_date": "2005-09-13",
-          "name": "Bones",
-          "vote_average": 8.205,
-          "vote_count": 3363
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/s0w8JbuNNxL1YgaHeDWih12C3jG.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10759,
-            10765
-          ],
-          "id": 63926,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u30EF\u30F3\u30D1\u30F3\u30DE\u30F3",
-          "overview": "The most powerful superhero in the world can kill anyone with one blow. But nothing can challenge him, so he struggles with ennui and depression.",
-          "popularity": 71.947,
-          "poster_path": "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg",
-          "first_air_date": "2015-10-05",
-          "name": "One-Punch Man",
-          "vote_average": 8.4,
-          "vote_count": 3944
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/foGkPxpw9h8zln81j63mix5B7m8.jpg",
-          "genre_ids": [
-            18,
-            10759
-          ],
-          "id": 71912,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Witcher",
-          "overview": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
-          "popularity": 71.4569,
-          "poster_path": "/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
-          "first_air_date": "2019-12-20",
-          "name": "The Witcher",
-          "vote_average": 7.964,
-          "vote_count": 6442
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/bY2J2Jq8rSrKm5xCFtzYzqFh44o.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 2316,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Office",
-          "overview": "The everyday lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company.",
-          "popularity": 71.1233,
-          "poster_path": "/dg9e5fPRRId8PoBE0F6jl5y85Eu.jpg",
-          "first_air_date": "2005-03-24",
-          "name": "The Office",
-          "vote_average": 8.6,
-          "vote_count": 4838
+          "vote_average": 8.086,
+          "vote_count": 17851
         }
       ],
-      "total_pages": 10571,
-      "total_results": 211412
+      "total_pages": 11205,
+      "total_results": 224088
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=23966",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=10534",
-      "x-memc": "HIT",
-      "x-memc-key": "c12c31f0d2890f8f400a9ac98d34289ee6262ce2cb9956581bf182f3c013f280",
-      "x-az": "us-east-1b",
-      "ETag": "W/\u002208b9bbe00b4ef99d55818536f6dcff70\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00224c3412a006f027c7605f21a96e60a146\u0022",
+      "x-az": "us-east-1c",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

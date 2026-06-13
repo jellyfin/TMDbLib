@@ -1,29 +1,29 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Movies;
 
 /// <summary>
-/// Represents the cast and crew credits for a movie.
+/// Cast and crew credits for a movie.
 /// </summary>
 public class Credits
 {
     /// <summary>
-    /// Gets or sets the list of cast members.
+    /// Gets or sets the cast members.
     /// </summary>
-    [JsonProperty("cast")]
+    [JsonPropertyName("cast")]
     public List<Cast>? Cast { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of crew members.
+    /// Gets or sets the crew members.
     /// </summary>
-    [JsonProperty("crew")]
+    [JsonPropertyName("crew")]
     public List<Crew>? Crew { get; set; }
 
     /// <summary>
-    /// Gets or sets the movie ID.
+    /// Gets or sets the movie id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

@@ -1,100 +1,146 @@
-﻿using System;
-using System.Globalization;
+using System;
 using System.Linq;
 using System.Reflection;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
-/// JSON converter for enum values that gracefully handles unrecognized values by falling back to defaults.
+/// Converter factory for enums that gracefully handles unrecognized values by falling back to defaults.
 /// </summary>
-public class TolerantEnumConverter : JsonConverter
+public class TolerantEnumConverter : JsonConverterFactory
 {
-    /// <summary>
-    /// Determines whether this instance can convert the specified object type.
-    /// </summary>
-    /// <param name="objectType">Type of the object.</param>
-    /// <returns>True if this converter can convert the type; otherwise, false.</returns>
-    public override bool CanConvert(Type objectType)
+    /// <inheritdoc />
+    public override bool CanConvert(Type typeToConvert)
     {
-        var type = IsNullableType(objectType) ? Nullable.GetUnderlyingType(objectType) : objectType;
+        var type = IsNullableType(typeToConvert) ? Nullable.GetUnderlyingType(typeToConvert) : typeToConvert;
         return type is not null && type.GetTypeInfo().IsEnum;
     }
 
-    /// <summary>
-    /// Reads the JSON representation of the object.
-    /// </summary>
-    /// <param name="reader">The <see cref="JsonReader"/> to read from.</param>
-    /// <param name="objectType">Type of the object.</param>
-    /// <param name="existingValue">The existing value of object being read.</param>
-    /// <param name="serializer">The calling serializer.</param>
-    /// <returns>The parsed enum value, or a default value if parsing fails.</returns>
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    /// <inheritdoc />
+    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
-        var isNullable = IsNullableType(objectType);
-        var enumType = isNullable ? Nullable.GetUnderlyingType(objectType) : objectType;
+        var isNullable = IsNullableType(typeToConvert);
+        var enumType = isNullable ? Nullable.GetUnderlyingType(typeToConvert)! : typeToConvert;
 
-        if (enumType is null)
-        {
-            return null;
-        }
+        var converterType = isNullable
+            ? typeof(TolerantNullableEnumConverter<>).MakeGenericType(enumType)
+            : typeof(TolerantEnumConverter<>).MakeGenericType(enumType);
 
-        var names = Enum.GetNames(enumType);
-
-        if (reader.TokenType == JsonToken.String)
-        {
-            var enumText = reader.Value?.ToString();
-
-            if (!string.IsNullOrEmpty(enumText))
-            {
-                var match = names.FirstOrDefault(n => string.Equals(n, enumText, StringComparison.OrdinalIgnoreCase));
-
-                if (match is not null)
-                {
-                    return Enum.Parse(enumType, match);
-                }
-            }
-        }
-        else if (reader.TokenType == JsonToken.Integer)
-        {
-            var enumVal = Convert.ToInt32(reader.Value, CultureInfo.InvariantCulture);
-            var values = (int[])Enum.GetValues(enumType);
-            if (values.Contains(enumVal))
-            {
-                return Enum.Parse(enumType, enumVal.ToString(CultureInfo.InvariantCulture));
-            }
-        }
-
-        if (!isNullable)
-        {
-            var defaultName = names.FirstOrDefault(n => string.Equals(n, "Unknown", StringComparison.OrdinalIgnoreCase)) ?? names.First();
-
-            return Enum.Parse(enumType, defaultName);
-        }
-
-        return null;
-    }
-
-    /// <summary>
-    /// Writes the JSON representation of the object.
-    /// </summary>
-    /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
-    /// <param name="value">The value to write.</param>
-    /// <param name="serializer">The calling serializer.</param>
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-    {
-        if (value is null)
-        {
-            writer.WriteNull();
-            return;
-        }
-
-        writer.WriteValue(value.ToString());
+        return (JsonConverter)Activator.CreateInstance(converterType)!;
     }
 
     private static bool IsNullableType(Type t)
     {
         return t.GetTypeInfo().IsGenericType && t.GetGenericTypeDefinition() == typeof(Nullable<>);
+    }
+}
+
+/// <summary>
+/// Typed tolerant enum converter.
+/// </summary>
+internal class TolerantEnumConverter<TEnum> : JsonConverter<TEnum>
+    where TEnum : struct, Enum
+{
+    public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        var names = Enum.GetNames<TEnum>();
+
+        if (reader.TokenType == JsonTokenType.String)
+        {
+            var enumText = reader.GetString();
+            if (!string.IsNullOrEmpty(enumText))
+            {
+                // Honour EnumValue attribute mapping first (TMDb sends lowercase forms).
+                var mapped = EnumMemberCache.GetValue(enumText, typeof(TEnum));
+                if (mapped is TEnum mappedTyped)
+                {
+                    return mappedTyped;
+                }
+
+                var match = names.FirstOrDefault(n => string.Equals(n, enumText, StringComparison.OrdinalIgnoreCase));
+                if (match is not null && Enum.TryParse<TEnum>(match, out var parsed))
+                {
+                    return parsed;
+                }
+            }
+        }
+        else if (reader.TokenType == JsonTokenType.Number && reader.TryGetInt32(out var enumVal))
+        {
+            var values = (int[])(object)Enum.GetValues<TEnum>();
+            if (values.Contains(enumVal))
+            {
+                return (TEnum)Enum.ToObject(typeof(TEnum), enumVal);
+            }
+        }
+
+        var defaultName = names.FirstOrDefault(n => string.Equals(n, "Unknown", StringComparison.OrdinalIgnoreCase)) ?? names.First();
+        return Enum.Parse<TEnum>(defaultName);
+    }
+
+    public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
+    {
+        var str = EnumMemberCache.GetString(value);
+        writer.WriteStringValue(str ?? value.ToString());
+    }
+}
+
+/// <summary>
+/// Typed tolerant nullable enum converter.
+/// </summary>
+internal class TolerantNullableEnumConverter<TEnum> : JsonConverter<TEnum?>
+    where TEnum : struct, Enum
+{
+    public override TEnum? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        if (reader.TokenType == JsonTokenType.Null)
+        {
+            return null;
+        }
+
+        var names = Enum.GetNames<TEnum>();
+
+        if (reader.TokenType == JsonTokenType.String)
+        {
+            var enumText = reader.GetString();
+            if (!string.IsNullOrEmpty(enumText))
+            {
+                // Honour EnumValue attribute mapping first (TMDb sends lowercase forms).
+                var mapped = EnumMemberCache.GetValue(enumText, typeof(TEnum));
+                if (mapped is TEnum mappedTyped)
+                {
+                    return mappedTyped;
+                }
+
+                var match = names.FirstOrDefault(n => string.Equals(n, enumText, StringComparison.OrdinalIgnoreCase));
+                if (match is not null && Enum.TryParse<TEnum>(match, out var parsed))
+                {
+                    return parsed;
+                }
+            }
+        }
+        else if (reader.TokenType == JsonTokenType.Number && reader.TryGetInt32(out var enumVal))
+        {
+            var values = (int[])(object)Enum.GetValues<TEnum>();
+            if (values.Contains(enumVal))
+            {
+                return (TEnum)Enum.ToObject(typeof(TEnum), enumVal);
+            }
+        }
+
+        return null;
+    }
+
+    public override void Write(Utf8JsonWriter writer, TEnum? value, JsonSerializerOptions options)
+    {
+        if (value is null)
+        {
+            writer.WriteNullValue();
+            return;
+        }
+
+        var str = EnumMemberCache.GetString(value.Value);
+        writer.WriteStringValue(str ?? value.Value.ToString());
     }
 }

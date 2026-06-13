@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Find;
@@ -10,33 +10,33 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// FindAsync movies, people and tv shows by an external id.
-    /// The following types can be found based on the specified external id's
-    /// - Movies: Imdb
-    /// - People: Imdb, FreeBaseMid, FreeBaseId, TvRage
-    /// - TV Series: Imdb, FreeBaseMid, FreeBaseId, TvRage, TvDb.
+    /// Finds movies, people, and TV shows by an external id.
     /// </summary>
-    /// <param name="source">The source the specified id belongs to.</param>
-    /// <param name="id">The id of the object you wish to located.</param>
-    /// <returns>A list of all objects in TMDb that matched your id.</returns>
-    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <param name="source">The external source.</param>
+    /// <param name="id">The external id to look up.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>All matching TMDb objects.</returns>
+    /// <remarks>
+    /// Supported sources: Movies (Imdb); People (Imdb, FreeBaseMid, FreeBaseId, TvRage);
+    /// TV Series (Imdb, FreeBaseMid, FreeBaseId, TvRage, TvDb).
+    /// </remarks>
     public Task<FindContainer?> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default)
     {
         return FindAsync(source, id, null, cancellationToken);
     }
 
     /// <summary>
-    /// FindAsync movies, people and tv shows by an external id.
-    /// The following types can be found based on the specified external id's
-    /// - Movies: Imdb
-    /// - People: Imdb, FreeBaseMid, FreeBaseId, TvRage
-    /// - TV Series: Imdb, FreeBaseMid, FreeBaseId, TvRage, TvDb.
+    /// Finds movies, people, and TV shows by an external id in a specific language.
     /// </summary>
-    /// <param name="source">The source the specified id belongs to.</param>
-    /// <param name="id">The id of the object you wish to located.</param>
-    /// <returns>A list of all objects in TMDb that matched your id.</returns>
-    /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
+    /// <param name="source">The external source.</param>
+    /// <param name="id">The external id to look up.</param>
+    /// <param name="language">The ISO 639-1 language code (e.g. en, it, es).</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>All matching TMDb objects.</returns>
+    /// <remarks>
+    /// Supported sources: Movies (Imdb); People (Imdb, FreeBaseMid, FreeBaseId, TvRage);
+    /// TV Series (Imdb, FreeBaseMid, FreeBaseId, TvRage, TvDb).
+    /// </remarks>
     public async Task<FindContainer?> FindAsync(FindExternalSource source, string id, string? language, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("find/{id}");

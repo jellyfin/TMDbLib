@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -8,20 +8,20 @@ namespace TMDbLib.Objects.TvShows;
 public class NetworkBase
 {
     /// <summary>
-    /// Gets or sets the network ID.
+    /// Gets or sets the network id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the network.
+    /// Gets or sets the network name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the origin country code of the network.
+    /// Gets or sets the origin country code.
     /// </summary>
-    [JsonProperty("origin_country")]
+    [JsonPropertyName("origin_country")]
     public string? OriginCountry { get; set; }
 }

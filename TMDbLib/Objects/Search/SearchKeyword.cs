@@ -1,21 +1,21 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Search;
 
 /// <summary>
-/// Represents a keyword search result.
+/// Keyword search result.
 /// </summary>
 public class SearchKeyword
 {
     /// <summary>
-    /// Gets or sets the keyword ID.
+    /// Gets or sets the keyword id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the keyword name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 }

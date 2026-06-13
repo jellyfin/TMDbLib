@@ -1,51 +1,82 @@
-﻿using System;
+using System;
 using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
-/// JSON converter for UTC datetime values in TMDb's specific format.
+/// JSON converter factory for UTC datetime values in TMDb's specific format
+/// (<c>yyyy-MM-dd HH:mm:ss UTC</c>). Supports both <see cref="DateTime"/> and
+/// <see cref="Nullable{DateTime}"/> properties.
 /// </summary>
-public class TmdbUtcTimeConverter : DateTimeConverterBase
+public class TmdbUtcTimeConverter : JsonConverterFactory
 {
     private const string Format = "yyyy-MM-dd HH:mm:ss 'UTC'";
 
-    /// <summary>
-    /// Reads the JSON representation of the object.
-    /// </summary>
-    /// <param name="reader">The <see cref="JsonReader"/> to read from.</param>
-    /// <param name="objectType">Type of the object.</param>
-    /// <param name="existingValue">The existing value of object being read.</param>
-    /// <param name="serializer">The calling serializer.</param>
-    /// <returns>The parsed DateTime value.</returns>
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    /// <inheritdoc />
+    public override bool CanConvert(Type typeToConvert)
     {
-        var stringValue = reader.Value?.ToString();
-        if (string.IsNullOrEmpty(stringValue))
-        {
-            return null;
-        }
-
-        return DateTime.ParseExact(stringValue, Format, null);
+        return typeToConvert == typeof(DateTime) || typeToConvert == typeof(DateTime?);
     }
 
-    /// <summary>
-    /// Writes the JSON representation of the object.
-    /// </summary>
-    /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
-    /// <param name="value">The value to write.</param>
-    /// <param name="serializer">The calling serializer.</param>
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    /// <inheritdoc />
+    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
-        if (value is DateTime dateTime)
+        if (typeToConvert == typeof(DateTime?))
         {
-            writer.WriteValue(dateTime.ToString(Format, CultureInfo.InvariantCulture));
+            return new NullableConverter();
         }
-        else
+
+        return new Converter();
+    }
+
+    private sealed class Converter : JsonConverter<DateTime>
+    {
+        public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            writer.WriteNull();
+            var stringValue = reader.GetString();
+            if (string.IsNullOrEmpty(stringValue))
+            {
+                return default;
+            }
+
+            return DateTime.ParseExact(stringValue, Format, CultureInfo.InvariantCulture);
+        }
+
+        public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value.ToString(Format, CultureInfo.InvariantCulture));
+        }
+    }
+
+    private sealed class NullableConverter : JsonConverter<DateTime?>
+    {
+        public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType == JsonTokenType.Null)
+            {
+                return null;
+            }
+
+            var stringValue = reader.GetString();
+            if (string.IsNullOrEmpty(stringValue))
+            {
+                return null;
+            }
+
+            return DateTime.ParseExact(stringValue, Format, CultureInfo.InvariantCulture);
+        }
+
+        public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
+        {
+            if (value is null)
+            {
+                writer.WriteNullValue();
+                return;
+            }
+
+            writer.WriteStringValue(value.Value.ToString(Format, CultureInfo.InvariantCulture));
         }
     }
 }

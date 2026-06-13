@@ -1,0 +1,431 @@
+{
+  "Guid": "6caf2fb8-e282-7447-bbc4-29df171ae071",
+  "UpdatedAt": "2026-06-13T13:30:17.950735Z",
+  "Title": "Proxy Mapping for GET /3/movie/259872/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/259872/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/259872/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 259872,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 16
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 27
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 10
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 11
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 37
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 11
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 28
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 6
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 18
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 10
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 27
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 26
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 13
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 11
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 18
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 7
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 6
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 6
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 14
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 16
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 12
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 11
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 5
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 9
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 7
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 11
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/259872-des-jours-plus-belles-que-la-nuit/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/eKVmLFHW5PeNhuR7Nedd8OIxW2M.jpg",
+              "provider_id": 100,
+              "provider_name": "GuideDoc",
+              "display_priority": 59
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=21818",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022ebcf39619454d5cd6c3ea550cd702b4b\u0022",
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

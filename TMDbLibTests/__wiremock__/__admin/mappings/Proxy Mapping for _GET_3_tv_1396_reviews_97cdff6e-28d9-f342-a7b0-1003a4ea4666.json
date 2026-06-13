@@ -1,6 +1,6 @@
 {
   "Guid": "97cdff6e-28d9-f342-a7b0-1003a4ea4666",
-  "UpdatedAt": "2025-12-24T18:45:21.6632225Z",
+  "UpdatedAt": "2026-06-13T13:30:14.074749Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/reviews",
   "Description": "Proxy Mapping for GET /3/tv/1396/reviews",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -38,24 +51,25 @@
       "page": 2,
       "results": [],
       "total_pages": 1,
-      "total_results": 4
+      "total_results": 5
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "63d9a8656eddc9d2df3b62e8d72b36e9db85e51995f01369fbdcf8320b675482",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=26861",
-      "ETag": "W/\u0022473153d354eaf68f2e586f987f7e07c4\u0022",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=22569",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "63d9a8656eddc9d2df3b62e8d72b36e9",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022490073816d83c4c7adfd61af0d44be69\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

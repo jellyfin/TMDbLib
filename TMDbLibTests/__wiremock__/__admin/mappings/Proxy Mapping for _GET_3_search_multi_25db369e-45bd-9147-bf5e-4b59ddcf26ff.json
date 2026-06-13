@@ -1,6 +1,6 @@
 {
   "Guid": "25db369e-45bd-9147-bf5e-4b59ddcf26ff",
-  "UpdatedAt": "2025-12-24T18:45:19.2366058Z",
+  "UpdatedAt": "2026-06-13T13:30:13.936853Z",
   "Title": "Proxy Mapping for GET /3/search/multi",
   "Description": "Proxy Mapping for GET /3/search/multi",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -58,268 +71,222 @@
       "results": [
         {
           "adult": false,
-          "id": 3182568,
-          "name": "Arrow Schwartzman",
-          "original_name": "Arrow Schwartzman",
-          "media_type": "person",
-          "popularity": 0.0379,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/A0rOMht0Z5tJ7QHGt7aIpfNvlT1.jpg",
-              "id": 324245,
-              "title": "7 Chinese Brothers",
-              "original_title": "7 Chinese Brothers",
-              "overview": "Larry is an unqualified, unemployable, inebriated prankster who rides a tide of booze onto the glorious shores of an undiscriminating Quick-Lube.  Taking a part-time job vacuuming and washing windshields, Larry finds himself mixed up with hostile co-workers and unsatisfied customers, while also finding himself smitten with his lovely boss, Lupe Torrez.  Will Larry keep it together long enough to win the girl, provide for man\u0027s best friend (his dog Arrow), and do his grandmother proud?",
-              "poster_path": "/k1vtozOhbk76ZmBJzKfmv1pev9i.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35
-              ],
-              "popularity": 1.8575,
-              "release_date": "2015-08-14",
-              "video": false,
-              "vote_average": 5.337,
-              "vote_count": 43
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 4200435,
-          "name": "Andrew Arrow",
-          "original_name": "Andrew Arrow",
-          "media_type": "person",
-          "popularity": 0.0956,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 1161356,
-              "title": "Five Questions",
-              "original_title": "Five Questions",
-              "overview": "In Five Questions, Jill, played by Amber Paul, comes to terms with an early trauma in her life. In each of the film\u0027s five scenes, a question is asked that propels Jill forward and toward an answer that opens a path to resolution.",
-              "poster_path": "/s9JY72j6LMwGBoFcad0PqUbhdbj.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 0.0898,
-              "release_date": "",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/i22S0qlmgd9zyBmCvmJQ9PB4rxt.jpg",
-          "id": 107228,
-          "title": "The Golden Arrow",
-          "original_title": "L\u0027arciere delle mille e una notte",
-          "overview": "Genies help an Arabian bandit (Tab Hunter) locate a magic arrow he needs to claim heirship to the sultan\u0027s kingdom.",
-          "poster_path": "/gVtdDfRAEqAx9QGkFqIrsOhcHKX.jpg",
+          "backdrop_path": "/l5xvPttML8yG8kn3InPiRHfoo24.jpg",
+          "id": 383366,
+          "title": "Blood Arrow",
+          "original_title": "Blood Arrow",
+          "overview": "Phyllis Coates, TV\u0027s erstwhile Lois Lane, essays one of her largest film roles in Blood Arrow. Coates is cast as a devout Mormon girl whose mission is to transport smallpox vaccine to her friends and neighbors. Unfortunately, this requires her to journey through hostile Indian territory. Appointing themselves as the girl\u0027s unofficial protectors are Indian scout Scott Brady, trapper Don Haggerty and (reluctantly) gambler Paul Richards.",
+          "poster_path": "/qEWZJnLSNhqw79VsYYtPmEM1VHn.jpg",
           "media_type": "movie",
-          "original_language": "it",
+          "original_language": "en",
           "genre_ids": [
-            12,
-            14
+            37
           ],
-          "popularity": 0.1263,
-          "release_date": "1962-09-07",
+          "popularity": 0.1331,
+          "release_date": "1958-03-31",
+          "softcore": false,
           "video": false,
-          "vote_average": 4.7,
-          "vote_count": 6
+          "vote_average": 8.0,
+          "vote_count": 2
         },
         {
           "adult": false,
           "backdrop_path": null,
-          "id": 359222,
-          "title": "Strike Witches: Operation Victory Arrow Vol.1 - The Thunder of Saint-Trond",
-          "original_title": "\u30B9\u30C8\u30E9\u30A4\u30AF\u30A6\u30A3\u30C3\u30C1\u30FC\u30BA Operation Victory Arrow vol.1 \u30B5\u30F3\u30FB\u30C8\u30ED\u30F3\u306E\u96F7\u9CF4",
-          "overview": "After half a month from Romagna release according to the first 501 Joint Fighter Wing , known as the \u0022 Strike Witches \u0022 ,  To Mina us Carl slant members of the original that are stationed in San Tron base of Berugika kingdom ,  Twin sister Ursula of Erica Hartmann have been dispatched .  Ursula belonging to the prototype development team of native Carl slant is , in Mina us  It was to have brought a variety of prototype in order to ask the practical test .  \u0022I \u0027m did me great pains come , but do not you sometimes the help of sister , Hartmann \u0022  \u0022 Sister , I have something angry ? \u0022  No, no it ejected is Erica Hartmann to test the prototype .  However , the activities of Neuroi around Berugika was not ceased -",
-          "poster_path": "/dkdP2e1ArQcyag0kNvRN5ZxRj4i.jpg",
+          "id": 616026,
+          "title": "Arrow",
+          "original_title": "Arrow",
+          "overview": "Two stories are interconnected in this brief film: Mike, a teenager at Wisconsin Museum of Music, is surrounded by Native American collectibles. Elsewhere, Winfield, a young Native American dancer, bids farewell to his community.",
+          "poster_path": null,
           "media_type": "movie",
-          "original_language": "ja",
-          "genre_ids": [
-            14,
-            16,
-            28
-          ],
-          "popularity": 0.1764,
-          "release_date": "2014-09-20",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.0297,
+          "release_date": "2019-07-12",
+          "softcore": false,
           "video": false,
-          "vote_average": 5.0,
+          "vote_average": 6.0,
           "vote_count": 1
         },
         {
           "adult": false,
-          "id": 3091620,
-          "name": "Ryan Arrowsmith",
-          "original_name": "Ryan Arrowsmith",
+          "id": 4154138,
+          "name": "Arrow Lester",
+          "original_name": "Arrow Lester",
           "media_type": "person",
-          "popularity": 0.0143,
+          "popularity": 0.0398,
           "gender": 0,
-          "known_for_department": "Production",
+          "known_for_department": "Acting",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
               "backdrop_path": null,
-              "id": 830060,
-              "title": "Ghetto Bird",
-              "original_title": "Ghetto Bird",
-              "overview": "A story about three young skaters and their struggles with gang violence, poverty and drug crime in London.",
-              "poster_path": "/4dqNWS4Zfnh1LZJq5CHO3ip805T.jpg",
+              "id": 1149916,
+              "title": "The Nightgown",
+              "original_title": "The Nightgown",
+              "overview": "In 1976, three curious schoolgirls set out to unravel the mystery of a botched exorcism and untimely death of a young girl.",
+              "poster_path": "/gBZrd7WeHMkehIeFiLYEGEKAxCU.jpg",
               "media_type": "movie",
               "original_language": "en",
-              "genre_ids": [],
-              "popularity": 0.6283,
-              "release_date": "2020-01-05",
+              "genre_ids": [
+                27
+              ],
+              "popularity": 0.2551,
+              "release_date": "2023-05-30",
+              "softcore": false,
               "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
+              "vote_average": 3.4,
+              "vote_count": 5
             }
           ]
         },
         {
           "adult": false,
-          "id": 2444980,
-          "name": "Matthew Arrow",
-          "original_name": "Matthew Arrow",
+          "id": 1812082,
+          "name": "Jack Arrow",
+          "original_name": "Jack Arrow",
           "media_type": "person",
-          "popularity": 0.0193,
+          "popularity": 0.2688,
           "gender": 0,
-          "known_for_department": "Production",
+          "known_for_department": "Acting",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/p3XGpyg9uAtiwHBBGN6OtRHDFu7.jpg",
-              "id": 249169,
-              "title": "Don Peyote",
-              "original_title": "Don Peyote",
-              "overview": "An ordinary guy delves deep into counterculture, conspiracy theories and the like as he tries to discern the structure of society.",
-              "poster_path": "/jIIBgSH7XE5Ns4fVcIQfb1B0cUi.jpg",
+              "backdrop_path": "/nLFxvLokHe3bQmrmAfljIfax2jQ.jpg",
+              "id": 185,
+              "title": "A Clockwork Orange",
+              "original_title": "A Clockwork Orange",
+              "overview": "In a near-future Britain, young Alexander DeLarge and his pals get their kicks beating and raping anyone they please. When not destroying the lives of others, Alex swoons to the music of Beethoven. The state, eager to crack down on juvenile crime, gives an incarcerated Alex the option to undergo an invasive procedure that\u0027ll rob him of all personal agency. In a time when conscience is a commodity, can Alex change his tune?",
+              "poster_path": "/4sHeTAp65WrSSuc05nRBKddhBxO.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                35
+                878,
+                80
               ],
-              "popularity": 3.0925,
-              "release_date": "2014-05-01",
+              "popularity": 8.7576,
+              "release_date": "1971-10-28",
+              "softcore": false,
               "video": false,
-              "vote_average": 3.625,
-              "vote_count": 20
+              "vote_average": 8.177,
+              "vote_count": 13837
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/pyTDtQCn5sG8gi2zkM5ZylSNmtJ.jpg",
+              "id": 681,
+              "title": "Diamonds Are Forever",
+              "original_title": "Diamonds Are Forever",
+              "overview": "Diamonds are stolen only to be sold again in the international market. James Bond infiltrates a smuggling mission to find out who\u0027s guilty. The mission takes him to Las Vegas where Bond meets his archenemy Blofeld.",
+              "poster_path": "/ooDT0eKrWCxJCsn9JehPkD0QYNj.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                53
+              ],
+              "popularity": 4.0894,
+              "release_date": "1971-12-14",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.401,
+              "vote_count": 2378
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/uiLhtMHXek72SEfbztG05pTNcc0.jpg",
+              "id": 6646,
+              "title": "Treasure Island",
+              "original_title": "Treasure Island",
+              "overview": "Enchanted by the idea of locating treasure buried by Captain Flint, Squire Trelawney, Dr. Livesey and Jim Hawkins charter a sailing voyage to a Caribbean island. Unfortunately, a large number of Flint\u0027s old pirate crew are aboard the ship, including Long John Silver.",
+              "poster_path": "/zPzBsQZ2EhSmO9FLvQQtWVkJqRu.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                12,
+                10751
+              ],
+              "popularity": 2.6164,
+              "release_date": "1950-07-19",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.6,
+              "vote_count": 236
             }
           ]
         },
         {
           "adult": false,
-          "id": 2606630,
-          "name": "Lark Arrowood",
-          "original_name": "Lark Arrowood",
+          "backdrop_path": "/38N3oiD6aJiJp4Xkriv2v3Ibd8d.jpg",
+          "id": 990397,
+          "title": "Arrow Sworn",
+          "original_title": "\u7D05\u4F36\u5BB4",
+          "overview": "Brilliantly played by LAW Ka-ying, the revered Skyblade hails from a prestigious family of Cantonese opera singers. Pressured into performing opposite the sponsor\u2019s child at the celebrated Red Banquet in return for financial support, the reluctant Skyblade is further taken aback when he realises that Jade is a girl slated to play a male lead role in a predominantly masculine cast. However, as Jade\u2019s talent becomes apparent to Skyblade, a bond is formed between the two during rehearsals, and a mutual understanding that both have been sacrificing their dreams and passions out of duty towards the family. When Jade reveals a shocking resolution to take control of her life, it is up to Skyblade to decide their fate on stage.",
+          "poster_path": "/yI7nsWadZqYeBqd4xxMcQ7KcAcP.jpg",
+          "media_type": "movie",
+          "original_language": "cn",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 0.1227,
+          "release_date": "2022-06-18",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1139952,
+          "title": "Arrow",
+          "original_title": "Arrow",
+          "overview": "Silent abstract video art piece using image processing by Chicago artist Cindy Neal.",
+          "poster_path": "/lBV210R59zoQTZ6u897st0ywVo7.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            16
+          ],
+          "popularity": 0.0409,
+          "release_date": "2012-01-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "id": 1835348,
+          "name": "Jez Arrow",
+          "original_name": "Jez Arrow",
           "media_type": "person",
-          "popularity": 0.0071,
+          "popularity": 0.0,
           "gender": 0,
-          "known_for_department": "Art",
+          "known_for_department": "Acting",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
               "backdrop_path": null,
-              "id": 1076005,
-              "title": "R\u0026R",
-              "original_title": "R\u0026R",
-              "overview": "Robin and Raymond have come to this idyllic cabin in the mountains to get away from the stress and toxicity of modern life, and work on a project that will make the world a better place, while being the ultimate expression of their love....",
-              "poster_path": "/aST6omDBJnMqSqGNtfcx67LdqLF.jpg",
+              "id": 231326,
+              "title": "The Happy Lands",
+              "original_title": "The Happy Lands",
+              "overview": "The Happy Lands tracks the lives of the Brogan, Guthrie and Baxter families as they overcome the economic challenges brought about by the 1926 General Strike.",
+              "poster_path": "/5i2BPFpF4STs7RljZ70oX2Dkw08.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27
+                18,
+                36
               ],
-              "popularity": 0.6942,
-              "release_date": "2018-11-07",
+              "popularity": 0.0631,
+              "release_date": "2012-07-14",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.2,
+              "vote_average": 3.8,
               "vote_count": 2
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/kdNthpoYmtvp9PI7W3tN96cadQT.jpg",
-              "id": 694725,
-              "title": "The Scott Tibbs Documentary",
-              "original_title": "The Scott Tibbs Documentary",
-              "overview": "Scott Tibbs, one of the Saw world\u0027s unseen background characters, takes his own unique perspective on the Jigsaw murders in his down-and-dirty documentary.",
-              "poster_path": "/g3mp4A5iI9yrtkJVy6Ske5N7MKf.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27
-              ],
-              "popularity": 0.2001,
-              "release_date": "2006-10-24",
-              "video": false,
-              "vote_average": 4.0,
-              "vote_count": 2
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3660282,
-          "name": "Black Arrow",
-          "original_name": "Black Arrow",
-          "media_type": "person",
-          "popularity": 0.0071,
-          "gender": 0,
-          "known_for_department": "Directing",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/fwbMFqLj20p1WAZm97Mlbof6R4D.jpg",
-              "id": 1011614,
-              "title": "Dove\u0027s Dont Fly Here",
-              "original_title": "Dove\u0027s Dont Fly Here",
-              "overview": "In a desolate world, a man ventures into woods, unaware of its haunting nature.",
-              "poster_path": null,
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [],
-              "popularity": 0.0168,
-              "release_date": "",
-              "video": true,
-              "vote_average": 0.0,
-              "vote_count": 0
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/j3zQf2fpjwd3ztMA8oDXUHsxpbk.jpg",
-              "id": 1011681,
-              "title": "Tragedy of the Red House",
-              "original_title": "Tragedy of the Red House",
-              "overview": "A struggling teen takes a psychological trip through his troubled mind",
-              "poster_path": "/gkDSNIdye05Bb6jQMweNyr84oCA.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27
-              ],
-              "popularity": 0.0071,
-              "release_date": "",
-              "video": true,
-              "vote_average": 0.0,
-              "vote_count": 0
             }
           ]
         },
@@ -350,8 +317,9 @@
                 28,
                 878
               ],
-              "popularity": 2.9131,
+              "popularity": 0.4489,
               "release_date": "2009-06-12",
+              "softcore": false,
               "video": false,
               "vote_average": 4.9,
               "vote_count": 16
@@ -371,11 +339,12 @@
                 10770,
                 9648
               ],
-              "popularity": 0.1992,
+              "popularity": 0.5797,
               "release_date": "2011-06-04",
+              "softcore": false,
               "video": false,
-              "vote_average": 4.0,
-              "vote_count": 7
+              "vote_average": 4.4,
+              "vote_count": 8
             },
             {
               "adult": false,
@@ -390,8 +359,9 @@
               "genre_ids": [
                 99
               ],
-              "popularity": 0.2717,
+              "popularity": 0.2004,
               "release_date": "2011-10-09",
+              "softcore": false,
               "video": false,
               "vote_average": 0.0,
               "vote_count": 0
@@ -400,11 +370,45 @@
         },
         {
           "adult": false,
-          "id": 4154138,
-          "name": "Arrow Lester",
-          "original_name": "Arrow Lester",
+          "id": 3307397,
+          "name": "Cami Arrow",
+          "original_name": "Cami Arrow",
           "media_type": "person",
-          "popularity": 0.0362,
+          "popularity": 0.0214,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/4WQazr0JlLNgEybdeL4jTxbUrRt.jpg",
+              "id": 897429,
+              "title": "All Too Well: The Short Film",
+              "original_title": "All Too Well: The Short Film",
+              "overview": "Short film featuring the extended version of the song \u201CAll Too Well\u201D by Taylor Swift. A troubled couple\u0027s romance blossoms before it eventually falls apart.",
+              "poster_path": "/zfgHyodGNdtBxO8R7d0qmR2JSEz.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                10402
+              ],
+              "popularity": 1.1217,
+              "release_date": "2021-11-12",
+              "softcore": false,
+              "video": false,
+              "vote_average": 8.026,
+              "vote_count": 292
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 2194411,
+          "name": "Arrow Griner",
+          "original_name": "Arrow Griner",
+          "media_type": "person",
+          "popularity": 0.0,
           "gender": 0,
           "known_for_department": "Acting",
           "profile_path": null,
@@ -412,21 +416,297 @@
             {
               "adult": false,
               "backdrop_path": null,
-              "id": 1149916,
-              "title": "The Nightgown",
-              "original_title": "The Nightgown",
-              "overview": "In 1976, three curious schoolgirls set out to unravel the mystery of a botched exorcism and untimely death of a young girl.",
-              "poster_path": "/gBZrd7WeHMkehIeFiLYEGEKAxCU.jpg",
+              "id": 568168,
+              "title": "Bobby Fischer Live",
+              "original_title": "Bobby Fischer Live",
+              "overview": "A bio about the life of Bobby Fischer.",
+              "poster_path": "/mB9OS5xSyRD29sosvfaftVHXFIQ.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [],
+              "popularity": 0.1444,
+              "release_date": "2009-10-01",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.7,
+              "vote_count": 3
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 3503100,
+          "name": "Josephine Arrow",
+          "original_name": "Josephine Arrow",
+          "media_type": "person",
+          "popularity": 0.0,
+          "gender": 0,
+          "known_for_department": "Crew",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 958618,
+              "title": "Hiraeth",
+              "original_title": "Hiraeth",
+              "overview": "Hiraeth is a heart-breaking film that explores one woman\u0027s grief at the edge of the solar system. Amber Jones, a British astronaut on the first manned mission to Europa. She\u0027s a controversial choice with a checkered background.",
+              "poster_path": "/kFY4wS0inC4g2kM8iwemX844kyN.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27
+                878,
+                18
               ],
-              "popularity": 0.1565,
-              "release_date": "2023-05-30",
+              "popularity": 0.1468,
+              "release_date": "2021-11-12",
+              "softcore": false,
               "video": false,
-              "vote_average": 3.4,
-              "vote_count": 5
+              "vote_average": 4.0,
+              "vote_count": 1
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jPlNuAcoh44OAzG5lh7sA2x2P1h.jpg",
+          "id": 402546,
+          "title": "Black Arrow",
+          "original_title": "Black Arrow",
+          "overview": "With a plot line mostly lifted from 1941\u0027s \u0022White Eagle\u0022, Columbia\u0027s 24th serial (following \u0022The Desert Hawk-1944\u0022 and ahead of 1945\u0027s \u0022Brenda Starr, Reporter\u0022), \u0022Black Arrow\u0022 finds carpet-baggers Jake Jackson and Buck Sherman arriving in Blue Mesa in search of gold.",
+          "poster_path": "/rllChgx2682liS2uRz6NKohxoNu.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            37
+          ],
+          "popularity": 0.3745,
+          "release_date": "1944-01-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "id": 3735042,
+          "name": "Carlissa Arrow",
+          "original_name": "Carlissa Arrow",
+          "media_type": "person",
+          "popularity": 0.0071,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/nuJ2ZgvkFzTwDmpyN3fNeuqEtZP.jpg",
+              "id": 160318,
+              "title": "Missing Pieces",
+              "original_title": "Missing Pieces",
+              "overview": "A heartbroken man kidnaps two strangers in hopes they will fall in love.",
+              "poster_path": "/57UqH70I7yjf3YgYSPyu8PejcT.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 0.1946,
+              "release_date": "2012-01-01",
+              "softcore": false,
+              "video": false,
+              "vote_average": 2.5,
+              "vote_count": 2
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 3623505,
+          "name": "Arrow Meister",
+          "original_name": "Arrow Meister",
+          "media_type": "person",
+          "popularity": 0.0,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/sjLo8RbshOyglJK2NLGqIfdzPCp.jpg",
+              "id": 508101,
+              "title": "Plus One",
+              "original_title": "Plus One",
+              "overview": "Longtime single friends, Ben and Alice, agree to be each other\u0027s respective plus one at every wedding they\u0027re invited to, during a busy summer of wedding fever.",
+              "poster_path": "/4w3bCp5UkLeemdq8MBNlyA3Zl2J.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                10749
+              ],
+              "popularity": 1.5007,
+              "release_date": "2019-06-14",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.8,
+              "vote_count": 413
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 2821695,
+          "name": "Shukat Arrow",
+          "original_name": "Shukat Arrow",
+          "media_type": "person",
+          "popularity": 0.0,
+          "gender": 0,
+          "known_for_department": "Crew",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/3PzTgk0gjaraK4KcnPvQ9Vbw09Y.jpg",
+              "id": 754903,
+              "title": "Holy Calamavote \u2013 A Special Performance by Run The Jewels",
+              "original_title": "Holy Calamavote \u2013 A Special Performance by Run The Jewels",
+              "overview": "Celebrate your right to vote with Run The Jewels\u0027 first performance of RTJ4.",
+              "poster_path": "/4e2pfGk0iZqk9WQOhuwhYXLcaqY.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                10402
+              ],
+              "popularity": 0.2395,
+              "release_date": "2020-10-17",
+              "softcore": false,
+              "video": false,
+              "vote_average": 9.3,
+              "vote_count": 3
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 315138,
+          "title": "Golden Arrow",
+          "original_title": "Freccia d\u0027oro",
+          "overview": "Aboard the luxurious high-speed express \u201CFreccia d\u2019oro,\u201D a jeweller carrying precious gems is targeted by thieves who take over the train, disabling alarms and barricading themselves in the baggage car. Meanwhile, a bridge ahead has collapsed, and the train is unaware due to the thieves\u2019 isolation of the locomotive. Panic ensues among the passengers. Just as disaster looms, the young engineer sees a glowing cross in the fog, prompting him to stop the train in time. The cross is revealed to be a rosary from his mother, reflecting off the headlight. This divine sign saves everyone, and the thieves are captured.",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "it",
+          "genre_ids": [],
+          "popularity": 0.0143,
+          "release_date": "1935-01-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "id": 2198214,
+          "name": "Arrow James",
+          "original_name": "Arrow James",
+          "media_type": "person",
+          "popularity": 0.0413,
+          "gender": 0,
+          "known_for_department": "Writing",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/5gNgbTuvCEYKsDhoFCZzPdoj6dD.jpg",
+              "id": 583307,
+              "title": "Bible Bees",
+              "original_title": "Bible Bees",
+              "overview": "Two little curious bees, Sunny and Petal are about to have the best time of our lives. Sharing stories is a great past time, but sharing stories about God is greater than anything. Join in on the fun, as they hear awesome story after awesome story about their Holy creator above. You know bumblebees, and you know honeybees... now get ready to meet the Bible Bees.",
+              "poster_path": "/6eBpi9Xa4wIFp1AyI5H1krW4bU4.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                16
+              ],
+              "popularity": 0.135,
+              "release_date": "2019-02-19",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.0,
+              "vote_count": 1
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 733106,
+              "title": "Bible Friends",
+              "original_title": "Bible Friends",
+              "overview": "The sun shines bright down on Bibletown, where folks praise God at home and in the streets, up and down! His creations glow bright from the north to south, and the Good Word spills forth from every smiling mouth! Join wonderful friends, Mica and Mary, as they give thanks to God in song - and if you pay close attention, you too can sing along with Christian-themed songs and nursery rhymes!",
+              "poster_path": "/v4n2SWMFCXkBsW6V6A8vX3aastz.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [],
+              "popularity": 0.0214,
+              "release_date": "2019-06-11",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 1450229,
+              "title": "Leprechaun Tales",
+              "original_title": "Leprechaun Tales",
+              "overview": "It\u0027s St. Patrick\u0027s Day, and the woodland creatures Snot and Moldspot are off to the Palace of Paddy to see the Leprechaun King, the wise ruler of Leprechaun Land. Snot and Moldspot are excited to listen to stories that only the Leprechaun King can tell. Come to Leprechaun Land to wave shamrocks and fill pots o\u0027 gold as you listen to tales of action and adventure that will be sure to put you in the St. Patrick\u0027s Day holiday spirit.",
+              "poster_path": "/226XbjNKayMG5QmViZBLJS1MVUL.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                14,
+                10751
+              ],
+              "popularity": 0.0958,
+              "release_date": "2019-03-17",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.0,
+              "vote_count": 1
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 4200435,
+          "name": "Andrew Arrow",
+          "original_name": "Andrew Arrow",
+          "media_type": "person",
+          "popularity": 0.0409,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 1161356,
+              "title": "Five Questions",
+              "original_title": "Five Questions",
+              "overview": "In Five Questions, Jill, played by Amber Paul, comes to terms with an early trauma in her life. In each of the film\u0027s five scenes, a question is asked that propels Jill forward and toward an answer that opens a path to resolution.",
+              "poster_path": "/s9JY72j6LMwGBoFcad0PqUbhdbj.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 0.4322,
+              "release_date": "",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
             }
           ]
         },
@@ -436,7 +716,7 @@
           "name": "Ann Arrow",
           "original_name": "Ann Arrow",
           "media_type": "person",
-          "popularity": 0.0261,
+          "popularity": 0.0071,
           "gender": 1,
           "known_for_department": "Acting",
           "profile_path": null,
@@ -454,357 +734,112 @@
               "genre_ids": [
                 27
               ],
-              "popularity": 0.1788,
+              "popularity": 0.2091,
               "release_date": "1970-01-23",
+              "softcore": false,
               "video": false,
-              "vote_average": 3.2,
+              "vote_average": 3.55,
               "vote_count": 20
             }
           ]
         },
         {
           "adult": false,
-          "backdrop_path": "/1bfrtFOdwWl8or6K1ZS4o7yjAgN.jpg",
-          "id": 1108282,
-          "title": "Farther Than an Arrow\u0027s Flight",
-          "original_title": "\u0414\u0430\u043B\u0456 \u043F\u043E\u043B\u044C\u043E\u0442\u0443 \u0441\u0442\u0440\u0456\u043B\u0438",
-          "overview": "The TV series is devoted to the topic of the artist\u0027s responsibility for every word he writes. In the center of the plot is the wandering of an artist-journalist of a Kyiv newspaper. He faces a number of internal problems: how to get along in a big city, the existence of true love and finding the answer to the eternal question - \u0022Who am I?\u0022 External events echo the psychological crisis of the main character. In search of himself, he travels to the villages of the Kherson region that were flooded to create reservoirs - somewhere under the water column is his parents\u0027 native village, a metaphor for Ukrainian culture and historical memory mutilated in the 20th century.  The man\u0027s concerns are closely related to the surrounding world: the atmosphere of the film reproduces the confusion of the entire nation: \u0022What will happen next, after communism and its ideology?\u0022 In the yard, everything points to the imminent collapse of the perestroika.",
-          "poster_path": "/7nEF8nz72WFWymAtQpUoRWL5zIy.jpg",
-          "media_type": "movie",
-          "original_language": "uk",
-          "genre_ids": [
-            10770,
-            18
-          ],
-          "popularity": 1.2855,
-          "release_date": "1990-01-01",
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "id": 1900100,
-          "name": "Jesse D. Arrow",
-          "original_name": "Jesse D. Arrow",
+          "id": 2358865,
+          "name": "Zorya Arrow",
+          "original_name": "Zorya Arrow",
           "media_type": "person",
-          "popularity": 0.3913,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": "/jF3AyUJCFDWt0zHGV8qxzqBBqFS.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/iYXLgv5NjRn00nyYahnkdaXCm6M.jpg",
-              "id": 428948,
-              "title": "Infinity Chamber",
-              "original_title": "Infinity Chamber",
-              "overview": "A man trapped in an automated prison must outsmart a computer in order to escape and try and find his way back to the outside world that may already be wiped out.",
-              "poster_path": "/zaYlG8wZ4DN3Kevnov39u3PjOfh.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                878,
-                9648,
-                53
-              ],
-              "popularity": 0.8455,
-              "release_date": "2016-12-03",
-              "video": false,
-              "vote_average": 6.297,
-              "vote_count": 264
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1669472,
-          "name": "Bianca Red Arrow",
-          "original_name": "Bianca Red Arrow",
-          "media_type": "person",
-          "popularity": 0.0214,
+          "popularity": 0.0286,
           "gender": 0,
           "known_for_department": "Acting",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/vmq1kWoBqOjUwjFB5IOexUNQloL.jpg",
-              "id": 412452,
-              "title": "Cross Wars",
-              "original_title": "Cross Wars",
-              "overview": "Cross is aided by his team of weapons experts Riot, War, Shark, Lucia, Ranger, Saint, Blackfire and Nuke. Their biggest fight is against their most dangerous enemy GUNNAR. A thousand year old Viking that\u0027s cursed to live for ever. Gunnar\u0027s only chance at ending his own life is to be the last living soul on earth. The Cross Team must stop Gunnar before he ends humanity.",
-              "poster_path": "/ubvOS7Ire1Wp6TrtwHH9Sw8vpbw.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28
-              ],
-              "popularity": 0.4798,
-              "release_date": "2017-02-11",
-              "video": false,
-              "vote_average": 4.1,
-              "vote_count": 25
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1235635,
-          "name": "Terry Arrowsmith",
-          "original_name": "Terry Arrowsmith",
-          "media_type": "person",
-          "popularity": 0.1036,
-          "gender": 2,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/w00lfexrsOeR25dO4hsWhbcUnmD.jpg",
-              "id": 4087,
-              "name": "The X-Files",
-              "original_name": "The X-Files",
-              "overview": "The exploits of FBI Special Agents Fox Mulder and Dana Scully who investigate X-Files: marginalized, unsolved cases involving paranormal phenomena. Mulder believes in the existence of aliens and the paranormal while Scully, a skeptic, is assigned to make scientific analyses of Mulder\u0027s discoveries that debunk Mulder\u0027s work and thus return him to mainstream cases.",
-              "poster_path": "/rcBx0p8h51LHceyhquYMxbspJQu.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                9648,
-                10765,
-                80
-              ],
-              "popularity": 94.8863,
-              "first_air_date": "1993-09-10",
-              "vote_average": 8.374,
-              "vote_count": 3386,
-              "origin_country": [
-                "US"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 264642,
-              "title": "Great White",
-              "original_title": "Great White",
-              "overview": "A professor tries to convince the residents of a small town that a series of attacks are the handiwork not of mountain animals but of a rare river-dwelling shark.",
-              "poster_path": "/H4KC3ZRGSshX4g0QmvgJYCZC5Y.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27
-              ],
-              "popularity": 1.376,
-              "release_date": "1998-01-01",
-              "video": false,
-              "vote_average": 2.3,
-              "vote_count": 3
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/6GzNuxHWvaEzNNVZ5xI0LsqxFCl.jpg",
-              "id": 4414,
-              "name": "Highlander: The Series",
-              "original_name": "Highlander: The Series",
-              "overview": "Duncan MacLeod cannot die -- he is a 400-year-old immortal, who has seen his share of humanity\u0027s history. Still, he risks his life in battle against other immortals and tries to save people from harm.",
-              "poster_path": "/rlJzuTbdMAa6jOdpKxxTx8KVN88.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                10765,
-                18,
-                10759
-              ],
-              "popularity": 14.3532,
-              "first_air_date": "1992-10-03",
-              "vote_average": 7.362,
-              "vote_count": 412,
-              "origin_country": [
-                "US"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 2325843,
-          "name": "Arrow Reynolds",
-          "original_name": "Arrow Reynolds",
-          "media_type": "person",
-          "popularity": 0.1192,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/4rVBkclzy2YQQBtsvbwBb34GQKV.jpg",
-              "id": 490001,
-              "title": "Believer",
-              "original_title": "Believer",
-              "overview": "Imagine Dragons\u2019 Mormon frontman Dan Reynolds is taking on a new mission to explore how the church treats its LGBTQ members. With the rising suicide rate amongst teens in the state of Utah, his concern with the church\u2019s policies sends him on an unexpected path for acceptance and change.",
-              "poster_path": "/rkR9BsoecpBAWknViMRnO42f43n.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99
-              ],
-              "popularity": 3.2866,
-              "release_date": "2017-01-20",
-              "video": false,
-              "vote_average": 6.654,
-              "vote_count": 26
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "id": 387933,
-          "title": "The Perfumed Arrow",
-          "original_title": "\u5973\u79C0\u624D",
-          "overview": "Ling Bor plays Wen Fei E who is both an excellent academic as well as martial arts expert. Since her childhood days fond of dressing up as a boy, she becomes a village scholar sharing classes with Tu Zi Zheng (Chin Feng) and Wei Zhun Zhi (Ho Fan). When Fei E\u0027s innocent father is framed and sent to prison, she rushes to his rescue saving Jing Fu Quan (Kam Fie) who is in the hands of robbers along the way. Mistaking Fei E to be a noble hero, Fu Quan has no greater wish than to get married to her savior...",
-          "poster_path": "/u409hNcomTRu1ocXY1lnBTIDqqb.jpg",
-          "media_type": "movie",
-          "original_language": "zh",
-          "genre_ids": [
-            18,
-            10402,
-            10749
-          ],
-          "popularity": 1.9637,
-          "release_date": "1966-11-23",
-          "video": false,
-          "vote_average": 6.0,
-          "vote_count": 1
-        },
-        {
-          "adult": false,
-          "id": 4657750,
-          "name": "Preston J. Arrow-Weed",
-          "original_name": "Preston J. Arrow-Weed",
-          "media_type": "person",
-          "popularity": 0.0071,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 1275614,
-              "title": "Yuma Crossing",
-              "original_title": "Yuma Crossing",
-              "overview": "The story of the Yuma Crossing, the place where centuries of travelers crossed the Colorado River as told in a series of reenacted vignettes by colorful characters from the Quechan tribe, the conquistadores, Father Kino, Olive Oatman and others up until the first bridge was built in the 1920\u0027s.",
+              "backdrop_path": "/1Qq7XJDBhpLaYB1Zai7d9dc17lU.jpg",
+              "id": 614510,
+              "title": "Hue Quilted Windowpane",
+              "original_title": "Hue Quilted Windowpane",
+              "overview": "A lonely woman who falls in love with the man of her dreams; Elvis Presley. Elvis appears to Edi on her living room television and whispers sweet nothings that only she can hear. He even dazzles her with a real cubic zirconia ring. But when he promises to come to visit Edi, she must wait to see if the man of her dreams will appear in reality.",
               "poster_path": null,
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                18,
-                99
+                18
               ],
-              "popularity": 0.0966,
-              "release_date": "1990-01-01",
+              "popularity": 0.0478,
+              "release_date": "2016-07-26",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 743412,
+              "title": "Scopophobia",
+              "original_title": "Scopophobia",
+              "overview": "In movies women\u2019s bodies are often seen in small pieces. Close ups of full lips, sexy eyes, long legs, etc, are cut together to suggest a convincing whole. But what if we took the pieces apart and found they didn\u2019t belong to the same person?",
+              "poster_path": "/z5uzlgibbbdbnB3eIDw84dFSkTK.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35
+              ],
+              "popularity": 0.042,
+              "release_date": "2020-09-15",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/aac2TKo8nhT76h8ESBagggxslE4.jpg",
+              "id": 1049805,
+              "title": "Arutinae",
+              "original_title": "Arutinae",
+              "overview": "Melding dream-logic and wry mystery, Arutinae melts the seams between sleeping and waking worlds. We follow up-and-coming indie musician Billie Christie on a pilgrimage to the former home of her musical idol, Inge Shielke, in the lakeside village of Matlock. Here, Billie meets the matriarch of an eccentric local family who presides over the lake\u0027s secrets\u2014a polluted portal to the parallel world of Arutinae.",
+              "poster_path": "/23hsFUPib29UFcgzhlry6JvlwVR.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                9648,
+                18,
+                10749,
+                878
+              ],
+              "popularity": 0.1764,
+              "release_date": "2023-07-29",
+              "softcore": false,
               "video": false,
               "vote_average": 0.0,
               "vote_count": 0
             }
           ]
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "id": 525476,
-          "title": "The Love Arrow",
-          "original_title": "\u0421\u0442\u0440\u0435\u043B\u0430 \u041B\u044E\u0431\u0432\u0438",
-          "overview": "",
-          "poster_path": "/d3Zj9DhQaA9a3eheDGVq93K1yYj.jpg",
-          "media_type": "movie",
-          "original_language": "ru",
-          "genre_ids": [
-            35
-          ],
-          "popularity": 1.4889,
-          "release_date": "2002-01-01",
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "id": 566671,
-          "name": "Billy Arrowood",
-          "original_name": "Billy Arrowood",
-          "media_type": "person",
-          "popularity": 0.0495,
-          "gender": 0,
-          "known_for_department": "Production",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/wryDL17raofFbO5AfhH1WSm034Y.jpg",
-              "id": 9654,
-              "title": "The Italian Job",
-              "original_title": "The Italian Job",
-              "overview": "Charlie Croker pulled off the crime of a lifetime. The one thing that he didn\u0027t plan on was being double-crossed. Along with a drop-dead gorgeous safecracker, Croker and his team take off to re-steal the loot and end up in a pulse-pounding, pedal-to-the-metal chase that careens up, down, above and below the streets of Los Angeles.",
-              "poster_path": "/eSkjK4kctyrWpFhxl35GPvSs6tI.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                80
-              ],
-              "popularity": 5.9926,
-              "release_date": "2003-05-30",
-              "video": false,
-              "vote_average": 6.784,
-              "vote_count": 5825
-            },
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 72581,
-              "title": "Bikini Bandits",
-              "original_title": "Bikini Bandits",
-              "overview": "The Bikini Bandits are sent to hell after their car goes off a cliff.",
-              "poster_path": "/mucdxNaXWDt1NXeIJWQP0jvBs72.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                35,
-                80
-              ],
-              "popularity": 0.7577,
-              "release_date": "2002-12-11",
-              "video": false,
-              "vote_average": 3.455,
-              "vote_count": 11
-            }
-          ]
         }
       ],
-      "total_pages": 16,
-      "total_results": 311
+      "total_pages": 17,
+      "total_results": 323
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=3614",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=12074",
       "x-memc": "HIT",
-      "x-memc-key": "1b2216eef633a7f2c0f543479be8a22cc7ac2a07bf3994858e2ddeae6e0f690d",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u0022bb5a14b4e56ef8b9cbd9c35f4cf09c75\u0022",
+      "x-memc-key": "85025a25edf8f213d0aa36c76a14841c",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00226cd812486db5f3d92d173ab492d777e2\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -1,6 +1,6 @@
 {
   "Guid": "716fbec2-5b1b-5645-b007-a7844d55ead2",
-  "UpdatedAt": "2025-12-24T18:45:21.2788751Z",
+  "UpdatedAt": "2026-06-13T13:30:13.401255Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/keywords",
   "Description": "Proxy Mapping for GET /3/tv/1396/keywords",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -89,10 +102,6 @@
           "id": 168713
         },
         {
-          "name": "narcissist",
-          "id": 185959
-        },
-        {
           "name": "albuquerque, new mexico",
           "id": 191005
         },
@@ -125,20 +134,16 @@
           "id": 259094
         },
         {
+          "name": "inspirational",
+          "id": 281585
+        },
+        {
           "name": "methamphetamine",
           "id": 281692
         },
         {
-          "name": "gritty",
-          "id": 286125
-        },
-        {
           "name": "thriller",
           "id": 316362
-        },
-        {
-          "name": "baffled",
-          "id": 325776
         },
         {
           "name": "violent",
@@ -155,17 +160,16 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "9f53f066f7707b585c2e726db0a7fdaa30ba53a2d75c1330803f52d2b2bd8515",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=25280",
-      "ETag": "W/\u0022f29a4aa4f851da782a0b0ec092d65643\u0022",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=12772",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002285076c0d73b3dc8d28472db75c1e575d\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

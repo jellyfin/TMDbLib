@@ -1,6 +1,6 @@
 {
   "Guid": "7a17322a-32d6-e942-ae0d-8b427cd5df77",
-  "UpdatedAt": "2025-12-24T18:45:32.502814Z",
+  "UpdatedAt": "2026-06-13T13:30:15.650805Z",
   "Title": "Proxy Mapping for GET /3/discover/tv",
   "Description": "Proxy Mapping for GET /3/discover/tv",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -58,319 +71,25 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/w00lfexrsOeR25dO4hsWhbcUnmD.jpg",
+          "backdrop_path": "/wh5agdl3b7fqC7mSjsCkHx4fMAs.jpg",
           "genre_ids": [
-            9648,
-            10765,
-            80
-          ],
-          "id": 4087,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The X-Files",
-          "overview": "The exploits of FBI Special Agents Fox Mulder and Dana Scully who investigate X-Files: marginalized, unsolved cases involving paranormal phenomena. Mulder believes in the existence of aliens and the paranormal while Scully, a skeptic, is assigned to make scientific analyses of Mulder\u0027s discoveries that debunk Mulder\u0027s work and thus return him to mainstream cases.",
-          "popularity": 94.8863,
-          "poster_path": "/rcBx0p8h51LHceyhquYMxbspJQu.jpg",
-          "first_air_date": "1993-09-10",
-          "name": "The X-Files",
-          "vote_average": 8.374,
-          "vote_count": 3386
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/grR9khLE8TibHjTYZq1jCSSupYk.jpg",
-          "genre_ids": [
-            80,
+            37,
             18
           ],
-          "id": 60622,
+          "id": 299167,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Fargo",
-          "overview": "A close-knit anthology series dealing with stories involving malice, violence and murder based in and around Minnesota.",
-          "popularity": 88.8079,
-          "poster_path": "/6U9CPeD8obHzweikFhiLhpc7YBT.jpg",
-          "first_air_date": "2014-04-15",
-          "name": "Fargo",
-          "vote_average": 8.291,
-          "vote_count": 3061
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lgGZ2ysbRyAOi2VgIZpp6k8qILj.jpg",
-          "genre_ids": [
-            16,
-            35
-          ],
-          "id": 1434,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Family Guy",
-          "overview": "Sick, twisted, politically incorrect and Freakin\u0027 Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he\u0027s not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
-          "popularity": 86.3148,
-          "poster_path": "/8o8kiBkWFK3gVytHdyzEWUBXVfK.jpg",
-          "first_air_date": "1999-01-31",
-          "name": "Family Guy",
-          "vote_average": 7.387,
-          "vote_count": 4740
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tc7canPSAn2X14hYi6Rl3gZm1o4.jpg",
-          "genre_ids": [
-            80,
-            18
-          ],
-          "id": 549,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Law \u0026 Order",
-          "overview": "In cases ripped from the headlines, police investigate serious and often deadly crimes, weighing the evidence and questioning the suspects until someone is taken into custody. The district attorney\u0027s office then builds a case to convict the perpetrator by proving the person guilty beyond a reasonable doubt. Working together, these expert teams navigate all sides of the complex criminal justice system to make New York a safer place.",
-          "popularity": 83.3096,
-          "poster_path": "/haJ9eHytVO3H3JooMJG1DiWwDNm.jpg",
-          "first_air_date": "1990-09-13",
-          "name": "Law \u0026 Order",
-          "vote_average": 7.365,
-          "vote_count": 651
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/rAOjnEFTuNysY7bot8zonhImGMh.jpg",
-          "genre_ids": [
-            10759,
-            18,
-            10765
-          ],
-          "id": 1402,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Walking Dead",
-          "overview": "Sheriff\u0027s deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
-          "popularity": 83.1204,
-          "poster_path": "/ng3cMtxYKt1OSQYqFlnKWnVsqNO.jpg",
-          "first_air_date": "2010-10-31",
-          "name": "The Walking Dead",
-          "vote_average": 8.089,
-          "vote_count": 17379
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/gFkHcIh7iE5G0oVOgpmY8ONQjhl.jpg",
-          "genre_ids": [
-            18,
-            10765
-          ],
-          "id": 60735,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Flash",
-          "overview": "After being struck by lightning, CSI investigator Barry Allen awakens from a nine-month coma to discover he has been  granted the gift of super speed.  Teaming up with S.T.A.R. Labs, Barry takes on the persona of The Flash, the Fastest  Man Alive, to protect his city.",
-          "popularity": 79.0137,
-          "poster_path": "/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
-          "first_air_date": "2014-10-07",
-          "name": "The Flash",
-          "vote_average": 7.768,
-          "vote_count": 11453
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 1668,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Friends",
-          "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
-          "popularity": 78.6868,
-          "poster_path": "/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
-          "first_air_date": "1994-09-22",
-          "name": "Friends",
-          "vote_average": 8.422,
-          "vote_count": 8741
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lHe8iwM4Cdm6RSEiara4PN8ZcBd.jpg",
-          "genre_ids": [
-            10759,
-            18,
-            10768
-          ],
-          "id": 44217,
-          "origin_country": [
-            "CA"
-          ],
-          "original_language": "en",
-          "original_name": "Vikings",
-          "overview": "The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar\u0027s band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.",
-          "popularity": 78.5937,
-          "poster_path": "/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg",
-          "first_air_date": "2013-03-03",
-          "name": "Vikings",
-          "vote_average": 8.093,
-          "vote_count": 7410
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1vhKauCQAq32u53X8n9qI896e6.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 46296,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Spartacus",
-          "overview": "Torn from his homeland and the woman he loves, Spartacus is condemned to the brutal world of the arena where blood and death are primetime entertainment.",
-          "popularity": 76.3939,
-          "poster_path": "/c2GKN4VHCj1dnjFMANRpGkCVBae.jpg",
-          "first_air_date": "2010-01-22",
-          "name": "Spartacus",
-          "vote_average": 8.028,
-          "vote_count": 2778
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/4AXxajuAz9tHAOe6h5zDg8z1X2s.jpg",
-          "genre_ids": [
-            80,
-            18
-          ],
-          "id": 1911,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Bones",
-          "overview": "Dr. Temperance Brennan and her\u00A0colleagues at the Jeffersonian\u0027s Medico-Legal Lab assist Special Agent Seeley Booth\u00A0with murder investigations when the remains are so badly decomposed, burned or destroyed that the standard identification methods are useless.",
-          "popularity": 74.9415,
-          "poster_path": "/eyTu5c8LniVciRZIOSHTvvkkgJa.jpg",
-          "first_air_date": "2005-09-13",
-          "name": "Bones",
-          "vote_average": 8.205,
-          "vote_count": 3364
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/s0w8JbuNNxL1YgaHeDWih12C3jG.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10759,
-            10765
-          ],
-          "id": 63926,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u30EF\u30F3\u30D1\u30F3\u30DE\u30F3",
-          "overview": "The most powerful superhero in the world can kill anyone with one blow. But nothing can challenge him, so he struggles with ennui and depression.",
-          "popularity": 71.947,
-          "poster_path": "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg",
-          "first_air_date": "2015-10-05",
-          "name": "One-Punch Man",
-          "vote_average": 8.4,
-          "vote_count": 3944
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/foGkPxpw9h8zln81j63mix5B7m8.jpg",
-          "genre_ids": [
-            18,
-            10759
-          ],
-          "id": 71912,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Witcher",
-          "overview": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
-          "popularity": 71.4569,
-          "poster_path": "/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
-          "first_air_date": "2019-12-20",
-          "name": "The Witcher",
-          "vote_average": 7.964,
-          "vote_count": 6443
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/bY2J2Jq8rSrKm5xCFtzYzqFh44o.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 2316,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Office",
-          "overview": "The everyday lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company.",
-          "popularity": 71.1233,
-          "poster_path": "/dg9e5fPRRId8PoBE0F6jl5y85Eu.jpg",
-          "first_air_date": "2005-03-24",
-          "name": "The Office",
-          "vote_average": 8.6,
-          "vote_count": 4838
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ncftkNAjIz2PBbUMY7T0CHVJP8d.jpg",
-          "genre_ids": [
-            80,
-            10765
-          ],
-          "id": 63174,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Lucifer",
-          "overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals.\u00A0But the longer he\u0027s away from the underworld, the greater the threat that the worst of humanity could escape.",
-          "popularity": 70.8625,
-          "poster_path": "/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
-          "first_air_date": "2016-01-25",
-          "name": "Lucifer",
-          "vote_average": 8.438,
-          "vote_count": 15223
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/or0E36KfzJYZwqXeiCfm1JgepKF.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 37680,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Suits",
-          "overview": "While running from a drug deal gone bad, Mike Ross, a brilliant young college-dropout, slips into a job interview with one of New York City\u0027s best legal closers, Harvey Specter. Tired of cookie-cutter law school grads, Harvey takes a gamble by hiring Mike on the spot after he recognizes his raw talent and photographic memory.",
-          "popularity": 70.6859,
-          "poster_path": "/vQiryp6LioFxQThywxbC6TuoDjy.jpg",
-          "first_air_date": "2011-06-23",
-          "name": "Suits",
-          "vote_average": 8.221,
-          "vote_count": 5467
+          "original_name": "Dutton Ranch",
+          "overview": "Rip Wheeler and Beth Dutton gamble everything on a new life in South Texas, but the promise of building a future far from the ghosts of Yellowstone quickly collides with brutal new realities and a rival ranch that will stop at nothing to protect its empire.",
+          "popularity": 149.7846,
+          "poster_path": "/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
+          "first_air_date": "2026-05-15",
+          "softcore": false,
+          "name": "Dutton Ranch",
+          "vote_average": 9.333,
+          "vote_count": 249
         },
         {
           "adult": false,
@@ -387,56 +106,191 @@
           "original_language": "en",
           "original_name": "CSI: Crime Scene Investigation",
           "overview": "A Las Vegas team of forensic investigators are trained to solve criminal cases by scouring the crime scene, collecting irrefutable evidence and finding the missing pieces that solve the mystery.",
-          "popularity": 70.4135,
+          "popularity": 148.4704,
           "poster_path": "/i5hmoRjHNWady4AtAGICTUXknKH.jpg",
           "first_air_date": "2000-10-06",
+          "softcore": false,
           "name": "CSI: Crime Scene Investigation",
-          "vote_average": 7.637,
-          "vote_count": 1331
+          "vote_average": 7.638,
+          "vote_count": 1386
         },
         {
           "adult": false,
-          "backdrop_path": "/jLUDukNSDvaRjMprqMDCq8PLq6X.jpg",
+          "backdrop_path": "/qVmgq1KXBp6BF2EqYPPaUG9iUGy.jpg",
           "genre_ids": [
-            16,
-            10759,
+            80,
             18,
-            10765
+            9648
           ],
-          "id": 256721,
+          "id": 764,
           "origin_country": [
-            "JP"
+            "GB"
           ],
-          "original_language": "ja",
-          "original_name": "\u30AC\u30C1\u30A2\u30AF\u30BF",
-          "overview": "Accused of murder and thrown into the Pit, a young orphan joins a group of monster fighters with special powers to uncover the truth and seek vengeance.",
-          "popularity": 70.1146,
-          "poster_path": "/jH78nLFrTU6aP7hY7KO6DZHFLoX.jpg",
-          "first_air_date": "2025-07-06",
-          "name": "Gachiakuta",
-          "vote_average": 8.587,
-          "vote_count": 167
+          "original_language": "en",
+          "original_name": "Midsomer Murders",
+          "overview": "The peacefulness of the Midsomer community is shattered by violent crimes, suspects are placed under suspicion, and it is up to a veteran DCI and his young sergeant to calmly and diligently eliminate the innocent and ruthlessly pursue the guilty. ",
+          "popularity": 132.5316,
+          "poster_path": "/pz7tsWxe0TTdfJnWPjZAEnrSl5M.jpg",
+          "first_air_date": "1997-03-23",
+          "softcore": false,
+          "name": "Midsomer Murders",
+          "vote_average": 7.489,
+          "vote_count": 356
         },
         {
           "adult": false,
-          "backdrop_path": "/cJYLon9ejKJV7ua03ab8Tj9u067.jpg",
+          "backdrop_path": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
           "genre_ids": [
-            18,
+            10759,
+            9648,
             10765
           ],
-          "id": 18165,
+          "id": 66732,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "The Vampire Diaries",
-          "overview": "The story of two vampire brothers obsessed with the same girl, who bears a striking resemblance to the beautiful but ruthless vampire they knew and loved in 1864.",
-          "popularity": 70.0488,
-          "poster_path": "/b3vl6wV1W8PBezFfntKTrhrehCY.jpg",
-          "first_air_date": "2009-09-10",
-          "name": "The Vampire Diaries",
-          "vote_average": 8.309,
-          "vote_count": 9401
+          "original_name": "Stranger Things",
+          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+          "popularity": 131.481,
+          "poster_path": "/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+          "first_air_date": "2016-07-15",
+          "softcore": false,
+          "name": "Stranger Things",
+          "vote_average": 8.564,
+          "vote_count": 21284
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg",
+          "genre_ids": [
+            35
+          ],
+          "id": 2316,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Office",
+          "overview": "The everyday lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company.",
+          "popularity": 126.7556,
+          "poster_path": "/7DJKHzAi83BmQrWLrYYOqcoKfhR.jpg",
+          "first_air_date": "2005-03-24",
+          "softcore": false,
+          "name": "The Office",
+          "vote_average": 8.588,
+          "vote_count": 5227
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5s9XHTB9SLPdg3mNU6BlSLnZ9Qq.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 34307,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Shameless",
+          "overview": "Chicagoan Frank Gallagher is the proud single dad of six smart, industrious, independent kids, who without him would be... perhaps better off. When Frank\u0027s not at the bar spending what little money they have, he\u0027s passed out on the floor. But the kids have found ways to grow up in spite of him. They may not be like any family you know, but they make no apologies for being exactly who they are.",
+          "popularity": 141.9102,
+          "poster_path": "/ifo31fMWLmyOVpdak9K0kY4jldQ.jpg",
+          "first_air_date": "2011-01-09",
+          "softcore": false,
+          "name": "Shameless",
+          "vote_average": 8.165,
+          "vote_count": 3341
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aSye04zKzWtUP3U6Cl4bOXc5Ih9.jpg",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "id": 1911,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Bones",
+          "overview": "Dr. Temperance Brennan and her\u00A0colleagues at the Jeffersonian\u0027s Medico-Legal Lab assist Special Agent Seeley Booth\u00A0with murder investigations when the remains are so badly decomposed, burned or destroyed that the standard identification methods are useless.",
+          "popularity": 131.4439,
+          "poster_path": "/eyTu5c8LniVciRZIOSHTvvkkgJa.jpg",
+          "first_air_date": "2005-09-13",
+          "softcore": false,
+          "name": "Bones",
+          "vote_average": 8.19,
+          "vote_count": 3497
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2eIlCirgcvEwmCSYh2wDfz5Sxvz.jpg",
+          "genre_ids": [
+            18,
+            80,
+            9648
+          ],
+          "id": 46952,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Blacklist",
+          "overview": "Raymond \u0022Red\u0022 Reddington, one of the FBI\u0027s most wanted fugitives, surrenders in person at FBI Headquarters in Washington, D.C. He claims that he and the FBI have the same interests: bringing down dangerous criminals and terrorists. In the last two decades, he\u0027s made a list of criminals and terrorists that matter the most but the FBI cannot find because it does not know they exist. Reddington calls this \u0022The Blacklist\u0022. Reddington will co-operate, but insists that he will speak only to Elizabeth Keen, a rookie FBI profiler.",
+          "popularity": 127.1472,
+          "poster_path": "/4HTfd1PhgFUenJxVuBDNdLmdr0c.jpg",
+          "first_air_date": "2013-09-23",
+          "softcore": false,
+          "name": "The Blacklist",
+          "vote_average": 7.636,
+          "vote_count": 3586
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/r0Q6eeN9L1ORL9QsV0Sg8ZV3vnv.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1408,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "House",
+          "overview": "Dr. Gregory House, a drug-addicted, unconventional, misanthropic medical genius, leads a team of diagnosticians at the fictional Princeton\u2013Plainsboro Teaching Hospital in New Jersey.",
+          "popularity": 123.652,
+          "poster_path": "/3Cz7ySOQJmqiuTdrc6CY0r65yDI.jpg",
+          "first_air_date": "2004-11-16",
+          "softcore": false,
+          "name": "House",
+          "vote_average": 8.566,
+          "vote_count": 7607
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lH22EnM0ofC7GsVGU8dAA2RXV1c.jpg",
+          "genre_ids": [
+            10759,
+            16,
+            10762
+          ],
+          "id": 65334,
+          "origin_country": [
+            "FR"
+          ],
+          "original_language": "fr",
+          "original_name": "Miraculous, les aventures de Ladybug et Chat Noir",
+          "overview": "Marinette and Adrien, two Parisian teenagers, are entrusted with powerful jewels in order to transform into superheroes Ladybug and Cat Noir. But neither hero knows the other\u0027s true identity \u2014 or that they\u0027re classmates!",
+          "popularity": 121.7217,
+          "poster_path": "/acrtAy8gmxcsEvrDP09MpMSCeDZ.jpg",
+          "first_air_date": "2015-10-19",
+          "softcore": false,
+          "name": "Miraculous: Tales of Ladybug \u0026 Cat Noir",
+          "vote_average": 8.1,
+          "vote_count": 4600
         },
         {
           "adult": false,
@@ -453,55 +307,234 @@
           "original_language": "en",
           "original_name": "Smallville",
           "overview": "The origins of the world\u2019s greatest hero\u2013from Krypton refugee Kal-el\u2019s arrival on Earth through his tumultuous teen years to Clark Kent\u2019s final steps toward embracing his destiny as the Man of Steel.",
-          "popularity": 68.8596,
-          "poster_path": "/peEEvc7JOhcqv80KP4LSA2eMbok.jpg",
+          "popularity": 116.9553,
+          "poster_path": "/mHZSq8LA5Dt48JjaOZ5tcPXQRVN.jpg",
           "first_air_date": "2001-10-16",
+          "softcore": false,
           "name": "Smallville",
-          "vote_average": 8.191,
-          "vote_count": 4303
+          "vote_average": 8.19,
+          "vote_count": 4469
         },
         {
           "adult": false,
-          "backdrop_path": "/q3pCsNvJ7CmdJUz2sJEEUY3pOPC.jpg",
+          "backdrop_path": "/rAOjnEFTuNysY7bot8zonhImGMh.jpg",
           "genre_ids": [
-            80,
+            10759,
             18,
-            9648
+            10765
           ],
-          "id": 5920,
+          "id": 1402,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "The Mentalist",
-          "overview": "Patrick Jane, a former celebrity psychic medium, uses his razor sharp skills of observation and expertise at \u0022reading\u0022 people to solve serious crimes with the California Bureau of Investigation.",
-          "popularity": 68.4601,
-          "poster_path": "/acYXu4KaDj1NIkMgObnhe4C4a0T.jpg",
-          "first_air_date": "2008-09-23",
-          "name": "The Mentalist",
-          "vote_average": 8.359,
-          "vote_count": 4089
+          "original_name": "The Walking Dead",
+          "overview": "Sheriff\u0027s deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+          "popularity": 114.2233,
+          "poster_path": "/ng3cMtxYKt1OSQYqFlnKWnVsqNO.jpg",
+          "first_air_date": "2010-10-31",
+          "softcore": false,
+          "name": "The Walking Dead",
+          "vote_average": 8.086,
+          "vote_count": 17851
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gFkHcIh7iE5G0oVOgpmY8ONQjhl.jpg",
+          "genre_ids": [
+            18,
+            10765
+          ],
+          "id": 60735,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Flash",
+          "overview": "After being struck by lightning, CSI investigator Barry Allen awakens from a nine-month coma to discover he has been  granted the gift of super speed.  Teaming up with S.T.A.R. Labs, Barry takes on the persona of The Flash, the Fastest  Man Alive, to protect his city.",
+          "popularity": 121.33,
+          "poster_path": "/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
+          "first_air_date": "2014-10-07",
+          "softcore": false,
+          "name": "The Flash",
+          "vote_average": 7.759,
+          "vote_count": 11621
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qpin8cASXEVtwhzNsprHYFiOAGk.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 95479,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u546A\u8853\u5EFB\u6226",
+          "overview": "Yuji Itadori is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a classmate who has been attacked by curses, he eats the finger of Ryomen Sukuna, taking the curse into his own soul. From then on, he shares one body with Ryomen Sukuna. Guided by the most powerful of sorcerers, Satoru Gojo, Itadori is admitted to Tokyo Jujutsu High School, an organization that fights the curses... and thus begins the heroic tale of a boy who became a curse to exorcise a curse, a life from which he could never turn back.",
+          "popularity": 112.6941,
+          "poster_path": "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg",
+          "first_air_date": "2020-10-03",
+          "softcore": false,
+          "name": "JUJUTSU KAISEN",
+          "vote_average": 8.571,
+          "vote_count": 4477
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7VO04TtL1jIT6XOPs9u4jdB8KaB.jpg",
+          "genre_ids": [
+            35,
+            10767
+          ],
+          "id": 59941,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Tonight Show Starring Jimmy Fallon",
+          "overview": "After Jay Leno\u0027s second retirement from the program, Jimmy Fallon stepped in as his permanent replacement. After 42 years in Los Angeles the program was brought back to New York.",
+          "popularity": 105.8661,
+          "poster_path": "/1N4o5PmmqhlVDrcdJ2RlCFWbLGX.jpg",
+          "first_air_date": "2014-02-17",
+          "softcore": false,
+          "name": "The Tonight Show Starring Jimmy Fallon",
+          "vote_average": 5.839,
+          "vote_count": 373
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/or0E36KfzJYZwqXeiCfm1JgepKF.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 37680,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Suits",
+          "overview": "While running from a drug deal gone bad, Mike Ross, a brilliant young college-dropout, slips into a job interview with one of New York City\u0027s best legal closers, Harvey Specter. Tired of cookie-cutter law school grads, Harvey takes a gamble by hiring Mike on the spot after he recognizes his raw talent and photographic memory.",
+          "popularity": 106.887,
+          "poster_path": "/vQiryp6LioFxQThywxbC6TuoDjy.jpg",
+          "first_air_date": "2011-06-23",
+          "softcore": false,
+          "name": "Suits",
+          "vote_average": 8.218,
+          "vote_count": 5718
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7j4ug9B6JXVeh5HhQjjPScrdj4Z.jpg",
+          "genre_ids": [
+            80,
+            10759,
+            18
+          ],
+          "id": 71790,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "S.W.A.T.",
+          "overview": "A Los Angeles S.W.A.T. sergeant is assigned to lead a highly skilled unit in the community where he grew up. Torn between loyalty to the streets, where the cops are sometimes the enemy, and allegiance to his brothers in blue, he strategically straddles the two worlds.",
+          "popularity": 105.8406,
+          "poster_path": "/1l7vsAIkqOzrqiPwjO27Cb5QdfJ.jpg",
+          "first_air_date": "2017-11-02",
+          "softcore": false,
+          "name": "S.W.A.T.",
+          "vote_average": 8.0,
+          "vote_count": 1574
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/m3Jev59mJLyUp5bXhY5SVfIBZI0.jpg",
+          "genre_ids": [
+            35
+          ],
+          "id": 1668,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Friends",
+          "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
+          "popularity": 111.6094,
+          "poster_path": "/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
+          "first_air_date": "1994-09-22",
+          "softcore": false,
+          "name": "Friends",
+          "vote_average": 8.416,
+          "vote_count": 9117
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dfX2UaHVE5c7kLBFbgmEZJuy4Ev.jpg",
+          "genre_ids": [
+            10767,
+            35
+          ],
+          "id": 61818,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Late Night with Seth Meyers",
+          "overview": "Seth Meyers, who is \u0022Saturday Night Live\u0027s\u0022 longest serving anchor on the show\u0027s wildly popular \u0022Weekend Update,\u0022 takes over as host of NBC\u0027s \u0022Late Night\u0022 \u2014 home to A-list celebrity guests, memorable comedy and the best in musical talent. As the Emmy Award-winning head writer for \u0022SNL,\u0022 Meyers has established a reputation for sharp wit and perfectly timed comedy, and has gained fame for his spot-on jokes and satire. Meyers takes his departure from \u0022SNL\u0022 to his new post at \u0022Late Night,\u0022 as Jimmy Fallon moves to \u0022The Tonight Show\u0022.",
+          "popularity": 104.073,
+          "poster_path": "/u8VruEGv7mtyJihVn2CSA1u90pk.jpg",
+          "first_air_date": "2014-02-25",
+          "softcore": false,
+          "name": "Late Night with Seth Meyers",
+          "vote_average": 5.206,
+          "vote_count": 126
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wsHj4oHQJoe7DMYaqNFwVoyLiAh.jpg",
+          "genre_ids": [
+            35,
+            10764
+          ],
+          "id": 33238,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uB7F0\uB2DD\uB9E8",
+          "overview": "These days, as variety shows are gradually disappearing, this is one of Korea\u2019s representative variety shows that has been responsible for Sunday evenings for over 10 years. This program features numerous stars and members going around various places, playing games, and completing missions. In particular, among the many fun elements of variety shows, this one focuses solely on laughter.\n\nOpen your eyes! Big fun is coming in!\n\nOpen your mouth! Big laughter is coming in!\n\nOpen your heart! Useful lessons are coming in!",
+          "popularity": 104.5933,
+          "poster_path": "/2Wmmu1MkqxJ48J7aySET9EKEjXz.jpg",
+          "first_air_date": "2010-07-11",
+          "softcore": false,
+          "name": "Running Man",
+          "vote_average": 8.257,
+          "vote_count": 210
         }
       ],
-      "total_pages": 198,
-      "total_results": 3958
+      "total_pages": 210,
+      "total_results": 4190
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=24326",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=26283",
       "x-memc": "MISS, STORE",
-      "x-memc-key": "0c56ecba1e5d0986cfd5b951c7f40ad7a192aaf2364bbc33b90f617c06b8807a",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u00228c089cfb2d9cab299df38b6475a56970\u0022",
+      "x-memc-key": "c80bcedc3654bd7b493aa0622c6c24b4",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00229f224cb24a980e1ad835de0cc296ee4a\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

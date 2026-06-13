@@ -1,6 +1,6 @@
 {
   "Guid": "c2e32d0a-8a76-1a4c-9931-77997f58c311",
-  "UpdatedAt": "2025-12-24T18:45:20.415614Z",
+  "UpdatedAt": "2026-06-13T13:30:13.48404Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/translations",
   "Description": "Proxy Mapping for GET /3/movie/47964/translations",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -43,10 +56,10 @@
           "name": "English",
           "english_name": "English",
           "data": {
-            "homepage": "http://www.diehardmovie.com/",
+            "homepage": "https://www.20thcenturystudios.com/movies/a-good-day-to-die-hard",
             "overview": "Iconoclastic, take-no-prisoners cop John McClane, finds himself for the first time on foreign soil after traveling to Moscow to help his wayward son Jack - unaware that Jack is really a highly-trained CIA operative out to stop a nuclear weapons heist. With the Russian underworld in pursuit, and battling a countdown to war, the two McClanes discover that their opposing methods make them unstoppable heroes.",
             "runtime": 98,
-            "tagline": "Yippee Ki-Yay Mother Russia.",
+            "tagline": "Yippee ki-yay Mother Russia.",
             "title": ""
           }
         },
@@ -343,7 +356,7 @@
           "english_name": "Romanian",
           "data": {
             "homepage": "",
-            "overview": "McLane se confrunt\u0103 cu cea mai mare provocare de p\u00E2n\u0103 acum, una cu ramifica\u021Bii \u00EEn toat\u0103 lumea, c\u0103ci fiul s\u0103u \u00EEnstr\u0103inat, Jack, este prins \u00EEn i\u021Bele unei complicate pove\u0219ti \u00EEn care este implicat \u0219i un mafiot rus, tat\u0103 \u0219i fiu f\u0103c\u00E2nd din acest punct tot posibilul pentru a-\u0219i proteja unul-altuia vie\u021Bile \u0219i de a elimina pericolul ce amenin\u021B\u0103 \u00EEns\u0103\u0219i democra\u021Bia.",
+            "overview": "Bruce Willis revine \u00EEn for\u021B\u0103 - un film de ac\u021Biune care te \u021Bine cu sufletul la gur\u0103 - \u00EEn rolul lui John McClane, eroul New York-ului cu norocul de a fi \u00EEn locul nepotrivit la momentul nepotrivit.",
             "runtime": 98,
             "tagline": "A\u0219a tat\u0103. A\u0219a fiu. A\u0219a infern.",
             "title": "\u0218i mai greu de ucis"
@@ -512,7 +525,7 @@
           "english_name": "Mandarin",
           "data": {
             "homepage": "",
-            "overview": "\u5C0A\u9EA5\u5805\u4E00\u5411\u8207\u5EFF\u6B72\u51FA\u982D\u7684\u5152\u5B50\u300C\u5C0F\u5C0A\u9EA5\u5805\u300D\u95DC\u4FC2\u758F\u96E2\uFF0C\u4F46\u4F5C\u70BA\u4ED6\u7684\u7236\u89AA\uFF0C\u7121\u8AD6\u600E\u6A23\u68D8\u624B\u60E1\u52A3\uFF0C\u9762\u5C0D\u9006\u6230\u6642\u4E5F\u6703\u6490\u5230\u76E1\uFF0C\u6BBA\u5230\u5E95\uFF01\u5152\u5B50\u5728\u6771\u6B50\u95D6\u4E0B\u5927\u798D\uFF0C\u75BE\u60E1\u5982\u4EC7\u7684\u8001\u5C0A\u7B2C\u4E00\u6642\u9593\u98DB\u5954\u5230\u83AB\u65AF\u79D1\uFF0C\u7D50\u679C\u51B7\u4E0D\u52DD\u9632\u4E0B\uFF0C\u88AB\u7576\u5730\u6050\u6016\u4EFD\u5B50\u7D81\u67B6\u2500\u2500\u4E8B\u4EF6\u7ADF\u8207\u767C\u52D5\u7B2C\u4E09\u6B21\u4E16\u754C\u5927\u6230\u6709\u95DC\uFF01\u70BA\u9632\u5168\u7403\u767C\u751F\u4E0D\u53EF\u6536\u62FE\u7684\u52D5\u4E82\uFF0C\u5169\u4F4D\u5C0A\u9EA5\u5805\u540C\u5FC3\u4E26\u80A9\u5354\u529B\uFF0C\u518D\u4E00\u6B21\u6210\u70BA\u62EF\u6551\u4E16\u754C\u7684\u65B0\u82F1\u96C4\uFF01",
+            "overview": "\u5C0A\u9EA5\u5805\u4E00\u5411\u8207\u5EFF\u6B72\u51FA\u982D\u7684\u5152\u5B50\u300C\u5C0F\u5C0A\u9EA5\u5805\u300D\u95DC\u4FC2\u758E\u96E2\uFF0C\u4F46\u4F5C\u70BA\u4ED6\u7684\u7236\u89AA\uFF0C\u7121\u8AD6\u600E\u6A23\u68D8\u624B\u60E1\u52A3\uFF0C\u9762\u5C0D\u9006\u6230\u6642\u4E5F\u6703\u6490\u5230\u76E1\uFF0C\u6BBA\u5230\u5E95\uFF01\u5152\u5B50\u5728\u6771\u6B50\u95D6\u4E0B\u5927\u798D\uFF0C\u75BE\u60E1\u5982\u4EC7\u7684\u8001\u5C0A\u7B2C\u4E00\u6642\u9593\u98DB\u5954\u5230\u83AB\u65AF\u79D1\uFF0C\u7D50\u679C\u51B7\u4E0D\u52DD\u9632\u4E0B\uFF0C\u88AB\u7576\u5730\u6050\u6016\u4EFD\u5B50\u7D81\u67B6\u2500\u2500\u4E8B\u4EF6\u7ADF\u8207\u767C\u52D5\u7B2C\u4E09\u6B21\u4E16\u754C\u5927\u6230\u6709\u95DC\uFF01\u70BA\u9632\u5168\u7403\u767C\u751F\u4E0D\u53EF\u6536\u62FE\u7684\u52D5\u4E82\uFF0C\u5169\u4F4D\u5C0A\u9EA5\u5805\u540C\u5FC3\u4E26\u80A9\u5354\u529B\uFF0C\u518D\u4E00\u6B21\u6210\u70BA\u62EF\u6551\u4E16\u754C\u7684\u65B0\u82F1\u96C4\uFF01",
             "runtime": 0,
             "tagline": "\u6253\u6B7B\u4E0D\u96E2\u7236\u5B50\u5175 \u706B\u8FA3ACTION\u8D85\u72E0\u52C1",
             "title": "\u864E\u81BD\u9F8D\u5A01\uFF1A\u64C7\u65E5\u958B\u6230"
@@ -603,17 +616,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=20854",
       "x-memc": "HIT",
-      "x-memc-key": "982d79aa5e5a756c3aec888638ef77f149f287abde45ca637d580bf57bf13552",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=26219",
-      "ETag": "W/\u0022f2e797fe9e15fc729213f20ccb58f28f\u0022",
+      "x-memc-key": "982d79aa5e5a756c3aec888638ef77f1",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022096b2e3ea290fd6bc4cad660874811ab\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -37,12 +37,12 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a company by its TMDb ID.
+    /// Gets a company by id.
     /// </summary>
-    /// <param name="companyId">The TMDb ID of the company.</param>
-    /// <param name="extraMethods">Additional data to include in the response using the append_to_response pattern.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>The company object.</returns>
+    /// <param name="companyId">The TMDb id of the company.</param>
+    /// <param name="extraMethods">Additional data to append to the response.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The company.</returns>
     public async Task<Company?> GetCompanyAsync(int companyId, CompanyMethods extraMethods = CompanyMethods.Undefined, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("company/{companyId}");
@@ -67,27 +67,49 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a paginated list of movies produced by a specific company.
+    /// Gets the movies produced by a company.
     /// </summary>
-    /// <param name="companyId">The TMDb ID of the company.</param>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with movies produced by the company.</returns>
+    /// <param name="companyId">The TMDb id of the company.</param>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The company's movies.</returns>
     public async Task<SearchContainerWithId<SearchMovie>?> GetCompanyMoviesAsync(int companyId, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetCompanyMoviesAsync(companyId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves a paginated list of movies produced by a specific company with language option.
+    /// Gets the movies produced by a company in a specific language.
     /// </summary>
-    /// <param name="companyId">The TMDb ID of the company.</param>
-    /// <param name="language">The ISO 639-1 language code for the movie text. Defaults to the client's DefaultLanguage.</param>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with movies produced by the company.</returns>
+    /// <param name="companyId">The TMDb id of the company.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The company's movies.</returns>
     public async Task<SearchContainerWithId<SearchMovie>?> GetCompanyMoviesAsync(int companyId, string? language, int page = 0, CancellationToken cancellationToken = default)
     {
         return await GetCompanyMethodInternal<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language, cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Gets the alternative names of a company.
+    /// </summary>
+    /// <param name="companyId">The TMDb id of the company.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The company's alternative names.</returns>
+    public async Task<AlternativeNames?> GetCompanyAlternativeNamesAsync(int companyId, CancellationToken cancellationToken = default)
+    {
+        return await GetCompanyMethodInternal<AlternativeNames>(companyId, CompanyMethods.AlternativeNames, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Gets the logos for a company.
+    /// </summary>
+    /// <param name="companyId">The TMDb id of the company.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The company's logos.</returns>
+    public async Task<ImagesWithId?> GetCompanyImagesAsync(int companyId, CancellationToken cancellationToken = default)
+    {
+        return await GetCompanyMethodInternal<ImagesWithId>(companyId, CompanyMethods.Images, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 }

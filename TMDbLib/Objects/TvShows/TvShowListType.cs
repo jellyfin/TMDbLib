@@ -1,9 +1,9 @@
-﻿using TMDbLib.Utilities;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Defines the types of TV show lists available.
+/// TV show list type.
 /// </summary>
 public enum TvShowListType
 {

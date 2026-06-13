@@ -1,13 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Xunit;
 using TMDbLib.Objects.Companies;
-using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 
@@ -22,7 +21,9 @@ public class ClientCompanyTests : TestBase
     {
         Methods = new Dictionary<CompanyMethods, Func<Company, object?>>
         {
-            [CompanyMethods.Movies] = company => company.Movies
+            [CompanyMethods.Movies] = company => company.Movies,
+            [CompanyMethods.AlternativeNames] = company => company.AlternativeNames,
+            [CompanyMethods.Images] = company => company.Images
         };
     }
 
@@ -32,7 +33,7 @@ public class ClientCompanyTests : TestBase
     [Fact]
     public async Task TestCompaniesExtrasNoneAsync()
     {
-        var company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+        var company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(company);
 
         // Test all extras, ensure none of them exist
@@ -84,7 +85,7 @@ public class ClientCompanyTests : TestBase
     [Fact]
     public async Task TestCompanyMissingAsync()
     {
-        var company = await TMDbClient.GetCompanyAsync(IdHelper.MissingID);
+        var company = await TMDbClient.GetCompanyAsync(IdHelper.MissingID, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Null(company);
     }
@@ -96,9 +97,9 @@ public class ClientCompanyTests : TestBase
     public async Task TestCompaniesMoviesAsync()
     {
         //GetCompanyMoviesAsync(int id, string language, int page = -1)
-        var resp = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox);
-        var respPage2 = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2);
-        var respItalian = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it");
+        var resp = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, cancellationToken: TestContext.Current.CancellationToken);
+        var respPage2 = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2, cancellationToken: TestContext.Current.CancellationToken);
+        var respItalian = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it", cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(resp);
         Assert.NotNull(respPage2);
@@ -121,6 +122,33 @@ public class ClientCompanyTests : TestBase
     }
 
     /// <summary>
+    /// Tests that the standalone GetCompanyAlternativeNamesAsync endpoint returns a result
+    /// with the company's id and a (possibly empty) list of alternative names.
+    /// </summary>
+    [Fact]
+    public async Task TestCompanyAlternativeNamesAsync()
+    {
+        var result = await TMDbClient.GetCompanyAlternativeNamesAsync(IdHelper.TwentiethCenturyFox, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.NotNull(result);
+        Assert.Equal(IdHelper.TwentiethCenturyFox, result.Id);
+        Assert.NotNull(result.Results);
+    }
+
+    /// <summary>
+    /// Tests that the standalone GetCompanyImagesAsync endpoint returns logos for the company.
+    /// </summary>
+    [Fact]
+    public async Task TestCompanyImagesEndpointAsync()
+    {
+        var result = await TMDbClient.GetCompanyImagesAsync(IdHelper.TwentiethCenturyFox, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.NotNull(result);
+        Assert.Equal(IdHelper.TwentiethCenturyFox, result.Id);
+        Assert.NotNull(result.Logos);
+    }
+
+    /// <summary>
     /// Tests that company logo URLs are generated correctly for both secure and non-secure URLs.
     /// </summary>
     [Fact]
@@ -130,7 +158,7 @@ public class ClientCompanyTests : TestBase
         await TMDbClient.GetConfigAsync();
 
         // Test image url generator
-        var company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox);
+        var company = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(company);
         Assert.NotNull(company.LogoPath);
 

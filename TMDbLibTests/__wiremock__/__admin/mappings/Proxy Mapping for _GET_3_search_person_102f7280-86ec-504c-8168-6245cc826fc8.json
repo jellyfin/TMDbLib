@@ -1,6 +1,6 @@
 {
   "Guid": "102f7280-86ec-504c-8168-6245cc826fc8",
-  "UpdatedAt": "2025-12-24T18:45:17.8781909Z",
+  "UpdatedAt": "2026-06-13T13:30:13.673377Z",
   "Title": "Proxy Mapping for GET /3/search/person",
   "Description": "Proxy Mapping for GET /3/search/person",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -58,103 +71,17 @@
       "results": [
         {
           "adult": false,
-          "gender": 1,
-          "id": 1633568,
-          "known_for_department": "Acting",
-          "name": "Saskia Williscroft",
-          "original_name": "Saskia Williscroft",
-          "popularity": 0.2493,
-          "profile_path": "/sYjj1AONHZuRq4LIRGelWemzJw0.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/zcySy6dnSmyqiichtDgO7AEeZoq.jpg",
-              "id": 254128,
-              "title": "San Andreas",
-              "original_title": "San Andreas",
-              "overview": "In the aftermath of a massive earthquake in California, a rescue-chopper pilot makes a dangerous journey across the state in order to rescue his estranged daughter.",
-              "poster_path": "/2Gfjn962aaFSD6eST6QU3oLDZTo.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                18,
-                53
-              ],
-              "popularity": 5.7157,
-              "release_date": "2015-05-27",
-              "video": false,
-              "vote_average": 6.243,
-              "vote_count": 8844
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/2hmlTS8gYEMJc4aijy3sTuAbDhz.jpg",
-              "id": 611114,
-              "title": "I Met a Girl",
-              "original_title": "I Met a Girl",
-              "overview": "An impulsive musician struggling with schizophrenia falls for a mysterious woman who may be all in his head. When she suddenly vanishes, he takes off on a cross- country journey across Australia to find her, forcing his long-suffering brother to try to rescue him.",
-              "poster_path": "/mkE8z7x5Ab94gN3CtormERYIz8B.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                10749,
-                18,
-                35
-              ],
-              "popularity": 4.2048,
-              "release_date": "2020-11-26",
-              "video": false,
-              "vote_average": 6.373,
-              "vote_count": 51
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 931701,
-          "known_for_department": "Acting",
-          "name": "Jody Willis",
-          "original_name": "Jody Willis",
-          "popularity": 0.0791,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/mFKNCKxGqDES41XgFIY7JDMZRrH.jpg",
-              "id": 22177,
-              "title": "Autumn",
-              "original_title": "Autumn",
-              "overview": "The virus came so fast no one had time to prepare. Before the day was over, entire towns were decimated, and large cities became monumental tombs. Left with nothing but fading hope and the will to live, reclusive software consultant Michael (Dexter Fletcher) and temperamental mechanic Carl (Dickon Tolson) lead a small group of survivors into the country in hopes of riding out the coming winter. But now the decaying victims of the plague are reanimating, growing more smart and vicious with each passing day. Now, the only hope for the survival of the human race is Phillip (Carradine), a man who refused to leave the city, and has somehow avoided becoming food for the flesh-eating masses.",
-              "poster_path": "/l3vNdN57edCqvbfxnNlHaQn11Ki.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27,
-                18
-              ],
-              "popularity": 1.7125,
-              "release_date": "2009-10-24",
-              "video": false,
-              "vote_average": 3.0,
-              "vote_count": 31
-            }
-          ]
-        },
-        {
-          "adult": false,
           "gender": 2,
           "id": 62,
           "known_for_department": "Acting",
           "name": "Bruce Willis",
           "original_name": "Bruce Willis",
-          "popularity": 5.9637,
+          "popularity": 3.7198,
           "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/paUKxrbN2ww0JeT2JtvgAuaGlPf.jpg",
+              "backdrop_path": "/6TjllWT3cGrPFyqDXurVZ3L8bBi.jpg",
               "id": 745,
               "title": "The Sixth Sense",
               "original_title": "The Sixth Sense",
@@ -167,19 +94,20 @@
                 53,
                 18
               ],
-              "popularity": 8.4993,
+              "popularity": 9.701,
               "release_date": "1999-08-06",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.947,
-              "vote_count": 12432
+              "vote_average": 7.953,
+              "vote_count": 12886
             },
             {
               "adult": false,
-              "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+              "backdrop_path": "/bvk2AAH64lP2YZs02Q3jskfHT8j.jpg",
               "id": 562,
               "title": "Die Hard",
               "original_title": "Die Hard",
-              "overview": "NYPD cop John McClane\u0027s plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her offices Christmas Party, the entire building is overtaken by a group of terrorists. With little help from the LAPD, wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.",
+              "overview": "High above the city of L.A. a team of terrorists has seized a building, taken hostages, and declared war. One man has manages to escape... An off-duty cop hiding somewhere inside. He\u0027s alone, tired... and the only chance anyone has got.",
               "poster_path": "/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
               "media_type": "movie",
               "original_language": "en",
@@ -187,15 +115,16 @@
                 28,
                 53
               ],
-              "popularity": 28.9381,
+              "popularity": 10.9206,
               "release_date": "1988-07-15",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.804,
-              "vote_count": 11857
+              "vote_average": 7.812,
+              "vote_count": 12310
             },
             {
               "adult": false,
-              "backdrop_path": "/dwN0kPGrLbFRxyL3F3J3t4ShQx.jpg",
+              "backdrop_path": "/jW21PoKwqs79wk6bfiYezox63mK.jpg",
               "id": 18,
               "title": "The Fifth Element",
               "original_title": "Le Cinqui\u00E8me \u00C9l\u00E9ment",
@@ -208,62 +137,593 @@
                 28,
                 12
               ],
-              "popularity": 18.6551,
+              "popularity": 18.9207,
               "release_date": "1997-05-02",
+              "softcore": false,
               "video": false,
               "vote_average": 7.6,
-              "vote_count": 11328
+              "vote_count": 11765
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 97267,
+          "known_for_department": "Acting",
+          "name": "Susan Willis",
+          "original_name": "Susan Willis",
+          "popularity": 0.2462,
+          "profile_path": "/w6FPXoFvs3HwHxERKLFlbdjpnxW.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/4ycpMe25LYpzGW42U9amyW9gM53.jpg",
+              "id": 322,
+              "title": "Mystic River",
+              "original_title": "Mystic River",
+              "overview": "The lives of three men who were childhood friends are shattered when one of them suffers a family tragedy.",
+              "poster_path": "/hCHVDbo6XJGj3r2i4hVjKhE0GKF.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                53,
+                80,
+                18,
+                9648
+              ],
+              "popularity": 5.9972,
+              "release_date": "2003-10-08",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.745,
+              "vote_count": 7470
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/oJRlYxfG10h4sxk2A7fpeOZnaFi.jpg",
+              "id": 9276,
+              "title": "The Faculty",
+              "original_title": "The Faculty",
+              "overview": "When some very creepy things start happening at Herrington High, the students begin to suspect that their faculty is being controlled by body-snatching aliens.",
+              "poster_path": "/5XetJwmAiDC0EtH23NIXaqFn3Wl.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                27,
+                878
+              ],
+              "popularity": 5.7423,
+              "release_date": "1998-12-25",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.562,
+              "vote_count": 2252
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/4t5UwFhfKMxpTYqQ6KZNHEQOrO8.jpg",
+              "id": 10276,
+              "title": "What About Bob?",
+              "original_title": "What About Bob?",
+              "overview": "Before going on vacation, self-involved psychiatrist Dr. Leo Marvin has the misfortune of taking on a new patient: Bob Wiley. An exemplar of neediness and a compendium of phobias, Bob follows Marvin to his family\u0027s country house. Dr. Marvin tries to get him to leave; the trouble is, everyone loves Bob. As his oblivious patient makes himself at home, Dr. Marvin loses his professional composure and, before long, may be ready for the loony bin himself.",
+              "poster_path": "/pFCrGGGhV5xeAdvEysv6aSv8T13.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35
+              ],
+              "popularity": 1.7738,
+              "release_date": "1991-05-17",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.888,
+              "vote_count": 904
             }
           ]
         },
         {
           "adult": false,
           "gender": 0,
-          "id": 242685,
-          "known_for_department": "Acting",
-          "name": "Sherry Willis-Burch",
-          "original_name": "Sherry Willis-Burch",
-          "popularity": 0.0925,
+          "id": 4375997,
+          "known_for_department": "Creator",
+          "name": "Helena Willis",
+          "original_name": "Helena Willis",
+          "popularity": 0.0977,
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/qe7axCDpuDr1hBPXDYURZud17Dm.jpg",
-              "id": 40469,
-              "title": "Final Exam",
-              "original_title": "Final Exam",
-              "overview": "In a small college in North Carolina, only a select few students are left to take mid terms. But, when a killer strikes, it could be everyone\u0027s final exam.",
-              "poster_path": "/zRSF8rruLln8VVmEqgaRKlSzTcf.jpg",
+              "backdrop_path": "/rwFLFqCd2hi6kKppvhzf76YWXMe.jpg",
+              "id": 239512,
+              "name": "LasseMajas detektivbyr\u00E5",
+              "original_name": "LasseMajas detektivbyr\u00E5",
+              "overview": "Christmas is approaching and the chief of police in the town of Valleby intends to put on a Christmas play in memory of his parents, but a lot of crime gets in the way. He therefore enlists the help of two young detectives, Lasse and Maja. Lasse and Maja have their own detective agency that solves crimes. When the orchestra learns that the police chief has not gathered enough actors, they become increasingly suspicious of his amateurish methods.",
+              "poster_path": "/nS8lQHPScmBPbCo0T6eDdzcY7Z0.jpg",
+              "media_type": "tv",
+              "original_language": "sv",
+              "genre_ids": [
+                10751,
+                10762
+              ],
+              "popularity": 1.1303,
+              "first_air_date": "2006-12-01",
+              "softcore": false,
+              "vote_average": 7.0,
+              "vote_count": 1,
+              "origin_country": [
+                "SE"
+              ]
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 0,
+          "id": 1401194,
+          "known_for_department": "Visual Effects",
+          "name": "Tony Willis",
+          "original_name": "Tony Willis",
+          "popularity": 0.2115,
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/jKnZ3CavwSTsBbgSpAhQU8Z9nOy.jpg",
+              "id": 457335,
+              "title": "Guns Akimbo",
+              "original_title": "Guns Akimbo",
+              "overview": "An ordinary guy suddenly finds himself forced to fight a gladiator-like battle for a dark website that streams the violence for viewers. In order to survive and rescue his kidnapped ex-girlfriend, he must battle Nix, a heavily armed and much more experienced fighter.",
+              "poster_path": "/vV23MzddmlZJ6TIXpmRUyGV9961.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27
+                28,
+                35,
+                80,
+                53
               ],
-              "popularity": 5.0414,
-              "release_date": "1981-06-05",
+              "popularity": 3.0833,
+              "release_date": "2020-02-27",
+              "softcore": false,
               "video": false,
-              "vote_average": 5.144,
-              "vote_count": 125
+              "vote_average": 6.438,
+              "vote_count": 2571
             },
             {
               "adult": false,
-              "backdrop_path": "/viHDt7yHqZYjnzvLbfP8BCWXmdx.jpg",
-              "id": 74225,
-              "title": "Killer Party",
-              "original_title": "Killer Party",
-              "overview": "Three sorority pledges are tasked with ensuring that the gals of Sigma Alpha Pi throw a killer party at an abandoned fraternity house. Unfortunately a vengeful spirit decides to take the killer epithet literally",
-              "poster_path": "/ym1KgAPOfmVYSh31mzK56jytqfT.jpg",
+              "backdrop_path": "/9AbessEz2YKjmPtYKATDeYRW3Px.jpg",
+              "id": 531,
+              "title": "The Wrong Trousers",
+              "original_title": "The Wrong Trousers",
+              "overview": "Wallace rents out Gromit\u0027s former bedroom to a penguin, who takes up an interest in the techno trousers created by Wallace. However, Gromit later learns that the penguin is a wanted criminal.",
+              "poster_path": "/mV8SDTjkxrDxu0a0egvFz1lRPU7.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                16,
+                35,
+                10751
+              ],
+              "popularity": 2.0715,
+              "release_date": "1993-12-17",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.823,
+              "vote_count": 1164
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/9GDHBrOowFg8op7UQpYGfwnuhbr.jpg",
+              "id": 71677,
+              "title": "Assassination Games",
+              "original_title": "Assassination Games",
+              "overview": "Brazil is a contract killer, willing to take any job if the price is right. Flint left the assassin game when a ruthless drug dealer\u2019s brutal attack left his wife in a coma. When a contract is put out on the same coldblooded drug dealer, both Brazil and Flint want him dead \u2013 one for the money, the other for revenge. With crooked Interpol agents and vicious members of the criminal underworld hot on their trail, these two assassins reluctantly join forces to quickly take out their target before they themselves are terminated.",
+              "poster_path": "/quJ0kXiQmP7rOg1m6WGmallQiJQ.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                80,
+                18,
+                53
+              ],
+              "popularity": 2.3499,
+              "release_date": "2011-07-28",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.332,
+              "vote_count": 460
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 83149,
+          "known_for_department": "Acting",
+          "name": "Willis Bouchey",
+          "original_name": "Willis Bouchey",
+          "popularity": 0.8779,
+          "profile_path": "/x7cecmICRE4EfOTblb1Nd3TrMWT.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/h1vBJ0uN4QCbBb5WVKxmtfTrHoY.jpg",
+              "id": 11697,
+              "title": "The Man Who Shot Liberty Valance",
+              "original_title": "The Man Who Shot Liberty Valance",
+              "overview": "Questions arise when Senator Stoddard attends the funeral of a local man named Tom Doniphon in a small Western town. Flashing back, we learn Doniphon saved Stoddard, then a lawyer, when he was roughed up by a crew of outlaws terrorizing the town, led by Liberty Valance. As the territory\u0027s safety hung in the balance, Doniphon and Stoddard, two of the only people standing up to him, proved to be very important, but different, foes to Valance.",
+              "poster_path": "/4C1R0LEivLjbv3swAzJfzh0tzXl.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                37
+              ],
+              "popularity": 2.7593,
+              "release_date": "1962-04-13",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.8,
+              "vote_count": 1284
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/aqZookq6pJmIT9lVIjDsBY2MNpK.jpg",
+              "id": 14580,
+              "title": "The Big Heat",
+              "original_title": "The Big Heat",
+              "overview": "After the suspicious suicide of a fellow cop, tough homicide detective Dave Bannion takes the law into his own hands when he sets out to smash a vicious crime syndicate.",
+              "poster_path": "/ezt6fb4JbghGKmaMzzuMtxpz0Kb.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                80,
+                53
+              ],
+              "popularity": 1.3424,
+              "release_date": "1953-10-14",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.7,
+              "vote_count": 552
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/wrX24LRWYGZyvPr3W3SSM35QOd7.jpg",
+              "id": 25955,
+              "title": "Pickup on South Street",
+              "original_title": "Pickup on South Street",
+              "overview": "In New York City, an insolent pickpocket, Skip McCoy, inadvertently sets off a chain of events when he targets ex-prostitute Candy and steals her wallet. Unaware that she has been making deliveries of highly classified information to the communists, Candy, who has been trailed by FBI agents for months in hopes of nabbing the spy ringleader, is sent by her ex-boyfriend, Joey, to find Skip and retrieve the valuable microfilm he now holds.",
+              "poster_path": "/et4fY4BxLyAPwxvUFUbzCUrGsjR.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                53,
+                80
+              ],
+              "popularity": 0.9042,
+              "release_date": "1953-05-27",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.4,
+              "vote_count": 322
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 20848,
+          "known_for_department": "Acting",
+          "name": "Rumer Willis",
+          "original_name": "Rumer Willis",
+          "popularity": 0.8095,
+          "profile_path": "/gWleoY30Cj3fFuF5NT12O6mnov7.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/xwgBHC2FgoIrQitl8jZwXXdsR9u.jpg",
+              "id": 466272,
+              "title": "Once Upon a Time... in Hollywood",
+              "original_title": "Once Upon a Time... in Hollywood",
+              "overview": "Los Angeles, 1969. TV star Rick Dalton, a struggling actor specializing in westerns, and stuntman Cliff Booth, his best friend, try to survive in a constantly changing movie industry. Dalton is the neighbor of the young and promising actress and model Sharon Tate, who has just married the prestigious Polish director Roman Polanski\u2026",
+              "poster_path": "/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
                 35,
-                27
+                18,
+                53
               ],
-              "popularity": 1.6317,
-              "release_date": "1986-05-09",
+              "popularity": 14.062,
+              "release_date": "2019-07-24",
+              "softcore": false,
               "video": false,
-              "vote_average": 5.0,
-              "vote_count": 63
+              "vote_average": 7.422,
+              "vote_count": 14873
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/nFPT1iucVA0qkmkJktYNeYzXhLc.jpg",
+              "id": 333381,
+              "title": "Return to Sender",
+              "original_title": "Return to Sender",
+              "overview": "A nurse mistakes a stranger who pays her a visit for her blind date and soon, the man rapes her and turns her life upside down. The woman works to reclaim her life and exact revenge on her assailant after he\u0027s paroled from prison.",
+              "poster_path": "/mBIRSvt2ebgdztuX7F7GwR0iPM0.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                53
+              ],
+              "popularity": 2.8171,
+              "release_date": "2015-05-31",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.113,
+              "vote_count": 1272
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/vz6iY1MtETWRtZMn379JYZGVCX1.jpg",
+              "id": 12620,
+              "title": "The House Bunny",
+              "original_title": "The House Bunny",
+              "overview": "Shelley is living a carefree life until a rival gets her tossed out of the Playboy Mansion. With nowhere to go, fate delivers her to the sorority girls from Zeta Alpha Zeta. Unless they can sign a new pledge class, the seven socially clueless women will lose their house to the scheming girls of Phi Iota Mu. In order to accomplish their goal, they need Shelley to teach them the ways of makeup and men; at the same time, Shelley needs some of what the Zetas have - a sense of individuality. The combination leads all the girls to learn how to stop pretending and start being themselves.",
+              "poster_path": "/4oGGJ824vqIqDtyMvMuK44pDEmx.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                10749,
+                35
+              ],
+              "popularity": 4.5298,
+              "release_date": "2008-08-22",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.7,
+              "vote_count": 2035
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 109776,
+          "known_for_department": "Acting",
+          "name": "Norman Willis",
+          "original_name": "Norman Willis",
+          "popularity": 0.2117,
+          "profile_path": "/6m75dkBarA8tkbZOsG7EaUAJRvD.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/eMgflonfRY89Zj4LZykJKPpG4wg.jpg",
+              "id": 596,
+              "title": "The Grapes of Wrath",
+              "original_title": "The Grapes of Wrath",
+              "overview": "Tom Joad returns to his home after a jail sentence to find his family kicked out of their farm due to foreclosure. He catches up with them on his Uncle\u2019s farm, and joins them the next day as they head for California and a new life... Hopefully.",
+              "poster_path": "/eUcxMVBIA0Jg8l1RGUqycrc3eIQ.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 1.9866,
+              "release_date": "1940-03-15",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.8,
+              "vote_count": 1102
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/syVuaPdiMv3Y8vmaUjBoGCSKCWM.jpg",
+              "id": 40951,
+              "title": "The Living Ghost",
+              "original_title": "The Living Ghost",
+              "overview": "A detective investigating kidnapping case discovers the victim, who may be a zombie.",
+              "poster_path": "/mXgcmju6l2pkEi0cazBhCSRKSVC.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                53,
+                27,
+                9648
+              ],
+              "popularity": 0.514,
+              "release_date": "1942-08-11",
+              "softcore": false,
+              "video": false,
+              "vote_average": 4.273,
+              "vote_count": 21
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/6Qslg5eD3RnxioHof3g4JAzStOS.jpg",
+              "id": 27974,
+              "title": "Bullets or Ballots",
+              "original_title": "Bullets or Ballots",
+              "overview": "After Police Captain Dan McLaren becomes police commissioner, former detective Johnny Blake publicly punches him, convincing rackets boss Al Kruger that Blake is sincere in his effort to join the mob. \u0022Bugs\u0022 Fenner, meanwhile, is certain that Blake is a police agent.",
+              "poster_path": "/qZhmP4AzkHPdfK0E8tpTSdZnGi1.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                80,
+                18
+              ],
+              "popularity": 0.638,
+              "release_date": "1936-06-06",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.577,
+              "vote_count": 52
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1991178,
+          "known_for_department": "Acting",
+          "name": "Willis Chung",
+          "original_name": "Willis Chung",
+          "popularity": 0.1973,
+          "profile_path": "/wkwQPMLOf61D3c5QiVa1cok0crC.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/dMARcKLrv0T7kVJ4iQR3vqTTdtT.jpg",
+              "id": 9615,
+              "title": "The Fast and the Furious: Tokyo Drift",
+              "original_title": "The Fast and the Furious: Tokyo Drift",
+              "overview": "In order to avoid a jail sentence, Sean Boswell heads to Tokyo to live with his military father. In a low-rent section of the city, Sean gets caught up in the underground world of drift racing",
+              "poster_path": "/46xqGOwHbh2TH2avWSw3SMXph4E.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                80,
+                18,
+                53
+              ],
+              "popularity": 2.5509,
+              "release_date": "2006-06-03",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.548,
+              "vote_count": 7633
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/r0Q6eeN9L1ORL9QsV0Sg8ZV3vnv.jpg",
+              "id": 1408,
+              "name": "House",
+              "original_name": "House",
+              "overview": "Dr. Gregory House, a drug-addicted, unconventional, misanthropic medical genius, leads a team of diagnosticians at the fictional Princeton\u2013Plainsboro Teaching Hospital in New Jersey.",
+              "poster_path": "/3Cz7ySOQJmqiuTdrc6CY0r65yDI.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 123.652,
+              "first_air_date": "2004-11-16",
+              "softcore": false,
+              "vote_average": 8.566,
+              "vote_count": 7606,
+              "origin_country": [
+                "US"
+              ]
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/6iNWfGVCEfASDdlNb05TP5nG0ll.jpg",
+              "id": 79744,
+              "name": "The Rookie",
+              "original_name": "The Rookie",
+              "overview": "Starting over isn\u0027t easy, especially for small-town guy John Nolan who, after a life-altering incident, is pursuing his dream of being an LAPD officer. As the force\u0027s oldest rookie, he\u0027s met with skepticism from some higher-ups who see him as just a walking midlife crisis.",
+              "poster_path": "/70kTz0OmjjZe7zHvIDrq2iKW7PJ.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                80,
+                18,
+                35
+              ],
+              "popularity": 266.3598,
+              "first_air_date": "2018-10-16",
+              "softcore": false,
+              "vote_average": 8.548,
+              "vote_count": 3295,
+              "origin_country": [
+                "US"
+              ]
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 74339,
+          "known_for_department": "Acting",
+          "name": "Dave Willis",
+          "original_name": "Dave Willis",
+          "popularity": 0.6463,
+          "profile_path": "/cAxDYGbinrHm1X6eJQi162pZ3Me.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/c4dymvMQT45P1j9RnscRyeyyqSg.jpg",
+              "id": 10283,
+              "name": "Archer",
+              "original_name": "Archer",
+              "overview": "Smart-mouthed superspy Sterling Archer and his dysfunctional team of secret agents turn dangerous missions into messy misadventures around the globe.",
+              "poster_path": "/vhnrkTGYPqcB63ALcSJm0WoaKHT.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                10759,
+                16
+              ],
+              "popularity": 48.1447,
+              "first_air_date": "2009-09-17",
+              "softcore": false,
+              "vote_average": 7.947,
+              "vote_count": 1424,
+              "origin_country": [
+                "US"
+              ]
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/5QWdGKrPWJQ3WcafuYA2PXL6uQG.jpg",
+              "id": 251,
+              "name": "Aqua Teen Hunger Force",
+              "original_name": "Aqua Teen Hunger Force",
+              "overview": "The surreal adventures of three anthropomorphic fast food items: Master Shake, Frylock and Meatwad, and their human nextdoor neighbor, Carl Brutananadilewski.",
+              "poster_path": "/jCWOkfMLsT2sGHadCkmR65MWtJu.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                16,
+                35
+              ],
+              "popularity": 14.2204,
+              "first_air_date": "2000-12-30",
+              "softcore": false,
+              "vote_average": 7.5,
+              "vote_count": 249,
+              "origin_country": [
+                "US"
+              ]
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/zNGe2UHloFU0RXMyLukhhMAUi14.jpg",
+              "id": 13158,
+              "title": "Aqua Teen Hunger Force Colon Movie Film for Theaters",
+              "original_title": "Aqua Teen Hunger Force Colon Movie Film for Theaters",
+              "overview": "An action epic that explores the origins of the Aqua Teen Hunger Force (better known as Master Shake, Frylock, and Meatwad,) who somehow become pitted in a battle over an immortal piece of exercise equipment.",
+              "poster_path": "/q3Ln4x4rv4nJsBBfukjvH2wiU28.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                28,
+                16,
+                12,
+                14,
+                878
+              ],
+              "popularity": 0.7611,
+              "release_date": "2007-04-13",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.474,
+              "vote_count": 136
             }
           ]
         },
@@ -274,7 +734,7 @@
           "known_for_department": "Acting",
           "name": "Willis Robards",
           "original_name": "Willis Robards",
-          "popularity": 0.1467,
+          "popularity": 0.0929,
           "profile_path": "/nb7G4EOZy0i1IBZVcza41JeW2fU.jpg",
           "known_for": [
             {
@@ -292,11 +752,12 @@
                 12,
                 10749
               ],
-              "popularity": 2.8643,
+              "popularity": 0.3025,
               "release_date": "1921-08-28",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.371,
-              "vote_count": 31
+              "vote_average": 6.4,
+              "vote_count": 34
             },
             {
               "adult": false,
@@ -311,8 +772,9 @@
               "genre_ids": [
                 18
               ],
-              "popularity": 0.0676,
+              "popularity": 0.1742,
               "release_date": "1917-01-01",
+              "softcore": false,
               "video": false,
               "vote_average": 4.0,
               "vote_count": 1
@@ -330,823 +792,752 @@
               "genre_ids": [
                 37
               ],
-              "popularity": 1.5332,
+              "popularity": 0.4184,
               "release_date": "1922-03-20",
+              "softcore": false,
               "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 227019,
-          "known_for_department": "Acting",
-          "name": "Pete Willis",
-          "original_name": "Pete Willis",
-          "popularity": 0.2123,
-          "profile_path": "/lfWHKuzcK2W24ie7DLwipm715L1.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/dIdpdIff62LhFBN4y5K3yPoGBS9.jpg",
-              "id": 57835,
-              "title": "Classic Albums: Def Leppard - Hysteria",
-              "original_title": "Classic Albums: Def Leppard - Hysteria",
-              "overview": "This program takes a track by track look at the making of the album. We speak to Joe Elliott, Rick Allen, Phil Collen, and Rick Savage who lead us through the original multitrack tapes. Joe and Phil play acoustic versions of \u0027Pour Some Sugar On Me\u0022 and \u0022Hysteria,\u0022 and Sav and Phil demonstrate riffs and licks from the songs, and explain the genesis of the songwriting. Features songs: Animal, Rocket, Love Bites, Hysteria, Women, Armageddon It, and Pour Some Sugar On Me. In this episode of the CLASSIC ALBUMS series, the surviving members of Def Leppard discuss the making of HYSTERIA as they sort through and explain the original multi-track tapes. In addition, some impromptu acoustic performances and musical demonstrations further dissect this classic album",
-              "poster_path": "/4LquTeBYU4A4u0YiY4yOcxo7uOg.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99,
-                10402
-              ],
-              "popularity": 2.2038,
-              "release_date": "2002-03-04",
-              "video": false,
-              "vote_average": 5.6,
-              "vote_count": 5
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/8p5fTmbUT1BAQ78lZuwUGvFJsY9.jpg",
-              "id": 57838,
-              "title": "Def Leppard: Rock of Ages",
-              "original_title": "Def Leppard: Rock of Ages",
-              "overview": "Tracks: 01 - Pour Some Sugar On Me 02 - Photograph 03 - Love Bites 04 - Let\u0027s Get Rocked 05 - Two Step Behind 06 - Animal 07 - Foolin\u0027 08 - Rocket 09 - When Love \u0026 Hate Collide 10 - Armageddon It 11 - Have You Ever Needed Someone So Bad 12 - Rock Of Ages 13 - Hysteria 14 - Bringin\u0027 On The Heartbreak 15 - Promises 16 - Women 17 - Slang 18 - Work It Out 19 - Now",
-              "poster_path": "/y0V6lywIuieSki9PiDpZnSSDOaq.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                10402
-              ],
-              "popularity": 1.41,
-              "release_date": "2005-11-15",
-              "video": true,
-              "vote_average": 9.2,
-              "vote_count": 4
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/r5zxtpqp0MSt73MNqtLUq3kUCjz.jpg",
-              "id": 61253,
-              "title": "Def Leppard: Historia",
-              "original_title": "Def Leppard: Historia",
-              "overview": "Historia is a compilation video released by Def Leppard, containing all the band\u0027s promotional videos from 1980 to 1988.",
-              "poster_path": "/dLCzHPkyLSz4ViYMhjRYLlzMssf.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                10402
-              ],
-              "popularity": 0.888,
-              "release_date": "1988-06-06",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 1143397,
-          "known_for_department": "Acting",
-          "name": "Nuala Willis",
-          "original_name": "Nuala Willis",
-          "popularity": 0.0555,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 68331,
-              "title": "The Sorcerer",
-              "original_title": "The Sorcerer",
-              "overview": "The villagers of Ploverleigh are celebrating the marriage of Alexis, son of Sir Marmaduke Poindextre, to Aline, daughter of Lady Sangazure, who just happens to be Sir Marmaduke\u0027s old flame. Alexis is determined that all shall share the purity of his true love. He has arranged for Mr. Wells, \u0022a dealer in magic and spells,\u0022 to administer his best-selling love potion to everyone in the village, including the vicar Dr. Daly. The result is hilarious confusion.",
-              "poster_path": "/qK5FyW5Vthdy7vfQyi1v5Klrpky.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                10402,
-                10770
-              ],
-              "popularity": 1.2668,
-              "release_date": "1982-05-31",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 74264,
-          "known_for_department": "Acting",
-          "name": "Kevan Willis",
-          "original_name": "Kevan Willis",
-          "popularity": 0.0071,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/qAOL3Z1b2nGhtQ5bfEvwsxMvz3W.jpg",
-              "id": 13195,
-              "title": "Flawless",
-              "original_title": "Flawless",
-              "overview": "A female executive and a night janitor conspire to commit a daring diamond heist from their mutual employer, The London Diamond Corporation.",
-              "poster_path": "/qENzVKfdyNBAwShcS0YhWeJe34M.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18,
-                53
-              ],
-              "popularity": 4.1056,
-              "release_date": "2007-09-01",
-              "video": false,
-              "vote_average": 6.739,
-              "vote_count": 592
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 3484,
-          "known_for_department": "Directing",
-          "name": "Willis H. O\u0027Brien",
-          "original_name": "Willis H. O\u0027Brien",
-          "popularity": 0.1743,
-          "profile_path": "/bV5q3Wt27xyb1ewCawiPxtBKBOI.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 133213,
-              "title": "The Dinosaur and the Missing Link: A Prehistoric Tragedy",
-              "original_title": "The Dinosaur and the Missing Link: A Prehistoric Tragedy",
-              "overview": "Two cavemen, The Duke and Stonejaw Steve, call on Miss Araminta Rockface. The hated rivals fight, and Steve wins when he throws The Duke into a pot of boiling water. A title card introduces a third rival, \u0022our unassuming hero, Theophilus Ivoryhead.\u0022 Miss Rockface invites the three men into her father\u0027s drawing room/cave, apologizing for not offering tea, since it has not been discovered yet. The Duke and Steve fight again, and everyone rushes out of the cave. Mr. Rockface notices his pot of food is empty; earlier, Wild Willie the Missing Link had eaten it. Mr. Rockface tells the three suitors they will have to procure their own dinner. Steve locates a desert quail and shoots an arrow at it, but the arrow misses the quail and happily (for Steve) hits The Duke\u0027s behind. Meanwhile, Wild Willie is still hungry and goes hunting for snakes. He finds a dinosaur\u0027s tail instead...",
-              "poster_path": "/m4jUwFMAt6XZnwgefYJYHFDfUdD.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                16,
-                35
-              ],
-              "popularity": 0.2469,
-              "release_date": "1915-01-01",
-              "video": false,
-              "vote_average": 6.1,
-              "vote_count": 15
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/LzonTaFh7fOhWcuTgfhthYwCDK.jpg",
-              "id": 132410,
-              "title": "The Ghost of Slumber Mountain",
-              "original_title": "The Ghost of Slumber Mountain",
-              "overview": "In a dream Uncle Jack looks through a magic telescope owned by the ghost of a hermit and sees what life was like millions of years ago, including a battle between prehistoric monsters.",
-              "poster_path": "/nxud9gQINYrm19enWFmgTnqprtg.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                14,
-                16,
-                27
-              ],
-              "popularity": 1.3148,
-              "release_date": "1918-11-17",
-              "video": false,
-              "vote_average": 5.9,
-              "vote_count": 11
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/qRzRz9jHe7sTQ9Xcwq8D2peQDe8.jpg",
-              "id": 106213,
-              "title": "R.F.D., 10,000 B.C.",
-              "original_title": "R.F.D., 10,000 B.C.",
-              "overview": "Set in prehistoric times, this short film was created for the Edison Company by Willis H. O\u0027Brien, a pioneer of American stop-motion animation.",
-              "poster_path": "/mS1BxqVqQMTRlUp3FhJ2dD8etjk.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                16
-              ],
-              "popularity": 0.0398,
-              "release_date": "1917-01-01",
-              "video": false,
-              "vote_average": 5.8,
-              "vote_count": 5
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 173508,
-          "known_for_department": "Directing",
-          "name": "Paul Willis",
-          "original_name": "Paul Willis",
-          "popularity": 0.0388,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 185183,
-              "title": "Hedda Gabler",
-              "original_title": "Hedda Gabler",
-              "overview": "Set in an anonymous corner of suburbia, this contemporary adaptation of the Henrik Ibsen play transposes the action into a contemporary setting in which the newly-married, quick-witted and energetic Hedda and her bland but stable husband George have recently arrived in their brand new home.",
-              "poster_path": null,
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 1.6387,
-              "release_date": "2004-06-12",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 1153583,
-          "known_for_department": "Writing",
-          "name": "Howard Willis",
-          "original_name": "Howard Willis",
-          "popularity": 0.0962,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 43330,
-              "title": "Bad Blood",
-              "original_title": "Bad Blood",
-              "overview": "During World War 2, a farmer in New Zealand murders seven people. The police, along with local Maori trackers, hunt him in the bush country.",
-              "poster_path": "/6Z5g18WZ56FxTkzhSia8Rcxe0zV.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                53,
-                18
-              ],
-              "popularity": 2.0342,
-              "release_date": "1982-11-12",
-              "video": false,
-              "vote_average": 6.7,
-              "vote_count": 9
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 2090222,
-          "known_for_department": "Acting",
-          "name": "Tywain Willis",
-          "original_name": "Tywain Willis",
-          "popularity": 0.0379,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/qNYL8EAUPvTaiW1hVavX1vIWVcl.jpg",
-              "id": 489930,
-              "title": "Blindspotting",
-              "original_title": "Blindspotting",
-              "overview": "Collin must make it through his final three days of probation for a chance at a new beginning. He and his troublemaking childhood best friend, Miles, work as movers, and when Collin witnesses a police shooting, the two men\u2019s friendship is tested as they grapple with identity and their changed realities in the rapidly-gentrifying neighborhood they grew up in.",
-              "poster_path": "/x4DRZfTqOlmzNWAvy4vcKWkgEGL.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                80,
-                18
-              ],
-              "popularity": 0.9572,
-              "release_date": "2018-07-20",
-              "video": false,
-              "vote_average": 7.332,
-              "vote_count": 707
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 21220,
-          "known_for_department": "Production",
-          "name": "David Willis",
-          "original_name": "David Willis",
-          "popularity": 0.9882,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/fBvSfLetWlAMevQVHa0nBDV1Fon.jpg",
-              "id": 1572,
-              "title": "Die Hard: With a Vengeance",
-              "original_title": "Die Hard: With a Vengeance",
-              "overview": "New York detective John McClane is back and kicking bad-guy butt in the third installment of this action-packed series, which finds him teaming with civilian Zeus Carver to prevent the loss of innocent lives. McClane thought he\u0027d seen it all, until a genius named Simon engages McClane, his new \u0022partner\u0022 -- and his beloved city -- in a deadly game that demands their concentration.",
-              "poster_path": "/buqmCdFQEWwEpL3agGgg2GVjN2d.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                53
-              ],
-              "popularity": 9.2658,
-              "release_date": "1995-05-19",
-              "video": false,
-              "vote_average": 7.275,
-              "vote_count": 6442
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/xfdIjDRBKbddojhUbmheLoLQXQN.jpg",
-              "id": 2069,
-              "title": "The Whole Nine Yards",
-              "original_title": "The Whole Nine Yards",
-              "overview": "After a mobster agrees to cooperate with an FBI investigation in order to stay out of prison, he\u0027s relocated by the authorities to a life of suburban anonymity as part of a witness protection program. It\u0027s not long before a couple of his new neighbours figure out his true identity and come knocking to see if he\u0027d be up for one more hit\u2014suburban style.",
-              "poster_path": "/rDV7ntPLY0ZDBT722Odsi80nFrn.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                80
-              ],
-              "popularity": 6.229,
-              "release_date": "2000-02-18",
-              "video": false,
-              "vote_average": 6.458,
-              "vote_count": 2003
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/aK1uB5c111DXSvPOrriizPoWwh9.jpg",
-              "id": 2026,
-              "title": "Hostage",
-              "original_title": "Hostage",
-              "overview": "When a mafia accountant is taken hostage on his beat, a police officer \u2013 wracked by guilt from a prior stint as a negotiator \u2013 must negotiate the standoff, even as his own family is held captive by the mob.",
-              "poster_path": "/vjhLmtjO2pMQXRgkxcwZoq2Ma8n.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                53,
-                80
-              ],
-              "popularity": 2.4074,
-              "release_date": "2005-03-10",
-              "video": false,
-              "vote_average": 6.346,
-              "vote_count": 1697
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 2173575,
-          "known_for_department": "Acting",
-          "name": "Matt Willis",
-          "original_name": "Matt Willis",
-          "popularity": 0.0168,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/hKM5wMIbikA6WeGSy6GDhJwzl6L.jpg",
-              "id": 475292,
-              "title": "Kaiju Bunraku",
-              "original_title": "Kaiju Bunraku",
-              "overview": "The Japanese art of bunraku puppetry dramatizes the existential crisis of a despondent denizen of a Kaiju-infested region of Japan; a rigorous theatrical tradition soaked in profound absurdism.",
-              "poster_path": "/xyPPKUM2HuefPs86VIqFAq7qiDh.jpg",
-              "media_type": "movie",
-              "original_language": "ja",
-              "genre_ids": [
-                28,
-                14
-              ],
-              "popularity": 0.0638,
-              "release_date": "2017-03-22",
-              "video": false,
-              "vote_average": 6.7,
-              "vote_count": 3
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 2847524,
-          "known_for_department": "Acting",
-          "name": "Elisha Willis",
-          "original_name": "Elisha Willis",
-          "popularity": 0.0239,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/8SqhkRsI1Ix1xK7E9sAn53IwLvW.jpg",
-              "id": 431084,
-              "title": "Cinderella",
-              "original_title": "Cinderella",
-              "overview": "Cinderella by Birmingham Royal Ballet.",
-              "poster_path": "/sgJfKqdMoGiJWLcdMQJTraHU5u7.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 0.1413,
-              "release_date": "2010-12-25",
-              "video": true,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 1632870,
-          "known_for_department": "Sound",
-          "name": "Willis Holman",
-          "original_name": "Willis Holman",
-          "popularity": 0.0852,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/lSjWDLe8KwU731Bhs1TAwA7agGH.jpg",
-              "id": 26268,
-              "title": "Harper",
-              "original_title": "Harper",
-              "overview": "Harper is a cynical private eye in the best tradition of Bogart. He even has Bogie\u0027s Baby hiring him to find her missing husband, getting involved along the way with an assortment of unsavory characters and an illegal-alien smuggling ring.",
-              "poster_path": "/zy56CkGHBA9WubuJ7fjntTZCvRi.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                9648,
-                80,
-                53
-              ],
-              "popularity": 2.7854,
-              "release_date": "1966-02-22",
-              "video": false,
-              "vote_average": 6.6,
-              "vote_count": 180
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/qCGttaliZIInqQaAYZEvm7ZcmOS.jpg",
-              "id": 27344,
-              "title": "Swamp Women",
-              "original_title": "Swamp Women",
-              "overview": "An undercover policewoman helps three female convicts escape from prison so that they can lead her to a stash of stolen diamonds hidden in a swamp.",
-              "poster_path": "/4Rr4hDuXr8gJnH48d7UcySpEnfC.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                53,
-                80,
-                12
-              ],
-              "popularity": 0.2871,
-              "release_date": "1956-04-01",
-              "video": false,
-              "vote_average": 3.391,
-              "vote_count": 32
-            },
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 132356,
-              "title": "Get Outta Town",
-              "original_title": "Get Outta Town",
-              "overview": "A longtime criminal returns to his native Los Angeles determined to avenge his brother\u0027s murder.",
-              "poster_path": "/73EtVFmVRrdy3B7rgWyhauIrmwX.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                53
-              ],
-              "popularity": 0.6347,
-              "release_date": "1960-01-01",
-              "video": false,
-              "vote_average": 5.4,
-              "vote_count": 7
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 3866860,
-          "known_for_department": "Acting",
-          "name": "Reginald Willis",
-          "original_name": "Reginald Willis",
-          "popularity": 0.0281,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 45382,
-              "title": "Artworks",
-              "original_title": "Artworks",
-              "overview": "A police chief\u0027s daughter, a sales agent for a home-security firm, meets an art gallery owner. Love and envy lead them to hatch a plot to steal overlooked but valuable paintings from her wealthy clients.",
-              "poster_path": "/psAm0RZMpK26MYf5RDJwU2PmeQk.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18,
-                10749
-              ],
-              "popularity": 0.4734,
-              "release_date": "2003-04-10",
-              "video": false,
-              "vote_average": 3.955,
-              "vote_count": 11
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/6hCIm8CpuZoOsKowgRPstwWORkW.jpg",
-              "id": 1120362,
-              "title": "Caviar",
-              "original_title": "Caviar",
-              "overview": "Antigone Corday is an aspiring social media influencer. She is mourning the recent death of her brother, Jeremiah, a well-known pundit and voice for progressive causes. Soon, she receives a mysterious package in the mail--a pre-recorded video of Jeremiah. He claims to have uncovered a conspiracy that will throw her worldview, and the fate of the planet, into question.",
-              "poster_path": "/a6cj4MngF6Dj2ePgMlGEw63XBnW.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27,
-                9648,
-                53,
-                35,
-                878
-              ],
-              "popularity": 0.1081,
-              "release_date": "2023-05-02",
-              "video": false,
-              "vote_average": 2.6,
-              "vote_count": 5
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/2znGjU5qUpWLRuNb7yaPHvRaLOS.jpg",
-              "id": 93567,
-              "title": "The Pride of Jesse Hallam",
-              "original_title": "The Pride of Jesse Hallam",
-              "overview": "Jesse Hallum sells the family farm to see that his daughter receives the medical care she needs at the Cincinnati Children\u0027s Hospital. The big city challenges him, though, especially when his illiteracy is exposed.",
-              "poster_path": "/yXt9fQQabeZJxVryn9JFw9LHrSX.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                10751,
-                10770
-              ],
-              "popularity": 0.5205,
-              "release_date": "1981-03-03",
-              "video": false,
-              "vote_average": 5.0,
-              "vote_count": 6
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 1378014,
-          "known_for_department": "Acting",
-          "name": "Willis Sparks",
-          "original_name": "Willis Sparks",
-          "popularity": 0.0571,
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/fBvSfLetWlAMevQVHa0nBDV1Fon.jpg",
-              "id": 1572,
-              "title": "Die Hard: With a Vengeance",
-              "original_title": "Die Hard: With a Vengeance",
-              "overview": "New York detective John McClane is back and kicking bad-guy butt in the third installment of this action-packed series, which finds him teaming with civilian Zeus Carver to prevent the loss of innocent lives. McClane thought he\u0027d seen it all, until a genius named Simon engages McClane, his new \u0022partner\u0022 -- and his beloved city -- in a deadly game that demands their concentration.",
-              "poster_path": "/buqmCdFQEWwEpL3agGgg2GVjN2d.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                53
-              ],
-              "popularity": 9.2658,
-              "release_date": "1995-05-19",
-              "video": false,
-              "vote_average": 7.275,
-              "vote_count": 6442
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/uFdLjtlgCbEtkQfBiZQPLfVryr5.jpg",
-              "id": 20762,
-              "title": "The Substitute",
-              "original_title": "The Substitute",
-              "overview": "When an inner-city Miami schoolteacher gets her knee broken after standing up to the school\u0027s gang leader, her mercenary combat specialist boyfriend goes undercover as a substitute teacher to take down the punk. Soon he discovers a conspiracy of criminals at work, and must reassemble his team from his last jungle raid to stop them.",
-              "poster_path": "/oWajA1tS7eAtm80IMfcJAGrojQF.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                80,
-                18,
-                53
-              ],
-              "popularity": 2.1123,
-              "release_date": "1996-04-19",
-              "video": false,
-              "vote_average": 6.9,
-              "vote_count": 530
-            },
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 1023606,
-              "title": "The Colony",
-              "original_title": "The Colony",
-              "overview": "An arrogant Malibu tycoon frantically tries to locate the files of a murdered psychotherapist before his enemies get their hands on them and destroy him in this failed pilot from the creators of \u0022Dynasty.\u0022",
-              "poster_path": "/ng5BNRIvXxRPmUSEUmMk3UNK6IX.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                10770
-              ],
-              "popularity": 4.3367,
-              "release_date": "1996-07-04",
-              "video": false,
-              "vote_average": 6.0,
+              "vote_average": 7.0,
               "vote_count": 1
             }
           ]
         },
         {
           "adult": false,
-          "gender": 0,
-          "id": 2033414,
-          "known_for_department": "Lighting",
-          "name": "Alan Willis",
-          "original_name": "Alan Willis",
-          "popularity": 0.1361,
+          "gender": 2,
+          "id": 1702316,
+          "known_for_department": "Acting",
+          "name": "Gunner Willis",
+          "original_name": "Gunner Willis",
+          "popularity": 0.2707,
+          "profile_path": "/7btxsL6QQrInbRfdHJ2JmZX1cNM.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/edXuLjxjYu1SkyMHd55hRasME8b.jpg",
+              "id": 636879,
+              "title": "A Nun\u0027s Curse",
+              "original_title": "A Nun\u0027s Curse",
+              "overview": "A group of travelers are forced to seek shelter inside an abandoned jail where a notorious nun named Sister Monday had once been assigned and was suspected of murdering prisoners.",
+              "poster_path": "/eutNRwSguV0NCx7BNAXOibWzjP6.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                27
+              ],
+              "popularity": 0.7854,
+              "release_date": "2020-05-12",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.356,
+              "vote_count": 202
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 343750,
+              "title": "Dollface",
+              "original_title": "Dorchester\u0027s Revenge: The Return of Crinoline Head",
+              "overview": "A group of college students researching Dorchester Stewart, better known as the infamous killer Crinoline Head, return to the scene of the horrific murders that happened in 1996.",
+              "poster_path": "/tfcV9GlgdEljvA8QKOFJONQ4ApR.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                27
+              ],
+              "popularity": 0.214,
+              "release_date": "2014-05-28",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.491,
+              "vote_count": 57
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/aatG9iVAUL7U7OyFEmupESpOrD2.jpg",
+              "id": 69740,
+              "name": "Ozark",
+              "original_name": "Ozark",
+              "overview": "A financial adviser drags his family from Chicago to the Missouri Ozarks, where he must launder $500 million in five years to appease a drug boss.",
+              "poster_path": "/pCGyPVrI9Fzw6rE1Pvi4BIXF6ET.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                80,
+                18
+              ],
+              "popularity": 33.7142,
+              "first_air_date": "2017-07-21",
+              "softcore": false,
+              "vote_average": 8.205,
+              "vote_count": 2777,
+              "origin_country": [
+                "US"
+              ]
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1220033,
+          "known_for_department": "Acting",
+          "name": "Jerome Willis",
+          "original_name": "Jerome Willis",
+          "popularity": 0.3666,
+          "profile_path": "/1gpiHDCUanzBOAr1N99DDzVZ5ht.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/kvdy0Ijjo2r9qsnWV4Dzx07qwnc.jpg",
+              "id": 1427,
+              "title": "Perfume: The Story of a Murderer",
+              "original_title": "Perfume: The Story of a Murderer",
+              "overview": "Jean-Baptiste Grenouille, born in the stench of 18th century Paris, develops a superior olfactory sense, which he uses to create the world\u0027s finest perfumes. However, his work takes a dark turn as he tries to preserve scents in the search for the ultimate perfume.",
+              "poster_path": "/2wrFrUej8ri5EpjgIkjKTAnr686.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                80,
+                14,
+                18
+              ],
+              "popularity": 7.8904,
+              "release_date": "2006-09-13",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.365,
+              "vote_count": 5015
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/8SnnGg0cqfa3bmorOERNrXvZ8Mn.jpg",
+              "id": 11954,
+              "title": "Lifeforce",
+              "original_title": "Lifeforce",
+              "overview": "A race of space vampires arrives in London and infects the populace, commencing an apocalyptic descent into chaos.",
+              "poster_path": "/AeLmyhJNQd2BMFGER36ctAeDhIp.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                27,
+                878,
+                28,
+                9648
+              ],
+              "popularity": 3.4048,
+              "release_date": "1985-06-21",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.231,
+              "vote_count": 724
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/AoMYwa8yRvXcbRKdD5s8VwIN3NA.jpg",
+              "id": 9300,
+              "title": "Orlando",
+              "original_title": "Orlando",
+              "overview": "England, 1600. Queen Elizabeth I promises Orlando, a young nobleman obsessed with poetry, that she will grant him land and fortune if he agrees to satisfy a very particular request.",
+              "poster_path": "/seRawEs8eQ8rWfkBm6QC39EQEAU.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                14
+              ],
+              "popularity": 1.447,
+              "release_date": "1992-12-11",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.925,
+              "vote_count": 385
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 2418188,
+          "known_for_department": "Directing",
+          "name": "Luke Willis",
+          "original_name": "Luke Willis",
+          "popularity": 0.0404,
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/sWi4SSeVPii4NU365Df9vzX1yOX.jpg",
-              "id": 2666,
-              "title": "Dark City",
-              "original_title": "Dark City",
-              "overview": "A man struggles with memories of his past, including a wife he cannot remember, in a nightmarish world with no sun and run by beings with telekinetic powers who seek the souls of humans.",
-              "poster_path": "/tNPEGju4DpTdbhBphNmZoEi9Bd3.jpg",
+              "backdrop_path": null,
+              "id": 800000,
+              "title": "Pool Boy",
+              "original_title": "Pool Boy",
+              "overview": "River Gallo stars as a non-binary pool cleaner who attracts the attention of a former high school athlete.",
+              "poster_path": "/nnhzlixmWADF0z3F7EZi6yfxVg1.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                9648,
-                878
+                10749
               ],
-              "popularity": 4.8069,
-              "release_date": "1998-02-27",
+              "popularity": 0.2455,
+              "release_date": "2021-03-17",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.33,
-              "vote_count": 3051
+              "vote_average": 2.8,
+              "vote_count": 4
             },
             {
               "adult": false,
-              "backdrop_path": "/kPmdc2OhVONoxdGXA8oJ6dqC3HL.jpg",
-              "id": 6972,
-              "title": "Australia",
-              "original_title": "Australia",
-              "overview": "Set in northern Australia before World War II, an English aristocrat who inherits a sprawling ranch reluctantly pacts with a stock-man in order to protect her new property from a takeover plot. As the pair drive 2,000 head of cattle over unforgiving landscape, they experience the bombing of Darwin by Japanese forces firsthand.",
-              "poster_path": "/tFQpccGMTWe24eWxK5U9rb7tK3M.jpg",
+              "backdrop_path": "/nwttlWOH04Q5gUyMfBKEhkUbgka.jpg",
+              "id": 633977,
+              "title": "The Summer House",
+              "original_title": "The Summer House",
+              "overview": "After many years Greg returns to his family\u0027s secluded vacation house with his boyfriend only to be tormented by the ghost of his homophobic father.",
+              "poster_path": "/5KYVv5n0E3Zc6AwI1AD9sIeHjtI.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                12,
-                10749,
-                18
-              ],
-              "popularity": 6.0787,
-              "release_date": "2008-11-18",
-              "video": false,
-              "vote_average": 6.588,
-              "vote_count": 2386
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/2CjY7TiNDKhuI0rk8K0Vq0UvIHZ.jpg",
-              "id": 409582,
-              "title": "7 Guardians of the Tomb",
-              "original_title": "7 Guardians of the Tomb",
-              "overview": "An innocent discovery of a well-preserved mummified Emperor from 200 BC China unearths a 2000 year old nightmare - a secret that should have remained buried.",
-              "poster_path": "/ca799tQJwj4lkkQpBdXohlvEtuQ.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                12,
                 27
               ],
-              "popularity": 1.9665,
-              "release_date": "2018-01-19",
+              "popularity": 0.0482,
+              "release_date": "2019-07-31",
+              "softcore": false,
               "video": false,
-              "vote_average": 5.379,
-              "vote_count": 248
+              "vote_average": 2.7,
+              "vote_count": 3
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 1306692,
+              "title": "A Love Letter to San Francisco",
+              "original_title": "A Love Letter to San Francisco",
+              "overview": "A Love Letter to San Francisco is a joyous tribute to our city by the bay. Shot at Oasis Cabaret \u0026 Nightclub, it features a feast of cameos from local drag Kings and Queens performing to Scott McKenzie\u0027s \u0022San Francisco\u0022 remixed by PH Electro.",
+              "poster_path": null,
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [],
+              "popularity": 0.0311,
+              "release_date": "2024-06-19",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
             }
           ]
         },
         {
           "adult": false,
           "gender": 0,
-          "id": 2504692,
-          "known_for_department": "Visual Effects",
-          "name": "Zachary S. Willis",
-          "original_name": "Zachary S. Willis",
-          "popularity": 0.0071,
+          "id": 1422263,
+          "known_for_department": "Acting",
+          "name": "Emma Willis",
+          "original_name": "Emma Willis",
+          "popularity": 0.0453,
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/e7tMI0zVKJB2TS74TaBifIZIkCp.jpg",
-              "id": 338967,
-              "title": "Zombieland: Double Tap",
-              "original_title": "Zombieland: Double Tap",
-              "overview": "Columbus, Tallahassee, Wichita, and Little Rock move to the American heartland as they face off against evolved zombies, fellow survivors, and the growing pains of the snarky makeshift family.",
-              "poster_path": "/dtRbVsUb5O12WWO54SRpiMtHKC0.jpg",
+              "backdrop_path": "/hwLUULOfCAeQyYRWLTrYQObmPta.jpg",
+              "id": 323149,
+              "title": "Darkness on the Edge of Town",
+              "original_title": "Darkness on the Edge of Town",
+              "overview": "A troubled teenage sharpshooter decides to avenge the death of her estranged sister after she is found murdered in a public bathroom.",
+              "poster_path": "/eMRgKnMqeNIaHZg0fgpDg7JG99a.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27,
-                35
+                53,
+                80,
+                18,
+                37
               ],
-              "popularity": 6.1816,
-              "release_date": "2019-10-09",
+              "popularity": 0.1541,
+              "release_date": "2014-07-09",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.911,
-              "vote_count": 6056
+              "vote_average": 6.0,
+              "vote_count": 8
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 0,
+          "id": 2477620,
+          "known_for_department": "Directing",
+          "name": "Allen Willis",
+          "original_name": "Allen Willis",
+          "popularity": 0.0393,
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 654252,
+              "title": "Have You Sold Your Dozen Roses?",
+              "original_title": "Have You Sold Your Dozen Roses?",
+              "overview": "Documentary about a rubbish dump by Allen Willis, Philip Greene, and David Myers.",
+              "poster_path": null,
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                99
+              ],
+              "popularity": 0.1234,
+              "release_date": "1958-04-22",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
             },
             {
               "adult": false,
-              "backdrop_path": "/kCqWQ24m7TjA0RllQMn0JYrcy4a.jpg",
-              "id": 592984,
-              "title": "Hillbilly Elegy",
-              "original_title": "Hillbilly Elegy",
-              "overview": "An urgent phone call pulls a Yale Law student back to his Ohio hometown, where he reflects on three generations of family history and his own future.",
-              "poster_path": "/aA0D6DKIfLtXYNy94Qq2IW5NiGR.jpg",
+              "backdrop_path": null,
+              "id": 715795,
+              "title": "Staggerlee: A Conversation with Black Panther Bobby Seale",
+              "original_title": "Staggerlee: A Conversation with Black Panther Bobby Seale",
+              "overview": "A documentary on Black Panther leader Bobby Seale during his incarceration in the San Francisco County Jail.",
+              "poster_path": "/nubRjpvAaU4N9SoK4hrJFiADgDy.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
+                99
+              ],
+              "popularity": 0.2424,
+              "release_date": "1970-01-01",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/lqsPXRr1ZKKRSMxbxWqzkvOwpXW.jpg",
+              "id": 1053783,
+              "title": "The Psychedelic Experience",
+              "original_title": "The Psychedelic Experience",
+              "overview": "Experimental movie, where a man comes home and experiences LSD. His kaleidoscopic visions follow, with readings inspired by the Tibethan Book of the Dead.",
+              "poster_path": "/euJpCSQRywSn10vwpRw6kpxtYxe.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                36,
+                99,
+                14
+              ],
+              "popularity": 0.4754,
+              "release_date": "1965-01-23",
+              "softcore": false,
+              "video": false,
+              "vote_average": 0.0,
+              "vote_count": 0
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 0,
+          "id": 9950,
+          "known_for_department": "Sound",
+          "name": "Jim Willis",
+          "original_name": "Jim Willis",
+          "popularity": 0.0652,
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/4rICId8WQBhOIzl7iZCVvc0QoJW.jpg",
+              "id": 9387,
+              "title": "Conan the Barbarian",
+              "original_title": "Conan the Barbarian",
+              "overview": "A horde of rampaging warriors massacre the parents of young Conan and enslave the young child for years on The Wheel of Pain. As the sole survivor of the childhood massacre, Conan is released from slavery and taught the ancient arts of fighting. Transforming himself into a killing machine, Conan travels into the wilderness to seek vengeance on Thulsa Doom, the man responsible for killing his family. In the wilderness, Conan takes up with the thieves Valeria and Subotai. The group comes upon King Osric, who wants the trio of warriors to help rescue his daughter who has joined Doom in the hills.",
+              "poster_path": "/qw2A587Ee61IwcSOLNFRhuOACZZ.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                12,
+                14,
+                28
+              ],
+              "popularity": 7.7056,
+              "release_date": "1982-03-16",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.806,
+              "vote_count": 2803
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/kx3KdTmefo87oQEEhGqm6dLlAg0.jpg",
+              "id": 4043,
+              "title": "Law of Desire",
+              "original_title": "La ley del deseo",
+              "overview": "Pablo, a successful film director, disappointed in his relationship with his young lover, Juan, concentrates in a new project, a monologue starring his transgender sister, Tina. Antonio, an uptight young man, falls possessively in love with the director and in his passion would stop at nothing to obtain the object of his desire.",
+              "poster_path": "/tAKaUaYGPCUStvlOaLwsJldrOJQ.jpg",
+              "media_type": "movie",
+              "original_language": "es",
+              "genre_ids": [
+                18,
+                10749,
+                53,
+                35
+              ],
+              "popularity": 1.1922,
+              "release_date": "1987-02-07",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.1,
+              "vote_count": 331
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/ejp6CZQ64mEvewfit2fSIpOYxGR.jpg",
+              "id": 661,
+              "title": "The Marriage of Maria Braun",
+              "original_title": "Die Ehe der Maria Braun",
+              "overview": "Maria marries a young soldier in the last days of World War II, only for him to go missing in the war. She must rely on her beauty and ambition to navigate the difficult post-war years alone.",
+              "poster_path": "/tXjZEzlf4WQwZ4Dt53gXeJVuO7p.jpg",
+              "media_type": "movie",
+              "original_language": "de",
+              "genre_ids": [
                 18
               ],
-              "popularity": 1.6722,
-              "release_date": "2020-11-09",
+              "popularity": 1.0214,
+              "release_date": "1979-03-23",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.692,
-              "vote_count": 987
+              "vote_average": 7.4,
+              "vote_count": 300
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1516495,
+          "known_for_department": "Acting",
+          "name": "Steve Willis",
+          "original_name": "Steve Willis",
+          "popularity": 0.0379,
+          "profile_path": "/azo90yecJSQgcuGKfIJ9GgRBdEu.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 361951,
+              "title": "Bezango, WA",
+              "original_title": "Bezango, WA",
+              "overview": "Bezango, WA tells the tale of cartooning and comics in the Pacific Northwest, focusing on the alternative community. The film chronicles both the past and the present, while featuring Frank M. Young, co-creator of the Eisner Award winning graphic novel \u0022The Carter Family: Don\u0027t Forget This Song,\u0022 and James Gill, a cartoonist, and mostly-cheerful introvert of the finest class.",
+              "poster_path": "/9wPpY50KgW94Ozy3jwDWYdo0jBu.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                99
+              ],
+              "popularity": 0.1388,
+              "release_date": "2015-09-30",
+              "softcore": false,
+              "video": false,
+              "vote_average": 3.4,
+              "vote_count": 4
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/uE0AVxX4a3mmXymd8162xmOC3UD.jpg",
+              "id": 3170,
+              "name": "The Biggest Loser Australia",
+              "original_name": "The Biggest Loser Australia",
+              "overview": "The Biggest Loser is an Australian reality television show, based on the original American version of the same name. It is produced by Crackerjack Productions and screened on Network Ten. It was hosted by Ajay Rochester from 2006\u20132009 and introduced former Olympian Hayley Lewis as its host in 2010. The show first debuted on 13 February 2006, followed by a second season on 4 February 2007 which introduced Michelle Bridges, Shannan Ponton and Steve Willis. The third season began airing on 3 February 2008. A fourth season, which features couples competing as teams, started airing on 1 February 2009. A fifth season, which aired on 31 January 2010, featuring former Olympic swimmer Hayley Lewis as the new host, and in 2011 the show introduced the new trainer Tiffiny Hall.",
+              "poster_path": "/oVlMLQLYn8CZP2fcieb0pvLvBfg.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                10764
+              ],
+              "popularity": 0.9845,
+              "first_air_date": "2006-02-13",
+              "softcore": false,
+              "vote_average": 5.8,
+              "vote_count": 4,
+              "origin_country": [
+                "AU"
+              ]
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/pmAzkQJa993nIgPqFtVmOhStHXg.jpg",
+              "id": 2354,
+              "name": "Home and Away",
+              "original_name": "Home and Away",
+              "overview": "Home and Away is set in the fictional town of Summer Bay, a coastal town in New South Wales, and follows the personal and professional lives of the people living in the area. The show initially focused on the Fletcher family, Pippa and Tom Fletcher and their five foster children Frank Morgan, Carly Morris, Steven Matheson, Lynn Davenport and Sally Keating, who would go on to become one of the show\u0027s longest-running characters. The show also originally and currently focuses on the Stewart family. Home and Away had proved popular when it premiered in 1988 and had risen to become a hit in Australia, and after only a few weeks, the show tackled its first major and disturbing storyline, the rape of Carly Morris; it was one of the first shows to feature such storylines during the early timeslot. H\u0026A has tackled many adult-themed and controversial storylines; something rarely found in its restricted timeslot.",
+              "poster_path": "/vn0eKMiG69bhQtxb7qLRo8SSqu5.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                10766
+              ],
+              "popularity": 32.605,
+              "first_air_date": "1988-01-18",
+              "softcore": false,
+              "vote_average": 6.3,
+              "vote_count": 77,
+              "origin_country": [
+                "AU"
+              ]
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 2088694,
+          "known_for_department": "Acting",
+          "name": "Tallulah Willis",
+          "original_name": "Tallulah Willis",
+          "popularity": 0.6468,
+          "profile_path": "/AhY6oj2IrkmVfNQPmHXEKVwNqbQ.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/cQUSBypH7uVSLvZYW6yVgorjgHK.jpg",
+              "id": 2122,
+              "title": "The Whole Ten Yards",
+              "original_title": "The Whole Ten Yards",
+              "overview": "Jimmy \u0022The Tulip\u0022 Tudeski now spends his days compulsively cleaning his house and perfecting his culinary skills with his wife, Jill, a purported assassin who has yet to pull off a clean hit. Suddenly, an uninvited and unwelcome connection to their past unexpectedly shows up on Jimmy and Jill\u0027s doorstep; it\u0027s Oz, and he\u0027s begging them to help him rescue his wife, Cynthia.",
+              "poster_path": "/4fbglyCpPqK1u40fhncLXKAF74A.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                53,
+                80
+              ],
+              "popularity": 1.4352,
+              "release_date": "2004-04-07",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.8,
+              "vote_count": 1032
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/97uVTcMUaml18166fwM2ds0kgp8.jpg",
+              "id": 3172,
+              "title": "Bandits",
+              "original_title": "Bandits",
+              "overview": "After escaping from prison, Joe and Terry go on a crime spree, robbing banks through Oregon and California in order to finance their scheme for a new life south of the border. Unfortunately, things get more complicated when they meet Kate, who runs into them with her car. She joins the bandits on their cross-country spree, and eventually she steals something, too: their hearts.",
+              "poster_path": "/vy5oMqjiYjjd7VWLnqo6c3u88lC.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                80
+              ],
+              "popularity": 3.0083,
+              "release_date": "2001-10-12",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.3,
+              "vote_count": 1114
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/tZJIL1n3eGZd3mZyto3Ux2xNEBW.jpg",
+              "id": 10533,
+              "title": "The Scarlet Letter",
+              "original_title": "The Scarlet Letter",
+              "overview": "Set in puritanical Boston in the mid 1600s, the story of seamstress Hester Prynne, who is outcast after she becomes pregnant by a respected reverend. She refuses to divulge the name of the father, is \u0022convicted\u0022 of adultery and forced to wear a scarlet \u0022A\u0022 until an Indian attack unites the Puritans and leads to a reevaluation of their laws and morals.",
+              "poster_path": "/8gIU7O3oV6NyWUjlL6ppbpnIZLW.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                10749
+              ],
+              "popularity": 1.9478,
+              "release_date": "1995-10-13",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.129,
+              "vote_count": 524
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1975170,
+          "known_for_department": "Acting",
+          "name": "Jenna Willis",
+          "original_name": "Jenna Willis",
+          "popularity": 0.5834,
+          "profile_path": "/keISNXsh3QqhFFQKHJqipunXsR4.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/lroojUACXVHdnjVYQXgts5IhqGr.jpg",
+              "id": 71552,
+              "title": "American Reunion",
+              "original_title": "American Reunion",
+              "overview": "The characters we met a little more than a decade ago return to East Great Falls for their high school reunion. In one long-overdue weekend, they will discover what has changed, who hasn\u2019t, and that time and distance can\u2019t break the bonds of friendship.",
+              "poster_path": "/de5QBIdVR4dnkBZ4a0zjkS4lTg.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35
+              ],
+              "popularity": 7.8165,
+              "release_date": "2012-04-04",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.3,
+              "vote_count": 4714
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/98sIdYdvnh68Va1JLjcyAuFGZO5.jpg",
+              "id": 466081,
+              "title": "The Informer",
+              "original_title": "The Informer",
+              "overview": "In New York, former convict Pete Koslow, related to the Polish mafia, must deal with both Klimek the General, his ruthless boss, and the twisted ambitions of two federal agents, as he tries to survive and protect the lives of his loved ones.",
+              "poster_path": "/pbGveUC8mk0QRkdXpERPLbMFnrg.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                80,
+                53
+              ],
+              "popularity": 2.5361,
+              "release_date": "2019-08-30",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.536,
+              "vote_count": 954
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/n3F2O09BBD3juuAYzV6pSc4T0Xa.jpg",
+              "id": 512412,
+              "title": "Backtrace",
+              "original_title": "Backtrace",
+              "overview": "The lone surviving thief of a violent armored car robbery is sprung from a high security facility and administered an experimental drug.",
+              "poster_path": "/gM14jePY6dxg3ORWJCJN3YpQOWh.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                80,
+                28,
+                12,
+                53
+              ],
+              "popularity": 3.3224,
+              "release_date": "2018-12-14",
+              "softcore": false,
+              "video": false,
+              "vote_average": 4.978,
+              "vote_count": 252
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1364042,
+          "known_for_department": "Sound",
+          "name": "Christopher Willis",
+          "original_name": "Christopher Willis",
+          "popularity": 0.3893,
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/x2FqFdUxRekbNdow3vZdtDqL96z.jpg",
+              "id": 402897,
+              "title": "The Death of Stalin",
+              "original_title": "The Death of Stalin",
+              "overview": "When dictator Joseph Stalin dies, his parasitic cronies square off in a frantic power struggle to become the next Soviet leader. As they bumble, brawl and back-stab their way to the top, the question remains \u2014 just who is running the government?",
+              "poster_path": "/AqH7q89NxGRDAyRWKqsL3OBtYfV.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                18,
+                36
+              ],
+              "popularity": 2.4297,
+              "release_date": "2017-10-20",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.015,
+              "vote_count": 2142
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/sYbdAWcTqcdLtpAnwIWjrIw6t0r.jpg",
+              "id": 359983,
+              "title": "The Lion Guard: Return of the Roar",
+              "original_title": "The Lion Guard: Return of the Roar",
+              "overview": "Set in the African savannah, the film follows Kion as he assembles the members of the \u0027Lion Guard\u0027. Throughout the film, the diverse team of young animals will learn how to utilize each of their unique abilities to solve problems and accomplish tasks to maintain balance within the Circle of Life, while also introducing viewers to the vast array of animals that populate the prodigious African landscape.",
+              "poster_path": "/pzcQ7cQBHIdsKLN4exd7bCyy1pk.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                10751,
+                10770,
+                16,
+                12
+              ],
+              "popularity": 1.6098,
+              "release_date": "2016-01-25",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.7,
+              "vote_count": 1221
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/udMUwcH9UBxwjvpRD3f0ExEJq89.jpg",
+              "id": 520900,
+              "title": "The Personal History of David Copperfield",
+              "original_title": "The Personal History of David Copperfield",
+              "overview": "A fresh and distinctive take on Charles Dickens\u2019 semi-autobiographical masterpiece, The Personal History of David Copperfield, set in the 1840s, chronicles the life of its iconic title character as he navigates a chaotic world to find his elusive place within it. From his unhappy childhood to the discovery of his gift as a storyteller and writer, David\u2019s journey is by turns hilarious and tragic, but always full of life, colour and humanity.",
+              "poster_path": "/2epgo9k2Jrs7qrTL1Rork1mDSKT.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35
+              ],
+              "popularity": 2.0124,
+              "release_date": "2019-11-07",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.401,
+              "vote_count": 538
             }
           ]
         }
       ],
-      "total_pages": 500,
-      "total_results": 10000
+      "total_pages": 47,
+      "total_results": 933
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=22023",
-      "x-memc": "MISS, STORE",
-      "x-memc-key": "516558eefc9be1362c148b507e508888758b96cedc359f64659f49a78130df62",
-      "x-az": "us-east-1b",
-      "ETag": "W/\u00229a92de2489e368bc144520db3fee259d\u0022",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=19389",
+      "x-memc": "HIT",
+      "x-memc-key": "e7d473766569750feb260372cfb461f7",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022e4eda9ce5f883d5d16067ee3edfca4e3\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

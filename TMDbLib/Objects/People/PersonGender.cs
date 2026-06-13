@@ -3,7 +3,7 @@ using TMDbLib.Utilities;
 namespace TMDbLib.Objects.People;
 
 /// <summary>
-/// Represents the gender of a person.
+/// Gender of a person.
 /// </summary>
 public enum PersonGender
 {

@@ -1,6 +1,6 @@
 {
   "Guid": "d796d0e1-6286-d74c-9ccc-6435ddddd40f",
-  "UpdatedAt": "2025-12-24T18:45:16.2024671Z",
+  "UpdatedAt": "2026-06-13T13:30:13.341127Z",
   "Title": "Proxy Mapping for GET /3/authentication/token/new",
   "Description": "Proxy Mapping for GET /3/authentication/token/new",
   "Priority": -2000000,
@@ -17,30 +17,44 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "success": true,
-      "expires_at": "2025-12-24 19:45:16 UTC",
-      "request_token": "8b65ad09b92d67475b441f9232a20f549e515d72"
+      "expires_at": "2026-06-13 14:30:13 UTC",
+      "request_token": "5bab654a535052764570fdc665bf385ebb96e42b"
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=0",
-      "authentication-callback": "https://www.themoviedb.org/authenticate/8b65ad09b92d67475b441f9232a20f549e515d72",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "max-age=0, private",
+      "authentication-callback": "https://www.themoviedb.org/authenticate/5bab654a535052764570fdc665bf385ebb96e42b",
       "x-az": "us-east-1c",
-      "ETag": "W/\u00220670ac1aa9ea5d5e01a4aea94f1e10bd\u0022",
+      "ETag": "W/\u0022523329c46f1160de9fcc78dc2ad3c82c\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

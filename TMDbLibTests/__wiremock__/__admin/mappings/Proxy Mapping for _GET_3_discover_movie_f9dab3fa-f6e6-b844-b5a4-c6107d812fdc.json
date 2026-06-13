@@ -1,6 +1,6 @@
 {
   "Guid": "f9dab3fa-f6e6-b844-b5a4-c6107d812fdc",
-  "UpdatedAt": "2025-12-24T18:45:27.8697257Z",
+  "UpdatedAt": "2026-06-13T13:30:16.657545Z",
   "Title": "Proxy Mapping for GET /3/discover/movie",
   "Description": "Proxy Mapping for GET /3/discover/movie",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "with_release_type",
@@ -38,418 +51,432 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg",
-          "genre_ids": [
-            878,
-            12,
-            14
-          ],
-          "id": 83533,
-          "original_language": "en",
-          "original_title": "Avatar: Fire and Ash",
-          "overview": "In the wake of the devastating war against the RDA and the loss of their eldest son, Jake Sully and Neytiri face a new threat on Pandora: the Ash People, a violent and power-hungry Na\u0027vi tribe led by the ruthless Varang. Jake\u0027s family must fight for their survival and the future of Pandora in a conflict that pushes them to their emotional and physical limits.",
-          "popularity": 559.9652,
-          "poster_path": "/g96wHxU7EnoIFwemb2RgohIXrgW.jpg",
-          "release_date": "2025-12-17",
-          "title": "Avatar: Fire and Ash",
-          "video": false,
-          "vote_average": 7.368,
-          "vote_count": 574
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/3jMN1k8b0Ptd9eMoeftUyDGJdCh.jpg",
-          "genre_ids": [
-            878,
-            12,
-            18
-          ],
-          "id": 982843,
-          "original_language": "ko",
-          "original_title": "\uB300\uD64D\uC218",
-          "overview": "When a raging flood traps a researcher and her young son, a call to a crucial mission puts their escape \u2014 and the future of humanity \u2014 on the line.",
-          "popularity": 482.8501,
-          "poster_path": "/7bLr0xljlMz8Xa8sufcZFhg8gh6.jpg",
-          "release_date": "2025-09-18",
-          "title": "The Great Flood",
-          "video": false,
-          "vote_average": 6.098,
-          "vote_count": 210
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ufqytAlziHq5pljKByGJ8IKhtEZ.jpg",
-          "genre_ids": [
-            53,
-            80,
-            9648
-          ],
-          "id": 425274,
-          "original_language": "en",
-          "original_title": "Now You See Me: Now You Don\u0027t",
-          "overview": "The original Four Horsemen reunite with a new generation of illusionists to take on powerful diamond heiress Veronika Vanderberg, who leads a criminal empire built on money laundering and trafficking. The new and old magicians must overcome their differences to work together on their most ambitious heist yet.",
-          "popularity": 375.3153,
-          "poster_path": "/oD3Eey4e4Z259XLm3eD3WGcoJAh.jpg",
-          "release_date": "2025-11-12",
-          "title": "Now You See Me: Now You Don\u0027t",
-          "video": false,
-          "vote_average": 6.5,
-          "vote_count": 606
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/zdva2LmrzZ0OdTI27ayzKPw0wkF.jpg",
-          "genre_ids": [
-            16,
-            35,
-            12,
-            10751,
-            9648
-          ],
-          "id": 1084242,
-          "original_language": "en",
-          "original_title": "Zootopia 2",
-          "overview": "After cracking the biggest case in Zootopia\u0027s history, rookie cops Judy Hopps and Nick Wilde find themselves on the twisting trail of a great mystery when Gary De\u0027Snake arrives and turns the animal metropolis upside down. To crack the case, Judy and Nick must go undercover to unexpected new parts of town, where their growing partnership is tested like never before.",
-          "popularity": 329.3201,
-          "poster_path": "/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg",
-          "release_date": "2025-11-26",
-          "title": "Zootopia 2",
-          "video": false,
-          "vote_average": 7.661,
-          "vote_count": 712
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/yCatt8lmp3oRFEcOZF8KHhsiASQ.jpg",
+          "backdrop_path": "/oPsRr7AfNLw6XaPuMpvkWK0bIUA.jpg",
           "genre_ids": [
             28,
-            10752
+            18
           ],
-          "id": 1223601,
-          "original_language": "fi",
-          "original_title": "Sisu 2",
-          "overview": "Returning to the house where his family was brutally murdered during the war, \u2018the man who refuses to die\u2019 dismantles it, loads it on a truck, and is determined to rebuild it somewhere safe in their honor. When the commander who killed his family comes back hellbent on finishing the job, a relentless, eye-popping cross-country chase ensues.",
-          "popularity": 326.0945,
-          "poster_path": "/jNsttCWZyPtW66MjhUozBzVsRb7.jpg",
-          "release_date": "2025-10-21",
-          "title": "Sisu: Road to Revenge",
+          "id": 1057265,
+          "title": "Peddi",
+          "original_language": "te",
+          "original_title": "\u0C2A\u0C46\u0C26\u0C4D\u0C26\u0C3F",
+          "overview": "In 1980s rural Andhra Pradesh, a spirited villager unites his community through sports to defend their pride against a powerful rival.",
+          "popularity": 764.3619,
+          "poster_path": "/kJAJNNBYlbqAcpTDxBNnaILSMTy.jpg",
+          "release_date": "2026-06-03",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.55,
-          "vote_count": 262
+          "vote_average": 6.561,
+          "vote_count": 33
         },
         {
           "adult": false,
-          "backdrop_path": "/bZlismAr366jWFiZNKzY3x3AN5X.jpg",
+          "backdrop_path": "/4k99kV4R1bbbrsnjR205v91Xbin.jpg",
           "genre_ids": [
             27,
             53
           ],
-          "id": 1228246,
+          "id": 1339713,
+          "title": "Obsession",
           "original_language": "en",
-          "original_title": "Five Nights at Freddy\u0027s 2",
-          "overview": "One year since the supernatural nightmare at Freddy Fazbear\u0027s Pizza, the stories about what transpired there have been twisted into a campy local legend, inspiring the town\u0027s first ever Fazfest. With the truth kept from her, Abby sneaks out to reconnect with Freddy, Bonnie, Chica, and Foxy, setting into motion a terrifying series of events that will reveal dark secrets about the real origin of Freddy\u0027s, and unleash a decades-hidden horror.",
-          "popularity": 249.8545,
-          "poster_path": "/udAxQEORq2I5wxI97N2TEqdhzBE.jpg",
-          "release_date": "2025-12-03",
-          "title": "Five Nights at Freddy\u0027s 2",
+          "original_title": "Obsession",
+          "overview": "After breaking the mysterious \u0022One Wish Willow\u0022 to win his crush\u0027s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+          "popularity": 817.0684,
+          "poster_path": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+          "release_date": "2026-05-13",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.2,
-          "vote_count": 227
+          "vote_average": 7.9,
+          "vote_count": 712
         },
         {
           "adult": false,
-          "backdrop_path": "/AePlQ3osZShJmbNj8tzQ3NoMTQF.jpg",
+          "backdrop_path": "/l5QgEvlfK6eHPM4YPEk7AArXmh8.jpg",
           "genre_ids": [
-            28,
-            53,
-            9648
-          ],
-          "id": 1013446,
-          "original_language": "fr",
-          "original_title": "Reflet dans un diamant mort",
-          "overview": "When the mysterious woman in the room next door disappears, a debonair 70-year-old ex-spy living in a luxury hotel on the C\u00F4te d\u0027Azur is confronted by the demons and darlings of a lurid past in which moviemaking, memories and madness collide.",
-          "popularity": 239.5594,
-          "poster_path": "/5CdRxBu7jRDHjthkAL8vE0GdKUD.jpg",
-          "release_date": "2025-06-25",
-          "title": "Reflection in a Dead Diamond",
-          "video": false,
-          "vote_average": 6.011,
-          "vote_count": 47
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/4mZ06VpfpAPuaUPn1SEV0brbbxe.jpg",
-          "genre_ids": [
-            878,
-            28
-          ],
-          "id": 1196067,
-          "original_language": "en",
-          "original_title": "Worldbreaker",
-          "overview": "Five years ago, a tear in the fabric of reality brought creatures to our world from an alternate dimension bent on our destruction. A father hides his daughter on an island to keep her safe while he prepares her for survival and the battles to come. But when the world is about to break, no place is safe.",
-          "popularity": 219.7148,
-          "poster_path": "/7K8w6mdrJp0oaSoKWGyjSZ4Zv2z.jpg",
-          "release_date": "2025-10-30",
-          "title": "Worldbreaker",
-          "video": false,
-          "vote_average": 6.074,
-          "vote_count": 27
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hvut2slhhgJ31UNa9Df7jFfAS0x.jpg",
-          "genre_ids": [
-            28,
-            53
-          ],
-          "id": 1336189,
-          "original_language": "en",
-          "original_title": "Delivery Run",
-          "overview": "A food delivery driver gets caught in a deadly chase in the icy Minnesota wilderness, pursued by a crazed snowplow driver for unknown reasons, facing life-threatening situations and forced to outsmart his relentless pursuer alone.",
-          "popularity": 211.3254,
-          "poster_path": "/eCA5maHDlZtXNTtiLXenwnEw7tc.jpg",
-          "release_date": "2025-09-10",
-          "title": "Delivery Run",
-          "video": false,
-          "vote_average": 5.25,
-          "vote_count": 18
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hyc9gq0Oq5THKak7tB7oqC2Rd6z.jpg",
-          "genre_ids": [
-            37,
-            12,
-            80
-          ],
-          "id": 1195518,
-          "original_language": "en",
-          "original_title": "The Unholy Trinity",
-          "overview": "Set against the turbulent backdrop of 1870s Montana, in the moments before the execution of Isaac Broadway, he gives his estranged son, Henry, an impossible task: murder the man who framed him for a crime he didn\u2019t commit. Intent on fulfilling his promise, Henry travels to the remote town of Trinity, where an unexpected turn of events traps him in town and leaves him caught between Gabriel Dove, the town\u2019s upstanding new sheriff, and a mysterious figure named St. Christopher.",
-          "popularity": 190.5957,
-          "poster_path": "/waU3o5qRPNA9bIC59DIsDppll11.jpg",
-          "release_date": "2025-06-13",
-          "title": "The Unholy Trinity",
-          "video": false,
-          "vote_average": 6.176,
-          "vote_count": 102
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
-          "genre_ids": [
-            53,
-            9648,
+            10749,
             35
           ],
-          "id": 812583,
-          "original_language": "en",
-          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
-          "overview": "When young priest Jud Duplenticy is sent to assist charismatic firebrand Monsignor Jefferson Wicks, it\u2019s clear that all is not well in the pews. After a sudden and seemingly impossible murder rocks the town, the lack of an obvious suspect prompts local police chief Geraldine Scott to join forces with renowned detective Benoit Blanc to unravel a mystery that defies all logic.",
-          "popularity": 170.5348,
-          "poster_path": "/qCOGGi8JBVEZMc3DVby8rUivyXz.jpg",
-          "release_date": "2025-11-26",
-          "title": "Wake Up Dead Man: A Knives Out Mystery",
+          "id": 1308553,
+          "title": "Hai Jawani Toh Ishq Hona Hai",
+          "original_language": "hi",
+          "original_title": "\u0939\u0948 \u091C\u0935\u093E\u0928\u0940 \u0924\u094B \u0907\u0936\u094D\u0915 \u0939\u094B\u0928\u093E \u0939\u0948",
+          "overview": "When Jass leaves his marriage over conflicting priorities, a new romance abroad is upended by shocking revelations, forcing him to confront love, loyalty, and the true meaning of commitment.",
+          "popularity": 548.4534,
+          "poster_path": "/vmlJvz6qVzYgei2V74GvnmcuQfW.jpg",
+          "release_date": "2026-06-04",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.2,
-          "vote_count": 1033
+          "vote_average": 5.4,
+          "vote_count": 15
         },
         {
           "adult": false,
-          "backdrop_path": "/x3s2lEGNguUnQ5YH3Goq7Ud7Lcn.jpg",
+          "backdrop_path": "/7uXzE0ZBkbAeKylOz7cUQF4Yw75.jpg",
           "genre_ids": [
-            28,
-            53
+            18
           ],
-          "id": 1491902,
-          "original_language": "en",
-          "original_title": "Bang: storm of bullets",
-          "overview": "Follows a ruthless hitman who, after narrowly escaping a fatal attempt on his life, betrays his gang in an effort to find forgiveness but ends up becoming a target himself.",
-          "popularity": 166.4193,
-          "poster_path": "/8SUzKOqe2ectvhYdSnR7Vq2F3n1.jpg",
-          "release_date": "2025-07-11",
-          "title": "Bang",
+          "id": 879945,
+          "title": "The Unknown Man",
+          "original_language": "nl",
+          "original_title": "L\u0027homme inconnu",
+          "overview": "Louis, a Flemish writer, decides to isolate himself at the C\u00F4te d\u2019Azur, hoping this place will bring him inspiration.",
+          "popularity": 672.0008,
+          "poster_path": "/4TpBhdaSl5ALHbgeaYOLF8Q3haz.jpg",
+          "release_date": "2021-10-16",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.2,
-          "vote_count": 17
+          "vote_average": 8.063,
+          "vote_count": 8
         },
         {
           "adult": false,
-          "backdrop_path": "/aHj7d7wSLqrg5cjAcgHhiGr97Ih.jpg",
+          "backdrop_path": "/ufSwlnECLoUbBjPrFqEQcWBzHwc.jpg",
+          "genre_ids": [
+            10402,
+            18
+          ],
+          "id": 936075,
+          "title": "Michael",
+          "original_language": "en",
+          "original_title": "Michael",
+          "overview": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world, highlighting both his life off-stage and some of the most iconic performances from his early solo career.",
+          "popularity": 460.9936,
+          "poster_path": "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+          "release_date": "2026-04-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.542,
+          "vote_count": 2001
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4EAAwpylq313qrDqpCxulUrXBNF.jpg",
           "genre_ids": [
             28,
-            53,
+            14,
+            12
+          ],
+          "id": 931285,
+          "title": "Mortal Kombat II",
+          "original_language": "en",
+          "original_title": "Mortal Kombat II",
+          "overview": "The fan favorite champions\u2014now joined by Johnny Cage himself\u2014are pitted against one another in the ultimate, no-holds barred, gory battle to defeat the dark rule of Shao Kahn that threatens the very existence of the Earthrealm and its defenders.",
+          "popularity": 439.2321,
+          "poster_path": "/hwRdDFIhaEmpRgoki805YvyyjZf.jpg",
+          "release_date": "2026-05-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.005,
+          "vote_count": 1094
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6zg7A9ICOthNR2TSXlT51KvXrsA.jpg",
+          "genre_ids": [
+            28,
+            12,
             878
           ],
-          "id": 798645,
+          "id": 1228710,
+          "title": "The Mandalorian and Grogu",
           "original_language": "en",
-          "original_title": "The Running Man",
-          "overview": "Desperate to save his sick daughter, working-class Ben Richards is convinced by The Running Man\u0027s charming but ruthless producer to enter the deadly competition game as a last resort. But Ben\u0027s defiance, instincts, and grit turn him into an unexpected fan favorite \u2014 and a threat to the entire system. As ratings skyrocket, so does the danger, and Ben must outwit not just the Hunters, but a nation addicted to watching him fall.",
-          "popularity": 165.481,
-          "poster_path": "/dKL78O9zxczVgjtNcQ9UkbYLzqX.jpg",
-          "release_date": "2025-11-11",
-          "title": "The Running Man",
+          "original_title": "The Mandalorian and Grogu",
+          "overview": "The evil Empire has fallen, and Imperial warlords remain scattered throughout the galaxy. As the fledgling New Republic works to protect everything the Rebellion fought for, they have enlisted the help of legendary Mandalorian bounty hunter Din Djarin and his young apprentice Grogu.",
+          "popularity": 323.5333,
+          "poster_path": "/5Vi8dSauVwH1HOsiZceDMbRr1Ca.jpg",
+          "release_date": "2026-05-20",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.83,
-          "vote_count": 731
+          "vote_average": 6.8,
+          "vote_count": 453
         },
         {
           "adult": false,
-          "backdrop_path": "/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
+          "backdrop_path": "/9Z2uDYXqJrlmePznQQJhL6d92Rq.jpg",
           "genre_ids": [
+            10751,
+            35,
+            12,
+            14,
+            16
+          ],
+          "id": 1226863,
+          "title": "The Super Mario Galaxy Movie",
+          "original_language": "en",
+          "original_title": "The Super Mario Galaxy Movie",
+          "overview": "Having thwarted Bowser\u0027s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir\u0027s crusade.",
+          "popularity": 321.1512,
+          "poster_path": "/eJGWx219ZcEMVQJhAgMiqo8tYY.jpg",
+          "release_date": "2026-04-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.166,
+          "vote_count": 2552
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eQySd26OW7UmCuaeBOL7qy6foMn.jpg",
+          "genre_ids": [
+            28,
+            14,
+            878
+          ],
+          "id": 454639,
+          "title": "Masters of the Universe",
+          "original_language": "en",
+          "original_title": "Masters of the Universe",
+          "overview": "After being separated for 15 years, the Sword of Power leads Prince Adam back to Eternia, where he discovers his home shattered under the fiendish rule of Skeletor. To save his family and his world, Adam must join forces with his closest allies, Teela and Duncan/Man-At-Arms, and embrace his true destiny as He-Man \u2014 the most powerful man in the universe.",
+          "popularity": 293.9049,
+          "poster_path": "/3YMd9Ogae4rDKLWuAZFuse9xhc5.jpg",
+          "release_date": "2026-06-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.34,
+          "vote_count": 184
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg",
+          "genre_ids": [
+            28,
             878,
             53
           ],
-          "id": 755898,
+          "id": 1275779,
+          "title": "Disclosure Day",
           "original_language": "en",
-          "original_title": "War of the Worlds",
-          "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
-          "popularity": 154.5233,
-          "poster_path": "/yvirUYrva23IudARHn3mMGVxWqM.jpg",
-          "release_date": "2025-07-29",
-          "title": "War of the Worlds",
+          "original_title": "Disclosure Day",
+          "overview": "If you found out we weren\u2019t alone, if someone showed you, proved it to you, would that frighten you?",
+          "popularity": 310.9838,
+          "poster_path": "/3o5YPjDGDTcTDL5ftDA9NwN9dLd.jpg",
+          "release_date": "2026-06-10",
+          "softcore": false,
           "video": false,
-          "vote_average": 4.251,
-          "vote_count": 790
+          "vote_average": 7.156,
+          "vote_count": 173
         },
         {
           "adult": false,
-          "backdrop_path": "/gtuXARxjGdfsGFqEwggBB8zUJza.jpg",
+          "backdrop_path": "/1eAuwNBy34kkM3xkl202z4f1NiI.jpg",
           "genre_ids": [
-            35,
-            28
+            28,
+            14
           ],
-          "id": 1589891,
-          "original_language": "es",
-          "original_title": "La hora de los valientes",
-          "overview": "A psychoanalyst on community service aids an agent shattered by infidelity; together, they will confront danger and discover second chances.",
-          "popularity": 141.974,
-          "poster_path": "/qKKG22O5pFxqglG0oMjWTjQWCNl.jpg",
-          "release_date": "2025-12-18",
-          "title": "A Time for Bravery",
+          "id": 1367220,
+          "title": "Karuppu",
+          "original_language": "ta",
+          "original_title": "\u0B95\u0BB0\u0BC1\u0BAA\u0BCD\u0BAA\u0BC1",
+          "overview": "In a world where justice falters, guardian deity Vettai Karuppu takes the guise of a lawyer to battle a corrupt legal system preying on the powerless.",
+          "popularity": 332.5493,
+          "poster_path": "/4KZXlZ5tTT6ghbW77gS4hSLkCd7.jpg",
+          "release_date": "2026-05-14",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.7,
-          "vote_count": 27
+          "vote_average": 7.462,
+          "vote_count": 13
         },
         {
           "adult": false,
-          "backdrop_path": "/vJ1z82bLSfg71sQcJ370N4TpWqf.jpg",
+          "backdrop_path": "/xugEpZk9YQ0DIz1aFvH5HGkqpZK.jpg",
           "genre_ids": [
-            27
+            27,
+            9648
           ],
-          "id": 1438030,
+          "id": 1304313,
+          "title": "Lee Cronin\u0027s The Mummy",
           "original_language": "en",
-          "original_title": "Slaughterhouse 2",
-          "overview": "Unlike Buddy Bacon in the original \u0027Slaughterhouse\u0027 his brother Cleavon left the blood-splattered pig farm for a better life. But just like his father, Cleavon has a mute son who has a passion for home-reared, flame-grilled Wonder Jerky. Anyone who strays into Bacon\u0027s ranch, of abandoned Americana cars, will soon become part of the Wonder Jerky success story.",
-          "popularity": 130.021,
-          "poster_path": "/wkZgGYcCQIzX8zvMAHpzg4hFhLF.jpg",
-          "release_date": "2024-10-23",
-          "title": "Slaughterhouse 2",
+          "original_title": "Lee Cronin\u0027s The Mummy",
+          "overview": "The young daughter of a journalist disappears into the desert without a trace\u2014eight years later, the broken family is shocked when she is returned to them, as what should be a joyful reunion turns into a living nightmare.",
+          "popularity": 250.2756,
+          "poster_path": "/1q308iixueCU4pFtSYugNOevtNx.jpg",
+          "release_date": "2026-04-15",
+          "softcore": false,
           "video": false,
-          "vote_average": 8.0,
+          "vote_average": 8.064,
+          "vote_count": 1779
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ksl01eojCFiGl5zO9kACiyiwpZs.jpg",
+          "genre_ids": [
+            10749,
+            18
+          ],
+          "id": 1523145,
+          "title": "Your Heart Will Be Broken",
+          "original_language": "ru",
+          "original_title": "\u0422\u0432\u043E\u0451 \u0441\u0435\u0440\u0434\u0446\u0435 \u0431\u0443\u0434\u0435\u0442 \u0440\u0430\u0437\u0431\u0438\u0442\u043E",
+          "overview": "High school student Polina is saved from bullying at her new school and makes a deal with the main bully Bars: he must pretend to be her boyfriend and protect her, and she must do everything he says. During this game, the couple develops real feelings, but her family and classmates have reasons to separate the lovers.",
+          "popularity": 227.796,
+          "poster_path": "/7wIBfBl2gejt6xHxNSK0reVIm7E.jpg",
+          "release_date": "2026-03-26",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.882,
+          "vote_count": 85
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/l1nekhf05HS5OpBr0vRqcD3NxoS.jpg",
+          "genre_ids": [
+            36,
+            80,
+            28,
+            14
+          ],
+          "id": 1103473,
+          "title": "KD \u2013 The Devil",
+          "original_language": "kn",
+          "original_title": "\u0C95\u0CC6\u0CA1\u0CBF - \u0CA6\u0CBF \u0CA1\u0CC6\u0CB5\u0CBF\u0CB2\u0CCD",
+          "overview": "In the early 1970s, a petty criminal Kaali unwittingly involves himself with underworld thugs, catalyzing events beyond his control.",
+          "popularity": 244.9469,
+          "poster_path": "/nEuEMJrnLBneE9tJlmzbhCFLu95.jpg",
+          "release_date": "2026-04-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.5,
           "vote_count": 2
         },
         {
           "adult": false,
-          "backdrop_path": "/4BtL2vvEufDXDP4u6xQjjQ1Y2aT.jpg",
+          "backdrop_path": "/ixjsQuOhdx6mKlyeMMzd80WjT6K.jpg",
+          "genre_ids": [
+            10749,
+            35
+          ],
+          "id": 1358005,
+          "title": "Office Romance",
+          "original_language": "en",
+          "original_title": "Office Romance",
+          "overview": "Jackie, President and CEO of Air Cruz, runs a tight ship in her business, including a rigid anti-fraternization policy for all her employees. When a new sexy lawyer begins working for her, that policy becomes very tested.",
+          "popularity": 206.8939,
+          "poster_path": "/1HRUTqEVDmJC4L6tp6zd85MI6uH.jpg",
+          "release_date": "2026-06-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.497,
+          "vote_count": 166
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qcIKxhqGMIj8uujsSoSMZWr8QqU.jpg",
           "genre_ids": [
             28,
-            80,
             53
           ],
-          "id": 1419406,
-          "original_language": "zh",
-          "original_title": "\u6355\u98CE\u8FFD\u5F71",
-          "overview": "Macau Police brings the tracking expert police officer out of retirement to help catch a dangerous group of professional thieves.",
-          "popularity": 126.9026,
-          "poster_path": "/e0RU6KpdnrqFxDKlI3NOqN8nHL6.jpg",
-          "release_date": "2025-08-16",
-          "title": "The Shadow\u0027s Edge",
-          "video": false,
-          "vote_average": 6.59,
-          "vote_count": 172
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/min9ZUDZbiguTiQ7yz1Hbqk78HT.jpg",
-          "genre_ids": [
-            878,
-            12,
-            28
-          ],
-          "id": 533533,
+          "id": 1122573,
+          "title": "In the Grey",
           "original_language": "en",
-          "original_title": "TRON: Ares",
-          "overview": "A highly sophisticated Program called Ares is sent from the digital world into the real world on a dangerous mission, marking humankind\u0027s first encounter with A.I. beings.",
-          "popularity": 121.2538,
-          "poster_path": "/chpWmskl3aKm1aTZqUHRCtviwPy.jpg",
-          "release_date": "2025-10-08",
-          "title": "TRON: Ares",
+          "original_title": "In the Grey",
+          "overview": "A covert team of elite operatives are living in the shadows. When a ruthless despot steals a billion-dollar fortune, they\u0027re sent to take it back\u2014an impossible heist that erupts into a deadly game of strategy, deception and survival.",
+          "popularity": 189.5511,
+          "poster_path": "/dQgIcW6Th08kMRf2HBoYWoFE6OD.jpg",
+          "release_date": "2026-05-13",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.574,
-          "vote_count": 807
+          "vote_average": 6.633,
+          "vote_count": 207
         },
         {
           "adult": false,
-          "backdrop_path": "/cd8YDn7M0lfaHhZdU6MvCDxPalP.jpg",
-          "genre_ids": [
-            28,
-            12,
-            878
-          ],
-          "id": 76600,
-          "original_language": "en",
-          "original_title": "Avatar: The Way of Water",
-          "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
-          "popularity": 114.6909,
-          "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-          "release_date": "2022-12-14",
-          "title": "Avatar: The Way of Water",
-          "video": false,
-          "vote_average": 7.608,
-          "vote_count": 13256
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/eJ0HooOOD1uzI39CfOQNWIiWKlJ.jpg",
+          "backdrop_path": "/qO55CD8tgVL1T4WKn6zYFFiD6lL.jpg",
           "genre_ids": [
             28,
             18,
+            80
+          ],
+          "id": 1439930,
+          "title": "The Punisher: One Last Kill",
+          "original_language": "en",
+          "original_title": "The Punisher: One Last Kill",
+          "overview": "As Frank Castle searches for meaning beyond revenge, an unexpected force pulls him back into the fight.",
+          "popularity": 179.3429,
+          "poster_path": "/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg",
+          "release_date": "2026-05-12",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.36,
+          "vote_count": 1567
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e5IdZ1OEWMYxTeu51tI67gXvfpn.jpg",
+          "genre_ids": [
+            80,
+            18,
             53
           ],
-          "id": 1387382,
-          "original_language": "en",
-          "original_title": "Hunting Season",
-          "overview": "When a reclusive survivalist and his daughter rescue a mysterious, wounded woman from a river, they become entangled in a deadly web of violence and revenge, forcing them to confront a brutal criminal to survive.",
-          "popularity": 112.4496,
-          "poster_path": "/cbryTyaWdqrKpQCw6K7zm2jrB5v.jpg",
-          "release_date": "2025-12-05",
-          "title": "Hunting Season",
+          "id": 1433117,
+          "title": "Kara",
+          "original_language": "ta",
+          "original_title": "\u0B95\u0BB0",
+          "overview": "A thief tries to go straight, but when predatory banks trap his father in debt, he returns to crime \u2014 with a determined cop closing in on his trail.",
+          "popularity": 159.2554,
+          "poster_path": "/uIrFdMWlJFdc1jPBP9bxeaISCDj.jpg",
+          "release_date": "2026-04-30",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.956,
-          "vote_count": 57
+          "vote_average": 6.1,
+          "vote_count": 22
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2I1OFQJ0L9T0dpU6FobKFWV2PxX.jpg",
+          "genre_ids": [
+            878,
+            12
+          ],
+          "id": 687163,
+          "title": "Project Hail Mary",
+          "original_language": "en",
+          "original_title": "Project Hail Mary",
+          "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
+          "popularity": 173.9269,
+          "poster_path": "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+          "release_date": "2026-03-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.672,
+          "vote_count": 4942
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aV5YOTVTnO2wYcN2AlNbdgnBYpb.jpg",
+          "genre_ids": [
+            35,
+            53,
+            18
+          ],
+          "id": 1628448,
+          "title": "Maa Behen",
+          "original_language": "hi",
+          "original_title": "\u092E\u093E\u0901 \u092C\u0939\u0928",
+          "overview": "In this dark comedy, a woman calls her estranged daughters in the middle of the night with chilling news \u2014 there\u0027s a dead body in her kitchen.",
+          "popularity": 182.5159,
+          "poster_path": "/rfooTavEjaWh6krAcPpHp1CPj7E.jpg",
+          "release_date": "2026-06-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 7
         }
       ],
-      "total_pages": 54310,
-      "total_results": 1086192
+      "total_pages": 57406,
+      "total_results": 1148119
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=25265",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=11615",
-      "x-memc": "HIT",
-      "x-memc-key": "c6631bd2409bb1f41ceba9247e06a93726d5aa205493de50613c52bee8e62bf0",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u0022ec10c329c5b85b577a6dd275a5efad25\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00222ac2c4009374f847d5205eb177073fd4\u0022",
+      "x-az": "us-east-1c",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

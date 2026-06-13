@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
 using VerifyTests;
 
 namespace TMDbLibTests.Helpers;
@@ -22,9 +22,9 @@ internal static partial class VerifyExtensions
     private static string GetPropertyName<T>(Expression<Func<T, object>> expression)
     {
         var prop = PropertyHelpers.GetPropertyInfo(expression);
-        var jsonPropAttribute = prop.GetCustomAttribute<JsonPropertyAttribute>();
+        var jsonPropAttribute = prop.GetCustomAttribute<JsonPropertyNameAttribute>();
 
-        return jsonPropAttribute?.PropertyName ?? prop.Name;
+        return jsonPropAttribute?.Name ?? prop.Name;
     }
 
     /// <summary>

@@ -1,6 +1,6 @@
 {
   "Guid": "69be6282-74b5-7b4e-822b-3ad335a2f073",
-  "UpdatedAt": "2025-12-24T18:45:16.1275612Z",
+  "UpdatedAt": "2026-06-13T13:30:13.497693Z",
   "Title": "Proxy Mapping for GET /3/tv/999999999/season/1/episode/1",
   "Description": "Proxy Mapping for GET /3/tv/999999999/season/1/episode/1",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 404,
@@ -31,13 +44,14 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-az": "us-east-1a",
+      "X-Gateway-Cache-Status": "MISS",
+      "x-az": "us-east-1c",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Error from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

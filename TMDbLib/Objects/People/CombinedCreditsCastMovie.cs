@@ -1,55 +1,28 @@
-using System;
-using Newtonsoft.Json;
-using TMDbLib.Objects.General;
+using System.Text.Json.Serialization;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.People;
 
 /// <summary>
-/// Represents a movie cast credit for a person.
+/// Movie cast credit for a person.
 /// </summary>
-public class CombinedCreditsCastMovie : CombinedCreditsCastBase
+public class CombinedCreditsCastMovie : TmdbMovieSummary, ICastCredit
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="CombinedCreditsCastMovie"/> class.
+    /// Gets or sets the character played.
     /// </summary>
-    public CombinedCreditsCastMovie()
-    {
-        MediaType = MediaType.Movie;
-    }
+    [JsonPropertyName("character")]
+    public string? Character { get; set; }
 
     /// <summary>
-    /// Gets or sets the order in the cast.
+    /// Gets or sets the credit id.
     /// </summary>
-    [JsonProperty("order")]
+    [JsonPropertyName("credit_id")]
+    public string? CreditId { get; set; }
+
+    /// <summary>
+    /// Gets or sets the order in the cast list.
+    /// </summary>
+    [JsonPropertyName("order")]
     public int? Order { get; set; }
-
-    /// <summary>
-    /// Gets or sets a value indicating whether the content is adult.
-    /// </summary>
-    [JsonProperty("adult")]
-    public bool Adult { get; set; }
-
-    /// <summary>
-    /// Gets or sets the original title.
-    /// </summary>
-    [JsonProperty("original_title")]
-    public string? OriginalTitle { get; set; }
-
-    /// <summary>
-    /// Gets or sets the release date.
-    /// </summary>
-    [JsonProperty("release_date")]
-    public DateTime? ReleaseDate { get; set; }
-
-    /// <summary>
-    /// Gets or sets the movie title.
-    /// </summary>
-    [JsonProperty("title")]
-    public string? Title { get; set; }
-
-    /// <summary>
-    /// Gets or sets a value indicating whether the movie has video content.
-    /// </summary>
-    [JsonProperty("video")]
-    public bool Video { get; set; }
 }

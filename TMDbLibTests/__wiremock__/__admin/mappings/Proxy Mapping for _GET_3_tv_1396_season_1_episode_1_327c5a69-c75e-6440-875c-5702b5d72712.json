@@ -1,6 +1,6 @@
 {
   "Guid": "327c5a69-c75e-6440-875c-5702b5d72712",
-  "UpdatedAt": "2025-12-24T18:45:17.844014Z",
+  "UpdatedAt": "2026-06-13T13:30:13.512985Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1",
   "Description": "Proxy Mapping for GET /3/tv/1396/season/1/episode/1",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "language",
@@ -66,8 +79,8 @@
           "known_for_department": "Writing",
           "name": "Vince Gilligan",
           "original_name": "Vince Gilligan",
-          "popularity": 4.1471,
-          "profile_path": "/z3E0DhBg1V1PZVEtS9vfFPzOWYB.jpg"
+          "popularity": 1.8113,
+          "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
         },
         {
           "department": "Directing",
@@ -79,8 +92,8 @@
           "known_for_department": "Writing",
           "name": "Vince Gilligan",
           "original_name": "Vince Gilligan",
-          "popularity": 4.1471,
-          "profile_path": "/z3E0DhBg1V1PZVEtS9vfFPzOWYB.jpg"
+          "popularity": 1.8113,
+          "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
         },
         {
           "job": "Director of Photography",
@@ -92,7 +105,7 @@
           "known_for_department": "Camera",
           "name": "John Toll",
           "original_name": "John Toll",
-          "popularity": 0.5291,
+          "popularity": 0.341,
           "profile_path": "/cfL9A6tC7L5Ps5fq1o3WpVKGMb1.jpg"
         },
         {
@@ -105,7 +118,7 @@
           "known_for_department": "Editing",
           "name": "Lynne Willingham",
           "original_name": "Lynne Willingham",
-          "popularity": 0.5709,
+          "popularity": 0.2671,
           "profile_path": null
         },
         {
@@ -118,7 +131,7 @@
           "known_for_department": "Art",
           "name": "James F. Oberlander",
           "original_name": "James F. Oberlander",
-          "popularity": 0.1273,
+          "popularity": 0.2478,
           "profile_path": null
         },
         {
@@ -131,7 +144,7 @@
           "known_for_department": "Production",
           "name": "Gina Scheerer",
           "original_name": "Gina Scheerer",
-          "popularity": 0.1414,
+          "popularity": 0.1516,
           "profile_path": null
         },
         {
@@ -144,7 +157,7 @@
           "known_for_department": "Art",
           "name": "Paul Breuninger",
           "original_name": "Paul Breuninger",
-          "popularity": 0.0862,
+          "popularity": 0.0193,
           "profile_path": null
         }
       ],
@@ -161,7 +174,7 @@
           "known_for_department": "Acting",
           "name": "Steven Michael Quezada",
           "original_name": "Steven Michael Quezada",
-          "popularity": 0.9618,
+          "popularity": 0.8527,
           "profile_path": "/pVYrDkwI6GWvCNL2kJhpDJfBFyd.jpg"
         },
         {
@@ -174,7 +187,7 @@
           "known_for_department": "Acting",
           "name": "Aaron Hill",
           "original_name": "Aaron Hill",
-          "popularity": 0.9315,
+          "popularity": 0.837,
           "profile_path": "/rNp31SeoVqSQU6OZWxZUhGwAgyq.jpg"
         },
         {
@@ -187,7 +200,7 @@
           "known_for_department": "Acting",
           "name": "Gregory Chase",
           "original_name": "Gregory Chase",
-          "popularity": 0.2955,
+          "popularity": 0.1839,
           "profile_path": "/gNdodev00CROpXuAh5EFmkWTVOo.jpg"
         },
         {
@@ -200,7 +213,7 @@
           "known_for_department": "Acting",
           "name": "Max Arciniega",
           "original_name": "Max Arciniega",
-          "popularity": 1.0252,
+          "popularity": 0.6309,
           "profile_path": "/eqKAJKPpt41KpsLIkkBnAY4HMAL.jpg"
         },
         {
@@ -213,7 +226,7 @@
           "known_for_department": "Acting",
           "name": "Marius Stan",
           "original_name": "Marius Stan",
-          "popularity": 0.3373,
+          "popularity": 0.2014,
           "profile_path": "/zX8fpNkyKEtQX3zTvks1hVhrOz7.jpg"
         },
         {
@@ -226,7 +239,7 @@
           "known_for_department": "Acting",
           "name": "Carmen Serano",
           "original_name": "Carmen Serano",
-          "popularity": 1.2383,
+          "popularity": 0.8161,
           "profile_path": "/nzJEe2UqvvMIBJZP1aeFEj4EunN.jpg"
         },
         {
@@ -239,7 +252,7 @@
           "known_for_department": "Art",
           "name": "Roberta Marquez Seret",
           "original_name": "Roberta Marquez Seret",
-          "popularity": 0.1099,
+          "popularity": 0.0765,
           "profile_path": null
         },
         {
@@ -252,7 +265,7 @@
           "known_for_department": "Acting",
           "name": "Evan Bobrick",
           "original_name": "Evan Bobrick",
-          "popularity": 0.0486,
+          "popularity": 0.1079,
           "profile_path": null
         },
         {
@@ -265,7 +278,7 @@
           "known_for_department": "Acting",
           "name": "Christopher Dempsey",
           "original_name": "Christopher Dempsey",
-          "popularity": 0.1463,
+          "popularity": 0.4207,
           "profile_path": "/pTngvks30p74j40TaniMkg4tbhn.jpg"
         },
         {
@@ -275,10 +288,10 @@
           "adult": false,
           "gender": 0,
           "id": 2969089,
-          "known_for_department": "Production",
+          "known_for_department": "Acting",
           "name": "Allan Pacheco",
           "original_name": "Allan Pacheco",
-          "popularity": 0.0737,
+          "popularity": 0.0553,
           "profile_path": null
         },
         {
@@ -291,7 +304,7 @@
           "known_for_department": "Acting",
           "name": "Jason Byrd",
           "original_name": "Jason Byrd",
-          "popularity": 0.0522,
+          "popularity": 0.0532,
           "profile_path": null
         },
         {
@@ -304,7 +317,7 @@
           "known_for_department": "Acting",
           "name": "Linda Speciale",
           "original_name": "Linda Speciale",
-          "popularity": 0.2826,
+          "popularity": 0.3057,
           "profile_path": null
         },
         {
@@ -317,7 +330,7 @@
           "known_for_department": "Acting",
           "name": "Jes\u00FAs Ram\u00EDrez",
           "original_name": "Jes\u00FAs Ram\u00EDrez",
-          "popularity": 0.0918,
+          "popularity": 0.0339,
           "profile_path": "/1EfPZxdFNNi3LFLR9laLcVROAko.jpg"
         },
         {
@@ -330,7 +343,7 @@
           "known_for_department": "Acting",
           "name": "Joshua S. Patton",
           "original_name": "Joshua S. Patton",
-          "popularity": 0.1175,
+          "popularity": 0.0336,
           "profile_path": null
         },
         {
@@ -343,7 +356,7 @@
           "known_for_department": "Acting",
           "name": "John Koyama",
           "original_name": "John Koyama",
-          "popularity": 0.3033,
+          "popularity": 0.5095,
           "profile_path": "/AwtHbt8qO7D3EFonG5lqml8xgwb.jpg"
         },
         {
@@ -356,8 +369,21 @@
           "known_for_department": "Crew",
           "name": "Ed Duran",
           "original_name": "Ed Duran",
-          "popularity": 0.2777,
+          "popularity": 0.2865,
           "profile_path": "/mzPJkVKg7ve3whmvyf2TyDIuewr.jpg"
+        },
+        {
+          "character": "Student on Bus (uncredited)",
+          "credit_id": "698ac427bb7da9dcd0822f4c",
+          "order": 853,
+          "adult": false,
+          "gender": 1,
+          "id": 1223199,
+          "known_for_department": "Production",
+          "name": "Melissa Bernstein",
+          "original_name": "Melissa Bernstein",
+          "popularity": 0.4296,
+          "profile_path": "/rSztwqMUIko8RkmwjxBse1XDW3g.jpg"
         }
       ],
       "name": "Pilot",
@@ -367,8 +393,8 @@
       "runtime": 59,
       "season_number": 1,
       "still_path": "/ydlY3iPfeOAvu8gVqrxPoMvzNCn.jpg",
-      "vote_average": 8.452,
-      "vote_count": 450,
+      "vote_average": 8.481,
+      "vote_count": 512,
       "images": {
         "stills": []
       }
@@ -378,15 +404,16 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=13785",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=21372",
       "x-az": "us-east-1a",
-      "ETag": "W/\u0022cb356f4dace2dd12f74466250ecb78c3\u0022",
+      "ETag": "W/\u0022fee9cff152bf15b336d7bd16ee49d9ca\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

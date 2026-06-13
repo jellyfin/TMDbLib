@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using TMDbLib.Objects.General;
+using System.Threading.Tasks;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -16,7 +15,7 @@ public class ClientWatchProvidersTests : TestBase
     [Fact]
     public async Task TestGetRegions()
     {
-        var watchProviderRegions = await TMDbClient.GetWatchProviderRegionsAsync();
+        var watchProviderRegions = await TMDbClient.GetWatchProviderRegionsAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(watchProviderRegions);
     }
@@ -27,7 +26,7 @@ public class ClientWatchProvidersTests : TestBase
     [Fact]
     public async Task TestGetMovieWatchProviders()
     {
-        var watchProviders = await TMDbClient.GetMovieWatchProvidersAsync();
+        var watchProviders = await TMDbClient.GetMovieWatchProvidersAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(watchProviders);
     }
@@ -38,7 +37,7 @@ public class ClientWatchProvidersTests : TestBase
     [Fact]
     public async Task TestGetTvWatchProviders()
     {
-        var watchProviders = await TMDbClient.GetTvWatchProvidersAsync();
+        var watchProviders = await TMDbClient.GetTvWatchProvidersAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(watchProviders);
     }

@@ -1,6 +1,6 @@
 {
   "Guid": "b513eba2-0dd3-244e-b308-ad500f297f8e",
-  "UpdatedAt": "2025-12-24T18:45:18.4881521Z",
+  "UpdatedAt": "2026-06-13T13:30:14.092842Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
   "Description": "Proxy Mapping for GET /3/movie/47964/alternative_titles",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "country",
@@ -43,18 +56,8 @@
         },
         {
           "iso_3166_1": "US",
-          "title": "Duro de matar 5",
-          "type": ""
-        },
-        {
-          "iso_3166_1": "US",
           "title": "Die Hard 5: A Good Day to Die Hard",
           "type": "working title"
-        },
-        {
-          "iso_3166_1": "US",
-          "title": "Die Hard V: A Good Day to Die Hard",
-          "type": "alternative title"
         }
       ]
     },
@@ -63,17 +66,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
       "x-memc": "HIT",
       "x-memc-key": "597225f4e0c4f341398ad9690a7b1790e3485183feee53110ddd8cffd827d594",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=25364",
-      "ETag": "W/\u0022f9b7c937d209db1716c768978d429555\u0022",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=27817",
+      "ETag": "W/\u0022280c4670ef3e729393a8b809b2217f3e\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

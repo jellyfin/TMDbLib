@@ -1,6 +1,6 @@
 {
   "Guid": "219d4fb6-1335-3f41-84b7-741a528cf19b",
-  "UpdatedAt": "2025-12-24T18:45:17.9137711Z",
+  "UpdatedAt": "2026-06-13T13:30:13.577731Z",
   "Title": "Proxy Mapping for GET /3/authentication/session/new",
   "Description": "Proxy Mapping for GET /3/authentication/session/new",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": []
   },
   "Response": {
@@ -33,14 +46,15 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=0",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "max-age=0, private",
       "x-az": "us-east-1a",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Error from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -1,6 +1,6 @@
 {
   "Guid": "20b444a9-1264-7f4a-b944-a767964f8d07",
-  "UpdatedAt": "2025-12-24T18:45:20.9236941Z",
+  "UpdatedAt": "2026-06-13T13:30:13.759875Z",
   "Title": "Proxy Mapping for GET /3/tv/1668",
   "Description": "Proxy Mapping for GET /3/tv/1668",
   "Priority": -2000000,
@@ -17,13 +17,26 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "adult": false,
-      "backdrop_path": "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
+      "backdrop_path": "/m3Jev59mJLyUp5bXhY5SVfIBZI0.jpg",
       "created_by": [
         {
           "id": 163461,
@@ -61,8 +74,8 @@
         "id": 87632,
         "name": "The Last One",
         "overview": "Erica goes into labor and the new parents, Monica and Chandler, get a bit more than they bargained for. Meanwhile, Joey gets them a housewarming gift - Chick Jr. and Duck Jr., who unfortunately get trapped inside the foosball table. Also, after their night together, Ross realizes that he\u0027s still in love with Rachel and doesn\u0027t want her to leave. Other friends convince him to go after her and Phoebe races Ross to the airport in a bid to stop Rachel from leaving for Paris.\n\nThe six friends prepare to say goodbye and embark on the next chapters of their lives.",
-        "vote_average": 9.0,
-        "vote_count": 57,
+        "vote_average": 8.91,
+        "vote_count": 67,
         "air_date": "2004-05-06",
         "episode_number": 17,
         "episode_type": "finale",
@@ -90,8 +103,8 @@
       "original_language": "en",
       "original_name": "Friends",
       "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
-      "popularity": 78.6868,
-      "poster_path": "/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
+      "popularity": 111.6094,
+      "poster_path": "/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
       "production_companies": [
         {
           "id": 1957,
@@ -161,7 +174,7 @@
           "overview": "",
           "poster_path": "/3WdH3FNMXgp3Qlx21T7kwKS8Mtc.jpg",
           "season_number": 4,
-          "vote_average": 8.2
+          "vote_average": 8.3
         },
         {
           "air_date": "1998-09-24",
@@ -211,7 +224,7 @@
           "overview": "",
           "poster_path": "/1IvIdN4I5jJ0bwC3BkmDCy4pQ9j.jpg",
           "season_number": 9,
-          "vote_average": 8.2
+          "vote_average": 8.1
         },
         {
           "air_date": "2003-09-25",
@@ -221,9 +234,10 @@
           "overview": "",
           "poster_path": "/67ETB6XIqYc5vZkyAjN8XINOX5i.jpg",
           "season_number": 10,
-          "vote_average": 8.5
+          "vote_average": 8.4
         }
       ],
+      "softcore": false,
       "spoken_languages": [
         {
           "english_name": "English",
@@ -234,26 +248,22 @@
       "status": "Ended",
       "tagline": "I\u0027ll be there for you.",
       "type": "Scripted",
-      "vote_average": 8.422,
-      "vote_count": 8741
+      "vote_average": 8.416,
+      "vote_count": 9118
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=22621",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "7bd9160248158cd0c52aaad6a36afc0006d1895771feb848d82617837bc5e96b",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022cfb84d177e1fb41c27aa2eb9e7668d14\u0022",
       "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=6391",
-      "ETag": "W/\u0022a8efdd5b8ee719feaccd103481bc0d5b\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

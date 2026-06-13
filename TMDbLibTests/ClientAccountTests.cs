@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Exceptions;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 
@@ -36,7 +36,7 @@ public class ClientAccountTests : TestBase
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.GuestTestSessionId, SessionType.GuestSession);
 
-        await Assert.ThrowsAsync<UserSessionRequiredException>(() => TMDbClient.AccountGetDetailsAsync());
+        await Assert.ThrowsAsync<UserSessionRequiredException>(() => TMDbClient.AccountGetDetailsAsync(cancellationToken: TestContext.Current.CancellationToken));
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ public class ClientAccountTests : TestBase
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-        var result = await TMDbClient.AccountGetListsAsync();
+        var result = await TMDbClient.AccountGetListsAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
         Assert.NotEmpty(result.Results);
@@ -94,7 +94,7 @@ public class ClientAccountTests : TestBase
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
 
         // Requires that you have marked at least one movie as favorite else this test will fail
-        var movies = await TMDbClient.AccountGetFavoriteMoviesAsync();
+        var movies = await TMDbClient.AccountGetFavoriteMoviesAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(movies);
         Assert.NotNull(movies.Results);
         var movie = movies.Results.Single(s => s.Id == IdHelper.Avatar);
@@ -111,7 +111,7 @@ public class ClientAccountTests : TestBase
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
 
-        var tvShows = await TMDbClient.AccountGetFavoriteTvAsync();
+        var tvShows = await TMDbClient.AccountGetFavoriteTvAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         // Account may or may not have favorites
         Assert.NotNull(tvShows);
@@ -134,7 +134,7 @@ public class ClientAccountTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetMovieWatchlistAsync(i));
 
-        var watchlist = await TMDbClient.AccountGetMovieWatchlistAsync();
+        var watchlist = await TMDbClient.AccountGetMovieWatchlistAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(watchlist);
         Assert.NotNull(watchlist.Results);
         var movie = watchlist.Results.Single(s => s.Id == 100042);
@@ -153,7 +153,7 @@ public class ClientAccountTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetTvWatchlistAsync(i));
 
-        var tvShows = await TMDbClient.AccountGetTvWatchlistAsync();
+        var tvShows = await TMDbClient.AccountGetTvWatchlistAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(tvShows);
         Assert.NotNull(tvShows.Results);
         var tvShow = tvShows.Results.Single(s => s.Id == 2691);
@@ -172,7 +172,7 @@ public class ClientAccountTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetFavoriteMoviesAsync(i));
 
-        var movies = await TMDbClient.AccountGetFavoriteMoviesAsync();
+        var movies = await TMDbClient.AccountGetFavoriteMoviesAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(movies);
         Assert.NotNull(movies.Results);
         var movie = movies.Results.Single(s => s.Id == IdHelper.Avatar);
@@ -191,7 +191,7 @@ public class ClientAccountTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowsAsync(i));
 
-        var tvShows = await TMDbClient.AccountGetRatedTvShowsAsync();
+        var tvShows = await TMDbClient.AccountGetRatedTvShowsAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(tvShows);
         Assert.NotNull(tvShows.Results);
         var tvShow = tvShows.Results.Single(s => s.Id == IdHelper.BigBangTheory);
@@ -211,7 +211,7 @@ public class ClientAccountTests : TestBase
 
         await TestHelpers.SearchPagesAsync(i => TMDbClient.AccountGetRatedTvShowEpisodesAsync(i));
 
-        var tvEpisodes = await TMDbClient.AccountGetRatedTvShowEpisodesAsync();
+        var tvEpisodes = await TMDbClient.AccountGetRatedTvShowEpisodesAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         // Account may or may not have rated episodes
         Assert.NotNull(tvEpisodes);
@@ -235,20 +235,20 @@ public class ClientAccountTests : TestBase
         // Ensure that the test movie is not marked as favorite before we start the test
         if (await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
         {
-            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false, cancellationToken: TestContext.Current.CancellationToken));
         }
         if (await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho))
         {
             throw new InvalidOperationException($"Test tv show '{IdHelper.DoctorWho}' was already marked as favorite. Unable to perform test correctly");
         }
         // Try to mark is as a favorite
-        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
+        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.True(await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
 
         // Try to un-mark is as a favorite
-        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.False(await DoesFavoriteListContainSpecificTvShow(IdHelper.DoctorWho));
@@ -266,20 +266,20 @@ public class ClientAccountTests : TestBase
         // Ensure that the test movie is not marked as favorite before we start the test
         if (await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
         {
-            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+            Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false, cancellationToken: TestContext.Current.CancellationToken));
         }
         if (await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator))
         {
             throw new InvalidOperationException($"Test movie '{IdHelper.Terminator}' was already marked as favorite. Unable to perform test correctly");
         }
         // Try to mark is as a favorite
-        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
+        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, true, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.True(await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
 
         // Try to un-mark is as a favorite
-        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+        Assert.True(await TMDbClient.AccountChangeFavoriteStatusAsync(MediaType.Movie, IdHelper.Terminator, false, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.False(await DoesFavoriteListContainSpecificMovie(IdHelper.Terminator));
@@ -297,20 +297,20 @@ public class ClientAccountTests : TestBase
         // Ensure that the test movie is not marked as favorite before we start the test
         if (await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
         {
-            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false, cancellationToken: TestContext.Current.CancellationToken));
         }
         if (await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho))
         {
             throw new InvalidOperationException($"Test tv show '{IdHelper.DoctorWho}' was already on watchlist. Unable to perform test correctly");
         }
         // Try to add an item to the watchlist
-        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true));
+        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, true, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.True(await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
 
         // Try to remove item from watchlist
-        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false));
+        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Tv, IdHelper.DoctorWho, false, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.False(await DoesWatchListContainSpecificTvShow(IdHelper.DoctorWho));
@@ -328,20 +328,20 @@ public class ClientAccountTests : TestBase
         // Ensure that the test movie is not marked as favorite before we start the test
         if (await DoesWatchListContainSpecificMovie(IdHelper.Terminator))
         {
-            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+            Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false, cancellationToken: TestContext.Current.CancellationToken));
         }
         if (await DoesWatchListContainSpecificMovie(IdHelper.Terminator))
         {
             throw new InvalidOperationException($"Test movie '{IdHelper.Terminator}' was already on watchlist. Unable to perform test correctly");
         }
         // Try to add an item to the watchlist
-        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true));
+        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, true, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.True(await DoesWatchListContainSpecificMovie(IdHelper.Terminator));
 
         // Try to remove item from watchlist
-        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false));
+        Assert.True(await TMDbClient.AccountChangeWatchlistStatusAsync(MediaType.Movie, IdHelper.Terminator, false, cancellationToken: TestContext.Current.CancellationToken));
 
         // Check if it worked
         Assert.False(await DoesWatchListContainSpecificMovie(IdHelper.Terminator));

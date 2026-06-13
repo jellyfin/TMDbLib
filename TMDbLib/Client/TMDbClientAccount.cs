@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Account;
@@ -46,12 +46,10 @@ public partial class TMDbClient
 
         if (sortBy != AccountSortBy.Undefined)
         {
-            request.AddParameter("sort_by", sortBy.GetDescription());
-        }
-
-        if (sortOrder != SortOrder.Undefined)
-        {
-            request.AddParameter("sort_order", sortOrder.GetDescription());
+            // TMDb expects the suffix on sort_by itself (e.g. created_at.asc). It does NOT
+            // accept a separate sort_order query parameter for account list endpoints.
+            var direction = sortOrder == SortOrder.Descending ? "desc" : "asc";
+            request.AddParameter("sort_by", $"{sortBy.GetDescription()}.{direction}");
         }
 
         language ??= DefaultLanguage;
@@ -66,15 +64,15 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Change the favorite status of a specific movie. Either make the movie a favorite or remove that status depending on the supplied boolean value.
+    /// Marks or unmarks a media item as favorite.
     /// </summary>
-    /// <param name="mediaType">The type of media to influence.</param>
-    /// <param name="mediaId">The id of the movie/tv show to influence.</param>
-    /// <param name="isFavorite">True if you want the specified movie to be marked as favorite, false if not.</param>
+    /// <param name="mediaType">The media type.</param>
+    /// <param name="mediaId">The media id.</param>
+    /// <param name="isFavorite">True to mark as favorite, false to remove.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns>True if the the movie's favorite status was successfully updated, false if not.</returns>
+    /// <returns>True if the favorite status was updated.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<bool> AccountChangeFavoriteStatusAsync(MediaType mediaType, int mediaId, bool isFavorite, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -93,15 +91,15 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Change the state of a specific movie on the users watchlist. Either add the movie to the list or remove it, depending on the specified boolean value.
+    /// Adds or removes a media item from the user's watchlist.
     /// </summary>
-    /// <param name="mediaType">The type of media to influence.</param>
-    /// <param name="mediaId">The id of the movie/tv show to influence.</param>
-    /// <param name="isOnWatchlist">True if you want the specified movie to be part of the watchlist, false if not.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>True if the the movie's status on the watchlist was successfully updated, false if not.</returns>
+    /// <param name="mediaType">The media type.</param>
+    /// <param name="mediaId">The media id.</param>
+    /// <param name="isOnWatchlist">True to add, false to remove.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>True if the watchlist status was updated.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<bool> AccountChangeWatchlistStatusAsync(MediaType mediaType, int mediaId, bool isOnWatchlist, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -120,12 +118,12 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Will retrieve the details of the account associated with the current session id.
+    /// Gets the account details for the current session.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The account details for the current session.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The account details.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<AccountDetails?> AccountGetDetailsAsync(CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -139,16 +137,16 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Get a list of all the movies marked as favorite by the current user.
+    /// Gets the current user's favorite movies.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="sortBy">The sort field to use.</param>
-    /// <param name="sortOrder">The sort order to use.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sortBy">The sort field.</param>
+    /// <param name="sortOrder">The sort order.</param>
     /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with favorite movies.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The favorite movies.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<SearchContainer<SearchMovie>?> AccountGetFavoriteMoviesAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
@@ -160,16 +158,16 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Get a list of all the tv shows marked as favorite by the current user.
+    /// Gets the current user's favorite TV shows.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="sortBy">The sort field to use.</param>
-    /// <param name="sortOrder">The sort order to use.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sortBy">The sort field.</param>
+    /// <param name="sortOrder">The sort order.</param>
     /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with favorite TV shows.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The favorite TV shows.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<SearchContainer<SearchTv>?> AccountGetFavoriteTvAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
@@ -181,16 +179,14 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieve all lists associated with the provided account id
-    /// This can be lists that were created by the user or lists marked as favorite.
+    /// Gets all lists created by or marked as favorite by the current user.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with account lists.</returns>
+    /// <param name="page">The page number.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The account lists.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
-    public async Task<SearchContainer<AccountList>?> AccountGetListsAsync(int page = 1, string? language = null, CancellationToken cancellationToken = default)
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
+    public async Task<SearchContainer<AccountList>?> AccountGetListsAsync(int page = 1, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
 
@@ -203,28 +199,22 @@ public partial class TMDbClient
             request.AddQueryString("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        language ??= DefaultLanguage;
-        if (!string.IsNullOrWhiteSpace(language))
-        {
-            request.AddQueryString("language", language);
-        }
-
         var response = await request.GetOfT<SearchContainer<AccountList>>(cancellationToken).ConfigureAwait(false);
 
         return response;
     }
 
     /// <summary>
-    /// Get a list of all the movies on the current users match list.
+    /// Gets the movies on the current user's watchlist.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="sortBy">The sort field to use.</param>
-    /// <param name="sortOrder">The sort order to use.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sortBy">The sort field.</param>
+    /// <param name="sortOrder">The sort order.</param>
     /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with movies from the watchlist.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The movies on the watchlist.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<SearchContainer<SearchMovie>?> AccountGetMovieWatchlistAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
@@ -236,16 +226,16 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Get a list of all the movies rated by the current user.
+    /// Gets the movies rated by the current user.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="sortBy">The sort field to use.</param>
-    /// <param name="sortOrder">The sort order to use.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sortBy">The sort field.</param>
+    /// <param name="sortOrder">The sort order.</param>
     /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with rated movies.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated movies.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<SearchContainer<SearchMovieWithRating>?> AccountGetRatedMoviesAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
@@ -257,16 +247,16 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Get a list of all the tv show episodes rated by the current user.
+    /// Gets the TV show episodes rated by the current user.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="sortBy">The sort field to use.</param>
-    /// <param name="sortOrder">The sort order to use.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sortBy">The sort field.</param>
+    /// <param name="sortOrder">The sort order.</param>
     /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with rated TV show episodes.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated TV show episodes.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<SearchContainer<AccountSearchTvEpisode>?> AccountGetRatedTvShowEpisodesAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
@@ -278,16 +268,16 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Get a list of all the tv shows rated by the current user.
+    /// Gets the TV shows rated by the current user.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="sortBy">The sort field to use.</param>
-    /// <param name="sortOrder">The sort order to use.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sortBy">The sort field.</param>
+    /// <param name="sortOrder">The sort order.</param>
     /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with rated TV shows.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated TV shows.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<SearchContainer<AccountSearchTv>?> AccountGetRatedTvShowsAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,
@@ -299,16 +289,16 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Get a list of all the tv shows on the current users match list.
+    /// Gets the TV shows on the current user's watchlist.
     /// </summary>
-    /// <param name="page">The page number to retrieve.</param>
-    /// <param name="sortBy">The sort field to use.</param>
-    /// <param name="sortOrder">The sort order to use.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sortBy">The sort field.</param>
+    /// <param name="sortOrder">The sort order.</param>
     /// <param name="language">The language for localized results.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with TV shows from the watchlist.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The TV shows on the watchlist.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doens't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<SearchContainer<SearchTv>?> AccountGetTvWatchlistAsync(
             int page = 1,
             AccountSortBy sortBy = AccountSortBy.Undefined,

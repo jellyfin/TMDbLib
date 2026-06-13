@@ -1,7 +1,8 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.Trending;
 using TMDbLib.Rest;
@@ -12,13 +13,13 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieves trending movies for a specific time window.
+    /// Gets the trending movies for a time window.
     /// </summary>
-    /// <param name="timeWindow">The time window for trending results (day or week).</param>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with trending movies.</returns>
+    /// <param name="timeWindow">The time window (day or week).</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The trending movies.</returns>
     public async Task<SearchContainer<SearchMovie>?> GetTrendingMoviesAsync(TimeWindow timeWindow, int page = 0, string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("trending/movie/{time_window}");
@@ -44,13 +45,13 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves trending TV shows for a specific time window.
+    /// Gets the trending TV shows for a time window.
     /// </summary>
-    /// <param name="timeWindow">The time window for trending results (day or week).</param>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with trending TV shows.</returns>
+    /// <param name="timeWindow">The time window (day or week).</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The trending TV shows.</returns>
     public async Task<SearchContainer<SearchTv>?> GetTrendingTvAsync(TimeWindow timeWindow, int page = 0, string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("trending/tv/{time_window}");
@@ -76,13 +77,13 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves trending people for a specific time window.
+    /// Gets the trending people for a time window.
     /// </summary>
-    /// <param name="timeWindow">The time window for trending results (day or week).</param>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with trending people.</returns>
+    /// <param name="timeWindow">The time window (day or week).</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The trending people.</returns>
     public async Task<SearchContainer<SearchPerson>?> GetTrendingPeopleAsync(TimeWindow timeWindow, int page = 0, string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("trending/person/{time_window}");
@@ -108,14 +109,14 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves all trending items (movies, TV shows, and people) for a specific time window.
+    /// Gets all trending items (movies, TV shows, and people) for a time window.
     /// </summary>
-    /// <param name="timeWindow">The time window for trending results (day or week).</param>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with all trending items.</returns>
-    public async Task<SearchContainer<SearchBase>?> GetTrendingAllAsync(TimeWindow timeWindow, int page = 0, string? language = null, CancellationToken cancellationToken = default)
+    /// <param name="timeWindow">The time window (day or week).</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The trending items.</returns>
+    public async Task<SearchContainer<TmdbEntity>?> GetTrendingAllAsync(TimeWindow timeWindow, int page = 0, string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("trending/all/{time_window}");
         req.AddUrlSegment("time_window", timeWindow.GetDescription());
@@ -134,7 +135,7 @@ public partial class TMDbClient
             req.AddParameter("language", DefaultLanguage);
         }
 
-        var resp = await req.GetOfT<SearchContainer<SearchBase>>(cancellationToken).ConfigureAwait(false);
+        var resp = await req.GetOfT<SearchContainer<TmdbEntity>>(cancellationToken).ConfigureAwait(false);
 
         return resp;
     }

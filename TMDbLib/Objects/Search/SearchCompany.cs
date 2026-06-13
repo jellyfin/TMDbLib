@@ -1,27 +1,33 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Search;
 
 /// <summary>
-/// Represents a company search result.
+/// Company search result.
 /// </summary>
 public class SearchCompany
 {
     /// <summary>
-    /// Gets or sets the company ID.
+    /// Gets or sets the company id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the logo image path.
     /// </summary>
-    [JsonProperty("logo_path")]
+    [JsonPropertyName("logo_path")]
     public string? LogoPath { get; set; }
 
     /// <summary>
     /// Gets or sets the company name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
+
+    /// <summary>
+    /// Gets or sets the origin country ISO code.
+    /// </summary>
+    [JsonPropertyName("origin_country")]
+    public string? OriginCountry { get; set; }
 }

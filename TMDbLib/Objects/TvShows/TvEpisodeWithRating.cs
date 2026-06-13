@@ -1,12 +1,12 @@
-﻿namespace TMDbLib.Objects.TvShows
+namespace TMDbLib.Objects.TvShows
 {
     /// <summary>
-    /// Represents a TV episode with a user rating.
+    /// TV episode with a user rating.
     /// </summary>
     public class TvEpisodeWithRating : TvEpisode
     {
         /// <summary>
-        /// Gets or sets the user rating for the episode.
+        /// Gets or sets the user rating.
         /// </summary>
         public double Rating { get; set; }
     }
