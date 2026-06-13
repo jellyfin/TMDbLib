@@ -141,7 +141,7 @@ public class CombinedCreditsConverterTest : TestBase
     public async Task TestJsonCombinedCreditsConverter()
     {
         // Get combined credits for a person who has both movie and TV credits
-        var result = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis);
+        var result = await TMDbClient.GetPersonCombinedCreditsAsync(IdHelper.BruceWillis, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.NotNull(result.Cast);
@@ -184,7 +184,7 @@ public class CombinedCreditsConverterTest : TestBase
     public async Task TestPersonCombinedCreditsAppendToResponse()
     {
         // Get person with combined credits appended
-        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, PersonMethods.CombinedCredits);
+        var person = await TMDbClient.GetPersonAsync(IdHelper.BruceWillis, PersonMethods.CombinedCredits, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(person);
         Assert.NotNull(person.CombinedCredits);

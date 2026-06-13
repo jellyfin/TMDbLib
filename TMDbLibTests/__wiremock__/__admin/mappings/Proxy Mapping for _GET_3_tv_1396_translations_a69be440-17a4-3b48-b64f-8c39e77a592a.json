@@ -1,6 +1,6 @@
 {
   "Guid": "a69be440-17a4-3b48-b64f-8c39e77a592a",
-  "UpdatedAt": "2025-12-24T18:45:19.8667143Z",
+  "UpdatedAt": "2026-05-24T16:19:43.123003Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/translations",
   "Description": "Proxy Mapping for GET /3/tv/1396/translations",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -129,7 +142,7 @@
             "name": "\u7EDD\u547D\u6BD2\u5E08",
             "overview": "\u65B0\u58A8\u897F\u54E5\u5DDE\u7684\u9AD8\u4E2D\u5316\u5B66\u8001\u5E08\u6C83\u5C14\u7279\u00B7H\u00B7\u6000\u7279\u662F\u62EE\u636E\u5BB6\u5EAD\u7684\u552F\u4E00\u7ECF\u6D4E\u6765\u6E90\u3002\u4ED6\u5927\u534A\u751F\u5B89\u5206\u5B88\u5DF1\uFF0C\u5162\u5162\u4E1A\u4E1A\uFF0C\u5374\u572850\u5C81\u751F\u65E5\u4E4B\u9645\u7A81\u7136\u5F97\u77E5\u81EA\u5DF1\u7F79\u60A3\u80BA\u764C\u665A\u671F\u7684\u5669\u8017\uFF0C\u539F\u672C\u4FBF\u4E0D\u751A\u987A\u610F\u7684\u4EBA\u751F\u987F\u65F6\u96EA\u4E0A\u52A0\u971C\u3002\u4E3A\u4E86\u4FDD\u969C\u6000\u5B55\u7684\u59BB\u5B50\u65AF\u51EF\u52D2\u548C\u6B8B\u75BE\u7684\u513F\u5B50\u5C0F\u6C83\u7279\u80FD\u5728\u81EA\u5DF1\u6B7B\u540E\u8863\u98DF\u65E0\u5FE7\uFF0C\u6C83\u5C14\u7279\u51B3\u610F\u94E4\u800C\u8D70\u9669\u3002\u4ED6\u4E3B\u52A8\u627E\u5230\u66FE\u7ECF\u7684\u5B66\u751F\u3001\u800C\u4ECA\u7684\u6BD2\u8D29\u5C0F\u6DF7\u6DF7\u6770\u897F\u00B7\u5E73\u514B\u66FC\u8C08\u5408\u4F5C\uFF0C\u5E76\u8FD0\u7528\u5A34\u719F\u9AD8\u8D85\u7684\u5316\u5B66\u6280\u672F\u63D0\u70BC\u51FA\u9AD8\u7EAF\u5EA6\u51B0\u6BD2\u4EA4\u7ED9\u540E\u8005\u8D29\u552E\u3002\u5B70\u6599\u4E8B\u6001\u7684\u53D1\u5C55\u5374\u5728\u5E73\u514B\u66FC\u5E26\u56DE\u6BD2\u54C1\u4F9B\u9500\u5546\u75AF\u72C2\u5C0F\u516B\u53CA\u5176\u8868\u5F1F\u540E\u6025\u8F6C\u76F4\u4E0B\uFF0C\u6C83\u5C14\u7279\u7684\u4EBA\u751F\u4E5F\u7531\u6B64\u5F7B\u5E95\u6B65\u5411\u5931\u63A7\u3002\u4ED6\u88AB\u8FEB\u5F00\u59CB\u4E86\u6559\u4E66\u4E0E\u5236\u6BD2\u7684\u53CC\u91CD\u751F\u6D3B\uFF0C\u9010\u6E10\u5760\u843D\u81F3\u4E07\u52AB\u4E0D\u590D\u7684\u6DF1\u6E0A\u3002",
             "homepage": "",
-            "tagline": ""
+            "tagline": "\u6539\u53D8\u8FD9\u4E2A\u65B9\u7A0B\u3002"
           }
         },
         {
@@ -429,7 +442,7 @@
             "name": "",
             "overview": "Un profesor de Qu\u00EDmica de secundaria con c\u00E1ncer terminal se asocia a un exestudiante para asegurar el futuro de su familia al fabricar y vender metanfetamina.",
             "homepage": "",
-            "tagline": "Todo tiene un punto de quiebre."
+            "tagline": "Vive libre o muere."
           }
         },
         {
@@ -547,7 +560,7 @@
           "english_name": "Mandarin",
           "data": {
             "name": "\u7D55\u547D\u6BD2\u5E2B",
-            "overview": "\u8A72\u5287\u8B1B\u8FF0\u4E86\u4E00\u6BD4\u7279\u666E\u901A\u7684\u9AD8\u4E2D\u5316\u5B78\u8001\u5E2B\u5728\u5F97\u77E5\u81EA\u5DF1\u8EAB\u60A3\u7D55\u75C7\u4E4B\u5F8C\uFF0C\u70BA\u4E86\u7D66\u5BB6\u4EBA\u7559\u4E0B\u8CA1\u7522\uFF0C\u800C\u5229\u7528\u81EA\u5DF1\u8D85\u51E1\u7684\u5316\u5B78\u77E5\u8B58\u88FD\u9020\u6BD2\u54C1\uFF0C\u4E26\u6210\u70BA\u4E16\u754C\u9802\u7D1A\u6BD2\u738B\u7684\u50B3\u5947\u72AF\u7F6A\u6545\u4E8B\u3002",
+            "overview": "\u4E00\u4F4D\u5316\u5B78\u8001\u5E2B\u70BA\u4E86\u990A\u5BB6\u992C\u53E3\uFF0C\u5192\u96AA\u6DF1\u5165\u6BD2\u54C1\u7684\u4E16\u754C\u3002\u9019\u90E8\u5F71\u96C6\u6C23\u6C1B\u7DCA\u5F35\uFF0C\u7531\u5E03\u840A\u6069\u00B7\u514B\u96F7\u65AF\u9813\u3001\u4E9E\u502B\u00B7\u4FDD\u7F85\u3001\u5B89\u5A1C\u00B7\u53E4\u6069\u4E3B\u6F14\u3002",
             "homepage": "",
             "tagline": ""
           }
@@ -643,17 +656,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=9138",
       "x-memc": "HIT",
       "x-memc-key": "d9749b2b94784fbbaf6676c9590ae3bd8996e090ebb93a6daa5983e867444fc8",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=13577",
-      "ETag": "W/\u0022e721c54b28d30915268445ffe37c49ae\u0022",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022fb4e77a0b2db5fa109bc040e3965a7ec\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

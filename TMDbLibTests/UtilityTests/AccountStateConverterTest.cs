@@ -64,7 +64,7 @@ public class AccountStateConverterTest : TestBase
     public async Task TestAccountStateConverterAccountState()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-        var accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.Avatar);
+        var accountState = await TMDbClient.GetMovieAccountStateAsync(IdHelper.Avatar, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(accountState);
         await Verify(accountState);
@@ -78,7 +78,7 @@ public class AccountStateConverterTest : TestBase
     public async Task TestAccountStateConverterTvEpisodeAccountState()
     {
         await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
-        var season = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1);
+        var season = await TMDbClient.GetTvSeasonAccountStateAsync(IdHelper.BigBangTheory, 1, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(season);
         Assert.NotNull(season.Results);
 

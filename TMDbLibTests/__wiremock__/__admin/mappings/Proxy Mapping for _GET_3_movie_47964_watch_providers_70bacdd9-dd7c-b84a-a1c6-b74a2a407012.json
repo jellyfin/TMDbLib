@@ -1,6 +1,6 @@
 {
   "Guid": "70bacdd9-dd7c-b84a-a1c6-b74a2a407012",
-  "UpdatedAt": "2025-12-24T18:45:21.3096512Z",
+  "UpdatedAt": "2026-05-24T16:19:43.619519Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/watch/providers",
   "Description": "Proxy Mapping for GET /3/movie/47964/watch/providers",
   "Priority": -2000000,
@@ -17,52 +17,54 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "id": 47964,
       "results": {
-        "AD": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=AD",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 5
-            }
-          ]
-        },
         "AE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=AE",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 3
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 1
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
               "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
             }
           ]
         },
@@ -76,14 +78,6 @@
               "display_priority": 7
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
-            }
-          ],
           "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -95,12 +89,12 @@
         },
         "AR": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=AR",
-          "flatrate": [
+          "ads": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 41
             }
           ],
           "buy": [
@@ -109,6 +103,14 @@
               "provider_id": 3,
               "provider_name": "Google Play Movies",
               "display_priority": 5
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ],
           "rent": [
@@ -124,40 +126,40 @@
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=AT",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 17
+              "display_priority": 18
             }
           ],
           "flatrate": [
@@ -165,67 +167,71 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/67FAj8KvIiV5iZMJuPUdMrqMftw.jpg",
+              "provider_id": 321,
+              "provider_name": "Sky X",
+              "display_priority": 17
             }
           ],
           "rent": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 17
+              "display_priority": 18
             }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=AU",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 11
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 13
@@ -246,7 +252,15 @@
               "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
               "provider_id": 436,
               "provider_name": "Fetch TV",
-              "display_priority": 31
+              "display_priority": 30
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
             }
           ]
         },
@@ -257,20 +271,12 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 1
+              "display_priority": 4
             }
           ]
         },
         "BA": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=BA",
-          "rent": [
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 7
-            }
-          ],
           "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -279,55 +285,41 @@
               "display_priority": 7
             }
           ],
-          "flatrate": [
+          "rent": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
             }
           ]
         },
         "BE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=BE",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 10
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 6
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 10
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
             }
           ],
           "flatrate": [
@@ -335,45 +327,60 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
             }
           ]
         },
         "BG": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=BG",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 15
+              "display_priority": 3
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
-            }
-          ]
-        },
-        "BH": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=BH",
-          "flatrate": [
-            {
-              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
-              "provider_id": 1750,
-              "provider_name": "TOD",
-              "display_priority": 22
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             }
           ]
         },
@@ -384,7 +391,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -395,7 +402,15 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 79
             }
           ]
         },
@@ -406,18 +421,18 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
         "CA": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=CA",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -438,7 +453,39 @@
               "display_priority": 33
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "provider_id": 140,
+              "provider_name": "CosmoGo",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 56
@@ -449,82 +496,86 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ],
-          "buy": [
+              "display_priority": 3
+            },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
               "display_priority": 5
             },
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "logo_path": "/esiLBRzDUwodjfN8gA4qj7l3ZF7.jpg",
+              "provider_id": 1794,
+              "provider_name": "Starz Amazon Channel",
+              "display_priority": 92
             },
             {
-              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
-              "provider_id": 140,
-              "provider_name": "CosmoGo",
-              "display_priority": 18
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 33
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 56
+              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
+              "provider_id": 2604,
+              "provider_name": "Crave Amazon Channel",
+              "display_priority": 140
             }
           ]
         },
         "CH": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=CH",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 2
-            }
-          ],
           "buy": [
             {
               "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
               "provider_id": 150,
               "provider_name": "blue TV",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
               "display_priority": 14
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 74
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/ytApMa9fThUQUFTn696AeNBrB8f.jpg",
+              "provider_id": 210,
+              "provider_name": "Sky",
+              "display_priority": 7
             }
           ],
           "rent": [
@@ -532,42 +583,64 @@
               "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
               "provider_id": 150,
               "provider_name": "blue TV",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
               "display_priority": 14
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 74
             }
           ]
         },
         "CL": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=CL",
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             },
             {
               "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
@@ -576,31 +649,31 @@
               "display_priority": 8
             }
           ],
-          "rent": [
+          "ads": [
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 4
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 4
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 51
             }
           ]
         },
         "CO": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=CO",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
           "rent": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 4
             }
           ],
           "flatrate": [
@@ -608,7 +681,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             },
             {
               "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
@@ -617,12 +690,12 @@
               "display_priority": 8
             }
           ],
-          "buy": [
+          "ads": [
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 52
             }
           ]
         },
@@ -633,7 +706,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -643,7 +716,7 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 10
             }
           ],
@@ -651,7 +724,7 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 10
             }
           ]
@@ -662,45 +735,65 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 0
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 1
+              "display_priority": 4
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 0
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 1
+              "display_priority": 4
             }
           ]
         },
         "CZ": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=CZ",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 3
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 28
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
               "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -714,41 +807,41 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
               "display_priority": 3
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 28
             }
           ]
         },
         "DE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
+              "provider_id": 30,
+              "provider_name": "WOW",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 14
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -757,62 +850,54 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 11
+              "display_priority": 9
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 13
+              "display_priority": 11
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 14
+              "display_priority": 15
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 15
+              "display_priority": 16
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 21
+              "display_priority": 22
             },
             {
               "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
               "provider_id": 1993,
               "provider_name": "Videoload",
-              "display_priority": 106
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 104
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -821,79 +906,109 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 11
+              "display_priority": 9
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 13
+              "display_priority": 11
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 14
+              "display_priority": 15
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 15
+              "display_priority": 16
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 21
+              "display_priority": 22
             },
             {
               "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
               "provider_id": 1993,
               "provider_name": "Videoload",
-              "display_priority": 106
+              "display_priority": 104
             },
             {
               "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
-              "display_priority": 130
+              "display_priority": 128
             }
           ]
         },
         "DK": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=DK",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
-            }
-          ],
           "buy": [
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
@@ -915,48 +1030,18 @@
               "display_priority": 15
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 48
             }
           ],
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 12
-            },
-            {
-              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
-              "provider_id": 423,
-              "provider_name": "Blockbuster",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 48
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -967,13 +1052,13 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 22
+              "display_priority": 3
             }
           ]
         },
         "EC": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=EC",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
@@ -981,15 +1066,23 @@
               "display_priority": 9
             }
           ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 34
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
@@ -1000,46 +1093,32 @@
         },
         "EE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=EE",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 3
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
-              "provider_id": 373,
-              "provider_name": "Go3",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 21
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
             }
           ]
         },
@@ -1049,46 +1128,52 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 4
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 31
+              "display_priority": 5
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 4
+              "display_priority": 5
             }
           ]
         },
         "ES": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg",
+              "provider_id": 1838,
+              "provider_name": "Tivify",
+              "display_priority": 52
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
@@ -1104,25 +1189,17 @@
               "display_priority": 14
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 32
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
@@ -1138,7 +1215,7 @@
               "display_priority": 14
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 32
@@ -1152,71 +1229,15 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
-            },
-            {
-              "logo_path": "/c7SqVo4DFrbK3RwhGbxvQ9SRco2.jpg",
-              "provider_id": 338,
-              "provider_name": "Ruutu",
-              "display_priority": 5
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 11
-            },
-            {
-              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
-              "provider_id": 423,
-              "provider_name": "Blockbuster",
-              "display_priority": 12
-            },
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/eglAxQEXSO13p6gNf3HKymrIu7y.jpg",
-              "provider_id": 540,
-              "provider_name": "Elisa Viihde",
-              "display_priority": 18
-            },
-            {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
-              "display_priority": 33
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 54
+              "display_priority": 3
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -1255,10 +1276,60 @@
               "display_priority": 33
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 54
+              "display_priority": 53
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/eglAxQEXSO13p6gNf3HKymrIu7y.jpg",
+              "provider_id": 540,
+              "provider_name": "Elisa Viihde",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 53
             }
           ]
         },
@@ -1269,70 +1340,14 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
-              "provider_id": 61,
-              "provider_name": "Orange VOD",
-              "display_priority": 12
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 19
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 40
-            },
-            {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
-              "provider_id": 2286,
-              "provider_name": "VIVA by videofutur",
-              "display_priority": 83
-            },
-            {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
-              "provider_id": 2307,
-              "provider_name": "Premiere Max",
-              "display_priority": 85
-            },
-            {
-              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
-              "provider_id": 2601,
-              "provider_name": "Path\u00E9 Home",
-              "display_priority": 103
+              "display_priority": 4
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
@@ -1345,43 +1360,99 @@
               "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
               "provider_id": 61,
               "provider_name": "Orange VOD",
-              "display_priority": 12
+              "display_priority": 11
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 15
+              "display_priority": 14
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 19
+              "display_priority": 16
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 40
-            },
-            {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
-              "provider_id": 2286,
-              "provider_name": "VIVA by videofutur",
-              "display_priority": 83
-            },
-            {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
-              "provider_id": 2307,
-              "provider_name": "Premiere Max",
-              "display_priority": 85
+              "display_priority": 37
             },
             {
               "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
               "provider_id": 2601,
               "provider_name": "Path\u00E9 Home",
-              "display_priority": 103
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 80
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 82
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/yvui9yFtpWHt0ZrsPelItbuTavI.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 80
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 82
             }
           ]
         },
@@ -1392,52 +1463,14 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 21
+              "display_priority": 3
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
@@ -1447,7 +1480,7 @@
               "display_priority": 5
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -1456,38 +1489,76 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 15
+              "display_priority": 16
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 21
+              "display_priority": 22
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 22
             }
           ]
         },
         "GG": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=GG",
-          "rent": [
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 84
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 84
+              "display_priority": 83
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 83
             }
           ]
         },
@@ -1497,14 +1568,14 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 5
             }
           ],
           "flatrate": [
@@ -1512,21 +1583,21 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 19
+              "display_priority": 3
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 5
             }
           ]
         },
@@ -1537,7 +1608,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -1548,7 +1619,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 30
+              "display_priority": 3
             }
           ]
         },
@@ -1559,34 +1630,26 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
         "HR": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=HR",
-          "rent": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 3
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 28
-            }
-          ],
           "buy": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
             }
           ]
         },
@@ -1597,21 +1660,21 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 3
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -1624,14 +1687,14 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 3
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -1648,50 +1711,26 @@
               "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
               "provider_id": 122,
               "provider_name": "Disney\u002B",
-              "display_priority": 49
+              "display_priority": 3
             }
           ]
         },
         "IE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=IE",
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 11
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 42
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -1712,18 +1751,42 @@
               "display_priority": 11
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 42
             }
           ],
-          "flatrate": [
+          "rent": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 2
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
             }
           ]
         },
@@ -1733,21 +1796,29 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 22
+              "provider_name": "Apple TV Store",
+              "display_priority": 23
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 22
+              "provider_name": "Apple TV Store",
+              "display_priority": 23
             }
           ]
         },
         "IN": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 3
+            }
+          ],
           "rent": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -1775,26 +1846,10 @@
               "provider_name": "YouTube",
               "display_priority": 10
             }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
-              "provider_id": 2336,
-              "provider_name": "JioHotstar",
-              "display_priority": 5
-            }
           ]
         },
         "IS": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=IS",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ],
           "buy": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -1826,50 +1881,18 @@
         },
         "IT": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=IT",
-          "buy": [
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
-              "provider_id": 109,
-              "provider_name": "Timvision",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 33
-            }
-          ],
           "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -1878,13 +1901,45 @@
               "display_priority": 8
             },
             {
-              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "logo_path": "/FyDfVwFZGuu2KVv7Kuz4ww7Ra3.jpg",
               "provider_id": 109,
               "provider_name": "Timvision",
               "display_priority": 13
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/FyDfVwFZGuu2KVv7Kuz4ww7Ra3.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 33
@@ -1895,7 +1950,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             }
           ]
         },
@@ -1906,18 +1961,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 24
-            }
-          ]
-        },
-        "JO": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=JO",
-          "flatrate": [
-            {
-              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
-              "provider_id": 1750,
-              "provider_name": "TOD",
-              "display_priority": 22
+              "display_priority": 2
             }
           ]
         },
@@ -1925,19 +1969,25 @@
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=JP",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 6
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
             }
           ],
           "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
@@ -1945,66 +1995,55 @@
               "display_priority": 3
             },
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 4
-            },
-            {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 72
+              "display_priority": 71
             }
           ],
           "rent": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 6
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/9EWAEok40O0HVhV0MYJmlE4LhGy.jpg",
+              "provider_id": 2683,
+              "provider_name": "FOD",
+              "display_priority": 80
             }
           ]
         },
         "KR": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
           "buy": [
             {
               "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
               "provider_id": 356,
               "provider_name": "wavve",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
               "display_priority": 6
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 2
-            }
-          ]
-        },
-        "KW": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=KW",
-          "flatrate": [
-            {
-              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
-              "provider_id": 1750,
-              "provider_name": "TOD",
-              "display_priority": 23
             }
           ]
         },
@@ -2015,7 +2054,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 12
+              "display_priority": 2
             }
           ]
         },
@@ -2026,95 +2065,67 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 23
+              "display_priority": 2
             }
           ]
         },
         "LT": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=LT",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 22
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 5
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 5
             },
             {
               "logo_path": "/7QzLA6rsML2rKxhuagWlDl7Zxlm.jpg",
               "provider_id": 553,
               "provider_name": "Telia Play",
-              "display_priority": 12
+              "display_priority": 13
             }
           ]
         },
         "LU": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=LU",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 0
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 2
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 0
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 1
+              "display_priority": 5
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 2
+              "display_priority": 6
             }
           ],
           "flatrate": [
@@ -2123,62 +2134,57 @@
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 6
             }
           ]
         },
         "LV": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=LV",
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
-              "provider_id": 373,
-              "provider_name": "Go3",
-              "display_priority": 7
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 21
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 3
-            }
-          ]
-        },
-        "ME": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=ME",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 5
             }
           ]
         },
@@ -2199,14 +2205,6 @@
               "provider_name": "Rakuten TV",
               "display_priority": 7
             }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
-            }
           ]
         },
         "MT": {
@@ -2216,7 +2214,7 @@
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
           "buy": [
@@ -2224,15 +2222,7 @@
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 7
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
+              "display_priority": 8
             }
           ]
         },
@@ -2242,16 +2232,16 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 12
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
             }
           ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 12
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
             }
           ]
         },
@@ -2262,7 +2252,15 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 69
             }
           ]
         },
@@ -2273,7 +2271,7 @@
               "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
               "provider_id": 122,
               "provider_name": "Disney\u002B",
-              "display_priority": 40
+              "display_priority": 3
             }
           ]
         },
@@ -2283,16 +2281,16 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 13
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 13
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             }
           ]
         },
@@ -2303,18 +2301,18 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
         "NL": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=NL",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 8
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -2329,7 +2327,7 @@
               "display_priority": 14
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 34
@@ -2346,7 +2344,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             },
             {
               "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
@@ -2355,12 +2353,12 @@
               "display_priority": 29
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 8
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -2375,7 +2373,7 @@
               "display_priority": 14
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 34
@@ -2395,13 +2393,13 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -2422,24 +2420,10 @@
               "display_priority": 15
             },
             {
-              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
-              "provider_id": 431,
-              "provider_name": "TV 2 Play",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 49
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
             }
           ],
           "buy": [
@@ -2447,13 +2431,13 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -2480,16 +2464,18 @@
               "display_priority": 15
             },
             {
-              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
-              "provider_id": 431,
-              "provider_name": "TV 2 Play",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 49
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -2499,8 +2485,8 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -2509,10 +2495,10 @@
               "display_priority": 7
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 59
+              "display_priority": 56
             }
           ],
           "flatrate": [
@@ -2520,7 +2506,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -2531,26 +2517,26 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 25
+              "display_priority": 3
             }
           ]
         },
         "PE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=PE",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
-            }
-          ],
           "rent": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 4
+              "display_priority": 5
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 36
             }
           ],
           "buy": [
@@ -2558,35 +2544,46 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 4
+              "display_priority": 5
             }
-          ]
-        },
-        "PH": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=PH",
+          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 27
+              "display_priority": 3
             }
           ]
         },
         "PL": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
+              "provider_id": 505,
+              "provider_name": "Player",
+              "display_priority": 10
+            }
+          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
@@ -2601,44 +2598,42 @@
               "display_priority": 10
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 27
+            },
+            {
+              "logo_path": "/mBliLuM0AbkRPGDoVa7IGxwC59b.jpg",
+              "provider_id": 2102,
+              "provider_name": "Premiery Canal\u002B",
+              "display_priority": 34
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 35
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
             },
             {
-              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
-              "provider_id": 505,
-              "provider_name": "Player",
-              "display_priority": 10
+              "logo_path": "/4OlZobihZLTpizChDitPeH3PmND.jpg",
+              "provider_id": 2669,
+              "provider_name": "Pilot WP",
+              "display_priority": 64
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
@@ -2647,7 +2642,7 @@
               "display_priority": 7
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 27
@@ -2657,17 +2652,12 @@
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 35
-            }
-          ]
-        },
-        "PS": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=PS",
-          "flatrate": [
+            },
             {
-              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
-              "provider_id": 1750,
-              "provider_name": "TOD",
-              "display_priority": 22
+              "logo_path": "/4OlZobihZLTpizChDitPeH3PmND.jpg",
+              "provider_id": 2669,
+              "provider_name": "Pilot WP",
+              "display_priority": 64
             }
           ]
         },
@@ -2677,61 +2667,29 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 43
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 43
@@ -2742,7 +2700,39 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
             }
           ]
         },
@@ -2753,7 +2743,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -2767,20 +2757,20 @@
               "display_priority": 21
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
-            }
-          ],
           "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
             }
           ]
         },
@@ -2800,14 +2790,6 @@
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 7
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
             }
           ]
         },
@@ -2832,59 +2814,43 @@
         },
         "SA": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=SA",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 3
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
-              "provider_id": 1750,
-              "provider_name": "TOD",
-              "display_priority": 27
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 1
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
               "display_priority": 3
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
             }
           ]
         },
         "SE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=SE",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
@@ -2911,18 +2877,18 @@
               "display_priority": 15
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 39
+              "display_priority": 38
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
@@ -2955,10 +2921,18 @@
               "display_priority": 15
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 39
+              "display_priority": 38
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -2969,7 +2943,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -2980,12 +2954,12 @@
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 23
             }
           ],
@@ -2994,21 +2968,13 @@
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 23
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
             }
           ]
         },
@@ -3018,8 +2984,8 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -3032,8 +2998,8 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -3047,7 +3013,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -3058,7 +3024,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 23
+              "display_priority": 2
             }
           ]
         },
@@ -3069,7 +3035,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 25
+              "display_priority": 3
             }
           ]
         },
@@ -3080,37 +3046,12 @@
               "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
               "provider_id": 122,
               "provider_name": "Disney\u002B",
-              "display_priority": 0
-            }
-          ]
-        },
-        "TN": {
-          "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=TN",
-          "flatrate": [
-            {
-              "logo_path": "/bFxDjHDXP02u1dLPZfTsTC1L6EA.jpg",
-              "provider_id": 1750,
-              "provider_name": "TOD",
-              "display_priority": 24
+              "display_priority": 3
             }
           ]
         },
         "TR": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=TR",
-          "buy": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 6
-            }
-          ],
           "rent": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
@@ -3121,7 +3062,7 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 6
             }
           ],
@@ -3130,7 +3071,21 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             }
           ]
         },
@@ -3141,7 +3096,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 13
+              "display_priority": 3
             }
           ]
         },
@@ -3152,17 +3107,17 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
         "UA": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=UA",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 2
             },
             {
@@ -3172,11 +3127,11 @@
               "display_priority": 3
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 2
             },
             {
@@ -3193,45 +3148,59 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 13
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 13
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             }
           ]
         },
         "US": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=US",
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 155
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 17
+              "display_priority": 18
             },
             {
               "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
@@ -3240,30 +3209,30 @@
               "display_priority": 35
             }
           ],
-          "buy": [
+          "rent": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 17
+              "display_priority": 18
             },
             {
               "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
@@ -3280,26 +3249,26 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 25
+              "display_priority": 2
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/60iyHW9xKBKVBf0kxiQixuLqG1f.jpg",
+              "provider_id": 2302,
+              "provider_name": "Mercado Play",
+              "display_priority": 34
             }
           ]
         },
         "VE": {
           "link": "https://www.themoviedb.org/movie/47964-a-good-day-to-die-hard/watch?locale=VE",
-          "rent": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 3
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             }
           ],
           "buy": [
@@ -3307,7 +3276,15 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 4
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 4
             }
           ]
         },
@@ -3317,28 +3294,28 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 4
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 2
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -3349,7 +3326,7 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 1
+              "display_priority": 2
             }
           ]
         }
@@ -3359,19 +3336,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "ETag": "W/\u0022bd99dcd53eaac546ba515eed24977dff\u0022",
+      "Cache-Control": "public, max-age=14584",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=19300",
-      "x-memc": "HIT",
-      "x-memc-key": "5c75d036c680988d037a2866756fc065c75328aef9997ac215f6803d1584a3f6",
-      "x-az": "us-east-1b",
-      "ETag": "W/\u0022e2150a5ab43ac7580f5388108e0b4ec7\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1c",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "Guid": "1d6e5aba-7575-de44-b35b-1e5f206bfa30",
-  "UpdatedAt": "2025-12-24T18:45:21.8148446Z",
+  "UpdatedAt": "2026-05-24T16:19:43.360899Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/reviews",
   "Description": "Proxy Mapping for GET /3/tv/1396/reviews",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -34,9 +47,9 @@
             "rating": 10.0
           },
           "content": "Wow....where to start. Not really into \u0022DRUG\u0022 inspired shows. But this one had me from the start. The only bad about this show was the split seasons when it was a first run show. But now you can go right through to the next episode with out having to wait.....MUST WATCH ! !",
-          "created_at": "2018-04-10T15:44:38.134Z",
+          "created_at": "2018-04-10T15:44:38Z",
           "id": "5accdbe6c3a3687e2702d058",
-          "updated_at": "2021-06-23T15:58:07.601Z",
+          "updated_at": "2021-06-23T15:58:07Z",
           "url": "https://www.themoviedb.org/review/5accdbe6c3a3687e2702d058"
         },
         {
@@ -48,9 +61,9 @@
             "rating": 10.0
           },
           "content": "I\u0027ll be honest, at first when I started this TV show and finished first season, I didn\u0027t like it. It felt boring for me and I stopped watching, but after few years, I decided to give it a chance and continue. I\u0027m so happy because of my decision, because after finishing this TV show, I can definitely tell that it was a masterpiece! 5th season is a bomb and 14th season was shocking! It left me with sad, euphoric shock feeling. It was mind blowing! I\u0027m not gonna spoil you what happened, but if you started first season and you don\u0027t like it, for goodness sake, give it a chance and continue watching. I promise you won\u0027t regret.\r\n\r\nCharacters are very well developed. Acting is superb! Plot is very interesting. Whole TV show is tense, especially the last season. The only downside I can think about is camera. Sometimes it\u0027s shaking on some certain scenes. I don\u0027t know why they didn\u0027t pay attention to this, but this is nothing, just a very minor minus. Everything else is great about this TV show.",
-          "created_at": "2019-09-30T09:02:26.890Z",
+          "created_at": "2019-09-30T09:02:26Z",
           "id": "5d91c4a2172d7f001759ca0a",
-          "updated_at": "2021-06-23T15:58:27.439Z",
+          "updated_at": "2021-06-23T15:58:27Z",
           "url": "https://www.themoviedb.org/review/5d91c4a2172d7f001759ca0a"
         },
         {
@@ -62,9 +75,9 @@
             "rating": 9.0
           },
           "content": "Started out really good, but dropped quality after the second to last season",
-          "created_at": "2020-06-10T07:29:33.686Z",
+          "created_at": "2020-06-10T07:29:33Z",
           "id": "5ee08bdd90dde0001fa67192",
-          "updated_at": "2021-06-23T15:58:39.055Z",
+          "updated_at": "2021-06-23T15:58:39Z",
           "url": "https://www.themoviedb.org/review/5ee08bdd90dde0001fa67192"
         },
         {
@@ -76,9 +89,9 @@
             "rating": 3.0
           },
           "content": "This is the kind of TV show for the \u0022formula lovers\u0022 who want to feel superior.\r\nThere is an air of the superiority complex of the \u0022drug knowledgeable\u0022 crowd in this series about a \u0022smart guy\u0022 breaking into the drug trade.\r\nHis \u0022talent\u0022 makes him the important cog in the machine. He can call his shots.\r\nStill, the ruffians give him a rough way to go, because criminals really are stupid.\r\nOnce they learn that they are nothing without him, he gets his way.\r\nMuch like a Western town blacksmith, he\u0027s the needed ingredient.\r\nHowever, things get very formula early on in the show. And there\u0027s always this sense of a superiority complex from the sort of people who push shows like this onto their friends and acquaintances. The directing writing team tap into the control freak crowd very well.\r\nBut it is a dull show about dull people.",
-          "created_at": "2023-04-02T17:02:14.125Z",
+          "created_at": "2023-04-02T17:02:14Z",
           "id": "6429b5168de0ae00978d836a",
-          "updated_at": "2023-04-03T16:45:23.650Z",
+          "updated_at": "2023-04-03T16:45:23Z",
           "url": "https://www.themoviedb.org/review/6429b5168de0ae00978d836a"
         }
       ],
@@ -90,17 +103,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=17190",
       "x-memc": "HIT",
       "x-memc-key": "3542da1c00a2bbe223987416ed21bf444695570998a6e8cf86d39a8a199cdaf5",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=17310",
-      "ETag": "W/\u002206a7acd034b4979873fda3280f7dde44\u0022",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022b58cc307785864d0a2b34c8989084755\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

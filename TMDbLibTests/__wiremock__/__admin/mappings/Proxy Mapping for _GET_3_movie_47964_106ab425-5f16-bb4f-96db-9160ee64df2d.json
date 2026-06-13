@@ -1,6 +1,6 @@
 {
   "Guid": "106ab425-5f16-bb4f-96db-9160ee64df2d",
-  "UpdatedAt": "2025-12-24T18:45:19.5669396Z",
+  "UpdatedAt": "2026-05-24T16:19:42.423269Z",
   "Title": "Proxy Mapping for GET /3/movie/47964",
   "Description": "Proxy Mapping for GET /3/movie/47964",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -41,7 +54,7 @@
           "name": "Thriller"
         }
       ],
-      "homepage": "http://www.diehardmovie.com/",
+      "homepage": "https://www.20thcenturystudios.com/movies/a-good-day-to-die-hard",
       "id": 47964,
       "imdb_id": "tt1606378",
       "origin_country": [
@@ -50,7 +63,7 @@
       "original_language": "en",
       "original_title": "A Good Day to Die Hard",
       "overview": "Iconoclastic, take-no-prisoners cop John McClane, finds himself for the first time on foreign soil after traveling to Moscow to help his wayward son Jack - unaware that Jack is really a highly-trained CIA operative out to stop a nuclear weapons heist. With the Russian underworld in pursuit, and battling a countdown to war, the two McClanes discover that their opposing methods make them unstoppable heroes.",
-      "popularity": 4.8277,
+      "popularity": 6.2441,
       "poster_path": "/qJ0csDXAVFMsNn0cRcjy6W6PxAK.jpg",
       "production_companies": [
         {
@@ -117,6 +130,7 @@
       "release_date": "2013-02-06",
       "revenue": 304654182,
       "runtime": 98,
+      "softcore": false,
       "spoken_languages": [
         {
           "english_name": "English",
@@ -130,29 +144,25 @@
         }
       ],
       "status": "Released",
-      "tagline": "Yippee Ki-Yay Mother Russia.",
+      "tagline": "Yippee ki-yay Mother Russia.",
       "title": "A Good Day to Die Hard",
       "video": false,
-      "vote_average": 5.3,
-      "vote_count": 6609
+      "vote_average": 5.333,
+      "vote_count": 6744
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "ETag": "W/\u00228147e353a133d7ea22ee4967a9d57529\u0022",
+      "Cache-Control": "public, max-age=23519",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "63636206f0cc70f470646fc5b1d233a89c68062c6a17ea55d788149266a50d85",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=27945",
-      "ETag": "W/\u00228cf06ab24a4d3542e36dbd9388bec89b\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1c",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

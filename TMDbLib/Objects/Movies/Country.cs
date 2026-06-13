@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.Movies;
@@ -13,6 +14,12 @@ public class Country
     /// </summary>
     [JsonProperty("certification")]
     public string? Certification { get; set; }
+
+    /// <summary>
+    /// Gets or sets descriptive tags associated with this release.
+    /// </summary>
+    [JsonProperty("descriptors")]
+    public List<string>? Descriptors { get; set; }
 
     /// <summary>
     /// Gets or sets a country code, e.g. US.

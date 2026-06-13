@@ -24,7 +24,7 @@ public class ListResult
     /// Gets or sets the list ID.
     /// </summary>
     [JsonProperty("id")]
-    public string? Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets a language code, e.g. en.
@@ -33,9 +33,15 @@ public class ListResult
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
+    /// Gets or sets a country code, e.g. US.
+    /// </summary>
+    [JsonProperty("iso_3166_1")]
+    public string? Iso_3166_1 { get; set; }
+
+    /// <summary>
     /// Gets or sets the item count in the list.
     /// </summary>
-    [JsonProperty("item_Count")]
+    [JsonProperty("item_count")]
     public int ItemCount { get; set; }
 
     /// <summary>

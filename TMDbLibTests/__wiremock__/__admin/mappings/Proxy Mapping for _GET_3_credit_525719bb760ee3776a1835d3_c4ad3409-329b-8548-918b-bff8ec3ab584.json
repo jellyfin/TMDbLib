@@ -1,6 +1,6 @@
 {
   "Guid": "c4ad3409-329b-8548-918b-bff8ec3ab584",
-  "UpdatedAt": "2025-12-24T18:45:17.5627635Z",
+  "UpdatedAt": "2026-05-24T16:19:42.643148Z",
   "Title": "Proxy Mapping for GET /3/credit/525719bb760ee3776a1835d3",
   "Description": "Proxy Mapping for GET /3/credit/525719bb760ee3776a1835d3",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -39,10 +52,11 @@
           80,
           18
         ],
-        "popularity": 22.2221,
+        "popularity": 50.4628,
         "first_air_date": "1984-09-16",
+        "softcore": false,
         "vote_average": 7.5,
-        "vote_count": 476,
+        "vote_count": 504,
         "origin_country": [
           "US"
         ],
@@ -53,8 +67,8 @@
             "name": "No Exit",
             "overview": "Crockett and Tubbs reluctantly help government agents in their pursuit of a dangerous arms dealer.",
             "media_type": "tv_episode",
-            "vote_average": 7.889,
-            "vote_count": 9,
+            "vote_average": 8.0,
+            "vote_count": 12,
             "air_date": "1984-11-09",
             "episode_number": 7,
             "episode_type": "standard",
@@ -70,9 +84,9 @@
             "id": 5510,
             "name": "Season 1",
             "overview": "The cops. The cars. The clothes. The explosive, groundbreaking detective show that redefined the word \u0022cool\u0022. Set against the seamy and steamy Miami underworld, ride shotgun with suave Vice cops Sonny Crockett and Rico Tubbs as they battle a never-ending gallery of criminals. Set to an electrifying soundtrack, every episode crackles with excitement and stylish flair.",
-            "poster_path": "/ggKwkZzWVZshb7JyDv9puFfRYMQ.jpg",
+            "poster_path": "/wxbDR1FYAgLfupWSzrXB1HsxMuA.jpg",
             "media_type": "tv_season",
-            "vote_average": 6.6,
+            "vote_average": 7.1,
             "air_date": "1984-09-16",
             "season_number": 1,
             "show_id": 1908,
@@ -88,7 +102,7 @@
         "name": "Bruce Willis",
         "original_name": "Bruce Willis",
         "media_type": "person",
-        "popularity": 5.9637,
+        "popularity": 4.778,
         "gender": 2,
         "known_for_department": "Acting",
         "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg"
@@ -99,17 +113,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "MISS, STORE",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=7286",
+      "x-memc": "HIT",
       "x-memc-key": "7e71a45d4786bbc61ad0e6a36402c447065c57366e70876798d097ecbb0e74e8",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=26341",
-      "ETag": "W/\u00229cdbca808326658c7a6dab12ab2ddf27\u0022",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00224da691dbcdc0c0056123a8cbfb20b74e\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

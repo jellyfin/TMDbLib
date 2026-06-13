@@ -314,7 +314,7 @@ public class DiscoverTv : DiscoverBase<SearchTv>
     /// <returns>The current <see cref="DiscoverTv"/> instance for method chaining.</returns>
     public DiscoverTv WhereKeywordsExclude(IEnumerable<Keyword> keywords)
     {
-        return WhereKeywordsInclude(keywords.Select(s => s.Id));
+        return WhereKeywordsExclude(keywords.Select(s => s.Id));
     }
 
     /// <summary>

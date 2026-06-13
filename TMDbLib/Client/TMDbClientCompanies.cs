@@ -90,4 +90,26 @@ public partial class TMDbClient
     {
         return await GetCompanyMethodInternal<SearchContainerWithId<SearchMovie>>(companyId, CompanyMethods.Movies, page, language, cancellationToken).ConfigureAwait(false);
     }
+
+    /// <summary>
+    /// Retrieves the alternative names of a company.
+    /// </summary>
+    /// <param name="companyId">The TMDb ID of the company.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>The alternative names for the company.</returns>
+    public async Task<AlternativeNames?> GetCompanyAlternativeNamesAsync(int companyId, CancellationToken cancellationToken = default)
+    {
+        return await GetCompanyMethodInternal<AlternativeNames>(companyId, CompanyMethods.AlternativeNames, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Retrieves the logos for a company.
+    /// </summary>
+    /// <param name="companyId">The TMDb ID of the company.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>The company's images (logos).</returns>
+    public async Task<ImagesWithId?> GetCompanyImagesAsync(int companyId, CancellationToken cancellationToken = default)
+    {
+        return await GetCompanyMethodInternal<ImagesWithId>(companyId, CompanyMethods.Images, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
 }

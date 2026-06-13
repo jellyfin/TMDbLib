@@ -1,6 +1,6 @@
 {
   "Guid": "a5b18c71-2de7-8d41-884e-ce256bcb613c",
-  "UpdatedAt": "2025-12-24T18:45:22.5323655Z",
+  "UpdatedAt": "2026-05-24T16:19:44.957021Z",
   "Title": "Proxy Mapping for GET /3/tv/2734/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/2734/watch/providers",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -31,7 +44,7 @@
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 21
+              "display_priority": 22
             }
           ]
         },
@@ -42,7 +55,7 @@
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -86,6 +99,12 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
               "display_priority": 1
             },
             {
@@ -100,30 +119,16 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=AT",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
-              "provider_id": 29,
-              "provider_name": "Sky Go",
               "display_priority": 7
-            },
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 154
             }
           ],
           "ads": [
@@ -131,7 +136,27 @@
               "logo_path": "/jmR0t1kjzHcyV7raynzMbF87J9d.jpg",
               "provider_id": 298,
               "provider_name": "RTL\u002B",
-              "display_priority": 49
+              "display_priority": 50
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/67FAj8KvIiV5iZMJuPUdMrqMftw.jpg",
+              "provider_id": 321,
+              "provider_name": "Sky X",
+              "display_priority": 17
             }
           ]
         },
@@ -141,11 +166,11 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 11
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 13
@@ -154,39 +179,7 @@
               "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
               "provider_id": 436,
               "provider_name": "Fetch TV",
-              "display_priority": 31
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
-              "provider_id": 134,
-              "provider_name": "Foxtel Now",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/7QX5OdsQZrXGNBKq9SPzoPV9OYQ.jpg",
-              "provider_id": 385,
-              "provider_name": "BINGE",
-              "display_priority": 85
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 95
+              "display_priority": 30
             }
           ],
           "ads": [
@@ -195,6 +188,44 @@
               "provider_id": 246,
               "provider_name": "7plus",
               "display_priority": 18
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/sSfxJXq7s8oHf3XWd0FtqagPDsF.jpg",
+              "provider_id": 21,
+              "provider_name": "Stan",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/7QX5OdsQZrXGNBKq9SPzoPV9OYQ.jpg",
+              "provider_id": 385,
+              "provider_name": "BINGE",
+              "display_priority": 84
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 93
             }
           ]
         },
@@ -227,24 +258,25 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
-            }
-          ]
-        },
-        "BF": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=BF",
-          "flatrate": [
+              "display_priority": 0
+            },
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
         "BG": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=BG",
           "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
@@ -282,19 +314,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/7Cg8esVVXOijXAm1f1vrS7jVjcN.jpg",
-              "provider_id": 307,
-              "provider_name": "Globoplay",
-              "display_priority": 9
+              "display_priority": 0
             },
             {
               "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
               "provider_id": 484,
               "provider_name": "Claro tv\u002B",
-              "display_priority": 21
+              "display_priority": 20
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -319,16 +345,10 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=BZ",
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 3
-            },
-            {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 6
+              "display_priority": 0
             }
           ]
         },
@@ -338,11 +358,11 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 56
@@ -350,45 +370,34 @@
           ],
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
-            },
-            {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 112
+              "display_priority": 111
             },
             {
               "logo_path": "/aaGh2F4UhXLRvOifdjSHQMqWB0K.jpg",
               "provider_id": 2171,
               "provider_name": "Citytvplus Amazon Channel",
-              "display_priority": 116
+              "display_priority": 115
             },
             {
               "logo_path": "/b1hPXukoQT9pkYbbNESUjNgSL3e.jpg",
               "provider_id": 1985,
               "provider_name": "Citytvplus",
-              "display_priority": 125
-            }
-          ]
-        },
-        "CD": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=CD",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 0
+              "display_priority": 124
             }
           ]
         },
@@ -402,16 +411,22 @@
               "display_priority": 0
             },
             {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
               "logo_path": "/ytApMa9fThUQUFTn696AeNBrB8f.jpg",
               "provider_id": 210,
               "provider_name": "Sky",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/l5SFTF3l9l1KSgZJM7foAppUenz.jpg",
               "provider_id": 622,
               "provider_name": "UPC TV",
-              "display_priority": 32
+              "display_priority": 31
             }
           ],
           "buy": [
@@ -419,7 +434,7 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
@@ -430,24 +445,19 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             },
             {
               "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
               "provider_id": 339,
               "provider_name": "MovistarTV",
               "display_priority": 8
-            }
-          ]
-        },
-        "CM": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=CM",
-          "flatrate": [
+            },
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
+              "logo_path": "/4ABGBjAMtRrYUrr0w3QfanuiaoB.jpg",
+              "provider_id": 1889,
+              "provider_name": "Universal\u002B Amazon Channel",
+              "display_priority": 42
             }
           ]
         },
@@ -458,7 +468,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             },
             {
               "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
@@ -479,53 +489,51 @@
             }
           ]
         },
-        "CV": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=CV",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ]
-        },
-        "CY": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=CY",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 3
-            }
-          ]
-        },
         "CZ": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=CZ",
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 22
-            },
-            {
-              "logo_path": "/qcTTC6rFBIVaCLzu0EKwuyrBlSR.jpg",
-              "provider_id": 2536,
-              "provider_name": "Oneplay",
-              "display_priority": 35
             }
           ]
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 104
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -534,34 +542,34 @@
               "display_priority": 0
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
-              "provider_id": 29,
-              "provider_name": "Sky Go",
-              "display_priority": 8
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
               "provider_id": 30,
               "provider_name": "WOW",
-              "display_priority": 9
+              "display_priority": 13
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 84
+              "display_priority": 83
             },
             {
               "logo_path": "/qqTyjCCJuuARytrY7rNRAKka1VF.jpg",
               "provider_id": 2412,
               "provider_name": "Magenta TV\u002B",
-              "display_priority": 198
+              "display_priority": 192
             },
             {
-              "logo_path": "/8o737RzF49I8kOHe9ua3tLORIEf.jpg",
-              "provider_id": 2578,
-              "provider_name": "RTL\u002B Max Amazon Channel",
-              "display_priority": 221
+              "logo_path": "/35XbldCPO3ztCREajGbfhf7827w.jpg",
+              "provider_id": 2660,
+              "provider_name": "Wow Fiction Amazon Channel",
+              "display_priority": 217
             }
           ],
           "ads": [
@@ -571,42 +579,30 @@
               "provider_name": "RTL\u002B",
               "display_priority": 5
             }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
-              "provider_id": 178,
-              "provider_name": "MagentaTV",
-              "display_priority": 21
-            },
-            {
-              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
-              "provider_id": 1993,
-              "provider_name": "Videoload",
-              "display_priority": 106
-            }
           ]
         },
         "DK": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=DK",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
@@ -657,12 +653,12 @@
         },
         "ES": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=ES",
-          "buy": [
+          "ads": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 32
+              "logo_path": "/zXlrphHQ0EiLTYZcDdVtDxmsjk5.jpg",
+              "provider_id": 62,
+              "provider_name": "Atres Player",
+              "display_priority": 13
             }
           ],
           "flatrate": [
@@ -670,7 +666,19 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
               "display_priority": 3
+            },
+            {
+              "logo_path": "/jse4MOi92Jgetym7nbXFZZBI6LK.jpg",
+              "provider_id": 2241,
+              "provider_name": "Movistar Plus\u002B",
+              "display_priority": 4
             },
             {
               "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
@@ -694,93 +702,113 @@
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 82
+              "display_priority": 79
             }
           ],
-          "ads": [
+          "buy": [
             {
-              "logo_path": "/zXlrphHQ0EiLTYZcDdVtDxmsjk5.jpg",
-              "provider_id": 62,
-              "provider_name": "Atres Player",
-              "display_priority": 13
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 32
             }
           ]
         },
         "FI": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=FI",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 53
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/c7SqVo4DFrbK3RwhGbxvQ9SRco2.jpg",
               "provider_id": 338,
               "provider_name": "Ruutu",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 32
-            },
-            {
-              "logo_path": "/wRMEDOZ8iAEEHXIY2VyckvT0K8I.jpg",
-              "provider_id": 2029,
-              "provider_name": "MTV Katsomo",
-              "display_priority": 38
             }
           ]
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=FR",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 37
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 3
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
             },
             {
               "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
               "provider_id": 1754,
               "provider_name": "TF1\u002B",
-              "display_priority": 56
+              "display_priority": 51
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 59
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/vo4tm5HBLpctihoSX6bTIG0VB9d.jpg",
+              "provider_id": 193,
+              "provider_name": "SFR Play",
+              "display_priority": 57
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 93
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 40
+              "display_priority": 87
             }
           ]
         },
@@ -792,17 +820,35 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 86
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -832,10 +878,10 @@
           ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 84
+              "display_priority": 83
             }
           ]
         },
@@ -850,6 +896,17 @@
             }
           ]
         },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
         "GT": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=GT",
           "flatrate": [
@@ -857,17 +914,6 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
-            }
-          ]
-        },
-        "GY": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=GY",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
               "display_priority": 0
             }
           ]
@@ -909,10 +955,10 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=HU",
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
@@ -941,6 +987,18 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
             }
           ]
         },
@@ -951,7 +1009,7 @@
               "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
               "provider_id": 2336,
               "provider_name": "JioHotstar",
-              "display_priority": 5
+              "display_priority": 3
             },
             {
               "logo_path": "/9YJY5OwsIPMoX3xC3TdtZVbKBpE.jpg",
@@ -985,12 +1043,32 @@
         },
         "IT": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=IT",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 6
             },
             {
               "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
@@ -999,18 +1077,16 @@
               "display_priority": 10
             },
             {
+              "logo_path": "/FyDfVwFZGuu2KVv7Kuz4ww7Ra3.jpg",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 13
+            },
+            {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
               "display_priority": 87
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 33
             }
           ]
         },
@@ -1040,24 +1116,24 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=JP",
           "rent": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 5
+              "display_priority": 6
             }
           ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
           "flatrate": [
@@ -1065,7 +1141,7 @@
               "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
               "provider_id": 15,
               "provider_name": "Hulu",
-              "display_priority": 1
+              "display_priority": 4
             }
           ]
         },
@@ -1076,7 +1152,7 @@
               "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
               "provider_id": 356,
               "provider_name": "wavve",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1087,7 +1163,7 @@
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -1110,6 +1186,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
             }
           ]
         },
@@ -1120,7 +1202,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 7
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -1146,17 +1234,6 @@
             }
           ]
         },
-        "MG": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=MG",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ]
-        },
         "MK": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=MK",
           "flatrate": [
@@ -1168,28 +1245,6 @@
             }
           ]
         },
-        "ML": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=ML",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
-            }
-          ]
-        },
-        "MW": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=MW",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 0
-            }
-          ]
-        },
         "MX": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=MX",
           "flatrate": [
@@ -1197,7 +1252,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 7
+              "display_priority": 0
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -1214,7 +1269,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 31
             }
           ]
         },
@@ -1222,16 +1277,10 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=NI",
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 4
-            },
-            {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 10
+              "display_priority": 0
             }
           ]
         },
@@ -1242,30 +1291,58 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 10
-            },
+            }
+          ],
+          "buy": [
             {
-              "logo_path": "/88ssxWDyhabjrwSrbSf87nCDK2y.jpg",
-              "provider_id": 472,
-              "provider_name": "NLZIET",
-              "display_priority": 21
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
             }
           ]
         },
         "NO": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=NO",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 49
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
@@ -1283,18 +1360,26 @@
         },
         "NZ": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=NZ",
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 0
-            },
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -1327,7 +1412,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1339,17 +1424,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            }
-          ]
-        },
-        "PG": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=PG",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             }
           ]
         },
@@ -1368,16 +1442,42 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=PL",
           "flatrate": [
             {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
             }
           ]
         },
         "PT": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=PT",
           "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
@@ -1412,9 +1512,9 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=RO",
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
               "display_priority": 2
             },
             {
@@ -1454,7 +1554,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             },
             {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
@@ -1490,6 +1596,12 @@
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=SK",
           "flatrate": [
             {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
               "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
@@ -1497,14 +1609,14 @@
             }
           ]
         },
-        "SN": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=SN",
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=SM",
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
             }
           ]
         },
@@ -1530,17 +1642,6 @@
             }
           ]
         },
-        "TD": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=TD",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ]
-        },
         "TH": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=TH",
           "flatrate": [
@@ -1555,6 +1656,12 @@
         "TR": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=TR",
           "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            },
             {
               "logo_path": "/gaDNJ1xISHBBq9LQXwwe8PPSRHD.jpg",
               "provider_id": 1826,
@@ -1585,31 +1692,28 @@
             }
           ]
         },
-        "TZ": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=TZ",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ]
-        },
         "US": {
           "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=US",
+          "free": [
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
               "provider_id": 15,
               "provider_name": "Hulu",
-              "display_priority": 8
+              "display_priority": 6
             },
             {
               "logo_path": "/2aGrp1xw3qhwCYvNGAJZPdjfeeX.jpg",
               "provider_id": 386,
               "provider_name": "Peacock Premium",
-              "display_priority": 15
+              "display_priority": 16
             },
             {
               "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
@@ -1618,30 +1722,42 @@
               "display_priority": 36
             },
             {
+              "logo_path": "/6hFf3sIdmXSAczy3i6tLSmy6gwK.jpg",
+              "provider_id": 79,
+              "provider_name": "NBC",
+              "display_priority": 48
+            },
+            {
+              "logo_path": "/A95qgiMz6ulV2SxeKcJ5Gc9pqGS.jpg",
+              "provider_id": 322,
+              "provider_name": "USA Network",
+              "display_priority": 94
+            },
+            {
               "logo_path": "/drPlq5beqXtBaP7MNs8W616YRhm.jpg",
               "provider_id": 387,
               "provider_name": "Peacock Premium Plus",
-              "display_priority": 217
+              "display_priority": 215
             }
           ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
@@ -1650,12 +1766,12 @@
               "display_priority": 35
             }
           ],
-          "free": [
+          "ads": [
             {
-              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
-              "provider_id": 486,
-              "provider_name": "Spectrum On Demand",
-              "display_priority": 121
+              "logo_path": "/6hFf3sIdmXSAczy3i6tLSmy6gwK.jpg",
+              "provider_id": 79,
+              "provider_name": "NBC",
+              "display_priority": 48
             }
           ]
         },
@@ -1680,17 +1796,6 @@
               "display_priority": 0
             }
           ]
-        },
-        "ZW": {
-          "link": "https://www.themoviedb.org/tv/2734-law-order-special-victims-unit/watch?locale=ZW",
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
-            }
-          ]
         }
       }
     },
@@ -1698,19 +1803,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "Server": "openresty",
-      "Cache-Control": "public, max-age=16972",
-      "x-memc": "HIT",
-      "x-memc-key": "0f1b8ac5bab09adde1403f26a1da5c86ba4c8d5601dcc8201c4d8fcad6c44e2a",
       "x-az": "us-east-1a",
-      "ETag": "W/\u00222a7e9f8bc983b37bb7fe87736fa29ece\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "ETag": "W/\u00226a4658252df2de1df398b2c88562224f\u0022",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=21121",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

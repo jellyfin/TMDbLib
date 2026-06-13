@@ -1,6 +1,6 @@
 {
   "Guid": "c67cece0-6f1a-7b4a-80ba-71de2b14b238",
-  "UpdatedAt": "2025-12-24T18:45:18.9517976Z",
+  "UpdatedAt": "2026-05-24T16:19:42.494384Z",
   "Title": "Proxy Mapping for GET /3/find/nm0000246",
   "Description": "Proxy Mapping for GET /3/find/nm0000246",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "external_source",
@@ -42,14 +55,14 @@
           "name": "Bruce Willis",
           "original_name": "Bruce Willis",
           "media_type": "person",
-          "popularity": 5.9637,
+          "popularity": 4.778,
           "gender": 2,
           "known_for_department": "Acting",
           "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/paUKxrbN2ww0JeT2JtvgAuaGlPf.jpg",
+              "backdrop_path": "/6TjllWT3cGrPFyqDXurVZ3L8bBi.jpg",
               "id": 745,
               "title": "The Sixth Sense",
               "original_title": "The Sixth Sense",
@@ -62,19 +75,20 @@
                 53,
                 18
               ],
-              "popularity": 8.4993,
+              "popularity": 10.5147,
               "release_date": "1999-08-06",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.947,
-              "vote_count": 12432
+              "vote_average": 7.952,
+              "vote_count": 12837
             },
             {
               "adult": false,
-              "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
+              "backdrop_path": "/bvk2AAH64lP2YZs02Q3jskfHT8j.jpg",
               "id": 562,
               "title": "Die Hard",
               "original_title": "Die Hard",
-              "overview": "NYPD cop John McClane\u0027s plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her offices Christmas Party, the entire building is overtaken by a group of terrorists. With little help from the LAPD, wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.",
+              "overview": "High above the city of L.A. a team of terrorists has seized a building, taken hostages, and declared war. One man has manages to escape... An off-duty cop hiding somewhere inside. He\u0027s alone, tired... and the only chance anyone has got.",
               "poster_path": "/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
               "media_type": "movie",
               "original_language": "en",
@@ -82,15 +96,16 @@
                 28,
                 53
               ],
-              "popularity": 28.9381,
+              "popularity": 12.5141,
               "release_date": "1988-07-15",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.804,
-              "vote_count": 11857
+              "vote_average": 7.811,
+              "vote_count": 12267
             },
             {
               "adult": false,
-              "backdrop_path": "/dwN0kPGrLbFRxyL3F3J3t4ShQx.jpg",
+              "backdrop_path": "/jW21PoKwqs79wk6bfiYezox63mK.jpg",
               "id": 18,
               "title": "The Fifth Element",
               "original_title": "Le Cinqui\u00E8me \u00C9l\u00E9ment",
@@ -103,11 +118,12 @@
                 28,
                 12
               ],
-              "popularity": 18.6551,
+              "popularity": 14.2532,
               "release_date": "1997-05-02",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.6,
-              "vote_count": 11328
+              "vote_average": 7.573,
+              "vote_count": 11691
             }
           ]
         }
@@ -121,17 +137,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=26144",
-      "x-memc": "MISS, STORE",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=14749",
+      "x-memc": "HIT",
       "x-memc-key": "ebed5563eadcd6e39c63af50f99687cdbf9912846f584f6185f3ea133179aee9",
       "x-az": "us-east-1a",
-      "ETag": "W/\u0022e192240da7a3afa02926093299a7b395\u0022",
+      "ETag": "W/\u00225a922c578dd1a46feaab0e72a28a7927\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -3,6 +3,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Objects.Exceptions;
 using TMDbLib.Rest;
 
 namespace TMDbLib.Client;
@@ -38,14 +39,21 @@ public partial class TMDbClient
         var request = _client.Create("authentication/session/new");
         request.AddParameter("request_token", initialRequestToken);
 
-        using RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
-
-        if (response.StatusCode == HttpStatusCode.Unauthorized)
+        try
         {
-            throw new UnauthorizedAccessException();
-        }
+            using RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
 
-        return await response.GetDataObject().ConfigureAwait(false);
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            return await response.GetDataObject().ConfigureAwait(false);
+        }
+        catch (TMDbAuthenticationException ex)
+        {
+            throw new UnauthorizedAccessException(ex.Message, ex);
+        }
     }
 
     /// <summary>
@@ -106,6 +114,10 @@ public partial class TMDbClient
         {
             response = await request.Get(cancellationToken).ConfigureAwait(false);
         }
+        catch (TMDbAuthenticationException ex)
+        {
+            throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.", ex);
+        }
         catch (AggregateException ex)
         {
             var inner = ex.InnerException;
@@ -123,6 +135,64 @@ public partial class TMDbClient
             {
                 throw new UnauthorizedAccessException("Call to TMDb returned unauthorized. Most likely the provided user credentials are invalid.");
             }
+        }
+    }
+
+    /// <summary>
+    /// Validates the configured TMDb API key against the v3 authentication endpoint.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>True if the API key is valid; otherwise false.</returns>
+    public async Task<bool> AuthenticationValidateApiKeyAsync(CancellationToken cancellationToken = default)
+    {
+        var request = _client.Create("authentication");
+
+        using var response = await request.Get(cancellationToken).ConfigureAwait(false);
+
+        return response.IsValid;
+    }
+
+    /// <summary>
+    /// Deletes a user session (logs the user out).
+    /// </summary>
+    /// <param name="sessionId">The session ID to invalidate.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>True if the session was successfully deleted; otherwise false.</returns>
+    public async Task<bool> AuthenticationDeleteSessionAsync(string sessionId, CancellationToken cancellationToken = default)
+    {
+        var request = _client.Create("authentication/session");
+        request.SetBody(new { session_id = sessionId });
+
+        using var response = await request.Delete(cancellationToken).ConfigureAwait(false);
+
+        return response.IsValid;
+    }
+
+    /// <summary>
+    /// Converts a v4 access token into a v3 session ID.
+    /// </summary>
+    /// <param name="accessToken">A valid TMDb v4 access token.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A user session object containing the resulting v3 session ID.</returns>
+    public async Task<UserSession?> AuthenticationCreateSessionFromV4Async(string accessToken, CancellationToken cancellationToken = default)
+    {
+        var request = _client.Create("authentication/session/convert/4");
+        request.SetBody(new { access_token = accessToken });
+
+        try
+        {
+            using var response = await request.Post<UserSession>(cancellationToken).ConfigureAwait(false);
+
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            return await response.GetDataObject().ConfigureAwait(false);
+        }
+        catch (TMDbAuthenticationException ex)
+        {
+            throw new UnauthorizedAccessException(ex.Message, ex);
         }
     }
 }

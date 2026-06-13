@@ -14,6 +14,12 @@ public class NetworkBase
     public int Id { get; set; }
 
     /// <summary>
+    /// Gets or sets the logo image path of the network.
+    /// </summary>
+    [JsonProperty("logo_path")]
+    public string? LogoPath { get; set; }
+
+    /// <summary>
     /// Gets or sets the name of the network.
     /// </summary>
     [JsonProperty("name")]

@@ -1,6 +1,6 @@
 {
   "Guid": "a74f435c-b04e-be4d-8f67-19190696cf5e",
-  "UpdatedAt": "2025-12-24T18:45:17.4876225Z",
+  "UpdatedAt": "2026-05-24T16:19:44.022774Z",
   "Title": "Proxy Mapping for GET /3/authentication/token/validate_with_login",
   "Description": "Proxy Mapping for GET /3/authentication/token/validate_with_login",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "username",
@@ -53,14 +66,15 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=0",
-      "x-az": "us-east-1b",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "max-age=0, private",
+      "x-az": "us-east-1c",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Error from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

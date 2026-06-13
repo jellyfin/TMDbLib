@@ -1,6 +1,6 @@
 {
   "Guid": "d4e37bfc-95d0-4947-a5ee-d7920d4e19b1",
-  "UpdatedAt": "2025-12-24T18:45:20.4839512Z",
+  "UpdatedAt": "2026-05-24T16:19:42.611468Z",
   "Title": "Proxy Mapping for GET /3/search/collection",
   "Description": "Proxy Mapping for GET /3/search/collection",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -55,18 +68,14 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "6e943c62b1f2b4ab1cc091c23dbc7c5ff8d2ba3947cf0ae99526dc6313ea5a02",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=16727",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=7729",
       "ETag": "W/\u0022d4995adf5698e7c2e796ac86c084aef5\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "x-az": "us-east-1a",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

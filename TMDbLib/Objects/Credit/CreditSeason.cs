@@ -15,6 +15,30 @@ public class CreditSeason
     public DateTime? AirDate { get; set; }
 
     /// <summary>
+    /// Gets or sets the number of episodes in the season.
+    /// </summary>
+    [JsonProperty("episode_count")]
+    public int EpisodeCount { get; set; }
+
+    /// <summary>
+    /// Gets or sets the season identifier.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; set; }
+
+    /// <summary>
+    /// Gets or sets the season name.
+    /// </summary>
+    [JsonProperty("name")]
+    public string? Name { get; set; }
+
+    /// <summary>
+    /// Gets or sets the season overview.
+    /// </summary>
+    [JsonProperty("overview")]
+    public string? Overview { get; set; }
+
+    /// <summary>
     /// Gets or sets the poster path for the season.
     /// </summary>
     [JsonProperty("poster_path")]
@@ -25,4 +49,10 @@ public class CreditSeason
     /// </summary>
     [JsonProperty("season_number")]
     public int SeasonNumber { get; set; }
+
+    /// <summary>
+    /// Gets or sets the parent TV show identifier.
+    /// </summary>
+    [JsonProperty("show_id")]
+    public int ShowId { get; set; }
 }

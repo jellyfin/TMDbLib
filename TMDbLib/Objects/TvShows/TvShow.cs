@@ -143,6 +143,12 @@ public class TvShow
     public List<string>? Languages { get; set; }
 
     /// <summary>
+    /// Gets or sets the lists containing this TV show. Populated when the Lists method is requested.
+    /// </summary>
+    [JsonProperty("lists")]
+    public SearchContainer<Movies.ListResult>? Lists { get; set; }
+
+    /// <summary>
     /// Gets or sets the last air date of the TV show.
     /// </summary>
     [JsonProperty("last_air_date")]
