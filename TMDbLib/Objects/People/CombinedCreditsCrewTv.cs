@@ -1,50 +1,34 @@
-using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using TMDbLib.Objects.General;
+using System.Text.Json.Serialization;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.People;
 
 /// <summary>
-/// Represents a TV show crew credit for a person.
+/// TV crew credit for a person.
 /// </summary>
-public class CombinedCreditsCrewTv : CombinedCreditsCrewBase
+public class CombinedCreditsCrewTv : TmdbTvSummary, ICrewCredit, ITvCreditExtras
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="CombinedCreditsCrewTv"/> class.
+    /// Gets or sets the credit id.
     /// </summary>
-    public CombinedCreditsCrewTv()
-    {
-        MediaType = MediaType.Tv;
-    }
+    [JsonPropertyName("credit_id")]
+    public string? CreditId { get; set; }
 
     /// <summary>
-    /// Gets or sets the TV show name.
+    /// Gets or sets the crew department.
     /// </summary>
-    [JsonProperty("name")]
-    public string? Name { get; set; }
+    [JsonPropertyName("department")]
+    public string? Department { get; set; }
 
     /// <summary>
-    /// Gets or sets the original TV show name.
+    /// Gets or sets the number of episodes the person worked on.
     /// </summary>
-    [JsonProperty("original_name")]
-    public string? OriginalName { get; set; }
-
-    /// <summary>
-    /// Gets or sets the first air date.
-    /// </summary>
-    [JsonProperty("first_air_date")]
-    public DateTime? FirstAirDate { get; set; }
-
-    /// <summary>
-    /// Gets or sets the origin country codes.
-    /// </summary>
-    [JsonProperty("origin_country")]
-    public List<string>? OriginCountry { get; set; }
-
-    /// <summary>
-    /// Gets or sets the number of episodes.
-    /// </summary>
-    [JsonProperty("episode_count")]
+    [JsonPropertyName("episode_count")]
     public int EpisodeCount { get; set; }
+
+    /// <summary>
+    /// Gets or sets the job title.
+    /// </summary>
+    [JsonPropertyName("job")]
+    public string? Job { get; set; }
 }

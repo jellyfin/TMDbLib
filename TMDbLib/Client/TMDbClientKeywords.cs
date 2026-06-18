@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
@@ -10,11 +10,11 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieves a keyword by its TMDb ID.
+    /// Gets a keyword by id.
     /// </summary>
-    /// <param name="keywordId">The TMDb ID of the keyword.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>The keyword object with ID and name.</returns>
+    /// <param name="keywordId">The TMDb id of the keyword.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The keyword.</returns>
     public async Task<Keyword?> GetKeywordAsync(int keywordId, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("keyword/{keywordId}");
@@ -26,26 +26,28 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a paginated list of movies tagged with a specific keyword.
+    /// Gets the movies tagged with a keyword.
     /// </summary>
-    /// <param name="keywordId">The TMDb ID of the keyword.</param>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with movies tagged with the specified keyword.</returns>
-    public async Task<SearchContainerWithId<SearchMovie>?> GetKeywordMoviesAsync(int keywordId, int page = 0, CancellationToken cancellationToken = default)
+    /// <param name="keywordId">The TMDb id of the keyword.</param>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="includeAdult">Whether to include adult movies.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The movies tagged with the keyword.</returns>
+    public async Task<SearchContainerWithId<SearchMovie>?> GetKeywordMoviesAsync(int keywordId, int page = 0, bool includeAdult = false, CancellationToken cancellationToken = default)
     {
-        return await GetKeywordMoviesAsync(keywordId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
+        return await GetKeywordMoviesAsync(keywordId, DefaultLanguage, page, includeAdult, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves a paginated list of movies tagged with a specific keyword with language option.
+    /// Gets the movies tagged with a keyword in a specific language.
     /// </summary>
-    /// <param name="keywordId">The TMDb ID of the keyword.</param>
-    /// <param name="language">The ISO 639-1 language code for movie text. Defaults to the client's DefaultLanguage.</param>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with movies tagged with the specified keyword.</returns>
-    public async Task<SearchContainerWithId<SearchMovie>?> GetKeywordMoviesAsync(int keywordId, string? language, int page = 0, CancellationToken cancellationToken = default)
+    /// <param name="keywordId">The TMDb id of the keyword.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="includeAdult">Whether to include adult movies.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The movies tagged with the keyword.</returns>
+    public async Task<SearchContainerWithId<SearchMovie>?> GetKeywordMoviesAsync(int keywordId, string? language, int page = 0, bool includeAdult = false, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("keyword/{keywordId}/movies");
         req.AddUrlSegment("keywordId", keywordId.ToString(CultureInfo.InvariantCulture));
@@ -60,6 +62,8 @@ public partial class TMDbClient
         {
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
+
+        req.AddParameter("include_adult", includeAdult ? "true" : "false");
 
         var resp = await req.GetOfT<SearchContainerWithId<SearchMovie>>(cancellationToken).ConfigureAwait(false);
 

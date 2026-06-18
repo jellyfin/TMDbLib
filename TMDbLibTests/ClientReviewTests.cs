@@ -1,9 +1,8 @@
-﻿using System.Threading.Tasks;
-using Xunit;
-using TMDbLib.Objects.Reviews;
+using System.Globalization;
+using System.Threading.Tasks;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
-using System.Globalization;
+using Xunit;
 
 namespace TMDbLibTests;
 
@@ -18,7 +17,7 @@ public class ClientReviewTests : TestBase
     [Fact]
     public async Task TestReviewFullDetails()
     {
-        var review = await TMDbClient.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId);
+        var review = await TMDbClient.GetReviewAsync(IdHelper.TheDarkKnightRisesReviewId, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(review);
     }
@@ -29,7 +28,7 @@ public class ClientReviewTests : TestBase
     [Fact]
     public async Task TestReviewMissing()
     {
-        var review = await TMDbClient.GetReviewAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
+        var review = await TMDbClient.GetReviewAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture), cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Null(review);
     }

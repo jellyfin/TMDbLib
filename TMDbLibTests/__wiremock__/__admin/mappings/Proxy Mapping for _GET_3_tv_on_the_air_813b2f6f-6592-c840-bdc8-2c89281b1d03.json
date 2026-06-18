@@ -1,6 +1,6 @@
 {
   "Guid": "813b2f6f-6592-c840-bdc8-2c89281b1d03",
-  "UpdatedAt": "2025-12-24T18:45:18.4152543Z",
+  "UpdatedAt": "2026-06-13T13:30:13.46735Z",
   "Title": "Proxy Mapping for GET /3/tv/on_the_air",
   "Description": "Proxy Mapping for GET /3/tv/on_the_air",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -38,90 +51,145 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/vyC7bYAd3lPHeg47VDz4iZ97wRP.jpg",
+          "backdrop_path": "/dz7p0quExY3L8R4aPj2QJUVhp74.jpg",
           "genre_ids": [
-            35,
-            18
+            18,
+            80
           ],
-          "id": 281009,
+          "id": 277439,
           "origin_country": [
-            "PH"
+            "US"
           ],
-          "original_language": "tl",
-          "original_name": "Ang Mutya ng Section E",
-          "overview": "Jay-jay, the only girl in the mischievous Section E, hopes for a fresh start in high school but quickly becomes the target of her rowdy male classmates\u0027 pranks and schemes to make her leave. Dubbed their \u0022Mutya\u0022 (muse), she fights back with wit and charm, turning the tables on her tormentors. Amidst the chaos, unexpected friendships blossom, and hilarious misunderstandings lead to heart-fluttering moments. Can Jay-jay survive the madness of Section E, or will she win over their hearts instead?",
-          "popularity": 37.597,
-          "poster_path": "/2wBlN0pC9U1LWmLNTdOuR76NSHe.jpg",
-          "first_air_date": "2025-01-03",
-          "name": "The Jewel of Section E",
-          "vote_average": 8.3,
-          "vote_count": 77
+          "original_language": "en",
+          "original_name": "Cape Fear",
+          "overview": "When convicted murderer Max Cady is released from prison, he begins infiltrating the family of the married attorneys who helped put him behind bars.",
+          "popularity": 77.1655,
+          "poster_path": "/2zOhbDmelY5WidqqdhEaVfOcEMp.jpg",
+          "first_air_date": "2026-06-04",
+          "softcore": false,
+          "name": "Cape Fear",
+          "vote_average": 6.2,
+          "vote_count": 30
         },
         {
           "adult": false,
-          "backdrop_path": "/Apo2p8VlZKtuhysk5F31A8cpvNt.jpg",
+          "backdrop_path": "/9y6yZz4fTBvQLYEBeDP8O9e6VBe.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 79481,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u6597\u7834\u82CD\u7A79",
+          "overview": "In a land where no magic is present. A land where the strong make the rules and weak have to obey. A land filled with alluring treasures and beauty, yet also filled with unforeseen danger. Three years ago, Xiao Yan, who had shown talents none had seen in decades, suddenly lost everything. His powers, his reputation, and his promise to his mother. What sorcery has caused him to lose all of his powers? And why has his fiancee suddenly shown up?",
+          "popularity": 79.0518,
+          "poster_path": "/a9bJPlezCXF6u0siDxf7cZaSXaJ.jpg",
+          "first_air_date": "2017-01-07",
+          "softcore": false,
+          "name": "Fights Break Sphere",
+          "vote_average": 8.2,
+          "vote_count": 57
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/x6y59dJBE1o0r4YRsWVQXE2nnlB.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765,
+            18,
+            9648
+          ],
+          "id": 65942,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "Re:\u30BC\u30ED\u304B\u3089\u59CB\u3081\u308B\u7570\u4E16\u754C\u751F\u6D3B",
+          "overview": "Natsuki Subaru, an ordinary high school  student, is on his way home from the convenience store when he finds  himself transported to another world. As he\u0027s lost and confused in a new  world where he doesn\u0027t even know left from right, the only person to  reach out to him was a beautiful girl with silver hair. Determined to  repay her somehow for saving him from his own despair, Subaru agrees to  help the girl find something she\u0027s looking for.",
+          "popularity": 85.4516,
+          "poster_path": "/aRwmcX36r1ZpR5Xq5mmFcpUDQ8J.jpg",
+          "first_air_date": "2016-04-04",
+          "softcore": false,
+          "name": "Re:ZERO -Starting Life in Another World-",
+          "vote_average": 7.9,
+          "vote_count": 649
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yx0sfeYOoXol2fjT22SXo9YyviI.jpg",
+          "genre_ids": [
+            18,
+            9648,
+            35
+          ],
+          "id": 270476,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Widow\u0027s Bay",
+          "overview": "The mayor of a New England town resolves to turn it into the next tourist hot spot, despite local warnings that it\u0027s cursed.",
+          "popularity": 76.2118,
+          "poster_path": "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg",
+          "first_air_date": "2026-04-28",
+          "softcore": false,
+          "name": "Widow\u0027s Bay",
+          "vote_average": 8.3,
+          "vote_count": 132
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vPVdWiLUNQyaGMazyZGVAyRcYBG.jpg",
+          "genre_ids": [
+            16,
+            35,
+            18,
+            10765
+          ],
+          "id": 261145,
+          "origin_country": [
+            "AU"
+          ],
+          "original_language": "en",
+          "original_name": "The Amazing Digital Circus",
+          "overview": "A woman finds herself trapped in a virtual circus where she and five other humans are subject to the whims of a wacky AI ringmaster. In this digital purgatory they must face frightening NPCs and cope with their own personal traumas.",
+          "popularity": 69.1439,
+          "poster_path": "/lpfrgfomX8uNFxv4VaEzvJGs9TK.jpg",
+          "first_air_date": "2023-10-13",
+          "softcore": false,
+          "name": "The Amazing Digital Circus",
+          "vote_average": 8.571,
+          "vote_count": 245
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sih377ne4tNY0MLSvNuHBfxeVKg.jpg",
           "genre_ids": [
             10764
           ],
-          "id": 245684,
+          "id": 112732,
           "origin_country": [
-            "KR"
+            "CN"
           ],
-          "original_language": "ko",
-          "original_name": "\uD751\uBC31\uC694\uB9AC\uC0AC: \uC694\uB9AC \uACC4\uAE09 \uC804\uC7C1",
-          "overview": "Eighty \u0022Black Spoon\u0022 underdog cooks with a knack for flavor face 20 elite \u0022White Spoon\u0022 chefs in a fierce cooking showdown among 100 contenders.",
-          "popularity": 37.2838,
-          "poster_path": "/dYMFQfzIJwCYAHwf3ZjiL2iVFIy.jpg",
-          "first_air_date": "2024-09-17",
-          "name": "Culinary Class Wars",
-          "vote_average": 8.5,
-          "vote_count": 52
+          "original_language": "zh",
+          "original_name": "\u54C8\u54C8\u54C8\u54C8\u54C8",
+          "overview": "Road-type outdoor reality show. The five-kazakhstan tour group takes time out of the busy and trivial daily life to embark on a journey from east to west across China.",
+          "popularity": 68.2661,
+          "poster_path": "/wynP4QFfZNYHW0ETAbKVY9UjSbF.jpg",
+          "first_air_date": "2020-11-06",
+          "softcore": false,
+          "name": "HaHaHaHaHa",
+          "vote_average": 7.0,
+          "vote_count": 7
         },
         {
           "adult": false,
-          "backdrop_path": "/cTFQKu8CLftXHUCIBGksfL8uhf3.jpg",
-          "genre_ids": [
-            18,
-            35
-          ],
-          "id": 281013,
-          "origin_country": [
-            "KR"
-          ],
-          "original_language": "ko",
-          "original_name": "\uD0A4\uC2A4\uB294 \uAD1C\uD788 \uD574\uC11C!",
-          "overview": "A passionate fling in Jeju ends abruptly \u2014 until fate reunites an heir and a young woman when she joins his company, disguised as a married mother.",
-          "popularity": 36.3926,
-          "poster_path": "/qY3ltlWUB7u3ENocrMOkbGCGYnt.jpg",
-          "first_air_date": "2025-11-12",
-          "name": "Dynamite Kiss",
-          "vote_average": 8.571,
-          "vote_count": 28
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/bJxf4Y8UKOBsWoE3gB6N0hfB04G.jpg",
-          "genre_ids": [
-            10768,
-            18
-          ],
-          "id": 246621,
-          "origin_country": [
-            "TR"
-          ],
-          "original_language": "tr",
-          "original_name": "Mehmed: Fetihler Sultan\u0131",
-          "overview": "The project, which will follow the story on the life of one of the most important rulers in Ottoman history, Fatih Sultan Mehmed, will also feature important stages of the life of Ey\u00FCp el Ensari, an important figure in the Islamic world, in parallel with Fatih\u0027s life.",
-          "popularity": 36.0231,
-          "poster_path": "/A8fHgHmcEQU1UcOcXhW3NXtwwcZ.jpg",
-          "first_air_date": "2024-02-27",
-          "name": "Mehmed: Sultan of Conquests",
-          "vote_average": 8.286,
-          "vote_count": 14
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/oVfucXvhutTpYExG9k06NJqnpT9.jpg",
+          "backdrop_path": "/2rmK7mnchw9Xr3XdiTFSxTTLXqv.jpg",
           "genre_ids": [
             10759,
             35,
@@ -134,164 +202,35 @@
           "original_language": "ja",
           "original_name": "\u30EF\u30F3\u30D4\u30FC\u30B9",
           "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \u0022One Piece\u0022 behind. Whoever claims the \u0022One Piece\u0022 will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \u0022Devil Fruit,\u0022 decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he\u0027s surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
-          "popularity": 35.48,
-          "poster_path": "/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg",
+          "popularity": 56.3183,
+          "poster_path": "/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg",
           "first_air_date": "1999-10-20",
+          "softcore": false,
           "name": "One Piece",
-          "vote_average": 8.718,
-          "vote_count": 5075
+          "vote_average": 8.738,
+          "vote_count": 5342
         },
         {
           "adult": false,
-          "backdrop_path": "/Q7AZOhmO9NGO6WRzu0uKh2dbWO.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10759,
-            10765
-          ],
-          "id": 98123,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u4ED9\u738B\u7684\u65E5\u5E38\u751F\u6D3B",
-          "overview": "As a cultivation genius who has achieved a new realm every two years since he was a year old, Wang Ling is a near-invincible existence with prowess far beyond his control. But now that he\u2019s sixteen, he faces his greatest battle yet \u2013 Senior High School. With one challenge after another popping up, his plans for a low-key high school life seem further and further away\u2026",
-          "popularity": 35.2972,
-          "poster_path": "/7By0jV3kf9MVvv3X3K8u4mhRUwp.jpg",
-          "first_air_date": "2020-01-18",
-          "name": "The Daily Life of the Immortal King",
-          "vote_average": 8.348,
-          "vote_count": 684
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/khHpr9W9cZ7mlQGvabC2IeG69pg.jpg",
-          "genre_ids": [
-            18,
-            9648
-          ],
-          "id": 254482,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u957F\u5B89\u4E8C\u5341\u56DB\u8BA1",
-          "overview": "Xie Huai\u0027an, son of the Huben Army\u0027s creator, survives his family\u0027s massacre. After ten long years in hiding, he returns to Chang\u0027an disguised as a lowly registrar, moving step by step through jianghu clashes and palace power plays in a tense battle of wits to avenge his family and safeguard the realm.",
-          "popularity": 33.252,
-          "poster_path": "/vMwB4BNicfWJl0JhU7YQApcoiHE.jpg",
-          "first_air_date": "2025-12-12",
-          "name": "The Vendetta of An",
-          "vote_average": 7.8,
-          "vote_count": 5
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/5UNcEz7Lc3OGilpPn1Tb9cd1xsc.jpg",
+          "backdrop_path": "/njEGYHyq58q94ZPJlSGs6bGrepv.jpg",
           "genre_ids": [
             35,
             10767
           ],
-          "id": 1220,
+          "id": 4419,
           "origin_country": [
-            "GB"
+            "US"
           ],
           "original_language": "en",
-          "original_name": "The Graham Norton Show",
-          "overview": "Each week celebrity guests join Irish comedian\u00A0Graham Norton to discuss what\u0027s being going on around the world that week. The guests poke fun and share their opinions on the main news stories. Graham is often joined by a band or artist to play the show out.",
-          "popularity": 33.2154,
-          "poster_path": "/vrbqaBXB8AALynQzpWz6JdCPEJS.jpg",
-          "first_air_date": "2007-02-22",
-          "name": "The Graham Norton Show",
-          "vote_average": 7.2,
-          "vote_count": 274
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/qrlfF3usm2FZCMvCg2uas8CazxW.jpg",
-          "genre_ids": [
-            10759,
-            80,
-            18
-          ],
-          "id": 119769,
-          "origin_country": [
-            "KR"
-          ],
-          "original_language": "ko",
-          "original_name": "\uBAA8\uBC94\uD0DD\uC2DC",
-          "overview": "A former special forces soldier delivers revenge for victims of injustice while working for a secret organization that fronts as a taxi company.",
-          "popularity": 33.1607,
-          "poster_path": "/lghfb8beej1aH9ML8QyeSixniom.jpg",
-          "first_air_date": "2021-04-09",
-          "name": "Taxi Driver",
-          "vote_average": 8.196,
-          "vote_count": 156
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/47cdJm6WGJqCsdE6QvPh6fLKwuo.jpg",
-          "genre_ids": [
-            16,
-            10759,
-            10765
-          ],
-          "id": 213402,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u3068\u3093\u3067\u3082\u30B9\u30AD\u30EB\u3067\u7570\u4E16\u754C\u653E\u6D6A\u30E1\u30B7",
-          "overview": "Tsuyoshi Mukohda, an ordinary salaryman, is suddenly transported to another world one day. The unique skill he gains upon arrival in this world is the seemingly useless \u0022Online Grocery.\u0022 Mukohda is discouraged at first, but the modern foods he\u0027s able to bring to his new world using this skill prove to have some unbelievable effects!",
-          "popularity": 32.232,
-          "poster_path": "/cXc3yiQ5RrimzfucovjO83RTrnq.jpg",
-          "first_air_date": "2023-01-11",
-          "name": "Campfire Cooking in Another World with My Absurd Skill",
-          "vote_average": 8.3,
-          "vote_count": 265
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9R3tyMeAEvY53Da6fVguBEVlfxE.jpg",
-          "genre_ids": [
-            10759,
-            16,
-            18,
-            10765
-          ],
-          "id": 223911,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u4ED9\u9006",
-          "overview": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength.",
-          "popularity": 31.3955,
-          "poster_path": "/6AVM12M6UunFmX0bSmP2o4N5Bnt.jpg",
-          "first_air_date": "2023-09-25",
-          "name": "Renegade Immortal",
-          "vote_average": 8.6,
-          "vote_count": 25
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/gTPfMUXFIgG6HZeR5hif2fvGzOv.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 271548,
-          "origin_country": [
-            "TR"
-          ],
-          "original_language": "tr",
-          "original_name": "Sahipsizler",
-          "overview": "A story of six siblings\u2014Azize, Cemo, Zeliha, Fidan, Samet, and Bal\u0131m\u2014who, after suddenly losing their parents, struggle to stay united and survive. The roots of their tragedy trace back to their parents, Bala and R\u0131fat, whose forbidden love began in a village in Mardin. R\u0131fat, a teacher, falls in love with Bala, but Yavuz, the wealthy and obsessive son of Mardin\u2019s richest family, kidnaps her. Despite his abuse, Bala escapes with R\u0131fat, and they build a secluded life in the forest, raising six children in peace. However, Yavuz\u2019s revenge shatters their world when he finds and attacks them. Fleeing to Istanbul, the siblings face the dangers of the city while seeking refuge with \u201CUncle Aslan,\u201D their father\u2019s trusted friend. The story highlights resilience, as the older siblings are forced to grow up quickly to protect their younger brothers and sisters in the face of overwhelming challenges.",
-          "popularity": 31.3484,
-          "poster_path": "/l0g0CAq7VjoKslVE9JZZQFMI9Tt.jpg",
-          "first_air_date": "2024-11-13",
-          "name": "6 of Us",
-          "vote_average": 5.5,
-          "vote_count": 2
+          "original_name": "Real Time with Bill Maher",
+          "overview": "Each week Bill Maher surrounds himself with a panel of guests which include politicians, actors, comedians, musicians and the like to discuss what\u0027s going on in the world.",
+          "popularity": 59.454,
+          "poster_path": "/pbpoLLp4kvnYVfnEGiEhagpJuVZ.jpg",
+          "first_air_date": "2003-02-21",
+          "softcore": false,
+          "name": "Real Time with Bill Maher",
+          "vote_average": 6.048,
+          "vote_count": 239
         },
         {
           "adult": false,
@@ -306,12 +245,13 @@
           "original_language": "af",
           "original_name": "Binnelanders",
           "overview": "A South African Afrikaans soap opera. It is set in and around the fictional private hospital, Binneland Kliniek, in Pretoria, and the storyline follows the trials, trauma and tribulations of the staff and patients of the hospital.",
-          "popularity": 31.1288,
+          "popularity": 60.2552,
           "poster_path": "/3bzECfllho8PphdYujLUIuhncJD.jpg",
           "first_air_date": "2005-10-13",
+          "softcore": false,
           "name": "Binnelanders",
-          "vote_average": 5.528,
-          "vote_count": 106
+          "vote_average": 5.532,
+          "vote_count": 111
         },
         {
           "adult": false,
@@ -328,35 +268,167 @@
           "original_language": "zh",
           "original_name": "\u51E1\u4EBA\u4FEE\u4ED9\u4F20",
           "overview": "A poor and ordinary boy from a village joins a minor sect in Jiang Hu and becomes an Unofficial Disciple by chance. How will Han Li, a commoner by birth, establish a foothold for himself in his sect? With his mediocre aptitude, he must successfully traverse the treacherous path of cultivation and avoid the notice of those who may do him harm. This is a story of an ordinary mortal who, against all odds, clashes with devilish demons and ancient celestials in order to find his own path towards immortality.",
-          "popularity": 30.0282,
+          "popularity": 58.7323,
           "poster_path": "/i6SYuRHPtODpZ8VX9ql21nj0tDq.jpg",
           "first_air_date": "2020-07-25",
+          "softcore": false,
           "name": "A Record of a Mortal\u0027s Journey to Immortality",
           "vote_average": 8.4,
-          "vote_count": 70
+          "vote_count": 76
         },
         {
           "adult": false,
-          "backdrop_path": "/lUrtMjiunomHPDC2sQNIxswbmdU.jpg",
+          "backdrop_path": "/i50h4Gz6e9BMGak5l6gg5qfIjcv.jpg",
+          "genre_ids": [
+            10764,
+            35
+          ],
+          "id": 117648,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Clarkson\u0027s Farm",
+          "overview": "Follow Jeremy Clarkson as he embarks on his latest adventure, farming. The man who on several occasions claims to be allergic to manual labour takes on the most manually labour intensive job there is. What could possibly go wrong?",
+          "popularity": 63.3688,
+          "poster_path": "/toVhyqMT3ICfahE7Ad8obJvZHpX.jpg",
+          "first_air_date": "2021-06-11",
+          "softcore": false,
+          "name": "Clarkson\u0027s Farm",
+          "vote_average": 8.5,
+          "vote_count": 412
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pvOI0jUuBVigqNTXClGGhIK2dSk.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 154770,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u4F60\u597D\uFF0C\u661F\u671F\u516D",
+          "overview": "\u0022Hello, Saturday\u0022 is the rebranding of the popular Chinese show \u0022Happy Camp\u0022, hosted by He Jiong and with a fixed group of regular celebrity members.\n\nThe program showcases the talent of various stars as well as social topics through creative and diverse content and games. It aims to spread positive energy while keeping up with the current trends and leading youth culture.",
+          "popularity": 52.0826,
+          "poster_path": "/wsTjWy6NE2s3h0neChr0D92ddwI.jpg",
+          "first_air_date": "2022-01-01",
+          "softcore": false,
+          "name": "Hello Saturday",
+          "vote_average": 6.4,
+          "vote_count": 10
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lDVOl7wTFUIqwlSrWsGjBCHt3fQ.jpg",
+          "genre_ids": [
+            16,
+            10765,
+            10759
+          ],
+          "id": 101172,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u541E\u566C\u661F\u7A7A",
+          "overview": "On the Earth, a catastrophe triggered the variation of all kinds of species. The superior survived and the inferior were extinct. Under this circumstance, Luo Feng inherited from the owner of Yunmo Star and became one of the three strongest people on the Earth. He lost his flesh during the fight against giant swallowed monster but then he took the flesh of the monster. In the flesh, he developed a human body. Later, he stepped out of the Earth and headed to the universe.",
+          "popularity": 49.699,
+          "poster_path": "/3iPt9bIPNYmhqQ3BVU4plRkkDbf.jpg",
+          "first_air_date": "2020-11-29",
+          "softcore": false,
+          "name": "Swallowed Star",
+          "vote_average": 8.5,
+          "vote_count": 33
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iw1knpC8Jg5davMn2MPxNVxBF8N.jpg",
           "genre_ids": [
             18,
-            80
+            10765
           ],
-          "id": 3034,
+          "id": 323411,
           "origin_country": [
-            "AT",
-            "DE",
-            "CH"
+            "US"
           ],
-          "original_language": "de",
-          "original_name": "Tatort",
-          "overview": "Tatort is a long-running German/Austrian/Swiss, crime television series set in various parts of these countries. The show is broadcast on the channels of ARD in Germany, ORF in Austria and SF1 in Switzerland.",
-          "popularity": 28.8815,
-          "poster_path": "/yh43TKi9himQWhzrlWBxV8WjsFn.jpg",
-          "first_air_date": "1970-11-29",
-          "name": "Scene of the Crime",
-          "vote_average": 6.106,
-          "vote_count": 118
+          "original_language": "en",
+          "original_name": "The Vampire Lestat",
+          "overview": "The Vampire Lestat goes on tour while being haunted by \u0022muses\u0022 from his past. As the band\u0027s popularity grows, so does Lestat\u0027s influence over vampires \u0026 humans alike, leaving others to contend with Lestat\u0027s power in the face of the Great Conversion.",
+          "popularity": 50.1296,
+          "poster_path": "/ohQgJV4CXDjCi3MMtobj2qlMQ0G.jpg",
+          "first_air_date": "2026-06-07",
+          "softcore": false,
+          "name": "The Vampire Lestat",
+          "vote_average": 6.3,
+          "vote_count": 15
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5APjn4LnV5wWk5DXq7ZewT6zzP1.jpg",
+          "genre_ids": [
+            10766
+          ],
+          "id": 291,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Coronation Street",
+          "overview": "The residents of Coronation Street are ordinary, working-class people, and the show follows them through regular social and family interactions at home, in the workplace, and in their local pub, the Rovers Return Inn. Britain\u0027s longest-running soap.",
+          "popularity": 56.7697,
+          "poster_path": "/5x1HXqYqPyYw7oc7Isu1lvVmwRP.jpg",
+          "first_air_date": "1960-12-09",
+          "softcore": false,
+          "name": "Coronation Street",
+          "vote_average": 5.4,
+          "vote_count": 116
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/m5AiGZT678lFmGAnBJUn4GqjGIu.jpg",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "id": 315038,
+          "origin_country": [
+            "IN"
+          ],
+          "original_language": "ta",
+          "original_name": "\u0BB0\u0BBF\u0B9A\u0BBE\u0BB0\u0BCD\u0B9F\u0BCD",
+          "overview": "A debt-ridden room service boy rises to challenge a ruthless kitchen at a luxurious beachside haven.",
+          "popularity": 51.9904,
+          "poster_path": "/cL7iOwqapRRb7eKKlXI4FDaP6rh.jpg",
+          "first_air_date": "2026-03-13",
+          "softcore": false,
+          "name": "Resort",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/p1ntnKJwn1URGv1xpU6NN33Y11O.jpg",
+          "genre_ids": [
+            18,
+            35,
+            10765
+          ],
+          "id": 303143,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uBA4B\uC9C4 \uC2E0\uC138\uACC4",
+          "overview": "A legendary Joseon villainess reincarnated in a modern actress\u2019s body clashes with a cold-blooded chaebol heir, sparking a chaotic love-hate romance across centuries.",
+          "popularity": 61.2475,
+          "poster_path": "/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg",
+          "first_air_date": "2026-05-08",
+          "softcore": false,
+          "name": "My Royal Nemesis",
+          "vote_average": 8.846,
+          "vote_count": 26
         },
         {
           "adult": false,
@@ -374,121 +446,76 @@
           "original_language": "ja",
           "original_name": "\u540D\u63A2\u5075\u30B3\u30CA\u30F3",
           "overview": "The son of a world famous mystery writer, Jimmy Kudo, has achieved his own notoriety by assisting the local police as a student detective. He has always been able to solve the most difficult of criminal cases using his wits and power of reason.",
-          "popularity": 28.8457,
-          "poster_path": "/ibd5jpPu2oxup9ecU8xvwlRZF0O.jpg",
+          "popularity": 39.1729,
+          "poster_path": "/rRIEFvHRy01OYzmXQBbGeW0Qilc.jpg",
           "first_air_date": "1996-01-08",
+          "softcore": false,
           "name": "Detective Conan",
-          "vote_average": 8.0,
-          "vote_count": 726
+          "vote_average": 8.013,
+          "vote_count": 756
         },
         {
           "adult": false,
-          "backdrop_path": "/AieLCY0071RFhSSYPRjzbkL0Wnn.jpg",
+          "backdrop_path": "/bBf0jhFPf1W9VKWLRNOP5EzDSea.jpg",
           "genre_ids": [
-            10768,
             18,
-            10759
+            35
           ],
-          "id": 119806,
+          "id": 317883,
           "origin_country": [
             "TR"
           ],
           "original_language": "tr",
-          "original_name": "Te\u015Fkilat",
-          "overview": "National Intelligence Organization members are always ready to serve to destroy the enemies of T\u00FCrkiye.",
-          "popularity": 27.8142,
-          "poster_path": "/jJ7kZ2KK8VlXCeFRluqSuFzbL3z.jpg",
-          "first_air_date": "2021-03-07",
-          "name": "The Shadow Team",
-          "vote_average": 7.2,
-          "vote_count": 30
+          "original_name": "Daha 17",
+          "overview": "After losing his family as a child, Aras comes to Bodrum searching for his missing brother. But his life changes when he clashes with the powerful Akkaya family and falls for Leyla, the sister of his greatest enemy. As buried secrets emerge, Aras discovers that finding his brother is only the beginning.",
+          "popularity": 45.8801,
+          "poster_path": "/erd75Gon5bXL38kngnH6DCrOUj2.jpg",
+          "first_air_date": "2026-05-31",
+          "softcore": false,
+          "name": "Torn Apart",
+          "vote_average": 6.0,
+          "vote_count": 5
         },
         {
           "adult": false,
-          "backdrop_path": "/a8a8z4aJr40zYgRMfmSESppX2eO.jpg",
+          "backdrop_path": "/vMIlGA4HJnJekSboqk4ap0lz2Sd.jpg",
           "genre_ids": [
-            10764,
-            35
+            10759,
+            10765,
+            16
           ],
-          "id": 70672,
+          "id": 124003,
           "origin_country": [
-            "KR"
+            "CN"
           ],
-          "original_language": "ko",
-          "original_name": "\uC544\uB294 \uD615\uB2D8",
-          "overview": "Male celebs play make-believe as high schoolers, welcoming star transfer students every week and engaging in battles of witty humor and slapstick.",
-          "popularity": 26.9283,
-          "poster_path": "/2jIi55JtYKJTL1km8qHMuUilOWo.jpg",
-          "first_air_date": "2015-12-05",
-          "name": "Men on a Mission",
-          "vote_average": 7.512,
-          "vote_count": 41
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/mbSSCIbNpeyNJqKAKkWgdvYsQ8F.jpg",
-          "genre_ids": [
-            18,
-            9648,
-            10766
-          ],
-          "id": 212907,
-          "origin_country": [
-            "ES"
-          ],
-          "original_language": "es",
-          "original_name": "La promesa",
-          "overview": "In 1913 Spain, a woman gets a job at the palace of La Promesa as a reward for saving the marquesses\u0027 son - but nobody knows that she has her own plans, which involve avenging her mother\u0027s death and finding her missing brother.",
-          "popularity": 26.2137,
-          "poster_path": "/y656ZhHU2Hh3bmC5vBtMa2vKpUM.jpg",
-          "first_air_date": "2023-01-12",
-          "name": "La promesa",
-          "vote_average": 7.7,
-          "vote_count": 68
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/k7h9p81H6X6TGV70TgOp4TmjXco.jpg",
-          "genre_ids": [
-            16,
-            9648,
-            10759
-          ],
-          "id": 253811,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u6843\u6E90\u6697\u9B3C",
-          "overview": "After a Momotaro assassin suddenly kills his adoptive father, Shiki vows to avenge him. But first, he must learn to control his newly awakened Oni blood.",
-          "popularity": 26.0817,
-          "poster_path": "/vnasRNhwT5M3OvTAMzYn4i5fQcT.jpg",
-          "first_air_date": "2025-07-11",
-          "name": "Tougen Anki",
-          "vote_average": 8.082,
-          "vote_count": 56
+          "original_language": "zh",
+          "original_name": "\u5B8C\u7F8E\u4E16\u754C",
+          "overview": "Born into a unique world where villages fight to gain power and control, the main character, Shi Hao, is a genius blessed by the heavens born under the poorest of conditions. His clan, however, has a mysterious past. To rise up and become the genius he is meant to be, the clan goes through every effort to aid his cultivation as they battle through fanatical monsters and engage in power struggles with other clans. His journey will bring him through unknown lands until he is able to become a person that can truly shake the world.",
+          "popularity": 38.8079,
+          "poster_path": "/qy60bm9admmgpkmcPeW4BvRjjVm.jpg",
+          "first_air_date": "2021-04-23",
+          "softcore": false,
+          "name": "Perfect World",
+          "vote_average": 8.417,
+          "vote_count": 24
         }
       ],
-      "total_pages": 48,
-      "total_results": 942
+      "total_pages": 52,
+      "total_results": 1037
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=14559",
+      "x-az": "us-east-1a",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=21461",
-      "x-memc": "HIT",
-      "x-memc-key": "9cca27469fe531fac2f4028743b4980df5559d72ae6b0646a7d021e644fb283f",
-      "x-az": "us-east-1b",
-      "ETag": "W/\u0022af85801a061b8d3a55e5afa1a71c47f5\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022016ef5bdd604f7d7f37cef4948edbf34\u0022",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

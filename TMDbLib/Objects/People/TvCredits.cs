@@ -1,28 +1,28 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.People;
 
 /// <summary>
-/// Represents TV credits for a person, including cast and crew roles.
+/// TV credits for a person.
 /// </summary>
 public class TvCredits
 {
     /// <summary>
-    /// Gets or sets the list of TV cast roles.
+    /// Gets or sets the cast roles.
     /// </summary>
-    [JsonProperty("cast")]
-    public List<TvRole>? Cast { get; set; }
+    [JsonPropertyName("cast")]
+    public List<CombinedCreditsCastTv>? Cast { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of TV crew jobs.
+    /// Gets or sets the crew jobs.
     /// </summary>
-    [JsonProperty("crew")]
-    public List<TvJob>? Crew { get; set; }
+    [JsonPropertyName("crew")]
+    public List<CombinedCreditsCrewTv>? Crew { get; set; }
 
     /// <summary>
-    /// Gets or sets the person ID.
+    /// Gets or sets the person id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

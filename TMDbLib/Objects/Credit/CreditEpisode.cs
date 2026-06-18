@@ -1,46 +1,46 @@
-﻿using System;
-using Newtonsoft.Json;
+using System;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Credit;
 
 /// <summary>
-/// Represents a TV show episode in a credit context.
+/// TV episode in a credit context.
 /// </summary>
 public class CreditEpisode
 {
     /// <summary>
-    /// Gets or sets the air date of the episode.
+    /// Gets or sets the air date.
     /// </summary>
-    [JsonProperty("air_date")]
+    [JsonPropertyName("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the episode number.
     /// </summary>
-    [JsonProperty("episode_number")]
-    public long EpisodeNumber { get; set; }
+    [JsonPropertyName("episode_number")]
+    public int EpisodeNumber { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the episode.
+    /// Gets or sets the episode name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the overview of the episode.
+    /// Gets or sets the overview.
     /// </summary>
-    [JsonProperty("overview")]
+    [JsonPropertyName("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
-    /// Gets or sets the season number the episode belongs to.
+    /// Gets or sets the season number.
     /// </summary>
-    [JsonProperty("season_number")]
+    [JsonPropertyName("season_number")]
     public int SeasonNumber { get; set; }
 
     /// <summary>
-    /// Gets or sets the still image path for the episode.
+    /// Gets or sets the still image path.
     /// </summary>
-    [JsonProperty("still_path")]
+    [JsonPropertyName("still_path")]
     public string? StillPath { get; set; }
 }

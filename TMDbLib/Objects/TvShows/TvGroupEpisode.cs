@@ -1,15 +1,15 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents an episode within an episode group.
+/// Episode within an episode group.
 /// </summary>
 public class TvGroupEpisode : TvEpisodeBase
 {
     /// <summary>
-    /// Gets or sets the order of the episode within the group.
+    /// Gets or sets the order within the group.
     /// </summary>
-    [JsonProperty("order")]
-    public long Order { get; set; }
+    [JsonPropertyName("order")]
+    public int Order { get; set; }
 }

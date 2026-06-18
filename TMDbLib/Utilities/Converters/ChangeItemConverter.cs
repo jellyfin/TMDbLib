@@ -1,74 +1,54 @@
 using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.Changes;
 
 namespace TMDbLib.Utilities.Converters;
 
-internal class ChangeItemConverter : JsonConverter
+/// <summary>
+/// Polymorphic converter for change items — dispatches on the <c>action</c> discriminator.
+/// </summary>
+internal class ChangeItemConverter : JsonConverter<ChangeItemBase>
 {
-    public override bool CanConvert(Type objectType)
+    public override ChangeItemBase? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return objectType == typeof(ChangeItemBase);
+        if (reader.TokenType == JsonTokenType.Null)
+        {
+            return null;
+        }
+
+        using var document = JsonDocument.ParseValue(ref reader);
+        var element = document.RootElement;
+
+        Type? targetType;
+        if (!element.TryGetProperty("action", out var actionElement))
+        {
+            // No discriminator: best-effort instantiate the declared type.
+            return (ChangeItemBase?)Activator.CreateInstance(typeToConvert);
+        }
+
+        var action = actionElement.Deserialize<ChangeAction>();
+        targetType = action switch
+        {
+            ChangeAction.Added => typeof(ChangeItemAdded),
+            ChangeAction.Created => typeof(ChangeItemCreated),
+            ChangeAction.Updated => typeof(ChangeItemUpdated),
+            ChangeAction.Deleted => typeof(ChangeItemDeleted),
+            ChangeAction.Destroyed => typeof(ChangeItemDestroyed),
+            _ => throw new ArgumentOutOfRangeException(nameof(reader), action, "Unsupported change-item action"),
+        };
+
+        return (ChangeItemBase?)element.Deserialize(targetType, options);
     }
 
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
-    {
-        var jObject = JObject.Load(reader);
-
-        ChangeItemBase? result;
-        if (jObject["action"] is null)
-        {
-            // We cannot determine the correct type, let's hope we were provided one
-            var instance = Activator.CreateInstance(objectType);
-            result = instance as ChangeItemBase;
-        }
-        else
-        {
-            // Determine the type based on the media_type
-            var mediaType = jObject["action"]?.ToObject<ChangeAction>();
-
-            switch (mediaType)
-            {
-                case ChangeAction.Added:
-                    result = new ChangeItemAdded();
-                    break;
-                case ChangeAction.Created:
-                    result = new ChangeItemCreated();
-                    break;
-                case ChangeAction.Updated:
-                    result = new ChangeItemUpdated();
-                    break;
-                case ChangeAction.Deleted:
-                    result = new ChangeItemDeleted();
-                    break;
-                case ChangeAction.Destroyed:
-                    result = new ChangeItemDestroyed();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
-        // Populate the result
-        if (result is not null)
-        {
-            using var jsonReader = jObject.CreateReader();
-            serializer.Populate(jsonReader, result);
-        }
-
-        return result;
-    }
-
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, ChangeItemBase value, JsonSerializerOptions options)
     {
         if (value is null)
         {
-            writer.WriteNull();
+            writer.WriteNullValue();
             return;
         }
 
-        var jToken = JToken.FromObject(value);
-        serializer.Serialize(writer, jToken);
+        JsonSerializer.Serialize(writer, value, value.GetType(), options);
     }
 }

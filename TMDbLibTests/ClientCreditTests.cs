@@ -1,9 +1,8 @@
+using System.Globalization;
 using System.Threading.Tasks;
-using Xunit;
-using TMDbLib.Objects.Credit;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
-using System.Globalization;
+using Xunit;
 
 namespace TMDbLibTests;
 
@@ -18,7 +17,7 @@ public class ClientCreditTests : TestBase
     [Fact]
     public async Task TestGetCreditTv()
     {
-        var result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice);
+        var result = await TMDbClient.GetCreditsAsync(IdHelper.BruceWillisMiamiVice, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Media);
 
@@ -35,7 +34,7 @@ public class ClientCreditTests : TestBase
     [Fact]
     public async Task TestMissingCredit()
     {
-        var result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture));
+        var result = await TMDbClient.GetCreditsAsync(IdHelper.MissingID.ToString(CultureInfo.InvariantCulture), cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Null(result);
     }
@@ -46,7 +45,7 @@ public class ClientCreditTests : TestBase
     [Fact]
     public async Task TestGetCreditSeasons()
     {
-        var result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse);
+        var result = await TMDbClient.GetCreditsAsync(IdHelper.HughLaurieHouse, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result);
         Assert.NotNull(result.Media);
 

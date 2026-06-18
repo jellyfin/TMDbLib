@@ -1,6 +1,6 @@
 {
   "Guid": "fe25028e-ff42-a744-9d4d-595d6dea4042",
-  "UpdatedAt": "2025-12-24T18:45:18.6708139Z",
+  "UpdatedAt": "2026-06-13T13:30:14.351563Z",
   "Title": "Proxy Mapping for GET /3/find/tt0903747",
   "Description": "Proxy Mapping for GET /3/find/tt0903747",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "external_source",
@@ -39,22 +52,23 @@
       "tv_results": [
         {
           "adult": false,
-          "backdrop_path": "/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg",
+          "backdrop_path": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
           "id": 1396,
           "name": "Breaking Bad",
           "original_name": "Breaking Bad",
           "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family\u0027s financial future at any cost as he enters the dangerous world of drugs and crime.",
-          "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+          "poster_path": "/3xnWaLQjelJDDF7LT1WBo6f4BRe.jpg",
           "media_type": "tv",
           "original_language": "en",
           "genre_ids": [
             18,
             80
           ],
-          "popularity": 150.5089,
+          "popularity": 141.528,
           "first_air_date": "2008-01-20",
-          "vote_average": 8.935,
-          "vote_count": 16731,
+          "softcore": false,
+          "vote_average": 8.947,
+          "vote_count": 17907,
           "origin_country": [
             "US"
           ]
@@ -67,19 +81,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1b",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=11587",
-      "x-memc": "HIT",
-      "x-memc-key": "16874528c37042f23d06a0a5f036fb36c4f9ff8458ec50c8540aef38eaebc2dd",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002275cfcb04f216834e041560b3ae2de29f\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00222634dab75006613004834b8b0011f572\u0022",
+      "Cache-Control": "public, max-age=22867",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "Guid": "72852953-4506-174f-a44a-be7ddb94fb44",
-  "UpdatedAt": "2025-12-24T18:45:16.1456617Z",
+  "UpdatedAt": "2026-06-13T13:30:13.319053Z",
   "Title": "Proxy Mapping for GET /3/search/multi",
   "Description": "Proxy Mapping for GET /3/search/multi",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -58,7 +71,30 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/wCAMVsPUcDjq9UeELNKB71hz6Mj.jpg",
+          "backdrop_path": "/ln93mBuLmw2sz3Tr3damJ4Czfav.jpg",
+          "id": 2584,
+          "name": "Dirty Jobs",
+          "original_name": "Dirty Jobs",
+          "overview": "Host and everyman Mike Rowe gets the grimy scoop on downright nasty occupations.",
+          "poster_path": "/mVWrO9JANfiemg6u7tQmob55tsM.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            10764,
+            35
+          ],
+          "popularity": 7.3791,
+          "first_air_date": "2005-07-26",
+          "softcore": false,
+          "vote_average": 6.984,
+          "vote_count": 95,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/k47gSbr0bqEgDAEedfyV2mAw5YU.jpg",
           "id": 115782,
           "title": "Jobs",
           "original_title": "Jobs",
@@ -70,11 +106,245 @@
             18,
             36
           ],
-          "popularity": 1.9287,
+          "popularity": 2.3095,
           "release_date": "2013-08-15",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.125,
-          "vote_count": 2540
+          "vote_average": 6.1,
+          "vote_count": 2613
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mCbB9wUe9KHjGCcYGCzMLYyMjjE.jpg",
+          "id": 321697,
+          "title": "Steve Jobs",
+          "original_title": "Steve Jobs",
+          "overview": "Set backstage at three iconic product launches and ending in 1998 with the unveiling of the iMac, Steve Jobs takes us behind the scenes of the digital revolution to paint an intimate portrait of the brilliant man at its epicenter.",
+          "poster_path": "/ljiRO29Y9khEERRqMluptUYunJ9.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            36
+          ],
+          "popularity": 2.8184,
+          "release_date": "2015-10-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 4376
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 51967,
+          "title": "Odd Jobs",
+          "original_title": "Odd Jobs",
+          "overview": "Five college buddies start their own moving business only to find themselves tangling with sleazy competitors and the mob.",
+          "poster_path": "/fFQlI4ZZbaz1IMnJM9Dv4QKSdRz.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            35
+          ],
+          "popularity": 0.5225,
+          "release_date": "1986-03-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 4.444,
+          "vote_count": 9
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sC2ELooRJ8cvsGq6mlXyAdT09g8.jpg",
+          "id": 228922,
+          "name": "The Expert of Changing Jobs",
+          "original_name": "\u8EE2\u8077\u306E\u9B54\u738B\u69D8",
+          "overview": "Hitsujitani Chiharu joined a big advertising agency after she graduated from a university. She experienced a hard time at her job due to harassment. After 3 years, Hitsujitani Chiharu decided to quit working at the advertising agency. She begins to work for a temp agency that is run by her aunt. There, she meets Kurusu Arashi, who works as a career adviser at the temp agency. He walks with a cane due to discomfort from his left foot, but he has a great reputation as a career adviser and his nickname is The Devil of Changing Jobs. He often makes biting remarks to people worried about changing jobs. Working with Kurusu Arashi and dealing with people who are looking to change jobs, Hitsujitani Chiharu also grows as a person.",
+          "poster_path": "/6JNiLVGptVZ6C1hz0IujddoiXSX.jpg",
+          "media_type": "tv",
+          "original_language": "ja",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 2.254,
+          "first_air_date": "2023-07-17",
+          "softcore": false,
+          "vote_average": 7.7,
+          "vote_count": 7,
+          "origin_country": [
+            "JP"
+          ]
+        },
+        {
+          "adult": false,
+          "id": 12897,
+          "name": "Steve Jobs",
+          "original_name": "Steve Jobs",
+          "media_type": "person",
+          "popularity": 0.2497,
+          "gender": 2,
+          "known_for_department": "Acting",
+          "profile_path": "/n71rW0xTowxKD0HwvLiWkaIfgbf.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/jbdvzJvNu0swWURJp71Fxwd54Fm.jpg",
+              "id": 15302,
+              "title": "The Pixar Story",
+              "original_title": "The Pixar Story",
+              "overview": "A look at the first years of Pixar Animation Studios - from the success of \u0022Toy Story\u0022 and Pixar\u0027s promotion of talented people, to the building of its East Bay campus, the company\u0027s relationship with Disney, and its remarkable initial string of eight hits. The contributions of John Lasseter, Ed Catmull and Steve Jobs are profiled. The decline of two-dimensional animation is chronicled as three-dimensional animation rises. Hard work and creativity seem to share the screen in equal proportions.",
+              "poster_path": "/vhK51wJybwZTRCPVUOkGpSI4auN.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                99
+              ],
+              "popularity": 1.2247,
+              "release_date": "2007-08-28",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.561,
+              "vote_count": 245
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/i8RaEKLkyDE8iPVnnMuuBBY0hBl.jpg",
+              "id": 89638,
+              "title": "Steve Jobs: The Lost Interview",
+              "original_title": "Steve Jobs: The Lost Interview",
+              "overview": "In a television interview filmed in 1995, Steve Jobs talks frankly about his early life, competition with Microsoft and his vision for the future, while he was running NeXT, the company he founded after leaving Apple.",
+              "poster_path": "/xISU0kU9uN9csV1PlcLYyduCKfA.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                99
+              ],
+              "popularity": 0.2167,
+              "release_date": "2012-05-11",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.2,
+              "vote_count": 71
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 80688,
+              "title": "Steve Jobs: Billion Dollar Hippy",
+              "original_title": "Steve Jobs: Billion Dollar Hippy",
+              "overview": "Broadly considered a brand that inspires fervour and defines cool consumerism, Apple has become one of the biggest corporations in the world, fuelled by game-changing products that tap into modern desires. Its leader, Steve Jobs, was a long-haired college dropout with infinite ambition, and an inspirational perfectionist with a bully\u0027s temper. A man of contradictions, he fused a Californian counterculture attitude and a mastery of the art of hype with explosive advances in computer technology.  Insiders including Apple co-founder Steve Wozniak, the chairman who ousted Jobs from the company he founded, and Jobs\u0027 chief of software, tell extraordinary stories of the rise, fall and rise again of Apple with Steve Jobs at its helm.  With Stephen Fry, world wide web inventor Sir Tim Berners-Lee and branding guru Rita Clifton, Evan Davis decodes the formula that took Apple from suburban garage to global supremacy.",
+              "poster_path": "/maYBumRfAbeH2bCSaRuN8cLEgcw.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                99
+              ],
+              "popularity": 0.1486,
+              "release_date": "2011-12-14",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.132,
+              "vote_count": 53
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 1097825,
+          "name": "Lisskulla Jobs",
+          "original_name": "Lisskulla Jobs",
+          "media_type": "person",
+          "popularity": 0.0652,
+          "gender": 0,
+          "known_for_department": "Acting",
+          "profile_path": "/bysRgqhWkeb4xoDxDHjyvQmlzoF.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/sPmO5OD55dL4hvFifCCsbydsUc2.jpg",
+              "id": 133705,
+              "title": "Kungsgatan",
+              "original_title": "Kungsgatan",
+              "overview": "Young woman Marta dreams of a better future and leaves her parent\u0027s cabbage patch and move to Stockholm. Waiting tables doesn\u0027t pay nearly enough and she soon finds herself working the streets. Her teenage sweetheart Adrian also moves to Stockholm to search for her. Plot by Mattias Thuresson.",
+              "poster_path": "/fsWG4s5vZqRzBZI3DHmXa2iuTms.jpg",
+              "media_type": "movie",
+              "original_language": "sv",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 0.1677,
+              "release_date": "1943-09-17",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.0,
+              "vote_count": 7
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 318855,
+              "title": "The Sin of Anna Lans",
+              "original_title": "Anna Lans",
+              "overview": "At a meeting at the Salvation Army a female soldier tells the story of her life.",
+              "poster_path": "/b3jqpgq8LUjkuQACmykK9riQsz6.jpg",
+              "media_type": "movie",
+              "original_language": "sv",
+              "genre_ids": [
+                18,
+                10749
+              ],
+              "popularity": 0.2124,
+              "release_date": "1943-08-20",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.333,
+              "vote_count": 3
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/3wvV5DuJu3VWhWx84eU1QugBliK.jpg",
+              "id": 773313,
+              "title": "Oldsmobile",
+              "original_title": "Oldsmobile",
+              "overview": "Old Siv has one dream left in life, to find her teenage sweetheart Albert who emigrated to the US 50 years ago.",
+              "poster_path": "/daLTn5lCVMyjQF23CVgbyLB0ouv.jpg",
+              "media_type": "movie",
+              "original_language": "sv",
+              "genre_ids": [
+                18,
+                10770
+              ],
+              "popularity": 0.0972,
+              "release_date": "1982-11-22",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.0,
+              "vote_count": 1
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fvQ6NtL532ywssx86taZtZtY6Ed.jpg",
+          "id": 61272,
+          "name": "Arm Jobs",
+          "original_name": "Jobs de bras",
+          "overview": "Whether Farm Equipment Mechanics, teamsters dog or bush pilots, those who make \u0022dirty work\u0022 are always happy to initiate Patrick Groulx to the basics of their job. And the facilitator returns the favor! Many workers recognize themselves in this series; that\u0027s probably why it is the most popular original production airing on Zt\u00E9l\u00E9.",
+          "poster_path": "/1gDketG20QksSv5rr2anrkmuEqh.jpg",
+          "media_type": "tv",
+          "original_language": "fr",
+          "genre_ids": [
+            10764
+          ],
+          "popularity": 0.4285,
+          "first_air_date": "2008-02-13",
+          "softcore": false,
+          "vote_average": 8.0,
+          "vote_count": 1,
+          "origin_country": [
+            "CA"
+          ]
         },
         {
           "adult": false,
@@ -90,85 +360,12 @@
             99,
             35
           ],
-          "popularity": 0.0143,
+          "popularity": 0.0874,
           "release_date": "2017-12-20",
+          "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
-        },
-        {
-          "adult": false,
-          "id": 112685,
-          "name": "Ian Jobson",
-          "original_name": "Ian Jobson",
-          "media_type": "person",
-          "popularity": 0.0168,
-          "gender": 0,
-          "known_for_department": "Art",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/1FRJQzbMbU1tZmimBCDgLk6P97R.jpg",
-              "id": 42307,
-              "title": "Road Train",
-              "original_title": "Road Train",
-              "overview": "A supernatural thriller about a group of teenagers menaced by a driver-less train in the Australian outback.",
-              "poster_path": "/aWcdGw3rO6ZMFepZR90urEisQ7U.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27,
-                53,
-                878
-              ],
-              "popularity": 7.2608,
-              "release_date": "2010-05-28",
-              "video": false,
-              "vote_average": 4.1,
-              "vote_count": 112
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/1WVvLN3oqvNiAcsQXAk0tTCPVp6.jpg",
-              "id": 34595,
-              "title": "Alexandra\u0027s Project",
-              "original_title": "Alexandra\u0027s Project",
-              "overview": "Steve is a man who has it all, a successful career, wonderful children, beautiful home and a loving wife. However, returning to his home after work on his birthday, he finds his house deserted and darkened with almost all the lightbulbs missing, all easy access outside cut off and a videotape waiting for him. Playing that tape, he watches a bizarre and grueling recording in which his wife explains her grievance with him, her reasons for disappearing with the children and her revenge for how he treated her in a way he would never forget.",
-              "poster_path": "/sao0EIQ94kcSjMABVvAZJDmaAIU.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                9648,
-                18,
-                53
-              ],
-              "popularity": 2.1973,
-              "release_date": "2003-05-16",
-              "video": false,
-              "vote_average": 5.9,
-              "vote_count": 87
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/sZ73dWsTFa3vI8BCUdyskpUmaog.jpg",
-              "id": 29483,
-              "title": "Beautiful Kate",
-              "original_title": "Beautiful Kate",
-              "overview": "Ned Kendall is asked to return to the remote and isolated family home by his sister, to say goodbye to his father who is dying. Ned also brings his young aspiring actress fiancee who struggles with the isolation. When home he starts having memories of his childhood many involving his beautiful twin sister and his older brother. These memories awaken long-buried secrets from the family\u0027s past.",
-              "poster_path": "/6z9mpf6cm3syWpDVNH8FhPy4xkR.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 0.7083,
-              "release_date": "2009-08-06",
-              "video": false,
-              "vote_average": 5.6,
-              "vote_count": 68
-            }
-          ]
         },
         {
           "adult": false,
@@ -195,8 +392,9 @@
                 10749,
                 18
               ],
-              "popularity": 1.1955,
+              "popularity": 0.077,
               "release_date": "2021-02-11",
+              "softcore": false,
               "video": false,
               "vote_average": 0.0,
               "vote_count": 0
@@ -205,237 +403,74 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/j9fRIimor0AMFJR9kjZubXcABzZ.jpg",
-          "id": 94664,
-          "name": "Mushoku Tensei: Jobless Reincarnation",
-          "original_name": "\u7121\u8077\u8EE2\u751F \uFF5E\u7570\u4E16\u754C\u884C\u3063\u305F\u3089\u672C\u6C17\u3060\u3059\uFF5E",
-          "overview": "A 34-year-old hikikomori is kicked out of his home by his family after the death of his parents. After his eviction, he saves a group of teenagers from being killed by a speeding truck, but loses his life in the process. When he comes to, he realizes he has been reborn as Rudeus Greyrat, in a world of swords and sorcery.",
-          "poster_path": "/gLKOYIMyKlUHW0SVdskhgf9C0yy.jpg",
-          "media_type": "tv",
-          "original_language": "ja",
-          "genre_ids": [
-            10759,
-            16,
-            10765
-          ],
-          "popularity": 23.9742,
-          "first_air_date": "2021-01-11",
-          "vote_average": 8.5,
-          "vote_count": 1380,
-          "origin_country": [
-            "JP"
-          ]
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/fvQ6NtL532ywssx86taZtZtY6Ed.jpg",
-          "id": 61272,
-          "name": "Arm Jobs",
-          "original_name": "Jobs de bras",
-          "overview": "Whether Farm Equipment Mechanics, teamsters dog or bush pilots, those who make \u0022dirty work\u0022 are always happy to initiate Patrick Groulx to the basics of their job. And the facilitator returns the favor! Many workers recognize themselves in this series; that\u0027s probably why it is the most popular original production airing on Zt\u00E9l\u00E9.",
-          "poster_path": "/1gDketG20QksSv5rr2anrkmuEqh.jpg",
-          "media_type": "tv",
-          "original_language": "fr",
-          "genre_ids": [
-            10764
-          ],
-          "popularity": 0.224,
-          "first_air_date": "2008-02-13",
-          "vote_average": 8.0,
-          "vote_count": 1,
-          "origin_country": [
-            "CA"
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3237597,
-          "name": "Brian Jobson",
-          "original_name": "Brian Jobson",
+          "id": 4107144,
+          "name": "Anders Jobs",
+          "original_name": "Anders Jobs",
           "media_type": "person",
-          "popularity": 0.0,
+          "popularity": 0.0071,
           "gender": 0,
-          "known_for_department": "Lighting",
+          "known_for_department": "Camera",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/ubNt0ytjMlTui4xUHpqiBKIkbaR.jpg",
-              "id": 2435,
-              "name": "Is It Bill Bailey?",
-              "original_name": "Is It Bill Bailey?",
-              "overview": "Is It Bill Bailey? is a stand up/sketch comedy series written by and starring Bill Bailey. Each episode features stage performances, interspersed with skits starring himself and other actors. As well as parodies of pop songs or artists, he deconstructs music from popular television shows.",
-              "poster_path": "/4LXH7zSjrhRfhE7hd0Qbyp3VkWd.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                35
-              ],
-              "popularity": 0.6853,
-              "first_air_date": "1998-02-20",
-              "vote_average": 6.8,
-              "vote_count": 8,
-              "origin_country": [
-                "GB"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 2430741,
-          "name": "Wayne Jobson",
-          "original_name": "Wayne Jobson",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/6dphYbWprs8lhINSjKVrDEmbeAe.jpg",
-              "id": 41934,
-              "title": "Heavy Petting",
-              "original_title": "Heavy Petting",
-              "overview": "Celebrities and creatives -- including musician David Byrne, performance artist Spalding Gray, comedian Sandra Bernhard, radical activist Abbie Hoffman, and poet Allen Ginsberg-- recall their earliest sexual experiences.",
-              "poster_path": "/qy2HqlhBsDi8CHhfrIXPwy6pfkU.jpg",
+              "backdrop_path": null,
+              "id": 1138961,
+              "title": "Som ni vill ha det",
+              "original_title": "Som ni vill ha det",
+              "overview": "A production of Shakespeare\u0027s \u0022As You Like It\u0022 filmed for television. After the overthrowing of the old duke by his tyrannical brother, the duke\u0027s daughter Rosalind disguises herself as a man and sets out to find her banished father while also counselling her clumsy suitor Orlando in the art of wooing.",
+              "poster_path": "/b0nTUj2KmykKFmND3Rt9XHfabQW.jpg",
               "media_type": "movie",
-              "original_language": "en",
+              "original_language": "sv",
               "genre_ids": [
-                99
+                35,
+                10749
               ],
-              "popularity": 0.1534,
-              "release_date": "1989-09-22",
+              "popularity": 0.0729,
+              "release_date": "1986-02-17",
+              "softcore": false,
               "video": false,
-              "vote_average": 5.2,
-              "vote_count": 9
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/cZEaETMoq4XmnlVzkv7MnwzOzVa.jpg",
-              "id": 638811,
-              "title": "Studio 17: The Lost Reggae Tapes",
-              "original_title": "Studio 17: The Lost Reggae Tapes",
-              "overview": "A newly discovered treasure trove of tapes from Studio 17, or Randy\u0027s located in downtown Kingston Jamaica, is the starting point for this remarkable story about a Chinese Jamaican family who helped create the music we now know as reggae.",
-              "poster_path": "/ifGNMpfRfEYSSq3Enu59kUiFVyh.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99,
-                10402
-              ],
-              "popularity": 1.6133,
-              "release_date": "2019-10-18",
-              "video": false,
-              "vote_average": 7.0,
+              "vote_average": 9.0,
               "vote_count": 1
             }
           ]
         },
         {
           "adult": false,
-          "id": 1826848,
-          "name": "Jobst Neuschaeffer",
-          "original_name": "Jobst Neuschaeffer",
+          "id": 2185447,
+          "name": "Maiya Jobs",
+          "original_name": "Maiya Jobs",
           "media_type": "person",
-          "popularity": 0.0,
+          "popularity": 0.0071,
           "gender": 0,
-          "known_for_department": "Production",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/zQ5tQOkD6PjX3TnmA15xOndjAX6.jpg",
-              "id": 301556,
-              "title": "Tales of the Dumpster Kid",
-              "original_title": "Geschichten vom K\u00FCbelkind",
-              "overview": "The Dumpster Kid is an artistic creation: in every story society forces her to learn something. But she, fully grown from the moment of her birth, unquestionably learns more than is called for. This extra knowledge, which is not wanted by society, regularly brings her into danger. Dumpster Kid dies in each story, and across each genre. Her stories are set in a whole range of different time periods. What is a Dumpster Kid?",
-              "poster_path": "/d4OZtEm9AOZjEcsPKF2JvfWoWrT.jpg",
-              "media_type": "movie",
-              "original_language": "de",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 1.8427,
-              "release_date": "1971-04-02",
-              "video": false,
-              "vote_average": 3.2,
-              "vote_count": 6
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1358495,
-          "name": "Eddie Jobson",
-          "original_name": "Eddie Jobson",
-          "media_type": "person",
-          "popularity": 0.0546,
-          "gender": 0,
-          "known_for_department": "Sound",
+          "known_for_department": "Crew",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
               "backdrop_path": null,
-              "id": 61155,
-              "title": "Women vs. Men",
-              "original_title": "Women vs. Men",
-              "overview": "Seeking the excitement that was once part of their married lives, Bruce and Michael slip out one night to a gentleman\u0027s club. When their wives, Dana and Brit, discover this boys-night-out activity, the husbands are booted from their homes. In the men\u0027s ensuing efforts to get back into their wives\u0027 good graces, their previously unspoken views about marriage and women begin to surface to disturbing effect for their wives.",
-              "poster_path": "/2x8LGOksY54Eb46r66pZ1lLqruH.jpg",
+              "id": 558277,
+              "title": "Free Monkeys",
+              "original_title": "Free Monkeys",
+              "overview": "A successful manager gets taken and finds himself in an unknown surrounding. He is pitted against his hijackers.What\u0027s their purpose...?",
+              "poster_path": "/oHR3k51FX5jhekkx6wHe64ePqgI.jpg",
               "media_type": "movie",
               "original_language": "en",
-              "genre_ids": [
-                35,
-                10770
-              ],
-              "popularity": 1.4196,
-              "release_date": "2002-08-04",
+              "genre_ids": [],
+              "popularity": 0.084,
+              "release_date": "2014-08-24",
+              "softcore": false,
               "video": false,
-              "vote_average": 4.5,
-              "vote_count": 6
+              "vote_average": 0.0,
+              "vote_count": 0
             }
           ]
         },
         {
           "adult": false,
-          "id": 4034827,
-          "name": "Jobst Oriwol",
-          "original_name": "Jobst Oriwol",
-          "media_type": "person",
-          "popularity": 0.0143,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/6ja3HVez4A4XPNSMHhuOiu2UTXm.jpg",
-              "id": 11308,
-              "title": "The Hotel New Hampshire",
-              "original_title": "The Hotel New Hampshire",
-              "overview": "Over the course of several years beginning in the 1950s, a man and his oddball family run hotels in New England and Vienna, as unexpected events change their lives forever.",
-              "poster_path": "/9XGGGniMtBqhox7JAV5JujlUqFz.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                18
-              ],
-              "popularity": 0.7401,
-              "release_date": "1984-03-09",
-              "video": false,
-              "vote_average": 5.6,
-              "vote_count": 126
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1675513,
-          "name": "Gertrude Jobstmann",
-          "original_name": "Gertrude Jobstmann",
+          "id": 6140427,
+          "name": "James Jobs",
+          "original_name": "James Jobs",
           "media_type": "person",
           "popularity": 0.0071,
           "gender": 0,
@@ -444,70 +479,127 @@
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": null,
-              "id": 414524,
-              "title": "The Mysterious Poacher",
-              "original_title": "The Mysterious Poacher",
-              "overview": "",
-              "poster_path": null,
+              "backdrop_path": "/oNKarCLPO82BBTITD2WnlR1lvnB.jpg",
+              "id": 629819,
+              "title": "Witnesses",
+              "original_title": "Witnesses",
+              "overview": "Four college classmates are hunted by a ruthless drug cartel hitman when they inadvertently record a murder while shooting their student film.",
+              "poster_path": "/2VMoVKi4gnjuqE9O2QrNBqpUsMI.jpg",
               "media_type": "movie",
               "original_language": "en",
-              "genre_ids": [],
-              "popularity": 0.0,
-              "release_date": "1972-01-01",
+              "genre_ids": [
+                27
+              ],
+              "popularity": 0.2128,
+              "release_date": "2019-09-09",
+              "softcore": false,
               "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            },
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 414533,
-              "title": "The Lone Climber",
-              "original_title": "The Lone Climber",
-              "overview": "",
-              "poster_path": null,
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [],
-              "popularity": 0.2769,
-              "release_date": "1972-01-01",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
+              "vote_average": 4.538,
+              "vote_count": 13
             }
           ]
         },
         {
           "adult": false,
-          "id": 2359435,
-          "name": "Herbert Jobst",
-          "original_name": "Herbert Jobst",
+          "id": 2343306,
+          "name": "Matt Jobs",
+          "original_name": "Matt Jobs",
           "media_type": "person",
-          "popularity": 0.0731,
+          "popularity": 0.0,
           "gender": 0,
-          "known_for_department": "Writing",
+          "known_for_department": "Acting",
+          "profile_path": null,
+          "known_for": []
+        },
+        {
+          "adult": false,
+          "id": 5370205,
+          "name": "Bill Jobs",
+          "original_name": "Bill Jobs",
+          "media_type": "person",
+          "popularity": 0.0071,
+          "gender": 0,
+          "known_for_department": "Sound",
+          "profile_path": null,
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/4JwThVCKvaUITU9QYUhRaabNM1Y.jpg",
+              "id": 1464013,
+              "title": "Mass State Lottery",
+              "original_title": "Mass State Lottery",
+              "overview": "A failed private investigator investigates a series of disappearances, and in order to get his way he\u0027s even willing to manipulate a grieving mother.",
+              "poster_path": "/tQxFQmrkSmvUz0bp6cutUSYA9ID.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                27,
+                80
+              ],
+              "popularity": 0.2693,
+              "release_date": "2025-08-25",
+              "softcore": false,
+              "video": false,
+              "vote_average": 9.5,
+              "vote_count": 2
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "id": 2887053,
+          "name": "Colin Jobs",
+          "original_name": "Colin Jobs",
+          "media_type": "person",
+          "popularity": 0.0,
+          "gender": 0,
+          "known_for_department": "Acting",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
               "backdrop_path": null,
-              "id": 279723,
-              "title": "Der Fremde",
-              "original_title": "Der Fremde",
-              "overview": "After years of drifting around, Willi Palko arrives in the lignite mining area. He was not only looking for a new job, but also wanted to finally settle down here. The party leadership sends him to the Schepp brigade, which has made itself \u0022suspicious\u0022 (on paper) due to its extremely high production figures. The stranger is accused of being a spy for the factory management. Willi finds it difficult to assert himself, but he is taken with the big excavator, the prospect of one day being allowed to drive it, and the brash flapper Hanna. He stays, and with his help a mine foreman is exposed as a Western agent and coal production is brought up to a really high level.",
-              "poster_path": "/qSo5mC4Yazl1LnK2OB2GC22Wgmg.jpg",
+              "id": 774123,
+              "title": "Abnormal Activity 3",
+              "original_title": "Abnormal Activity 3",
+              "overview": "Just when we thought the demonic parodies were over, the sister of the girl from the first movie discovers the demons may have returned! This time in the form of a missing baby. Was her babysitting business just a really bad idea, or are demons indeed to blame thanks to the first movie? Never before has a film series skipped over an unnecessary sequel and went right for part 3!",
+              "poster_path": "/vnb3DI4zvgxpuzlQhIWT35gOnrJ.jpg",
               "media_type": "movie",
-              "original_language": "de",
+              "original_language": "en",
               "genre_ids": [
-                18
+                27,
+                35
               ],
-              "popularity": 0.0775,
-              "release_date": "1961-03-03",
+              "popularity": 0.0143,
+              "release_date": "2011-06-28",
+              "softcore": false,
               "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
+              "vote_average": 3.0,
+              "vote_count": 1
             }
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 197827,
+          "name": "Odd Jobs",
+          "original_name": "Odd Jobs",
+          "overview": "Nate is a neurotic, recently laid-off investment banker. Joe is his unemployed, morally questionable, hustler roommate. Unable to find gainful employment (or pay for his impending wedding), Nate secretly tags along on Joe\u0027s work-for-hire Craigslist adventures. Each episode finds the unlikely pair doing an outlandish job for ridiculous people in an absurd attempt to earn a random buck.",
+          "poster_path": "/5iGp77w2BLfGfb5NVEiW3SmDCA3.jpg",
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            35
+          ],
+          "popularity": 0.5158,
+          "first_air_date": "2009-02-18",
+          "softcore": false,
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "origin_country": [
+            "US"
           ]
         },
         {
@@ -525,304 +617,129 @@
             14,
             9648
           ],
-          "popularity": 0.1672,
+          "popularity": 0.2058,
           "release_date": "2022-07-16",
+          "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/qGGyTFtBJrZUsyVWn3F3ry020Qc.jpg",
-          "id": 881955,
-          "title": "Men and Jobs",
-          "original_title": "\u0414\u0435\u043B\u0430 \u0438 \u043B\u044E\u0434\u0438",
-          "overview": "An American engineer, consulting on a Soviet construction project, inspires a backward and timid new foreman to learn better about his job, assert himself, solve problems and inspire his own men to bring the job in ahead of schedule.",
-          "poster_path": "/jQWiPIx77aB0mgyYuSgOwqU2pwO.jpg",
-          "media_type": "movie",
-          "original_language": "ru",
+          "backdrop_path": null,
+          "id": 310970,
+          "name": "Odd Jobs",
+          "original_name": "Odd Jobs",
+          "overview": "The year is 2127: the world is an extreme late-stage capitalist hellscape and reluctant team of gig workers travel around the neo-Midwest doing the weirdest most dangerous tasks the ODD JOBS app demands.",
+          "poster_path": null,
+          "media_type": "tv",
+          "original_language": "en",
           "genre_ids": [
-            18
+            16,
+            10765,
+            35
           ],
-          "popularity": 1.2359,
-          "release_date": "1932-10-09",
-          "video": false,
-          "vote_average": 3.0,
-          "vote_count": 1
-        },
-        {
-          "adult": false,
-          "id": 2400044,
-          "name": "Franz Jobst-Rauch",
-          "original_name": "Franz Jobst-Rauch",
-          "media_type": "person",
-          "popularity": 0.0071,
-          "gender": 0,
-          "known_for_department": "Writing",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 627360,
-              "title": "Das K\u00FCssverbot",
-              "original_title": "Das K\u00FCssverbot",
-              "overview": "",
-              "poster_path": null,
-              "media_type": "movie",
-              "original_language": "de",
-              "genre_ids": [],
-              "popularity": 0.1561,
-              "release_date": "1920-08-24",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
+          "popularity": 0.2146,
+          "first_air_date": "",
+          "softcore": false,
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "origin_country": [
+            "US"
           ]
         },
         {
           "adult": false,
-          "id": 1428226,
-          "name": "Jennifer Jobst",
-          "original_name": "Jennifer Jobst",
+          "id": 2033383,
+          "name": "Laurene Powell Jobs",
+          "original_name": "Laurene Powell Jobs",
           "media_type": "person",
-          "popularity": 0.2013,
-          "gender": 0,
-          "known_for_department": "Costume \u0026 Make-Up",
+          "popularity": 0.2155,
+          "gender": 1,
+          "known_for_department": "Production",
           "profile_path": null,
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/5fX1oSGuYdKgwWmUTAN5MNSQGzr.jpg",
-              "id": 209112,
-              "title": "Batman v Superman: Dawn of Justice",
-              "original_title": "Batman v Superman: Dawn of Justice",
-              "overview": "Fearing the actions of a god-like Super Hero left unchecked, Gotham City\u2019s own formidable, forceful vigilante takes on Metropolis\u2019s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it\u2019s ever known before.",
-              "poster_path": "/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
+              "backdrop_path": "/wQiXDEzfU8pydakr5yZ01bhlN30.jpg",
+              "id": 1058699,
+              "title": "STILL: A Michael J. Fox Movie",
+              "original_title": "STILL: A Michael J. Fox Movie",
+              "overview": "A short kid from a Canadian army base becomes the international pop culture darling of the 1980s\u2014only to find the course of his life altered by a stunning diagnosis. What happens when an incurable optimist confronts an incurable disease?",
+              "poster_path": "/fDO4gYZxvdsIrHKzsSAbc3N7Wfg.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                28,
-                12,
-                14
+                99
               ],
-              "popularity": 16.3057,
-              "release_date": "2016-03-23",
+              "popularity": 1.283,
+              "release_date": "2023-01-20",
+              "softcore": false,
               "video": false,
-              "vote_average": 5.988,
-              "vote_count": 18642
+              "vote_average": 7.773,
+              "vote_count": 229
             },
             {
               "adult": false,
-              "backdrop_path": "/ih2xVgeMS8R5WUetYE8Mr9hVTlB.jpg",
-              "id": 771,
-              "title": "Home Alone",
-              "original_title": "Home Alone",
-              "overview": "Eight-year-old Kevin McCallister makes the most of the situation after his family unwittingly leaves him behind when they go on Christmas vacation. When thieves try to break into his home, he puts up a fight like no other.",
-              "poster_path": "/i5We88HdO9Nsrv8xLyo4toNsLUM.jpg",
+              "backdrop_path": "/1LYWnmr5K3Hs3XEZ323bY0dBZsK.jpg",
+              "id": 776527,
+              "title": "Summer of Soul (...Or, When the Revolution Could Not Be Televised)",
+              "original_title": "Summer of Soul (...Or, When the Revolution Could Not Be Televised)",
+              "overview": "During the same summer as Woodstock, over 300,000 people attended the Harlem Cultural Festival, celebrating African American music and culture, and promoting Black pride and unity. The footage from the festival sat in a basement, unseen for over 50 years, keeping this incredible event in America\u0027s history lost \u2014 until now.",
+              "poster_path": "/8kNwhqUGvpzWJd60O1Qvb8G6psK.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                35,
-                10751
+                10402,
+                99,
+                36
               ],
-              "popularity": 4.0585,
-              "release_date": "1990-11-16",
+              "popularity": 0.9788,
+              "release_date": "2021-07-02",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.453,
-              "vote_count": 12093
+              "vote_average": 7.639,
+              "vote_count": 220
             },
             {
               "adult": false,
-              "backdrop_path": "/dGiPJO75b9GmXqxvusbKlcYrDcg.jpg",
-              "id": 772,
-              "title": "Home Alone 2: Lost in New York",
-              "original_title": "Home Alone 2: Lost in New York",
-              "overview": "Instead of flying to Florida with his folks, Kevin ends up alone in New York, where he gets a hotel room with his dad\u0027s credit card\u2014despite problems from a clerk and meddling bellboy. But when Kevin runs into his old nemeses, the Wet Bandits, he\u0027s determined to foil their plans to rob a toy store on Christmas Eve.",
-              "poster_path": "/9CAkQ9nfrDaIAyncWndwg0tfC8g.jpg",
+              "backdrop_path": "/zqMT7xmPdN5WLwxP2UonlESFaiC.jpg",
+              "id": 653729,
+              "title": "Time",
+              "original_title": "Time",
+              "overview": "Fox Rich, indomitable matriarch and modern-day abolitionist, strives to keep her family together while fighting for the release of her incarcerated husband. An intimate, epic, and unconventional love story, filmed over two decades.",
+              "poster_path": "/2yLZmlf6vdpkhTaD0oUmIFu8SsM.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                35,
-                10751,
-                12
+                99
               ],
-              "popularity": 49.7405,
-              "release_date": "1992-11-15",
+              "popularity": 0.3826,
+              "release_date": "2020-10-09",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.8,
-              "vote_count": 10272
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1515079,
-          "name": "Marc Jobst",
-          "original_name": "Marc Jobst",
-          "media_type": "person",
-          "popularity": 0.3011,
-          "gender": 2,
-          "known_for_department": "Directing",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/foGkPxpw9h8zln81j63mix5B7m8.jpg",
-              "id": 71912,
-              "name": "The Witcher",
-              "original_name": "The Witcher",
-              "overview": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
-              "poster_path": "/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                10759
-              ],
-              "popularity": 71.4569,
-              "first_air_date": "2019-12-20",
-              "vote_average": 7.964,
-              "vote_count": 6442,
-              "origin_country": [
-                "US"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/qsnXwGS7KBbX4JLqHvICngtR8qg.jpg",
-              "id": 61889,
-              "name": "Marvel\u0027s Daredevil",
-              "original_name": "Marvel\u0027s Daredevil",
-              "overview": "Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell\u2019s Kitchen as Daredevil.",
-              "poster_path": "/u6tICVagGwukuFPr0qBUwOqCKSn.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18,
-                10759
-              ],
-              "popularity": 18.3044,
-              "first_air_date": "2015-04-10",
-              "vote_average": 8.2,
-              "vote_count": 4938,
-              "origin_country": [
-                "US"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/jBGjbSDRxOEudW9rmQbWDzJUKq9.jpg",
-              "id": 67178,
-              "name": "Marvel\u0027s The Punisher",
-              "original_name": "Marvel\u0027s The Punisher",
-              "overview": "A former Marine out to punish the criminals responsible for his family\u0027s murder finds himself ensnared in a military conspiracy.",
-              "poster_path": "/tM6xqRKXoloH9UchaJEyyRE9O1w.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                10759,
-                80,
-                18
-              ],
-              "popularity": 15.6517,
-              "first_air_date": "2017-11-17",
-              "vote_average": 8.136,
-              "vote_count": 2917,
-              "origin_country": [
-                "US"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1057996,
-          "name": "Lewis Jobson",
-          "original_name": "Lewis Jobson",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 113972,
-              "title": "Rising Tide",
-              "original_title": "Rising Tide",
-              "overview": "Exams finished, the holidays arrived, one last chance to celebrate with their closest friends. It should have been a trip to remember forever, it was...but for all the wrong reasons. Ten friends end up camping on the spiritual and ghostly tidal island of Lindisfarne, but the newest member of the group has a devastating past. You will never feel safe in a tent again.",
-              "poster_path": "/ooAyQNvYVoeC2erzE4peZJUyZ0a.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                53
-              ],
-              "popularity": 1.0663,
-              "release_date": "2011-08-17",
-              "video": false,
-              "vote_average": 3.4,
-              "vote_count": 5
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3041272,
-          "name": "Norbert Jobst",
-          "original_name": "Norbert Jobst",
-          "media_type": "person",
-          "popularity": 0.0414,
-          "gender": 0,
-          "known_for_department": "Costume \u0026 Make-Up",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/mOvik71sf6PHAgEcpTeQunKXUzW.jpg",
-              "id": 30029,
-              "title": "Angel\u0027s Flight",
-              "original_title": "Angel\u0027s Flight",
-              "overview": "A series of murders involving a stripper are investigated by a hard-drinking reporter.",
-              "poster_path": "/76VOkVcWXDRSDwFI2areI9Tirs4.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18
-              ],
-              "popularity": 2.0247,
-              "release_date": "1965-01-01",
-              "video": false,
-              "vote_average": 4.333,
-              "vote_count": 9
+              "vote_average": 6.762,
+              "vote_count": 124
             }
           ]
         }
       ],
-      "total_pages": 40,
-      "total_results": 792
+      "total_pages": 11,
+      "total_results": 202
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=13009",
-      "x-memc": "HIT",
-      "x-memc-key": "de7696ae7cc9fe57131407d5c9ad088f255faa6ae9d4e4b8ae29f8d88f745321",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=28026",
+      "ETag": "W/\u0022620860e4894accf70b8303b18500b0a9\u0022",
       "x-az": "us-east-1c",
-      "ETag": "W/\u002261aca3a8cb6bf0a42f18fa2c596ed027\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

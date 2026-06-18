@@ -1,0 +1,816 @@
+{
+  "Guid": "b0408459-c6d5-6947-95db-31626d11f187",
+  "UpdatedAt": "2026-06-13T13:30:13.360511Z",
+  "Title": "Proxy Mapping for GET /3/movie/1439930/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1439930/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1439930/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1439930,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 3
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/movie/1439930-the-punisher-one-last-kill/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=22051",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00221bfd29ced59ec976ee43ce959413d73e\u0022",
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

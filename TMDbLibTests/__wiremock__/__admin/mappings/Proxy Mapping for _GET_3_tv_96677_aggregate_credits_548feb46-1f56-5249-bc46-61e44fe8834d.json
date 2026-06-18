@@ -1,6 +1,6 @@
 {
   "Guid": "548feb46-1f56-5249-bc46-61e44fe8834d",
-  "UpdatedAt": "2025-12-24T18:45:20.0037593Z",
+  "UpdatedAt": "2026-06-13T13:30:13.973659Z",
   "Title": "Proxy Mapping for GET /3/tv/96677/aggregate_credits",
   "Description": "Proxy Mapping for GET /3/tv/96677/aggregate_credits",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -30,16 +43,16 @@
           "known_for_department": "Acting",
           "name": "Omar Sy",
           "original_name": "Omar Sy",
-          "popularity": 2.8286,
+          "popularity": 2.0585,
           "profile_path": "/ftoP3CMC4ob8VJAu1gEHSC714K5.jpg",
           "roles": [
             {
               "credit_id": "60752e2cca8354006fbfa83e",
               "character": "Assane Diop",
-              "episode_count": 17
+              "episode_count": 25
             }
           ],
-          "total_episode_count": 17,
+          "total_episode_count": 25,
           "order": 0
         },
         {
@@ -49,7 +62,7 @@
           "known_for_department": "Acting",
           "name": "Ludivine Sagnier",
           "original_name": "Ludivine Sagnier",
-          "popularity": 1.7117,
+          "popularity": 0.9288,
           "profile_path": "/hd4fLjgtgNEidJOjuLNGfK1sOhm.jpg",
           "roles": [
             {
@@ -68,7 +81,7 @@
           "known_for_department": "Acting",
           "name": "Soufiane Guerrab",
           "original_name": "Soufiane Guerrab",
-          "popularity": 0.4466,
+          "popularity": 0.5247,
           "profile_path": "/3KPutm0tNtt1CtFm6gyLPSqtOK2.jpg",
           "roles": [
             {
@@ -87,7 +100,7 @@
           "known_for_department": "Acting",
           "name": "Shirine Boutella",
           "original_name": "Shirine Boutella",
-          "popularity": 1.5012,
+          "popularity": 0.7486,
           "profile_path": "/4qBT877sIjMLycDBmahEpL1nwEk.jpg",
           "roles": [
             {
@@ -106,7 +119,7 @@
           "known_for_department": "Acting",
           "name": "Etan Simon",
           "original_name": "Etan Simon",
-          "popularity": 0.372,
+          "popularity": 0.2861,
           "profile_path": "/uXF3yPXMQhIMkv2VA3dkIQPN813.jpg",
           "roles": [
             {
@@ -125,7 +138,7 @@
           "known_for_department": "Acting",
           "name": "Antoine Gouy",
           "original_name": "Antoine Gouy",
-          "popularity": 0.6818,
+          "popularity": 0.5887,
           "profile_path": "/g0KnDyYzYHNY3TQgcX3B26ILnTu.jpg",
           "roles": [
             {
@@ -144,7 +157,7 @@
           "known_for_department": "Acting",
           "name": "Mamadou Ha\u00EFdara",
           "original_name": "Mamadou Ha\u00EFdara",
-          "popularity": 0.7219,
+          "popularity": 0.3638,
           "profile_path": "/pEcfv4SuxqJ0GDjwW5IInb1ct8w.jpg",
           "roles": [
             {
@@ -163,8 +176,8 @@
           "known_for_department": "Acting",
           "name": "Herv\u00E9 Pierre",
           "original_name": "Herv\u00E9 Pierre",
-          "popularity": 0.621,
-          "profile_path": "/zrorzRqdKqbZVNws404U13Ypxf.jpg",
+          "popularity": 0.3098,
+          "profile_path": "/dFjFLiRdyLGkMFlHed7aNRPiJrK.jpg",
           "roles": [
             {
               "credit_id": "6074f46c78570e006e363872",
@@ -187,7 +200,7 @@
           "known_for_department": "Acting",
           "name": "Clotilde Hesme",
           "original_name": "Clotilde Hesme",
-          "popularity": 0.9267,
+          "popularity": 0.5565,
           "profile_path": "/hPWDBjjk0OJaMdiVRaUBL7jeAcZ.jpg",
           "roles": [
             {
@@ -206,7 +219,7 @@
           "known_for_department": "Acting",
           "name": "Vincent Londez",
           "original_name": "Vincent Londez",
-          "popularity": 0.5479,
+          "popularity": 0.1688,
           "profile_path": "/sVVveDFGIU9Llk5scvrHr9UQgPY.jpg",
           "roles": [
             {
@@ -225,7 +238,7 @@
           "known_for_department": "Acting",
           "name": "Ludmilla Makowski",
           "original_name": "Ludmilla Makowski",
-          "popularity": 0.352,
+          "popularity": 0.2056,
           "profile_path": "/e3NKoEfGsV59uvzmhyapwHRUdSj.jpg",
           "roles": [
             {
@@ -244,7 +257,7 @@
           "known_for_department": "Acting",
           "name": "Adama Niane",
           "original_name": "Adama Niane",
-          "popularity": 0.4399,
+          "popularity": 0.2491,
           "profile_path": "/r1mvrT2AXJwUFPBEzGPs1O1UdB7.jpg",
           "roles": [
             {
@@ -263,7 +276,7 @@
           "known_for_department": "Acting",
           "name": "No\u00E9 Wodecki",
           "original_name": "No\u00E9 Wodecki",
-          "popularity": 0.2934,
+          "popularity": 0.1449,
           "profile_path": "/kcEWCtVSGgmI4MdAJCXGxGnaoJd.jpg",
           "roles": [
             {
@@ -282,7 +295,7 @@
           "known_for_department": "Acting",
           "name": "Adrian Valli Capitant de Villebonne",
           "original_name": "Adrian Valli Capitant de Villebonne",
-          "popularity": 0.08,
+          "popularity": 0.0311,
           "profile_path": "/ozyD5UO9BgUqXN3w916VDht2to2.jpg",
           "roles": [
             {
@@ -301,8 +314,8 @@
           "known_for_department": "Acting",
           "name": "Vincent Garanger",
           "original_name": "Vincent Garanger",
-          "popularity": 0.2503,
-          "profile_path": "/y87tPq1LDuoegHjMCf9c3zOrn8Z.jpg",
+          "popularity": 0.1817,
+          "profile_path": null,
           "roles": [
             {
               "credit_id": "60767ae38ddc340040ae387c",
@@ -320,7 +333,7 @@
           "known_for_department": "Acting",
           "name": "Martha Canga Antonio",
           "original_name": "Martha Canga Antonio",
-          "popularity": 0.1638,
+          "popularity": 0.2244,
           "profile_path": "/bXOAg9ozIyqQMy6JKxwzDravJe8.jpg",
           "roles": [
             {
@@ -339,7 +352,7 @@
           "known_for_department": "Acting",
           "name": "Salif Ciss\u00E9",
           "original_name": "Salif Ciss\u00E9",
-          "popularity": 0.4854,
+          "popularity": 0.3651,
           "profile_path": "/h0EzP4ZCdNK6ouMjQBSYDsSLPb7.jpg",
           "roles": [
             {
@@ -358,7 +371,7 @@
           "known_for_department": "Acting",
           "name": "Fargass Assand\u00E9",
           "original_name": "Fargass Assand\u00E9",
-          "popularity": 0.5331,
+          "popularity": 0.1323,
           "profile_path": "/ox0jDG4i0dgZTMMkP6PXDUFY4cP.jpg",
           "roles": [
             {
@@ -382,7 +395,7 @@
           "known_for_department": "Acting",
           "name": "Sandra Parfait",
           "original_name": "Sandra Parfait",
-          "popularity": 0.6589,
+          "popularity": 0.438,
           "profile_path": "/cTAAbJmFMKFOTxf9XG1n6ryP48H.jpg",
           "roles": [
             {
@@ -401,7 +414,7 @@
           "known_for_department": "Acting",
           "name": "Naky Sy Savane",
           "original_name": "Naky Sy Savane",
-          "popularity": 2.4693,
+          "popularity": 0.0864,
           "profile_path": "/nx3ynVUaaOikAAPAoUYJpFOxxre.jpg",
           "roles": [
             {
@@ -420,7 +433,7 @@
           "known_for_department": "Acting",
           "name": "Nicolas Wanczycki",
           "original_name": "Nicolas Wanczycki",
-          "popularity": 0.1844,
+          "popularity": 0.5177,
           "profile_path": "/xksvgEBrpOB26BCga8JDqHZRRqZ.jpg",
           "roles": [
             {
@@ -439,8 +452,8 @@
           "known_for_department": "Acting",
           "name": "Aloysia Delahaut",
           "original_name": "Aloysia Delahaut",
-          "popularity": 0.0379,
-          "profile_path": "/kjtHkILAnVvcAmdFL6UxhK5O4Iu.jpg",
+          "popularity": 0.122,
+          "profile_path": null,
           "roles": [
             {
               "credit_id": "60cc464d05a5330058818d6d",
@@ -458,7 +471,7 @@
           "known_for_department": "Acting",
           "name": "Stefan Crepon",
           "original_name": "Stefan Crepon",
-          "popularity": 0.5766,
+          "popularity": 0.3639,
           "profile_path": "/pEhRxeFhLR1iVyYBMkHijkLZ3xN.jpg",
           "roles": [
             {
@@ -477,7 +490,7 @@
           "known_for_department": "Acting",
           "name": "Nicolas Berno",
           "original_name": "Nicolas Berno",
-          "popularity": 0.3765,
+          "popularity": 0.1651,
           "profile_path": "/YAxdvjzRgdxNtUPvBzvQi8PuIZ.jpg",
           "roles": [
             {
@@ -496,7 +509,7 @@
           "known_for_department": "Acting",
           "name": "Nicole Garcia",
           "original_name": "Nicole Garcia",
-          "popularity": 0.8027,
+          "popularity": 0.5405,
           "profile_path": "/kZWBVMLkxGhH97DgJ0uoUlSF5Z5.jpg",
           "roles": [
             {
@@ -520,7 +533,7 @@
           "known_for_department": "Acting",
           "name": "Ad\u00E8le Wismes",
           "original_name": "Ad\u00E8le Wismes",
-          "popularity": 0.4395,
+          "popularity": 0.2939,
           "profile_path": "/j5kRdzo5rPF0mGjFqlNv57wW8Oj.jpg",
           "roles": [
             {
@@ -539,7 +552,7 @@
           "known_for_department": "Acting",
           "name": "Johann Dionnet",
           "original_name": "Johann Dionnet",
-          "popularity": 0.3616,
+          "popularity": 0.2172,
           "profile_path": "/irngNv7FKMaCqpT5zTt6AsyXSsN.jpg",
           "roles": [
             {
@@ -563,7 +576,7 @@
           "known_for_department": "Acting",
           "name": "\u00C9ric Paul",
           "original_name": "\u00C9ric Paul",
-          "popularity": 0.0856,
+          "popularity": 0.3233,
           "profile_path": null,
           "roles": [
             {
@@ -582,7 +595,7 @@
           "known_for_department": "Acting",
           "name": "Marie Barraud",
           "original_name": "Marie Barraud",
-          "popularity": 0.1033,
+          "popularity": 0.063,
           "profile_path": null,
           "roles": [
             {
@@ -601,7 +614,7 @@
           "known_for_department": "Acting",
           "name": "Salim K\u00E9chiouche",
           "original_name": "Salim K\u00E9chiouche",
-          "popularity": 0.7784,
+          "popularity": 0.6994,
           "profile_path": "/e5Esg19sYhwgS0ekbqTXwxvKWMo.jpg",
           "roles": [
             {
@@ -620,7 +633,7 @@
           "known_for_department": "Acting",
           "name": "Julien Pestel",
           "original_name": "Julien Pestel",
-          "popularity": 0.2542,
+          "popularity": 0.367,
           "profile_path": "/kVXB4pPd9SzrI7HZTLgsJdmUKOQ.jpg",
           "roles": [
             {
@@ -639,7 +652,7 @@
           "known_for_department": "Acting",
           "name": "Yanis Benatallah",
           "original_name": "Yanis Benatallah",
-          "popularity": 0.0362,
+          "popularity": 0.0499,
           "profile_path": null,
           "roles": [
             {
@@ -658,7 +671,7 @@
           "known_for_department": "Acting",
           "name": "Sandya Toure Meite",
           "original_name": "Sandya Toure Meite",
-          "popularity": 0.0552,
+          "popularity": 0.0314,
           "profile_path": null,
           "roles": [
             {
@@ -677,7 +690,7 @@
           "known_for_department": "Acting",
           "name": "Steve Tientcheu",
           "original_name": "Steve Tientcheu",
-          "popularity": 0.5624,
+          "popularity": 0.3719,
           "profile_path": "/zhKrlGuSLuRPg8Jev18k5z7SHwE.jpg",
           "roles": [
             {
@@ -696,7 +709,7 @@
           "known_for_department": "Acting",
           "name": "Moussa Sylla",
           "original_name": "Moussa Sylla",
-          "popularity": 0.3517,
+          "popularity": 0.2825,
           "profile_path": "/xssgWYXb3CiwcgPoeA3FFbaHQlj.jpg",
           "roles": [
             {
@@ -715,7 +728,7 @@
           "known_for_department": "Acting",
           "name": "Anne Beno\u00EEt",
           "original_name": "Anne Beno\u00EEt",
-          "popularity": 0.2608,
+          "popularity": 0.5726,
           "profile_path": "/2k8OfvyrzvxrSsSd3ye7b9xySwp.jpg",
           "roles": [
             {
@@ -734,7 +747,7 @@
           "known_for_department": "Acting",
           "name": "Xavier Lema\u00EEtre",
           "original_name": "Xavier Lema\u00EEtre",
-          "popularity": 0.2683,
+          "popularity": 0.3377,
           "profile_path": "/48FFd6ARgXdYahnGjQxAvAV2nTY.jpg",
           "roles": [
             {
@@ -753,7 +766,7 @@
           "known_for_department": "Acting",
           "name": "Jocelyne Vignon",
           "original_name": "Jocelyne Vignon",
-          "popularity": 0.1312,
+          "popularity": 0.1527,
           "profile_path": "/AgvAD7K9bHYktQwfYcLNwTeKZCZ.jpg",
           "roles": [
             {
@@ -772,7 +785,7 @@
           "known_for_department": "Acting",
           "name": "Christian Gazio",
           "original_name": "Christian Gazio",
-          "popularity": 3.8319,
+          "popularity": 0.1367,
           "profile_path": "/dsAEs0p2RE7k8hen3VOXjV4rzhM.jpg",
           "roles": [
             {
@@ -791,7 +804,7 @@
           "known_for_department": "Acting",
           "name": "David Forgit",
           "original_name": "David Forgit",
-          "popularity": 0.1938,
+          "popularity": 0.0732,
           "profile_path": "/vfcPb7nc9grSGahDfEViiIAjavb.jpg",
           "roles": [
             {
@@ -810,7 +823,7 @@
           "known_for_department": "Acting",
           "name": "Vincent Furic",
           "original_name": "Vincent Furic",
-          "popularity": 0.2272,
+          "popularity": 0.1105,
           "profile_path": "/6E1NAzKRy7RhGPfvQ0UudG1HHJo.jpg",
           "roles": [
             {
@@ -829,7 +842,7 @@
           "known_for_department": "Acting",
           "name": "Azzeddine Ahmed-Chaouch",
           "original_name": "Azzeddine Ahmed-Chaouch",
-          "popularity": 0.1448,
+          "popularity": 0.1065,
           "profile_path": "/wR7D6c8WxZiDxLEubsJnk7rdGuW.jpg",
           "roles": [
             {
@@ -848,7 +861,7 @@
           "known_for_department": "Acting",
           "name": "L\u00E9a Bonneau",
           "original_name": "L\u00E9a Bonneau",
-          "popularity": 0.7268,
+          "popularity": 0.191,
           "profile_path": "/cUY4b4byEvPHbBZqtdFVF1jRLhL.jpg",
           "roles": [
             {
@@ -867,7 +880,7 @@
           "known_for_department": "Acting",
           "name": "Franck Mercadal",
           "original_name": "Franck Mercadal",
-          "popularity": 0.2047,
+          "popularity": 0.2318,
           "profile_path": "/9ZQpWCFSHWD8U4JnZ1E0Ty2AMt1.jpg",
           "roles": [
             {
@@ -886,7 +899,7 @@
           "known_for_department": "Acting",
           "name": "Athaya Mokonzi",
           "original_name": "Athaya Mokonzi",
-          "popularity": 0.2359,
+          "popularity": 0.0988,
           "profile_path": "/80I93ijZjj2rA860YpifShMTzl0.jpg",
           "roles": [
             {
@@ -910,7 +923,7 @@
           "known_for_department": "Acting",
           "name": "Pierre Lottin",
           "original_name": "Pierre Lottin",
-          "popularity": 0.8613,
+          "popularity": 0.6059,
           "profile_path": "/1d0CBRIjScO7AUkQAqPcaRuC9Mg.jpg",
           "roles": [
             {
@@ -929,7 +942,7 @@
           "known_for_department": "Acting",
           "name": "Xavier Robic",
           "original_name": "Xavier Robic",
-          "popularity": 0.8749,
+          "popularity": 0.264,
           "profile_path": "/sXhSZ7Gyiq6sq3R85eRPMkoiJOh.jpg",
           "roles": [
             {
@@ -948,7 +961,7 @@
           "known_for_department": "Acting",
           "name": "Daniel Hanssens",
           "original_name": "Daniel Hanssens",
-          "popularity": 0.2377,
+          "popularity": 0.1703,
           "profile_path": "/x2PNFRAgIMltpqiyfdyCdgWURHt.jpg",
           "roles": [
             {
@@ -967,7 +980,7 @@
           "known_for_department": "Acting",
           "name": "Aur\u00E9lie Casse",
           "original_name": "Aur\u00E9lie Casse",
-          "popularity": 0.1579,
+          "popularity": 0.1002,
           "profile_path": "/lzxAegBXUYzZJeBgYBbmKu4gvHS.jpg",
           "roles": [
             {
@@ -986,7 +999,7 @@
           "known_for_department": "Acting",
           "name": "C\u00E9cile Ollivier",
           "original_name": "C\u00E9cile Ollivier",
-          "popularity": 0.1174,
+          "popularity": 0.0535,
           "profile_path": null,
           "roles": [
             {
@@ -1005,7 +1018,7 @@
           "known_for_department": "Acting",
           "name": "Bonnie Bouriche Troutaud",
           "original_name": "Bonnie Bouriche Troutaud",
-          "popularity": 0.0453,
+          "popularity": 0.0439,
           "profile_path": null,
           "roles": [
             {
@@ -1024,7 +1037,7 @@
           "known_for_department": "Acting",
           "name": "\u00C9douard Michelon",
           "original_name": "\u00C9douard Michelon",
-          "popularity": 0.2668,
+          "popularity": 0.3213,
           "profile_path": "/mAFyY60mEdexbmOi83v69oTRHi6.jpg",
           "roles": [
             {
@@ -1043,17 +1056,17 @@
           "known_for_department": "Acting",
           "name": "Marc Simon",
           "original_name": "Marc Simon",
-          "popularity": 0.0664,
+          "popularity": 0.0445,
           "profile_path": null,
           "roles": [
             {
-              "credit_id": "651fe0e03d3557011c00e51e",
-              "character": "Fan France 98",
+              "credit_id": "6522027ac1ffbd00fe111a26",
+              "character": "Fan France 1998",
               "episode_count": 1
             },
             {
-              "credit_id": "6522027ac1ffbd00fe111a26",
-              "character": "Fan France 1998",
+              "credit_id": "651fe0e03d3557011c00e51e",
+              "character": "Fan France 98",
               "episode_count": 1
             }
           ],
@@ -1067,7 +1080,7 @@
           "known_for_department": "Acting",
           "name": "Bartholomeus",
           "original_name": "Bartholomeus",
-          "popularity": 0.1072,
+          "popularity": 0.0289,
           "profile_path": null,
           "roles": [
             {
@@ -1086,7 +1099,7 @@
           "known_for_department": "Acting",
           "name": "Kamel Guenfoud",
           "original_name": "Kamel Guenfoud",
-          "popularity": 0.3964,
+          "popularity": 0.2896,
           "profile_path": "/2No4vnSwvQuGaNYoIq3ipJWTh5L.jpg",
           "roles": [
             {
@@ -1105,7 +1118,7 @@
           "known_for_department": "Acting",
           "name": "Gr\u00E9goire Colin",
           "original_name": "Gr\u00E9goire Colin",
-          "popularity": 1.333,
+          "popularity": 0.4096,
           "profile_path": "/jtolsceVVsMT1wWi8m8pdtaUE4f.jpg",
           "roles": [
             {
@@ -1124,7 +1137,7 @@
           "known_for_department": "Acting",
           "name": "Arthur Choisnet",
           "original_name": "Arthur Choisnet",
-          "popularity": 0.2631,
+          "popularity": 0.3273,
           "profile_path": "/56tzwcW4vm4A0dZp4WQ8O2Qjrlc.jpg",
           "roles": [
             {
@@ -1143,7 +1156,7 @@
           "known_for_department": "Acting",
           "name": "Sa\u00EFd Benchnafa",
           "original_name": "Sa\u00EFd Benchnafa",
-          "popularity": 0.2519,
+          "popularity": 0.3123,
           "profile_path": "/dSdxCP8UT9kEqZ4Rk9YlvWCrWOy.jpg",
           "roles": [
             {
@@ -1162,7 +1175,7 @@
           "known_for_department": "Acting",
           "name": "Mohamed Nouar",
           "original_name": "Mohamed Nouar",
-          "popularity": 0.0983,
+          "popularity": 0.0409,
           "profile_path": "/2PmsZeXswYqvgkUqsh6HuaZcAAn.jpg",
           "roles": [
             {
@@ -1181,7 +1194,7 @@
           "known_for_department": "Acting",
           "name": "Charlotte Saliou",
           "original_name": "Charlotte Saliou",
-          "popularity": 0.0286,
+          "popularity": 0.0416,
           "profile_path": null,
           "roles": [
             {
@@ -1200,7 +1213,7 @@
           "known_for_department": "Acting",
           "name": "Ary Gabison",
           "original_name": "Ary Gabison",
-          "popularity": 0.1724,
+          "popularity": 0.047,
           "profile_path": "/2rvGjQZYcs8AT4tyT130iFZturm.jpg",
           "roles": [
             {
@@ -1219,7 +1232,7 @@
           "known_for_department": "Acting",
           "name": "Martin Trouv\u00E9-Dug\u00E9ny",
           "original_name": "Martin Trouv\u00E9-Dug\u00E9ny",
-          "popularity": 0.0297,
+          "popularity": 0.0322,
           "profile_path": null,
           "roles": [
             {
@@ -1238,7 +1251,7 @@
           "known_for_department": "Acting",
           "name": "Xavier Gojo",
           "original_name": "Xavier Gojo",
-          "popularity": 0.2241,
+          "popularity": 0.1388,
           "profile_path": "/v0lvWqNhDX8F7nl7twoBPlCm2e0.jpg",
           "roles": [
             {
@@ -1257,7 +1270,7 @@
           "known_for_department": "Acting",
           "name": "Linda Massoz",
           "original_name": "Linda Massoz",
-          "popularity": 0.2125,
+          "popularity": 0.0506,
           "profile_path": "/smFFKDIJnmFLae3HzqNfGYMtHBK.jpg",
           "roles": [
             {
@@ -1276,7 +1289,7 @@
           "known_for_department": "Acting",
           "name": "Karim Lasmi",
           "original_name": "Karim Lasmi",
-          "popularity": 0.3474,
+          "popularity": 0.0635,
           "profile_path": "/6lMxGwUuxQosMFiq168Mdxkxiyb.jpg",
           "roles": [
             {
@@ -1295,7 +1308,7 @@
           "known_for_department": "Acting",
           "name": "Fran\u00E7ois Cr\u00E9ton",
           "original_name": "Fran\u00E7ois Cr\u00E9ton",
-          "popularity": 0.1409,
+          "popularity": 0.3521,
           "profile_path": "/MZqRzRqflgE6rGW1F9SH2DyYCz.jpg",
           "roles": [
             {
@@ -1314,7 +1327,7 @@
           "known_for_department": "Acting",
           "name": "Laurent Maurel",
           "original_name": "Laurent Maurel",
-          "popularity": 0.2253,
+          "popularity": 0.1563,
           "profile_path": "/vEbQJ8VNUyUwy10okhZ8mXjsg9o.jpg",
           "roles": [
             {
@@ -1333,7 +1346,7 @@
           "known_for_department": "Acting",
           "name": "Lazare Mohamed",
           "original_name": "Lazare Mohamed",
-          "popularity": 0.1055,
+          "popularity": 0.0311,
           "profile_path": null,
           "roles": [
             {
@@ -1352,7 +1365,7 @@
           "known_for_department": "Acting",
           "name": "Denis Mathieu",
           "original_name": "Denis Mathieu",
-          "popularity": 0.062,
+          "popularity": 0.0327,
           "profile_path": null,
           "roles": [
             {
@@ -1371,7 +1384,7 @@
           "known_for_department": "Acting",
           "name": "\u00C9tienne M\u00E9nard",
           "original_name": "\u00C9tienne M\u00E9nard",
-          "popularity": 0.2008,
+          "popularity": 0.3271,
           "profile_path": "/9kSZdZZezov0uZY68nzwiPhDktk.jpg",
           "roles": [
             {
@@ -1390,7 +1403,7 @@
           "known_for_department": "Acting",
           "name": "Mehdi Fettah",
           "original_name": "Mehdi Fettah",
-          "popularity": 0.129,
+          "popularity": 0.0641,
           "profile_path": null,
           "roles": [
             {
@@ -1409,7 +1422,7 @@
           "known_for_department": "Acting",
           "name": "V\u00E9ronique Viel",
           "original_name": "V\u00E9ronique Viel",
-          "popularity": 0.1341,
+          "popularity": 0.0448,
           "profile_path": "/ggqmYk5l1RcqXblL7KoMCNjRLxo.jpg",
           "roles": [
             {
@@ -1428,7 +1441,7 @@
           "known_for_department": "Acting",
           "name": "Jean-Marc Lallement",
           "original_name": "Jean-Marc Lallement",
-          "popularity": 0.0662,
+          "popularity": 0.0507,
           "profile_path": "/YFVccRPx7yPbAcDE3DXm2AEvA6.jpg",
           "roles": [
             {
@@ -1447,7 +1460,7 @@
           "known_for_department": "Acting",
           "name": "L\u00E9o Boucry",
           "original_name": "L\u00E9o Boucry",
-          "popularity": 0.0398,
+          "popularity": 0.0888,
           "profile_path": null,
           "roles": [
             {
@@ -1466,7 +1479,7 @@
           "known_for_department": "Acting",
           "name": "Guillaume Auvert",
           "original_name": "Guillaume Auvert",
-          "popularity": 0.0214,
+          "popularity": 0.0616,
           "profile_path": null,
           "roles": [
             {
@@ -1485,7 +1498,7 @@
           "known_for_department": "Acting",
           "name": "Melvin Habib",
           "original_name": "Melvin Habib",
-          "popularity": 0.0824,
+          "popularity": 0.0214,
           "profile_path": null,
           "roles": [
             {
@@ -1504,7 +1517,7 @@
           "known_for_department": "Acting",
           "name": "B\u00E9n\u00E9dicte-Lala Ernoult",
           "original_name": "B\u00E9n\u00E9dicte-Lala Ernoult",
-          "popularity": 0.0718,
+          "popularity": 0.0623,
           "profile_path": "/buMdLq8eWUrAwVagcjAaCLowdUk.jpg",
           "roles": [
             {
@@ -1523,7 +1536,7 @@
           "known_for_department": "Acting",
           "name": "Charles Dupisre",
           "original_name": "Charles Dupisre",
-          "popularity": 0.0507,
+          "popularity": 0.0214,
           "profile_path": null,
           "roles": [
             {
@@ -1542,7 +1555,7 @@
           "known_for_department": "Acting",
           "name": "Jean-Pierre Cormarie",
           "original_name": "Jean-Pierre Cormarie",
-          "popularity": 0.0336,
+          "popularity": 0.047,
           "profile_path": null,
           "roles": [
             {
@@ -1561,7 +1574,7 @@
           "known_for_department": "Acting",
           "name": "Abel Jafri",
           "original_name": "Abel Jafri",
-          "popularity": 0.2699,
+          "popularity": 0.2197,
           "profile_path": "/nZ476kQTZZMjb7sDJZCV9otlWM6.jpg",
           "roles": [
             {
@@ -1580,7 +1593,7 @@
           "known_for_department": "Acting",
           "name": "K\u00E9vin Poncet",
           "original_name": "K\u00E9vin Poncet",
-          "popularity": 0.175,
+          "popularity": 0.0368,
           "profile_path": null,
           "roles": [
             {
@@ -1599,7 +1612,7 @@
           "known_for_department": "Acting",
           "name": "Olivier Ho Hio Hen",
           "original_name": "Olivier Ho Hio Hen",
-          "popularity": 0.0913,
+          "popularity": 0.3127,
           "profile_path": "/1QBfLKroGHV1VLLZfLZISuDL5HG.jpg",
           "roles": [
             {
@@ -1618,7 +1631,7 @@
           "known_for_department": "Acting",
           "name": "Val\u00E9rie de Dietrich",
           "original_name": "Val\u00E9rie de Dietrich",
-          "popularity": 0.077,
+          "popularity": 0.0878,
           "profile_path": "/czoWL4DLXiDueHDHREDQiRxon3v.jpg",
           "roles": [
             {
@@ -1637,7 +1650,7 @@
           "known_for_department": "Acting",
           "name": "B\u00E9reng\u00E8re Dautun",
           "original_name": "B\u00E9reng\u00E8re Dautun",
-          "popularity": 0.0873,
+          "popularity": 0.1003,
           "profile_path": "/AeO71TBMG0Rw0onZaL7LZcJdr0L.jpg",
           "roles": [
             {
@@ -1656,7 +1669,7 @@
           "known_for_department": "Acting",
           "name": "Pierre Rousselet",
           "original_name": "Pierre Rousselet",
-          "popularity": 0.0707,
+          "popularity": 0.241,
           "profile_path": "/gce7zWwF1rkuJMfYkIC4Yn2vKfe.jpg",
           "roles": [
             {
@@ -1675,7 +1688,7 @@
           "known_for_department": "Acting",
           "name": "Caroline Borderieux",
           "original_name": "Caroline Borderieux",
-          "popularity": 0.0956,
+          "popularity": 0.0363,
           "profile_path": null,
           "roles": [
             {
@@ -1694,7 +1707,7 @@
           "known_for_department": "Acting",
           "name": "C\u00E9dric Meusburger",
           "original_name": "C\u00E9dric Meusburger",
-          "popularity": 0.1133,
+          "popularity": 0.13,
           "profile_path": "/712Q12h3Ooc7rRWvG2i8Z7P9hfM.jpg",
           "roles": [
             {
@@ -1713,7 +1726,7 @@
           "known_for_department": "Acting",
           "name": "Daniel Martin",
           "original_name": "Daniel Martin",
-          "popularity": 0.3583,
+          "popularity": 0.2353,
           "profile_path": "/fUalx2UASfEKzJ3AKHEa51ys9L.jpg",
           "roles": [
             {
@@ -1732,7 +1745,7 @@
           "known_for_department": "Acting",
           "name": "Beno\u00EEt Tachoires",
           "original_name": "Beno\u00EEt Tachoires",
-          "popularity": 0.2101,
+          "popularity": 0.2499,
           "profile_path": "/86OK3SrHXSuHhIF2mEjA1v2kdHd.jpg",
           "roles": [
             {
@@ -1751,7 +1764,7 @@
           "known_for_department": "Acting",
           "name": "V\u00E9ronique Royer",
           "original_name": "V\u00E9ronique Royer",
-          "popularity": 0.1255,
+          "popularity": 0.1224,
           "profile_path": "/hcRT2U4jAnIUlSchBEi69QXCAF6.jpg",
           "roles": [
             {
@@ -1770,7 +1783,7 @@
           "known_for_department": "Acting",
           "name": "Mathieu Milella",
           "original_name": "Mathieu Milella",
-          "popularity": 0.0655,
+          "popularity": 0.0516,
           "profile_path": "/jFHKDOe7NhbpwrdywPlEOBe0IAJ.jpg",
           "roles": [
             {
@@ -1789,7 +1802,7 @@
           "known_for_department": "Acting",
           "name": "Tonio Descanvelle",
           "original_name": "Tonio Descanvelle",
-          "popularity": 1.101,
+          "popularity": 0.2391,
           "profile_path": "/l5xgE93R5bjwenULIItboKYVmve.jpg",
           "roles": [
             {
@@ -1808,7 +1821,7 @@
           "known_for_department": "Acting",
           "name": "Rodolphe Borgniet",
           "original_name": "Rodolphe Borgniet",
-          "popularity": 0.0571,
+          "popularity": 0.0423,
           "profile_path": "/e5t0tCV8h4u9zIZOSpBR62znreB.jpg",
           "roles": [
             {
@@ -1827,7 +1840,7 @@
           "known_for_department": "Acting",
           "name": "S\u00E9bastien Faglain",
           "original_name": "S\u00E9bastien Faglain",
-          "popularity": 0.5232,
+          "popularity": 0.0848,
           "profile_path": "/sxMspalpuJjyKAqujpryL3vYOM0.jpg",
           "roles": [
             {
@@ -1846,7 +1859,7 @@
           "known_for_department": "Acting",
           "name": "Denis Mathieu",
           "original_name": "Denis Mathieu",
-          "popularity": 0.0881,
+          "popularity": 0.0429,
           "profile_path": null,
           "roles": [
             {
@@ -1865,7 +1878,7 @@
           "known_for_department": "Acting",
           "name": "Maud Le Gu\u00E9n\u00E9dal",
           "original_name": "Maud Le Gu\u00E9n\u00E9dal",
-          "popularity": 0.2035,
+          "popularity": 0.1663,
           "profile_path": "/jPUb9VwEeFIKMnp94fOSLkSUtfY.jpg",
           "roles": [
             {
@@ -1884,7 +1897,7 @@
           "known_for_department": "Acting",
           "name": "Juliette Poissonnier",
           "original_name": "Juliette Poissonnier",
-          "popularity": 0.1327,
+          "popularity": 0.1231,
           "profile_path": "/fHWvz2864Porxnhgu9LQosvmkr9.jpg",
           "roles": [
             {
@@ -1903,7 +1916,7 @@
           "known_for_department": "Acting",
           "name": "Christopher Minkoulou",
           "original_name": "Christopher Minkoulou",
-          "popularity": 0.0445,
+          "popularity": 0.0368,
           "profile_path": null,
           "roles": [
             {
@@ -1922,7 +1935,7 @@
           "known_for_department": "Acting",
           "name": "H\u00E9l\u00E8ne Mannarino",
           "original_name": "H\u00E9l\u00E8ne Mannarino",
-          "popularity": 0.1205,
+          "popularity": 0.1208,
           "profile_path": "/qH53e9tZpnFY671dlfA2knqQwv8.jpg",
           "roles": [
             {
@@ -1941,7 +1954,7 @@
           "known_for_department": "Acting",
           "name": "Yoni Dahan",
           "original_name": "Yoni Dahan",
-          "popularity": 0.2366,
+          "popularity": 0.0311,
           "profile_path": "/aM7CGlVnxBmRgapRu4Y2j3ZoCMr.jpg",
           "roles": [
             {
@@ -1960,7 +1973,7 @@
           "known_for_department": "Acting",
           "name": "Sarah G\u00E9lin",
           "original_name": "Sarah G\u00E9lin",
-          "popularity": 0.1363,
+          "popularity": 0.0368,
           "profile_path": null,
           "roles": [
             {
@@ -1979,7 +1992,7 @@
           "known_for_department": "Acting",
           "name": "Marion Creusvaux",
           "original_name": "Marion Creusvaux",
-          "popularity": 0.0746,
+          "popularity": 0.1773,
           "profile_path": "/5FnuN1zSnaL8dMG5x9Or9THxUNs.jpg",
           "roles": [
             {
@@ -1998,7 +2011,7 @@
           "known_for_department": "Acting",
           "name": "Christian Julien",
           "original_name": "Christian Julien",
-          "popularity": 0.0535,
+          "popularity": 0.0807,
           "profile_path": null,
           "roles": [
             {
@@ -2017,7 +2030,7 @@
           "known_for_department": "Acting",
           "name": "Guillaume M\u00E9lanie",
           "original_name": "Guillaume M\u00E9lanie",
-          "popularity": 0.0659,
+          "popularity": 0.0792,
           "profile_path": "/iIMjYSANLakqtBfdVsBOu3wQLz7.jpg",
           "roles": [
             {
@@ -2036,7 +2049,7 @@
           "known_for_department": "Sound",
           "name": "Mathieu Lamboley",
           "original_name": "Mathieu Lamboley",
-          "popularity": 0.0551,
+          "popularity": 0.1821,
           "profile_path": "/xqPzm3gUZw7g3ALK1tc0lW1fbvs.jpg",
           "roles": [
             {
@@ -2055,7 +2068,7 @@
           "known_for_department": "Acting",
           "name": "Si\u00E8me Miladi",
           "original_name": "Si\u00E8me Miladi",
-          "popularity": 0.3234,
+          "popularity": 0.1344,
           "profile_path": "/c8KqYaJw723h6ePRNxkdaEhUrV0.jpg",
           "roles": [
             {
@@ -2074,7 +2087,7 @@
           "known_for_department": "Acting",
           "name": "Mustapha Benameur",
           "original_name": "Mustapha Benameur",
-          "popularity": 0.0071,
+          "popularity": 0.0503,
           "profile_path": null,
           "roles": [
             {
@@ -2093,7 +2106,7 @@
           "known_for_department": "Acting",
           "name": "Pauline Huruguen",
           "original_name": "Pauline Huruguen",
-          "popularity": 0.1438,
+          "popularity": 0.1272,
           "profile_path": "/rE7HGHjoV3T6qOuAZg3p4zIOy6v.jpg",
           "roles": [
             {
@@ -2112,7 +2125,7 @@
           "known_for_department": "Acting",
           "name": "Nadd",
           "original_name": "Nadd",
-          "popularity": 0.0404,
+          "popularity": 0.0429,
           "profile_path": null,
           "roles": [
             {
@@ -2131,7 +2144,7 @@
           "known_for_department": "Acting",
           "name": "Audrey Looten",
           "original_name": "Audrey Looten",
-          "popularity": 0.3639,
+          "popularity": 0.234,
           "profile_path": "/ps8atU9J2kayOAZNLFia2TakSU5.jpg",
           "roles": [
             {
@@ -2150,7 +2163,7 @@
           "known_for_department": "Acting",
           "name": "Jean-Yves Freyburger",
           "original_name": "Jean-Yves Freyburger",
-          "popularity": 0.0682,
+          "popularity": 0.0795,
           "profile_path": "/j9856zGhceBu44BdLq4FjtZWYWj.jpg",
           "roles": [
             {
@@ -2169,7 +2182,7 @@
           "known_for_department": "Crew",
           "name": "Michel Bouis",
           "original_name": "Michel Bouis",
-          "popularity": 0.4238,
+          "popularity": 0.3176,
           "profile_path": "/1bbHGIhG02AV6PrJmF1gHTwWYtp.jpg",
           "roles": [
             {
@@ -2188,7 +2201,7 @@
           "known_for_department": "Acting",
           "name": "Maximilien Seweryn",
           "original_name": "Maximilien Seweryn",
-          "popularity": 0.2577,
+          "popularity": 0.445,
           "profile_path": "/cmI4gHnoRepcSE2l2T0mPXdAfGC.jpg",
           "roles": [
             {
@@ -2207,7 +2220,7 @@
           "known_for_department": "Acting",
           "name": "Emmanuel Cottalorda",
           "original_name": "Emmanuel Cottalorda",
-          "popularity": 0.0261,
+          "popularity": 0.0429,
           "profile_path": null,
           "roles": [
             {
@@ -2226,7 +2239,7 @@
           "known_for_department": "Acting",
           "name": "Eric Bougnon",
           "original_name": "Eric Bougnon",
-          "popularity": 0.5492,
+          "popularity": 0.2098,
           "profile_path": "/bHJtY6lvj6Nq0Ii6k8k7jR1wdAP.jpg",
           "roles": [
             {
@@ -2245,7 +2258,7 @@
           "known_for_department": "Acting",
           "name": "Jenna Pisani",
           "original_name": "Jenna Pisani",
-          "popularity": 0.1341,
+          "popularity": 0.0311,
           "profile_path": null,
           "roles": [
             {
@@ -2264,7 +2277,7 @@
           "known_for_department": "Acting",
           "name": "Henri Giey",
           "original_name": "Henri Giey",
-          "popularity": 0.1133,
+          "popularity": 0.0921,
           "profile_path": "/4AFZ4mYhytzq73xZlupin1onpV3.jpg",
           "roles": [
             {
@@ -2283,7 +2296,7 @@
           "known_for_department": "Acting",
           "name": "Sullivan Jousett",
           "original_name": "Sullivan Jousett",
-          "popularity": 0.0214,
+          "popularity": 0.0311,
           "profile_path": null,
           "roles": [
             {
@@ -2302,7 +2315,7 @@
           "known_for_department": "Acting",
           "name": "Charles-Roger Bour",
           "original_name": "Charles-Roger Bour",
-          "popularity": 0.1271,
+          "popularity": 0.1372,
           "profile_path": "/sTD4uytaGkd2GDdlzi63TYYzpdi.jpg",
           "roles": [
             {
@@ -2321,7 +2334,7 @@
           "known_for_department": "Acting",
           "name": "Lelio Bernard",
           "original_name": "Lelio Bernard",
-          "popularity": 0.0929,
+          "popularity": 0.0423,
           "profile_path": null,
           "roles": [
             {
@@ -2340,7 +2353,7 @@
           "known_for_department": "Acting",
           "name": "Jean Benguigui",
           "original_name": "Jean Benguigui",
-          "popularity": 0.5697,
+          "popularity": 0.4611,
           "profile_path": "/21m2psUsFlsSdbsxGPjZdLRoAjs.jpg",
           "roles": [
             {
@@ -2359,7 +2372,7 @@
           "known_for_department": "Acting",
           "name": "Jean-Luc Diqu\u00E9ro",
           "original_name": "Jean-Luc Diqu\u00E9ro",
-          "popularity": 0.0214,
+          "popularity": 0.0352,
           "profile_path": null,
           "roles": [
             {
@@ -2378,7 +2391,7 @@
           "known_for_department": "Acting",
           "name": "Armand Eloi",
           "original_name": "Armand Eloi",
-          "popularity": 0.1385,
+          "popularity": 0.0616,
           "profile_path": "/xRjbHoxZ0QPxtkFSc3G3pnqroKL.jpg",
           "roles": [
             {
@@ -2397,7 +2410,7 @@
           "known_for_department": "Acting",
           "name": "Gabrielle Atger",
           "original_name": "Gabrielle Atger",
-          "popularity": 0.4678,
+          "popularity": 0.3831,
           "profile_path": "/j3UH0agLH9aiuAeIhT30FZQYfRJ.jpg",
           "roles": [
             {
@@ -2416,7 +2429,7 @@
           "known_for_department": "Acting",
           "name": "Bertrand Lacy",
           "original_name": "Bertrand Lacy",
-          "popularity": 0.1454,
+          "popularity": 0.0737,
           "profile_path": "/rYaIPVnG4PFgQiIGFEfQuvsNtXz.jpg",
           "roles": [
             {
@@ -2435,7 +2448,7 @@
           "known_for_department": "Acting",
           "name": "Cesare Capitani",
           "original_name": "Cesare Capitani",
-          "popularity": 0.0772,
+          "popularity": 0.1816,
           "profile_path": "/4KDkbZjrjTSFFtPtgiN89U1nvOe.jpg",
           "roles": [
             {
@@ -2454,7 +2467,7 @@
           "known_for_department": "Acting",
           "name": "Vladimir Perrin",
           "original_name": "Vladimir Perrin",
-          "popularity": 0.2919,
+          "popularity": 0.2275,
           "profile_path": "/hoSUPf2EolfLYysFAwuLDougxAI.jpg",
           "roles": [
             {
@@ -2473,7 +2486,7 @@
           "known_for_department": "Acting",
           "name": "Malick Baulet",
           "original_name": "Malick Baulet",
-          "popularity": 0.0509,
+          "popularity": 0.0596,
           "profile_path": null,
           "roles": [
             {
@@ -2492,7 +2505,7 @@
           "known_for_department": "Acting",
           "name": "Cyril Brossaud",
           "original_name": "Cyril Brossaud",
-          "popularity": 0.0948,
+          "popularity": 0.0478,
           "profile_path": null,
           "roles": [
             {
@@ -2511,7 +2524,7 @@
           "known_for_department": "Acting",
           "name": "Vincent Overath",
           "original_name": "Vincent Overath",
-          "popularity": 0.0873,
+          "popularity": 0.0382,
           "profile_path": null,
           "roles": [
             {
@@ -2530,7 +2543,7 @@
           "known_for_department": "Acting",
           "name": "Walid Afkir",
           "original_name": "Walid Afkir",
-          "popularity": 0.1752,
+          "popularity": 0.2826,
           "profile_path": "/4s7KGPZJRLT5NB38581sh6s6lOo.jpg",
           "roles": [
             {
@@ -2549,7 +2562,7 @@
           "known_for_department": "Acting",
           "name": "Blandine P\u00E9lissier",
           "original_name": "Blandine P\u00E9lissier",
-          "popularity": 0.0764,
+          "popularity": 0.1613,
           "profile_path": "/1nwXG4PSeHHMUO3YqZEoNxu7gvo.jpg",
           "roles": [
             {
@@ -2568,7 +2581,7 @@
           "known_for_department": "Acting",
           "name": "Ayoub Marceau",
           "original_name": "Ayoub Marceau",
-          "popularity": 0.1109,
+          "popularity": 0.1884,
           "profile_path": "/fXnox1HBrnqFhQt7rOyVcF6MSWf.jpg",
           "roles": [
             {
@@ -2587,7 +2600,7 @@
           "known_for_department": "Acting",
           "name": "Robert Moundi",
           "original_name": "Robert Moundi",
-          "popularity": 0.0693,
+          "popularity": 0.0286,
           "profile_path": null,
           "roles": [
             {
@@ -2606,7 +2619,7 @@
           "known_for_department": "Acting",
           "name": "Foued Nabba",
           "original_name": "Foued Nabba",
-          "popularity": 0.7572,
+          "popularity": 0.2721,
           "profile_path": "/iOvDItJylmOWEdlNBkvMfJu9okv.jpg",
           "roles": [
             {
@@ -2625,7 +2638,7 @@
           "known_for_department": "Acting",
           "name": "Francois Nowacki",
           "original_name": "Francois Nowacki",
-          "popularity": 0.0168,
+          "popularity": 0.0589,
           "profile_path": null,
           "roles": [
             {
@@ -2644,7 +2657,7 @@
           "known_for_department": "Acting",
           "name": "Malik Amraoui",
           "original_name": "Malik Amraoui",
-          "popularity": 0.3529,
+          "popularity": 0.0691,
           "profile_path": "/jltlBQadywhj343GXu6yixmsICd.jpg",
           "roles": [
             {
@@ -2663,7 +2676,7 @@
           "known_for_department": "Acting",
           "name": "Fr\u00E9d\u00E9ric Kneip",
           "original_name": "Fr\u00E9d\u00E9ric Kneip",
-          "popularity": 0.1691,
+          "popularity": 0.2227,
           "profile_path": "/alLBlQlp8m5Dk8iAQRZIYkAuTD8.jpg",
           "roles": [
             {
@@ -2682,7 +2695,7 @@
           "known_for_department": "Acting",
           "name": "Elodie Roupr\u00EAt",
           "original_name": "Elodie Roupr\u00EAt",
-          "popularity": 0.1203,
+          "popularity": 0.0418,
           "profile_path": "/wJB5eMgFwykHtPuSfYGjAeJW13u.jpg",
           "roles": [
             {
@@ -2701,7 +2714,7 @@
           "known_for_department": "Acting",
           "name": "Adou Khan",
           "original_name": "Adou Khan",
-          "popularity": 0.1328,
+          "popularity": 0.082,
           "profile_path": "/bWpNlFrMPdFCbVNLkhRvZh9WcfK.jpg",
           "roles": [
             {
@@ -2720,7 +2733,7 @@
           "known_for_department": "Acting",
           "name": "Isabelle Girard",
           "original_name": "Isabelle Girard",
-          "popularity": 0.0214,
+          "popularity": 0.0361,
           "profile_path": null,
           "roles": [
             {
@@ -2739,7 +2752,7 @@
           "known_for_department": "Acting",
           "name": "Ulysse Dutilloy-Li\u00E9geois",
           "original_name": "Ulysse Dutilloy-Li\u00E9geois",
-          "popularity": 0.0297,
+          "popularity": 0.0527,
           "profile_path": null,
           "roles": [
             {
@@ -2758,7 +2771,7 @@
           "known_for_department": "Acting",
           "name": "Ted Etienne",
           "original_name": "Ted Etienne",
-          "popularity": 0.7436,
+          "popularity": 0.0563,
           "profile_path": "/2Cbk41iNSQjCUmdYE33yf6arLik.jpg",
           "roles": [
             {
@@ -2777,7 +2790,7 @@
           "known_for_department": "Acting",
           "name": "Luc-Antoine Diqu\u00E9ro",
           "original_name": "Luc-Antoine Diqu\u00E9ro",
-          "popularity": 0.1153,
+          "popularity": 0.0912,
           "profile_path": "/9rOKHWW4PM0IPYicKDjtreqz9PM.jpg",
           "roles": [
             {
@@ -2796,7 +2809,7 @@
           "known_for_department": "Acting",
           "name": "Ga\u00EBlle Lebert",
           "original_name": "Ga\u00EBlle Lebert",
-          "popularity": 0.1369,
+          "popularity": 0.1536,
           "profile_path": "/qYW8lmKPEoUOh7bOExCrHuQ1DhK.jpg",
           "roles": [
             {
@@ -2815,7 +2828,7 @@
           "known_for_department": "Acting",
           "name": "Laurence Cormerais",
           "original_name": "Laurence Cormerais",
-          "popularity": 0.058,
+          "popularity": 0.0614,
           "profile_path": "/a6yvYhdDCC6VJH1fL7Bbklg5UdW.jpg",
           "roles": [
             {
@@ -2834,7 +2847,7 @@
           "known_for_department": "Acting",
           "name": "Jean-Louis Cassarino",
           "original_name": "Jean-Louis Cassarino",
-          "popularity": 0.0286,
+          "popularity": 0.0264,
           "profile_path": "/4WpnRmlziyLYscTNbgy8QBq1O6M.jpg",
           "roles": [
             {
@@ -2853,8 +2866,8 @@
           "known_for_department": "Acting",
           "name": "Antony Hickling",
           "original_name": "Antony Hickling",
-          "popularity": 0.4074,
-          "profile_path": "/euOHOfYSWspVX5NW6l889YiIB9j.jpg",
+          "popularity": 0.3099,
+          "profile_path": "/4duuoJywDtjME40gvxYgUIXCBZQ.jpg",
           "roles": [
             {
               "credit_id": "652145d9ea84c7012d6b25b5",
@@ -2872,7 +2885,7 @@
           "known_for_department": "Acting",
           "name": "J\u00E9r\u00F4me Quintard",
           "original_name": "J\u00E9r\u00F4me Quintard",
-          "popularity": 0.0806,
+          "popularity": 0.0286,
           "profile_path": "/cRjG74cUMoNntMonWNGDAWvmfZg.jpg",
           "roles": [
             {
@@ -2891,7 +2904,7 @@
           "known_for_department": "Acting",
           "name": "Laurent Pons",
           "original_name": "Laurent Pons",
-          "popularity": 0.5384,
+          "popularity": 0.1787,
           "profile_path": "/xoN8A9tvLQEqvLkpchpedkFeiqh.jpg",
           "roles": [
             {
@@ -2910,7 +2923,7 @@
           "known_for_department": "Acting",
           "name": "Ga\u00EFa Warnant",
           "original_name": "Ga\u00EFa Warnant",
-          "popularity": 0.1251,
+          "popularity": 0.0352,
           "profile_path": "/ce1HGNXfdm5PMAUFB3znnNR0pUt.jpg",
           "roles": [
             {
@@ -2929,7 +2942,7 @@
           "known_for_department": "Acting",
           "name": "Estelle Desydol",
           "original_name": "Estelle Desydol",
-          "popularity": 0.0652,
+          "popularity": 0.0521,
           "profile_path": null,
           "roles": [
             {
@@ -2948,7 +2961,7 @@
           "known_for_department": "Acting",
           "name": "Bruno Paviot",
           "original_name": "Bruno Paviot",
-          "popularity": 0.9088,
+          "popularity": 0.3227,
           "profile_path": "/pGVf8YttW85MdqPfFjVKliOaS7e.jpg",
           "roles": [
             {
@@ -2967,7 +2980,7 @@
           "known_for_department": "Acting",
           "name": "Omar Baha",
           "original_name": "Omar Baha",
-          "popularity": 0.0888,
+          "popularity": 0.0311,
           "profile_path": null,
           "roles": [
             {
@@ -2986,7 +2999,7 @@
           "known_for_department": "Acting",
           "name": "Frank Messica",
           "original_name": "Frank Messica",
-          "popularity": 0.0398,
+          "popularity": 0.0239,
           "profile_path": null,
           "roles": [
             {
@@ -3005,7 +3018,7 @@
           "known_for_department": "Acting",
           "name": "Guillaume Tarbouriech",
           "original_name": "Guillaume Tarbouriech",
-          "popularity": 0.0071,
+          "popularity": 0.0311,
           "profile_path": null,
           "roles": [
             {
@@ -3024,7 +3037,7 @@
           "known_for_department": "Acting",
           "name": "Romuald Tchoualak",
           "original_name": "Romuald Tchoualak",
-          "popularity": 0.0071,
+          "popularity": 0.0711,
           "profile_path": null,
           "roles": [
             {
@@ -3043,7 +3056,7 @@
           "known_for_department": "Acting",
           "name": "Senou Fofana",
           "original_name": "Senou Fofana",
-          "popularity": 0.1583,
+          "popularity": 0.0352,
           "profile_path": null,
           "roles": [
             {
@@ -3062,7 +3075,7 @@
           "known_for_department": "Acting",
           "name": "L\u00E9onard Tindano",
           "original_name": "L\u00E9onard Tindano",
-          "popularity": 0.089,
+          "popularity": 0.0264,
           "profile_path": null,
           "roles": [
             {
@@ -3081,7 +3094,7 @@
           "known_for_department": "Acting",
           "name": "Emmanuelle Bougerol",
           "original_name": "Emmanuelle Bougerol",
-          "popularity": 0.1255,
+          "popularity": 0.1305,
           "profile_path": "/iCLS7Cj0tbWVZDQeLINxKurOsJ7.jpg",
           "roles": [
             {
@@ -3100,7 +3113,7 @@
           "known_for_department": "Acting",
           "name": "Dylan Louhoungou",
           "original_name": "Dylan Louhoungou",
-          "popularity": 0.1059,
+          "popularity": 0.091,
           "profile_path": "/srIm2OEQRw5aNtoikZwtggUg8GT.jpg",
           "roles": [
             {
@@ -3119,7 +3132,7 @@
           "known_for_department": "Acting",
           "name": "Marie Lagr\u00E9e",
           "original_name": "Marie Lagr\u00E9e",
-          "popularity": 0.1614,
+          "popularity": 0.0382,
           "profile_path": null,
           "roles": [
             {
@@ -3138,7 +3151,7 @@
           "known_for_department": "Acting",
           "name": "Damien Bellard",
           "original_name": "Damien Bellard",
-          "popularity": 0.1387,
+          "popularity": 0.0639,
           "profile_path": "/jrzsyKkiisW9Yc0gloAfWqIsDvu.jpg",
           "roles": [
             {
@@ -3157,7 +3170,7 @@
           "known_for_department": "Acting",
           "name": "Catherine Trottmann",
           "original_name": "Catherine Trottmann",
-          "popularity": 0.1348,
+          "popularity": 0.0747,
           "profile_path": "/zmoYbad5ukWjwB3COZMLko8eZG1.jpg",
           "roles": [
             {
@@ -3176,7 +3189,7 @@
           "known_for_department": "Acting",
           "name": "Seyna Kane",
           "original_name": "Seyna Kane",
-          "popularity": 0.1696,
+          "popularity": 0.0837,
           "profile_path": null,
           "roles": [
             {
@@ -3195,7 +3208,7 @@
           "known_for_department": "Acting",
           "name": "Patrick Rocca",
           "original_name": "Patrick Rocca",
-          "popularity": 0.2034,
+          "popularity": 0.2599,
           "profile_path": "/hRa6OhfgVUX1lgqk4BNyZAfktJx.jpg",
           "roles": [
             {
@@ -3214,7 +3227,7 @@
           "known_for_department": "Acting",
           "name": "Ali Tiemoko-Ha\u00EFdara",
           "original_name": "Ali Tiemoko-Ha\u00EFdara",
-          "popularity": 0.0701,
+          "popularity": 0.0994,
           "profile_path": null,
           "roles": [
             {
@@ -3233,7 +3246,7 @@
           "known_for_department": "Acting",
           "name": "Philippe R\u00E9simont",
           "original_name": "Philippe R\u00E9simont",
-          "popularity": 0.1623,
+          "popularity": 0.3597,
           "profile_path": "/aPtKQWC0sNUIBpsKvlKjSCFuUIG.jpg",
           "roles": [
             {
@@ -3252,7 +3265,7 @@
           "known_for_department": "Acting",
           "name": "Thierry Angelvy",
           "original_name": "Thierry Angelvy",
-          "popularity": 0.1076,
+          "popularity": 0.0968,
           "profile_path": "/f74kmZ6uuP385ccOqAiXqbAVmJi.jpg",
           "roles": [
             {
@@ -3271,7 +3284,7 @@
           "known_for_department": "Acting",
           "name": "Salim Kissari",
           "original_name": "Salim Kissari",
-          "popularity": 0.1824,
+          "popularity": 0.1427,
           "profile_path": "/cRJTEPALogDlGtdejmd2MGw1UGK.jpg",
           "roles": [
             {
@@ -3290,7 +3303,7 @@
           "known_for_department": "Acting",
           "name": "Anthony Clerveaux",
           "original_name": "Anthony Clerveaux",
-          "popularity": 0.0598,
+          "popularity": 0.0541,
           "profile_path": null,
           "roles": [
             {
@@ -3309,7 +3322,7 @@
           "known_for_department": "Acting",
           "name": "Kevin Duforest",
           "original_name": "Kevin Duforest",
-          "popularity": 0.0949,
+          "popularity": 0.0377,
           "profile_path": null,
           "roles": [
             {
@@ -3328,7 +3341,7 @@
           "known_for_department": "Acting",
           "name": "Alo\u00EFs Menu",
           "original_name": "Alo\u00EFs Menu",
-          "popularity": 0.1005,
+          "popularity": 0.1091,
           "profile_path": null,
           "roles": [
             {
@@ -3347,7 +3360,7 @@
           "known_for_department": "Writing",
           "name": "Fran\u00E7ois Uzan",
           "original_name": "Fran\u00E7ois Uzan",
-          "popularity": 0.196,
+          "popularity": 0.4786,
           "profile_path": null,
           "roles": [
             {
@@ -3366,7 +3379,7 @@
           "known_for_department": "Acting",
           "name": "Oph\u00E9ly Mezino",
           "original_name": "Oph\u00E9ly Mezino",
-          "popularity": 0.1283,
+          "popularity": 0.0361,
           "profile_path": null,
           "roles": [
             {
@@ -3385,7 +3398,7 @@
           "known_for_department": "Acting",
           "name": "Xin Wang",
           "original_name": "Xin Wang",
-          "popularity": 0.1028,
+          "popularity": 0.1479,
           "profile_path": "/7QARLZ9TAUi3vLDPRuFWClj3bFQ.jpg",
           "roles": [
             {
@@ -3404,7 +3417,7 @@
           "known_for_department": "Acting",
           "name": "Christian Diaz",
           "original_name": "Christian Diaz",
-          "popularity": 0.1166,
+          "popularity": 0.0845,
           "profile_path": "/iOiT9BYQf89JjunpNREAq6Y77U0.jpg",
           "roles": [
             {
@@ -3415,18 +3428,37 @@
           ],
           "total_episode_count": 1,
           "order": 681
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 3807815,
+          "known_for_department": "Acting",
+          "name": "David Sollazzo",
+          "original_name": "David Sollazzo",
+          "popularity": 0.0448,
+          "profile_path": "/OEQ9Rrz7UzkdL6D3yGhUzHXZJQ.jpg",
+          "roles": [
+            {
+              "credit_id": "698cb357d84736ad0932063f",
+              "character": "Police officer",
+              "episode_count": 1
+            }
+          ],
+          "total_episode_count": 1,
+          "order": 682
         }
       ],
       "crew": [
         {
           "adult": false,
-          "gender": 0,
+          "gender": 2,
           "id": 1550381,
           "known_for_department": "Camera",
           "name": "Christophe Nuyens",
           "original_name": "Christophe Nuyens",
-          "popularity": 0.0814,
-          "profile_path": null,
+          "popularity": 0.2355,
+          "profile_path": "/bRvwcIYi30OfaPUJhGWXAbZRAzJ.jpg",
           "jobs": [
             {
               "credit_id": "6074f8a765686e00296f5bec",
@@ -3444,7 +3476,7 @@
           "known_for_department": "Camera",
           "name": "Martial Schmeltz",
           "original_name": "Martial Schmeltz",
-          "popularity": 0.0412,
+          "popularity": 0.0143,
           "profile_path": null,
           "jobs": [
             {
@@ -3468,7 +3500,7 @@
           "known_for_department": "Camera",
           "name": "Antony Diaz",
           "original_name": "Antony Diaz",
-          "popularity": 0.2436,
+          "popularity": 0.0691,
           "profile_path": "/3k98mLAbRwzjGpq7ySk7T28vz9K.jpg",
           "jobs": [
             {
@@ -3482,50 +3514,12 @@
         },
         {
           "adult": false,
-          "gender": 0,
-          "id": 1412918,
-          "known_for_department": "Camera",
-          "name": "Jean-Baptiste Jay",
-          "original_name": "Jean-Baptiste Jay",
-          "popularity": 0.0593,
-          "profile_path": null,
-          "jobs": [
-            {
-              "credit_id": "60cc3307f12cf4007873d7e0",
-              "job": "Second Unit Director of Photography",
-              "episode_count": 2
-            }
-          ],
-          "department": "Camera",
-          "total_episode_count": 2
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 2210443,
-          "known_for_department": "Camera",
-          "name": "Thomas Lerebour",
-          "original_name": "Thomas Lerebour",
-          "popularity": 0.1436,
-          "profile_path": null,
-          "jobs": [
-            {
-              "credit_id": "6074f8c718864b00439b220c",
-              "job": "Second Unit Director of Photography",
-              "episode_count": 2
-            }
-          ],
-          "department": "Camera",
-          "total_episode_count": 2
-        },
-        {
-          "adult": false,
           "gender": 2,
           "id": 2172640,
           "known_for_department": "Camera",
           "name": "Mathieu de Montgrand",
           "original_name": "Mathieu de Montgrand",
-          "popularity": 0.0658,
+          "popularity": 0.2717,
           "profile_path": null,
           "jobs": [
             {
@@ -3540,11 +3534,49 @@
         {
           "adult": false,
           "gender": 2,
+          "id": 2210443,
+          "known_for_department": "Camera",
+          "name": "Thomas Lerebour",
+          "original_name": "Thomas Lerebour",
+          "popularity": 0.2209,
+          "profile_path": null,
+          "jobs": [
+            {
+              "credit_id": "6074f8c718864b00439b220c",
+              "job": "Second Unit Director of Photography",
+              "episode_count": 2
+            }
+          ],
+          "department": "Camera",
+          "total_episode_count": 2
+        },
+        {
+          "adult": false,
+          "gender": 0,
+          "id": 1412918,
+          "known_for_department": "Camera",
+          "name": "Jean-Baptiste Jay",
+          "original_name": "Jean-Baptiste Jay",
+          "popularity": 0.0743,
+          "profile_path": null,
+          "jobs": [
+            {
+              "credit_id": "60cc3307f12cf4007873d7e0",
+              "job": "Second Unit Director of Photography",
+              "episode_count": 2
+            }
+          ],
+          "department": "Camera",
+          "total_episode_count": 2
+        },
+        {
+          "adult": false,
+          "gender": 2,
           "id": 2781670,
           "known_for_department": "Camera",
           "name": "David Ciccodicola",
           "original_name": "David Ciccodicola",
-          "popularity": 0.0143,
+          "popularity": 0.1616,
           "profile_path": null,
           "jobs": [
             {
@@ -3563,7 +3595,7 @@
           "known_for_department": "Camera",
           "name": "Tommaso Fiorilli",
           "original_name": "Tommaso Fiorilli",
-          "popularity": 0.0338,
+          "popularity": 0.1387,
           "profile_path": null,
           "jobs": [
             {
@@ -3577,13 +3609,13 @@
         },
         {
           "adult": false,
-          "gender": 0,
+          "gender": 1,
           "id": 16366,
           "known_for_department": "Costume \u0026 Make-Up",
           "name": "Fr\u00E9d\u00E9rique Arguello",
           "original_name": "Fr\u00E9d\u00E9rique Arguello",
-          "popularity": 0.066,
-          "profile_path": "/9oQhy24n45z1p14UmLzD9Ac9SDR.jpg",
+          "popularity": 0.1027,
+          "profile_path": null,
           "jobs": [
             {
               "credit_id": "6880fdc5e242da0f0f55dbe8",
@@ -3601,7 +3633,7 @@
           "known_for_department": "Sound",
           "name": "Quentin Boniface",
           "original_name": "Quentin Boniface",
-          "popularity": 0.0487,
+          "popularity": 0.0588,
           "profile_path": null,
           "jobs": [
             {
@@ -3620,7 +3652,7 @@
           "known_for_department": "Directing",
           "name": "Louis Leterrier",
           "original_name": "Louis Leterrier",
-          "popularity": 1.2402,
+          "popularity": 1.2088,
           "profile_path": "/bpqqRRyCLeoAup2OAv1Dtm5C8Tn.jpg",
           "jobs": [
             {
@@ -3658,7 +3690,7 @@
           "known_for_department": "Directing",
           "name": "Ludovic Bernard",
           "original_name": "Ludovic Bernard",
-          "popularity": 0.2185,
+          "popularity": 0.1996,
           "profile_path": "/iGcvZVswdFUZ4ZSRjD6K4Iu5K5H.jpg",
           "jobs": [
             {
@@ -3677,7 +3709,7 @@
           "known_for_department": "Directing",
           "name": "Xavier Gens",
           "original_name": "Xavier Gens",
-          "popularity": 0.2715,
+          "popularity": 0.4834,
           "profile_path": "/zZ2ZtJeBq0yXB1Z5hSztarGt1yN.jpg",
           "jobs": [
             {
@@ -3696,7 +3728,7 @@
           "known_for_department": "Directing",
           "name": "Louis Leterrier",
           "original_name": "Louis Leterrier",
-          "popularity": 1.2402,
+          "popularity": 1.2088,
           "profile_path": "/bpqqRRyCLeoAup2OAv1Dtm5C8Tn.jpg",
           "jobs": [
             {
@@ -3715,7 +3747,7 @@
           "known_for_department": "Writing",
           "name": "Hugo G\u00E9lin",
           "original_name": "Hugo G\u00E9lin",
-          "popularity": 0.5378,
+          "popularity": 0.2593,
           "profile_path": "/50pjdx9FGGu3ixdZkurgiMZ7pQ6.jpg",
           "jobs": [
             {
@@ -3734,7 +3766,7 @@
           "known_for_department": "Directing",
           "name": "Podz",
           "original_name": "Podz",
-          "popularity": 0.9473,
+          "popularity": 0.2502,
           "profile_path": "/2RhWnJb3phrzZ2kondASFdk2GrW.jpg",
           "jobs": [
             {
@@ -3753,7 +3785,7 @@
           "known_for_department": "Directing",
           "name": "Marcela Said",
           "original_name": "Marcela Said",
-          "popularity": 0.2557,
+          "popularity": 0.0702,
           "profile_path": "/403437TeYWW6sUeUHs3vdlRaGhu.jpg",
           "jobs": [
             {
@@ -3772,7 +3804,7 @@
           "known_for_department": "Editing",
           "name": "Justine Roussillon",
           "original_name": "Justine Roussillon",
-          "popularity": 0.085,
+          "popularity": 0.123,
           "profile_path": null,
           "jobs": [
             {
@@ -3786,36 +3818,12 @@
         },
         {
           "adult": false,
-          "gender": 2,
-          "id": 2619974,
-          "known_for_department": "Editing",
-          "name": "Romain Rioult",
-          "original_name": "Romain Rioult",
-          "popularity": 0.1114,
-          "profile_path": null,
-          "jobs": [
-            {
-              "credit_id": "60f311adb84cdd0045adcf4b",
-              "job": "Additional Editor",
-              "episode_count": 1
-            },
-            {
-              "credit_id": "60cc4aeaf12cf4007873e614",
-              "job": "Lead Editor",
-              "episode_count": 1
-            }
-          ],
-          "department": "Editing",
-          "total_episode_count": 2
-        },
-        {
-          "adult": false,
           "gender": 0,
           "id": 1317252,
           "known_for_department": "Editing",
           "name": "Audrey Simonaud",
           "original_name": "Audrey Simonaud",
-          "popularity": 0.1545,
+          "popularity": 0.2677,
           "profile_path": null,
           "jobs": [
             {
@@ -3830,11 +3838,35 @@
         {
           "adult": false,
           "gender": 2,
+          "id": 2619974,
+          "known_for_department": "Editing",
+          "name": "Romain Rioult",
+          "original_name": "Romain Rioult",
+          "popularity": 0.212,
+          "profile_path": null,
+          "jobs": [
+            {
+              "credit_id": "60cc4aeaf12cf4007873e614",
+              "job": "Lead Editor",
+              "episode_count": 1
+            },
+            {
+              "credit_id": "60f311adb84cdd0045adcf4b",
+              "job": "Additional Editor",
+              "episode_count": 1
+            }
+          ],
+          "department": "Editing",
+          "total_episode_count": 2
+        },
+        {
+          "adult": false,
+          "gender": 2,
           "id": 1277831,
           "known_for_department": "Editing",
           "name": "Gr\u00E9goire Sivan",
           "original_name": "Gr\u00E9goire Sivan",
-          "popularity": 0.1477,
+          "popularity": 0.3282,
           "profile_path": "/7m3dfhSk541jWvYy85LajvC0aMI.jpg",
           "jobs": [
             {
@@ -3853,7 +3885,7 @@
           "known_for_department": "Editing",
           "name": "Vincent Tabaillon",
           "original_name": "Vincent Tabaillon",
-          "popularity": 0.2117,
+          "popularity": 0.1869,
           "profile_path": null,
           "jobs": [
             {
@@ -3867,61 +3899,23 @@
         },
         {
           "adult": false,
-          "gender": 1,
-          "id": 935703,
-          "known_for_department": "Production",
-          "name": "Sidonie Dumas",
-          "original_name": "Sidonie Dumas",
-          "popularity": 0.2812,
-          "profile_path": "/5wjOToV9ykOWtenMRY4QMgFPTWH.jpg",
-          "jobs": [
-            {
-              "credit_id": "60130b00c3c891003d40f1eb",
-              "job": "Producer",
-              "episode_count": 17
-            }
-          ],
-          "department": "Production",
-          "total_episode_count": 17
-        },
-        {
-          "adult": false,
           "gender": 2,
           "id": 2313438,
           "known_for_department": "Acting",
           "name": "Martin Jaubert",
           "original_name": "Martin Jaubert",
-          "popularity": 0.1751,
+          "popularity": 0.0855,
           "profile_path": null,
           "jobs": [
-            {
-              "credit_id": "6520965e967cc73425f3b483",
-              "job": "Producer",
-              "episode_count": 7
-            },
             {
               "credit_id": "6074f8e518864b00439b225f",
               "job": "Production Executive",
               "episode_count": 10
-            }
-          ],
-          "department": "Production",
-          "total_episode_count": 17
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 1953711,
-          "known_for_department": "Production",
-          "name": "Isabelle Degeorges",
-          "original_name": "Isabelle Degeorges",
-          "popularity": 0.0362,
-          "profile_path": null,
-          "jobs": [
+            },
             {
-              "credit_id": "60130b33dd83fa003d9e8462",
+              "credit_id": "6520965e967cc73425f3b483",
               "job": "Producer",
-              "episode_count": 17
+              "episode_count": 7
             }
           ],
           "department": "Production",
@@ -3934,7 +3928,7 @@
           "known_for_department": "Production",
           "name": "Nathan Franck",
           "original_name": "Nathan Franck",
-          "popularity": 0.1046,
+          "popularity": 0.0193,
           "profile_path": null,
           "jobs": [
             {
@@ -3953,7 +3947,7 @@
           "known_for_department": "Production",
           "name": "Christophe Riand\u00E9e",
           "original_name": "Christophe Riand\u00E9e",
-          "popularity": 0.0806,
+          "popularity": 0.1635,
           "profile_path": null,
           "jobs": [
             {
@@ -3968,11 +3962,49 @@
         {
           "adult": false,
           "gender": 1,
+          "id": 1953711,
+          "known_for_department": "Production",
+          "name": "Isabelle Degeorges",
+          "original_name": "Isabelle Degeorges",
+          "popularity": 0.3177,
+          "profile_path": null,
+          "jobs": [
+            {
+              "credit_id": "60130b33dd83fa003d9e8462",
+              "job": "Producer",
+              "episode_count": 17
+            }
+          ],
+          "department": "Production",
+          "total_episode_count": 17
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 935703,
+          "known_for_department": "Production",
+          "name": "Sidonie Dumas",
+          "original_name": "Sidonie Dumas",
+          "popularity": 0.2657,
+          "profile_path": "/5wjOToV9ykOWtenMRY4QMgFPTWH.jpg",
+          "jobs": [
+            {
+              "credit_id": "60130b00c3c891003d40f1eb",
+              "job": "Producer",
+              "episode_count": 17
+            }
+          ],
+          "department": "Production",
+          "total_episode_count": 17
+        },
+        {
+          "adult": false,
+          "gender": 1,
           "id": 1021803,
           "known_for_department": "Production",
           "name": "Catherine Chevron",
           "original_name": "Catherine Chevron",
-          "popularity": 0.123,
+          "popularity": 0.0256,
           "profile_path": null,
           "jobs": [
             {
@@ -3991,7 +4023,7 @@
           "known_for_department": "Production",
           "name": "Micha\u00EBl Laguens",
           "original_name": "Micha\u00EBl Laguens",
-          "popularity": 0.3401,
+          "popularity": 0.2111,
           "profile_path": null,
           "jobs": [
             {
@@ -4010,7 +4042,7 @@
           "known_for_department": "Acting",
           "name": "Omar Sy",
           "original_name": "Omar Sy",
-          "popularity": 2.8286,
+          "popularity": 2.0585,
           "profile_path": "/ftoP3CMC4ob8VJAu1gEHSC714K5.jpg",
           "jobs": [
             {
@@ -4029,7 +4061,7 @@
           "known_for_department": "Sound",
           "name": "Mathieu Lamboley",
           "original_name": "Mathieu Lamboley",
-          "popularity": 0.0551,
+          "popularity": 0.1821,
           "profile_path": "/xqPzm3gUZw7g3ALK1tc0lW1fbvs.jpg",
           "jobs": [
             {
@@ -4043,31 +4075,12 @@
         },
         {
           "adult": false,
-          "gender": 2,
-          "id": 1577907,
-          "known_for_department": "Sound",
-          "name": "Pascal Mayer",
-          "original_name": "Pascal Mayer",
-          "popularity": 0.157,
-          "profile_path": "/ppYOK9gHSxKOEaw1BnQK90yKxHV.jpg",
-          "jobs": [
-            {
-              "credit_id": "60792cc143d9b1003fdc531c",
-              "job": "Music Supervisor",
-              "episode_count": 10
-            }
-          ],
-          "department": "Sound",
-          "total_episode_count": 10
-        },
-        {
-          "adult": false,
           "gender": 0,
           "id": 2127516,
           "known_for_department": "Sound",
           "name": "Steve Bouyer",
           "original_name": "Steve Bouyer",
-          "popularity": 0.2259,
+          "popularity": 0.2651,
           "profile_path": null,
           "jobs": [
             {
@@ -4082,17 +4095,36 @@
         {
           "adult": false,
           "gender": 2,
+          "id": 1577907,
+          "known_for_department": "Sound",
+          "name": "Pascal Mayer",
+          "original_name": "Pascal Mayer",
+          "popularity": 0.3473,
+          "profile_path": "/ppYOK9gHSxKOEaw1BnQK90yKxHV.jpg",
+          "jobs": [
+            {
+              "credit_id": "60792cc143d9b1003fdc531c",
+              "job": "Music Supervisor",
+              "episode_count": 10
+            }
+          ],
+          "department": "Sound",
+          "total_episode_count": 10
+        },
+        {
+          "adult": false,
+          "gender": 2,
           "id": 1618156,
           "known_for_department": "Writing",
           "name": "Fran\u00E7ois Uzan",
           "original_name": "Fran\u00E7ois Uzan",
-          "popularity": 0.196,
+          "popularity": 0.4786,
           "profile_path": null,
           "jobs": [
             {
-              "credit_id": "6076773419ab5900297cb895",
-              "job": "Story",
-              "episode_count": 17
+              "credit_id": "60767860fbe36f0029a5cda0",
+              "job": "Dialogue",
+              "episode_count": 8
             },
             {
               "credit_id": "607677491b1f3c0057b632ef",
@@ -4105,9 +4137,9 @@
               "episode_count": 8
             },
             {
-              "credit_id": "60767860fbe36f0029a5cda0",
-              "job": "Dialogue",
-              "episode_count": 8
+              "credit_id": "6076773419ab5900297cb895",
+              "job": "Story",
+              "episode_count": 17
             }
           ],
           "department": "Writing",
@@ -4120,9 +4152,14 @@
           "known_for_department": "Creator",
           "name": "George Kay",
           "original_name": "George Kay",
-          "popularity": 0.689,
+          "popularity": 0.3018,
           "profile_path": null,
           "jobs": [
+            {
+              "credit_id": "607678873103250040bd073e",
+              "job": "Screenplay",
+              "episode_count": 16
+            },
             {
               "credit_id": "60767851d4b9d90027d3e31e",
               "job": "Dialogue",
@@ -4137,11 +4174,6 @@
               "credit_id": "60767722d8f44e00417730b5",
               "job": "Story",
               "episode_count": 17
-            },
-            {
-              "credit_id": "607678873103250040bd073e",
-              "job": "Screenplay",
-              "episode_count": 16
             }
           ],
           "department": "Writing",
@@ -4154,7 +4186,7 @@
           "known_for_department": "Writing",
           "name": "Maurice Leblanc",
           "original_name": "Maurice Leblanc",
-          "popularity": 0.9385,
+          "popularity": 0.167,
           "profile_path": "/ahLLyEKarqWeBfzkniNzfP56seO.jpg",
           "jobs": [
             {
@@ -4173,7 +4205,7 @@
           "known_for_department": "Acting",
           "name": "Omar Sy",
           "original_name": "Omar Sy",
-          "popularity": 2.8286,
+          "popularity": 2.0585,
           "profile_path": "/ftoP3CMC4ob8VJAu1gEHSC714K5.jpg",
           "jobs": [
             {
@@ -4192,18 +4224,18 @@
           "known_for_department": "Writing",
           "name": "Tony Saint",
           "original_name": "Tony Saint",
-          "popularity": 0.1494,
+          "popularity": 0.2698,
           "profile_path": null,
           "jobs": [
-            {
-              "credit_id": "6521f9ffc1ffbd0138e551f3",
-              "job": "Screenplay",
-              "episode_count": 1
-            },
             {
               "credit_id": "651fe216c50ad200c91ec95c",
               "job": "Story",
               "episode_count": 7
+            },
+            {
+              "credit_id": "6521f9ffc1ffbd0138e551f3",
+              "job": "Screenplay",
+              "episode_count": 1
             }
           ],
           "department": "Writing",
@@ -4216,7 +4248,7 @@
           "known_for_department": "Production",
           "name": "Nathan Franck",
           "original_name": "Nathan Franck",
-          "popularity": 0.1046,
+          "popularity": 0.0193,
           "profile_path": null,
           "jobs": [
             {
@@ -4240,7 +4272,7 @@
           "known_for_department": "Creator",
           "name": "Eliane Montane",
           "original_name": "Eliane Montane",
-          "popularity": 0.1315,
+          "popularity": 0.2194,
           "profile_path": null,
           "jobs": [
             {
@@ -4264,7 +4296,7 @@
           "known_for_department": "Creator",
           "name": "Anne Ciss\u00E9",
           "original_name": "Anne Ciss\u00E9",
-          "popularity": 0.1374,
+          "popularity": 0.0694,
           "profile_path": null,
           "jobs": [
             {
@@ -4283,17 +4315,17 @@
           "known_for_department": "Writing",
           "name": "Louis Penicaut",
           "original_name": "Louis Penicaut",
-          "popularity": 0.188,
+          "popularity": 0.0695,
           "profile_path": null,
           "jobs": [
             {
-              "credit_id": "652096173d355700ff62e24d",
-              "job": "Adaptation",
+              "credit_id": "6521116a0721660139c91991",
+              "job": "Dialogue",
               "episode_count": 2
             },
             {
-              "credit_id": "6521116a0721660139c91991",
-              "job": "Dialogue",
+              "credit_id": "652096173d355700ff62e24d",
+              "job": "Adaptation",
               "episode_count": 2
             }
           ],
@@ -4322,49 +4354,11 @@
         {
           "adult": false,
           "gender": 0,
-          "id": 1929014,
-          "known_for_department": "Production",
-          "name": "Lily Lambert",
-          "original_name": "Lily Lambert",
-          "popularity": 0.109,
-          "profile_path": null,
-          "jobs": [
-            {
-              "credit_id": "60cc2dd8aaec71005645b40a",
-              "job": "Adaptation",
-              "episode_count": 2
-            }
-          ],
-          "department": "Writing",
-          "total_episode_count": 2
-        },
-        {
-          "adult": false,
-          "gender": 0,
-          "id": 2827181,
-          "known_for_department": "Directing",
-          "name": "D\u00E9borah Hassoun",
-          "original_name": "D\u00E9borah Hassoun",
-          "popularity": 0.0281,
-          "profile_path": null,
-          "jobs": [
-            {
-              "credit_id": "60cc2dcd87e63e00408e2bf3",
-              "job": "Adaptation",
-              "episode_count": 2
-            }
-          ],
-          "department": "Writing",
-          "total_episode_count": 2
-        },
-        {
-          "adult": false,
-          "gender": 0,
           "id": 4310445,
           "known_for_department": "Writing",
           "name": "Adam Usden",
           "original_name": "Adam Usden",
-          "popularity": 0.0336,
+          "popularity": 0.0143,
           "profile_path": null,
           "jobs": [
             {
@@ -4379,11 +4373,68 @@
         {
           "adult": false,
           "gender": 0,
+          "id": 2827181,
+          "known_for_department": "Directing",
+          "name": "D\u00E9borah Hassoun",
+          "original_name": "D\u00E9borah Hassoun",
+          "popularity": 0.045,
+          "profile_path": null,
+          "jobs": [
+            {
+              "credit_id": "60cc2dcd87e63e00408e2bf3",
+              "job": "Adaptation",
+              "episode_count": 2
+            }
+          ],
+          "department": "Writing",
+          "total_episode_count": 2
+        },
+        {
+          "adult": false,
+          "gender": 0,
+          "id": 1929014,
+          "known_for_department": "Production",
+          "name": "Lily Lambert",
+          "original_name": "Lily Lambert",
+          "popularity": 0.0805,
+          "profile_path": null,
+          "jobs": [
+            {
+              "credit_id": "60cc2dd8aaec71005645b40a",
+              "job": "Adaptation",
+              "episode_count": 2
+            }
+          ],
+          "department": "Writing",
+          "total_episode_count": 2
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 3161599,
+          "known_for_department": "Writing",
+          "name": "Sumerah Srivastav",
+          "original_name": "Sumerah Srivastav",
+          "popularity": 0.123,
+          "profile_path": null,
+          "jobs": [
+            {
+              "credit_id": "60f30d861d78f2005d276779",
+              "job": "Screenplay",
+              "episode_count": 1
+            }
+          ],
+          "department": "Writing",
+          "total_episode_count": 1
+        },
+        {
+          "adult": false,
+          "gender": 0,
           "id": 1652582,
           "known_for_department": "Crew",
           "name": "Camille Couasse",
           "original_name": "Camille Couasse",
-          "popularity": 0.1166,
+          "popularity": 0.0239,
           "profile_path": null,
           "jobs": [
             {
@@ -4402,7 +4453,7 @@
           "known_for_department": "Acting",
           "name": "Nicolas Cl\u00E9ment",
           "original_name": "Nicolas Cl\u00E9ment",
-          "popularity": 0.1525,
+          "popularity": 0.1362,
           "profile_path": null,
           "jobs": [
             {
@@ -4417,30 +4468,11 @@
         {
           "adult": false,
           "gender": 2,
-          "id": 2474815,
-          "known_for_department": "Writing",
-          "name": "Soiliho Bodin",
-          "original_name": "Soiliho Bodin",
-          "popularity": 0.2352,
-          "profile_path": null,
-          "jobs": [
-            {
-              "credit_id": "60cc43c3b0ba7e00574fc1c1",
-              "job": "Screenplay",
-              "episode_count": 1
-            }
-          ],
-          "department": "Writing",
-          "total_episode_count": 1
-        },
-        {
-          "adult": false,
-          "gender": 2,
           "id": 1229423,
           "known_for_department": "Writing",
           "name": "Steve Bailie",
           "original_name": "Steve Bailie",
-          "popularity": 0.4812,
+          "popularity": 0.1428,
           "profile_path": null,
           "jobs": [
             {
@@ -4459,7 +4491,7 @@
           "known_for_department": "Writing",
           "name": "Kam Odedra",
           "original_name": "Kam Odedra",
-          "popularity": 0.1373,
+          "popularity": 0.0482,
           "profile_path": null,
           "jobs": [
             {
@@ -4473,16 +4505,16 @@
         },
         {
           "adult": false,
-          "gender": 1,
-          "id": 3161599,
+          "gender": 2,
+          "id": 2474815,
           "known_for_department": "Writing",
-          "name": "Sumerah Srivastav",
-          "original_name": "Sumerah Srivastav",
-          "popularity": 0.0848,
+          "name": "Soiliho Bodin",
+          "original_name": "Soiliho Bodin",
+          "popularity": 0.0478,
           "profile_path": null,
           "jobs": [
             {
-              "credit_id": "60f30d861d78f2005d276779",
+              "credit_id": "60cc43c3b0ba7e00574fc1c1",
               "job": "Screenplay",
               "episode_count": 1
             }
@@ -4497,19 +4529,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=25414",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=9248",
-      "x-memc": "HIT",
-      "x-memc-key": "4ce7678f8a93771ef6699e650d380b15ca939b27484f8a7dcc89e21579d7a0e7",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022d28513f3bd65b587ec2e963f61d78e7a\u0022",
       "x-az": "us-east-1a",
-      "ETag": "W/\u0022bea4d905f81ac87e3c44bdff233553ee\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

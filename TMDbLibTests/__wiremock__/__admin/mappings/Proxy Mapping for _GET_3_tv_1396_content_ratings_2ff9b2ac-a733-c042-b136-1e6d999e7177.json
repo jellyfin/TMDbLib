@@ -1,6 +1,6 @@
 {
   "Guid": "2ff9b2ac-a733-c042-b136-1e6d999e7177",
-  "UpdatedAt": "2025-12-24T18:45:23.0300346Z",
+  "UpdatedAt": "2026-06-13T13:30:14.025467Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/content_ratings",
   "Description": "Proxy Mapping for GET /3/tv/1396/content_ratings",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -185,19 +198,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=15365",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "d7cb730684185102d0189d8e22a70e0c99f7ceba69d998264d5b47878ca20a61",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=16391",
+      "X-Gateway-Cache-Status": "HIT",
       "ETag": "W/\u00224065c3b234cfdd449baea64b1848e814\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

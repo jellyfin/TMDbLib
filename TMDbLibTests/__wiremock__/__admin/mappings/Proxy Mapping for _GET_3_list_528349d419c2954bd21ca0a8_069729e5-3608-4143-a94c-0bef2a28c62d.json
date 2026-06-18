@@ -1,6 +1,6 @@
 {
   "Guid": "069729e5-3608-4143-a94c-0bef2a28c62d",
-  "UpdatedAt": "2025-12-24T18:45:16.8427471Z",
+  "UpdatedAt": "2026-06-13T13:30:13.531605Z",
   "Title": "Proxy Mapping for GET /3/list/528349d419c2954bd21ca0a8",
   "Description": "Proxy Mapping for GET /3/list/528349d419c2954bd21ca0a8",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 404,
@@ -31,13 +44,14 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-az": "us-east-1c",
+      "X-Gateway-Cache-Status": "MISS",
+      "x-az": "us-east-1a",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Error from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

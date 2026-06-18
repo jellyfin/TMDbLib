@@ -1,21 +1,21 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents detailed information about a TV network.
+/// Detailed TV network information.
 /// </summary>
-public class Network : NetworkBase
+public class Network : NetworkWithLogo
 {
     /// <summary>
-    /// Gets or sets the headquarters location of the network.
+    /// Gets or sets the headquarters location.
     /// </summary>
-    [JsonProperty("headquarters")]
+    [JsonPropertyName("headquarters")]
     public string? Headquarters { get; set; }
 
     /// <summary>
-    /// Gets or sets the homepage URL of the network.
+    /// Gets or sets the homepage URL.
     /// </summary>
-    [JsonProperty("homepage")]
+    [JsonPropertyName("homepage")]
     public string? Homepage { get; set; }
 }

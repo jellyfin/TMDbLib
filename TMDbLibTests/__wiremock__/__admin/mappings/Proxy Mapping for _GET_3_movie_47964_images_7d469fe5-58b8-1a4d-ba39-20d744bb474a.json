@@ -1,6 +1,6 @@
 {
   "Guid": "7d469fe5-58b8-1a4d-ba39-20d744bb474a",
-  "UpdatedAt": "2025-12-24T18:45:23.7301427Z",
+  "UpdatedAt": "2026-06-13T13:30:13.891295Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/images",
   "Description": "Proxy Mapping for GET /3/movie/47964/images",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "language",
@@ -147,6 +160,16 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 784
+        },
+        {
+          "aspect_ratio": 2.744,
+          "height": 297,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/hHoQGUsJ2I1tdiiRYLxOlMnLM5t.png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 815
         }
       ],
       "posters": [
@@ -168,6 +191,16 @@
           "file_path": "/evxtv4e8Amm436Y5rW16RkGu8pX.jpg",
           "vote_average": 5.25,
           "vote_count": 8,
+          "width": 1000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 1500,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/kD2SqRZFSdFEGzBJ4JBEjtFbBgw.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
           "width": 1000
         },
         {
@@ -229,16 +262,6 @@
           "vote_average": 1.75,
           "vote_count": 2,
           "width": 960
-        },
-        {
-          "aspect_ratio": 0.667,
-          "height": 2100,
-          "iso_3166_1": "US",
-          "iso_639_1": "en",
-          "file_path": "/1YwHJ4ihGJvvV2W8d4aDWGgeK3Y.jpg",
-          "vote_average": 1.75,
-          "vote_count": 2,
-          "width": 1400
         },
         {
           "aspect_ratio": 0.667,
@@ -402,16 +425,6 @@
         },
         {
           "aspect_ratio": 0.667,
-          "height": 3000,
-          "iso_3166_1": "US",
-          "iso_639_1": "en",
-          "file_path": "/mz9IPn1dMvIKcD28tqfnfN17DEC.jpg",
-          "vote_average": 0.0,
-          "vote_count": 0,
-          "width": 2000
-        },
-        {
-          "aspect_ratio": 0.667,
           "height": 1500,
           "iso_3166_1": "US",
           "iso_639_1": "en",
@@ -429,6 +442,16 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 1181
+        },
+        {
+          "aspect_ratio": 0.701,
+          "height": 1426,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/9lCr0vjoleDozx9kWddZganVVQ4.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1000
         },
         {
           "aspect_ratio": 0.666,
@@ -459,6 +482,16 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 1000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 3000,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/wMg14MKiXoez80QdYfwUs0Cf5Q4.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000
         }
       ]
     },
@@ -466,19 +499,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=21959",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "c41ad2f4d2b8bc9c8f1c09eebb109ace1632b01e5696cf759053810ba5834bc1",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=8713",
-      "ETag": "W/\u002217c5a75da1c3ff7fce4cb8f822def639\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022551e875552b7fd569833e616efd7b606\u0022",
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

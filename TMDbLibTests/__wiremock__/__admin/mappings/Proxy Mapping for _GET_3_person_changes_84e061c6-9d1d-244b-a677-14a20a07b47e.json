@@ -1,6 +1,6 @@
 {
   "Guid": "84e061c6-9d1d-244b-a677-14a20a07b47e",
-  "UpdatedAt": "2025-12-24T18:45:18.4285985Z",
+  "UpdatedAt": "2026-06-13T13:30:13.726015Z",
   "Title": "Proxy Mapping for GET /3/person/changes",
   "Description": "Proxy Mapping for GET /3/person/changes",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "end_date",
@@ -37,403 +50,503 @@
       "results": [
         {
           "id": 2051931,
-          "adult": true
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833467,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833468,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 5833469,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833470,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833471,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833472,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833473,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833474,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 5833475,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833476,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 12799,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833477,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833478,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3082766,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 1998,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833479,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 11803,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833480,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833481,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 130712,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833482,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833483,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 5833484,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833485,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833486,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 102710,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833487,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 105988,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1056739,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 22621,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833488,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1999,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833489,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1204,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833490,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833491,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833492,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833493,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833494,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833495,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833496,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 16561,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833497,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833498,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833499,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833500,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 7719,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833501,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3567668,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3779104,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 2370557,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 16474,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833502,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 5833503,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 5833504,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1505109,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 2042,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833505,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 1325040,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1763310,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833506,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 4551985,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 37,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3105760,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1662734,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 52035,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3217401,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5756875,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1848283,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 934711,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 2992784,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 34833,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3729697,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 553387,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1449790,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5522313,
-          "adult": null
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 4318155,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5155311,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833507,
-          "adult": true
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 2040793,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1743464,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5816284,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1794507,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1451913,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 2041474,
-          "adult": true
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3870018,
-          "adult": false
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 3870833,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3870834,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1877335,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 2,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3751264,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 934708,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 1326013,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 4448763,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 3,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 4,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 4318168,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 2234441,
-          "adult": false
+          "adult": false,
+          "softcore": false
         },
         {
           "id": 5833508,
-          "adult": false
+          "adult": false,
+          "softcore": false
         }
       ],
       "page": 1,
@@ -445,17 +558,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=77318",
-      "x-memc": "HIT",
-      "x-memc-key": "ec0b869d1ac59a052780cb6d527e685d53357783d2931c3a13c166c4e34e4393",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u0022adb0622214e1b14fd386281109d0408c\u0022",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=86400",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "df59626901b019010c10c06dc1183a5a",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u002223534439346eea974e762287313d85bd\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

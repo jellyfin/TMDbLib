@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
 using TMDbLib.Objects.Collections;
-using TMDbLib.Objects.General;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 
@@ -30,7 +29,7 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsExtrasNone()
     {
-        var collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
+        var collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(collection);
 
         // Test all extras, ensure none of them exist
@@ -46,7 +45,7 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionMissing()
     {
-        var collection = await TMDbClient.GetCollectionAsync(IdHelper.MissingID);
+        var collection = await TMDbClient.GetCollectionAsync(IdHelper.MissingID, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Null(collection);
     }
@@ -57,7 +56,7 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsParts()
     {
-        var collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection);
+        var collection = await TMDbClient.GetCollectionAsync(IdHelper.BackToTheFutureCollection, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(collection);
 
         await Verify(collection);
@@ -97,7 +96,7 @@ public class ClientCollectionTests : TestBase
     [Fact]
     public async Task TestCollectionsImagesAsync()
     {
-        var images = await TMDbClient.GetCollectionImagesAsync(IdHelper.BackToTheFutureCollection);
+        var images = await TMDbClient.GetCollectionImagesAsync(IdHelper.BackToTheFutureCollection, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(images);
 
         TestImagesHelpers.TestImagePaths(images);

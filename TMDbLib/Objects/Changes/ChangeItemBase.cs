@@ -1,5 +1,5 @@
-﻿using System;
-using Newtonsoft.Json;
+using System;
+using System.Text.Json.Serialization;
 using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes;
@@ -12,26 +12,25 @@ public abstract class ChangeItemBase
     /// <summary>
     /// Gets or sets the type of action that occurred.
     /// </summary>
-    [JsonProperty("action")]
+    [JsonPropertyName("action")]
     public ChangeAction Action { get; set; }
 
     /// <summary>
     /// Gets or sets the unique identifier for the change item.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public string? Id { get; set; }
 
     /// <summary>
-    /// Gets or sets a language code, e.g. en
-    /// This field is not always set.
+    /// Gets or sets the language code (e.g. "en"); not always set.
     /// </summary>
-    [JsonProperty("iso_639_1")]
+    [JsonPropertyName("iso_639_1")]
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the UTC timestamp when the change occurred.
     /// </summary>
-    [JsonProperty("time")]
+    [JsonPropertyName("time")]
     [JsonConverter(typeof(TmdbUtcTimeConverter))]
     public DateTime Time { get; set; }
 }

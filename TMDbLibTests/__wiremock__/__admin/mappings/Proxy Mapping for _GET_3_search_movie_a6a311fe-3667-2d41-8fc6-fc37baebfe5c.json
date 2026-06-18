@@ -1,6 +1,6 @@
 {
   "Guid": "a6a311fe-3667-2d41-8fc6-fc37baebfe5c",
-  "UpdatedAt": "2025-12-24T18:45:21.3866794Z",
+  "UpdatedAt": "2026-06-13T13:30:13.896194Z",
   "Title": "Proxy Mapping for GET /3/search/movie",
   "Description": "Proxy Mapping for GET /3/search/movie",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -58,22 +71,47 @@
       "results": [
         {
           "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            18,
+            12,
+            35,
+            80,
+            9648,
+            53
+          ],
+          "id": 1501117,
+          "title": "Brother Wang \u0026 Brother Liu 007",
+          "original_language": "zh",
+          "original_title": "\u738B\u54E5\u67F3\u54E5007",
+          "overview": "Hotel owner Brother Liu (Ai Chai-Choi) and Brother Wang (Li Kuan-Chang), an employee of the Space Toys Company, are close friends who both share a passion for judo. Brother Liu, facing financial difficulties due to poor hotel management and creditors at his doorstep, was at a loss when a hotel in Thailand offered him a position to take over its operations. Brother Wang was also assigned by his company to expand business in Southeast Asia. Before departing, the chairman warned Brother Wang to be wary of commercial spies. On that day, Wang and Liu met, each harboring their own agendas, and bid each other farewell. The two happened to meet on the plane and could only tell each other they would disembark in Hong Kong and then transfer to Thailand. At that moment, an intelligence battle was unfolding in Hong Kong, and the international intelligence agents \u201C008\u201D and \u201C009,\u201D who were about to arrive in Hong Kong, happened to look exactly like Wang and Liu...",
+          "popularity": 0.1336,
+          "poster_path": null,
+          "release_date": "1967-02-08",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
           "backdrop_path": "/aQXQGsyGmcY8QXXNUBl230QrrxL.jpg",
           "genre_ids": [
             80,
             35
           ],
           "id": 273857,
+          "title": "007\u00BD no Carnaval",
           "original_language": "pt",
           "original_title": "007\u00BD no Carnaval",
           "overview": "British secret agent 007\u00BD is sent to Rio de Janeiro to recover the plans stolen from a new metal alloy. His contact is a taxi driver, who ends up being murdered by enemy agents.",
-          "popularity": 0.3481,
+          "popularity": 0.1874,
           "poster_path": "/onBYlBnQgepFz5xQYDjViUy6Crd.jpg",
           "release_date": "1966-03-01",
-          "title": "007\u00BD no Carnaval",
+          "softcore": false,
           "video": false,
-          "vote_average": 4.8,
-          "vote_count": 9
+          "vote_average": 5.15,
+          "vote_count": 10
         },
         {
           "adult": false,
@@ -81,17 +119,18 @@
           "genre_ids": [
             99
           ],
-          "id": 685332,
+          "id": 703083,
+          "title": "Lesson #007: Close Quarters Combat",
           "original_language": "en",
-          "original_title": "Moonraker: 007 in Rio",
-          "overview": "Original 1979 short promotional production featurette for the James Bond movie Moonraker (1979) featuring interview and behind the scenes footage.",
-          "popularity": 3.8394,
-          "poster_path": "/dNfqwcLYy3LxEtGcWSFej27Acyh.jpg",
-          "release_date": "1979-01-01",
-          "title": "Moonraker: 007 in Rio",
+          "original_title": "Lesson #007: Close Quarters Combat",
+          "overview": "Short documentary about the staging and filming of the elevator fight sequence from the James Bond movie \u0022Diamonds are Forever\u0022.",
+          "popularity": 0.1091,
+          "poster_path": null,
+          "release_date": "1971-01-01",
+          "softcore": false,
           "video": false,
-          "vote_average": 5.8,
-          "vote_count": 15
+          "vote_average": 4.8,
+          "vote_count": 3
         },
         {
           "adult": false,
@@ -99,19 +138,20 @@
           "genre_ids": [
             16,
             878,
-            10752
+            28
           ],
-          "id": 587355,
-          "original_language": "ja",
-          "original_title": "Mobile Suit Gundam MS IGLOO: Apocalypse 0079",
-          "overview": "Lieutenant Oliver May and the 603 Technical Division Unit aboard the Jotunheim continue testing and evaluating experimental weapons to aid the Zeon war effort against the Federation Forces. At the end of each experiment, the tale of the trials and tribulations faced by the weapon and its test pilot adds a small chapter to the long history of the One Year War",
-          "popularity": 0.0943,
-          "poster_path": "/xJQ1gbNjAswJAPVpj8bfQCo1UUM.jpg",
-          "release_date": "2006-04-26",
-          "title": "Mobile Suit Gundam MS IGLOO: Apocalypse 0079",
+          "id": 1469852,
+          "title": "\uBE44\uB514\uC624 \uB808\uC778\uC838 007",
+          "original_language": "ko",
+          "original_title": "\uBE44\uB514\uC624 \uB808\uC778\uC838 007",
+          "overview": "",
+          "popularity": 0.0362,
+          "poster_path": "/kRt65VFWxbEJL3iACcti3FxcwCJ.jpg",
+          "release_date": "1984-12-22",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.3,
-          "vote_count": 3
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
@@ -119,17 +159,109 @@
           "genre_ids": [
             99
           ],
-          "id": 1177401,
+          "id": 423101,
+          "title": "Highly Classified: The World of 007",
+          "original_language": "en",
+          "original_title": "Highly Classified: The World of 007",
+          "overview": "His world is full of glamour, mystery and intrigue and now you get to be a part of it! Let gadget wizard Q (Desmond Llewelyn) be your guide to the ubiquitous lifestyle and thrilling adventures of the world\u0027s most notorious secret agent. The undercover team will take you behind-the-scenes as they infiltrate the highly classified worlds of the man everyone knows as Bond -- James Bond. Hosted by Desmond Llewelyn who plays Secret Service gadget master Q. Boasts rare behind-the-scenes footage of spectacular stunts and explosive action sequences. Reveals the special effects magic behind the remotely-driven BMW, the rooftop motorcycle chase and death-defying skysrcaper jump. Interviews with Tomorrow Never Dies\u0027 director Roger Spottiswoode and stars Pierce Brosnan, Jonathan Pryce, Michelle Yeoh, Teri Hatcher and Judi Dench.",
+          "popularity": 0.4851,
+          "poster_path": "/kfE7hRnSvmZLFSZmDpKCYwtTotK.jpg",
+          "release_date": "1998-01-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 1204022,
+          "title": "007 - Bonus disque",
           "original_language": "fr",
-          "original_title": "Opus 007",
+          "original_title": "007 - Bonus disque",
           "overview": "",
-          "popularity": 0.3284,
-          "poster_path": null,
-          "release_date": "1965-01-01",
-          "title": "Opus 007",
+          "popularity": 0.0071,
+          "poster_path": "/7RrPWqTuuWuKgt52sCOaD3Veo4R.jpg",
+          "release_date": "",
+          "softcore": false,
+          "video": true,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 683665,
+          "title": "007: Licence to Restore",
+          "original_language": "en",
+          "original_title": "007: Licence to Restore",
+          "overview": "A short documentary featurette made for DVD about the film restoration of the original film negatives of the Eon Productions James Bond series. Focuses mainly on the 1960 Bond movies.",
+          "popularity": 0.0327,
+          "poster_path": "/7SQRq5I6auWa6BIwTWeWei3cOXk.jpg",
+          "release_date": "2006-07-17",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.0,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9LdXJxOCUC2D83S9QAj6xhZjrBu.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 423145,
+          "title": "Ian Fleming: 007\u0027s Creator",
+          "original_language": "en",
+          "original_title": "Ian Fleming: 007\u0027s Creator",
+          "overview": "John Cork and his compatriots from the Ian Fleming Foundation, who have created outstanding documentaries for most of MGM\u0027s 007 DVDs, provide a fine overview of the life and times of James Bond\u0027s creator. Rather than using voice-over narrative, Cork and company tell this story entirely through the recollections of Fleming\u0027s family, friends and colleagues, combining new interviews with archival footage (including conversations with Fleming himself).",
+          "popularity": 0.4815,
+          "poster_path": "/uKgZXrhAgkPFAd3EcAnK3F04Zom.jpg",
+          "release_date": "2000-01-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            35
+          ],
+          "id": 1707899,
+          "title": "007 vs. Prince Pork",
+          "original_language": "zh",
+          "original_title": "007\u5927\u6218\u732A\u8089\u738B\u5B50",
+          "overview": "A parody short by Hu Ge.",
+          "popularity": 0.0673,
+          "poster_path": "/cilZb9LEsiCSHNBUHEDD8Lfdvly.jpg",
+          "release_date": "2008-01-23",
+          "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 604593,
+          "title": "The Bond Sound: The Music of 007",
+          "original_language": "en",
+          "original_title": "The Bond Sound: The Music of 007",
+          "overview": "Documentary discussing the many songs featured in the James Bond films",
+          "popularity": 0.2208,
+          "poster_path": "/yPWYwqZou2lsJGW7BmYtywtY6Bt.jpg",
+          "release_date": "2000-10-17",
+          "softcore": false,
+          "video": true,
+          "vote_average": 6.833,
+          "vote_count": 6
         },
         {
           "adult": false,
@@ -140,13 +272,14 @@
             10770
           ],
           "id": 784053,
+          "title": "Napoleon\u2019s James Bond",
           "original_language": "de",
           "original_title": "Napoleons deutscher 007 \u2013 Karl Ludwig Schulmeister",
           "overview": "Charles Louis Schulmeister (1770-1853) was a smuggler and a revolutionary, but also a chief of police and Napoleon Bonaparte\u0027s favorite spy. A look back on his adventurous life with the purpose of unraveling the many mysteries of his unique path.",
-          "popularity": 1.4157,
+          "popularity": 0.1218,
           "poster_path": "/ryisqDj7Bp0e6pKwuUWiMJLL4NG.jpg",
           "release_date": "2017-10-07",
-          "title": "Napoleon\u2019s James Bond",
+          "softcore": false,
           "video": false,
           "vote_average": 5.5,
           "vote_count": 2
@@ -158,52 +291,75 @@
             99
           ],
           "id": 1041259,
+          "title": "Designing 007: Fifty Years of Bond Style",
           "original_language": "en",
           "original_title": "Designing 007: Fifty Years of Bond Style",
           "overview": "A look at a museum exhibition that celebrates the Bond franchise from a design perspective: costumes, sets, concept art, props, etc. We get a multi-sensory experience, immersing audiences in the creation and development of Bond style over its auspicious 50 year history.",
-          "popularity": 0.0546,
+          "popularity": 0.0641,
           "poster_path": null,
           "release_date": "2012-09-25",
-          "title": "Designing 007: Fifty Years of Bond Style",
+          "softcore": false,
           "video": true,
           "vote_average": 0.0,
           "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/beLmtRa2nJzHsjc4HrtcVmEoH2C.jpg",
+          "backdrop_path": null,
           "genre_ids": [
             35
           ],
-          "id": 1411375,
-          "original_language": "az",
-          "original_title": "Hozu 007",
-          "overview": "The sudden kidnapping of the girl by animators at the party sets everything in motion, and everyone falls into panic. Sarvat gathers the best agents in the world to start searching for the girl. Meanwhile, a simple villager named Hozu accidentally gets involved in the situation and, imagining himself as \u0022Agent 007,\u0022 joins the professionals in the search. The contrast between Hozu\u0027s naivety and Sarvat\u2019s serious world adds an amusing touch and adventure to the story.",
-          "popularity": 1.0502,
-          "poster_path": "/pycMOxOS71LCldlQNf1hprRnoi3.jpg",
-          "release_date": "2024-10-31",
-          "title": "Hozu 007",
+          "id": 1707897,
+          "title": "007 vs. Man in Black",
+          "original_language": "zh",
+          "original_title": "007\u5927\u6218\u9ED1\u8863\u4EBA",
+          "overview": "A parody short by Hu Ge.",
+          "popularity": 0.0923,
+          "poster_path": "/14naXobSMLmwxaNETpqVGa5Rcuf.jpg",
+          "release_date": "2007-01-10",
+          "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/lYDPFIXu8Bo9MAL5UTgQphRK0Ft.jpg",
+          "backdrop_path": null,
           "genre_ids": [
-            10402
+            99,
+            10770
           ],
-          "id": 1140593,
-          "original_language": "ja",
-          "original_title": "\u6FA4\u91CE\u5F18\u4E4B LIVE [nZk]007",
-          "overview": "",
-          "popularity": 0.432,
-          "poster_path": "/b77wm2shTcfARNKydnTg6EBMvYo.jpg",
-          "release_date": "2022-03-13",
-          "title": "\u6FA4\u91CE\u5F18\u4E4B LIVE [nZk]007",
+          "id": 368155,
+          "title": "Happy Anniversary 007: 25 Years of James Bond",
+          "original_language": "en",
+          "original_title": "Happy Anniversary 007: 25 Years of James Bond",
+          "overview": "An hour documentary on the history of Bond for the 25th anniversary of the film series.",
+          "popularity": 0.365,
+          "poster_path": "/7YqTYxzukFJzwlfrxpqqd32Vecj.jpg",
+          "release_date": "1987-05-13",
+          "softcore": false,
           "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
+          "vote_average": 6.722,
+          "vote_count": 9
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            99
+          ],
+          "id": 854933,
+          "title": "007 - For Our Eyes Only",
+          "original_language": "en",
+          "original_title": "007 - For Our Eyes Only",
+          "overview": "In anticipation of the 25th chapter in the iconic James Bond Saga, based on the novels of British writer Ian Fleming, Sabbatical Entertainment presents \u0022For Our Eyes Only\u0022 an enthralling documentary that recounts and relives all of 007\u0027s menacing missions throughout this legendary cinematic franchise, from 1962\u0027s premiere of \u0022Dr. No\u0022, to the highly anticipated \u0022No Time To Die.\u0022",
+          "popularity": 0.0239,
+          "poster_path": "/qDBOPsM1GOIdQWdjUymcF6Gckmx.jpg",
+          "release_date": "2020-08-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 3
         },
         {
           "adult": false,
@@ -213,13 +369,33 @@
             80
           ],
           "id": 809441,
+          "title": "Cezmi Band 007 Bu\u00E7uk",
           "original_language": "tr",
           "original_title": "Cezmi Band 007 Bu\u00E7uk",
           "overview": "Turkish spy Cezmi Band battles villains in a James Bond inspired thriller.",
-          "popularity": 0.2267,
+          "popularity": 0.0143,
           "poster_path": "/7n6aq5bUiI0ptdVecQaSbNvMTZF.jpg",
           "release_date": "1965-08-05",
-          "title": "Cezmi Band 007 Bu\u00E7uk",
+          "softcore": false,
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lYDPFIXu8Bo9MAL5UTgQphRK0Ft.jpg",
+          "genre_ids": [
+            10402
+          ],
+          "id": 1140593,
+          "title": "\u6FA4\u91CE\u5F18\u4E4B LIVE [nZk]007",
+          "original_language": "ja",
+          "original_title": "\u6FA4\u91CE\u5F18\u4E4B LIVE [nZk]007",
+          "overview": "",
+          "popularity": 0.0998,
+          "poster_path": "/b77wm2shTcfARNKydnTg6EBMvYo.jpg",
+          "release_date": "2022-03-13",
+          "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
@@ -227,85 +403,16 @@
         {
           "adult": false,
           "backdrop_path": null,
-          "genre_ids": [
-            99
-          ],
-          "id": 733205,
-          "original_language": "en",
-          "original_title": "007 in Egypt",
-          "overview": "A look at filming James Bond in Egypt.",
-          "popularity": 0.461,
-          "poster_path": null,
-          "release_date": "2006-07-17",
-          "title": "007 in Egypt",
-          "video": false,
-          "vote_average": 7.5,
-          "vote_count": 3
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
           "genre_ids": [],
-          "id": 532395,
-          "original_language": "en",
-          "original_title": "Looking for Mr Bond: 007 at the BBC",
-          "overview": "After more than 60 years tracking James Bond in print and on screen, the BBC opens up its vaults to reveal the forgotten files on the world\u0027s most famous secret agent. Featuring rare and candid interviews with all six actors to play 007, and exclusive behind-the-scenes footage, this is James Bond unguarded, unrestricted and unseen.",
-          "popularity": 0.2558,
-          "poster_path": "/kPzHJVcCv4j5n04obGJpndQ4Sbl.jpg",
-          "release_date": "2015-10-28",
-          "title": "Looking for Mr Bond: 007 at the BBC",
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [
-            99
-          ],
-          "id": 733359,
-          "original_language": "en",
-          "original_title": "007 Stage Dedication",
-          "overview": "Original archival footage of the opening of the Albert R. Broccoli 007 Stage at Pinewood Studios, Buckinghamshire, England.",
-          "popularity": 0.6968,
-          "poster_path": "/okv91ptAr8EpDiqHrUuG7kuZcrp.jpg",
-          "release_date": "2006-01-01",
-          "title": "007 Stage Dedication",
-          "video": false,
-          "vote_average": 4.7,
-          "vote_count": 3
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [],
-          "id": 683665,
-          "original_language": "en",
-          "original_title": "007: Licence to Restore",
-          "overview": "A short documentary featurette made for DVD about the film restoration of the original film negatives of the Eon Productions James Bond series. Focuses mainly on the 1960 Bond movies.",
-          "popularity": 0.0595,
-          "poster_path": "/7SQRq5I6auWa6BIwTWeWei3cOXk.jpg",
-          "release_date": "2006-07-17",
-          "title": "007: Licence to Restore",
-          "video": false,
-          "vote_average": 5.0,
-          "vote_count": 5
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [
-            28
-          ],
-          "id": 1339406,
-          "original_language": "pt",
-          "original_title": "007 - Genderbond",
-          "overview": "In a mysterious proposal focused on introducing the character, Jane Bond enters the dark corridor through the illuminated door. Her silhouette and her eyes are visible with a light source in the corridor. A retelling of a scene from the film \u0022007 - Skyfall\u0022.",
-          "popularity": 0.0143,
-          "poster_path": null,
-          "release_date": "2024-08-26",
-          "title": "007 - Genderbond",
+          "id": 1610821,
+          "title": "Tobor The 8th Man The Movie - Samantha 007 and The Light That Burned",
+          "original_language": "ja",
+          "original_title": "\u30A8\u30A4\u30C8\u30DE\u30F3 - \u30ED\u30DC\u30C3\u30C8007 \u5149\u7DDA\u9283\u30EC\u30FC\u30B6\u30FC",
+          "overview": "A short film made up of Episodes 9 through 10 of the 8th Man anime series. The film premiered at the first iteration of the Toei Manga Festival \u0022Manga Grand Parade\u0022.",
+          "popularity": 0.051,
+          "poster_path": "/xRw72PPQiNmzapT9Ikknsezlwbz.jpg",
+          "release_date": "1964-07-21",
+          "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
@@ -317,13 +424,14 @@
             99
           ],
           "id": 471697,
+          "title": "Unsolved History 3. KAL 007",
           "original_language": "ru",
           "original_title": "Unsolved History 3. KAL 007",
           "overview": "",
-          "popularity": 0.0582,
+          "popularity": 0.08,
           "poster_path": "/p6kU20z0crHeOLgP4zsj1K49C4Z.jpg",
           "release_date": "",
-          "title": "Unsolved History 3. KAL 007",
+          "softcore": false,
           "video": false,
           "vote_average": 7.5,
           "vote_count": 2
@@ -332,110 +440,41 @@
           "adult": false,
           "backdrop_path": null,
           "genre_ids": [
-            99
+            99,
+            10770
           ],
-          "id": 854933,
+          "id": 372239,
+          "title": "Now Pay Attention 007: A Tribute to Actor Desmond Llewelyn",
           "original_language": "en",
-          "original_title": "007 - For Our Eyes Only",
-          "overview": "In anticipation of the 25th chapter in the iconic James Bond Saga, based on the novels of British writer Ian Fleming, Sabbatical Entertainment presents \u0022For Our Eyes Only\u0022 an enthralling documentary that recounts and relives all of 007\u0027s menacing missions throughout this legendary cinematic franchise, from 1962\u0027s premiere of \u0022Dr. No\u0022, to the highly anticipated \u0022No Time To Die.\u0022",
-          "popularity": 0.256,
-          "poster_path": "/qDBOPsM1GOIdQWdjUymcF6Gckmx.jpg",
-          "release_date": "2020-08-20",
-          "title": "007 - For Our Eyes Only",
+          "original_title": "Now Pay Attention 007: A Tribute to Actor Desmond Llewelyn",
+          "overview": "",
+          "popularity": 0.1725,
+          "poster_path": "/fQCS8Ax6tLePm3hvoPGEd7IEvCR.jpg",
+          "release_date": "2000-01-22",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.2,
-          "vote_count": 3
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [
-            35
-          ],
-          "id": 483595,
-          "original_language": "es",
-          "original_title": "Er Conde Bond 007 y Pico",
-          "overview": "Venezuelan movie",
-          "popularity": 0.0239,
-          "poster_path": null,
-          "release_date": "2012-08-17",
-          "title": "Er Conde Bond 007 y Pico",
-          "video": false,
-          "vote_average": 10.0,
-          "vote_count": 1
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [],
-          "id": 695502,
-          "original_language": "en",
-          "original_title": "Dauphin 007",
-          "overview": "Referring to the heir-apparent to the French throne, Dauphin 007 is a short animation which draws on elements and narratives surrounding the French Revolution, chronicling a would-be king lion who meets an untimely demise via a MRI machine/guillotine.",
-          "popularity": 0.0071,
-          "poster_path": "/3TYauRRipRA83WgfO9NeqvjjuBn.jpg",
-          "release_date": "2011-05-19",
-          "title": "Dauphin 007",
-          "video": false,
-          "vote_average": 7.0,
-          "vote_count": 1
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [
-            28
-          ],
-          "id": 1496632,
-          "original_language": "en",
-          "original_title": "Mission 007",
-          "overview": "Jammu and Kashmir is very free and our hands are out of it. When Pakistani terrorists try to grab it somehow, a military officer is beheaded and the head is taken away and the body is sent. Our Indian military has to pay for it .",
-          "popularity": 0.6662,
-          "poster_path": "/oQufNu6Aw3Emze7bxvYNAXzaZNi.jpg",
-          "release_date": "2025-06-06",
-          "title": "Mission 007",
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [
-            16
-          ],
-          "id": 1095067,
-          "original_language": "ja",
-          "original_title": "\u30B8\u30AA\u30CB\u30C3\u30AF\u30D5\u30ED\u30F3\u30C8 \u6A5F\u52D5\u6226\u58EB\u30AC\u30F3\u30C0\u30E00079 \u30B8\u30AA\u30F3\u306E\u60B2\u61A4",
-          "overview": "Short animated recap of the One Year War from the perspective of LCDR Garret Schmitzer.",
-          "popularity": 0.0143,
-          "poster_path": "/tbygHw7zxHJdvCnHV5qMrNoWCkW.jpg",
-          "release_date": "2001-09-06",
-          "title": "Mobile Suit Gundam: Zeonic Front - Indignation of Zeon.",
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
+          "vote_average": 5.7,
+          "vote_count": 6
         }
       ],
       "total_pages": 7,
-      "total_results": 121
+      "total_results": 128
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=6236",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "6d1efc362e98279f6bcdbc978ae00d755ac03d7551ed57c9a6380603ff24df36",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=15773",
-      "ETag": "W/\u0022ce1264979c202b6a85c59e5a3ee0162b\u0022",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00222a93cd937af3179fcdf8427b18fb4a48\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

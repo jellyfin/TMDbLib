@@ -1,6 +1,6 @@
 {
   "Guid": "6d0c457c-1fbf-a843-be30-21eb43b0ffcd",
-  "UpdatedAt": "2025-12-24T18:45:16.2712573Z",
+  "UpdatedAt": "2026-06-13T13:30:13.305872Z",
   "Title": "Proxy Mapping for GET /3/person/41419/tagged_images",
   "Description": "Proxy Mapping for GET /3/person/41419/tagged_images",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -61,11 +74,12 @@
             "genre_ids": [
               35
             ],
-            "popularity": 1.3125,
+            "popularity": 2.0124,
             "release_date": "2019-11-07",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.419,
-            "vote_count": 512
+            "vote_average": 6.401,
+            "vote_count": 538
           },
           "media_type": "movie"
         },
@@ -93,11 +107,12 @@
             "genre_ids": [
               35
             ],
-            "popularity": 1.3125,
+            "popularity": 2.0124,
             "release_date": "2019-11-07",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.419,
-            "vote_count": 512
+            "vote_average": 6.401,
+            "vote_count": 538
           },
           "media_type": "movie"
         }
@@ -110,17 +125,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=20788",
       "x-memc": "HIT",
-      "x-memc-key": "56576980a5463a00485267f2052a0013498a77b81837c1267f1a76eae64c8943",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=7056",
-      "ETag": "W/\u00229920799385e3d5527cd4f4c6ffc3c764\u0022",
+      "x-memc-key": "56576980a5463a00485267f2052a0013",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022d014a077f4fd87ec110f2970dc881aee\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

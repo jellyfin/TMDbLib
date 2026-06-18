@@ -1,6 +1,6 @@
 {
   "Guid": "536fcfd2-2097-6a4f-85fb-d7e3e58216f1",
-  "UpdatedAt": "2025-12-24T18:45:21.5385689Z",
+  "UpdatedAt": "2026-06-13T13:30:13.90719Z",
   "Title": "Proxy Mapping for GET /3/search/movie",
   "Description": "Proxy Mapping for GET /3/search/movie",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -65,16 +78,17 @@
             53
           ],
           "id": 646,
+          "title": "Dr. No",
           "original_language": "en",
           "original_title": "Dr. No",
           "overview": "Agent 007 battles mysterious Dr. No, a scientific genius bent on destroying the U.S. space program. As the countdown to disaster begins, Bond must go to Jamaica, where he encounters beautiful Honey Ryder, to confront a megalomaniacal villain in his massive island headquarters.",
-          "popularity": 6.0542,
+          "popularity": 7.9132,
           "poster_path": "/f9HsemSsBEHN5eoMble1bj6fDxs.jpg",
           "release_date": "1962-10-07",
-          "title": "Dr. No",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.99,
-          "vote_count": 3889
+          "vote_average": 6.983,
+          "vote_count": 4061
         }
       ],
       "total_pages": 1,
@@ -85,17 +99,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=22033",
       "x-memc": "MISS, STORE",
-      "x-memc-key": "415fa5fd4194728fd29b42a6cb8a7f98d48f65fee6f0a2ad0454703099014e7c",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=22981",
-      "ETag": "W/\u00223d52b2c84dd7de303aea0ae17125248f\u0022",
+      "x-memc-key": "f6bb08f6f60a581c04c151c02623764c",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022131260397564e258088ea840ef2b6960\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

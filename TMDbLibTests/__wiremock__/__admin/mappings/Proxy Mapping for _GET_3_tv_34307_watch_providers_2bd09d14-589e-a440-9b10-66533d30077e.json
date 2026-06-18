@@ -1,6 +1,6 @@
 {
   "Guid": "2bd09d14-589e-a440-9b10-66533d30077e",
-  "UpdatedAt": "2025-12-24T18:45:23.6015498Z",
+  "UpdatedAt": "2026-06-13T13:30:15.270577Z",
   "Title": "Proxy Mapping for GET /3/tv/34307/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/34307/watch/providers",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -28,22 +41,22 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=AD",
           "flatrate": [
             {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 23
-            },
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 31
+              "display_priority": 24
             }
           ]
         },
@@ -60,7 +73,7 @@
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -111,7 +124,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -122,13 +135,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -142,85 +155,78 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=AT",
           "flatrate": [
             {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 9,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 61
-            },
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 154
+              "display_priority": 62
             }
           ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 12
+              "display_priority": 13
             }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=AU",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 11
-            }
-          ],
           "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 2
-            },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 50
-            },
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 94
+              "display_priority": 2
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 95
+              "display_priority": 93
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -272,26 +278,37 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=BE",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
-            }
-          ],
           "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=BF",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
             }
           ]
         },
@@ -326,12 +343,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             },
             {
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
@@ -388,19 +399,19 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -409,16 +420,16 @@
               "display_priority": 41
             },
             {
-              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
               "provider_id": 1825,
               "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 49
+              "display_priority": 48
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 83
+              "display_priority": 80
             }
           ]
         },
@@ -452,7 +463,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 6
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -468,8 +485,8 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             }
           ],
           "flatrate": [
@@ -477,7 +494,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 3
             },
             {
               "logo_path": "/7rJJlPpuGz0DV5OLjVW1HzYaFj9.jpg",
@@ -489,7 +506,18 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 94
+              "display_priority": 93
+            }
+          ]
+        },
+        "CD": {
+          "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=CD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
             }
           ]
         },
@@ -500,7 +528,7 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             }
           ],
           "flatrate": [
@@ -533,16 +561,16 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=CL",
           "flatrate": [
             {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
-            },
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 2
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -559,7 +587,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -567,22 +601,28 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=CO",
           "flatrate": [
             {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
             },
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 2
-            },
-            {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 6
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 69
             }
           ]
         },
@@ -617,6 +657,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -627,7 +673,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 6
+              "display_priority": 0
             }
           ]
         },
@@ -638,13 +684,19 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -673,24 +725,24 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 84
+              "display_priority": 83
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 114
+              "display_priority": 112
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -699,25 +751,25 @@
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 21
+              "display_priority": 22
             },
             {
               "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
               "provider_id": 1993,
               "provider_name": "Videoload",
-              "display_priority": 106
+              "display_priority": 104
             },
             {
               "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
-              "display_priority": 130
+              "display_priority": 128
             }
           ]
         },
@@ -728,13 +780,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
@@ -809,7 +861,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
@@ -854,7 +906,7 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 3
+              "display_priority": 1
             },
             {
               "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
@@ -875,16 +927,16 @@
               "display_priority": 51
             },
             {
-              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
-              "provider_id": 2472,
-              "provider_name": "HBO Max  Amazon Channel",
-              "display_priority": 81
-            },
-            {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 82
+              "display_priority": 79
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 87
             }
           ]
         },
@@ -895,13 +947,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -919,6 +971,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -928,7 +986,7 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
@@ -938,60 +996,16 @@
               "display_priority": 9
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 19
-            },
-            {
               "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
               "provider_id": 2286,
               "provider_name": "VIVA by videofutur",
-              "display_priority": 83
+              "display_priority": 80
             },
             {
               "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
               "provider_id": 2307,
               "provider_name": "Premiere Max",
-              "display_priority": 85
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 59
-            },
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 78
-            },
-            {
-              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
-              "provider_id": 2472,
-              "provider_name": "HBO Max  Amazon Channel",
-              "display_priority": 91
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 93
+              "display_priority": 82
             }
           ],
           "rent": [
@@ -1005,13 +1019,51 @@
               "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
               "provider_id": 2286,
               "provider_name": "VIVA by videofutur",
-              "display_priority": 83
+              "display_priority": 80
             },
             {
               "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
               "provider_id": 2307,
               "provider_name": "Premiere Max",
-              "display_priority": 85
+              "display_priority": 82
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 75
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 87
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 106
             }
           ]
         },
@@ -1021,11 +1073,11 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -1042,7 +1094,7 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 87
+              "display_priority": 86
             }
           ]
         },
@@ -1067,10 +1119,10 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=GG",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 84
+              "display_priority": 83
             }
           ]
         },
@@ -1106,10 +1158,10 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=GQ",
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1151,6 +1203,12 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=GY",
           "flatrate": [
             {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
@@ -1165,13 +1223,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 5
+              "display_priority": 1
             }
           ]
         },
@@ -1222,13 +1280,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -1251,7 +1309,7 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 6
+              "display_priority": 1
             }
           ]
         },
@@ -1274,12 +1332,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             }
           ]
         },
@@ -1291,6 +1343,18 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 73
             }
           ]
         },
@@ -1302,12 +1366,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             }
           ]
         },
@@ -1324,7 +1382,7 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             }
           ]
         },
@@ -1341,7 +1399,19 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 86
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
@@ -1370,7 +1440,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 22
+              "display_priority": 23
             }
           ]
         },
@@ -1382,12 +1452,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             },
             {
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
@@ -1456,12 +1520,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             }
           ]
         },
@@ -1475,16 +1533,10 @@
               "display_priority": 0
             },
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            },
-            {
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -1507,7 +1559,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 10
+              "display_priority": 11
             }
           ]
         },
@@ -1541,26 +1593,26 @@
         },
         "LU": {
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=LU",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 16
-            }
-          ],
           "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 2
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1662,7 +1714,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -1679,7 +1731,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1713,7 +1771,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 4
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1745,9 +1809,26 @@
             }
           ]
         },
+        "MW": {
+          "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=MW",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
         "MX": {
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=MX",
           "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
@@ -1758,16 +1839,10 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
               "provider_id": 1825,
               "provider_name": "HBO Max Amazon Channel",
               "display_priority": 15
@@ -1782,7 +1857,7 @@
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 73
+              "display_priority": 70
             }
           ]
         },
@@ -1799,7 +1874,7 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 7
+              "display_priority": 1
             }
           ]
         },
@@ -1861,7 +1936,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 10
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -1875,22 +1956,28 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=NL",
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 0
-            },
-            {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 48
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 75
             }
           ]
         },
@@ -1901,13 +1988,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
@@ -1925,26 +2012,12 @@
         },
         "NZ": {
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=NZ",
-          "ads": [
-            {
-              "logo_path": "/vcsLhyNRm528LzfVqQJDddusP27.jpg",
-              "provider_id": 440,
-              "provider_name": "ThreeNow",
-              "display_priority": 15
-            }
-          ],
           "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
-            },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             }
           ]
         },
@@ -1956,12 +2029,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             },
             {
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
@@ -2001,13 +2068,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -2031,6 +2098,17 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            }
+          ]
+        },
+        "PG": {
+          "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=PG",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
             }
           ]
         },
@@ -2075,24 +2153,35 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 5
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 38
+              "display_priority": 37
             }
           ]
         },
         "PS": {
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=PT",
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -2105,29 +2194,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
-            }
-          ]
-        },
-        "PT": {
-          "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=PT",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 32
+              "display_priority": 33
             }
           ]
         },
@@ -2164,12 +2236,6 @@
               "display_priority": 0
             },
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            },
-            {
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
@@ -2184,13 +2250,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -2267,6 +2333,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -2277,19 +2349,25 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 44
+              "display_priority": 43
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 65
             }
           ]
         },
@@ -2340,13 +2418,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -2381,6 +2459,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -2437,7 +2521,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -2448,13 +2538,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 3
+              "display_priority": 1
             }
           ]
         },
@@ -2482,7 +2572,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -2505,7 +2595,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 11
+              "display_priority": 12
             }
           ]
         },
@@ -2534,6 +2624,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -2558,22 +2654,22 @@
           "link": "https://www.themoviedb.org/tv/34307-shameless/watch?locale=US",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
@@ -2587,13 +2683,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 2
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 155
+              "display_priority": 154
             }
           ]
         },
@@ -2616,7 +2712,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -2644,7 +2740,7 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -2662,12 +2758,6 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
-            },
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
             }
           ]
         },
@@ -2712,7 +2802,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 4
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         }
@@ -2722,19 +2818,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=15726",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=25483",
-      "x-memc": "HIT",
-      "x-memc-key": "60da0c9a9bd9ad91bc68f661447008e699c0fe4fc11a11e7717e751761243623",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002296f5cbe3514211c6c9f8eb59acd0bee1\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022e376f241f1fd03b741d13c07ab0a863e\u0022",
+      "x-az": "us-east-1c",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

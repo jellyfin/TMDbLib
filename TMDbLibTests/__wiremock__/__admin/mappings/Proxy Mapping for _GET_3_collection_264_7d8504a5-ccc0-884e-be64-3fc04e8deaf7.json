@@ -1,6 +1,6 @@
 {
   "Guid": "7d8504a5-ccc0-884e-be64-3fc04e8deaf7",
-  "UpdatedAt": "2025-12-24T18:45:17.5172918Z",
+  "UpdatedAt": "2026-06-13T13:30:13.305874Z",
   "Title": "Proxy Mapping for GET /3/collection/264",
   "Description": "Proxy Mapping for GET /3/collection/264",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -32,7 +45,7 @@
       "parts": [
         {
           "adult": false,
-          "backdrop_path": "/pZCLGHynFPOv8dve6u9waxknLth.jpg",
+          "backdrop_path": "/5bzPWQ2dFUl2aZKkp7ILJVVkRed.jpg",
           "id": 105,
           "title": "Back to the Future",
           "original_title": "Back to the Future",
@@ -45,11 +58,12 @@
             35,
             878
           ],
-          "popularity": 17.4226,
+          "popularity": 19.0748,
           "release_date": "1985-07-03",
+          "softcore": false,
           "video": false,
-          "vote_average": 8.322,
-          "vote_count": 21169
+          "vote_average": 8.3,
+          "vote_count": 21850
         },
         {
           "adult": false,
@@ -58,7 +72,7 @@
           "title": "Back to the Future Part II",
           "original_title": "Back to the Future Part II",
           "overview": "Marty and Doc are at it again as the time-traveling duo head to 2015 to nip some McFly family woes in the bud. But things go awry thanks to bully Biff Tannen and a pesky sports almanac. In a last-ditch attempt to set things straight, Marty finds himself bound for 1955 and face to face with his teenage parents -- again.",
-          "poster_path": "/YBawEsTkUZBDajKbd5LiHkmMGf.jpg",
+          "poster_path": "/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg",
           "media_type": "movie",
           "original_language": "en",
           "genre_ids": [
@@ -66,15 +80,16 @@
             35,
             878
           ],
-          "popularity": 7.2296,
+          "popularity": 8.3736,
           "release_date": "1989-11-22",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.774,
-          "vote_count": 13534
+          "vote_average": 7.782,
+          "vote_count": 13957
         },
         {
           "adult": false,
-          "backdrop_path": "/vKp3NvqBkcjHkCHSGi6EbcP7g4J.jpg",
+          "backdrop_path": "/AtF7TESJEMmImBRUj9Z7HmW2ZH0.jpg",
           "id": 196,
           "title": "Back to the Future Part III",
           "original_title": "Back to the Future Part III",
@@ -87,11 +102,12 @@
             35,
             878
           ],
-          "popularity": 5.9065,
+          "popularity": 5.7778,
           "release_date": "1990-05-25",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.491,
-          "vote_count": 11188
+          "vote_average": 7.5,
+          "vote_count": 11541
         }
       ]
     },
@@ -99,19 +115,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1a",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "13ad4705c33348c7dcf5cbeed24c74911c95447ccd032bf2e7760ef214431626",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=15226",
-      "ETag": "W/\u00229552c6efeae976f7f3fca560ba0b686c\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=16007",
+      "ETag": "W/\u0022113ae597a0eb7b40fcb18ee50060e2cd\u0022",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

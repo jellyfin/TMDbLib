@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Movies;
 
 /// <summary>
-/// Specifies additional movie data to retrieve from the API.
+/// Additional movie data to retrieve from the API.
 /// </summary>
 [Flags]
 public enum MovieMethods

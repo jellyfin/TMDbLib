@@ -1,6 +1,6 @@
 {
   "Guid": "f8732a67-7777-6847-b178-6f6857ca01af",
-  "UpdatedAt": "2025-12-24T18:45:17.7095026Z",
+  "UpdatedAt": "2026-06-13T13:30:14.439253Z",
   "Title": "Proxy Mapping for GET /3/movie/latest",
   "Description": "Proxy Mapping for GET /3/movie/latest",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -25,39 +38,58 @@
       "adult": false,
       "backdrop_path": null,
       "belongs_to_collection": null,
-      "budget": 0,
+      "budget": 1500000,
       "genres": [
         {
-          "id": 99,
-          "name": "Documentary"
+          "id": 10751,
+          "name": "Family"
+        },
+        {
+          "id": 12,
+          "name": "Adventure"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        },
+        {
+          "id": 16,
+          "name": "Animation"
         }
       ],
       "homepage": "",
-      "id": 1603638,
-      "imdb_id": "tt5986348",
+      "id": 1713769,
+      "imdb_id": null,
       "origin_country": [
-        "TR"
+        "US"
       ],
-      "original_language": "tr",
-      "original_title": "\u0130zzet G\u00FCnay Belgeseli",
-      "overview": "",
+      "original_language": "en",
+      "original_title": "The Smith Family Movie",
+      "overview": "The Smith Family Movie is a high-energy, 2d animated holiday comedy-adventure centered around 12-year-old Aaliyah Smith (played by breakout star Pink Pinkett Jones). The story kicks off during the family\u2019s chaotic, ultra-loud annual Christmas party, where Aaliyah is struggling to get her eccentric relatives to notice her passion for music. To bring everyone together, her aunt surprises the family with an all-expenses-paid winter vacation to a luxury holiday resort.",
       "popularity": 0.0,
       "poster_path": null,
-      "production_companies": [],
-      "production_countries": [],
-      "release_date": "",
-      "revenue": 0,
-      "runtime": 0,
-      "spoken_languages": [
+      "production_companies": [
         {
-          "english_name": "Turkish",
-          "iso_639_1": "tr",
-          "name": "T\u00FCrk\u00E7e"
+          "id": 252955,
+          "logo_path": null,
+          "name": "YelloFello Studios",
+          "origin_country": ""
         }
       ],
-      "status": "Released",
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2026-12-13",
+      "revenue": 1500000000,
+      "runtime": 92,
+      "softcore": false,
+      "spoken_languages": [],
+      "status": "In Production",
       "tagline": "",
-      "title": "\u0130zzet G\u00FCnay Belgeseli",
+      "title": "The Smith Family Movie",
       "video": false,
       "vote_average": 0.0,
       "vote_count": 0
@@ -67,17 +99,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
       "Cache-Control": "public, max-age=0",
       "x-memc": "MISS",
-      "x-memc-key": "2486f371919290448476c712019e749588a041d4758e1e1ad54830bbb7bffc74",
+      "x-memc-key": "2486f371919290448476c712019e7495",
       "x-az": "us-east-1a",
-      "ETag": "W/\u002284d9cec63303834ead7777af6fceaffc\u0022",
+      "ETag": "W/\u00223f6bba083aa1fa2ea959367e2b724c25\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

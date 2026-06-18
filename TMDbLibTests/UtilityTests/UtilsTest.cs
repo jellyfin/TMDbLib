@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using TMDbLib.Utilities;
 using TMDbLibTests.JsonHelpers;
 using Xunit;

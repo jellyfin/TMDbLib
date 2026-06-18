@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -10,30 +10,30 @@ public class ExternalIdsTvShow : ExternalIds
     /// <summary>
     /// Gets or sets the IMDb ID.
     /// </summary>
-    [JsonProperty("imdb_id")]
+    [JsonPropertyName("imdb_id")]
     public string? ImdbId { get; set; }
 
     /// <summary>
     /// Gets or sets the TVDb ID.
     /// </summary>
-    [JsonProperty("tvdb_id")]
-    public string? TvdbId { get; set; }
+    [JsonPropertyName("tvdb_id")]
+    public int? TvdbId { get; set; }
 
     /// <summary>
     /// Gets or sets the Facebook ID.
     /// </summary>
-    [JsonProperty("facebook_id")]
+    [JsonPropertyName("facebook_id")]
     public string? FacebookId { get; set; }
 
     /// <summary>
     /// Gets or sets the Twitter ID.
     /// </summary>
-    [JsonProperty("twitter_id")]
+    [JsonPropertyName("twitter_id")]
     public string? TwitterId { get; set; }
 
     /// <summary>
     /// Gets or sets the Instagram ID.
     /// </summary>
-    [JsonProperty("instagram_id")]
+    [JsonPropertyName("instagram_id")]
     public string? InstagramId { get; set; }
 }

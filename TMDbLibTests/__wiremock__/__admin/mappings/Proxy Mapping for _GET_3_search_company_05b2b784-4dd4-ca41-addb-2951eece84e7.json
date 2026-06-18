@@ -1,6 +1,6 @@
 {
   "Guid": "05b2b784-4dd4-ca41-addb-2951eece84e7",
-  "UpdatedAt": "2025-12-24T18:45:20.8877619Z",
+  "UpdatedAt": "2026-06-13T13:30:13.780336Z",
   "Title": "Proxy Mapping for GET /3/search/company",
   "Description": "Proxy Mapping for GET /3/search/company",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -47,34 +60,22 @@
       "page": 2,
       "results": [
         {
-          "id": 121483,
-          "logo_path": "/6a6osf6j0zj058QB63FRNh2BgGo.png",
-          "name": "Disneyland Paris",
-          "origin_country": "FR"
-        },
-        {
-          "id": 175458,
-          "logo_path": "/1JOD7Lr0bMqyP3gMTzPd6qrWY0h.png",
-          "name": "Walt Disney Television Alternative",
+          "id": 160956,
+          "logo_path": "/zkZ7fxge59WeJQmcjy2g8aAkqmU.png",
+          "name": "Walt Disney Records",
           "origin_country": "US"
         },
         {
-          "id": 130098,
-          "logo_path": "/mD2IMn94LyC6u8xfqkAMiIg90Hm.png",
-          "name": "Disney Interactive Studios",
-          "origin_country": "US"
-        },
-        {
-          "id": 4436,
-          "logo_path": "/iCnomrQJMG059X084K4bARkYIhM.png",
-          "name": "Disneynature",
+          "id": 112779,
+          "logo_path": null,
+          "name": "Walt Disney Animation",
           "origin_country": "FR"
         },
         {
-          "id": 103374,
-          "logo_path": "/ApbzfacgrUSGF3r4MUfbnjeso9L.png",
-          "name": "The Walt Disney Company EMEA",
-          "origin_country": "GB"
+          "id": 258193,
+          "logo_path": null,
+          "name": "Disney Media Distribution",
+          "origin_country": ""
         },
         {
           "id": 202949,
@@ -83,22 +84,40 @@
           "origin_country": "US"
         },
         {
-          "id": 206180,
-          "logo_path": null,
-          "name": "Walt Disney Educational Materials Company",
-          "origin_country": ""
-        },
-        {
-          "id": 160956,
-          "logo_path": "/zkZ7fxge59WeJQmcjy2g8aAkqmU.png",
-          "name": "Walt Disney Records",
+          "id": 241784,
+          "logo_path": "/sepE4Kn7ZJdpdahWsXW1fPXRkPI.png",
+          "name": "Disney Branded Television",
           "origin_country": "US"
         },
         {
-          "id": 164892,
-          "logo_path": "/2wH2cZCfpQvMsWZCZbHFEJx0R86.png",
-          "name": "The Walt Disney Company (Japan)",
-          "origin_country": "JP"
+          "id": 241787,
+          "logo_path": "/7wRFRKnGTX8J4URYQA0jQbMBgGt.png",
+          "name": "Disney Channels Worldwide",
+          "origin_country": "US"
+        },
+        {
+          "id": 88716,
+          "logo_path": null,
+          "name": "Walt Disney Germany",
+          "origin_country": ""
+        },
+        {
+          "id": 107038,
+          "logo_path": "/vQWGWxJQXcK0qyZd26orU7ScUKe.png",
+          "name": "Disney Theatrical Group",
+          "origin_country": "US"
+        },
+        {
+          "id": 107039,
+          "logo_path": "/kkuLBOtli6Ym7LNt5VyZHyOYMgZ.png",
+          "name": "Disney Broadcast Production",
+          "origin_country": ""
+        },
+        {
+          "id": 15935,
+          "logo_path": "/25xmKjrZS3TJMYa1RvxZ2qcMHHX.png",
+          "name": "Walt Disney Imagineering",
+          "origin_country": "US"
         },
         {
           "id": 177000,
@@ -107,85 +126,80 @@
           "origin_country": "AU"
         },
         {
-          "id": 3475,
-          "logo_path": "/jTPNzDEn7eHmp3nEXEEtkHm6jLg.png",
-          "name": "Disney Television Animation",
-          "origin_country": "US"
-        },
-        {
           "id": 89347,
           "logo_path": null,
           "name": "Disney World Cinema",
           "origin_country": "IN"
         },
         {
-          "id": 41712,
+          "id": 52126,
           "logo_path": null,
-          "name": "Disney Interactive",
-          "origin_country": "CA"
+          "name": "Disney Media Productions",
+          "origin_country": ""
         },
         {
-          "id": 99981,
+          "id": 272654,
           "logo_path": null,
-          "name": "Disney T\u00FCrkiye",
-          "origin_country": "TR"
+          "name": "Walt Disney Japan",
+          "origin_country": "JP"
         },
         {
-          "id": 213974,
-          "logo_path": "/sWk3695LylXzBoL7aJbpBemS921.png",
-          "name": "Disney Channel France",
-          "origin_country": "FR"
-        },
-        {
-          "id": 141906,
+          "id": 296690,
           "logo_path": null,
-          "name": "Walt Disney Television Italia",
-          "origin_country": "IT"
+          "name": "walt disney imag",
+          "origin_country": ""
         },
         {
-          "id": 164864,
+          "id": 13852,
           "logo_path": null,
-          "name": "Disney India Media Networks",
-          "origin_country": "IN"
+          "name": "Odissey",
+          "origin_country": ""
         },
         {
-          "id": 214202,
-          "logo_path": "/eAgWVdyCLhaawCGomhUd7qX1Hbo.png",
-          "name": "The Walt Disney Company Germany",
-          "origin_country": "DE"
-        },
-        {
-          "id": 185119,
-          "logo_path": "/8LNVYqRRG3fLKghBdQfUDselGH2.png",
-          "name": "Disney Concerts",
+          "id": 20193,
+          "logo_path": "/oz1p4QkoNONJZ3JT6BF6Jj4Nw2l.png",
+          "name": "The Walt Disney Company",
           "origin_country": "US"
         },
         {
-          "id": 203967,
-          "logo_path": "/zndbMwp7KApska5l5Jrerj2CHFH.png",
-          "name": "The Walt Disney Company (Southeast Asia)",
-          "origin_country": "SG"
+          "id": 171656,
+          "logo_path": "/4UBohOtIr9DtxylH48Qsg6aDow6.png",
+          "name": "Walt Disney Feature Animation",
+          "origin_country": "US"
+        },
+        {
+          "id": 209687,
+          "logo_path": "/y6ih8QvALQtL6eHpxzXIk4CC8iO.png",
+          "name": "The Walt Disney Company",
+          "origin_country": "BR"
+        },
+        {
+          "id": 175458,
+          "logo_path": "/1JOD7Lr0bMqyP3gMTzPd6qrWY0h.png",
+          "name": "Walt Disney Television Alternative",
+          "origin_country": "US"
         }
       ],
       "total_pages": 4,
-      "total_results": 71
+      "total_results": 75
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "b291c8e88920738ed1f6163b373b9edb5ba55551d3ee985ba1caeaf9d4cd1f8a",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=28740",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "837fddf2f087a4f5ceec681c94993511",
       "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=7481",
-      "ETag": "W/\u00222b85393020692ac76bacad5b38b816c1\u0022",
+      "ETag": "W/\u0022e9f7459c1e114fc40ee11b82bc80c46e\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

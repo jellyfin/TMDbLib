@@ -1,6 +1,6 @@
 {
   "Guid": "88d544d7-91bf-ad4a-ac1e-92a268f4bf62",
-  "UpdatedAt": "2025-12-24T18:45:22.0151752Z",
+  "UpdatedAt": "2026-06-13T13:30:13.428168Z",
   "Title": "Proxy Mapping for GET /3/tv/1400",
   "Description": "Proxy Mapping for GET /3/tv/1400",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "append_to_response",
@@ -38,20 +51,20 @@
       "backdrop_path": "/tMRdEsMg9MyXAkcufK9YJEeIaNW.jpg",
       "created_by": [
         {
+          "id": 16377,
+          "credit_id": "5256ca0119c2956ff605959e",
+          "name": "Jerry Seinfeld",
+          "original_name": "Jerry Seinfeld",
+          "gender": 2,
+          "profile_path": "/iZLDMjGFvDJzLhKDjscLptAF87M.jpg"
+        },
+        {
           "id": 16376,
           "credit_id": "5256ca0119c2956ff60595c6",
           "name": "Larry David",
           "original_name": "Larry David",
           "gender": 2,
           "profile_path": "/ojPx93eaDcanOVi4AH14uAFwXhn.jpg"
-        },
-        {
-          "id": 16377,
-          "credit_id": "5256ca0119c2956ff605959e",
-          "name": "Jerry Seinfeld",
-          "original_name": "Jerry Seinfeld",
-          "gender": 2,
-          "profile_path": "/ajmOd1zbf4XtDJw29nXocuMI80b.jpg"
         }
       ],
       "episode_run_time": [],
@@ -73,8 +86,8 @@
         "id": 63283,
         "name": "The Finale (2)",
         "overview": "Witnesses testify to the gang\u0027s (lack of) character as they go on trial for violating a \u0022Good Samaritan Law.\u0022",
-        "vote_average": 7.2,
-        "vote_count": 8,
+        "vote_average": 7.6,
+        "vote_count": 10,
         "air_date": "1998-05-14",
         "episode_number": 24,
         "episode_type": "finale",
@@ -102,12 +115,12 @@
       "original_language": "en",
       "original_name": "Seinfeld",
       "overview": "A stand-up comedian and his three offbeat friends weather the pitfalls and payoffs of life in New York City in the \u002790s. It\u0027s a show about nothing.",
-      "popularity": 52.5987,
+      "popularity": 73.7934,
       "poster_path": "/aCw8ONfyz3AhngVQa1E2Ss4KSUQ.jpg",
       "production_companies": [
         {
           "id": 97,
-          "logo_path": "/qv3ih9pR9w2XNKZDsqDqAGuZjqc.png",
+          "logo_path": "/smyTD67uNsdaySnnjVDmh0kyotp.png",
           "name": "Castle Rock Entertainment",
           "origin_country": "US"
         },
@@ -143,7 +156,7 @@
           "id": 3638,
           "name": "Specials",
           "overview": "",
-          "poster_path": "/rOseRl5P1sRPsF1Uaxfu8QyhWgG.jpg",
+          "poster_path": "/b7K0P0l90Caecoyf9lkr2kXaCrl.jpg",
           "season_number": 0,
           "vote_average": 0.0
         },
@@ -153,9 +166,9 @@
           "id": 3629,
           "name": "Season 1",
           "overview": "",
-          "poster_path": "/5tnnUOx3fp94UwHMl6tRdkYfEuG.jpg",
+          "poster_path": "/8CcmmI4kdxI3tEzD8OOAXs0vz5.jpg",
           "season_number": 1,
-          "vote_average": 7.2
+          "vote_average": 7.3
         },
         {
           "air_date": "1991-01-23",
@@ -163,7 +176,7 @@
           "id": 3630,
           "name": "Season 2",
           "overview": "",
-          "poster_path": "/pnIzg5YwOFrfJnQ31z9T2wviPBF.jpg",
+          "poster_path": "/s69REAzzJd0G95s4PQZXmfJTAkX.jpg",
           "season_number": 2,
           "vote_average": 7.7
         },
@@ -173,7 +186,7 @@
           "id": 3631,
           "name": "Season 3",
           "overview": "",
-          "poster_path": "/nkhwnuxdDrVFKKC6qUPs6G7bvbO.jpg",
+          "poster_path": "/g8yIsI4xVBk2eZHHQtOfG5jWF8b.jpg",
           "season_number": 3,
           "vote_average": 7.8
         },
@@ -183,9 +196,9 @@
           "id": 3632,
           "name": "Season 4",
           "overview": "",
-          "poster_path": "/wR2rnCJ4ErRsaHoMVqd9hi4UDMX.jpg",
+          "poster_path": "/3YWuAlmhmOGh1eIOu3ZZdsnMA1E.jpg",
           "season_number": 4,
-          "vote_average": 7.9
+          "vote_average": 7.7
         },
         {
           "air_date": "1993-09-16",
@@ -193,9 +206,9 @@
           "id": 3633,
           "name": "Season 5",
           "overview": "",
-          "poster_path": "/xVACsCDOOfjkCk5tsNz2qgP6QWH.jpg",
+          "poster_path": "/mamg6P0PslS495H8r72IQ3j63XJ.jpg",
           "season_number": 5,
-          "vote_average": 8.0
+          "vote_average": 7.8
         },
         {
           "air_date": "1994-09-22",
@@ -203,9 +216,9 @@
           "id": 3634,
           "name": "Season 6",
           "overview": "",
-          "poster_path": "/lZ1mZVxPxXNCQ96DiueznMwrK5S.jpg",
+          "poster_path": "/cdTAMv6JFM9IScpquCoO8LPQtX2.jpg",
           "season_number": 6,
-          "vote_average": 8.0
+          "vote_average": 7.9
         },
         {
           "air_date": "1995-09-21",
@@ -213,7 +226,7 @@
           "id": 3635,
           "name": "Season 7",
           "overview": "",
-          "poster_path": "/xWOa5ooCisnvavvfOPWbgjxmaaL.jpg",
+          "poster_path": "/u7eBxeqKg4B2V8BIT3sEuxN9JtE.jpg",
           "season_number": 7,
           "vote_average": 8.0
         },
@@ -223,9 +236,9 @@
           "id": 3636,
           "name": "Season 8",
           "overview": "",
-          "poster_path": "/hcjHVDoFwbPS9oO7GdhU8vA8ONd.jpg",
+          "poster_path": "/qI4dkI4YlCGqFMJX7y5knLRAQn5.jpg",
           "season_number": 8,
-          "vote_average": 8.0
+          "vote_average": 8.1
         },
         {
           "air_date": "1997-09-25",
@@ -233,11 +246,12 @@
           "id": 3637,
           "name": "Season 9",
           "overview": "",
-          "poster_path": "/otyE0qfPWaKlNgb56j5FQNYPsLb.jpg",
+          "poster_path": "/hMC8aWx5tM6PczhYebGi0yBWGB5.jpg",
           "season_number": 9,
           "vote_average": 7.9
         }
       ],
+      "softcore": false,
       "spoken_languages": [
         {
           "english_name": "English",
@@ -248,8 +262,8 @@
       "status": "Ended",
       "tagline": "A show about nothing.",
       "type": "Scripted",
-      "vote_average": 8.252,
-      "vote_count": 2223,
+      "vote_average": 8.262,
+      "vote_count": 2342,
       "episode_groups": {
         "results": [
           {
@@ -296,15 +310,16 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=24672",
-      "ETag": "W/\u00226febaef417605307eda428aa897bf623\u0022",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=23203",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022fce338bd1cdc1d7b48bcae1b9236fa7c\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

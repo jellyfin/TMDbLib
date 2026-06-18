@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using TMDbLib.Objects.General;
+using System.Threading.Tasks;
 using TMDbLib.Objects.Search;
 using TMDbLib.Objects.Trending;
 using TMDbLibTests.JsonHelpers;
@@ -18,7 +17,7 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingMoviesAsync()
     {
-        var movies = await TMDbClient.GetTrendingMoviesAsync(TimeWindow.Week);
+        var movies = await TMDbClient.GetTrendingMoviesAsync(TimeWindow.Week, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(movies);
         Assert.NotNull(movies.Results);
         Assert.NotEmpty(movies.Results);
@@ -30,7 +29,7 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingTvAsync()
     {
-        var tv = await TMDbClient.GetTrendingTvAsync(TimeWindow.Week);
+        var tv = await TMDbClient.GetTrendingTvAsync(TimeWindow.Week, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(tv);
         Assert.NotNull(tv.Results);
         Assert.NotEmpty(tv.Results);
@@ -42,7 +41,7 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingPeopleAsync()
     {
-        var people = await TMDbClient.GetTrendingPeopleAsync(TimeWindow.Week);
+        var people = await TMDbClient.GetTrendingPeopleAsync(TimeWindow.Week, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(people);
         Assert.NotNull(people.Results);
         Assert.NotEmpty(people.Results);
@@ -54,7 +53,7 @@ public class ClientTrendingTests : TestBase
     [Fact]
     public async Task TestTrendingAllAsync()
     {
-        var all = await TMDbClient.GetTrendingAllAsync(TimeWindow.Week);
+        var all = await TMDbClient.GetTrendingAllAsync(TimeWindow.Week, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(all);
         Assert.NotNull(all.Results);
         Assert.NotEmpty(all.Results);

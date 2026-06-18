@@ -1,40 +1,40 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents a person who created the TV show.
+/// Creator of a TV show.
 /// </summary>
 public class CreatedBy
 {
     /// <summary>
-    /// Gets or sets the person ID.
+    /// Gets or sets the person id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
-    /// Gets or sets the credit ID.
+    /// Gets or sets the credit id.
     /// </summary>
-    [JsonProperty("credit_id")]
+    [JsonPropertyName("credit_id")]
     public string? CreditId { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the person.
+    /// Gets or sets the name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the gender of the person.
+    /// Gets or sets the gender.
     /// </summary>
-    [JsonProperty("gender")]
+    [JsonPropertyName("gender")]
     public PersonGender Gender { get; set; }
 
     /// <summary>
     /// Gets or sets the profile image path.
     /// </summary>
-    [JsonProperty("profile_path")]
+    [JsonPropertyName("profile_path")]
     public string? ProfilePath { get; set; }
 }
