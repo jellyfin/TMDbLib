@@ -24,4 +24,10 @@ public class SearchCompany
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }
+
+    /// <summary>
+    /// Gets or sets the ISO 3166-1 country code of the company's origin.
+    /// </summary>
+    [JsonProperty("origin_country")]
+    public string? OriginCountry { get; set; }
 }

@@ -1291,7 +1291,6 @@
       id: {Scrubbed},
       name: Vincent Garanger,
       order: 566,
-      profile_path: <non-empty>,
       gender: Male,
       known_for_department: Acting,
       original_name: Vincent Garanger
@@ -2290,7 +2289,6 @@
       id: {Scrubbed},
       name: Aloysia Delahaut,
       order: 569,
-      profile_path: <non-empty>,
       known_for_department: Acting,
       original_name: Aloysia Delahaut
     },
@@ -2515,6 +2513,23 @@
       gender: Female,
       known_for_department: Acting,
       original_name: Seyna Kane
+    },
+    {
+      roles: [
+        {
+          character: Police officer,
+          credit_id: {Scrubbed},
+          episode_count: 1
+        }
+      ],
+      total_episode_count: 1,
+      id: {Scrubbed},
+      name: David Sollazzo,
+      order: 682,
+      profile_path: <non-empty>,
+      gender: Male,
+      known_for_department: Acting,
+      original_name: David Sollazzo
     },
     {
       roles: [
@@ -2942,7 +2957,7 @@
       department: Costume & Make-Up,
       id: {Scrubbed},
       name: Frédérique Arguello,
-      profile_path: <non-empty>,
+      gender: Female,
       known_for_department: Costume & Make-Up,
       original_name: Frédérique Arguello
     },
@@ -2966,13 +2981,13 @@
     {
       jobs: [
         {
-          job: Director,
+          job: Other,
           credit_id: {Scrubbed},
-          episode_count: 3
+          episode_count: 7
         }
       ],
-      total_episode_count: 3,
-      department: Directing,
+      total_episode_count: 7,
+      department: Crew,
       id: {Scrubbed},
       name: Louis Leterrier,
       profile_path: <non-empty>,
@@ -2983,13 +2998,13 @@
     {
       jobs: [
         {
-          job: Other,
+          job: Director,
           credit_id: {Scrubbed},
-          episode_count: 7
+          episode_count: 3
         }
       ],
-      total_episode_count: 7,
-      department: Crew,
+      total_episode_count: 3,
+      department: Directing,
       id: {Scrubbed},
       name: Louis Leterrier,
       profile_path: <non-empty>,
@@ -3323,6 +3338,8 @@
       department: Camera,
       id: {Scrubbed},
       name: Christophe Nuyens,
+      profile_path: <non-empty>,
+      gender: Male,
       known_for_department: Camera,
       original_name: Christophe Nuyens
     },
@@ -3661,21 +3678,6 @@
     {
       jobs: [
         {
-          job: Producer,
-          credit_id: {Scrubbed},
-          episode_count: 17
-        }
-      ],
-      total_episode_count: 17,
-      department: Production,
-      id: {Scrubbed},
-      name: Nathan Franck,
-      known_for_department: Production,
-      original_name: Nathan Franck
-    },
-    {
-      jobs: [
-        {
           job: Adaptation,
           credit_id: {Scrubbed},
           episode_count: 5
@@ -3688,6 +3690,21 @@
       ],
       total_episode_count: 7,
       department: Writing,
+      id: {Scrubbed},
+      name: Nathan Franck,
+      known_for_department: Production,
+      original_name: Nathan Franck
+    },
+    {
+      jobs: [
+        {
+          job: Producer,
+          credit_id: {Scrubbed},
+          episode_count: 17
+        }
+      ],
+      total_episode_count: 17,
+      department: Production,
       id: {Scrubbed},
       name: Nathan Franck,
       known_for_department: Production,
@@ -3744,13 +3761,13 @@
     {
       jobs: [
         {
-          job: Adaptation,
+          job: Translator,
           credit_id: {Scrubbed},
-          episode_count: 3
+          episode_count: 1
         }
       ],
-      total_episode_count: 3,
-      department: Writing,
+      total_episode_count: 1,
+      department: Crew,
       id: {Scrubbed},
       name: Morgane Praud Lébely,
       known_for_department: Writing,
@@ -3759,13 +3776,13 @@
     {
       jobs: [
         {
-          job: Translator,
+          job: Adaptation,
           credit_id: {Scrubbed},
-          episode_count: 1
+          episode_count: 3
         }
       ],
-      total_episode_count: 1,
-      department: Crew,
+      total_episode_count: 3,
+      department: Writing,
       id: {Scrubbed},
       name: Morgane Praud Lébely,
       known_for_department: Writing,

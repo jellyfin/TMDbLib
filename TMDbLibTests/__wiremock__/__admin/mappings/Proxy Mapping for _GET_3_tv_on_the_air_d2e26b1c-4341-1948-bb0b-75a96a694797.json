@@ -1,6 +1,6 @@
 {
   "Guid": "d2e26b1c-4341-1948-bb0b-75a96a694797",
-  "UpdatedAt": "2025-12-24T18:45:18.1285073Z",
+  "UpdatedAt": "2026-05-24T16:19:42.83993Z",
   "Title": "Proxy Mapping for GET /3/tv/on_the_air",
   "Description": "Proxy Mapping for GET /3/tv/on_the_air",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -38,132 +51,114 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
+          "backdrop_path": "/auyEi4Xho43HFvVQnd42LzqBdiV.jpg",
           "genre_ids": [
-            10765,
             9648,
-            10759
-          ],
-          "id": 66732,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Stranger Things",
-          "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
-          "popularity": 529.3398,
-          "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
-          "first_air_date": "2016-07-15",
-          "name": "Stranger Things",
-          "vote_average": 8.597,
-          "vote_count": 19645
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
-          "genre_ids": [
-            10759,
             18,
             10765
           ],
-          "id": 106379,
+          "id": 124364,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Fallout",
-          "overview": "The story of haves and have-nots in a world in which there\u0027s almost nothing left to have. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind \u2014 and are shocked to discover an incredibly complex, gleefully weird, and highly violent universe waiting for them.",
-          "popularity": 208.1718,
-          "poster_path": "/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
-          "first_air_date": "2024-04-10",
-          "name": "Fallout",
-          "vote_average": 8.179,
-          "vote_count": 2238
+          "original_name": "FROM",
+          "overview": "Unravel the mystery of a nightmarish town in middle America that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest \u2013 including the terrifying creatures that come out when the sun goes down.",
+          "popularity": 631.0481,
+          "poster_path": "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+          "first_air_date": "2022-02-20",
+          "softcore": false,
+          "name": "FROM",
+          "vote_average": 8.398,
+          "vote_count": 3298
         },
         {
           "adult": false,
-          "backdrop_path": "/jvTeRgjFsp66xj8SWxhr7O2J4ud.jpg",
-          "genre_ids": [
-            10751,
-            16,
-            35
-          ],
-          "id": 456,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Simpsons",
-          "overview": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
-          "popularity": 145.4962,
-          "poster_path": "/uWpG7GqfKGQqX4YMAo3nv5OrglV.jpg",
-          "first_air_date": "1989-12-17",
-          "name": "The Simpsons",
-          "vote_average": 8.011,
-          "vote_count": 10495
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ckPbbcJOcL43mJBrROTMrtOBIYK.jpg",
-          "genre_ids": [
-            18,
-            10759
-          ],
-          "id": 240459,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Spartacus: House of Ashur",
-          "overview": "In a world where he survived the events of Spartacus (2010), Ashur clawed his way to power, owning the same ludus that once owned him. Allying with a fierce gladiatrix, Ashur ignites a new kind of spectacle that offends the elite.",
-          "popularity": 138.695,
-          "poster_path": "/vNByuzy60v31nmUVPMA8oAtneUK.jpg",
-          "first_air_date": "2025-12-05",
-          "name": "Spartacus: House of Ashur",
-          "vote_average": 6.244,
-          "vote_count": 90
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/opxjwbFSadDgVmZtrLTlWJsUxrB.jpg",
+          "backdrop_path": "/mez2Z3WqlPKNXpi7mWoiiE5guE9.jpg",
           "genre_ids": [
             18
           ],
-          "id": 283123,
+          "id": 85552,
           "origin_country": [
-            "TR"
+            "US"
           ],
-          "original_language": "tr",
-          "original_name": "E\u015Fref R\u00FCya",
-          "overview": "As a child, E\u015Fref fell in love from afar with a girl he called \u201CR\u00FCya\u201D and spent years searching for her, only to become a powerful mafia figure along the way. Meanwhile, Nisan, an idealistic musician, finds herself in grave danger after performing at a wedding held at E\u015Fref\u2019s hotel. E\u015Fref falls for Nisan, unaware that she is both the long-lost R\u00FCya he has been chasing for years and a police informant. Trapped in a whirlwind of love, betrayal, and power struggles, E\u015Fref is forced into a brutal reckoning\u2014both with his criminal empire and his own emotions.",
-          "popularity": 100.7385,
-          "poster_path": "/jwrN5QA07dm8sKuUFInP2MRLPfb.jpg",
-          "first_air_date": "2025-03-19",
-          "name": "Esref\u0027s Dream",
-          "vote_average": 7.045,
-          "vote_count": 22
+          "original_language": "en",
+          "original_name": "Euphoria",
+          "overview": "A group of high school students navigate love and friendships in a world of drugs, sex, trauma, and social media.",
+          "popularity": 221.548,
+          "poster_path": "/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg",
+          "first_air_date": "2019-06-16",
+          "softcore": false,
+          "name": "Euphoria",
+          "vote_average": 8.289,
+          "vote_count": 10669
         },
         {
           "adult": false,
-          "backdrop_path": "/qVmgq1KXBp6BF2EqYPPaUG9iUGy.jpg",
+          "backdrop_path": "/wsHj4oHQJoe7DMYaqNFwVoyLiAh.jpg",
+          "genre_ids": [
+            35,
+            10764
+          ],
+          "id": 33238,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uB7F0\uB2DD\uB9E8",
+          "overview": "These days, as variety shows are gradually disappearing, this is one of Korea\u2019s representative variety shows that has been responsible for Sunday evenings for over 10 years. This program features numerous stars and members going around various places, playing games, and completing missions. In particular, among the many fun elements of variety shows, this one focuses solely on laughter.\n\nOpen your eyes! Big fun is coming in!\n\nOpen your mouth! Big laughter is coming in!\n\nOpen your heart! Useful lessons are coming in!",
+          "popularity": 206.0859,
+          "poster_path": "/2Wmmu1MkqxJ48J7aySET9EKEjXz.jpg",
+          "first_air_date": "2010-07-11",
+          "softcore": false,
+          "name": "Running Man",
+          "vote_average": 8.2,
+          "vote_count": 209
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/w88B4ooZ2LSYPw5107JOkjvI8PI.jpg",
           "genre_ids": [
             80,
             18,
             9648
           ],
-          "id": 764,
+          "id": 4057,
           "origin_country": [
-            "GB"
+            "US"
           ],
           "original_language": "en",
-          "original_name": "Midsomer Murders",
-          "overview": "The peacefulness of the Midsomer community is shattered by violent crimes, suspects are placed under suspicion, and it is up to a veteran DCI and his young sergeant to calmly and diligently eliminate the innocent and ruthlessly pursue the guilty. ",
-          "popularity": 97.8414,
-          "poster_path": "/31wojXBSLT6LYTUMyc6BiyXqUyP.jpg",
-          "first_air_date": "1997-03-23",
-          "name": "Midsomer Murders",
-          "vote_average": 7.5,
-          "vote_count": 337
+          "original_name": "Criminal Minds",
+          "overview": "An elite team of FBI profilers analyze the country\u0027s most twisted criminal minds, anticipating their next moves before they strike again. The Behavioral Analysis Unit\u0027s most experienced agent is David Rossi, a founding member of the BAU who returns to help the team solve new cases.",
+          "popularity": 182.0649,
+          "poster_path": "/gigxjNnACiXAfrwoMox5WJFgc0I.jpg",
+          "first_air_date": "2005-09-22",
+          "softcore": false,
+          "name": "Criminal Minds",
+          "vote_average": 8.301,
+          "vote_count": 4069
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ewlmL0nxo2lLqBj69upgp2gjHpV.jpg",
+          "genre_ids": [
+            37,
+            18
+          ],
+          "id": 299167,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Dutton Ranch",
+          "overview": "Rip Wheeler and Beth Dutton gamble everything on a new life in South Texas, but the promise of building a future far from the ghosts of Yellowstone quickly collides with brutal new realities and a rival ranch that will stop at nothing to protect its empire.",
+          "popularity": 165.3965,
+          "poster_path": "/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
+          "first_air_date": "2026-05-15",
+          "softcore": false,
+          "name": "Dutton Ranch",
+          "vote_average": 9.374,
+          "vote_count": 111
         },
         {
           "adult": false,
@@ -180,100 +175,288 @@
           "original_language": "ja",
           "original_name": "\u4EEE\u9762\u30E9\u30A4\u30C0\u30FC",
           "overview": "Takeshi Hongo is a promising young man with a passion for motorcycle racing. However, his dreams are suddenly ruined when he gets kidnapped by Shocker, the evil secret organization planning to dominate the world. After being remodeled into a cyborg, Takeshi escapes and swears to protect the world from the inhuman monsters.",
-          "popularity": 82.8277,
-          "poster_path": "/lv3OlrXyTNg4Dz0JrtopOmMziNs.jpg",
+          "popularity": 141.573,
+          "poster_path": "/2DIBDFHiKQawz4WPsYekl9DHwyA.jpg",
           "first_air_date": "1971-04-03",
+          "softcore": false,
           "name": "Kamen Rider",
-          "vote_average": 6.457,
-          "vote_count": 92
+          "vote_average": 6.389,
+          "vote_count": 99
         },
         {
           "adult": false,
-          "backdrop_path": "/QbRbCULZVBcrN2uydpmIOQLV5O.jpg",
+          "backdrop_path": "/pXss1GWhPOcf6SrmRJ4JSkIU3sE.jpg",
           "genre_ids": [
-            18
-          ],
-          "id": 301507,
-          "origin_country": [
-            "CA"
-          ],
-          "original_language": "en",
-          "original_name": "Heated Rivalry",
-          "overview": "Two of the biggest stars in Major League Hockey are bound by ambition, rivalry, and a magnetic pull neither of them fully understands. What begins as a secret fling between two fresh faced rookies evolves into a years-long journey of love, denial, and self-discovery. Over the next eight years, as they chase glory on the ice, they struggle to navigate their feelings for each other. Torn between the sport they live for and the love they can\u2019t ignore, they must decide if there\u2019s room in their fiercely competitive world for something as fragile \u2013 and powerful \u2013 as real love.",
-          "popularity": 80.887,
-          "poster_path": "/epgr7n61vVIniyAghz2GYj22DkC.jpg",
-          "first_air_date": "2025-11-28",
-          "name": "Heated Rivalry",
-          "vote_average": 8.4,
-          "vote_count": 50
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/s0w8JbuNNxL1YgaHeDWih12C3jG.jpg",
-          "genre_ids": [
-            16,
             35,
+            10764
+          ],
+          "id": 98031,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u5954\u8DD1\u5427",
+          "overview": "Hurry Up, Brother! is a Chinese variety show based off the original Korean variety show, Running Man. It is created by SBS and co-produced with Zhejiang Television. It first aired on October 10, 2014. This show is classified as a game-variety show, where the MCs and guests complete missions in a landmark to win a race. In 2017, the show officially changed its name to \u0022Keep Running\u0022.",
+          "popularity": 129.4761,
+          "poster_path": "/lr4er9w2jHqFx8VFyASN8Q1LWzB.jpg",
+          "first_air_date": "2014-10-10",
+          "softcore": false,
+          "name": "Keep Running",
+          "vote_average": 5.7,
+          "vote_count": 11
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lH22EnM0ofC7GsVGU8dAA2RXV1c.jpg",
+          "genre_ids": [
             10759,
-            10765
+            16,
+            10762
           ],
-          "id": 63926,
+          "id": 65334,
           "origin_country": [
-            "JP"
+            "FR"
           ],
-          "original_language": "ja",
-          "original_name": "\u30EF\u30F3\u30D1\u30F3\u30DE\u30F3",
-          "overview": "The most powerful superhero in the world can kill anyone with one blow. But nothing can challenge him, so he struggles with ennui and depression.",
-          "popularity": 71.947,
-          "poster_path": "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg",
-          "first_air_date": "2015-10-05",
-          "name": "One-Punch Man",
-          "vote_average": 8.4,
-          "vote_count": 3944
+          "original_language": "fr",
+          "original_name": "Miraculous, les aventures de Ladybug et Chat Noir",
+          "overview": "Marinette and Adrien, two Parisian teenagers, are entrusted with powerful jewels in order to transform into superheroes Ladybug and Cat Noir. But neither hero knows the other\u0027s true identity \u2014 or that they\u0027re classmates!",
+          "popularity": 116.3092,
+          "poster_path": "/acrtAy8gmxcsEvrDP09MpMSCeDZ.jpg",
+          "first_air_date": "2015-10-19",
+          "softcore": false,
+          "name": "Miraculous: Tales of Ladybug \u0026 Cat Noir",
+          "vote_average": 8.054,
+          "vote_count": 4584
         },
         {
           "adult": false,
-          "backdrop_path": "/qoBCcx25NbiEFcTlYUXfeNjb2q5.jpg",
+          "backdrop_path": "/pvOI0jUuBVigqNTXClGGhIK2dSk.jpg",
           "genre_ids": [
-            10765,
-            18
+            10764
           ],
-          "id": 294968,
+          "id": 154770,
           "origin_country": [
-            "ES"
+            "CN"
           ],
-          "original_language": "es",
-          "original_name": "Los Protegidos: Un nuevo poder",
-          "overview": "",
-          "popularity": 66.9581,
-          "poster_path": "/znq1gVSpGj9pmuhmkRoLbQgLr9A.jpg",
-          "first_air_date": "2025-12-14",
-          "name": "Los Protegidos: Un nuevo poder",
-          "vote_average": 7.6,
-          "vote_count": 5
+          "original_language": "zh",
+          "original_name": "\u4F60\u597D\uFF0C\u661F\u671F\u516D",
+          "overview": "\u0022Hello, Saturday\u0022 is the rebranding of the popular Chinese show \u0022Happy Camp\u0022, hosted by He Jiong and with a fixed group of regular celebrity members.\n\nThe program showcases the talent of various stars as well as social topics through creative and diverse content and games. It aims to spread positive energy while keeping up with the current trends and leading youth culture.",
+          "popularity": 100.9276,
+          "poster_path": "/wsTjWy6NE2s3h0neChr0D92ddwI.jpg",
+          "first_air_date": "2022-01-01",
+          "softcore": false,
+          "name": "Hello Saturday",
+          "vote_average": 6.4,
+          "vote_count": 10
         },
         {
           "adult": false,
-          "backdrop_path": "/q71au2YjcwXBMZKNzNgjK7RZ3Hs.jpg",
+          "backdrop_path": "/ihT4s15wPjqXLblKlE6cwBhJVz4.jpg",
           "genre_ids": [
-            18
+            18,
+            80,
+            10759
           ],
-          "id": 157741,
+          "id": 290856,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Landman",
-          "overview": "Set in the proverbial boomtowns of West-Texas and a modern-day tale of fortune-seeking in the world of oil rigs, the series is an upstairs/downstairs story of roughnecks and wildcat billionaires that are fueling a boom so big it\u2019s reshaping our climate, our economy and our geopolitics.",
-          "popularity": 64.7394,
-          "poster_path": "/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
-          "first_air_date": "2024-11-17",
-          "name": "Landman",
-          "vote_average": 8.053,
-          "vote_count": 337
+          "original_name": "Marshals",
+          "overview": "With the Yellowstone Ranch behind him, Kayce Dutton joins an elite unit of U.S. Marshals, combining his skills as a cowboy and Navy SEAL to bring range justice to Montana, where he and his teammates must balance family, duty and the high psychological cost that comes with serving as the last line of defense in the region\u0027s war on violence.",
+          "popularity": 99.8019,
+          "poster_path": "/nInfaveN1iFpRIcMGNKENoVVUT2.jpg",
+          "first_air_date": "2026-03-01",
+          "softcore": false,
+          "name": "Marshals",
+          "vote_average": 8.0,
+          "vote_count": 217
         },
         {
           "adult": false,
-          "backdrop_path": "/n69QxkZ0RRc6PMNnxD9U0MZnLzl.jpg",
+          "backdrop_path": "/x6y59dJBE1o0r4YRsWVQXE2nnlB.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765,
+            9648,
+            18
+          ],
+          "id": 65942,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "Re:\u30BC\u30ED\u304B\u3089\u59CB\u3081\u308B\u7570\u4E16\u754C\u751F\u6D3B",
+          "overview": "Natsuki Subaru, an ordinary high school  student, is on his way home from the convenience store when he finds  himself transported to another world. As he\u0027s lost and confused in a new  world where he doesn\u0027t even know left from right, the only person to  reach out to him was a beautiful girl with silver hair. Determined to  repay her somehow for saving him from his own despair, Subaru agrees to  help the girl find something she\u0027s looking for.",
+          "popularity": 99.7749,
+          "poster_path": "/5MrRCj7z92YLWMXHeWKp19eJPYv.jpg",
+          "first_air_date": "2016-04-04",
+          "softcore": false,
+          "name": "Re:ZERO -Starting Life in Another World-",
+          "vote_average": 7.9,
+          "vote_count": 625
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/Rseua6cAC83aVDNMExhzxHNqgy.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 126398,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u4E94\u5341\u516C\u91CC\u6843\u82B1\u575E",
+          "overview": "A social experiment reality show about the cultivation of an ideal community, inviting 15 guests to Taohuawu, 15KM away from the city center, to live together for 21 days, creating an ideal society in their hearts. See how they live, work, and live in harmony in friction and cooperation. It is also a journey to explore the source of material and spiritual consensus.",
+          "popularity": 98.25,
+          "poster_path": "/A3C6crK4GQPNt2f43Vq6l2c845Y.jpg",
+          "first_air_date": "2021-05-23",
+          "softcore": false,
+          "name": "Wonderland",
+          "vote_average": 8.0,
+          "vote_count": 5
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9R3tyMeAEvY53Da6fVguBEVlfxE.jpg",
+          "genre_ids": [
+            10759,
+            16,
+            18,
+            10765
+          ],
+          "id": 223911,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u4ED9\u9006",
+          "overview": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength.",
+          "popularity": 97.4399,
+          "poster_path": "/2jEJSCLFjniFT7z4YvyY9Ywo1lc.jpg",
+          "first_air_date": "2023-09-25",
+          "softcore": false,
+          "name": "Renegade Immortal",
+          "vote_average": 8.8,
+          "vote_count": 32
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5C5cMYUlmX6BU5YxBqhp7ZpSd3Q.jpg",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "id": 211288,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Tracker",
+          "overview": "Lone-wolf survivalist Colter Shaw roams the country as a \u201Creward seeker,\u201D using his expert tracking skills to help private citizens and law enforcement solve all manner of mysteries while contending with his own fractured family.",
+          "popularity": 95.6943,
+          "poster_path": "/otula4h1ITZ0eV84eg7Lb8u614C.jpg",
+          "first_air_date": "2024-02-11",
+          "softcore": false,
+          "name": "Tracker",
+          "vote_average": 7.513,
+          "vote_count": 279
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sih377ne4tNY0MLSvNuHBfxeVKg.jpg",
+          "genre_ids": [
+            10764
+          ],
+          "id": 112732,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u54C8\u54C8\u54C8\u54C8\u54C8",
+          "overview": "Road-type outdoor reality show. The five-kazakhstan tour group takes time out of the busy and trivial daily life to embark on a journey from east to west across China.",
+          "popularity": 94.612,
+          "poster_path": "/wynP4QFfZNYHW0ETAbKVY9UjSbF.jpg",
+          "first_air_date": "2020-11-06",
+          "softcore": false,
+          "name": "HaHaHaHaHa",
+          "vote_average": 7.0,
+          "vote_count": 7
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9y6yZz4fTBvQLYEBeDP8O9e6VBe.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 79481,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u6597\u7834\u82CD\u7A79",
+          "overview": "In a land where no magic is present. A land where the strong make the rules and weak have to obey. A land filled with alluring treasures and beauty, yet also filled with unforeseen danger. Three years ago, Xiao Yan, who had shown talents none had seen in decades, suddenly lost everything. His powers, his reputation, and his promise to his mother. What sorcery has caused him to lose all of his powers? And why has his fiancee suddenly shown up?",
+          "popularity": 94.0591,
+          "poster_path": "/a9bJPlezCXF6u0siDxf7cZaSXaJ.jpg",
+          "first_air_date": "2017-01-07",
+          "softcore": false,
+          "name": "Fights Break Sphere",
+          "vote_average": 8.2,
+          "vote_count": 57
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/Ao5pBFuWY32cVuh6iYjEjZMEscN.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10765,
+            10759
+          ],
+          "id": 60625,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Rick and Morty",
+          "overview": "Follows a sociopathic genius scientist who drags his inherently timid grandson on adventures across the universe.",
+          "popularity": 88.1233,
+          "poster_path": "/WGRQ8FpjkDTzivQJ43t94bOuY0.jpg",
+          "first_air_date": "2013-12-02",
+          "softcore": false,
+          "name": "Rick and Morty",
+          "vote_average": 8.675,
+          "vote_count": 10852
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/a8a8z4aJr40zYgRMfmSESppX2eO.jpg",
+          "genre_ids": [
+            10764,
+            35
+          ],
+          "id": 70672,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uC544\uB294 \uD615\uB2D8",
+          "overview": "Male celebs play make-believe as high schoolers, welcoming star transfer students every week and engaging in battles of witty humor and slapstick.",
+          "popularity": 83.1848,
+          "poster_path": "/2jIi55JtYKJTL1km8qHMuUilOWo.jpg",
+          "first_air_date": "2015-12-05",
+          "softcore": false,
+          "name": "Men on a Mission",
+          "vote_average": 7.5,
+          "vote_count": 41
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eGPH1IwktalozwCmeLTp3aPbHGC.jpg",
           "genre_ids": [
             10764
           ],
@@ -284,208 +467,53 @@
           "original_language": "en",
           "original_name": "Raw",
           "overview": "A regularly scheduled, live, year-round program featuring some of the biggest WWE Superstars.",
-          "popularity": 56.8328,
-          "poster_path": "/pv5WNnLUo7mpT8k901Lo8UovrqI.jpg",
+          "popularity": 78.8035,
+          "poster_path": "/fstEe6RsyNyPUnMwNcL20iNl0nE.jpg",
           "first_air_date": "1993-01-11",
+          "softcore": false,
           "name": "Raw",
           "vote_average": 6.8,
-          "vote_count": 346
+          "vote_count": 356
         },
         {
           "adult": false,
-          "backdrop_path": "/uoIOfRNmu47P2fET2KnrYHt3TH.jpg",
+          "backdrop_path": "/hINekSpbcBxjnjGqmIm6I4bz2ab.jpg",
           "genre_ids": [
-            18,
-            10759
-          ],
-          "id": 272418,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Robin Hood",
-          "overview": "A modern reimagining of the classic tale. After the Norman invasion of England, Rob, a Saxon forester\u2019s son, and Marian, a Norman lord\u2019s daughter, fall in love and unite to fight for justice, challenge corruption, and restore peace to the land.",
-          "popularity": 56.7271,
-          "poster_path": "/3teWChNzKJdbfen46IdeKTygdZa.jpg",
-          "first_air_date": "2025-11-02",
-          "name": "Robin Hood",
-          "vote_average": 7.6,
-          "vote_count": 76
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lysUnU6V0VfcthDbviuVlIqgHOR.jpg",
-          "genre_ids": [
-            16,
-            10759,
+            10767,
             35
           ],
-          "id": 120089,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "SPY\u00D7FAMILY",
-          "overview": "A spy, an assassin and a telepath come together to pose as a family, each for their own reasons, while hiding their true identities from each other.",
-          "popularity": 49.0867,
-          "poster_path": "/7NAvPYPAu7MeHwP8E9sn81PqsRh.jpg",
-          "first_air_date": "2022-04-09",
-          "name": "SPY x FAMILY",
-          "vote_average": 8.518,
-          "vote_count": 2141
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/b4D9I3nz4Iya8Pd566PpOvz9q6O.jpg",
-          "genre_ids": [
-            18,
-            10759,
-            9648
-          ],
-          "id": 302463,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "es",
-          "original_name": "Dinast\u00EDa Casillas",
-          "overview": "",
-          "popularity": 49.0582,
-          "poster_path": "/xbBJBKssJr85OzAJNSuWdkh5p4v.jpg",
-          "first_air_date": "2025-10-07",
-          "name": "Dinast\u00EDa Casillas",
-          "vote_average": 8.35,
-          "vote_count": 214
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/sAxx25ijwYQ8xsT56wu2IzvIRss.jpg",
-          "genre_ids": [
-            10759,
-            10765,
-            18,
-            10751
-          ],
-          "id": 103540,
+          "id": 22980,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Percy Jackson and the Olympians",
-          "overview": "Percy Jackson is on a dangerous quest. Outrunning monsters and outwitting gods, he must journey across America to return Zeus\u0027s master bolt and stop an all-out war. With the help of his friends Annabeth and Grover, Percy\u0027s journey will lead him closer to the answers he seeks: how to fit into a world where he feels out of place, and who he\u0027s destined to be.",
-          "popularity": 48.8362,
-          "poster_path": "/40eFcTzZier3DWLqldsP5VHxeoD.jpg",
-          "first_air_date": "2023-12-19",
-          "name": "Percy Jackson and the Olympians",
-          "vote_average": 7.3,
-          "vote_count": 640
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/39bifj2FNytJ2m1cqOBcWMTKgmV.jpg",
-          "genre_ids": [
-            18,
-            80
-          ],
-          "id": 97951,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Mayor of Kingstown",
-          "overview": "In a small Michigan town where the business of incarceration is the only thriving industry, the McClusky family are the power brokers between the police, criminals, inmates, prison guards and politicians in a city completely dependent on prisons and the prisoners they contain.",
-          "popularity": 48.7651,
-          "poster_path": "/6rWIip9MZELAA0SKii5WqsBDCYW.jpg",
-          "first_air_date": "2021-11-14",
-          "name": "Mayor of Kingstown",
-          "vote_average": 7.868,
-          "vote_count": 551
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/xnU9b4IehJ08Ikz3sweABtY5IwU.jpg",
-          "genre_ids": [
-            16,
-            35
-          ],
-          "id": 32726,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Bob\u0027s Burgers",
-          "overview": "Bob\u0027s Burgers follows a third-generation restaurateur, Bob, as he runs Bob\u0027s Burgers with the help of his wife and their three kids. Bob and his quirky family have big ideas about burgers, but fall short on service and sophistication. Despite the greasy counters, lousy location and a dearth of customers, Bob and his family are determined to make Bob\u0027s Burgers \u0022grand re-re-re-opening\u0022 a success.",
-          "popularity": 44.0845,
-          "poster_path": "/iIHsQe3Qjs3NH62HdamyQEPeqTR.jpg",
-          "first_air_date": "2011-01-09",
-          "name": "Bob\u0027s Burgers",
-          "vote_average": 7.831,
-          "vote_count": 1038
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/8dbKQrdVR5HD7PVWjTPawnTYCPT.jpg",
-          "genre_ids": [
-            35,
-            80,
-            18,
-            9648
-          ],
-          "id": 41956,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "Death in Paradise",
-          "overview": "A brilliant but idiosyncratic British detective and his resourceful local team solve baffling murder mysteries on the fictional Caribbean island of Saint-Marie.",
-          "popularity": 43.5479,
-          "poster_path": "/u7t6vCyqAdD5hE4eEfTrZmVljDi.jpg",
-          "first_air_date": "2011-10-25",
-          "name": "Death in Paradise",
-          "vote_average": 7.478,
-          "vote_count": 299
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/wsHj4oHQJoe7DMYaqNFwVoyLiAh.jpg",
-          "genre_ids": [
-            35,
-            10764
-          ],
-          "id": 33238,
-          "origin_country": [
-            "KR"
-          ],
-          "original_language": "ko",
-          "original_name": "\uB7F0\uB2DD\uB9E8",
-          "overview": "These days, as variety shows are gradually disappearing, this is one of Korea\u2019s representative variety shows that has been responsible for Sunday evenings for over 10 years. This program features numerous stars and members going around various places, playing games, and completing missions. In particular, among the many fun elements of variety shows, this one focuses solely on laughter.\n\nOpen your eyes! Big fun is coming in!\n\nOpen your mouth! Big laughter is coming in!\n\nOpen your heart! Useful lessons are coming in!",
-          "popularity": 38.4697,
-          "poster_path": "/2Wmmu1MkqxJ48J7aySET9EKEjXz.jpg",
-          "first_air_date": "2010-07-11",
-          "name": "Running Man",
-          "vote_average": 8.3,
-          "vote_count": 199
+          "original_name": "Watch What Happens Live with Andy Cohen",
+          "overview": "Bravo network executive Andy Cohen discusses pop culture topics with celebrities and reality show personalities.",
+          "popularity": 78.6101,
+          "poster_path": "/onSD9UXfJwrMXWhq7UY7hGF2S1h.jpg",
+          "first_air_date": "2009-07-16",
+          "softcore": false,
+          "name": "Watch What Happens Live with Andy Cohen",
+          "vote_average": 5.0,
+          "vote_count": 86
         }
       ],
-      "total_pages": 48,
-      "total_results": 943
+      "total_pages": 64,
+      "total_results": 1278
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "ETag": "W/\u0022d223054a5e22563467044aae6f0f1431\u0022",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=21806",
-      "x-memc": "HIT",
-      "x-memc-key": "59997a0c4ae78c5a753d057ec6c1111b70581fc272e4df82f370da2e68cf6a1e",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=27919",
       "x-az": "us-east-1b",
-      "ETag": "W/\u002286c018c11849f3cbefe423b6280ce39b\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

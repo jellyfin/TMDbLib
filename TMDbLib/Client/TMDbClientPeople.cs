@@ -51,12 +51,12 @@ public partial class TMDbClient
 
         if (startDate.HasValue)
         {
-            req.AddParameter("startDate", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
+            req.AddParameter("start_date", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         if (endDate is not null)
         {
-            req.AddParameter("endDate", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
+            req.AddParameter("end_date", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -285,7 +285,7 @@ public partial class TMDbClient
     /// <param name="personId">The TMDb id of the person.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A container with translation information for the person.</returns>
-    public async Task<TranslationsContainer?> GePersonTranslationsAsync(int personId, CancellationToken cancellationToken = default)
+    public async Task<TranslationsContainer?> GetPersonTranslationsAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<TranslationsContainer>(personId, PersonMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }

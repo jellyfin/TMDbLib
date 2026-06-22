@@ -1,0 +1,265 @@
+{
+  "Guid": "e148f969-7cd5-e84b-9258-f4f1ac49beee",
+  "UpdatedAt": "2026-05-24T16:19:43.076319Z",
+  "Title": "Proxy Mapping for GET /3/tv/1396/lists",
+  "Description": "Proxy Mapping for GET /3/tv/1396/lists",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1396/lists",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1396,
+      "page": 1,
+      "results": [
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8656146,
+          "item_count": 3,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "movie",
+          "poster_path": null
+        },
+        {
+          "description": "Television Series of which I have watched one or more complete seasons.",
+          "favorite_count": 0,
+          "id": 8193811,
+          "item_count": 690,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Television Series",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8655243,
+          "item_count": 78,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "series",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8234063,
+          "item_count": 5620,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Favorite Actors",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8523626,
+          "item_count": 141,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "TV Shows tmdb",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8309257,
+          "item_count": 21,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Liked TV Shows",
+          "poster_path": null
+        },
+        {
+          "description": "serials ",
+          "favorite_count": 0,
+          "id": 8528488,
+          "item_count": 51,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "tv serial",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8524937,
+          "item_count": 146,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Long\u0027ns",
+          "poster_path": null
+        },
+        {
+          "description": "Films I own on DVD and Blu-Ray.",
+          "favorite_count": 0,
+          "id": 8570792,
+          "item_count": 1833,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Physical Media - Movies",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8655210,
+          "item_count": 2,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "series",
+          "poster_path": null
+        },
+        {
+          "description": "movies ",
+          "favorite_count": 0,
+          "id": 8504684,
+          "item_count": 29,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Pedroyung",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8653372,
+          "item_count": 50,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "series can finish me ",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8652427,
+          "item_count": 157,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "TV shows",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8649243,
+          "item_count": 123,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "LiveWave Kurdish Subtitles",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8584345,
+          "item_count": 8,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Next Watch TV",
+          "poster_path": null
+        },
+        {
+          "description": "\u003C3",
+          "favorite_count": 0,
+          "id": 101542,
+          "item_count": 1393,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Vaached\u2764",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8290390,
+          "item_count": 700,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Live-Action",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8513484,
+          "item_count": 255,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "best one",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8525402,
+          "item_count": 12,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "my B",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8587025,
+          "item_count": 102,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Series Watched",
+          "poster_path": null
+        }
+      ],
+      "total_pages": 115,
+      "total_results": 2292
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=20052",
+      "x-memc": "HIT",
+      "x-memc-key": "3e7e3cd2be719353a012f286a96a4d273f656b05f802d0cfd528f3f334460359",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u00222e778bb25d880d0ca9fb19fbe05f9160\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

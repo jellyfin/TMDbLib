@@ -1,6 +1,6 @@
 {
   "Guid": "e9575f19-0923-7e4d-ae45-d949de98fce8",
-  "UpdatedAt": "2025-12-24T18:45:21.6001026Z",
+  "UpdatedAt": "2026-05-24T16:19:43.587681Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/similar",
   "Description": "Proxy Mapping for GET /3/movie/47964/similar",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "language",
@@ -38,422 +51,446 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/lV2UQv1qmiZA0tWsVjgFLD6z2uG.jpg",
+          "backdrop_path": "/7hp74pYj4cwzpmMfOFoBGPQfpN8.jpg",
+          "genre_ids": [
+            80,
+            10749,
+            18,
+            53
+          ],
+          "id": 1221103,
+          "title": "And it Begins",
+          "original_language": "en",
+          "original_title": "And it Begins",
+          "overview": "",
+          "popularity": 0.4759,
+          "poster_path": "/AaNiSTDVRc3t9Ge0znN3WtIXKw1.jpg",
+          "release_date": "2025-07-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9ndW7vAmrhZkGD4PoAhTRYRWlL6.jpg",
+          "genre_ids": [
+            36,
+            28,
+            35,
+            10749
+          ],
+          "id": 829373,
+          "title": "\u767D\u591C\u4FA0",
+          "original_language": "zh",
+          "original_title": "\u767D\u591C\u4FA0",
+          "overview": "",
+          "popularity": 1.0109,
+          "poster_path": "/gcn1JntampkoA8ybSLIyqmLJxT0.jpg",
+          "release_date": "2018-06-14",
+          "softcore": false,
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xqdoDeulDTydU8AF2bLLnZXiZVT.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 489064,
+          "title": "3 from Hell",
+          "original_language": "en",
+          "original_title": "3 from Hell",
+          "overview": "Nach ihrem letzten Abenteuer konnten sich Otis, Baby und Captain Spaulding gerade noch retten. Doch weil die drei in den letzten Jahren nicht unt\u00E4tig waren und einiges auf dem Kerbholz haben, wandern sie nun f\u00FCr immer in den Knast, wo sie hoffentlich niemanden mehr etwas tun k\u00F6nnen. Doch die Ruhe w\u00E4hrt nur kurz \u2013 schon bald sind die Fireflies zusammen mit dem \u201EMidnight Wolfman\u201C wieder auf einem m\u00F6rderischen Trip quer durch die Vereinigten Staaten unterwegs und hinterlassen dabei einen blutigen Pfad.",
+          "popularity": 1.7294,
+          "poster_path": "/AfOIOlX64iEH7FsngPUM4BCUdJt.jpg",
+          "release_date": "2019-09-16",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.796,
+          "vote_count": 541
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/r3EO5gWWbfeKdq64Qwaerj8WNcE.jpg",
+          "genre_ids": [
+            27,
+            18,
+            9648,
+            53
+          ],
+          "id": 1559575,
+          "title": "Kafir: Gerbang Sukma",
+          "original_language": "id",
+          "original_title": "Kafir: Gerbang Sukma",
+          "overview": "",
+          "popularity": 1.9707,
+          "poster_path": "/sVMDB5U1maHTCc36vqLKu3KzUbs.jpg",
+          "release_date": "2026-01-29",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iin1ajTl4KbElByBVvyO5ESXu0x.jpg",
           "genre_ids": [
             28,
+            12,
+            18,
+            37
+          ],
+          "id": 46301,
+          "title": "Disappearances",
+          "original_language": "en",
+          "original_title": "Disappearances",
+          "overview": "",
+          "popularity": 0.4554,
+          "poster_path": "/hBYYSkps5i2hRC67lI6I3IoZp2s.jpg",
+          "release_date": "2007-05-11",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.125,
+          "vote_count": 12
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qwTPtDEtpG00lLl6C93HVz2TKfJ.jpg",
+          "genre_ids": [
+            28,
+            12,
+            27,
+            878
+          ],
+          "id": 52728,
+          "title": "Gamera gegen Gaos - Frankensteins Kampf der Ungeheuer",
+          "original_language": "ja",
+          "original_title": "\u5927\u602A\u7363\u7A7A\u4E2D\u6226 \u30AC\u30E1\u30E9\u5BFE\u30AE\u30E3\u30AA\u30B9",
+          "overview": "Gaos, ein riesiges, \uFB02edermaus\u00E4hnliches Flugmonster, erwacht nach einem Erdbeben in einer H\u00F6hle zum Leben. Aus seinem Maul kann diese Riesen\uFB02edermaus einen t\u00F6dlichen Strahl verschie\u00DFen und macht rege Gebrauch davon. Gamera, die \uFB02iegende Riesenschildkr\u00F6te, stellt sich Gaos in den Weg und ein blutiger, todbringender Kampf zweier Urweltmonster entbrennt...",
+          "popularity": 1.373,
+          "poster_path": "/twoVm7irqE5pipU2h8vdwcUu9y.jpg",
+          "release_date": "1967-03-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.115,
+          "vote_count": 91
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ftRkFtAGuHngHnLiOxktq0aCVMF.jpg",
+          "genre_ids": [
+            28,
+            16,
+            35,
+            10751,
+            12
+          ],
+          "id": 324852,
+          "title": "Ich - Einfach unverbesserlich 3",
+          "original_language": "en",
+          "original_title": "Despicable Me 3",
+          "overview": "Der einstmals finstere Gru hat sich im zweiten Teil in Agentin Lucy Wilde verguckt und aus Liebe zu ihr und seinen drei Adoptivt\u00F6chtern Margo, Edith und Agnes die Seiten gewechselt: Gemeinsam mit seiner Angetrauten bek\u00E4mpft er nun B\u00F6sewichte. Zu diesen geh\u00F6rt auch Balthazar Bratt, ein Super-B\u00F6sewicht und 80er-Jahre-Fan mit Schulterpolstern und Vokuhila, der hinter einem riesigen rosa Diamanten her ist. W\u00E4hrend Gru mit der Jagd auf Bratt besch\u00E4ftigt ist, bekommt er Besuch von seinem Zwillingsbruder Dru. Dieser hat nicht nur volles Haar, sondern ist auch noch erfolgreicher und selbstbewusster als Gru, der nicht mal seine Minions unter Kontrolle hat \u2013 und das nervt diesen gewaltig! Doch dann holt Balthazar Bratt zu einem teuflischen Schlag aus und die ungleichen Br\u00FCder m\u00FCssen sich zusammenraufen, um die Welt zu retten.",
+          "popularity": 6.8703,
+          "poster_path": "/f2QpHiuMjQ5J9olQVIJBDLV8Hr4.jpg",
+          "release_date": "2017-06-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.467,
+          "vote_count": 7622
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/71z6chLCv5wAJptUD7SSrdRlBXU.jpg",
+          "genre_ids": [
+            28,
+            53,
+            10770
+          ],
+          "id": 52825,
+          "title": "Pursuit",
+          "original_language": "en",
+          "original_title": "Pursuit",
+          "overview": "Der Extremist James Wright versucht, auf einer Parteiversammlung der Demokraten in San Diego ein Giftgas-Attentat zu ver\u00FCben. Ihm auf den Fersen ist FBI-Agent Steven Graves der die Aktion zu verhindern versucht. Dabei entwickelt sich ein Katz-und-Maus-Spiel, nicht zuletzt aufgrund der \u00FCberragenden Intelligenz des Attent\u00E4ters...",
+          "popularity": 0.8012,
+          "poster_path": "/cSwwhQdug1GU9n7OzEHPlYXqU18.jpg",
+          "release_date": "1972-12-12",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.421,
+          "vote_count": 19
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/geAj0xnkppb35qkp1Qcbr4A292.jpg",
+          "genre_ids": [
             80,
             53
           ],
-          "id": 82,
-          "original_language": "en",
-          "original_title": "Miami Vice",
-          "overview": "Sonny Crockett und Ricardo Tubbs arbeiten undercover um drei Morde in Miami aufzukl\u00E4ren. Im Rahmen ihrer Ermittlungen begleiten sie einen Drogenkurier, der gro\u00DFe Mengen nach S\u00FCdflorida transportiert und sie hoffentlich zum gesuchten M\u00F6rder f\u00FChrt. Ihr Auftrag l\u00E4uft jedoch aus dem Ruder, als sich Crockett mit der Frau eines Waffen- und Drogenkuriers einl\u00E4sst und Tubbs Freundin Trudy ins Fadenkreuz der Verbrecher ger\u00E4t.",
-          "popularity": 2.7761,
-          "poster_path": "/zxF0lsq8cpHlYJZtj9RsJ0AfJPN.jpg",
-          "release_date": "2006-07-27",
-          "title": "Miami Vice",
+          "id": 678420,
+          "title": "Truy L\u00F9ng B\u0103ng Qu\u1EF7 Gi\u00F3",
+          "original_language": "vi",
+          "original_title": "Truy L\u00F9ng B\u0103ng Qu\u1EF7 Gi\u00F3",
+          "overview": "",
+          "popularity": 0.2822,
+          "poster_path": "/xQt21I71hbxmkQeTuOu0DW5V8hk.jpg",
+          "release_date": "1993-02-17",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.0,
-          "vote_count": 1898
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/12fvZHskx57kQfNEUXJ3v0flWYQ.jpg",
+          "backdrop_path": "/r17jFHAemzcWPPtoO0UxjIX0xas.jpg",
           "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "id": 324552,
+          "title": "John Wick: Kapitel 2",
+          "original_language": "en",
+          "original_title": "John Wick: Chapter 2",
+          "overview": "Nur noch das Auto zur\u00FCckholen, dann will sich John Wick zur\u00FCck in den Ruhestand verabschieden. Doch nachdem der Ex-Auftragskiller sein geliebtes Gef\u00E4hrt wieder und sich mit Abram geeinigt hat, dem Bruder seiner Nemesis Viggo Tarassow geht es f\u00FCr Wick erst richtig los. Wicks ehemaliger Kollege Santino steht vor der T\u00FCr und gibt ihm eine mit Blut besiegelte M\u00FCnze. Wie der Einzelk\u00E4mpfer wei\u00DF, steht das Geldst\u00FCck f\u00FCr ein Versprechen, das Wick einst gab \u2013 das Versprechen von Hilfe als Gegenleistung f\u00FCr einen alten Gefallen. Und auch wenn der Killer seine Ruhe haben will, kann er schlie\u00DFlich nicht anders, als seine Zusicherung einzul\u00F6sen, denn andernfalls droht ihm der Tod. Wick geht nach Rom, wo Santinos Schwester Gianna in die Riege der einflussreichsten Gangsterbosse kommen will...",
+          "popularity": 13.7773,
+          "poster_path": "/7JvUTRGuuS6G15OVRCe7AKduTYP.jpg",
+          "release_date": "2017-02-08",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.337,
+          "vote_count": 14228
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7mHeyU0a538bgguOeF57I8ZroSk.jpg",
+          "genre_ids": [
+            28,
+            12,
+            53
+          ],
+          "id": 324668,
+          "title": "Jason Bourne",
+          "original_language": "en",
+          "original_title": "Jason Bourne",
+          "overview": "Nachdem Jason Bourne nicht nur sein Ged\u00E4chtnis, sondern auch seine Freundin verloren hat und einen eigenen Feldzug gegen die ihn jagende CIA antrat, um endlich hinter das Geheimnis seiner Vergangenheit zu gelangen, ist er mithilfe von Nicky Parsons  untergetaucht. Doch das Leben eines auf der Flucht lebenden Agenten mit besonders modifizierten F\u00E4higkeiten kann nie lange ruhig bleiben. Denn inzwischen wei\u00DF Jason Bourne zwar, wer er ist, aber nicht, was diejenigen, die ihn erschaffen haben, mit ihm vorhatten. Also versucht er\u00A0\u2013 verfolgt von der CIA\u00A0\u2013 die versteckten Wahrheiten in seiner Vergangenheit zu finden.",
+          "popularity": 8.381,
+          "poster_path": "/9bijYuGTAiTczZvfJ9N4AZ4wlRF.jpg",
+          "release_date": "2016-07-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.38,
+          "vote_count": 6200
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zNriRTr0kWwyaXPzdg1EIxf0BWk.jpg",
+          "genre_ids": [
+            878,
             12,
             28
           ],
-          "id": 89,
+          "id": 1234821,
+          "title": "Jurassic World: Die Wiedergeburt",
           "original_language": "en",
-          "original_title": "Indiana Jones and the Last Crusade",
-          "overview": "Wir schreiben das Jahr 1938: Doktor Jones wird vom M\u00E4zen eines Museums beauftragt, den Heiligen Gral und somit die wichtigste Reliquie der Christenheit zu finden. Jones\u0027 Einwand, es w\u00FCrde der falsche Jones gefragt werden, denn der eigentliche Experte sei sein Vater Henry, f\u00F6rdert nur die Erkenntnis zu Tage, dass Jones senior bereits die Spur aufgenommen hatte, mittlerweile aber verschwunden ist. Nun ist des Doktors Jagdinstinkt geweckt. Besorgt um das Wohlergehen des Vaters und mit dem Museumskurator Marcus Brody im Gep\u00E4ck tritt Jones eine Reise in die alte Welt an, um das zustande zu bringen, was die mittelalterlichen Kreuzz\u00FCge nicht geschafft hatten: den Kelch zu finden, der beim letzten Abendmahl gereicht worden war und das Blut Jesu am Kreuz aufgefangen hatte. Erwartungsgem\u00E4\u00DF ist aber nicht nur der Doktor auf der Suche - auch die Schergen Hitlers wollen sich die Sagen umwobenen Kr\u00E4fte des Kelches sichern, verhei\u00DFt er doch das ewige Leben\u2026",
-          "popularity": 7.5118,
-          "poster_path": "/kaAhHlHv2SU7AK5xOMYzsqe2mrr.jpg",
-          "release_date": "1989-05-24",
-          "title": "Indiana Jones und der letzte Kreuzzug",
+          "original_title": "Jurassic World Rebirth",
+          "overview": "F\u00FCnf Jahre nach den Ereignissen von \u0027Jurassic World: Ein neue Zeitalter\u0027 wird die Spezialistin f\u00FCr verdeckte Operationen, Zora Bennett, auf eine streng geheime Mission geschickt: Sie soll genetisches Material von den drei gr\u00F6\u00DFten Dinosauriern der Welt sichern. Doch als ihr Team auf eine Familie trifft, deren Boot bei einem Ausflug gekentert ist, stranden sie gemeinsam auf einer abgelegenen Insel. Dort sto\u00DFen sie auf eine finstere und schockierende Entdeckung, die jahrzehntelang vor der Menschheit verborgen blieb\u00A0\u2013 und deren Geheimnis alles ver\u00E4ndern k\u00F6nnte.",
+          "popularity": 35.5238,
+          "poster_path": "/uUGZdps8TesT34lPMfvTWuyZmZe.jpg",
+          "release_date": "2025-07-01",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.849,
-          "vote_count": 10741
+          "vote_average": 6.264,
+          "vote_count": 3342
         },
         {
           "adult": false,
-          "backdrop_path": "/bIA65PCRtIQfBvIoKohJbtOPl3M.jpg",
+          "backdrop_path": null,
+          "genre_ids": [
+            18,
+            53
+          ],
+          "id": 1234932,
+          "title": "Ruptura",
+          "original_language": "es",
+          "original_title": "Ruptura",
+          "overview": "",
+          "popularity": 0.2211,
+          "poster_path": "/7RRpCXuIGyPXhT2b4KVsgVvqJEI.jpg",
+          "release_date": "2023-11-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            10749,
+            9648,
+            53
+          ],
+          "id": 53472,
+          "title": "In einer hei\u00DFen Nacht",
+          "original_language": "nl",
+          "original_title": "De flat",
+          "overview": "Nach der Trennung von ihrem Mann lebt die \u00C4rztin Roos Hartman mit ihrem kleinen Sohn Davy in einem Appartement-Haus am Meer. Als in einer hei\u00DFen Sommernacht eine andere Mieterin brutal ermordet wird, f\u00E4llt der Verdacht sofort auf Eric Coenen, einen attraktiven, aber etwas mysteri\u00F6s wirkenden jungen Mann, der ebenfalls in dem Hochhaus-Komplex wohnt. Erics Frau ist erst k\u00FCrzlich gestorben \u2013 angeblich an einer unheilbaren Krankheit. Roos zweifelt an Erics Schuld. Mehr noch: Die einsame junge Frau erliegt der erotischen Ausstrahlung des mutma\u00DFlichen M\u00F6rders und l\u00E4sst sich auf eine heftige Sex-Aff\u00E4re mit ihm ein. Als Roos dann auf eigene Faust Nachforschungen anstellt, um Eric zu entlasten, erlebt sie eine b\u00F6se \u00DCberraschung...",
+          "popularity": 0.237,
+          "poster_path": "/6toJCFegThT7QWHjtzo4ZVjQl4p.jpg",
+          "release_date": "1994-04-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 4.636,
+          "vote_count": 11
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            35,
+            28
+          ],
+          "id": 679816,
+          "title": "The Pitch",
+          "original_language": "en",
+          "original_title": "The Pitch",
+          "overview": "",
+          "popularity": 0.2512,
+          "poster_path": "/mAgBL51Gp4RSf2gr4OFSWrXaypc.jpg",
+          "release_date": "2001-02-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.0,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/po1niVuud0tX86xOFegO5omQ2wX.jpg",
+          "genre_ids": [
+            878,
+            28,
+            53
+          ],
+          "id": 1236153,
+          "title": "Mercy",
+          "original_language": "en",
+          "original_title": "Mercy",
+          "overview": "LAPD-Detective Raymond steht, wie immer mehr in dieser dystopischen Zukunft, wegen des Mordes an seiner Frau vor Gericht. Die hochmoderne KI-Richterin Maddox, deren Einf\u00FChrung er einst selbst unterst\u00FCtzte, leitet schlie\u00DFlich das Verfahren gegen ihn. Binnen lediglich 90 Minuten muss der Gesetzesh\u00FCter nun seine eigene Unschuld hieb- und stichfest beweisen, bevor die k\u00FCnstliche Rechtsprechung \u00FCber sein weiteres Leben \u2013 oder dessen Ende \u2013 entscheidet.",
+          "popularity": 25.2205,
+          "poster_path": "/qe0L3XcwR58ufXFigHUFxwYuGuV.jpg",
+          "release_date": "2026-01-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.014,
+          "vote_count": 1277
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            28,
+            18
+          ],
+          "id": 680136,
+          "title": "Bloodlock",
+          "original_language": "en",
+          "original_title": "Bloodlock",
+          "overview": "",
+          "popularity": 0.2709,
+          "poster_path": "/wCRVivWfdqaRJHV3IUEFLw8jSJ6.jpg",
+          "release_date": "1998-12-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.5,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ebQW6U5BakqE3EsuVvk4AGV6DRH.jpg",
           "genre_ids": [
             28,
             35,
-            80
-          ],
-          "id": 96,
-          "original_language": "en",
-          "original_title": "Beverly Hills Cop II",
-          "overview": "Schlechte Nachrichten aus Beverly Hills: Axel Foleys Freund Captain Bogomil ist auf der Stra\u00DFe angeschossen worden und Axel fliegt sofort an die Westk\u00FCste, um bei der Suche nach T\u00E4tern zu helfen. Die Spuren deuten auf einen Verbrecherring, der die Stadt seit Tagen mit schweren Raub\u00FCberf\u00E4llen in Atem h\u00E4lt. W\u00E4hrend die \u00C4rzte um Bogomils Leben k\u00E4mpfen, nimmt Axel mit Taggart und Rosewood die Suche nach dem Sch\u00FCtzen auf. Ihre Ermittlungen f\u00FChren bald zu dem skrupellosen Waffenh\u00E4ndler Maxwell Dent und seiner Killer-Lady Karla. Dummerweise identifizieren die beiden Axel schnell als Cop und setzen einen Killer auf ihn an. Mit wenig Erfolg allerdings, denn der reaktionsschnelle und clevere Foley hat einen unschlagbaren Instinkt f\u00FCr gef\u00E4hrliche Situationen\u2026",
-          "popularity": 4.0786,
-          "poster_path": "/8Y1U40ibyQYFzwBng4DolpMOoT0.jpg",
-          "release_date": "1987-05-18",
-          "title": "Beverly Hills Cop II",
-          "video": false,
-          "vote_average": 6.52,
-          "vote_count": 2710
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kWYfW2Re0rUDE6IHhy4CRuKWeFr.jpg",
-          "genre_ids": [
-            12,
-            14,
-            28
-          ],
-          "id": 121,
-          "original_language": "en",
-          "original_title": "The Lord of the Rings: The Two Towers",
-          "overview": "Der Weg der Gef\u00E4hrten hat sich geteilt. Ringtr\u00E4ger Frodo und sein treuer Begleiter Sam treffen in den Bergen von Emyn Muil auf Gollum, dem einst Bilbo Beutlin den Einen Ring wegnahm. Gollums Versuch, den m\u00E4chtigen Ring von Frodo zu stehlen, misslingt, doch die Hobbits bringen es nicht \u00FCbers Herz, die Kreatur zu t\u00F6ten. Stattdessen soll Gollum die beiden nach Mordor an die Pforten von Barad-D\u00FBr, Saurons Festung, f\u00FChren, wo Frodo den Ring vernichten will. W\u00E4hrenddessen folgen Aragorn, Elben-Bogensch\u00FCtze Legolas und Zwerg Gimli den Spuren der von Orks verschleppten Hobbits. Im Menschenk\u00F6nigreich Rohan ersuchen sie Unterst\u00FCtzung. Doch K\u00F6nig Theoden steht unter einem t\u00F6dlichen Bann Saurons. Erst als Gandalf als wiedergeborener wei\u00DFer Zauberer zur\u00FCckkehrt, wendet sich das Blatt. Er befreit Theoden von dem Fluch und bringt die Menschen von Rohan hinter sich. Unterdessen r\u00FCckt Saurons Verb\u00FCndeter Saruman mit einer 10.000 Mann starken Armee von Uruk-hais in RIchtung der Menschenstadt vor...",
-          "popularity": 21.6824,
-          "poster_path": "/tgBCeAjPwXeUaf8LsRL0LzBIcdR.jpg",
-          "release_date": "2002-12-18",
-          "title": "Der Herr der Ringe - Die zwei T\u00FCrme",
-          "video": false,
-          "vote_average": 8.41,
-          "vote_count": 23183
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
-          "genre_ids": [
-            12,
-            14,
-            28
-          ],
-          "id": 122,
-          "original_language": "en",
-          "original_title": "The Lord of the Rings: The Return of the King",
-          "overview": "Saurons Heer will Minas Tirith angreifen, die in Felsen errichtete Hauptstadt von Gondor. Angesichts der Bedrohlichkeit des feindlichen Heeres wiegt es umso schwerer, dass Gondors K\u00F6nig fehlt und nur der schw\u00E4chliche Truchsess Denethor \u00FCber das einst m\u00E4chtige K\u00F6nigreich wacht. Wird Aragorn die Kraft aufbringen, jene Aufgabe zu \u00FCbernehmen, f\u00FCr die sein Schicksal ihn bestimmt hat? W\u00E4hrend Gandalf verzweifelt versucht, die mutlosen K\u00E4mpfer von Gondor zu motivieren, sammelt Th\u00E9oden die Krieger von Rohan, um am Kampf teilzunehmen. Aber obwohl sie tapfer und leidenschaftlich Widerstand leisten, haben die Streitkr\u00E4fte der Menschen dem \u00FCberw\u00E4ltigenden Ansturm der feindlichen Legionen gegen das K\u00F6nigreich kaum etwas entgegenzusetzen. Jeder Sieg fordert gro\u00DFe Opfer. Trotz der starken Verluste stellen sich die Gef\u00E4hrten der gr\u00F6\u00DFten Schlacht ihres Lebens - vereint durch ein einziges Ziel: Sauron muss so lange abgelenkt werden, bis Frodo den Ring vernichtet hat...",
-          "popularity": 20.6783,
-          "poster_path": "/uFjlP9U9UOZAzGB25HUtmlEpXbc.jpg",
-          "release_date": "2003-12-17",
-          "title": "Der Herr der Ringe - Die R\u00FCckkehr des K\u00F6nigs",
-          "video": false,
-          "vote_average": 8.491,
-          "vote_count": 25759
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/nSm9cij9VRrGDoZoS16CPnX0FqK.jpg",
-          "genre_ids": [
-            12,
-            18,
-            28,
             10749
           ],
-          "id": 146,
-          "original_language": "zh",
-          "original_title": "\u5367\u864E\u85CF\u9F8D",
-          "overview": "Nachdem der Schwertk\u00E4mpfer Li Mu Bai beschlie\u00DFt, sein legend\u00E4res \u0022Gr\u00FCnes Schwert\u0022 dem Hohen Rat zu schenken, gibt es nur noch \u00C4rger: Kaum ist das Schwert angekommen, wird es auch schon wieder von einem mysteri\u00F6sen maskierten M\u00E4dchen geklaut. Schlie\u00DFlich stellt sich heraus, dass der Dieb Jen Yu hei\u00DFt und Tochter des Gouverneurs ist. Beeindruckt von ihren k\u00E4mpferischen F\u00E4higkeiten, fasst Mu Bai den Entschluss, Yu als seine Sch\u00FClerin zu unterweisen und sie zur K\u00E4mpferin f\u00FCr Recht und Ordnung zu machen. Doch das M\u00E4dchen zeigt wenig Interesse und nutzt seine F\u00E4higkeiten zu sinnlosen Gewaltakten. Zusammen mit seiner heimlichen Flamme Lien findet Mu Bai schlie\u00DFlich heraus, dass Yu Sch\u00FClerin der b\u00F6sen Jade Fuchs ist, die einst Mu Bais Meister t\u00F6tete. Mu Bai und Lien glauben an das Gute in Yu und wollen sie von Jade Fuchs befreien. Es kommt zum entscheidenden Duell...",
-          "popularity": 6.0115,
-          "poster_path": "/swVLZljd97OYwqswe89MLmDjuoH.jpg",
-          "release_date": "2000-07-06",
-          "title": "Tiger \u0026 Dragon",
+          "id": 502453,
+          "title": "\u68DF\u7BE4\u7279\u5DE5",
+          "original_language": "cn",
+          "original_title": "\u68DF\u7BE4\u7279\u5DE5",
+          "overview": "",
+          "popularity": 1.9338,
+          "poster_path": "/1HbrLDihjs8Y8QjpxLo4kfBVMXT.jpg",
+          "release_date": "2018-02-15",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.431,
-          "vote_count": 3445
+          "vote_average": 5.471,
+          "vote_count": 17
         },
         {
           "adult": false,
-          "backdrop_path": "/bZlismAr366jWFiZNKzY3x3AN5X.jpg",
+          "backdrop_path": "/zuMv27NBmEabc4JB5iI6t7NAKrH.jpg",
           "genre_ids": [
-            27,
-            53
+            10749,
+            28,
+            35
           ],
-          "id": 1228246,
-          "original_language": "en",
-          "original_title": "Five Nights at Freddy\u0027s 2",
-          "overview": "Sie sind nicht mehr nur bei Freddy\u2019s \u2026 Seit den albtraumhaften Geschehnissen in Freddy\u2019s Pizzeria ist ein Jahr vergangen. Die Geschichten dar\u00FCber, was sich dort genau abgespielt hat, haben sich l\u00E4ngst zu einem lokalen Mythos verkl\u00E4rt \u2013 ein Mythos, der so popul\u00E4r ist, dass die Stadt nun sogar das erste \u201EFazfest\u201C abhalten will. Der ehemalige Wachmann Mike und die Polizistin Vanessa haben Mikes elfj\u00E4hriger Schwester Abby die Wahrheit \u00FCber das Schicksal ihrer animatronischen Freunde bislang verschwiegen. Eines Tages schleicht sich Abby heimlich davon, um sich mit Freddy, Bonnie, Chica und Foxy zu treffen. Sie ahnt nicht, dass sie damit eine Reihe von schrecklichen Ereignissen in Gang setzt, die dunkle Geheimnisse \u00FCber den Ursprung von Freddy\u2019s Pizzeria enth\u00FCllen \u2013 und einen Schrecken entfesseln, der seit Jahrzehnten verborgen lag. uwu",
-          "popularity": 249.8545,
-          "poster_path": "/byFxrm3IS9wErulqpqDIsaLaTeG.jpg",
-          "release_date": "2025-12-03",
-          "title": "Five Nights at Freddy\u0027s 2",
+          "id": 325555,
+          "title": "\u092E\u0935\u093E\u0932\u0940 \u090F\u092E\u090F\u0932\u090F",
+          "original_language": "hi",
+          "original_title": "\u092E\u0935\u093E\u0932\u0940 \u090F\u092E\u090F\u0932\u090F",
+          "overview": "",
+          "popularity": 0.8249,
+          "poster_path": "/C9PWC4xMNYgWfGRXG8veM8dBzZ.jpg",
+          "release_date": "1996-06-09",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.2,
-          "vote_count": 227
+          "vote_average": 3.875,
+          "vote_count": 8
         },
         {
           "adult": false,
-          "backdrop_path": "/8G6HCS82vNxgg5wp7oBDSk32XpF.jpg",
+          "backdrop_path": null,
           "genre_ids": [
             28,
-            12,
-            878
+            80
           ],
-          "id": 558,
-          "original_language": "en",
-          "original_title": "Spider-Man 2",
-          "overview": "Zwei Jahre sind inzwischen vergangen, als Peter Parker von einer genmutierten Spinne gebissen wurde und sein Leben sich radikal ver\u00E4ndert hat. Bei der Verbrechensbek\u00E4mpferei l\u00E4sst er sein College-Studium schleifen und versp\u00E4tet sich permanent bei seinen beiden Jobs. Zu allem \u00DCberfluss muss Peter mit ansehen, wie Mary Jane im Gegensatz zu ihm ihr Leben meistert. Nun allerdings streckt ein neuer B\u00F6sewicht namens Dr. Octavius seine metallischen Tentakel nach der Zivilisation aus. Mit ihm ist nicht zu spa\u00DFen..",
-          "popularity": 6.7685,
-          "poster_path": "/r2wWhkHLpxCWzTJgPaT2pRvV3vm.jpg",
-          "release_date": "2004-06-25",
-          "title": "Spider-Man 2",
+          "id": 679484,
+          "title": "Siete en la mira 4: Yo soy la ley",
+          "original_language": "es",
+          "original_title": "Siete en la mira 4: Yo soy la ley",
+          "overview": "",
+          "popularity": 0.141,
+          "poster_path": "/58HuODgQB8odF4XrrdJPQ5HAowp.jpg",
+          "release_date": "1991-05-01",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.298,
-          "vote_count": 15907
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/w1oD1MzHjnBJc5snKupIQaSBLIh.jpg",
-          "genre_ids": [
-            28,
-            12,
-            878
-          ],
-          "id": 559,
-          "original_language": "en",
-          "original_title": "Spider-Man 3",
-          "overview": "Eigentlich k\u00F6nnte alles wunderbar laufen f\u00FCr Peter Parker, seit er seiner Freundin Mary Jane Watson seine Geheimidentit\u00E4t \u0022Spiderman\u0022 offenbart hat. Doch am Horizont zeigen sich bald neue dunkle Wolken, als der Ausbrecher Flint Marko durch einen Unfall in den geheimnisvollen \u0022Sandman\u0022 verwandelt wird, einen Mutanten, der seine Molek\u00FCle ver\u00E4ndern kann. Peter ist bald pers\u00F6nlich betroffen, denn offenbar hat Marko etwas mit dem Mord an seinem Onkel zu tun. Doch es zeigt sich neues Unheil: eine au\u00DFerirdische schwarze Substanz ergreift von Peter Besitz, die seine dunkle, machtstrebende Seite zum Vorschein bringt.",
-          "popularity": 12.3701,
-          "poster_path": "/idzYppC7Qztelr7451Z0cWlvFFF.jpg",
-          "release_date": "2007-05-01",
-          "title": "Spider-Man 3",
-          "video": false,
-          "vote_average": 6.448,
-          "vote_count": 14825
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/oIwfoUFfWfESn0Y8u8jv9lc8li1.jpg",
-          "genre_ids": [
-            28,
-            53
-          ],
-          "id": 562,
-          "original_language": "en",
-          "original_title": "Die Hard",
-          "overview": "Eigentlich m\u00F6chte der New Yorker Polizist John McClane dieses Weihnachten nur seine Noch-Ehefrau Holly, welche in Los Angeles in einer gro\u00DFen, erfolgreichen Firma Karriere gemacht hat, besuchen und das Fest mit den beiden gemeinsamen Kinder verbringen. Als die Feierlichkeiten im Nakatomi Plaza beginnen sollen, st\u00FCrmt eine Gruppe von Terroristen das Hochhaus und nur John McClane schafft es ihnen zu entwischen. Lediglich bewaffnet mit ein paar Zigaretten und einem Walkie-Talkie, wodurch er den Funk der Geiselnehmer mith\u00F6ren kann, und mit Waffen, welche die Terroristen gelegentlich so rumliegen lassen, muss John nun nicht nur sein eigenes Leben retten, sondern m\u00F6glichst auch das aller anderen Beteiligten. Und so beschlie\u00DFt er, die \u00E4u\u00DFerst brutale Truppe auszumerzen und sich einen Terroristen nach dem anderen vorzukn\u00F6pfen. W\u00E4hrend drau\u00DFen dann schon die Polizei und das FBI st\u00FCmperhaft versucht, das Geb\u00E4ude zu st\u00FCrmen, k\u00E4mpft McClane ohne Schuhe gegen die 12 Aggressoren...",
-          "popularity": 28.9381,
-          "poster_path": "/5xokZs8I3RfHeMkDqHIcg1ZjoTs.jpg",
-          "release_date": "1988-07-15",
-          "title": "Stirb langsam",
-          "video": false,
-          "vote_average": 7.804,
-          "vote_count": 11855
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/q46nyik6GeDkUV6wQGiZQ97UuP6.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 579,
-          "original_language": "en",
-          "original_title": "Jaws 2",
-          "overview": "Aus dem kleinen K\u00FCstenort Amity soll ein modernes Seebad gemacht werden. Pl\u00F6tzlich geschehen schreckliche Ungl\u00FCcksf\u00E4lle. Polizeichef Brody bef\u00FCrchtet, dass so wie vor einigen Jahren wieder ein Hai daf\u00FCr verantwortlich sein k\u00F6nnte. Aber keiner reagiert auf seine Warnungen. Auf sich allein gestellt, versucht er, die m\u00F6rderische Bestie zu bek\u00E4mpfen...",
-          "popularity": 3.2885,
-          "poster_path": "/8xA83bATuN2QW7k5BL5Z8jMCh6V.jpg",
-          "release_date": "1978-06-16",
-          "title": "Der wei\u00DFe Hai 2",
-          "video": false,
-          "vote_average": 6.029,
-          "vote_count": 2055
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/grIaRfJJz7VrMSpFxTTdD5GEbE4.jpg",
-          "genre_ids": [
-            12,
-            53,
-            27
-          ],
-          "id": 580,
-          "original_language": "en",
-          "original_title": "Jaws: The Revenge",
-          "overview": "Ellen Brody lebt mit ihrem Sohn Sean noch immer in dem Ferienort Amity. Kurz vor Weihnachten geschieht das Unglaubliche: Sean wird, wie sein Vater Jahre zuvor, von einem wei\u00DFen Hai zerfleischt. Keiner h\u00F6rt seine Schreie, keiner kommt ihm zu Hilfe. Seine Mutter l\u00E4sst sich nun endlich von ihrem \u00E4ltesten Sohn Michael \u00FCberreden, mit auf die Bahamas zu ziehen \u2013 weit weg von allen Killer-Haien. Doch der Frieden w\u00E4hrt nicht lange: schon kurze Zeit sp\u00E4ter taucht pl\u00F6tzlich eine spitze, dreieckige Flosse am Strand auf. Das Monstrum ist Ellen gefolgt \u2013 und es ist hungrig! Ein letzter dramatischer Kampf zwischen Mensch und Bestie beginnt \u2013 die Zeit der Abrechnung ist gekommen \u2026",
-          "popularity": 4.3272,
-          "poster_path": "/hpaiu0UJ0e884hIK22LWTIHTsPe.jpg",
-          "release_date": "1987-07-17",
-          "title": "Der wei\u00DFe Hai IV - Die Abrechnung",
-          "video": false,
-          "vote_average": 4.076,
-          "vote_count": 1132
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
-          "genre_ids": [
-            28,
-            878
-          ],
-          "id": 603,
-          "original_language": "en",
-          "original_title": "The Matrix",
-          "overview": "Der Hacker Neo wird \u00FCbers Internet von einer geheimnisvollen Untergrund-Organisation kontaktiert. Der Kopf der Gruppe \u2013 der gesuchte Terrorist Morpheus \u2013 weiht ihn in ein entsetzliches Geheimnis ein: Die Realit\u00E4t, wie wir sie erleben, ist nur eine Scheinwelt. In Wahrheit werden die Menschen l\u00E4ngst von einer unheimlichen virtuellen Macht beherrscht \u2013 der \u201EMatrix\u201C, deren Agenten Neo bereits im Visier haben \u2026",
-          "popularity": 22.3782,
-          "poster_path": "/e2TJalTg6apJ1jWmA0rkltumpuK.jpg",
-          "release_date": "1999-03-31",
-          "title": "Matrix",
-          "video": false,
-          "vote_average": 8.236,
-          "vote_count": 27117
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hgWDZ0UlGEf8LvrAkKt6VqAH0bu.jpg",
-          "genre_ids": [
-            12,
-            28,
-            53,
-            878
-          ],
-          "id": 604,
-          "original_language": "en",
-          "original_title": "The Matrix Reloaded",
-          "overview": "Die W\u00E4chter schw\u00E4rmen aus. Smith klont sich. Neo fliegt \u2026 aber vielleicht kann selbst der Auserw\u00E4hlte mit seinen atemberaubenden neuen F\u00E4higkeiten den Angriff der Maschinen nicht mehr aufhalten.  Neo. Morpheus. Trinity. Zur\u00FCck im spannenden zweiten Kapitel der Matrix-Trilogie treffen sie auf au\u00DFergew\u00F6hnliche Verb\u00FCndete: Gemeinsam bek\u00E4mpfen sie ihre Gegner, die sich klonen, durch Upgrades immer st\u00E4rker werden und die letzte Festung der Menschheit belagern.",
-          "popularity": 8.5716,
-          "poster_path": "/nq9ODAvLiyC8YNcfc4WReBVAL6b.jpg",
-          "release_date": "2003-05-15",
-          "title": "Matrix Reloaded",
-          "video": false,
-          "vote_average": 7.068,
-          "vote_count": 11586
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kJYPag1YrA4PsXIftFdq3QEaanV.jpg",
-          "genre_ids": [
-            12,
-            28,
-            53,
-            878
-          ],
-          "id": 605,
-          "original_language": "en",
-          "original_title": "The Matrix Revolutions",
-          "overview": "Die letzte Schlacht gegen die Maschinen k\u00E4mpfen Neo, der Auserw\u00E4hlte, Rebellionsf\u00FChrer Morpheus und ihre Verb\u00FCndeten \u2013 ein Krieg, der in den Ruinen der realen Welt gef\u00FChrt wird, der das Schicksal der Menschheit besiegelt und dessen Sieg in den H\u00E4nden von Neo liegt, der seinerseits eine Reihe von \u00DCberraschungen zu erwarten hat.",
-          "popularity": 7.8531,
-          "poster_path": "/2DbT6Un16X3eJrobVA2AsbaPJ8L.jpg",
-          "release_date": "2003-11-05",
-          "title": "Matrix Revolutions",
-          "video": false,
-          "vote_average": 6.748,
-          "vote_count": 10467
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/8JMiQa0OqsCYvbNUrQIrMzwV7g2.jpg",
-          "genre_ids": [
-            28,
-            53,
-            12
-          ],
-          "id": 657,
-          "original_language": "en",
-          "original_title": "From Russia with Love",
-          "overview": "James Bond soll in Istanbul eine russische Dechiffriermaschine von einer \u00FCbergelaufenen Agentin erhalten. Das verlockende Angebot entpuppt sich jedoch als t\u00F6dliche Falle.",
-          "popularity": 4.4457,
-          "poster_path": "/8i3NzAWcNmE1IVuUu9RSQBSvgJI.jpg",
-          "release_date": "1963-10-10",
-          "title": "James Bond 007 - Liebesgr\u00FC\u00DFe aus Moskau",
-          "video": false,
-          "vote_average": 7.072,
-          "vote_count": 3216
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/cpZAXIYA0lkZMpAt7d1MmH8ojNV.jpg",
-          "genre_ids": [
-            28,
-            53,
-            12
-          ],
-          "id": 667,
-          "original_language": "en",
-          "original_title": "You Only Live Twice",
-          "overview": "Ein mysteri\u00F6ses Raumschiff entf\u00FChrt eine russische und eine amerikanische Raumkapsel und bringt die Welt an den Rand eines Weltkrieges. James Bond ermittelt in Japan, trifft auf seinen Erzfeind Blofeld und die raffinierte Helga Brandt.",
-          "popularity": 4.9062,
-          "poster_path": "/ytGRF5H5A5VNBUZqUv6rsVPqqpm.jpg",
-          "release_date": "1967-06-13",
-          "title": "James Bond 007 - Man lebt nur zweimal",
-          "video": false,
-          "vote_average": 6.591,
-          "vote_count": 2363
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/8lRdfsmJjUXQU3DMOOB3vVIhJxP.jpg",
-          "genre_ids": [
-            12,
-            28,
-            53
-          ],
-          "id": 691,
-          "original_language": "en",
-          "original_title": "The Spy Who Loved Me",
-          "overview": "Ein russisches und ein amerikanisches U-Boot mit Atomraketen an Bord verschwinden spurlos von der Bildfl\u00E4che. Amerikaner und Russen beschuldigen sich gegenseitig. James Bond soll das R\u00E4tsel der verschwundenen U-Boote l\u00F6sen. Aber auch der KGB hat schon einen Agenten losgeschickt.",
-          "popularity": 3.3129,
-          "poster_path": "/3z50Zw7ryke1e8BZOoCqTmlfsLt.jpg",
-          "release_date": "1977-07-07",
-          "title": "James Bond 007 - Der Spion, der mich liebte",
-          "video": false,
-          "vote_average": 6.826,
-          "vote_count": 2135
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ebaq0ecL1Tu39rIExfHwE4ToFl2.jpg",
-          "genre_ids": [
-            28,
-            12,
-            53
-          ],
-          "id": 708,
-          "original_language": "en",
-          "original_title": "The Living Daylights",
-          "overview": "James Bond verhilft einem russischen General zur Flucht in den Westen. Von ihm erf\u00E4hrt er, dass der KGB in einer gro\u00DF angelegten Aktion alle feindlichen Agenten t\u00F6ten will. Wenig sp\u00E4ter wird der General vor den Augen des Secret Service entf\u00FChrt. 007 sch\u00F6pft einen Verdacht.",
-          "popularity": 5.1146,
-          "poster_path": "/10Od1LGlmBbz4EVjPTyTtDV8zuU.jpg",
-          "release_date": "1987-06-29",
-          "title": "James Bond 007 - Der Hauch des Todes",
-          "video": false,
-          "vote_average": 6.541,
-          "vote_count": 1934
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tsSWHgaFlzzkp3o976juBZbmcs2.jpg",
-          "genre_ids": [
-            28,
-            80,
-            878
-          ],
-          "id": 754,
-          "original_language": "en",
-          "original_title": "Face/Off",
-          "overview": "Zehn lange Jahre folgte FBI-Agent Archer der Blutspur des Superverbrechers Castor Troy. Doch jetzt, wo dieser halbtot geschossen vor ihm liegt, kann er sich nicht dar\u00FCber freuen. Denn leider hatte Troy zuvor noch Zeit, eine verheerende Bombe irgendwo in L.A. zu deponieren. Archer bleibt nur eine M\u00F6glichkeit - er mu\u00DF die Identit\u00E4t des verha\u00DFten Widerparts annehmen, um an das Versteck der Bombe zu kommen. Ein revolution\u00E4rer Fortschritt in der kosmetischen Chirurgie macht\u0027s m\u00F6glich - leider nicht nur in eine Richtung.",
-          "popularity": 5.9974,
-          "poster_path": "/fawgQgfx78HE50WRubShb7aWWhE.jpg",
-          "release_date": "1997-06-27",
-          "title": "Im K\u00F6rper des Feindes",
-          "video": false,
-          "vote_average": 7.05,
-          "vote_count": 5683
+          "vote_average": 5.75,
+          "vote_count": 20
         }
       ],
-      "total_pages": 5108,
-      "total_results": 102160
+      "total_pages": 5380,
+      "total_results": 107593
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=15307",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=16007",
       "x-memc": "HIT",
       "x-memc-key": "93d906ef30a671ff7effbdbe1721abe94f609623dc95dbf2e4c9e1a7b240375d",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002265f5af82aec84e4e4700ae34067e2d17\u0022",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u002256a2e29681840167b03485f08e015ef2\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -19,6 +19,12 @@ public class SearchTv : SearchMovieTvBase
     }
 
     /// <summary>
+    /// Gets or sets a value indicating whether the TV show is adult content.
+    /// </summary>
+    [JsonProperty("adult")]
+    public bool Adult { get; set; }
+
+    /// <summary>
     /// Gets or sets the first air date of the TV show.
     /// </summary>
     [JsonProperty("first_air_date")]

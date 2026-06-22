@@ -1,6 +1,6 @@
 {
   "Guid": "67bcb2f8-2489-f143-8431-5a3219c9047c",
-  "UpdatedAt": "2025-12-24T18:45:18.6639567Z",
+  "UpdatedAt": "2026-05-24T16:19:42.514457Z",
   "Title": "Proxy Mapping for GET /3/certification/tv/list",
   "Description": "Proxy Mapping for GET /3/certification/tv/list",
   "Priority": -2000000,
@@ -17,37 +17,129 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "certifications": {
-        "PH": [
+        "AU": [
           {
-            "certification": "NR",
-            "meaning": "No rating information.",
-            "order": 0
-          },
-          {
-            "certification": "G",
-            "meaning": "Suitable for all ages. Material for television, which in the judgment of the Board does not contain anything unsuitable for children.",
+            "certification": "P",
+            "meaning": "Programming is intended for younger children 2\u201311; commercial stations must show at least 30 minutes of P-rated content each weekday and weekends at all times. No advertisements may be shown during P-rated programs.",
             "order": 1
           },
           {
-            "certification": "PG",
-            "meaning": "Parental guidance suggested. Material for television, which, in the judgment of the Board, may contain some adult material that may be permissible for children to watch but only under the guidance and supervision of a parent or adult.",
+            "certification": "C",
+            "meaning": "Programming intended for older children 5\u201314; commercial stations must show at least 30 minutes of C-rated content each weekday between 7 a.m. and 8 a.m. or between 4 p.m. and 8:30 p.m. A further 2 and a half ours a week must also be shown either within these time bands or between 7 a.m. and 8:30 p.m. on weekends and school holidays, for a total of five hours a week (averaged as 260 hours over the course of a year). C-rated content is subject to certain restrictions and limitations on advertising (typically five minutes maximum per 30-minute period or seven minutes including promotions and community announcements).",
             "order": 2
           },
           {
-            "certification": "SPG",
-            "meaning": "Stronger and more vigilant parental guidance is suggested. Programs classified as \u201CSPG\u201D may contain more serious topic and theme, which may not be advisable for children to watch except under the very vigilant guidance and presence of a parent or an adult.",
+            "certification": "G",
+            "meaning": "For general exhibition; all ages are permitted to watch programming with this rating.",
             "order": 3
           },
           {
-            "certification": "X",
-            "meaning": "Any television program that does not conform to the \u201CG\u201D, \u201CPG\u201D, and \u201CSPG\u201D classification shall be disapproved for television broadcast.",
+            "certification": "PG",
+            "meaning": "Parental guidance is recommended for young viewers; PG-rated content may air at any time on digital-only channels, otherwise, it should only be broadcast between 8:30 a.m. and 4:00 p.m. and between 7:00 p.m. and 6:00 a.m. on weekdays, and between 10:00 a.m. and 6:00 a.m. on weekends.",
             "order": 4
+          },
+          {
+            "certification": "M",
+            "meaning": "Recommended for mature audiences; M-rated content may only be broadcast between 8:30 p.m. and 5:00 a.m. on any day, and additionally between 12:00 p.m. and 3:00 p.m. on schooldays.",
+            "order": 5
+          },
+          {
+            "certification": "MA 15\u002B",
+            "meaning": "Not suitable for children and teens under 15; MA15\u002B-rated programming may only be broadcast between 9:00 p.m. and 5:00 a.m. on any given day. Consumer advice is mandatory. Some R18\u002B rated movies on DVD/Blu-ray are often re-edited on free TV/cable channels to secure a more ",
+            "order": 6
+          },
+          {
+            "certification": "R 18\u002B",
+            "meaning": "Not for children under 18; this is limited to Adult ",
+            "order": 8
+          }
+        ],
+        "BR": [
+          {
+            "certification": "14",
+            "meaning": "Content suitable for viewers over the age of 14.",
+            "order": 3
+          },
+          {
+            "certification": "16",
+            "meaning": "Content suitable for viewers over the age of 16.",
+            "order": 4
+          },
+          {
+            "certification": "L",
+            "meaning": "Content is suitable for all audiences.",
+            "order": 0
+          },
+          {
+            "certification": "10",
+            "meaning": "Content suitable for viewers over the age of 10.",
+            "order": 1
+          },
+          {
+            "certification": "12",
+            "meaning": "Content suitable for viewers over the age of 12.",
+            "order": 2
+          },
+          {
+            "certification": "18",
+            "meaning": "Content suitable for viewers over the age of 18.",
+            "order": 5
+          }
+        ],
+        "CA": [
+          {
+            "certification": "Exempt",
+            "meaning": "Shows which are exempt from ratings (such as news and sports programming) will not display an on-screen rating at all.",
+            "order": 1
+          },
+          {
+            "certification": "C",
+            "meaning": "Programming suitable for children ages of 2\u20137 years. No profanity or sexual content of any level allowed. Contains little violence.",
+            "order": 2
+          },
+          {
+            "certification": "C8",
+            "meaning": "Suitable for children ages 8\u002B. Low level violence and fantasy horror is allowed. No foul language is allowed, but occasional ",
+            "order": 3
+          },
+          {
+            "certification": "G",
+            "meaning": "Suitable for general audiences. Programming suitable for the entire family with mild violence, and mild profanity and/or censored language.",
+            "order": 4
+          },
+          {
+            "certification": "PG",
+            "meaning": "Parental guidance. Moderate violence and moderate profanity is allowed, as is brief nudity and sexual references if important to the context of the story.",
+            "order": 5
+          },
+          {
+            "certification": "14\u002B",
+            "meaning": "Programming intended for viewers ages 14 and older. May contain strong violence and strong profanity, and depictions of sexual activity as long as they are within the context of a story.",
+            "order": 6
+          },
+          {
+            "certification": "18\u002B",
+            "meaning": "Programming intended for viewers ages 18 and older. May contain explicit violence and sexual activity. Programming with this rating cannot air before the watershed (9:00 p.m. to 6:00 a.m.).",
+            "order": 7
           }
         ],
         "CA-QC": [
@@ -80,6 +172,80 @@
             "certification": "G",
             "meaning": "Appropriate for all ages and must contain little or no violence and little to no sexual content.",
             "order": 1
+          }
+        ],
+        "DE": [
+          {
+            "certification": "0",
+            "meaning": "Can be aired at any time.",
+            "order": 1
+          },
+          {
+            "certification": "6",
+            "meaning": "Can be aired at any time.",
+            "order": 2
+          },
+          {
+            "certification": "12",
+            "meaning": "The broadcaster must take the decision about the air time by taking in consideration the impact on young children in the timeframe from 6:00am to 8:00pm.",
+            "order": 3
+          },
+          {
+            "certification": "16",
+            "meaning": "Can be aired only from 10:00pm Uhr to 6:00am.",
+            "order": 4
+          },
+          {
+            "certification": "18",
+            "meaning": "Can be aired only from 11:00pm Uhr to 6:00am.",
+            "order": 5
+          }
+        ],
+        "ES": [
+          {
+            "certification": "NR",
+            "meaning": "No rating information.",
+            "order": 0
+          },
+          {
+            "certification": "ERI",
+            "meaning": "Specially recommended for younger children.",
+            "order": 1
+          },
+          {
+            "certification": "TP",
+            "meaning": "For general viewing.",
+            "order": 2
+          },
+          {
+            "certification": "7",
+            "meaning": "Not recommended for viewers under the age of 7.",
+            "order": 3
+          },
+          {
+            "certification": "10",
+            "meaning": "Not recommended for viewers under the age of 10.",
+            "order": 4
+          },
+          {
+            "certification": "12",
+            "meaning": "Not recommended for viewers under the age of 12.",
+            "order": 5
+          },
+          {
+            "certification": "13",
+            "meaning": "Not recommended for viewers under the age of 13.",
+            "order": 6
+          },
+          {
+            "certification": "16",
+            "meaning": "Not recommended for viewers under the age of 16.",
+            "order": 7
+          },
+          {
+            "certification": "18",
+            "meaning": "Not recommended for viewers under the age of 18.",
+            "order": 8
           }
         ],
         "FR": [
@@ -151,146 +317,6 @@
             "order": 6
           }
         ],
-        "IT": [
-          {
-            "certification": "T",
-            "meaning": "All ages admitted.",
-            "order": 1
-          },
-          {
-            "certification": "BA",
-            "meaning": "Parental guidance suggested.",
-            "order": 2
-          },
-          {
-            "certification": "VM12",
-            "meaning": "Not recommended for children under 12.",
-            "order": 3
-          },
-          {
-            "certification": "VM14",
-            "meaning": "Not recommended for children under 14.",
-            "order": 4
-          },
-          {
-            "certification": "VM18",
-            "meaning": "Not recommended for children under 18.",
-            "order": 5
-          }
-        ],
-        "LT": [
-          {
-            "certification": "S",
-            "meaning": "Intended for adult viewers from the age of 18 (corresponding to the age-appropriate index N-18) and broadcast between 23 (11pm) and 6 (6am) hours; Limited to minors and intended for adult audiences.",
-            "order": 3
-          },
-          {
-            "certification": "N-14",
-            "meaning": "Intended for viewers from 14 years of age and broadcast from 21 (9pm) to 6 (6am) hours.",
-            "order": 2
-          },
-          {
-            "certification": "NR",
-            "meaning": "No rating information.",
-            "order": 0
-          },
-          {
-            "certification": "N-7",
-            "meaning": "Intended for viewers from 7 years old.",
-            "order": 1
-          }
-        ],
-        "NO": [
-          {
-            "certification": "A",
-            "meaning": "Allowed at all times.",
-            "order": 1
-          },
-          {
-            "certification": "6",
-            "meaning": "Allowed at all times.",
-            "order": 2
-          },
-          {
-            "certification": "9",
-            "meaning": "Allowed at all times.",
-            "order": 3
-          },
-          {
-            "certification": "12",
-            "meaning": "Only allowed during the period 19.00 \u2013 05.30.",
-            "order": 4
-          },
-          {
-            "certification": "15",
-            "meaning": "Only allowed during the period 21.00 \u2013 05.30.",
-            "order": 5
-          },
-          {
-            "certification": "18",
-            "meaning": "Only allowed during the period 21.00 \u2013 05.30.",
-            "order": 6
-          }
-        ],
-        "KR": [
-          {
-            "certification": "Exempt",
-            "meaning": "This rating is only for knowledge based game shows; lifestyle shows; documentary shows; news; current topic discussion shows; education/culture shows; sports that excludes MMA or other violent sports; and other programs that Korea Communications Standards Commission recognizes.",
-            "order": 1
-          },
-          {
-            "certification": "ALL",
-            "meaning": "This rating is for programming that is appropriate for all ages. This program usually involves programs designed for children or families.",
-            "order": 2
-          },
-          {
-            "certification": "7",
-            "meaning": "This rating is for programming that may contain material inappropriate for children younger than 7, and parental discretion should be used. Some cartoon programming not deemed strictly as ",
-            "order": 3
-          },
-          {
-            "certification": "12",
-            "meaning": "This rating is for programs that may deemed inappropriate for those younger than 12, and parental discretion should be used. Usually used for animations that have stronger themes or violence then those designed for children, or for reality shows that have mild violence, themes, or language.",
-            "order": 4
-          },
-          {
-            "certification": "15",
-            "meaning": "This rating is for programs that contain material that may be inappropriate for children under 15, and that parental discretion should be used. Examples include most dramas, and talk shows on OTA (over-the-air) TV (KBS, MBC, SBS), and many American TV shows/dramas on Cable TV channels like OCN and OnStyle. The programs that have this rating may include moderate or strong adult themes, language, sexual inference, and violence. As with the TV-MA rating in North America, this rating is commonly applied to live events where the occurrence of inappropriate dialogue is unpredictable. Since 2007, this rating is the most used rating for TV.",
-            "order": 5
-          },
-          {
-            "certification": "19",
-            "meaning": "This rating is for programs that are intended for adults only. 19-rated programming cannot air during the hours of 7:00AM to 9:00AM, and 1:00PM to 10:00PM. Programmes that receive this rating will almost certainly have adult themes, sexual situations, frequent use of strong language and disturbing scenes of violence.",
-            "order": 6
-          }
-        ],
-        "NZ": [
-          {
-            "certification": "G",
-            "meaning": "Approved for general viewing.",
-            "order": 1
-          },
-          {
-            "certification": "PG",
-            "meaning": "Parental Guidance recommended for younger viewers.",
-            "order": 2
-          },
-          {
-            "certification": "M",
-            "meaning": "Suitable for mature audiences 16 years and over.",
-            "order": 3
-          },
-          {
-            "certification": "16",
-            "meaning": "People under 16 years should not view.",
-            "order": 4
-          },
-          {
-            "certification": "18",
-            "meaning": "People under 18 years should not view.",
-            "order": 5
-          }
-        ],
         "HU": [
           {
             "certification": "Unrated",
@@ -328,36 +354,58 @@
             "order": 4
           }
         ],
-        "BR": [
+        "KR": [
           {
-            "certification": "14",
-            "meaning": "Content suitable for viewers over the age of 14.",
-            "order": 3
-          },
-          {
-            "certification": "16",
-            "meaning": "Content suitable for viewers over the age of 16.",
-            "order": 4
-          },
-          {
-            "certification": "L",
-            "meaning": "Content is suitable for all audiences.",
-            "order": 0
-          },
-          {
-            "certification": "10",
-            "meaning": "Content suitable for viewers over the age of 10.",
+            "certification": "Exempt",
+            "meaning": "This rating is only for knowledge based game shows; lifestyle shows; documentary shows; news; current topic discussion shows; education/culture shows; sports that excludes MMA or other violent sports; and other programs that Korea Communications Standards Commission recognizes.",
             "order": 1
           },
           {
-            "certification": "12",
-            "meaning": "Content suitable for viewers over the age of 12.",
+            "certification": "ALL",
+            "meaning": "This rating is for programming that is appropriate for all ages. This program usually involves programs designed for children or families.",
             "order": 2
           },
           {
-            "certification": "18",
-            "meaning": "Content suitable for viewers over the age of 18.",
+            "certification": "7",
+            "meaning": "This rating is for programming that may contain material inappropriate for children younger than 7, and parental discretion should be used. Some cartoon programming not deemed strictly as ",
+            "order": 3
+          },
+          {
+            "certification": "12",
+            "meaning": "This rating is for programs that may deemed inappropriate for those younger than 12, and parental discretion should be used. Usually used for animations that have stronger themes or violence then those designed for children, or for reality shows that have mild violence, themes, or language.",
+            "order": 4
+          },
+          {
+            "certification": "15",
+            "meaning": "This rating is for programs that contain material that may be inappropriate for children under 15, and that parental discretion should be used. Examples include most dramas, and talk shows on OTA (over-the-air) TV (KBS, MBC, SBS), and many American TV shows/dramas on Cable TV channels like OCN and OnStyle. The programs that have this rating may include moderate or strong adult themes, language, sexual inference, and violence. As with the TV-MA rating in North America, this rating is commonly applied to live events where the occurrence of inappropriate dialogue is unpredictable. Since 2007, this rating is the most used rating for TV.",
             "order": 5
+          },
+          {
+            "certification": "19",
+            "meaning": "This rating is for programs that are intended for adults only. 19-rated programming cannot air during the hours of 7:00AM to 9:00AM, and 1:00PM to 10:00PM. Programmes that receive this rating will almost certainly have adult themes, sexual situations, frequent use of strong language and disturbing scenes of violence.",
+            "order": 6
+          }
+        ],
+        "LT": [
+          {
+            "certification": "S",
+            "meaning": "Intended for adult viewers from the age of 18 (corresponding to the age-appropriate index N-18) and broadcast between 23 (11pm) and 6 (6am) hours; Limited to minors and intended for adult audiences.",
+            "order": 3
+          },
+          {
+            "certification": "N-14",
+            "meaning": "Intended for viewers from 14 years of age and broadcast from 21 (9pm) to 6 (6am) hours.",
+            "order": 2
+          },
+          {
+            "certification": "NR",
+            "meaning": "No rating information.",
+            "order": 0
+          },
+          {
+            "certification": "N-7",
+            "meaning": "Intended for viewers from 7 years old.",
+            "order": 1
           }
         ],
         "NL": [
@@ -402,30 +450,57 @@
             "order": 7
           }
         ],
-        "FI": [
+        "PH": [
           {
-            "certification": "S",
-            "meaning": "Allowed at all times.",
+            "certification": "NR",
+            "meaning": "No rating information.",
             "order": 0
           },
           {
-            "certification": "K7",
-            "meaning": "Not allowed air before 7:00 a.m., not recommended for children under 7.",
+            "certification": "G",
+            "meaning": "Suitable for all ages. Material for television, which in the judgment of the Board does not contain anything unsuitable for children.",
             "order": 1
           },
           {
-            "certification": "K12",
-            "meaning": "Not allowed air before 5:00 p.m., not recommended for children under 12.",
+            "certification": "PG",
+            "meaning": "Parental guidance suggested. Material for television, which, in the judgment of the Board, may contain some adult material that may be permissible for children to watch but only under the guidance and supervision of a parent or adult.",
             "order": 2
           },
           {
-            "certification": "K16",
-            "meaning": "Not allowed air before 9:00 p.m., not recommended for children under 16.",
+            "certification": "SPG",
+            "meaning": "Stronger and more vigilant parental guidance is suggested. Programs classified as \u201CSPG\u201D may contain more serious topic and theme, which may not be advisable for children to watch except under the very vigilant guidance and presence of a parent or an adult.",
             "order": 3
           },
           {
-            "certification": "K18",
-            "meaning": "Not allowed air before 11:00 p.m., not recommended for children under 18.",
+            "certification": "X",
+            "meaning": "Any television program that does not conform to the \u201CG\u201D, \u201CPG\u201D, and \u201CSPG\u201D classification shall be disapproved for television broadcast.",
+            "order": 4
+          }
+        ],
+        "PT": [
+          {
+            "certification": "NR",
+            "meaning": "No rating information.",
+            "order": 0
+          },
+          {
+            "certification": "T",
+            "meaning": "Todos (suitable for all).",
+            "order": 1
+          },
+          {
+            "certification": "10",
+            "meaning": "Acompanhamento Parental (may not be suitable for children under 10, parental guidance advised).",
+            "order": 2
+          },
+          {
+            "certification": "12",
+            "meaning": "Acompanhamento Parental (may not be suitable for children under 12, parental guidance advised).",
+            "order": 3
+          },
+          {
+            "certification": "16",
+            "meaning": "Not suitable for children under 16, access to these programs is locked by a personal password.",
             "order": 4
           }
         ],
@@ -454,102 +529,6 @@
             "certification": "0\u002B",
             "meaning": "Can be watched by Any Age.",
             "order": 1
-          }
-        ],
-        "SE": [
-          {
-            "certification": "Btl",
-            "meaning": "",
-            "order": 1
-          },
-          {
-            "certification": "Fr\u00E5n 7 \u00E5r",
-            "meaning": "",
-            "order": 2
-          },
-          {
-            "certification": "Fr\u00E5n 11 \u00E5r",
-            "meaning": "",
-            "order": 3
-          },
-          {
-            "certification": "Fr\u00E5n 15 \u00E5r",
-            "meaning": "",
-            "order": 4
-          }
-        ],
-        "CA": [
-          {
-            "certification": "Exempt",
-            "meaning": "Shows which are exempt from ratings (such as news and sports programming) will not display an on-screen rating at all.",
-            "order": 1
-          },
-          {
-            "certification": "C",
-            "meaning": "Programming suitable for children ages of 2\u20137 years. No profanity or sexual content of any level allowed. Contains little violence.",
-            "order": 2
-          },
-          {
-            "certification": "C8",
-            "meaning": "Suitable for children ages 8\u002B. Low level violence and fantasy horror is allowed. No foul language is allowed, but occasional ",
-            "order": 3
-          },
-          {
-            "certification": "G",
-            "meaning": "Suitable for general audiences. Programming suitable for the entire family with mild violence, and mild profanity and/or censored language.",
-            "order": 4
-          },
-          {
-            "certification": "PG",
-            "meaning": "Parental guidance. Moderate violence and moderate profanity is allowed, as is brief nudity and sexual references if important to the context of the story.",
-            "order": 5
-          },
-          {
-            "certification": "14\u002B",
-            "meaning": "Programming intended for viewers ages 14 and older. May contain strong violence and strong profanity, and depictions of sexual activity as long as they are within the context of a story.",
-            "order": 6
-          },
-          {
-            "certification": "18\u002B",
-            "meaning": "Programming intended for viewers ages 18 and older. May contain explicit violence and sexual activity. Programming with this rating cannot air before the watershed (9:00 p.m. to 6:00 a.m.).",
-            "order": 7
-          }
-        ],
-        "AU": [
-          {
-            "certification": "P",
-            "meaning": "Programming is intended for younger children 2\u201311; commercial stations must show at least 30 minutes of P-rated content each weekday and weekends at all times. No advertisements may be shown during P-rated programs.",
-            "order": 1
-          },
-          {
-            "certification": "C",
-            "meaning": "Programming intended for older children 5\u201314; commercial stations must show at least 30 minutes of C-rated content each weekday between 7 a.m. and 8 a.m. or between 4 p.m. and 8:30 p.m. A further 2 and a half ours a week must also be shown either within these time bands or between 7 a.m. and 8:30 p.m. on weekends and school holidays, for a total of five hours a week (averaged as 260 hours over the course of a year). C-rated content is subject to certain restrictions and limitations on advertising (typically five minutes maximum per 30-minute period or seven minutes including promotions and community announcements).",
-            "order": 2
-          },
-          {
-            "certification": "G",
-            "meaning": "For general exhibition; all ages are permitted to watch programming with this rating.",
-            "order": 3
-          },
-          {
-            "certification": "PG",
-            "meaning": "Parental guidance is recommended for young viewers; PG-rated content may air at any time on digital-only channels, otherwise, it should only be broadcast between 8:30 a.m. and 4:00 p.m. and between 7:00 p.m. and 6:00 a.m. on weekdays, and between 10:00 a.m. and 6:00 a.m. on weekends.",
-            "order": 4
-          },
-          {
-            "certification": "M",
-            "meaning": "Recommended for mature audiences; M-rated content may only be broadcast between 8:30 p.m. and 5:00 a.m. on any day, and additionally between 12:00 p.m. and 3:00 p.m. on schooldays.",
-            "order": 5
-          },
-          {
-            "certification": "MA 15\u002B",
-            "meaning": "Not suitable for children and teens under 15; MA15\u002B-rated programming may only be broadcast between 9:00 p.m. and 5:00 a.m. on any given day. Consumer advice is mandatory. Some R18\u002B rated movies on DVD/Blu-ray are often re-edited on free TV/cable channels to secure a more ",
-            "order": 6
-          },
-          {
-            "certification": "R 18\u002B",
-            "meaning": "Not for children under 18; this is limited to Adult ",
-            "order": 8
           }
         ],
         "SK": [
@@ -581,99 +560,6 @@
           {
             "certification": "18",
             "meaning": "Content exclusively for adults.",
-            "order": 5
-          }
-        ],
-        "MY": [
-          {
-            "certification": "U",
-            "meaning": "No age limit. Can be broadcast anytime.",
-            "order": 1
-          },
-          {
-            "certification": "P13",
-            "meaning": "Viewers under 13 years of age need parental/guardian supervision while viewing. Can be broadcast anytime, but some elements may only be broadcast at night.",
-            "order": 2
-          },
-          {
-            "certification": "18",
-            "meaning": "For viewers 18 and above. Cannot be broadcast before 10:00 PM.",
-            "order": 3
-          }
-        ],
-        "PT": [
-          {
-            "certification": "NR",
-            "meaning": "No rating information.",
-            "order": 0
-          },
-          {
-            "certification": "T",
-            "meaning": "Todos (suitable for all).",
-            "order": 1
-          },
-          {
-            "certification": "10",
-            "meaning": "Acompanhamento Parental (may not be suitable for children under 10, parental guidance advised).",
-            "order": 2
-          },
-          {
-            "certification": "12",
-            "meaning": "Acompanhamento Parental (may not be suitable for children under 12, parental guidance advised).",
-            "order": 3
-          },
-          {
-            "certification": "16",
-            "meaning": "Not suitable for children under 16, access to these programs is locked by a personal password.",
-            "order": 4
-          }
-        ],
-        "DK": [
-          {
-            "certification": "A",
-            "meaning": "Suitable for a general audience.",
-            "order": 1
-          },
-          {
-            "certification": "7",
-            "meaning": "Not recommended for children under 7.",
-            "order": 2
-          },
-          {
-            "certification": "11",
-            "meaning": "For ages 11 and up.",
-            "order": 3
-          },
-          {
-            "certification": "15",
-            "meaning": "For ages 15 and up.",
-            "order": 4
-          }
-        ],
-        "BG": [
-          {
-            "certification": "Unrated",
-            "meaning": "Can be viewed for each age.",
-            "order": 1
-          },
-          {
-            "certification": "12",
-            "meaning": "Content suitable for viewers over the age of 12.",
-            "order": 2
-          },
-          {
-            "certification": "14",
-            "meaning": "Content suitable for viewers over the age of 14.",
-            "order": 3
-          },
-          {
-            "certification": "16",
-            "meaning": "Content suitable for viewers over the age of 16.",
-            "order": 4
-          },
-          {
-            "certification": "18",
-            "meaning": "Content suitable for viewers over the age of 18. Not allowed before 23:00.",
             "order": 5
           }
         ],
@@ -714,107 +600,6 @@
             "order": 7
           }
         ],
-        "DE": [
-          {
-            "certification": "0",
-            "meaning": "Can be aired at any time.",
-            "order": 1
-          },
-          {
-            "certification": "6",
-            "meaning": "Can be aired at any time.",
-            "order": 2
-          },
-          {
-            "certification": "12",
-            "meaning": "The broadcaster must take the decision about the air time by taking in consideration the impact on young children in the timeframe from 6:00am to 8:00pm.",
-            "order": 3
-          },
-          {
-            "certification": "16",
-            "meaning": "Can be aired only from 10:00pm Uhr to 6:00am.",
-            "order": 4
-          },
-          {
-            "certification": "18",
-            "meaning": "Can be aired only from 11:00pm Uhr to 6:00am.",
-            "order": 5
-          }
-        ],
-        "IN": [
-          {
-            "certification": "U",
-            "meaning": "Viewable for all ages.",
-            "order": 1
-          },
-          {
-            "certification": "U/A 7\u002B",
-            "meaning": "Viewable for 7 and above years old.",
-            "order": 2
-          },
-          {
-            "certification": "U/A 13\u002B",
-            "meaning": "Viewable for 13 and above years old.",
-            "order": 3
-          },
-          {
-            "certification": "U/A 16\u002B",
-            "meaning": "Viewable for 16 and above years old.",
-            "order": 4
-          },
-          {
-            "certification": "A",
-            "meaning": "Viewable only for adults.",
-            "order": 5
-          }
-        ],
-        "ES": [
-          {
-            "certification": "NR",
-            "meaning": "No rating information.",
-            "order": 0
-          },
-          {
-            "certification": "ERI",
-            "meaning": "Specially recommended for younger children.",
-            "order": 1
-          },
-          {
-            "certification": "TP",
-            "meaning": "For general viewing.",
-            "order": 2
-          },
-          {
-            "certification": "7",
-            "meaning": "Not recommended for viewers under the age of 7.",
-            "order": 3
-          },
-          {
-            "certification": "10",
-            "meaning": "Not recommended for viewers under the age of 10.",
-            "order": 4
-          },
-          {
-            "certification": "12",
-            "meaning": "Not recommended for viewers under the age of 12.",
-            "order": 5
-          },
-          {
-            "certification": "13",
-            "meaning": "Not recommended for viewers under the age of 13.",
-            "order": 6
-          },
-          {
-            "certification": "16",
-            "meaning": "Not recommended for viewers under the age of 16.",
-            "order": 7
-          },
-          {
-            "certification": "18",
-            "meaning": "Not recommended for viewers under the age of 18.",
-            "order": 8
-          }
-        ],
         "US": [
           {
             "certification": "TV-MA",
@@ -852,6 +637,163 @@
             "order": 3
           }
         ],
+        "IT": [
+          {
+            "certification": "T",
+            "meaning": "All ages admitted.",
+            "order": 1
+          },
+          {
+            "certification": "BA",
+            "meaning": "Parental guidance suggested.",
+            "order": 2
+          },
+          {
+            "certification": "VM12",
+            "meaning": "Not recommended for children under 12.",
+            "order": 3
+          },
+          {
+            "certification": "VM14",
+            "meaning": "Not recommended for children under 14.",
+            "order": 4
+          },
+          {
+            "certification": "VM18",
+            "meaning": "Not recommended for children under 18.",
+            "order": 5
+          }
+        ],
+        "FI": [
+          {
+            "certification": "S",
+            "meaning": "Allowed at all times.",
+            "order": 0
+          },
+          {
+            "certification": "K7",
+            "meaning": "Not allowed air before 7:00 a.m., not recommended for children under 7.",
+            "order": 1
+          },
+          {
+            "certification": "K12",
+            "meaning": "Not allowed air before 5:00 p.m., not recommended for children under 12.",
+            "order": 2
+          },
+          {
+            "certification": "K16",
+            "meaning": "Not allowed air before 9:00 p.m., not recommended for children under 16.",
+            "order": 3
+          },
+          {
+            "certification": "K18",
+            "meaning": "Not allowed air before 11:00 p.m., not recommended for children under 18.",
+            "order": 4
+          }
+        ],
+        "MY": [
+          {
+            "certification": "U",
+            "meaning": "No age limit. Can be broadcast anytime.",
+            "order": 1
+          },
+          {
+            "certification": "P13",
+            "meaning": "Viewers under 13 years of age need parental/guardian supervision while viewing. Can be broadcast anytime, but some elements may only be broadcast at night.",
+            "order": 2
+          },
+          {
+            "certification": "18",
+            "meaning": "For viewers 18 and above. Cannot be broadcast before 10:00 PM.",
+            "order": 3
+          }
+        ],
+        "NZ": [
+          {
+            "certification": "G",
+            "meaning": "Approved for general viewing.",
+            "order": 1
+          },
+          {
+            "certification": "PG",
+            "meaning": "Parental Guidance recommended for younger viewers.",
+            "order": 2
+          },
+          {
+            "certification": "M",
+            "meaning": "Suitable for mature audiences 16 years and over.",
+            "order": 3
+          },
+          {
+            "certification": "16",
+            "meaning": "People under 16 years should not view.",
+            "order": 4
+          },
+          {
+            "certification": "18",
+            "meaning": "People under 18 years should not view.",
+            "order": 5
+          }
+        ],
+        "NO": [
+          {
+            "certification": "A",
+            "meaning": "Allowed at all times.",
+            "order": 1
+          },
+          {
+            "certification": "6",
+            "meaning": "Allowed at all times.",
+            "order": 2
+          },
+          {
+            "certification": "9",
+            "meaning": "Allowed at all times.",
+            "order": 3
+          },
+          {
+            "certification": "12",
+            "meaning": "Only allowed during the period 19.00 \u2013 05.30.",
+            "order": 4
+          },
+          {
+            "certification": "15",
+            "meaning": "Only allowed during the period 21.00 \u2013 05.30.",
+            "order": 5
+          },
+          {
+            "certification": "18",
+            "meaning": "Only allowed during the period 21.00 \u2013 05.30.",
+            "order": 6
+          }
+        ],
+        "BG": [
+          {
+            "certification": "Unrated",
+            "meaning": "Can be viewed for each age.",
+            "order": 1
+          },
+          {
+            "certification": "12",
+            "meaning": "Content suitable for viewers over the age of 12.",
+            "order": 2
+          },
+          {
+            "certification": "14",
+            "meaning": "Content suitable for viewers over the age of 14.",
+            "order": 3
+          },
+          {
+            "certification": "16",
+            "meaning": "Content suitable for viewers over the age of 16.",
+            "order": 4
+          },
+          {
+            "certification": "18",
+            "meaning": "Content suitable for viewers over the age of 18. Not allowed before 23:00.",
+            "order": 5
+          }
+        ],
         "MX": [
           {
             "certification": "AA",
@@ -882,6 +824,180 @@
             "certification": "D",
             "meaning": "Exclusively for adults aged 18 or older (allowed only between midnight and 05:00).",
             "order": 6
+          }
+        ],
+        "IN": [
+          {
+            "certification": "U",
+            "meaning": "Viewable for all ages.",
+            "order": 1
+          },
+          {
+            "certification": "U/A 7\u002B",
+            "meaning": "Viewable for 7 and above years old.",
+            "order": 2
+          },
+          {
+            "certification": "U/A 13\u002B",
+            "meaning": "Viewable for 13 and above years old.",
+            "order": 3
+          },
+          {
+            "certification": "U/A 16\u002B",
+            "meaning": "Viewable for 16 and above years old.",
+            "order": 4
+          },
+          {
+            "certification": "A",
+            "meaning": "Viewable only for adults.",
+            "order": 5
+          }
+        ],
+        "DK": [
+          {
+            "certification": "A",
+            "meaning": "Suitable for a general audience.",
+            "order": 1
+          },
+          {
+            "certification": "7",
+            "meaning": "Not recommended for children under 7.",
+            "order": 2
+          },
+          {
+            "certification": "11",
+            "meaning": "For ages 11 and up.",
+            "order": 3
+          },
+          {
+            "certification": "15",
+            "meaning": "For ages 15 and up.",
+            "order": 4
+          }
+        ],
+        "SE": [
+          {
+            "certification": "Btl",
+            "meaning": "",
+            "order": 1
+          },
+          {
+            "certification": "Fr\u00E5n 7 \u00E5r",
+            "meaning": "",
+            "order": 2
+          },
+          {
+            "certification": "Fr\u00E5n 11 \u00E5r",
+            "meaning": "",
+            "order": 3
+          },
+          {
+            "certification": "Fr\u00E5n 15 \u00E5r",
+            "meaning": "",
+            "order": 4
+          }
+        ],
+        "ID": [
+          {
+            "certification": "SU",
+            "meaning": "Suitable for general audiences over the age of 2 years.",
+            "order": 1
+          },
+          {
+            "certification": "P",
+            "meaning": "Suitable for pre-school children from ages 2 through 6.",
+            "order": 2
+          },
+          {
+            "certification": "A",
+            "meaning": "Suitable for children from ages 7 through 12.",
+            "order": 3
+          },
+          {
+            "certification": "R",
+            "meaning": "Suitable for teens from ages 13 through 17.",
+            "order": 4
+          },
+          {
+            "certification": "D",
+            "meaning": "Suitable for viewers over 18 and older. Programmes with this rating are aired from 10.00 PM to 03.00 AM.",
+            "order": 5
+          }
+        ],
+        "TR": [
+          {
+            "certification": "Genel \u0130zleyici",
+            "meaning": "General audience. Suitable for all ages.",
+            "order": 1
+          },
+          {
+            "certification": "7\u002B",
+            "meaning": "Suitable for ages 7 and over.",
+            "order": 2
+          },
+          {
+            "certification": "13\u002B",
+            "meaning": "Suitable for ages 13 and over.",
+            "order": 3
+          },
+          {
+            "certification": "18\u002B",
+            "meaning": "Suitable for ages 18 and over.",
+            "order": 4
+          }
+        ],
+        "AR": [
+          {
+            "certification": "ATP",
+            "meaning": "Suitable for all audiences.",
+            "order": 1
+          },
+          {
+            "certification": "SAM 13",
+            "meaning": "Suitable for ages 13 and up.",
+            "order": 2
+          },
+          {
+            "certification": "SAM 16",
+            "meaning": "Suitable for ages 16 and up.",
+            "order": 3
+          },
+          {
+            "certification": "SAM 18",
+            "meaning": "Suitable for ages 18 and up.",
+            "order": 4
+          }
+        ],
+        "PL": [
+          {
+            "certification": "0",
+            "meaning": "Positive or neutral view of the world, little to no violence, non-sexual love, and no sexual content.",
+            "order": 2
+          },
+          {
+            "certification": "7",
+            "meaning": "As above; may additionally contain some mild language, bloodless violence, and a more negative view of the world.",
+            "order": 3
+          },
+          {
+            "certification": "12",
+            "meaning": "May contain some foul language, some violence, and some sexual content.",
+            "order": 4
+          },
+          {
+            "certification": "16",
+            "meaning": "Deviant social behaviour, world filled with violence and sexuality, simplified picture of adulthood, display of physical force, especially in controversial social context (against or by parents, teachers, etc.), immoral behaviour without ethic dilemma, putting the blame on the victim, excessive concentration on material possessions.",
+            "order": 5
+          },
+          {
+            "certification": "18",
+            "meaning": "One-sided display of the joys of adult life without showing responsibilities (e.g. work), social justification of violent behaviour, excessive vulgarity, use of racial slurs and social stereotypes, explicit sexual content, praise of aggression or vulgarity, access to these programs is locked by a personal password.",
+            "order": 6
+          },
+          {
+            "certification": "AL",
+            "meaning": "No age restrictions.",
+            "order": 1
           }
         ],
         "MA": [
@@ -933,144 +1049,58 @@
             "order": 5
           }
         ],
-        "AR": [
+        "IL": [
           {
-            "certification": "ATP",
-            "meaning": "Suitable for all audiences.",
+            "certification": "E",
+            "meaning": "Exempt from classification. This rating is usually applied to live broadcasts.",
             "order": 1
           },
           {
-            "certification": "SAM 13",
-            "meaning": "Suitable for ages 13 and up.",
-            "order": 2
-          },
-          {
-            "certification": "SAM 16",
-            "meaning": "Suitable for ages 16 and up.",
-            "order": 3
-          },
-          {
-            "certification": "SAM 18",
-            "meaning": "Suitable for ages 18 and up.",
-            "order": 4
-          }
-        ],
-        "TR": [
-          {
-            "certification": "Genel \u0130zleyici",
-            "meaning": "General audience. Suitable for all ages.",
+            "certification": "G",
+            "meaning": "General Audiences. Anyone, regardless of age, can watch the programme.",
             "order": 1
-          },
-          {
-            "certification": "7\u002B",
-            "meaning": "Suitable for ages 7 and over.",
-            "order": 2
-          },
-          {
-            "certification": "13\u002B",
-            "meaning": "Suitable for ages 13 and over.",
-            "order": 3
-          },
-          {
-            "certification": "18\u002B",
-            "meaning": "Suitable for ages 18 and over.",
-            "order": 4
-          }
-        ],
-        "PL": [
-          {
-            "certification": "0",
-            "meaning": "Positive or neutral view of the world, little to no violence, non-sexual love, and no sexual content.",
-            "order": 2
-          },
-          {
-            "certification": "7",
-            "meaning": "As above; may additionally contain some mild language, bloodless violence, and a more negative view of the world.",
-            "order": 3
-          },
-          {
-            "certification": "12",
-            "meaning": "May contain some foul language, some violence, and some sexual content.",
-            "order": 4
-          },
-          {
-            "certification": "16",
-            "meaning": "Deviant social behaviour, world filled with violence and sexuality, simplified picture of adulthood, display of physical force, especially in controversial social context (against or by parents, teachers, etc.), immoral behaviour without ethic dilemma, putting the blame on the victim, excessive concentration on material possessions.",
-            "order": 5
-          },
-          {
-            "certification": "18",
-            "meaning": "One-sided display of the joys of adult life without showing responsibilities (e.g. work), social justification of violent behaviour, excessive vulgarity, use of racial slurs and social stereotypes, explicit sexual content, praise of aggression or vulgarity, access to these programs is locked by a personal password.",
-            "order": 6
-          },
-          {
-            "certification": "AL",
-            "meaning": "No age restrictions.",
-            "order": 1
-          }
-        ],
-        "ID": [
-          {
-            "certification": "SU",
-            "meaning": "Suitable for general audiences over the age of 2 years.",
-            "order": 1
-          },
-          {
-            "certification": "P",
-            "meaning": "Suitable for pre-school children from ages 2 through 6.",
-            "order": 2
-          },
-          {
-            "certification": "A",
-            "meaning": "Suitable for children from ages 7 through 12.",
-            "order": 3
-          },
-          {
-            "certification": "R",
-            "meaning": "Suitable for teens from ages 13 through 17.",
-            "order": 4
-          },
-          {
-            "certification": "D",
-            "meaning": "Suitable for viewers over 18 and older. Programmes with this rating are aired from 10.00 PM to 03.00 AM.",
-            "order": 5
-          }
-        ],
-        "CZ": [
-          {
-            "certification": "0\u002B",
-            "meaning": "Suitable for all ages.",
-            "order": 1
-          },
-          {
-            "certification": "5\u002B",
-            "meaning": "Suitable for persons aged 5 years and over.",
-            "order": 2
-          },
-          {
-            "certification": "7\u002B",
-            "meaning": "Suitable for persons aged 7 years and over.",
-            "order": 3
-          },
-          {
-            "certification": "9\u002B",
-            "meaning": "Suitable for persons aged 9 years and over.",
-            "order": 4
           },
           {
             "certification": "12\u002B",
-            "meaning": "Suitable for persons aged 12 years and over.",
-            "order": 5
+            "meaning": "Suitable for children 12 and over only.",
+            "order": 2
           },
           {
             "certification": "15\u002B",
-            "meaning": "Suitable for persons aged 15 years and over.",
-            "order": 6
+            "meaning": "Suitable for teens 15 and over only.",
+            "order": 3
           },
           {
             "certification": "18\u002B",
-            "meaning": "Suitable only for adults.",
-            "order": 7
+            "meaning": "Suitable for adults 18 and over only.",
+            "order": 4
+          }
+        ],
+        "TW": [
+          {
+            "certification": "0\u002B",
+            "meaning": "Suitable for watching by general audiences.",
+            "order": 1
+          },
+          {
+            "certification": "6\u002B",
+            "meaning": "Not suitable for viewing by children under the age of six; children over six and under the age of twelve can view if accompanied by parents, teacher or an adult relative.",
+            "order": 2
+          },
+          {
+            "certification": "12\u002B",
+            "meaning": "Not suitable for viewing by children under the age of twelve, split from the former rating Parental Guidance.",
+            "order": 3
+          },
+          {
+            "certification": "15\u002B",
+            "meaning": "Not suitable for viewing by people under the age of fifteen, split from the former rating Parental Guidance.",
+            "order": 4
+          },
+          {
+            "certification": "18\u002B",
+            "meaning": "Not suitable for viewing by people under the age of eighteen.",
+            "order": 4
           }
         ],
         "ZA": [
@@ -1105,126 +1135,35 @@
             "order": 6
           }
         ],
-        "IL": [
-          {
-            "certification": "E",
-            "meaning": "Exempt from classification. This rating is usually applied to live broadcasts.",
-            "order": 1
-          },
+        "SG": [
           {
             "certification": "G",
-            "meaning": "General Audiences. Anyone, regardless of age, can watch the programme.",
-            "order": 1
-          },
-          {
-            "certification": "12\u002B",
-            "meaning": "Suitable for children 12 and over only.",
-            "order": 2
-          },
-          {
-            "certification": "15\u002B",
-            "meaning": "Suitable for teens 15 and over only.",
-            "order": 3
-          },
-          {
-            "certification": "18\u002B",
-            "meaning": "Suitable for adults 18 and over only.",
-            "order": 4
-          }
-        ],
-        "CH": [
-          {
-            "certification": "0",
             "meaning": "",
             "order": 1
           },
           {
-            "certification": "6",
-            "meaning": "ab 6 Jahren",
-            "order": 2
-          },
-          {
-            "certification": "12",
-            "meaning": "ab 12 Jahren",
-            "order": 3
-          },
-          {
-            "certification": "16",
-            "meaning": "ab 16 Jahren",
-            "order": 4
-          },
-          {
-            "certification": "18",
-            "meaning": "ab 18 Jahren",
-            "order": 5
-          }
-        ],
-        "UA": [
-          {
-            "certification": "0\u002B",
+            "certification": "PG",
             "meaning": "",
             "order": 2
           },
           {
-            "certification": "UR",
-            "meaning": "",
-            "order": 1
-          },
-          {
-            "certification": "9\u002B",
-            "meaning": "Suitable for persons aged 9 years and over.",
-            "order": 3
-          },
-          {
-            "certification": "12\u002B",
-            "meaning": "Suitable for persons aged 12 years and over.",
-            "order": 4
-          },
-          {
-            "certification": "16\u002B",
-            "meaning": "Suitable for persons aged 16 years and over.",
-            "order": 5
-          },
-          {
-            "certification": "18\u002B",
-            "meaning": "Suitable only for adults.",
-            "order": 6
-          }
-        ],
-        "VI": [
-          {
-            "certification": "NR",
-            "meaning": "",
-            "order": 0
-          },
-          {
-            "certification": "TV-Y",
-            "meaning": "",
-            "order": 1
-          },
-          {
-            "certification": "TV-Y7",
-            "meaning": "",
-            "order": 2
-          },
-          {
-            "certification": "TV-G",
+            "certification": "PG13",
             "meaning": "",
             "order": 3
           },
           {
-            "certification": "TV-PG",
+            "certification": "NC16",
             "meaning": "",
             "order": 4
           },
           {
-            "certification": "TV-14",
+            "certification": "M18",
             "meaning": "",
             "order": 5
           },
           {
-            "certification": "TV-MA",
-            "meaning": "",
+            "certification": "R21",
+            "meaning": "Suitable for adults aged 21 and above.",
             "order": 6
           }
         ],
@@ -1265,6 +1204,43 @@
             "order": 5
           }
         ],
+        "VI": [
+          {
+            "certification": "NR",
+            "meaning": "",
+            "order": 0
+          },
+          {
+            "certification": "TV-Y",
+            "meaning": "",
+            "order": 1
+          },
+          {
+            "certification": "TV-Y7",
+            "meaning": "",
+            "order": 2
+          },
+          {
+            "certification": "TV-G",
+            "meaning": "",
+            "order": 3
+          },
+          {
+            "certification": "TV-PG",
+            "meaning": "",
+            "order": 4
+          },
+          {
+            "certification": "TV-14",
+            "meaning": "",
+            "order": 5
+          },
+          {
+            "certification": "TV-MA",
+            "meaning": "",
+            "order": 6
+          }
+        ],
         "IE": [
           {
             "certification": "G",
@@ -1297,63 +1273,31 @@
             "order": 6
           }
         ],
-        "RO": [
+        "CH": [
           {
-            "certification": "Unrated",
-            "meaning": "Programmes can be viewed by any age.",
+            "certification": "0",
+            "meaning": "",
             "order": 1
           },
           {
-            "certification": "AP",
-            "meaning": "Programmes are recommended for children with parental guidance, may not contain any violence or sexual content.",
+            "certification": "6",
+            "meaning": "ab 6 Jahren",
             "order": 2
           },
           {
             "certification": "12",
-            "meaning": "Programmes not recommended for children below the age of 12, may contain light sexual content or explicit language.",
+            "meaning": "ab 12 Jahren",
             "order": 3
           },
           {
-            "certification": "15",
-            "meaning": "Programmes not recommended for teens and children below the age of 15, may contain more intensive violence and sexual content.",
+            "certification": "16",
+            "meaning": "ab 16 Jahren",
             "order": 4
           },
           {
             "certification": "18",
-            "meaning": "The programme is recommended for adult viewers (for ages 18 and up), may contain explicit violence and explicit sexual content.",
+            "meaning": "ab 18 Jahren",
             "order": 5
-          }
-        ],
-        "SG": [
-          {
-            "certification": "G",
-            "meaning": "",
-            "order": 1
-          },
-          {
-            "certification": "PG",
-            "meaning": "",
-            "order": 2
-          },
-          {
-            "certification": "PG13",
-            "meaning": "",
-            "order": 3
-          },
-          {
-            "certification": "NC16",
-            "meaning": "",
-            "order": 4
-          },
-          {
-            "certification": "M18",
-            "meaning": "",
-            "order": 5
-          },
-          {
-            "certification": "R21",
-            "meaning": "Suitable for adults aged 21 and above.",
-            "order": 6
           }
         ],
         "AT": [
@@ -1390,6 +1334,70 @@
           {
             "certification": "16",
             "meaning": "Freigegeben ab 16 Jahren",
+            "order": 7
+          }
+        ],
+        "RO": [
+          {
+            "certification": "Unrated",
+            "meaning": "Programmes can be viewed by any age.",
+            "order": 1
+          },
+          {
+            "certification": "AP",
+            "meaning": "Programmes are recommended for children with parental guidance, may not contain any violence or sexual content.",
+            "order": 2
+          },
+          {
+            "certification": "12",
+            "meaning": "Programmes not recommended for children below the age of 12, may contain light sexual content or explicit language.",
+            "order": 3
+          },
+          {
+            "certification": "15",
+            "meaning": "Programmes not recommended for teens and children below the age of 15, may contain more intensive violence and sexual content.",
+            "order": 4
+          },
+          {
+            "certification": "18",
+            "meaning": "The programme is recommended for adult viewers (for ages 18 and up), may contain explicit violence and explicit sexual content.",
+            "order": 5
+          }
+        ],
+        "CZ": [
+          {
+            "certification": "0\u002B",
+            "meaning": "Suitable for all ages.",
+            "order": 1
+          },
+          {
+            "certification": "5\u002B",
+            "meaning": "Suitable for persons aged 5 years and over.",
+            "order": 2
+          },
+          {
+            "certification": "7\u002B",
+            "meaning": "Suitable for persons aged 7 years and over.",
+            "order": 3
+          },
+          {
+            "certification": "9\u002B",
+            "meaning": "Suitable for persons aged 9 years and over.",
+            "order": 4
+          },
+          {
+            "certification": "12\u002B",
+            "meaning": "Suitable for persons aged 12 years and over.",
+            "order": 5
+          },
+          {
+            "certification": "15\u002B",
+            "meaning": "Suitable for persons aged 15 years and over.",
+            "order": 6
+          },
+          {
+            "certification": "18\u002B",
+            "meaning": "Suitable only for adults.",
             "order": 7
           }
         ],
@@ -1430,31 +1438,36 @@
             "order": 7
           }
         ],
-        "TW": [
+        "UA": [
           {
             "certification": "0\u002B",
-            "meaning": "Suitable for watching by general audiences.",
-            "order": 1
-          },
-          {
-            "certification": "6\u002B",
-            "meaning": "Not suitable for viewing by children under the age of six; children over six and under the age of twelve can view if accompanied by parents, teacher or an adult relative.",
+            "meaning": "",
             "order": 2
           },
           {
-            "certification": "12\u002B",
-            "meaning": "Not suitable for viewing by children under the age of twelve, split from the former rating Parental Guidance.",
+            "certification": "UR",
+            "meaning": "",
+            "order": 1
+          },
+          {
+            "certification": "9\u002B",
+            "meaning": "Suitable for persons aged 9 years and over.",
             "order": 3
           },
           {
-            "certification": "15\u002B",
-            "meaning": "Not suitable for viewing by people under the age of fifteen, split from the former rating Parental Guidance.",
+            "certification": "12\u002B",
+            "meaning": "Suitable for persons aged 12 years and over.",
             "order": 4
           },
           {
+            "certification": "16\u002B",
+            "meaning": "Suitable for persons aged 16 years and over.",
+            "order": 5
+          },
+          {
             "certification": "18\u002B",
-            "meaning": "Not suitable for viewing by people under the age of eighteen.",
-            "order": 4
+            "meaning": "Suitable only for adults.",
+            "order": 6
           }
         ],
         "LU": [
@@ -1528,15 +1541,16 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
       "x-az": "us-east-1c",
-      "ETag": "W/\u002238ab5641addbed4d598562dcd0dcce7e\u0022",
+      "ETag": "W/\u002240ca3327b52c14bda4ac96a7cd3ced7c\u0022",
       "Cache-Control": "must-revalidate, max-age=0, private",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

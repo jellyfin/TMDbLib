@@ -1,6 +1,6 @@
 {
   "Guid": "914a05b2-a39b-694c-be0a-f4e85fea497f",
-  "UpdatedAt": "2025-12-24T18:45:20.5605501Z",
+  "UpdatedAt": "2026-05-24T16:19:42.601788Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/recommendations",
   "Description": "Proxy Mapping for GET /3/movie/47964/recommendations",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -26,400 +39,45 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/djSAd6HUm66eVNC3PiZbYwOpD5A.jpg",
-          "id": 81005,
-          "title": "Jack the Giant Slayer",
-          "original_title": "Jack the Giant Slayer",
-          "overview": "The story of an ancient war that is reignited when a young farmhand unwittingly opens a gateway between our world and a fearsome race of giants. Unleashed on the Earth for the first time in centuries, the giants strive to reclaim the land they once lost, forcing the young man, Jack into the battle of his life to stop them. Fighting for a kingdom, its people, and the love of a brave princess, he comes face to face with the unstoppable warriors he thought only existed in legend\u2013and gets the chance to become a legend himself.",
-          "poster_path": "/9jSI7saUX9Qz0JLh19jX2ulEwL7.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            14,
-            28,
-            12,
-            18
-          ],
-          "popularity": 10.0552,
-          "release_date": "2013-02-27",
-          "video": false,
-          "vote_average": 5.867,
-          "vote_count": 5098
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/e9XpCB9XoTSvek6O7PNvJMhSlIK.jpg",
-          "id": 49051,
-          "title": "The Hobbit: An Unexpected Journey",
-          "original_title": "The Hobbit: An Unexpected Journey",
-          "overview": "Bilbo Baggins, a hobbit enjoying his quiet life, is swept into an epic quest by Gandalf the Grey and thirteen dwarves who seek to reclaim their mountain home from Smaug, the dragon.",
-          "poster_path": "/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            12,
-            14,
-            28
-          ],
-          "popularity": 14.0233,
-          "release_date": "2012-12-12",
-          "video": false,
-          "vote_average": 7.365,
-          "vote_count": 19156
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
-          "id": 24428,
-          "title": "The Avengers",
-          "original_title": "The Avengers",
-          "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
-          "poster_path": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            878,
-            28,
-            12
-          ],
-          "popularity": 49.8791,
-          "release_date": "2012-04-25",
-          "video": false,
-          "vote_average": 7.881,
-          "vote_count": 34579
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/mjYU7EwVeOtM39ArdWHZk78VhYm.jpg",
-          "id": 117263,
-          "title": "Olympus Has Fallen",
-          "original_title": "Olympus Has Fallen",
-          "overview": "When the White House (Secret Service Code: \u0022Olympus\u0022) is captured by a terrorist mastermind and the President is kidnapped, disgraced former Presidential guard Mike Banning finds himself trapped within the building. As the national security team scrambles to respond, they are forced to rely on Banning\u0027s inside knowledge to help retake the White House, save the President and avert an even bigger disaster.",
-          "poster_path": "/u3GTFGwesNBNd0t1hiLaEk1iqZU.jpg",
+          "backdrop_path": "/lBsbWXGn9maPKGhN3fozTU3BH0r.jpg",
+          "id": 757725,
+          "title": "Shadow Force",
+          "original_title": "Shadow Force",
+          "overview": "Kyrah and Isaac were once the leaders of a multinational special forces group called Shadow Force. They broke the rules by falling in love, and in order to protect their son, they go underground. With a large bounty on their heads, and the vengeful Shadow Force hot on their trail, one family\u0027s fight becomes all-out war.",
+          "poster_path": "/9LCpHFXZgkqp2AWiYq0mGbfZauk.jpg",
           "media_type": "movie",
           "original_language": "en",
           "genre_ids": [
             28,
             53
           ],
-          "popularity": 9.0655,
-          "release_date": "2013-03-20",
+          "popularity": 3.7567,
+          "release_date": "2025-05-01",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.414,
-          "vote_count": 6895
+          "vote_average": 6.36,
+          "vote_count": 296
         },
         {
           "adult": false,
-          "backdrop_path": "/mJSe5dxKu8Sq0GfdjdWVqdGvzfV.jpg",
-          "id": 60304,
-          "title": "Hansel \u0026 Gretel: Witch Hunters",
-          "original_title": "Hansel \u0026 Gretel: Witch Hunters",
-          "overview": "After getting a taste for blood as children, Hansel and Gretel have become the ultimate vigilantes, hell-bent on retribution. Now, unbeknownst to them, Hansel and Gretel have become the hunted, and must face an evil far greater than witches... their past.",
-          "poster_path": "/j343Rpj3WeNvP0SV80zveve70io.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            14,
-            27,
-            28
-          ],
-          "popularity": 4.6358,
-          "release_date": "2013-01-17",
-          "video": false,
-          "vote_average": 6.094,
-          "vote_count": 6963
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/aRqTPOPt8BOHE0ngppM9jnuuaeS.jpg",
-          "id": 1571,
-          "title": "Live Free or Die Hard",
-          "original_title": "Live Free or Die Hard",
-          "overview": "John McClane is back and badder than ever, and this time he calls on the services of a young hacker in his bid to stop a ring of Internet terrorists intent on taking control of America\u0027s computer infrastructure.",
-          "poster_path": "/31TT47YjBl7a7uvJ3ff1nrirXhP.jpg",
+          "backdrop_path": "/27Mj3rFYP3xqFy7lnz17vEd8Ms.jpg",
+          "id": 725201,
+          "title": "The Gray Man",
+          "original_title": "The Gray Man",
+          "overview": "When a shadowy CIA agent uncovers damning agency secrets, he\u0027s hunted across the globe by a sociopathic rogue operative who\u0027s put a bounty on his head.",
+          "poster_path": "/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg",
           "media_type": "movie",
           "original_language": "en",
           "genre_ids": [
             28,
             53
           ],
-          "popularity": 9.1808,
-          "release_date": "2007-06-20",
+          "popularity": 9.0614,
+          "release_date": "2022-07-13",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.634,
-          "vote_count": 6151
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/n2eUT4zQA2yYcKOgAFidgOyiFoH.jpg",
-          "id": 68718,
-          "title": "Django Unchained",
-          "original_title": "Django Unchained",
-          "overview": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
-          "poster_path": "/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            18,
-            37
-          ],
-          "popularity": 14.7117,
-          "release_date": "2012-12-25",
-          "video": false,
-          "vote_average": 8.2,
-          "vote_count": 27340
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/fOipappvgVtUbbHOtmCkHzcwJjC.jpg",
-          "id": 93456,
-          "title": "Despicable Me 2",
-          "original_title": "Despicable Me 2",
-          "overview": "Gru is recruited by the Anti-Villain League to help deal with a powerful new super criminal.",
-          "poster_path": "/5Fh4NdoEnCjCK9wLjdJ9DJNFl2b.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            16,
-            35,
-            10751
-          ],
-          "popularity": 8.2226,
-          "release_date": "2013-06-26",
-          "video": false,
-          "vote_average": 6.938,
-          "vote_count": 11744
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/o6TYNmB1CT85j7lmyvSedoybyc9.jpg",
-          "id": 68728,
-          "title": "Oz the Great and Powerful",
-          "original_title": "Oz the Great and Powerful",
-          "overview": "Oscar Diggs, a small-time circus illusionist and con-artist, is whisked from Kansas to the Land of Oz where the inhabitants assume he\u0027s the great wizard of prophecy, there to save Oz from the clutches of evil.",
-          "poster_path": "/tkzfAUEKoUp4YFNbZV9hfpZOz0z.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            14,
-            12,
-            10751
-          ],
-          "popularity": 5.1852,
-          "release_date": "2013-03-07",
-          "video": false,
-          "vote_average": 5.929,
-          "vote_count": 6693
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/iVped1djsF0tvGkvnHbzsE3ZPTF.jpg",
-          "id": 68721,
-          "title": "Iron Man 3",
-          "original_title": "Iron Man 3",
-          "overview": "When Tony Stark\u0027s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
-          "poster_path": "/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            28,
-            12,
-            878
-          ],
-          "popularity": 17.718,
-          "release_date": "2013-04-18",
-          "video": false,
-          "vote_average": 6.93,
-          "vote_count": 22993
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/7JNzw1tSZZEgsBw6lu0VfO2X2Ef.jpg",
-          "id": 19995,
-          "title": "Avatar",
-          "original_title": "Avatar",
-          "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
-          "poster_path": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            28,
-            12,
-            14,
-            878
-          ],
-          "popularity": 111.795,
-          "release_date": "2009-12-16",
-          "video": false,
-          "vote_average": 7.597,
-          "vote_count": 33012
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/pEhXq18GVe1dg2ltplcxtGWfSje.jpg",
-          "id": 72559,
-          "title": "G.I. Joe: Retaliation",
-          "original_title": "G.I. Joe: Retaliation",
-          "overview": "Framed for crimes against the country, the G.I. Joe team is terminated by Presidential order. This forces the G.I. Joes into not only fighting their mortal enemy Cobra; they are forced to contend with threats from within the government that jeopardize their very existence.",
-          "poster_path": "/3rWIZMzTKcCtV0eHJ70Z4Ru659f.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            28,
-            878,
-            12,
-            53
-          ],
-          "popularity": 5.5912,
-          "release_date": "2013-03-27",
-          "video": false,
-          "vote_average": 5.651,
-          "vote_count": 5660
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/cDtefl7KGnKrDziEUXetMnztvqr.jpg",
-          "id": 1573,
-          "title": "Die Hard 2",
-          "original_title": "Die Hard 2",
-          "overview": "One year after his heroics in Los Angeles, John McClane is an off-duty cop who is the wrong guy in the wrong place at the wrong time. On a snowy Christmas Eve, as he waits for his wife\u0027s plane to land at Washington Dulles International Airport, terrorists take over the air traffic control system in a plot to free a South American army general and drug smuggler being flown into the US to face drug charges. It\u0027s now up to McClane to take on the terrorists, while coping with an inept airport police chief, an uncooperative anti-terrorist squad, and the life of his wife and everyone else trapped in planes circling overhead.",
-          "poster_path": "/ybki0UWO3OPhaM6MSniuKC7sy1R.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            28,
-            53
-          ],
-          "popularity": 10.6652,
-          "release_date": "1990-07-03",
-          "video": false,
-          "vote_average": 6.961,
-          "vote_count": 6175
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/8oeXbjMtaYYGgjJl9RJNe7umkuS.jpg",
-          "id": 87827,
-          "title": "Life of Pi",
-          "original_title": "Life of Pi",
-          "overview": "The story of an Indian boy named Pi, a zookeeper\u0027s son who finds himself in the company of a hyena, zebra, orangutan, and a Bengal tiger after a shipwreck sets them adrift in the Pacific Ocean.",
-          "poster_path": "/iLgRu4hhSr6V1uManX6ukDriiSc.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            12,
-            18
-          ],
-          "popularity": 4.6961,
-          "release_date": "2012-11-20",
-          "video": false,
-          "vote_average": 7.405,
-          "vote_count": 13516
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/vBuw223bR0jeI3GHMfCjNBCGo6.jpg",
-          "id": 119283,
-          "title": "Parker",
-          "original_title": "Parker",
-          "overview": "A thief with a unique code of professional ethics is double-crossed by his crew and left for dead. Assuming a new disguise and forming an unlikely alliance with a woman on the inside, he looks to hijack the score of the crew\u0027s latest heist.",
-          "poster_path": "/ocTaizFzASVPClHsx6VRBi5yP9Z.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            28,
-            80
-          ],
-          "popularity": 3.8943,
-          "release_date": "2013-01-23",
-          "video": false,
-          "vote_average": 6.1,
-          "vote_count": 3183
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/3sndNmvdF0R8AeyCmVoNv8LKtNy.jpg",
-          "id": 70160,
-          "title": "The Hunger Games",
-          "original_title": "The Hunger Games",
-          "overview": "In a dystopian society where the Capitol forces each district to send two young tributes to fight to the death in a televised spectacle, a girl volunteers to take her sister\u2019s place, setting the stage for a struggle of survival and defiance.",
-          "poster_path": "/yXCbOiVDCxO71zI7cuwBRXdftq8.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            878,
-            12,
-            28,
-            53
-          ],
-          "popularity": 7.1828,
-          "release_date": "2012-03-12",
-          "video": false,
-          "vote_average": 7.221,
-          "vote_count": 22851
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9jih8et3fkd0Zdo4NHf3cnPj05Z.jpg",
-          "id": 158011,
-          "title": "The Call",
-          "original_title": "The Call",
-          "overview": "Jordan Turner is an experienced 911 operator but when she makes an error in judgment and a call ends badly, Jordan is rattled and unsure if she can continue. But when teenager Casey Welson is abducted in the back of a man\u0027s car and calls 911, Jordan is the one called upon to use all of her experience, insights and quick thinking to help Casey escape, and not just to save her, but to make sure the man is brought to justice.",
-          "poster_path": "/mG334OlDVJpD8gMfTCM2Mpp0gQH.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            80,
-            53
-          ],
-          "popularity": 2.4986,
-          "release_date": "2013-03-14",
-          "video": false,
-          "vote_average": 6.793,
-          "vote_count": 2990
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/oqxCzAO8sn1rSco2Pc19DlitgEn.jpg",
-          "id": 82992,
-          "title": "Fast \u0026 Furious 6",
-          "original_title": "Fast \u0026 Furious 6",
-          "overview": "Hobbs has Dominic and Brian reassemble their crew to take down a team of mercenaries; Dominic unexpectedly gets sidetracked with facing his presumed deceased girlfriend, Letty.",
-          "poster_path": "/thSmnRdrzPBBospIOJjLZBReqzo.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            28,
-            53,
-            80
-          ],
-          "popularity": 1.0567,
-          "release_date": "2013-05-21",
-          "video": false,
-          "vote_average": 6.816,
-          "vote_count": 10960
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/gd2vQT8uMf1FAsiC0OdewL7XUFR.jpg",
-          "id": 146216,
-          "title": "RED 2",
-          "original_title": "RED 2",
-          "overview": "Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.",
-          "poster_path": "/tbksijr6g340yFWRgI4JfwrtM9h.jpg",
-          "media_type": "movie",
-          "original_language": "en",
-          "genre_ids": [
-            28,
-            35,
-            80,
-            53
-          ],
-          "popularity": 8.1079,
-          "release_date": "2013-07-18",
-          "video": false,
-          "vote_average": 6.529,
-          "vote_count": 4212
+          "vote_average": 6.901,
+          "vote_count": 4213
         },
         {
           "adult": false,
@@ -432,36 +90,409 @@
           "media_type": "movie",
           "original_language": "en",
           "genre_ids": [
-            53,
+            28,
             18,
+            53
+          ],
+          "popularity": 4.4026,
+          "release_date": "2013-02-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 2481
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/p5z5X3GRnaFEqgtEa7fiGhgtUkA.jpg",
+          "id": 7304,
+          "title": "Running Scared",
+          "original_title": "Running Scared",
+          "overview": "A low-ranking thug is entrusted by his boss to dispose of a gun that killed corrupt cops, but things spiral out of control when the gun ends up in wrong hands.",
+          "poster_path": "/f2LU6M8wFmt6G1fzv9JFWbIkRd9.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80,
+            18,
+            53
+          ],
+          "popularity": 2.5434,
+          "release_date": "2006-01-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.988,
+          "vote_count": 1153
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8TLkiYAUwEXInVCJ3cQVyZXChyZ.jpg",
+          "id": 717930,
+          "title": "Kandahar",
+          "original_title": "Kandahar",
+          "overview": "After his mission is exposed, an undercover CIA operative stuck deep in hostile territory in Afghanistan must fight his way out, alongside his Afghan translator, to an extraction point in Kandahar, all whilst avoiding elite enemy forces and foreign spies tasked with hunting them down.",
+          "poster_path": "/lCanGgsqF4xD2WA5NF8PWeT3IXd.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53,
+            10752
+          ],
+          "popularity": 4.5206,
+          "release_date": "2023-05-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.771,
+          "vote_count": 1237
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ozIxT9hpvAW9nPHksJlKyptNzFs.jpg",
+          "id": 1093995,
+          "title": "Chief of Station",
+          "original_title": "Chief of Station",
+          "overview": "After learning that the death of his wife was not an accident, a former CIA Station Chief is forced back into the espionage underworld, teaming up with an adversary to unravel a conspiracy that challenges everything he thought he knew.",
+          "poster_path": "/bammLc9ixvwx1qFoWdkSK2rIwGT.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 2.939,
+          "release_date": "2024-05-02",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 233
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tsSWHgaFlzzkp3o976juBZbmcs2.jpg",
+          "id": 754,
+          "title": "Face/Off",
+          "original_title": "Face/Off",
+          "overview": "In order to foil a terrorist plot, an FBI agent undergoes facial transplant surgery and assumes the identity of a criminal mastermind. The plan turns sour when the criminal wakes up prematurely and seeks revenge.",
+          "poster_path": "/69Xzn8UdPbVnmqSChKz2RTpoNfB.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80,
+            878
+          ],
+          "popularity": 9.8458,
+          "release_date": "1997-06-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.054,
+          "vote_count": 5884
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kutrMwSVEcGFn5F0fUJYYRPzuxn.jpg",
+          "id": 1048241,
+          "title": "My Spy The Eternal City",
+          "original_title": "My Spy The Eternal City",
+          "overview": "JJ, a veteran CIA agent, reunites with his prot\u00E9g\u00E9 Sophie, in order to prevent a catastrophic nuclear plot targeting the Vatican.",
+          "poster_path": "/fRBfkzSrcyrnUfVgpEtTurEEiac.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            35,
+            10751
+          ],
+          "popularity": 4.0515,
+          "release_date": "2024-07-18",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 462
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sGqqnvOqJg2HDHrjtCPIlCwF4Mu.jpg",
+          "id": 423204,
+          "title": "Angel Has Fallen",
+          "original_title": "Angel Has Fallen",
+          "overview": "After a treacherous attack, Secret Service agent Mike Banning is charged with attempting to assassinate President Trumbull. Chased by his own colleagues and the FBI, Banning begins a race against the clock to clear his name.",
+          "poster_path": "/fapXd3v9qTcNBTm39ZC4KUVQDNf.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 7.91,
+          "release_date": "2019-08-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.604,
+          "vote_count": 3877
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/61MrK5U4w4MVL1vfwoG12zYPJ8B.jpg",
+          "id": 615457,
+          "title": "Nobody",
+          "original_title": "Nobody",
+          "overview": "Hutch Mansell, a suburban dad, overlooked husband, nothing neighbor \u2014 a \u0022nobody.\u0022 When two thieves break into his home one night, Hutch\u0027s unknown long-simmering rage is ignited and propels him on a brutal path that will uncover dark secrets he fought to leave behind.",
+          "poster_path": "/oBgWY00bEFeZ9N25wWVyuQddbAo.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 13.4835,
+          "release_date": "2021-03-18",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.879,
+          "vote_count": 8319
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qFVv6qw6LqotUQofdwKSvxJfLnu.jpg",
+          "id": 254904,
+          "title": "The November Man",
+          "original_title": "The November Man",
+          "overview": "An ex-CIA operative is brought back in on a very personal mission and finds himself pitted against his former pupil in a deadly game involving high level CIA officials and the Russian president-elect.",
+          "poster_path": "/4ejNFbCgLMDAuy7jFQmc7cr6UAW.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            80,
+            28,
+            53
+          ],
+          "popularity": 3.049,
+          "release_date": "2014-08-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.108,
+          "vote_count": 1598
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fcjOngTcwB2DurqKP2vwMs6qsTl.jpg",
+          "id": 500922,
+          "title": "A Score to Settle",
+          "original_title": "A Score to Settle",
+          "overview": "A former mob enforcer who is released from prison after serving 22 years for a crime he didn\u0027t commit sets out on a path for revenge against the people who wronged him.",
+          "poster_path": "/7LwB71jzfmbweqYvNGCHNXnwedo.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80,
+            18,
+            53
+          ],
+          "popularity": 2.1472,
+          "release_date": "2019-08-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.842,
+          "vote_count": 522
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/b5IB4VGjR818tTNcCLHQCIFwQmW.jpg",
+          "id": 10431,
+          "title": "War",
+          "original_title": "War",
+          "overview": "FBI agent Jack Crawford is out for revenge when his partner is killed and all clues point to the mysterious assassin Rogue. But when Rogue turns up years later to take care of some unfinished business, he triggers a violent clash of rival gangs. Will the truth come out before it\u0027s too late? And when the dust settles, who will remain standing?",
+          "poster_path": "/scFc8RD4sFxB2x0eIOaymphMnYh.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "popularity": 7.3116,
+          "release_date": "2007-08-24",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.397,
+          "vote_count": 2040
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yheWWmGBLEf7lTePzl6cmXDOjEK.jpg",
+          "id": 22090,
+          "title": "Telefon",
+          "original_title": "Telefon",
+          "overview": "Nicolai Dalchimski, a mad KGB agent steals a notebook full of names of \u0022sleeping\u0022 undercover KGB agents sent to the U.S. in the 1950\u0027s. These agents got their assignments under hypnosis, so they can\u0027t remember their missions until they\u0027re told a line of a Robert Frost poem. Dalchimski flees to the U.S. and starts phoning these agents who perform sabotage acts against military targets.",
+          "poster_path": "/dryfRzxf9lFuLI8UPJnjSoa3QxZ.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            53,
+            28,
+            80
+          ],
+          "popularity": 1.5188,
+          "release_date": "1977-12-16",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.654,
+          "vote_count": 130
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7u6fQagw5BON5Xvg82MuPJ2REGB.jpg",
+          "id": 976734,
+          "title": "Canary Black",
+          "original_title": "Canary Black",
+          "overview": "Top level CIA agent Avery Graves is blackmailed by terrorists into betraying her own country to save her kidnapped husband. Cut off from her team, she turns to her underworld contacts to survive and help locate the coveted intelligence that the kidnappers want.",
+          "poster_path": "/hhiR6uUbTYYvKoACkdAIQPS5c6f.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "popularity": 4.2967,
+          "release_date": "2024-10-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.221,
+          "vote_count": 490
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rlnmgMp5tE8Roqb96bRV6rdfYte.jpg",
+          "id": 45817,
+          "title": "The Kremlin Letter",
+          "original_title": "The Kremlin Letter",
+          "overview": "After an unauthorized letter suggesting U.S. support for a Russian attack on China is sent to Moscow, a former naval officer and his team go undercover to retrieve it. Their plans are disrupted when a cunning politician raids their hideout.",
+          "poster_path": "/wSxhK4AJTupQIiODuhfxR2YqUE.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            53,
             28
           ],
-          "popularity": 2.5002,
-          "release_date": "2013-02-21",
+          "popularity": 0.908,
+          "release_date": "1970-02-01",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.123,
-          "vote_count": 2430
+          "vote_average": 6.0,
+          "vote_count": 46
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7RwAE11n2nd5pSqI9mCk4tPaEtM.jpg",
+          "id": 27576,
+          "title": "Salt",
+          "original_title": "Salt",
+          "overview": "As a CIA officer, Evelyn Salt swore an oath to duty, honor, and country. Her loyalty will be tested when a Russian defector accuses her of being a Russian sleeper spy. She goes on the run, using all her skills and years of experience as a covert operative to elude capture, protect her husband, and stay one step ahead of her colleagues at the CIA. Her efforts to prove her innocence only serve to cast doubt on her motives, as the hunt to uncover the truth behind her identity continues and the question remains: \u0022Who is Salt?\u0022",
+          "poster_path": "/kqeIJG7VjwkcTR26QHg8D01x8yI.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            9648,
+            53
+          ],
+          "popularity": 6.441,
+          "release_date": "2010-07-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.416,
+          "vote_count": 5921
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cOEd8b4lBqVIriNTMuhEi3nelZC.jpg",
+          "id": 106021,
+          "title": "Erased",
+          "original_title": "Erased",
+          "overview": "A former agent of the CIA and his estranged daughter go on the run after his employers target them for assassination.",
+          "poster_path": "/42OvgvP795xTfVINk48PAYWEFt7.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 2.6775,
+          "release_date": "2012-08-23",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.073,
+          "vote_count": 790
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cVzAhirOhKh91AB1TFcGn0Rh5c3.jpg",
+          "id": 1208561,
+          "title": "Art of Eight Limbs",
+          "original_title": "Art of Eight Limbs",
+          "overview": "Four canisters of deadly VX nerve gas have fallen into the hands of an international arms dealer in Myanmar. A CIA recruit delivers a high-tech detection device to an agent already on the ground.",
+          "poster_path": "/tZRypLd2SU3Eeqg5tD5cwkk5CdL.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 1.558,
+          "release_date": "2024-08-16",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.442,
+          "vote_count": 43
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7rKyFSg6SdLoCRCVoWLjL5k658k.jpg",
+          "id": 668489,
+          "title": "Havoc",
+          "original_title": "Havoc",
+          "overview": "When a drug heist swerves lethally out of control, a jaded cop fights his way through a corrupt city\u0027s criminal underworld to save a politician\u0027s son.",
+          "poster_path": "/r46leE6PSzLR3pnVzaxx5Q30yUF.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80,
+            53,
+            18
+          ],
+          "popularity": 9.1529,
+          "release_date": "2025-04-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.369,
+          "vote_count": 1217
         }
       ],
-      "total_pages": 2,
-      "total_results": 40
+      "total_pages": 49,
+      "total_results": 966
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=5195",
+      "X-Gateway-Cache-Status": "MISS",
       "x-memc": "HIT",
       "x-memc-key": "e80c9c581ab9025530939cc45c6ca16c64a21b9d4c86d9f149a5997ee7cec1dd",
       "x-az": "us-east-1a",
-      "ETag": "W/\u002291243c439b8600430fbd4dfe7e5e5954\u0022",
+      "Cache-Control": "public, max-age=0",
+      "ETag": "W/\u002292f76ef216d3df89308d544057bd3b49\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "RefreshHit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

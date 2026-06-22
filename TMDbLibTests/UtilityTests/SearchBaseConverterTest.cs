@@ -88,7 +88,7 @@ public class SearchBaseConverterTest : TestBase
     public async Task TestSearchBaseConverter()
     {
         await TestHelpers.SearchPagesAsync(i => TMDbClient.SearchMultiAsync("Jobs", i));
-        var result = await TMDbClient.SearchMultiAsync("Jobs");
+        var result = await TMDbClient.SearchMultiAsync("Jobs", cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.NotNull(result.Results);

@@ -1,6 +1,6 @@
 {
   "Guid": "535fe2a1-e4c4-6741-93fe-e52a03b0d485",
-  "UpdatedAt": "2025-12-24T18:45:20.6714456Z",
+  "UpdatedAt": "2026-05-24T16:19:42.811758Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/videos",
   "Description": "Proxy Mapping for GET /3/tv/1396/videos",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -29,12 +42,12 @@
           "iso_3166_1": "US",
           "name": "Series Trailer",
           "key": "XZ8daibM3AE",
-          "published_at": "2013-03-25T16:28:54.000Z",
           "site": "YouTube",
           "size": 480,
           "type": "Trailer",
           "official": true,
-          "id": "5759db2fc3a3683e7c003df7"
+          "id": "5759db2fc3a3683e7c003df7",
+          "published_at": "2013-03-25T16:28:54.000Z"
         }
       ]
     },
@@ -42,19 +55,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022baa7099fde1149509c8de6a3103f50df\u0022",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "4304a339e6d32fbc96076632361884959e3dbb519be5e668a36ab699e47493b9",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=12091",
-      "ETag": "W/\u0022c057e28bc9d69aa5c71a29fa8c55ce84\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=12703",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }
