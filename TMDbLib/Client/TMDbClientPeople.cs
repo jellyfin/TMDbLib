@@ -51,12 +51,12 @@ public partial class TMDbClient
 
         if (startDate.HasValue)
         {
-            req.AddParameter("startDate", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
+            req.AddParameter("start_date", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         if (endDate is not null)
         {
-            req.AddParameter("endDate", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
+            req.AddParameter("end_date", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -65,10 +65,10 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves the most recently created person on TMDb.
+    /// Gets the most recently created person on TMDb.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The latest person added to TMDb.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The latest person.</returns>
     public async Task<Person?> GetLatestPersonAsync(CancellationToken cancellationToken = default)
     {
         var req = _client.Create("person/latest");
@@ -79,12 +79,12 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a person by TMDb id using the default language.
+    /// Gets a person by id.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="extraMethods">A list of additional methods to execute for this request as enum flags.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The requested person or null if not found.</returns>
+    /// <param name="extraMethods">Additional methods to append to the response.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person, or null if not found.</returns>
     public async Task<Person?> GetPersonAsync(
         int personId,
         PersonMethods extraMethods = PersonMethods.Undefined,
@@ -94,13 +94,13 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves a person by TMDb id with specific language settings.
+    /// Gets a person by id in a specific language.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="extraMethods">A list of additional methods to execute for this request as enum flags.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The requested person or null if not found.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="extraMethods">Additional methods to append to the response.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person, or null if not found.</returns>
     public async Task<Person?> GetPersonAsync(int personId, string? language, PersonMethods extraMethods = PersonMethods.Undefined, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("person/{personId}");
@@ -161,34 +161,34 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves external IDs for a person (IMDB, Facebook, Twitter, Instagram, etc.).
+    /// Gets the external ids for a person (IMDb, Facebook, Twitter, Instagram, etc.).
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>An object containing all known external IDs for the person.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's external ids.</returns>
     public async Task<ExternalIdsPerson?> GetPersonExternalIdsAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<ExternalIdsPerson>(personId, PersonMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves profile images for a person.
+    /// Gets the profile images for a person.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The profile images for the person.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's profile images.</returns>
     public async Task<ProfileImages?> GetPersonImagesAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<ProfileImages>(personId, PersonMethods.Images, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves a list of popular people.
+    /// Gets the list of popular people.
     /// </summary>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with popular people.</returns>
+    /// <param name="page">The page number.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The popular people.</returns>
     public async Task<SearchContainer<SearchPerson>?> GetPersonPopularListAsync(int page = 0, string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("person/popular");
@@ -209,105 +209,105 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves movie credits for a person using the default language.
+    /// Gets the movie credits for a person.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>Movie credits including cast and crew roles for the person.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's movie credits.</returns>
     public async Task<MovieCredits?> GetPersonMovieCreditsAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonMovieCreditsAsync(personId, DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves movie credits for a person with specific language settings.
+    /// Gets the movie credits for a person in a specific language.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>Movie credits including cast and crew roles for the person.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's movie credits.</returns>
     public async Task<MovieCredits?> GetPersonMovieCreditsAsync(int personId, string? language, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<MovieCredits>(personId, PersonMethods.MovieCredits, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves tagged images for a person using the default language.
+    /// Gets the tagged images for a person.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with tagged images featuring the person.</returns>
+    /// <param name="page">The page number.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The tagged images featuring the person.</returns>
     public async Task<SearchContainerWithId<TaggedImage>?> GetPersonTaggedImagesAsync(int personId, int page, CancellationToken cancellationToken = default)
     {
         return await GetPersonTaggedImagesAsync(personId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves tagged images for a person with specific language settings.
+    /// Gets the tagged images for a person in a specific language.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="page">The page number of results to retrieve.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A search container with tagged images featuring the person.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The tagged images featuring the person.</returns>
     public async Task<SearchContainerWithId<TaggedImage>?> GetPersonTaggedImagesAsync(int personId, string? language, int page, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<SearchContainerWithId<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves TV show credits for a person using the default language.
+    /// Gets the TV credits for a person.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>TV show credits including cast and crew roles for the person.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's TV credits.</returns>
     public async Task<TvCredits?> GetPersonTvCreditsAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonTvCreditsAsync(personId, DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves TV show credits for a person with specific language settings.
+    /// Gets the TV credits for a person in a specific language.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>TV show credits including cast and crew roles for the person.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's TV credits.</returns>
     public async Task<TvCredits?> GetPersonTvCreditsAsync(int personId, string? language, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<TvCredits>(personId, PersonMethods.TvCredits, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves available translations for a person.
+    /// Gets the available translations for a person.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A container with translation information for the person.</returns>
-    public async Task<TranslationsContainer?> GePersonTranslationsAsync(int personId, CancellationToken cancellationToken = default)
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's translations.</returns>
+    public async Task<TranslationsContainer?> GetPersonTranslationsAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<TranslationsContainer>(personId, PersonMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves combined movie and TV credits for a person using the default language.
+    /// Gets the combined movie and TV credits for a person.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>Combined credits including both movie and TV cast/crew roles for the person.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's combined credits.</returns>
     public async Task<CombinedCredits?> GetPersonCombinedCreditsAsync(int personId, CancellationToken cancellationToken = default)
     {
         return await GetPersonCombinedCreditsAsync(personId, DefaultLanguage, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves combined movie and TV credits for a person with specific language settings.
+    /// Gets the combined movie and TV credits for a person in a specific language.
     /// </summary>
     /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>Combined credits including both movie and TV cast/crew roles for the person.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The person's combined credits.</returns>
     public async Task<CombinedCredits?> GetPersonCombinedCreditsAsync(int personId, string? language, CancellationToken cancellationToken = default)
     {
         return await GetPersonMethodInternal<CombinedCredits>(personId, PersonMethods.CombinedCredits, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);

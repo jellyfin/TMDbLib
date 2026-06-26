@@ -1,6 +1,6 @@
 {
   "Guid": "fa620ebf-73ff-cc4c-8974-55b5626afe48",
-  "UpdatedAt": "2025-12-24T18:45:16.8520322Z",
+  "UpdatedAt": "2026-05-24T16:19:42.526263Z",
   "Title": "Proxy Mapping for GET /3/search/keyword",
   "Description": "Proxy Mapping for GET /3/search/keyword",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -47,12 +60,68 @@
       "page": 2,
       "results": [
         {
-          "id": 332084,
-          "name": "plot oriented"
+          "id": 373440,
+          "name": "plot twists"
         },
         {
           "id": 349354,
           "name": "mini-plot"
+        },
+        {
+          "id": 364454,
+          "name": "plot twist (reviravolta)."
+        },
+        {
+          "id": 300425,
+          "name": "children centered plot"
+        },
+        {
+          "id": 208388,
+          "name": "plot to kill"
+        },
+        {
+          "id": 366552,
+          "name": "female centred plot"
+        },
+        {
+          "id": 375630,
+          "name": "female centered plot"
+        },
+        {
+          "id": 3203,
+          "name": "pilot"
+        },
+        {
+          "id": 191888,
+          "name": "ploy"
+        },
+        {
+          "id": 313338,
+          "name": "plow"
+        },
+        {
+          "id": 171401,
+          "name": "pot"
+        },
+        {
+          "id": 326977,
+          "name": "plo"
+        },
+        {
+          "id": 354657,
+          "name": "lot"
+        },
+        {
+          "id": 235053,
+          "name": "plotin"
+        },
+        {
+          "id": 235054,
+          "name": "plotinus"
+        },
+        {
+          "id": 292179,
+          "name": "plotting bureaucrats"
         },
         {
           "id": 354990,
@@ -61,39 +130,28 @@
         {
           "id": 361839,
           "name": "sport plots"
-        },
-        {
-          "id": 362071,
-          "name": "alibi plot"
-        },
-        {
-          "id": 364216,
-          "name": "\u002790s, classic, feature, plot oriented"
-        },
-        {
-          "id": 364454,
-          "name": "plot twist (reviravolta)."
         }
       ],
       "total_pages": 2,
-      "total_results": 27
+      "total_results": 38
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=14195",
       "x-memc": "HIT",
-      "x-memc-key": "764e40050b12786be3998cb570a9d00383890615b44757adc9c0969c0840a6eb",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=23970",
-      "ETag": "W/\u00227624e91fe19323a807ceebf9a3097922\u0022",
+      "x-memc-key": "3a94c21cf07d5369931a214a930bc9e8bad60d41e9933e76bf469d6b29be8b37",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022b3373c899dc08a407c694940d855491e\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

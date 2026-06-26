@@ -1,14 +1,10 @@
 namespace TMDbLib.Objects.General;
 
 /// <summary>
-/// Containswatch provider IDs for use with Discover filtering.
-/// Provider IDs were sourced from TMDb's watch/providers endpoint.
-/// Note: Provider availability varies by region. Use with <c>WhereWatchRegionIs()</c>.
+/// Watch provider IDs for use with Discover filtering. Availability varies by region; combine with <c>WhereWatchRegionIs()</c>.
 /// </summary>
 /// <remarks>
-/// These IDs represent the base platform providers. Many platforms have additional
-/// "channel" variants (e.g., "Paramount+ Amazon Channel") which have different IDs.
-/// Available provider IDs change over time, last updated: 2025-12-23.
+/// IDs represent base platform providers; channel variants (e.g. "Paramount+ Amazon Channel") have separate IDs. Last updated 2025-12-23.
 /// </remarks>
 public static class WatchProvider
 {

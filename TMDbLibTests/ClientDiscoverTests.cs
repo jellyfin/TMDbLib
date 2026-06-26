@@ -95,13 +95,13 @@ public class ClientDiscoverTests : TestBase
         var query = await TMDbClient.DiscoverMoviesAsync()
             .WhereOriginalLanguageIs("en-US")
             .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
-            .Query();
+            .Query(cancellationToken: TestContext.Current.CancellationToken);
 
         var queryDanish = await TMDbClient.DiscoverMoviesAsync()
             .WhereLanguageIs("da-DK")
             .WhereOriginalLanguageIs("en-US")
             .WherePrimaryReleaseDateIsAfter(new DateTime(2017, 01, 01))
-            .Query();
+            .Query(cancellationToken: TestContext.Current.CancellationToken);
 
         // Should be the same identities, but different titles
         Assert.NotNull(query);
@@ -132,7 +132,7 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -165,7 +165,7 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -192,7 +192,7 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -219,7 +219,7 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate, WatchMonetizationType.Free)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -251,7 +251,7 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -282,7 +282,7 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -315,7 +315,7 @@ public class ClientDiscoverTests : TestBase
             .IncludeWithAnyOfWatchProviders(filteredProviderIds)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -342,7 +342,7 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -369,7 +369,7 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate, WatchMonetizationType.Free)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);
@@ -401,7 +401,7 @@ public class ClientDiscoverTests : TestBase
             .WhereAnyWatchMonetizationTypesMatch(WatchMonetizationType.Flatrate)
             .WhereWatchRegionIs("US");
 
-        var results = await query.Query();
+        var results = await query.Query(cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(results);
         Assert.NotNull(results.Results);

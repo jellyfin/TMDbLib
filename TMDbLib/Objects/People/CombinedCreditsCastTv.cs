@@ -1,50 +1,34 @@
-using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
-using TMDbLib.Objects.General;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.People;
 
 /// <summary>
-/// Represents a TV show cast credit for a person.
+/// TV cast credit for a person.
 /// </summary>
-public class CombinedCreditsCastTv : CombinedCreditsCastBase
+public class CombinedCreditsCastTv : TmdbTvSummary, ICastCredit, ITvCreditExtras
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="CombinedCreditsCastTv"/> class.
+    /// Gets or sets the character played.
     /// </summary>
-    public CombinedCreditsCastTv()
-    {
-        MediaType = MediaType.Tv;
-    }
+    [JsonProperty("character")]
+    public string? Character { get; set; }
 
     /// <summary>
-    /// Gets or sets the TV show name.
+    /// Gets or sets the credit id.
     /// </summary>
-    [JsonProperty("name")]
-    public string? Name { get; set; }
+    [JsonProperty("credit_id")]
+    public string? CreditId { get; set; }
 
     /// <summary>
-    /// Gets or sets the original TV show name.
-    /// </summary>
-    [JsonProperty("original_name")]
-    public string? OriginalName { get; set; }
-
-    /// <summary>
-    /// Gets or sets the first air date.
-    /// </summary>
-    [JsonProperty("first_air_date")]
-    public DateTime? FirstAirDate { get; set; }
-
-    /// <summary>
-    /// Gets or sets the origin country codes.
-    /// </summary>
-    [JsonProperty("origin_country")]
-    public List<string>? OriginCountry { get; set; }
-
-    /// <summary>
-    /// Gets or sets the number of episodes.
+    /// Gets or sets the number of episodes the person appeared in.
     /// </summary>
     [JsonProperty("episode_count")]
     public int EpisodeCount { get; set; }
+
+    /// <summary>
+    /// Gets or sets the order in the cast list.
+    /// </summary>
+    [JsonProperty("order")]
+    public int? Order { get; set; }
 }

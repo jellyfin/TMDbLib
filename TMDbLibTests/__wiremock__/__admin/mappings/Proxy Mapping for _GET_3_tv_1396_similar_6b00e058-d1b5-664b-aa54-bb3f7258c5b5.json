@@ -1,6 +1,6 @@
 {
   "Guid": "6b00e058-d1b5-664b-aa54-bb3f7258c5b5",
-  "UpdatedAt": "2025-12-24T18:45:20.2118311Z",
+  "UpdatedAt": "2026-05-24T16:19:43.133962Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/similar",
   "Description": "Proxy Mapping for GET /3/tv/1396/similar",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -26,452 +39,465 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/7IsJDr77F46fhy1aZT3S5HD2stv.jpg",
+          "backdrop_path": "/77fcZl4Qzou3W2ihFBmRySvL9aS.jpg",
           "genre_ids": [
-            16,
+            10766,
             18
           ],
-          "id": 30083,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u30D6\u30E9\u30C3\u30AF\u30FB\u30B8\u30E3\u30C3\u30AF",
-          "overview": "Kuroo Hazama, also known as \u0022Black Jack,\u0022 is a legend in the medical world. Famous for being one of the best, as well as not having a license, Hazama and his assistant Pinoko save countless lives that other doctors cannot... for a price; an exorbitant price, in fact, which causes many to view the genius as greedy and heartless. Despite these claims, however, none can deny his skill and the lengths that he will go to treat his patients. This dark medical drama tells the story of the ominous and mysterious world of underground medicine as Black Jack risks his life to cure some of the most bizarre diseases imaginable, even if it means breaking every law in the process.",
-          "popularity": 4.2569,
-          "poster_path": "/aveuKnsIiDhWVaC1X6qmafiSLUu.jpg",
-          "first_air_date": "1993-12-12",
-          "name": "Black Jack",
-          "vote_average": 6.5,
-          "vote_count": 11
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tuCU2yVRM2iZxFkpqlPUyvd6tSu.jpg",
-          "genre_ids": [
-            16,
-            35,
-            18,
-            10765
-          ],
-          "id": 94954,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Hazbin Hotel",
-          "overview": "In attempt to find a non-violent alternative for reducing Hell\u0027s overpopulation, the daughter of Lucifer opens a rehabilitation hotel that offers a group of misfit demons a chance at redemption.",
-          "popularity": 31.9309,
-          "poster_path": "/aVYHMW8pdzJ9qG1OGRMKyGy9xor.jpg",
-          "first_air_date": "2024-01-18",
-          "name": "Hazbin Hotel",
-          "vote_average": 8.6,
-          "vote_count": 1482
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dmZsCcUODXWKnuL4dTN9BFvKGXS.jpg",
-          "genre_ids": [
-            18,
-            10759,
-            9648
-          ],
-          "id": 95041,
+          "id": 56054,
           "origin_country": [
             "TH"
           ],
           "original_language": "th",
-          "original_name": "\u0E40\u0E04\u0E27\u0E49\u0E07",
-          "overview": "Trapped on an island destroyed by a tsunami, the students of an elite school try to hold on to hope. But mysterious forces seem to work against them.",
-          "popularity": 1.6137,
-          "poster_path": "/2FSIccV9zK9mVeNmOdxGVNoSsRP.jpg",
-          "first_air_date": "2019-11-14",
-          "name": "The Stranded",
-          "vote_average": 6.69,
-          "vote_count": 63
+          "original_name": "\u0E40\u0E2A\u0E19\u0E48\u0E2B\u0E32\u0E2A\u0E31\u0E0D\u0E0D\u0E32\u0E41\u0E04\u0E49\u0E19",
+          "overview": "Kin is the President of KTK Corporation and is marrying his long time girlfriend of 7 years Ganok. On their wedding night, the bride goes to retrieve a wedding present that she had forgotten for her newly wedded husband.  Tawan had just left the airport after finding out that her fianc\u00E9 had been cheating for two years and is now breaking off their engagement. Moreover, they are expecting their first child. Tawan, hurt and heart-broken, walks home in the rain and while crossing the street was hit by a car driven by Ganok.  Tawan was hospitalized. Ganok was later pronounced death. Kin was devastated that he had just lost the love of his life, and demanded to know who that person was that caused his wife\u0027s car accident. He later went to Tawan\u0027s hospital room and read the name on her ID tag. That name is now forever embedded in his mind and promised Ganok that he will seek revenge for her with the upmost satisfaction....",
+          "popularity": 0.9422,
+          "poster_path": "/qgW0nllUf1XbFHZO0JHwyfBfWgN.jpg",
+          "first_air_date": "2014-05-21",
+          "softcore": false,
+          "name": "Sanaeha Sunya Kaen",
+          "vote_average": 7.0,
+          "vote_count": 1
         },
         {
           "adult": false,
-          "backdrop_path": "/kMXhioNDWQ2fvcC2QHVtEVIrVzC.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 95044,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u4F59\u751F\uFF0C\u8BF7\u591A\u6307\u6559",
-          "overview": "Lin Zhixiao\u0027s entire world is turned upside down just before graduation. Her father is hospitalized after being diagnosed with cancer which leaves her no choice but to give up an important job opportunity. She and her boyfriend also break up. In an instant, all of her hopes and dreams for the future are gone.\n\nAt this time, Gu Wei, her father\u0027s attending physician, walks into Lin Zhixiao\u0027s life. Love has the tendency to creep up on you when you\u0027re not looking. Two people who have been hurt before gradually get to know each other and fall in love. They go through doubts and hit road bumps, they experience misunderstandings and trying times, but in the process of falling in love, they realize that they are made for each other.",
-          "popularity": 1.9134,
-          "poster_path": "/puemYOibrTKQsj9gxfj0FW3DKzz.jpg",
-          "first_air_date": "2022-03-15",
-          "name": "The Oath of Love",
-          "vote_average": 6.8,
-          "vote_count": 23
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9FsIQ9q71GRRjzc1GqUDyN1XyCQ.jpg",
-          "genre_ids": [
-            80,
-            9648
-          ],
-          "id": 95101,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u60AA\u306E\u6CE2\u52D5 \u6BBA\u4EBA\u5206\u6790\u73ED\u30B9\u30D4\u30F3\u30AA\u30D5",
-          "overview": "In 2014, a series of murders targeting women takes place in Kawasaki City. All the victims have been killed as if they had hanged and these are dubbed the \u0022Hanging Murders\u0022 in public. The police investigation runs into difficulties without clues on the murderer. However, Detective Iguchi from the First Investigation Division has his eye on a man whom he suspects to kill for pleasure. This man is Naoya Nogi. He lies about his identity, erases his traces in public, and lives as if he is holding his breath. Nogi is actually Masato Yaginuma, the victim in the sensational Akishima mother and son kidnapping case. He gets his neighbor, Yoshika, involved as he tries to escape the police dragnet but comes to realize some facts. What is his true motive?",
-          "popularity": 0.4424,
-          "poster_path": "/v0EL2dZHgklsgtUrZPdmfk6BlVK.jpg",
-          "first_air_date": "2019-10-06",
-          "name": "Evil\u0027s Wave",
-          "vote_average": 7.6,
-          "vote_count": 5
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/o71YkJOb26pHlyVXf2Yjjat0Zjd.jpg",
-          "genre_ids": [
-            35,
-            18,
-            80,
-            9648
-          ],
-          "id": 895,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "Murder Most Horrid",
-          "overview": "A comedy that started in 1991 as a pilot, Murder Most Horrid stars Dawn French as various characters, as she embarks on a different mystery every episode. In one way or another she is involved with murder - either committing the crime herself or even getting bumped off herself!",
-          "popularity": 2.2837,
-          "poster_path": "/jDy8mYjBA48smpQHBurON4Ia9rf.jpg",
-          "first_air_date": "1991-11-14",
-          "name": "Murder Most Horrid",
-          "vote_average": 6.8,
-          "vote_count": 14
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/aJcyY1F1oUhsQiA7fuDDzTyIDzf.jpg",
+          "backdrop_path": "/k76NuWGNLInN9WjhH7zhAcXBxvX.jpg",
           "genre_ids": [
             16,
-            35,
             18
           ],
-          "id": 899,
+          "id": 88040,
           "origin_country": [
             "JP"
           ],
           "original_language": "ja",
-          "original_name": "\u30E4\u30DE\u30C8\u30CA\u30C7\u30B7\u30B3\u4E03\u5909\u5316\u2665",
-          "overview": "It\u0027s a gorgeous, spacious mansion, and four handsome, fifteen-year-old friends are allowed to live in it for free! There\u0027s only one condition\u2014that within three years the guys must transform the owner\u0027s wallflower niece into a lady befitting the palace in which they all live! How hard can it be? Enter Sunako Nakahara, the agoraphobic, horror-movie-loving, pockmark-faced, frizzy-haired, fashion-illiterate recluse who tends to break into explosive nosebleeds whenever she sees anyone attractive. This project is going to take more than our four heroes ever expected: it needs a miracle!",
-          "popularity": 1.6981,
-          "poster_path": "/zlcuBwbCHki0oWplNQhHhStYwFn.jpg",
-          "first_air_date": "2006-10-03",
-          "name": "The Wallflower",
-          "vote_average": 6.7,
-          "vote_count": 32
+          "original_name": "\u30AE\u30F4\u30F3",
+          "overview": "Ritsuka\u2019s lost his spark for music\u2014until he hears Mafuyu sing. One voice pulls him back in, and suddenly, everything starts to change between them.",
+          "popularity": 6.8247,
+          "poster_path": "/gO4ntuWf5hTUNA76onzA62GVoBf.jpg",
+          "first_air_date": "2019-07-12",
+          "softcore": false,
+          "name": "given",
+          "vote_average": 8.545,
+          "vote_count": 789
         },
         {
           "adult": false,
-          "backdrop_path": "/bm06ncZQxPSEVaoMe6Xt08ul0PG.jpg",
+          "backdrop_path": null,
           "genre_ids": [
-            18,
-            35
-          ],
-          "id": 900,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "Skins",
-          "overview": "Irreverent comedy drama which follows the messy lives, loves, delirious highs and inevitable lows of a group of raucous teenage friends in Bristol.",
-          "popularity": 18.5452,
-          "poster_path": "/yaDeFXW7Lzv6fqGymsUctt1a5fs.jpg",
-          "first_air_date": "2007-01-25",
-          "name": "Skins",
-          "vote_average": 8.1,
-          "vote_count": 1339
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/xOmGbLkJvSNlPZoYIbOgAaFpIW9.jpg",
-          "genre_ids": [
-            10759,
-            80,
+            35,
             18
           ],
-          "id": 211892,
-          "origin_country": [
-            "MY"
-          ],
-          "original_language": "ms",
-          "original_name": "One Cent Thief",
-          "overview": "With his ill father medical bills piling up, a cash-stapped banker devises an elaborate scheme to steal one cent from every customer\u0027s account.",
-          "popularity": 2.9909,
-          "poster_path": "/dqX022pdApy2SxDN5tEb6Ou26ER.jpg",
-          "first_air_date": "2022-10-08",
-          "name": "One Cent Thief",
-          "vote_average": 6.5,
-          "vote_count": 6
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/n7F79xjSkhJJp7IIXGEtmqBFdcS.jpg",
-          "genre_ids": [
-            18,
-            9648,
-            80
-          ],
-          "id": 211927,
-          "origin_country": [
-            "CN"
-          ],
-          "original_language": "zh",
-          "original_name": "\u5C18\u5C01\u5341\u4E09\u8F7D",
-          "overview": "The special homicide case that was unsolved in 1997 resurfaced 13 years later. Criminal policeman Wei Zhengrong, who wasn\u0027t able to find out the real murderer that year was traumatised and left the front line. The once fledgling new policeman Lu Xingzhi grown from his innocence and has become a meticulous criminal investigation expert. The many coincidences of the case brought the master and apprentice together again to hunt down the real culprit.",
-          "popularity": 2.2483,
-          "poster_path": "/uPGPeWo7v65HePODxE9vQQd1Z94.jpg",
-          "first_air_date": "2023-04-06",
-          "name": "Thirteen Years of Dust",
-          "vote_average": 7.8,
-          "vote_count": 17
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dL0b5bla4FImdPKnCfQwmALv2zr.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 211962,
+          "id": 89,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "BET Her Presents: The Waiting Room",
-          "overview": "In these two short films we will follow the lives of two women in a doctor\u0027s waiting room as they await to hear if they have breast cancer. Each short story will follow their journey after receiving the life changing diagnosis. All stories are written and directed by black women.",
-          "popularity": 0.2523,
-          "poster_path": "/ffKf17tvaXyF4jae6sXE0pNFl7R.jpg",
-          "first_air_date": "2019-10-20",
-          "name": "BET Her Presents: The Waiting Room",
+          "original_name": "Titus",
+          "overview": "Titus is an American dark comedy sitcom that debuted on Fox in 2000. The series was created by its star, Christopher Titus, Jack Kenny, and Brian Hargrove. This sitcom was based on Christopher\u0027s stand-up comedy act, more specifically his one-man show Norman Rockwell is Bleeding, which was based loosely upon his real-life family; lines from Norman Rockwell is Bleeding were spoken by Titus as commentary. Titus plays an outwardly childish adult, who owns a custom car shop. The show follows him and his dimwitted halfbrother Dave, his girlfriend Erin with the \u0022heart of gold\u0022, his goody-goody friend Tommy, and his arrogantly lewd, bigoted and multiple-divorced father Ken \u0022Papa\u0022 Titus.",
+          "popularity": 11.0008,
+          "poster_path": "/Ab7WWSBFSYbZVXORydeEaPltG9K.jpg",
+          "first_air_date": "2000-03-20",
+          "softcore": false,
+          "name": "Titus",
+          "vote_average": 6.878,
+          "vote_count": 45
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6k6vAUa0Fm73HB0QBOJbFGTgPq5.jpg",
+          "genre_ids": [
+            35,
+            80,
+            18
+          ],
+          "id": 186,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Weeds",
+          "overview": "After the unexpected death of her husband, a suburban mom resorts to selling weed to support her family.",
+          "popularity": 45.1032,
+          "poster_path": "/gKUsBTa5b0GY7U4iWBseeBalfjO.jpg",
+          "first_air_date": "2005-08-07",
+          "softcore": false,
+          "name": "Weeds",
+          "vote_average": 7.477,
+          "vote_count": 984
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zw7jm3EzJmmzoq8LrRC46bgr1Fc.jpg",
+          "genre_ids": [
+            18,
+            9648
+          ],
+          "id": 231260,
+          "origin_country": [
+            "TH"
+          ],
+          "original_language": "th",
+          "original_name": "\u0E40\u0E25\u0E48\u0E19\u0E08\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07",
+          "overview": "Three friends dive into the dark side of the sex industry to find a missing person, facing their own fears and desires along the way.",
+          "popularity": 8.4428,
+          "poster_path": "/7Ewd3BLkE5MshNFxDFAdmDYvXkS.jpg",
+          "first_air_date": "2023-11-16",
+          "softcore": false,
+          "name": "Playboyy",
+          "vote_average": 7.462,
+          "vote_count": 13
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zvkf8VbpwgutIzoaAFFoJhvzD8d.jpg",
+          "genre_ids": [
+            80,
+            9648,
+            18
+          ],
+          "id": 231268,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uBA71\uC0B4 \uD55C\uBC88 \uC7A1\uD799\uC2DC\uB2E4",
+          "overview": "A melodramatic chase thriller that tells the story of special reporter Seo Jeong-won and detective Kim Tae-heon tracking down a murder case.",
+          "popularity": 4.6591,
+          "poster_path": "/aW9FeOvTmmg0y53El7nxZojZlWy.jpg",
+          "first_air_date": "2024-03-18",
+          "softcore": false,
+          "name": "Nothing Uncovered",
+          "vote_average": 7.25,
+          "vote_count": 8
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vWnYTzeqEMus0zzuWoriJ5GF26J.jpg",
+          "genre_ids": [
+            18,
+            80,
+            9648
+          ],
+          "id": 136,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Thriller",
+          "overview": "Thriller is a British television series, originally broadcast in the UK from 1973 to 1976. It is an anthology series: each episode has a self-contained story and its own cast. As the title suggests, each story is a thriller of some variety, from tales of the supernatural to down-to-earth whodunits.",
+          "popularity": 12.3739,
+          "poster_path": "/bRfxYga00zCB29fha9zWLsed0tn.jpg",
+          "first_air_date": "1973-04-14",
+          "softcore": false,
+          "name": "Thriller",
+          "vote_average": 6.909,
+          "vote_count": 11
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aRZ7k1M3AdjVv8n3Fi6cAkEdpYY.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 198102,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Hijack",
+          "overview": "Expert negotiator Sam Nelson is in for the ride of his life\u2014and so is everyone on board with him\u2014after a group of hijackers take control. Sam will try every move in his playbook to take them down...as the stakes grow higher by the second.",
+          "popularity": 17.1124,
+          "poster_path": "/2C51clnxQdiqPDeqQlXcUx70hse.jpg",
+          "first_air_date": "2023-06-28",
+          "softcore": false,
+          "name": "Hijack",
+          "vote_average": 7.545,
+          "vote_count": 786
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+            16,
+            10765,
+            9648,
+            18
+          ],
+          "id": 119317,
+          "origin_country": [],
+          "original_language": "en",
+          "original_name": "Common Monsters",
+          "overview": "Elle and her son Rowan are on the run. Is this twisted mother and son relationship a bizarre case of extreme Munchausen syndrome by proxy? Or is Rowan a dangerous supernatural creature?",
+          "popularity": 1.0427,
+          "poster_path": "/6AwI3wW7phD19bsrpy3h9djMGLM.jpg",
+          "first_air_date": "2020-10-30",
+          "softcore": false,
+          "name": "Common Monsters",
           "vote_average": 0.0,
           "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/RxfwuFrlZ2lCjYfYDWyS6ouK5J.jpg",
-          "genre_ids": [
-            10766,
-            18
-          ],
-          "id": 128794,
-          "origin_country": [
-            "MX"
-          ],
-          "original_language": "es",
-          "original_name": "La desalmada",
-          "overview": "Fernanda Linares (Livia Brito) is a woman thirsty for revenge after the murder of her husband on their wedding night, where in addition, Fernanda was a victim of rape after the event occurred. However, Fernanda\u0027s life will change when she meets Rafael Toscano (Jos\u00E9 Ron), a handsome young man who recently just received his university degree with whom she will empathize and return to Fernanda the opportunity to love again.",
-          "popularity": 3.2118,
-          "poster_path": "/f7s3EsUtq0ZBH2pEhqxLa446IkQ.jpg",
-          "first_air_date": "2021-07-05",
-          "name": "La desalmada",
-          "vote_average": 7.563,
-          "vote_count": 64
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/uNvpN37f9HbvsDBQFhHU5m2EnVo.jpg",
-          "genre_ids": [
-            80,
-            18,
-            9648
-          ],
-          "id": 128904,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Dark Winds",
-          "overview": "This psychological thriller follows two Navajo police officers, Leaphorn and Chee, in the 1970s Southwest as their search for clues in a grisly double murder case forces them to challenge their own spiritual beliefs and come to terms with the trauma of their pasts.",
-          "popularity": 9.1615,
-          "poster_path": "/kDlrMN0P9ByrEH2GoRbBFeZHbcf.jpg",
-          "first_air_date": "2022-06-12",
-          "name": "Dark Winds",
-          "vote_average": 7.5,
-          "vote_count": 154
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/mx7CXbxPGoQZ4cIGkMB4dvjQBV4.jpg",
-          "genre_ids": [
-            18,
-            10768
-          ],
-          "id": 61112,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Manhattan",
-          "overview": "Set against the backdrop of the greatest clandestine race against time in the history of science with the mission to build the world\u0027s first atomic bomb in Los Alamos, New Mexico. Flawed scientists and their families attempt to co-exist in a world where secrets and lies infiltrate every aspect of their lives.",
-          "popularity": 4.647,
-          "poster_path": "/qZeMzP3mNC9JbufbSmZYT0Z7rpj.jpg",
-          "first_air_date": "2014-07-27",
-          "name": "Manhattan",
-          "vote_average": 7.059,
-          "vote_count": 127
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/5dH0UdUDON0FOKfm9guXgOkWMlH.jpg",
+          "backdrop_path": "/vo0YxK08xXg11aBjVKjdYbl4unX.jpg",
           "genre_ids": [
             18
           ],
-          "id": 61014,
+          "id": 295068,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Holly",
+          "overview": "Holly Elliot is a university graduate taking an evening class in art appreciation. Her husband, David, on the other hand, works for a mail-order firm and is trying hard to keep up with Holly by taking an extramural degree in his spare time. Their lives are about to be irrevocably upended.",
+          "popularity": 1.0843,
+          "poster_path": "/urv61TyU58XZ03kQ8B2q5FvK7fj.jpg",
+          "first_air_date": "1972-09-01",
+          "softcore": false,
+          "name": "Holly",
+          "vote_average": 0.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aHqbCEtuYRC4bfVYEQqdkXimIbm.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 295170,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "A Woman of Substance",
+          "overview": "The life of Emma Harte, from kitchen maid at the beginning of the 20th-century, to respected businesswoman and grandmother in the 1980s. From humble beginnings, Emma Harte starts her business with a small shop, but over the next twenty years, she expands her stores and invests in the growing textile industry in Leeds.",
+          "popularity": 5.3069,
+          "poster_path": "/tW7pp996pGVd0YTLtc7ZyW9VMqk.jpg",
+          "first_air_date": "2026-03-11",
+          "softcore": false,
+          "name": "A Woman of Substance",
+          "vote_average": 8.8,
+          "vote_count": 9
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/YIxBXMVqEb6KdqHHB7636Gc9yr.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 88166,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "The Knick",
-          "overview": "Set in downtown New York in 1900, \u0027The Knick\u0027 is centered on the Knickerbocker Hospital and its staff, notably Dr. John Thackery, the hospital\u0027s brilliant chief surgeon who pushes medicine\u0027s boundaries, pioneering new procedures despite a severe drug addiction.",
-          "popularity": 4.9065,
-          "poster_path": "/oeEqDSIVOi6q0GcZj8L9Q6G7fGC.jpg",
-          "first_air_date": "2014-08-08",
-          "name": "The Knick",
-          "vote_average": 7.849,
-          "vote_count": 482
+          "original_name": "I Know This Much Is True",
+          "overview": "The parallel lives of identical twin brothers Dominick and Thomas Birdsey in an epic story of betrayal, sacrifice and forgiveness set against the backdrop of 20th century America.",
+          "popularity": 5.2935,
+          "poster_path": "/y6bjZiYZa1U8UJ2KxgJuU0B8M5K.jpg",
+          "first_air_date": "2020-05-09",
+          "softcore": false,
+          "name": "I Know This Much Is True",
+          "vote_average": 7.62,
+          "vote_count": 275
         },
         {
           "adult": false,
-          "backdrop_path": "/ifTmNwg9aqq3Xov496cmIdCEWbo.jpg",
+          "backdrop_path": "/k5LOQVkVhwq8qybNjwSdWpGghM7.jpg",
           "genre_ids": [
             18,
-            9648,
-            10765
+            35,
+            80
           ],
-          "id": 243975,
+          "id": 88236,
+          "origin_country": [
+            "DE"
+          ],
+          "original_language": "de",
+          "original_name": "How to Sell Drugs Online (Fast)",
+          "overview": "To win back his ex-girlfriend, a nerdy teen starts selling ecstasy online out of his bedroom -- and becomes one of Europe\u0027s biggest dealers.",
+          "popularity": 7.1094,
+          "poster_path": "/xg7U76h1DNtwa0eBOIbFdiM80DR.jpg",
+          "first_air_date": "2019-05-31",
+          "softcore": false,
+          "name": "How to Sell Drugs Online (Fast)",
+          "vote_average": 7.9,
+          "vote_count": 930
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/npdXl2w9FNHXQO0gyua8panB4rU.jpg",
+          "genre_ids": [
+            35,
+            80
+          ],
+          "id": 88258,
+          "origin_country": [
+            "GB"
+          ],
+          "original_language": "en",
+          "original_name": "Don\u0027t Forget the Driver",
+          "overview": "Coach driver and single dad Peter Green leads a life of ordinary routine until the discovery of a dead body on the docile Bognor shoreline and an unsettling meeting with a new arrival in town throws his life into chaos.",
+          "popularity": 1.4191,
+          "poster_path": "/sb4NlWptU4IHxKtv4BEnXTHwuPg.jpg",
+          "first_air_date": "2019-04-09",
+          "softcore": false,
+          "name": "Don\u0027t Forget the Driver",
+          "vote_average": 6.8,
+          "vote_count": 12
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oDjjcXWIWBbeb6hDE28y4LpTaJd.jpg",
+          "genre_ids": [
+            16,
+            18
+          ],
+          "id": 56568,
           "origin_country": [
             "JP"
           ],
           "original_language": "ja",
-          "original_name": "\u4E03\u5915\u306E\u56FD",
-          "overview": "Yoji Minamimaru, known as Nanmaru, is a university student with a supernatural ability to create small holes in anything. One day, Yoji finds out that the professor of folklore studies has gone missing. Together with his classmates, he decides to search for the professor.",
-          "popularity": 3.2277,
-          "poster_path": "/xcruqDh8O7OPmoHZaShZ0j1irJ7.jpg",
-          "first_air_date": "2024-07-04",
-          "name": "Land of Tanabata",
-          "vote_average": 7.353,
-          "vote_count": 17
+          "original_name": "NANA",
+          "overview": "Nana Osaki and Nana Komatsu meet while traveling to Tokyo in pursuit of their respective dreams, and decide to be roommates. Although drastically different people, the two become very close and together they find out if their biggest dreams have room for their best friend.",
+          "popularity": 27.7849,
+          "poster_path": "/kPUYN8DkYDOFxw4EZyrZcTN4mhb.jpg",
+          "first_air_date": "2006-04-05",
+          "softcore": false,
+          "name": "NANA",
+          "vote_average": 8.4,
+          "vote_count": 249
         },
         {
           "adult": false,
-          "backdrop_path": "/A5lVyejMsP5G7rAJBwU9ug3Wzou.jpg",
+          "backdrop_path": "/40GC5powBaJz9JfEsqPFFc79RzF.jpg",
           "genre_ids": [
+            16,
+            35,
             18
           ],
-          "id": 1104,
+          "id": 292,
           "origin_country": [
             "US"
           ],
           "original_language": "en",
-          "original_name": "Mad Men",
-          "overview": "Set in 1960-1970 New York, this sexy, stylized and provocative drama follows the lives of the ruthlessly competitive men and women of Madison Avenue advertising.",
-          "popularity": 35.7276,
-          "poster_path": "/yd4BrXPQZvin4XMDlXUP9JgQDUQ.jpg",
-          "first_air_date": "2007-07-19",
-          "name": "Mad Men",
-          "vote_average": 8.127,
-          "vote_count": 1399
+          "original_name": "Moral Orel",
+          "overview": "Orel is an 11-year-old boy who loves church. His unbridled enthusiasm for piousness and his misinterpretation of religious morals often lead to disastrous results, including self-mutilation and crack addiction. No matter how much trouble he gets into, his reverence always keeps him cheery.",
+          "popularity": 7.788,
+          "poster_path": "/1OSdgNEIYzCDYDmvJcGGBXgsAnR.jpg",
+          "first_air_date": "2005-12-12",
+          "softcore": false,
+          "name": "Moral Orel",
+          "vote_average": 8.01,
+          "vote_count": 99
         },
         {
           "adult": false,
-          "backdrop_path": "/2LjY0Nxtk0Hm2XV9TRPVETnKLDR.jpg",
+          "backdrop_path": "/h61wnNwIg15qCc5XNfkGvEESFgB.jpg",
           "genre_ids": [
             18,
-            9648,
-            80
+            35
           ],
-          "id": 95259,
+          "id": 407,
           "origin_country": [
-            "US"
+            "GB"
           ],
           "original_language": "en",
-          "original_name": "Dare Me",
-          "overview": "Dive into the cutthroat world of competitive high school cheerleading, following the fraught relationship between two best friends after a new coach arrives to bring their team to prominence.",
-          "popularity": 1.7259,
-          "poster_path": "/eLmQL6gWgWnhgdv0CxHaVQcnYOX.jpg",
-          "first_air_date": "2019-12-29",
-          "name": "Dare Me",
-          "vote_average": 7.7,
-          "vote_count": 354
+          "original_name": "Sugar Rush",
+          "overview": "Sugar Rush is an Emmy Award\u2013winning British television comedy drama series developed by Shine Limited and broadcast by Channel 4, based on the Julie Burchill novel of the same name. It follows the trials and tribulations of teenager Kim Daniels, who is dealing with all the usual adolescent issues, plus one - she thinks she might be gay.  Her family has recently moved to Brighton from London, and she finds herself with a huge crush on her new best friend, Maria \u0060Sugar\u0027 Sweet. Sugar has a bit of a wild side, and frequently gets Kim into trouble, though Kim can find trouble on her own as well. Despite attractions to other girls, and a few attempts at being interested in guys, Kim continues to long for Sugar.",
+          "popularity": 4.5351,
+          "poster_path": "/YEW7UwhDpVo6N1tpNHGmC9ZjNO.jpg",
+          "first_air_date": "2005-06-07",
+          "softcore": false,
+          "name": "Sugar Rush",
+          "vote_average": 7.083,
+          "vote_count": 42
         },
         {
           "adult": false,
-          "backdrop_path": "/njVkdqzI6b60IAr4LEF5PVUTm1O.jpg",
+          "backdrop_path": "/4qGZrcuz1LOqesVj13GlWeWsKZK.jpg",
           "genre_ids": [
             18,
-            9648,
-            10759
+            9648
           ],
-          "id": 128712,
+          "id": 231304,
           "origin_country": [
             "CN"
           ],
           "original_language": "zh",
-          "original_name": "\u541B\u5B50\u76DF",
-          "overview": "A brilliant commoner and a mysterious minister team up to solve crimes and expose corruption in the royal court of ancient China.",
-          "popularity": 3.478,
-          "poster_path": "/7uW1D3XuKDHfGPozPJO0FUr6InB.jpg",
-          "first_air_date": "2023-01-30",
-          "name": "A League of Nobleman",
-          "vote_average": 7.5,
-          "vote_count": 11
+          "original_name": "\u5957\u8DEF\u5148\u751F\u8BF7\u6307\u793A",
+          "overview": "Mo Su Qing, a seemingly weak orphan girl in trouble, who approaches Ye Zhong Jue, the president of the group, to avenge her family, and sets up a scheme step by step. It never occurred to her that the smooth progress of all plans was due to the many routines set up by Ye Zhong Jue. The little white rabbit VS the big bad wolf: both sides claim to control the overall situation, but they don\u0027t know that there is no hunter in this love game, both of them are prey...",
+          "popularity": 1.223,
+          "poster_path": "/pBxUwXcza41vffXXfNb6cWqyulI.jpg",
+          "first_air_date": "2023-07-13",
+          "softcore": false,
+          "name": "Trick in Love",
+          "vote_average": 7.0,
+          "vote_count": 1
         },
         {
           "adult": false,
-          "backdrop_path": "/uTvxihDsPgEcBgWI5iN1pAjVX88.jpg",
+          "backdrop_path": "/sEKwdnrnO3I1DE98zYG7HLA2wEI.jpg",
           "genre_ids": [
-            80,
-            18
+            18,
+            80
           ],
-          "id": 30217,
+          "id": 231340,
           "origin_country": [
-            "AU"
+            "GB"
           ],
           "original_language": "en",
-          "original_name": "The Last Outlaw",
-          "overview": "An unmistakable Australian icon - a smoking revolver, two piercing eyes behind a makeshift mask of armour. But beyond the armour, behind the eyes was a man both ruthless and gentle, rugged and kind - the infamous last outlaw, Ned Kelly was his name.\n\nBoth revered and reviled throughout the ages Ned Kelly was an Irish-Australian battler-cum-bushranger, fiercely independent and pushed into action by the repressive colonial authorities of the time.\n\nThe Last Outlaw examines the life of Ned Kelly, and expounds the legend from early indiscretions and the formation of his gang through to the violent killings at Stringy Bark Creek, culminating in his explosive last stand and shoot out at Glenrowan.\n\nThe Last Outlaw is a remarkable four-part miniseries presentation that deflects historical judgement and allows the legend to live on.",
-          "popularity": 0.6133,
-          "poster_path": "/3uGqkBmq93ueFPeRJfo1TmeSVry.jpg",
-          "first_air_date": "1980-10-20",
-          "name": "The Last Outlaw",
-          "vote_average": 5.0,
-          "vote_count": 1
+          "original_name": "The Killing Kind",
+          "overview": "Barrister Ingrid Lewis defends John Webster against stalking charges, only for Webster to turn on her.",
+          "popularity": 3.0933,
+          "poster_path": "/5imNWXMYXmBZBc34BqPE3lkoIl9.jpg",
+          "first_air_date": "2023-09-07",
+          "softcore": false,
+          "name": "The Killing Kind",
+          "vote_average": 6.3,
+          "vote_count": 19
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/v5GYPMTlrkr8mn65xV3LXN4sqEE.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 295426,
+          "origin_country": [
+            "CN"
+          ],
+          "original_language": "zh",
+          "original_name": "\u9ED1\u91D1\u6E38\u620F",
+          "overview": "After his brother\u2019s mysterious death in a financial scandal, Hao Qing teams up with hacker Jia Yu and wealthy heir Zhang Xiaoshao to infiltrate a corrupt empire. Together, they work to expose fraud, money laundering, and deception, to bring the mastermind to justice and restore hope to an orphanage.",
+          "popularity": 1.057,
+          "poster_path": "/O42bgOFYSPBLLwAQEtLwwYZYRk.jpg",
+          "first_air_date": "2026-02-12",
+          "softcore": false,
+          "name": "Black Gold Game",
+          "vote_average": 0.0,
+          "vote_count": 0
         }
       ],
-      "total_pages": 2575,
-      "total_results": 51500
+      "total_pages": 2761,
+      "total_results": 55207
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=9258",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=25164",
       "x-memc": "HIT",
       "x-memc-key": "dd812b52c6250005c5c707d49d79369e8028f180ff1c12d088fc7e23ff92194f",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u002246c569051dc9eef0fa24b1dc138f5031\u0022",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022cf9d99b0d93a5a2ce52e1ab1bf5163fa\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

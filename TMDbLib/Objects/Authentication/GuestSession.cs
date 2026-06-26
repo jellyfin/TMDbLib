@@ -5,15 +5,13 @@ using TMDbLib.Utilities.Converters;
 namespace TMDbLib.Objects.Authentication;
 
 /// <summary>
-/// A guest session can be used to rate movies/tv shows without having a registered TMDb user account.
-/// You should only generate a single guest session per user (or device) as you will be able to attach the ratings to a TMDb user account in the future.
-/// There is also IP limits in place so you should always make sure it's the end user doing the guest session actions.
-/// If a guest session is not used for the first time within 24 hours, it will be automatically discarded.
+/// A guest session for rating movies/TV shows without a registered TMDb account.
+/// Generate only one per user/device; sessions are discarded if unused within 24 hours.
 /// </summary>
 public class GuestSession
 {
     /// <summary>
-    /// Gets or sets the date / time before which the session must be used for the first time else it will expire. Time is expressed as local time.
+    /// Gets or sets the local date/time before which the session must first be used or it will expire.
     /// </summary>
     [JsonProperty("expires_at")]
     [JsonConverter(typeof(CustomDatetimeFormatConverter))]

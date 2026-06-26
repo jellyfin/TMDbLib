@@ -1,6 +1,6 @@
 {
   "Guid": "5152c25a-4df5-5947-b57e-b94a40eec6e0",
-  "UpdatedAt": "2025-12-24T18:45:24.344757Z",
+  "UpdatedAt": "2026-05-24T16:19:43.881244Z",
   "Title": "Proxy Mapping for GET /3/tv/60735/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/60735/watch/providers",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -28,16 +41,10 @@
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=AD",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 23
-            },
-            {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 31
+              "display_priority": 0
             }
           ]
         },
@@ -48,7 +55,7 @@
               "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
               "provider_id": 630,
               "provider_name": "STARZPLAY",
-              "display_priority": 6
+              "display_priority": 7
             }
           ]
         },
@@ -81,7 +88,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -92,7 +99,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -100,22 +107,22 @@
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=AT",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 12
+              "display_priority": 13
             }
           ],
           "flatrate": [
@@ -123,41 +130,35 @@
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 9,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 61
+              "display_priority": 62
             }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=AU",
-          "flatrate": [
+          "ads": [
             {
-              "logo_path": "/sSfxJXq7s8oHf3XWd0FtqagPDsF.jpg",
-              "provider_id": 21,
-              "provider_name": "Stan",
-              "display_priority": 10
-            },
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 94
+              "logo_path": "/xoId9luelz6lXMQkzLyJf3ssXTL.jpg",
+              "provider_id": 378,
+              "provider_name": "9Now",
+              "display_priority": 16
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 11
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 13
@@ -166,7 +167,39 @@
               "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
               "provider_id": 436,
               "provider_name": "Fetch TV",
-              "display_priority": 31
+              "display_priority": 30
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/sSfxJXq7s8oHf3XWd0FtqagPDsF.jpg",
+              "provider_id": 21,
+              "provider_name": "Stan",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 92
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 93
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 104
             }
           ]
         },
@@ -177,7 +210,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -211,14 +250,6 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=BE",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
-            }
-          ],
           "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
@@ -227,10 +258,29 @@
               "display_priority": 10
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=BF",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
             }
           ]
         },
@@ -280,7 +330,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -308,7 +358,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 12
+              "display_priority": 0
             }
           ]
         },
@@ -319,7 +369,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 6
+              "display_priority": 0
             }
           ]
         },
@@ -336,40 +386,37 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 94
+              "display_priority": 93
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 56
             }
           ]
         },
+        "CD": {
+          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=CD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
         "CH": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=CH",
-          "buy": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 14
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -382,6 +429,20 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
             }
           ]
         },
@@ -409,7 +470,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -420,7 +481,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -431,7 +498,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 0
             }
           ]
         },
@@ -454,6 +521,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -464,7 +537,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 6
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -472,13 +551,7 @@
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=DE",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -487,25 +560,25 @@
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 21
+              "display_priority": 22
             },
             {
               "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
               "provider_id": 1993,
               "provider_name": "Videoload",
-              "display_priority": 106
+              "display_priority": 104
             },
             {
               "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
-              "display_priority": 130
+              "display_priority": 128
             }
           ],
           "flatrate": [
@@ -519,20 +592,12 @@
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 114
+              "display_priority": 112
             }
           ]
         },
         "DK": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=DK",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
-            }
-          ],
           "rent": [
             {
               "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
@@ -553,6 +618,14 @@
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 15
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -575,6 +648,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 35
             }
           ]
         },
@@ -607,38 +686,32 @@
               "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
               "provider_id": 630,
               "provider_name": "STARZPLAY",
-              "display_priority": 19
+              "display_priority": 21
             }
           ]
         },
         "ES": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 79
+            }
+          ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 32
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
-              "provider_id": 149,
-              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/5AkEgpCNaBP3Fbwd2m1GdQIk0vv.jpg",
-              "provider_id": 2472,
-              "provider_name": "HBO Max  Amazon Channel",
-              "display_priority": 81
             }
           ]
         },
@@ -650,14 +723,6 @@
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 13
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
             }
           ],
           "buy": [
@@ -674,10 +739,18 @@
               "display_priority": 13
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 54
+              "display_priority": 53
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -689,6 +762,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -700,12 +779,6 @@
               "provider_id": 58,
               "provider_name": "Canal VOD",
               "display_priority": 9
-            },
-            {
-              "logo_path": "/s7mg9n4UHrcdJQL78JmaU6oAdHt.jpg",
-              "provider_id": 59,
-              "provider_name": "Bbox VOD",
-              "display_priority": 18
             }
           ],
           "flatrate": [
@@ -713,20 +786,20 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 59
+              "display_priority": 54
             }
           ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
@@ -736,16 +809,10 @@
               "display_priority": 9
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 19
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 40
+              "display_priority": 37
             }
           ]
         },
@@ -755,7 +822,7 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
@@ -765,7 +832,7 @@
               "display_priority": 5
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -774,33 +841,7 @@
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 16
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
-              "provider_id": 39,
-              "provider_name": "Now TV",
-              "display_priority": 44
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 99
-            },
-            {
-              "logo_path": "/1LuvKw01c2KQCt6DqgAgR06H2pT.jpg",
-              "provider_id": 2300,
-              "provider_name": "ITVX Premium",
-              "display_priority": 114
+              "display_priority": 17
             }
           ],
           "ads": [
@@ -808,7 +849,39 @@
               "logo_path": "/1LuvKw01c2KQCt6DqgAgR06H2pT.jpg",
               "provider_id": 41,
               "provider_name": "ITVX",
-              "display_priority": 20
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "provider_id": 39,
+              "provider_name": "Now TV",
+              "display_priority": 43
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 98
+            },
+            {
+              "logo_path": "/1LuvKw01c2KQCt6DqgAgR06H2pT.jpg",
+              "provider_id": 2300,
+              "provider_name": "ITVX Premium",
+              "display_priority": 113
             }
           ]
         },
@@ -835,10 +908,10 @@
           ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 84
+              "display_priority": 83
             }
           ]
         },
@@ -872,6 +945,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -904,6 +983,12 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
               "display_priority": 1
             }
           ]
@@ -937,7 +1022,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -949,6 +1034,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -960,6 +1051,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
             },
             {
               "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
@@ -976,7 +1073,7 @@
               "display_priority": 9
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 42
@@ -1004,6 +1101,12 @@
               "display_priority": 1
             },
             {
+              "logo_path": "/kVqjgpcwvDJOhCupjcLzwwtOp52.jpg",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 3
+            },
+            {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
@@ -1024,26 +1127,26 @@
         },
         "IT": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=IT",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
               "display_priority": 87
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 33
             }
           ]
         },
@@ -1060,26 +1163,26 @@
         },
         "JP": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=JP",
-          "rent": [
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 5
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "display_priority": 8
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 6
             }
           ],
           "flatrate": [
@@ -1093,7 +1196,7 @@
               "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
               "provider_id": 84,
               "provider_name": "U-NEXT",
-              "display_priority": 2
+              "display_priority": 5
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -1177,13 +1280,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 7
+              "display_priority": 0
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 16
+              "display_priority": 1
             }
           ],
           "buy": [
@@ -1191,7 +1294,7 @@
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 2
+              "display_priority": 6
             }
           ]
         },
@@ -1225,6 +1328,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 35
             }
           ]
         },
@@ -1263,7 +1372,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
             }
           ]
         },
@@ -1274,7 +1383,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 3
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1302,7 +1417,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 4
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1334,6 +1455,17 @@
             }
           ]
         },
+        "MW": {
+          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=MW",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
         "MX": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=MX",
           "flatrate": [
@@ -1341,7 +1473,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 7
+              "display_priority": 0
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -1359,6 +1491,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1414,18 +1552,37 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 10
+              "display_priority": 0
             }
           ]
         },
         "NL": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 34
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=NO",
+          "rent": [
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
             }
           ],
           "flatrate": [
@@ -1433,18 +1590,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
-            }
-          ]
-        },
-        "NO": {
-          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=NO",
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ],
           "buy": [
@@ -1460,24 +1606,30 @@
               "provider_name": "SF Anytime",
               "display_priority": 15
             }
-          ],
-          "rent": [
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 15
-            }
           ]
         },
         "NZ": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=NZ",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 59
+              "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 4
             }
           ]
         },
@@ -1499,7 +1651,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1514,6 +1666,17 @@
             }
           ]
         },
+        "PG": {
+          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=PG",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
         "PH": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=PH",
           "flatrate": [
@@ -1522,6 +1685,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1533,6 +1702,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1543,12 +1718,12 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ],
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 27
@@ -1562,7 +1737,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1584,7 +1759,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1623,7 +1798,7 @@
               "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
               "provider_id": 630,
               "provider_name": "STARZPLAY",
-              "display_priority": 18
+              "display_priority": 21
             }
           ]
         },
@@ -1635,11 +1810,33 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
         "SE": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=SE",
+          "rent": [
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 15
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ],
           "buy": [
             {
               "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
@@ -1654,26 +1851,10 @@
               "display_priority": 15
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 39
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 15
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 38
             }
           ]
         },
@@ -1685,6 +1866,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1706,7 +1893,7 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             }
           ]
         },
@@ -1729,6 +1916,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1754,6 +1947,17 @@
             }
           ]
         },
+        "TD": {
+          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
         "TH": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=TH",
           "flatrate": [
@@ -1761,12 +1965,35 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
               "display_priority": 1
             }
           ]
         },
         "TN": {
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 36
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=TR",
           "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
@@ -1795,6 +2022,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1806,6 +2039,12 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         },
@@ -1830,22 +2069,10 @@
           "link": "https://www.themoviedb.org/tv/60735-the-flash/watch?locale=US",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
-            },
-            {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
@@ -1859,13 +2086,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 2
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 155
+              "display_priority": 154
             }
           ]
         },
@@ -1937,7 +2164,13 @@
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 4
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
             }
           ]
         }
@@ -1947,19 +2180,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "Server": "openresty",
-      "Cache-Control": "public, max-age=25077",
-      "x-memc": "HIT",
-      "x-memc-key": "4a693608e30e90cd5f132c961b65101fa7db96321d860e1d8c1c0d6c051f08d2",
       "x-az": "us-east-1b",
-      "ETag": "W/\u0022913cccfaae676b284d6555d66ca59791\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
+      "Cache-Control": "public, max-age=5698",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00227b5184209733e71469d059784c4277b0\u0022",
       "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

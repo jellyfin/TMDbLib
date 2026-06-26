@@ -1,6 +1,6 @@
 {
   "Guid": "ef1945ea-9c5d-184a-a7b7-992da0814c36",
-  "UpdatedAt": "2025-12-24T18:45:31.8272764Z",
+  "UpdatedAt": "2026-05-24T16:19:44.880606Z",
   "Title": "Proxy Mapping for GET /3/discover/movie",
   "Description": "Proxy Mapping for GET /3/discover/movie",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "language",
@@ -64,17 +77,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
       "x-memc": "MISS",
-      "x-memc-key": "c5c8cec33763d5cb218d0fe34d819fa31b2460817e636086ce4a8400aee8cfe7",
+      "x-memc-key": "0cdbcae7d1c0abd910fdbd703c782416e5ac64f6eb0b7398303a0ec76dc3cc59",
       "x-az": "us-east-1b",
       "Cache-Control": "public, max-age=0",
       "ETag": "W/\u00220e23279b004381f72a34159d5c7dfd1f\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
       "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

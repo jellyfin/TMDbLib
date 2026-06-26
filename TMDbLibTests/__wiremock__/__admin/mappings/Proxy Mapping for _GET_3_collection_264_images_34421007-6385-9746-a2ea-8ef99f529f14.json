@@ -1,6 +1,6 @@
 {
   "Guid": "34421007-6385-9746-a2ea-8ef99f529f14",
-  "UpdatedAt": "2025-12-24T18:45:17.0660624Z",
+  "UpdatedAt": "2026-05-24T16:19:42.491358Z",
   "Title": "Proxy Mapping for GET /3/collection/264/images",
   "Description": "Proxy Mapping for GET /3/collection/264/images",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -202,8 +215,8 @@
           "iso_3166_1": "US",
           "iso_639_1": "en",
           "file_path": "/5Xsu2o5IsZRuuxCEVZ9nVve21FP.jpg",
-          "vote_average": 6.722,
-          "vote_count": 6,
+          "vote_average": 7.19,
+          "vote_count": 7,
           "width": 1000
         },
         {
@@ -253,7 +266,7 @@
           "iso_639_1": "fr",
           "file_path": "/6pfffFtoOqi7uxYJLDcLB6QOXlY.jpg",
           "vote_average": 3.334,
-          "vote_count": 1,
+          "vote_count": 2,
           "width": 1000
         },
         {
@@ -375,6 +388,26 @@
           "vote_average": 3.334,
           "vote_count": 2,
           "width": 1000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 3000,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/egNtG9yPweWAmP7KgG3F9l02swe.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 2000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 3000,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/7XiDThAKsqAq4oO3JwcdrU3asmC.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 2000
         },
         {
           "aspect_ratio": 0.666,
@@ -1265,6 +1298,26 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 1280
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 1500,
+          "iso_3166_1": "ES",
+          "iso_639_1": "ca",
+          "file_path": "/cI9AXx7HCChlvdkblissjf5KDIM.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 1500,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/vLDVUwCaEEJJAPuuYO0YKCmWeGw.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1000
         }
       ]
     },
@@ -1273,17 +1326,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=10110",
       "x-memc": "HIT",
-      "x-memc-key": "a170d4177e951ef8644ebb23e4c3453964a87f78f24acba98b5744b9ccd927c1",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=8579",
-      "ETag": "W/\u00221023b2a9faeb227604b479b5ab7ce564\u0022",
+      "x-memc-key": "a34c791a6d7dce47b74dde457222d570c3f6c5a77dd940209363d7207a11aa52",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u0022c7586717c0edf8707cce764e6645338d\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

@@ -1,6 +1,6 @@
 {
   "Guid": "7bb8394c-fe2b-1d4c-b4fe-203e6117251a",
-  "UpdatedAt": "2025-12-24T18:45:19.8786833Z",
+  "UpdatedAt": "2026-05-24T16:19:42.578566Z",
   "Title": "Proxy Mapping for GET /3/search/tv",
   "Description": "Proxy Mapping for GET /3/search/tv",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -57,24 +70,25 @@
       "page": 2,
       "results": [],
       "total_pages": 1,
-      "total_results": 5
+      "total_results": 6
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=22304",
       "x-memc": "HIT",
-      "x-memc-key": "a6934a19449fc1ac48a70e5b992d78a4f1d6b22b9145b94b343fee0b3036dcba",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=20437",
-      "ETag": "W/\u00227e106293441e1bbe3f659ed1a0251601\u0022",
+      "x-memc-key": "7706b1eaa6e930884c4e2361fd104dc7eeeda94c9e810bc19a28c36ec6e8706b",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00225b651d974aa40b259c0ff4858ca8db6d\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

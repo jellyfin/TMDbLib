@@ -1,6 +1,6 @@
 {
   "Guid": "199a5d2a-4c24-1e4e-ac8b-fac515995cfd",
-  "UpdatedAt": "2025-12-24T18:45:22.6767787Z",
+  "UpdatedAt": "2026-05-24T16:19:45.192749Z",
   "Title": "Proxy Mapping for GET /3/tv/456/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/456/watch/providers",
   "Priority": -2000000,
@@ -17,35 +17,26 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "id": 456,
       "results": {
-        "AD": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AD",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 5
-            }
-          ]
-        },
-        "AL": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AL",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
-            }
-          ]
-        },
         "AR": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AR",
           "flatrate": [
@@ -53,7 +44,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -61,22 +52,22 @@
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AT",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 12
+              "display_priority": 13
             }
           ],
           "flatrate": [
@@ -84,7 +75,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             }
           ]
         },
@@ -94,14 +85,14 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 11
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
             },
             {
               "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
               "provider_id": 436,
               "provider_name": "Fetch TV",
-              "display_priority": 31
+              "display_priority": 30
             }
           ],
           "flatrate": [
@@ -109,18 +100,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ]
-        },
-        "BA": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=BA",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
+              "display_priority": 4
             }
           ]
         },
@@ -131,7 +111,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -142,7 +122,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 15
+              "display_priority": 3
             }
           ]
         },
@@ -153,7 +133,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -164,7 +144,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -175,7 +155,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -186,7 +166,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             },
             {
               "logo_path": "/xoFyQOXR3qINRsdnCQyd7jGx8Wo.jpg",
@@ -199,8 +179,8 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             }
           ]
         },
@@ -211,7 +191,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ],
           "buy": [
@@ -219,7 +199,7 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
@@ -236,7 +216,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -247,7 +227,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -258,7 +238,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -269,13 +249,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
-            },
-            {
-              "logo_path": "/qcTTC6rFBIVaCLzu0EKwuyrBlSR.jpg",
-              "provider_id": 2536,
-              "provider_name": "Oneplay",
-              "display_priority": 35
+              "display_priority": 3
             }
           ]
         },
@@ -285,11 +259,11 @@
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
+              "provider_name": "Apple TV Store",
               "display_priority": 4
             },
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 7
@@ -298,25 +272,25 @@
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 21
+              "display_priority": 22
             },
             {
               "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
               "provider_id": 1993,
               "provider_name": "Videoload",
-              "display_priority": 106
+              "display_priority": 104
             },
             {
               "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
-              "display_priority": 130
+              "display_priority": 128
             }
           ],
           "flatrate": [
@@ -324,7 +298,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -335,7 +309,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -346,7 +320,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 22
+              "display_priority": 3
             }
           ]
         },
@@ -357,29 +331,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
-            }
-          ]
-        },
-        "EE": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=EE",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 21
-            }
-          ]
-        },
-        "EG": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=EG",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 31
+              "display_priority": 3
             }
           ]
         },
@@ -390,7 +342,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             },
             {
               "logo_path": "/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg",
@@ -407,53 +359,31 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=FR",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 5
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             }
           ]
         },
         "GB": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=GB",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ],
           "ads": [
             {
               "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
@@ -461,16 +391,44 @@
               "provider_name": "Channel 4",
               "display_priority": 10
             }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 12
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
           ]
         },
         "GG": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=GG",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 84
+              "display_priority": 83
             }
           ]
         },
@@ -481,7 +439,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 19
+              "display_priority": 3
             }
           ]
         },
@@ -492,7 +450,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -503,7 +461,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 30
+              "display_priority": 3
             }
           ]
         },
@@ -514,18 +472,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
-            }
-          ]
-        },
-        "HR": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=HR",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 28
+              "display_priority": 3
             }
           ]
         },
@@ -536,26 +483,32 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
         "IE": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 8
+            }
+          ],
           "ads": [
             {
               "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
               "provider_id": 103,
               "provider_name": "Channel 4",
               "display_priority": 15
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 2
             }
           ]
         },
@@ -570,17 +523,6 @@
             }
           ]
         },
-        "IS": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=IS",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ]
-        },
         "IT": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=IT",
           "flatrate": [
@@ -588,21 +530,13 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             },
             {
-              "logo_path": "/6FDKQWcR6JfmRKLqezSsvGgRuUY.jpg",
+              "logo_path": "/FyDfVwFZGuu2KVv7Kuz4ww7Ra3.jpg",
               "provider_id": 109,
               "provider_name": "Timvision",
               "display_priority": 13
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/2hBbMVUI2G4GAGRAD0RZCZqDMUh.jpg",
-              "provider_id": 359,
-              "provider_name": "Mediaset Infinity",
-              "display_priority": 11
             }
           ]
         },
@@ -613,7 +547,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 24
+              "display_priority": 2
             }
           ]
         },
@@ -621,16 +555,16 @@
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=JP",
           "flatrate": [
             {
-              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
-              "provider_id": 15,
-              "provider_name": "Hulu",
-              "display_priority": 1
-            },
-            {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
+            },
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 4
             }
           ]
         },
@@ -641,7 +575,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -652,7 +586,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 12
+              "display_priority": 2
             }
           ]
         },
@@ -663,18 +597,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 23
-            }
-          ]
-        },
-        "LT": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=LT",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 22
+              "display_priority": 2
             }
           ]
         },
@@ -689,50 +612,6 @@
             }
           ]
         },
-        "LV": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=LV",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 21
-            }
-          ]
-        },
-        "ME": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=ME",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 1
-            }
-          ]
-        },
-        "MK": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=MK",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
-            }
-          ]
-        },
-        "MT": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=MT",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
-            }
-          ]
-        },
         "MX": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=MX",
           "flatrate": [
@@ -740,7 +619,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -751,7 +630,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -762,7 +641,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             }
           ]
         },
@@ -773,13 +652,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
-            },
-            {
-              "logo_path": "/tpfmd22xEapb1aW2gzjSM5104rx.jpg",
-              "provider_id": 431,
-              "provider_name": "TV 2 Play",
-              "display_priority": 16
+              "display_priority": 3
             }
           ]
         },
@@ -790,7 +663,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -801,7 +674,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 25
+              "display_priority": 3
             }
           ]
         },
@@ -812,18 +685,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
-            }
-          ]
-        },
-        "PH": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=PH",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 27
+              "display_priority": 3
             }
           ]
         },
@@ -834,7 +696,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -845,7 +707,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -856,7 +718,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -867,18 +729,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
-            }
-          ]
-        },
-        "RS": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=RS",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
+              "display_priority": 2
             }
           ]
         },
@@ -900,7 +751,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -911,18 +762,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
-            }
-          ]
-        },
-        "SI": {
-          "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=SI",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 6
+              "display_priority": 3
             }
           ]
         },
@@ -933,7 +773,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 3
             }
           ]
         },
@@ -944,7 +784,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 23
+              "display_priority": 2
             }
           ]
         },
@@ -955,7 +795,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 25
+              "display_priority": 3
             }
           ]
         },
@@ -966,7 +806,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 0
+              "display_priority": 2
             }
           ]
         },
@@ -977,7 +817,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 13
+              "display_priority": 3
             }
           ]
         },
@@ -988,7 +828,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -996,54 +836,28 @@
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=US",
           "buy": [
             {
-              "logo_path": "/seGSXajazLMCKGB5hnRCidtjay1.jpg",
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
-              "provider_name": "Apple TV",
-              "display_priority": 7
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
               "provider_id": 7,
               "provider_name": "Fandango At Home",
               "display_priority": 35
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
-              "provider_id": 15,
-              "provider_name": "Hulu",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
-              "provider_id": 257,
-              "provider_name": "fuboTV",
-              "display_priority": 10
-            },
-            {
-              "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
-              "provider_id": 2528,
-              "provider_name": "YouTube TV",
-              "display_priority": 36
             }
           ],
           "free": [
@@ -1059,6 +873,38 @@
               "provider_name": "Spectrum On Demand",
               "display_priority": 121
             }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
+              "provider_id": 2528,
+              "provider_name": "YouTube TV",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/r2nFtrKGezfBEV2xA3gufBaqi5j.jpg",
+              "provider_id": 2554,
+              "provider_name": "FOX One Amazon Channel",
+              "display_priority": 340
+            }
           ]
         },
         "UY": {
@@ -1068,7 +914,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 25
+              "display_priority": 2
             }
           ]
         },
@@ -1079,7 +925,7 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 1
+              "display_priority": 3
             }
           ]
         }
@@ -1089,18 +935,17 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=972",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=17401",
-      "x-memc": "HIT",
-      "x-memc-key": "9bc209e3dcf1b54fe5e4f9b545916fc1e7daac680420620dd507b9d90d7b6067",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u00229017049874c63ee5de909df893070938\u0022",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u002295f06c49f166dc1e2eea665addb903c4\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

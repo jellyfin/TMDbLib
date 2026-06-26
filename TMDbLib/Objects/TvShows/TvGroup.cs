@@ -4,30 +4,30 @@ using Newtonsoft.Json;
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents a group of episodes in an episode group collection.
+/// Group of episodes in an episode group collection.
 /// </summary>
 public class TvGroup
 {
     /// <summary>
-    /// Gets or sets the group ID.
+    /// Gets or sets the group id.
     /// </summary>
     [JsonProperty("id")]
     public string? Id { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the group.
+    /// Gets or sets the group name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Gets or sets the display order of the group.
+    /// Gets or sets the display order.
     /// </summary>
     [JsonProperty("order")]
     public int Order { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of episodes in the group.
+    /// Gets or sets the episodes in the group.
     /// </summary>
     [JsonProperty("episodes")]
     public List<TvGroupEpisode>? Episodes { get; set; }

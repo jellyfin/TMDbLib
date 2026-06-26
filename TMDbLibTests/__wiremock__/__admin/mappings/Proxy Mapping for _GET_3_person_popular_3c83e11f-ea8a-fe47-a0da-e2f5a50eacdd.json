@@ -1,6 +1,6 @@
 {
   "Guid": "3c83e11f-ea8a-fe47-a0da-e2f5a50eacdd",
-  "UpdatedAt": "2025-12-24T18:45:17.0784265Z",
+  "UpdatedAt": "2026-05-24T16:19:44.377505Z",
   "Title": "Proxy Mapping for GET /3/person/popular",
   "Description": "Proxy Mapping for GET /3/person/popular",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -26,77 +39,161 @@
       "results": [
         {
           "adult": false,
-          "gender": 2,
-          "id": 2650306,
+          "gender": 1,
+          "id": 1320544,
           "known_for_department": "Acting",
-          "name": "He Yu",
-          "original_name": "\u4F55\u4E0E",
-          "popularity": 81.4658,
-          "profile_path": "/xgXKg2EgqrCGKghJ1QEkJ1dCSEf.jpg",
+          "name": "Daniella Wang",
+          "original_name": "\u738B\u674E\u4E39\u59AE",
+          "popularity": 55.5244,
+          "profile_path": "/Afh0SE4hnXY0eiKu3uyB1R0XKZL.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/4J8znHxVaZY3vKb05IWqWfzczXR.jpg",
-              "id": 207668,
-              "name": "The Legend of ShenLi",
-              "original_name": "\u4E0E\u51E4\u884C",
-              "overview": "The ancient gods died, and there is only one last god in the world - Xingzhi. Rumor has it that this God of Action has lived alone in the heavens for tens of thousands of years, ruthless and lustless. In the battle of the immortals and demons, he turned the tide by himself, and since then, Du Men has been swept away, and his traces are hard to find.\n\nHundreds of years are just a click away. As the queen who was born with a pearl in the devil world, Shen Li\u0027s life was bright and dazzling. But on the occasion of her thousand-year-old birthday, the claws of political marriage were scratching their heads. On the way to escape from the marriage, Shen Li was beaten back to the original form of a phoenix and fell to the world with injuries. When she was seriously injured and comatose, the mortal hawker treated her as a fat chicken, plucked all the hair from her body, and locked her in a cage for sale.\n\nThe fate of the two is tightly linked by a seemingly casual transaction.",
-              "poster_path": "/cVlSN6xr9IsTwRSNvZqkLg8ZLnl.jpg",
-              "media_type": "tv",
+              "backdrop_path": "/xu7d0EZo6nqKUb41CC96YdTg2Jw.jpg",
+              "id": 134764,
+              "title": "Due West: Our Sex Journey",
+              "original_title": "\u4E00\u8DEF\u5411\u897F",
+              "overview": "Set in contemporary Hong Kong, several young people are searching for romance and struggling to learn the difference between lust and love in an adventure that takes them to the mainland where pleasure is much more readily available.",
+              "poster_path": "/iHNfgw9bS5DBjsVxVAXL8Nm6Klm.jpg",
+              "media_type": "movie",
+              "original_language": "cn",
+              "genre_ids": [
+                35,
+                18,
+                10749
+              ],
+              "popularity": 7.926,
+              "release_date": "2012-09-20",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.051,
+              "vote_count": 59
+            },
+            {
+              "adult": false,
+              "backdrop_path": null,
+              "id": 325517,
+              "title": "Midnight Hair",
+              "original_title": "\u591C\u534A\u68B3\u5934",
+              "overview": "Midnight Hair follows a young couple as they move to a mountain villa, where bizarre hauntings terrorize them day and night... While trying to find out the source of these paranormal activites, they discover that a dirty secret from their past is rapidly catching up to them.",
+              "poster_path": "/2WGMYaWjSGDYjHpdX8FHndmzRQK.jpg",
+              "media_type": "movie",
               "original_language": "zh",
               "genre_ids": [
+                9648,
+                53,
+                27
+              ],
+              "popularity": 1.6321,
+              "release_date": "2014-06-13",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.429,
+              "vote_count": 7
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/slMsEIQvdUTjMk4dSLrOKNmzRCK.jpg",
+              "id": 852005,
+              "title": "Crazy Tsunami",
+              "original_title": "\u72C2\u9CC4\u6D77\u5578",
+              "overview": "A sudden tsunami came as a shock, trapping Jiang Peng and his daughter, Jiang Xiao Hu, in Chinatown of Southeast Asia. The two of them, with other inhabitants, took a brace to fight against the terrible monster that followed. However, after the life-and-death struggle, they found surprisingly a man-made calamity instead of a natural disaster.",
+              "poster_path": "/tX3oIneivfQNwaxXAHgMchc3gYe.jpg",
+              "media_type": "movie",
+              "original_language": "zh",
+              "genre_ids": [
+                27,
+                28,
+                18
+              ],
+              "popularity": 1.1153,
+              "release_date": "2021-07-16",
+              "softcore": false,
+              "video": false,
+              "vote_average": 4.783,
+              "vote_count": 23
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 2676077,
+          "known_for_department": "Acting",
+          "name": "Julia Doyle",
+          "original_name": "Julia Doyle",
+          "popularity": 41.2822,
+          "profile_path": "/4CtJynpPkV5t7ydwobUUL0sGsTJ.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/auyEi4Xho43HFvVQnd42LzqBdiV.jpg",
+              "id": 124364,
+              "name": "FROM",
+              "original_name": "FROM",
+              "overview": "Unravel the mystery of a nightmarish town in middle America that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest \u2013 including the terrifying creatures that come out when the sun goes down.",
+              "poster_path": "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                9648,
                 18,
                 10765
               ],
-              "popularity": 7.8196,
-              "first_air_date": "2024-03-18",
-              "vote_average": 8.521,
-              "vote_count": 24,
+              "popularity": 631.0481,
+              "first_air_date": "2022-02-20",
+              "softcore": false,
+              "vote_average": 8.4,
+              "vote_count": 3297,
               "origin_country": [
-                "CN"
+                "US"
               ]
             },
             {
               "adult": false,
-              "backdrop_path": "/lGL9uU9wkGnUpdJEtvI2jl7U4eu.jpg",
-              "id": 213882,
-              "name": "Sword and Fairy 1",
-              "original_name": "\u53C8\u89C1\u900D\u9065",
-              "overview": "Li Xiaoyao, a young inn attendant who dreams of becoming a great hero, accidentally meets Zhao Ling\u0027er, a descendant of the goddess Nuwa. Together, they embark on a quest to find the Water Spiritual Bead, which can end the drought plaguing the land. Along the way, they befriend the bickering partner Lin Yueru and the scholarly Liu Jinyuan, among other like-minded companions. They face numerous dangers in their search for the spiritual bead and ultimately thwart the cataclysmic scheme of the Moon Worship Sect\u0027s leader, who aims to destroy the world.",
-              "poster_path": "/jelH4T7Kt8VeziZ9tnv2FwNjOzA.jpg",
-              "media_type": "tv",
-              "original_language": "zh",
+              "backdrop_path": "/517uHmTS9Z9nUWBe0gcFaoehNk6.jpg",
+              "id": 999243,
+              "title": "Hell of a Summer",
+              "original_title": "Hell of a Summer",
+              "overview": "When 24-year-old Jason Hochberg arrives for counsellor weekend at his beloved Camp Pineway, his biggest problem is feeling out of touch with his teenage co-workers. Little does he know; a masked killer has murdered camp owners John and Kathy and is preparing to strike again.",
+              "poster_path": "/q9rRLc9pRDR8H6YoJTmXrBmivxD.jpg",
+              "media_type": "movie",
+              "original_language": "en",
               "genre_ids": [
-                10765
+                27,
+                35,
+                9648
               ],
-              "popularity": 4.7527,
-              "first_air_date": "2024-04-02",
-              "vote_average": 6.4,
-              "vote_count": 5,
-              "origin_country": [
-                "CN"
-              ]
+              "popularity": 4.1131,
+              "release_date": "2025-04-03",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.53,
+              "vote_count": 165
             },
             {
               "adult": false,
-              "backdrop_path": "/6K9ojCzbRHvCHjzeBudukUG51a3.jpg",
-              "id": 128999,
-              "name": "My Fated Boy",
-              "original_name": "\u6211\u7684\u90BB\u5C45\u957F\u4E0D\u5927",
-              "overview": "31-year old Lin Yang is accomplished at work but does not have her own else and even her apartment was rented. In her boring life, suddenly appears 24-year old Lu Zheng An. Lu Zheng An was her neighbour who grew up with her, and has returned from studying overseas. He tries hard to enter her life, and eventually succeeds in moving into her house and intruding into her work. Lin Xiang constantly reminds herself that Lu Zheng An is a younger brother, but ultimately could not withstand Zheng An\u0027s charms. Her boring life and sleeping heart was awakened with the appearance of Zheng An, and she finds herself falling for him.",
-              "poster_path": "/p11rrUlkipaBs5d8F59gJYhmZCQ.jpg",
+              "backdrop_path": "/5tdBOcx5OAUkNh8TbHJ1wEoWrh.jpg",
+              "id": 153269,
+              "name": "Astrid \u0026 Lilly Save the World",
+              "original_name": "Astrid \u0026 Lilly Save the World",
+              "overview": "High school is hard enough when you\u0027re different, but when outcast BFFs Astrid and Lilly accidentally crack open a portal to a terrifyingly quirky monster dimension, it gets a lot more complicated. It\u0027s up to them to vanquish the creepy creatures and save the world, becoming the badass heroes they were meant to be. That is, if they can survive the horrors of high school.",
+              "poster_path": "/dgYFcMUOojIeK7jZEjkjK3tOqTe.jpg",
               "media_type": "tv",
-              "original_language": "zh",
+              "original_language": "en",
               "genre_ids": [
-                18,
-                35
+                35,
+                9648,
+                10765,
+                18
               ],
-              "popularity": 5.0418,
-              "first_air_date": "2021-07-12",
-              "vote_average": 5.5,
-              "vote_count": 8,
+              "popularity": 1.4899,
+              "first_air_date": "2022-01-26",
+              "softcore": false,
+              "vote_average": 5.6,
+              "vote_count": 21,
               "origin_country": [
-                "CN"
+                "US"
               ]
             }
           ]
@@ -104,523 +201,232 @@
         {
           "adult": false,
           "gender": 1,
-          "id": 2426851,
+          "id": 1562430,
           "known_for_department": "Acting",
-          "name": "Clara Stack",
-          "original_name": "Clara Stack",
-          "popularity": 60.9968,
-          "profile_path": "/yMK3IADqV2oReJMKdkrcEIBxdtu.jpg",
+          "name": "Hannah Cheramy",
+          "original_name": "Hannah Cheramy",
+          "popularity": 33.7064,
+          "profile_path": "/bVNJpvLKWwzxvLPFFmhsoMsR5qu.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg",
-              "id": 200875,
-              "name": "IT: Welcome to Derry",
-              "original_name": "IT: Welcome to Derry",
-              "overview": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried evil lurking. As the kids set out to determine what\u0027s really going on, a rising unease prompts several townspeople to work together to restore peace \u2013 all while a U.S. military operation seeks to exploit Derry for its own objectives.",
-              "poster_path": "/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
+              "backdrop_path": "/auyEi4Xho43HFvVQnd42LzqBdiV.jpg",
+              "id": 124364,
+              "name": "FROM",
+              "original_name": "FROM",
+              "overview": "Unravel the mystery of a nightmarish town in middle America that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest \u2013 including the terrifying creatures that come out when the sun goes down.",
+              "poster_path": "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
               "media_type": "tv",
               "original_language": "en",
               "genre_ids": [
+                9648,
                 18,
-                9648
+                10765
               ],
-              "popularity": 277.6787,
-              "first_air_date": "2025-10-26",
-              "vote_average": 8.254,
-              "vote_count": 1006,
+              "popularity": 631.0481,
+              "first_air_date": "2022-02-20",
+              "softcore": false,
+              "vote_average": 8.4,
+              "vote_count": 3297,
               "origin_country": [
                 "US"
               ]
             },
             {
               "adult": false,
-              "backdrop_path": "/gOJJjBB1aj6vqzuJLspERcwZuPQ.jpg",
-              "id": 936059,
-              "title": "The Naughty Nine",
-              "original_title": "The Naughty Nine",
-              "overview": "Fifth-grader Andy finds himself without a present from Santa on Christmas morning. Realizing he must have landed on the \u201Cnaughty list\u201D and feeling unfairly maligned, Andy pulls together a team of eight other naughty-listers to help him execute an elaborate heist on Santa\u2019s Village at the North Pole to get the presents they feel they deserve.",
-              "poster_path": "/5JoTI5Nrh2U639WfwUk0Akum7fQ.jpg",
+              "backdrop_path": "/1ddf2Kq1hC7SgV02E3pyLAC26lq.jpg",
+              "id": 339967,
+              "title": "Colossal",
+              "original_title": "Colossal",
+              "overview": "A woman discovers that severe catastrophic events are somehow connected to the mental breakdown from which she\u0027s suffering.",
+              "poster_path": "/4VOyofBd1pexblxtDZYtYIk7NI4.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                10751,
-                12,
-                35,
-                10770,
-                80
+                18,
+                14,
+                878
               ],
-              "popularity": 7.208,
-              "release_date": "2023-11-09",
+              "popularity": 4.0376,
+              "release_date": "2017-04-06",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.3,
-              "vote_count": 78
+              "vote_average": 6.277,
+              "vote_count": 2280
             },
             {
               "adult": false,
-              "backdrop_path": "/1R68vl3d5s86JsS2NPjl8UoMqIS.jpg",
-              "id": 88329,
-              "name": "Hawkeye",
-              "original_name": "Hawkeye",
-              "overview": "Former Avenger Clint Barton has a seemingly simple mission: get back to his family for Christmas. Possible? Maybe with the help of Kate Bishop, a 22-year-old archer with dreams of becoming a superhero. The two are forced to work together when a presence from Barton\u2019s past threatens to derail far more than the festive spirit.",
-              "poster_path": "/ct5pNE5dDHryHLDnxyZPYcqO1sz.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                35,
-                10759
-              ],
-              "popularity": 14.9456,
-              "first_air_date": "2021-11-24",
-              "vote_average": 7.81,
-              "vote_count": 3593,
-              "origin_country": [
-                "US"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 5296,
-          "known_for_department": "Acting",
-          "name": "James Ransone",
-          "original_name": "James Ransone",
-          "popularity": 49.0803,
-          "profile_path": "/n1O0RnxKPfxvVJUh13Gr0pPGlvd.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/iQY3kJ2oqHqmcSm32xPfkFF4xW9.jpg",
-              "id": 283445,
-              "title": "Sinister 2",
-              "original_title": "Sinister 2",
-              "overview": "A young mother and her twin sons move into a rural house that\u0027s marked for death.",
-              "poster_path": "/hF6ORyihtAWHqKkIQI8BSpLQyON.jpg",
+              "backdrop_path": "/9JD5I9MH1ZNsDfDiLX7ZHkGRDjC.jpg",
+              "id": 433419,
+              "title": "The Hollow Child",
+              "original_title": "The Hollow Child",
+              "overview": "Samantha has lived her whole life in different foster homes. Now living in a small town, she never feels like she quite fits in, even with her own current foster family who might adopt her, or the boy who follows her around doing her classwork. So, it\u2019s perhaps natural that she doesn\u2019t know what to do with a curious tagalong little sister named Olivia. One day, Sam callously ditches Olivia, who wanders off into the woods on her own and disappears.",
+              "poster_path": "/lHeNY6zvR9yA2JWF9FrIOldsc2j.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
                 27
               ],
-              "popularity": 7.9837,
-              "release_date": "2015-08-19",
+              "popularity": 1.6686,
+              "release_date": "2018-05-18",
+              "softcore": false,
               "video": false,
-              "vote_average": 5.884,
-              "vote_count": 2237
-            },
+              "vote_average": 6.357,
+              "vote_count": 155
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1433019,
+          "known_for_department": "Acting",
+          "name": "Emma Elle Paterson",
+          "original_name": "Emma Elle Paterson",
+          "popularity": 21.4671,
+          "profile_path": "/gc0Lq7VMwY8pDgmemRTYpM1AmGE.jpg",
+          "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/8moTOzunF7p40oR5XhlDvJckOSW.jpg",
-              "id": 474350,
-              "title": "It Chapter Two",
-              "original_title": "It Chapter Two",
-              "overview": "27 years after overcoming the malevolent supernatural entity Pennywise, the former members of the Losers\u0027 Club, who have grown up and moved away from Derry, are brought back together by a devastating phone call.",
-              "poster_path": "/zfE0R94v1E8cuKAerbskfD3VfUt.jpg",
+              "backdrop_path": "/sTQNRqLbfCXolrb5CizAW1dj528.jpg",
+              "id": 246655,
+              "title": "X-Men: Apocalypse",
+              "original_title": "X-Men: Apocalypse",
+              "overview": "After the re-emergence of the world\u0027s first mutant, world-destroyer Apocalypse, the X-Men must unite to defeat his extinction level plan.",
+              "poster_path": "/2mtQwJKVKQrZgTz49Dizb25eOQQ.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27,
-                53
+                878,
+                14,
+                28
               ],
-              "popularity": 52.1159,
-              "release_date": "2019-09-04",
+              "popularity": 11.7204,
+              "release_date": "2016-05-18",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.838,
-              "vote_count": 9330
+              "vote_average": 6.524,
+              "vote_count": 13764
             },
             {
               "adult": false,
-              "backdrop_path": "/jovIEk4cAxWmA2dBcPrfhn3jzYN.jpg",
-              "id": 82507,
-              "title": "Sinister",
-              "original_title": "Sinister",
-              "overview": "True-crime writer Ellison Oswalt is in a slump; he hasn\u0027t had a best seller in more than 10 years and is becoming increasingly desperate for a hit. So, when he discovers the existence of a snuff film showing the deaths of a family, he vows to solve the mystery. He moves his own family into the victims\u0027 home and gets to work. However, when old film footage and other clues hint at the presence of a supernatural force, Ellison learns that living in the house may be fatal.",
-              "poster_path": "/nzx10sca3arCeYBAomHan4Q6wa1.jpg",
+              "backdrop_path": "/hpDuLFn6uaCNyUbBYNyY6BFP9HA.jpg",
+              "id": 369776,
+              "title": "The Tuche Family: The American Dream",
+              "original_title": "Les Tuche 2 : Le R\u00EAve am\u00E9ricain",
+              "overview": "Les Tuche, a modest french family, change his life after winning a super lottery. Thanks to the money of his parents, the son, Donald (aka \u0022coin-coin\u0022) goes to Los Angeles to improve his english. On the L.A. University, he meets Jennifer, daughter of a famous American financier.",
+              "poster_path": "/27KhcV8Yd98yhEk6vcU1cKHn8Rj.jpg",
+              "media_type": "movie",
+              "original_language": "fr",
+              "genre_ids": [
+                35
+              ],
+              "popularity": 0.9994,
+              "release_date": "2016-02-03",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.554,
+              "vote_count": 1020
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/kv9xVrxfLpudBLyYf1QvLCpUQuy.jpg",
+              "id": 1182047,
+              "title": "The Apprentice",
+              "original_title": "The Apprentice",
+              "overview": "A young Donald Trump, eager to make his name as a hungry scion of a wealthy family in 1970s New York, comes under the spell of Roy Cohn, the cutthroat attorney who would help create the Donald Trump we know today. Cohn sees in Trump the perfect prot\u00E9g\u00E9\u2014someone with raw ambition, a hunger for success, and a willingness to do whatever it takes to win.",
+              "poster_path": "/549Hdul2BgPnZMhqFxp6npp2opr.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27,
-                53,
-                9648
+                36,
+                18,
+                35
               ],
-              "popularity": 10.0669,
-              "release_date": "2012-03-29",
+              "popularity": 4.9301,
+              "release_date": "2024-10-09",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.868,
-              "vote_count": 5855
+              "vote_average": 6.865,
+              "vote_count": 956
             }
           ]
         },
         {
           "adult": false,
           "gender": 2,
-          "id": 564,
-          "known_for_department": "Directing",
-          "name": "Richard Linklater",
-          "original_name": "Richard Linklater",
-          "popularity": 29.0728,
-          "profile_path": "/xSctxeZQzQbZoaxIvcDeHlDjbiN.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/iv1ajZACUGHn4JztG9Z8yvbcmic.jpg",
-              "id": 1584,
-              "title": "School of Rock",
-              "original_title": "School of Rock",
-              "overview": "Fired from his band and hard up for cash, guitarist and vocalist Dewey Finn finagles his way into a job as a fifth-grade substitute teacher at a private school, where he secretly begins teaching his students the finer points of rock \u0027n\u0027 roll. The school\u0027s hard-nosed principal is rightly suspicious of Finn\u0027s activities. But Finn\u0027s roommate remains in the dark about what he\u0027s doing.",
-              "poster_path": "/zXLXaepIBvFVLU25DH3wv4IPSbe.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                10402
-              ],
-              "popularity": 5.5209,
-              "release_date": "2003-10-03",
-              "video": false,
-              "vote_average": 7.082,
-              "vote_count": 5971
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/Ac2s9RJEi1ZeaQopoLsqlsmWQmx.jpg",
-              "id": 85350,
-              "title": "Boyhood",
-              "original_title": "Boyhood",
-              "overview": "The film tells a story of a divorced couple trying to raise their young son. The story follows the boy for twelve years, from first grade at age 6 through 12th grade at age 17-18, and examines his relationship with his parents as he grows.",
-              "poster_path": "/2BvtvDUyxiMJ4dmKfiQf4qdOHQN.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 2.7667,
-              "release_date": "2014-06-05",
-              "video": false,
-              "vote_average": 7.492,
-              "vote_count": 5386
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/qA2TyqPldTtoTVY3LKrNIG5g6bH.jpg",
-              "id": 76,
-              "title": "Before Sunrise",
-              "original_title": "Before Sunrise",
-              "overview": "An unexpected meeting on a train leads two travelers to spend an evening wandering through Vienna. As the night unfolds, they share stories and conversations about life and love, exploring new ideas while a quiet intimacy grows between them, knowing it may be their only night together.",
-              "poster_path": "/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                10749
-              ],
-              "popularity": 6.4219,
-              "release_date": "1995-01-27",
-              "video": false,
-              "vote_average": 8.0,
-              "vote_count": 4502
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 2019485,
+          "id": 10727,
           "known_for_department": "Acting",
-          "name": "Kayla Wallace",
-          "original_name": "Kayla Wallace",
-          "popularity": 27.8026,
-          "profile_path": "/yeXPErkuJr3gLNeYOuATt27Z8Kr.jpg",
+          "name": "John Hannah",
+          "original_name": "John Hannah",
+          "popularity": 21.3397,
+          "profile_path": "/8GzJhaZrChZpv84SU4vAsvsR3cl.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/y0ludgr1EvyXcT1lv2M0m621LQ6.jpg",
-              "id": 277217,
-              "title": "Descendants",
-              "original_title": "Descendants",
-              "overview": "A present-day idyllic kingdom where the benevolent teenage son of King Adam and Queen Belle offers a chance of redemption for the troublemaking offspring of Disney\u0027s classic villains: Cruella De Vil (Carlos), Maleficent (Mal), the Evil Queen (Evie) and Jafar (Jay).",
-              "poster_path": "/65DkgHPSLVjgr6IYkpY9Aqqqid5.jpg",
+              "backdrop_path": "/8zLS8p1tRyWFLRFfmgQq0j5WE6z.jpg",
+              "id": 564,
+              "title": "The Mummy",
+              "original_title": "The Mummy",
+              "overview": "Dashing legionnaire Rick O\u0027Connell stumbles upon the hidden ruins of Hamunaptra while in the midst of a battle to claim the area in 1920s Egypt. It has been over three thousand years since former High Priest Imhotep suffered a fate worse than death as a punishment for a forbidden love\u2014along with a curse that guarantees eternal doom upon the world if he is ever awoken.",
+              "poster_path": "/yhIsVvcUm7QxzLfT6HW2wLf5ajY.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                10751,
                 12,
-                14,
-                10770,
-                10402
-              ],
-              "popularity": 5.6103,
-              "release_date": "2015-07-31",
-              "video": false,
-              "vote_average": 7.148,
-              "vote_count": 2450
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/q71au2YjcwXBMZKNzNgjK7RZ3Hs.jpg",
-              "id": 157741,
-              "name": "Landman",
-              "original_name": "Landman",
-              "overview": "Set in the proverbial boomtowns of West-Texas and a modern-day tale of fortune-seeking in the world of oil rigs, the series is an upstairs/downstairs story of roughnecks and wildcat billionaires that are fueling a boom so big it\u2019s reshaping our climate, our economy and our geopolitics.",
-              "poster_path": "/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 64.7394,
-              "first_air_date": "2024-11-17",
-              "vote_average": 8.053,
-              "vote_count": 337,
-              "origin_country": [
-                "US"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/6ntd6GgMgL4pV6HbAzrU0WWDytY.jpg",
-              "id": 838184,
-              "title": "Snowed in for Christmas",
-              "original_title": "Snowed in for Christmas",
-              "overview": "Kaley, a young Au Pair, finds herself unable to return home for the holidays when a snowstorm derails her plans. In spite of her own disappointment she is determined to teach the girls she watches, alongside their charming Uncle, the magic of Christmas. Will this series of events lead to a perfect Christmas?",
-              "poster_path": "/f3hKZBbf7K5tCqsgWKs5sk1r8Cz.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                10770,
-                35,
-                10749,
-                10751
-              ],
-              "popularity": 2.3496,
-              "release_date": "2021-11-14",
-              "video": false,
-              "vote_average": 6.2,
-              "vote_count": 31
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 5081,
-          "known_for_department": "Acting",
-          "name": "Emily Blunt",
-          "original_name": "Emily Blunt",
-          "popularity": 26.8801,
-          "profile_path": "/5nCSG5TL1bP1geD8aaBfaLnLLCD.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/nIrDm42dy5PaXtUAzUfPmxM4mQm.jpg",
-              "id": 447332,
-              "title": "A Quiet Place",
-              "original_title": "A Quiet Place",
-              "overview": "A family is forced to live in silence while hiding from creatures that hunt by sound.",
-              "poster_path": "/nAU74GmpUk7t5iklEp3bufwDq4n.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27,
-                18,
-                878
-              ],
-              "popularity": 9.6221,
-              "release_date": "2018-04-03",
-              "video": false,
-              "vote_average": 7.395,
-              "vote_count": 14939
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/fKPgObonYgPgCdu88yjV7Hpn7Dp.jpg",
-              "id": 273481,
-              "title": "Sicario",
-              "original_title": "Sicario",
-              "overview": "An idealistic FBI agent is enlisted by a government task force to aid in the escalating war against drugs at the border area between the U.S. and Mexico.",
-              "poster_path": "/lz8vNyXeidqqOdJW9ZjnDAMb5Vr.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
                 28,
-                80,
-                53
+                14
               ],
-              "popularity": 9.5773,
-              "release_date": "2015-09-17",
+              "popularity": 112.0816,
+              "release_date": "1999-04-16",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.414,
-              "vote_count": 9229
+              "vote_average": 6.972,
+              "vote_count": 9988
             },
             {
               "adult": false,
-              "backdrop_path": "/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
-              "id": 137113,
-              "title": "Edge of Tomorrow",
-              "original_title": "Edge of Tomorrow",
-              "overview": "Major Bill Cage is an officer who has never seen a day of combat when he is unceremoniously demoted and dropped into combat. Cage is killed within minutes, managing to take an alpha alien down with him. He awakens back at the beginning of the same day and is forced to fight and die again... and again - as physical contact with the alien has thrown him into a time loop.",
-              "poster_path": "/nBM9MMa2WCwvMG4IJ3eiGUdbPe6.jpg",
+              "backdrop_path": "/7s7WkAFPBsMTprYMbqbgKoppQsR.jpg",
+              "id": 1734,
+              "title": "The Mummy Returns",
+              "original_title": "The Mummy Returns",
+              "overview": "Rick and Evelyn O\u2019Connell, along with their 8-year-old son Alex, discover the key to the legendary Scorpion King\u2019s might: the fabled Bracelet of Anubis. Unfortunately, a newly resurrected Imhotep has designs on the bracelet as well, and isn\u2019t above kidnapping its new bearer, Alex, to gain control of Anubis\u2019s otherworldly army.",
+              "poster_path": "/kdJsW7hcy1lrj7tdMPycTAQPAiR.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                28,
-                878
-              ],
-              "popularity": 9.8723,
-              "release_date": "2014-05-27",
-              "video": false,
-              "vote_average": 7.633,
-              "vote_count": 14635
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 2113005,
-          "known_for_department": "Acting",
-          "name": "Zhao Jinmai",
-          "original_name": "\u8D75\u4ECA\u9EA6",
-          "popularity": 24.069,
-          "profile_path": "/hndhOhSK0GAMi1qQaacacl3aHzO.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/wIrqeoJHYtZmneqIufPtcOHMjOg.jpg",
-              "id": 535167,
-              "title": "The Wandering Earth",
-              "original_title": "\u6D41\u6D6A\u5730\u7403",
-              "overview": "When the Sun begins to expand in such a way that it will inevitably engulf and destroy the Earth in a hundred years, united mankind finds a way to avoid extinction by propelling the planet out of the Solar System using gigantic engines, moving it to a new home located four light years away, an epic journey that will last thousands of years.",
-              "poster_path": "/z3MXFdFjrYmoxOEFgE1wuphwo2a.jpg",
-              "media_type": "movie",
-              "original_language": "zh",
-              "genre_ids": [
-                878,
-                28,
-                18
-              ],
-              "popularity": 2.9342,
-              "release_date": "2019-02-05",
-              "video": false,
-              "vote_average": 6.649,
-              "vote_count": 1084
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/wNYUv8u5Z0AI4dkyxGyet7eLEWm.jpg",
-              "id": 945675,
-              "title": "One Week Friends",
-              "original_title": "\u4E00\u5468\u7684\u670B\u53CB",
-              "overview": "A high school student suffers from a strange amnesia, causing her memories to only last a week. After she befriends a new student, his kindness and persistence make her gradually open up.",
-              "poster_path": "/9Adt7lE79voOqRzYhe4mNnHqUoo.jpg",
-              "media_type": "movie",
-              "original_language": "zh",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 3.5331,
-              "release_date": "2022-06-18",
-              "video": false,
-              "vote_average": 5.955,
-              "vote_count": 122
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/diTz0umqocpeFa0g4Q4DiMw84DF.jpg",
-              "id": 155441,
-              "name": "Reset",
-              "original_name": "\u5F00\u7AEF",
-              "overview": "The lives of a college student and a video game designer are kept being reset after an explosion on a bus. During each reset, they have to work together to find out what the reason for the explosion is. Will these two be able to save themselves and their fellow passengers? Will they be able to close the time-loop?",
-              "poster_path": "/t95T31wxF0ElSwUE4U8AnOSAmF3.jpg",
-              "media_type": "tv",
-              "original_language": "zh",
-              "genre_ids": [
-                18,
-                9648
-              ],
-              "popularity": 2.3773,
-              "first_air_date": "2022-01-11",
-              "vote_average": 8.131,
-              "vote_count": 111,
-              "origin_country": [
-                "CN"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 1245,
-          "known_for_department": "Acting",
-          "name": "Scarlett Johansson",
-          "original_name": "Scarlett Johansson",
-          "popularity": 22.9557,
-          "profile_path": "/mjReG6rR7NPMEIWb1T4YWtV11ty.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/ozVwXlfxqNsariipatGwa5px3Pm.jpg",
-              "id": 240832,
-              "title": "Lucy",
-              "original_title": "Lucy",
-              "overview": "A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic.",
-              "poster_path": "/dhjyfcwEoW6jJ4Q7DpZTp6E58GA.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
-                878
-              ],
-              "popularity": 9.6601,
-              "release_date": "2014-07-25",
-              "video": false,
-              "vote_average": 6.471,
-              "vote_count": 16721
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg",
-              "id": 497698,
-              "title": "Black Widow",
-              "original_title": "Black Widow",
-              "overview": "Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.",
-              "poster_path": "/7JPpIjhD2V0sKyFvhB9khUMa30d.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                28,
                 12,
-                878
+                28,
+                14
               ],
-              "popularity": 11.7744,
-              "release_date": "2021-07-07",
+              "popularity": 69.8007,
+              "release_date": "2001-05-04",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.2,
-              "vote_count": 10907
+              "vote_average": 6.403,
+              "vote_count": 7662
             },
             {
               "adult": false,
-              "backdrop_path": "/dDVqfmCzSy3TKSmiS2pJ9QB5E3P.jpg",
-              "id": 315837,
-              "title": "Ghost in the Shell",
-              "original_title": "Ghost in the Shell",
-              "overview": "In the near future, Major is the first of her kind: a human saved from a terrible crash, then cyber-enhanced to be a perfect soldier devoted to stopping the world\u0027s most dangerous criminals.",
-              "poster_path": "/zCtL3UBgCoZzd7XTVGhvl6XY75E.jpg",
+              "backdrop_path": "/W034dd7w2malON26KWyZm4y37W.jpg",
+              "id": 1735,
+              "title": "The Mummy: Tomb of the Dragon Emperor",
+              "original_title": "The Mummy: Tomb of the Dragon Emperor",
+              "overview": "Archaeologist Rick O\u0027Connell travels to China, pitting him against an emperor from the 2,000-year-old Han dynasty who\u0027s returned from the dead to pursue a quest for world domination. This time, O\u0027Connell enlists the help of his wife and son to quash the so-called \u0027Dragon Emperor\u0027 and his abuse of supernatural power.",
+              "poster_path": "/A3acM1lX5PNWQa6r5qeMAJOxbnT.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                878,
-                18,
-                28
+                12,
+                28,
+                14
               ],
-              "popularity": 4.6913,
-              "release_date": "2017-03-29",
+              "popularity": 21.7806,
+              "release_date": "2008-07-01",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.102,
-              "vote_count": 8373
+              "vote_average": 5.518,
+              "vote_count": 4803
             }
           ]
         },
@@ -631,26 +437,27 @@
           "known_for_department": "Acting",
           "name": "Sydney Sweeney",
           "original_name": "Sydney Sweeney",
-          "popularity": 22.7304,
+          "popularity": 20.652,
           "profile_path": "/uDnIdU4KGjQg7liFvb9wnALvg95.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/9KnIzPCv9XpWA0MqmwiKBZvV1Sj.jpg",
+              "backdrop_path": "/mez2Z3WqlPKNXpi7mWoiiE5guE9.jpg",
               "id": 85552,
               "name": "Euphoria",
               "original_name": "Euphoria",
               "overview": "A group of high school students navigate love and friendships in a world of drugs, sex, trauma, and social media.",
-              "poster_path": "/3Q0hd3heuWwDWpwcDkhQOA6TYWI.jpg",
+              "poster_path": "/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg",
               "media_type": "tv",
               "original_language": "en",
               "genre_ids": [
                 18
               ],
-              "popularity": 40.6471,
+              "popularity": 221.548,
               "first_air_date": "2019-06-16",
-              "vote_average": 8.287,
-              "vote_count": 10241,
+              "softcore": false,
+              "vote_average": 8.289,
+              "vote_count": 10669,
               "origin_country": [
                 "US"
               ]
@@ -669,705 +476,1068 @@
                 10749,
                 35
               ],
-              "popularity": 10.9736,
+              "popularity": 14.7901,
               "release_date": "2023-12-21",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.828,
-              "vote_count": 2826
+              "vote_average": 6.777,
+              "vote_count": 3062
             },
             {
               "adult": false,
-              "backdrop_path": "/3zKU2EznBtOPtheyCTQwdZL4b93.jpg",
-              "id": 1041613,
-              "title": "Immaculate",
-              "original_title": "Immaculate",
-              "overview": "An American nun embarks on a new journey when she joins a remote convent in the Italian countryside. However, her warm welcome quickly turns into a living nightmare when she discovers her new home harbours a sinister secret and unspeakable horrors.",
-              "poster_path": "/zyopv7D5j7cfswG0NYiA14qAdPC.jpg",
+              "backdrop_path": "/8lgSWWrpS75Hwdm0TZlL1dK7VDD.jpg",
+              "id": 1368166,
+              "title": "The Housemaid",
+              "original_title": "The Housemaid",
+              "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dangerous\u2014a sexy, seductive game of secrets, scandal, and power.",
+              "poster_path": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27,
                 9648,
                 53
               ],
-              "popularity": 5.0036,
-              "release_date": "2024-03-20",
+              "popularity": 69.3416,
+              "release_date": "2025-12-18",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.218,
-              "vote_count": 1529
+              "vote_average": 7.246,
+              "vote_count": 2173
             }
           ]
         },
         {
           "adult": false,
           "gender": 1,
-          "id": 141801,
+          "id": 2478377,
           "known_for_department": "Acting",
-          "name": "Paige Tamada",
-          "original_name": "Paige Tamada",
-          "popularity": 22.4105,
-          "profile_path": "/pORrZ9gppePMsZBHhwRHvNogFU7.jpg",
+          "name": "Ella Bright",
+          "original_name": "Ella Bright",
+          "popularity": 18.7557,
+          "profile_path": "/frdjTC8xrHJAbSUCNcrUvnU0SVx.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/rcQZmnhcb6P4mkgJAHnCYp3c1gp.jpg",
-              "id": 11395,
-              "title": "The Santa Clause",
-              "original_title": "The Santa Clause",
-              "overview": "On Christmas Eve, divorced dad Scott Calvin and his son discover Santa Claus has fallen off their roof. When Scott takes the reins of the magical sleigh, he finds he is now the new Santa, and must convince a world of disbelievers, including himself.",
-              "poster_path": "/hvV2rI60qOYELT7tHHLpxtafnBZ.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                14,
-                18,
-                35,
-                10751
-              ],
-              "popularity": 13.67,
-              "release_date": "1994-11-11",
-              "video": false,
-              "vote_average": 6.513,
-              "vote_count": 2217
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/uyB27Tx3KtczuSo4tDfmiXhfuCp.jpg",
-              "id": 1892,
-              "name": "The Fresh Prince of Bel-Air",
-              "original_name": "The Fresh Prince of Bel-Air",
-              "overview": "Will, a street-smart teenager, moves from the tough streets of West Philly to posh Bel-Air to live with his Uncle Philip, Aunt Vivian, his cousins \u2014 spoiled Hilary, preppy Carlton and young Ashley \u2014 and their sophisticated British butler, Geoffrey. Though Will\u2019s antics and upbringing contrast greatly with the upper-class lifestyle of his extended relatives, he soon finds himself right at home as a loved part of the family.",
-              "poster_path": "/fJXzwxCVr2TEkhhKRKcih9o5DYK.jpg",
+              "backdrop_path": "/52sp0vPhLOWrZ1QoZIWiapronM.jpg",
+              "id": 273240,
+              "name": "Off Campus",
+              "original_name": "Off Campus",
+              "overview": "Hannah Wells tutors hockey captain Garrett Graham to win over her crush. Their deal becomes real connection as they face their pasts. Friends Logan, Dean, Tucker, and Allie navigate college life and love.",
+              "poster_path": "/cbODFqkcmRgrYH8NkG4Q4Hcg8Z1.jpg",
               "media_type": "tv",
               "original_language": "en",
               "genre_ids": [
-                35,
-                10751
+                18
               ],
-              "popularity": 15.1347,
-              "first_air_date": "1990-09-10",
-              "vote_average": 7.92,
-              "vote_count": 2381,
+              "popularity": 502.8831,
+              "first_air_date": "2026-05-13",
+              "softcore": false,
+              "vote_average": 9.064,
+              "vote_count": 219,
               "origin_country": [
                 "US"
               ]
             },
             {
               "adult": false,
-              "backdrop_path": "/bG9GfEN24IMSieaiNNcxIUyTHRh.jpg",
-              "id": 58093,
-              "title": "Milo",
-              "original_title": "Milo",
-              "overview": "Four young grade-school girls witness the murder of one of their classmates during what they thought was just an innocent game. The killer is a strange young boy named Milo Jeeder. Sixteen years later, the four survivors of the event re-unite under happier circumstances in the same town where it happened. They believe that Milo drowned in a river shortly after the murder, but soon learn that the demonic killer Milo has also returned, still a young boy, unchanged even after almost two decades.",
-              "poster_path": "/lNKffmpdUqz7IDV0ly1t7vx0kYI.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27
-              ],
-              "popularity": 1.5302,
-              "release_date": "1998-10-06",
-              "video": false,
-              "vote_average": 4.3,
-              "vote_count": 22
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 1223876,
-          "known_for_department": "Acting",
-          "name": "Tyler Chase",
-          "original_name": "Tyler Chase",
-          "popularity": 18.4937,
-          "profile_path": "/wcsh5Eu83vrEXOny35LMscwL2B9.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/nJSPkq5dtASykhiYIZhpCX9Zgeq.jpg",
-              "id": 449176,
-              "title": "Love, Simon",
-              "original_title": "Love, Simon",
-              "overview": "Everyone deserves a great love story, but for 17-year-old Simon Spier, it\u0027s a little more complicated. He hasn\u0027t told his family or friends that he\u0027s gay, and he doesn\u0027t know the identity of the anonymous classmate that he\u0027s fallen for online.",
-              "poster_path": "/snIsqVPmlu4LPjvToHpDotxa7Eh.jpg",
+              "backdrop_path": "/5Zvu4SrY3p9qgnITkCn4jAQwKvB.jpg",
+              "id": 426563,
+              "title": "Holmes \u0026 Watson",
+              "original_title": "Holmes \u0026 Watson",
+              "overview": "Detective Sherlock Holmes and Dr. John Watson join forces to investigate a mysterious murder at Buckingham Palace. It seems like an open-and-shut case as all signs point to Professor James Moriarty, the criminal mastermind and longtime nemesis of the crime-solving duo. When new twists and clues begin to emerge, the world\u0027s greatest sleuth and his trusted assistant must now use their legendary wits and ingenious methods to catch the killer as they only have four days before the queen becomes the next victim.",
+              "poster_path": "/orEUlKndjV1rEcWqXbbjegjfv97.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
                 35,
-                18,
-                10749
-              ],
-              "popularity": 2.7809,
-              "release_date": "2018-02-16",
-              "video": false,
-              "vote_average": 7.983,
-              "vote_count": 6177
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/rAOjnEFTuNysY7bot8zonhImGMh.jpg",
-              "id": 1402,
-              "name": "The Walking Dead",
-              "original_name": "The Walking Dead",
-              "overview": "Sheriff\u0027s deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
-              "poster_path": "/ng3cMtxYKt1OSQYqFlnKWnVsqNO.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                10759,
-                18,
-                10765
-              ],
-              "popularity": 83.1204,
-              "first_air_date": "2010-10-31",
-              "vote_average": 8.089,
-              "vote_count": 17379,
-              "origin_country": [
-                "US"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/dxcVAo7NyrVmOV9iXFVTGnJFP0F.jpg",
-              "id": 68052,
-              "name": "Freakish",
-              "original_name": "Freakish",
-              "overview": "A group of students trapped in a high school must fight for survival when predatory mutant freaks take over after a meltdown at the local chemical plant.",
-              "poster_path": "/mfnKy9zX5t56gE1Tp5OWikF6agE.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                10765
-              ],
-              "popularity": 1.7699,
-              "first_air_date": "2016-10-10",
-              "vote_average": 6.328,
-              "vote_count": 64,
-              "origin_country": [
-                "US"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 3467949,
-          "known_for_department": "Acting",
-          "name": "Maya McNair",
-          "original_name": "Maya McNair",
-          "popularity": 18.1273,
-          "profile_path": "/sGjeXXuC2ubZr0a7iKbHNplHATV.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/stMVkOzLeHqaz6cdd3BV6saKxcz.jpg",
-              "id": 929569,
-              "title": "World\u0027s Best",
-              "original_title": "World\u0027s Best",
-              "overview": "Twelve-year-old mathematics genius Prem discovers his recently deceased father was a famous rapper and immediately sets out to learn more about his father\u2019s life and passions. Empowered by imaginative hip-hop music-fueled fantasies, Prem is determined to find out if hip-hop truly is in his DNA.",
-              "poster_path": "/9xvEhZZMOmLIkqe4khrtF5TkOnO.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                10402,
-                10751,
-                35
-              ],
-              "popularity": 3.6847,
-              "release_date": "2023-06-23",
-              "video": false,
-              "vote_average": 6.2,
-              "vote_count": 20
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg",
-              "id": 200875,
-              "name": "IT: Welcome to Derry",
-              "original_name": "IT: Welcome to Derry",
-              "overview": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried evil lurking. As the kids set out to determine what\u0027s really going on, a rising unease prompts several townspeople to work together to restore peace \u2013 all while a U.S. military operation seeks to exploit Derry for its own objectives.",
-              "poster_path": "/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                9648
-              ],
-              "popularity": 277.6787,
-              "first_air_date": "2025-10-26",
-              "vote_average": 8.254,
-              "vote_count": 1006,
-              "origin_country": [
-                "US"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/eSVvx8xys2NuFhl8fevXt41wX7v.jpg",
-              "id": 103302,
-              "name": "Clarice",
-              "original_name": "Clarice",
-              "overview": "In 1993, six months after the events of The Silence of the Lambs, FBI Agent Clarice Starling returns to the field to pursue serial murderers and sexual predators while navigating the high stakes political world of Washington, D.C.",
-              "poster_path": "/7OFxU0bBO0HDL4klXmM1ahJPbv8.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18
-              ],
-              "popularity": 2.9669,
-              "first_air_date": "2021-02-11",
-              "vote_average": 6.9,
-              "vote_count": 254,
-              "origin_country": [
-                "US"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 15048,
-          "known_for_department": "Acting",
-          "name": "Robby Benson",
-          "original_name": "Robby Benson",
-          "popularity": 17.8808,
-          "profile_path": "/rYcDiM9LrStdlcb80N3WAR2CsHX.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/fW4ZCoEZRBqLAJGFQ2g5AdAfPQR.jpg",
-              "id": 10020,
-              "title": "Beauty and the Beast",
-              "original_title": "Beauty and the Beast",
-              "overview": "Follow the adventures of Belle, a bright young woman who finds herself in the castle of a prince who\u0027s been turned into a mysterious beast. With the help of the castle\u0027s enchanted staff, Belle soon learns the most important lesson of all -- that true beauty comes from within.",
-              "poster_path": "/hUJ0UvQ5tgE2Z9WpfuduVSdiCiU.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                10749,
-                10751,
-                16,
-                14
-              ],
-              "popularity": 10.6775,
-              "release_date": "1991-10-22",
-              "video": false,
-              "vote_average": 7.728,
-              "vote_count": 10409
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/cJb3cXT8Zx3VdXTKDyR3O5SbVKv.jpg",
-              "id": 13313,
-              "title": "Beauty and the Beast: The Enchanted Christmas",
-              "original_title": "Beauty and the Beast: The Enchanted Christmas",
-              "overview": "Astonished to find the Beast has a deep-seeded hatred for the Christmas season, Belle endeavors to change his mind on the matter.",
-              "poster_path": "/l1Tb0fvnj9wnCgm5qnTRoO6OxDT.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                16,
-                10751,
-                14
-              ],
-              "popularity": 5.3622,
-              "release_date": "1997-11-11",
-              "video": false,
-              "vote_average": 6.225,
-              "vote_count": 1073
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/dAuE36QjmEXW3AkIzYlHyaBOmmF.jpg",
-              "id": 20235,
-              "title": "Belle\u0027s Magical World",
-              "original_title": "Belle\u0027s Magical World",
-              "overview": "Belle, the Beast, Lumiere, Cogsworth and the rest of those zany castle residents use their imaginations to embark on three magical, storybook adventures. This direct-to-video anthology serves as a \u0022sequel\u0022 to Disney\u0027s animated hit film. In \u0022The Perfect World,\u0022 Belle and the Beast learn about forgiveness. In \u0022Fifi\u0027s Folly,\u0022 Lumiere\u0027s girlfriend is jealous of his bond with Belle. And in \u0022Broken Wing,\u0022 the Beast learns to be kind to an injured bird.",
-              "poster_path": "/md6BrF3we17ZnPibam9jZDCl5iN.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                16,
-                10751
-              ],
-              "popularity": 2.2978,
-              "release_date": "1998-02-16",
-              "video": false,
-              "vote_average": 6.194,
-              "vote_count": 483
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 2049994,
-          "known_for_department": "Acting",
-          "name": "Zhao Lusi",
-          "original_name": "\u8D75\u9732\u601D",
-          "popularity": 17.7794,
-          "profile_path": "/y82wmaDqTdXqvtasb4kxAIuT44U.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/wQlJJJ50gKphCci0SmoetUXmJN4.jpg",
-              "id": 210733,
-              "name": "Hidden Love",
-              "original_name": "\u5077\u5077\u85CF\u4E0D\u4F4F",
-              "overview": "Since high school, Sang Zhi has had a crush on Duan Jiaxu. When fate brings them together again, they find a chance to embark on a sweet relationship.",
-              "poster_path": "/riGzESa9N9toumP9OhMmg0QvFPD.jpg",
-              "media_type": "tv",
-              "original_language": "zh",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 14.5801,
-              "first_air_date": "2023-06-20",
-              "vote_average": 8.467,
-              "vote_count": 212,
-              "origin_country": [
-                "CN"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/5BuVAlwQiLHVqTWITHxaLmp2leB.jpg",
-              "id": 87299,
-              "name": "I Hear You",
-              "original_name": "\u6700\u52A8\u542C\u7684\u4E8B",
-              "overview": "Bei Er Duo, a girl from an ordinary family, dreams about studying in Japan to be a professional voice actor. However, her mother wants her to marry rich whilst she is young, leading to continuous blind dates which irritate Bei Er Duo. In her desperation to raise funds for studying overseas as well as helping her best friend Tang Li out of a crisis, Bei Er Duo joins a couple reality program, encountering top violin maker Ye Shu Wei.",
-              "poster_path": "/2wVMh3vqvt1IgAhextxwUKxaOAH.jpg",
-              "media_type": "tv",
-              "original_language": "zh",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 2.8813,
-              "first_air_date": "2019-01-28",
-              "vote_average": 7.7,
-              "vote_count": 68,
-              "origin_country": [
-                "CN"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/gxafmR8O7cAJxmrs3RHp1P2ftsY.jpg",
-              "id": 103635,
-              "name": "The Romance of Tiger and Rose",
-              "original_name": "\u4F20\u95FB\u4E2D\u7684\u9648\u828A\u828A",
-              "overview": "Chen Xiaoqian, a struggling screenwriter suddenly finds herself trapped inside her own script as the Third Princess of Dongliang, a female-led kingdom. With her character caught between an arranged engagement to the noble Pei Heng and a forbidden love for Prince Han Shuo of a rival nation, Xiaoqian must rewrite her fate to survive\u2014and discover what love truly means.",
-              "poster_path": "/mCsidkxf6ji8e71T07dYff3FjCF.jpg",
-              "media_type": "tv",
-              "original_language": "zh",
-              "genre_ids": [
-                35,
-                18
-              ],
-              "popularity": 2.2812,
-              "first_air_date": "2020-05-18",
-              "vote_average": 7.4,
-              "vote_count": 26,
-              "origin_country": [
-                "CN"
-              ]
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 18050,
-          "known_for_department": "Acting",
-          "name": "Elle Fanning",
-          "original_name": "Elle Fanning",
-          "popularity": 17.4769,
-          "profile_path": "/e8CUyxQSE99y5IOfzSLtHC0B0Ch.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/4hfcpHmMEgmFTdnVx4XCtM6dgCG.jpg",
-              "id": 102651,
-              "title": "Maleficent",
-              "original_title": "Maleficent",
-              "overview": "A beautiful, pure-hearted young woman, Maleficent has an idyllic life growing up in a peaceable forest kingdom, until one day when an invading army threatens the harmony of the land. She rises to be the land\u0027s fiercest protector, but she ultimately suffers a ruthless betrayal \u2013 an act that begins to turn her heart into stone. Bent on revenge, Maleficent faces an epic battle with the invading King\u0027s successor and, as a result, places a curse upon his newborn infant Aurora. As the child grows, Maleficent realizes that Aurora holds the key to peace in the kingdom \u2013 and to Maleficent\u0027s true happiness as well.",
-              "poster_path": "/bDG3yei6AJlEAK3A5wN7RwFXQ7V.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                14,
-                12,
-                28,
-                10751,
-                10749
-              ],
-              "popularity": 10.718,
-              "release_date": "2014-05-28",
-              "video": false,
-              "vote_average": 7.088,
-              "vote_count": 13509
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/xcfjWEmSpgJe8htlg1qFTwQfPG7.jpg",
-              "id": 301365,
-              "title": "The Neon Demon",
-              "original_title": "The Neon Demon",
-              "overview": "When aspiring model Jesse moves to Los Angeles, her youth and vitality are devoured by a group of beauty-obsessed women who will take any means necessary to get what she has.",
-              "poster_path": "/3rBo2AfWSlvsPmYFdJsNUMfkNIo.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27,
-                53
-              ],
-              "popularity": 3.7807,
-              "release_date": "2016-05-31",
-              "video": false,
-              "vote_average": 6.508,
-              "vote_count": 3857
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/x6Dr9i6vhWICxs7hnX2BakcMtPd.jpg",
-              "id": 37686,
-              "title": "Super 8",
-              "original_title": "Super 8",
-              "overview": "In late 1970s Ohio, a group of friends filming a homemade zombie movie witness a devastating train derailment. Soon after, their quiet town is gripped by unexplained disappearances, strange phenomena, and a growing sense of fear, as they uncover that something terrifying has been set loose.",
-              "poster_path": "/pUWIjaMMYJjeBm5bJyE3mIXdQ62.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                53,
-                878,
-                9648
-              ],
-              "popularity": 4.8778,
-              "release_date": "2011-06-08",
-              "video": false,
-              "vote_average": 6.771,
-              "vote_count": 6890
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 1,
-          "id": 1356210,
-          "known_for_department": "Acting",
-          "name": "Millie Bobby Brown",
-          "original_name": "Millie Bobby Brown",
-          "popularity": 17.2032,
-          "profile_path": "/yr61C2oLZiUlHmySso2Wc5MTv20.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
-              "id": 66732,
-              "name": "Stranger Things",
-              "original_name": "Stranger Things",
-              "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
-              "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
-              "media_type": "tv",
-              "original_language": "en",
-              "genre_ids": [
-                10765,
-                9648,
-                10759
-              ],
-              "popularity": 529.3398,
-              "first_air_date": "2016-07-15",
-              "vote_average": 8.596,
-              "vote_count": 19644,
-              "origin_country": [
-                "US"
-              ]
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/pQQggUuDMleFSl2tQYxzTmKIiLU.jpg",
-              "id": 497582,
-              "title": "Enola Holmes",
-              "original_title": "Enola Holmes",
-              "overview": "While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.",
-              "poster_path": "/riYInlsq2kf1AWoGm80JQW5dLKp.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                12,
                 9648,
                 80
               ],
-              "popularity": 5.419,
-              "release_date": "2020-09-23",
+              "popularity": 3.1457,
+              "release_date": "2018-12-25",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.24,
-              "vote_count": 6353
+              "vote_average": 4.308,
+              "vote_count": 929
             },
             {
               "adult": false,
-              "backdrop_path": "/deLWkOLZmBNkm8p16igfapQyqeq.jpg",
-              "id": 763215,
-              "title": "Damsel",
-              "original_title": "Damsel",
-              "overview": "A young woman\u0027s marriage to a charming prince turns into a fierce fight for survival when she\u0027s offered up as a sacrifice to a fire-breathing dragon.",
-              "poster_path": "/AgHbB9DCE9aE57zkHjSmseszh6e.jpg",
-              "media_type": "movie",
+              "backdrop_path": "/fGAqfLefgeuLwKe2Hk3OHb504G5.jpg",
+              "id": 101149,
+              "name": "Malory Towers",
+              "original_name": "Malory Towers",
+              "overview": "Follow the adventures of Darrell Rivers as she leaves home for the first time to attend an all-girls\u2019 boarding school. Set in post-war Britain on the sun-drenched cliffs of the Cornish coast, the series explores a nostalgic world of midnight feasts, lacrosse, pranks, a mystery ghost and lasting friendships.",
+              "poster_path": "/zU5yHvPmAWFIdz0cbCAmw0ONYQU.jpg",
+              "media_type": "tv",
               "original_language": "en",
               "genre_ids": [
-                14,
-                28,
-                12
+                10751,
+                18
               ],
-              "popularity": 11.4569,
-              "release_date": "2024-03-07",
-              "video": false,
-              "vote_average": 6.989,
-              "vote_count": 2631
+              "popularity": 8.6902,
+              "first_air_date": "2020-04-06",
+              "softcore": false,
+              "vote_average": 7.6,
+              "vote_count": 13,
+              "origin_country": [
+                "GB"
+              ]
             }
           ]
         },
         {
           "adult": false,
           "gender": 1,
-          "id": 3128782,
+          "id": 35224,
           "known_for_department": "Acting",
-          "name": "Nell Fisher",
-          "original_name": "Nell Fisher",
-          "popularity": 17.1744,
-          "profile_path": "/sBD7AFNCUuaqD443TBBFiAVHAHI.jpg",
+          "name": "Anndi McAfee",
+          "original_name": "Anndi McAfee",
+          "popularity": 17.7578,
+          "profile_path": "/31BmotCrcdSR6gFnJqqCUHvy6Dh.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
-              "id": 66732,
-              "name": "Stranger Things",
-              "original_name": "Stranger Things",
-              "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
-              "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+              "backdrop_path": "/7x9IsfdRlYXWyy817neZntOM0DN.jpg",
+              "id": 22582,
+              "title": "Tom and Jerry: The Movie",
+              "original_title": "Tom and Jerry: The Movie",
+              "overview": "The popular cartoon cat and mouse are thrown into a feature film. The story has the twosome trying to help an orphan girl who is being berated and exploited by a greedy guardian.",
+              "poster_path": "/k68ZB5trRKcEJSQdPiY6jtxVq14.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                16,
+                35,
+                10751
+              ],
+              "popularity": 4.0166,
+              "release_date": "1993-02-05",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.3,
+              "vote_count": 620
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/6neiLkVRYIVbbRTLhlSLtt8o5di.jpg",
+              "id": 537,
+              "name": "Hey Arnold!",
+              "original_name": "Hey Arnold!",
+              "overview": "The daily life of Arnold--a fourth-grader with a wild imagination, street smarts and a head shaped like a football.",
+              "poster_path": "/c1Yv042okfvMdT1Ulwlat9Tj70B.jpg",
               "media_type": "tv",
               "original_language": "en",
               "genre_ids": [
-                10765,
-                9648,
-                10759
+                10751,
+                16,
+                35,
+                18
               ],
-              "popularity": 529.3398,
-              "first_air_date": "2016-07-15",
-              "vote_average": 8.596,
-              "vote_count": 19644,
+              "popularity": 28.7783,
+              "first_air_date": "1996-10-07",
+              "softcore": false,
+              "vote_average": 8.018,
+              "vote_count": 975,
               "origin_country": [
                 "US"
               ]
             },
             {
               "adult": false,
-              "backdrop_path": "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
-              "id": 713704,
-              "title": "Evil Dead Rise",
-              "original_title": "Evil Dead Rise",
-              "overview": "A reunion between two estranged sisters gets cut short by the rise of flesh-possessing demons, thrusting them into a primal battle for survival as they face the most nightmarish version of family imaginable.",
-              "poster_path": "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg",
+              "backdrop_path": "/qIkSCWFsXGDYInpQCqtKqCsatKl.jpg",
+              "id": 17337,
+              "title": "The Land Before Time VI: The Secret of Saurus Rock",
+              "original_title": "The Land Before Time VI: The Secret of Saurus Rock",
+              "overview": "Legends claim that Saurus Rock keeps bad luck out of the Great Valley. Is it really true? Could the mysterious Longneck named Doc be the famous Lone Dinosaur, who can defeat a Sharptooth with his lasso-like tail To find out, Littlefoot and company must cross the great Valley and face a dangerous Sharptooth themselves!",
+              "poster_path": "/gULz0vkjx3VrN9aJGjQ7EduSNx8.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                27,
-                53
+                16,
+                12,
+                10751
               ],
-              "popularity": 11.1207,
-              "release_date": "2023-04-12",
+              "popularity": 1.208,
+              "release_date": "1998-12-01",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.918,
-              "vote_count": 3460
+              "vote_average": 6.2,
+              "vote_count": 296
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 5420126,
+          "known_for_department": "Acting",
+          "name": "Ashley Lopez",
+          "original_name": "Ashley Lopez",
+          "popularity": 17.0976,
+          "profile_path": "/pRIF389pP8fCmkp7wlOusY9AlMQ.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/f6nBStUsAEbn8i1vjMwqeaENxv9.jpg",
+              "id": 1442532,
+              "title": "Sticky",
+              "original_title": "Malagkit",
+              "overview": "When a man proposes marriage to his girlfriend, she wants to find out first if they are ready for a lifetime commitment. She meets her friend and her husband that will open up desires they are not aware of for a long time.",
+              "poster_path": "/cEJe5DfzXb0hqOsMzJxHzRjYLWq.jpg",
+              "media_type": "movie",
+              "original_language": "tl",
+              "genre_ids": [
+                10749
+              ],
+              "popularity": 2.3009,
+              "release_date": "2025-03-11",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.6,
+              "vote_count": 11
             },
             {
               "adult": false,
-              "backdrop_path": "/wDfpKEENIW5j65n08LHorrfItk.jpg",
-              "id": 1153110,
-              "title": "Bookworm",
-              "original_title": "Bookworm",
-              "overview": "Eleven-year-old Mildred\u2019s life is turned upside down when her mother lands in hospital and estranged, American magician father, Strawn Wise, comes to look after her.  Hoping to entertain the bookish tween, Strawn takes Mildred camping in the notoriously rugged New Zealand wilderness, and the pair embark on the ultimate test of family bonding \u2013 a quest to find the mythological beast known as the Canterbury Panther.",
-              "poster_path": "/260GDjmYf2A9W09RRo5FwUueQ3Y.jpg",
+              "backdrop_path": "/msNUV9bY0Z8PJ0uwzB7d8ckl5Bs.jpg",
+              "id": 1477108,
+              "title": "Maninilip",
+              "original_title": "Maninilip",
+              "overview": "Alex, a young photographer, secretly documents his neighbors\u2019 sex lives. But when he witnesses Luisa being abused by her husband, he uses his camera to help her\u2014and becomes entangled in a passionate affair.",
+              "poster_path": "/cHbcN1jelcN7QVKAZKk0q4pbJnT.jpg",
               "media_type": "movie",
-              "original_language": "en",
+              "original_language": "tl",
               "genre_ids": [
-                12,
-                10751,
-                35,
-                18
+                18,
+                53
               ],
-              "popularity": 2.7032,
-              "release_date": "2024-07-04",
+              "popularity": 6.2947,
+              "release_date": "2025-05-23",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.547,
-              "vote_count": 75
+              "vote_average": 7.5,
+              "vote_count": 4
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/tRz8qS7zyP5F77zx6X9TY3k6PVE.jpg",
+              "id": 1588860,
+              "title": "Happy Ending",
+              "original_title": "Happy Ending",
+              "overview": "Want the special with VMX Beauty Ashley Lopez? Ina is a new masseuse who gains the fancy of first-time customer Joel. But while Joel pursues Ina relentlessly, Ina is unsure if she can give him the happy ending he wants.",
+              "poster_path": "/wpYoYJ4kWLGhSfS3ofn4xEPJbun.jpg",
+              "media_type": "movie",
+              "original_language": "tl",
+              "genre_ids": [
+                18,
+                10749
+              ],
+              "popularity": 6.7082,
+              "release_date": "2025-12-22",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.4,
+              "vote_count": 5
             }
           ]
         },
         {
           "adult": false,
           "gender": 2,
-          "id": 880,
+          "id": 21743,
           "known_for_department": "Acting",
-          "name": "Ben Affleck",
-          "original_name": "Ben Affleck",
-          "popularity": 17.0511,
-          "profile_path": "/aTcqu8cI4wMohU17xTdqmXKTGrw.jpg",
+          "name": "Alexander Held",
+          "original_name": "Alexander Held",
+          "popularity": 16.0805,
+          "profile_path": "/zE9NoMX4657qMX52EMFah9pHYSI.jpg",
           "known_for": [
             {
               "adult": false,
-              "backdrop_path": "/iWak7wT0j6ycCc8lKr4NBz9c7n5.jpg",
-              "id": 210577,
-              "title": "Gone Girl",
-              "original_title": "Gone Girl",
-              "overview": "With his wife\u0027s disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it\u0027s suspected that he may not be innocent.",
-              "poster_path": "/ts996lKsxvjkO2yiYG0ht4qAicO.jpg",
+              "backdrop_path": "/zb6fM1CX41D9rF9hdgclu0peUmy.jpg",
+              "id": 424,
+              "title": "Schindler\u0027s List",
+              "original_title": "Schindler\u0027s List",
+              "overview": "The true story of how businessman Oskar Schindler saved over a thousand Jewish lives from the Nazis while they worked as slaves in his factory during World War II.",
+              "poster_path": "/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
-                9648,
-                53,
-                18
+                18,
+                36,
+                10752
               ],
-              "popularity": 13.2269,
-              "release_date": "2014-10-01",
+              "popularity": 35.851,
+              "release_date": "1993-12-15",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.889,
-              "vote_count": 19486
+              "vote_average": 8.569,
+              "vote_count": 17448
             },
             {
               "adult": false,
-              "backdrop_path": "/5fX1oSGuYdKgwWmUTAN5MNSQGzr.jpg",
-              "id": 209112,
-              "title": "Batman v Superman: Dawn of Justice",
-              "original_title": "Batman v Superman: Dawn of Justice",
-              "overview": "Fearing the actions of a god-like Super Hero left unchecked, Gotham City\u2019s own formidable, forceful vigilante takes on Metropolis\u2019s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it\u2019s ever known before.",
-              "poster_path": "/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
+              "backdrop_path": "/cmyrTgVrfsQNlQG4o6m7E5HoP0L.jpg",
+              "id": 613,
+              "title": "Downfall",
+              "original_title": "Der Untergang",
+              "overview": "In April of 1945, Germany stands at the brink of defeat with the Russian Army closing in from the east and the Allied Expeditionary Force attacking from the west. In Berlin, capital of the Third Reich, Adolf Hitler proclaims that Germany will still achieve victory and orders his generals and advisers to fight to the last man. When the end finally does come, and Hitler lies dead by his own hand, what is left of his military must find a way to end the killing that is the Battle of Berlin, and lay down their arms in surrender.",
+              "poster_path": "/cP1ElGjBhbZAAqmueXjHDKlSwiP.jpg",
+              "media_type": "movie",
+              "original_language": "de",
+              "genre_ids": [
+                18,
+                36,
+                10752
+              ],
+              "popularity": 6.4259,
+              "release_date": "2004-09-16",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.9,
+              "vote_count": 4301
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/4co3a3mx5BgoHCmJUPAI03MDOWy.jpg",
+              "id": 2117,
+              "title": "Sophie Scholl: The Final Days",
+              "original_title": "Sophie Scholl \u2013 Die letzten Tage",
+              "overview": "In 1943, as Hitler continues to wage war across Europe, a group of college students mount an underground resistance movement in Munich. Dedicated expressly to the downfall of the monolithic Third Reich war machine, they call themselves the White Rose. One of its few female members, Sophie Scholl is captured during a dangerous mission to distribute pamphlets on campus with her brother Hans. Unwavering in her convictions and loyalty to the White Rose, her cross-examination by the Gestapo quickly escalates into a searing test of wills as Scholl delivers a passionate call to freedom and personal responsibility.",
+              "poster_path": "/aAbxubEzowWJNBWYG82wXcKuzZP.jpg",
+              "media_type": "movie",
+              "original_language": "de",
+              "genre_ids": [
+                18,
+                36
+              ],
+              "popularity": 1.4727,
+              "release_date": "2005-02-13",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.119,
+              "vote_count": 458
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 18897,
+          "known_for_department": "Acting",
+          "name": "Jackie Chan",
+          "original_name": "\u6210\u9F8D",
+          "popularity": 15.1459,
+          "profile_path": "/nraZoTzwJQPHspAVsKfgl3RXKKa.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/9FrpAtF87VKblKkDEiIZzYgO40K.jpg",
+              "id": 2109,
+              "title": "Rush Hour",
+              "original_title": "Rush Hour",
+              "overview": "When Hong Kong Inspector Lee is summoned to Los Angeles to investigate a kidnapping, the FBI doesn\u0027t want any outside help and assigns cocky LAPD Detective James Carter to distract Lee from the case. Not content to watch the action from the sidelines, Lee and Carter form an unlikely partnership and investigate the case themselves.",
+              "poster_path": "/we7wOLVFgxhzLzUt0qNe50xdIQZ.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
                 28,
-                12,
-                14
+                35,
+                80
               ],
-              "popularity": 16.3057,
-              "release_date": "2016-03-23",
+              "popularity": 12.5984,
+              "release_date": "1998-09-18",
+              "softcore": false,
               "video": false,
-              "vote_average": 5.988,
-              "vote_count": 18642
+              "vote_average": 7.069,
+              "vote_count": 5640
             },
             {
               "adult": false,
-              "backdrop_path": "/2nyaeISu2xIxIgZYNpX4UayY8PN.jpg",
-              "id": 141052,
-              "title": "Justice League",
-              "original_title": "Justice League",
-              "overview": "Fuelled by his restored faith in humanity and inspired by Superman\u0027s selfless act, Bruce Wayne and Diana Prince assemble a team of metahumans consisting of Barry Allen, Arthur Curry and Victor Stone to face the catastrophic threat of Steppenwolf and the Parademons who are on the hunt for three Mother Boxes on Earth.",
-              "poster_path": "/eifGNCSDuxJeS1loAXil5bIGgvC.jpg",
+              "backdrop_path": "/vPJwn9pp5f58CqdaXU3eOSLoJkl.jpg",
+              "id": 5175,
+              "title": "Rush Hour 2",
+              "original_title": "Rush Hour 2",
+              "overview": "It\u0027s vacation time for Carter as he finds himself alongside Lee in Hong Kong wishing for more excitement. While Carter wants to party and meet the ladies, Lee is out to track down a Triad gang lord who may be responsible for killing two men at the American Embassy. Things get complicated as the pair stumble onto a counterfeiting plot. The boys are soon up to their necks in fist fights and life-threatening situations. A trip back to the U.S. may provide the answers about the bombing, the counterfeiting, and the true allegiance of sexy customs agent Isabella.",
+              "poster_path": "/aBQf2vMiCINeVC9v6BGVYKXurTh.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                35,
+                80
+              ],
+              "popularity": 9.8669,
+              "release_date": "2001-08-03",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.762,
+              "vote_count": 4585
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/ozsLB1HRCN6ZAmJN89pWtoiAwnb.jpg",
+              "id": 5174,
+              "title": "Rush Hour 3",
+              "original_title": "Rush Hour 3",
+              "overview": "After a botched assassination attempt, the mismatched duo finds themselves in Paris, struggling to retrieve a precious list of names, as the murderous crime syndicate\u0027s henchmen try their best to stop them. Once more, Lee and Carter must fight their way through dangerous gangsters; however, this time, the past has come back to haunt Lee. Will the boys get the job done once and for all?",
+              "poster_path": "/mp9CzKxLa2i7yblMXUrzVfGqsCo.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                35,
+                80
+              ],
+              "popularity": 7.3307,
+              "release_date": "2007-08-08",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.496,
+              "vote_count": 3709
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 3295424,
+          "known_for_department": "Acting",
+          "name": "Ava Mendez",
+          "original_name": "Ava Mendez",
+          "popularity": 15.1081,
+          "profile_path": "/7copIlR1xIzE4KxTXj1N9CwNQlf.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/ougkufYSiruP8jrEHQanXN7DxRv.jpg",
+              "id": 893694,
+              "title": "Eva",
+              "original_title": "Eva",
+              "overview": "When Eva gets involved in a steamy threesome with a houseboy and her lady boss, she realizes she has to choose only one between them.",
+              "poster_path": "/xADCcluh5TaqETZGO45RulKnYDy.jpg",
+              "media_type": "movie",
+              "original_language": "tl",
+              "genre_ids": [
+                18,
+                10749
+              ],
+              "popularity": 4.7134,
+              "release_date": "2021-12-24",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.36,
+              "vote_count": 25
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/1SJZxBUM1woyTK2yTFK4nHvh4C.jpg",
+              "id": 1091393,
+              "title": "Domme",
+              "original_title": "Domme",
+              "overview": "A man spies on his neighbors because of the noises they create every night. But he discovers that they do wild erotic practices. As he interferes with their business, the more he gets involved in their lives and their mess.",
+              "poster_path": "/yBScz1TeUs55fDKKUl4OvvZlO67.jpg",
+              "media_type": "movie",
+              "original_language": "tl",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 0.8649,
+              "release_date": "2023-03-17",
+              "softcore": false,
+              "video": false,
+              "vote_average": 3.5,
+              "vote_count": 6
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/kGD5j5FpAOXKVuWkCpfDMlqKGbq.jpg",
+              "id": 1015333,
+              "title": "The Escort Wife",
+              "original_title": "The Escort Wife",
+              "overview": "A wife who just had a miscarriage finds out that her husband is having an affair with a high-end escort. She turns into prostitution and will take her revenge on her...",
+              "poster_path": "/9cAFsL9dMWrqbfNMomSkkLBJsBS.jpg",
+              "media_type": "movie",
+              "original_language": "tl",
+              "genre_ids": [
+                53
+              ],
+              "popularity": 4.2134,
+              "release_date": "2022-09-16",
+              "softcore": false,
+              "video": false,
+              "vote_average": 4.692,
+              "vote_count": 13
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 2638587,
+          "known_for_department": "Acting",
+          "name": "Inde Navarrette",
+          "original_name": "Inde Navarrette",
+          "popularity": 14.9714,
+          "profile_path": "/dOyn0C1bUIZiXy2Q4ws04kB1RhS.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/pPKiIJEEcV0E1hpVcWRXyp73ZpX.jpg",
+              "id": 95057,
+              "name": "Superman \u0026 Lois",
+              "original_name": "Superman \u0026 Lois",
+              "overview": "After years of facing megalomaniacal supervillains, monsters wreaking havoc on Metropolis, and alien invaders intent on wiping out the human race, The Man of Steel aka Clark Kent and Lois Lane come face to face with one of their greatest challenges ever: dealing with all the stress, pressures and complexities that come with being working parents in today\u0027s society.",
+              "poster_path": "/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+              "media_type": "tv",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                10765
+              ],
+              "popularity": 40.2431,
+              "first_air_date": "2021-02-23",
+              "softcore": false,
+              "vote_average": 8.057,
+              "vote_count": 2680,
+              "origin_country": [
+                "US"
+              ]
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/1pKFDggvtk23zcn1vUcPiKyuHxM.jpg",
+              "id": 1339713,
+              "title": "Obsession",
+              "original_title": "Obsession",
+              "overview": "After breaking the mysterious \u0022One Wish Willow\u0022 to win his crush\u0027s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+              "poster_path": "/40I66L7QKguTFDPvcLcdiTbAD7I.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                27,
+                53
+              ],
+              "popularity": 257.9027,
+              "release_date": "2026-04-16",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.9,
+              "vote_count": 223
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/oIJjO1CvEdTMFNkWfHaV0RB584G.jpg",
+              "id": 628847,
+              "title": "Trap House",
+              "original_title": "Trap House",
+              "overview": "An undercover DEA agent and his partner embark on a game of cat and mouse with an audacious, and surprising group of thieves \u2013 their own rebellious teenagers, who have begun robbing from a dangerous cartel, using their parents\u0027 tactics and top-secret intel to do it.",
+              "poster_path": "/6tpAPeuuqbVnYWWPoOLEDLSBU7a.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                80,
+                53
+              ],
+              "popularity": 9.9203,
+              "release_date": "2025-11-14",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.583,
+              "vote_count": 265
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1487683,
+          "known_for_department": "Acting",
+          "name": "Hitoe Ootake",
+          "original_name": "\u5927\u7AF9\u4E00\u91CD",
+          "popularity": 14.9494,
+          "profile_path": "/44pPj6GmPInI9q6BAKMIygp9yN6.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/pNE7sm5kvMR8A3sKFaJNA78KkgS.jpg",
+              "id": 670435,
+              "title": "Female Teacher Diary: Forbidden Sex",
+              "original_title": "\u5973\u6559\u5E2B\u65E5\u8A18 \u7981\u3058\u3089\u308C\u305F\u6027",
+              "overview": "The film depicts the relationship between a beautiful teacher and a male teacher, popular among female students, an excellent student who tells the teacher about his feelings using an answering machine, and a high school student who bets on whether she can have a relationship with a male teacher. This is the debut full-length work by Hideo Nakata.",
+              "poster_path": "/wD7Xtfd91hfl66pMDWp1i8dVyX0.jpg",
+              "media_type": "movie",
+              "original_language": "ja",
+              "genre_ids": [
+                10749,
+                18
+              ],
+              "popularity": 18.725,
+              "release_date": "1995-09-08",
+              "softcore": true,
+              "video": false,
+              "vote_average": 4.8,
+              "vote_count": 6
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/3ABnMR20ZvrvFY4AFkoZq5Jfoj8.jpg",
+              "id": 631318,
+              "title": "Female Teacher Diary 3: Hidden Sex",
+              "original_title": "\u5973\u6559\u5E2B\u65E5\u8A183 \u79D8\u3081\u3089\u308C\u305F\u6027",
+              "overview": "When she takes off her teacher clothes, her womanhood breaks...  Satoko, a new teacher, is frightened by the hungry gazes of frustrated male students, and is bullied every day by delinquent students such as Hinata Masaaki. Unable to resist, she just lets things happen, and her only emotional solace is through computer communications. As she becomes addicted to lewd sex with the people she is communicating with, a shocking event befalls her...",
+              "poster_path": "/iG2OcU7azeRrtD2xoZznvQaDiTb.jpg",
+              "media_type": "movie",
+              "original_language": "ja",
+              "genre_ids": [],
+              "popularity": 3.3511,
+              "release_date": "1997-06-11",
+              "softcore": true,
+              "video": false,
+              "vote_average": 4.0,
+              "vote_count": 3
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/jsI6CJTkoLY5Aa7kLGzQd2UVO49.jpg",
+              "id": 934758,
+              "title": "Molester Diary: A Man Who Kept Stroking Ass 3",
+              "original_title": "\u5C3B\u3092\u64AB\u3067\u307E\u308F\u3057\u3064\u3065\u3051\u305F\u7537 \u75F4\u6F22\u65E5\u8A183",
+              "overview": "This is a criminal act. But I can\u0027t stop crying !! Chapter 3 Continue ... I want it. The art teacher\u0027s finger is a magical ubi! Elevator girl, days of lust for school girls to seek \u0022indecent\u0022 ?! Kyoko, an elevator girl who was surprised when she was molested on a commuter train. The molester man who is crazy about Kyoko\u0027s ass is Ishikawa, a high school art teacher. By touching Kyoko, Ishikawa, who leads a mediocre life, begins to regain his forgotten passion for sculpture. On the other hand, Kyoko forgives her body to Yano, an old man who wants to return Yori, but she finds herself that she can only feel it with Ishikawa\u0027s hands like playing with clay. Meanwhile, Ishikawa asks Kyoko to become a model for her sculpture, as if inspired by her student Kayo, who favors her and continues her provocation. Kyoko heads to the art room at midnight, Kayo chasing after her, while being puzzled by that pleasure ... The third must-see in the \u0022Ass Stroke\u0022 series!",
+              "poster_path": "/Afj7h8EpImp6rzrxUXmoc0qcwka.jpg",
+              "media_type": "movie",
+              "original_language": "ja",
+              "genre_ids": [],
+              "popularity": 12.2339,
+              "release_date": "1996-01-01",
+              "softcore": true,
+              "video": false,
+              "vote_average": 5.0,
+              "vote_count": 2
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1511047,
+          "known_for_department": "Art",
+          "name": "Roberto Plate",
+          "original_name": "Roberto Plate",
+          "popularity": 14.8853,
+          "profile_path": "/1entrWkrVOwFofjr67isZNUVo1j.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/y6rN93Sea9PpUrIWMdyXRbowSAe.jpg",
+              "id": 46978,
+              "title": "Ma\u00EEtresse",
+              "original_title": "Ma\u00EEtresse",
+              "overview": "After breaking into a house he believes is empty, thief Olivier is caught by the owner, Ariane, who turns out to be a dominatrix. Improbably falling for her, Olivier returns periodically, and an impulsive romance blossoms despite Ariane\u0027s profession. Soon Olivier becomes more familiar with her work, even joining in on occasion. However, when he discovers that Ariane has a son, he attempts to \u0022fix\u0022 her, hoping to give her a better life.",
+              "poster_path": "/4F9aPUvaWgU1ifvuHlaQgN6Ohnv.jpg",
+              "media_type": "movie",
+              "original_language": "fr",
+              "genre_ids": [
+                18,
+                10749
+              ],
+              "popularity": 1.4094,
+              "release_date": "1976-02-11",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.813,
+              "vote_count": 56
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/3PYCFFNjmGkuyaDzxTTiC6k8UU0.jpg",
+              "id": 64225,
+              "title": "Love on the Ground",
+              "original_title": "L\u0027Amour par terre",
+              "overview": "A playwright offers two actress friends the chance to appear in his new, unfinished play, which consists of only one female part.",
+              "poster_path": "/qQqNBjFWfTJhDUWArEX1BV5LG0M.jpg",
+              "media_type": "movie",
+              "original_language": "fr",
+              "genre_ids": [
+                18,
+                35
+              ],
+              "popularity": 0.5676,
+              "release_date": "1984-10-17",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.8,
+              "vote_count": 15
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/zRh0C48ce1WTVciCf7oGhVXWEPa.jpg",
+              "id": 204411,
+              "title": "The Games of Countess Dolingen",
+              "original_title": "Les Jeux de la Comtesse Dolingen de Gratz",
+              "overview": "This complex and puzzling French drama walks the fine wavering line between the fictional and the very real as it tells the tale of a strangely erotic event in the life of a little girl and the musings of a schizophrenic woman. Also involved is an enigmatic spouse who prepares a surprise for a burglar.",
+              "poster_path": "/lA5Rpet9DadRR5LeiUaa7yTkHvz.jpg",
+              "media_type": "movie",
+              "original_language": "fr",
+              "genre_ids": [
+                18
+              ],
+              "popularity": 0.6131,
+              "release_date": "1981-09-01",
+              "softcore": false,
+              "video": false,
+              "vote_average": 3.3,
+              "vote_count": 10
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 976,
+          "known_for_department": "Acting",
+          "name": "Jason Statham",
+          "original_name": "Jason Statham",
+          "popularity": 14.7731,
+          "profile_path": "/pXGSq2UpcDE2NMF8LR56QZf5U1q.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/gTghF8ardwJ48XLHkiapWk3ZmSo.jpg",
+              "id": 107,
+              "title": "Snatch",
+              "original_title": "Snatch",
+              "overview": "Unscrupulous boxing promoters, violent bookies, a Russian gangster, incompetent amateur robbers, and supposedly Jewish jewellers fight to track down a priceless stolen diamond.",
+              "poster_path": "/kJZoAHq1SLDdWjeNGtlHAnGpmFV.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                80,
+                35
+              ],
+              "popularity": 9.0461,
+              "release_date": "2000-09-01",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.822,
+              "vote_count": 9958
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/ibKeXahq4JD63z6uWQphqoJLvNw.jpg",
+              "id": 345940,
+              "title": "The Meg",
+              "original_title": "The Meg",
+              "overview": "A deep sea submersible pilot revisits his past fears in the Mariana Trench, and accidentally unleashes the seventy foot ancestor of the Great White Shark believed to be extinct.",
+              "poster_path": "/eyWICPcxOuTcDDDbTMOZawoOn8d.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                878,
+                27
+              ],
+              "popularity": 10.6663,
+              "release_date": "2018-08-09",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.248,
+              "vote_count": 8180
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/70AV2Xx5FQYj20labp0EGdbjI6E.jpg",
+              "id": 637649,
+              "title": "Wrath of Man",
+              "original_title": "Wrath of Man",
+              "overview": "A cold and mysterious new security guard for a Los Angeles cash truck company surprises his co-workers when he unleashes precision skills during a heist. The crew is left wondering who he is and where he came from. Soon, the marksman\u0027s ultimate motive becomes clear as he takes dramatic and irrevocable steps to settle a score.",
+              "poster_path": "/M7SUK85sKjaStg4TKhlAVyGlz3.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                53,
+                80,
+                18
+              ],
+              "popularity": 28.6477,
+              "release_date": "2021-04-22",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.574,
+              "vote_count": 6080
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1813,
+          "known_for_department": "Acting",
+          "name": "Anne Hathaway",
+          "original_name": "Anne Hathaway",
+          "popularity": 14.4419,
+          "profile_path": "/s6tflSD20MGz04ZR2R1lZvhmC4Y.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/2ssWTSVklAEc98frZUQhgtGHx7s.jpg",
+              "id": 157336,
+              "title": "Interstellar",
+              "original_title": "Interstellar",
+              "overview": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+              "poster_path": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                12,
+                18,
+                878
+              ],
+              "popularity": 75.1374,
+              "release_date": "2014-11-05",
+              "softcore": false,
+              "video": false,
+              "vote_average": 8.474,
+              "vote_count": 39784
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/gkh6Nt8DtY1XT4gQsyFq9XAVJlJ.jpg",
+              "id": 350,
+              "title": "The Devil Wears Prada",
+              "original_title": "The Devil Wears Prada",
+              "overview": "A young woman from the Midwest gets more than she bargained for when she moves to New York to become a writer and ends up as the assistant to the tyrannical, larger-than-life editor-in-chief of a major fashion magazine.",
+              "poster_path": "/8912AsVuS7Sj915apArUFbv6F9L.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                18,
+                35
+              ],
+              "popularity": 213.6181,
+              "release_date": "2006-06-29",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.42,
+              "vote_count": 13533
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/d44RH1S9h1iQfhwsX9IX4zxhzjQ.jpg",
+              "id": 9880,
+              "title": "The Princess Diaries",
+              "original_title": "The Princess Diaries",
+              "overview": "A socially awkward but very bright 15-year-old girl being raised by a single mom discovers that she is the princess of a small European country because of the recent death of her long-absent father, who, unknown to her, was the crown prince of Genovia. She must make a choice between continuing the life of a San Francisco teen or stepping up to the throne.",
+              "poster_path": "/qSw4lzhDGeM5MjQc86BLzJALhBs.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                35,
+                10751,
+                10749
+              ],
+              "popularity": 9.5227,
+              "release_date": "2001-08-03",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.962,
+              "vote_count": 5263
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 500,
+          "known_for_department": "Acting",
+          "name": "Tom Cruise",
+          "original_name": "Tom Cruise",
+          "popularity": 14.1476,
+          "profile_path": "/p17SLq4wabXwIYyjXF1Wf5cNnAm.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
+              "id": 137113,
+              "title": "Edge of Tomorrow",
+              "original_title": "Edge of Tomorrow",
+              "overview": "Major Bill Cage is an officer who has never seen a day of combat when he is unceremoniously demoted and dropped into combat. Cage is killed within minutes, managing to take an alpha alien down with him. He awakens back at the beginning of the same day and is forced to fight and die again... and again - as physical contact with the alien has thrown him into a time loop.",
+              "poster_path": "/nBM9MMa2WCwvMG4IJ3eiGUdbPe6.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                878
+              ],
+              "popularity": 11.7913,
+              "release_date": "2014-05-27",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.638,
+              "vote_count": 15039
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/2kVt8oj1cSz4GAP0Hi8SESOiH0T.jpg",
+              "id": 75612,
+              "title": "Oblivion",
+              "original_title": "Oblivion",
+              "overview": "Jack Harper is one of the last few drone repairmen stationed on Earth. Part of a massive operation to extract vital resources after decades of war with a terrifying threat known as the Scavs, Jack\u2019s mission is nearly complete. His existence is brought crashing down when he rescues a beautiful  stranger from a downed spacecraft. Her arrival triggers a chain of events that  forces him to question everything he knows and puts the fate of humanity in his hands.",
+              "poster_path": "/bYLM3GpNUZnoFElPXp1zlhDPdtv.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                878,
+                12,
+                9648
+              ],
+              "popularity": 7.8,
+              "release_date": "2013-04-10",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.678,
+              "vote_count": 11491
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/AaV1YIdWKnjAIAOe8UUKBFm327v.jpg",
+              "id": 361743,
+              "title": "Top Gun: Maverick",
+              "original_title": "Top Gun: Maverick",
+              "overview": "After more than thirty years of service as one of the Navy\u2019s top aviators, and dodging the advancement in rank that would ground him, Pete \u201CMaverick\u201D Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+              "poster_path": "/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                18
+              ],
+              "popularity": 38.9243,
+              "release_date": "2022-05-21",
+              "softcore": false,
+              "video": false,
+              "vote_average": 8.158,
+              "vote_count": 10946
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 20652,
+          "known_for_department": "Acting",
+          "name": "Cecilia Cheung",
+          "original_name": "\u5F35\u67CF\u829D",
+          "popularity": 13.7245,
+          "profile_path": "/xghVxRPUmFCHYxzD0NxMO8NtoKK.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/AwlJ2bQGjfEuXLsL5XJAaxOmMuV.jpg",
+              "id": 2008,
+              "title": "The Promise",
+              "original_title": "\u65E0\u6781",
+              "overview": "An orphaned girl, driven by poverty at such a young age, makes a promise with an enchantress. In return for beauty and the admiration of every man, she will never be with the man she loves. This spell cannot be broken unless the impossible happens: snow falling in spring and the dead coming back to life. Now a grown and beautiful princess, she regrets her promise, for all of the men she\u0027s loved has always been met with tragedy.",
+              "poster_path": "/tdm4mlc27S1d72ub4Y4xcU2OlDD.jpg",
+              "media_type": "movie",
+              "original_language": "zh",
+              "genre_ids": [
+                14,
+                18,
+                28,
+                53,
+                10749
+              ],
+              "popularity": 3.2928,
+              "release_date": "2005-12-15",
+              "softcore": false,
+              "video": false,
+              "vote_average": 5.586,
+              "vote_count": 133
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/fGzO3qGIaBlLlW53fsaRSUPEjw0.jpg",
+              "id": 53168,
+              "title": "King of Comedy",
+              "original_title": "\u559C\u5287\u4E4B\u738B",
+              "overview": "Wan Tin-Sau is an actor who cannot seem to catch a break, since his only professional jobs are limited to being a movie extra. As well as being an actor, he is also the head of his village\u0027s community center.",
+              "poster_path": "/dmJWvKNgeCrIwJH6AapdSMiZHop.jpg",
+              "media_type": "movie",
+              "original_language": "cn",
+              "genre_ids": [
+                35,
+                18,
+                10749
+              ],
+              "popularity": 8.8364,
+              "release_date": "1999-02-08",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.4,
+              "vote_count": 210
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/lMRX4cLx4hxYth3iQ96c0E1RHGB.jpg",
+              "id": 11770,
+              "title": "Shaolin Soccer",
+              "original_title": "\u5C11\u6797\u8DB3\u7403",
+              "overview": "A young Shaolin follower reunites with his discouraged brothers to form a soccer team using their martial art skills to their advantage.",
+              "poster_path": "/z6ZQqwoxWy9muIxwUP4K2zWw7BU.jpg",
+              "media_type": "movie",
+              "original_language": "cn",
+              "genre_ids": [
+                28,
+                35
+              ],
+              "popularity": 14.9104,
+              "release_date": "2001-07-05",
+              "softcore": false,
+              "video": false,
+              "vote_average": 7.163,
+              "vote_count": 2522
+            }
+          ]
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1245,
+          "known_for_department": "Acting",
+          "name": "Scarlett Johansson",
+          "original_name": "Scarlett Johansson",
+          "popularity": 13.6744,
+          "profile_path": "/druW5adKddizHNSoPbI0q7Mvn0K.jpg",
+          "known_for": [
+            {
+              "adult": false,
+              "backdrop_path": "/1hzH1Wu2xhXBNOWzw3RMwNTJX5q.jpg",
+              "id": 240832,
+              "title": "Lucy",
+              "original_title": "Lucy",
+              "overview": "A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic.",
+              "poster_path": "/kRbpUTRNm6QbLQFPFWUcNC4czEm.jpg",
+              "media_type": "movie",
+              "original_language": "en",
+              "genre_ids": [
+                28,
+                878
+              ],
+              "popularity": 10.8513,
+              "release_date": "2014-07-25",
+              "softcore": false,
+              "video": false,
+              "vote_average": 6.474,
+              "vote_count": 17042
+            },
+            {
+              "adult": false,
+              "backdrop_path": "/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg",
+              "id": 497698,
+              "title": "Black Widow",
+              "original_title": "Black Widow",
+              "overview": "Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.",
+              "poster_path": "/7JPpIjhD2V0sKyFvhB9khUMa30d.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
@@ -1375,181 +1545,58 @@
                 12,
                 878
               ],
-              "popularity": 9.0211,
-              "release_date": "2017-11-15",
+              "popularity": 15.364,
+              "release_date": "2021-07-07",
+              "softcore": false,
               "video": false,
-              "vote_average": 6.074,
-              "vote_count": 13421
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 3026,
-          "known_for_department": "Directing",
-          "name": "Rob Reiner",
-          "original_name": "Rob Reiner",
-          "popularity": 16.8231,
-          "profile_path": "/rcmPU3YlhHQVzZlV197qhmRsgEL.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/yjGllQUm28R4X9xD9T5xMszirgw.jpg",
-              "id": 235,
-              "title": "Stand by Me",
-              "original_title": "Stand by Me",
-              "overview": "After learning that a boy their age has been accidentally killed near their rural homes, four boys decide to go see the body. On the way, Gordie, Vern, Chris and Teddy encounter a mean junk man and a marsh full of leeches, as they also learn more about one another and their very different home lives. Just a lark at first, the boys\u0027 adventure evolves into a defining event in their lives.",
-              "poster_path": "/vz0w9BSehcqjDcJOjRaCk7fgJe7.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18
-              ],
-              "popularity": 11.1756,
-              "release_date": "1986-08-08",
-              "video": false,
-              "vote_average": 7.848,
-              "vote_count": 6256
+              "vote_average": 7.168,
+              "vote_count": 11227
             },
             {
               "adult": false,
-              "backdrop_path": "/cgo3OmF84touDrrLkQ1DQ3MRFyO.jpg",
-              "id": 1700,
-              "title": "Misery",
-              "original_title": "Misery",
-              "overview": "After an accident, acclaimed novelist Paul Sheldon is rescued by a nurse who claims to be his biggest fan.  Her obsession takes a dark turn when she holds him captive in her remote Colorado home and forces him to write back to life the popular literary character he killed off.",
-              "poster_path": "/klPO5oh1LOxiPpdDXZo1ADgpKcw.jpg",
+              "backdrop_path": "/dDVqfmCzSy3TKSmiS2pJ9QB5E3P.jpg",
+              "id": 315837,
+              "title": "Ghost in the Shell",
+              "original_title": "Ghost in the Shell",
+              "overview": "In the near future, Major is the first of her kind: a human saved from a terrible crash, then cyber-enhanced to be a perfect soldier devoted to stopping the world\u0027s most dangerous criminals.",
+              "poster_path": "/zCtL3UBgCoZzd7XTVGhvl6XY75E.jpg",
               "media_type": "movie",
               "original_language": "en",
               "genre_ids": [
+                878,
                 18,
-                53
+                28
               ],
-              "popularity": 9.3775,
-              "release_date": "1990-11-30",
+              "popularity": 7.3526,
+              "release_date": "2017-03-29",
+              "softcore": false,
               "video": false,
-              "vote_average": 7.7,
-              "vote_count": 5004
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/aQ2ZbNqIaecoQsryNe33UmDtms.jpg",
-              "id": 2493,
-              "title": "The Princess Bride",
-              "original_title": "The Princess Bride",
-              "overview": "In this enchantingly cracked fairy tale, the beautiful Princess Buttercup and the dashing Westley must overcome staggering odds to find happiness amid six-fingered swordsmen, murderous princes, Sicilians and rodents of unusual size. But even death can\u0027t stop these true lovebirds from triumphing.",
-              "poster_path": "/2FC9L9MrjBoGHYjYZjdWQdopVYb.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                12,
-                10751,
-                14,
-                35,
-                10749
-              ],
-              "popularity": 18.695,
-              "release_date": "1987-09-25",
-              "video": false,
-              "vote_average": 7.7,
-              "vote_count": 4908
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "gender": 2,
-          "id": 3455931,
-          "known_for_department": "Acting",
-          "name": "Truman Hanks",
-          "original_name": "Truman Hanks",
-          "popularity": 16.717,
-          "profile_path": "/6ERfNyCNxGWnsTniEM8bfMk8TsL.jpg",
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/9ZznETDyfPWVugRiv0jfGrkRftw.jpg",
-              "id": 937278,
-              "title": "A Man Called Otto",
-              "original_title": "A Man Called Otto",
-              "overview": "When a lively young family moves in next door, grumpy widower Otto Anderson meets his match in a quick-witted, pregnant woman named Marisol, leading to an unlikely friendship that turns his world upside down.",
-              "poster_path": "/130H1gap9lFfiTF9iDrqNIkFvC9.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                18
-              ],
-              "popularity": 10.5228,
-              "release_date": "2022-12-28",
-              "video": false,
-              "vote_average": 7.757,
-              "vote_count": 3367
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/oIUDSK3CCqkpe6lct8YPuUupFes.jpg",
-              "id": 1172675,
-              "title": "The Swan",
-              "original_title": "The Swan",
-              "overview": "Two large, ignorant bullies ruthlessly pursue a small, brilliant boy in this young adult Roald Dahl short story.",
-              "poster_path": "/fRbx6DPdQBJrhZWyshjJABtAIyu.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 1.3339,
-              "release_date": "2023-09-27",
-              "video": false,
-              "vote_average": 6.797,
-              "vote_count": 490
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/57dG6BzU2RcPtLgoA3oyHUIb2rI.jpg",
-              "id": 581032,
-              "title": "News of the World",
-              "original_title": "News of the World",
-              "overview": "A Texan traveling across the wild West bringing the news of the world to local townspeople, agrees to help rescue a young girl who was kidnapped.",
-              "poster_path": "/fYQCgVRsQTEfUrP7cW5iAFVYOlh.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18,
-                37,
-                12
-              ],
-              "popularity": 2.6985,
-              "release_date": "2020-12-25",
-              "video": false,
-              "vote_average": 6.947,
-              "vote_count": 1868
+              "vote_average": 6.107,
+              "vote_count": 8559
             }
           ]
         }
       ],
-      "total_pages": 221866,
-      "total_results": 4437309
+      "total_pages": 236045,
+      "total_results": 4720886
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=13126",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=21918",
       "x-memc": "HIT",
       "x-memc-key": "f2394b16cc55bb65062fc43f2e2198e5d641e8213d3bca47cd5b894f7c516028",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u00222867a6ae52f37825ed957d416d9a0caf\u0022",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022188911d9755712b56f7c0647d8e087f5\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

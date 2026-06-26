@@ -12,9 +12,9 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Can be used to discover movies matching certain criteria.
+    /// Creates a builder for discovering movies matching certain criteria.
     /// </summary>
-    /// <returns>A DiscoverMovie object that can be used to configure and execute movie discovery queries.</returns>
+    /// <returns>A configurable discovery query.</returns>
     public DiscoverMovie DiscoverMoviesAsync()
     {
         return new DiscoverMovie(this);
@@ -44,9 +44,9 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Can be used to discover new tv shows matching certain criteria.
+    /// Creates a builder for discovering TV shows matching certain criteria.
     /// </summary>
-    /// <returns>A DiscoverTv object that can be used to configure and execute TV show discovery queries.</returns>
+    /// <returns>A configurable discovery query.</returns>
     public DiscoverTv DiscoverTvShowsAsync()
     {
         return new DiscoverTv(this);

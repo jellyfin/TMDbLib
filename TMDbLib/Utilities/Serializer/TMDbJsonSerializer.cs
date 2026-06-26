@@ -22,7 +22,7 @@ public class TMDbJsonSerializer : ITMDbSerializer
         _serializer.Converters.Add(new KnownForConverter());
         _serializer.Converters.Add(new CombinedCreditsCastConverter());
         _serializer.Converters.Add(new CombinedCreditsCrewConverter());
-        _serializer.Converters.Add(new SearchBaseConverter());
+        _serializer.Converters.Add(new TmdbEntityConverter());
         _serializer.Converters.Add(new TaggedImageConverter());
         _serializer.Converters.Add(new TolerantEnumConverter());
     }
@@ -32,12 +32,7 @@ public class TMDbJsonSerializer : ITMDbSerializer
     /// </summary>
     public static TMDbJsonSerializer Instance { get; } = new();
 
-    /// <summary>
-    /// Serializes an object to a stream.
-    /// </summary>
-    /// <param name="target">The target stream to write to.</param>
-    /// <param name="obj">The object to serialize.</param>
-    /// <param name="type">The type of the object.</param>
+    /// <inheritdoc />
     public void Serialize(Stream target, object obj, Type type)
     {
         using var sw = new StreamWriter(target, _encoding, 4096, true);
@@ -46,12 +41,7 @@ public class TMDbJsonSerializer : ITMDbSerializer
         _serializer.Serialize(jw, obj, type);
     }
 
-    /// <summary>
-    /// Deserializes an object from a stream.
-    /// </summary>
-    /// <param name="source">The source stream to read from.</param>
-    /// <param name="type">The type of the object to deserialize.</param>
-    /// <returns>The deserialized object.</returns>
+    /// <inheritdoc />
     public object? Deserialize(Stream source, Type type)
     {
         using var sr = new StreamReader(source, _encoding, false, 4096, true);

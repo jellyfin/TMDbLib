@@ -1,0 +1,90 @@
+{
+  "Guid": "97566424-dc04-d747-b304-98738393c6b9",
+  "UpdatedAt": "2026-05-24T16:19:42.838247Z",
+  "Title": "Proxy Mapping for GET /3/movie/1122573/keywords",
+  "Description": "Proxy Mapping for GET /3/movie/1122573/keywords",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1122573/keywords",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1122573,
+      "keywords": [
+        {
+          "id": 10364,
+          "name": "mission"
+        },
+        {
+          "id": 10051,
+          "name": "heist"
+        },
+        {
+          "id": 33705,
+          "name": "agent"
+        },
+        {
+          "id": 181325,
+          "name": "dangerous mission"
+        },
+        {
+          "id": 325763,
+          "name": "ambiguous"
+        },
+        {
+          "id": 325803,
+          "name": "dubious"
+        },
+        {
+          "id": 325809,
+          "name": "enthusiastic"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=8996",
+      "x-memc": "HIT",
+      "x-memc-key": "fb8a50c5f7001a78fe8352bbda1d50d59b1e7dd78df8eaf904caa7a4a632f331",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022523c2dfd006948b589e9cfb47b4467f6\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

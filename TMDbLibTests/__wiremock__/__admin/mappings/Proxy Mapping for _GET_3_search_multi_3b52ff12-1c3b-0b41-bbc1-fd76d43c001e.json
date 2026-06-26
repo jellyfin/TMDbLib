@@ -1,6 +1,6 @@
 {
   "Guid": "3b52ff12-1c3b-0b41-bbc1-fd76d43c001e",
-  "UpdatedAt": "2025-12-24T18:45:16.1757281Z",
+  "UpdatedAt": "2026-05-24T16:19:42.47689Z",
   "Title": "Proxy Mapping for GET /3/search/multi",
   "Description": "Proxy Mapping for GET /3/search/multi",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "query",
@@ -58,645 +71,281 @@
       "results": [
         {
           "adult": false,
-          "id": 2887053,
-          "name": "Colin Jobs",
-          "original_name": "Colin Jobs",
-          "media_type": "person",
+          "backdrop_path": "/cKv5ge5WMnDBvNefxD59eZfo5mA.jpg",
+          "id": 332108,
+          "title": "Odd Jobs",
+          "original_title": "\u0394\u03BF\u03C5\u03BB\u03B5\u03B9\u03AD\u03C2 \u03C4\u03BF\u03C5 \u03C0\u03BF\u03B4\u03B1\u03C1\u03B9\u03BF\u03CD",
+          "overview": "Two poor roommates, Mitros and Mitrousis, struggle to survive by doing odd jobs, from the neighborhood kiosk to the restaurant. They try to deceive their creditors by selling them promises of a hair loss remedy they are manufacturing. However, when their creditors realize that they have been defrauded, they pursue them, unaware that an ingenious industrialist is perfecting their medicine.",
+          "poster_path": "/4uAG6JhB43QWrom06Z38OqqVChA.jpg",
+          "media_type": "movie",
+          "original_language": "el",
+          "genre_ids": [
+            35
+          ],
+          "popularity": 0.3571,
+          "release_date": "1962-02-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 4
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qGGyTFtBJrZUsyVWn3F3ry020Qc.jpg",
+          "id": 881955,
+          "title": "Men and Jobs",
+          "original_title": "\u0414\u0435\u043B\u0430 \u0438 \u043B\u044E\u0434\u0438",
+          "overview": "An American engineer, consulting on a Soviet construction project, inspires a backward and timid new foreman to learn better about his job, assert himself, solve problems and inspire his own men to bring the job in ahead of schedule.",
+          "poster_path": "/jQWiPIx77aB0mgyYuSgOwqU2pwO.jpg",
+          "media_type": "movie",
+          "original_language": "ru",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 0.49,
+          "release_date": "1932-10-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 3.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 160292,
+          "title": "Men Without Jobs",
+          "original_title": "Men Without Jobs",
+          "overview": "Compulsive gambler Oz lives in a rent-controlled apartment in Brooklyn, with his roommate, Ivy-League dropout Ish. Crippled by an unspoken fear of failure, the serial underachievers whittle the hours away playing video games and discussing plans for a band that has yet to leave the realm of the hypothetical. But after they meet graffiti artist Veronica, who challenges them to take action, Oz and Ish must examine themselves for the first time.",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "popularity": 0.281,
+          "release_date": "2004-06-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/o4faV5i6S0cJCmdOwg72So2rmsw.jpg",
+          "id": 560580,
+          "title": "Jobs? Never!!",
+          "original_title": "Jobs? Never!!",
+          "overview": "Jobs? Never!! is an intimate glimpse into the soul of the  40-year-old legendary skater and iconoclast Jim Greco. Shot on  Super 16mm \u0026 35mm, this short-film follows Greco as he navigates through his days: living, skating, falling and dreaming in Los Angeles.",
+          "poster_path": "/irG7OFAggdL8Ia0JMuKsQ82Rvyu.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            99
+          ],
+          "popularity": 0.4115,
+          "release_date": "2018-09-26",
+          "softcore": false,
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1621152,
+          "title": "Between Jobs",
+          "original_title": "Between Jobs",
+          "overview": "On a dark, rainy night an old, white man is visited by a young, black stranger asking to use the telephone. After making his call, the young man insists on waiting in the warm, dry house. Initially, the old man\u0027s fear and prejudice keep them apart, but they soon discover a moment of fleeting friendship",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 0.0823,
+          "release_date": "1984-11-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 9.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1656421,
+          "title": "Between Jobs",
+          "original_title": "\u6E05\u9664\u5931\u696D",
+          "overview": "In 2017, in order to deal with the high unemployment rate, the government implements the \u0022Unemployment Clearance Plan.\u0022",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "zh",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 0.0264,
+          "release_date": "2018-11-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1117958,
+          "title": "Day Jobs",
+          "original_title": "Day Jobs",
+          "overview": "After coming out as gay, a struggling comedian looks for a job as a nanny to pay rent to her overly understanding ex-boyfriend.",
+          "poster_path": "/9sLmM3cX6YHO8QJtQ93p4vTsFhj.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.1464,
+          "release_date": "2023-04-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 253501,
+          "title": "American Jobs",
+          "original_title": "American Jobs",
+          "overview": "Filmmaker Greg Spotts exposes the carnage left behind by companies who choose to outsource their jobs. Moved to action after hearing that 3 million jobs ceased to exist in America between 2000 and 2003, Spotts set out to make this documentary by visiting 19 hard-hit cities across the nation and meeting the men and women who have suffered the after-effects of mass layoffs. The result is a heartbreaking study of the global economy.",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            99
+          ],
+          "popularity": 0.0239,
+          "release_date": "2005-02-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 9.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 782204,
+          "title": "Stiff Jobs",
+          "original_title": "Stiff Jobs",
+          "overview": "\u0022Stiff Jobs\u0022 is the story of two of the most ruthless hitmen in all of Strangeville, Wolfram and Windgate. What was to be a routine hit on a well-to-do gay pedophile with inclinations toward fat Cuban boys, turns into murder, mayhem and all the perverted sexual nonsense Hack Movies is known for when our heroes get themselves balls deep in supernatural jizm, and come face to face with the forces of darkness!",
+          "poster_path": "/s8S2jmRatJIhEMDc5BvYoLzDXVI.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            27,
+            35,
+            28
+          ],
+          "popularity": 0.0168,
+          "release_date": "2009-02-17",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1210085,
+          "title": "Odd Jobs",
+          "original_title": "Odd Jobs",
+          "overview": "Nate is a neurotic, recently laid-off investment banker. Joe is his unemployed, morally questionable, hustler roommate. Unable to find gainful employment (or pay for his impending wedding), Nate secretly tags along on Joe\u0027s work-for-hire Craigslist adventures. Each episode follows the pair as they blaze a trail through a world in economic crisis, trying on new hats (and hamburger costumes) as they learn the rules of survival.",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.0264,
+          "release_date": "",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 1251070,
+          "title": "School \u0026 Jobs",
+          "original_title": "School \u0026 Jobs",
+          "overview": "Made under the supervision of the Agency for Instructional Television and with the assistance of the Exxon Corporation, School \u0026 Jobs is a short educational film for students about the school-to-work pipeline in America.",
+          "poster_path": null,
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [],
           "popularity": 0.0071,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 774123,
-              "title": "Abnormal Activity 3",
-              "original_title": "Abnormal Activity 3",
-              "overview": "Just when we thought the demonic parodies were over, the sister of the girl from the first movie discovers the demons may have returned! This time in the form of a missing baby. Was her babysitting business just a really bad idea, or are demons indeed to blame thanks to the first movie? Never before has a film series skipped over an unnecessary sequel and went right for part 3!",
-              "poster_path": "/vnb3DI4zvgxpuzlQhIWT35gOnrJ.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27,
-                35
-              ],
-              "popularity": 0.414,
-              "release_date": "2011-06-28",
-              "video": false,
-              "vote_average": 3.0,
-              "vote_count": 1
-            }
-          ]
+          "release_date": "",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
-          "id": 4107144,
-          "name": "Anders Jobs",
-          "original_name": "Anders Jobs",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Camera",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 1138961,
-              "title": "Som ni vill ha det",
-              "original_title": "Som ni vill ha det",
-              "overview": "A production of Shakespeare\u0027s \u0022As You Like It\u0022 filmed for television. After the overthrowing of the old duke by his tyrannical brother, the duke\u0027s daughter Rosalind disguises herself as a man and sets out to find her banished father while also counselling her clumsy suitor Orlando in the art of wooing.",
-              "poster_path": "/b0nTUj2KmykKFmND3Rt9XHfabQW.jpg",
-              "media_type": "movie",
-              "original_language": "sv",
-              "genre_ids": [
-                35,
-                10749
-              ],
-              "popularity": 0.1016,
-              "release_date": "1986-02-17",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
+          "backdrop_path": null,
+          "id": 875864,
+          "title": "Jobs for All!",
+          "original_title": "Arbete \u00E5t alla!",
+          "overview": "A highly choreographed review of the Industrial Age as we know it today \u2013 an intense and playful roller coaster ride that demands the viewer confronts how \u201Cwork works.\u201D Culled entirely from archival footage, the film unfolds in the filmmakers\u2019 trademark, and humorously critical, cinematic voices.",
+          "poster_path": "/eguhv8oAzphNfkEufEOoFUDmCoX.jpg",
+          "media_type": "movie",
+          "original_language": "sv",
+          "genre_ids": [
+            99
+          ],
+          "popularity": 0.0847,
+          "release_date": "2021-04-29",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
-          "id": 2920141,
-          "name": "Chris Jobse",
-          "original_name": "Chris Jobse",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Sound",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 782181,
-              "title": "The Shining Armour",
-              "original_title": "Het glinsterend pantser",
-              "overview": "After losing sight of each other for 25 years, the paths of three childhood friends cross paths. It concerns successful conductor Victor Slingeland, successful writer Sander Vastenhout and general practitioner Bert Duprez. Slingeland enjoys a reputation as a womanizer. This intrigues Vastenhout who, as is often the case with authors, is without inspiration. Vastenhout sees the unraveling of Slingeland\u0027s complex personality as possible new material for a novel. With the help of Dr. Duprez, Vastenhout tries to find out about Slingeland\u0027s secret by imitating his behavior and thus challenging him.",
-              "poster_path": "/v6yVioZUMGznMHfqwTFahWACMGs.jpg",
-              "media_type": "movie",
-              "original_language": "nl",
-              "genre_ids": [
-                18,
-                10770
-              ],
-              "popularity": 0.1029,
-              "release_date": "1998-10-23",
-              "video": false,
-              "vote_average": 1.0,
-              "vote_count": 1
-            }
-          ]
+          "backdrop_path": null,
+          "id": 948128,
+          "title": "Steve Jobs: iGenius",
+          "original_title": "\uC2A4\uD2F0\uBE0C \uC7A1\uC2A4 : \uBBF8\uB798\uB97C \uC77D\uB294 \uCC9C\uC7AC",
+          "overview": "Steve Jobs was the modern day Thomas Edison! From his ground breaking i-phones, i-pads and i-pods to paternity issues and finding the sister he never knew, this program will delve into the life of one of the greatest innovators and geniuses of all time.",
+          "poster_path": "/ynXoAAgF7biE33cs4lwe0Mi5eK4.jpg",
+          "media_type": "movie",
+          "original_language": "ko",
+          "genre_ids": [
+            99
+          ],
+          "popularity": 0.2163,
+          "release_date": "2012-10-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
-          "id": 2928999,
-          "name": "Ian Jobson",
-          "original_name": "Ian Jobson",
-          "media_type": "person",
-          "popularity": 0.0143,
-          "gender": 0,
-          "known_for_department": "Art",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/o2QOGwQqpKC82l52bkjRzJyb0Ve.jpg",
-              "id": 44381,
-              "title": "Napoleon",
-              "original_title": "Napoleon",
-              "overview": "The adventures of Golden Retriever pup Napoleon and his friend, the parrot Birdo Lucci.",
-              "poster_path": "/c3wcjhGgC9usb8MhrKNeVjIr1Lz.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                12,
-                10751
-              ],
-              "popularity": 3.4192,
-              "release_date": "1995-06-30",
-              "video": false,
-              "vote_average": 6.1,
-              "vote_count": 89
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 2430742,
-          "name": "Brian Jobson",
-          "original_name": "Brian Jobson",
-          "media_type": "person",
-          "popularity": 0.0286,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/cZEaETMoq4XmnlVzkv7MnwzOzVa.jpg",
-              "id": 638811,
-              "title": "Studio 17: The Lost Reggae Tapes",
-              "original_title": "Studio 17: The Lost Reggae Tapes",
-              "overview": "A newly discovered treasure trove of tapes from Studio 17, or Randy\u0027s located in downtown Kingston Jamaica, is the starting point for this remarkable story about a Chinese Jamaican family who helped create the music we now know as reggae.",
-              "poster_path": "/ifGNMpfRfEYSSq3Enu59kUiFVyh.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99,
-                10402
-              ],
-              "popularity": 1.6133,
-              "release_date": "2019-10-18",
-              "video": false,
-              "vote_average": 7.0,
-              "vote_count": 1
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1476234,
-          "name": "Gary Jobson",
-          "original_name": "Gary Jobson",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Directing",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 344205,
-              "title": "Ted Turner\u0027s Greatest Race",
-              "original_title": "Ted Turner\u0027s Greatest Race",
-              "overview": "When Ted Turner entered his yacht Tenacious in the famed Fastnet Race in 1979, he did not need to prove himself. Turner already had the following on his r\u00E9sum\u00E9: founder of a television network, owner of the Atlanta Hawks and Braves, and, most appropriate here, winner of the 1977 America\u2019s Cup. Still, he loved to sail and loved to race with his crew of carefully selected mates. This race would prove to be like no other Turner had ever entered when a freak storm turned the Celtic Sea into chaos. When the winds stopped and the race was over, many of the 303 entrants hadn\u2019t even finished and, tragically, 15 sailors had lost their lives. The victorious crew of the Tenacious relive the voyage, of which Turner famously said: \u201CI was more afraid of losing than I was of dying.\u201D",
-              "poster_path": "/kGj3wCbYZ5ueUcYJPokyi74X7dU.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99
-              ],
-              "popularity": 0.305,
-              "release_date": "2015-06-03",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 2185447,
-          "name": "Maiya Jobs",
-          "original_name": "Maiya Jobs",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Crew",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 558277,
-              "title": "Free Monkeys",
-              "original_title": "Free Monkeys",
-              "overview": "A successful manager gets taken and finds himself in an unknown surrounding. He is pitted against his hijackers.What\u0027s their purpose...?",
-              "poster_path": "/oHR3k51FX5jhekkx6wHe64ePqgI.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [],
-              "popularity": 0.6341,
-              "release_date": "2014-08-24",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 2659261,
-          "name": "Jobson Madibo Katondolo",
-          "original_name": "Jobson Madibo Katondolo",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Camera",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/qvfjzCdQSIHvBnBXRbMbwT447lI.jpg",
-              "id": 709012,
-              "title": "Bwana Jogoo: The Ballad of Jessy Gitta",
-              "original_title": "Bwana Jogoo: The Ballad of Jessy Gitta",
-              "overview": "The music documentary \u0022Bwana Jogoo: The Ballad of Jessy Gitta\u0022 tells the story of Jessy Gitta Kasirivu, a well-known Ugandan musician who, in the early morning of August 4, 1974, gets violently arrested by Idi Amin\u0027s infamous State Research Bureau (SRB) agents.",
-              "poster_path": "/fgGi5ITlhFsn0xW1qmuKMlSNoHy.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99,
-                10402
-              ],
-              "popularity": 0.0071,
-              "release_date": "2019-07-16",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3867347,
-          "name": "Wayne Jobson",
-          "original_name": "Wayne Jobson",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/7kOTlicmHSZO0zySoP4X5TPmRxo.jpg",
-              "id": 1072490,
-              "title": "The Green Goddess",
-              "original_title": "The Green Goddess",
-              "overview": "Three Americans grow fields of cannabis in Switzerland and meet the divine feminine spirit that lives within the THC crystal. Featuring over 500 special effects, animations and an incredible music soundtrack.",
-              "poster_path": "/8CMeVFGvXC3AQuo7AVJ4RxxdvwQ.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                18
-              ],
-              "popularity": 0.4882,
-              "release_date": "2021-09-21",
-              "video": false,
-              "vote_average": 1.0,
-              "vote_count": 2
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 560217,
-          "name": "Eva Jobst",
-          "original_name": "Eva Jobst",
-          "media_type": "person",
-          "popularity": 0.0143,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/fQCGnq3OY8tyZa4jBPAGq9LSddw.jpg",
-              "id": 63077,
-              "title": "The Coming Days",
-              "original_title": "Die kommenden Tage",
-              "overview": "Welcome to 2020: The European Union has collapsed following the fourth Gulf War and massive barricades keep illegal immigrants out of cities that are barely functioning. In the middle of this highly volatile environment is the family of Walter Kuper, an energy conglomerate executive. Walter\u2019s daughter, Cecilia, has joined the Black Storm terrorist group. Her sister Laura must choose between motherhood and the man she loves; their brother Philip has been called up to fight for Germany in a hopeless war to secure the last remaining oil fields. Starring leading actors Daniel Br\u00FChl, Johanna Wokalek and J\u00FCrgen Vogel, \u0022The Days to Come\u0022 asks provocative questions about the current state of things as it depicts personal and political realities in a scarily believable near\u2013future.",
-              "poster_path": "/c9P2ioWN8mEDWQgdn4fnlIob6HS.jpg",
-              "media_type": "movie",
-              "original_language": "de",
-              "genre_ids": [
-                18,
-                878
-              ],
-              "popularity": 2.2687,
-              "release_date": "2010-11-04",
-              "video": false,
-              "vote_average": 4.9,
-              "vote_count": 36
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1770922,
-          "name": "Jobst Arndt",
-          "original_name": "Jobst Arndt",
-          "media_type": "person",
-          "popularity": 0.0261,
-          "gender": 0,
-          "known_for_department": "Writing",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 296307,
-              "title": "So ein Affentheater",
-              "original_title": "So ein Affentheater",
-              "overview": "",
-              "poster_path": null,
-              "media_type": "movie",
-              "original_language": "de",
-              "genre_ids": [
-                35
-              ],
-              "popularity": 0.8905,
-              "release_date": "1953-08-06",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 4669190,
-          "name": "Brian Jobson",
-          "original_name": "Brian Jobson",
-          "media_type": "person",
-          "popularity": 0.0071,
-          "gender": 0,
-          "known_for_department": "Camera",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/aqPWu2B9JPX7JXutMDH4u8DXi0c.jpg",
-              "id": 1278480,
-              "title": "Dounreay: The Atomic Dream",
-              "original_title": "Dounreay: The Atomic Dream",
-              "overview": "Documentary telling the story of the rise and fall of a daring experiment into atomic energy as the history of the Dounreay fast reactor is charted by the pioneers involved.",
-              "poster_path": "/hY9mkQ9GyM5WuOFAtS5vc06T2n.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99
-              ],
-              "popularity": 2.9106,
-              "release_date": "2006-05-22",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3249247,
-          "name": "Sebastian Jobst",
-          "original_name": "Sebastian Jobst",
-          "media_type": "person",
-          "popularity": 0.0071,
-          "gender": 0,
-          "known_for_department": "Directing",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 878544,
-              "title": "Ama\u0027ara - the Song of the Whales",
-              "original_title": "Ama\u0027ara - the Song of the Whales",
-              "overview": "One woman\u0027s journey to save - and love - the whales.  Enter a world of transcendence in AMA\u0027ARA \u2013 The SONG of the WHALES. Spiritual singer and healer Marina Trost follows her calling to cross oceans to save the whales and create a new, loving relationship between humans and these majestic beings. Through channeled music and mesmerizing cinematography, we feel Marina\u0027s passion and how she connects intuitively to the whales\u2019 beauty and majesty. Spirituality, sacred song, and healing flow beyond time and space. In this cinematic meditation, we uncover song as a vehicle to our own transcendence. This film is a powerfully poetic love song for our troubled times.  (ILLUMINATE Film Festival 2021)",
-              "poster_path": "/xSrO5I0rogVZC7UEWqyHX5DD2q6.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                99
-              ],
-              "popularity": 0.0243,
-              "release_date": "2021-05-23",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            },
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 974346,
-              "title": "Kollowalla",
-              "original_title": "Kollowalla",
-              "overview": "An artist facing death. A deep and inspirring journey from darkness into light. The last days of Kollowalla, a russian gay artist in exile, who has to face his own death. A dreamlike, surreal journey of old memories and weird fantasies. A film inspired by great artists like Werner Schroeter, Derek Jarman, And Christoph Schlingensief and how they created impressive pieces of art, while they were in their dying process.",
-              "poster_path": "/nGOXiOns3PXTjkTjxOYjMFecAAL.jpg",
-              "media_type": "movie",
-              "original_language": "de",
-              "genre_ids": [],
-              "popularity": 0.0,
-              "release_date": "2019-01-15",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3257359,
-          "name": "Phizzo Jobson",
-          "original_name": "Phizzo Jobson",
-          "media_type": "person",
-          "popularity": 0.0071,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 880793,
-              "title": "The Fall of Adam",
-              "original_title": "The Fall of Adam",
-              "overview": "The Fall of Adam is an urban regeneration of Adam\u0027s fall from grace. Taking the story to new hi-rise heights and wrestling his descent down through the inferno, he finds his once beautiful eve has turned from the divine to the bovine. A bloody fight with a fat guy in stained underwear (Satan) ends Adam\u0027s fall. His body descends the endless flights to his death. He turns back to the dust in which he was created.",
-              "poster_path": null,
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 0.0729,
-              "release_date": "2006-06-05",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3002252,
-          "name": "Marie Jobst",
-          "original_name": "Marie Jobst",
-          "media_type": "person",
-          "popularity": 0.0,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 803492,
-              "title": "Glashaus",
-              "original_title": "Glashaus",
-              "overview": "",
-              "poster_path": "/xPUe1O8s4TYYqyEH1CQ2dHRZJUI.jpg",
-              "media_type": "movie",
-              "original_language": "de",
-              "genre_ids": [
-                18
-              ],
-              "popularity": 0.0071,
-              "release_date": "",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 1317312,
-          "name": "Chris Jobson",
-          "original_name": "Chris Jobson",
-          "media_type": "person",
-          "popularity": 0.0362,
-          "gender": 0,
-          "known_for_department": "Art",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/1KlJVF0xXLeFq2KTIjzA2LvWHH9.jpg",
-              "id": 67748,
-              "title": "Snowtown",
-              "original_title": "Snowtown",
-              "overview": "Based on true events, 16 year-old Jamie falls in with his mother\u0027s new boyfriend and his crowd of self-appointed neighborhood watchmen, a relationship that leads to a spree of torture and murder.",
-              "poster_path": "/5LW1vPLa8ueVwdOgR8w5xYkSQGv.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                80,
-                18
-              ],
-              "popularity": 3.096,
-              "release_date": "2011-05-19",
-              "video": false,
-              "vote_average": 6.3,
-              "vote_count": 339
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/puqgdRA8VC8QcNUBljfrnjtPhLg.jpg",
-              "id": 126757,
-              "title": "100 Bloody Acres",
-              "original_title": "100 Bloody Acres",
-              "overview": "Reg and Lindsay run an organic fertiliser business. They need a fresh supply of their \u0022secret ingredient\u0022 to process through the meat grinder. Reg comes across two guys and a girl with a broken-down vehicle on their way to a music festival.",
-              "poster_path": "/jYUolYFQ7F8E2rEunRNwtbpLwmW.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                27
-              ],
-              "popularity": 2.7712,
-              "release_date": "2012-08-04",
-              "video": false,
-              "vote_average": 5.788,
-              "vote_count": 144
-            },
-            {
-              "adult": false,
-              "backdrop_path": "/1FRJQzbMbU1tZmimBCDgLk6P97R.jpg",
-              "id": 42307,
-              "title": "Road Train",
-              "original_title": "Road Train",
-              "overview": "A supernatural thriller about a group of teenagers menaced by a driver-less train in the Australian outback.",
-              "poster_path": "/aWcdGw3rO6ZMFepZR90urEisQ7U.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                27,
-                53,
-                878
-              ],
-              "popularity": 7.2608,
-              "release_date": "2010-05-28",
-              "video": false,
-              "vote_average": 4.1,
-              "vote_count": 112
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 2295479,
-          "name": "Jeff Jobson",
-          "original_name": "Jeff Jobson",
-          "media_type": "person",
-          "popularity": 0.0143,
-          "gender": 0,
-          "known_for_department": "Acting",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": null,
-              "id": 597193,
-              "title": "Shakespeare\u0027s Plan 12 from Outer Space",
-              "original_title": "Shakespeare\u0027s Plan 12 from Outer Space",
-              "overview": "William Shakespeare\u0027s \u0022Twelfth Night\u0022, re-imagined in a child\u0027s vision of Hell. \u0022Shakespeare\u0027s Plan 12 from Outer Space\u0022 is a festive yarn, comprised of the most homely and vulgar materials, while shamelessly thwarted buy the Bard\u0027s coarsest of jokes and grossest buffoonery.",
-              "poster_path": "/mR14sPVHo9E2Q3JE32HMmM3wa5F.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35,
-                14,
-                27
-              ],
-              "popularity": 0.1028,
-              "release_date": "1996-01-01",
-              "video": false,
-              "vote_average": 0.0,
-              "vote_count": 0
-            }
-          ]
-        },
-        {
-          "adult": false,
-          "id": 3501954,
-          "name": "David Jobson",
-          "original_name": "David Jobson",
-          "media_type": "person",
-          "popularity": 0.0143,
-          "gender": 0,
-          "known_for_department": "Sound",
-          "profile_path": null,
-          "known_for": [
-            {
-              "adult": false,
-              "backdrop_path": "/wrH0jFNI8Y4EsyFIuIPLS4WNhmc.jpg",
-              "id": 455498,
-              "title": "Mumbo Jumbo",
-              "original_title": "Mumbo Jumbo",
-              "overview": "In a misguided attempt to do something for the war on terror, self-styled suburban warriors Gool, Rube and Simmo are ready to carry out their first operation, but things don\u0027t go quite as they planned.",
-              "poster_path": "/vHwrC6pWv4NAqYOdW84bS0gQzZR.jpg",
-              "media_type": "movie",
-              "original_language": "en",
-              "genre_ids": [
-                35
-              ],
-              "popularity": 2.7279,
-              "release_date": "2005-07-07",
-              "video": false,
-              "vote_average": 5.0,
-              "vote_count": 1
-            }
+          "backdrop_path": null,
+          "id": 89073,
+          "name": "Hand Jobs",
+          "original_name": "Hand Jobs",
+          "overview": "Hand Model Guru, Sophie Lin, mentors newcomer, Cameron, through the thrilling and neurotic world of hand modeling. After Cameron experiences an uncommonly fast rise to fame, temptations of \u0022Face Acting\u0022 put their friendship to the test.",
+          "poster_path": null,
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [
+            35
+          ],
+          "popularity": 0.3023,
+          "first_air_date": "2017-08-14",
+          "softcore": false,
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "origin_country": [
+            "US"
           ]
         },
         {
@@ -712,51 +361,132 @@
           "genre_ids": [
             35
           ],
-          "popularity": 1.8545,
+          "popularity": 0.0749,
           "release_date": "1959-01-01",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.0,
-          "vote_count": 1
+          "vote_average": 8.5,
+          "vote_count": 2
         },
         {
           "adult": false,
-          "backdrop_path": "/tw6OWtgvbMBSHBudaOiHttLeZyP.jpg",
-          "id": 306813,
-          "title": "A Man for All Jobs...",
-          "original_title": "\u0386\u03BD\u03B8\u03C1\u03C9\u03C0\u03BF\u03C2 \u03B3\u03B9\u03B1 \u038C\u03BB\u03B5\u03C2 \u03C4\u03B9\u03C2 \u0394\u03BF\u03C5\u03BB\u03B5\u03B9\u03AD\u03C2...",
-          "overview": "A cynical young man, Giorgos, who believes that in this life you need to steer clear of principles and attachments, clashes with his father, captain Manolis and abandons the management of the family\u2019s shipyard. Determined to build his life again, he gets a job as a waiter in a large hotel and believes that he can also get rich by taking advantage of the sorrows and the loneliness of the wealthy.",
-          "poster_path": "/mJh4OBA9y5ZCvHUzpiklE3IbDcd.jpg",
+          "backdrop_path": null,
+          "id": 695023,
+          "title": "Fraggles Look For Jobs",
+          "original_title": "Fraggles Look For Jobs",
+          "overview": "Fraggle Rock wrap video taped in 1986, and screened May 16, 1986.",
+          "poster_path": "/5hvR8SBS1rWsVLO65WFIqZUrR5I.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.2077,
+          "release_date": "1986-05-16",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 6930,
+          "name": "Dirty Jobs",
+          "original_name": "Dirty Jobs",
+          "overview": "Dirty Jobs was a reality/factual program on the Nine Network, based on the American version of the same name, in which hosts Jo Beth Taylor and Ben Dark are shown performing difficult, strange, and/or messy occupational duties alongside professional workers.\n\nThe show premiered following the premiere of the Australian version of The Singing Bee on 7 October 2007. The show managed lacklustre ratings and was removed after five episodes and replaced with Commercial Breakdown.",
+          "poster_path": null,
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.0676,
+          "first_air_date": "2007-10-07",
+          "softcore": false,
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "origin_country": [
+            "AU"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 323713,
+          "title": "Workers and Jobs",
+          "original_title": "Workers and Jobs",
+          "overview": "Public information film aimed at the unemployed, commissioned by the Ministry of Labour.",
+          "poster_path": "/eLGMtwboVYjegxFdNyxujo421zT.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            99
+          ],
+          "popularity": 0.0404,
+          "release_date": "1935-03-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 23531,
+          "name": "Food Jobs",
+          "original_name": "Food Jobs",
+          "overview": "",
+          "poster_path": null,
+          "media_type": "tv",
+          "original_language": "en",
+          "genre_ids": [],
+          "popularity": 0.1777,
+          "first_air_date": "",
+          "softcore": false,
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 484625,
+          "title": "One Vengos for All Jobs",
+          "original_title": "\u0388\u03BD\u03B1\u03C2 \u0392\u03AD\u03B3\u03B3\u03BF\u03C2 \u03B3\u03B9\u03B1 \u038C\u03BB\u03B5\u03C2 \u03C4\u03B9\u03C2 \u0394\u03BF\u03C5\u03BB\u03B5\u03B9\u03AD\u03C2",
+          "overview": "An honest man is trying to find a job, but finds it difficult just because of the honesty. The need becomes more urgent when falls in love for a young girl who lives near him.",
+          "poster_path": "/hsghe7BgoYM2VSW2LQO2x2NkMoH.jpg",
           "media_type": "movie",
           "original_language": "el",
           "genre_ids": [
             35
           ],
-          "popularity": 2.481,
-          "release_date": "1966-01-10",
+          "popularity": 0.2717,
+          "release_date": "1970-01-01",
+          "softcore": false,
           "video": false,
-          "vote_average": 5.333,
-          "vote_count": 9
+          "vote_average": 5.8,
+          "vote_count": 10
         }
       ],
-      "total_pages": 40,
-      "total_results": 792
+      "total_pages": 11,
+      "total_results": 203
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=26794",
-      "x-memc": "MISS, STORE",
-      "x-memc-key": "0db4c7acbd370ad58bfb8025efa28380915db2d9838a54f037aa420d1b68205e",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u00221270272d95708c398c47d7540fed9637\u0022",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=10112",
+      "x-memc": "HIT",
+      "x-memc-key": "1783402a927ea6ff3c6eb20be18d9b55b8b2916f86e74db7307f90658fd4097d",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00224096e081087641129d4c1cce60f5c820\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
       "X-Cache": "Hit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

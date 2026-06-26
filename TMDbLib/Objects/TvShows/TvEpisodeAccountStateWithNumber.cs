@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents the account state for a TV episode including the episode number.
+/// TV episode account state including the episode number.
 /// </summary>
 public class TvEpisodeAccountStateWithNumber : TvEpisodeAccountState
 {
@@ -11,5 +11,5 @@ public class TvEpisodeAccountStateWithNumber : TvEpisodeAccountState
     /// Gets or sets the episode number.
     /// </summary>
     [JsonProperty("episode_number")]
-    public long EpisodeNumber { get; set; }
+    public int EpisodeNumber { get; set; }
 }

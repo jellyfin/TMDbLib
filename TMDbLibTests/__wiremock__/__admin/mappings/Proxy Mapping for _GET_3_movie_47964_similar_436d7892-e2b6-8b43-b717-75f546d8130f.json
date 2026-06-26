@@ -1,6 +1,6 @@
 {
   "Guid": "436d7892-e2b6-8b43-b717-75f546d8130f",
-  "UpdatedAt": "2025-12-24T18:45:21.4557415Z",
+  "UpdatedAt": "2026-05-24T16:19:43.579785Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/similar",
   "Description": "Proxy Mapping for GET /3/movie/47964/similar",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -26,425 +39,436 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": null,
+          "backdrop_path": "/pfrU9uHNtDxa6U93Fm9o4sjudGU.jpg",
           "genre_ids": [
-            36,
-            28
-          ],
-          "id": 1061876,
-          "original_language": "en",
-          "original_title": "Shootout of an Underground Railroad",
-          "overview": "During the American Civil War, a duo consisting of an optimistic gunslinger and his assistant attempt to safely cross an African escapee to Iowa from Missouri. What starts as a lonely trek becomes dangerous after the three are caught by a slave patrol. As a tense conversation slurs, it soon becomes obvious that a shootout is near.",
-          "popularity": 0.1141,
-          "poster_path": "/wR8sLoOfwGK6xixIcszxsljf0yh.jpg",
-          "release_date": "2024-05-24",
-          "title": "Shootout of an Underground Railroad",
-          "video": true,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/owAe5rRStnX7ibVAPmza3NCXjCy.jpg",
-          "genre_ids": [
-            80,
-            18,
-            53
-          ],
-          "id": 23168,
-          "original_language": "en",
-          "original_title": "The Town",
-          "overview": "Doug MacRay is a longtime thief, who, smarter than the rest of his crew, is looking for his chance to exit the game. When a bank job leads to the group kidnapping an attractive branch manager, he takes on the role of monitoring her \u2013 but their burgeoning relationship threatens to unveil the identities of Doug and his crew to the FBI Agent who is on their case.",
-          "popularity": 6.0793,
-          "poster_path": "/3NIzyXkfylsjflRKSz8Fts3lXzm.jpg",
-          "release_date": "2010-09-15",
-          "title": "The Town",
-          "video": false,
-          "vote_average": 7.216,
-          "vote_count": 5398
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/mcekbZUIzReeBvVjxqbryL3RDsI.jpg",
-          "genre_ids": [
-            80,
-            28
-          ],
-          "id": 23200,
-          "original_language": "en",
-          "original_title": "Silent Partner",
-          "overview": "Gordon Patrick, a young CIA analyst is assigned to investigate the mysterious death of a major Russian political figure.",
-          "popularity": 2.1608,
-          "poster_path": "/oRtLzttDOZUD84JECxCYVMhNloU.jpg",
-          "release_date": "2005-05-26",
-          "title": "Silent Partner",
-          "video": false,
-          "vote_average": 5.056,
-          "vote_count": 18
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/qJ3MLGzIf5uGzwq5738se5uQE1P.jpg",
-          "genre_ids": [
-            18,
-            28,
-            35,
-            53
-          ],
-          "id": 27069,
-          "original_language": "en",
-          "original_title": "The Raspberry Reich",
-          "overview": "Gudrun has modeled her amateur German terrorist group after the 1970s Red Army Faction (Baader-Meinhof Gang). She attempts to imitate her heroes by kidnapping the son of a wealthy industrialist and hopes to negotiate leftist demands from the father. When Gudrun\u2019s not spouting leftist verses (including during a hilariously brilliant fuck session), she\u2019s trying to convince her all-male gang to abandon their heterosexuality, which she believes is the result of mass delusion.",
-          "popularity": 3.1886,
-          "poster_path": "/jYhY9PaxbUUqgbbLAEHz0G8Vhnl.jpg",
-          "release_date": "2004-04-01",
-          "title": "The Raspberry Reich",
-          "video": false,
-          "vote_average": 5.432,
-          "vote_count": 44
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/rXILUagNP3zoLcY0iGcRk43dMBH.jpg",
-          "genre_ids": [
-            9648,
             27,
-            80,
             53
           ],
-          "id": 27118,
+          "id": 10131,
+          "title": "A Nightmare on Elm Street 4: The Dream Master",
           "original_language": "en",
-          "original_title": "The Hound of the Baskervilles",
-          "overview": "When a nobleman is threatened by a family curse on his newly inherited estate, detective Sherlock Holmes is hired to investigate.",
-          "popularity": 3.6332,
-          "poster_path": "/61XD1LxA3kXLRrBXat3jN84MtPR.jpg",
-          "release_date": "1939-03-24",
-          "title": "The Hound of the Baskervilles",
+          "original_title": "A Nightmare on Elm Street 4: The Dream Master",
+          "overview": "Freddy Krueger returns once again to terrorize the dreams of the remaining Dream Warriors, as well as those of a young woman who may be able to defeat him for good.",
+          "popularity": 3.4164,
+          "poster_path": "/boStYG7jKdoIZTduiOOsUVknD13.jpg",
+          "release_date": "1988-08-19",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.123,
-          "vote_count": 212
+          "vote_average": 5.864,
+          "vote_count": 1608
         },
         {
           "adult": false,
-          "backdrop_path": "/8PKqcN6IREm2Xy43lzhPZ2ORzQi.jpg",
+          "backdrop_path": "/lUHhwf9VRcdnP5gQjnqa337L33M.jpg",
           "genre_ids": [
-            28,
-            27,
             878,
+            28,
+            53,
+            12
+          ],
+          "id": 10134,
+          "title": "Cyborg",
+          "original_language": "en",
+          "original_title": "Cyborg",
+          "overview": "A martial artist hunts a killer in a plague-infested urban dump of the future.",
+          "popularity": 4.5201,
+          "poster_path": "/rwzRUC6inDraeIQD8f0FYteSonL.jpg",
+          "release_date": "1989-04-07",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.641,
+          "vote_count": 824
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7lmBufEG7P7Y1HClYK3gCxYrkgS.jpg",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "id": 10138,
+          "title": "Iron Man 2",
+          "original_language": "en",
+          "original_title": "Iron Man 2",
+          "overview": "With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony Stark faces pressure from the government, the press and the public to share his technology with the military. Unwilling to let go of his invention, Stark, with Pepper Potts and James \u0027Rhodey\u0027 Rhodes at his side, must forge new alliances \u2013 and confront powerful enemies.",
+          "popularity": 28.6929,
+          "poster_path": "/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
+          "release_date": "2010-04-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.852,
+          "vote_count": 22353
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/48eGqD1OvrCPC7zqCEaD6GDiqoT.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 10160,
+          "title": "A Nightmare on Elm Street: The Dream Child",
+          "original_language": "en",
+          "original_title": "A Nightmare on Elm Street: The Dream Child",
+          "overview": "The pregnant Alice finds Freddy Krueger striking through the sleeping mind of her unborn child, hoping to be reborn into the real world.",
+          "popularity": 3.6095,
+          "poster_path": "/kizvpgXQfrAgN8FhOd87LbKk6kO.jpg",
+          "release_date": "1989-08-11",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.41,
+          "vote_count": 1424
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kn2DrfbjYWyNAXlYjCIhQPOTEYd.jpg",
+          "genre_ids": [
+            80,
+            28,
+            53
+          ],
+          "id": 10167,
+          "title": "Half Past Dead",
+          "original_language": "en",
+          "original_title": "Half Past Dead",
+          "overview": "A man goes undercover in a hi-tech prison to find out information to help prosecute those who killed his wife. While there, he stumbles onto a plot involving a death-row inmate and his $200 million stash of gold.",
+          "popularity": 1.7836,
+          "poster_path": "/fJhudecoqyoZLoCwAZvqNPd7MK5.jpg",
+          "release_date": "2002-11-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.124,
+          "vote_count": 392
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/acNTpCRoAHueT1VoJzEQPYXdXy5.jpg",
+          "genre_ids": [
+            18,
+            878,
+            53
+          ],
+          "id": 10176,
+          "title": "The Quiet Earth",
+          "original_language": "en",
+          "original_title": "The Quiet Earth",
+          "overview": "After a top-secret experiment misfires, a scientist may be the only man left alive in the world.",
+          "popularity": 2.0554,
+          "poster_path": "/h0X2luIgPtN4LHH9s9so48jMuss.jpg",
+          "release_date": "1985-09-08",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.632,
+          "vote_count": 623
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/120TJwjOG5ShzYQIW9E61l6SvUL.jpg",
+          "genre_ids": [
+            18,
+            53,
             10749
           ],
-          "id": 27150,
+          "id": 10170,
+          "title": "The Russia House",
           "original_language": "en",
-          "original_title": "Silent Rage",
-          "overview": "A mentally ill man in a small Texas town goes on a killing rampage and is fatally wounded by police. When doctors use an experimental serum to bring him back to life, the killer develops superhuman strength and the town sheriff must pursue him.",
-          "popularity": 5.7849,
-          "poster_path": "/9LwR6SFLuzbbzYgXdGnVHahBqrO.jpg",
-          "release_date": "1982-04-02",
-          "title": "Silent Rage",
+          "original_title": "The Russia House",
+          "overview": "Barley Scott Blair, a Lisbon-based editor of Russian literature who unexpectedly begins working for British intelligence, is commissioned to investigate the purposes of Dante, a dissident scientist trapped in the decaying Soviet Union that is crumbling under the new open-minded policies.",
+          "popularity": 1.5998,
+          "poster_path": "/fFvwQGcpEdXkuPJaS15Xtl6h6P4.jpg",
+          "release_date": "1990-12-21",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.0,
-          "vote_count": 171
+          "vote_average": 6.07,
+          "vote_count": 330
         },
         {
           "adult": false,
-          "backdrop_path": "/uZmTG0bsNMxWM4h2W7c2ifSIAMu.jpg",
+          "backdrop_path": "/sl7hpSJR11FlfcewMJ6ihsbbAuJ.jpg",
           "genre_ids": [
             28,
+            53,
+            18
+          ],
+          "id": 10222,
+          "title": "Kickboxer",
+          "original_language": "en",
+          "original_title": "Kickboxer",
+          "overview": "If your enemy refuses to be humbled... Destroy him. Accompanied by his brother Kurt, American kickboxing champion Eric Sloane, arrives in Thailand to defeat the Eastern warriors at their own sport. His opponent: ruthless fighter and Thai champion, Tong Po. Tong not only defeats Eric, he paralyzes him for life. Crazed with anger, Kurt vows revenge.",
+          "popularity": 4.4818,
+          "poster_path": "/q3NCTsIb5mzOuf3XbQr9AfZyAaF.jpg",
+          "release_date": "1989-04-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.845,
+          "vote_count": 1570
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/93tvkTtV6tQQiYhxhij9tuODNOq.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 10225,
+          "title": "Jason Lives - Friday the 13th Part VI",
+          "original_language": "en",
+          "original_title": "Jason Lives - Friday the 13th Part VI",
+          "overview": "Tommy Jarvis, tormented by the fear that maybe Jason isn\u0027t really dead, unwittingly resurrects the mass murderer for another bloody rampage.",
+          "popularity": 4.2599,
+          "poster_path": "/6vdUpHvkspQonXBdWcLWW5ciEPJ.jpg",
+          "release_date": "1986-08-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.253,
+          "vote_count": 1348
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/roHX6N0VkySKBlramHUw1zdMQHB.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 10281,
+          "title": "Friday the 13th Part VII - The New Blood",
+          "original_language": "en",
+          "original_title": "Friday the 13th Part VII - The New Blood",
+          "overview": "Tina Shepard, a telekinetic teenage girl, accidentally unchains Jason from his watery grave, allowing him to go on another killing spree in the area.",
+          "popularity": 3.2,
+          "poster_path": "/rUzk9Qnyz2FZGxHMBrq6DYIQZkO.jpg",
+          "release_date": "1988-05-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.476,
+          "vote_count": 1208
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6U5sEPgkf3nnQC51kUUKcKzNSyR.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 10283,
+          "title": "Friday the 13th Part VIII: Jason Takes Manhattan",
+          "original_language": "en",
+          "original_title": "Friday the 13th Part VIII: Jason Takes Manhattan",
+          "overview": "Jason ships out aboard a teen-filled \u0022love boat\u0022 bound for New York, which he soon transforms into the ultimate voyage of the damned.",
+          "popularity": 3.5625,
+          "poster_path": "/6ezOsZ9UzqGnbDokaatxdOWP6e9.jpg",
+          "release_date": "1989-07-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 4.935,
+          "vote_count": 1207
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6QstEy47t8yLY3FZCqukbKlYIH3.jpg",
+          "genre_ids": [
             12,
+            28,
+            35,
+            10749
+          ],
+          "id": 10303,
+          "title": "The Jewel of the Nile",
+          "original_language": "en",
+          "original_title": "The Jewel of the Nile",
+          "overview": "Joan Wilder is thrust back into a world of murder, chases, foreign intrigue... and love. This time out she\u0027s duped by a duplicitous Arab dignitary who brings her to the Middle East, ostensibly to write a book about his life. Of course, he\u0027s up to no good, and Joan is just another pawn in his wicked game. But Jack Colton and his sidekick Ralph show up to help our intrepid heroine save the day.",
+          "popularity": 2.6042,
+          "poster_path": "/6VjsIhnIcrz2XdQVHdsMj5DdSa1.jpg",
+          "release_date": "1985-08-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.217,
+          "vote_count": 1273
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/exQwGehuaGAjqVwSoVfAA8sybna.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 10306,
+          "title": "Poltergeist III",
+          "original_language": "en",
+          "original_title": "Poltergeist III",
+          "overview": "Carol Anne has been sent to live with her Aunt and Uncle in an effort to hide her from the clutches of the ghostly Reverend Kane, but he tracks her down and terrorises her in her relatives\u0027 appartment in a tall glass building. Will he finally achieve his target and capture Carol Anne again, or will Tangina be able, yet again, to thwart him?",
+          "popularity": 1.0589,
+          "poster_path": "/pLewUibOJLGISvMqB94mAMdjz2q.jpg",
+          "release_date": "1988-06-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.2,
+          "vote_count": 546
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2UYxVugjbaPHH5f3cEQveufe75Y.jpg",
+          "genre_ids": [
+            28,
+            35
+          ],
+          "id": 10040,
+          "title": "Miss Congeniality 2: Armed and Fabulous",
+          "original_language": "en",
+          "original_title": "Miss Congeniality 2: Armed and Fabulous",
+          "overview": "After her triumph at the Miss United States pageant, FBI agent Gracie Hart becomes an overnight sensation -- and the new \u0022face of the FBI\u0022. But it\u0027s time to spring into action again when the pageant\u0027s winner, Cheryl, and emcee, Stan, are abducted.",
+          "popularity": 3.221,
+          "poster_path": "/gcYoIHND3ugn2VH1cNHHNQasEyI.jpg",
+          "release_date": "2005-03-11",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.746,
+          "vote_count": 1964
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dSbXXdDcnQFimUf1mhkPk5dkQU3.jpg",
+          "genre_ids": [
+            28,
             53,
             878
           ],
-          "id": 1450300,
-          "original_language": "en",
-          "original_title": "The Lightning Code",
-          "overview": "Teenage inventor Miles Fletcher unlocks the lost secret to limitless energy, catching the attention of Luxos Energy, a corporation posing as heroes. Just as he perfects his invention, they betray him\u2014stealing his work and shutting him out. With nowhere to turn, Miles must decide\u2014give up or trust his friends and fight back. In a high-stakes battle of ingenuity vs. industry, he races to stop Luxos before they turn his discovery into a weapon.",
-          "popularity": 0.2288,
-          "poster_path": "/naW3uB3WHyvLFP7M9IpV4IeK4vO.jpg",
-          "release_date": "2025-05-09",
-          "title": "The Lightning Code",
+          "id": 10045,
+          "title": "District B13",
+          "original_language": "fr",
+          "original_title": "Banlieue 13",
+          "overview": "Set in the ghettos of Paris in 2010, an undercover cop and ex-thug try to infiltrate a gang in order to defuse a neutron bomb.",
+          "popularity": 3.753,
+          "poster_path": "/uYIDJ15RLBsFFBSAkqjIirZCgVi.jpg",
+          "release_date": "2004-11-09",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.0,
-          "vote_count": 3
+          "vote_average": 6.814,
+          "vote_count": 1986
         },
         {
           "adult": false,
-          "backdrop_path": "/ifEz0TMxhJCi2iDPyVj2w5EqdFq.jpg",
+          "backdrop_path": "/phJnPutSg663Xc9lSa3UNp9C5zg.jpg",
           "genre_ids": [
             28,
             12,
-            53
-          ],
-          "id": 293105,
-          "original_language": "de",
-          "original_title": "Der Spion, der in die H\u00F6lle ging",
-          "overview": "CIA agent Jeff Larson is sent to investigate suspicious activities at a U.S. base located in southern Spain. He discovers the base is being heavily monitored by the KGB via hidden cameras and moles within the base, and he must find a way to ferret the traitors out whilst avoiding discovery of his investigation.",
-          "popularity": 0.1392,
-          "poster_path": "/8WEwLbxkRmKxCEyIbaGi7zxHuLi.jpg",
-          "release_date": "1965-08-13",
-          "title": "The Spy Who Went Into Hell",
-          "video": false,
-          "vote_average": 4.8,
-          "vote_count": 4
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dghqiKjqZwFXTz5OCFYORflLAJO.jpg",
-          "genre_ids": [
-            80,
-            18,
-            53
-          ],
-          "id": 480572,
-          "original_language": "en",
-          "original_title": "Bullet Head",
-          "overview": "A group of career criminals finds itself trapped in a warehouse with the law \u2013 and an Attack Dog named DeNiro closing in.",
-          "popularity": 4.879,
-          "poster_path": "/ySmKQPjWnNzuZ5YliQaOVEnWn2.jpg",
-          "release_date": "2017-12-07",
-          "title": "Bullet Head",
-          "video": false,
-          "vote_average": 4.995,
-          "vote_count": 539
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/2rsrEot0ODJT1ivyziwznBFfpZq.jpg",
-          "genre_ids": [
-            28,
-            18,
-            37,
-            10770
-          ],
-          "id": 26939,
-          "original_language": "en",
-          "original_title": "The Quick and the Dead",
-          "overview": "In 1876 Wyoming, the gun is the only law. And for Duncan and Suzanna McKaskel, newly arrived settlers beset by outlaws, rugged frontiersman Con Vallian is the only hope.",
-          "popularity": 1.6425,
-          "poster_path": "/9VAY6pSG6Tx1NCmFvg8VhGvlV33.jpg",
-          "release_date": "1987-02-28",
-          "title": "The Quick and the Dead",
-          "video": false,
-          "vote_average": 6.3,
-          "vote_count": 44
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/yFC72NT2tNv6AUonYj1IpYHflMl.jpg",
-          "genre_ids": [
-            12,
             878,
-            28,
-            10751
-          ],
-          "id": 26947,
-          "original_language": "ja",
-          "original_title": "\u30AC\u30E1\u30E9\u5BFE\u5927\u60AA\u7363\u30AE\u30ED\u30F3",
-          "overview": "Two young boys sneak aboard a spaceship and find themselves whisked away to the mysterious planet Terra. There, they encounter Gamera\u0027s old foe Gyaos and two female aliens with a taste for human brains. Gamera must save the children and battle the new monster Guiron, whose entire body is a deadly living weapon.",
-          "popularity": 0.8845,
-          "poster_path": "/13Hn8vS45Ua0ex5dpVED5eQlqZi.jpg",
-          "release_date": "1969-03-21",
-          "title": "Gamera vs. Guiron",
-          "video": false,
-          "vote_average": 5.338,
-          "vote_count": 99
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/phvEiBiS9JASXeD84BCvKg0iNWz.jpg",
-          "genre_ids": [
-            878,
-            9648,
             53
           ],
-          "id": 1450575,
+          "id": 10049,
+          "title": "Attack Force",
           "original_language": "en",
-          "original_title": "Deliverance",
-          "overview": "A severed worker at Lumon Industries stumbles upon a series of cryptic messages that unravel the sinister truth behind his reality, forcing him to question his identity and fight for his freedom.",
-          "popularity": 1.4106,
-          "poster_path": "/xCIJ28auH5VVde3JnVVxsApGdd4.jpg",
-          "release_date": "2025-03-22",
-          "title": "Deliverance",
+          "original_title": "Attack Force",
+          "overview": "Marshall Lawson is the commander of an elite military unit. Marshall Lawson loses his strike-team in a cold-blooded and seemingly random attack, and he takes it upon himself to investigate the attack, with the help of his girlfriend Tia and his friend Dwayne.",
+          "popularity": 0.9977,
+          "poster_path": "/pcd5EzwGMF4247BvtfEbz3bUpPU.jpg",
+          "release_date": "2006-12-05",
+          "softcore": false,
           "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
+          "vote_average": 4.272,
+          "vote_count": 112
         },
         {
           "adult": false,
-          "backdrop_path": "/mqFiNjFHxalek0KzpjRWO8Apecc.jpg",
-          "genre_ids": [
-            37,
-            28,
-            80
-          ],
-          "id": 27277,
-          "original_language": "en",
-          "original_title": "The War Wagon",
-          "overview": "An ex-con seeks revenge on the man who put him in prison by planning a robbery of the latter\u0027s stagecoach, which is transporting gold. He enlists the help of a partner, who could be working for his nemesis.",
-          "popularity": 3.6683,
-          "poster_path": "/wGSv9mfHocleVwH4Q8d38SkwQP.jpg",
-          "release_date": "1967-05-26",
-          "title": "The War Wagon",
-          "video": false,
-          "vote_average": 6.8,
-          "vote_count": 205
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/bSt58XaCJwriOoWBrhinpBpb7zj.jpg",
-          "genre_ids": [
-            80,
-            18,
-            53
-          ],
-          "id": 27280,
-          "original_language": "en",
-          "original_title": "Vice Raid",
-          "overview": "A prostitute sets out to frame a cop.",
-          "popularity": 5.3723,
-          "poster_path": "/upN9bwpSHmvSruNr44R9IFtvGkb.jpg",
-          "release_date": "1959-12-01",
-          "title": "Vice Raid",
-          "video": false,
-          "vote_average": 6.2,
-          "vote_count": 13
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/e7Imdzy2E6ODQZi7Vld8Rpgc7jf.jpg",
-          "genre_ids": [
-            28
-          ],
-          "id": 27310,
-          "original_language": "en",
-          "original_title": "The Marine 2",
-          "overview": "Rebels seize control of the hotel where a Marine sniper and his wife are staying. Can he save the day?",
-          "popularity": 1.6852,
-          "poster_path": "/z1PayLY6vlMeCrL6Xz8biuuVkLq.jpg",
-          "release_date": "2009-12-29",
-          "title": "The Marine 2",
-          "video": false,
-          "vote_average": 5.9,
-          "vote_count": 223
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dlGlOF9Jey8k0ENuzwfn2aLy9jX.jpg",
+          "backdrop_path": "/wzC2p07FfCsOTLo2aUeGBUQhsHX.jpg",
           "genre_ids": [
             28,
-            53
-          ],
-          "id": 27342,
-          "original_language": "en",
-          "original_title": "Malone",
-          "overview": "Erstwhile C.I.A. assassin Richard Malone hopes for a tranquil retirement in the placid Pacific Northwest, but what he gets is a rumble with a right-wing extremist plotting a secret revolution.",
-          "popularity": 0.7457,
-          "poster_path": "/uA32G48OnKutmWdifMSi9hp2jed.jpg",
-          "release_date": "1987-05-01",
-          "title": "Malone",
-          "video": false,
-          "vote_average": 6.0,
-          "vote_count": 69
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1v9BvqpmfzQT0V0kQqMnmaPIxEN.jpg",
-          "genre_ids": [
-            10770,
-            28,
-            35,
-            18
-          ],
-          "id": 1065681,
-          "original_language": "ja",
-          "original_title": "\u5FCD\u98A8\u6226\u968A\u30CF\u30EA\u30B1\u30F3\u30B8\u30E3\u30FCwith\u30C9\u30F3\u30D6\u30E9\u30B6\u30FC\u30BA",
-          "overview": "Ninpuu Sentai Hurricaneger with Donbrothers is a Japanese superhero tokusatsu crossover short film released exclusively on TTFC, featuring Donbrothers teaming up with Hurricanegers.",
-          "popularity": 3.639,
-          "poster_path": "/4AC8LN16TU0zVGSC6vM5kUOFT0a.jpg",
-          "release_date": "2022-12-25",
-          "title": "Ninpuu Sentai Hurricaneger with Donbrothers",
-          "video": false,
-          "vote_average": 8.2,
-          "vote_count": 4
-        },
-        {
-          "adult": false,
-          "backdrop_path": null,
-          "genre_ids": [
             53,
-            28
+            878
           ],
-          "id": 292920,
+          "id": 10061,
+          "title": "Escape from L.A.",
           "original_language": "en",
-          "original_title": "Pressure Point",
-          "overview": "A CIA assassin is embroiled in a deadly game across two continents. Betrayed and imprisoned, he faces one last mission to regain his freedom, his family and his self respect. Stars Steve Railsback, Larry Linville.",
-          "popularity": 3.513,
-          "poster_path": "/u3u4qyYz3imG98CkCn9cxxdfvLM.jpg",
-          "release_date": "1997-12-27",
-          "title": "Pressure Point",
+          "original_title": "Escape from L.A.",
+          "overview": "Into the 9.6-quaked Los Angeles of 2013 comes Snake Plissken. His job: wade through L.A.\u0027s ruined landmarks to retrieve a doomsday device.",
+          "popularity": 3.2229,
+          "poster_path": "/3L9lL2eUsmLNNfENPwNOc82Hzpw.jpg",
+          "release_date": "1996-08-09",
+          "softcore": false,
           "video": false,
-          "vote_average": 2.1,
-          "vote_count": 10
+          "vote_average": 5.875,
+          "vote_count": 1602
         },
         {
           "adult": false,
-          "backdrop_path": "/9OoxnHszTpcjMXKXwUEJhOlc3xQ.jpg",
+          "backdrop_path": "/wz9Fntmcqvrd4bqtPCTLp5DeEwc.jpg",
           "genre_ids": [
-            9648,
-            53
+            28,
+            35
           ],
-          "id": 1067747,
-          "original_language": "de",
-          "original_title": "QVIS I",
-          "overview": "By pure coincidence, Mia finds an enigmatic sketch book which leads her to mystical places. There, she gets to know the story of Vera - a story of old myths, of modern technology, and of escape and oblivion.",
-          "popularity": 0.635,
-          "poster_path": "/xTrrTVeXuMomMqdwlsGvGrgO6dA.jpg",
-          "release_date": "2019-05-04",
-          "title": "QVIS I",
+          "id": 10117,
+          "title": "Action Jackson",
+          "original_language": "en",
+          "original_title": "Action Jackson",
+          "overview": "Vengeance drives a tough Detroit cop to stay on the trail of a power hungry auto magnate who\u0027s systematically eliminating his competition.",
+          "popularity": 2.225,
+          "poster_path": "/vWBGkHT91My4T2iV3xgynpBTKtQ.jpg",
+          "release_date": "1988-02-12",
+          "softcore": false,
           "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
+          "vote_average": 5.507,
+          "vote_count": 282
         },
         {
           "adult": false,
-          "backdrop_path": "/qQRY1Ctil9QTMWhKjnN2MzlKSQJ.jpg",
+          "backdrop_path": "/euXJlfeYSyrdkOoFQ9gtUG8OOhH.jpg",
+          "genre_ids": [
+            27,
+            53,
+            14
+          ],
+          "id": 10072,
+          "title": "A Nightmare on Elm Street 3: Dream Warriors",
+          "original_language": "en",
+          "original_title": "A Nightmare on Elm Street 3: Dream Warriors",
+          "overview": "A psychiatrist, familiar with the knife-wielding dream demon Freddy Krueger, helps teens at a mental hospital battle the killer who is invading their dreams.",
+          "popularity": 2.508,
+          "poster_path": "/qbtZewU6EGvxi8yFVzwZ31NijLX.jpg",
+          "release_date": "1987-02-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.708,
+          "vote_count": 2018
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dkWllC5DOST1hfCwDjHp7JTyLop.jpg",
           "genre_ids": [
             18,
-            28,
-            80
+            27,
+            53
           ],
-          "id": 28943,
+          "id": 10042,
+          "title": "Within",
           "original_language": "en",
-          "original_title": "Shiner",
-          "overview": "The past catches up with a ruthlessly ambitious boxing promoter.",
-          "popularity": 3.4883,
-          "poster_path": "/8Ccd7MeyNM7Lp580GCkQ1gVoCA0.jpg",
-          "release_date": "2000-09-22",
-          "title": "Shiner",
+          "original_title": "Within",
+          "overview": "In a Asian desert, a team of explorers learn of a newly discovered cave system and set out to explore it. However as soon as they begin the descent, it becomes clear that this was a secret that should have remained below the surface.",
+          "popularity": 0.6682,
+          "poster_path": "/lVEnRvjpWMPplRN5EX28cyNnVZk.jpg",
+          "release_date": "2005-10-30",
+          "softcore": false,
           "video": false,
-          "vote_average": 5.229,
-          "vote_count": 24
+          "vote_average": 3.3,
+          "vote_count": 46
         }
       ],
-      "total_pages": 5108,
-      "total_results": 102158
+      "total_pages": 5380,
+      "total_results": 107593
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1b",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=8468",
-      "x-memc": "HIT",
-      "x-memc-key": "3ee1ab6a1c524ecd3b48d7a7c4b5aa37fa235d9ae4bf3287201bb2d917f20dc4",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u0022cfbe32cbd84985c8cac7d9de1ce9dfbe\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00223312d5a4d78eb77d7f8da7ec9c5fe71c\u0022",
+      "Cache-Control": "public, max-age=23666",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

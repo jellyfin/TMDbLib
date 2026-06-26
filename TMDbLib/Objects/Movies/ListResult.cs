@@ -4,7 +4,7 @@ using TMDbLib.Objects.General;
 namespace TMDbLib.Objects.Movies;
 
 /// <summary>
-/// Represents a list result containing a movie.
+/// List entry containing a movie.
 /// </summary>
 public class ListResult
 {
@@ -21,21 +21,27 @@ public class ListResult
     public int FavoriteCount { get; set; }
 
     /// <summary>
-    /// Gets or sets the list ID.
+    /// Gets or sets the list id.
     /// </summary>
     [JsonProperty("id")]
-    public string? Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
-    /// Gets or sets a language code, e.g. en.
+    /// Gets or sets the language code, e.g. en.
     /// </summary>
     [JsonProperty("iso_639_1")]
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
-    /// Gets or sets the item count in the list.
+    /// Gets or sets the country code, e.g. US.
     /// </summary>
-    [JsonProperty("item_Count")]
+    [JsonProperty("iso_3166_1")]
+    public string? Iso_3166_1 { get; set; }
+
+    /// <summary>
+    /// Gets or sets the item count.
+    /// </summary>
+    [JsonProperty("item_count")]
     public int ItemCount { get; set; }
 
     /// <summary>

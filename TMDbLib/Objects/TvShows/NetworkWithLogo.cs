@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Represents a TV network with logo information.
+/// TV network with logo information.
 /// </summary>
 public class NetworkWithLogo : NetworkBase
 {
