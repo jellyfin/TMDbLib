@@ -113,8 +113,7 @@ public partial class TMDbClient
 
         var appends = string.Join(
             ",",
-            Enum.GetValues(typeof(PersonMethods))
-                                         .OfType<PersonMethods>()
+            Enum.GetValues<PersonMethods>()
                                          .Except([PersonMethods.Undefined])
                                          .Where(s => extraMethods.HasFlag(s))
                                          .Select(s => s.GetDescription()));

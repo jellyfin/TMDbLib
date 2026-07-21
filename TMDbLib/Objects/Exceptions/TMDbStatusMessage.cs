@@ -26,5 +26,5 @@ public class TMDbStatusMessage
     /// </summary>
     [JsonIgnore]
     public TMDbStatusCode Code =>
-        Enum.IsDefined(typeof(TMDbStatusCode), StatusCode) ? (TMDbStatusCode)StatusCode : TMDbStatusCode.Unknown;
+        Enum.IsDefined((TMDbStatusCode)StatusCode) ? (TMDbStatusCode)StatusCode : TMDbStatusCode.Unknown;
 }

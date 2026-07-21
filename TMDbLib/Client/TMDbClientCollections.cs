@@ -70,8 +70,7 @@ public partial class TMDbClient
 
         var appends = string.Join(
             ",",
-            Enum.GetValues(typeof(CollectionMethods))
-                                         .OfType<CollectionMethods>()
+            Enum.GetValues<CollectionMethods>()
                                          .Except([CollectionMethods.Undefined])
                                          .Where(s => extraMethods.HasFlag(s))
                                          .Select(s => s.GetDescription()));

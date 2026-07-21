@@ -196,8 +196,7 @@ public sealed partial class TMDbClient
 
         var appends = string.Join(
             ",",
-            Enum.GetValues(typeof(MovieMethods))
-                                         .OfType<MovieMethods>()
+            Enum.GetValues<MovieMethods>()
                                          .Except([MovieMethods.Undefined])
                                          .Where(s => extraMethods.HasFlag(s))
                                          .Select(s => s.GetDescription()));
