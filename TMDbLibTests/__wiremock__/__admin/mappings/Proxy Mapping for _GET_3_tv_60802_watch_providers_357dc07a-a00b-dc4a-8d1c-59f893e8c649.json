@@ -1,0 +1,238 @@
+{
+  "Guid": "357dc07a-a00b-dc4a-8d1c-59f893e8c649",
+  "UpdatedAt": "2026-07-21T19:32:04.311532Z",
+  "Title": "Proxy Mapping for GET /3/tv/60802/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/60802/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/60802/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 60802,
+      "results": {
+        "AO": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=AO",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 8
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 9
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 9
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/jse4MOi92Jgetym7nbXFZZBI6LK.jpg",
+              "provider_id": 2241,
+              "provider_name": "Movistar Plus\u002B",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 7
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/jy4yvY3szonb0p6rtMXvF5stuX9.jpg",
+              "provider_id": 497,
+              "provider_name": "Tele2 Play",
+              "display_priority": 20
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/60802-the-last-ship/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 38
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 154
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=25629",
+      "x-memc": "HIT",
+      "x-memc-key": "62d63b24074252c911718c674ebcd911",
+      "x-az": "us-east-1a",
+      "ETag": "W/\u002200b8b2938335356ebc3ca1ef800b4379\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

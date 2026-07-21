@@ -1,0 +1,2100 @@
+{
+  "Guid": "ce61bee5-7ec6-5c44-b382-ddaf46e2d19e",
+  "UpdatedAt": "2026-07-21T19:32:05.387838Z",
+  "Title": "Proxy Mapping for GET /3/tv/125988/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/125988/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/125988/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 125988,
+      "results": {
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=AE",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=AG",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=AR",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 63
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 63
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 133
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 84
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 53
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BG",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BR",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 73
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 80
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BS",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BY",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=BZ",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 112
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 123
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CH",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CL",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 46
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CO",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 47
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CR",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CV",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CY",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 25
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=DE",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 112
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 191
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=DK",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=EC",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=EE",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=EG",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=ES",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 73
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 79
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=FI",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 54
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=FJ",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=FR",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 108
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=GB",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 98
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 118
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 81
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=GH",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=HN",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=IE",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=IL",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 68
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 76
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 87
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=JO",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=JP",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 29
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/qHThQdkJuROK0k5QTCrknaNukWe.jpg",
+              "provider_id": 1883,
+              "provider_name": "TVING",
+              "display_priority": 29
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=LV",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=MD",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=MX",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 64
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 70
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=NI",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=NL",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 67
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=NO",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 40
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=OM",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=PE",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=PH",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 57
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=PT",
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=QA",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=RU",
+          "ads": [
+            {
+              "logo_path": "/3EJQtj4m83kRh7bV9BF6KWmPiKp.jpg",
+              "provider_id": 577,
+              "provider_name": "TvIgle",
+              "display_priority": 19
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=SA",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 58
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=SI",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=SK",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
+              "provider_id": 381,
+              "provider_name": "Canal\u002B",
+              "display_priority": 35
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=TW",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 1
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=UG",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 203
+            },
+            {
+              "logo_path": "/mHrYMgnZIp6lgW2aXg7ix9zGOnA.jpg",
+              "provider_id": 2243,
+              "provider_name": "Apple TV Amazon Channel",
+              "display_priority": 216
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 4
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/125988-silo/watch?locale=ZA",
+          "free": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mcbz1LgtErU9p4UdbZ0rG6RTWHX.jpg",
+              "provider_id": 350,
+              "provider_name": "Apple TV",
+              "display_priority": 2
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=0",
+      "x-memc": "HIT",
+      "x-memc-key": "f4f59019fb745552f771207d1f503065",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022cbf80be981c2418afaf275da66985235\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

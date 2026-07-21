@@ -1,6 +1,6 @@
 {
   "Guid": "6e993b94-5860-194a-91e7-be828dd95b89",
-  "UpdatedAt": "2026-05-24T16:19:43.705254Z",
+  "UpdatedAt": "2026-07-21T19:32:03.917722Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/images",
   "Description": "Proxy Mapping for GET /3/movie/47964/images",
   "Priority": -2000000,
@@ -748,6 +748,26 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 3265
+        },
+        {
+          "aspect_ratio": 2.744,
+          "height": 297,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/hHoQGUsJ2I1tdiiRYLxOlMnLM5t.png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 815
+        },
+        {
+          "aspect_ratio": 3.029,
+          "height": 312,
+          "iso_3166_1": "RU",
+          "iso_639_1": "ru",
+          "file_path": "/wpBK2KOqMvpAVgCjmATabZ5L58s.png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 945
         }
       ],
       "posters": [
@@ -787,16 +807,6 @@
           "iso_3166_1": "IT",
           "iso_639_1": "it",
           "file_path": "/yGot6qzp3pGaqBCaLEY1IayjCLg.jpg",
-          "vote_average": 3.334,
-          "vote_count": 1,
-          "width": 1000
-        },
-        {
-          "aspect_ratio": 0.667,
-          "height": 1500,
-          "iso_3166_1": "RU",
-          "iso_639_1": "ru",
-          "file_path": "/EktjFIPWceg2MWOorzHsPj1gZ1.jpg",
           "vote_average": 3.334,
           "vote_count": 1,
           "width": 1000
@@ -1024,6 +1034,26 @@
         {
           "aspect_ratio": 0.667,
           "height": 3000,
+          "iso_3166_1": "RU",
+          "iso_639_1": "ru",
+          "file_path": "/pxiCHwR8gth7mOJLjMO8fV5T8iI.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 2000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 1500,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/kD2SqRZFSdFEGzBJ4JBEjtFbBgw.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 1000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 3000,
           "iso_3166_1": "PT",
           "iso_639_1": "pt",
           "file_path": "/lwV8LxjFT6AdbUJxQrDIMZz5C8I.jpg",
@@ -1070,6 +1100,16 @@
           "vote_average": 2.278,
           "vote_count": 3,
           "width": 550
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 1500,
+          "iso_3166_1": "RU",
+          "iso_639_1": "ru",
+          "file_path": "/EktjFIPWceg2MWOorzHsPj1gZ1.jpg",
+          "vote_average": 1.75,
+          "vote_count": 2,
+          "width": 1000
         },
         {
           "aspect_ratio": 0.667,
@@ -2094,11 +2134,31 @@
         {
           "aspect_ratio": 0.667,
           "height": 3000,
-          "iso_3166_1": "RU",
-          "iso_639_1": "ru",
-          "file_path": "/pxiCHwR8gth7mOJLjMO8fV5T8iI.jpg",
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/fleRcus6HkdaEJzRO9Q55qFNuNX.jpg",
           "vote_average": 0.0,
           "vote_count": 0,
+          "width": 2000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 2880,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/5JvavCVtQ9rBwr8vm0nmtyrYgmM.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 3000,
+          "iso_3166_1": "TH",
+          "iso_639_1": "th",
+          "file_path": "/tZfVoylVrkIfzCWvrHtboJDYwS8.jpg",
+          "vote_average": 0.0,
+          "vote_count": 1,
           "width": 2000
         }
       ]
@@ -2107,18 +2167,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "Cache-Control": "public, max-age=570",
+      "x-az": "us-east-1a",
+      "Cache-Control": "public, max-age=17008",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u002284a72e381c9450827111a82a453f29fd\u0022",
-      "Vary": [
-        "Accept-Encoding",
-        "Origin"
-      ],
+      "ETag": "W/\u0022aeb1c73665232c56311f97985f776a0d\u0022",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

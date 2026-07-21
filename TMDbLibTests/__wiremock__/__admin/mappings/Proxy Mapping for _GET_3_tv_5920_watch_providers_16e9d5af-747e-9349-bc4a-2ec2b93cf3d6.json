@@ -1,6 +1,6 @@
 {
   "Guid": "16e9d5af-747e-9349-bc4a-2ec2b93cf3d6",
-  "UpdatedAt": "2026-05-24T16:19:45.221565Z",
+  "UpdatedAt": "2026-07-21T19:32:05.467879Z",
   "Title": "Proxy Mapping for GET /3/tv/5920/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/5920/watch/providers",
   "Priority": -2000000,
@@ -56,7 +56,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 24
+              "display_priority": 25
             }
           ]
         },
@@ -79,7 +79,7 @@
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
@@ -102,7 +102,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 11
+              "display_priority": 12
             }
           ]
         },
@@ -120,6 +120,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 36
             }
           ]
         },
@@ -159,44 +165,36 @@
               "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
               "provider_id": 339,
               "provider_name": "MovistarTV",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 35
+              "display_priority": 36
             }
           ]
         },
         "AT": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=AT",
-          "ads": [
-            {
-              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
-              "provider_id": 304,
-              "provider_name": "Joyn",
-              "display_priority": 69
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 13
+              "display_priority": 14
             }
           ],
           "flatrate": [
@@ -216,13 +214,7 @@
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 62
-            },
-            {
-              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
-              "provider_id": 1825,
-              "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 152
+              "display_priority": 63
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -230,24 +222,24 @@
               "provider_name": "HBO Max",
               "display_priority": 153
             }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 70
+            }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=AU",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 12
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
@@ -259,7 +251,7 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 49
+              "display_priority": 50
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -278,6 +270,14 @@
               "provider_id": 1825,
               "provider_name": "HBO Max Amazon Channel",
               "display_priority": 104
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
             }
           ]
         },
@@ -317,7 +317,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 27
+              "display_priority": 28
             }
           ]
         },
@@ -340,12 +340,20 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 23
+              "display_priority": 24
             }
           ]
         },
         "BE": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=BE",
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -358,14 +366,6 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 10
             }
           ]
         },
@@ -399,7 +399,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 21
+              "display_priority": 22
             }
           ]
         },
@@ -462,7 +462,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 31
             }
           ]
         },
@@ -485,19 +485,19 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 41
+              "display_priority": 42
             },
             {
               "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
               "provider_id": 1825,
               "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 48
+              "display_priority": 49
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
@@ -526,7 +526,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 24
+              "display_priority": 25
             }
           ]
         },
@@ -560,19 +560,21 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 9
+              "display_priority": 10
             }
           ]
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=CA",
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            },
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
@@ -580,24 +582,22 @@
               "display_priority": 1
             },
             {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            },
+            {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 93
+              "display_priority": 94
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 111
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 112
             }
           ]
         },
@@ -619,7 +619,7 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             }
           ],
           "flatrate": [
@@ -634,6 +634,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 76
             }
           ]
         },
@@ -673,13 +679,13 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
               "provider_id": 339,
               "provider_name": "MovistarTV",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
@@ -719,13 +725,13 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
               "provider_id": 339,
               "provider_name": "MovistarTV",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
               "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
@@ -754,7 +760,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 4
+              "display_priority": 5
             }
           ]
         },
@@ -811,12 +817,58 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 31
             }
           ]
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=DE",
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 12
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 23
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 104
+            },
+            {
+              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 128
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -847,58 +899,6 @@
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 218
-            },
-            {
-              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
-              "provider_id": 1825,
-              "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 219
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
-              "provider_id": 304,
-              "provider_name": "Joyn",
-              "display_priority": 10
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
-              "provider_id": 20,
-              "provider_name": "maxdome Store",
-              "display_priority": 17
-            },
-            {
-              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
-              "provider_id": 178,
-              "provider_name": "MagentaTV",
-              "display_priority": 22
-            },
-            {
-              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
-              "provider_id": 1993,
-              "provider_name": "Videoload",
-              "display_priority": 104
-            },
-            {
-              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
-              "provider_id": 2209,
-              "provider_name": "Freenet meinVOD",
-              "display_priority": 128
             }
           ]
         },
@@ -909,7 +909,7 @@
               "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
               "provider_id": 426,
               "provider_name": "SF Anytime",
-              "display_priority": 15
+              "display_priority": 16
             }
           ],
           "flatrate": [
@@ -929,13 +929,13 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
               "provider_id": 1961,
               "provider_name": "Allente",
-              "display_priority": 37
+              "display_priority": 38
             }
           ],
           "buy": [
@@ -943,13 +943,13 @@
               "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
               "provider_id": 423,
               "provider_name": "Blockbuster",
-              "display_priority": 14
+              "display_priority": 15
             },
             {
               "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
               "provider_id": 426,
               "provider_name": "SF Anytime",
-              "display_priority": 15
+              "display_priority": 16
             }
           ]
         },
@@ -972,7 +972,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 31
             }
           ]
         },
@@ -1012,7 +1012,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 6
+              "display_priority": 7
             }
           ]
         },
@@ -1046,7 +1046,7 @@
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 20
+              "display_priority": 21
             }
           ]
         },
@@ -1069,19 +1069,19 @@
               "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
               "provider_id": 149,
               "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 16
+              "display_priority": 17
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 51
+              "display_priority": 52
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
@@ -1099,14 +1099,6 @@
         },
         "FI": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=FI",
-          "rent": [
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 13
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1124,7 +1116,7 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 33
+              "display_priority": 34
             }
           ],
           "buy": [
@@ -1132,13 +1124,21 @@
               "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
               "provider_id": 423,
               "provider_name": "Blockbuster",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
               "provider_id": 426,
               "provider_name": "SF Anytime",
-              "display_priority": 13
+              "display_priority": 14
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 14
             }
           ]
         },
@@ -1161,24 +1161,72 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=FR",
+          "ads": [
+            {
+              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
+              "provider_id": 1754,
+              "provider_name": "TF1\u002B",
+              "display_priority": 51
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 79
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 81
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 79
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 81
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 2
-            },
-            {
-              "logo_path": "/8qSG9LtUhBQIWy2Fr6fzeW7gBdd.jpg",
-              "provider_id": 1967,
-              "provider_name": "Molotov TV",
-              "display_priority": 34
             },
             {
               "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
@@ -1193,62 +1241,10 @@
               "display_priority": 54
             },
             {
-              "logo_path": "/vo4tm5HBLpctihoSX6bTIG0VB9d.jpg",
-              "provider_id": 193,
-              "provider_name": "SFR Play",
-              "display_priority": 57
-            },
-            {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 87
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
-              "provider_id": 58,
-              "provider_name": "Canal VOD",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
-              "provider_id": 2286,
-              "provider_name": "VIVA by videofutur",
-              "display_priority": 80
-            },
-            {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
-              "provider_id": 2307,
-              "provider_name": "Premiere Max",
-              "display_priority": 82
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
-              "provider_id": 58,
-              "provider_name": "Canal VOD",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
-              "provider_id": 2286,
-              "provider_name": "VIVA by videofutur",
-              "display_priority": 80
-            },
-            {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
-              "provider_id": 2307,
-              "provider_name": "Premiere Max",
-              "display_priority": 82
+              "display_priority": 86
             }
           ]
         },
@@ -1259,19 +1255,13 @@
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
               "display_priority": 5
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
           "flatrate": [
@@ -1288,16 +1278,16 @@
               "display_priority": 1
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
               "provider_id": 39,
               "provider_name": "Now TV",
-              "display_priority": 43
+              "display_priority": 44
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
@@ -1418,7 +1408,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 4
+              "display_priority": 5
             }
           ]
         },
@@ -1475,7 +1465,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 31
             }
           ]
         },
@@ -1498,7 +1488,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 33
+              "display_priority": 34
             }
           ]
         },
@@ -1558,16 +1548,16 @@
               "display_priority": 1
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
               "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
               "provider_id": 39,
               "provider_name": "Now TV",
-              "display_priority": 10
+              "display_priority": 11
             }
           ]
         },
@@ -1635,7 +1625,7 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 23
+              "display_priority": 24
             }
           ]
         },
@@ -1693,7 +1683,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 23
+              "display_priority": 24
             }
           ]
         },
@@ -1733,25 +1723,25 @@
               "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
               "provider_id": 15,
               "provider_name": "Hulu",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
               "provider_id": 84,
               "provider_name": "U-NEXT",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 24
+              "display_priority": 25
             },
             {
               "logo_path": "/zA1rTWwNDx96pwkHUuvVWWkdpPa.jpg",
               "provider_id": 2284,
               "provider_name": "HBO Max on U-Next",
-              "display_priority": 27
+              "display_priority": 28
             }
           ],
           "buy": [
@@ -1759,13 +1749,13 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 8
+              "display_priority": 9
             }
           ],
           "rent": [
@@ -1773,7 +1763,7 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/9EWAEok40O0HVhV0MYJmlE4LhGy.jpg",
@@ -1813,7 +1803,7 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 26
+              "display_priority": 27
             }
           ]
         },
@@ -1853,7 +1843,7 @@
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
@@ -1876,7 +1866,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 11
+              "display_priority": 12
             }
           ]
         },
@@ -1894,6 +1884,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 42
             }
           ]
         },
@@ -1922,6 +1918,12 @@
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
               "display_priority": 1
+            },
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 26
             }
           ],
           "buy": [
@@ -1929,7 +1931,7 @@
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 6
+              "display_priority": 7
             }
           ]
         },
@@ -2014,7 +2016,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 25
+              "display_priority": 26
             }
           ]
         },
@@ -2031,7 +2033,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 6
+              "display_priority": 7
             }
           ]
         },
@@ -2071,7 +2073,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 26
+              "display_priority": 27
             }
           ]
         },
@@ -2144,19 +2146,19 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
               "provider_id": 1825,
               "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 15
+              "display_priority": 16
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 39
+              "display_priority": 40
             },
             {
               "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
@@ -2253,7 +2255,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 13
+              "display_priority": 14
             }
           ]
         },
@@ -2276,28 +2278,6 @@
         },
         "NO": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=NO",
-          "rent": [
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 15
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
-              "provider_id": 423,
-              "provider_name": "Blockbuster",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 15
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -2315,13 +2295,35 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
               "provider_id": 578,
               "provider_name": "Strim",
-              "display_priority": 27
+              "display_priority": 28
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
             }
           ]
         },
@@ -2384,7 +2386,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 31
             }
           ]
         },
@@ -2407,7 +2409,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -2543,7 +2545,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 29
+              "display_priority": 30
             }
           ]
         },
@@ -2589,7 +2591,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 23
+              "display_priority": 24
             }
           ]
         },
@@ -2612,7 +2614,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 28
+              "display_priority": 29
             }
           ]
         },
@@ -2646,7 +2648,7 @@
               "logo_path": "/kC6JTo59Gj6I4vJPyBAYGh0sKAE.jpg",
               "provider_id": 629,
               "provider_name": "OSN\u002B",
-              "display_priority": 20
+              "display_priority": 21
             }
           ]
         },
@@ -2674,7 +2676,7 @@
               "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
               "provider_id": 426,
               "provider_name": "SF Anytime",
-              "display_priority": 15
+              "display_priority": 16
             }
           ],
           "flatrate": [
@@ -2694,7 +2696,7 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 6
+              "display_priority": 7
             }
           ],
           "buy": [
@@ -2702,13 +2704,13 @@
               "logo_path": "/auWzottqpExOHUlJwDZ4DvdHGoL.jpg",
               "provider_id": 423,
               "provider_name": "Blockbuster",
-              "display_priority": 14
+              "display_priority": 15
             },
             {
               "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
               "provider_id": 426,
               "provider_name": "SF Anytime",
-              "display_priority": 15
+              "display_priority": 16
             }
           ]
         },
@@ -2748,7 +2750,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 28
+              "display_priority": 29
             }
           ]
         },
@@ -2771,7 +2773,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 37
+              "display_priority": 38
             }
           ]
         },
@@ -2828,7 +2830,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 31
             }
           ]
         },
@@ -2851,7 +2853,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 10
+              "display_priority": 11
             }
           ]
         },
@@ -2875,6 +2877,12 @@
         "TH": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=TH",
           "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
             {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
@@ -2904,6 +2912,12 @@
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=TR",
           "flatrate": [
             {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
               "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
@@ -2930,7 +2944,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 12
+              "display_priority": 13
             }
           ]
         },
@@ -2968,6 +2982,17 @@
             }
           ]
         },
+        "UA": {
+          "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 18
+            }
+          ]
+        },
         "UG": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=UG",
           "flatrate": [
@@ -2987,38 +3012,38 @@
         },
         "US": {
           "link": "https://www.themoviedb.org/tv/5920-the-mentalist/watch?locale=US",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 17
-            },
-            {
-              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
-              "provider_id": 7,
-              "provider_name": "Fandango At Home",
-              "display_priority": 35
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
               "provider_id": 15,
               "provider_name": "Hulu",
               "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 38
             }
           ]
         },
@@ -3041,7 +3066,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 4
+              "display_priority": 5
             }
           ]
         },
@@ -3075,7 +3100,7 @@
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 27
+              "display_priority": 28
             }
           ]
         },
@@ -3147,11 +3172,11 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=22400",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "Cache-Control": "public, max-age=12996",
-      "ETag": "W/\u002241f9a659a1fe41e5ae2cac8b64a4c677\u0022",
-      "x-az": "us-east-1a",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00226358428af8b4a536ea0917ef3ffc6eef\u0022",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022",

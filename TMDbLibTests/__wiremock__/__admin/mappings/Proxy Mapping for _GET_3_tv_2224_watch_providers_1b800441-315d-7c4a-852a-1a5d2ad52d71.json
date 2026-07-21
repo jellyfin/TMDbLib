@@ -1,0 +1,285 @@
+{
+  "Guid": "1b800441-315d-7c4a-852a-1a5d2ad52d71",
+  "UpdatedAt": "2026-07-21T19:32:05.261657Z",
+  "Title": "Proxy Mapping for GET /3/tv/2224/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/2224/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/2224/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 2224,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/7QX5OdsQZrXGNBKq9SPzoPV9OYQ.jpg",
+              "provider_id": 385,
+              "provider_name": "BINGE",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 10
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 91
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 95
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 121
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 122
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/o2qiZykonJuLglxwBbtUbHu4wIO.jpg",
+              "provider_id": 449,
+              "provider_name": "Global TV",
+              "display_priority": 47
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/eMoqH13BYzIC1wDlhONhHfDM3DN.jpg",
+              "provider_id": 1706,
+              "provider_name": "Comedy Central Plus Amazon Channel",
+              "display_priority": 73
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/2ycGtAxsOqWhpqfDYu9XHBkzBTJ.jpg",
+              "provider_id": 2440,
+              "provider_name": "Sweatflix Amazon Channel",
+              "display_priority": 139
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/2ycGtAxsOqWhpqfDYu9XHBkzBTJ.jpg",
+              "provider_id": 2440,
+              "provider_name": "Sweatflix Amazon Channel",
+              "display_priority": 39
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 83
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 9
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
+              "provider_id": 563,
+              "provider_name": "KPN",
+              "display_priority": 30
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/2224-the-daily-show/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/5wym1C0jAvJeGirPdgVpcW0CCuy.jpg",
+              "provider_id": 2616,
+              "provider_name": "Paramount Plus Essential",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/ywIoxSjoYJGUIbR6BfxUiCHdPi3.jpg",
+              "provider_id": 633,
+              "provider_name": "Paramount\u002B Roku Premium Channel",
+              "display_priority": 65
+            },
+            {
+              "logo_path": "/2ycGtAxsOqWhpqfDYu9XHBkzBTJ.jpg",
+              "provider_id": 2440,
+              "provider_name": "Sweatflix Amazon Channel",
+              "display_priority": 287
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=16883",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u00223a4bf7f48890a4a3d08de2f35348253d\u0022",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

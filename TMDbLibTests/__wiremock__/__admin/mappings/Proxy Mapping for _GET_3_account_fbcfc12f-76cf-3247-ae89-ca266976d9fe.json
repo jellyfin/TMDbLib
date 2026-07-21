@@ -1,6 +1,6 @@
 {
   "Guid": "fbcfc12f-76cf-3247-ae89-ca266976d9fe",
-  "UpdatedAt": "2026-05-24T16:19:44.201991Z",
+  "UpdatedAt": "2026-07-21T19:32:04.964796Z",
   "Title": "Proxy Mapping for GET /3/account",
   "Description": "Proxy Mapping for GET /3/account",
   "Priority": -2000000,
@@ -57,16 +57,14 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "MISS",
-      "x-memc": "MISS",
-      "x-memc-key": "5c6bc127a88a71f6c4d18f8d04c5776ea0919cb125896ebd8970cc9d7bfcdc12",
-      "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=0",
+      "Cache-Control": "max-age=0, private",
+      "x-az": "us-east-1c",
       "ETag": "W/\u0022ff94454d35cbbd65767c9f2ca15a36c3\u0022",
       "Vary": [
-        "Accept-Encoding",
+        "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
+      "X-Cache": "Miss from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }

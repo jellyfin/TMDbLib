@@ -1,6 +1,6 @@
 {
   "Guid": "75cbf936-aafa-7649-a965-20ebbad2b077",
-  "UpdatedAt": "2026-05-24T16:19:43.392145Z",
+  "UpdatedAt": "2026-07-21T19:32:04.211703Z",
   "Title": "Proxy Mapping for GET /3/tv/1399/season/1/videos",
   "Description": "Proxy Mapping for GET /3/tv/1399/season/1/videos",
   "Priority": -2000000,
@@ -235,20 +235,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1a",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=8595",
-      "x-memc": "HIT",
-      "x-memc-key": "1cdbe65f951782a92f07bc57c6ccd963f6766c8956bb61a9d49c28f52ac917f7",
-      "x-az": "us-east-1c",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=6925",
       "ETag": "W/\u0022825d7715db24a2e135d578d6da2f50dc\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }
