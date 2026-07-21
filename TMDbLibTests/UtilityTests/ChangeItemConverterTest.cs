@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Changes;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.JsonHelpers;
 using Xunit;

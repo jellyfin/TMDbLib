@@ -1,56 +1,104 @@
 using System;
 using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
-/// JSON converter for DateTime values with custom format strings.
+/// JSON converter factory for DateTime values with custom format strings.
+/// Supports both <see cref="DateTime"/> and <see cref="Nullable{DateTime}"/>.
 /// </summary>
-public class CustomDatetimeFormatConverter : DateTimeConverterBase
+public class CustomDatetimeFormatConverter : JsonConverterFactory
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="CustomDatetimeFormatConverter"/> class.
-    /// </summary>
-    public CustomDatetimeFormatConverter()
-    {
-        CultureInfo = new CultureInfo("en-US");
-        DatetimeFormat = "yyyy-MM-dd HH:mm:ss UTC";
-    }
-
     /// <summary>
     /// Gets or sets the culture info to use for date formatting.
     /// </summary>
-    public CultureInfo CultureInfo { get; set; }
+    public CultureInfo CultureInfo { get; set; } = new CultureInfo("en-US");
 
     /// <summary>
     /// Gets or sets the datetime format string.
     /// </summary>
-    public string DatetimeFormat { get; set; }
+    public string DatetimeFormat { get; set; } = "yyyy-MM-dd HH:mm:ss UTC";
 
     /// <inheritdoc />
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    public override bool CanConvert(Type typeToConvert)
     {
-        var stringValue = reader.Value?.ToString();
-        if (string.IsNullOrEmpty(stringValue))
-        {
-            return null;
-        }
-
-        return DateTime.ParseExact(stringValue, DatetimeFormat, CultureInfo.CurrentCulture);
+        return typeToConvert == typeof(DateTime) || typeToConvert == typeof(DateTime?);
     }
 
     /// <inheritdoc />
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
-        if (value is DateTime dateTime)
+        if (typeToConvert == typeof(DateTime?))
         {
-            writer.WriteValue(dateTime.ToString(DatetimeFormat, CultureInfo));
+            return new NullableConverter(DatetimeFormat, CultureInfo);
         }
-        else
+
+        return new Converter(DatetimeFormat, CultureInfo);
+    }
+
+    private sealed class Converter : JsonConverter<DateTime>
+    {
+        private readonly string _format;
+        private readonly CultureInfo _culture;
+
+        public Converter(string format, CultureInfo culture)
         {
-            writer.WriteNull();
+            _format = format;
+            _culture = culture;
+        }
+
+        public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var stringValue = reader.GetString();
+            return string.IsNullOrEmpty(stringValue)
+                ? default
+                : DateTime.ParseExact(stringValue, _format, _culture);
+        }
+
+        public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value.ToString(_format, _culture));
+        }
+    }
+
+    private sealed class NullableConverter : JsonConverter<DateTime?>
+    {
+        private readonly string _format;
+        private readonly CultureInfo _culture;
+
+        public NullableConverter(string format, CultureInfo culture)
+        {
+            _format = format;
+            _culture = culture;
+        }
+
+        public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType == JsonTokenType.Null)
+            {
+                return null;
+            }
+
+            var stringValue = reader.GetString();
+            if (string.IsNullOrEmpty(stringValue))
+            {
+                return null;
+            }
+
+            return DateTime.ParseExact(stringValue, _format, _culture);
+        }
+
+        public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
+        {
+            if (value is null)
+            {
+                writer.WriteNullValue();
+                return;
+            }
+
+            writer.WriteStringValue(value.Value.ToString(_format, _culture));
         }
     }
 }

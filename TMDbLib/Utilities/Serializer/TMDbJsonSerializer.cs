@@ -1,30 +1,40 @@
-﻿using System;
+using System;
 using System.IO;
-using System.Text;
-using Newtonsoft.Json;
+using System.Text.Json;
 using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Utilities.Serializer;
 
 /// <summary>
-/// JSON serializer implementation for TMDbLib using Newtonsoft.Json with custom converters.
+/// JSON serializer implementation for TMDbLib using System.Text.Json with the
+/// library's custom converters pre-registered.
 /// </summary>
 public class TMDbJsonSerializer : ITMDbSerializer
 {
-    private readonly JsonSerializer _serializer;
-    private readonly Encoding _encoding = new UTF8Encoding(false);
+    private readonly JsonSerializerOptions _options;
 
     private TMDbJsonSerializer()
     {
-        _serializer = JsonSerializer.CreateDefault();
-        _serializer.Converters.Add(new ChangeItemConverter());
-        _serializer.Converters.Add(new AccountStateConverter());
-        _serializer.Converters.Add(new KnownForConverter());
-        _serializer.Converters.Add(new CombinedCreditsCastConverter());
-        _serializer.Converters.Add(new CombinedCreditsCrewConverter());
-        _serializer.Converters.Add(new TmdbEntityConverter());
-        _serializer.Converters.Add(new TaggedImageConverter());
-        _serializer.Converters.Add(new TolerantEnumConverter());
+        _options = new JsonSerializerOptions
+        {
+            // TMDb returns nulls in many places; we just want to skip writing them
+            // back when serialising. Reads ignore the value either way.
+            DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.Never,
+
+            // Newtonsoft was case-insensitive by default; keep that behaviour so models
+            // without explicit [JsonPropertyName] still bind to lowercase wire keys.
+            PropertyNameCaseInsensitive = true,
+        };
+
+        // Order matters: list-level converters are applied via property attributes,
+        // global converters here cover the rest.
+        _options.Converters.Add(new TolerantEnumConverter());
+        _options.Converters.Add(new EnumStringValueConverter());
+        _options.Converters.Add(new LenientDateTimeConverter());
+        _options.Converters.Add(new ChangeItemConverter());
+        _options.Converters.Add(new AccountStateConverter());
+        _options.Converters.Add(new TaggedImageConverter());
+        _options.Converters.Add(new TmdbEntityConverter());
     }
 
     /// <summary>
@@ -32,21 +42,20 @@ public class TMDbJsonSerializer : ITMDbSerializer
     /// </summary>
     public static TMDbJsonSerializer Instance { get; } = new();
 
+    /// <summary>
+    /// Gets the <see cref="JsonSerializerOptions"/> in use.
+    /// </summary>
+    public JsonSerializerOptions Options => _options;
+
     /// <inheritdoc />
     public void Serialize(Stream target, object obj, Type type)
     {
-        using var sw = new StreamWriter(target, _encoding, 4096, true);
-        using var jw = new JsonTextWriter(sw);
-
-        _serializer.Serialize(jw, obj, type);
+        JsonSerializer.Serialize(target, obj, type, _options);
     }
 
     /// <inheritdoc />
     public object? Deserialize(Stream source, Type type)
     {
-        using var sr = new StreamReader(source, _encoding, false, 4096, true);
-        using var jr = new JsonTextReader(sr);
-
-        return _serializer.Deserialize(jr, type);
+        return JsonSerializer.Deserialize(source, type, _options);
     }
 }

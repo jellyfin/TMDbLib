@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Configuration;
@@ -7,7 +6,6 @@ using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Languages;
 using TMDbLib.Objects.Timezones;
-using TMDbLib.Rest;
 
 namespace TMDbLib.Client;
 

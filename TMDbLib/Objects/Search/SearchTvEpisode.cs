@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.General.Schema;
 
@@ -21,72 +21,72 @@ public class SearchTvEpisode : TmdbEntity
     /// <summary>
     /// Gets or sets the air date.
     /// </summary>
-    [JsonProperty("air_date")]
+    [JsonPropertyName("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the episode number.
     /// </summary>
-    [JsonProperty("episode_number")]
+    [JsonPropertyName("episode_number")]
     public int EpisodeNumber { get; set; }
 
     /// <summary>
     /// Gets or sets the episode type (e.g. standard, finale).
     /// </summary>
-    [JsonProperty("episode_type")]
+    [JsonPropertyName("episode_type")]
     public string? EpisodeType { get; set; }
 
     /// <summary>
     /// Gets or sets the episode name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview.
     /// </summary>
-    [JsonProperty("overview")]
+    [JsonPropertyName("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the production code.
     /// </summary>
-    [JsonProperty("production_code")]
+    [JsonPropertyName("production_code")]
     public string? ProductionCode { get; set; }
 
     /// <summary>
     /// Gets or sets the runtime in minutes.
     /// </summary>
-    [JsonProperty("runtime")]
+    [JsonPropertyName("runtime")]
     public int? Runtime { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.
     /// </summary>
-    [JsonProperty("season_number")]
+    [JsonPropertyName("season_number")]
     public int SeasonNumber { get; set; }
 
     /// <summary>
     /// Gets or sets the parent TV show id.
     /// </summary>
-    [JsonProperty("show_id")]
+    [JsonPropertyName("show_id")]
     public int ShowId { get; set; }
 
     /// <summary>
     /// Gets or sets the still image path.
     /// </summary>
-    [JsonProperty("still_path")]
+    [JsonPropertyName("still_path")]
     public string? StillPath { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score.
     /// </summary>
-    [JsonProperty("vote_average")]
+    [JsonPropertyName("vote_average")]
     public double VoteAverage { get; set; }
 
     /// <summary>
     /// Gets or sets the total vote count.
     /// </summary>
-    [JsonProperty("vote_count")]
+    [JsonPropertyName("vote_count")]
     public int VoteCount { get; set; }
 }

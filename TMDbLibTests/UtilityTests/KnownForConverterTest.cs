@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.General.Schema;
+using TMDbLib.Objects.Search;
 using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -9,12 +11,15 @@ using Xunit;
 namespace TMDbLibTests.UtilityTests;
 
 /// <summary>
-/// Contains tests for the KnownFor polymorphic converter.
+/// Tests for the KnownFor polymorphic converter. The converter is wired property-level on
+/// <see cref="SearchPerson.KnownFor"/>, so these tests exercise the converter through that wrapper.
 /// </summary>
 public class KnownForConverterTest : TestBase
 {
+    private static string WrapKnownFor(string itemJson) => $"{{\"known_for\": [{itemJson}]}}";
+
     /// <summary>
-    /// Tests that the KnownFor converter correctly deserializes movie objects.
+    /// Movie payloads dispatch to <see cref="TmdbMovieSummary"/>.
     /// </summary>
     [Fact]
     public async Task KnownForConverter_Movie()
@@ -24,10 +29,12 @@ public class KnownForConverterTest : TestBase
             OriginalTitle = "Hello world"
         };
 
-        var json = Serializer.SerializeToString(original);
-        var result = Serializer.DeserializeFromString<TmdbMediaSummary>(json) as TmdbMovieSummary;
+        var json = WrapKnownFor(Serializer.SerializeToString(original));
+        var container = Serializer.DeserializeFromString<SearchPerson>(json);
+        var result = container?.KnownFor?[0] as TmdbMovieSummary;
 
-        Assert.Equal(original.Title, result?.Title);
+        Assert.NotNull(result);
+        Assert.Equal(original.OriginalTitle, result.OriginalTitle);
         await Verify(new
         {
             json,
@@ -36,7 +43,7 @@ public class KnownForConverterTest : TestBase
     }
 
     /// <summary>
-    /// Tests that the KnownFor converter correctly deserializes TV show objects.
+    /// TV payloads dispatch to <see cref="TmdbTvSummary"/>.
     /// </summary>
     [Fact]
     public async Task KnownForConverter_Tv()
@@ -46,10 +53,12 @@ public class KnownForConverterTest : TestBase
             OriginalName = "Hello world"
         };
 
-        var json = Serializer.SerializeToString(original);
-        var result = Serializer.DeserializeFromString<TmdbMediaSummary>(json) as TmdbTvSummary;
+        var json = WrapKnownFor(Serializer.SerializeToString(original));
+        var container = Serializer.DeserializeFromString<SearchPerson>(json);
+        var result = container?.KnownFor?[0] as TmdbTvSummary;
 
-        Assert.Equal(original.OriginalName, result?.OriginalName);
+        Assert.NotNull(result);
+        Assert.Equal(original.OriginalName, result.OriginalName);
         await Verify(new
         {
             json,
@@ -58,8 +67,7 @@ public class KnownForConverterTest : TestBase
     }
 
     /// <summary>
-    /// Verifies that the KnownFor converter correctly deserializes different media types from
-    /// person search responses.
+    /// End-to-end: /search/person mixed known_for items dispatch to the correct concrete types.
     /// </summary>
     [Fact]
     public async Task TestJsonKnownForConverter()
@@ -67,12 +75,11 @@ public class KnownForConverterTest : TestBase
         var result = await TMDbClient.SearchPersonAsync("Bryan Cranston", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(result?.Results);
 
-        var knownForList = result.Results.SelectMany(s => s.KnownFor ?? []).ToList();
+        var knownForList = result.Results.SelectMany(s => s.KnownFor ?? new List<TmdbMediaSummary>()).ToList();
         Assert.NotEmpty(knownForList);
 
         Assert.Contains(knownForList, item => item.MediaType == MediaType.Movie && item is TmdbMovieSummary);
 
-        // TV shows may or may not be present depending on the API response
         if (knownForList.Any(item => item.MediaType == MediaType.Tv))
         {
             Assert.Contains(knownForList, item => item.MediaType == MediaType.Tv && item is TmdbTvSummary);

@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
-using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.People;
 using TMDbLib.Utilities.Serializer;
 using TMDbLibTests.Helpers;

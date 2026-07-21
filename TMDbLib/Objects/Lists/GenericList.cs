@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.Lists;
@@ -12,12 +12,12 @@ public class GenericList : TMDbList<string>
     /// <summary>
     /// Gets or sets the username of the list creator.
     /// </summary>
-    [JsonProperty("created_by")]
+    [JsonPropertyName("created_by")]
     public string? CreatedBy { get; set; }
 
     /// <summary>
     /// Gets or sets the list of items in the list.
     /// </summary>
-    [JsonProperty("items")]
+    [JsonPropertyName("items")]
     public List<TmdbEntity>? Items { get; set; }
 }

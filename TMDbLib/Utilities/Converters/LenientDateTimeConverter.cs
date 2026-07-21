@@ -6,47 +6,52 @@ using System.Text.Json.Serialization;
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
-/// JSON converter factory for UTC datetime values in TMDb's specific format
-/// (<c>yyyy-MM-dd HH:mm:ss UTC</c>). Supports both <see cref="DateTime"/> and
-/// <see cref="Nullable{DateTime}"/> properties.
+/// Global converter for <see cref="DateTime"/> and <see cref="Nullable{DateTime}"/> that
+/// tolerates the TMDb wire-format quirks: empty strings, unparseable values, and the
+/// "yyyy-MM-dd" partial format alongside ISO 8601.
 /// </summary>
-public class TmdbUtcTimeConverter : JsonConverterFactory
+internal class LenientDateTimeConverter : JsonConverterFactory
 {
-    private const string Format = "yyyy-MM-dd HH:mm:ss 'UTC'";
-
-    /// <inheritdoc />
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert == typeof(DateTime) || typeToConvert == typeof(DateTime?);
     }
 
-    /// <inheritdoc />
     public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
-        if (typeToConvert == typeof(DateTime?))
+        return typeToConvert == typeof(DateTime?) ? new NullableConverter() : new Converter();
+    }
+
+    private static DateTime? TryParse(string? str)
+    {
+        if (string.IsNullOrEmpty(str))
         {
-            return new NullableConverter();
+            return null;
         }
 
-        return new Converter();
+        if (DateTime.TryParse(str, CultureInfo.InvariantCulture, DateTimeStyles.None, out var result))
+        {
+            return result;
+        }
+
+        return null;
     }
 
     private sealed class Converter : JsonConverter<DateTime>
     {
         public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var stringValue = reader.GetString();
-            if (string.IsNullOrEmpty(stringValue))
+            if (reader.TokenType == JsonTokenType.String)
             {
-                return default;
+                return TryParse(reader.GetString()) ?? default;
             }
 
-            return DateTime.ParseExact(stringValue, Format, CultureInfo.InvariantCulture);
+            return reader.GetDateTime();
         }
 
         public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.ToString(Format, CultureInfo.InvariantCulture));
+            writer.WriteStringValue(value);
         }
     }
 
@@ -59,13 +64,17 @@ public class TmdbUtcTimeConverter : JsonConverterFactory
                 return null;
             }
 
-            var stringValue = reader.GetString();
-            if (string.IsNullOrEmpty(stringValue))
+            if (reader.TokenType == JsonTokenType.String)
             {
-                return null;
+                return TryParse(reader.GetString());
             }
 
-            return DateTime.ParseExact(stringValue, Format, CultureInfo.InvariantCulture);
+            if (reader.TryGetDateTime(out var dt))
+            {
+                return dt;
+            }
+
+            return null;
         }
 
         public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
@@ -76,7 +85,7 @@ public class TmdbUtcTimeConverter : JsonConverterFactory
                 return;
             }
 
-            writer.WriteStringValue(value.Value.ToString(Format, CultureInfo.InvariantCulture));
+            writer.WriteStringValue(value.Value);
         }
     }
 }

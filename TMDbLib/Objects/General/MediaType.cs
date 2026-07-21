@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
 using TMDbLib.Utilities.Converters;
 

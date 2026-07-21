@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -10,6 +10,6 @@ public class TvAccountState
     /// <summary>
     /// Gets or sets the user rating.
     /// </summary>
-    [JsonProperty("rating")]
+    [JsonPropertyName("rating")]
     public double? Rating { get; set; }
 }

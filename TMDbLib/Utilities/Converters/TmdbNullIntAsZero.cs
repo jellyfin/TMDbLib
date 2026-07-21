@@ -1,40 +1,38 @@
-﻿using System;
-using System.Globalization;
-using Newtonsoft.Json;
+using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
 /// JSON converter that treats null integer values as zero.
 /// </summary>
-public class TmdbNullIntAsZero : JsonConverter
+public class TmdbNullIntAsZero : JsonConverter<int>
 {
     /// <inheritdoc />
-    public override bool CanConvert(Type objectType)
+    public override int Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return objectType == typeof(int);
-    }
-
-    /// <inheritdoc />
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
-    {
-        if (reader.Value is null)
+        if (reader.TokenType == JsonTokenType.Null)
         {
             return 0;
         }
 
-        return Convert.ToInt32(reader.Value, CultureInfo.InvariantCulture);
+        if (reader.TokenType == JsonTokenType.Number)
+        {
+            return reader.GetInt32();
+        }
+
+        if (reader.TokenType == JsonTokenType.String && int.TryParse(reader.GetString(), out var parsed))
+        {
+            return parsed;
+        }
+
+        return 0;
     }
 
     /// <inheritdoc />
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, int value, JsonSerializerOptions options)
     {
-        if (value is null)
-        {
-            writer.WriteNull();
-            return;
-        }
-
-        writer.WriteValue(value.ToString());
+        writer.WriteNumberValue(value);
     }
 }
