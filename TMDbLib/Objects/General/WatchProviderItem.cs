@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,30 +11,30 @@ public class WatchProviderItem
     /// <summary>
     /// Gets or sets the display priority for ordering providers.
     /// </summary>
-    [JsonProperty("display_priority")]
+    [JsonPropertyName("display_priority")]
     public int? DisplayPriority { get; set; }
 
     /// <summary>
     /// Gets or sets the per-country display priorities for the provider, keyed by ISO 3166-1 country code.
     /// </summary>
-    [JsonProperty("display_priorities")]
+    [JsonPropertyName("display_priorities")]
     public Dictionary<string, int>? DisplayPriorities { get; set; }
 
     /// <summary>
     /// Gets or sets the logo path for the provider.
     /// </summary>
-    [JsonProperty("logo_path")]
+    [JsonPropertyName("logo_path")]
     public string? LogoPath { get; set; }
 
     /// <summary>
     /// Gets or sets the provider ID.
     /// </summary>
-    [JsonProperty("provider_id")]
+    [JsonPropertyName("provider_id")]
     public int? ProviderId { get; set; }
 
     /// <summary>
     /// Gets or sets the provider name.
     /// </summary>
-    [JsonProperty("provider_name")]
+    [JsonPropertyName("provider_name")]
     public string? ProviderName { get; set; }
 }

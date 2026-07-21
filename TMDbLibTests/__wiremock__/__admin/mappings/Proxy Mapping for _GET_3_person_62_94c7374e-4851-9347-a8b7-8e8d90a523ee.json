@@ -1,6 +1,6 @@
 {
   "Guid": "94c7374e-4851-9347-a8b7-8e8d90a523ee",
-  "UpdatedAt": "2026-05-24T16:19:44.664595Z",
+  "UpdatedAt": "2026-07-21T19:32:03.733346Z",
   "Title": "Proxy Mapping for GET /3/person/62",
   "Description": "Proxy Mapping for GET /3/person/62",
   "Priority": -2000000,
@@ -61,7 +61,7 @@
       "known_for_department": "Acting",
       "name": "Bruce Willis",
       "place_of_birth": "Idar-Oberstein, West Germany [now Germany]",
-      "popularity": 4.778,
+      "popularity": 6.5438,
       "profile_path": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
       "external_ids": {
         "freebase_mid": "/m/0h7pj",
@@ -80,18 +80,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=12395",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=16674",
-      "x-az": "us-east-1a",
-      "ETag": "W/\u0022e8047472cb068fb6c97bf3e255e8bc0e\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022a7ee348f6248dc5e905379b98330c0d8\u0022",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

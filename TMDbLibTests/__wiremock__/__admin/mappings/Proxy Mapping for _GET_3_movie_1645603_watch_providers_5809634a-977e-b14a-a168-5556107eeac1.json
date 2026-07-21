@@ -1,0 +1,316 @@
+{
+  "Guid": "5809634a-977e-b14a-a168-5556107eeac1",
+  "UpdatedAt": "2026-07-21T19:32:03.204526Z",
+  "Title": "Proxy Mapping for GET /3/movie/1645603/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1645603/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1645603/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1645603,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/1645603-night-of-the-living-dead/watch?locale=AT",
+          "rent": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 19
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 19
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/1645603-night-of-the-living-dead/watch?locale=CH",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 74
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 74
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/1645603-night-of-the-living-dead/watch?locale=DE",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 23
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/1645603-night-of-the-living-dead/watch?locale=ES",
+          "rent": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/ozZU2vSlyL11rFGEkq1HE0yxIJq.jpg",
+              "provider_id": 64,
+              "provider_name": "Filmin Plus",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/8vES2nJNwOF57muvqLByDLm6snp.jpg",
+              "provider_id": 1717,
+              "provider_name": "Acontra Plus",
+              "display_priority": 44
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1645603-night-of-the-living-dead/watch?locale=US",
+          "rent": [
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 20
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 20
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "x-az": "us-east-1c",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=24949",
+      "ETag": "W/\u0022897a0eca8823d5fc8ef7bc5b290ea664\u0022",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

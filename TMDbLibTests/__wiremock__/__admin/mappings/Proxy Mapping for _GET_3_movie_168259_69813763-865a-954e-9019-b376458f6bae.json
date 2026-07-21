@@ -1,6 +1,6 @@
 {
   "Guid": "69813763-865a-954e-9019-b376458f6bae",
-  "UpdatedAt": "2026-05-24T16:19:43.688063Z",
+  "UpdatedAt": "2026-07-21T19:32:03.873621Z",
   "Title": "Proxy Mapping for GET /3/movie/168259",
   "Description": "Proxy Mapping for GET /3/movie/168259",
   "Priority": -2000000,
@@ -79,7 +79,7 @@
       "original_language": "en",
       "original_title": "Furious 7",
       "overview": "Nachdem Dominic Toretto und sein Team den B\u00F6sewicht Owen Shaw ausgeschaltet haben, sinnt dessen Bruder Deckard nach blutiger Rache. Doch der ist nicht ihr einziges Problem. Die Bleifu\u00DF-Freunde sollen n\u00E4mlich gleichzeitig - im Auftrag eines mysteri\u00F6sen Agenten namens Mr. Nobody - heimt\u00FCckischen Terroristen ein \u0022Das Auge Gottes\u0022 genanntes GPS-Programm abjagen und die Programmiererin Ramsey aus deren H\u00E4nden befreien. Also klemmt sich die Crew noch einmal hinters Steuer und trotzt dabei mehrfach der Schwerkraft.",
-      "popularity": 17.3353,
+      "popularity": 9.5089,
       "poster_path": "/lyZDOEX6zr9yv9RBjKQoYr6LyYk.jpg",
       "production_companies": [
         {
@@ -137,22 +137,27 @@
       "tagline": "Zeit f\u00FCr Vergeltung",
       "title": "Fast \u0026 Furious 7",
       "video": false,
-      "vote_average": 7.2,
-      "vote_count": 11265
+      "vote_average": 7.218,
+      "vote_count": 11368
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "x-az": "us-east-1b",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "HIT",
-      "ETag": "W/\u0022b6afa7ba0a7813fd4cf96fc574aa51b9\u0022",
-      "Cache-Control": "public, max-age=15932",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=22402",
+      "x-memc": "HIT",
+      "x-memc-key": "a415a99732fce1218a8fdc74dd9c0abc",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u0022251c7ac9f975afb479b03d808a3d2625\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022",
-      "Vary": "Origin"
+      "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }
 }

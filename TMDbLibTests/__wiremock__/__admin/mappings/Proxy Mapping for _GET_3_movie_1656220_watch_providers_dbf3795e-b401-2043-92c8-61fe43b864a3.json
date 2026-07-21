@@ -1,0 +1,276 @@
+{
+  "Guid": "dbf3795e-b401-2043-92c8-61fe43b864a3",
+  "UpdatedAt": "2026-07-21T19:32:03.332968Z",
+  "Title": "Proxy Mapping for GET /3/movie/1656220/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1656220/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1656220/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1656220,
+      "results": {
+        "AR": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 50
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 42
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 94
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 83
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 52
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 54
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 86
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 40
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1656220-23-000-leben/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 154
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "ETag": "W/\u0022918ea0dbbc6891a44fbf5303b207debd\u0022",
+      "Cache-Control": "public, max-age=14184",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

@@ -12,6 +12,26 @@ env:
   DOTNET_NOLOGO: true
 
 jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@9a946fdbd5fb07b82b2f5a4466058b876ab72bb2 # v5
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Verify formatting
+      run: dotnet format whitespace --verify-no-changes --no-restore
+
+    - name: Verify code style
+      run: dotnet format style --verify-no-changes --no-restore
+
   build:
     runs-on: ubuntu-latest
 

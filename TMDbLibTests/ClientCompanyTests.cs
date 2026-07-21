@@ -1,13 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Xunit;
 using TMDbLib.Objects.Companies;
-using TMDbLib.Objects.General;
 using TMDbLib.Objects.Search;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 

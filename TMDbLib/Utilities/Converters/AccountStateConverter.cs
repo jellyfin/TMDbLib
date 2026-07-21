@@ -1,81 +1,28 @@
 using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 
 namespace TMDbLib.Utilities.Converters;
 
-internal class AccountStateConverter : JsonConverter
+/// <summary>
+/// Normalises the TMDb <c>rated</c> field (which is either <c>false</c> or
+/// <c>{ "value": n }</c>) into a <c>rating</c> property on the C# object.
+/// </summary>
+internal class AccountStateConverter : JsonConverterFactory
 {
-    public override bool CanConvert(Type objectType)
+    public override bool CanConvert(Type typeToConvert)
     {
-        return objectType == typeof(AccountState) ||
-                objectType == typeof(TvAccountState) ||
-                objectType == typeof(TvEpisodeAccountState) ||
-                objectType == typeof(TvEpisodeAccountStateWithNumber);
+        return typeToConvert == typeof(AccountState)
+            || typeToConvert == typeof(TvAccountState)
+            || typeToConvert == typeof(TvEpisodeAccountState)
+            || typeToConvert == typeof(TvEpisodeAccountStateWithNumber);
     }
 
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
-        var jObject = JObject.Load(reader);
-
-        // Sometimes the AccountState.Rated is an object with a value in it
-        // In these instances, convert it from:
-        //  "rated": { "value": 5 }
-        //  "rated": False
-        // To:
-        //  "rating": 5
-        //  "rating": null
-
-        var obj = jObject["rated"]!;
-        if (obj.Type == JTokenType.Boolean)
-        {
-            // It's "False", so the rating is not set
-            jObject.Remove("rated");
-            jObject.Add("rating", null);
-        }
-        else if (obj.Type == JTokenType.Object)
-        {
-            // Read out the value
-            var rating = obj["value"]?.ToObject<double>();
-            jObject.Remove("rated");
-            jObject.Add("rating", rating);
-        }
-
-        var result = Activator.CreateInstance(objectType);
-
-        // Populate the result
-        if (result is not null)
-        {
-            using var jsonReader = jObject.CreateReader();
-            serializer.Populate(jsonReader, result);
-        }
-
-        return result;
-    }
-
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-    {
-        if (value is null)
-        {
-            writer.WriteNull();
-            return;
-        }
-
-        var jToken = JObject.FromObject(value);
-        var ratingToken = jToken["rating"];
-        jToken.Remove("rating");
-
-        if (ratingToken is JValue obj && obj.Value is not null)
-        {
-            jToken["rated"] = JToken.FromObject(new { value = obj });
-        }
-        else
-        {
-            jToken["rated"] = null;
-        }
-
-        jToken.WriteTo(writer);
+        var converterType = typeof(AccountStateConverter<>).MakeGenericType(typeToConvert);
+        return (JsonConverter)Activator.CreateInstance(converterType)!;
     }
 }

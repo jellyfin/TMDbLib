@@ -1,6 +1,6 @@
 {
   "Guid": "c48767f4-7944-674f-ac72-d07c7be0e0fb",
-  "UpdatedAt": "2026-05-24T16:19:44.323589Z",
+  "UpdatedAt": "2026-07-21T19:32:05.094098Z",
   "Title": "Proxy Mapping for GET /3/account/6089455/lists",
   "Description": "Proxy Mapping for GET /3/account/6089455/lists",
   "Priority": -2000000,
@@ -39,6 +39,16 @@
       "page": 1,
       "results": [
         {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8658212,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        },
+        {
           "description": "This is a test list",
           "favorite_count": 0,
           "id": 1724,
@@ -60,7 +70,7 @@
         }
       ],
       "total_pages": 1,
-      "total_results": 2
+      "total_results": 3
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
@@ -68,16 +78,14 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "MISS",
-      "x-memc": "MISS",
-      "x-memc-key": "7f44a8d96aad3e0e5aeb681c9c3270e04aef8c5ed3ddfd9833c5695bdb396160",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=0",
-      "ETag": "W/\u002246e8683dca38530c3dd7f1d80af3dabb\u0022",
+      "Cache-Control": "max-age=0, private",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022a84ab15a65b6ff212d8f2d7644905a18\u0022",
       "Vary": [
-        "Accept-Encoding",
+        "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
+      "X-Cache": "Miss from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }

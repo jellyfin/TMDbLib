@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMDbLib.Objects.Exceptions;
 using TMDbLib.Utilities.Serializer;
 
@@ -212,7 +211,11 @@ internal class RestRequest
 
             if (isJson)
             {
-                statusMessage = JsonConvert.DeserializeObject<TMDbStatusMessage>(await resp.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false));
+                var stream = await resp.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                await using (stream.ConfigureAwait(false))
+                {
+                    statusMessage = await JsonSerializer.DeserializeAsync<TMDbStatusMessage>(stream, cancellationToken: cancellationToken).ConfigureAwait(false);
+                }
             }
             else
             {

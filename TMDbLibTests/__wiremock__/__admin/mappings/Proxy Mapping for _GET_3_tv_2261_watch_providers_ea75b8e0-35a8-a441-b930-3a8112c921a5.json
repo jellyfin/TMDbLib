@@ -1,0 +1,94 @@
+{
+  "Guid": "ea75b8e0-35a8-a441-b930-3a8112c921a5",
+  "UpdatedAt": "2026-07-21T19:32:05.246699Z",
+  "Title": "Proxy Mapping for GET /3/tv/2261/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/2261/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/2261/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 2261,
+      "results": {
+        "US": {
+          "link": "https://www.themoviedb.org/tv/2261-the-tonight-show-starring-johnny-carson/watch?locale=US",
+          "ads": [
+            {
+              "logo_path": "/wQzSN83BnWVgO7xEh0SeTVqtrFv.jpg",
+              "provider_id": 207,
+              "provider_name": "The Roku Channel",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 75
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/2aGrp1xw3qhwCYvNGAJZPdjfeeX.jpg",
+              "provider_id": 386,
+              "provider_name": "Peacock Premium",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/drPlq5beqXtBaP7MNs8W616YRhm.jpg",
+              "provider_id": 387,
+              "provider_name": "Peacock Premium Plus",
+              "display_priority": 214
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=397",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00222cc5796732803ce97c988d0c3c9a31e3\u0022",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

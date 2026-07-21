@@ -1,5 +1,5 @@
-﻿using System;
-using Newtonsoft.Json;
+using System;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.General.Schema;
 
@@ -21,42 +21,42 @@ public class SearchTvSeason : TmdbEntity
     /// <summary>
     /// Gets or sets the air date.
     /// </summary>
-    [JsonProperty("air_date")]
+    [JsonPropertyName("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes.
     /// </summary>
-    [JsonProperty("episode_count")]
+    [JsonPropertyName("episode_count")]
     public int EpisodeCount { get; set; }
 
     /// <summary>
     /// Gets or sets the season name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview.
     /// </summary>
-    [JsonProperty("overview")]
+    [JsonPropertyName("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
-    [JsonProperty("poster_path")]
+    [JsonPropertyName("poster_path")]
     public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.
     /// </summary>
-    [JsonProperty("season_number")]
+    [JsonPropertyName("season_number")]
     public int SeasonNumber { get; set; }
 
     /// <summary>
     /// Gets or sets the average vote score.
     /// </summary>
-    [JsonProperty("vote_average")]
+    [JsonPropertyName("vote_average")]
     public double VoteAverage { get; set; }
 }

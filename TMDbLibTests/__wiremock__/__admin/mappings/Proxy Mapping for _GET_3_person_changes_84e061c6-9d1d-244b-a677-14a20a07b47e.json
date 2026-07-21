@@ -1,6 +1,6 @@
 {
   "Guid": "84e061c6-9d1d-244b-a677-14a20a07b47e",
-  "UpdatedAt": "2026-05-24T16:19:42.941436Z",
+  "UpdatedAt": "2026-07-21T19:32:03.660367Z",
   "Title": "Proxy Mapping for GET /3/person/changes",
   "Description": "Proxy Mapping for GET /3/person/changes",
   "Priority": -2000000,
@@ -559,10 +559,10 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=8846",
-      "x-memc": "HIT",
-      "x-memc-key": "df59626901b019010c10c06dc1183a5acac9e4d0a92372bbc0094efc25d218cd",
-      "x-az": "us-east-1b",
+      "Cache-Control": "public, max-age=86400",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "df59626901b019010c10c06dc1183a5a",
+      "x-az": "us-east-1a",
       "ETag": "W/\u002223534439346eea974e762287313d85bd\u0022",
       "Vary": [
         "accept-encoding",

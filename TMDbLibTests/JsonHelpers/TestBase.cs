@@ -24,7 +24,11 @@ public abstract class TestBase
     /// Registers necessary module initializers.
     /// </summary>
     [ModuleInitializer]
-    public static void Init() => VerifyNewtonsoftJson.Initialize();
+    public static void Init()
+    {
+        // Verify ships with Argon (an Newtonsoft.Json fork) for snapshot serialization.
+        // No explicit initialiser is needed when not using the Verify.NewtonsoftJson add-on.
+    }
 
     /// <summary>
     /// Gets the Verify settings used for all tests in this class.
@@ -62,7 +66,7 @@ public abstract class TestBase
         VerifySettings.AddExtraSettings(serializerSettings =>
         {
             // Use custom contract resolver that:
-            // 1. Reads Newtonsoft.Json [JsonProperty] attributes for property names
+            // 1. Reads System.Text.Json [JsonPropertyName] attributes for property names
             // 2. Uses camelCase for properties without explicit names
             // 3. Sorts collections for consistent output
             serializerSettings.ContractResolver = new DataSortingContractResolver();
@@ -256,14 +260,13 @@ public abstract class TestBase
         {
             var property = base.CreateProperty(member, memberSerialization);
 
-            // Check for Newtonsoft.Json JsonPropertyAttribute and use its name
+            // Check for System.Text.Json JsonPropertyNameAttribute and use its name
             var jsonPropertyAttr = member.GetCustomAttributes(true)
-                .FirstOrDefault(a => a.GetType().FullName == "Newtonsoft.Json.JsonPropertyAttribute");
+                .FirstOrDefault(a => a.GetType().FullName == "System.Text.Json.Serialization.JsonPropertyNameAttribute");
 
             if (jsonPropertyAttr is not null)
             {
-                // Get the PropertyName from the attribute using reflection
-                var propertyNameProp = jsonPropertyAttr.GetType().GetProperty("PropertyName");
+                var propertyNameProp = jsonPropertyAttr.GetType().GetProperty("Name");
                 if (propertyNameProp is not null)
                 {
                     var name = propertyNameProp.GetValue(jsonPropertyAttr) as string;

@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows;
 
@@ -10,12 +10,12 @@ public class Network : NetworkWithLogo
     /// <summary>
     /// Gets or sets the headquarters location.
     /// </summary>
-    [JsonProperty("headquarters")]
+    [JsonPropertyName("headquarters")]
     public string? Headquarters { get; set; }
 
     /// <summary>
     /// Gets or sets the homepage URL.
     /// </summary>
-    [JsonProperty("homepage")]
+    [JsonPropertyName("homepage")]
     public string? Homepage { get; set; }
 }

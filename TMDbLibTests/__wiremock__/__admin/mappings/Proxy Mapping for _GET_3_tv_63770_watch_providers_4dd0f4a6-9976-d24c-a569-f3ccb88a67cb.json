@@ -1,0 +1,161 @@
+{
+  "Guid": "4dd0f4a6-9976-d24c-a569-f3ccb88a67cb",
+  "UpdatedAt": "2026-07-21T19:32:05.407598Z",
+  "Title": "Proxy Mapping for GET /3/tv/63770/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/63770/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/63770/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 63770,
+      "results": {
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/63770-the-late-show-with-stephen-colbert/watch?locale=GB",
+          "free": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 87
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 119
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 120
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/63770-the-late-show-with-stephen-colbert/watch?locale=IE",
+          "free": [
+            {
+              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 45
+            },
+            {
+              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "provider_id": 2304,
+              "provider_name": "Paramount Plus Basic with Ads",
+              "display_priority": 46
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/63770-the-late-show-with-stephen-colbert/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 6
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/63770-the-late-show-with-stephen-colbert/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/5wym1C0jAvJeGirPdgVpcW0CCuy.jpg",
+              "provider_id": 2616,
+              "provider_name": "Paramount Plus Essential",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV Channel ",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/ywIoxSjoYJGUIbR6BfxUiCHdPi3.jpg",
+              "provider_id": 633,
+              "provider_name": "Paramount\u002B Roku Premium Channel",
+              "display_priority": 65
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "ETag": "W/\u0022961b2f1ae487b64692db452e59911b06\u0022",
+      "Cache-Control": "public, max-age=7251",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1c",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

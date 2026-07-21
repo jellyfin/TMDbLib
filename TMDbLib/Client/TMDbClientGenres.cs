@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
-using TMDbLib.Rest;
 
 namespace TMDbLib.Client;
 

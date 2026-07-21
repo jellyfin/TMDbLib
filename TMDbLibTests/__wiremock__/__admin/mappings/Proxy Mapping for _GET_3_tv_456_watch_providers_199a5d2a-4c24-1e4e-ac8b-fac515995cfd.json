@@ -1,6 +1,6 @@
 {
   "Guid": "199a5d2a-4c24-1e4e-ac8b-fac515995cfd",
-  "UpdatedAt": "2026-05-24T16:19:45.192749Z",
+  "UpdatedAt": "2026-07-21T19:32:05.511315Z",
   "Title": "Proxy Mapping for GET /3/tv/456/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/456/watch/providers",
   "Priority": -2000000,
@@ -55,19 +55,19 @@
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 13
+              "display_priority": 14
             }
           ],
           "flatrate": [
@@ -81,26 +81,26 @@
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=AU",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 12
-            },
-            {
-              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
-              "provider_id": 436,
-              "provider_name": "Fetch TV",
-              "display_priority": 30
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
             }
           ]
         },
@@ -161,25 +161,25 @@
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=CA",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/xoFyQOXR3qINRsdnCQyd7jGx8Wo.jpg",
-              "provider_id": 326,
-              "provider_name": "CTV",
-              "display_priority": 43
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
               "display_priority": 6
             }
           ]
@@ -199,13 +199,13 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 14
+              "display_priority": 15
             }
           ]
         },
@@ -255,30 +255,38 @@
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 17
+              "display_priority": 18
             },
             {
               "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 22
+              "display_priority": 23
             },
             {
               "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
@@ -291,14 +299,6 @@
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
               "display_priority": 128
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
             }
           ]
         },
@@ -348,7 +348,7 @@
               "logo_path": "/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg",
               "provider_id": 1838,
               "provider_name": "Tivify",
-              "display_priority": 52
+              "display_priority": 53
             }
           ]
         },
@@ -378,7 +378,7 @@
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
@@ -389,7 +389,21 @@
               "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
               "provider_id": 103,
               "provider_name": "Channel 4",
-              "display_priority": 10
+              "display_priority": 11
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
             }
           ],
           "flatrate": [
@@ -400,24 +414,10 @@
               "display_priority": 3
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 12
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 13
             }
           ]
         },
@@ -497,10 +497,10 @@
               "display_priority": 3
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 8
+              "display_priority": 9
             }
           ],
           "ads": [
@@ -508,7 +508,7 @@
               "logo_path": "/uMWCgjsGnO5IoQtqxXOjnQA5gt9.jpg",
               "provider_id": 103,
               "provider_name": "Channel 4",
-              "display_priority": 15
+              "display_priority": 16
             }
           ]
         },
@@ -519,7 +519,7 @@
               "logo_path": "/9YJY5OwsIPMoX3xC3TdtZVbKBpE.jpg",
               "provider_id": 614,
               "provider_name": "VI movies and tv",
-              "display_priority": 35
+              "display_priority": 36
             }
           ]
         },
@@ -536,7 +536,7 @@
               "logo_path": "/FyDfVwFZGuu2KVv7Kuz4ww7Ra3.jpg",
               "provider_id": 109,
               "provider_name": "Timvision",
-              "display_priority": 13
+              "display_priority": 9
             }
           ]
         },
@@ -564,7 +564,7 @@
               "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
               "provider_id": 15,
               "provider_name": "Hulu",
-              "display_priority": 4
+              "display_priority": 5
             }
           ]
         },
@@ -740,7 +740,7 @@
               "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
               "provider_id": 117,
               "provider_name": "Kinopoisk",
-              "display_priority": 20
+              "display_priority": 21
             }
           ]
         },
@@ -834,46 +834,6 @@
         },
         "US": {
           "link": "https://www.themoviedb.org/tv/456-the-simpsons/watch?locale=US",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 17
-            },
-            {
-              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
-              "provider_id": 7,
-              "provider_name": "Fandango At Home",
-              "display_priority": 35
-            }
-          ],
-          "free": [
-            {
-              "logo_path": "/m4KUe3UoTnLgN4g6txYMnBqeUI5.jpg",
-              "provider_id": 123,
-              "provider_name": "FXNow",
-              "display_priority": 41
-            },
-            {
-              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
-              "provider_id": 486,
-              "provider_name": "Spectrum On Demand",
-              "display_priority": 121
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
@@ -891,19 +851,59 @@
               "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
               "provider_id": 257,
               "provider_name": "fuboTV",
-              "display_priority": 9
+              "display_priority": 10
             },
             {
               "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
               "provider_id": 2528,
               "provider_name": "YouTube TV",
-              "display_priority": 36
+              "display_priority": 39
             },
             {
               "logo_path": "/r2nFtrKGezfBEV2xA3gufBaqi5j.jpg",
               "provider_id": 2554,
               "provider_name": "FOX One Amazon Channel",
-              "display_priority": 340
+              "display_priority": 339
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/m4KUe3UoTnLgN4g6txYMnBqeUI5.jpg",
+              "provider_id": 123,
+              "provider_name": "FXNow",
+              "display_priority": 44
+            },
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 38
             }
           ]
         },
@@ -936,17 +936,14 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "x-az": "us-east-1b",
-      "Cache-Control": "public, max-age=972",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "ETag": "W/\u002295f06c49f166dc1e2eea665addb903c4\u0022",
-      "Vary": [
-        "Accept-Encoding",
-        "Origin"
-      ],
+      "Cache-Control": "public, max-age=8099",
+      "ETag": "W/\u0022e9281d8b48d6a4bd9835c7710775d532\u0022",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

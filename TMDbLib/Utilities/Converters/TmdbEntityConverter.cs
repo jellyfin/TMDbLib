@@ -1,6 +1,6 @@
 using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.Search;
@@ -12,59 +12,50 @@ namespace TMDbLib.Utilities.Converters;
 /// concrete <see cref="TmdbEntity"/> subclass for endpoints returning mixed lists
 /// (search/multi, trending/all, list items, tagged_images.media, etc.).
 /// </summary>
-internal class TmdbEntityConverter : JsonConverter
+internal class TmdbEntityConverter : JsonConverter<TmdbEntity>
 {
-    public override bool CanConvert(Type objectType)
+    public override TmdbEntity? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return objectType == typeof(TmdbEntity);
-    }
+        if (reader.TokenType == JsonTokenType.Null)
+        {
+            return null;
+        }
 
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
-    {
-        var jObject = JObject.Load(reader);
+        using var document = JsonDocument.ParseValue(ref reader);
+        var element = document.RootElement;
 
-        TmdbEntity? result;
-        if (jObject["media_type"] is null)
+        Type targetType;
+        if (!element.TryGetProperty("media_type", out var mediaTypeElement))
         {
             // Discriminator missing — fall back to the requested concrete type.
-            result = Activator.CreateInstance(objectType) as TmdbEntity;
+            return (TmdbEntity?)Activator.CreateInstance(typeToConvert);
         }
-        else
+
+        var mediaType = mediaTypeElement.Deserialize<MediaType>();
+        targetType = mediaType switch
         {
-            var mediaType = jObject["media_type"]!.ToObject<MediaType>();
+            MediaType.Movie => typeof(SearchMovie),
+            MediaType.Tv => typeof(SearchTv),
+            MediaType.Person => typeof(SearchPerson),
+            MediaType.Episode => typeof(SearchTvEpisode),
+            MediaType.TvEpisode => typeof(SearchTvEpisode),
+            MediaType.Season => typeof(SearchTvSeason),
+            MediaType.TvSeason => typeof(SearchTvSeason),
+            MediaType.Collection => typeof(SearchCollection),
+            _ => throw new ArgumentOutOfRangeException(nameof(reader), mediaType, "Unsupported media type"),
+        };
 
-            result = mediaType switch
-            {
-                MediaType.Movie => new SearchMovie(),
-                MediaType.Tv => new SearchTv(),
-                MediaType.Person => new SearchPerson(),
-                MediaType.Episode => new SearchTvEpisode(),
-                MediaType.TvEpisode => new SearchTvEpisode(),
-                MediaType.Season => new SearchTvSeason(),
-                MediaType.TvSeason => new SearchTvSeason(),
-                MediaType.Collection => new SearchCollection(),
-                _ => throw new ArgumentOutOfRangeException(),
-            };
-        }
-
-        if (result is not null)
-        {
-            using var jsonReader = jObject.CreateReader();
-            serializer.Populate(jsonReader, result);
-        }
-
-        return result;
+        return (TmdbEntity?)element.Deserialize(targetType, options);
     }
 
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, TmdbEntity value, JsonSerializerOptions options)
     {
         if (value is null)
         {
-            writer.WriteNull();
+            writer.WriteNullValue();
             return;
         }
 
-        var jToken = JToken.FromObject(value);
-        jToken.WriteTo(writer);
+        JsonSerializer.Serialize(writer, value, value.GetType(), options);
     }
 }

@@ -1,6 +1,6 @@
 {
   "Guid": "51ff146a-b4b1-9041-b21a-a068b89374f0",
-  "UpdatedAt": "2026-05-24T16:19:42.632207Z",
+  "UpdatedAt": "2026-07-21T19:32:03.01045Z",
   "Title": "Proxy Mapping for GET /3/search/person",
   "Description": "Proxy Mapping for GET /3/search/person",
   "Priority": -2000000,
@@ -66,7 +66,7 @@
           "known_for_department": "Acting",
           "name": "Bryan Cranston",
           "original_name": "Bryan Cranston",
-          "popularity": 7.7796,
+          "popularity": 6.1176,
           "profile_path": "/npIIZJGSrcJIJ6yHdmbqO6Jzo5I.jpg",
           "known_for": [
             {
@@ -83,11 +83,11 @@
                 18,
                 80
               ],
-              "popularity": 240.6403,
+              "popularity": 90.9435,
               "first_air_date": "2008-01-20",
               "softcore": false,
-              "vote_average": 8.944,
-              "vote_count": 17770,
+              "vote_average": 8.948,
+              "vote_count": 18150,
               "origin_country": [
                 "US"
               ]
@@ -107,12 +107,12 @@
                 35,
                 16
               ],
-              "popularity": 7.9121,
+              "popularity": 4.1097,
               "release_date": "2018-03-23",
               "softcore": false,
               "video": false,
-              "vote_average": 7.8,
-              "vote_count": 5403
+              "vote_average": 7.848,
+              "vote_count": 5464
             },
             {
               "adult": false,
@@ -129,12 +129,12 @@
                 53,
                 80
               ],
-              "popularity": 10.8021,
+              "popularity": 11.4057,
               "release_date": "2011-09-15",
               "softcore": false,
               "video": false,
-              "vote_average": 7.584,
-              "vote_count": 13605
+              "vote_average": 7.583,
+              "vote_count": 13754
             }
           ]
         }
@@ -146,20 +146,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=15228",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=7354",
-      "x-memc": "HIT",
-      "x-memc-key": "2090d3758265d8cb956b2341c681ecc5d88952c788b2bba45cb01d2185ae20c9",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u002299d5ea54d0517eaafeebab53843b7ed0\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
+      "X-Gateway-Cache-Status": "HIT",
+      "ETag": "W/\u0022ebc1389b1a3b7223ec942e833ed4163d\u0022",
+      "x-az": "us-east-1a",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

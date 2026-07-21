@@ -1,6 +1,6 @@
 {
   "Guid": "209164e7-b4f6-344a-bf74-e5ba47e95fe0",
-  "UpdatedAt": "2026-05-24T16:19:44.768072Z",
+  "UpdatedAt": "2026-07-21T19:32:05.030669Z",
   "Title": "Proxy Mapping for GET /3/discover/movie",
   "Description": "Proxy Mapping for GET /3/discover/movie",
   "Priority": -2000000,
@@ -68,16 +68,16 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "MISS",
-      "x-memc": "MISS",
-      "x-memc-key": "6c483c0db477a60edab2d43e9cb2b3bcf6ebb13510fd9776f5fcd4d73f095d0d",
-      "x-az": "us-east-1c",
       "Cache-Control": "public, max-age=0",
+      "x-memc": "MISS",
+      "x-memc-key": "6c483c0db477a60edab2d43e9cb2b3bc",
+      "x-az": "us-east-1b",
       "ETag": "W/\u00220e23279b004381f72a34159d5c7dfd1f\u0022",
       "Vary": [
-        "Accept-Encoding",
+        "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
+      "X-Cache": "Miss from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }

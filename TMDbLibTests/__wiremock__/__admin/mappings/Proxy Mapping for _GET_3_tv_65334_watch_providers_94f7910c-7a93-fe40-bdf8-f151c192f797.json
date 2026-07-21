@@ -1,6 +1,6 @@
 {
   "Guid": "94f7910c-7a93-fe40-bdf8-f151c192f797",
-  "UpdatedAt": "2026-05-24T16:19:43.913894Z",
+  "UpdatedAt": "2026-07-21T19:32:04.230198Z",
   "Title": "Proxy Mapping for GET /3/tv/65334/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/65334/watch/providers",
   "Priority": -2000000,
@@ -61,7 +61,7 @@
               "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
               "provider_id": 630,
               "provider_name": "STARZPLAY",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -117,6 +117,14 @@
         },
         "AT": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 8
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -130,32 +138,16 @@
               "provider_name": "Disney Plus",
               "display_priority": 3
             }
-          ],
-          "buy": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=AU",
-          "free": [
-            {
-              "logo_path": "/zR1TJmEwssf0ZThB2iByNtZi2Oo.jpg",
-              "provider_id": 135,
-              "provider_name": "ABC iview",
-              "display_priority": 19
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
@@ -167,7 +159,15 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 49
+              "display_priority": 50
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/zR1TJmEwssf0ZThB2iByNtZi2Oo.jpg",
+              "provider_id": 135,
+              "provider_name": "ABC iview",
+              "display_priority": 20
             }
           ]
         },
@@ -270,16 +270,10 @@
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=BR",
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            },
-            {
               "logo_path": "/7Cg8esVVXOijXAm1f1vrS7jVjcN.jpg",
               "provider_id": 307,
               "provider_name": "Globoplay",
-              "display_priority": 9
+              "display_priority": 10
             }
           ]
         },
@@ -313,12 +307,32 @@
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 94
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 7
             }
           ],
           "free": [
@@ -329,24 +343,12 @@
               "display_priority": 146
             }
           ],
-          "flatrate": [
+          "ads": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
-            },
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 93
+              "logo_path": "/a7O0Z1uhFjgGydRrgT6ucBisP4K.jpg",
+              "provider_id": 314,
+              "provider_name": "CBC Gem",
+              "display_priority": 43
             }
           ]
         },
@@ -357,7 +359,7 @@
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 6
+              "display_priority": 7
             }
           ],
           "flatrate": [
@@ -500,7 +502,7 @@
               "logo_path": "/vrefjVylvD4RkEjQguuXebCp9UQ.jpg",
               "provider_id": 1928,
               "provider_name": "Prima Plus",
-              "display_priority": 25
+              "display_priority": 26
             },
             {
               "logo_path": "/rqjfOJNuH6W5wwSvaBaMOZdDX5w.jpg",
@@ -512,26 +514,6 @@
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=DE",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
-              "provider_id": 178,
-              "provider_name": "MagentaTV",
-              "display_priority": 22
-            },
-            {
-              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
-              "provider_id": 1993,
-              "provider_name": "Videoload",
-              "display_priority": 104
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -550,6 +532,26 @@
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
               "display_priority": 83
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 23
+            },
+            {
+              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 104
             }
           ]
         },
@@ -572,19 +574,13 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/ddwrbKxlX8n7TasdvrauFijCmEm.jpg",
               "provider_id": 383,
               "provider_name": "TV 2",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
-              "provider_id": 1961,
-              "provider_name": "Allente",
-              "display_priority": 37
+              "display_priority": 9
             }
           ]
         },
@@ -658,25 +654,17 @@
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 22
             }
           ]
         },
         "ES": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=ES",
-          "ads": [
-            {
-              "logo_path": "/zXlrphHQ0EiLTYZcDdVtDxmsjk5.jpg",
-              "provider_id": 62,
-              "provider_name": "Atres Player",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/lDvzuBuNVgpcdzDpPmmufKvrZPb.jpg",
-              "provider_id": 2237,
-              "provider_name": "3Cat",
-              "display_priority": 69
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -694,25 +682,41 @@
               "logo_path": "/jse4MOi92Jgetym7nbXFZZBI6LK.jpg",
               "provider_id": 2241,
               "provider_name": "Movistar Plus\u002B",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
               "provider_id": 149,
               "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 51
+              "display_priority": 52
             },
             {
               "logo_path": "/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg",
               "provider_id": 1838,
               "provider_name": "Tivify",
-              "display_priority": 52
+              "display_priority": 53
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/lDvzuBuNVgpcdzDpPmmufKvrZPb.jpg",
+              "provider_id": 2237,
+              "provider_name": "3Cat",
+              "display_priority": 70
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/zXlrphHQ0EiLTYZcDdVtDxmsjk5.jpg",
+              "provider_id": 62,
+              "provider_name": "Atres Player",
+              "display_priority": 14
             }
           ]
         },
@@ -735,7 +739,7 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 33
+              "display_priority": 34
             }
           ]
         },
@@ -752,12 +756,20 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=FR",
+          "ads": [
+            {
+              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
+              "provider_id": 1754,
+              "provider_name": "TF1\u002B",
+              "display_priority": 51
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             },
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
@@ -787,32 +799,18 @@
               "logo_path": "/vVK3CP8wZOg2Fm5pKwLoLatw4h6.jpg",
               "provider_id": 2615,
               "provider_name": "TFOU Max Amazon Channel",
-              "display_priority": 100
+              "display_priority": 98
             }
           ]
         },
         "GB": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=GB",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            }
-          ],
           "free": [
             {
               "logo_path": "/nc8Tpsr8SqCbsTUogPDD06gGzB3.jpg",
               "provider_id": 38,
               "provider_name": "BBC iPlayer",
-              "display_priority": 14
+              "display_priority": 15
             }
           ],
           "flatrate": [
@@ -829,16 +827,30 @@
               "display_priority": 3
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
               "display_priority": 86
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
             }
           ]
         },
@@ -1011,10 +1023,10 @@
               "display_priority": 3
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
@@ -1137,13 +1149,13 @@
               "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
               "provider_id": 97,
               "provider_name": "Watcha",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 26
+              "display_priority": 27
             },
             {
               "logo_path": "/qHThQdkJuROK0k5QTCrknaNukWe.jpg",
@@ -1250,7 +1262,7 @@
               "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
               "provider_id": 373,
               "provider_name": "Go3",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
@@ -1378,7 +1390,7 @@
               "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 39
+              "display_priority": 40
             }
           ]
         },
@@ -1463,12 +1475,6 @@
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
-            },
-            {
-              "logo_path": "/qN7uDYanT47WI0MmbwOr5HFFot.jpg",
-              "provider_id": 72,
-              "provider_name": "Videoland",
-              "display_priority": 7
             }
           ]
         },
@@ -1491,7 +1497,7 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
@@ -1592,6 +1598,14 @@
         },
         "PL": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=PL",
+          "ads": [
+            {
+              "logo_path": "/mhsYsVY18PVcVh76y2XFrodqbBD.jpg",
+              "provider_id": 2658,
+              "provider_name": "TVP",
+              "display_priority": 62
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
@@ -1610,14 +1624,6 @@
               "provider_id": 2214,
               "provider_name": "CDA Premium",
               "display_priority": 42
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/mhsYsVY18PVcVh76y2XFrodqbBD.jpg",
-              "provider_id": 2658,
-              "provider_name": "TVP",
-              "display_priority": 63
             }
           ]
         },
@@ -1706,7 +1712,7 @@
               "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
               "provider_id": 117,
               "provider_name": "Kinopoisk",
-              "display_priority": 20
+              "display_priority": 21
             }
           ]
         },
@@ -1723,7 +1729,7 @@
               "logo_path": "/pDroY6RxYdVw63eAepag4b116Ub.jpg",
               "provider_id": 630,
               "provider_name": "STARZPLAY",
-              "display_priority": 21
+              "display_priority": 22
             }
           ]
         },
@@ -1757,7 +1763,7 @@
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 6
+              "display_priority": 7
             }
           ]
         },
@@ -1976,20 +1982,12 @@
         },
         "US": {
           "link": "https://www.themoviedb.org/tv/65334-miraculous-les-aventures-de-ladybug-et-chat-noir/watch?locale=US",
-          "free": [
-            {
-              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
-              "provider_id": 486,
-              "provider_name": "Spectrum On Demand",
-              "display_priority": 121
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 1
             },
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
@@ -2001,13 +1999,13 @@
               "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
               "provider_id": 257,
               "provider_name": "fuboTV",
-              "display_priority": 9
+              "display_priority": 10
             },
             {
               "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
               "provider_id": 2528,
               "provider_name": "YouTube TV",
-              "display_priority": 36
+              "display_priority": 39
             },
             {
               "logo_path": "/d8HzRaIa5aGE5mJB1SsIA9hODdx.jpg",
@@ -2020,6 +2018,14 @@
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
               "display_priority": 154
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
             }
           ]
         },
@@ -2107,11 +2113,11 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "ETag": "W/\u00224e77f25169f1c22104c4fd8479929acb\u0022",
-      "Cache-Control": "public, max-age=21640",
+      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=17418",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "x-az": "us-east-1c",
+      "ETag": "W/\u00226d137bc2ac7866ecfbb0604636f18481\u0022",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022",

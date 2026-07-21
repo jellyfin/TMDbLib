@@ -1,6 +1,6 @@
 {
   "Guid": "c4fb51c4-baf6-2749-9f75-b580ce7c282e",
-  "UpdatedAt": "2026-05-24T16:19:43.606238Z",
+  "UpdatedAt": "2026-07-21T19:32:03.644271Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/releases",
   "Description": "Proxy Mapping for GET /3/movie/47964/releases",
   "Priority": -2000000,
@@ -547,6 +547,13 @@
           "iso_3166_1": "VN",
           "primary": false,
           "release_date": "2013-02-10"
+        },
+        {
+          "certification": "18\u002B",
+          "descriptors": [],
+          "iso_3166_1": "RU",
+          "primary": false,
+          "release_date": "2013-06-10"
         }
       ]
     },
@@ -556,11 +563,11 @@
       "Connection": "keep-alive",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=18854",
+      "Cache-Control": "public, max-age=26223",
       "x-memc": "HIT",
-      "x-memc-key": "ed18b836eeeb852f48ceb0638d9376357556bb5c719d99d3e98e92fa6e81e1f3",
+      "x-memc-key": "ed18b836eeeb852f48ceb0638d937635",
       "x-az": "us-east-1b",
-      "ETag": "W/\u002265f98d8763416d5450a414755ef272ae\u0022",
+      "ETag": "W/\u00224907040b5846be09e92b3840fb281330\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"

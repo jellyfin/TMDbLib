@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.Exceptions
+namespace TMDbLib.Objects.Exceptions
 {
     /// <summary>
     /// Represents an exception that occurs when the TMDb API returns an error.

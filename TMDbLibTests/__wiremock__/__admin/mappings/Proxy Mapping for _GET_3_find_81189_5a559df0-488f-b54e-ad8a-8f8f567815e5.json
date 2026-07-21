@@ -1,6 +1,6 @@
 {
   "Guid": "5a559df0-488f-b54e-ad8a-8f8f567815e5",
-  "UpdatedAt": "2026-05-24T16:19:42.651241Z",
+  "UpdatedAt": "2026-07-21T19:32:03.130828Z",
   "Title": "Proxy Mapping for GET /3/find/81189",
   "Description": "Proxy Mapping for GET /3/find/81189",
   "Priority": -2000000,
@@ -64,11 +64,11 @@
             18,
             80
           ],
-          "popularity": 240.6403,
+          "popularity": 90.9435,
           "first_air_date": "2008-01-20",
           "softcore": false,
-          "vote_average": 8.944,
-          "vote_count": 17774,
+          "vote_average": 8.948,
+          "vote_count": 18150,
           "origin_country": [
             "US"
           ]
@@ -81,20 +81,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "ETag": "W/\u0022ff3d72a4d02913ea5e0c0d88e1c18687\u0022",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=25138",
-      "x-memc": "MISS, STORE",
-      "x-memc-key": "66967817ed603853c2efd7be890f544b769d50b618c3eafc680e6e4f34941447",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=13273",
       "x-az": "us-east-1b",
-      "ETag": "W/\u002272a596bc5bb31142e883f5f9a5bcf5b6\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

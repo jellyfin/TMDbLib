@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Timezones;
 
@@ -11,12 +11,12 @@ public class TimezoneEntry
     /// <summary>
     /// Gets or sets the ISO 3166-1 country code.
     /// </summary>
-    [JsonProperty("iso_3166_1")]
+    [JsonPropertyName("iso_3166_1")]
     public string? Iso_3166_1 { get; set; }
 
     /// <summary>
     /// Gets or sets the IANA timezone identifiers for the country.
     /// </summary>
-    [JsonProperty("zones")]
+    [JsonPropertyName("zones")]
     public List<string>? Zones { get; set; }
 }

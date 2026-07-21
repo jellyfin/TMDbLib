@@ -1,34 +1,51 @@
 using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
-internal abstract class JsonCreationConverter<T> : JsonConverter
+/// <summary>
+/// Polymorphic converter base — reads the JSON into a <see cref="JsonDocument"/>,
+/// asks the derived class to pick the concrete subtype, then deserializes into it.
+/// </summary>
+/// <typeparam name="T">Polymorphic root type.</typeparam>
+internal abstract class JsonCreationConverter<T> : JsonConverter<T>
+    where T : class
 {
-    protected abstract T? GetInstance(JObject jObject);
+    /// <summary>
+    /// Returns the concrete subtype to deserialize into, based on the root JSON element.
+    /// </summary>
+    /// <param name="element">The root JSON element to inspect.</param>
+    /// <returns>The concrete subtype to deserialize into, or <c>null</c> if none applies.</returns>
+    protected abstract Type? GetTargetType(JsonElement element);
 
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        var jObject = JObject.Load(reader);
+        if (reader.TokenType == JsonTokenType.Null)
+        {
+            return null;
+        }
 
-        var target = GetInstance(jObject);
+        using var document = JsonDocument.ParseValue(ref reader);
+        var element = document.RootElement;
 
-        using var jsonReader = jObject.CreateReader();
-        serializer.Populate(jsonReader, target!);
+        var targetType = GetTargetType(element);
+        if (targetType is null)
+        {
+            return null;
+        }
 
-        return target;
+        return (T?)element.Deserialize(targetType, options);
     }
 
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
     {
         if (value is null)
         {
-            writer.WriteNull();
+            writer.WriteNullValue();
             return;
         }
 
-        var jToken = JToken.FromObject(value);
-        jToken.WriteTo(writer);
+        JsonSerializer.Serialize(writer, value, value.GetType(), options);
     }
 }

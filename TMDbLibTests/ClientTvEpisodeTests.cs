@@ -1,15 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Xunit;
 using TMDbLib.Objects.Authentication;
-using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
-using Cast = TMDbLib.Objects.TvShows.Cast;
+using Xunit;
 
 namespace TMDbLibTests;
 

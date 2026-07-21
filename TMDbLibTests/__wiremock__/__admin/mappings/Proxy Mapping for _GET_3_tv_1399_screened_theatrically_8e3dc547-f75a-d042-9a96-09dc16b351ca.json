@@ -1,6 +1,6 @@
 {
   "Guid": "8e3dc547-f75a-d042-9a96-09dc16b351ca",
-  "UpdatedAt": "2026-05-24T16:19:42.56225Z",
+  "UpdatedAt": "2026-07-21T19:32:03.259562Z",
   "Title": "Proxy Mapping for GET /3/tv/1399/screened_theatrically",
   "Description": "Proxy Mapping for GET /3/tv/1399/screened_theatrically",
   "Priority": -2000000,
@@ -38,6 +38,11 @@
       "id": 1399,
       "results": [
         {
+          "id": 63103,
+          "episode_number": 10,
+          "season_number": 4
+        },
+        {
           "id": 63080,
           "episode_number": 9,
           "season_number": 3
@@ -45,11 +50,6 @@
         {
           "id": 63102,
           "episode_number": 9,
-          "season_number": 4
-        },
-        {
-          "id": 63103,
-          "episode_number": 10,
           "season_number": 4
         },
         {
@@ -68,20 +68,15 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "x-az": "us-east-1a",
       "Server": "openresty",
-      "X-Gateway-Cache-Status": "MISS",
-      "Cache-Control": "public, max-age=14118",
-      "x-memc": "HIT",
-      "x-memc-key": "5a809fcaa10e9a59bcec16afbc07a6514e4fe5a297703b931fcaf6fc72ca366d",
-      "x-az": "us-east-1b",
-      "ETag": "W/\u0022204ba3fb24fe78f4ca5dc2e04b4e3b07\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=23787",
+      "ETag": "W/\u00226670c1e6760cc20504c4d5e4d128c06a\u0022",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

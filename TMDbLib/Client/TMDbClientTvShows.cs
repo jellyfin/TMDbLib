@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
-using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
@@ -492,7 +491,8 @@ public partial class TMDbClient
         req.AddUrlSegment("tvShowId", tvShowId.ToString(CultureInfo.InvariantCulture));
         AddSessionId(req);
 
-        req.SetBody(new { value = rating });
+        // Force at least one fractional digit so STJ emits `5.0` rather than `5`, matching the TMDb wire format.
+        req.SetBody(new { value = (decimal)rating + 0.0m });
 
         using var response = await req.Post<PostReply>(cancellationToken).ConfigureAwait(false);
 

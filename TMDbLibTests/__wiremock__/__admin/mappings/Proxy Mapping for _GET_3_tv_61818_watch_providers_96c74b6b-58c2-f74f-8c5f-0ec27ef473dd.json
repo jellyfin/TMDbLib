@@ -1,0 +1,124 @@
+{
+  "Guid": "96c74b6b-58c2-f74f-8c5f-0ec27ef473dd",
+  "UpdatedAt": "2026-07-21T19:32:05.445869Z",
+  "Title": "Proxy Mapping for GET /3/tv/61818/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/61818/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/61818/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 61818,
+      "results": {
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/61818-late-night-with-seth-meyers/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
+              "provider_id": 230,
+              "provider_name": "Crave",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
+              "provider_id": 2604,
+              "provider_name": "Crave Amazon Channel",
+              "display_priority": 140
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/xoFyQOXR3qINRsdnCQyd7jGx8Wo.jpg",
+              "provider_id": 326,
+              "provider_name": "CTV",
+              "display_priority": 44
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/61818-late-night-with-seth-meyers/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/m96XwMazeZKY2WxrFw6HJt5na9S.jpg",
+              "provider_id": 2715,
+              "provider_name": "Cignal Play",
+              "display_priority": 44
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/61818-late-night-with-seth-meyers/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/2aGrp1xw3qhwCYvNGAJZPdjfeeX.jpg",
+              "provider_id": 386,
+              "provider_name": "Peacock Premium",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/drPlq5beqXtBaP7MNs8W616YRhm.jpg",
+              "provider_id": 387,
+              "provider_name": "Peacock Premium Plus",
+              "display_priority": 214
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/6hFf3sIdmXSAczy3i6tLSmy6gwK.jpg",
+              "provider_id": 79,
+              "provider_name": "NBC",
+              "display_priority": 50
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=18864",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u00228322677cfa21a5e065861edf38581d83\u0022",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
+    }
+  }
+}

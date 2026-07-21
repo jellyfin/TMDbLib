@@ -1,6 +1,6 @@
 {
   "Guid": "1eea1f9c-9c12-f349-b5c2-1c4f35a0d343",
-  "UpdatedAt": "2026-05-24T16:19:45.245652Z",
+  "UpdatedAt": "2026-07-21T19:32:05.478372Z",
   "Title": "Proxy Mapping for GET /3/tv/1434/watch/providers",
   "Description": "Proxy Mapping for GET /3/tv/1434/watch/providers",
   "Priority": -2000000,
@@ -50,32 +50,24 @@
         },
         "AT": {
           "link": "https://www.themoviedb.org/tv/1434-family-guy/watch?locale=AT",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 4
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 13
+              "display_priority": 14
             }
           ],
           "ads": [
@@ -83,7 +75,15 @@
               "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
               "provider_id": 304,
               "provider_name": "Joyn",
-              "display_priority": 69
+              "display_priority": 70
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
             }
           ]
         },
@@ -160,26 +160,26 @@
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 2
             }
           ]
         },
         "CH": {
           "link": "https://www.themoviedb.org/tv/1434-family-guy/watch?locale=CH",
-          "buy": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 6
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
             }
           ]
         },
@@ -229,24 +229,40 @@
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/1434-family-guy/watch?locale=DE",
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 12
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
               "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 17
+              "display_priority": 18
             },
             {
               "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 22
+              "display_priority": 23
             },
             {
               "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
@@ -259,14 +275,6 @@
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
               "display_priority": 128
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
             }
           ]
         },
@@ -332,7 +340,7 @@
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             }
           ],
           "flatrate": [
@@ -346,6 +354,14 @@
         },
         "GB": {
           "link": "https://www.themoviedb.org/tv/1434-family-guy/watch?locale=GB",
+          "ads": [
+            {
+              "logo_path": "/1LuvKw01c2KQCt6DqgAgR06H2pT.jpg",
+              "provider_id": 41,
+              "provider_name": "ITVX",
+              "display_priority": 22
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
@@ -354,10 +370,10 @@
               "display_priority": 3
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
               "logo_path": "/1LuvKw01c2KQCt6DqgAgR06H2pT.jpg",
@@ -366,20 +382,12 @@
               "display_priority": 113
             }
           ],
-          "ads": [
-            {
-              "logo_path": "/1LuvKw01c2KQCt6DqgAgR06H2pT.jpg",
-              "provider_id": 41,
-              "provider_name": "ITVX",
-              "display_priority": 21
-            }
-          ],
           "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -459,10 +467,10 @@
               "display_priority": 3
             },
             {
-              "logo_path": "/kAZkQcIxMxTmlwdgSB05fqtymp0.jpg",
+              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
@@ -479,7 +487,7 @@
               "logo_path": "/9YJY5OwsIPMoX3xC3TdtZVbKBpE.jpg",
               "provider_id": 614,
               "provider_name": "VI movies and tv",
-              "display_priority": 35
+              "display_priority": 36
             }
           ]
         },
@@ -699,7 +707,7 @@
               "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
               "provider_id": 117,
               "provider_name": "Kinopoisk",
-              "display_priority": 20
+              "display_priority": 21
             }
           ],
           "buy": [
@@ -707,7 +715,7 @@
               "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
               "provider_id": 117,
               "provider_name": "Kinopoisk",
-              "display_priority": 20
+              "display_priority": 21
             }
           ]
         },
@@ -801,46 +809,6 @@
         },
         "US": {
           "link": "https://www.themoviedb.org/tv/1434-family-guy/watch?locale=US",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 17
-            },
-            {
-              "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
-              "provider_id": 7,
-              "provider_name": "Fandango At Home",
-              "display_priority": 35
-            }
-          ],
-          "free": [
-            {
-              "logo_path": "/m4KUe3UoTnLgN4g6txYMnBqeUI5.jpg",
-              "provider_id": 123,
-              "provider_name": "FXNow",
-              "display_priority": 41
-            },
-            {
-              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
-              "provider_id": 486,
-              "provider_name": "Spectrum On Demand",
-              "display_priority": 121
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
@@ -852,25 +820,65 @@
               "logo_path": "/9BgaNQRMDvVlji1JBZi6tcfxpKx.jpg",
               "provider_id": 257,
               "provider_name": "fuboTV",
-              "display_priority": 9
+              "display_priority": 10
             },
             {
               "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
               "provider_id": 2528,
               "provider_name": "YouTube TV",
-              "display_priority": 36
+              "display_priority": 39
             },
             {
               "logo_path": "/da2dkyeFe4GCRaKxpsW4mzt2UPl.jpg",
               "provider_id": 318,
               "provider_name": "Adult Swim",
-              "display_priority": 93
+              "display_priority": 94
             },
             {
               "logo_path": "/r2nFtrKGezfBEV2xA3gufBaqi5j.jpg",
               "provider_id": 2554,
               "provider_name": "FOX One Amazon Channel",
-              "display_priority": 340
+              "display_priority": 339
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/m4KUe3UoTnLgN4g6txYMnBqeUI5.jpg",
+              "provider_id": 123,
+              "provider_name": "FXNow",
+              "display_priority": 44
+            },
+            {
+              "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 121
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 38
             }
           ]
         },
@@ -902,11 +910,11 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
-      "ETag": "W/\u0022640b8ce4bd78d0febf7fba2ed90df6e9\u0022",
-      "Cache-Control": "public, max-age=9896",
+      "x-az": "us-east-1b",
       "Server": "openresty",
       "X-Gateway-Cache-Status": "HIT",
-      "x-az": "us-east-1c",
+      "Cache-Control": "public, max-age=15174",
+      "ETag": "W/\u0022371fc99c87e2f3dbdcc669a54a95b6eb\u0022",
       "X-Cache": "Hit from cloudfront",
       "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022",
