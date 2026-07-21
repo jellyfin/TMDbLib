@@ -15,7 +15,8 @@ internal abstract class JsonCreationConverter<T> : JsonConverter<T>
     /// <summary>
     /// Returns the concrete subtype to deserialize into, based on the root JSON element.
     /// </summary>
-    /// <returns></returns>
+    /// <param name="element">The root JSON element to inspect.</param>
+    /// <returns>The concrete subtype to deserialize into, or <c>null</c> if none applies.</returns>
     protected abstract Type? GetTargetType(JsonElement element);
 
     public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
