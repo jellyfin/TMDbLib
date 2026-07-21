@@ -12,11 +12,11 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Retrieves movies rated by the current guest session.
+    /// Gets the movies rated by the current guest session.
     /// </summary>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with rated movies including their ratings.</returns>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated movies.</returns>
     /// <exception cref="GuestSessionRequiredException">Thrown when no guest session is set.</exception>
     public async Task<SearchContainer<SearchMovieWithRating>?> GetGuestSessionRatedMoviesAsync(int page = 0, CancellationToken cancellationToken = default)
     {
@@ -24,12 +24,12 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves movies rated by the current guest session with language option.
+    /// Gets the movies rated by the current guest session in a specific language.
     /// </summary>
-    /// <param name="language">The ISO 639-1 language code for movie text. If empty, uses the client's DefaultLanguage.</param>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with rated movies including their ratings.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated movies.</returns>
     /// <exception cref="GuestSessionRequiredException">Thrown when no guest session is set.</exception>
     public async Task<SearchContainer<SearchMovieWithRating>?> GetGuestSessionRatedMoviesAsync(string? language, int page = 0, CancellationToken cancellationToken = default)
     {
@@ -55,11 +55,11 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves TV shows rated by the current guest session.
+    /// Gets the TV shows rated by the current guest session.
     /// </summary>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with rated TV shows including their ratings.</returns>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated TV shows.</returns>
     /// <exception cref="GuestSessionRequiredException">Thrown when no guest session is set.</exception>
     public async Task<SearchContainer<SearchTvShowWithRating>?> GetGuestSessionRatedTvAsync(int page = 0, CancellationToken cancellationToken = default)
     {
@@ -67,12 +67,12 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves TV shows rated by the current guest session with language option.
+    /// Gets the TV shows rated by the current guest session in a specific language.
     /// </summary>
-    /// <param name="language">The ISO 639-1 language code for TV show text. If empty, uses the client's DefaultLanguage.</param>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with rated TV shows including their ratings.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated TV shows.</returns>
     /// <exception cref="GuestSessionRequiredException">Thrown when no guest session is set.</exception>
     public async Task<SearchContainer<SearchTvShowWithRating>?> GetGuestSessionRatedTvAsync(string? language, int page = 0, CancellationToken cancellationToken = default)
     {
@@ -98,11 +98,11 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves TV episodes rated by the current guest session.
+    /// Gets the TV episodes rated by the current guest session.
     /// </summary>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with rated TV episodes including their ratings.</returns>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated TV episodes.</returns>
     /// <exception cref="GuestSessionRequiredException">Thrown when no guest session is set.</exception>
     public async Task<SearchContainer<TvEpisodeWithRating>?> GetGuestSessionRatedTvEpisodesAsync(int page = 0, CancellationToken cancellationToken = default)
     {
@@ -110,12 +110,12 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves TV episodes rated by the current guest session with language option.
+    /// Gets the TV episodes rated by the current guest session in a specific language.
     /// </summary>
-    /// <param name="language">The ISO 639-1 language code for TV episode text. If empty, uses the client's DefaultLanguage.</param>
-    /// <param name="page">The page of results to retrieve. Use 0 for the default page.</param>
-    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-    /// <returns>A search container with rated TV episodes including their ratings.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="page">The page number. Use 0 for the default.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The rated TV episodes.</returns>
     /// <exception cref="GuestSessionRequiredException">Thrown when no guest session is set.</exception>
     public async Task<SearchContainer<TvEpisodeWithRating>?> GetGuestSessionRatedTvEpisodesAsync(string? language, int page = 0, CancellationToken cancellationToken = default)
     {

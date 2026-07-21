@@ -1,15 +1,22 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.General;
 
 /// <summary>
-/// Represents aggregated crew information across multiple episodes or projects.
+/// Aggregated crew information across multiple episodes or projects.
 /// </summary>
-public class CrewAggregate : CrewBase
+public class CrewAggregate : TmdbPersonSummary
 {
     /// <summary>
-    /// Gets or sets the list of jobs performed by the crew member.
+    /// Gets or sets the crew department.
+    /// </summary>
+    [JsonProperty("department")]
+    public string? Department { get; set; }
+
+    /// <summary>
+    /// Gets or sets the jobs performed by the crew member.
     /// </summary>
     [JsonProperty("jobs")]
     public List<CrewJob>? Jobs { get; set; }

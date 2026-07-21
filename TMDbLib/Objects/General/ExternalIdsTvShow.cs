@@ -17,7 +17,7 @@ public class ExternalIdsTvShow : ExternalIds
     /// Gets or sets the TVDb ID.
     /// </summary>
     [JsonProperty("tvdb_id")]
-    public string? TvdbId { get; set; }
+    public int? TvdbId { get; set; }
 
     /// <summary>
     /// Gets or sets the Facebook ID.

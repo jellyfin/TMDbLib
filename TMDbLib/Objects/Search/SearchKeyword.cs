@@ -3,12 +3,12 @@ using Newtonsoft.Json;
 namespace TMDbLib.Objects.Search;
 
 /// <summary>
-/// Represents a keyword search result.
+/// Keyword search result.
 /// </summary>
 public class SearchKeyword
 {
     /// <summary>
-    /// Gets or sets the keyword ID.
+    /// Gets or sets the keyword id.
     /// </summary>
     [JsonProperty("id")]
     public int Id { get; set; }

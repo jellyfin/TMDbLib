@@ -1,0 +1,1725 @@
+{
+  "Guid": "89f65102-530c-a845-8b60-f99186613169",
+  "UpdatedAt": "2026-05-24T16:19:42.475754Z",
+  "Title": "Proxy Mapping for GET /3/configuration/timezones",
+  "Description": "Proxy Mapping for GET /3/configuration/timezones",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/configuration/timezones",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": [
+      {
+        "iso_3166_1": "AD",
+        "zones": [
+          "Europe/Andorra"
+        ]
+      },
+      {
+        "iso_3166_1": "AE",
+        "zones": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "iso_3166_1": "AF",
+        "zones": [
+          "Asia/Kabul"
+        ]
+      },
+      {
+        "iso_3166_1": "AG",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "AI",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "AL",
+        "zones": [
+          "Europe/Tirane"
+        ]
+      },
+      {
+        "iso_3166_1": "AM",
+        "zones": [
+          "Asia/Yerevan"
+        ]
+      },
+      {
+        "iso_3166_1": "AO",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "AQ",
+        "zones": [
+          "Antarctica/Casey",
+          "Antarctica/Davis",
+          "Antarctica/Mawson",
+          "Antarctica/Palmer",
+          "Antarctica/Rothera",
+          "Antarctica/Troll",
+          "Antarctica/Vostok",
+          "Pacific/Auckland",
+          "Pacific/Port_Moresby",
+          "Asia/Riyadh",
+          "Asia/Singapore"
+        ]
+      },
+      {
+        "iso_3166_1": "AR",
+        "zones": [
+          "America/Argentina/Buenos_Aires",
+          "America/Argentina/Cordoba",
+          "America/Argentina/Salta",
+          "America/Argentina/Jujuy",
+          "America/Argentina/Tucuman",
+          "America/Argentina/Catamarca",
+          "America/Argentina/La_Rioja",
+          "America/Argentina/San_Juan",
+          "America/Argentina/Mendoza",
+          "America/Argentina/San_Luis",
+          "America/Argentina/Rio_Gallegos",
+          "America/Argentina/Ushuaia"
+        ]
+      },
+      {
+        "iso_3166_1": "AS",
+        "zones": [
+          "Pacific/Pago_Pago"
+        ]
+      },
+      {
+        "iso_3166_1": "AT",
+        "zones": [
+          "Europe/Vienna"
+        ]
+      },
+      {
+        "iso_3166_1": "AU",
+        "zones": [
+          "Australia/Lord_Howe",
+          "Antarctica/Macquarie",
+          "Australia/Hobart",
+          "Australia/Melbourne",
+          "Australia/Sydney",
+          "Australia/Broken_Hill",
+          "Australia/Brisbane",
+          "Australia/Lindeman",
+          "Australia/Adelaide",
+          "Australia/Darwin",
+          "Australia/Perth",
+          "Australia/Eucla",
+          "Asia/Tokyo"
+        ]
+      },
+      {
+        "iso_3166_1": "AW",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "AX",
+        "zones": [
+          "Europe/Helsinki"
+        ]
+      },
+      {
+        "iso_3166_1": "AZ",
+        "zones": [
+          "Asia/Baku"
+        ]
+      },
+      {
+        "iso_3166_1": "BA",
+        "zones": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "iso_3166_1": "BB",
+        "zones": [
+          "America/Barbados"
+        ]
+      },
+      {
+        "iso_3166_1": "BD",
+        "zones": [
+          "Asia/Dhaka"
+        ]
+      },
+      {
+        "iso_3166_1": "BE",
+        "zones": [
+          "Europe/Brussels"
+        ]
+      },
+      {
+        "iso_3166_1": "BF",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "BG",
+        "zones": [
+          "Europe/Sofia"
+        ]
+      },
+      {
+        "iso_3166_1": "BH",
+        "zones": [
+          "Asia/Qatar"
+        ]
+      },
+      {
+        "iso_3166_1": "BI",
+        "zones": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "iso_3166_1": "BJ",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "BL",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "BM",
+        "zones": [
+          "Atlantic/Bermuda"
+        ]
+      },
+      {
+        "iso_3166_1": "BN",
+        "zones": [
+          "Asia/Kuching"
+        ]
+      },
+      {
+        "iso_3166_1": "BO",
+        "zones": [
+          "America/La_Paz"
+        ]
+      },
+      {
+        "iso_3166_1": "BQ",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "BR",
+        "zones": [
+          "America/Noronha",
+          "America/Belem",
+          "America/Fortaleza",
+          "America/Recife",
+          "America/Araguaina",
+          "America/Maceio",
+          "America/Bahia",
+          "America/Sao_Paulo",
+          "America/Campo_Grande",
+          "America/Cuiaba",
+          "America/Santarem",
+          "America/Porto_Velho",
+          "America/Boa_Vista",
+          "America/Manaus",
+          "America/Eirunepe",
+          "America/Rio_Branco"
+        ]
+      },
+      {
+        "iso_3166_1": "BS",
+        "zones": [
+          "America/Toronto"
+        ]
+      },
+      {
+        "iso_3166_1": "BT",
+        "zones": [
+          "Asia/Thimphu"
+        ]
+      },
+      {
+        "iso_3166_1": "BV",
+        "zones": []
+      },
+      {
+        "iso_3166_1": "BW",
+        "zones": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "iso_3166_1": "BY",
+        "zones": [
+          "Europe/Minsk"
+        ]
+      },
+      {
+        "iso_3166_1": "BZ",
+        "zones": [
+          "America/Belize"
+        ]
+      },
+      {
+        "iso_3166_1": "CA",
+        "zones": [
+          "America/St_Johns",
+          "America/Halifax",
+          "America/Glace_Bay",
+          "America/Moncton",
+          "America/Goose_Bay",
+          "America/Toronto",
+          "America/Iqaluit",
+          "America/Winnipeg",
+          "America/Resolute",
+          "America/Rankin_Inlet",
+          "America/Regina",
+          "America/Swift_Current",
+          "America/Edmonton",
+          "America/Cambridge_Bay",
+          "America/Inuvik",
+          "America/Vancouver",
+          "America/Dawson_Creek",
+          "America/Fort_Nelson",
+          "America/Whitehorse",
+          "America/Dawson",
+          "America/Panama",
+          "America/Puerto_Rico",
+          "America/Phoenix"
+        ]
+      },
+      {
+        "iso_3166_1": "CC",
+        "zones": [
+          "Asia/Yangon"
+        ]
+      },
+      {
+        "iso_3166_1": "CD",
+        "zones": [
+          "Africa/Maputo",
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "CF",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "CG",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "CH",
+        "zones": [
+          "Europe/Zurich"
+        ]
+      },
+      {
+        "iso_3166_1": "CI",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "CK",
+        "zones": [
+          "Pacific/Rarotonga"
+        ]
+      },
+      {
+        "iso_3166_1": "CL",
+        "zones": [
+          "America/Santiago",
+          "America/Coyhaique",
+          "America/Punta_Arenas",
+          "Pacific/Easter"
+        ]
+      },
+      {
+        "iso_3166_1": "CM",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "CN",
+        "zones": [
+          "Asia/Shanghai",
+          "Asia/Urumqi"
+        ]
+      },
+      {
+        "iso_3166_1": "CO",
+        "zones": [
+          "America/Bogota"
+        ]
+      },
+      {
+        "iso_3166_1": "CR",
+        "zones": [
+          "America/Costa_Rica"
+        ]
+      },
+      {
+        "iso_3166_1": "CU",
+        "zones": [
+          "America/Havana"
+        ]
+      },
+      {
+        "iso_3166_1": "CV",
+        "zones": [
+          "Atlantic/Cape_Verde"
+        ]
+      },
+      {
+        "iso_3166_1": "CW",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "CX",
+        "zones": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "iso_3166_1": "CY",
+        "zones": [
+          "Asia/Nicosia",
+          "Asia/Famagusta"
+        ]
+      },
+      {
+        "iso_3166_1": "CZ",
+        "zones": [
+          "Europe/Prague"
+        ]
+      },
+      {
+        "iso_3166_1": "DE",
+        "zones": [
+          "Europe/Berlin",
+          "Europe/Zurich"
+        ]
+      },
+      {
+        "iso_3166_1": "DJ",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "DK",
+        "zones": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "iso_3166_1": "DM",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "DO",
+        "zones": [
+          "America/Santo_Domingo"
+        ]
+      },
+      {
+        "iso_3166_1": "DZ",
+        "zones": [
+          "Africa/Algiers"
+        ]
+      },
+      {
+        "iso_3166_1": "EC",
+        "zones": [
+          "America/Guayaquil",
+          "Pacific/Galapagos"
+        ]
+      },
+      {
+        "iso_3166_1": "EE",
+        "zones": [
+          "Europe/Tallinn"
+        ]
+      },
+      {
+        "iso_3166_1": "EG",
+        "zones": [
+          "Africa/Cairo"
+        ]
+      },
+      {
+        "iso_3166_1": "EH",
+        "zones": [
+          "Africa/El_Aaiun"
+        ]
+      },
+      {
+        "iso_3166_1": "ER",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "ES",
+        "zones": [
+          "Europe/Madrid",
+          "Africa/Ceuta",
+          "Atlantic/Canary"
+        ]
+      },
+      {
+        "iso_3166_1": "ET",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "FI",
+        "zones": [
+          "Europe/Helsinki"
+        ]
+      },
+      {
+        "iso_3166_1": "FJ",
+        "zones": [
+          "Pacific/Fiji"
+        ]
+      },
+      {
+        "iso_3166_1": "FK",
+        "zones": [
+          "Atlantic/Stanley"
+        ]
+      },
+      {
+        "iso_3166_1": "FM",
+        "zones": [
+          "Pacific/Kosrae",
+          "Pacific/Port_Moresby",
+          "Pacific/Guadalcanal"
+        ]
+      },
+      {
+        "iso_3166_1": "FO",
+        "zones": [
+          "Atlantic/Faroe"
+        ]
+      },
+      {
+        "iso_3166_1": "FR",
+        "zones": [
+          "Europe/Paris"
+        ]
+      },
+      {
+        "iso_3166_1": "GA",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "GB",
+        "zones": [
+          "Europe/London"
+        ]
+      },
+      {
+        "iso_3166_1": "GD",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "GE",
+        "zones": [
+          "Asia/Tbilisi"
+        ]
+      },
+      {
+        "iso_3166_1": "GF",
+        "zones": [
+          "America/Cayenne"
+        ]
+      },
+      {
+        "iso_3166_1": "GG",
+        "zones": [
+          "Europe/London"
+        ]
+      },
+      {
+        "iso_3166_1": "GH",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "GI",
+        "zones": [
+          "Europe/Gibraltar"
+        ]
+      },
+      {
+        "iso_3166_1": "GL",
+        "zones": [
+          "America/Nuuk",
+          "America/Danmarkshavn",
+          "America/Scoresbysund",
+          "America/Thule"
+        ]
+      },
+      {
+        "iso_3166_1": "GM",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "GN",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "GP",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "GQ",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "GR",
+        "zones": [
+          "Europe/Athens"
+        ]
+      },
+      {
+        "iso_3166_1": "GS",
+        "zones": [
+          "Atlantic/South_Georgia"
+        ]
+      },
+      {
+        "iso_3166_1": "GT",
+        "zones": [
+          "America/Guatemala"
+        ]
+      },
+      {
+        "iso_3166_1": "GU",
+        "zones": [
+          "Pacific/Guam"
+        ]
+      },
+      {
+        "iso_3166_1": "GW",
+        "zones": [
+          "Africa/Bissau"
+        ]
+      },
+      {
+        "iso_3166_1": "GY",
+        "zones": [
+          "America/Guyana"
+        ]
+      },
+      {
+        "iso_3166_1": "HK",
+        "zones": [
+          "Asia/Hong_Kong"
+        ]
+      },
+      {
+        "iso_3166_1": "HM",
+        "zones": []
+      },
+      {
+        "iso_3166_1": "HN",
+        "zones": [
+          "America/Tegucigalpa"
+        ]
+      },
+      {
+        "iso_3166_1": "HR",
+        "zones": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "iso_3166_1": "HT",
+        "zones": [
+          "America/Port-au-Prince"
+        ]
+      },
+      {
+        "iso_3166_1": "HU",
+        "zones": [
+          "Europe/Budapest"
+        ]
+      },
+      {
+        "iso_3166_1": "ID",
+        "zones": [
+          "Asia/Jakarta",
+          "Asia/Pontianak",
+          "Asia/Makassar",
+          "Asia/Jayapura"
+        ]
+      },
+      {
+        "iso_3166_1": "IE",
+        "zones": [
+          "Europe/Dublin"
+        ]
+      },
+      {
+        "iso_3166_1": "IL",
+        "zones": [
+          "Asia/Jerusalem"
+        ]
+      },
+      {
+        "iso_3166_1": "IM",
+        "zones": [
+          "Europe/London"
+        ]
+      },
+      {
+        "iso_3166_1": "IN",
+        "zones": [
+          "Asia/Kolkata"
+        ]
+      },
+      {
+        "iso_3166_1": "IO",
+        "zones": [
+          "Indian/Chagos"
+        ]
+      },
+      {
+        "iso_3166_1": "IQ",
+        "zones": [
+          "Asia/Baghdad"
+        ]
+      },
+      {
+        "iso_3166_1": "IR",
+        "zones": [
+          "Asia/Tehran"
+        ]
+      },
+      {
+        "iso_3166_1": "IS",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "IT",
+        "zones": [
+          "Europe/Rome"
+        ]
+      },
+      {
+        "iso_3166_1": "JE",
+        "zones": [
+          "Europe/London"
+        ]
+      },
+      {
+        "iso_3166_1": "JM",
+        "zones": [
+          "America/Jamaica"
+        ]
+      },
+      {
+        "iso_3166_1": "JO",
+        "zones": [
+          "Asia/Amman"
+        ]
+      },
+      {
+        "iso_3166_1": "JP",
+        "zones": [
+          "Asia/Tokyo"
+        ]
+      },
+      {
+        "iso_3166_1": "KE",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "KG",
+        "zones": [
+          "Asia/Bishkek"
+        ]
+      },
+      {
+        "iso_3166_1": "KH",
+        "zones": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "iso_3166_1": "KI",
+        "zones": [
+          "Pacific/Tarawa",
+          "Pacific/Kanton",
+          "Pacific/Kiritimati"
+        ]
+      },
+      {
+        "iso_3166_1": "KM",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "KN",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "KP",
+        "zones": [
+          "Asia/Pyongyang"
+        ]
+      },
+      {
+        "iso_3166_1": "KR",
+        "zones": [
+          "Asia/Seoul"
+        ]
+      },
+      {
+        "iso_3166_1": "KW",
+        "zones": [
+          "Asia/Riyadh"
+        ]
+      },
+      {
+        "iso_3166_1": "KY",
+        "zones": [
+          "America/Panama"
+        ]
+      },
+      {
+        "iso_3166_1": "KZ",
+        "zones": [
+          "Asia/Almaty",
+          "Asia/Qyzylorda",
+          "Asia/Qostanay",
+          "Asia/Aqtobe",
+          "Asia/Aqtau",
+          "Asia/Atyrau",
+          "Asia/Oral"
+        ]
+      },
+      {
+        "iso_3166_1": "LA",
+        "zones": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "iso_3166_1": "LB",
+        "zones": [
+          "Asia/Beirut"
+        ]
+      },
+      {
+        "iso_3166_1": "LC",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "LI",
+        "zones": [
+          "Europe/Zurich"
+        ]
+      },
+      {
+        "iso_3166_1": "LK",
+        "zones": [
+          "Asia/Colombo"
+        ]
+      },
+      {
+        "iso_3166_1": "LR",
+        "zones": [
+          "Africa/Monrovia"
+        ]
+      },
+      {
+        "iso_3166_1": "LS",
+        "zones": [
+          "Africa/Johannesburg"
+        ]
+      },
+      {
+        "iso_3166_1": "LT",
+        "zones": [
+          "Europe/Vilnius"
+        ]
+      },
+      {
+        "iso_3166_1": "LU",
+        "zones": [
+          "Europe/Brussels"
+        ]
+      },
+      {
+        "iso_3166_1": "LV",
+        "zones": [
+          "Europe/Riga"
+        ]
+      },
+      {
+        "iso_3166_1": "LY",
+        "zones": [
+          "Africa/Tripoli"
+        ]
+      },
+      {
+        "iso_3166_1": "MA",
+        "zones": [
+          "Africa/Casablanca"
+        ]
+      },
+      {
+        "iso_3166_1": "MC",
+        "zones": [
+          "Europe/Paris"
+        ]
+      },
+      {
+        "iso_3166_1": "MD",
+        "zones": [
+          "Europe/Chisinau"
+        ]
+      },
+      {
+        "iso_3166_1": "ME",
+        "zones": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "iso_3166_1": "MF",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "MG",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "MH",
+        "zones": [
+          "Pacific/Kwajalein",
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "iso_3166_1": "MK",
+        "zones": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "iso_3166_1": "ML",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "MM",
+        "zones": [
+          "Asia/Yangon"
+        ]
+      },
+      {
+        "iso_3166_1": "MN",
+        "zones": [
+          "Asia/Ulaanbaatar",
+          "Asia/Hovd"
+        ]
+      },
+      {
+        "iso_3166_1": "MO",
+        "zones": [
+          "Asia/Macau"
+        ]
+      },
+      {
+        "iso_3166_1": "MP",
+        "zones": [
+          "Pacific/Guam"
+        ]
+      },
+      {
+        "iso_3166_1": "MQ",
+        "zones": [
+          "America/Martinique"
+        ]
+      },
+      {
+        "iso_3166_1": "MR",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "MS",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "MT",
+        "zones": [
+          "Europe/Malta"
+        ]
+      },
+      {
+        "iso_3166_1": "MU",
+        "zones": [
+          "Indian/Mauritius"
+        ]
+      },
+      {
+        "iso_3166_1": "MV",
+        "zones": [
+          "Indian/Maldives"
+        ]
+      },
+      {
+        "iso_3166_1": "MW",
+        "zones": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "iso_3166_1": "MX",
+        "zones": [
+          "America/Mexico_City",
+          "America/Cancun",
+          "America/Merida",
+          "America/Monterrey",
+          "America/Matamoros",
+          "America/Chihuahua",
+          "America/Ciudad_Juarez",
+          "America/Ojinaga",
+          "America/Mazatlan",
+          "America/Bahia_Banderas",
+          "America/Hermosillo",
+          "America/Tijuana"
+        ]
+      },
+      {
+        "iso_3166_1": "MY",
+        "zones": [
+          "Asia/Kuching",
+          "Asia/Singapore"
+        ]
+      },
+      {
+        "iso_3166_1": "MZ",
+        "zones": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "iso_3166_1": "NA",
+        "zones": [
+          "Africa/Windhoek"
+        ]
+      },
+      {
+        "iso_3166_1": "NC",
+        "zones": [
+          "Pacific/Noumea"
+        ]
+      },
+      {
+        "iso_3166_1": "NE",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "NF",
+        "zones": [
+          "Pacific/Norfolk"
+        ]
+      },
+      {
+        "iso_3166_1": "NG",
+        "zones": [
+          "Africa/Lagos"
+        ]
+      },
+      {
+        "iso_3166_1": "NI",
+        "zones": [
+          "America/Managua"
+        ]
+      },
+      {
+        "iso_3166_1": "NL",
+        "zones": [
+          "Europe/Brussels"
+        ]
+      },
+      {
+        "iso_3166_1": "NO",
+        "zones": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "iso_3166_1": "NP",
+        "zones": [
+          "Asia/Kathmandu"
+        ]
+      },
+      {
+        "iso_3166_1": "NR",
+        "zones": [
+          "Pacific/Nauru"
+        ]
+      },
+      {
+        "iso_3166_1": "NU",
+        "zones": [
+          "Pacific/Niue"
+        ]
+      },
+      {
+        "iso_3166_1": "NZ",
+        "zones": [
+          "Pacific/Auckland",
+          "Pacific/Chatham"
+        ]
+      },
+      {
+        "iso_3166_1": "OM",
+        "zones": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "iso_3166_1": "PA",
+        "zones": [
+          "America/Panama"
+        ]
+      },
+      {
+        "iso_3166_1": "PE",
+        "zones": [
+          "America/Lima"
+        ]
+      },
+      {
+        "iso_3166_1": "PF",
+        "zones": [
+          "Pacific/Tahiti",
+          "Pacific/Marquesas",
+          "Pacific/Gambier"
+        ]
+      },
+      {
+        "iso_3166_1": "PG",
+        "zones": [
+          "Pacific/Port_Moresby",
+          "Pacific/Bougainville"
+        ]
+      },
+      {
+        "iso_3166_1": "PH",
+        "zones": [
+          "Asia/Manila"
+        ]
+      },
+      {
+        "iso_3166_1": "PK",
+        "zones": [
+          "Asia/Karachi"
+        ]
+      },
+      {
+        "iso_3166_1": "PL",
+        "zones": [
+          "Europe/Warsaw"
+        ]
+      },
+      {
+        "iso_3166_1": "PM",
+        "zones": [
+          "America/Miquelon"
+        ]
+      },
+      {
+        "iso_3166_1": "PN",
+        "zones": [
+          "Pacific/Pitcairn"
+        ]
+      },
+      {
+        "iso_3166_1": "PR",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "PS",
+        "zones": [
+          "Asia/Gaza",
+          "Asia/Hebron"
+        ]
+      },
+      {
+        "iso_3166_1": "PT",
+        "zones": [
+          "Europe/Lisbon",
+          "Atlantic/Madeira",
+          "Atlantic/Azores"
+        ]
+      },
+      {
+        "iso_3166_1": "PW",
+        "zones": [
+          "Pacific/Palau"
+        ]
+      },
+      {
+        "iso_3166_1": "PY",
+        "zones": [
+          "America/Asuncion"
+        ]
+      },
+      {
+        "iso_3166_1": "QA",
+        "zones": [
+          "Asia/Qatar"
+        ]
+      },
+      {
+        "iso_3166_1": "RE",
+        "zones": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "iso_3166_1": "RO",
+        "zones": [
+          "Europe/Bucharest"
+        ]
+      },
+      {
+        "iso_3166_1": "RS",
+        "zones": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "iso_3166_1": "RU",
+        "zones": [
+          "Europe/Kaliningrad",
+          "Europe/Moscow",
+          "Europe/Simferopol",
+          "Europe/Kirov",
+          "Europe/Volgograd",
+          "Europe/Astrakhan",
+          "Europe/Saratov",
+          "Europe/Ulyanovsk",
+          "Europe/Samara",
+          "Asia/Yekaterinburg",
+          "Asia/Omsk",
+          "Asia/Novosibirsk",
+          "Asia/Barnaul",
+          "Asia/Tomsk",
+          "Asia/Novokuznetsk",
+          "Asia/Krasnoyarsk",
+          "Asia/Irkutsk",
+          "Asia/Chita",
+          "Asia/Yakutsk",
+          "Asia/Khandyga",
+          "Asia/Vladivostok",
+          "Asia/Ust-Nera",
+          "Asia/Magadan",
+          "Asia/Sakhalin",
+          "Asia/Srednekolymsk",
+          "Asia/Kamchatka",
+          "Asia/Anadyr"
+        ]
+      },
+      {
+        "iso_3166_1": "RW",
+        "zones": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "iso_3166_1": "SA",
+        "zones": [
+          "Asia/Riyadh"
+        ]
+      },
+      {
+        "iso_3166_1": "SB",
+        "zones": [
+          "Pacific/Guadalcanal"
+        ]
+      },
+      {
+        "iso_3166_1": "SC",
+        "zones": [
+          "Asia/Dubai"
+        ]
+      },
+      {
+        "iso_3166_1": "SD",
+        "zones": [
+          "Africa/Khartoum"
+        ]
+      },
+      {
+        "iso_3166_1": "SE",
+        "zones": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "iso_3166_1": "SG",
+        "zones": [
+          "Asia/Singapore"
+        ]
+      },
+      {
+        "iso_3166_1": "SH",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "SI",
+        "zones": [
+          "Europe/Belgrade"
+        ]
+      },
+      {
+        "iso_3166_1": "SJ",
+        "zones": [
+          "Europe/Berlin"
+        ]
+      },
+      {
+        "iso_3166_1": "SK",
+        "zones": [
+          "Europe/Prague"
+        ]
+      },
+      {
+        "iso_3166_1": "SL",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "SM",
+        "zones": [
+          "Europe/Rome"
+        ]
+      },
+      {
+        "iso_3166_1": "SN",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "SO",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "SR",
+        "zones": [
+          "America/Paramaribo"
+        ]
+      },
+      {
+        "iso_3166_1": "SS",
+        "zones": [
+          "Africa/Juba"
+        ]
+      },
+      {
+        "iso_3166_1": "ST",
+        "zones": [
+          "Africa/Sao_Tome"
+        ]
+      },
+      {
+        "iso_3166_1": "SV",
+        "zones": [
+          "America/El_Salvador"
+        ]
+      },
+      {
+        "iso_3166_1": "SX",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "SY",
+        "zones": [
+          "Asia/Damascus"
+        ]
+      },
+      {
+        "iso_3166_1": "SZ",
+        "zones": [
+          "Africa/Johannesburg"
+        ]
+      },
+      {
+        "iso_3166_1": "TC",
+        "zones": [
+          "America/Grand_Turk"
+        ]
+      },
+      {
+        "iso_3166_1": "TD",
+        "zones": [
+          "Africa/Ndjamena"
+        ]
+      },
+      {
+        "iso_3166_1": "TF",
+        "zones": [
+          "Asia/Dubai",
+          "Indian/Maldives"
+        ]
+      },
+      {
+        "iso_3166_1": "TG",
+        "zones": [
+          "Africa/Abidjan"
+        ]
+      },
+      {
+        "iso_3166_1": "TH",
+        "zones": [
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "iso_3166_1": "TJ",
+        "zones": [
+          "Asia/Dushanbe"
+        ]
+      },
+      {
+        "iso_3166_1": "TK",
+        "zones": [
+          "Pacific/Fakaofo"
+        ]
+      },
+      {
+        "iso_3166_1": "TL",
+        "zones": [
+          "Asia/Dili"
+        ]
+      },
+      {
+        "iso_3166_1": "TM",
+        "zones": [
+          "Asia/Ashgabat"
+        ]
+      },
+      {
+        "iso_3166_1": "TN",
+        "zones": [
+          "Africa/Tunis"
+        ]
+      },
+      {
+        "iso_3166_1": "TO",
+        "zones": [
+          "Pacific/Tongatapu"
+        ]
+      },
+      {
+        "iso_3166_1": "TR",
+        "zones": [
+          "Europe/Istanbul"
+        ]
+      },
+      {
+        "iso_3166_1": "TT",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "TV",
+        "zones": [
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "iso_3166_1": "TW",
+        "zones": [
+          "Asia/Taipei"
+        ]
+      },
+      {
+        "iso_3166_1": "TZ",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "UA",
+        "zones": [
+          "Europe/Kyiv",
+          "Europe/Simferopol"
+        ]
+      },
+      {
+        "iso_3166_1": "UG",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "UM",
+        "zones": [
+          "Pacific/Pago_Pago",
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "iso_3166_1": "US",
+        "zones": [
+          "America/New_York",
+          "America/Detroit",
+          "America/Kentucky/Louisville",
+          "America/Kentucky/Monticello",
+          "America/Indiana/Indianapolis",
+          "America/Indiana/Vincennes",
+          "America/Indiana/Winamac",
+          "America/Indiana/Marengo",
+          "America/Indiana/Petersburg",
+          "America/Indiana/Vevay",
+          "America/Chicago",
+          "America/Indiana/Tell_City",
+          "America/Indiana/Knox",
+          "America/Menominee",
+          "America/North_Dakota/Center",
+          "America/North_Dakota/New_Salem",
+          "America/North_Dakota/Beulah",
+          "America/Denver",
+          "America/Boise",
+          "America/Phoenix",
+          "America/Los_Angeles",
+          "America/Anchorage",
+          "America/Juneau",
+          "America/Sitka",
+          "America/Metlakatla",
+          "America/Yakutat",
+          "America/Nome",
+          "America/Adak",
+          "Pacific/Honolulu"
+        ]
+      },
+      {
+        "iso_3166_1": "UY",
+        "zones": [
+          "America/Montevideo"
+        ]
+      },
+      {
+        "iso_3166_1": "UZ",
+        "zones": [
+          "Asia/Samarkand",
+          "Asia/Tashkent"
+        ]
+      },
+      {
+        "iso_3166_1": "VA",
+        "zones": [
+          "Europe/Rome"
+        ]
+      },
+      {
+        "iso_3166_1": "VC",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "VE",
+        "zones": [
+          "America/Caracas"
+        ]
+      },
+      {
+        "iso_3166_1": "VG",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "VI",
+        "zones": [
+          "America/Puerto_Rico"
+        ]
+      },
+      {
+        "iso_3166_1": "VN",
+        "zones": [
+          "Asia/Ho_Chi_Minh",
+          "Asia/Bangkok"
+        ]
+      },
+      {
+        "iso_3166_1": "VU",
+        "zones": [
+          "Pacific/Efate"
+        ]
+      },
+      {
+        "iso_3166_1": "WF",
+        "zones": [
+          "Pacific/Tarawa"
+        ]
+      },
+      {
+        "iso_3166_1": "WS",
+        "zones": [
+          "Pacific/Apia"
+        ]
+      },
+      {
+        "iso_3166_1": "YE",
+        "zones": [
+          "Asia/Riyadh"
+        ]
+      },
+      {
+        "iso_3166_1": "YT",
+        "zones": [
+          "Africa/Nairobi"
+        ]
+      },
+      {
+        "iso_3166_1": "ZA",
+        "zones": [
+          "Africa/Johannesburg"
+        ]
+      },
+      {
+        "iso_3166_1": "ZM",
+        "zones": [
+          "Africa/Maputo"
+        ]
+      },
+      {
+        "iso_3166_1": "ZW",
+        "zones": [
+          "Africa/Maputo"
+        ]
+      }
+    ],
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=21185",
+      "x-memc": "HIT",
+      "x-memc-key": "4edc2fc5a83e5ed4a0c978bf0a497b9897bee42a3aed81837bf427a24d0ddfcc",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022ed38b0a65850a90805d87398c7032568\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

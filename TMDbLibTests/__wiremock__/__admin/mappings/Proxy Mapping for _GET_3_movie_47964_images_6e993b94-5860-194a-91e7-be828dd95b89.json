@@ -1,6 +1,6 @@
 {
   "Guid": "6e993b94-5860-194a-91e7-be828dd95b89",
-  "UpdatedAt": "2025-12-24T18:45:21.8119536Z",
+  "UpdatedAt": "2026-05-24T16:19:43.705254Z",
   "Title": "Proxy Mapping for GET /3/movie/47964/images",
   "Description": "Proxy Mapping for GET /3/movie/47964/images",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -69,6 +82,16 @@
           "iso_3166_1": "US",
           "iso_639_1": "en",
           "file_path": "/1j3viRQ5A6CFeZt7HmTUpXeqClI.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": "MX",
+          "iso_639_1": "es",
+          "file_path": "/4DvzCZVvlRTwDOaN5I6P5kEGV4y.jpg",
           "vote_average": 3.334,
           "vote_count": 1,
           "width": 1920
@@ -342,6 +365,56 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 1280
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": "MX",
+          "iso_639_1": "es",
+          "file_path": "/rB00pIf9bENTAuoxL0HviZQfC8E.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1578,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/kjWPiOwVF7ZA7CPnEamQtwivGu6.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2806
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1569,
+          "iso_3166_1": null,
+          "iso_639_1": null,
+          "file_path": "/4eDOQUfwTv3tVSFdXJb8EBehDGA.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2789
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 1080,
+          "iso_3166_1": "DE",
+          "iso_639_1": "de",
+          "file_path": "/lkgojY7EZm9BeWdRBcfb1sgn9dh.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1920
+        },
+        {
+          "aspect_ratio": 1.778,
+          "height": 2160,
+          "iso_3166_1": "MX",
+          "iso_639_1": "es",
+          "file_path": "/nb0RkAIFBHyjNikLdPvxob72VAB.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 3840
         }
       ],
       "id": 47964,
@@ -362,8 +435,8 @@
           "iso_3166_1": "PT",
           "iso_639_1": "pt",
           "file_path": "/ohF8UJY74XJxqJDwnLw8tMfjUIS.png",
-          "vote_average": 8.034,
-          "vote_count": 5,
+          "vote_average": 8.362,
+          "vote_count": 6,
           "width": 1919
         },
         {
@@ -399,7 +472,7 @@
         {
           "aspect_ratio": 4.571,
           "height": 175,
-          "iso_3166_1": "PT",
+          "iso_3166_1": "BR",
           "iso_639_1": "pt",
           "file_path": "/w5S14GqMh9T8Mv5uBhFHn0zJbAa.png",
           "vote_average": 3.334,
@@ -409,7 +482,7 @@
         {
           "aspect_ratio": 4.543,
           "height": 317,
-          "iso_3166_1": "PT",
+          "iso_3166_1": "BR",
           "iso_639_1": "pt",
           "file_path": "/vb03RDxOVUdl1GiCoL1fu9e7Ofj.png",
           "vote_average": 1.434,
@@ -419,7 +492,7 @@
         {
           "aspect_ratio": 4.543,
           "height": 317,
-          "iso_3166_1": "PT",
+          "iso_3166_1": "BR",
           "iso_639_1": "pt",
           "file_path": "/33kGvwRniQtJr5Y5QRLYe0kBOoB.png",
           "vote_average": 1.066,
@@ -655,13 +728,33 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 3840
+        },
+        {
+          "aspect_ratio": 1.814,
+          "height": 2117,
+          "iso_3166_1": "RO",
+          "iso_639_1": "ro",
+          "file_path": "/uzaJBN1SIlVPVlzRoGhXY6tWia8.png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 3840
+        },
+        {
+          "aspect_ratio": 2.513,
+          "height": 1299,
+          "iso_3166_1": "DE",
+          "iso_639_1": "de",
+          "file_path": "/2WC84X3s5HD7rglpsbe61VW7VKh.png",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 3265
         }
       ],
       "posters": [
         {
           "aspect_ratio": 0.667,
           "height": 2100,
-          "iso_3166_1": "CN",
+          "iso_3166_1": "TW",
           "iso_639_1": "zh",
           "file_path": "/kahu89W3sRWtkNyTnvaOb357SED.jpg",
           "vote_average": 10.0,
@@ -909,6 +1002,26 @@
           "width": 1000
         },
         {
+          "aspect_ratio": 0.672,
+          "height": 2197,
+          "iso_3166_1": "RO",
+          "iso_639_1": "ro",
+          "file_path": "/aZrhW3L5l4KNcJxiZsOjWLEHeWX.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 1476
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 936,
+          "iso_3166_1": "CZ",
+          "iso_639_1": "cs",
+          "file_path": "/jFUbfZAlICTHKI6MrUQ4tTW9Z3Q.jpg",
+          "vote_average": 3.334,
+          "vote_count": 1,
+          "width": 624
+        },
+        {
           "aspect_ratio": 0.667,
           "height": 3000,
           "iso_3166_1": "PT",
@@ -951,7 +1064,7 @@
         {
           "aspect_ratio": 0.667,
           "height": 825,
-          "iso_3166_1": "CN",
+          "iso_3166_1": "TW",
           "iso_639_1": "zh",
           "file_path": "/ncWfQHNNl4zpBNXO1lS9ZfS3mQK.jpg",
           "vote_average": 2.278,
@@ -1060,22 +1173,12 @@
         },
         {
           "aspect_ratio": 0.667,
-          "height": 2100,
-          "iso_3166_1": "US",
-          "iso_639_1": "en",
-          "file_path": "/1YwHJ4ihGJvvV2W8d4aDWGgeK3Y.jpg",
-          "vote_average": 1.75,
-          "vote_count": 2,
-          "width": 1400
-        },
-        {
-          "aspect_ratio": 0.667,
           "height": 1800,
           "iso_3166_1": "PT",
           "iso_639_1": "pt",
           "file_path": "/qlBdUUjm7Q5CMyv5yRNNhfnydVd.jpg",
-          "vote_average": 1.444,
-          "vote_count": 6,
+          "vote_average": 1.31,
+          "vote_count": 7,
           "width": 1200
         },
         {
@@ -1084,8 +1187,8 @@
           "iso_3166_1": "PT",
           "iso_639_1": "pt",
           "file_path": "/bmUFMMbJJA2BXLhhLCGhLFOIPZP.jpg",
-          "vote_average": 1.444,
-          "vote_count": 6,
+          "vote_average": 1.31,
+          "vote_count": 7,
           "width": 1000
         },
         {
@@ -1141,16 +1244,6 @@
         {
           "aspect_ratio": 0.667,
           "height": 3000,
-          "iso_3166_1": "PT",
-          "iso_639_1": "pt",
-          "file_path": "/2dTmzg6TNkVF3QfQ2THpIWzjb0l.jpg",
-          "vote_average": 1.066,
-          "vote_count": 6,
-          "width": 2000
-        },
-        {
-          "aspect_ratio": 0.667,
-          "height": 3000,
           "iso_3166_1": "US",
           "iso_639_1": "en",
           "file_path": "/lnM1IXmW6Hs1zlNoOp1IILSSuL8.jpg",
@@ -1179,13 +1272,23 @@
           "width": 1400
         },
         {
+          "aspect_ratio": 0.667,
+          "height": 3000,
+          "iso_3166_1": "PT",
+          "iso_639_1": "pt",
+          "file_path": "/2dTmzg6TNkVF3QfQ2THpIWzjb0l.jpg",
+          "vote_average": 0.904,
+          "vote_count": 7,
+          "width": 2000
+        },
+        {
           "aspect_ratio": 0.704,
           "height": 1076,
           "iso_3166_1": "PT",
           "iso_639_1": "pt",
           "file_path": "/dbdsztIOA10MLmAWLK0PAbL79qq.jpg",
           "vote_average": 0.5,
-          "vote_count": 4,
+          "vote_count": 5,
           "width": 758
         },
         {
@@ -1195,7 +1298,7 @@
           "iso_639_1": "pt",
           "file_path": "/sy96tIVFS3t3GK6l44pb0QwQz8f.jpg",
           "vote_average": 0.5,
-          "vote_count": 4,
+          "vote_count": 5,
           "width": 760
         },
         {
@@ -1431,7 +1534,7 @@
         {
           "aspect_ratio": 0.703,
           "height": 1063,
-          "iso_3166_1": "ES",
+          "iso_3166_1": "MX",
           "iso_639_1": "es",
           "file_path": "/exfw6nIiMHO3h2hTLgJ1axXeA7q.jpg",
           "vote_average": 0.0,
@@ -1481,7 +1584,7 @@
         {
           "aspect_ratio": 0.667,
           "height": 3000,
-          "iso_3166_1": "ES",
+          "iso_3166_1": "MX",
           "iso_639_1": "es",
           "file_path": "/2pbOzV1kxc9dpz33djZBKiZlMNW.jpg",
           "vote_average": 0.0,
@@ -1769,16 +1872,6 @@
           "width": 1000
         },
         {
-          "aspect_ratio": 0.667,
-          "height": 3000,
-          "iso_3166_1": "US",
-          "iso_639_1": "en",
-          "file_path": "/mz9IPn1dMvIKcD28tqfnfN17DEC.jpg",
-          "vote_average": 0.0,
-          "vote_count": 0,
-          "width": 2000
-        },
-        {
           "aspect_ratio": 0.701,
           "height": 1426,
           "iso_3166_1": "GE",
@@ -1791,7 +1884,7 @@
         {
           "aspect_ratio": 0.667,
           "height": 1500,
-          "iso_3166_1": "ES",
+          "iso_3166_1": "MX",
           "iso_639_1": "es",
           "file_path": "/fsZEPHqhonac9HuwOWZqXfDGPTE.jpg",
           "vote_average": 0.0,
@@ -1831,8 +1924,8 @@
         {
           "aspect_ratio": 0.701,
           "height": 1426,
-          "iso_3166_1": null,
-          "iso_639_1": null,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
           "file_path": "/9lCr0vjoleDozx9kWddZganVVQ4.jpg",
           "vote_average": 0.0,
           "vote_count": 0,
@@ -1957,6 +2050,56 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 2000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 3000,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/wMg14MKiXoez80QdYfwUs0Cf5Q4.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000
+        },
+        {
+          "aspect_ratio": 0.701,
+          "height": 1426,
+          "iso_3166_1": "VN",
+          "iso_639_1": "vi",
+          "file_path": "/qIneYZEig8O5yTGiDM5DdUNWGvm.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 750,
+          "iso_3166_1": "RU",
+          "iso_639_1": "ru",
+          "file_path": "/5aVb1aMRCjFf86qRmhJRxNvn4Qd.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 500
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 750,
+          "iso_3166_1": "RU",
+          "iso_639_1": "ru",
+          "file_path": "/hDXNTwrshvDbO5yAvI4ONZW7iiy.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 500
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 3000,
+          "iso_3166_1": "RU",
+          "iso_639_1": "ru",
+          "file_path": "/pxiCHwR8gth7mOJLjMO8fV5T8iI.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 2000
         }
       ]
     },
@@ -1964,18 +2107,17 @@
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "Cache-Control": "public, max-age=570",
       "Server": "openresty",
-      "x-memc": "MISS, STORE",
-      "x-memc-key": "4a1ee304829a0a24333ac1f343cefc3c5d7e5484630ef93750c1da4ee611d5ba",
-      "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=17438",
-      "ETag": "W/\u00227d88a22c347bf0fa95a314993c837445\u0022",
+      "X-Gateway-Cache-Status": "HIT",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002284a72e381c9450827111a82a453f29fd\u0022",
       "Vary": [
-        "accept-encoding",
+        "Accept-Encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

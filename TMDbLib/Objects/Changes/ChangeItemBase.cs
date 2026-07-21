@@ -22,8 +22,7 @@ public abstract class ChangeItemBase
     public string? Id { get; set; }
 
     /// <summary>
-    /// Gets or sets a language code, e.g. en
-    /// This field is not always set.
+    /// Gets or sets the language code (e.g. "en"); not always set.
     /// </summary>
     [JsonProperty("iso_639_1")]
     public string? Iso_639_1 { get; set; }

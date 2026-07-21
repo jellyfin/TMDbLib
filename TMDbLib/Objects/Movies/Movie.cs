@@ -9,12 +9,12 @@ using TMDbLib.Objects.Search;
 namespace TMDbLib.Objects.Movies;
 
 /// <summary>
-/// Represents a movie with its details and related information.
+/// Movie with details and related information.
 /// </summary>
 public class Movie
 {
     /// <summary>
-    /// Gets or sets the account states for this movie.
+    /// Gets or sets the account states.
     /// </summary>
     [JsonProperty("account_states")]
     public AccountState? AccountStates { get; set; }
@@ -26,7 +26,7 @@ public class Movie
     public bool Adult { get; set; }
 
     /// <summary>
-    /// Gets or sets the alternative titles for the movie.
+    /// Gets or sets the alternative titles.
     /// </summary>
     [JsonProperty("alternative_titles")]
     public AlternativeTitles? AlternativeTitles { get; set; }
@@ -44,13 +44,13 @@ public class Movie
     public SearchCollection? BelongsToCollection { get; set; }
 
     /// <summary>
-    /// Gets or sets the movie budget.
+    /// Gets or sets the budget.
     /// </summary>
     [JsonProperty("budget")]
     public long Budget { get; set; }
 
     /// <summary>
-    /// Gets or sets the change history for the movie.
+    /// Gets or sets the change history.
     /// </summary>
     [JsonProperty("changes")]
     public ChangesContainer? Changes { get; set; }
@@ -62,7 +62,7 @@ public class Movie
     public Credits? Credits { get; set; }
 
     /// <summary>
-    /// Gets or sets the list of genres for the movie.
+    /// Gets or sets the genres.
     /// </summary>
     [JsonProperty("genres")]
     public List<Genre>? Genres { get; set; }
@@ -74,25 +74,25 @@ public class Movie
     public string? Homepage { get; set; }
 
     /// <summary>
-    /// Gets or sets the TMDb movie ID.
+    /// Gets or sets the TMDb id.
     /// </summary>
     [JsonProperty("id")]
     public int Id { get; set; }
 
     /// <summary>
-    /// Gets or sets the images for the movie.
+    /// Gets or sets the images.
     /// </summary>
     [JsonProperty("images")]
     public Images? Images { get; set; }
 
     /// <summary>
-    /// Gets or sets the IMDb ID.
+    /// Gets or sets the IMDb id.
     /// </summary>
     [JsonProperty("imdb_id")]
     public string? ImdbId { get; set; }
 
     /// <summary>
-    /// Gets or sets the keywords associated with the movie.
+    /// Gets or sets the keywords.
     /// </summary>
     [JsonProperty("keywords")]
     public KeywordsContainer? Keywords { get; set; }
@@ -116,7 +116,7 @@ public class Movie
     public string? OriginalTitle { get; set; }
 
     /// <summary>
-    /// Gets or sets the movie overview or synopsis.
+    /// Gets or sets the overview.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }
@@ -158,7 +158,7 @@ public class Movie
     public ResultContainer<ReleaseDatesContainer>? ReleaseDates { get; set; }
 
     /// <summary>
-    /// Gets or sets the external IDs for the movie.
+    /// Gets or sets the external ids.
     /// </summary>
     [JsonProperty("external_ids")]
     public ExternalIdsMovie? ExternalIds { get; set; }
@@ -170,7 +170,7 @@ public class Movie
     public Releases? Releases { get; set; }
 
     /// <summary>
-    /// Gets or sets the movie revenue.
+    /// Gets or sets the revenue.
     /// </summary>
     [JsonProperty("revenue")]
     public long Revenue { get; set; }
@@ -200,7 +200,7 @@ public class Movie
     public SearchContainer<SearchMovie>? Recommendations { get; set; }
 
     /// <summary>
-    /// Gets or sets the spoken languages in the movie.
+    /// Gets or sets the spoken languages.
     /// </summary>
     [JsonProperty("spoken_languages")]
     public List<SpokenLanguage>? SpokenLanguages { get; set; }
@@ -218,7 +218,7 @@ public class Movie
     public string? Tagline { get; set; }
 
     /// <summary>
-    /// Gets or sets the movie title.
+    /// Gets or sets the title.
     /// </summary>
     [JsonProperty("title")]
     public string? Title { get; set; }
@@ -236,7 +236,7 @@ public class Movie
     public bool Video { get; set; }
 
     /// <summary>
-    /// Gets or sets the videos associated with the movie.
+    /// Gets or sets the videos.
     /// </summary>
     [JsonProperty("videos")]
     public ResultContainer<Video>? Videos { get; set; }
@@ -260,7 +260,7 @@ public class Movie
     public int VoteCount { get; set; }
 
     /// <summary>
-    /// Gets or sets the OriginCountry list.
+    /// Gets or sets the origin country ISO codes.
     /// </summary>
     [JsonProperty("origin_country")]
     public List<string>? OriginCountry { get; set; }

@@ -1,6 +1,6 @@
 {
   "Guid": "f1ecddb6-a65b-2044-a171-5a4ff203ce31",
-  "UpdatedAt": "2025-12-24T18:45:17.4318927Z",
+  "UpdatedAt": "2026-05-24T16:19:42.882914Z",
   "Title": "Proxy Mapping for GET /3/tv/episode_group/5acf93e60e0a26346d0000ce",
   "Description": "Proxy Mapping for GET /3/tv/episode_group/5acf93e60e0a26346d0000ce",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -299,7 +312,7 @@
               "season_number": 1,
               "show_id": 59717,
               "still_path": "/kdmwBXVT6qhsHmJj1xKG54RSN5L.jpg",
-              "vote_average": 8.25,
+              "vote_average": 8.2,
               "vote_count": 8,
               "order": 16
             },
@@ -435,8 +448,8 @@
               "season_number": 1,
               "show_id": 59717,
               "still_path": "/1rCk3DluTA2eCTQJA5TJOvwfnfj.jpg",
-              "vote_average": 8.667,
-              "vote_count": 6,
+              "vote_average": 8.7,
+              "vote_count": 7,
               "order": 4
             },
             {
@@ -467,7 +480,7 @@
               "season_number": 2,
               "show_id": 59717,
               "still_path": "/1UNxbzQIcDR0lyKUhGTg9Erv4Wi.jpg",
-              "vote_average": 7.583,
+              "vote_average": 7.6,
               "vote_count": 6,
               "order": 6
             },
@@ -499,7 +512,7 @@
               "season_number": 2,
               "show_id": 59717,
               "still_path": "/mIXxcBj8JXaf6V37ciPuUzIDVVd.jpg",
-              "vote_average": 7.833,
+              "vote_average": 7.8,
               "vote_count": 6,
               "order": 8
             }
@@ -1418,17 +1431,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=16760",
       "x-memc": "HIT",
       "x-memc-key": "9f7c7743a1b21253d98f07e3be78938a8dd342cdc6beb5fabec4a227eb8e621f",
-      "x-az": "us-east-1c",
-      "Cache-Control": "public, max-age=22078",
-      "ETag": "W/\u002226be3d39751ef3f846292d06e1f689ee\u0022",
+      "x-az": "us-east-1b",
+      "ETag": "W/\u0022dab4e1945d67404867e57a150e362e47\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

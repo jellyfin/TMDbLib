@@ -8,10 +8,10 @@ namespace TMDbLib.Client;
 public partial class TMDbClient
 {
     /// <summary>
-    /// Returns a list of all of the countries TMDb has watch provider (OTT/streaming) data for.
+    /// Gets the countries with watch provider (OTT/streaming) data.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A list of regions/countries with watch provider data available.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The available regions.</returns>
     /// <remarks>Uses <see cref="DefaultLanguage"/> to translate data.</remarks>
     public async Task<ResultContainer<WatchProviderRegion>?> GetWatchProviderRegionsAsync(CancellationToken cancellationToken = default)
     {
@@ -27,10 +27,10 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for movies.
+    /// Gets the watch providers (OTT/streaming) available for movies.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A list of watch providers for movies.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The movie watch providers.</returns>
     /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
     public async Task<ResultContainer<WatchProviderItem>?> GetMovieWatchProvidersAsync(CancellationToken cancellationToken = default)
     {
@@ -51,10 +51,10 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Returns a list of the watch provider (OTT/streaming) data TMDb has available for shows.
+    /// Gets the watch providers (OTT/streaming) available for TV shows.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A list of watch providers for TV shows.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The TV watch providers.</returns>
     /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
     public async Task<ResultContainer<WatchProviderItem>?> GetTvWatchProvidersAsync(CancellationToken cancellationToken = default)
     {

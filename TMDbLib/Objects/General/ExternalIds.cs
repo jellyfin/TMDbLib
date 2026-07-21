@@ -29,7 +29,7 @@ public class ExternalIds
     /// Gets or sets the TVRage ID.
     /// </summary>
     [JsonProperty("tvrage_id")]
-    public string? TvrageId { get; set; }
+    public int? TvrageId { get; set; }
 
     /// <summary>
     /// Gets or sets the Wikidata ID.

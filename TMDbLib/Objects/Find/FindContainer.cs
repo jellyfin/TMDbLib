@@ -10,6 +10,12 @@ namespace TMDbLib.Objects.Find;
 public class FindContainer
 {
     /// <summary>
+    /// Gets or sets the list of collection results.
+    /// </summary>
+    [JsonProperty("collection_results")]
+    public List<SearchCollection>? CollectionResults { get; set; }
+
+    /// <summary>
     /// Gets or sets the list of movie results.
     /// </summary>
     [JsonProperty("movie_results")]

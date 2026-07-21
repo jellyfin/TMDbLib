@@ -16,7 +16,7 @@ public class ClientTvEpisodeGroupTests : TestBase
     [Fact]
     public async Task TestTvEpisodeGroups()
     {
-        var group = await TMDbClient.GetTvEpisodeGroupsAsync("5acf93e60e0a26346d0000ce");
+        var group = await TMDbClient.GetTvEpisodeGroupsAsync("5acf93e60e0a26346d0000ce", cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(group);
     }

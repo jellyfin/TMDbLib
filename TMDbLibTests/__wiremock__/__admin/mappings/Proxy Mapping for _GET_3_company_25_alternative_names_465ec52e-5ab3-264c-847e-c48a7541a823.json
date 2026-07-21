@@ -1,0 +1,86 @@
+{
+  "Guid": "465ec52e-5ab3-264c-847e-c48a7541a823",
+  "UpdatedAt": "2026-05-24T16:19:42.754764Z",
+  "Title": "Proxy Mapping for GET /3/company/25/alternative_names",
+  "Description": "Proxy Mapping for GET /3/company/25/alternative_names",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/company/25/alternative_names",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 25,
+      "results": [
+        {
+          "name": "Twentieth Century Fox Film Corporation",
+          "type": ""
+        },
+        {
+          "name": "Twentieth Century-Fox",
+          "type": ""
+        },
+        {
+          "name": "Twentieth Century Fox",
+          "type": ""
+        },
+        {
+          "name": "20th Century-Fox",
+          "type": ""
+        },
+        {
+          "name": "20\uC138\uAE30 \uD3ED\uC2A4",
+          "type": "Korean"
+        },
+        {
+          "name": "\u4E8C\u5341\u4E16\u7EAA\u798F\u514B\u65AF",
+          "type": "Chinese"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=24349",
+      "x-memc": "HIT",
+      "x-memc-key": "43905260c9f3adbbe539d504444645f004a9ee55aff7c1f41c091da9c08d9e73",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u002285c393f25410dcd918c0b0663827a28e\u0022",
+      "Vary": [
+        "accept-encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

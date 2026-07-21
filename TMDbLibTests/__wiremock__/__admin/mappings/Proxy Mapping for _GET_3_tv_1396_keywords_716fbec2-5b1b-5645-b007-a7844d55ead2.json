@@ -1,6 +1,6 @@
 {
   "Guid": "716fbec2-5b1b-5645-b007-a7844d55ead2",
-  "UpdatedAt": "2025-12-24T18:45:21.2788751Z",
+  "UpdatedAt": "2026-05-24T16:19:42.802903Z",
   "Title": "Proxy Mapping for GET /3/tv/1396/keywords",
   "Description": "Proxy Mapping for GET /3/tv/1396/keywords",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -137,10 +150,6 @@
           "id": 316362
         },
         {
-          "name": "baffled",
-          "id": 325776
-        },
-        {
           "name": "violent",
           "id": 342828
         },
@@ -155,18 +164,14 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "x-memc": "HIT",
-      "x-memc-key": "9f53f066f7707b585c2e726db0a7fdaa30ba53a2d75c1330803f52d2b2bd8515",
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=13378",
+      "ETag": "W/\u00224ab4b398dedc2918c8fce2e06c9c2fb3\u0022",
       "x-az": "us-east-1a",
-      "Cache-Control": "public, max-age=25280",
-      "ETag": "W/\u0022f29a4aa4f851da782a0b0ec092d65643\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "RefreshHit from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

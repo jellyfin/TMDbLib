@@ -4,7 +4,7 @@ using TMDbLib.Utilities;
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
-/// Defines the optional data that can be retrieved along with TV show details.
+/// Additional TV show data to retrieve from the API.
 /// </summary>
 [Flags]
 public enum TvShowMethods
@@ -110,4 +110,16 @@ public enum TvShowMethods
     /// </summary>
     [EnumValue("aggregate_credits")]
     CreditsAggregate = 1 << 15,
+
+    /// <summary>
+    /// Include the lists that contain this TV show.
+    /// </summary>
+    [EnumValue("lists")]
+    Lists = 1 << 16,
+
+    /// <summary>
+    /// Include screened-theatrically episodes for this TV show.
+    /// </summary>
+    [EnumValue("screened_theatrically")]
+    ScreenedTheatrically = 1 << 17,
 }

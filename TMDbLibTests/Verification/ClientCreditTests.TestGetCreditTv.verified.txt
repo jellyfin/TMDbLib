@@ -4,6 +4,7 @@
   id: {Scrubbed},
   job: Actor,
   media: {
+    backdrop_path: <non-empty>,
     character: Tony Amato,
     episodes: [
       {
@@ -15,20 +16,42 @@
         still_path: <non-empty>
       }
     ],
+    first_air_date: DateTime_2,
+    genre_ids: [
+      18,
+      80
+    ],
     id: {Scrubbed},
+    media_type: tv,
     name: Miami Vice,
+    origin_country: [
+      US
+    ],
+    original_language: en,
     original_name: Miami Vice,
+    overview: The story of the Miami Police Department's vice squad and its efforts to end drug trafficking and prostitution, centered on the unlikely partnership of Sonny Crockett and Ricardo Tubbs - who first meet when Tubbs is undercover in a drug cartel.,
+    poster_path: <non-empty>,
     seasons: [
       {
         air_date: DateTime_2,
+        episode_count: 22,
+        id: {Scrubbed},
+        name: Season 1,
+        overview: The cops. The cars. The clothes. The explosive, groundbreaking detective show that redefined the word "cool". Set against the seamy and steamy Miami underworld, ride shotgun with suave Vice cops Sonny Crockett and Rico Tubbs as they battle a never-ending gallery of criminals. Set to an electrifying soundtrack, every episode crackles with excitement and stylish flair.,
         poster_path: <non-empty>,
-        season_number: 1
+        season_number: 1,
+        show_id: {Scrubbed}
       }
     ]
   },
   media_type: tv,
   person: {
+    gender: Male,
     id: {Scrubbed},
-    name: Bruce Willis
+    known_for_department: Acting,
+    media_type: person,
+    name: Bruce Willis,
+    original_name: Bruce Willis,
+    profile_path: <non-empty>
   }
 }

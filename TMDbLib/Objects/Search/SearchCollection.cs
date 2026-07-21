@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.Search;
 
 /// <summary>
-/// Represents a collection search result.
+/// Collection search result.
 /// </summary>
-public class SearchCollection : SearchBase
+public class SearchCollection : TmdbEntity
 {
     // Property to hold additional data from the JSON (populated by JSON deserialization)
 #pragma warning disable CS0649 // Field is assigned by JSON deserialization
@@ -30,7 +31,7 @@ public class SearchCollection : SearchBase
     public string? BackdropPath { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the collection.
+    /// Gets or sets the collection name.
     /// </summary>
     [JsonProperty("name")]
     public string? Name
@@ -55,7 +56,7 @@ public class SearchCollection : SearchBase
     public string? OriginalLanguage { get; set; }
 
     /// <summary>
-    /// Gets or sets the original name of the collection.
+    /// Gets or sets the original collection name.
     /// </summary>
     [JsonProperty("original_name")]
     public string? OriginalName
@@ -75,7 +76,7 @@ public class SearchCollection : SearchBase
     }
 
     /// <summary>
-    /// Gets or sets the overview text of the collection.
+    /// Gets or sets the overview text.
     /// </summary>
     [JsonProperty("overview")]
     public string? Overview { get; set; }

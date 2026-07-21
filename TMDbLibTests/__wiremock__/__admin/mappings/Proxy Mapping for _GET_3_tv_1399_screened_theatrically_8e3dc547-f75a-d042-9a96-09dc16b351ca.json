@@ -1,6 +1,6 @@
 {
   "Guid": "8e3dc547-f75a-d042-9a96-09dc16b351ca",
-  "UpdatedAt": "2025-12-24T18:45:16.340847Z",
+  "UpdatedAt": "2026-05-24T16:19:42.56225Z",
   "Title": "Proxy Mapping for GET /3/tv/1399/screened_theatrically",
   "Description": "Proxy Mapping for GET /3/tv/1399/screened_theatrically",
   "Priority": -2000000,
@@ -17,7 +17,20 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1"
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
   },
   "Response": {
     "StatusCode": 200,
@@ -56,17 +69,18 @@
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=22103",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=14118",
       "x-memc": "HIT",
       "x-memc-key": "5a809fcaa10e9a59bcec16afbc07a6514e4fe5a297703b931fcaf6fc72ca366d",
-      "x-az": "us-east-1a",
+      "x-az": "us-east-1b",
       "ETag": "W/\u0022204ba3fb24fe78f4ca5dc2e04b4e3b07\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

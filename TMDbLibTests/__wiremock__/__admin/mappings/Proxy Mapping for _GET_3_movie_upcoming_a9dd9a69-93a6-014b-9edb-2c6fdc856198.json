@@ -1,6 +1,6 @@
 {
   "Guid": "a9dd9a69-93a6-014b-9edb-2c6fdc856198",
-  "UpdatedAt": "2025-12-24T18:45:23.9663359Z",
+  "UpdatedAt": "2026-05-24T16:19:43.771445Z",
   "Title": "Proxy Mapping for GET /3/movie/upcoming",
   "Description": "Proxy Mapping for GET /3/movie/upcoming",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -35,423 +48,435 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "dates": {
-        "maximum": "2026-01-21",
-        "minimum": "2025-12-31"
+        "maximum": "2026-06-17",
+        "minimum": "2026-05-27"
       },
       "page": 2,
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/jOuu4mEBOuJVb6CkkmRDpjnrZed.jpg",
+          "backdrop_path": "/5p6BsJtnPbglYN15MuiUEppPl0f.jpg",
           "genre_ids": [
-            27,
-            9648
+            9648,
+            878,
+            53
           ],
-          "id": 937941,
+          "id": 1275779,
+          "title": "Disclosure Day",
           "original_language": "en",
-          "original_title": "Shelby Oaks",
-          "overview": "A woman\u0027s obsessive search for her missing sister leads her into a terrifying mystery at the hands of an unknown evil.",
-          "popularity": 22.2051,
-          "poster_path": "/i3omY4P6QUzFQlEeclWY92RuXCH.jpg",
-          "release_date": "2025-10-02",
-          "title": "Shelby Oaks",
+          "original_title": "Disclosure Day",
+          "overview": "If you found out we weren\u2019t alone, if someone showed you, proved it to you, would that frighten you?",
+          "popularity": 18.5313,
+          "poster_path": "/3o5YPjDGDTcTDL5ftDA9NwN9dLd.jpg",
+          "release_date": "2026-06-10",
+          "softcore": false,
           "video": false,
-          "vote_average": 5.781,
-          "vote_count": 128
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/kWYfW2Re0rUDE6IHhy4CRuKWeFr.jpg",
-          "genre_ids": [
-            12,
-            14,
-            28
-          ],
-          "id": 121,
-          "original_language": "en",
-          "original_title": "The Lord of the Rings: The Two Towers",
-          "overview": "Frodo Baggins and the other members of the Fellowship continue on their sacred quest to destroy the One Ring--but on separate paths. Their destinies lie at two towers--Orthanc Tower in Isengard, where the corrupt wizard Saruman awaits, and Sauron\u0027s fortress at Barad-dur, deep within the dark lands of Mordor. Frodo and Sam are trekking to Mordor to destroy the One Ring of Power while Gimli, Legolas and Aragorn search for the orc-captured Merry and Pippin. All along, nefarious wizard Saruman awaits the Fellowship members at the Orthanc Tower in Isengard.",
-          "popularity": 21.6824,
-          "poster_path": "/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
-          "release_date": "2002-12-18",
-          "title": "The Lord of the Rings: The Two Towers",
-          "video": false,
-          "vote_average": 8.41,
-          "vote_count": 23183
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/vRoIogTQDO5yAmTmH5uGrlPfS0N.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 1124566,
-          "original_language": "no",
-          "original_title": "Affeksjonsverdi",
-          "overview": "Sisters Nora and Agnes reunite with their estranged father, the charismatic Gustav, a once-renowned director who offers stage actress Nora a role in what he hopes will be his comeback film. When Nora turns it down, she soon discovers he has given her part to an eager young Hollywood star.",
-          "popularity": 21.5149,
-          "poster_path": "/7YYrTByEx7fPetfcTa6pEF6XjD9.jpg",
-          "release_date": "2025-08-20",
-          "title": "Sentimental Value",
-          "video": false,
-          "vote_average": 7.6,
-          "vote_count": 182
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/2YOnE2qmoyyOUqQsFit12gDSauk.jpg",
-          "genre_ids": [
-            80,
-            35,
-            18
-          ],
-          "id": 1242419,
-          "original_language": "en",
-          "original_title": "Roofman",
-          "overview": "A former Army Ranger and struggling father turns to robbing McDonald\u2019s restaurants by cutting holes in their roofs, earning him the nickname \u0027Roofman\u0027. After escaping prison, he secretly lives inside a Toys \u201CR\u201D Us for six months, surviving undetected while planning his next move. But when he falls for a divorced mom drawn to his undeniable charm, his double life begins to unravel, setting off a compelling and suspenseful game of cat and mouse as his past closes in.",
-          "popularity": 21.2572,
-          "poster_path": "/pUpFD3Oq1eN5mdF9MDwCwH874P8.jpg",
-          "release_date": "2025-10-08",
-          "title": "Roofman",
-          "video": false,
-          "vote_average": 7.237,
-          "vote_count": 321
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
-          "genre_ids": [
-            12,
-            14,
-            28
-          ],
-          "id": 122,
-          "original_language": "en",
-          "original_title": "The Lord of the Rings: The Return of the King",
-          "overview": "As armies mass for a final battle that will decide the fate of the world--and powerful, ancient forces of Light and Dark compete to determine the outcome--one member of the Fellowship of the Ring is revealed as the noble heir to the throne of the Kings of Men. Yet, the sole hope for triumph over evil lies with a brave hobbit, Frodo, who, accompanied by his loyal friend Sam and the hideous, wretched Gollum, ventures deep into the very dark heart of Mordor on his seemingly impossible quest to destroy the Ring of Power.\u200B",
-          "popularity": 20.6783,
-          "poster_path": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
-          "release_date": "2003-12-17",
-          "title": "The Lord of the Rings: The Return of the King",
-          "video": false,
-          "vote_average": 8.491,
-          "vote_count": 25759
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/AvYsEYnj8h0495UhBYEXqK7hkFo.jpg",
+          "backdrop_path": "/pO7XVtgA6t5JbxY1S8Y4cQEFarR.jpg",
           "genre_ids": [
             35,
-            80,
-            18,
-            9648
+            27
           ],
-          "id": 1287571,
-          "original_language": "id",
-          "original_title": "Agak Laen: Menyala Pantiku!",
-          "overview": "After repeatedly failing their missions, Detectives Bene, Boris, Jegel, and Oki are given one last chance: to go undercover in a nursing home in search of a fugitive wanted for the murder of the mayor\u2019s child.",
-          "popularity": 19.548,
-          "poster_path": "/48Lbiwc8QiaGXhpfHkWExLgIcaa.jpg",
-          "release_date": "2025-11-27",
-          "title": "Agak Laen: Menyala Pantiku!",
-          "video": false,
-          "vote_average": 8.2,
-          "vote_count": 4
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/yt9m5CiU2MZkQoNl1kqLPODNR4t.jpg",
-          "genre_ids": [
-            18,
-            10749
-          ],
-          "id": 858024,
+          "id": 1273221,
+          "title": "Scary Movie",
           "original_language": "en",
-          "original_title": "Hamnet",
-          "overview": "The powerful story of love and loss that inspired the creation of Shakespeare\u0027s timeless masterpiece, Hamlet.",
-          "popularity": 18.4461,
-          "poster_path": "/71KNp6RiOQTbs8Fn1DagrFQrZmx.jpg",
-          "release_date": "2025-11-26",
-          "title": "Hamnet",
+          "original_title": "Scary Movie",
+          "overview": "Twenty-six years after outrunning a suspiciously familiar masked killer, the Core Four are back in the killer\u0027s crosshairs and no horror movie IP is safe.",
+          "popularity": 18.1629,
+          "poster_path": "/2OHkZEqQL4OjYXIqWopJu0BijTD.jpg",
+          "release_date": "2026-06-03",
+          "softcore": false,
           "video": false,
-          "vote_average": 8.2,
-          "vote_count": 17
+          "vote_average": 0.0,
+          "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/rz8NcfTRczvn94vpnmMx42zt6EC.jpg",
+          "backdrop_path": "/7Wev9JMo6R5XAfz2KDvXb7oPMmy.jpg",
           "genre_ids": [
-            53,
-            18
+            9648,
+            53
           ],
-          "id": 1042834,
+          "id": 77,
+          "title": "Memento",
           "original_language": "en",
-          "original_title": "Eden",
-          "overview": "A group of disillusioned outsiders abandon modern society in search of a new beginning. Settling on a remote, uninhabited island, their utopian dream quickly unravels as they discover that the greatest threat isn\u2019t the brutal climate or deadly wildlife, but each other.",
-          "popularity": 14.9614,
-          "poster_path": "/jbFEESMVbpJU8IjZBjiWGJdEsxR.jpg",
-          "release_date": "2025-04-03",
-          "title": "Eden",
+          "original_title": "Memento",
+          "overview": "Leonard Shelby is tracking down the man who raped and murdered his wife. The difficulty of locating his wife\u0027s killer, however, is compounded by the fact that he suffers from a rare, untreatable form of short-term memory loss. Although he can recall details of life before his accident, Leonard cannot remember what happened fifteen minutes ago, where he\u0027s going, or why.",
+          "popularity": 16.4004,
+          "poster_path": "/fKTPH2WvH8nHTXeBYBVhawtRqtR.jpg",
+          "release_date": "2000-10-11",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.751,
-          "vote_count": 456
+          "vote_average": 8.177,
+          "vote_count": 16206
         },
         {
           "adult": false,
-          "backdrop_path": "/7PDe2oJu8BHsu9hJ02FjOXT20a1.jpg",
-          "genre_ids": [
-            18,
-            10402,
-            10749
-          ],
-          "id": 1371185,
-          "original_language": "en",
-          "original_title": "Song Sung Blue",
-          "overview": "Based on a true story, two down-on-their-luck musicians form a joyous Neil Diamond tribute band, proving it\u0027s never too late to find love and follow your dreams.",
-          "popularity": 13.8286,
-          "poster_path": "/3HsIAbHWbFDUbY2jfj4wqEjGC3b.jpg",
-          "release_date": "2025-12-25",
-          "title": "Song Sung Blue",
-          "video": false,
-          "vote_average": 6.0,
-          "vote_count": 3
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/cJvUJEEQ86LSjl4gFLkYpdCJC96.jpg",
-          "genre_ids": [
-            10752,
-            28
-          ],
-          "id": 1241436,
-          "original_language": "en",
-          "original_title": "Warfare",
-          "overview": "A platoon of Navy SEALs embarks on a dangerous mission in Ramadi, Iraq, with the chaos and brotherhood of war retold through their memories of the event.",
-          "popularity": 13.208,
-          "poster_path": "/srj9rYrjefyWqkLc6l2xjTGeBGO.jpg",
-          "release_date": "2025-04-09",
-          "title": "Warfare",
-          "video": false,
-          "vote_average": 7.103,
-          "vote_count": 1184
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tPaurpIUskVji5vwV0dhy9pq4Vs.jpg",
+          "backdrop_path": "/3o7t1gF0wbXAtELCkIcYyPXoIxA.jpg",
           "genre_ids": [
             10751,
-            16,
-            12,
-            35
-          ],
-          "id": 953,
-          "original_language": "en",
-          "original_title": "Madagascar",
-          "overview": "Four animal friends get a taste of the wild life when they break out of captivity at the Central Park Zoo and wash ashore on the island of Madagascar.",
-          "popularity": 12.881,
-          "poster_path": "/zMpJY5CJKUufG9OTw0In4eAFqPX.jpg",
-          "release_date": "2005-05-25",
-          "title": "Madagascar",
-          "video": false,
-          "vote_average": 6.917,
-          "vote_count": 11395
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/g1OvTd1eF346vmx8qsJnjaiooZ6.jpg",
-          "genre_ids": [
-            12,
             14,
-            10751
+            12
           ],
-          "id": 630,
+          "id": 1140521,
+          "title": "The Magic Faraway Tree",
           "original_language": "en",
-          "original_title": "The Wizard of Oz",
-          "overview": "Young Dorothy finds herself in a magical world where she makes friends with a lion, a scarecrow and a tin man as they make their way along the yellow brick road to talk with the Wizard and ask for the things they miss most in their lives. The Wicked Witch of the West is the only thing that could stop them.",
-          "popularity": 12.2943,
-          "poster_path": "/lbezZTzzOcomu2ezKJBUsIPtqA6.jpg",
-          "release_date": "1939-08-15",
-          "title": "The Wizard of Oz",
+          "original_title": "The Magic Faraway Tree",
+          "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They\u0027re transported to fantastical lands, rekindling their family bond through adventures.",
+          "popularity": 17.9144,
+          "poster_path": "/udXvLxC5gAqN8SinemyFBEcHpTf.jpg",
+          "release_date": "2026-03-26",
+          "softcore": false,
           "video": false,
-          "vote_average": 7.59,
-          "vote_count": 5927
+          "vote_average": 6.367,
+          "vote_count": 30
         },
         {
           "adult": false,
-          "backdrop_path": "/nKwZoaflB5VQNn0StOBAHDxU8YR.jpg",
+          "backdrop_path": "/zdXnJqBaGFVtLoPNuMeKfEYUViZ.jpg",
           "genre_ids": [
-            35,
+            10749,
             18
           ],
-          "id": 1206008,
+          "id": 11036,
+          "title": "The Notebook",
           "original_language": "en",
-          "original_title": "Ella McCay",
-          "overview": "An idealistic young politician juggles familial issues and a challenging work life while preparing to take over the job of her mentor, the state\u2019s longtime incumbent governor.",
-          "popularity": 11.8331,
-          "poster_path": "/iQCtK477yqp6xnHHrQG2P0lXoow.jpg",
-          "release_date": "2025-12-11",
-          "title": "Ella McCay",
+          "original_title": "The Notebook",
+          "overview": "An epic love story centered around an older man who reads aloud to a woman with Alzheimer\u0027s. From a faded notebook, the old man\u0027s words bring to life the story about a couple who is separated by World War II, and is then passionately reunited, seven years later, after they have taken different paths.",
+          "popularity": 17.6099,
+          "poster_path": "/rNzQyW4f8B8cQeg7Dgj3n6eT5k9.jpg",
+          "release_date": "2004-06-25",
+          "softcore": false,
           "video": false,
-          "vote_average": 5.1,
-          "vote_count": 20
+          "vote_average": 7.9,
+          "vote_count": 12529
         },
         {
           "adult": false,
-          "backdrop_path": "/c6LXcv9D70NpftZX1j0Z3umXhoK.jpg",
-          "genre_ids": [
-            18,
-            53
-          ],
-          "id": 1151272,
-          "original_language": "es",
-          "original_title": "Sir\u0101t",
-          "overview": "A man and his son arrive at a rave lost in the mountains of Morocco. They are looking for Marina, their daughter and sister, who disappeared months ago at another rave. Driven by fate, they decide to follow a group of ravers in search of one last party, in hopes Marina will be there.",
-          "popularity": 11.8002,
-          "poster_path": "/4RsM2U4mJr1Gf2S0W8hClrM2x80.jpg",
-          "release_date": "2025-06-06",
-          "title": "Sir\u0101t",
-          "video": false,
-          "vote_average": 6.899,
-          "vote_count": 267
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/yZtnGzfZER0QU7ZG4r4RaZAaXJH.jpg",
-          "genre_ids": [
-            27,
-            53,
-            80
-          ],
-          "id": 1519168,
-          "original_language": "en",
-          "original_title": "The Jester 2",
-          "overview": "When teen magician Max crosses paths with the sinister Jester on Halloween night, she must outsmart a supernatural killer whose magic is all too real and whose tricks always end up in blood.",
-          "popularity": 11.3652,
-          "poster_path": "/47dsw1jSOV0Be5zmy7CtLhYpqU.jpg",
-          "release_date": "2025-09-15",
-          "title": "The Jester 2",
-          "video": false,
-          "vote_average": 6.4,
-          "vote_count": 39
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/zWO3B2CTDguZqCrVQ2u5Xnp9VRS.jpg",
+          "backdrop_path": "/mWRjVb2Lj9pjOlNcDP7lNvrvSo8.jpg",
           "genre_ids": [
             80,
-            53,
             35
           ],
-          "id": 1245993,
+          "id": 1400357,
+          "title": "The Christophers",
           "original_language": "en",
-          "original_title": "Caught Stealing",
-          "overview": "Burned-out ex-baseball player Hank Thompson unexpectedly finds himself embroiled in a dangerous struggle for survival amidst the criminal underbelly of late 1990s New York City, forced to navigate a treacherous underworld he never imagined.",
-          "popularity": 11.3591,
-          "poster_path": "/cvda8s5J8YaHjTyEyXQpvD6f3iV.jpg",
-          "release_date": "2025-08-26",
-          "title": "Caught Stealing",
+          "original_title": "The Christophers",
+          "overview": "The estranged children of a once-famous artist hire a forger to complete his unfinished works so they can be \u0022discovered\u0022 and sold after his death.",
+          "popularity": 16.7653,
+          "poster_path": "/s6oUrGMNl8hVh7fn0O8oF2rHwrM.jpg",
+          "release_date": "2026-04-10",
+          "softcore": false,
           "video": false,
-          "vote_average": 6.926,
-          "vote_count": 619
+          "vote_average": 6.8,
+          "vote_count": 26
         },
         {
           "adult": false,
-          "backdrop_path": "/xSD0q1FiuZkvHuy7uscOLbmd1hR.jpg",
-          "genre_ids": [
-            12,
-            28,
-            14
-          ],
-          "id": 13494,
-          "original_language": "en",
-          "original_title": "Red Sonja",
-          "overview": "A young girl rises from the ashes of tragedy to become the most feared warrior woman of all time: the She-Devil with a Sword.",
-          "popularity": 11.0835,
-          "poster_path": "/aE3yh4y0h96CZZpLo0UDFMWZAA9.jpg",
-          "release_date": "2025-07-31",
-          "title": "Red Sonja",
-          "video": false,
-          "vote_average": 5.708,
-          "vote_count": 149
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kv8kCuvfhSQ50YxjowqpVn1QqhJ.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 801937,
-          "original_language": "en",
-          "original_title": "Silent Night, Deadly Night",
-          "overview": "After witnessing his parents\u2019 brutal murder on Christmas Eve, Billy transforms into a Killer Santa, delivering a yearly spree of calculated, chilling violence. This year, his blood-soaked mission collides with love, as a young woman challenges him to confront his darkness.",
-          "popularity": 10.9248,
-          "poster_path": "/xCdSd7NnRdnL8DGLVhI95WhUNoi.jpg",
-          "release_date": "2025-12-11",
-          "title": "Silent Night, Deadly Night",
-          "video": false,
-          "vote_average": 5.714,
-          "vote_count": 21
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/q2V1q2Xxwqg3uXQKufpdCtrnAdn.jpg",
-          "genre_ids": [
-            35,
-            14
-          ],
-          "id": 1114967,
-          "original_language": "en",
-          "original_title": "Good Fortune",
-          "overview": "A well-meaning but rather inept angel named Gabriel meddles in the lives of a struggling gig worker and a wealthy capitalist.",
-          "popularity": 10.6389,
-          "poster_path": "/r83HIGA0mUiy7I9qVr17pF7SCDP.jpg",
-          "release_date": "2025-10-14",
-          "title": "Good Fortune",
-          "video": false,
-          "vote_average": 7.08,
-          "vote_count": 337
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ffQFnAUm2Uu4RU0nijpjPRf9TBT.jpg",
+          "backdrop_path": "/g3L6tOvJIRWSkxnhmoEW1SKEvW3.jpg",
           "genre_ids": [
             18,
             10749
           ],
-          "id": 843,
-          "original_language": "cn",
-          "original_title": "\u82B1\u6A23\u5E74\u83EF",
-          "overview": "Two neighbors form a strong bond after both suspect extramarital activities of their spouses. However, they agree to keep their bond platonic so as not to commit similar wrongs.",
-          "popularity": 10.5508,
-          "poster_path": "/m8jNwTP13ubYZyh5siVuyT9pZDp.jpg",
-          "release_date": "2000-09-29",
-          "title": "In the Mood for Love",
+          "id": 5879,
+          "title": "In the Realm of the Senses",
+          "original_language": "ja",
+          "original_title": "\u611B\u306E\u30B3\u30EA\u30FC\u30C0",
+          "overview": "A passionate telling of the story of Sada Abe, a woman whose affair with her master led to an obsessive and ultimately destructive sexual relationship.",
+          "popularity": 15.7586,
+          "poster_path": "/AiFQbgjgSXWPfbi9iIYT39iXWMW.jpg",
+          "release_date": "1976-09-15",
+          "softcore": false,
           "video": false,
-          "vote_average": 8.092,
-          "vote_count": 3100
+          "vote_average": 6.6,
+          "vote_count": 729
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg",
+          "genre_ids": [
+            27,
+            9648,
+            53
+          ],
+          "id": 493922,
+          "title": "Hereditary",
+          "original_language": "en",
+          "original_title": "Hereditary",
+          "overview": "Following the death of the Leigh family matriarch, Annie and her children uncover disturbing secrets about their heritage. Their daily lives are not only impacted, but they also become entangled in a chilling fate from which they cannot escape, driving them to the brink of madness.",
+          "popularity": 14.4332,
+          "poster_path": "/hjlZSXM86wJrfCv5VKfR5DI2VeU.jpg",
+          "release_date": "2018-06-07",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 8556
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e9UvRjJAqn2hLXDfMHU1LFMEKGv.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1430077,
+          "title": "Hokum",
+          "original_language": "en",
+          "original_title": "Hokum",
+          "overview": "When novelist Ohm Bauman retreats to a remote inn to scatter his parents\u0027 ashes, he is consumed by tales of a witch haunting the honeymoon suite. Disturbing visions and a shocking disappearance forces him to confront dark corners of his past.",
+          "popularity": 15.2235,
+          "poster_path": "/jKPWwsbAM6HKURPYQ1eG8DmKMKn.jpg",
+          "release_date": "2026-04-29",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.9,
+          "vote_count": 50
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vbkW4KerpshPZnP84w9qwSfYrhu.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1198984,
+          "title": "We Bury the Dead",
+          "original_language": "en",
+          "original_title": "We Bury the Dead",
+          "overview": "After a catastrophic military disaster, the dead don\u0027t just rise - they hunt. Ava searches for her missing husband, but what she finds is far more terrifying.",
+          "popularity": 14.6595,
+          "poster_path": "/xZqo0yPARmyF8TACVNyaOACkYWG.jpg",
+          "release_date": "2026-01-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 5.9,
+          "vote_count": 220
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6xVAbjvUWKJlPSVYduQgkRzEQNy.jpg",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "id": 1424965,
+          "title": "Ice Skater",
+          "original_language": "en",
+          "original_title": "Ice Skater",
+          "overview": "A survival drama about an ice skater stranded on an ice floe at the Arctic Sea. When the ice floe starts to float towards south and melt, the ice skater must use all means necessary to survive.",
+          "popularity": 12.9339,
+          "poster_path": "/m93BKabB7Je8WQACed58BXeHNNR.jpg",
+          "release_date": "2026-05-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pYgj8e2Y6RufnSyOA6OnzmxFXxZ.jpg",
+          "genre_ids": [
+            27,
+            18,
+            9648
+          ],
+          "id": 530385,
+          "title": "Midsommar",
+          "original_language": "en",
+          "original_title": "Midsommar",
+          "overview": "Several friends travel to Sweden to study as anthropologists a summer festival that is held every ninety years in the remote hometown of one of them. What begins as a dream vacation in a place where the sun never sets, gradually turns into a dark nightmare as the mysterious inhabitants invite them to participate in their disturbing festive activities.",
+          "popularity": 12.0675,
+          "poster_path": "/7LEI8ulZzO5gy9Ww2NVCrKmHeDZ.jpg",
+          "release_date": "2019-07-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.151,
+          "vote_count": 8050
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vgGcmZWWjxYanOrPxxIoijZqCtQ.jpg",
+          "genre_ids": [
+            35,
+            53
+          ],
+          "id": 467905,
+          "title": "How to Make a Killing",
+          "original_language": "en",
+          "original_title": "How to Make a Killing",
+          "overview": "Disowned at birth by his obscenely wealthy family, blue-collar Becket Redfellow will stop at nothing to reclaim his inheritance, no matter how many relatives stand in his way.",
+          "popularity": 12.2649,
+          "poster_path": "/vxMeKC7o5Gi8IHMi6lUgsdprTqv.jpg",
+          "release_date": "2026-02-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.08,
+          "vote_count": 395
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2TWIlmhE06ghspeQLEX1VmnEBiE.jpg",
+          "genre_ids": [
+            10749,
+            35
+          ],
+          "id": 1455079,
+          "title": "You, Me \u0026 Tuscany",
+          "original_language": "en",
+          "original_title": "You, Me \u0026 Tuscany",
+          "overview": "When a woman crashes at an empty Italian villa, posing as the owner\u0027s fianc\u00E9e, she discovers an unexpected romance that could transform her life.",
+          "popularity": 11.9095,
+          "poster_path": "/mJS0IF7Af3WpPRhSTDT6rGpiLzw.jpg",
+          "release_date": "2026-04-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.214,
+          "vote_count": 56
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sT5Inhc0aaReSZoufWgfJTQUbKp.jpg",
+          "genre_ids": [
+            80,
+            53
+          ],
+          "id": 1340206,
+          "title": "Tuner",
+          "original_language": "en",
+          "original_title": "Tuner",
+          "overview": "A talented piano tuner\u0027s life is turned upside down when he discovers that his meticulous skills for tuning pianos can equally be applied to cracking safes.",
+          "popularity": 11.7224,
+          "poster_path": "/kyM60vcgf7lfofmZB4F5Rj7OrHW.jpg",
+          "release_date": "2026-05-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.0,
+          "vote_count": 2
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fe6kkxaxn0mCU2gl1vfU44IYWsy.jpg",
+          "genre_ids": [
+            18,
+            36
+          ],
+          "id": 1317149,
+          "title": "I Swear",
+          "original_language": "en",
+          "original_title": "I Swear",
+          "overview": "Diagnosed with Tourette Syndrome at 15, John Davidson navigates his way against the odds through troubled teenage years and into adulthood, finding inspiration in the kindness of others to discover his true purpose in life.",
+          "popularity": 15.41,
+          "poster_path": "/vUwyhNWBKkSwK8ELvEeBRwV724h.jpg",
+          "release_date": "2025-09-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 8.2,
+          "vote_count": 296
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9VM1KI9sVZETl0d00FK7CnBzxiw.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            14,
+            12
+          ],
+          "id": 1497970,
+          "title": "Tom and Jerry: Forbidden Compass",
+          "original_language": "zh",
+          "original_title": "\u732B\u548C\u8001\u9F20\uFF1A\u661F\u76D8\u5947\u7F18",
+          "overview": "During a chase inside a museum, Tom and Jerry find an ancient magical compass and end up being transported through time. Lost in a distant era, they will need to work together to find a way back home.",
+          "popularity": 11.8082,
+          "poster_path": "/5qttWFjsO62k88civZaDMHiBTvy.jpg",
+          "release_date": "2025-08-02",
+          "softcore": false,
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 41
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oPsRr7AfNLw6XaPuMpvkWK0bIUA.jpg",
+          "genre_ids": [
+            28,
+            18
+          ],
+          "id": 1057265,
+          "title": "Peddi",
+          "original_language": "te",
+          "original_title": "\u0C2A\u0C46\u0C26\u0C4D\u0C26\u0C3F",
+          "overview": "In 1980s rural Andhra Pradesh, a spirited villager unites his community through sports to defend their pride against a powerful rival.",
+          "popularity": 11.2733,
+          "poster_path": "/kydPBzuU4TSmDOXCkgAdVFF8sgU.jpg",
+          "release_date": "2026-06-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ksqaGSybKVyzkRmLFBgefMSa45a.jpg",
+          "genre_ids": [
+            53,
+            18,
+            9648
+          ],
+          "id": 1381027,
+          "title": "Good Boy",
+          "original_language": "en",
+          "original_title": "Good Boy",
+          "overview": "Tommy, a volatile 19-year-old, revels in drugs, parties and violence. After getting separated from his friends on a drunken bender, he is abducted by a shadowy figure. He wakes to find himself imprisoned in the basement of a remote Yorkshire house, inhabited by a very strange family. But what unfolds is not what he could possibly expect.",
+          "popularity": 13.2118,
+          "poster_path": "/x0wD4Qxe0wulV0bxarsQ05PqDNF.jpg",
+          "release_date": "2026-03-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.309,
+          "vote_count": 89
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6n53UI4mX9QMfe2S0Pgt8mGebY1.jpg",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "id": 194,
+          "title": "Am\u00E9lie",
+          "original_language": "fr",
+          "original_title": "Le Fabuleux Destin d\u0027Am\u00E9lie Poulain",
+          "overview": "At a tiny Parisian caf\u00E9, the adorable yet painfully shy Am\u00E9lie accidentally discovers a gift for helping others. Soon Amelie is spending her days as a matchmaker, guardian angel, and all-around do-gooder. But when she bumps into a handsome stranger, will she find the courage to become the star of her very own love story?",
+          "popularity": 10.6018,
+          "poster_path": "/nSxDa3M9aMvGVLoItzWTepQ5h5d.jpg",
+          "release_date": "2001-04-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 7.92,
+          "vote_count": 12380
         }
       ],
-      "total_pages": 37,
-      "total_results": 731
+      "total_pages": 71,
+      "total_results": 1420
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
+      "ETag": "W/\u00226b409bdc3ea19571875fb39b5c965969\u0022",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=12903",
-      "x-memc": "HIT",
-      "x-memc-key": "f04285b05c61f3dae2bae75b288dcf660c5b517a46bc294e671abf3e18531c20",
-      "x-az": "us-east-1c",
-      "ETag": "W/\u0022ec5911374aebd5d88f8ce092025320da\u0022",
-      "Vary": [
-        "accept-encoding",
-        "Origin"
-      ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
-      "Alt-Svc": "h3=\u0022:443\u0022"
+      "X-Gateway-Cache-Status": "HIT",
+      "Cache-Control": "public, max-age=7935",
+      "x-az": "us-east-1b",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022",
+      "Vary": "Origin"
     }
   }
 }

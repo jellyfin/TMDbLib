@@ -34,7 +34,11 @@ public partial class TMDbClient
 
         if (!string.IsNullOrWhiteSpace(includeImageLanguage))
         {
-            req.AddParameter("include_image_language", includeImageLanguage);
+            // Videos endpoint expects `include_video_language`; only images endpoint uses `include_image_language`.
+            var key = tvShowMethod == TvSeasonMethods.Videos
+                ? "include_video_language"
+                : "include_image_language";
+            req.AddParameter(key, includeImageLanguage);
         }
 
         var response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -43,14 +47,14 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieves the account states for all episodes in a TV season.
+    /// Gets the account states for each episode in a TV season.
     /// </summary>
     /// <param name="tvShowId">The TMDb id of the TV show.</param>
     /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A container with account states for each episode in the season.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>Account states per episode.</returns>
     /// <remarks>Requires a valid user session.</remarks>
-    /// <exception cref="UserSessionRequiredException">Thrown when the current client object doesn't have a user session assigned.</exception>
+    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
     public async Task<ResultContainer<TvEpisodeAccountStateWithNumber>?> GetTvSeasonAccountStateAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
         RequireSessionId(SessionType.UserSession);
@@ -58,7 +62,6 @@ public partial class TMDbClient
         var req = _client.Create("tv/{id}/season/{season_number}/account_states");
         req.AddUrlSegment("id", tvShowId.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("season_number", seasonNumber.ToString(CultureInfo.InvariantCulture));
-        req.AddUrlSegment("method", TvEpisodeMethods.AccountStates.GetDescription());
         AddSessionId(req, SessionType.UserSession);
 
         using var response = await req.Get<ResultContainer<TvEpisodeAccountStateWithNumber>>(cancellationToken).ConfigureAwait(false);
@@ -67,15 +70,15 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Retrieve a season for a specifc tv Show by id.
+    /// Gets a TV season.
     /// </summary>
-    /// <param name="tvShowId">TMDb id of the tv show the desired season belongs to.</param>
-    /// <param name="seasonNumber">The season number of the season you want to retrieve. Note use 0 for specials.</param>
-    /// <param name="extraMethods">Enum flags indicating any additional data that should be fetched in the same request.</param>
-    /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
-    /// <param name="includeImageLanguage">If specified the api will attempt to return localized image results eg. en,it,es.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>The requested season for the specified tv show.</returns>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="extraMethods">Additional methods to append to the response.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="includeImageLanguage">Comma-separated ISO 639-1 codes for image languages.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season.</returns>
     public async Task<TvSeason?> GetTvSeasonAsync(int tvShowId, int seasonNumber, TvSeasonMethods extraMethods = TvSeasonMethods.Undefined, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
         if (extraMethods.HasFlag(TvSeasonMethods.AccountStates))
@@ -106,8 +109,7 @@ public partial class TMDbClient
 
         var appends = string.Join(
             ",",
-            Enum.GetValues(typeof(TvSeasonMethods))
-                                         .OfType<TvSeasonMethods>()
+            Enum.GetValues<TvSeasonMethods>()
                                          .Except([TvSeasonMethods.Undefined])
                                          .Where(s => extraMethods.HasFlag(s))
                                          .Select(s => s.GetDescription()));
@@ -161,80 +163,77 @@ public partial class TMDbClient
     }
 
     /// <summary>
-    /// Returns a credits object for the season of the tv show associated with the provided TMDb id.
+    /// Gets the credits for a TV season.
     /// </summary>
-    /// <param name="tvShowId">The TMDb id of the target tv show.</param>
-    /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-    /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>Credits information including cast and crew for the season.</returns>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season's cast and crew.</returns>
     public async Task<Credits?> GetTvSeasonCreditsAsync(int tvShowId, int seasonNumber, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<Credits>(tvShowId, seasonNumber, TvSeasonMethods.Credits, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Returns a credits object for the aggragation of tv season associated with the provided TMDb id.
+    /// Gets the aggregate credits for a TV season.
     /// </summary>
-    /// <param name="tvShowId">The TMDb id of the target tv show.</param>
-    /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-    /// <param name="language">If specified the api will attempt to return a localized result. ex: en,it,es. </param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A task representing the asynchronous operation, with the aggregate credits as the result.</returns>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season's aggregate credits.</returns>
     public async Task<CreditsAggregate?> GetTvSeasonAggregateCredits(int tvShowId, int seasonNumber, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<CreditsAggregate>(tvShowId, seasonNumber, TvSeasonMethods.CreditsAggregate, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Returns an object that contains all known exteral id's for the season of the tv show related to the specified TMDB id.
+    /// Gets the external ids for a TV season (TVDB, etc.).
     /// </summary>
-    /// <param name="tvShowId">The TMDb id of the target tv show.</param>
-    /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>External IDs for the season from various sources like TVDB, etc.</returns>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season's external ids.</returns>
     public async Task<ExternalIdsTvSeason?> GetTvSeasonExternalIdsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<ExternalIdsTvSeason>(tvShowId, seasonNumber, TvSeasonMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves all images all related to the season of specified tv show.
+    /// Gets the poster images for a TV season.
     /// </summary>
-    /// <param name="tvShowId">The TMDb id of the target tv show.</param>
-    /// <param name="seasonNumber">The season number of the season you want to retrieve information for. Note use 0 for specials.</param>
-    /// <param name="language">
-    /// If specified the api will attempt to return a localized result. ex: en,it,es.
-    /// For images this means that the image might contain language specifc text.
-    /// </param>
-    /// <param name="includeImageLanguage">If you want to include a fallback language (especially useful for backdrops) you can use the include_image_language parameter. This should be a comma separated value like so: include_image_language=en,null.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>Poster images for the season.</returns>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="language">The ISO 639-1 language code. Images may contain language-specific text.</param>
+    /// <param name="includeImageLanguage">Comma-separated ISO 639-1 codes for image fallback (e.g. "en,null").</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season's posters.</returns>
     public async Task<PosterImages?> GetTvSeasonImagesAsync(int tvShowId, int seasonNumber, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<PosterImages>(tvShowId, seasonNumber, TvSeasonMethods.Images, language: language, includeImageLanguage: includeImageLanguage, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves videos (trailers, teasers, clips, etc.) for a TV season.
+    /// Gets the videos for a TV season.
     /// </summary>
     /// <param name="tvShowId">The TMDb id of the TV show.</param>
     /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
-    /// <param name="language">Language to localize the results in.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A container with video information for the season.</returns>
+    /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season's videos.</returns>
     public async Task<ResultContainer<Video>?> GetTvSeasonVideosAsync(int tvShowId, int seasonNumber, string? language = null, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<ResultContainer<Video>>(tvShowId, seasonNumber, TvSeasonMethods.Videos, language: language, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Retrieves available translations for a TV season.
+    /// Gets the available translations for a TV season.
     /// </summary>
     /// <param name="tvShowId">The TMDb id of the TV show.</param>
     /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
-    /// <param name="cancellationToken">A cancellation token.</param>
-    /// <returns>A container with translation information for the season.</returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season's translations.</returns>
     public async Task<TranslationsContainer?> GetTvSeasonTranslationsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, TvSeasonMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);

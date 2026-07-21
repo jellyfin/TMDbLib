@@ -1,0 +1,60 @@
+{
+  "Guid": "dbf258f6-200d-4c41-bd5e-686f8fed13ff",
+  "UpdatedAt": "2026-05-24T16:19:43.219321Z",
+  "Title": "Proxy Mapping for GET /3/tv/season/518344/changes",
+  "Description": "Proxy Mapping for GET /3/tv/season/518344/changes",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/season/518344/changes",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "changes": []
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=600",
+      "x-memc": "MISS, STORE",
+      "x-memc-key": "be9e74af5fdad4b02ef85e7723eee1a41c41cfb6e291462a01e239bbe3f7719a",
+      "x-az": "us-east-1c",
+      "ETag": "W/\u00221c7b0be7cfcb529d61df7c7b50baa91e\u0022",
+      "Vary": [
+        "Accept-Encoding",
+        "Origin"
+      ],
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
+      "Alt-Svc": "h3=\u0022:443\u0022"
+    }
+  }
+}

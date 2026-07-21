@@ -108,10 +108,10 @@ public class ChangeItemConverterTest : TestBase
     [Fact]
     public async Task TestChangeItemConverter()
     {
-        var latestMovie = await TMDbClient.GetMovieLatestAsync();
+        var latestMovie = await TMDbClient.GetMovieLatestAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(latestMovie);
 
-        var changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id);
+        var changes = await TMDbClient.GetMovieChangesAsync(latestMovie.Id, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(changes);
         var changeItems = changes.SelectMany(s => s.Items ?? []).ToList();
 

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace TMDbLib.Objects.Exceptions;
 
@@ -8,7 +9,7 @@ namespace TMDbLib.Objects.Exceptions;
 public class TMDbStatusMessage
 {
     /// <summary>
-    /// Gets or sets the status code.
+    /// Gets or sets the raw status code as returned by TMDb.
     /// </summary>
     [JsonProperty("status_code")]
     public int StatusCode { get; set; }
@@ -18,4 +19,12 @@ public class TMDbStatusMessage
     /// </summary>
     [JsonProperty("status_message")]
     public string? StatusMessage { get; set; }
+
+    /// <summary>
+    /// Gets the TMDb status code mapped to a known <see cref="TMDbStatusCode"/> value.
+    /// Returns <see cref="TMDbStatusCode.Unknown"/> if the code is outside the documented range.
+    /// </summary>
+    [JsonIgnore]
+    public TMDbStatusCode Code =>
+        Enum.IsDefined((TMDbStatusCode)StatusCode) ? (TMDbStatusCode)StatusCode : TMDbStatusCode.Unknown;
 }

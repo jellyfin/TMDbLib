@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Newtonsoft.Json;
-using TMDbLib.Objects.Search;
+using TMDbLib.Objects.General.Schema;
 
 namespace TMDbLib.Objects.Lists;
 
@@ -19,5 +19,5 @@ public class GenericList : TMDbList<string>
     /// Gets or sets the list of items in the list.
     /// </summary>
     [JsonProperty("items")]
-    public List<SearchBase>? Items { get; set; }
+    public List<TmdbEntity>? Items { get; set; }
 }

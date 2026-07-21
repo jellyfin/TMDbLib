@@ -1,6 +1,6 @@
 {
   "Guid": "9d227013-006f-894d-aec1-f2e969dc6006",
-  "UpdatedAt": "2025-12-24T18:45:15.9838541Z",
+  "UpdatedAt": "2026-05-24T16:19:42.645613Z",
   "Title": "Proxy Mapping for GET /3/person/31/tagged_images",
   "Description": "Proxy Mapping for GET /3/person/31/tagged_images",
   "Priority": -2000000,
@@ -18,6 +18,19 @@
       "GET"
     ],
     "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
     "Params": [
       {
         "Name": "page",
@@ -84,7 +97,7 @@
             "title": "Inferno",
             "original_title": "Inferno",
             "overview": "After waking up in a hospital with amnesia, professor Robert Langdon and a doctor must race against time to foil a deadly global plot.",
-            "poster_path": "/cnqvFvjAaV28F1tU7986VVg0WP7.jpg",
+            "poster_path": "/smaWxdIMH24gD96lKNe1a036LVG.jpg",
             "media_type": "movie",
             "original_language": "en",
             "genre_ids": [
@@ -92,11 +105,12 @@
               53,
               28
             ],
-            "popularity": 4.1174,
+            "popularity": 6.0392,
             "release_date": "2016-10-13",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.084,
-            "vote_count": 6486
+            "vote_average": 6.093,
+            "vote_count": 6636
           },
           "media_type": "movie"
         },
@@ -126,11 +140,12 @@
               53,
               878
             ],
-            "popularity": 2.3449,
+            "popularity": 3.7143,
             "release_date": "2017-04-27",
+            "softcore": false,
             "video": false,
-            "vote_average": 5.521,
-            "vote_count": 4523
+            "vote_average": 5.523,
+            "vote_count": 4586
           },
           "media_type": "movie"
         },
@@ -159,11 +174,12 @@
               35,
               18
             ],
-            "popularity": 1.3962,
+            "popularity": 2.0584,
             "release_date": "2016-04-22",
+            "softcore": false,
             "video": false,
-            "vote_average": 5.85,
-            "vote_count": 1198
+            "vote_average": 5.853,
+            "vote_count": 1222
           },
           "media_type": "movie"
         },
@@ -180,7 +196,7 @@
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/h5jqLrIv1tlszezv2UEWq9KBuoj.jpg",
+            "backdrop_path": "/8sb4aBST28vN3rBz704XJczS0Ld.jpg",
             "id": 446354,
             "title": "The Post",
             "original_title": "The Post",
@@ -192,11 +208,12 @@
               18,
               36
             ],
-            "popularity": 3.7235,
+            "popularity": 4.7284,
             "release_date": "2017-12-22",
+            "softcore": false,
             "video": false,
-            "vote_average": 7.003,
-            "vote_count": 4791
+            "vote_average": 7.0,
+            "vote_count": 4906
           },
           "media_type": "movie"
         },
@@ -213,12 +230,12 @@
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+            "backdrop_path": "/66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",
             "id": 13,
             "title": "Forrest Gump",
             "original_title": "Forrest Gump",
             "overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events\u2014in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
-            "poster_path": "/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+            "poster_path": "/Cw4hIUIAmSYfK9QfaUW5igp9La.jpg",
             "media_type": "movie",
             "original_language": "en",
             "genre_ids": [
@@ -226,11 +243,12 @@
               18,
               10749
             ],
-            "popularity": 23.0188,
+            "popularity": 26.9498,
             "release_date": "1994-06-23",
+            "softcore": false,
             "video": false,
-            "vote_average": 8.462,
-            "vote_count": 28975
+            "vote_average": 8.465,
+            "vote_count": 29726
           },
           "media_type": "movie"
         },
@@ -247,7 +265,7 @@
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/rW2xRFlJRbTnBJlQTSjQmjevIwb.jpg",
+            "backdrop_path": "/bdD39MpSVhKjxarTxLSfX6baoMP.jpg",
             "id": 857,
             "title": "Saving Private Ryan",
             "original_title": "Saving Private Ryan",
@@ -260,11 +278,12 @@
               18,
               36
             ],
-            "popularity": 13.8489,
+            "popularity": 21.1322,
             "release_date": "1998-07-24",
+            "softcore": false,
             "video": false,
-            "vote_average": 8.2,
-            "vote_count": 16718
+            "vote_average": 8.224,
+            "vote_count": 17184
           },
           "media_type": "movie"
         },
@@ -275,18 +294,18 @@
           "id": "5d660ffc58361b001021b778",
           "iso_3166_1": "CN",
           "iso_639_1": "zh",
-          "vote_average": 3.852,
-          "vote_count": 17,
+          "vote_average": 3.666,
+          "vote_count": 18,
           "width": 859,
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+            "backdrop_path": "/66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",
             "id": 13,
             "title": "Forrest Gump",
             "original_title": "Forrest Gump",
             "overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events\u2014in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
-            "poster_path": "/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+            "poster_path": "/Cw4hIUIAmSYfK9QfaUW5igp9La.jpg",
             "media_type": "movie",
             "original_language": "en",
             "genre_ids": [
@@ -294,11 +313,12 @@
               18,
               10749
             ],
-            "popularity": 23.0188,
+            "popularity": 26.9498,
             "release_date": "1994-06-23",
+            "softcore": false,
             "video": false,
-            "vote_average": 8.462,
-            "vote_count": 28975
+            "vote_average": 8.465,
+            "vote_count": 29726
           },
           "media_type": "movie"
         },
@@ -328,11 +348,12 @@
               10751,
               18
             ],
-            "popularity": 1.9217,
+            "popularity": 3.3203,
             "release_date": "2019-09-07",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.955,
-            "vote_count": 1699
+            "vote_average": 6.969,
+            "vote_count": 1747
           },
           "media_type": "movie"
         },
@@ -343,8 +364,8 @@
           "id": "5eb2941fbf0f63001d8027ae",
           "iso_3166_1": "US",
           "iso_639_1": "en",
-          "vote_average": 5.25,
-          "vote_count": 24,
+          "vote_average": 5.06,
+          "vote_count": 25,
           "width": 2000,
           "image_type": "poster",
           "media": {
@@ -354,18 +375,19 @@
             "title": "A League of Their Own",
             "original_title": "A League of Their Own",
             "overview": "As America\u0027s stock of athletic young men is depleted during World War II, a professional all-female baseball league springs up in the Midwest, funded by publicity-hungry candy maker Walter Harvey. Competitive sisters Dottie Hinson and Kit Keller spar with each other, scout Ernie Capadino and grumpy has-been coach Jimmy Dugan on their way to fame.",
-            "poster_path": "/7xpFXAOjgzFPE3vyVerFGfrXhFK.jpg",
+            "poster_path": "/f9BtX6wYOwJUyfUr4vyeT3COz6m.jpg",
             "media_type": "movie",
             "original_language": "en",
             "genre_ids": [
               35,
               18
             ],
-            "popularity": 3.0164,
+            "popularity": 4.8669,
             "release_date": "1992-07-01",
+            "softcore": false,
             "video": false,
-            "vote_average": 7.217,
-            "vote_count": 1482
+            "vote_average": 7.2,
+            "vote_count": 1536
           },
           "media_type": "movie"
         },
@@ -394,11 +416,12 @@
               35,
               10749
             ],
-            "popularity": 1.5066,
+            "popularity": 1.9596,
             "release_date": "1990-03-09",
+            "softcore": false,
             "video": false,
-            "vote_average": 5.785,
-            "vote_count": 564
+            "vote_average": 5.803,
+            "vote_count": 579
           },
           "media_type": "movie"
         },
@@ -427,11 +450,12 @@
               35,
               10749
             ],
-            "popularity": 2.4563,
+            "popularity": 3.2119,
             "release_date": "1986-03-26",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.512,
-            "vote_count": 1201
+            "vote_average": 6.509,
+            "vote_count": 1233
           },
           "media_type": "movie"
         },
@@ -448,7 +472,7 @@
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/pyeknyOKRLBd4ROOeYL6kV103ov.jpg",
+            "backdrop_path": "/4HJN6dyyPMJTimMglfEdVxjW2p5.jpg",
             "id": 11974,
             "title": "The \u0027Burbs",
             "original_title": "The \u0027Burbs",
@@ -461,11 +485,12 @@
               27,
               53
             ],
-            "popularity": 2.8267,
+            "popularity": 3.8936,
             "release_date": "1989-02-17",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.761,
-            "vote_count": 1315
+            "vote_average": 6.753,
+            "vote_count": 1366
           },
           "media_type": "movie"
         },
@@ -482,7 +507,7 @@
           "image_type": "poster",
           "media": {
             "adult": false,
-            "backdrop_path": "/3Epsjs0q4gbkusvAVcCBUCwnjeo.jpg",
+            "backdrop_path": "/oCFVYPXI4IfhtF3GapU2jkDicDI.jpg",
             "id": 8358,
             "title": "Cast Away",
             "original_title": "Cast Away",
@@ -494,11 +519,12 @@
               12,
               18
             ],
-            "popularity": 9.5751,
+            "popularity": 10.5118,
             "release_date": "2000-12-22",
+            "softcore": false,
             "video": false,
-            "vote_average": 7.66,
-            "vote_count": 11947
+            "vote_average": 7.661,
+            "vote_count": 12250
           },
           "media_type": "movie"
         },
@@ -520,18 +546,19 @@
             "title": "Catch Me If You Can",
             "original_title": "Catch Me If You Can",
             "overview": "A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks as a Pan Am pilot, doctor, and legal prosecutor. An FBI agent makes it his mission to put him behind bars. But Frank not only eludes capture, he revels in the pursuit.",
-            "poster_path": "/sdYgEkKCDPWNU6KnoL4qd8xZ4w7.jpg",
+            "poster_path": "/ctjEj2xM32OvBXCq8zAdK3ZrsAj.jpg",
             "media_type": "movie",
             "original_language": "en",
             "genre_ids": [
               18,
               80
             ],
-            "popularity": 18.3005,
+            "popularity": 13.7018,
             "release_date": "2002-12-16",
+            "softcore": false,
             "video": false,
-            "vote_average": 8.0,
-            "vote_count": 16580
+            "vote_average": 7.979,
+            "vote_count": 17074
           },
           "media_type": "movie"
         },
@@ -561,11 +588,12 @@
               18,
               53
             ],
-            "popularity": 4.9241,
+            "popularity": 5.5499,
             "release_date": "2013-10-10",
+            "softcore": false,
             "video": false,
-            "vote_average": 7.538,
-            "vote_count": 7273
+            "vote_average": 7.539,
+            "vote_count": 7475
           },
           "media_type": "movie"
         },
@@ -595,34 +623,70 @@
               10751,
               18
             ],
-            "popularity": 1.9217,
+            "popularity": 3.3203,
             "release_date": "2019-09-07",
+            "softcore": false,
             "video": false,
-            "vote_average": 6.955,
-            "vote_count": 1699
+            "vote_average": 6.969,
+            "vote_count": 1747
+          },
+          "media_type": "movie"
+        },
+        {
+          "aspect_ratio": 0.675,
+          "file_path": "/zYLfDWPmhvPYBQaaOWAE8zsGVUT.jpg",
+          "height": 1600,
+          "id": "69b7ec1a998fc15eed5a75ce",
+          "iso_3166_1": "HR",
+          "iso_639_1": "hr",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1080,
+          "image_type": "poster",
+          "media": {
+            "adult": false,
+            "backdrop_path": "/zywtNiaZ9r7azrcNdl2j0jOgrkw.jpg",
+            "id": 594,
+            "title": "The Terminal",
+            "original_title": "The Terminal",
+            "overview": "An Eastern European tourist unexpectedly finds himself stranded in JFK airport, and must take up temporary residence there.",
+            "poster_path": "/cPB3ZMM4UdsSAhNdS4c7ps5nypY.jpg",
+            "media_type": "movie",
+            "original_language": "en",
+            "genre_ids": [
+              35,
+              18
+            ],
+            "popularity": 7.5453,
+            "release_date": "2004-06-17",
+            "softcore": false,
+            "video": false,
+            "vote_average": 7.352,
+            "vote_count": 8683
           },
           "media_type": "movie"
         }
       ],
       "total_pages": 1,
-      "total_results": 17
+      "total_results": 18
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Transfer-Encoding": "chunked",
       "Connection": "keep-alive",
       "Server": "openresty",
-      "Cache-Control": "public, max-age=9459",
-      "x-memc": "HIT",
+      "X-Gateway-Cache-Status": "MISS",
+      "Cache-Control": "public, max-age=28533",
+      "x-memc": "MISS, STORE",
       "x-memc-key": "6ae44c13d5e5169ab8f454deb3ffa0a73c2cb6aef96db910b996ad6a286e76f1",
       "x-az": "us-east-1c",
-      "ETag": "W/\u002228e8c08e09e587caf9ac391054d7299f\u0022",
+      "ETag": "W/\u002237f2400cd1eea53cf01e8194462f2d23\u0022",
       "Vary": [
         "accept-encoding",
         "Origin"
       ],
-      "X-Cache": "Miss from cloudfront",
-      "X-Amz-Cf-Pop": "MUC50-P3",
+      "X-Cache": "Hit from cloudfront",
+      "X-Amz-Cf-Pop": "MUC50-P2",
       "Alt-Svc": "h3=\u0022:443\u0022"
     }
   }

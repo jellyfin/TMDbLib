@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Companies;
@@ -19,5 +19,17 @@ public enum CompanyMethods
     /// Include movies associated with the company.
     /// </summary>
     [EnumValue("movies")]
-    Movies = 1
+    Movies = 1,
+
+    /// <summary>
+    /// Include alternative names for the company.
+    /// </summary>
+    [EnumValue("alternative_names")]
+    AlternativeNames = 2,
+
+    /// <summary>
+    /// Include logo images for the company.
+    /// </summary>
+    [EnumValue("images")]
+    Images = 4,
 }

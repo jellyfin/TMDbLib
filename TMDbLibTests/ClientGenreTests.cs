@@ -20,10 +20,10 @@ public class ClientGenreTests : TestBase
     public async Task TestGenreTvListAsync()
     {
         // Default language
-        var genres = await TMDbClient.GetTvGenresAsync();
+        var genres = await TMDbClient.GetTvGenresAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         // Another language
-        var genresDanish = await TMDbClient.GetTvGenresAsync("da");
+        var genresDanish = await TMDbClient.GetTvGenresAsync("da", cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(new
         {
@@ -47,10 +47,10 @@ public class ClientGenreTests : TestBase
     public async Task TestGenreMovieListAsync()
     {
         // Default language
-        var genres = await TMDbClient.GetMovieGenresAsync();
+        var genres = await TMDbClient.GetMovieGenresAsync(cancellationToken: TestContext.Current.CancellationToken);
 
         // Another language
-        var genresDanish = await TMDbClient.GetMovieGenresAsync("da");
+        var genresDanish = await TMDbClient.GetMovieGenresAsync("da", cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(new
         {

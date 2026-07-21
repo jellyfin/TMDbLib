@@ -76,7 +76,7 @@ public class TaggedImageConverterTest : TestBase
     public async Task TestJsonTaggedImageConverter(int personId)
     {
         // Get images
-        var result = await TMDbClient.GetPersonTaggedImagesAsync(personId, 1);
+        var result = await TMDbClient.GetPersonTaggedImagesAsync(personId, 1, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.NotNull(result.Results);
