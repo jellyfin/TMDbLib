@@ -1,14 +1,14 @@
 {
-  "Guid": "72a1b020-8055-034c-959d-a1ec39cbd0a7",
-  "Title": "Proxy Mapping for GET /3/person/latest",
-  "Description": "Proxy Mapping for GET /3/person/latest",
+  "Guid": "617469cc-2c38-2a4e-a2ba-8f51379da6bb",
+  "Title": "Proxy Mapping for GET /3/tv/season/535035/changes",
+  "Description": "Proxy Mapping for GET /3/tv/season/535035/changes",
   "Priority": -2000000,
   "Request": {
     "Path": {
       "Matchers": [
         {
           "Name": "WildcardMatcher",
-          "Pattern": "/3/person/latest",
+          "Pattern": "/3/tv/season/535035/changes",
           "IgnoreCase": false
         }
       ]
@@ -34,20 +34,7 @@
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
-      "adult": false,
-      "also_known_as": [],
-      "biography": "",
-      "birthday": null,
-      "deathday": null,
-      "gender": 0,
-      "homepage": null,
-      "id": 6395076,
-      "imdb_id": null,
-      "known_for_department": "Acting",
-      "name": "Fitzallond Williams",
-      "place_of_birth": null,
-      "popularity": 0.0,
-      "profile_path": null
+      "changes": []
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

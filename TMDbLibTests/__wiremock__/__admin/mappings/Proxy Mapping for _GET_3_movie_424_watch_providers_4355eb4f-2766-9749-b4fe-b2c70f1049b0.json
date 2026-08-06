@@ -68,6 +68,28 @@
         },
         "AR": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 36
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 6
+            }
+          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -86,28 +108,6 @@
               "provider_id": 167,
               "provider_name": "Claro video",
               "display_priority": 9
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 6
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 36
             }
           ]
         },
@@ -192,70 +192,6 @@
         },
         "AU": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=AU",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 22
-            },
-            {
-              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
-              "provider_id": 436,
-              "provider_name": "Fetch TV",
-              "display_priority": 31
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 22
-            },
-            {
-              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
-              "provider_id": 436,
-              "provider_name": "Fetch TV",
-              "display_priority": 31
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/7QX5OdsQZrXGNBKq9SPzoPV9OYQ.jpg",
@@ -269,11 +205,75 @@
               "provider_name": "Foxtel Now",
               "display_priority": 10
             }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 31
+            }
           ]
         },
         "BA": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=BA",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -281,7 +281,7 @@
               "display_priority": 8
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -303,20 +303,6 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=BE",
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 39
-            },
-            {
-              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
-              "provider_id": 1825,
-              "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 62
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -349,6 +335,20 @@
               "provider_id": 461,
               "provider_name": "RTBF Auvio",
               "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 62
             }
           ],
           "buy": [
@@ -411,6 +411,14 @@
         },
         "BO": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -438,18 +446,18 @@
               "provider_name": "Google Play Movies",
               "display_priority": 20
             }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 31
-            }
           ]
         },
         "BR": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/9kcTsX2laYclN4bFiMH3RuhZel2.jpg",
+              "provider_id": 2156,
+              "provider_name": "Telecine Amazon Channel",
+              "display_priority": 56
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -468,14 +476,6 @@
               "provider_id": 3,
               "provider_name": "Google Play Movies",
               "display_priority": 14
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/9kcTsX2laYclN4bFiMH3RuhZel2.jpg",
-              "provider_id": 2156,
-              "provider_name": "Telecine Amazon Channel",
-              "display_priority": 56
             }
           ],
           "rent": [
@@ -545,14 +545,6 @@
               "display_priority": 5
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 10
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -560,18 +552,18 @@
               "provider_name": "Apple TV Store",
               "display_priority": 5
             }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 10
+            }
           ]
         },
         "CA": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=CA",
-          "flatrate": [
-            {
-              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
-              "provider_id": 2604,
-              "provider_name": "Crave Amazon Channel",
-              "display_priority": 140
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -641,48 +633,18 @@
               "provider_name": "Amazon Video",
               "display_priority": 57
             }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
+              "provider_id": 2604,
+              "provider_name": "Crave Amazon Channel",
+              "display_priority": 140
+            }
           ]
         },
         "CH": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=CH",
-          "buy": [
-            {
-              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
-              "provider_id": 150,
-              "provider_name": "blue TV",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 10
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 74
-            }
-          ],
           "rent": [
             {
               "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
@@ -726,18 +688,48 @@
               "provider_name": "Amazon Video",
               "display_priority": 74
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 74
+            }
           ]
         },
         "CL": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=CL",
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 8
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -776,6 +768,14 @@
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 56
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 8
             }
           ]
         },
@@ -902,7 +902,7 @@
         },
         "CY": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=CY",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -910,7 +910,7 @@
               "display_priority": 3
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -921,14 +921,6 @@
         },
         "CZ": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=CZ",
-          "flatrate": [
-            {
-              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
-              "provider_id": 1939,
-              "provider_name": "Lepsi TV",
-              "display_priority": 27
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -979,6 +971,14 @@
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 42
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 27
             }
           ]
         },
@@ -1089,15 +1089,7 @@
         },
         "DK": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=DK",
-          "flatrate": [
-            {
-              "logo_path": "/s38BRDYN1fP3Ll9bptNaE5JXFkL.jpg",
-              "provider_id": 2624,
-              "provider_name": "TV2 Skyshowtime",
-              "display_priority": 51
-            }
-          ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
@@ -1135,7 +1127,15 @@
               "display_priority": 48
             }
           ],
-          "buy": [
+          "flatrate": [
+            {
+              "logo_path": "/s38BRDYN1fP3Ll9bptNaE5JXFkL.jpg",
+              "provider_id": 2624,
+              "provider_name": "TV2 Skyshowtime",
+              "display_priority": 51
+            }
+          ],
+          "rent": [
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
@@ -1421,86 +1421,6 @@
         },
         "FR": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=FR",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
-              "provider_id": 58,
-              "provider_name": "Canal VOD",
-              "display_priority": 11
-            },
-            {
-              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
-              "provider_id": 61,
-              "provider_name": "Orange VOD",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 18
-            },
-            {
-              "logo_path": "/brt7T1qjJhyKaazaHP2N9r31TRS.jpg",
-              "provider_id": 389,
-              "provider_name": "Sooner",
-              "display_priority": 22
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 36
-            },
-            {
-              "logo_path": "/f0AbfwtuitfNzrnENo1CWcPQiN6.jpg",
-              "provider_id": 2601,
-              "provider_name": "Path\u00E9 Home",
-              "display_priority": 54
-            },
-            {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
-              "provider_id": 2286,
-              "provider_name": "VIVA by videofutur",
-              "display_priority": 79
-            },
-            {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
-              "provider_id": 2307,
-              "provider_name": "Premiere Max",
-              "display_priority": 81
-            },
-            {
-              "logo_path": "/1syoSwH2yIskHUqeOiK9re8AMJC.jpg",
-              "provider_id": 310,
-              "provider_name": "LaCinetek",
-              "display_priority": 86
-            },
-            {
-              "logo_path": "/1gtidYfh89iLkGcbhPtr1lvx47W.jpg",
-              "provider_id": 2671,
-              "provider_name": "ARTE Boutique",
-              "display_priority": 103
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -1600,11 +1520,91 @@
               "provider_name": "HBO Max Amazon Channel",
               "display_priority": 106
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/9Fyo6njYvroAIxAzTBbLgnjgYga.jpg",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/brt7T1qjJhyKaazaHP2N9r31TRS.jpg",
+              "provider_id": 389,
+              "provider_name": "Sooner",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/f0AbfwtuitfNzrnENo1CWcPQiN6.jpg",
+              "provider_id": 2601,
+              "provider_name": "Path\u00E9 Home",
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 79
+            },
+            {
+              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 81
+            },
+            {
+              "logo_path": "/1syoSwH2yIskHUqeOiK9re8AMJC.jpg",
+              "provider_id": 310,
+              "provider_name": "LaCinetek",
+              "display_priority": 86
+            },
+            {
+              "logo_path": "/1gtidYfh89iLkGcbhPtr1lvx47W.jpg",
+              "provider_id": 2671,
+              "provider_name": "ARTE Boutique",
+              "display_priority": 103
+            }
           ]
         },
         "GB": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=GB",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1642,7 +1642,7 @@
               "display_priority": 23
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1721,7 +1721,7 @@
         },
         "GR": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=GR",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1741,7 +1741,7 @@
               "display_priority": 34
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1764,20 +1764,6 @@
         },
         "GT": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=GT",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 21
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -1799,6 +1785,20 @@
               "provider_name": "HBO Max",
               "display_priority": 5
             }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 21
+            }
           ]
         },
         "GY": {
@@ -1814,7 +1814,7 @@
         },
         "HK": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=HK",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1822,7 +1822,7 @@
               "display_priority": 8
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1833,6 +1833,20 @@
         },
         "HN": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=HN",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            }
+          ],
           "flatrate": [
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -1854,25 +1868,11 @@
               "provider_name": "Google Play Movies",
               "display_priority": 20
             }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 20
-            }
           ]
         },
         "HR": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=HR",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
@@ -1880,7 +1880,7 @@
               "display_priority": 43
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
               "provider_id": 10,
@@ -1891,7 +1891,7 @@
         },
         "HU": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=HU",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1911,7 +1911,7 @@
               "display_priority": 37
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1934,7 +1934,7 @@
         },
         "IE": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=IE",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -1966,7 +1966,7 @@
               "display_priority": 43
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2057,7 +2057,7 @@
         },
         "IS": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=IS",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
@@ -2071,7 +2071,7 @@
               "display_priority": 39
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
               "provider_id": 76,
@@ -2088,38 +2088,6 @@
         },
         "IT": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=IT",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 11
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 34
-            },
-            {
-              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
-              "provider_id": 40,
-              "provider_name": "CHILI",
-              "display_priority": 37
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
@@ -2165,6 +2133,38 @@
               "provider_name": "CHILI",
               "display_priority": 37
             }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "provider_id": 40,
+              "provider_name": "CHILI",
+              "display_priority": 37
+            }
           ]
         },
         "JM": {
@@ -2180,6 +2180,46 @@
         },
         "JP": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
+              "provider_id": 84,
+              "provider_name": "U-NEXT",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 71
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 9
+            }
+          ],
           "rent": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -2205,50 +2245,24 @@
               "provider_name": "FOD",
               "display_priority": 80
             }
-          ],
-          "buy": [
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=KR",
+          "rent": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 5
             },
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 9
+              "display_priority": 7
             }
           ],
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
-              "provider_id": 84,
-              "provider_name": "U-NEXT",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 71
-            }
-          ]
-        },
-        "KR": {
-          "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=KR",
           "buy": [
             {
               "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
@@ -2276,20 +2290,6 @@
               "provider_name": "Watcha",
               "display_priority": 6
             }
-          ],
-          "rent": [
-            {
-              "logo_path": "/hPcjSaWfMwEqXaCMu7Fkb529Dkc.jpg",
-              "provider_id": 356,
-              "provider_name": "wavve",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            }
           ]
         },
         "LC": {
@@ -2305,20 +2305,6 @@
         },
         "LT": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=LT",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 35
-            }
-          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -2331,6 +2317,20 @@
               "provider_id": 553,
               "provider_name": "Telia Play",
               "display_priority": 14
+            },
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 35
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
             },
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -2385,7 +2385,7 @@
         },
         "LV": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=LV",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2399,7 +2399,7 @@
               "display_priority": 34
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2446,7 +2446,7 @@
         },
         "MT": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=MT",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -2454,7 +2454,7 @@
               "display_priority": 9
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -2465,7 +2465,7 @@
         },
         "MU": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=MU",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2473,7 +2473,7 @@
               "display_priority": 12
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2553,7 +2553,7 @@
         },
         "MZ": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=MZ",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2561,7 +2561,7 @@
               "display_priority": 13
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2572,6 +2572,14 @@
         },
         "NI": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 14
+            }
+          ],
           "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -2584,14 +2592,6 @@
               "provider_id": 3,
               "provider_name": "Google Play Movies",
               "display_priority": 6
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 14
             }
           ],
           "buy": [
@@ -2611,6 +2611,14 @@
         },
         "NL": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
+              "provider_id": 563,
+              "provider_name": "KPN",
+              "display_priority": 30
+            }
+          ],
           "rent": [
             {
               "logo_path": "/lnOkJKyFl87mzqNebAbE8ADdHoB.jpg",
@@ -2673,14 +2681,6 @@
               "provider_id": 697,
               "provider_name": "meJane",
               "display_priority": 40
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
-              "provider_id": 563,
-              "provider_name": "KPN",
-              "display_priority": 30
             }
           ]
         },
@@ -2813,14 +2813,6 @@
         },
         "PE": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=PE",
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 8
-            }
-          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -2854,11 +2846,19 @@
               "provider_name": "Claro video",
               "display_priority": 10
             }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 8
+            }
           ]
         },
         "PH": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=PH",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2866,7 +2866,7 @@
               "display_priority": 7
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2920,7 +2920,7 @@
         },
         "PY": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=PY",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2934,7 +2934,7 @@
               "display_priority": 20
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -2997,6 +2997,14 @@
         },
         "RU": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=RU",
+          "ads": [
+            {
+              "logo_path": "/yyMxS08v80D96O7NtL9supa5sn7.jpg",
+              "provider_id": 557,
+              "provider_name": "More TV",
+              "display_priority": 14
+            }
+          ],
           "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -3037,14 +3045,6 @@
               "provider_id": 117,
               "provider_name": "Kinopoisk",
               "display_priority": 21
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/yyMxS08v80D96O7NtL9supa5sn7.jpg",
-              "provider_id": 557,
-              "provider_name": "More TV",
-              "display_priority": 14
             }
           ]
         },
@@ -3148,7 +3148,7 @@
         },
         "SI": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=SI",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -3162,7 +3162,7 @@
               "display_priority": 24
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
               "provider_id": 35,
@@ -3251,7 +3251,7 @@
         },
         "TR": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=TR",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
@@ -3265,7 +3265,7 @@
               "display_priority": 7
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
               "provider_id": 3,
@@ -3293,7 +3293,7 @@
         },
         "TW": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=TW",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -3301,7 +3301,7 @@
               "display_priority": 8
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -3343,7 +3343,7 @@
         },
         "UG": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=UG",
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -3351,7 +3351,7 @@
               "display_priority": 13
             }
           ],
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -3362,6 +3362,52 @@
         },
         "US": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 37
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 151
+            }
+          ],
           "rent": [
             {
               "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
@@ -3399,52 +3445,6 @@
               "provider_name": "FlixFling",
               "display_priority": 94
             }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 2
-            },
-            {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 151
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 20
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 21
-            },
-            {
-              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
-              "provider_id": 7,
-              "provider_name": "Fandango At Home",
-              "display_priority": 37
-            }
           ]
         },
         "UY": {
@@ -3460,20 +3460,6 @@
         },
         "VE": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=VE",
-          "rent": [
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
           "flatrate": [
             {
               "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
@@ -3495,11 +3481,25 @@
               "provider_name": "Apple TV Store",
               "display_priority": 6
             }
+          ],
+          "rent": [
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
           ]
         },
         "ZA": {
           "link": "https://www.themoviedb.org/movie/424-schindler-s-list/watch?locale=ZA",
-          "buy": [
+          "rent": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
@@ -3507,7 +3507,7 @@
               "display_priority": 3
             }
           ],
-          "rent": [
+          "buy": [
             {
               "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
               "provider_id": 2,
