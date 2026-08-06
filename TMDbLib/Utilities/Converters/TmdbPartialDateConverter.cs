@@ -1,47 +1,42 @@
 using System;
 using System.Globalization;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
 /// JSON converter for partial or incomplete date values that may not parse correctly.
 /// </summary>
-public class TmdbPartialDateConverter : JsonConverter
+public class TmdbPartialDateConverter : JsonConverter<DateTime?>
 {
     /// <inheritdoc />
-    public override bool CanConvert(Type objectType)
+    public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return objectType == typeof(DateTime?);
-    }
-
-    /// <inheritdoc />
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
-    {
-        var str = reader.Value as string;
-        if (string.IsNullOrEmpty(str))
+        if (reader.TokenType == JsonTokenType.Null)
         {
             return null;
         }
 
-        if (!DateTime.TryParse(str, CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.None, out var result))
+        if (reader.TokenType == JsonTokenType.String && reader.TryGetDateTime(out var dt))
         {
-            return null;
+            return dt;
         }
 
-        return result;
+        return reader.TryGetDateTimeLenient(CultureInfo.InvariantCulture.DateTimeFormat, out var result)
+            ? result
+            : null;
     }
 
     /// <inheritdoc />
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
     {
-        var date = value as DateTime?;
-        if (date is null)
+        if (value is null)
         {
-            writer.WriteNull();
+            writer.WriteNullValue();
             return;
         }
 
-        writer.WriteValue(date.Value.ToString(CultureInfo.InvariantCulture));
+        writer.WriteFormattedStringValue(value.Value, null, CultureInfo.InvariantCulture);
     }
 }

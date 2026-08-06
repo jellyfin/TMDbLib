@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.TvShows
 {
@@ -11,19 +11,19 @@ namespace TMDbLib.Objects.TvShows
         /// <summary>
         /// Gets or sets the rating descriptors.
         /// </summary>
-        [JsonProperty("descriptors")]
+        [JsonPropertyName("descriptors")]
         public List<string>? Descriptors { get; set; }
 
         /// <summary>
         /// Gets or sets the country code, e.g. US.
         /// </summary>
-        [JsonProperty("iso_3166_1")]
+        [JsonPropertyName("iso_3166_1")]
         public string? Iso_3166_1 { get; set; }
 
         /// <summary>
         /// Gets or sets the content rating value.
         /// </summary>
-        [JsonProperty("rating")]
+        [JsonPropertyName("rating")]
         public string? Rating { get; set; }
     }
 }

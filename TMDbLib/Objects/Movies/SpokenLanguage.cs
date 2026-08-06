@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Movies
 {
@@ -10,19 +10,19 @@ namespace TMDbLib.Objects.Movies
         /// <summary>
         /// Gets or sets the English name.
         /// </summary>
-        [JsonProperty("english_name")]
+        [JsonPropertyName("english_name")]
         public string? EnglishName { get; set; }
 
         /// <summary>
         /// Gets or sets the language code, e.g. en.
         /// </summary>
-        [JsonProperty("iso_639_1")]
+        [JsonPropertyName("iso_639_1")]
         public string? Iso_639_1 { get; set; }
 
         /// <summary>
         /// Gets or sets the language name.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string? Name { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Account;
 
@@ -10,6 +10,6 @@ public class TmdbAvatar
     /// <summary>
     /// Gets or sets the relative path to the user's TMDb-hosted avatar image.
     /// </summary>
-    [JsonProperty("avatar_path")]
+    [JsonPropertyName("avatar_path")]
     public string? AvatarPath { get; set; }
 }

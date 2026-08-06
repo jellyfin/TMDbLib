@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General.Schema;
 
@@ -21,24 +21,24 @@ public class TmdbTvSummary : TmdbMediaSummary
     /// <summary>
     /// Gets or sets the first-air date.
     /// </summary>
-    [JsonProperty("first_air_date")]
+    [JsonPropertyName("first_air_date")]
     public DateTime? FirstAirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the show name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the origin country ISO 3166-1 codes.
     /// </summary>
-    [JsonProperty("origin_country")]
+    [JsonPropertyName("origin_country")]
     public List<string>? OriginCountry { get; set; }
 
     /// <summary>
     /// Gets or sets the original (untranslated) show name.
     /// </summary>
-    [JsonProperty("original_name")]
+    [JsonPropertyName("original_name")]
     public string? OriginalName { get; set; }
 }

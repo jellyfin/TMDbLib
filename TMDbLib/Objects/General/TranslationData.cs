@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -10,12 +10,13 @@ public class TranslationData
     /// <summary>
     /// Gets or sets the translated name or title.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     // Private hack to ensure two properties (name, title) are deserialized into Name.
     // Tv Shows and Movies will use different names for their translation data.
-    [JsonProperty("title")]
+    [JsonInclude]
+    [JsonPropertyName("title")]
     private string Title
     {
         set => Name = value;
@@ -24,12 +25,13 @@ public class TranslationData
     /// <summary>
     /// Gets or sets the translated overview or biography.
     /// </summary>
-    [JsonProperty("overview")]
+    [JsonPropertyName("overview")]
     public string? Overview { get; set; }
 
     // Private hack to ensure two properties (overview, biography) are deserialized into Overview.
     // Most of the entities have an overview, but people have a biography.
-    [JsonProperty("biography")]
+    [JsonInclude]
+    [JsonPropertyName("biography")]
     private string Biography
     {
         set => Overview = value;
@@ -38,18 +40,18 @@ public class TranslationData
     /// <summary>
     /// Gets or sets the translated homepage URL.
     /// </summary>
-    [JsonProperty("homepage")]
+    [JsonPropertyName("homepage")]
     public string? HomePage { get; set; }
 
     /// <summary>
     /// Gets or sets the translated tagline.
     /// </summary>
-    [JsonProperty("tagline")]
+    [JsonPropertyName("tagline")]
     public string? Tagline { get; set; }
 
     /// <summary>
     /// Gets or sets the runtime in minutes.
     /// </summary>
-    [JsonProperty("runtime")]
+    [JsonPropertyName("runtime")]
     public int Runtime { get; set; }
 }

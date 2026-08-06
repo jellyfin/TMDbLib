@@ -1,6 +1,5 @@
 using System.Globalization;
 using System.Threading.Tasks;
-using TMDbLib.Objects.Credit;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;

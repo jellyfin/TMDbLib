@@ -1,4 +1,5 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes;
 
@@ -18,6 +19,7 @@ public class ChangeItemDeleted : ChangeItemBase
     /// <summary>
     /// Gets or sets the original value before deletion.
     /// </summary>
-    [JsonProperty("original_value")]
+    [JsonPropertyName("original_value")]
+    [JsonConverter(typeof(TmdbChangeValueConverter))]
     public object? OriginalValue { get; set; }
 }
