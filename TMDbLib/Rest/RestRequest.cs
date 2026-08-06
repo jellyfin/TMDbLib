@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
 using System.Net.Http;
@@ -135,6 +136,8 @@ internal class RestRequest
         return new RestResponse<T>(resp, _client);
     }
 
+    [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "The body object is always a TMDbLib request type referenced by the calling public client method; the linker preserves it.")]
+    [UnconditionalSuppressMessage("AOT", "IL3050:RequiresDynamicCode", Justification = "The body object is always a TMDbLib request type referenced by the calling public client method; no runtime type construction is performed here.")]
     private HttpRequestMessage PrepRequest(HttpMethod method)
     {
         var queryStringSb = new StringBuilder();
@@ -183,6 +186,8 @@ internal class RestRequest
         return req;
     }
 
+    [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "TMDbStatusMessage is a fixed internal type with primitive members; the linker can preserve it.")]
+    [UnconditionalSuppressMessage("AOT", "IL3050:RequiresDynamicCode", Justification = "TMDbStatusMessage is a fixed internal type with primitive members; no runtime type construction is performed.")]
     private async Task<HttpResponseMessage?> SendInternal(HttpMethod method, CancellationToken cancellationToken)
     {
         // Account for the following settings:

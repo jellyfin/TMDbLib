@@ -1,11 +1,14 @@
 using System;
+using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.People;
 
 /// <summary>
 /// Additional person data to retrieve from the API.
 /// </summary>
+[JsonConverter(typeof(TolerantEnumConverter<PersonMethods>))]
 [Flags]
 public enum PersonMethods
 {

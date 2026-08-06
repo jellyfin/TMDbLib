@@ -5,6 +5,7 @@ using TMDbLib.Objects.Account;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Lists;
+using TMDbLib.Objects.Requests;
 using TMDbLib.Objects.Search;
 using TMDbLib.Rest;
 using TMDbLib.Utilities;
@@ -79,7 +80,12 @@ public partial class TMDbClient
 
         var request = _client.Create("account/{accountId}/favorite");
         request.AddUrlSegment("accountId", ActiveAccount!.Id.ToString(CultureInfo.InvariantCulture));
-        request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, favorite = isFavorite });
+        request.SetBody(new FavoriteRequest
+        {
+            MediaType = mediaType.GetDescription(),
+            MediaId = mediaId,
+            Favorite = isFavorite,
+        });
         AddSessionId(request, SessionType.UserSession);
 
         var response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);
@@ -106,7 +112,12 @@ public partial class TMDbClient
 
         var request = _client.Create("account/{accountId}/watchlist");
         request.AddUrlSegment("accountId", ActiveAccount!.Id.ToString(CultureInfo.InvariantCulture));
-        request.SetBody(new { media_type = mediaType.GetDescription(), media_id = mediaId, watchlist = isOnWatchlist });
+        request.SetBody(new WatchlistRequest
+        {
+            MediaType = mediaType.GetDescription(),
+            MediaId = mediaId,
+            Watchlist = isOnWatchlist,
+        });
         AddSessionId(request, SessionType.UserSession);
 
         var response = await request.PostOfT<PostReply>(cancellationToken).ConfigureAwait(false);

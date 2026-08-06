@@ -1,10 +1,13 @@
+using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Find;
 
 /// <summary>
 /// Represents the external sources that can be used for finding content.
 /// </summary>
+[JsonConverter(typeof(TolerantEnumConverter<FindExternalSource>))]
 public enum FindExternalSource
 {
     /// <summary>

@@ -43,10 +43,28 @@ public class TmdbChangeValueConverter : JsonConverter<object?>
     /// <inheritdoc />
     public override void Write(Utf8JsonWriter writer, object? value, JsonSerializerOptions options)
     {
-        if (value is null)
+        // Write the shapes Read can produce directly - no reflection, so the codepath
+        // stays AOT/trim-safe and doesn't depend on the resolver knowing these types.
+        switch (value)
         {
-            writer.WriteNullValue();
-            return;
+            case null:
+                writer.WriteNullValue();
+                return;
+            case string text:
+                writer.WriteStringValue(text);
+                return;
+            case bool boolean:
+                writer.WriteBooleanValue(boolean);
+                return;
+            case long integer:
+                writer.WriteNumberValue(integer);
+                return;
+            case double number:
+                writer.WriteNumberValue(number);
+                return;
+            case JsonElement element:
+                element.WriteTo(writer);
+                return;
         }
 
         var runtimeType = value.GetType();
@@ -59,6 +77,6 @@ public class TmdbChangeValueConverter : JsonConverter<object?>
             return;
         }
 
-        JsonSerializer.Serialize(writer, value, runtimeType, options);
+        JsonSerializer.Serialize(writer, value, options.GetTypeInfo(runtimeType));
     }
 }

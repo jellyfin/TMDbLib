@@ -17,7 +17,7 @@ public class TranslationData
     // Tv Shows and Movies will use different names for their translation data.
     [JsonInclude]
     [JsonPropertyName("title")]
-    private string Title
+    internal string Title
     {
         set => Name = value;
     }
@@ -32,7 +32,7 @@ public class TranslationData
     // Most of the entities have an overview, but people have a biography.
     [JsonInclude]
     [JsonPropertyName("biography")]
-    private string Biography
+    internal string Biography
     {
         set => Overview = value;
     }

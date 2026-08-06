@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 
@@ -7,9 +8,16 @@ namespace TMDbLib.Utilities;
 
 internal static class EnumMemberCache
 {
+    // Enum fields are always preserved by the runtime - the trimmer keeps every declared
+    // static field of an enum because enums are value types - so DeclaredMembers reflection
+    // is safe even with trimming.
+    private const DynamicallyAccessedMemberTypes EnumMembers =
+        DynamicallyAccessedMemberTypes.PublicFields | DynamicallyAccessedMemberTypes.NonPublicFields;
+
     private static readonly Dictionary<Type, Dictionary<object, string?>> _memberCache = [];
 
-    private static Dictionary<object, string?> GetOrPrepareCache(Type type)
+    private static Dictionary<object, string?> GetOrPrepareCache(
+        [DynamicallyAccessedMembers(EnumMembers)] Type type)
     {
         if (!type.GetTypeInfo().IsEnum)
         {
@@ -27,7 +35,7 @@ internal static class EnumMemberCache
 
         cache = [];
 
-        foreach (var fieldInfo in type.GetTypeInfo().DeclaredMembers.OfType<FieldInfo>().Where(s => s.IsStatic))
+        foreach (var fieldInfo in type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static))
         {
             var value = fieldInfo.GetValue(null);
             if (value is null)
@@ -58,7 +66,7 @@ internal static class EnumMemberCache
         return cache;
     }
 
-    public static T? GetValue<T>(string input)
+    public static T? GetValue<[DynamicallyAccessedMembers(EnumMembers)] T>(string input)
     {
         var valueType = typeof(T);
         var cache = GetOrPrepareCache(valueType);
@@ -74,7 +82,7 @@ internal static class EnumMemberCache
         return default;
     }
 
-    public static object? GetValue(string? input, Type type)
+    public static object? GetValue(string? input, [DynamicallyAccessedMembers(EnumMembers)] Type type)
     {
         var cache = GetOrPrepareCache(type);
 
@@ -89,6 +97,7 @@ internal static class EnumMemberCache
         return null;
     }
 
+    [UnconditionalSuppressMessage("Trimming", "IL2072:DynamicallyAccessedMembers", Justification = "Enum runtime types are preserved by the runtime - every declared static field is kept for value-type metadata.")]
     public static string? GetString(object? value)
     {
         if (value is null)

@@ -1,10 +1,13 @@
+using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Discover;
 
 /// <summary>
 /// Specifies the sorting options for movie discovery queries.
 /// </summary>
+[JsonConverter(typeof(TolerantEnumConverter<DiscoverMovieSortBy>))]
 public enum DiscoverMovieSortBy
 {
     /// <summary>

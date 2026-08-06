@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ internal class RestResponse<T> : RestResponse
         _client = client;
     }
 
+    [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "T is always a TMDbLib response type referenced by the calling public client method; the linker preserves it.")]
+    [UnconditionalSuppressMessage("AOT", "IL3050:RequiresDynamicCode", Justification = "T is always a TMDbLib response type referenced by the calling public client method; no runtime type construction is performed here.")]
     public async Task<T?> GetDataObject()
     {
         if (!IsValid)

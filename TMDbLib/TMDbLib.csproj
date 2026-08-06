@@ -7,6 +7,13 @@
     <PackageId>TMDbLib</PackageId>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <Nullable>enable</Nullable>
+
+    <!-- AOT / trim analysis. Enables IL2026/IL2046/IL3050 etc. as warnings/errors at build time. -->
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+    <EnableAotAnalyzer>true</EnableAotAnalyzer>
+    <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
 
   <!-- Analyzers -->

@@ -1,10 +1,13 @@
+using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Discover;
 
 /// <summary>
 /// Specifies the monetization type for watch provider filtering.
 /// </summary>
+[JsonConverter(typeof(TolerantEnumConverter<WatchMonetizationType>))]
 public enum WatchMonetizationType
 {
     /// <summary>

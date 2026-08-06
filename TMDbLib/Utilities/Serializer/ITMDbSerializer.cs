@@ -5,6 +5,8 @@ namespace TMDbLib.Utilities.Serializer;
 
 /// <summary>
 /// Interface for JSON serialization and deserialization in TMDbLib.
+/// The default implementation uses System.Text.Json with source-generated type
+/// metadata - fully compatible with trimming and native AOT.
 /// </summary>
 public interface ITMDbSerializer
 {

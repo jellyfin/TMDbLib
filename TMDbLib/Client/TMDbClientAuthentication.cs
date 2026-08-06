@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.Exceptions;
+using TMDbLib.Objects.Requests;
 using TMDbLib.Rest;
 
 namespace TMDbLib.Client;
@@ -161,7 +162,7 @@ public partial class TMDbClient
     public async Task<bool> AuthenticationDeleteSessionAsync(string sessionId, CancellationToken cancellationToken = default)
     {
         var request = _client.Create("authentication/session");
-        request.SetBody(new { session_id = sessionId });
+        request.SetBody(new SessionIdRequest { SessionId = sessionId });
 
         using var response = await request.Delete(cancellationToken).ConfigureAwait(false);
 
@@ -177,7 +178,7 @@ public partial class TMDbClient
     public async Task<UserSession?> AuthenticationCreateSessionFromV4Async(string accessToken, CancellationToken cancellationToken = default)
     {
         var request = _client.Create("authentication/session/convert/4");
-        request.SetBody(new { access_token = accessToken });
+        request.SetBody(new AccessTokenRequest { AccessToken = accessToken });
 
         try
         {

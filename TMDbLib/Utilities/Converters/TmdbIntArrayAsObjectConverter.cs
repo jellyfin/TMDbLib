@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -10,6 +11,8 @@ namespace TMDbLib.Utilities.Converters;
 /// </summary>
 internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
 {
+    [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "List<int> contains primitive types only - no member reflection.")]
+    [UnconditionalSuppressMessage("AOT", "IL3050:RequiresDynamicCode", Justification = "List<int> contains primitive types only - no runtime type construction.")]
     public override List<int>? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         // Sometimes the genre_ids is an empty object, instead of an array
@@ -39,6 +42,8 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
         throw new InvalidOperationException("Unable to convert list of integers");
     }
 
+    [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "List<int> contains primitive types only - no member reflection.")]
+    [UnconditionalSuppressMessage("AOT", "IL3050:RequiresDynamicCode", Justification = "List<int> contains primitive types only - no runtime type construction.")]
     public override void Write(Utf8JsonWriter writer, List<int>? value, JsonSerializerOptions options)
     {
         if (value is null)
