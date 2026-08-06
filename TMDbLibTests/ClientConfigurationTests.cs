@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Configuration;
-using Xunit;
-using TMDbLib.Objects.Timezones;
-using TMDbLibTests.JsonHelpers;
 using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Languages;
+using TMDbLib.Objects.Timezones;
+using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 

@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using System.Net;
-using TMDbLibTests.Exceptions;
 using TMDbLib.Client;
 using TMDbLib.Utilities.Serializer;
+using TMDbLibTests.Exceptions;
 using WireMock.Server;
 using WireMock.Settings;
 

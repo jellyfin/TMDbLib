@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.Certifications
+namespace TMDbLib.Objects.Certifications
 {
     /// <summary>
     /// Represents a content rating certification for movies or TV shows.

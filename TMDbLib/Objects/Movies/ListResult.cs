@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using TMDbLib.Objects.General;
 
 namespace TMDbLib.Objects.Movies;

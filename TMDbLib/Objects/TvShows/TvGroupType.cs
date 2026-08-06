@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.TvShows
+namespace TMDbLib.Objects.TvShows
 {
     /// <summary>
     /// Episode grouping type for a TV show.

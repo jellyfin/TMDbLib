@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.General
+namespace TMDbLib.Objects.General
 {
     /// <summary>
     /// Represents a production country.
