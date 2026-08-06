@@ -1,0 +1,401 @@
+{
+  "Guid": "f790610c-1170-c449-839b-e23b763057d3",
+  "Title": "Proxy Mapping for GET /3/list/509",
+  "Description": "Proxy Mapping for GET /3/list/509",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/list/509",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "created_by": "regina.phalange",
+      "description": "",
+      "favorite_count": 0,
+      "id": 509,
+      "iso_639_1": "en",
+      "item_count": 16,
+      "items": [
+        {
+          "adult": false,
+          "backdrop_path": "/wrxA079U3x0JZoqr68wC4DcyF2V.jpg",
+          "id": 77878,
+          "title": "The Lady",
+          "original_title": "The Lady",
+          "overview": "The story of Aung San Suu Kyi as she becomes the core of Burma\u0027s democracy movement, and her relationship with her husband, writer Michael Aris.",
+          "poster_path": "/nAtFlDKS7VP1EQ3nGs8Rv2GUuTP.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            36,
+            18,
+            53,
+            10749
+          ],
+          "popularity": 0.0,
+          "release_date": "2011-11-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gCpWPe6wORcXg64CAFviErLuSrw.jpg",
+          "id": 71688,
+          "title": "The Iron Lady",
+          "original_title": "The Iron Lady",
+          "overview": "A look at the life of Margaret Thatcher, the former Prime Minister of the United Kingdom, with a focus on the price she paid for power.",
+          "poster_path": "/fx7wpKXOht7WOkeOslvErbrf69Q.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            36,
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "2011-12-26",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sfW8gtA6Bz2F4zK1FoCKbMqTF8Z.jpg",
+          "id": 640,
+          "title": "Catch Me If You Can",
+          "original_title": "Catch Me If You Can",
+          "overview": "A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks as a Pan Am pilot, doctor, and legal prosecutor. An FBI agent makes it his mission to put him behind bars. But Frank not only eludes capture, he revels in the pursuit.",
+          "poster_path": "/ctjEj2xM32OvBXCq8zAdK3ZrsAj.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "popularity": 0.0,
+          "release_date": "2002-12-16",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oCFVYPXI4IfhtF3GapU2jkDicDI.jpg",
+          "id": 8358,
+          "title": "Cast Away",
+          "original_title": "Cast Away",
+          "overview": "Chuck Noland, a top international manager for FedEx, and Kelly, a Ph.D. student, are in love and heading towards marriage. Then Chuck\u0027s plane to Malaysia crashes at sea during a terrible storm. He\u0027s the only survivor, and finds himself marooned on a desolate island. With no way to escape, Chuck must find ways to survive in his new home.",
+          "poster_path": "/7lLJgKnAicAcR5UEuo8xhSMj18w.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "2000-12-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pnEMDuaZeDXUQPPhhGTo9QMfMeA.jpg",
+          "id": 853,
+          "title": "Enemy at the Gates",
+          "original_title": "Enemy at the Gates",
+          "overview": "A Russian and a German sniper play a game of cat-and-mouse during the Battle of Stalingrad in WWII.",
+          "poster_path": "/cHRAbVdsCWFaQrswRsBP7Bn255W.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            10752,
+            36
+          ],
+          "popularity": 0.0,
+          "release_date": "2001-02-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9Ebn8atCcGk5OZrx4xmoTobAxoh.jpg",
+          "id": 1581,
+          "title": "The Holiday",
+          "original_title": "The Holiday",
+          "overview": "Two women, one American and one British, swap homes at Christmastime following bad breakups. Each woman finds romance with a local man but realizes that the imminent return home may end the relationship.",
+          "poster_path": "/h1ITOpvJN3Tw4Sy60w2QTfYMvdd.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "popularity": 0.0,
+          "release_date": "2006-12-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vvcLSgiviCIU0J0UcwLqWdU8Iup.jpg",
+          "id": 824,
+          "title": "Moulin Rouge!",
+          "original_title": "Moulin Rouge!",
+          "overview": "A celebration of love and creative inspiration takes place in the infamous, gaudy and glamorous Parisian nightclub, at the cusp of the 20th century. A young poet, who is plunged into the heady world of Moulin Rouge, begins a passionate affair with the club\u0027s most notorious and beautiful star.",
+          "poster_path": "/2kjM5CUZRIU5yOANUowrbJcRL9L.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            10749,
+            10402
+          ],
+          "popularity": 0.0,
+          "release_date": "2001-05-18",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5jhG1lTgV0MS6tDkBMQSSitttTT.jpg",
+          "id": 1402,
+          "title": "The Pursuit of Happyness",
+          "original_title": "The Pursuit of Happyness",
+          "overview": "A struggling salesman takes custody of his son as he\u0027s poised to begin a life-changing professional career.",
+          "poster_path": "/lBYOKAMcxIvuk9s9hMuecB9dPBV.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "2006-12-14",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/v46Uq29FXcl4huvu1Nh7tJ5qAjZ.jpg",
+          "id": 10673,
+          "title": "Wall Street",
+          "original_title": "Wall Street",
+          "overview": "A young and impatient stockbroker is willing to do anything to get to the top, including trading on illegal inside information taken through a ruthless and greedy corporate raider, whom takes the youth under his wing.",
+          "poster_path": "/2tQYq9ntzn2dEwDIGLBSipYPenv.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "1987-12-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zpBl7qfBB1ir1BVNQtPlPwQ6IFd.jpg",
+          "id": 1165,
+          "title": "The Queen",
+          "original_title": "The Queen",
+          "overview": "The Queen is an intimate behind the scenes glimpse at the interaction between HM Elizabeth II and Prime Minister Tony Blair during their struggle, following the death of Diana, to reach a compromise between what was a private tragedy for the Royal family and the public\u0027s demand for an overt display of mourning.",
+          "poster_path": "/v08RH5Cx9EFAQMBWQuE5jHAgHYs.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            18,
+            36
+          ],
+          "popularity": 0.0,
+          "release_date": "2006-09-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7jaNOECZG8uS1tlq69HsY5xY8P9.jpg",
+          "id": 855,
+          "title": "Black Hawk Down",
+          "original_title": "Black Hawk Down",
+          "overview": "When U.S. Rangers and an elite Delta Force team attempt to kidnap two underlings of a Somali warlord, their Black Hawk helicopters are shot down, and the Americans suffer heavy casualties, facing intense fighting from the militia on the ground.",
+          "poster_path": "/7fU5dSqKRL4XHeEUz62rCKBfYok.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            10752,
+            36
+          ],
+          "popularity": 0.0,
+          "release_date": "2001-12-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/PrMb3oeEluauy0q9ZO5xL33A6C.jpg",
+          "id": 180,
+          "title": "Minority Report",
+          "original_title": "Minority Report",
+          "overview": "John Anderton is a top \u0027Precrime\u0027 cop in the late-21st century, when technology can predict crimes before they\u0027re committed. But Anderton becomes the quarry when another investigator targets him for a murder charge.",
+          "poster_path": "/ccqpHq5tk5W4ymbSbuoy4uYOxFI.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            28,
+            53
+          ],
+          "popularity": 0.0,
+          "release_date": "2002-06-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
+          "id": 603,
+          "title": "The Matrix",
+          "original_title": "The Matrix",
+          "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+          "poster_path": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "1999-03-31",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ihOJcrorpDQtHTzIOrobbOhpJsj.jpg",
+          "id": 604,
+          "title": "The Matrix Reloaded",
+          "original_title": "The Matrix Reloaded",
+          "overview": "The Resistance builds in numbers as humans are freed from the Matrix and brought to the city of Zion. Neo discovers his superpowers, including the ability to see the code inside the Matrix. With machine sentinels digging to Zion in 72 hours, Neo, Morpheus and Trinity must find the Keymaker to ultimately reach the Source.",
+          "poster_path": "/aA5qHS0FbSXO8PxcxUIHbDrJyuh.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            53,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2003-05-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/smqQ71MIn1DSdSiQzCzCOV6rgRq.jpg",
+          "id": 435,
+          "title": "The Day After Tomorrow",
+          "original_title": "The Day After Tomorrow",
+          "overview": "After paleoclimatologist Jack Hall is largely ignored by UN officials when presenting his environmental concerns about the beginning of a new Ice Age, his research proves true when a superstorm develops, setting off catastrophic natural disasters throughout the world. Trying to get to his son, Sam, who is trapped in New York City with his friend Laura and others, Jack and his crew must travel to get to Sam before it\u0027s too late.",
+          "poster_path": "/Wr4HeYQRvwVCxzOV5TmGE7UkXq.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            53,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2004-05-26",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zywtNiaZ9r7azrcNdl2j0jOgrkw.jpg",
+          "id": 594,
+          "title": "The Terminal",
+          "original_title": "The Terminal",
+          "overview": "An Eastern European tourist unexpectedly finds himself stranded in JFK airport, and must take up temporary residence there.",
+          "poster_path": "/cPB3ZMM4UdsSAhNdS4c7ps5nypY.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "2004-06-17",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        }
+      ],
+      "name": "Watched",
+      "page": 1,
+      "poster_path": "/cwj4iyqAt0pH3jp15jBJA2SCavP.jpg",
+      "total_pages": 1,
+      "total_results": 16
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}
