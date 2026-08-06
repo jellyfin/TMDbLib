@@ -1,0 +1,1903 @@
+{
+  "Guid": "0ae88b9a-981d-1141-bb5b-91d85f0132ef",
+  "Title": "Proxy Mapping for GET /3/tv/30983/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/30983/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/30983/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 30983,
+      "results": {
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=AE",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 17
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 32
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 119
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 70
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 50
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 80
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 6
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 23
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 41
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BF",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 3
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 20
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 70
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 24
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BY",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 6
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 9
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 94
+            }
+          ]
+        },
+        "CD": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CD",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 43
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 44
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+              "provider_id": 339,
+              "provider_name": "MovistarTV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 45
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 30
+            }
+          ]
+        },
+        "CU": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CU",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CV",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 12
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CY",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 9
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 24
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 176
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 12
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 37
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 25
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=ES",
+          "free": [
+            {
+              "logo_path": "/lDvzuBuNVgpcdzDpPmmufKvrZPb.jpg",
+              "provider_id": 2237,
+              "provider_name": "3Cat",
+              "display_priority": 70
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 72
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 79
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/4SBh9iYygSJYCBFlQQ1LlaRnGuL.jpg",
+              "provider_id": 2714,
+              "provider_name": "CanalSurMas",
+              "display_priority": 91
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 37
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=FJ",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 11
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/w86FOwg0bbgUSHWWnjOTuEjsUvq.jpg",
+              "provider_id": 415,
+              "provider_name": "Animation Digital Network",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/vo4tm5HBLpctihoSX6bTIG0VB9d.jpg",
+              "provider_id": 193,
+              "provider_name": "SFR Play",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/h5QpXIpSnvrPFnOLRXV83CtVHQH.jpg",
+              "provider_id": 2173,
+              "provider_name": "Anime Digital Network Amazon Channel",
+              "display_priority": 76
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 86
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 10
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 14
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 25
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 22
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 35
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 32
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 24
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=ID",
+          "ads": [
+            {
+              "logo_path": "/o7WsYI2r1llIf9h6JTGVX9yTHPx.jpg",
+              "provider_id": 158,
+              "provider_name": "Viu",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/l2ZNwMC37iK0fquVuYWfcgIJJdF.jpg",
+              "provider_id": 489,
+              "provider_name": "Vidio",
+              "display_priority": 17
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/l2ZNwMC37iK0fquVuYWfcgIJJdF.jpg",
+              "provider_id": 489,
+              "provider_name": "Vidio",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 32
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 38
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=IL",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 25
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/p2fVhnzr0znG2KnVLmH9bjj7F0S.jpg",
+              "provider_id": 2182,
+              "provider_name": "Anime Times Amazon Channel",
+              "display_priority": 57
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 27
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 30
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/xcXI50PQIBsRDAP6eEpv09Vz8SG.jpg",
+              "provider_id": 1895,
+              "provider_name": "Anime Generation Amazon Channel",
+              "display_priority": 58
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 74
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 87
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 23
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 25
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 71
+            },
+            {
+              "logo_path": "/9EWAEok40O0HVhV0MYJmlE4LhGy.jpg",
+              "provider_id": 2683,
+              "provider_name": "FOD",
+              "display_priority": 80
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 7
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 13
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/5gmEivxOGPdq4Afpq1f8ktLtEW1.jpg",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/qHThQdkJuROK0k5QTCrknaNukWe.jpg",
+              "provider_id": 1883,
+              "provider_name": "TVING",
+              "display_priority": 29
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 27
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 11
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 10
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 25
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "MD": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MD",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 24
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 5
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 25
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 24
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 13
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 61
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 14
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 24
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 27
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 10
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 44
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 55
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 38
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 51
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 30
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PK": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PK",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 44
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 25
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 30
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 20
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 27
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 12
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 38
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 27
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 34
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 12
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 10
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 27
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 27
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 25
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 12
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 7
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 151
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 30
+            }
+          ]
+        },
+        "VA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=VA",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "XK": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=XK",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 5
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 26
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 24
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/tv/30983/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 12
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

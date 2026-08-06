@@ -1,0 +1,202 @@
+{
+  "Guid": "0a16dfbb-eaf9-8b47-8108-f61625efc46f",
+  "Title": "Proxy Mapping for GET /3/movie/1698856/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1698856/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1698856/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1698856,
+      "results": {
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1698856-master-of-the-universe/watch?locale=AU",
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 64
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1698856-master-of-the-universe/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 9
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/1698856-master-of-the-universe/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 79
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1698856-master-of-the-universe/watch?locale=NZ",
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 36
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/movie/1698856-master-of-the-universe/watch?locale=TW",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1698856-master-of-the-universe/watch?locale=US",
+          "rent": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 124
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 37
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 36
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}
