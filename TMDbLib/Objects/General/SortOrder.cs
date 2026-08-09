@@ -1,13 +1,11 @@
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.General;
 
 /// <summary>
 /// Represents sort order options.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<SortOrder>))]
+[TolerantEnum]
 public enum SortOrder
 {
     /// <summary>

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -11,8 +10,6 @@ namespace TMDbLib.Utilities.Converters;
 /// </summary>
 internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
 {
-    [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "List<int> contains primitive types only - no member reflection.")]
-    [UnconditionalSuppressMessage("AOT", "IL3050:RequiresDynamicCode", Justification = "List<int> contains primitive types only - no runtime type construction.")]
     public override List<int>? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         // Sometimes the genre_ids is an empty object, instead of an array
@@ -30,7 +27,21 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
 
         if (reader.TokenType == JsonTokenType.StartArray)
         {
-            return JsonSerializer.Deserialize<List<int>>(ref reader, options);
+            // Read the array by hand rather than recursing into JsonSerializer - the reflection-based
+            // overloads are not AOT-safe, and List<int> is not registered in TMDbJsonContext.
+            var values = new List<int>();
+
+            while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+            {
+                if (reader.TokenType != JsonTokenType.Number)
+                {
+                    throw new JsonException("Unable to convert list of integers");
+                }
+
+                values.Add(reader.GetInt32());
+            }
+
+            return values;
         }
 
         if (reader.TokenType == JsonTokenType.StartObject)
@@ -42,8 +53,6 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
         throw new InvalidOperationException("Unable to convert list of integers");
     }
 
-    [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "List<int> contains primitive types only - no member reflection.")]
-    [UnconditionalSuppressMessage("AOT", "IL3050:RequiresDynamicCode", Justification = "List<int> contains primitive types only - no runtime type construction.")]
     public override void Write(Utf8JsonWriter writer, List<int>? value, JsonSerializerOptions options)
     {
         if (value is null)
@@ -52,6 +61,13 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
             return;
         }
 
-        JsonSerializer.Serialize(writer, value, options);
+        writer.WriteStartArray();
+
+        foreach (var item in value)
+        {
+            writer.WriteNumberValue(item);
+        }
+
+        writer.WriteEndArray();
     }
 }

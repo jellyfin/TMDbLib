@@ -1,13 +1,11 @@
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.General;
 
 /// <summary>
 /// Represents the type of media.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<MediaType>))]
+[TolerantEnum]
 public enum MediaType
 {
     /// <summary>

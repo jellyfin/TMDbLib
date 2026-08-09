@@ -1,13 +1,11 @@
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Trending;
 
 /// <summary>
 /// Represents the time window for trending content.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<TimeWindow>))]
+[TolerantEnum]
 public enum TimeWindow
 {
     /// <summary>

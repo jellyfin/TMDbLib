@@ -1,13 +1,11 @@
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
 /// TV show list type.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<TvShowListType>))]
+[TolerantEnum]
 public enum TvShowListType
 {
     /// <summary>

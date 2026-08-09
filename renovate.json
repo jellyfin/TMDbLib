@@ -2,5 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>jellyfin/.github//renovate-presets/dotnet"
+  ],
+  "packageRules": [
+    {
+      "description": "Roslyn is deliberately pinned to the version shipped with the oldest supported .NET SDK (8.0). A source generator can only be loaded by a compiler at least as new as the Roslyn it was built against, so bumping this breaks the build for anyone on that SDK. Raise it by hand when dropping .NET 8 support.",
+      "matchPackageNames": [
+        "Microsoft.CodeAnalysis.CSharp"
+      ],
+      "enabled": false
+    }
   ]
 }

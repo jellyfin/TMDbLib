@@ -1,14 +1,12 @@
 using System;
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Discover;
 
 /// <summary>
 /// Specifies the sorting options for TV show discovery queries.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<DiscoverTvShowSortBy>))]
+[TolerantEnum]
 public enum DiscoverTvShowSortBy
 {
     /// <summary>

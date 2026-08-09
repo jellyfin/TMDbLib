@@ -14,7 +14,10 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private enum AccountListsMethods
+    // Internal rather than private so the generated GetDescription() overload can name it;
+    // never serialized, so no JSON converter is generated.
+    [TolerantEnum(GenerateJsonConverter = false)]
+    internal enum AccountListsMethods
     {
         [EnumValue("favorite/movies")]
         FavoriteMovies,

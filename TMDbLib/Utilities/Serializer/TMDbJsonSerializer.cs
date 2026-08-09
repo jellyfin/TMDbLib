@@ -31,8 +31,10 @@ public class TMDbJsonSerializer : ITMDbSerializer
             TypeInfoResolver = TMDbJsonContext.Default,
         };
 
-        // Enum converters are applied per-enum via [JsonConverter(typeof(TolerantEnumConverter<...>))]
-        // - that keeps the codepath AOT-friendly (no JsonConverterFactory.MakeGenericType).
+        // One source-generated converter per TMDb enum - no factory, no MakeGenericType, and no
+        // reflection over enum fields or their attributes.
+        TmdbEnumConverters.RegisterAll(_options);
+
         _options.Converters.Add(new LenientDateTimeConverter());
         _options.Converters.Add(new ChangeItemConverter());
         _options.Converters.Add(new AccountStateConverter<TMDbLib.Objects.General.AccountState>(TMDbJsonContext.Default.AccountState));

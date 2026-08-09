@@ -1,13 +1,11 @@
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Account;
 
 /// <summary>
 /// Specifies the sorting options for account-related queries.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<AccountSortBy>))]
+[TolerantEnum]
 public enum AccountSortBy
 {
     /// <summary>

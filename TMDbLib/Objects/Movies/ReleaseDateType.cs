@@ -1,12 +1,11 @@
-using System.Text.Json.Serialization;
-using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Movies
 {
     /// <summary>
     /// Movie release type.
     /// </summary>
-    [JsonConverter(typeof(TolerantEnumConverter<ReleaseDateType>))]
+    [TolerantEnum]
     public enum ReleaseDateType
     {
         /// <summary>

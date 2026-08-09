@@ -91,19 +91,19 @@ public abstract class TestBase
     }
 
     /// <summary>
-    /// Argon-compatible enum converter that uses TMDbLib's EnumMemberCache for proper string values.
+    /// Argon-compatible enum converter that renders enums using their TMDb string values.
     /// </summary>
     class ArgonEnumStringValueConverter : Argon.JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var str = EnumMemberCache.GetString(value);
+            var str = EnumValueLookup.GetString(value);
             writer.WriteValue(str);
         }
 
         public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var val = EnumMemberCache.GetValue(reader.Value as string, objectType);
+            var val = EnumValueLookup.GetValue(reader.Value as string, objectType);
             return val;
         }
 

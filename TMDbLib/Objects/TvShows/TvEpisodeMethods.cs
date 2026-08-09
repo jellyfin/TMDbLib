@@ -1,14 +1,12 @@
 using System;
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.TvShows;
 
 /// <summary>
 /// Additional TV episode data to retrieve from the API.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<TvEpisodeMethods>))]
+[TolerantEnum]
 [Flags]
 public enum TvEpisodeMethods
 {

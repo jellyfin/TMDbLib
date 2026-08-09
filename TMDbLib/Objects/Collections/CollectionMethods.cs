@@ -1,14 +1,12 @@
 using System;
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Collections;
 
 /// <summary>
 /// Specifies additional methods to include when retrieving collection information.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<CollectionMethods>))]
+[TolerantEnum]
 [Flags]
 public enum CollectionMethods
 {

@@ -1,12 +1,11 @@
-using System.Text.Json.Serialization;
-using TMDbLib.Utilities.Converters;
+using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.TvShows
 {
     /// <summary>
     /// Episode grouping type for a TV show.
     /// </summary>
-    [JsonConverter(typeof(TolerantEnumConverter<TvGroupType>))]
+    [TolerantEnum]
     public enum TvGroupType
     {
         /// <summary>

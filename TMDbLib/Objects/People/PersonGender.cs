@@ -1,13 +1,11 @@
-using System.Text.Json.Serialization;
 using TMDbLib.Utilities;
-using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.People;
 
 /// <summary>
 /// Gender of a person.
 /// </summary>
-[JsonConverter(typeof(TolerantEnumConverter<PersonGender>))]
+[TolerantEnum]
 public enum PersonGender
 {
     /// <summary>
