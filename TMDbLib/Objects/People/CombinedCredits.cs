@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General.Schema;
 using TMDbLib.Utilities.Converters;
 
@@ -15,18 +15,20 @@ public class CombinedCredits
     /// <summary>
     /// Gets or sets the combined cast roles (both movie and TV).
     /// </summary>
-    [JsonProperty("cast", ItemConverterType = typeof(CombinedCreditsCastConverter))]
+    [JsonPropertyName("cast")]
+    [JsonConverter(typeof(CombinedCreditsCastConverter))]
     public List<TmdbMediaSummary>? Cast { get; set; }
 
     /// <summary>
     /// Gets or sets the combined crew jobs (both movie and TV).
     /// </summary>
-    [JsonProperty("crew", ItemConverterType = typeof(CombinedCreditsCrewConverter))]
+    [JsonPropertyName("crew")]
+    [JsonConverter(typeof(CombinedCreditsCrewConverter))]
     public List<TmdbMediaSummary>? Crew { get; set; }
 
     /// <summary>
     /// Gets or sets the person id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 }

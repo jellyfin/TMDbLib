@@ -1,32 +1,23 @@
 using System;
 using System.Reflection;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
-internal class EnumStringValueConverter : JsonConverter
+/// <summary>
+/// Converter factory that maps enums using <see cref="EnumMemberCache"/>.
+/// </summary>
+internal class EnumStringValueConverter : JsonConverterFactory
 {
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override bool CanConvert(Type typeToConvert)
     {
-        if (value is null)
-        {
-            writer.WriteNull();
-            return;
-        }
-
-        var str = EnumMemberCache.GetString(value);
-        writer.WriteValue(str);
+        return typeToConvert.GetTypeInfo().IsEnum;
     }
 
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
-        var val = EnumMemberCache.GetValue(reader.Value as string, objectType);
-
-        return val;
-    }
-
-    public override bool CanConvert(Type objectType)
-    {
-        return objectType.GetTypeInfo().IsEnum;
+        var converterType = typeof(EnumStringValueConverter<>).MakeGenericType(typeToConvert);
+        return (JsonConverter)Activator.CreateInstance(converterType)!;
     }
 }

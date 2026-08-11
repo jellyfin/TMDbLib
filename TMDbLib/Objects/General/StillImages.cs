@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.General;
 
@@ -11,12 +11,12 @@ public class StillImages
     /// <summary>
     /// Gets or sets the TMDb ID.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the list of still images.
     /// </summary>
-    [JsonProperty("stills")]
+    [JsonPropertyName("stills")]
     public List<ImageData>? Stills { get; set; }
 }

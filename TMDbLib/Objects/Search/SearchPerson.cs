@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.General.Schema;
 using TMDbLib.Utilities.Converters;
 
@@ -14,6 +14,7 @@ public class SearchPerson : TmdbPersonSummary
     /// <summary>
     /// Gets or sets the movies and TV shows the person is known for.
     /// </summary>
-    [JsonProperty("known_for", ItemConverterType = typeof(KnownForConverter))]
+    [JsonPropertyName("known_for")]
+    [JsonConverter(typeof(KnownForConverter))]
     public List<TmdbMediaSummary>? KnownFor { get; set; }
 }

@@ -1,4 +1,5 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using TMDbLib.Utilities.Converters;
 
 namespace TMDbLib.Objects.Changes;
 
@@ -18,6 +19,7 @@ public class ChangeItemAdded : ChangeItemBase
     /// <summary>
     /// Gets or sets the value that was added.
     /// </summary>
-    [JsonProperty("value")]
+    [JsonPropertyName("value")]
+    [JsonConverter(typeof(TmdbChangeValueConverter))]
     public object? Value { get; set; }
 }

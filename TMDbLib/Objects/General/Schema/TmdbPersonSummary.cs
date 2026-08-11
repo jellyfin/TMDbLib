@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using TMDbLib.Objects.People;
 
 namespace TMDbLib.Objects.General.Schema;
@@ -21,36 +21,36 @@ public class TmdbPersonSummary : TmdbEntity
     /// <summary>
     /// Gets or sets a value indicating whether the person is associated with adult content.
     /// </summary>
-    [JsonProperty("adult")]
+    [JsonPropertyName("adult")]
     public bool Adult { get; set; }
 
     /// <summary>
     /// Gets or sets the person's gender.
     /// </summary>
-    [JsonProperty("gender")]
+    [JsonPropertyName("gender")]
     public PersonGender Gender { get; set; }
 
     /// <summary>
     /// Gets or sets the department TMDb classifies the person under.
     /// </summary>
-    [JsonProperty("known_for_department")]
+    [JsonPropertyName("known_for_department")]
     public string? KnownForDepartment { get; set; }
 
     /// <summary>
     /// Gets or sets the display name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the original (untranslated) name.
     /// </summary>
-    [JsonProperty("original_name")]
+    [JsonPropertyName("original_name")]
     public string? OriginalName { get; set; }
 
     /// <summary>
     /// Gets or sets the profile image path.
     /// </summary>
-    [JsonProperty("profile_path")]
+    [JsonPropertyName("profile_path")]
     public string? ProfilePath { get; set; }
 }

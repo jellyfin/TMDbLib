@@ -1,39 +1,74 @@
 using System;
 using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
-/// JSON converter for UTC datetime values in TMDb's specific format.
+/// JSON converter factory for UTC datetime values in TMDb's specific format
+/// (<c>yyyy-MM-dd HH:mm:ss UTC</c>). Supports both <see cref="DateTime"/> and
+/// <see cref="Nullable{DateTime}"/> properties.
 /// </summary>
-public class TmdbUtcTimeConverter : DateTimeConverterBase
+public class TmdbUtcTimeConverter : JsonConverterFactory
 {
     private const string Format = "yyyy-MM-dd HH:mm:ss 'UTC'";
 
     /// <inheritdoc />
-    public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+    public override bool CanConvert(Type typeToConvert)
     {
-        var stringValue = reader.Value?.ToString();
-        if (string.IsNullOrEmpty(stringValue))
-        {
-            return null;
-        }
-
-        return DateTime.ParseExact(stringValue, Format, null);
+        return typeToConvert == typeof(DateTime) || typeToConvert == typeof(DateTime?);
     }
 
     /// <inheritdoc />
-    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
-        if (value is DateTime dateTime)
+        if (typeToConvert == typeof(DateTime?))
         {
-            writer.WriteValue(dateTime.ToString(Format, CultureInfo.InvariantCulture));
+            return new NullableConverter();
         }
-        else
+
+        return new Converter();
+    }
+
+    private sealed class Converter : JsonConverter<DateTime>
+    {
+        public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            writer.WriteNull();
+            return reader.TryGetDateTimeExact(Format, CultureInfo.InvariantCulture, out var value)
+                ? value
+                : default;
+        }
+
+        public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
+        {
+            writer.WriteFormattedStringValue(value, Format, CultureInfo.InvariantCulture);
+        }
+    }
+
+    private sealed class NullableConverter : JsonConverter<DateTime?>
+    {
+        public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType == JsonTokenType.Null)
+            {
+                return null;
+            }
+
+            return reader.TryGetDateTimeExact(Format, CultureInfo.InvariantCulture, out var value)
+                ? value
+                : null;
+        }
+
+        public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
+        {
+            if (value is null)
+            {
+                writer.WriteNullValue();
+                return;
+            }
+
+            writer.WriteFormattedStringValue(value.Value, Format, CultureInfo.InvariantCulture);
         }
     }
 }

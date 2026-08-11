@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TMDbLib.Objects.Credit;
 
@@ -11,48 +11,48 @@ public class CreditSeason
     /// <summary>
     /// Gets or sets the air date.
     /// </summary>
-    [JsonProperty("air_date")]
+    [JsonPropertyName("air_date")]
     public DateTime? AirDate { get; set; }
 
     /// <summary>
     /// Gets or sets the number of episodes.
     /// </summary>
-    [JsonProperty("episode_count")]
+    [JsonPropertyName("episode_count")]
     public int EpisodeCount { get; set; }
 
     /// <summary>
     /// Gets or sets the season id.
     /// </summary>
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the season name.
     /// </summary>
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the overview.
     /// </summary>
-    [JsonProperty("overview")]
+    [JsonPropertyName("overview")]
     public string? Overview { get; set; }
 
     /// <summary>
     /// Gets or sets the poster image path.
     /// </summary>
-    [JsonProperty("poster_path")]
+    [JsonPropertyName("poster_path")]
     public string? PosterPath { get; set; }
 
     /// <summary>
     /// Gets or sets the season number.
     /// </summary>
-    [JsonProperty("season_number")]
+    [JsonPropertyName("season_number")]
     public int SeasonNumber { get; set; }
 
     /// <summary>
     /// Gets or sets the parent TV show id.
     /// </summary>
-    [JsonProperty("show_id")]
+    [JsonPropertyName("show_id")]
     public int ShowId { get; set; }
 }
