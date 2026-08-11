@@ -181,11 +181,11 @@ public class ClientTvShowTests : TestBase
     [Fact]
     public async Task TestTvShowSeparateExtrasVideosAsync()
     {
-        var videos = await TMDbClient.GetTvShowVideosAsync(IdHelper.BreakingBad, cancellationToken: TestContext.Current.CancellationToken);
+        var videos = await TMDbClient.GetTvShowVideosAsync(IdHelper.GameOfThrones, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(videos);
 
         Assert.NotNull(videos.Results);
-        var single = videos.Results.Single(s => s.Id == "5759db2fc3a3683e7c003df7");
+        var single = videos.Results.Single(s => s.Id == "5c9295200e0a267cd8168bd8");
 
         await Verify(single);
     }

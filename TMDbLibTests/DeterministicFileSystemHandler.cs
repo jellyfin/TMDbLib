@@ -95,12 +95,13 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
         // Generate deterministic GUID
         var deterministicGuid = GenerateDeterministicGuid(signature);
 
-        // Update the JSON with deterministic GUID (UpdatedAt is preserved as-is)
+        // Update the JSON with deterministic GUID
         var oldGuid = node["Guid"]?.GetValue<string>() ?? string.Empty;
         node["Guid"] = deterministicGuid;
 
-        // Remove dynamic headers
-        RemoveDynamicHeaders(node);
+        // Drop volatile bookkeeping and canonicalise unordered bodies, so re-recording
+        // unchanged data leaves the file untouched instead of producing a spurious diff.
+        WireMockMappingNormalizer.NormalizeMapping(node);
 
         // Remove excluded params from request matchers (so WireMock can match during playback)
         RemoveExcludedParamsFromRequest(node);
@@ -257,35 +258,6 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
         }
 
         return fileName.Replace(oldGuid, newGuid, StringComparison.Ordinal);
-    }
-
-    private static void RemoveDynamicHeaders(JsonNode node)
-    {
-        var headers = node["Response"]?["Headers"];
-        if (headers is null)
-        {
-            return;
-        }
-
-        // Headers that change between recordings and shouldn't affect matching
-        string[] dynamicHeaders =
-        [
-            "Date",
-            "x-memc-age",
-            "x-memc-expires",
-            "x-task-id",
-            "X-Amz-Cf-Id",
-            "Age",
-            "Via"
-        ];
-
-        foreach (var header in dynamicHeaders)
-        {
-            if (headers[header] is not null)
-            {
-                headers.AsObject().Remove(header);
-            }
-        }
     }
 
     private static void RemoveExcludedParamsFromRequest(JsonNode node)

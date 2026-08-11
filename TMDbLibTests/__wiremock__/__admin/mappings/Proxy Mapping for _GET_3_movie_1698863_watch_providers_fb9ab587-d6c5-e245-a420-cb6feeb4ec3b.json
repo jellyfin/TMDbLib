@@ -1,0 +1,86 @@
+{
+  "Guid": "fb9ab587-d6c5-e245-a420-cb6feeb4ec3b",
+  "Title": "Proxy Mapping for GET /3/movie/1698863/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1698863/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1698863/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1698863,
+      "results": {
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1698863-the-odyssey/watch?locale=CA",
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 9
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1698863-the-odyssey/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 37
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 37
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 36
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

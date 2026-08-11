@@ -1,0 +1,132 @@
+{
+  "Guid": "f8a5a442-3f0d-b044-8a6d-350906ccd2a3",
+  "Title": "Proxy Mapping for GET /3/tv/1399/videos",
+  "Description": "Proxy Mapping for GET /3/tv/1399/videos",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1399/videos",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1399,
+      "results": [
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Game of Thrones | Official Series Trailer",
+          "key": "KPLWWIOCOOQ",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Trailer",
+          "official": true,
+          "id": "64ec59a7e894a60101224a01",
+          "published_at": "2021-04-05T16:00:07.000Z"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Inside Game of Thrones: A Story in Camera Work",
+          "key": "y2ZJ3lTaREY",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Behind the Scenes",
+          "official": true,
+          "id": "5c999b48c3a36863b73b9d42",
+          "published_at": "2019-03-25T14:00:06.000Z"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Inside Game of Thrones: A Story in Prosthetics",
+          "key": "f3MUpuRF6Ck",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Behind the Scenes",
+          "official": true,
+          "id": "5c92c2519251412b51773135",
+          "published_at": "2019-03-11T14:00:03.000Z"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Opening Credits",
+          "key": "s7L2PVdrb_8",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Opening Credits",
+          "official": true,
+          "id": "6233756fba131b001f875249",
+          "published_at": "2011-04-18T20:20:02.000Z"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Official Trailer",
+          "key": "BpJYNVhGf1s",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Trailer",
+          "official": true,
+          "id": "5c9295200e0a267cd8168bd8",
+          "published_at": "2011-03-04T04:21:14.000Z"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Iron Throne Preview",
+          "key": "hhqRmcsWqac",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Teaser",
+          "official": true,
+          "id": "6639c6fc3a48c501344fb627",
+          "published_at": "2011-01-15T01:59:02.000Z"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Inside Game of Thrones",
+          "key": "nf5YvIn6XB8",
+          "site": "YouTube",
+          "size": 360,
+          "type": "Featurette",
+          "official": true,
+          "id": "6639c72a3a48c5012b4fbd10",
+          "published_at": "2011-01-10T19:53:20.000Z"
+        }
+      ]
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

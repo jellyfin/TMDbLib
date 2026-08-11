@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -15,6 +16,103 @@ namespace TMDbLibTests;
 /// </summary>
 public static class WireMockMappingNormalizer
 {
+    /// <summary>
+    /// Response headers that differ between recordings without carrying any information the
+    /// tests rely on (CDN routing, cache bookkeeping, content hashes). Keeping them would make
+    /// every refresh of the recorded data churn even where the payload is byte-identical.
+    /// </summary>
+    private static readonly string[] _dynamicHeaders =
+    [
+        "Age",
+        "Alt-Svc",
+        "Cache-Control",
+        "Date",
+        "ETag",
+        "Vary",
+        "Via",
+        "X-Amz-Cf-Id",
+        "X-Amz-Cf-Pop",
+        "X-Cache",
+        "X-Gateway-Cache-Status",
+        "x-az",
+        "x-memc",
+        "x-memc-age",
+        "x-memc-expires",
+        "x-memc-key",
+        "x-task-id"
+    ];
+
+    /// <summary>
+    /// Request paths whose response body is an unordered lookup table.
+    /// </summary>
+    private static readonly HashSet<string> _unorderedResponsePaths = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "/3/certification/movie/list",
+        "/3/certification/tv/list",
+        "/3/configuration/countries",
+        "/3/configuration/jobs",
+        "/3/configuration/languages",
+        "/3/configuration/primary_translations",
+        "/3/configuration/timezones",
+        "/3/watch/providers/regions"
+    };
+
+    /// <summary>
+    /// Credentials TMDb mints per call. Lengths match the wire shape. The expiry stays in the
+    /// past, like any recorded expiry, and after the lower bound
+    /// <c>CustomDatetimeFormatConverterTest</c> allows - that test range-checks the value, so a
+    /// far-future pin would fail its upper bound of two days out.
+    /// </summary>
+    private const string PinnedRequestToken = "0000000000000000000000000000000000000000";
+    private const string PinnedGuestSessionId = "00000000000000000000000000000000";
+    private const string PinnedExpiry = "2026-01-01 00:00:00 UTC";
+
+    /// <summary>
+    /// Body fields that hold a live counter or a minted credential rather than anything the
+    /// tests depend on, mapped to the value each is pinned to. Prototypes rather than literals
+    /// so the numbers keep their wire shape - System.Text.Json writes the shortest
+    /// round-trippable form, turning an assigned 0.0 back into 0. Deliberately excludes
+    /// <c>rating</c>, which looks similar to the counters but is load-bearing.
+    /// </summary>
+    private static readonly Dictionary<string, JsonNode> _volatileBodyFields = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["popularity"] = JsonNode.Parse("0.0")!,
+        ["vote_average"] = JsonNode.Parse("0.0")!,
+        ["vote_count"] = JsonNode.Parse("0")!,
+        ["expires_at"] = JsonValue.Create(PinnedExpiry),
+        ["guest_session_id"] = JsonValue.Create(PinnedGuestSessionId),
+        ["request_token"] = JsonValue.Create(PinnedRequestToken),
+        ["session_id"] = JsonValue.Create(PinnedRequestToken)
+    };
+
+    /// <summary>
+    /// Response headers that echo a minted credential. They cannot just be dropped like the
+    /// dynamic ones, because a test asserts the callback is present.
+    /// </summary>
+    private static readonly Dictionary<string, string> _pinnedHeaders = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["authentication-callback"] = $"https://www.themoviedb.org/authenticate/{PinnedRequestToken}"
+    };
+
+    /// <summary>
+    /// Strips volatile bookkeeping from a recorded mapping, pins its live counters and
+    /// canonicalises the element order of unordered response bodies, so that re-recording
+    /// unchanged data yields an unchanged file.
+    /// </summary>
+    /// <param name="node">The parsed mapping to normalize in place.</param>
+    public static void NormalizeMapping(JsonNode node)
+    {
+        // WireMock stamps the record time into every mapping; it alone would dirty all files.
+        if (node is JsonObject root)
+        {
+            root.Remove("UpdatedAt");
+        }
+
+        NormalizeHeaders(node);
+        ScrubVolatileBodyFields(node["Response"]?["BodyAsJson"]);
+        SortUnorderedResponseBody(node);
+    }
+
     /// <summary>
     /// Normalizes all mapping files in the specified directory.
     /// - Generates deterministic GUIDs based on request signature (method + path + sorted params)
@@ -62,8 +160,8 @@ public static class WireMockMappingNormalizer
                 var oldGuid = node["Guid"]?.GetValue<string>() ?? string.Empty;
                 node["Guid"] = deterministicGuid;
 
-                // Remove dynamic headers that change between recordings
-                RemoveDynamicHeaders(node);
+                // Same treatment the record path applies, so the two cannot drift apart
+                NormalizeMapping(node);
 
                 var updatedJson = node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
 
@@ -172,29 +270,111 @@ public static class WireMockMappingNormalizer
         return fileName.Replace(oldGuid, newGuid, StringComparison.Ordinal);
     }
 
-    private static void RemoveDynamicHeaders(JsonNode node)
+    private static void NormalizeHeaders(JsonNode node)
     {
         var headers = node["Response"]?["Headers"];
         if (headers is null) return;
 
-        // Headers that change between recordings and shouldn't affect matching
-        var dynamicHeaders = new[]
+        foreach (var header in _dynamicHeaders)
         {
-            "Date",
-            "x-memc-age",
-            "x-memc-expires",
-            "x-task-id",
-            "X-Amz-Cf-Id",
-            "Age",
-            "Via"
-        };
+            headers.AsObject().Remove(header);
+        }
 
-        foreach (var header in dynamicHeaders)
+        foreach (var (header, pinned) in _pinnedHeaders)
         {
             if (headers[header] is not null)
             {
-                headers.AsObject().Remove(header);
+                headers[header] = pinned;
             }
+        }
+    }
+
+    private static void ScrubVolatileBodyFields(JsonNode? node)
+    {
+        switch (node)
+        {
+            case JsonObject obj:
+                // Snapshot the properties: the loop reassigns some of them.
+                foreach (var property in obj.ToList())
+                {
+                    // Only pin actual values - a null stays null, so "no value recorded"
+                    // does not turn into "recorded as zero".
+                    if (_volatileBodyFields.TryGetValue(property.Key, out var pinned) && property.Value is JsonValue)
+                    {
+                        obj[property.Key] = pinned.DeepClone();
+                    }
+                    else
+                    {
+                        ScrubVolatileBodyFields(property.Value);
+                    }
+                }
+
+                break;
+
+            case JsonArray array:
+                foreach (var item in array)
+                {
+                    ScrubVolatileBodyFields(item);
+                }
+
+                break;
+        }
+    }
+
+    private static void SortUnorderedResponseBody(JsonNode node)
+    {
+        var path = node["Request"]?["Path"]?["Matchers"]?.AsArray() is { Count: > 0 } matchers
+            ? matchers[0]?["Pattern"]?.GetValue<string>()
+            : null;
+
+        if (path is null || !_unorderedResponsePaths.Contains(path))
+        {
+            return;
+        }
+
+        SortRecursively(node["Response"]?["BodyAsJson"]);
+    }
+
+    private static void SortRecursively(JsonNode? node)
+    {
+        switch (node)
+        {
+            case JsonObject obj:
+                // Key order varies too - these bodies are keyed by country - and JsonObject
+                // preserves insertion order, so the properties need reordering as well.
+                var properties = obj.Select(property => (property.Key, Value: property.Value?.DeepClone())).ToList();
+
+                foreach (var property in properties)
+                {
+                    SortRecursively(property.Value);
+                }
+
+                obj.Clear();
+                foreach (var (key, value) in properties.OrderBy(property => property.Key, StringComparer.Ordinal))
+                {
+                    obj[key] = value;
+                }
+
+                break;
+
+            case JsonArray array:
+                // Clone before clearing: a JsonNode keeps its parent, so the originals cannot be
+                // re-added to the array they were just removed from.
+                var items = array.Select(item => item?.DeepClone()).ToList();
+
+                // Canonicalise children first, so the sort keys below are themselves stable.
+                foreach (var item in items)
+                {
+                    SortRecursively(item);
+                }
+
+                array.Clear();
+                foreach (var item in items.OrderBy(item => item?.ToJsonString() ?? string.Empty, StringComparer.Ordinal))
+                {
+                    array.Add(item);
+                }
+
+                break;
         }
     }
 
