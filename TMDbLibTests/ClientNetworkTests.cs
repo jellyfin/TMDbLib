@@ -1,9 +1,9 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using TMDbLib.Objects.General;
-using Xunit;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 

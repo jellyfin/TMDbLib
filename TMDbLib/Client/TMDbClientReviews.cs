@@ -1,4 +1,4 @@
-﻿using System.Threading;
+using System.Threading;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Rest;

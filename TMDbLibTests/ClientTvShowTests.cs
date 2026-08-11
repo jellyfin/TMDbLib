@@ -1,14 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Xunit;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.TvShows;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 

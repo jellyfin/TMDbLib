@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using TMDbLibTests.Exceptions;
-using Xunit;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 

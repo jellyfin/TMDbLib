@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.Exceptions
+namespace TMDbLib.Objects.Exceptions
 {
     /// <summary>
     /// Represents an exception that is thrown when a requested item is not found in the TMDb API.

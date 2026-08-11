@@ -1,4 +1,4 @@
-﻿namespace TMDbLib.Objects.TvShows
+namespace TMDbLib.Objects.TvShows
 {
     /// <summary>
     /// TV episode with a user rating.

@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using TMDbLibTests.JsonHelpers;
 using Xunit;

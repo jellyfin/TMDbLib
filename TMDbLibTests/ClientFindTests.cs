@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using Xunit;
+using System.Threading.Tasks;
 using TMDbLib.Objects.Find;
 using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
+using Xunit;
 
 namespace TMDbLibTests;
 
