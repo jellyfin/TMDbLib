@@ -295,6 +295,12 @@ public class TvShow
     public string? Type { get; set; }
 
     /// <summary>
+    /// Gets or sets the episodes that were screened theatrically.
+    /// </summary>
+    [JsonPropertyName("screened_theatrically")]
+    public ResultContainer<TvEpisodeInfo>? ScreenedTheatrically { get; set; }
+
+    /// <summary>
     /// Gets or sets the videos.
     /// </summary>
     [JsonPropertyName("videos")]

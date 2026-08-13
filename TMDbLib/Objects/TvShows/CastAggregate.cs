@@ -20,4 +20,10 @@ public class CastAggregate : TmdbPersonSummary
     /// </summary>
     [JsonPropertyName("total_episode_count")]
     public int TotalEpisodeCount { get; set; }
+
+    /// <summary>
+    /// Gets or sets the order in the cast list.
+    /// </summary>
+    [JsonPropertyName("order")]
+    public int? Order { get; set; }
 }

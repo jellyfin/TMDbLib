@@ -78,6 +78,12 @@ public class TvSeasonEpisode
     public int SeasonNumber { get; set; }
 
     /// <summary>
+    /// Gets or sets the TMDb id of the TV show this episode belongs to.
+    /// </summary>
+    [JsonPropertyName("show_id")]
+    public int ShowId { get; set; }
+
+    /// <summary>
     /// Gets or sets the still image path.
     /// </summary>
     [JsonPropertyName("still_path")]

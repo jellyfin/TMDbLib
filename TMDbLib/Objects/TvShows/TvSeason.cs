@@ -112,4 +112,10 @@ public class TvSeason
     /// </summary>
     [JsonPropertyName("translations")]
     public TranslationsContainer? Translations { get; set; }
+
+    /// <summary>
+    /// Gets or sets the watch providers by country.
+    /// </summary>
+    [JsonPropertyName("watch/providers")]
+    public SingleResultContainer<Dictionary<string, WatchProviders>>? WatchProviders { get; set; }
 }

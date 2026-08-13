@@ -225,6 +225,19 @@ public class ClientTvSeasonTests : TestBase
     }
 
     /// <summary>
+    /// Tests that watch provider information can be retrieved for a TV season by region.
+    /// </summary>
+    [Fact]
+    public async Task TestTvSeasonGetWatchProvidersAsync()
+    {
+        var resp = await TMDbClient.GetTvSeasonWatchProvidersAsync(IdHelper.GameOfThrones, 1, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.NotNull(resp);
+        Assert.NotNull(resp.Results);
+
+        // Not making further assertions since this data is highly dynamic.
+    }
+
+    /// <summary>
     /// Tests that null is returned when attempting to retrieve a non-existent TV season.
     /// </summary>
     [Fact]
