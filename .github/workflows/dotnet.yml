@@ -53,7 +53,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Test
-      run: MOCK_MODE=Playback dotnet test --no-build --verbosity normal --filter "Category!=RequiresAccountAccess"
+      run: MOCK_MODE=Playback dotnet test --no-build --verbosity normal --filter-not-trait "Category=RequiresAccountAccess"
 
     - name: Pack
       if: github.ref == 'refs/heads/master'
