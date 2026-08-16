@@ -68,7 +68,7 @@ public sealed class TolerantEnumGenerator : IIncrementalGenerator
             string? enumValue = null;
             foreach (var attribute in member.GetAttributes())
             {
-                if (attribute.AttributeClass?.ToDisplayString() != ValueAttributeName)
+                if (!string.Equals(attribute.AttributeClass?.ToDisplayString(), ValueAttributeName, StringComparison.Ordinal))
                 {
                     continue;
                 }
