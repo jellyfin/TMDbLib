@@ -6,6 +6,7 @@ namespace TMDbLib.Objects.Companies;
 /// <summary>
 /// Specifies additional methods to include when retrieving company information.
 /// </summary>
+[TolerantEnum]
 [Flags]
 public enum CompanyMethods
 {

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.People;
@@ -24,6 +25,7 @@ internal class CombinedCreditsCrewConverter : JsonConverter<List<TmdbMediaSummar
 
         using var document = JsonDocument.ParseValue(ref reader);
         var list = new List<TmdbMediaSummary>();
+        var mediaTypeInfo = (JsonTypeInfo<MediaType>)options.GetTypeInfo(typeof(MediaType));
 
         foreach (var element in document.RootElement.EnumerateArray())
         {
@@ -32,14 +34,13 @@ internal class CombinedCreditsCrewConverter : JsonConverter<List<TmdbMediaSummar
                 continue;
             }
 
-            Type target = mt.Deserialize<MediaType>() switch
+            TmdbMediaSummary? item = mt.Deserialize(mediaTypeInfo) switch
             {
-                MediaType.Movie => typeof(CombinedCreditsCrewMovie),
-                MediaType.Tv => typeof(CombinedCreditsCrewTv),
+                MediaType.Movie => (TmdbMediaSummary?)element.Deserialize(options.GetTypeInfo(typeof(CombinedCreditsCrewMovie))),
+                MediaType.Tv => (TmdbMediaSummary?)element.Deserialize(options.GetTypeInfo(typeof(CombinedCreditsCrewTv))),
                 _ => throw new ArgumentOutOfRangeException(nameof(reader), mt.GetString(), "Unsupported crew credit media type"),
             };
 
-            var item = (TmdbMediaSummary?)element.Deserialize(target, options);
             if (item is not null)
             {
                 list.Add(item);
@@ -60,7 +61,14 @@ internal class CombinedCreditsCrewConverter : JsonConverter<List<TmdbMediaSummar
         writer.WriteStartArray();
         foreach (var item in value)
         {
-            JsonSerializer.Serialize(writer, item, item.GetType(), options);
+            if (item is null)
+            {
+                writer.WriteNullValue();
+                continue;
+            }
+
+            var typeInfo = options.GetTypeInfo(item.GetType());
+            JsonSerializer.Serialize(writer, item, typeInfo);
         }
 
         writer.WriteEndArray();

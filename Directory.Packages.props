@@ -11,6 +11,13 @@
     <PackageVersion Include="SmartAnalyzers.MultithreadingAnalyzer" Version="1.1.31" />
     <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.556" />
 
+    <!-- Source generators.
+         Pinned to the Roslyn version shipped with the oldest SDK we support (.NET 8). A generator
+         can only be loaded by a compiler at least as new as the Roslyn it was built against, so
+         bumping this would break the build for anyone on the .NET 8 SDK. Renovate is configured
+         to leave it alone; raise it only when dropping support for that SDK. -->
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+
     <!-- Build/Release dependencies -->
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.400" />
     <PackageVersion Include="MinVer" Version="7.0.0" />

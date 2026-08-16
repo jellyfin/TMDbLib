@@ -5,6 +5,7 @@ namespace TMDbLib.Objects.TvShows;
 /// <summary>
 /// TV show list type.
 /// </summary>
+[TolerantEnum]
 public enum TvShowListType
 {
     /// <summary>

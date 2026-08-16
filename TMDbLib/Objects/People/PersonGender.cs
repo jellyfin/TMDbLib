@@ -5,6 +5,7 @@ namespace TMDbLib.Objects.People;
 /// <summary>
 /// Gender of a person.
 /// </summary>
+[TolerantEnum]
 public enum PersonGender
 {
     /// <summary>

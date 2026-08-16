@@ -82,7 +82,6 @@ public static class SerializerExtensions
     /// <returns>The deserialized object.</returns>
     public static T? DeserializeFromString<T>(this ITMDbSerializer serializer, string json)
     {
-        // TODO: Better method
         var bytes = Encoding.UTF8.GetBytes(json);
         using var ms = new MemoryStream(bytes);
 
@@ -98,7 +97,6 @@ public static class SerializerExtensions
     /// <returns>The deserialized object, or null if deserialization fails.</returns>
     public static object? DeserializeFromString(this ITMDbSerializer serializer, string json, Type type)
     {
-        // TODO: Better method
         var bytes = Encoding.UTF8.GetBytes(json);
         using var ms = new MemoryStream(bytes);
 

@@ -20,13 +20,8 @@ public class AccountStateConverterTest : TestBase
     [Fact]
     public void AccountStateConverter_WithData()
     {
-        // { "rated": { "value": 5 } }
-        var original = new
-        {
-            rated = new { value = 5 }
-        };
+        const string json = """{"rated":{"value":5}}""";
 
-        var json = Serializer.SerializeToString(original);
         var result = Serializer.DeserializeFromString<AccountState>(json);
 
         Verify(new
@@ -42,10 +37,8 @@ public class AccountStateConverterTest : TestBase
     [Fact]
     public void AccountStateConverter_WithoutData()
     {
-        // { "rated": false }
-        var original = new { rated = false };
+        const string json = """{"rated":false}""";
 
-        var json = Serializer.SerializeToString(original);
         var result = Serializer.DeserializeFromString<AccountState>(json);
 
         Verify(new

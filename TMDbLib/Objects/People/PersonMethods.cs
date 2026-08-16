@@ -6,6 +6,7 @@ namespace TMDbLib.Objects.People;
 /// <summary>
 /// Additional person data to retrieve from the API.
 /// </summary>
+[TolerantEnum]
 [Flags]
 public enum PersonMethods
 {

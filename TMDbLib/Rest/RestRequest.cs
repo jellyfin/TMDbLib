@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
 using System.Net.Http;
@@ -214,7 +215,7 @@ internal class RestRequest
                 var stream = await resp.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
                 await using (stream.ConfigureAwait(false))
                 {
-                    statusMessage = await JsonSerializer.DeserializeAsync<TMDbStatusMessage>(stream, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    statusMessage = await JsonSerializer.DeserializeAsync(stream, TMDbJsonContext.Default.TMDbStatusMessage, cancellationToken).ConfigureAwait(false);
                 }
             }
             else

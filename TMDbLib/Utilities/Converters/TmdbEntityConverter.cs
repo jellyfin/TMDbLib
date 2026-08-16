@@ -1,6 +1,7 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.General.Schema;
 using TMDbLib.Objects.Search;
@@ -9,8 +10,8 @@ namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
 /// Polymorphic converter that maps the <c>media_type</c> discriminator to the correct
-/// concrete <see cref="TmdbEntity"/> subclass for endpoints returning mixed lists
-/// (search/multi, trending/all, list items, tagged_images.media, etc.).
+/// concrete <see cref="TmdbEntity"/> subclass. AOT-friendly: dispatches via the
+/// configured <see cref="JsonSerializerOptions"/> source-generated metadata.
 /// </summary>
 internal class TmdbEntityConverter : JsonConverter<TmdbEntity>
 {
@@ -24,28 +25,24 @@ internal class TmdbEntityConverter : JsonConverter<TmdbEntity>
         using var document = JsonDocument.ParseValue(ref reader);
         var element = document.RootElement;
 
-        Type targetType;
         if (!element.TryGetProperty("media_type", out var mediaTypeElement))
         {
-            // Discriminator missing - fall back to the requested concrete type.
-            return (TmdbEntity?)Activator.CreateInstance(typeToConvert);
+            // Discriminator missing - empty entity (callers can't tell which concrete
+            // subtype to materialize). Returning null keeps the call path AOT-safe.
+            return null;
         }
 
-        var mediaType = mediaTypeElement.Deserialize<MediaType>();
-        targetType = mediaType switch
+        var mediaType = mediaTypeElement.Deserialize((JsonTypeInfo<MediaType>)options.GetTypeInfo(typeof(MediaType)));
+        return mediaType switch
         {
-            MediaType.Movie => typeof(SearchMovie),
-            MediaType.Tv => typeof(SearchTv),
-            MediaType.Person => typeof(SearchPerson),
-            MediaType.Episode => typeof(SearchTvEpisode),
-            MediaType.TvEpisode => typeof(SearchTvEpisode),
-            MediaType.Season => typeof(SearchTvSeason),
-            MediaType.TvSeason => typeof(SearchTvSeason),
-            MediaType.Collection => typeof(SearchCollection),
+            MediaType.Movie => (TmdbEntity?)element.Deserialize(options.GetTypeInfo(typeof(SearchMovie))),
+            MediaType.Tv => (TmdbEntity?)element.Deserialize(options.GetTypeInfo(typeof(SearchTv))),
+            MediaType.Person => (TmdbEntity?)element.Deserialize(options.GetTypeInfo(typeof(SearchPerson))),
+            MediaType.Episode or MediaType.TvEpisode => (TmdbEntity?)element.Deserialize(options.GetTypeInfo(typeof(SearchTvEpisode))),
+            MediaType.Season or MediaType.TvSeason => (TmdbEntity?)element.Deserialize(options.GetTypeInfo(typeof(SearchTvSeason))),
+            MediaType.Collection => (TmdbEntity?)element.Deserialize(options.GetTypeInfo(typeof(SearchCollection))),
             _ => throw new ArgumentOutOfRangeException(nameof(reader), mediaType, "Unsupported media type"),
         };
-
-        return (TmdbEntity?)element.Deserialize(targetType, options);
     }
 
     public override void Write(Utf8JsonWriter writer, TmdbEntity value, JsonSerializerOptions options)
@@ -56,6 +53,7 @@ internal class TmdbEntityConverter : JsonConverter<TmdbEntity>
             return;
         }
 
-        JsonSerializer.Serialize(writer, value, value.GetType(), options);
+        var typeInfo = options.GetTypeInfo(value.GetType());
+        JsonSerializer.Serialize(writer, value, typeInfo);
     }
 }

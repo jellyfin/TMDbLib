@@ -5,6 +5,7 @@ namespace TMDbLib.Objects.General;
 /// <summary>
 /// Represents sort order options.
 /// </summary>
+[TolerantEnum]
 public enum SortOrder
 {
     /// <summary>

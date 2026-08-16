@@ -5,6 +5,7 @@ namespace TMDbLib.Objects.Find;
 /// <summary>
 /// Represents the external sources that can be used for finding content.
 /// </summary>
+[TolerantEnum]
 public enum FindExternalSource
 {
     /// <summary>

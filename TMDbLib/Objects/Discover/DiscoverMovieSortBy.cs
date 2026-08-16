@@ -5,6 +5,7 @@ namespace TMDbLib.Objects.Discover;
 /// <summary>
 /// Specifies the sorting options for movie discovery queries.
 /// </summary>
+[TolerantEnum]
 public enum DiscoverMovieSortBy
 {
     /// <summary>

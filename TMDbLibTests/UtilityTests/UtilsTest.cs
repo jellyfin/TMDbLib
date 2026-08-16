@@ -1,4 +1,4 @@
-using System;
+using TMDbLib.Objects.General;
 using TMDbLib.Utilities;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
@@ -11,26 +11,12 @@ namespace TMDbLibTests.UtilityTests;
 public class UtilsTest : TestBase
 {
     /// <summary>
-    /// Tests that GetDescription throws ArgumentException when called on a non-enum type.
-    /// </summary>
-    [Fact]
-    public void EnumDescriptionNonEnumTest()
-    {
-        var @struct = new EnumTestStruct();
-
-        Assert.Throws<ArgumentException>(() => @struct.GetDescription());
-    }
-
-    /// <summary>
     /// Tests that GetDescription returns the enum name when no EnumValue attribute is present.
     /// </summary>
     [Fact]
     public void EnumDescriptionNonDescriptionTest()
     {
-        var @enum = EnumTestEnum.A;
-        var s = @enum.GetDescription();
-
-        Assert.Equal("A", s);
+        Assert.Equal("Unknown", MediaType.Unknown.GetDescription());
     }
 
     /// <summary>
@@ -39,20 +25,7 @@ public class UtilsTest : TestBase
     [Fact]
     public void EnumDescriptionTest()
     {
-        var @enum = EnumTestEnum.B;
-        var s = @enum.GetDescription();
-
-        Assert.Equal("B-Description", s);
-    }
-
-    enum EnumTestEnum
-    {
-        A,
-        [EnumValue("B-Description")]
-        B
-    }
-
-    struct EnumTestStruct
-    {
+        Assert.Equal("movie", MediaType.Movie.GetDescription());
+        Assert.Equal("tv_episode", MediaType.TvEpisode.GetDescription());
     }
 }

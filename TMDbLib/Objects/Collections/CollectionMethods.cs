@@ -6,6 +6,7 @@ namespace TMDbLib.Objects.Collections;
 /// <summary>
 /// Specifies additional methods to include when retrieving collection information.
 /// </summary>
+[TolerantEnum]
 [Flags]
 public enum CollectionMethods
 {

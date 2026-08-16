@@ -7,6 +7,13 @@
     <PackageId>TMDbLib</PackageId>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <Nullable>enable</Nullable>
+
+    <!-- AOT / trim analysis. Enables IL2026/IL2046/IL3050 etc. as warnings/errors at build time. -->
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+    <EnableAotAnalyzer>true</EnableAotAnalyzer>
+    <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
 
   <!-- Analyzers -->
@@ -22,6 +29,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <!-- Build-time only: generates the enum <-> TMDb string maps so no runtime reflection is needed. -->
+  <ItemGroup>
+    <ProjectReference Include="../TMDbLib.SourceGenerators/TMDbLib.SourceGenerators.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
   </ItemGroup>
 
   <ItemGroup>

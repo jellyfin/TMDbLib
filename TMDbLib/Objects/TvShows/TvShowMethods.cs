@@ -6,6 +6,7 @@ namespace TMDbLib.Objects.TvShows;
 /// <summary>
 /// Additional TV show data to retrieve from the API.
 /// </summary>
+[TolerantEnum]
 [Flags]
 public enum TvShowMethods
 {

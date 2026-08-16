@@ -5,6 +5,7 @@ namespace TMDbLib.Objects.Account;
 /// <summary>
 /// Specifies the sorting options for account-related queries.
 /// </summary>
+[TolerantEnum]
 public enum AccountSortBy
 {
     /// <summary>

@@ -27,7 +27,21 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
 
         if (reader.TokenType == JsonTokenType.StartArray)
         {
-            return JsonSerializer.Deserialize<List<int>>(ref reader, options);
+            // Read the array by hand rather than recursing into JsonSerializer - the reflection-based
+            // overloads are not AOT-safe, and List<int> is not registered in TMDbJsonContext.
+            var values = new List<int>();
+
+            while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+            {
+                if (reader.TokenType != JsonTokenType.Number)
+                {
+                    throw new JsonException("Unable to convert list of integers");
+                }
+
+                values.Add(reader.GetInt32());
+            }
+
+            return values;
         }
 
         if (reader.TokenType == JsonTokenType.StartObject)
@@ -47,6 +61,13 @@ internal class TmdbIntArrayAsObjectConverter : JsonConverter<List<int>?>
             return;
         }
 
-        JsonSerializer.Serialize(writer, value, options);
+        writer.WriteStartArray();
+
+        foreach (var item in value)
+        {
+            writer.WriteNumberValue(item);
+        }
+
+        writer.WriteEndArray();
     }
 }

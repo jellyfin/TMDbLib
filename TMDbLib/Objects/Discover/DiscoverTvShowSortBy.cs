@@ -6,6 +6,7 @@ namespace TMDbLib.Objects.Discover;
 /// <summary>
 /// Specifies the sorting options for TV show discovery queries.
 /// </summary>
+[TolerantEnum]
 public enum DiscoverTvShowSortBy
 {
     /// <summary>

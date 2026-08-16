@@ -1,8 +1,11 @@
+using TMDbLib.Utilities;
+
 namespace TMDbLib.Objects.Movies
 {
     /// <summary>
     /// Movie release type.
     /// </summary>
+    [TolerantEnum]
     public enum ReleaseDateType
     {
         /// <summary>

@@ -6,6 +6,7 @@ namespace TMDbLib.Objects.Movies;
 /// <summary>
 /// Additional movie data to retrieve from the API.
 /// </summary>
+[TolerantEnum]
 [Flags]
 public enum MovieMethods
 {

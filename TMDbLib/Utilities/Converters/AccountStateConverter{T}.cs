@@ -2,16 +2,27 @@ using System;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
 
 namespace TMDbLib.Utilities.Converters;
 
 /// <summary>
-/// Typed normaliser between the wire <c>rated</c> shape and the C# <c>rating</c> property.
+/// Typed normaliser between the wire <c>rated</c> shape (either <c>false</c> or
+/// <c>{ "value": N }</c>) and the C# <c>rating</c> property. Registered per-type
+/// from <see cref="Serializer.TMDbJsonSerializer"/> with a source-generated
+/// <see cref="JsonTypeInfo{T}"/> so dispatch stays AOT-friendly.
 /// </summary>
-/// <typeparam name="T">The account state type being converted.</typeparam>
+/// <typeparam name="T">The concrete account-state type.</typeparam>
 internal class AccountStateConverter<T> : JsonConverter<T>
     where T : class, new()
 {
+    private readonly JsonTypeInfo<T> _typeInfo;
+
+    public AccountStateConverter(JsonTypeInfo<T> typeInfo)
+    {
+        _typeInfo = typeInfo;
+    }
+
     public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.Null)
@@ -42,7 +53,7 @@ internal class AccountStateConverter<T> : JsonConverter<T>
             }
         }
 
-        return node.Deserialize<T>(WithoutThisConverter(options));
+        return node.Deserialize(_typeInfo);
     }
 
     public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
@@ -53,7 +64,7 @@ internal class AccountStateConverter<T> : JsonConverter<T>
             return;
         }
 
-        var node = JsonSerializer.SerializeToNode(value, value.GetType(), WithoutThisConverter(options))?.AsObject();
+        var node = JsonSerializer.SerializeToNode(value, _typeInfo)?.AsObject();
         if (node is null)
         {
             writer.WriteNullValue();
@@ -75,21 +86,6 @@ internal class AccountStateConverter<T> : JsonConverter<T>
             }
         }
 
-        node.WriteTo(writer, WithoutThisConverter(options));
-    }
-
-    private static JsonSerializerOptions WithoutThisConverter(JsonSerializerOptions options)
-    {
-        // Create a copy that excludes this converter to avoid recursion.
-        var copy = new JsonSerializerOptions(options);
-        for (var i = copy.Converters.Count - 1; i >= 0; i--)
-        {
-            if (copy.Converters[i] is AccountStateConverter)
-            {
-                copy.Converters.RemoveAt(i);
-            }
-        }
-
-        return copy;
+        node.WriteTo(writer);
     }
 }

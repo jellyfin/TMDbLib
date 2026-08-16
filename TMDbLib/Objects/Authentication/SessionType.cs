@@ -1,8 +1,11 @@
+using TMDbLib.Utilities;
+
 namespace TMDbLib.Objects.Authentication
 {
     /// <summary>
     /// Specifies the type of session used for authentication.
     /// </summary>
+    [TolerantEnum]
     public enum SessionType
     {
         /// <summary>

@@ -5,6 +5,7 @@ namespace TMDbLib.Objects.General;
 /// <summary>
 /// Represents the type of credit.
 /// </summary>
+[TolerantEnum]
 public enum CreditType
 {
     /// <summary>
