@@ -20,10 +20,22 @@ public class ImageData
     public string? FilePath { get; set; }
 
     /// <summary>
+    /// Gets or sets the file extension of the image, e.g. ".svg". Only returned for company and network logos.
+    /// </summary>
+    [JsonPropertyName("file_type")]
+    public string? FileType { get; set; }
+
+    /// <summary>
     /// Gets or sets the height of the image in pixels.
     /// </summary>
     [JsonPropertyName("height")]
     public int Height { get; set; }
+
+    /// <summary>
+    /// Gets or sets the image id. Only returned for company and network logos.
+    /// </summary>
+    [JsonPropertyName("id")]
+    public string? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the language code, e.g. en.

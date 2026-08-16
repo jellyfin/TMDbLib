@@ -79,6 +79,30 @@ public enum DiscoverTvShowSortBy
     PrimaryReleaseDateDesc,
 
     /// <summary>
+    /// Sort by name in ascending order.
+    /// </summary>
+    [EnumValue("name.asc")]
+    Name,
+
+    /// <summary>
+    /// Sort by name in descending order.
+    /// </summary>
+    [EnumValue("name.desc")]
+    NameDesc,
+
+    /// <summary>
+    /// Sort by original name in ascending order.
+    /// </summary>
+    [EnumValue("original_name.asc")]
+    OriginalName,
+
+    /// <summary>
+    /// Sort by original name in descending order.
+    /// </summary>
+    [EnumValue("original_name.desc")]
+    OriginalNameDesc,
+
+    /// <summary>
     /// Sort by vote count in ascending order.
     /// </summary>
     [EnumValue("vote_count.asc")]

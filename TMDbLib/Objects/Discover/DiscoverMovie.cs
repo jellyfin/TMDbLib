@@ -679,4 +679,46 @@ public class DiscoverMovie : DiscoverBase<SearchMovie>
         Parameters["without_watch_providers"] = string.Join("|", providerIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
         return this;
     }
+
+    /// <summary>
+    /// Exclude movies with the specified genres. Expected value is a list of genres.
+    /// </summary>
+    /// <param name="genres">The genres to exclude.</param>
+    /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
+    public DiscoverMovie WhereGenresExclude(IEnumerable<Genre> genres)
+    {
+        return WhereGenresExclude(genres.Select(s => s.Id));
+    }
+
+    /// <summary>
+    /// Exclude movies with the specified genres. Expected value is a list of integer (the id of a genre).
+    /// </summary>
+    /// <param name="genreIds">The genre IDs to exclude.</param>
+    /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
+    public DiscoverMovie WhereGenresExclude(IEnumerable<int> genreIds)
+    {
+        Parameters["without_genres"] = string.Join(",", genreIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
+        return this;
+    }
+
+    /// <summary>
+    /// Filter movies to exclude a specific keyword. Expected value is a list of keywords.
+    /// </summary>
+    /// <param name="keywords">The keywords to exclude.</param>
+    /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
+    public DiscoverMovie WhereKeywordsExclude(IEnumerable<Keyword> keywords)
+    {
+        return WhereKeywordsExclude(keywords.Select(s => s.Id));
+    }
+
+    /// <summary>
+    /// Filter movies to exclude a specific keyword. Expected value is a list of integer (the id of a keyword).
+    /// </summary>
+    /// <param name="keywordIds">The keyword IDs to exclude.</param>
+    /// <returns>The current <see cref="DiscoverMovie"/> instance for method chaining.</returns>
+    public DiscoverMovie WhereKeywordsExclude(IEnumerable<int> keywordIds)
+    {
+        Parameters["without_keywords"] = string.Join("|", keywordIds.Select(s => s.ToString(CultureInfo.InvariantCulture)));
+        return this;
+    }
 }

@@ -41,6 +41,18 @@ public class Collection
     public string? Name { get; set; }
 
     /// <summary>
+    /// Gets or sets the original language code of the collection.
+    /// </summary>
+    [JsonPropertyName("original_language")]
+    public string? OriginalLanguage { get; set; }
+
+    /// <summary>
+    /// Gets or sets the collection name in its original language.
+    /// </summary>
+    [JsonPropertyName("original_name")]
+    public string? OriginalName { get; set; }
+
+    /// <summary>
     /// Gets or sets the overview or description of the collection.
     /// </summary>
     [JsonPropertyName("overview")]

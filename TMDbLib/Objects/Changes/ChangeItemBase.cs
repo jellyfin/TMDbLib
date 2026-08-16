@@ -28,6 +28,12 @@ public abstract class ChangeItemBase
     public string? Iso_639_1 { get; set; }
 
     /// <summary>
+    /// Gets or sets the country code (e.g. "US"); not always set.
+    /// </summary>
+    [JsonPropertyName("iso_3166_1")]
+    public string? Iso_3166_1 { get; set; }
+
+    /// <summary>
     /// Gets or sets the UTC timestamp when the change occurred.
     /// </summary>
     [JsonPropertyName("time")]

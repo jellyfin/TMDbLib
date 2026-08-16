@@ -74,6 +74,18 @@ public enum DiscoverMovieSortBy
     OriginalTitleDesc,
 
     /// <summary>
+    /// Sort by title in ascending order.
+    /// </summary>
+    [EnumValue("title.asc")]
+    Title,
+
+    /// <summary>
+    /// Sort by title in descending order.
+    /// </summary>
+    [EnumValue("title.desc")]
+    TitleDesc,
+
+    /// <summary>
     /// Sort by vote average in ascending order.
     /// </summary>
     [EnumValue("vote_average.asc")]

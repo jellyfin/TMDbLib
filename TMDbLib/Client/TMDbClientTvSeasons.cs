@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -237,5 +238,17 @@ public partial class TMDbClient
     public async Task<TranslationsContainer?> GetTvSeasonTranslationsAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
     {
         return await GetTvSeasonMethodInternal<TranslationsContainer>(tvShowId, seasonNumber, TvSeasonMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Gets the watch providers (OTT/streaming) for a TV season, keyed by country.
+    /// </summary>
+    /// <param name="tvShowId">The TMDb id of the TV show.</param>
+    /// <param name="seasonNumber">The season number. Use 0 for specials.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The season's watch providers per country.</returns>
+    public async Task<SingleResultContainer<Dictionary<string, WatchProviders>>?> GetTvSeasonWatchProvidersAsync(int tvShowId, int seasonNumber, CancellationToken cancellationToken = default)
+    {
+        return await GetTvSeasonMethodInternal<SingleResultContainer<Dictionary<string, WatchProviders>>>(tvShowId, seasonNumber, TvSeasonMethods.WatchProviders, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 }
