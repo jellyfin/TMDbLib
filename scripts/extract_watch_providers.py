@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """
-Extract TMDb watch providers into a JSON format suitable for generating WatchProvider.cs.
+Extract TMDb watch providers, either as JSON or as the WatchProvider.cs source.
 
 Usage:
+    # inspect the grouping as JSON
     python extract_watch_providers.py --api-key YOUR_API_KEY [--output providers.json]
 
-The output JSON has the structure:
+    # regenerate the C# constants (overwrites the file; do not hand-edit it)
+    python extract_watch_providers.py --api-key YOUR_API_KEY --format cs \
+        --output ../TMDbLib/Objects/Discover/WatchProvider.cs
+
+The JSON output has the structure:
     {
       "GroupName": {
         "MemberName": { "id": 8, "name": "Netflix", "is_channel": false,
@@ -18,9 +23,14 @@ The output JSON has the structure:
     }
 
 The "_ungrouped" key collects providers that did not match any known brand group.
+
+With --format cs the previous output is read back first: any constant whose
+provider ID has disappeared from the API is re-emitted as [Obsolete] rather than
+deleted, so regenerating never breaks a caller.
 """
 
 import argparse
+import datetime
 import json
 import re
 import sys
@@ -304,8 +314,11 @@ def to_member_name(provider_name: str, group_name: str,
 
     member = "".join(parts)
 
-    # Step 6 – fallback
-    if not member:
+    # Step 6 – fallback.  Also catches names that survive step 4 still spelling
+    # out the group ("The Roku Channel" keeps its noise word past the prefix
+    # strip, then normalises back to "RokuChannel"): C# rejects a member sharing
+    # its enclosing type's name (CS0542), and the repetition says nothing anyway.
+    if not member or (group_name and _squash(member) == _squash(group_name)):
         member = "Standard"
 
     # Clean up: remove any remaining leading/trailing underscores or digits
@@ -358,8 +371,18 @@ def merge_providers(movie: list[dict], tv: list[dict]) -> dict[int, dict]:
 # ---------------------------------------------------------------------------
 
 def build_output(providers: dict[int, dict],
-                 include_channels: bool) -> dict[str, Any]:
+                 include_channels: bool,
+                 reserved: dict[str, set[str]] | None = None) -> dict[str, Any]:
+    """
+    Group the live providers and assign each a C# member name.
+
+    `reserved` maps a group to member names that must not be handed to a live
+    provider — the names of retired providers we still emit as obsolete
+    constants.  Reusing such a name for a different ID would silently repoint a
+    published constant, so live providers yield and take an "Alt" suffix instead.
+    """
     output: dict[str, dict] = {}
+    reserved = reserved or {}
 
     for pid, provider in sorted(providers.items()):
         name = provider["provider_name"]
@@ -373,7 +396,7 @@ def build_output(providers: dict[int, dict],
         if group not in output:
             output[group] = {}
 
-        existing = set(output[group].keys())
+        existing = set(output[group].keys()) | reserved.get(group, set())
         member = to_member_name(name, group if group != "_ungrouped" else "", existing)
 
         output[group][member] = {
@@ -387,12 +410,218 @@ def build_output(providers: dict[int, dict],
 
 
 # ---------------------------------------------------------------------------
+# Previous-output parser
+#
+# TMDb silently drops providers from watch/providers.  Deleting the matching
+# constants would break callers, so on every regeneration we read back the file
+# we are about to overwrite: any constant whose ID is gone from the API is
+# carried forward and marked [Obsolete].  Their member names and doc comments
+# come from the previous file, because the API can no longer supply either.
+# ---------------------------------------------------------------------------
+
+_CS_CLASS_RE = re.compile(r"^\s{4}public static class (\w+)")
+_CS_CONST_RE = re.compile(r"^\s{8}public const int (\w+) = (\d+);")
+_CS_DOC_RE = re.compile(r"^\s{8}/// <summary>(.*)</summary>\s*$")
+_CS_OBSOLETE_RE = re.compile(r"^\s+\[Obsolete\((.*)\)\]\s*$")
+
+
+def parse_previous_cs(text: str) -> dict[str, list[dict]]:
+    """
+    Recover the {group: [{member, id, doc, obsolete}]} shape from generated C#.
+
+    Only what we need to re-emit a retired constant verbatim is extracted; the
+    parser is deliberately tied to this script's own output formatting.
+    """
+    groups: dict[str, list[dict]] = {}
+    group = None
+    doc = None
+    obsolete = None
+
+    for line in text.splitlines():
+        match = _CS_CLASS_RE.match(line)
+        if match:
+            group = match.group(1)
+            groups.setdefault(group, [])
+            doc = obsolete = None
+            continue
+
+        match = _CS_DOC_RE.match(line)
+        if match:
+            doc = match.group(1)
+            continue
+
+        match = _CS_OBSOLETE_RE.match(line)
+        if match:
+            obsolete = match.group(1)
+            continue
+
+        match = _CS_CONST_RE.match(line)
+        if match and group:
+            groups[group].append({
+                "member": match.group(1),
+                "id": int(match.group(2)),
+                "doc": doc,
+                "obsolete": obsolete,
+            })
+            doc = obsolete = None
+
+    return {g: members for g, members in groups.items() if members}
+
+
+def collect_retired(previous: dict[str, list[dict]],
+                    live_ids: set[int]) -> dict[str, list[dict]]:
+    """Pick out the previously-emitted constants whose IDs the API has dropped."""
+    retired: dict[str, list[dict]] = {}
+
+    for group, members in previous.items():
+        for entry in members:
+            if entry["id"] in live_ids:
+                continue
+            retired.setdefault(group, []).append(entry)
+
+    return retired
+
+
+# ---------------------------------------------------------------------------
+# C# emitter
+#
+# Renders the grouped output as TMDbLib/Objects/Discover/WatchProvider.cs.
+# Everything here is derived from the API response and the BRAND_GROUPS table,
+# so the file can be regenerated from scratch on every refresh; do not hand-edit
+# the generated source — change this script instead.
+# ---------------------------------------------------------------------------
+
+CS_OBSOLETE_MESSAGE = ("No longer returned by TMDb's watch/providers endpoint. "
+                       "Will be removed in a future version.")
+
+CS_HEADER = """namespace TMDbLib.Objects.Discover;
+
+/// <summary>
+/// Watch provider IDs for use with Discover filtering. Availability varies by region; combine with <c>WhereWatchRegionIs()</c>.
+/// </summary>
+/// <remarks>
+/// IDs represent base platform providers; channel variants (e.g. "Paramount+ Amazon Channel") have separate IDs. Last updated {date}.
+/// </remarks>
+public static class WatchProvider
+{{
+"""
+
+
+def _xml_escape(text: str) -> str:
+    """Escape the three characters that are not legal in XML doc-comment text."""
+    return (text.replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;"))
+
+
+def _doc_summary(provider_name: str) -> str:
+    """Render a provider name as a one-line XML doc summary."""
+    name = _xml_escape(provider_name.strip())
+    # TMDb names carry no trailing period of their own; add one for prose.
+    return name if name.endswith(".") else name + "."
+
+
+def _group_sort_key(group: str) -> tuple[str, str]:
+    # Case-insensitive so the listing reads alphabetically to a human ("AcornTV"
+    # before "AMCPlus"); the exact spelling breaks ties for a stable order.
+    return group.lower(), group
+
+
+def _merge_members(live: dict[str, dict],
+                   retired: list[dict]) -> list[dict]:
+    """
+    Combine a group's live and retired members into one ID-ascending list.
+
+    Retired members keep the member name, doc comment and [Obsolete] argument
+    they were emitted with, so regenerating never renames a published constant.
+    """
+    members = [
+        {
+            "member": member,
+            "id": data["id"],
+            "doc": _doc_summary(data["name"]),
+            "obsolete": None,
+        }
+        for member, data in live.items()
+    ]
+
+    for entry in retired:
+        members.append({
+            "member": entry["member"],
+            "id": entry["id"],
+            "doc": entry["doc"] or _doc_summary(entry["member"]),
+            # Preserve an existing message verbatim so re-runs are idempotent.
+            "obsolete": entry["obsolete"] or f'"{CS_OBSOLETE_MESSAGE}"',
+        })
+
+    return sorted(members, key=lambda m: m["id"])
+
+
+def render_csharp(output: dict[str, Any], date: str,
+                  retired: dict[str, list[dict]] | None = None) -> str:
+    """Render the grouped provider output as the WatchProvider.cs source."""
+    retired = retired or {}
+
+    # "_ungrouped" is intentionally dropped: those providers matched no brand
+    # group, so they have no class to live in.
+    groups = (set(output) | set(retired)) - {"_ungrouped"}
+    rendered = {
+        group: _merge_members(output.get(group, {}), retired.get(group, []))
+        for group in groups
+    }
+    rendered = {group: members for group, members in rendered.items() if members}
+
+    body: list[str] = []
+    for index, group in enumerate(sorted(rendered, key=_group_sort_key)):
+        members = rendered[group]
+
+        if index:
+            body.append("\n")
+
+        # A group whose every provider is gone is obsolete as a whole, so callers
+        # get one warning on the class instead of one per constant.
+        group_obsolete = all(m["obsolete"] for m in members)
+
+        body.append(f"    /// <summary>\n"
+                    f"    /// {group} provider IDs.\n"
+                    f"    /// </summary>\n")
+        if group_obsolete:
+            body.append(f'    [Obsolete("{CS_OBSOLETE_MESSAGE}")]\n')
+        body.append(f"    public static class {group}\n"
+                    f"    {{\n")
+
+        for member in members:
+            body.append(f"        /// <summary>{member['doc']}</summary>\n")
+            # Suppressed inside an already-obsolete class: the class-level
+            # attribute covers every member, and CS0612 would fire on the All
+            # initialiser below for referencing them.
+            if member["obsolete"] and not group_obsolete:
+                body.append(f"        [Obsolete({member['obsolete']})]\n")
+            body.append(f"        public const int {member['member']} = {member['id']};\n\n")
+
+        # Obsolete members stay out of All so iterating it never hits a dead ID
+        # (and never trips CS0612 in this generated file).
+        listed = [m["member"] for m in members
+                  if group_obsolete or not m["obsolete"]]
+        body.append(f"        /// <summary>All {group} provider IDs.</summary>\n"
+                    f"        public static readonly int[] All = [{", ".join(listed)}];\n"
+                    f"    }}\n")
+
+    header = CS_HEADER.format(date=date)
+    # System is only referenced by [Obsolete]; omit the using when nothing is.
+    if "[Obsolete(" in "".join(body):
+        header = "using System;\n\n" + header
+
+    return header + "".join(body) + "}\n"
+
+
+# ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Extract TMDb watch providers to JSON for WatchProvider.cs generation."
+        description="Extract TMDb watch providers as JSON, or generate WatchProvider.cs."
     )
     parser.add_argument(
         "--api-key",
@@ -405,6 +634,30 @@ def main() -> None:
         default="-",
         metavar="FILE",
         help="Output file path (default: stdout)",
+    )
+    parser.add_argument(
+        "--format",
+        choices=("json", "cs"),
+        default="json",
+        help="Output format: 'json' (default) or 'cs' for WatchProvider.cs source",
+    )
+    parser.add_argument(
+        "--date",
+        metavar="YYYY-MM-DD",
+        help="Value for the 'Last updated' stamp in --format cs (default: today, UTC)",
+    )
+    parser.add_argument(
+        "--previous",
+        metavar="FILE",
+        help="Existing WatchProvider.cs to read retired providers from "
+             "(default: the --format cs output file, when it exists)",
+    )
+    parser.add_argument(
+        "--no-previous",
+        dest="use_previous",
+        action="store_false",
+        default=True,
+        help="Do not carry retired providers forward from the previous output",
     )
     parser.add_argument(
         "--no-channels",
@@ -426,17 +679,41 @@ def main() -> None:
     all_providers = merge_providers(movie_providers, tv_providers)
     print(f"  {len(all_providers)} unique providers total", file=sys.stderr)
 
-    output = build_output(all_providers, args.include_channels)
+    # Read back the file we are about to overwrite, so providers TMDb has
+    # dropped survive as [Obsolete] constants instead of vanishing.
+    retired: dict[str, list[dict]] = {}
+    if args.format == "cs" and args.use_previous:
+        source = args.previous or (args.output if args.output != "-" else None)
+        if source:
+            try:
+                with open(source, encoding="utf-8") as fh:
+                    previous = parse_previous_cs(fh.read())
+            except FileNotFoundError:
+                print(f"  no previous output at {source}; "
+                      f"emitting live providers only", file=sys.stderr)
+            else:
+                retired = collect_retired(previous, set(all_providers))
+                count = sum(len(v) for v in retired.values())
+                print(f"  {count} retired provider(s) carried forward from "
+                      f"{source}", file=sys.stderr)
+
+    reserved = {group: {e["member"] for e in entries}
+                for group, entries in retired.items()}
+    output = build_output(all_providers, args.include_channels, reserved)
 
     grouped = sum(len(v) for k, v in output.items() if k != "_ungrouped")
     ungrouped = len(output.get("_ungrouped", {}))
     print(f"  {grouped} providers grouped into known brands, "
           f"{ungrouped} ungrouped", file=sys.stderr)
 
-    result = json.dumps(output, indent=2, ensure_ascii=False)
+    if args.format == "cs":
+        stamp = args.date or datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d")
+        result = render_csharp(output, stamp, retired)
+    else:
+        result = json.dumps(output, indent=2, ensure_ascii=False)
 
     if args.output == "-":
-        print(result)
+        sys.stdout.write(result if result.endswith("\n") else result + "\n")
     else:
         with open(args.output, "w", encoding="utf-8") as fh:
             fh.write(result)

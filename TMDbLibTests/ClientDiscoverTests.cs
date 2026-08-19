@@ -158,7 +158,7 @@ public class ClientDiscoverTests : TestBase
         int[] filteredProviderIds =
         [
             WatchProvider.Netflix.Standard,
-            WatchProvider.Amazon.PrimeVideo
+            WatchProvider.Amazon.PrimeVideoAlt
         ];
 
         DiscoverMovie query = TMDbClient.DiscoverMoviesAsync()
@@ -308,7 +308,7 @@ public class ClientDiscoverTests : TestBase
         int[] filteredProviderIds =
         [
             WatchProvider.Netflix.Standard,
-            WatchProvider.Amazon.PrimeVideo
+            WatchProvider.Amazon.PrimeVideoAlt
         ];
 
         DiscoverTv query = TMDbClient.DiscoverTvShowsAsync()
