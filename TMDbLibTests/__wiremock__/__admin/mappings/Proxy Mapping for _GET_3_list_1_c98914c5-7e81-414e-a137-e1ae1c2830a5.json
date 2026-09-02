@@ -1,0 +1,510 @@
+{
+  "Guid": "c98914c5-7e81-414e-a137-e1ae1c2830a5",
+  "Title": "Proxy Mapping for GET /3/list/1",
+  "Description": "Proxy Mapping for GET /3/list/1",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/list/1",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "created_by": "Travis Bell",
+      "description": "The idea behind this list is to collect the live action comic book movies from within the Marvel franchise.",
+      "favorite_count": 0,
+      "id": 1,
+      "iso_639_1": "en",
+      "item_count": 68,
+      "items": [
+        {
+          "adult": false,
+          "backdrop_path": "/fn4n6uOYcB6Uh89nbNPoU2w80RV.jpg",
+          "id": 315635,
+          "title": "Spider-Man: Homecoming",
+          "original_title": "Spider-Man: Homecoming",
+          "overview": "Following the events of Captain America: Civil War, Peter Parker, with the help of his mentor Tony Stark, tries to balance his life as an ordinary high school student in Queens, New York City, with fighting crime as his superhero alter ego Spider-Man as a new threat, the Vulture, emerges.",
+          "poster_path": "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2017-07-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bW93ycPSSi3Hxx1NvlMX5qm2mQu.jpg",
+          "id": 283995,
+          "title": "Guardians of the Galaxy Vol. 2",
+          "original_title": "Guardians of the Galaxy Vol. 2",
+          "overview": "The Guardians must fight to keep their newfound family together as they unravel the mysteries of Peter Quill\u0027s true parentage.",
+          "poster_path": "/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2017-04-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qTdCfGyDisY9e8BLycszlyTsPWx.jpg",
+          "id": 263115,
+          "title": "Logan",
+          "original_title": "Logan",
+          "overview": "In the near future, a weary Logan cares for an ailing Professor X in a hideout on the Mexican border. But Logan\u0027s attempts to hide from the world and his legacy are upended when a young mutant arrives, pursued by dark forces.",
+          "poster_path": "/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            18,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2017-02-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kkoiH8ZWxJ9WSAjOadGtuHUQxbm.jpg",
+          "id": 284052,
+          "title": "Doctor Strange",
+          "original_title": "Doctor Strange",
+          "overview": "After his career is destroyed, a brilliant but arrogant surgeon gets a new lease on life when a sorcerer takes him under her wing and trains him to defend the world against evil.",
+          "poster_path": "/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            12,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2016-10-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sTQNRqLbfCXolrb5CizAW1dj528.jpg",
+          "id": 246655,
+          "title": "X-Men: Apocalypse",
+          "original_title": "X-Men: Apocalypse",
+          "overview": "After the re-emergence of the world\u0027s first mutant, world-destroyer Apocalypse, the X-Men must unite to defeat his extinction level plan.",
+          "poster_path": "/ikA8UhYdTGpqbatFa93nIf6noSr.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            14,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2016-05-18",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
+          "id": 271110,
+          "title": "Captain America: Civil War",
+          "original_title": "Captain America: Civil War",
+          "overview": "Following the events of Age of Ultron, the collective governments of the world pass an act designed to regulate all superhuman activity. This polarizes opinion amongst the Avengers, causing two factions to side with Iron Man or Captain America, which causes an epic battle between former allies.",
+          "poster_path": "/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2016-04-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/en971MEXui9diirXlogOrPKmsEn.jpg",
+          "id": 293660,
+          "title": "Deadpool",
+          "original_title": "Deadpool",
+          "overview": "The origin story of former Special Forces operative turned mercenary Wade Wilson, who, after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.",
+          "poster_path": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            35
+          ],
+          "popularity": 0.0,
+          "release_date": "2016-02-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/or5kDR8Ve3TtuPSdEf1X5NdQHyz.jpg",
+          "id": 166424,
+          "title": "Fantastic Four",
+          "original_title": "Fantastic Four",
+          "overview": "Four young outsiders teleport to a dangerous universe, which alters their physical form in shocking ways. Their lives irrevocably upended, the team must learn to harness their daunting new abilities and work together to save Earth from a former friend turned enemy.",
+          "poster_path": "/cDroz5qSlP8xZ6tOpeYoPkBvKyL.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2015-08-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1K3JmSNUN8OpjYsCjc0Hy0SYxAb.jpg",
+          "id": 102899,
+          "title": "Ant-Man",
+          "original_title": "Ant-Man",
+          "overview": "Armed with the astonishing ability to shrink in scale but increase in strength, master thief Scott Lang must embrace his inner-hero and help his mentor, Doctor Hank Pym, protect the secret behind his spectacular Ant-Man suit from a new generation of towering threats. Against seemingly insurmountable obstacles, Pym and Lang must plan and pull off a heist that will save the world.",
+          "poster_path": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2015-07-14",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/kIBK5SKwgqIIuRKhhWrJn3XkbPq.jpg",
+          "id": 99861,
+          "title": "Avengers: Age of Ultron",
+          "original_title": "Avengers: Age of Ultron",
+          "overview": "When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and Earth\u2019s Mightiest Heroes are put to the ultimate test as the fate of the planet hangs in the balance. As the villainous Ultron emerges, it is up to The Avengers to stop him from enacting his terrible plans, and soon uneasy alliances and unexpected action pave the way for an epic and unique global adventure.",
+          "poster_path": "/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2015-04-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uLtVbjvS1O7gXL8lUOwsFOH4man.jpg",
+          "id": 118340,
+          "title": "Guardians of the Galaxy",
+          "original_title": "Guardians of the Galaxy",
+          "overview": "Light years from Earth, 26 years after being abducted, Peter Quill finds himself the prime target of a manhunt after discovering an orb wanted by Ronan the Accuser.",
+          "poster_path": "/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2014-07-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3czpqXzFy5UcNuD1AubecRLWkwD.jpg",
+          "id": 127585,
+          "title": "X-Men: Days of Future Past",
+          "original_title": "X-Men: Days of Future Past",
+          "overview": "The ultimate X-Men ensemble fights a war for the survival of the species across two time periods as they join forces with their younger selves in an epic battle that must change the past \u2013 to save our future.",
+          "poster_path": "/tYfijzolzgoMOtegh1Y7j2Enorg.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2014-05-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/k0hlAzTryCYX1O1LyC6P8tAa8s0.jpg",
+          "id": 102382,
+          "title": "The Amazing Spider-Man 2",
+          "original_title": "The Amazing Spider-Man 2",
+          "overview": "For Peter Parker, life is busy. Between taking out the bad guys as Spider-Man and spending time with the person he loves, Gwen Stacy, high school graduation cannot come quickly enough. Peter has not forgotten about the promise he made to Gwen\u2019s father to protect her by staying away, but that is a promise he cannot keep. Things will change for Peter when a new villain, Electro, emerges, an old friend, Harry Osborn, returns, and Peter uncovers new clues about his past.",
+          "poster_path": "/bU7nTmvmy0h3VUP01v1T2imgH6N.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2014-04-16",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+          "id": 100402,
+          "title": "Captain America: The Winter Soldier",
+          "original_title": "Captain America: The Winter Soldier",
+          "overview": "After the cataclysmic events in New York with The Avengers, Steve Rogers, aka Captain America is living quietly in Washington, D.C. and trying to adjust to the modern world. But when a S.H.I.E.L.D. colleague comes under attack, Steve becomes embroiled in a web of intrigue that threatens to put the world at risk. Joining forces with the Black Widow, Captain America struggles to expose the ever-widening conspiracy while fighting off professional assassins sent to silence him at every turn. When the full scope of the villainous plot is revealed, Captain America and the Black Widow enlist the help of a new ally, the Falcon. However, they soon find themselves up against an unexpected and formidable enemy\u2014the Winter Soldier.",
+          "poster_path": "/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2014-03-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5QEOy0QEpad9QsXeMxuGHPXMale.jpg",
+          "id": 76338,
+          "title": "Thor: The Dark World",
+          "original_title": "Thor: The Dark World",
+          "overview": "Thor fights to restore order across the cosmos\u2026 but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.",
+          "poster_path": "/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            14
+          ],
+          "popularity": 0.0,
+          "release_date": "2013-10-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bEAQfLTykGg232kJogBlxRYaRqU.jpg",
+          "id": 76170,
+          "title": "The Wolverine",
+          "original_title": "The Wolverine",
+          "overview": "Wolverine faces his ultimate nemesis - and tests of his physical, emotional, and mortal limits - in a life-changing voyage to modern-day Japan.",
+          "poster_path": "/t2wVAcoRlKvEIVSbiYDb8d0QqqS.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2013-07-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iVped1djsF0tvGkvnHbzsE3ZPTF.jpg",
+          "id": 68721,
+          "title": "Iron Man 3",
+          "original_title": "Iron Man 3",
+          "overview": "When Tony Stark\u0027s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
+          "poster_path": "/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2013-04-18",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/HVcza6tJtWFrLriuh3Ano4Vt46.jpg",
+          "id": 1930,
+          "title": "The Amazing Spider-Man",
+          "original_title": "The Amazing Spider-Man",
+          "overview": "A teenage Peter Parker grapples with both high school and amazing super-human crises as his alter-ego Spider-Man.",
+          "poster_path": "/jexoNYnPd6vVrmygwF6QZmWPFdu.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2012-06-23",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gHLs7Fy3DzLmLsD4lmfqL55KGcl.jpg",
+          "id": 24428,
+          "title": "The Avengers",
+          "original_title": "The Avengers",
+          "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+          "poster_path": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2012-04-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ebNcAJfWsSbbv7VhboAvpUdOduJ.jpg",
+          "id": 71676,
+          "title": "Ghost Rider: Spirit of Vengeance",
+          "original_title": "Ghost Rider: Spirit of Vengeance",
+          "overview": "When the devil resurfaces with aims to take over the world in human form, Johnny Blaze reluctantly comes out of hiding to transform into the flame-spewing supernatural hero Ghost Rider -- and rescue a 10-year-old boy from an unsavory end.",
+          "poster_path": "/xEoBT6lYfQNpSpTm8gJMTrQytiw.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            14,
+            53
+          ],
+          "popularity": 0.0,
+          "release_date": "2011-12-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        }
+      ],
+      "name": "The Marvel Universe",
+      "page": 2,
+      "poster_path": "/coJVIUEOToAEGViuhclM7pXC75R.jpg",
+      "total_pages": 4,
+      "total_results": 68
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}
