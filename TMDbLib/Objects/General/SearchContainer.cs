@@ -7,7 +7,7 @@ namespace TMDbLib.Objects.General;
 /// Represents a paginated container for search results.
 /// </summary>
 /// <typeparam name="T">The type of items contained in the search results.</typeparam>
-public class SearchContainer<T>
+public class SearchContainer<T> : IPagedResult<T>
 {
     /// <summary>
     /// Gets or sets the current page number.
@@ -32,4 +32,7 @@ public class SearchContainer<T>
     /// </summary>
     [JsonPropertyName("total_results")]
     public int TotalResults { get; set; }
+
+    /// <inheritdoc />
+    IReadOnlyList<T>? IPagedResult<T>.Items => Results;
 }
