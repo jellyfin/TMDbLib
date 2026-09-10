@@ -1,0 +1,509 @@
+{
+  "Guid": "6641ef96-9ef9-2741-a8eb-582a3aa73ab1",
+  "Title": "Proxy Mapping for GET /3/list/1",
+  "Description": "Proxy Mapping for GET /3/list/1",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/list/1",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "3",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "created_by": "Travis Bell",
+      "description": "The idea behind this list is to collect the live action comic book movies from within the Marvel franchise.",
+      "favorite_count": 0,
+      "id": 1,
+      "iso_639_1": "en",
+      "item_count": 68,
+      "items": [
+        {
+          "adult": false,
+          "backdrop_path": "/yFuKvT4Vm3sKHdFY4eG6I4ldAnn.jpg",
+          "id": 1771,
+          "title": "Captain America: The First Avenger",
+          "original_title": "Captain America: The First Avenger",
+          "overview": "During World War II, Steve Rogers is a sickly man from Brooklyn who\u0027s transformed into super-soldier Captain America to aid in the war effort. Rogers must stop the Red Skull \u2013 Adolf Hitler\u0027s ruthless head of weaponry, and the leader of an organization that intends to use a mysterious device of untold powers for world domination.",
+          "poster_path": "/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2011-07-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yhp5Pt4GugkCs5mz63qWz5khHXe.jpg",
+          "id": 49538,
+          "title": "X-Men: First Class",
+          "original_title": "X-Men: First Class",
+          "overview": "Before Charles Xavier and Erik Lensherr took the names Professor X and Magneto, they were two young men discovering their powers for the first time. Before they were arch-enemies, they were closest of friends, working together with other mutants (some familiar, some new), to stop the greatest threat the world has ever known.",
+          "poster_path": "/hNEokmUke0dazoBhttFN0o3L7Xv.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2011-06-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg",
+          "id": 10195,
+          "title": "Thor",
+          "original_title": "Thor",
+          "overview": "Against his father Odin\u0027s will, The Mighty Thor - a powerful but arrogant warrior god - recklessly reignites an ancient war. Thor is cast down to Earth and forced to live among humans as punishment. Once here, Thor learns what it takes to be a true hero when the most dangerous villain of his world sends the darkest forces of Asgard to invade Earth.",
+          "poster_path": "/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            14,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2011-04-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7lmBufEG7P7Y1HClYK3gCxYrkgS.jpg",
+          "id": 10138,
+          "title": "Iron Man 2",
+          "original_title": "Iron Man 2",
+          "overview": "With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony Stark faces pressure from the government, the press and the public to share his technology with the military. Unwilling to let go of his invention, Stark, with Pepper Potts and James \u0027Rhodey\u0027 Rhodes at his side, must forge new alliances \u2013 and confront powerful enemies.",
+          "poster_path": "/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2010-04-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/p4GzAzjlL7lXIVGvayg7zvzGTSi.jpg",
+          "id": 2080,
+          "title": "X-Men Origins: Wolverine",
+          "original_title": "X-Men Origins: Wolverine",
+          "overview": "After seeking to live a normal life after 200 years, Logan sets out to avenge a death by undergoing the mutant Weapon X program and becoming Wolverine.",
+          "poster_path": "/yj8LbTju1p7CUJg7US2unSBk33s.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2009-04-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dqPZpQy6PJINOJtld17NgIERusH.jpg",
+          "id": 13056,
+          "title": "Punisher: War Zone",
+          "original_title": "Punisher: War Zone",
+          "overview": "Waging his one-man war on the world of organized crime, ruthless vigilante-hero Frank Castle sets his sights on overeager mob boss Billy Russoti. After Russoti is left horribly disfigured by Castle, he sets out for vengeance under his new alias: Jigsaw. With the \u0022Punisher Task Force\u0022 hot on his trail and the FBI unable to take Jigsaw in, Frank must stand up to the formidable army that Jigsaw has recruited before more of his evil deeds go unpunished.",
+          "poster_path": "/oOvKJgYUIpfswGHAdW6159bPbvM.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80
+          ],
+          "popularity": 0.0,
+          "release_date": "2008-12-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jPu8yiadqgzwFPGKJmGo637ASVP.jpg",
+          "id": 1724,
+          "title": "The Incredible Hulk",
+          "original_title": "The Incredible Hulk",
+          "overview": "Scientist Bruce Banner scours the planet for an antidote to the unbridled force of rage within him: the Hulk. But when the military masterminds who dream of exploiting his powers force him back to civilization, he finds himself coming face to face with a new, deadly foe.",
+          "poster_path": "/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2008-06-12",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+          "id": 1726,
+          "title": "Iron Man",
+          "original_title": "Iron Man",
+          "overview": "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.",
+          "poster_path": "/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2008-04-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/o2wYH40zW0JIYiYUTu6L4gsNy7E.jpg",
+          "id": 1979,
+          "title": "Fantastic Four: Rise of the Silver Surfer",
+          "original_title": "Fantastic Four: Rise of the Silver Surfer",
+          "overview": "The Fantastic Four return to the big screen as a new and all powerful enemy threatens the Earth. The seemingly unstoppable \u0027Silver Surfer\u0027, but all is not what it seems and there are old and new enemies that pose a greater threat than the intrepid superheroes realize.",
+          "poster_path": "/9wRfzTcMyyzkQxVDqBHv8RwuZOv.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2007-06-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/FfAU0PUs8AJkMU2VbkVNFtRXR4.jpg",
+          "id": 559,
+          "title": "Spider-Man 3",
+          "original_title": "Spider-Man 3",
+          "overview": "The seemingly invincible Spider-Man goes up against an all-new crop of villains\u2014including the shape-shifting Sandman. While Spider-Man\u2019s superpowers are altered by an alien organism, his alter ego, Peter Parker, deals with nemesis Eddie Brock and also gets caught up in a love triangle.",
+          "poster_path": "/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2007-05-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zbV32WKHFuEYLXLTpr0rmVjQn11.jpg",
+          "id": 1250,
+          "title": "Ghost Rider",
+          "original_title": "Ghost Rider",
+          "overview": "In order to save his dying father, young stunt cyclist Johnny Blaze sells his soul to Mephistopheles and sadly parts from the pure-hearted Roxanne Simpson, the love of his life. Years later, Johnny\u0027s path crosses again with Roxanne, now a go-getting reporter, and also with Mephistopheles, who offers to release Johnny\u0027s soul if Johnny becomes the fabled, fiery \u0027Ghost Rider\u0027.",
+          "poster_path": "/4quwR1VwZouD0YF9AaD72kQAjxH.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            53,
+            28,
+            14
+          ],
+          "popularity": 0.0,
+          "release_date": "2007-01-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nLMXULCGLnzRxz11txPzPqbOHSz.jpg",
+          "id": 36668,
+          "title": "X-Men: The Last Stand",
+          "original_title": "X-Men: The Last Stand",
+          "overview": "When a cure is found to treat mutations, lines are drawn amongst the X-Men led by Professor Charles Xavier, and Magneto\u0027s Brotherhood of Mutants.",
+          "poster_path": "/a2xicU8DpKtRizOHjQLC1JyCSRS.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2006-05-24",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2cDXXLirYsoP6rk9B8yrvNHbbFy.jpg",
+          "id": 9738,
+          "title": "Fantastic Four",
+          "original_title": "Fantastic Four",
+          "overview": "During a space voyage, four scientists are altered by cosmic rays: Reed Richards gains the ability to stretch his body; Sue Storm can become invisible; Johnny Storm controls fire; and Ben Grimm is turned into a super-strong \u2026 thing. Together, these \u0022Fantastic Four\u0022 must now thwart the evil plans of Dr. Doom and save the world from certain destruction.",
+          "poster_path": "/4YMcYEFS8sFuW3soP1HVmgR3cSm.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            14,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2005-06-29",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2JMOTj6DFjNcg9KToctmfTV55EW.jpg",
+          "id": 9947,
+          "title": "Elektra",
+          "original_title": "Elektra",
+          "overview": "Elektra the warrior survives a near-death experience, becomes an assassin-for-hire, and tries to protect her two latest targets, a single father and his young daughter, from a group of supernatural assassins.",
+          "poster_path": "/gC6s6NKHneSrOKyQZnUMb443RKU.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            14,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2005-01-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/63eAFgJtN6ZTyFFzlAOoZLhlYqc.jpg",
+          "id": 36648,
+          "title": "Blade: Trinity",
+          "original_title": "Blade: Trinity",
+          "overview": "For years, Blade has fought against the vampires in the cover of the night. But now, after falling into the crosshairs of the FBI, he is forced out into the daylight, where he is driven to join forces with a clan of human vampire hunters he never knew existed\u2014The Nightstalkers. Together with Abigail and Hannibal, two deftly trained Nightstalkers, Blade follows a trail of blood to the ancient creature that is also hunting him\u2014the original vampire, Dracula.",
+          "poster_path": "/6f7iXvPOnf83MaLB1JmPzUor1rr.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            27,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2004-12-08",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6al048Lat3eLVQOuKtc9h6Tu94d.jpg",
+          "id": 558,
+          "title": "Spider-Man 2",
+          "original_title": "Spider-Man 2",
+          "overview": "Peter Parker is going through a major identity crisis. Burned out from being Spider-Man, he decides to shelve his superhero alter ego, which leaves the city suffering in the wake of carnage left by the evil Doc Ock. In the meantime, Parker still can\u0027t act on his feelings for Mary Jane Watson, a girl he\u0027s loved since childhood. A certain anger begins to brew in his best friend Harry Osborn as well...",
+          "poster_path": "/aGuvNAaaZuWXYQQ6N2v7DeuP6mB.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2004-06-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ziexSS07RmowuyqAdJMh1sGxjHg.jpg",
+          "id": 7220,
+          "title": "The Punisher",
+          "original_title": "The Punisher",
+          "overview": "When undercover FBI agent Frank Castle\u0027s wife and son are slaughtered, he becomes \u0027the Punisher\u0027 -- a ruthless vigilante willing to go to any length to avenge his family.",
+          "poster_path": "/7rmA1HwYp2GKM85BL0cVwCaosGr.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80,
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "2004-04-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8vQBXqDbb30qNpBcNYwTesSg75.jpg",
+          "id": 1927,
+          "title": "Hulk",
+          "original_title": "Hulk",
+          "overview": "Bruce Banner, a genetics researcher with a tragic past, suffers massive radiation exposure in his laboratory that causes him to transform into a raging green monster when he gets angry.",
+          "poster_path": "/UllIft2jLSBaay3zQyMV4GNdfy.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            28,
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "2003-06-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7TYITrR804tLITNur3b8VLCK6tw.jpg",
+          "id": 36658,
+          "title": "X2",
+          "original_title": "X2",
+          "overview": "Professor Charles Xavier and his team of genetically gifted superheroes face a rising tide of anti-mutant sentiment led by Col. William Stryker. Storm, Wolverine and Jean Grey must join Magneto and Mystique to unhinge Stryker\u0027s scheme to exterminate all mutants.",
+          "poster_path": "/bst4alFUXCxISwdRUKSMhhkrX1M.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2003-04-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/e7jIX02GiSwsgkU5lMpeKjwq2Zc.jpg",
+          "id": 9480,
+          "title": "Daredevil",
+          "original_title": "Daredevil",
+          "overview": "A man blinded in a childhood accident fights crime using his superhumanly-elevated remaining senses.",
+          "poster_path": "/oCDBwSkntYamuw8VJIxMRCtDBmi.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2003-02-14",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        }
+      ],
+      "name": "The Marvel Universe",
+      "page": 3,
+      "poster_path": "/coJVIUEOToAEGViuhclM7pXC75R.jpg",
+      "total_pages": 4,
+      "total_results": 68
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}
