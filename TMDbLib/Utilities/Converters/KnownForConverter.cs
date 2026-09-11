@@ -38,7 +38,7 @@ internal class KnownForConverter : JsonConverter<List<TmdbMediaSummary>?>
             {
                 MediaType.Movie => (TmdbMediaSummary?)element.Deserialize(options.GetTypeInfo(typeof(TmdbMovieSummary))),
                 MediaType.Tv => (TmdbMediaSummary?)element.Deserialize(options.GetTypeInfo(typeof(TmdbTvSummary))),
-                _ => throw new ArgumentOutOfRangeException(nameof(reader), mt.GetString(), "Unsupported known-for media type"),
+                _ => null,
             };
 
             if (item is not null)
