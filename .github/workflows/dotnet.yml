@@ -65,7 +65,7 @@ jobs:
 
     - name: "Github packages: Cleanup"
       if: github.ref == 'refs/heads/master'
-      uses: stripethree/gpr-janitor@f3704c21869d8e021ba14e340ea28c879b35d1b1 # dist
+      uses: stripethree/gpr-janitor@647231257bcdd4131e2e865c68c0bdd18467acdd # dist
       with:
         dry-run: false
         keep-versions: 25
