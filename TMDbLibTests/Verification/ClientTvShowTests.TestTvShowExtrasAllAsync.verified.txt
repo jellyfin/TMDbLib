@@ -220,6 +220,7 @@
         known_for_department: Acting,
         name: David Griffin,
         original_name: David Griffin,
+        profile_path: <non-empty>,
         id: {Scrubbed},
         media_type: person
       }
@@ -974,15 +975,16 @@
           {
             character: Emmet,
             credit_id: {Scrubbed},
-            episode_count: 34
+            episode_count: 40
           }
         ],
-        total_episode_count: 34,
+        total_episode_count: 40,
         order: 5,
         gender: Male,
         known_for_department: Acting,
         name: David Griffin,
         original_name: David Griffin,
+        profile_path: <non-empty>,
         id: {Scrubbed},
         media_type: person
       },
@@ -1503,10 +1505,10 @@
           {
             character: Rose,
             credit_id: {Scrubbed},
-            episode_count: 34
+            episode_count: 40
           }
         ],
-        total_episode_count: 34,
+        total_episode_count: 40,
         order: 6,
         gender: Female,
         known_for_department: Acting,
@@ -1828,6 +1830,7 @@
         known_for_department: Acting,
         name: David Ashford,
         original_name: David Ashford,
+        profile_path: <non-empty>,
         id: {Scrubbed},
         media_type: person
       },
@@ -2647,6 +2650,23 @@
         original_name: Sid Sutton,
         id: {Scrubbed},
         media_type: person
+      },
+      {
+        department: Writing,
+        jobs: [
+          {
+            job: Script Editor,
+            credit_id: {Scrubbed},
+            episode_count: 24
+          }
+        ],
+        total_episode_count: 24,
+        gender: Male,
+        known_for_department: Writing,
+        name: Christopher Bond,
+        original_name: Christopher Bond,
+        id: {Scrubbed},
+        media_type: person
       }
     ]
   },
@@ -2691,6 +2711,12 @@
   id: {Scrubbed},
   images: {
     backdrops: [
+      {
+        aspect_ratio: <non-empty>,
+        file_path: <non-empty>,
+        height: <non-empty>,
+        width: <non-empty>
+      },
       {
         aspect_ratio: <non-empty>,
         file_path: <non-empty>,
@@ -2822,15 +2848,17 @@
         iso_639_1: en,
         iso_3166_1: US,
         width: <non-empty>
-      },
+      }
+    ],
+    posters: [
       {
         aspect_ratio: <non-empty>,
         file_path: <non-empty>,
         height: <non-empty>,
+        iso_639_1: en,
+        iso_3166_1: US,
         width: <non-empty>
-      }
-    ],
-    posters: [
+      },
       {
         aspect_ratio: <non-empty>,
         file_path: <non-empty>,
@@ -2859,8 +2887,8 @@
         aspect_ratio: <non-empty>,
         file_path: <non-empty>,
         height: <non-empty>,
-        iso_639_1: en,
-        iso_3166_1: US,
+        iso_639_1: pl,
+        iso_3166_1: PL,
         width: <non-empty>
       },
       {
@@ -2910,6 +2938,22 @@
         iso_639_1: fi,
         iso_3166_1: FI,
         width: <non-empty>
+      },
+      {
+        aspect_ratio: <non-empty>,
+        file_path: <non-empty>,
+        height: <non-empty>,
+        iso_639_1: bg,
+        iso_3166_1: BG,
+        width: <non-empty>
+      },
+      {
+        aspect_ratio: <non-empty>,
+        file_path: <non-empty>,
+        height: <non-empty>,
+        iso_639_1: pl,
+        iso_3166_1: PL,
+        width: <non-empty>
       }
     ],
     logos: [
@@ -2955,7 +2999,7 @@
       },
       {
         id: {Scrubbed},
-        name: bucket
+        name: social satire
       },
       {
         id: {Scrubbed},
@@ -2964,6 +3008,10 @@
       {
         id: {Scrubbed},
         name: sitcom
+      },
+      {
+        id: {Scrubbed},
+        name: class warfare
       },
       {
         id: {Scrubbed},
@@ -2990,7 +3038,7 @@
         id: {Scrubbed},
         iso_639_1: en,
         iso_3166_1: US,
-        item_count: 141,
+        item_count: 150,
         name: watched tv
       },
       {
@@ -3038,7 +3086,7 @@
         id: {Scrubbed},
         iso_639_1: en,
         iso_3166_1: US,
-        item_count: 789,
+        item_count: 811,
         name: TV Series
       },
       {
@@ -3062,7 +3110,7 @@
         id: {Scrubbed},
         iso_639_1: en,
         iso_3166_1: US,
-        item_count: 1038,
+        item_count: 1042,
         name: Watched
       },
       {
@@ -3074,6 +3122,14 @@
         name: Easy-watching TV shows
       },
       {
+        description: these are some of my fave watches,
+        id: {Scrubbed},
+        iso_639_1: en,
+        iso_3166_1: US,
+        item_count: 42,
+        name: movies and shows i like
+      },
+      {
         description: Best Of....,
         id: {Scrubbed},
         iso_639_1: en,
@@ -3082,19 +3138,11 @@
         name: Series & Docs 
       },
       {
-        description: Automatski uvoz sa Letterboxd liste kure222,
-        id: {Scrubbed},
-        iso_639_1: en,
-        iso_3166_1: US,
-        item_count: 947,
-        name: Top 1000 Shows
-      },
-      {
         description: ,
         id: {Scrubbed},
         iso_639_1: en,
         iso_3166_1: US,
-        item_count: 23,
+        item_count: 24,
         name: TV-UK
       },
       {
@@ -3102,23 +3150,15 @@
         id: {Scrubbed},
         iso_639_1: en,
         iso_3166_1: US,
-        item_count: 340,
-        name: TV Show Collection1
-      },
-      {
-        description: Have seen at least 1 episode of. ,
-        id: {Scrubbed},
-        iso_639_1: en,
-        iso_3166_1: US,
-        item_count: 979,
-        name: Series
+        item_count: 7356,
+        name: US Enterprise TV
       },
       {
         description: ,
         id: {Scrubbed},
         iso_639_1: en,
         iso_3166_1: US,
-        item_count: 143,
+        item_count: 149,
         name: TV
       },
       {
@@ -3136,10 +3176,18 @@
         iso_3166_1: US,
         item_count: 60,
         name: British TV Classics
+      },
+      {
+        description: ,
+        id: {Scrubbed},
+        iso_639_1: en,
+        iso_3166_1: US,
+        item_count: 4086,
+        name: Limelight Not Seen
       }
     ],
-    total_pages: 3,
-    total_results: 60
+    total_pages: 4,
+    total_results: 62
   },
   last_air_date: DateTime_2,
   last_episode_to_air: {
@@ -3171,10 +3219,7 @@
   origin_country: [
     GB
   ],
-  overview:
-Hyacinth Bucket (whose name, she insists, is pronounced "Bouquet") is a suburban housewife in the West Midlands. She would be the first to tell you that she is a gracious hostess, a respected citizen, and a well-connected member of high society. If you don't believe that, just ask her best friend Elizabeth, held captive in Hyacinth's kitchen; or the postmen and neighbours who bristle at the sound of her voice; or Richard, her weary and compliant husband.
-
-In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not for her senile father's love of running wild in the nip. Oh, and she would prefer it if her brother-in-law was a sharper dresser. And that her husband was more ambitious. And that her sisters were more presentable. And do take your shoes off before you come in the house, dear. Mind that you don't brush against the wallpaper.,
+  overview: A snobbish housewife is determined to climb the social ladder, in spite of her family's working class connections and the constant chagrin of her long suffering husband.,
   poster_path: <non-empty>,
   production_companies: [
     {
@@ -3195,40 +3240,23 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
     results: [
       {
         first_air_date: DateTime_3,
-        name: A Bit of Fry & Laurie,
+        name: Less than Perfect,
         origin_country: [
-          GB
+          US
         ],
-        original_name: A Bit of Fry & Laurie,
+        original_name: Less than Perfect,
         backdrop_path: <non-empty>,
         genre_ids: [
           35
         ],
         original_language: en,
-        overview: A British comedy television series with turns of phrase and elaborate wordplay, written by and starring former Cambridge Footlights members Stephen Fry and Hugh Laurie.,
+        overview: Claude Casey moved up in the secretarial world of television news, from temp to the anchor's desk. After her boss hires her full time, Claude realizes she may be in over her head in this world of assistants fighting to get ahead. But Claude is determined to prove that though she may not be perfect, she's not going down without a fight.,
         poster_path: <non-empty>,
         id: {Scrubbed},
         media_type: tv
       },
       {
         first_air_date: DateTime_4,
-        name: French & Saunders,
-        origin_country: [
-          GB
-        ],
-        original_name: French & Saunders,
-        backdrop_path: <non-empty>,
-        genre_ids: [
-          35
-        ],
-        original_language: en,
-        overview: French and Saunders is a British sketch comedy television series written by and starring comic duo Dawn French and Jennifer Saunders. It is also the name by which the performers are known on the occasions when they appear elsewhere as a double act.,
-        poster_path: <non-empty>,
-        id: {Scrubbed},
-        media_type: tv
-      },
-      {
-        first_air_date: DateTime_5,
         name: My Three Sons,
         origin_country: [
           US
@@ -3246,7 +3274,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       },
       {
-        first_air_date: DateTime_6,
+        first_air_date: DateTime_5,
         name: Benson,
         origin_country: [
           US
@@ -3263,7 +3291,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       },
       {
-        first_air_date: DateTime_7,
+        first_air_date: DateTime_6,
         name: The Jeffersons,
         origin_country: [
           US
@@ -3281,7 +3309,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       },
       {
-        first_air_date: DateTime_8,
+        first_air_date: DateTime_7,
         name: Mama's Family,
         origin_country: [
           US
@@ -3298,7 +3326,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       },
       {
-        first_air_date: DateTime_9,
+        first_air_date: DateTime_8,
         name: One Day at a Time,
         origin_country: [
           US
@@ -3315,7 +3343,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       },
       {
-        first_air_date: DateTime_10,
+        first_air_date: DateTime_9,
         name: Nick Cannon Presents: Wild 'N Out,
         origin_country: [
           US
@@ -3332,7 +3360,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       },
       {
-        first_air_date: DateTime_11,
+        first_air_date: DateTime_10,
         name: The King of Queens,
         origin_country: [
           US
@@ -3349,7 +3377,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       },
       {
-        first_air_date: DateTime_12,
+        first_air_date: DateTime_11,
         name: The Honeymooners,
         origin_country: [
           US
@@ -3362,6 +3390,23 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         ],
         original_language: en,
         overview: A bus driver and his sewer worker friend struggle to strike it rich while their wives look on with weary patience. One of the most influential situation comedy television series in American history.,
+        poster_path: <non-empty>,
+        id: {Scrubbed},
+        media_type: tv
+      },
+      {
+        first_air_date: DateTime_12,
+        name: Yes, Dear,
+        origin_country: [
+          US
+        ],
+        original_name: Yes, Dear,
+        backdrop_path: <non-empty>,
+        genre_ids: [
+          35
+        ],
+        original_language: en,
+        overview: A comedy about two young couples and their outrageously contrasting views on parenting. Greg and Kim Warner struggle on a daily basis to become perfect at the job. Kim is a neurotic, stay-at-home mother, and although her husband, Greg, is a success in his career, his more difficult job is keeping his wife calm as they raise their two young children. While Kim is determined to be the perfect mother and perfect wife and to raise the perfect children, her sister, Christine Hughes, a very down-to-earth mother of two, continually reminds her that life will never be perfect. Christine's husband, Jimmy, often feels compelled to share with his brother-in-law his philosophy about being a husband and a parent while still remaining a man.,
         poster_path: <non-empty>,
         id: {Scrubbed},
         media_type: tv
@@ -3403,17 +3448,17 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
       },
       {
         first_air_date: DateTime_15,
-        name: Miranda,
+        name: Harry Enfield and Chums,
         origin_country: [
           GB
         ],
-        original_name: Miranda,
+        original_name: Harry Enfield and Chums,
         backdrop_path: <non-empty>,
         genre_ids: [
           35
         ],
         original_language: en,
-        overview: Socially inept Miranda always gets into awkward situations; working in her joke shop with best friend Stevie, being hounded by her pushy mother, and especially when she's around her crush Gary.,
+        overview: Harry Enfield, Kathy Burke, Paul Whitehouse and others take on an array of oddball characters and old-time favorites in this sketch comedy show.,
         poster_path: <non-empty>,
         id: {Scrubbed},
         media_type: tv
@@ -3454,23 +3499,6 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
       },
       {
         first_air_date: DateTime_18,
-        name: Suburgatory,
-        origin_country: [
-          US
-        ],
-        original_name: Suburgatory,
-        backdrop_path: <non-empty>,
-        genre_ids: [
-          35
-        ],
-        original_language: en,
-        overview: Single father George Altman is doing his best to raise his sixteen-year-old daughter Tessa in the big city. When he discovers a box of condoms in her bedroom, though, he decides the time has come to move her to a more wholesome and nurturing environment: the suburbs. But behind the beautiful homes and perfect lawns lurk the Franken-moms, spray tans, nose jobs, and Red Bull-guzzling teens who have nothing in common with Tessa. It’s a whole new world, one that makes George wonder if they haven’t jumped out of the frying pan and into the fire.,
-        poster_path: <non-empty>,
-        id: {Scrubbed},
-        media_type: tv
-      },
-      {
-        first_air_date: DateTime_19,
         name: Key & Peele,
         origin_country: [
           US
@@ -3482,6 +3510,23 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         ],
         original_language: en,
         overview: Key & Peele is an American sketch comedy television show. It stars Keegan-Michael Key and Jordan Peele, both former cast members of MADtv. Each episode of the show consists of several pre-taped sketches starring the two actors, introduced by Key and Peele in front of a live studio audience.,
+        poster_path: <non-empty>,
+        id: {Scrubbed},
+        media_type: tv
+      },
+      {
+        first_air_date: DateTime_19,
+        name: Friends with Better Lives,
+        origin_country: [
+          US
+        ],
+        original_name: Friends with Better Lives,
+        backdrop_path: <non-empty>,
+        genre_ids: [
+          35
+        ],
+        original_language: en,
+        overview: A comedy about six friends at different stages in their lives – married, divorced, newly engaged and single – who are outwardly happy, but secretly questioning if their friends have it better. Andi and Bobby are happily married with two kids but at times long for the days they had less responsibility and more fun; Will is newly single and preaching the bachelor lifestyle, but still pining for his ex-wife; Jules and Lowell are high on their passionate new relationship; and Kate has a successful career but may take a swan dive into the L.A. River when she finds out her last remaining single friend, Jules, just got engaged. When it comes to relationships, these six friends are finding it a challenge to look at each other without wondering… who really has the better life?,
         poster_path: <non-empty>,
         id: {Scrubbed},
         media_type: tv
@@ -3538,14 +3583,14 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         media_type: tv
       }
     ],
-    total_pages: 15,
-    total_results: 298
+    total_pages: 16,
+    total_results: 306
   },
   seasons: [
     {
       air_date: DateTime_23,
       episode_count: 7,
-      name: Season 3,
+      name: Series 3,
       overview: ,
       poster_path: <non-empty>,
       season_number: 3,
@@ -3555,7 +3600,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
     {
       air_date: DateTime_24,
       episode_count: 10,
-      name: Season 2,
+      name: Series 2,
       overview: ,
       poster_path: <non-empty>,
       season_number: 2,
@@ -3563,9 +3608,9 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
       media_type: season
     },
     {
-      air_date: DateTime_1,
+      air_date: DateTime_25,
       episode_count: 6,
-      name: Season 1,
+      name: Series 1,
       overview: ,
       poster_path: <non-empty>,
       season_number: 1,
@@ -3573,9 +3618,9 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
       media_type: season
     },
     {
-      air_date: DateTime_25,
+      air_date: DateTime_26,
       episode_count: 10,
-      name: Season 5,
+      name: Series 5,
       overview: ,
       poster_path: <non-empty>,
       season_number: 5,
@@ -3583,9 +3628,9 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
       media_type: season
     },
     {
-      air_date: DateTime_26,
+      air_date: DateTime_27,
       episode_count: 7,
-      name: Season 4,
+      name: Series 4,
       overview: ,
       poster_path: <non-empty>,
       season_number: 4,
@@ -3593,7 +3638,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
       media_type: season
     },
     {
-      air_date: DateTime_27,
+      air_date: DateTime_28,
       episode_count: 25,
       name: Specials,
       overview: Christmas may come but once a year, but for arch-snob Hyacinth Bucket (pronounced Bouquet, if you please), disaster, drama and humiliation – all obstacles on the ladder to social-climbing success – are far more frequent. In these Christmas Specials we see a delightful cruise on the QE2 start in a less-than-delightful muddy field. We see a glorious English Civil War pageant, with Hyacinth as Queen Henrietta Maria, go royally wrong when the cast fails to turn up and her unsavoury relatives step into the breach. And we see that even The Season of Good Will isn’t immune from woe, as a sherry-fuelled Richard, dressed as Santa, brings Hyacinth tidings devoid of any comfort and joy.,
@@ -3616,6 +3661,14 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
     results: {
       AT: {
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=AT,
+        flatrate: [
+          {
+            display_priority: 161,
+            logo_path: <non-empty>,
+            provider_id: {Scrubbed},
+            provider_name: BBC Player Amazon Channel
+          }
+        ],
         buy: [
           {
             display_priority: 5,
@@ -3653,13 +3706,13 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
             provider_name: Stan
           },
           {
-            display_priority: 56,
+            display_priority: 54,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
-            provider_name: Britbox Apple TV Channel 
+            provider_name: Britbox Apple TV channel
           },
           {
-            display_priority: 73,
+            display_priority: 71,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox Amazon Channel
@@ -3675,7 +3728,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         ],
         ads: [
           {
-            display_priority: 17,
+            display_priority: 16,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: 9Now
@@ -3686,27 +3739,27 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=CA,
         flatrate: [
           {
-            display_priority: 26,
+            display_priority: 24,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox Amazon Channel
           },
           {
-            display_priority: 42,
+            display_priority: 40,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox
           },
           {
-            display_priority: 95,
+            display_priority: 91,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
-            provider_name: Britbox Apple TV Channel 
+            provider_name: Britbox Apple TV channel
           }
         ],
         buy: [
           {
-            display_priority: 7,
+            display_priority: 6,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Apple TV Store
@@ -3717,7 +3770,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=DE,
         flatrate: [
           {
-            display_priority: 31,
+            display_priority: 32,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BBC Player Amazon Channel
@@ -3731,7 +3784,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
             provider_name: Apple TV Store
           },
           {
-            display_priority: 8,
+            display_priority: 7,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Amazon Video
@@ -3742,22 +3795,28 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=DK,
         flatrate: [
           {
-            display_priority: 9,
+            display_priority: 8,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: TV 2
           },
           {
-            display_priority: 32,
+            display_priority: 30,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox
           },
           {
-            display_priority: 38,
+            display_priority: 36,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Allente
+          },
+          {
+            display_priority: 64,
+            logo_path: <non-empty>,
+            provider_id: {Scrubbed},
+            provider_name: BritBox Amazon Channel
           }
         ]
       },
@@ -3765,10 +3824,16 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=FI,
         flatrate: [
           {
-            display_priority: 32,
+            display_priority: 30,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox
+          },
+          {
+            display_priority: 66,
+            logo_path: <non-empty>,
+            provider_id: {Scrubbed},
+            provider_name: BritBox Amazon Channel
           }
         ]
       },
@@ -3782,13 +3847,13 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
             provider_name: Sky Go
           },
           {
-            display_priority: 44,
+            display_priority: 43,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Now TV
           },
           {
-            display_priority: 113,
+            display_priority: 110,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: ITVX Premium
@@ -3815,7 +3880,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=GG,
         buy: [
           {
-            display_priority: 83,
+            display_priority: 81,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Amazon Video
@@ -3826,13 +3891,13 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=IE,
         flatrate: [
           {
-            display_priority: 9,
+            display_priority: 8,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Sky Go
           },
           {
-            display_priority: 11,
+            display_priority: 10,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Now TV
@@ -3843,21 +3908,10 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=IN,
         flatrate: [
           {
-            display_priority: 60,
+            display_priority: 56,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BBC Player Amazon Channel
-          }
-        ]
-      },
-      LV: {
-        link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=LV,
-        free: [
-          {
-            display_priority: 36,
-            logo_path: <non-empty>,
-            provider_id: {Scrubbed},
-            provider_name: LTV1
           }
         ]
       },
@@ -3865,7 +3919,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=NL,
         flatrate: [
           {
-            display_priority: 22,
+            display_priority: 21,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: NLZIET
@@ -3876,22 +3930,28 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=NO,
         flatrate: [
           {
-            display_priority: 28,
+            display_priority: 27,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Strim
           },
           {
-            display_priority: 33,
+            display_priority: 31,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox
           },
           {
-            display_priority: 37,
+            display_priority: 35,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
-            provider_name: Britbox Apple TV Channel 
+            provider_name: Britbox Apple TV channel
+          },
+          {
+            display_priority: 56,
+            logo_path: <non-empty>,
+            provider_id: {Scrubbed},
+            provider_name: BritBox Amazon Channel
           }
         ]
       },
@@ -3899,7 +3959,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=PL,
         flatrate: [
           {
-            display_priority: 42,
+            display_priority: 41,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: CDA Premium
@@ -3910,25 +3970,25 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
         link: https://www.themoviedb.org/tv/34-keeping-up-appearances/watch?locale=SE,
         flatrate: [
           {
-            display_priority: 20,
+            display_priority: 19,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: Tele2 Play
           },
           {
-            display_priority: 34,
+            display_priority: 32,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox
           },
           {
-            display_priority: 40,
+            display_priority: 38,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: TV4 Play
           },
           {
-            display_priority: 56,
+            display_priority: 54,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
             provider_name: BritBox Amazon Channel
@@ -3942,7 +4002,7 @@ In fact, Hyacinth's reputation could be as perfect as her new lounge set, if not
             display_priority: 25,
             logo_path: <non-empty>,
             provider_id: {Scrubbed},
-            provider_name: Britbox Apple TV Channel 
+            provider_name: Britbox Apple TV channel
           },
           {
             display_priority: 58,

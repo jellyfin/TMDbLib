@@ -67,9 +67,10 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: stripethree/gpr-janitor@647231257bcdd4131e2e865c68c0bdd18467acdd # dist
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        package-name: TMDbLib
+        package-type: nuget
+        owner-type: org
         dry-run: false
         keep-versions: 25
         min-age-days: 14
-        versions-to-fetch: 20
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
