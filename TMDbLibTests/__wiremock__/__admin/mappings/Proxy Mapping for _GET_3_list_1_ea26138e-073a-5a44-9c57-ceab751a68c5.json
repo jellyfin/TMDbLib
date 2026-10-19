@@ -1,0 +1,499 @@
+{
+  "Guid": "ea26138e-073a-5a44-9c57-ceab751a68c5",
+  "Title": "Proxy Mapping for GET /3/list/1",
+  "Description": "Proxy Mapping for GET /3/list/1",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/list/1",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "created_by": "Travis Bell",
+      "description": "The idea behind this list is to collect the live action comic book movies from within the Marvel franchise.",
+      "favorite_count": 0,
+      "id": 1,
+      "iso_639_1": "en",
+      "item_count": 68,
+      "items": [
+        {
+          "adult": false,
+          "backdrop_path": "/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg",
+          "id": 986056,
+          "title": "Thunderbolts*",
+          "original_title": "Thunderbolts*",
+          "overview": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
+          "poster_path": "/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2025-04-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ce3prrjh9ZehEl5JinNqr4jIeaB.jpg",
+          "id": 822119,
+          "title": "Captain America: Brave New World",
+          "original_title": "Captain America: Brave New World",
+          "overview": "After meeting with newly elected U.S. President Thaddeus Ross, Sam finds himself in the middle of an international incident. He must discover the reason behind a nefarious global plot before the true mastermind has the entire world seeing red.",
+          "poster_path": "/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            53,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2025-02-12",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+          "id": 533535,
+          "title": "Deadpool \u0026 Wolverine",
+          "original_title": "Deadpool \u0026 Wolverine",
+          "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+          "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            35,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2024-07-24",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg",
+          "id": 609681,
+          "title": "The Marvels",
+          "original_title": "The Marvels",
+          "overview": "When her duties send her to an anomalous wormhole linked to a Kree revolutionary, Carol\u0027s powers become entangled with that of Jersey City super-fan Kamala Khan, aka Ms. Marvel, and Carol\u0027s estranged niece, now S.A.B.E.R. astronaut Captain Monica Rambeau. Together, this unlikely trio must team up and learn to work in concert to save the universe.",
+          "poster_path": "/9GBhzXMFjgcZ3FdR9w3bUMMTps5.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2023-11-08",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg",
+          "id": 447365,
+          "title": "Guardians of the Galaxy Vol. 3",
+          "original_title": "Guardians of the Galaxy Vol. 3",
+          "overview": "Peter Quill, still reeling from the loss of Gamora, must rally his team around him to defend the universe along with protecting one of their own. A mission that, if not completed successfully, could quite possibly lead to the end of the Guardians as we know them.",
+          "poster_path": "/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            12,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2023-05-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/m8JTwHFwX7I7JY5fPe4SjqejWag.jpg",
+          "id": 640146,
+          "title": "Ant-Man and the Wasp: Quantumania",
+          "original_title": "Ant-Man and the Wasp: Quantumania",
+          "overview": "Super-Hero partners Scott Lang and Hope van Dyne, along with with Hope\u0027s parents Janet van Dyne and Hank Pym, and Scott\u0027s daughter Cassie Lang, find themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that will push them beyond the limits of what they thought possible.",
+          "poster_path": "/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2023-02-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/83H0C66AcvkwpG2738VCTHMY9uv.jpg",
+          "id": 505642,
+          "title": "Black Panther: Wakanda Forever",
+          "original_title": "Black Panther: Wakanda Forever",
+          "overview": "Queen Ramonda, Shuri, M\u2019Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T\u2019Challa\u2019s death.  As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+          "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2022-11-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg",
+          "id": 616037,
+          "title": "Thor: Love and Thunder",
+          "original_title": "Thor: Love and Thunder",
+          "overview": "After his retirement is interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods, Thor Odinson enlists the help of King Valkyrie, Korg, and ex-girlfriend Jane Foster, who now wields Mjolnir as the Mighty Thor. Together they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher\u2019s vengeance and stop him before it\u2019s too late.",
+          "poster_path": "/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            28,
+            35
+          ],
+          "popularity": 0.0,
+          "release_date": "2022-07-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg",
+          "id": 453395,
+          "title": "Doctor Strange in the Multiverse of Madness",
+          "original_title": "Doctor Strange in the Multiverse of Madness",
+          "overview": "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.",
+          "poster_path": "/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            28,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2022-05-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uyrOU4BDm2kbVxFsMiDFIHDhc4d.jpg",
+          "id": 634649,
+          "title": "Spider-Man: No Way Home",
+          "original_title": "Spider-Man: No Way Home",
+          "overview": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+          "poster_path": "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2021-12-15",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/c6H7Z4u73ir3cIoCteuhJh7UCAR.jpg",
+          "id": 524434,
+          "title": "Eternals",
+          "original_title": "Eternals",
+          "overview": "The Eternals are a team of ancient aliens who have been living on Earth in secret for thousands of years. When an unexpected tragedy forces them out of the shadows, they are forced to reunite against mankind\u2019s most ancient enemy, the Deviants.",
+          "poster_path": "/lFByFSLV5WDJEv3KabbdAF959F2.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2021-11-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/r7K6Xt0RX4Mw0cAbZVw5cyb1Tux.jpg",
+          "id": 566525,
+          "title": "Shang-Chi and the Legend of the Ten Rings",
+          "original_title": "Shang-Chi and the Legend of the Ten Rings",
+          "overview": "Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+          "poster_path": "/9f2Q0U3IOsLgrI2HkvldwSABZy5.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            14
+          ],
+          "popularity": 0.0,
+          "release_date": "2021-09-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg",
+          "id": 497698,
+          "title": "Black Widow",
+          "original_title": "Black Widow",
+          "overview": "Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.",
+          "poster_path": "/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2021-07-07",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vamhMTvh9m9zFHDoR0v1nRtf6T4.jpg",
+          "id": 429617,
+          "title": "Spider-Man: Far From Home",
+          "original_title": "Spider-Man: Far From Home",
+          "overview": "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.",
+          "poster_path": "/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2019-06-28",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2xfV5Zdq4kCsFVReRXJKnJaUFCD.jpg",
+          "id": 299534,
+          "title": "Avengers: Endgame",
+          "original_title": "Avengers: Endgame",
+          "overview": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos\u0027 actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+          "poster_path": "/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            878,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "2019-04-24",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qAzYK4YPSWDc7aa4R43LcwRIAyb.jpg",
+          "id": 299537,
+          "title": "Captain Marvel",
+          "original_title": "Captain Marvel",
+          "overview": "The story follows Carol Danvers as she becomes one of the universe\u2019s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.",
+          "poster_path": "/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2019-03-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iYdgEUE2W2aJkgqfSjf1x3gFfuV.jpg",
+          "id": 363088,
+          "title": "Ant-Man and the Wasp",
+          "original_title": "Ant-Man and the Wasp",
+          "overview": "Just when his time under house arrest is about to end, Scott Lang once again puts his freedom at risk to help Hope van Dyne and Dr. Hank Pym dive into the quantum realm and try to accomplish, against time and any chance of success, a very dangerous rescue mission.",
+          "poster_path": "/cFQEO687n1K6umXbInzocxcnAQz.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2018-07-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
+          "id": 299536,
+          "title": "Avengers: Infinity War",
+          "original_title": "Avengers: Infinity War",
+          "overview": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
+          "poster_path": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2018-04-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg",
+          "id": 284054,
+          "title": "Black Panther",
+          "original_title": "Black Panther",
+          "overview": "King T\u0027Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country\u0027s new leader. However, T\u0027Challa soon finds that he is challenged for the throne by factions within his own country as well as without. Using powers reserved to Wakandan kings, T\u0027Challa assumes the Black Panther mantle to join with ex-girlfriend Nakia, the queen-mother, his princess-kid sister, members of the Dora Milaje (the Wakandan \u0027special forces\u0027) and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+          "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2018-02-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vLmHH8jAy8Jq8uBsLucd3592WGh.jpg",
+          "id": 284053,
+          "title": "Thor: Ragnarok",
+          "original_title": "Thor: Ragnarok",
+          "overview": "Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the destruction of his home-world and the end of Asgardian civilization, at the hands of a powerful new threat, the ruthless Hela.",
+          "poster_path": "/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            35,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "2017-10-02",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        }
+      ],
+      "name": "The Marvel Universe",
+      "page": 1,
+      "poster_path": "/coJVIUEOToAEGViuhclM7pXC75R.jpg",
+      "total_pages": 4,
+      "total_results": 68
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}
