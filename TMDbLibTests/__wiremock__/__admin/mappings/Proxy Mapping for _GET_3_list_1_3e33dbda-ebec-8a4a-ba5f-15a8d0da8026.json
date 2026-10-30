@@ -1,0 +1,246 @@
+{
+  "Guid": "3e33dbda-ebec-8a4a-ba5f-15a8d0da8026",
+  "Title": "Proxy Mapping for GET /3/list/1",
+  "Description": "Proxy Mapping for GET /3/list/1",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/list/1",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
+    "Params": [
+      {
+        "Name": "page",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "4",
+            "IgnoreCase": false
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "created_by": "Travis Bell",
+      "description": "The idea behind this list is to collect the live action comic book movies from within the Marvel franchise.",
+      "favorite_count": 0,
+      "id": 1,
+      "iso_639_1": "en",
+      "item_count": 68,
+      "items": [
+        {
+          "adult": false,
+          "backdrop_path": "/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg",
+          "id": 557,
+          "title": "Spider-Man",
+          "original_title": "Spider-Man",
+          "overview": "After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.",
+          "poster_path": "/or6XJBVpcEbIkma0V9zshnbEtx4.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2002-05-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/86b0NGY1i0bt3ckhkcHxiCSMxk1.jpg",
+          "id": 36586,
+          "title": "Blade II",
+          "original_title": "Blade II",
+          "overview": "Blade forms an uneasy alliance with the vampire council in order to combat the Reapers, who are feeding on vampires.",
+          "poster_path": "/yDHwo3eWcMiy5LnnEnlGV9iLu9k.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            14,
+            27,
+            28,
+            53
+          ],
+          "popularity": 0.0,
+          "release_date": "2002-03-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3QUVzbcNyfGe3ocWkYAT8emK8Co.jpg",
+          "id": 36657,
+          "title": "X-Men",
+          "original_title": "X-Men",
+          "overview": "Two mutants, Rogue and Wolverine, come to a private academy for their kind whose resident superhero team, the X-Men, must oppose a terrorist organization with similar powers.",
+          "poster_path": "/bRDAc4GogyS9ci3ow7UnInOcriN.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "2000-07-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7NKfxJrQn053UJeLftlx4m4NTzo.jpg",
+          "id": 36647,
+          "title": "Blade",
+          "original_title": "Blade",
+          "overview": "The Daywalker known as \u0022Blade\u0022 - a half-vampire, half-mortal man - becomes the protector of humanity against an underground army of vampires.",
+          "poster_path": "/oWT70TvbsmQaqyphCZpsnQR7R32.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            27,
+            28
+          ],
+          "popularity": 0.0,
+          "release_date": "1998-08-21",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2uBGbCx6eOo9EMtQt3DnhMSKzB8.jpg",
+          "id": 22059,
+          "title": "The Fantastic Four",
+          "original_title": "The Fantastic Four",
+          "overview": "When dosed with cosmic rays, four intrepid astronauts are given incredible powers. They decide to form a superhero group called the Fantastic Four to fight their arch-enemy, Dr. Doom.",
+          "poster_path": "/avJpIDOjyfdoOLINYficKvW9dEa.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            878,
+            12
+          ],
+          "popularity": 0.0,
+          "release_date": "1994-01-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/a7nEljKws5sgtCndAkJtdpGz9pe.jpg",
+          "id": 13995,
+          "title": "Captain America",
+          "original_title": "Captain America",
+          "overview": "During World War II, a brave, patriotic American Soldier undergoes experiments to become a new supersoldier, \u0022Captain America\u0022. Racing to Germany to sabotage the rockets of Nazi baddie \u0022Red Skull\u0022, Captain America winds up frozen until the 1990s. He reawakens to find that the Red Skull has changed identities and is now planning to kidnap the President of the United States.",
+          "poster_path": "/vdHrLFfHcJX9nlvUfG3LK2a2hq4.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            12,
+            878,
+            10752
+          ],
+          "popularity": 0.0,
+          "release_date": "1990-12-14",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tFmrdnfXM0p6ihMTFpptYOKEfSl.jpg",
+          "id": 8867,
+          "title": "The Punisher",
+          "original_title": "The Punisher",
+          "overview": "The avenging angel of Marvel Comics fame comes brilliantly to life in this searing action-adventure thriller! Dolph Lundgren stars as Frank Castle, a veteran cop who loses his entire family to a mafia car bomb. His ex-partner believes Castle survived the blast and became the Punisher, living in the sewers and exacting vigilante violence against mob bosses throughout the city. When the populace is caught in the midst of a gang war that he caused, Castle must again emerge from the shadows and save the innocent.",
+          "poster_path": "/tA0O0hYyHX7Hl2Fl8VEtGtfBtjI.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            28,
+            80,
+            18
+          ],
+          "popularity": 0.0,
+          "release_date": "1989-10-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eWNKQuZI5yEVqz3ATgc0ezYWgJH.jpg",
+          "id": 10658,
+          "title": "Howard the Duck",
+          "original_title": "Howard the Duck",
+          "overview": "A scientific experiment unknowingly brings extraterrestrial life forms to the Earth through a laser beam. First is the cigar-smoking drake, Howard, from the duck\u0027s planet. A few kids try to keep him from the greedy scientists and help him back to his planet, but then a much less friendly being arrives through the beam...",
+          "poster_path": "/eU0dWo8PJgsSAZFbcyHiUpuLSyW.jpg",
+          "media_type": "movie",
+          "original_language": "en",
+          "genre_ids": [
+            35,
+            12,
+            878
+          ],
+          "popularity": 0.0,
+          "release_date": "1986-08-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        }
+      ],
+      "name": "The Marvel Universe",
+      "page": 4,
+      "poster_path": "/coJVIUEOToAEGViuhclM7pXC75R.jpg",
+      "total_pages": 4,
+      "total_results": 68
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

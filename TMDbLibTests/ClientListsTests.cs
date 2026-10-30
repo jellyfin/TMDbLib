@@ -21,6 +21,10 @@ public class ClientListsTests : TestBase
     // The legacy id this test used, "528349d419c2954bd21ca0a8", therefore only ever requested
     // list 528349, which does not exist. This is a long-lived list that still resolves.
     private const int TestListId = 509;
+
+    // A long-lived list with more items than fit on one page, so the paging fields are meaningful.
+    private const int MultiPageListId = 1;
+
     private const string EphemeralListPrefix = "TestListTMDbLib-";
 
     /// <summary>
@@ -37,6 +41,53 @@ public class ClientListsTests : TestBase
         Assert.NotEmpty(list.Items);
 
         await Verify(list);
+    }
+
+    /// <summary>
+    /// Tests that the items of a list longer than one page can be paged through. Without the paging
+    /// fields on the response a caller has no way of telling that a list has more items to fetch.
+    /// </summary>
+    [Fact]
+    public async Task TestGetListPagingAsync()
+    {
+        var firstPage = await TMDbClient.GetListAsync(MultiPageListId, page: 1, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.NotNull(firstPage);
+        Assert.Equal(1, firstPage.Page);
+        Assert.True(firstPage.TotalPages > 1);
+        Assert.Equal(firstPage.ItemCount, firstPage.TotalResults);
+        Assert.NotNull(firstPage.Items);
+        Assert.True(firstPage.Items.Count < firstPage.TotalResults);
+
+        var secondPage = await TMDbClient.GetListAsync(MultiPageListId, page: 2, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.NotNull(secondPage);
+        Assert.Equal(2, secondPage.Page);
+        Assert.Equal(firstPage.TotalPages, secondPage.TotalPages);
+        Assert.NotNull(secondPage.Items);
+        Assert.NotEmpty(secondPage.Items);
+
+        // Each page holds different items, so paging through them yields the whole list.
+        Assert.Empty(firstPage.Items.Select(item => item.Id).Intersect(secondPage.Items.Select(item => item.Id)));
+    }
+
+    /// <summary>
+    /// Tests that the items of a list longer than one page can be enumerated in one go.
+    /// </summary>
+    [Fact]
+    public async Task TestGetListItemsAsync()
+    {
+        var list = await TMDbClient.GetListAsync(MultiPageListId, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.NotNull(list);
+        Assert.True(list.TotalPages > 1);
+
+        var items = await TMDbClient.GetListItemsAsync(MultiPageListId, cancellationToken: TestContext.Current.CancellationToken)
+            .ToListAsync(TestContext.Current.CancellationToken);
+
+        // The list can gain or lose an item between the requests, so this only asserts that paging
+        // happened at all and that no item was handed out twice.
+        Assert.True(items.Count > list.Items!.Count);
+        Assert.Equal(items.Count, items.Select(item => item.Id).Distinct().Count());
     }
 
     /// <summary>
