@@ -1,12 +1,10 @@
-using System;
-
 namespace TMDbLib.Objects.Discover;
 
 /// <summary>
 /// Watch provider IDs for use with Discover filtering. Availability varies by region; combine with <c>WhereWatchRegionIs()</c>.
 /// </summary>
 /// <remarks>
-/// IDs represent base platform providers; channel variants (e.g. "Paramount+ Amazon Channel") have separate IDs. Last updated 2026-08-19.
+/// IDs represent base platform providers; channel variants (e.g. "Paramount+ Amazon Channel") have separate IDs. Last updated 2026-10-30.
 /// </remarks>
 public static class WatchProvider
 {
@@ -21,7 +19,7 @@ public static class WatchProvider
         /// <summary>AcornTV Amazon Channel.</summary>
         public const int AmazonChannel = 196;
 
-        /// <summary>Acorn TV Apple TV.</summary>
+        /// <summary>Acorn TV Apple TV channel.</summary>
         public const int AppleTV = 2034;
 
         /// <summary>All AcornTV provider IDs.</summary>
@@ -72,7 +70,7 @@ public static class WatchProvider
         /// <summary>AMC+ Roku Premium Channel.</summary>
         public const int RokuChannel = 635;
 
-        /// <summary>AMC Plus Apple TV Channel.</summary>
+        /// <summary>AMC Plus Apple TV channel.</summary>
         public const int AppleTVChannel = 1854;
 
         /// <summary>AMC Channels Amazon Channel.</summary>
@@ -123,7 +121,7 @@ public static class WatchProvider
         /// <summary>BritBox Amazon Channel.</summary>
         public const int AmazonChannel = 197;
 
-        /// <summary>Britbox Apple TV Channel.</summary>
+        /// <summary>Britbox Apple TV channel.</summary>
         public const int AppleTVChannel = 1852;
 
         /// <summary>All BritBox provider IDs.</summary>
@@ -222,7 +220,7 @@ public static class WatchProvider
         /// <summary>CuriosityStream Amazon Channel.</summary>
         public const int AmazonChannel = 603;
 
-        /// <summary>CuriosityStream Apple TV Channel.</summary>
+        /// <summary>CuriosityStream Apple TV channel.</summary>
         public const int AppleTVChannel = 2060;
 
         /// <summary>All CuriosityStream provider IDs.</summary>
@@ -423,8 +421,11 @@ public static class WatchProvider
         /// <summary>ITVX Premium.</summary>
         public const int Premium = 2300;
 
+        /// <summary>ITV Amazon Channel.</summary>
+        public const int AmazonChannel = 598;
+
         /// <summary>All ITVX provider IDs.</summary>
-        public static readonly int[] All = [Standard, Premium];
+        public static readonly int[] All = [Standard, Premium, AmazonChannel];
     }
 
     /// <summary>
@@ -561,7 +562,7 @@ public static class WatchProvider
         /// <summary>Paramount+ Roku Premium Channel.</summary>
         public const int PlusRokuChannel = 633;
 
-        /// <summary>Paramount Plus Apple TV Channel.</summary>
+        /// <summary>Paramount Plus Apple TV channel.</summary>
         public const int PlusAppleTVChannel = 1853;
 
         /// <summary>Paramount Plus Premium.</summary>
@@ -630,10 +631,6 @@ public static class WatchProvider
         /// <summary>Pluto TV.</summary>
         public const int Standard = 300;
 
-        /// <summary>Pluto TV Live.</summary>
-        [Obsolete("No longer returned by TMDb's watch/providers endpoint. Will be removed in a future version.")]
-        public const int Live = 1965;
-
         /// <summary>All PlutoTV provider IDs.</summary>
         public static readonly int[] All = [Standard];
     }
@@ -681,19 +678,6 @@ public static class WatchProvider
     }
 
     /// <summary>
-    /// Showmax provider IDs.
-    /// </summary>
-    [Obsolete("No longer returned by TMDb's watch/providers endpoint. Will be removed in a future version.")]
-    public static class Showmax
-    {
-        /// <summary>Showmax.</summary>
-        public const int Standard = 55;
-
-        /// <summary>All Showmax provider IDs.</summary>
-        public static readonly int[] All = [Standard];
-    }
-
-    /// <summary>
     /// Shudder provider IDs.
     /// </summary>
     public static class Shudder
@@ -704,7 +688,7 @@ public static class WatchProvider
         /// <summary>Shudder Amazon Channel.</summary>
         public const int AmazonChannel = 204;
 
-        /// <summary>Shudder Apple TV Channel.</summary>
+        /// <summary>Shudder Apple TV channel.</summary>
         public const int AppleTVChannel = 2049;
 
         /// <summary>All Shudder provider IDs.</summary>
@@ -731,9 +715,6 @@ public static class WatchProvider
         /// <summary>Sky.</summary>
         public const int Standard = 210;
 
-        /// <summary>Sky X.</summary>
-        public const int X = 321;
-
         /// <summary>Now TV Cinema.</summary>
         public const int NowTVCinema = 591;
 
@@ -744,7 +725,7 @@ public static class WatchProvider
         public const int TV2Skyshowtime = 2624;
 
         /// <summary>All Sky provider IDs.</summary>
-        public static readonly int[] All = [Go, WOW, NowTV, Store, Standard, X, NowTVCinema, Showtime, TV2Skyshowtime];
+        public static readonly int[] All = [Go, WOW, NowTV, Store, Standard, NowTVCinema, Showtime, TV2Skyshowtime];
     }
 
     /// <summary>
@@ -755,8 +736,11 @@ public static class WatchProvider
         /// <summary>Sony Liv.</summary>
         public const int Standard = 237;
 
+        /// <summary>Sonyliv Amazon Channel.</summary>
+        public const int AmazonChannel = 2792;
+
         /// <summary>All SonyLiv provider IDs.</summary>
-        public static readonly int[] All = [Standard];
+        public static readonly int[] All = [Standard, AmazonChannel];
     }
 
     /// <summary>
@@ -788,7 +772,7 @@ public static class WatchProvider
         /// <summary>Starz Amazon Channel.</summary>
         public const int AmazonChannel = 1794;
 
-        /// <summary>Starz Apple TV Channel.</summary>
+        /// <summary>Starz Apple TV channel.</summary>
         public const int AppleTVChannel = 1855;
 
         /// <summary>All Starz provider IDs.</summary>
@@ -806,7 +790,7 @@ public static class WatchProvider
         /// <summary>Sundance Now Amazon Channel.</summary>
         public const int AmazonChannel = 205;
 
-        /// <summary>Sundance Now Apple TV Channel.</summary>
+        /// <summary>Sundance Now Apple TV channel.</summary>
         public const int AppleTVChannel = 2048;
 
         /// <summary>All SundanceNow provider IDs.</summary>
@@ -860,8 +844,11 @@ public static class WatchProvider
         /// <summary>VIX.</summary>
         public const int Standard = 457;
 
+        /// <summary>ViX Premium Amazon Channel.</summary>
+        public const int PremiumAmazonChannel = 1866;
+
         /// <summary>All ViX provider IDs.</summary>
-        public static readonly int[] All = [Standard];
+        public static readonly int[] All = [Standard, PremiumAmazonChannel];
     }
 
     /// <summary>
