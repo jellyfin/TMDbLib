@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Authentication;
-using TMDbLibTests.Helpers;
 using TMDbLibTests.Exceptions;
+using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
