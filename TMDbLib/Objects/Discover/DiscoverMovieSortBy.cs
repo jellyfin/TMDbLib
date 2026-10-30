@@ -26,14 +26,16 @@ public enum DiscoverMovieSortBy
     PopularityDesc,
 
     /// <summary>
-    /// Sort by release date in ascending order.
+    /// Sort by release date (of any release type) in ascending order.
     /// </summary>
+    /// <remarks>Supported by the API although missing from the TMDb OpenAPI spec.</remarks>
     [EnumValue("release_date.asc")]
     ReleaseDate,
 
     /// <summary>
-    /// Sort by release date in descending order.
+    /// Sort by release date (of any release type) in descending order.
     /// </summary>
+    /// <remarks>Supported by the API although missing from the TMDb OpenAPI spec.</remarks>
     [EnumValue("release_date.desc")]
     ReleaseDateDesc,
 

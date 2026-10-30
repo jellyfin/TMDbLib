@@ -283,21 +283,19 @@ public partial class TMDbClient : IDisposable
     /// <summary>
     /// Verifies that the client has the required session, throwing if not.
     /// </summary>
-    /// <param name="sessionType">The required session type.</param>
-    /// <exception cref="UserSessionRequiredException">Thrown when no user session is assigned.</exception>
-    /// <exception cref="GuestSessionRequiredException">Thrown when no guest session is assigned.</exception>
+    /// <param name="sessionType">The required session type; <see cref="SessionType.GuestSession"/> accepts either a guest or a user session.</param>
+    /// <exception cref="UserSessionRequiredException">Thrown when a user session is required but not assigned.</exception>
+    /// <exception cref="GuestSessionRequiredException">Thrown when a guest or user session is required but none is assigned.</exception>
     private void RequireSessionId(SessionType sessionType)
     {
         if (string.IsNullOrWhiteSpace(SessionId))
         {
-            if (sessionType == SessionType.GuestSession)
+            if (sessionType == SessionType.UserSession)
             {
                 throw new UserSessionRequiredException();
             }
-            else
-            {
-                throw new GuestSessionRequiredException();
-            }
+
+            throw new GuestSessionRequiredException();
         }
 
         if (sessionType == SessionType.UserSession && SessionType == SessionType.GuestSession)

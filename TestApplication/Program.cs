@@ -71,8 +71,8 @@ internal class Program
         // We're requesting additional data, in this case: Images. This means that the Movie property "Images" will be populated (else it will be null).
         // We could combine these properties, requesting even more information in one go:
         //      client.GetMovieAsync(movieId, MovieMethods.Images);
-        //      client.GetMovieAsync(movieId, MovieMethods.Images | MovieMethods.Releases);
-        //      client.GetMovieAsync(movieId, MovieMethods.Images | MovieMethods.Trailers | MovieMethods.Translations);
+        //      client.GetMovieAsync(movieId, MovieMethods.Images | MovieMethods.ReleaseDates);
+        //      client.GetMovieAsync(movieId, MovieMethods.Images | MovieMethods.Videos | MovieMethods.Translations);
         //
         // .. and so on..
         //

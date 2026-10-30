@@ -10,15 +10,17 @@ public partial class TMDbClient
     /// <summary>
     /// Gets the countries with watch provider (OTT/streaming) data.
     /// </summary>
+    /// <param name="language">The ISO 639-1 language code used to translate the data. Defaults to <see cref="DefaultLanguage"/>.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The available regions.</returns>
-    /// <remarks>Uses <see cref="DefaultLanguage"/> to translate data.</remarks>
-    public async Task<ResultContainer<WatchProviderRegion>?> GetWatchProviderRegionsAsync(CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<WatchProviderRegion>?> GetWatchProviderRegionsAsync(string? language = null, CancellationToken cancellationToken = default)
     {
         var req = _client.Create("watch/providers/regions");
-        if (DefaultLanguage is not null)
+
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
-            req.AddParameter("language", DefaultLanguage);
+            req.AddParameter("language", language);
         }
 
         var response = await req.GetOfT<ResultContainer<WatchProviderRegion>>(cancellationToken).ConfigureAwait(false);
@@ -29,48 +31,43 @@ public partial class TMDbClient
     /// <summary>
     /// Gets the watch providers (OTT/streaming) available for movies.
     /// </summary>
+    /// <param name="language">The ISO 639-1 language code used to translate the data. Defaults to <see cref="DefaultLanguage"/>.</param>
+    /// <param name="watchRegion">The ISO 3166-1 country code to filter by. Defaults to <see cref="DefaultCountry"/>.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The movie watch providers.</returns>
-    /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
-    public async Task<ResultContainer<WatchProviderItem>?> GetMovieWatchProvidersAsync(CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<WatchProviderItem>?> GetMovieWatchProvidersAsync(string? language = null, string? watchRegion = null, CancellationToken cancellationToken = default)
     {
-        var req = _client.Create("watch/providers/movie");
-        if (DefaultLanguage is not null)
-        {
-            req.AddParameter("language", DefaultLanguage);
-        }
-
-        if (DefaultCountry is not null)
-        {
-            req.AddParameter("watch_region", DefaultCountry);
-        }
-
-        var response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
-
-        return response;
+        return await GetWatchProvidersInternal("watch/providers/movie", language, watchRegion, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
     /// Gets the watch providers (OTT/streaming) available for TV shows.
     /// </summary>
+    /// <param name="language">The ISO 639-1 language code used to translate the data. Defaults to <see cref="DefaultLanguage"/>.</param>
+    /// <param name="watchRegion">The ISO 3166-1 country code to filter by. Defaults to <see cref="DefaultCountry"/>.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The TV watch providers.</returns>
-    /// <remarks>Uses <see cref="DefaultCountry"/> and <see cref="DefaultLanguage"/> to filter or translate data.</remarks>
-    public async Task<ResultContainer<WatchProviderItem>?> GetTvWatchProvidersAsync(CancellationToken cancellationToken = default)
+    public async Task<ResultContainer<WatchProviderItem>?> GetTvWatchProvidersAsync(string? language = null, string? watchRegion = null, CancellationToken cancellationToken = default)
     {
-        var req = _client.Create("watch/providers/tv");
-        if (DefaultLanguage is not null)
+        return await GetWatchProvidersInternal("watch/providers/tv", language, watchRegion, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task<ResultContainer<WatchProviderItem>?> GetWatchProvidersInternal(string endpoint, string? language, string? watchRegion, CancellationToken cancellationToken)
+    {
+        var req = _client.Create(endpoint);
+
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
-            req.AddParameter("language", DefaultLanguage);
+            req.AddParameter("language", language);
         }
 
-        if (DefaultCountry is not null)
+        watchRegion ??= DefaultCountry;
+        if (!string.IsNullOrWhiteSpace(watchRegion))
         {
-            req.AddParameter("watch_region", DefaultCountry);
+            req.AddParameter("watch_region", watchRegion);
         }
 
-        var response = await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
-
-        return response;
+        return await req.GetOfT<ResultContainer<WatchProviderItem>>(cancellationToken).ConfigureAwait(false);
     }
 }

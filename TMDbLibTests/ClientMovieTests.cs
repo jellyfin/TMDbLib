@@ -27,7 +27,6 @@ public class ClientMovieTests : TestBase
             [MovieMethods.Credits] = movie => movie.Credits,
             [MovieMethods.Images] = movie => movie.Images,
             [MovieMethods.Keywords] = movie => movie.Keywords,
-            [MovieMethods.Releases] = movie => movie.Releases,
             [MovieMethods.Videos] = movie => movie.Videos,
             [MovieMethods.Translations] = movie => movie.Translations,
             [MovieMethods.Similar] = movie => movie.Similar,
@@ -261,17 +260,6 @@ public class ClientMovieTests : TestBase
     public async Task TestMoviesGetMovieKeywords()
     {
         var resp = await TMDbClient.GetMovieKeywordsAsync(IdHelper.AGoodDayToDieHard, cancellationToken: TestContext.Current.CancellationToken);
-
-        await Verify(resp);
-    }
-
-    /// <summary>
-    /// Tests that release information for a movie can be retrieved.
-    /// </summary>
-    [Fact]
-    public async Task TestMoviesGetMovieReleases()
-    {
-        var resp = await TMDbClient.GetMovieReleasesAsync(IdHelper.AGoodDayToDieHard, cancellationToken: TestContext.Current.CancellationToken);
 
         await Verify(resp);
     }

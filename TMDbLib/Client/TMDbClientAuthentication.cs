@@ -38,11 +38,11 @@ public partial class TMDbClient
     public async Task<UserSession?> AuthenticationGetUserSessionAsync(string initialRequestToken, CancellationToken cancellationToken = default)
     {
         var request = _client.Create("authentication/session/new");
-        request.AddParameter("request_token", initialRequestToken);
+        request.SetBody(new RequestTokenRequest { RequestToken = initialRequestToken });
 
         try
         {
-            using RestResponse<UserSession> response = await request.Get<UserSession>(cancellationToken).ConfigureAwait(false);
+            using RestResponse<UserSession> response = await request.Post<UserSession>(cancellationToken).ConfigureAwait(false);
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
@@ -106,14 +106,12 @@ public partial class TMDbClient
     public async Task AuthenticationValidateUserTokenAsync(string initialRequestToken, string username, string password, CancellationToken cancellationToken = default)
     {
         var request = _client.Create("authentication/token/validate_with_login");
-        request.AddParameter("request_token", initialRequestToken);
-        request.AddParameter("username", username);
-        request.AddParameter("password", password);
+        request.SetBody(new ValidateWithLoginRequest { Username = username, Password = password, RequestToken = initialRequestToken });
 
         RestResponse response;
         try
         {
-            response = await request.Get(cancellationToken).ConfigureAwait(false);
+            response = await request.Post(cancellationToken).ConfigureAwait(false);
         }
         catch (TMDbAuthenticationException ex)
         {

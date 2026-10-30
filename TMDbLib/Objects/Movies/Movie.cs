@@ -164,12 +164,6 @@ public class Movie
     public ExternalIdsMovie? ExternalIds { get; set; }
 
     /// <summary>
-    /// Gets or sets the releases information.
-    /// </summary>
-    [JsonPropertyName("releases")]
-    public Releases? Releases { get; set; }
-
-    /// <summary>
     /// Gets or sets the revenue.
     /// </summary>
     [JsonPropertyName("revenue")]

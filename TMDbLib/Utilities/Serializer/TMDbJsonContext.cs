@@ -122,7 +122,6 @@ namespace TMDbLib.Utilities.Serializer;
 [JsonSerializable(typeof(TMDbLib.Objects.TvShows.Credits), TypeInfoPropertyName = "TvShowsCredits")]
 [JsonSerializable(typeof(TMDbLib.Objects.Movies.Cast), TypeInfoPropertyName = "MoviesCast")]
 [JsonSerializable(typeof(TMDbLib.Objects.TvShows.Cast), TypeInfoPropertyName = "TvShowsCast")]
-[JsonSerializable(typeof(TMDbLib.Objects.Movies.Country), TypeInfoPropertyName = "MoviesCountry")]
 [JsonSerializable(typeof(TMDbLib.Objects.Countries.Country), TypeInfoPropertyName = "CountriesCountry")]
 [JsonSerializable(typeof(List<TMDbLib.Objects.Movies.Cast>), TypeInfoPropertyName = "ListMoviesCast")]
 [JsonSerializable(typeof(List<TMDbLib.Objects.TvShows.Cast>), TypeInfoPropertyName = "ListTvShowsCast")]
@@ -135,4 +134,6 @@ namespace TMDbLib.Utilities.Serializer;
 [JsonSerializable(typeof(WatchlistRequest))]
 [JsonSerializable(typeof(SessionIdRequest))]
 [JsonSerializable(typeof(AccessTokenRequest))]
+[JsonSerializable(typeof(RequestTokenRequest))]
+[JsonSerializable(typeof(ValidateWithLoginRequest))]
 internal partial class TMDbJsonContext : JsonSerializerContext;

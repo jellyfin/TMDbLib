@@ -10,7 +10,7 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T?> SearchMethodInternal<T>(string method, string query, int page, string? language = null, bool? includeAdult = null, int year = 0, string? dateFormat = null, string? region = null, int primaryReleaseYear = 0, int firstAirDateYear = 0, CancellationToken cancellationToken = default)
+    private async Task<T?> SearchMethodInternal<T>(string method, string query, int page, string? language = null, bool? includeAdult = null, int year = 0, string? region = null, int primaryReleaseYear = 0, int firstAirDateYear = 0, CancellationToken cancellationToken = default)
         where T : new()
     {
         var req = _client.Create("search/{method}");
@@ -37,10 +37,6 @@ public partial class TMDbClient
         {
             req.AddParameter("include_adult", includeAdult.Value ? "true" : "false");
         }
-
-        // TODO: Dateformat?
-        // if (dateFormat is not null)
-        //    req.DateFormat = dateFormat;
 
         if (!string.IsNullOrWhiteSpace(region))
         {

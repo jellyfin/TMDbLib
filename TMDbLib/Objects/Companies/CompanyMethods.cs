@@ -17,12 +17,6 @@ public enum CompanyMethods
     Undefined = 0,
 
     /// <summary>
-    /// Include movies associated with the company.
-    /// </summary>
-    [EnumValue("movies")]
-    Movies = 1,
-
-    /// <summary>
     /// Include alternative names for the company.
     /// </summary>
     [EnumValue("alternative_names")]

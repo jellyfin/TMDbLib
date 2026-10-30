@@ -20,7 +20,6 @@ public class ClientCompanyTests : TestBase
     {
         Methods = new Dictionary<CompanyMethods, Func<Company, object?>>
         {
-            [CompanyMethods.Movies] = company => company.Movies,
             [CompanyMethods.AlternativeNames] = company => company.AlternativeNames,
             [CompanyMethods.Images] = company => company.Images
         };
@@ -67,15 +66,7 @@ public class ClientCompanyTests : TestBase
             var result = await TMDbClient.GetCompanyAsync(IdHelper.TwentiethCenturyFox, combined);
             Assert.NotNull(result);
             return result;
-        }, async company =>
-        {
-            // Reduce testdata
-            Assert.NotNull(company.Movies);
-            Assert.NotNull(company.Movies.Results);
-            company.Movies.Results = company.Movies.Results.OrderBy(s => s.Id).Take(1).ToList();
-
-            await Verify(company, settings => settings.IgnoreProperty(nameof(company.Movies.TotalPages), nameof(company.Movies.TotalResults)));
-        });
+        }, async company => await Verify(company));
     }
 
     /// <summary>
@@ -87,37 +78,6 @@ public class ClientCompanyTests : TestBase
         var company = await TMDbClient.GetCompanyAsync(IdHelper.MissingID, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Null(company);
-    }
-
-    /// <summary>
-    /// Tests that retrieving company movies returns results and supports language filtering and pagination.
-    /// </summary>
-    [Fact]
-    public async Task TestCompaniesMoviesAsync()
-    {
-        //GetCompanyMoviesAsync(int id, string language, int page = -1)
-        var resp = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, cancellationToken: TestContext.Current.CancellationToken);
-        var respPage2 = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, 2, cancellationToken: TestContext.Current.CancellationToken);
-        var respItalian = await TMDbClient.GetCompanyMoviesAsync(IdHelper.TwentiethCenturyFox, "it", cancellationToken: TestContext.Current.CancellationToken);
-
-        Assert.NotNull(resp);
-        Assert.NotNull(respPage2);
-        Assert.NotNull(respItalian);
-        Assert.NotNull(resp.Results);
-        Assert.NotNull(respPage2.Results);
-        Assert.NotNull(respItalian.Results);
-        Assert.NotEmpty(resp.Results);
-        Assert.NotEmpty(respPage2.Results);
-        Assert.NotEmpty(respItalian.Results);
-
-        // Verify pagination works
-        Assert.True(resp.TotalResults > resp.Results.Count, "Should have multiple pages of results");
-
-        // Verify Italian localization returns translated titles (at least some should differ)
-        // Note: API ordering can vary between languages, so we check if any titles differ
-        var englishTitles = resp.Results.Select(r => r.Title).ToHashSet();
-        var italianTitles = respItalian.Results.Select(r => r.Title).ToHashSet();
-        Assert.False(englishTitles.SetEquals(italianTitles), "Italian results should have different titles than English");
     }
 
     /// <summary>

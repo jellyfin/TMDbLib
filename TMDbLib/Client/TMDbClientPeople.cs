@@ -16,12 +16,8 @@ public partial class TMDbClient
     private async Task<T?> GetPersonMethodInternal<T>(
         int personId,
         PersonMethods personMethod,
-        string dateFormat = "yyyy-MM-dd",
-        string? country = null,
         string? language = null,
         int page = 0,
-        DateTime? startDate = null,
-        DateTime? endDate = null,
         CancellationToken cancellationToken = default)
         where T : new()
     {
@@ -29,34 +25,19 @@ public partial class TMDbClient
         req.AddUrlSegment("personId", personId.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("method", personMethod.GetDescription());
 
-        // TODO: Dateformat?
-        // if (dateFormat is not null)
-        //    req.DateFormat = dateFormat;
-
-        if (country is not null)
+        // Only the credit sub-resources accept a language, per the TMDb OpenAPI spec.
+        if (personMethod is PersonMethods.CombinedCredits or PersonMethods.MovieCredits or PersonMethods.TvCredits)
         {
-            req.AddParameter("country", country);
-        }
-
-        language ??= DefaultLanguage;
-        if (!string.IsNullOrWhiteSpace(language))
-        {
-            req.AddParameter("language", language);
+            language ??= DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+            {
+                req.AddParameter("language", language);
+            }
         }
 
         if (page >= 1)
         {
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (startDate.HasValue)
-        {
-            req.AddParameter("start_date", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
-        }
-
-        if (endDate is not null)
-        {
-            req.AddParameter("end_date", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -106,7 +87,8 @@ public partial class TMDbClient
         var req = _client.Create("person/{personId}");
         req.AddUrlSegment("personId", personId.ToString(CultureInfo.InvariantCulture));
 
-        if (language is not null)
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }
@@ -197,7 +179,8 @@ public partial class TMDbClient
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        if (language is not null)
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }
@@ -239,20 +222,7 @@ public partial class TMDbClient
     /// <returns>The tagged images featuring the person.</returns>
     public async Task<SearchContainerWithId<TaggedImage>?> GetPersonTaggedImagesAsync(int personId, int page, CancellationToken cancellationToken = default)
     {
-        return await GetPersonTaggedImagesAsync(personId, DefaultLanguage, page, cancellationToken).ConfigureAwait(false);
-    }
-
-    /// <summary>
-    /// Gets the tagged images for a person in a specific language.
-    /// </summary>
-    /// <param name="personId">The TMDb id of the person.</param>
-    /// <param name="language">The ISO 639-1 language code.</param>
-    /// <param name="page">The page number.</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns>The tagged images featuring the person.</returns>
-    public async Task<SearchContainerWithId<TaggedImage>?> GetPersonTaggedImagesAsync(int personId, string? language, int page, CancellationToken cancellationToken = default)
-    {
-        return await GetPersonMethodInternal<SearchContainerWithId<TaggedImage>>(personId, PersonMethods.TaggedImages, language: language, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await GetPersonMethodInternal<SearchContainerWithId<TaggedImage>>(personId, PersonMethods.TaggedImages, page: page, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>

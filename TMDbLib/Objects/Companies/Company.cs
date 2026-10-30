@@ -52,12 +52,6 @@ public class Company
     public ImagesWithId? Images { get; set; }
 
     /// <summary>
-    /// Gets or sets the movies associated with the company. This property is populated when the Movies method is requested.
-    /// </summary>
-    [JsonPropertyName("movies")]
-    public SearchContainer<SearchMovie>? Movies { get; set; }
-
-    /// <summary>
     /// Gets or sets the company name.
     /// </summary>
     [JsonPropertyName("name")]

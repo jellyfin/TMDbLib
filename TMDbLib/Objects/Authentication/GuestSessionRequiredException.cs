@@ -14,4 +14,13 @@ public class GuestSessionRequiredException : Exception
         : base("The method you called requires a valid guest or user session to be set on the client object. Please use the 'SetSessionInformation' method to do so.")
     {
     }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GuestSessionRequiredException"/> class with a specific message.
+    /// </summary>
+    /// <param name="message">The message that describes the error.</param>
+    public GuestSessionRequiredException(string message)
+        : base(message)
+    {
+    }
 }

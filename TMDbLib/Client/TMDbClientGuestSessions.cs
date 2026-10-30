@@ -17,6 +17,12 @@ public partial class TMDbClient
     {
         RequireSessionId(SessionType.GuestSession);
 
+        // The session id is part of the path, so only an actual guest session works here.
+        if (SessionType != SessionType.GuestSession)
+        {
+            throw new GuestSessionRequiredException("The method you called requires a guest session, but a user session is set on the client object. Please use the 'SetSessionInformation' method to set a guest session.");
+        }
+
         var request = _client.Create(path);
 
         if (page > 0)
@@ -24,7 +30,8 @@ public partial class TMDbClient
             request.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        if (!string.IsNullOrEmpty(language))
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             request.AddParameter("language", language);
         }

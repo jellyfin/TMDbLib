@@ -51,34 +51,6 @@ public enum DiscoverTvShowSortBy
     PopularityDesc,
 
     /// <summary>
-    /// Sort by revenue in ascending order.
-    /// </summary>
-    [Obsolete("Not supported by /discover/tv. Will be removed in a future version.")]
-    [EnumValue("revenue.asc")]
-    Revenue,
-
-    /// <summary>
-    /// Sort by revenue in descending order.
-    /// </summary>
-    [Obsolete("Not supported by /discover/tv. Will be removed in a future version.")]
-    [EnumValue("revenue.desc")]
-    RevenueDesc,
-
-    /// <summary>
-    /// Sort by primary release date in ascending order.
-    /// </summary>
-    [Obsolete("Not supported by /discover/tv. Use FirstAirDate instead. Will be removed in a future version.")]
-    [EnumValue("primary_release_date.asc")]
-    PrimaryReleaseDate,
-
-    /// <summary>
-    /// Sort by primary release date in descending order.
-    /// </summary>
-    [Obsolete("Not supported by /discover/tv. Use FirstAirDateDesc instead. Will be removed in a future version.")]
-    [EnumValue("primary_release_date.desc")]
-    PrimaryReleaseDateDesc,
-
-    /// <summary>
     /// Sort by name in ascending order.
     /// </summary>
     [EnumValue("name.asc")]
