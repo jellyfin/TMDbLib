@@ -1,6 +1,8 @@
 using System;
 using System.Threading.Tasks;
+using TMDbLib.Objects.Authentication;
 using TMDbLibTests.Exceptions;
+using TMDbLibTests.Helpers;
 using TMDbLibTests.JsonHelpers;
 using Xunit;
 
@@ -186,5 +188,23 @@ public class ClientAuthenticationTests : TestBase
         {
             _output.WriteLine($"WARNING: Test credentials are no longer valid. Exception: {ex.Message}");
         }
+    }
+
+    /// <summary>
+    /// Tests that calling a user-session method without any session throws UserSessionRequiredException.
+    /// </summary>
+    [Fact]
+    public async Task TestUserSessionRequiredWithoutSessionAsync()
+    {
+        await Assert.ThrowsAsync<UserSessionRequiredException>(() => TMDbClient.AccountGetDetailsAsync(cancellationToken: TestContext.Current.CancellationToken));
+    }
+
+    /// <summary>
+    /// Tests that calling a method accepting a guest or user session without any session throws GuestSessionRequiredException.
+    /// </summary>
+    [Fact]
+    public async Task TestGuestSessionRequiredWithoutSessionAsync()
+    {
+        await Assert.ThrowsAsync<GuestSessionRequiredException>(() => TMDbClient.MovieSetRatingAsync(IdHelper.Avatar, 5, cancellationToken: TestContext.Current.CancellationToken));
     }
 }

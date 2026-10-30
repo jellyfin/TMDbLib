@@ -28,6 +28,7 @@ public partial class TMDbClient
             request.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
+        language ??= DefaultLanguage;
         if (!string.IsNullOrWhiteSpace(language))
         {
             request.AddParameter("language", language);

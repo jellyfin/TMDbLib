@@ -63,10 +63,4 @@ public enum TvSeasonMethods
     /// </summary>
     [EnumValue("watch/providers")]
     WatchProviders = 128,
-
-    /// <summary>
-    /// Include changes.
-    /// </summary>
-    [EnumValue("changes")]
-    Changes = 256,
 }

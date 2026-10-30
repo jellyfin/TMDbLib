@@ -1,14 +1,14 @@
 {
-  "Guid": "219d4fb6-1335-3f41-84b7-741a528cf19b",
-  "Title": "Proxy Mapping for GET /3/authentication/session/new",
-  "Description": "Proxy Mapping for GET /3/authentication/session/new",
+  "Guid": "0a5707b0-b8e1-9a4c-9163-cb409b153c88",
+  "Title": "Proxy Mapping for GET /3/tv/1396/episode_groups",
+  "Description": "Proxy Mapping for GET /3/tv/1396/episode_groups",
   "Priority": -2000000,
   "Request": {
     "Path": {
       "Matchers": [
         {
           "Name": "WildcardMatcher",
-          "Pattern": "/3/authentication/session/new",
+          "Pattern": "/3/tv/1396/episode_groups",
           "IgnoreCase": false
         }
       ]
@@ -29,16 +29,23 @@
         ],
         "IgnoreCase": true
       }
-    ],
-    "Params": []
+    ]
   },
   "Response": {
-    "StatusCode": 401,
+    "StatusCode": 200,
     "BodyAsJson": {
-      "success": false,
-      "failure": true,
-      "status_code": 17,
-      "status_message": "Session denied."
+      "results": [
+        {
+          "description": "Seasons grouped as they appear on DVD, as well as paid video-on-demand services, such as Prime Video and YouTube.",
+          "episode_count": 62,
+          "group_count": 6,
+          "id": "69f50757054263b7bc87e32a",
+          "name": "DVD / PVOD",
+          "network": null,
+          "type": 3
+        }
+      ],
+      "id": 1396
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

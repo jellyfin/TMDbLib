@@ -133,6 +133,26 @@ public class ClientTvShowTests : TestBase
     }
 
     /// <summary>
+    /// Tests that episode groups can be retrieved separately for a TV show.
+    /// </summary>
+    [Fact]
+    public async Task TestTvShowSeparateExtrasEpisodeGroupsAsync()
+    {
+        var episodeGroups = await TMDbClient.GetTvShowEpisodeGroupsAsync(IdHelper.BreakingBad, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.NotNull(episodeGroups);
+
+        Assert.Equal(IdHelper.BreakingBad, episodeGroups.Id);
+        Assert.NotNull(episodeGroups.Results);
+        Assert.NotEmpty(episodeGroups.Results);
+        Assert.All(episodeGroups.Results, group =>
+        {
+            Assert.False(string.IsNullOrEmpty(group.Id));
+            Assert.False(string.IsNullOrEmpty(group.Name));
+            Assert.True(group.EpisodeCount > 0);
+        });
+    }
+
+    /// <summary>
     /// Tests that keywords can be retrieved separately for a TV show.
     /// </summary>
     [Fact]

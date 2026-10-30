@@ -22,13 +22,10 @@ public sealed partial class TMDbClient
     private async Task<T?> GetMovieMethodInternal<T>(
         int movieId,
         MovieMethods movieMethod,
-        string dateFormat = "yyyy-MM-dd",
         string? country = null,
         string? language = null,
         string? includeImageLanguage = null,
         int page = 0,
-        DateTime? startDate = null,
-        DateTime? endDate = null,
         CancellationToken cancellationToken = default)
         where T : new()
     {
@@ -41,30 +38,29 @@ public sealed partial class TMDbClient
             req.AddParameter("country", country);
         }
 
-        language ??= DefaultLanguage;
-        if (!string.IsNullOrWhiteSpace(language))
+        // Only these sub-resources accept a language, per the TMDb OpenAPI spec.
+        if (movieMethod is MovieMethods.Credits or MovieMethods.Images or MovieMethods.Lists or MovieMethods.Recommendations
+            or MovieMethods.Reviews or MovieMethods.Similar or MovieMethods.Videos)
         {
-            req.AddParameter("language", language);
+            language ??= DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+            {
+                req.AddParameter("language", language);
+            }
         }
 
-        if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+        if (movieMethod == MovieMethods.Images)
         {
-            req.AddParameter("include_image_language", includeImageLanguage);
+            includeImageLanguage ??= DefaultImageLanguage;
+            if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+            {
+                req.AddParameter("include_image_language", includeImageLanguage);
+            }
         }
 
         if (page >= 1)
         {
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (startDate.HasValue)
-        {
-            req.AddParameter("start_date", startDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
-        }
-
-        if (endDate is not null)
-        {
-            req.AddParameter("end_date", endDate.Value.ToString(dateFormat, CultureInfo.InvariantCulture));
         }
 
         var response = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -184,7 +180,8 @@ public sealed partial class TMDbClient
             AddSessionId(req, SessionType.UserSession);
         }
 
-        if (language is not null)
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }
@@ -235,11 +232,6 @@ public sealed partial class TMDbClient
         if (item.Credits is not null)
         {
             item.Credits.Id = item.Id;
-        }
-
-        if (item.Releases is not null)
-        {
-            item.Releases.Id = item.Id;
         }
 
         if (item.Keywords is not null)
@@ -413,7 +405,8 @@ public sealed partial class TMDbClient
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        if (language is not null)
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }
@@ -445,7 +438,8 @@ public sealed partial class TMDbClient
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        if (language is not null)
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }
@@ -469,17 +463,6 @@ public sealed partial class TMDbClient
     public async Task<ResultContainer<ReleaseDatesContainer>?> GetMovieReleaseDatesAsync(int movieId, CancellationToken cancellationToken = default)
     {
         return await GetMovieMethodInternal<ResultContainer<ReleaseDatesContainer>>(movieId, MovieMethods.ReleaseDates, cancellationToken: cancellationToken).ConfigureAwait(false);
-    }
-
-    /// <summary>
-    /// Gets the release information for a movie.
-    /// </summary>
-    /// <param name="movieId">The TMDb id of the movie.</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns>The movie's releases.</returns>
-    public async Task<Releases?> GetMovieReleasesAsync(int movieId, CancellationToken cancellationToken = default)
-    {
-        return await GetMovieMethodInternal<Releases>(movieId, MovieMethods.Releases, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -549,7 +532,8 @@ public sealed partial class TMDbClient
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        if (language is not null)
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }
@@ -592,7 +576,8 @@ public sealed partial class TMDbClient
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        if (language is not null)
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }

@@ -41,12 +41,6 @@ public enum MovieMethods
     Keywords = 1 << 3,
 
     /// <summary>
-    /// Include releases information.
-    /// </summary>
-    [EnumValue("releases")]
-    Releases = 1 << 4,
-
-    /// <summary>
     /// Include videos.
     /// </summary>
     [EnumValue("videos")]

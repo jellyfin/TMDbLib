@@ -35,6 +35,7 @@ public partial class TMDbClient
     {
         var req = _client.Create("configuration/countries");
 
+        language ??= DefaultLanguage;
         if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);

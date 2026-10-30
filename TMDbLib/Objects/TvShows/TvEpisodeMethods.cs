@@ -51,10 +51,4 @@ public enum TvEpisodeMethods
     /// </summary>
     [EnumValue("translations")]
     Translations = 32,
-
-    /// <summary>
-    /// Include changes.
-    /// </summary>
-    [EnumValue("changes")]
-    Changes = 64,
 }

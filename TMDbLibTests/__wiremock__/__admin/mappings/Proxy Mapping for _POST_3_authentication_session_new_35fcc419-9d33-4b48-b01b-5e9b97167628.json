@@ -1,0 +1,61 @@
+{
+  "Guid": "35fcc419-9d33-4b48-b01b-5e9b97167628",
+  "Title": "Proxy Mapping for GET /3/authentication/session/new",
+  "Description": "Proxy Mapping for GET /3/authentication/session/new",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/authentication/session/new",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "POST"
+    ],
+    "HttpVersion": "1.1",
+    "Headers": [
+      {
+        "Name": "Accept-Encoding",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "gzip, deflate, br",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      },
+      {
+        "Name": "Content-Type",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "application/json",
+            "IgnoreCase": true
+          }
+        ],
+        "IgnoreCase": true
+      }
+    ],
+    "Params": []
+  },
+  "Response": {
+    "StatusCode": 401,
+    "BodyAsJson": {
+      "success": false,
+      "failure": true,
+      "status_code": 17,
+      "status_message": "Session denied."
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

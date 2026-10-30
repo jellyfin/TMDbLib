@@ -12,6 +12,18 @@ namespace TMDbLibTests;
 public class ClientGuestSessionTests : TestBase
 {
     /// <summary>
+    /// Tests that the guest session rated lists reject a user session, since the session id is part of the path.
+    /// </summary>
+    [Fact]
+    [Trait("Category", "RequiresAccountAccess")]
+    public async Task TestGuestSessionRatedRequiresGuestSessionAsync()
+    {
+        await TMDbClient.SetSessionInformationAsync(TestConfig.UserSessionId, SessionType.UserSession);
+
+        await Assert.ThrowsAsync<GuestSessionRequiredException>(() => TMDbClient.GetGuestSessionRatedMoviesAsync(cancellationToken: TestContext.Current.CancellationToken));
+    }
+
+    /// <summary>
     /// Tests that TV episode ratings can be set and removed using a guest session.
     /// </summary>
     [Fact]

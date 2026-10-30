@@ -29,7 +29,8 @@ public partial class TMDbClient
     {
         var req = _client.Create("credit/{id}");
 
-        if (!string.IsNullOrEmpty(language))
+        language ??= DefaultLanguage;
+        if (!string.IsNullOrWhiteSpace(language))
         {
             req.AddParameter("language", language);
         }

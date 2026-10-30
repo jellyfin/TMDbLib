@@ -21,24 +21,6 @@ public enum FindExternalSource
     TvDb,
 
     /// <summary>
-    /// Freebase MID external ID source.
-    /// </summary>
-    [EnumValue("freebase_mid")]
-    FreebaseMid,
-
-    /// <summary>
-    /// Freebase ID external ID source.
-    /// </summary>
-    [EnumValue("freebase_id")]
-    FreebaseId,
-
-    /// <summary>
-    /// TVRage external ID source.
-    /// </summary>
-    [EnumValue("tvrage_id")]
-    TvRage,
-
-    /// <summary>
     /// Wikidata external ID source.
     /// </summary>
     [EnumValue("wikidata_id")]

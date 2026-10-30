@@ -14,7 +14,7 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T?> GetTvEpisodeMethodInternal<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string? dateFormat = null, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
+    private async Task<T?> GetTvEpisodeMethodInternal<T>(int tvShowId, int seasonNumber, int episodeNumber, TvEpisodeMethods tvShowMethod, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
         where T : new()
     {
         var req = _client.Create("tv/{id}/season/{season_number}/episode/{episode_number}/{method}");
@@ -24,14 +24,19 @@ public partial class TMDbClient
 
         req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
-        // TODO: Dateformat?
-        // if (dateFormat is not null)
-        //    req.DateFormat = dateFormat;
-
-        language ??= DefaultLanguage;
-        if (!string.IsNullOrWhiteSpace(language))
+        // Only these sub-resources accept a language, per the TMDb OpenAPI spec.
+        if (tvShowMethod is TvEpisodeMethods.Credits or TvEpisodeMethods.Images or TvEpisodeMethods.Videos)
         {
-            req.AddParameter("language", language);
+            language ??= DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+            {
+                req.AddParameter("language", language);
+            }
+        }
+
+        if (tvShowMethod == TvEpisodeMethods.Images)
+        {
+            includeImageLanguage ??= DefaultImageLanguage;
         }
 
         if (!string.IsNullOrWhiteSpace(includeImageLanguage))

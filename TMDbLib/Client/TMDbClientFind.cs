@@ -17,8 +17,7 @@ public partial class TMDbClient
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>All matching TMDb objects.</returns>
     /// <remarks>
-    /// Supported sources: Movies (Imdb); People (Imdb, FreeBaseMid, FreeBaseId, TvRage);
-    /// TV Series (Imdb, FreeBaseMid, FreeBaseId, TvRage, TvDb).
+    /// Not every source applies to every media type; for example, <see cref="FindExternalSource.TvDb"/> only matches TV shows, seasons and episodes.
     /// </remarks>
     public Task<FindContainer?> FindAsync(FindExternalSource source, string id, CancellationToken cancellationToken = default)
     {
@@ -34,8 +33,7 @@ public partial class TMDbClient
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>All matching TMDb objects.</returns>
     /// <remarks>
-    /// Supported sources: Movies (Imdb); People (Imdb, FreeBaseMid, FreeBaseId, TvRage);
-    /// TV Series (Imdb, FreeBaseMid, FreeBaseId, TvRage, TvDb).
+    /// Not every source applies to every media type; for example, <see cref="FindExternalSource.TvDb"/> only matches TV shows, seasons and episodes.
     /// </remarks>
     public async Task<FindContainer?> FindAsync(FindExternalSource source, string id, string? language, CancellationToken cancellationToken = default)
     {

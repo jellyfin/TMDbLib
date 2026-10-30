@@ -13,16 +13,27 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T?> GetCollectionMethodInternal<T>(int collectionId, CollectionMethods collectionMethod, string? language = null, CancellationToken cancellationToken = default)
+    private async Task<T?> GetCollectionMethodInternal<T>(int collectionId, CollectionMethods collectionMethod, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
         where T : new()
     {
         var req = _client.Create("collection/{collectionId}/{method}");
         req.AddUrlSegment("collectionId", collectionId.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("method", collectionMethod.GetDescription());
 
-        if (language is not null)
+        // Only the images sub-resource accepts these, per the TMDb OpenAPI spec.
+        if (collectionMethod == CollectionMethods.Images)
         {
-            req.AddParameter("language", language);
+            language ??= DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+            {
+                req.AddParameter("language", language);
+            }
+
+            includeImageLanguage ??= DefaultImageLanguage;
+            if (!string.IsNullOrWhiteSpace(includeImageLanguage))
+            {
+                req.AddParameter("include_image_language", includeImageLanguage);
+            }
         }
 
         var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -102,11 +113,12 @@ public partial class TMDbClient
     /// </summary>
     /// <param name="collectionId">The TMDb id of the collection.</param>
     /// <param name="language">The ISO 639-1 language code.</param>
+    /// <param name="includeImageLanguage">A comma-separated list of ISO 639-1 codes of image languages to include (e.g. "en,null").</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The collection's posters and backdrops.</returns>
-    public async Task<ImagesWithId?> GetCollectionImagesAsync(int collectionId, string? language = null, CancellationToken cancellationToken = default)
+    public async Task<ImagesWithId?> GetCollectionImagesAsync(int collectionId, string? language = null, string? includeImageLanguage = null, CancellationToken cancellationToken = default)
     {
-        return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, cancellationToken).ConfigureAwait(false);
+        return await GetCollectionMethodInternal<ImagesWithId>(collectionId, CollectionMethods.Images, language, includeImageLanguage, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -117,6 +129,6 @@ public partial class TMDbClient
     /// <returns>The collection's translations.</returns>
     public async Task<TranslationsContainer?> GetCollectionTranslationsAsync(int collectionId, CancellationToken cancellationToken = default)
     {
-        return await GetCollectionMethodInternal<TranslationsContainer>(collectionId, CollectionMethods.Translations, null, cancellationToken).ConfigureAwait(false);
+        return await GetCollectionMethodInternal<TranslationsContainer>(collectionId, CollectionMethods.Translations, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 }

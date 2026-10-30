@@ -19,34 +19,42 @@ namespace TMDbLib.Client;
 
 public partial class TMDbClient
 {
-    private async Task<T?> GetTvShowMethodInternal<T>(int id, TvShowMethods tvShowMethod, string? dateFormat = null, string? language = null, string? includeMediaLanguage = null, int page = 0, CancellationToken cancellationToken = default)
+    private async Task<T?> GetTvShowMethodInternal<T>(int id, TvShowMethods tvShowMethod, string? language = null, string? includeMediaLanguage = null, int page = 0, CancellationToken cancellationToken = default)
         where T : new()
     {
         var req = _client.Create("tv/{id}/{method}");
         req.AddUrlSegment("id", id.ToString(CultureInfo.InvariantCulture));
         req.AddUrlSegment("method", tvShowMethod.GetDescription());
 
-        // TODO: Dateformat?
-        // if (dateFormat is not null)
-        //    req.DateFormat = dateFormat;
-
         if (page > 0)
         {
             req.AddParameter("page", page.ToString(CultureInfo.InvariantCulture));
         }
 
-        language ??= DefaultLanguage;
-        if (!string.IsNullOrWhiteSpace(language))
+        // Only these sub-resources accept a language, per the TMDb OpenAPI spec.
+        if (tvShowMethod is TvShowMethods.CreditsAggregate or TvShowMethods.Credits or TvShowMethods.Images or TvShowMethods.Lists
+            or TvShowMethods.Recommendations or TvShowMethods.Reviews or TvShowMethods.Similar or TvShowMethods.Videos)
         {
-            req.AddParameter("language", language);
+            language ??= DefaultLanguage;
+            if (!string.IsNullOrWhiteSpace(language))
+            {
+                req.AddParameter("language", language);
+            }
         }
 
-        includeMediaLanguage ??= DefaultImageLanguage;
-        if (!string.IsNullOrWhiteSpace(includeMediaLanguage))
+        if (tvShowMethod == TvShowMethods.Images)
         {
-            req.AddParameter(
-                tvShowMethod == TvShowMethods.Videos ? "include_video_language" : "include_image_language",
-                includeMediaLanguage);
+            includeMediaLanguage ??= DefaultImageLanguage;
+        }
+
+        if (tvShowMethod is TvShowMethods.Images or TvShowMethods.Videos)
+        {
+            if (!string.IsNullOrWhiteSpace(includeMediaLanguage))
+            {
+                req.AddParameter(
+                    tvShowMethod == TvShowMethods.Videos ? "include_video_language" : "include_image_language",
+                    includeMediaLanguage);
+            }
         }
 
         var resp = await req.GetOfT<T>(cancellationToken).ConfigureAwait(false);
@@ -243,6 +251,17 @@ public partial class TMDbClient
     public async Task<ExternalIdsTvShow?> GetTvShowExternalIdsAsync(int id, CancellationToken cancellationToken = default)
     {
         return await GetTvShowMethodInternal<ExternalIdsTvShow>(id, TvShowMethods.ExternalIds, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Gets the episode groups for a TV show.
+    /// </summary>
+    /// <param name="id">The TMDb id of the TV show.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The TV show's episode groups.</returns>
+    public async Task<ResultContainer<TvGroupCollection>?> GetTvShowEpisodeGroupsAsync(int id, CancellationToken cancellationToken = default)
+    {
+        return await GetTvShowMethodInternal<ResultContainer<TvGroupCollection>>(id, TvShowMethods.EpisodeGroups, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
