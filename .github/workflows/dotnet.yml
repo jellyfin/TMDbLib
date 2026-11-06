@@ -65,7 +65,7 @@ jobs:
 
     - name: "Github packages: Cleanup"
       if: github.ref == 'refs/heads/master'
-      uses: stripethree/gpr-janitor@62ae019a1372c20cb6f3f7125ea4f115045caf1f # dist
+      uses: stripethree/gpr-janitor@a6c93f1490fdf96130889800c95f61d1c2cf7ec6 # dist
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         package-name: TMDbLib
