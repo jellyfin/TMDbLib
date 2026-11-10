@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "language",
@@ -47,26 +34,26 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "dates": {
-        "maximum": "2026-09-02",
-        "minimum": "2026-08-12"
+        "maximum": "2026-12-02",
+        "minimum": "2026-11-11"
       },
       "page": 1,
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/RMXG8myu1aGlNUsRjtxzmpdMK0.jpg",
+          "backdrop_path": "/j96rurZqmBjyY37Fncl3IB0qJNe.jpg",
           "genre_ids": [
-            12,
-            28,
-            14
+            878,
+            9648,
+            28
           ],
-          "id": 1368337,
-          "title": "Die Odyssee",
-          "original_language": "en",
-          "original_title": "The Odyssey",
-          "overview": "Folgt Odysseus, dem legend\u00E4ren griechischen K\u00F6nig von Ithaka, auf seiner langen und gef\u00E4hrlichen Heimreise nach dem Trojanischen Krieg und schildert seine Begegnungen mit mythischen Wesen wie dem Zyklopen Polyphem, den Sirenen und der Hexeng\u00F6ttin Circe, w\u00E4hrend er versucht, wieder mit seiner Frau Penelope zusammenzukommen.",
+          "id": 1058424,
+          "title": "Hope",
+          "original_language": "ko",
+          "original_title": "\uD638\uD504",
+          "overview": "Nachdem s\u00E4mtliche Verst\u00E4rkungskr\u00E4fte abgezogen wurden, um Waldbr\u00E4nde einzud\u00E4mmen, und die Kommunikation vollst\u00E4ndig zusammengebrochen ist, k\u00E4mpfen der Leiter des Polizeipostens von Hope, Bum-seok, und die Polizistin Sung-ae darum, ein Dorf voller \u00E4lterer Menschen zu sch\u00FCtzen. W\u00E4hrenddessen brechen Sung-ki und weitere Menschen aus dem Dorf in die umliegenden Berge auf, um eine mysteri\u00F6se Bestie aufzusp\u00FCren \u2013 doch schon bald werden sie selbst zur Beute. Was aus Unwissenheit beginnt, setzt eine Katastrophe in Gang, die sich durch menschliche Konflikte zu einer Trag\u00F6die kosmischen Ausma\u00DFes entwickelt.",
           "popularity": 0.0,
-          "poster_path": "/4E8Ji8jTcWNncl9PdUCauoj2qh9.jpg",
+          "poster_path": "/bRPrdyif9z2BYW2yNhZX0P8V9L5.jpg",
           "release_date": "2026-07-15",
           "softcore": false,
           "video": false,
@@ -75,206 +62,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/rZfmzpixLKLR3Hg2u0WgC7XLFl8.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 1339713,
-          "title": "Obsession \u2013 Du sollst mich lieben",
-          "original_language": "en",
-          "original_title": "Obsession",
-          "overview": "Als der hoffnungslose Romantiker Bear einen magischen Gegenstand nutzt, damit sein Crush endlich Gef\u00FChle f\u00FCr ihn entwickelt, muss er feststellen, dass manche W\u00FCnsche einen finsteren, unheimlichen Tribut fordern.",
-          "popularity": 0.0,
-          "poster_path": "/1bAhSRf3BVOCI9zNzTLrsJA1LAq.jpg",
-          "release_date": "2026-05-13",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lh3BDkmWJh998n4fQcHYcVi7dpm.jpg",
-          "genre_ids": [
-            12,
-            18,
-            28
-          ],
-          "id": 1284465,
-          "title": "The Death of Robin Hood",
-          "original_language": "en",
-          "original_title": "The Death of Robin Hood",
-          "overview": "W\u00E4hrend er nach einem Leben voller Verbrechen und Mord mit seiner Vergangenheit ringt, findet sich Robin Hood schwer verwundet nach einer Schlacht wieder, die er f\u00FCr seine letzte hielt. In den H\u00E4nden einer geheimnisvollen Frau bietet sich ihm eine Chance auf Erl\u00F6sung.",
-          "popularity": 0.0,
-          "poster_path": "/dpcDnatuJlRUldshZkZoqdJDijg.jpg",
-          "release_date": "2026-06-18",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/c6BPbkO5Npt1OdwttAxCFo06wtH.jpg",
-          "genre_ids": [
-            10751,
-            14,
-            35,
-            12
-          ],
-          "id": 1108427,
-          "title": "Vaiana",
-          "original_language": "en",
-          "original_title": "Moana",
-          "overview": "\u201EVAIANA\u201C enth\u00E4lt Sequenzen, die sich auf photosensitive Menschen oder Menschen mit photosensitiver Epilepsie auswirken k\u00F6nnten. In der Realverfilmung des Oscar\u00AE-nominierten Animationsabenteuers folgt Vaiana dem Ruf des Ozeans und wagt sich zum ersten Mal \u00FCber das Riff ihrer Heimatinsel Motunui hinaus. Gemeinsam mit dem ber\u00FChmt-ber\u00FCchtigten Halbgott Maui begibt sie sich auf eine abenteuerliche Reise \u00FCber die Weiten des Meeres, um die Zukunft ihres Volkes zu sichern.",
-          "popularity": 0.0,
-          "poster_path": "/x1QRMN8Mgci1Z121zFp3PwcEIwW.jpg",
-          "release_date": "2026-07-08",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kkcwhgSFd81QDlXo8ytrpHPQjhy.jpg",
-          "genre_ids": [
-            12,
-            16,
-            35,
-            10751,
-            14
-          ],
-          "id": 1315772,
-          "title": "Minions \u0026 Monster",
-          "original_language": "en",
-          "original_title": "Minions \u0026 Monsters",
-          "overview": "MINIONS \u0026 MONSTER erz\u00E4hlt die abgefahrene, aberwitzige und nat\u00FCrlich absolut wahre Geschichte der Minions und wie sie Hollywood erobern, Filmstars werden, alles verlieren, Monster auf die Welt loslassen und sich dann heldenhaft daranmachen, den Planeten vor genau dem Chaos zu retten, das sie selbst angerichtet haben.",
-          "popularity": 0.0,
-          "poster_path": "/6jtBUoqgOSElz1v5QahkrWCYXm1.jpg",
-          "release_date": "2026-06-24",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/jDvxsBemt2Iyslg7qn2WMzgxz23.jpg",
-          "genre_ids": [
-            28,
-            27,
-            878
-          ],
-          "id": 1375646,
-          "title": "\uAD70\uCCB4",
-          "original_language": "ko",
-          "original_title": "\uAD70\uCCB4",
-          "overview": "",
-          "popularity": 0.0,
-          "poster_path": "/thK6glS5pklrlijsgSN6Hw9GLQK.jpg",
-          "release_date": "2026-05-21",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/7y8zWGEjs7tresw4Hzkkf4TdkcL.jpg",
-          "genre_ids": [
-            27,
-            10749
-          ],
-          "id": 1564614,
-          "title": "Leviticus",
-          "original_language": "en",
-          "original_title": "Leviticus",
-          "overview": "",
-          "popularity": 0.0,
-          "poster_path": "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg",
-          "release_date": "2026-06-17",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1x9e0qWonw634NhIsRdvnneeqvN.jpg",
-          "genre_ids": [
-            10749
-          ],
-          "id": 1523145,
-          "title": "\u0422\u0432\u043E\u0451 \u0441\u0435\u0440\u0434\u0446\u0435 \u0431\u0443\u0434\u0435\u0442 \u0440\u0430\u0437\u0431\u0438\u0442\u043E",
-          "original_language": "ru",
-          "original_title": "\u0422\u0432\u043E\u0451 \u0441\u0435\u0440\u0434\u0446\u0435 \u0431\u0443\u0434\u0435\u0442 \u0440\u0430\u0437\u0431\u0438\u0442\u043E",
-          "overview": "",
-          "popularity": 0.0,
-          "poster_path": "/iGpMm603GUKH2SiXB2S5m4sZ17t.jpg",
-          "release_date": "2026-03-26",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ufSwlnECLoUbBjPrFqEQcWBzHwc.jpg",
-          "genre_ids": [
-            10402,
-            18
-          ],
-          "id": 936075,
-          "title": "Michael",
-          "original_language": "en",
-          "original_title": "Michael",
-          "overview": "Der junge Michael Jackson wird als achtes von zehn Kindern unter der strengen F\u00FChrung seines Vaters Joe fr\u00FCh f\u00FCr eine Musikkarriere gedrillt wird. Mit der Familienband Jackson Five feiert er erste Erfolge, im Alter von 13 Jahren startet er bereits die Solokarriere. Auch im Erwachsenenalter ist sein Leben von der Musik dominiert. Ende der 1970er-Jahre lernt er bei Filmarbeiten Diana Ross und den Produzenten Quincy Jones kennen, was seine musikalische Ausrichtung grundlegend ver\u00E4ndert. Das von Jones produzierte Album \u0022Off the Wall\u0022 (1979) wird ein gro\u00DFer Erfolg, der 1982 durch die bahnbrechende und meistverkaufte Platte \u0022Thriller\u0022 noch \u00FCbertroffen wird. Parallel zu diesem Aufstieg kommt es zum Bruch mit seinem Vater Joe, den Jackson als Manager entl\u00E4sst und durch den Anwalt John Branca ersetzt.",
-          "popularity": 0.0,
-          "poster_path": "/uEk5QnmWN8t8t0rZ8gvOITg2yuR.jpg",
-          "release_date": "2026-04-22",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/szKv713FcUXx6hcfdY369vtkmzr.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 1127384,
-          "title": "Deep Water",
-          "original_language": "en",
-          "original_title": "Deep Water",
-          "overview": "",
-          "popularity": 0.0,
-          "poster_path": "/kjcuS7xaRyqRjVaVcH4t0qHshuX.jpg",
-          "release_date": "2026-04-30",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hS4FcOM5y71FurkBQgDLTBxmWZh.jpg",
+          "backdrop_path": "/oqrYIDH4tvfEzPe1yqT4jzmAWHQ.jpg",
           "genre_ids": [
             878,
             27,
-            53
+            28
           ],
-          "id": 1469342,
-          "title": "Her Private Hell",
-          "original_language": "en",
-          "original_title": "Her Private Hell",
-          "overview": "Als ein mysteri\u00F6ser Nebel eine futuristische Metropole verschlingt und eine t\u00F6dliche, schwer fassbare Kreatur freisetzt, begibt sich eine junge Frau mit bewegter Vergangenheit auf die Suche nach ihrem Vater. Ihr Weg kreuzt sich mit dem eines amerikanischen GIs, der eine nervenaufreibende Odyssee durchlebt, um seine Tochter aus der H\u00F6lle zu retten.",
+          "id": 1381071,
+          "title": "Godzilla Minus Zero",
+          "original_language": "ja",
+          "original_title": "\u30B4\u30B8\u30E9-0.0",
+          "overview": "Der Krieg hat Japan auf Null reduziert, und Godzilla hat es ins Minus gest\u00FCrzt. Zwei Jahre sind seitdem vergangen und das Land k\u00E4mpft immer noch immer verzweifelt darum, sich wieder zu erholen und endlich in den normalen Alltag zur\u00FCckzufinden. Gerade als es der Menschheit gelang, an einem hart erk\u00E4mpften Frieden festzuhalten, schl\u00E4gt eine neue Bedrohung zu und vernichtet die Hoffnung im Handumdrehen. Ein drittes Mal wird es nicht geben. Hier endet alles.",
           "popularity": 0.0,
-          "poster_path": "/kiFacg75KVjy0AM3S4QmbPas8zL.jpg",
-          "release_date": "2026-07-23",
+          "poster_path": "/hZviv9gguqHGw4GK8gS5d5bDhA4.jpg",
+          "release_date": "2026-11-03",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -282,82 +83,19 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/5lB7yPaRhJHQ9dx7AnvPUi0GZDU.jpg",
-          "genre_ids": [
-            10749,
-            18
-          ],
-          "id": 1516698,
-          "title": "The Last Sunrise",
-          "original_language": "en",
-          "original_title": "The Last Sunrise",
-          "overview": "Basierend auf dem beliebten Roman folgt \u0022The Last Sunrise\u0022 Ry , einer chronisch kranken Studentin, bei einem Sommerurlaub auf Mallorca mit ihrer Mutter. Als sie sich unerwartet in Juli\u00E1n verliebt und lernt, im Moment zu leben, drohen ihr sich verschlimmernder Gesundheitszustand und lang gehegte Familiengeheimnisse vor Sommerende alles zu zerst\u00F6ren.",
-          "popularity": 0.0,
-          "poster_path": "/pego3yEZ5SuGvRjESKAguL4Wu7M.jpg",
-          "release_date": "2026-08-26",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/nHxWyy18SvAZ8jJeemtS8k1UNjM.jpg",
-          "genre_ids": [
-            28,
-            80,
-            53
-          ],
-          "id": 1290821,
-          "title": "Shelter",
-          "original_language": "en",
-          "original_title": "Shelter",
-          "overview": "Der ehemalige Elite-Agent Michael Mason lebt auf einer schottischen Insel in v\u00F6lliger Isolation. Als eines Tages ein schwerer Sturm aufzieht und ein Boot kentert, rettet er ein M\u00E4dchen vor dem Ertrinken. F\u00FCr den Bootsf\u00FChrer kommt jede Hilfe zu sp\u00E4t. Kurzerhand nimmt Michael Jessie bei sich auf und l\u00F6st damit eine Kette unvorhergesehener Ereignisse aus: Sein Versteck wird entdeckt und von einem brutalen Squad-Team \u00FCberfallen. Michael sieht sich gezwungen, seinen Zufluchtsort zu verlassen und in jene Welt zur\u00FCckzukehren, der er f\u00FCr immer entkommen wollte. Um die Teenagerin in Sicherheit zu bringen, muss er sich den D\u00E4monen seiner Vergangenheit stellen \u2026",
-          "popularity": 0.0,
-          "poster_path": "/fz8fhY5xuE6NenYDuBsHbB7wUdj.jpg",
-          "release_date": "2026-01-28",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/4BtL2vvEufDXDP4u6xQjjQ1Y2aT.jpg",
-          "genre_ids": [
-            28,
-            80,
-            18,
-            53
-          ],
-          "id": 1419406,
-          "title": "Shadow Chase - Im Netz der Diebe",
-          "original_language": "zh",
-          "original_title": "\u6355\u98CE\u8FFD\u5F71",
-          "overview": "Wong Tak-chung ist ein pensionierter \u00DCberwachungsexperte der Polizei von Macau. Als eine Gangsterbande die Hafenstadt terrorisiert, sind seine ehemaligen Chefs allerdings am verzweifeln, weil seine Nachfolger den Verbrechern einfach nichts nachweisen k\u00F6nnen. Deshalb wird Wong aus dem Ruhestand zur\u00FCck in den Dienst beordert. Gemeinsam mit einem Team junger Ermittler, die mit modernster Technologie arbeiten, nimmt der Veteran sich des Falles an, verl\u00E4sst sich dabei aber lieber weiterhin auf traditionelle Methoden und seine Old-School-Ausr\u00FCstung. Dass die Kollaboration zwischen Alt und Jung, abgebr\u00FCht und nassforsch nicht gerade reibungslos abl\u00E4uft, ist gl\u00FCcklicherweise nur ein kleines Hindernis. Denn schnell stellen sich erste Ergebnisse ein. Als Fu Long-sheng, der Boss der Verbrecher, und sein psychopathischer Sohn Hu Feng bemerken, dass Wong und sein Team ihnen auf der Spur sind, gehen sie zum Frontalangriff auf die Cops \u00FCber, die nun kompromisslos zusammenhalten m\u00FCssen.",
-          "popularity": 0.0,
-          "poster_path": "/5Jyh6FeadADzRSzGrjbmjkNzIFw.jpg",
-          "release_date": "2025-08-16",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/qcIKxhqGMIj8uujsSoSMZWr8QqU.jpg",
+          "backdrop_path": "/bySCyjQXNPgsnLTlgJpSMnRazPD.jpg",
           "genre_ids": [
             28,
             53
           ],
-          "id": 1122573,
-          "title": "In the Grey",
+          "id": 1294189,
+          "title": "The Mongoose",
           "original_language": "en",
-          "original_title": "In the Grey",
-          "overview": "Mit automatischen Waffen und Sprengstoff gehen sie genauso geschickt um wie mit Einfluss, Macht und Worten: Ein Team von Eliteagenten, das in globalen Grauzonen agiert, wird auf einen skrupellosen Despoten angesetzt, der eine Milliarde Dollar hinterzogen hat. Auf einer streng bewachten Privatinsel entwickelt sich die trickreiche Mission, das Geld zur\u00FCckzuholen, zu einem strategischen Wettrennen, bei dem jedes Mittel recht ist..",
+          "original_title": "The Mongoose",
+          "overview": "Ein f\u00E4lschlicherweise beschuldigter Kriegsheld, der nichts zu verlieren hat, f\u00FChrt die Polizei auf eine epische, im Fernsehen \u00FCbertragene Verfolgungsjagd, unterst\u00FCtzt von Mitgliedern seines ehemaligen Bataillons der Spezialeinheiten der Armee und von einem faszinierten Publikum, das seine sichere Flucht anfeuert, genau beobachtet.",
           "popularity": 0.0,
-          "poster_path": "/4UzCbozgtdTIwbHoZSP10A9gCC5.jpg",
-          "release_date": "2026-05-13",
+          "poster_path": "/nNMAZ9d83p5xjgPDVMoTMbxXjrc.jpg",
+          "release_date": "2026-10-29",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -365,39 +103,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/1XAC6RPT01UX9EQGy2JVn5c8pgy.jpg",
+          "backdrop_path": "/prbMZ3DPf8taS6JYQd6igPnm2mA.jpg",
           "genre_ids": [
-            12,
-            14
-          ],
-          "id": 671,
-          "title": "Harry Potter und der Stein der Weisen",
-          "original_language": "en",
-          "original_title": "Harry Potter and the Philosopher\u0027s Stone",
-          "overview": "Harry Potter erf\u00E4hrt an seinem 11. Geburtstag, dass seine verstorbenen Eltern m\u00E4chtige Zauberer waren und auch er selbst magische Kr\u00E4fte besitzt. Als er von Hogwarts, der Schule f\u00FCr Hexerei und Zauberei, aufgenommen wird, erlebt Harry das Abenteuer seines Lebens. Er lernt Quidditch, das hoch in der Luft gespielt wird, und auf dem Weg, sich einem schwarzen Magier zu stellen, der ihn vernichten will, muss Harry eine spannende Schachpartie mit lebenden Figuren \u00FCberstehen\u2026",
-          "popularity": 0.0,
-          "poster_path": "/nKspzM3rVJASkT4CvZvuj9KDT7l.jpg",
-          "release_date": "2001-11-16",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ddrLCUT8hqSlEICTTbdlFYB5q4a.jpg",
-          "genre_ids": [
+            14,
             28,
-            35
+            12
           ],
-          "id": 1307247,
-          "title": "\uC624\uCF00\uC774 \uB9C8\uB2F4 2",
-          "original_language": "ko",
-          "original_title": "\uC624\uCF00\uC774 \uB9C8\uB2F4 2",
-          "overview": "",
+          "id": 656908,
+          "title": "Ramayana: Rise of a Legend",
+          "original_language": "hi",
+          "original_title": "\u0930\u093E\u092E\u093E\u092F\u0923\u092E\u094D",
+          "overview": "In einem Zeitalter der G\u00F6tter und K\u00F6nige h\u00E4ngt das Schicksal der Welten am seidenen Faden. Rama, ein Prinz, dessen Leben von Pflicht, Selbstlosigkeit und unersch\u00FCtterlicher Rechtschaffenheit bestimmt wird, muss sich dem unsterblichen Ravana stellen, getrieben von Stolz und Rache und m\u00E4chtig genug den Kosmos zu zerst\u00F6ren.",
           "popularity": 0.0,
-          "poster_path": "/xDbrWXB9yb5aEdt4peVy8OWNP2Y.jpg",
-          "release_date": "2026-08-12",
+          "poster_path": "/gOWnXaBxqT6k2y40hKfYU6c0Ym.jpg",
+          "release_date": "2026-11-05",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -405,28 +124,7 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/1oKLEA9JOhvaBwLpqjROisvWMy7.jpg",
-          "genre_ids": [
-            10749,
-            35,
-            18
-          ],
-          "id": 1325734,
-          "title": "Das Drama - Noch mal auf Anfang",
-          "original_language": "en",
-          "original_title": "The Drama",
-          "overview": "Emma und Charlie sind bereit, ihre Beziehung offiziell zu machen: Ihre Hochzeit steht kurz bevor. Sie feilen an ihren Gel\u00FCbden, der Termin f\u00FCr ein Test-Fotoshooting steht, die D-Jane ist gebucht. Alles l\u00E4uft nach Plan. Bei einem letzten Probeessen mit der angehenden Trauzeugin und ihrem Ehemann lassen sie sich auf ein verh\u00E4ngnisvolles Spiel ein: Alle vier sollen die schlimmste Sache offenbaren, die sie in ihrem bisherigen Leben verbrochen haben. Emmas Beichte schockiert die Anwesenden \u2013 und l\u00F6st eine Kette chaotischer Ereignisse aus. Obwohl Charlie versucht, Verst\u00E4ndnis f\u00FCr Emmas Gest\u00E4ndnis aufzubringen, steht die Beziehung kurz vor der Trauung pl\u00F6tzlich vor dem Aus. Doch was ist Emmas grosses Geheimnis?",
-          "popularity": 0.0,
-          "poster_path": "/yojMKtExmL8a8TOyrT1im8pJF6M.jpg",
-          "release_date": "2026-04-01",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/g4wdPZlhVioK69H8Q0o9Id5QhNs.jpg",
+          "backdrop_path": "/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
           "genre_ids": [
             53
           ],
@@ -436,8 +134,8 @@
           "original_title": "Fall 2: Deadpoint",
           "overview": "W\u00E4hrend eines gef\u00E4hrlichen Aufstiegs am thail\u00E4ndischen Mount Kwan sitzen zwei Kletterer in schwindelerregender H\u00F6he fest; dort machen die enorme Tiefe, die v\u00F6llige Ausgesetztheit und die schier aussichtslosen Umst\u00E4nde jeden Augenblick zu einem Kampf ums \u00DCberleben.",
           "popularity": 0.0,
-          "poster_path": "/p73G56bJGPa5y52cyqWscHR6NnN.jpg",
-          "release_date": "2026-09-02",
+          "poster_path": "/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
+          "release_date": "2026-09-01",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -445,28 +143,313 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/J1UgJwRxDQS92kw75KgeVFZMHf.jpg",
+          "backdrop_path": "/9nU0FKNefmhbgi2xXlvZchZsqwm.jpg",
           "genre_ids": [
-            18,
-            35,
+            27,
+            53,
             28
           ],
-          "id": 1491920,
-          "title": "\u529F\u592B\u5973\u8DB3",
-          "original_language": "zh",
-          "original_title": "\u529F\u592B\u5973\u8DB3",
+          "id": 1244523,
+          "title": "Beware Boi\u00FAna",
+          "original_language": "en",
+          "original_title": "Beware Boi\u00FAna",
+          "overview": "Tief im Amazonasgebiet verwandelt sich eine medizinische Mission in einen Kampf ums \u00DCberleben, als Boi\u00FAna, ein riesiges urzeitliches Raubtier, erwacht, um ihr Revier zur\u00FCckzuerobern. Im Dschungel, wo die Natur die absolute Macht hat, entscheidet sie, wer lebt und wer stirbt.",
+          "popularity": 0.0,
+          "poster_path": "/3YTPvYoCRIU9PJGdxEmz6xbNrmV.jpg",
+          "release_date": "2026-10-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bDsmYvrzto7xrEwqDpLC3SPhn9A.jpg",
+          "genre_ids": [
+            18,
+            10752
+          ],
+          "id": 1422041,
+          "title": "La bola negra",
+          "original_language": "es",
+          "original_title": "La bola negra",
+          "overview": "Drei Leben, drei miteinander verwobene Schicksale, ein gemeinsames Erbe: Die Jahre 1932, 1937 und 2017 umspannend, erz\u00E4hlt LA BOLA NEGRA eine Geschichte von Begehren, Schmerz und der Sehnsucht von Sebasti\u00E1n, Rafael und Alberto, deren Lebenswege untrennbar miteinander verbunden sind. Inspiriert von einem der letzten, unvollendeten Werke Federico Garc\u00EDa Lorcas, spannt der Film einen Bogen von der Vorkriegszeit Spaniens bis in die Gegenwart.",
+          "popularity": 0.0,
+          "poster_path": "/t1azKLExwUxKj6v6m2L535evuRa.jpg",
+          "release_date": "2026-09-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sMmG82PtjK8A9rVc34gwKQtCm3A.jpg",
+          "genre_ids": [
+            27,
+            35,
+            14
+          ],
+          "id": 1514026,
+          "title": "Buddy",
+          "original_language": "en",
+          "original_title": "Buddy",
+          "overview": "Alle lieben Buddy. Oder m\u00FCssen es zumindest, denn wenn das orange Einhorn w\u00FCtend wird, verwandelt sich seine quietschbunte Kindersendung schnell in blutiges Chaos. In der k\u00FCnstlich perfekten Studiowelt im Stil der 80er und 90er leben Kinder neben sprechenden Gegenst\u00E4nden, singen, tanzen und lernen Lektionen \u00FCber Freundschaft und Zusammenhalt. Doch als Josh keine Lust auf Buddys Geburtstagsparty hat, bekommt die fr\u00F6hliche Fassade schnell Risse und Josh einen t\u00F6dlichen Axthieb verpasst. Folge f\u00FCr Folge eskaliert die Lage, denn gegen Buddys Zorn gibt es keine p\u00E4dagogisch wertvolle L\u00F6sung",
+          "popularity": 0.0,
+          "poster_path": "/1BdZbNvl1SfrrX8J9X5tQzN6Ivu.jpg",
+          "release_date": "2026-08-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7RsPdXLDNugDIlwXPVeeprNfMx.jpg",
+          "genre_ids": [
+            27,
+            14,
+            9648
+          ],
+          "id": 1232569,
+          "title": "Pinocchio: Unstrung",
+          "original_language": "en",
+          "original_title": "Pinocchio: Unstrung",
+          "overview": "Nachdem seine Eltern bei einem Autounfall gestorben sind, zieht James zu seinem Gro\u00DFvater Geppetto. Er freundet sich mit Zach und Michael an, doch als Zach an Krebs stirbt und Michael wegzieht, steht James allein dar. Geppetto verspricht, ihm einen Freund zu bauen, der ihn niemals verlassen wird. Ein Jahr sp\u00E4ter trifft James eines Nachts in Gepettos Werkstatt auf Pinocchio, eine sprechende Marionette, deren Nase beim L\u00FCgen w\u00E4chst. Geppetto erkl\u00E4rt, er habe Pinocchio f\u00FCr James gebaut und die beiden freunden sich an. Pinocchio sehnt sich allerdings danach, ein Mensch zu sein. Er begegnet im Keller einer h\u00F6lzernen Kreatur, die ihm erkl\u00E4rt, er brauche daf\u00FCr menschliche Organe, was Pinocchio zu finsteren Taten verf\u00FChrt.",
+          "popularity": 0.0,
+          "poster_path": "/hJNdizFlxOW89edX3Rzr6OliSFI.jpg",
+          "release_date": "2026-07-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dJTWIecL2vxsCRl5G0lRhPsfrhc.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1228834,
+          "title": "The Fix",
+          "original_language": "en",
+          "original_title": "The Fix",
+          "overview": "Desillusioniert durch das Ende des Krieges in Afghanistan, machte sich eine Gruppe von in Ungnade gefallenen, vom Krieg zerrissenen Ex-CIA-Aktivisten nach Teheran, um eine lebensver\u00E4ndernde Rechnung zu f\u00E4llen.",
+          "popularity": 0.0,
+          "poster_path": "/jlP8XDjZN89GrpM3je5Uf8Grqx8.jpg",
+          "release_date": "2026-09-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sEsMwSDUWGIx9EfNxzM6KzVSsSQ.jpg",
+          "genre_ids": [
+            53,
+            18,
+            80
+          ],
+          "id": 1375441,
+          "title": "Primetime",
+          "original_language": "en",
+          "original_title": "Primetime",
+          "overview": "Im Jahr 2006 macht sich Chris Hansen, der Moderator von \u201ETo Catch a Predator\u201C, daran, Fernsehgeschichte zu schreiben.",
+          "popularity": 0.0,
+          "poster_path": "/iVtbZFH8QwcPB3U1xYDi9s9laOn.jpg",
+          "release_date": "2026-09-23",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+          "genre_ids": [
+            16,
+            12,
+            14
+          ],
+          "id": 791523,
+          "title": "Wildwood",
+          "original_language": "en",
+          "original_title": "Wildwood",
+          "overview": "Nachdem ihr kleiner Bruder von einem Schwarm Kr\u00E4hen entf\u00FChrt worden ist, begibt sich die 12-j\u00E4hrige Prue auf eine abenteuerliche Rettungsmission in die \u201EUndurchdringliche Wildnis\u201C \u2013 einen verzauberten Wald, der sich am Rande von Portland, Oregon, verbirgt. Gemeinsam mit ihrem tollpatschigen Mitsch\u00FCler Curtis betritt sie eine Welt voller sprechender Tiere, Magie und uralter M\u00E4chte. Als die beiden in einen Konflikt geraten, der das Gleichgewicht des Waldes bedroht, entdeckt Prue eine innere St\u00E4rke, von der sie niemals geahnt h\u00E4tte, dass sie in ihr steckt. Wenn sie ihren Bruder retten und das Schicksal von Wildwood ver\u00E4ndern will, muss sie alles aufs Spiel setzen.",
+          "popularity": 0.0,
+          "poster_path": "/oYkGlrvG7QNqrLtss4Q3Bpr1Np6.jpg",
+          "release_date": "2026-10-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qDa0fqDqIBCovRp975RvtGPcuN3.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1288445,
+          "title": "Mutiny",
+          "original_language": "en",
+          "original_title": "Mutiny",
+          "overview": "Special-Forces-Soldat Cole Reed arbeitet inzwischen f\u00FCr den milliardenschweren Industriellen Taran. Als sein Auftraggeber direkt vor seinen Augen einem Mordanschlag zum Opfer f\u00E4llt, ger\u00E4t Cole selbst unter Verdacht und soll f\u00FCr das Verbrechen verantwortlich gemacht werden. Um seinen Namen reinzuwaschen und die Hinterm\u00E4nner zu finden, nimmt er die Verfolgung der T\u00E4ter auf. Seine Spur f\u00FChrt ihn an Bord eines Frachtschiffs, wo er den Verantwortlichen immer n\u00E4herkommt. Dort beginnt Cole einen kompromisslosen Ein-Mann-Feldzug gegen seine Gegner und st\u00F6\u00DFt dabei auf Hinweise, die weit \u00FCber den Mord an Taran hinausreichen. Schon bald wird deutlich, dass hinter den Ereignissen eine internationale Verschw\u00F6rung steckt. W\u00E4hrend sich die Lage auf hoher See immer weiter zuspitzt, muss Cole nicht nur gegen zahlreiche Gegner bestehen, sondern auch die Wahrheit ans Licht bringen, bevor die Drahtzieher ihre Pl\u00E4ne verwirklichen k\u00F6nnen.",
+          "popularity": 0.0,
+          "poster_path": "/pgXv3bgudUDugs8DmJik5XLZ6Bc.jpg",
+          "release_date": "2026-08-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hXRw0AVY8avc0koUXj2rMY6q2N8.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1474226,
+          "title": "El vestido",
+          "original_language": "es",
+          "original_title": "El vestido",
           "overview": "",
           "popularity": 0.0,
-          "poster_path": "/7H9Gkdr9V5KMM6STtCRdTuRD2Zd.jpg",
-          "release_date": "2026-07-11",
+          "poster_path": "/2SoHOeFWgF4pP9yVlEch76ja7r5.jpg",
+          "release_date": "2026-02-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rueyXwlewVPAP5NkqCUJx4RjhqB.jpg",
+          "genre_ids": [
+            35,
+            12,
+            10751,
+            16
+          ],
+          "id": 1204680,
+          "title": "Coyote vs. ACME",
+          "original_language": "en",
+          "original_title": "Coyote vs. Acme",
+          "overview": "Nach all den Jahren vergeblicher Liebesm\u00FCh hat Willi Kojote es satt, dass bisher jedes einzelne Produkt der ACME Corporation eine erfolgreiche Jagd auf den Road Runner vereitelt hat. Kojote beschlie\u00DFt deshalb, das Unternehmen f\u00FCr seine mangelhafte Ware in die Verantwortung zu nehmen, und engagiert den ebenso gl\u00FCck- wie mittellosen Anwalt Kevin Avery, um gegen ACME vor Gericht zu ziehen. Als der herausfindet, dass die Rechtsabteilung des Konzerns von Buddy Crane geleitet wird, dem selbstgef\u00E4lligen Chef seiner ehemaligen Kanzlei, gibt er alles, um den Prozess zu gewinnen.",
+          "popularity": 0.0,
+          "poster_path": "/lHiLrnVKMZS4RmPYOFgXaCh0tQb.jpg",
+          "release_date": "2026-08-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3uLA0ujne91bkzFStZICCYeqhnt.jpg",
+          "genre_ids": [
+            35,
+            80,
+            53
+          ],
+          "id": 891621,
+          "title": "Wild Horse Nine",
+          "original_language": "en",
+          "original_title": "Wild Horse Nine",
+          "overview": "Kurz vor dem Milit\u00E4r-Putsch in Chile im Jahr 1973 werden die CIA-Agenten Chris und Lee von ihrem B\u00FCroleiter MJ von Santiago auf die Osterinsel entsandt. Vor dem Hintergrund der ikonischen Skulpturen der Insel ringen die langj\u00E4hrigen Partner mit ihrer dunklen Vergangenheit und aktuellen Verschw\u00F6rungen. Dabei droht Chris\u2019 neu gefundene Freundschaft mit zwei rebellischen Studentinnen die Reise aller in dieses abgelegene Paradies v\u00F6llig aus dem Ruder laufen zu lassen.",
+          "popularity": 0.0,
+          "poster_path": "/wBMhiwn8JpZ0oMox5OCGvEaCDwX.jpg",
+          "release_date": "2026-10-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ggqvhSdAASrseKuMlzk51sbvbE8.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1562642,
+          "title": "Ghost Soldier",
+          "original_language": "en",
+          "original_title": "Ghost Soldier",
+          "overview": "",
+          "popularity": 0.0,
+          "poster_path": "/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
+          "release_date": "2026-11-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oIglj0Jy9duG4LnrRUpH8n001Pk.jpg",
+          "genre_ids": [
+            10749,
+            14,
+            35
+          ],
+          "id": 1302904,
+          "title": "Practical Magic 2 \u2013 Zauberhafte Schwestern",
+          "original_language": "en",
+          "original_title": "Practical Magic 2",
+          "overview": "Eine Hexenfamilie aus mehreren Generationen, die jahrhundertelang dazu verdammt war, lieblos zu sein, versucht, den Zauber zu brechen, indem sie sich dunklen Geheimnissen stellt und f\u00FCreinander Opfer bringt.",
+          "popularity": 0.0,
+          "poster_path": "/gprNY1uglCDkiG0uqvAjTPT4GJ3.jpg",
+          "release_date": "2026-09-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1400837,
+          "title": "Other Mommy",
+          "original_language": "en",
+          "original_title": "Other Mommy",
+          "overview": "Ein junges M\u00E4dchen, Bela, bildet eine Beziehung mit einer unheimlichen Entit\u00E4t in ihrem Haus, die unheimlich aussieht wie ihre eigene Mutter.",
+          "popularity": 0.0,
+          "poster_path": "/dDRtLmxorXpXHxTJqxNlMT9rJP9.jpg",
+          "release_date": "2026-10-07",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nhIL3O4W9h5V5JbNQm7yjoDk3So.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 1765072,
+          "title": "You Can See Everything",
+          "original_language": "en",
+          "original_title": "You Can See Everything",
+          "overview": "34 Tage vor ihrer Inhaftierung l\u00E4dt die ber\u00FCchtigte Theranos-Gr\u00FCnderin Elizabeth Holmes ein skeptisches Filmteam ein, jeden ihrer Schritte zu dokumentieren. Was als intimes Portr\u00E4t beginnt, entwickelt sich zu einer nervenaufreibenden dreij\u00E4hrigen Reise.",
+          "popularity": 0.0,
+          "poster_path": "/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg",
+          "release_date": "2026-10-16",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
         }
       ],
-      "total_pages": 49,
-      "total_results": 965
+      "total_pages": 89,
+      "total_results": 1772
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

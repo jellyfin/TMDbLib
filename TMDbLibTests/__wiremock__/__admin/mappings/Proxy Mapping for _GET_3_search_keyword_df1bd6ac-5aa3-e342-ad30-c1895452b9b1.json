@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "query",
@@ -139,8 +126,8 @@
           "name": "kidnapping plot"
         }
       ],
-      "total_pages": 2,
-      "total_results": 38
+      "total_pages": 3,
+      "total_results": 43
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

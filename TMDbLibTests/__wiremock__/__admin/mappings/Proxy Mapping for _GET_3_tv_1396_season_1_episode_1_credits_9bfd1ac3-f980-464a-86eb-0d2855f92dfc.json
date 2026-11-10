@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -43,7 +30,7 @@
           "name": "Bryan Cranston",
           "original_name": "Bryan Cranston",
           "popularity": 0.0,
-          "profile_path": "/npIIZJGSrcJIJ6yHdmbqO6Jzo5I.jpg",
+          "profile_path": "/7Jahy5LZX2Fo8fGJltMreAI49hC.jpg",
           "character": "Walter White",
           "credit_id": "52542282760ee313280017f9",
           "order": 0
@@ -116,19 +103,6 @@
       ],
       "crew": [
         {
-          "department": "Writing",
-          "job": "Writer",
-          "credit_id": "52542275760ee313280006ce",
-          "adult": false,
-          "gender": 2,
-          "id": 66633,
-          "known_for_department": "Writing",
-          "name": "Vince Gilligan",
-          "original_name": "Vince Gilligan",
-          "popularity": 0.0,
-          "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
-        },
-        {
           "department": "Directing",
           "job": "Director",
           "credit_id": "52542275760ee313280006e8",
@@ -142,17 +116,17 @@
           "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
         },
         {
-          "job": "Director of Photography",
-          "department": "Camera",
-          "credit_id": "52b7029219c29533d00dd2c1",
+          "department": "Writing",
+          "job": "Writer",
+          "credit_id": "52542275760ee313280006ce",
           "adult": false,
           "gender": 2,
-          "id": 2483,
-          "known_for_department": "Camera",
-          "name": "John Toll",
-          "original_name": "John Toll",
+          "id": 66633,
+          "known_for_department": "Writing",
+          "name": "Vince Gilligan",
+          "original_name": "Vince Gilligan",
           "popularity": 0.0,
-          "profile_path": "/cfL9A6tC7L5Ps5fq1o3WpVKGMb1.jpg"
+          "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
         },
         {
           "job": "Editor",
@@ -166,6 +140,19 @@
           "original_name": "Lynne Willingham",
           "popularity": 0.0,
           "profile_path": null
+        },
+        {
+          "job": "Director of Photography",
+          "department": "Camera",
+          "credit_id": "52b7029219c29533d00dd2c1",
+          "adult": false,
+          "gender": 2,
+          "id": 2483,
+          "known_for_department": "Camera",
+          "name": "John Toll",
+          "original_name": "John Toll",
+          "popularity": 0.0,
+          "profile_path": "/cfL9A6tC7L5Ps5fq1o3WpVKGMb1.jpg"
         },
         {
           "job": "Art Direction",

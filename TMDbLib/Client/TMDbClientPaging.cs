@@ -6,12 +6,12 @@ using TMDbLib.Utilities;
 
 namespace TMDbLib.Client;
 
-/// <summary>
+/// <content>
 /// Streaming counterparts of the page-based endpoints. Each of these fetches one page per 20 items
 /// as the sequence is consumed, so enumerating a large result set is a lot of requests - mind the
 /// rate limit. Any other paged endpoint can be enumerated the same way with
 /// <see cref="PagedResults.EnumerateAllAsync{T}"/>.
-/// </summary>
+/// </content>
 public partial class TMDbClient
 {
     /// <summary>

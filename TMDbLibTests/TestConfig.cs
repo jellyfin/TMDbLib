@@ -117,7 +117,8 @@ public class TestConfig
                 SaveMappingToFile = true, // Save to files for later playback
                 SaveMappingForStatusCodePattern = "*",
                 AppendGuidToSavedMappingFile = true, // Unique filenames for each request
-                ExcludedHeaders = ["Host", "Content-Length", "Transfer-Encoding"],
+                // Accept-Encoding depends on the runtime, so it must not be part of the match.
+                ExcludedHeaders = ["Host", "Content-Length", "Transfer-Encoding", "Accept-Encoding"],
                 ExcludedParams = ["api_key"]
             };
         }

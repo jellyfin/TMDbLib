@@ -262,6 +262,11 @@ public partial class DeterministicFileSystemHandler : IFileSystemHandler
 
     private static void RemoveExcludedParamsFromRequest(JsonNode node)
     {
+        // Mappings are identified by method + path + query only (see ExtractRequestSignature), so a body
+        // matcher would only ever hold the first recorded variant. It also captures dynamic values such as
+        // request tokens, which never match on playback. Newer WireMock versions record it, so drop it.
+        node["Request"]?.AsObject().Remove("Body");
+
         var paramsArray = node["Request"]?["Params"]?.AsArray();
         if (paramsArray is null)
         {

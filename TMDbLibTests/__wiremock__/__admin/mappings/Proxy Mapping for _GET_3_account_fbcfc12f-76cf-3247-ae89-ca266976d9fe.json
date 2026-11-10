@@ -17,24 +17,12 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": []
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
+      "accent_color": 8,
       "avatar": {
         "gravatar": {
           "hash": "9ec1d4adda263fac03b990ec88f16b2e"
@@ -43,11 +31,31 @@
           "avatar_path": null
         }
       },
+      "background_image": "",
+      "description": "",
       "id": 6089455,
       "iso_639_1": "en",
       "iso_3166_1": "BE",
       "name": "Test Name",
+      "content_settings": {
+        "adult_content": false,
+        "filter_profanity": true,
+        "emoji_tone": null
+      },
       "include_adult": false,
+      "regional_settings": {
+        "language": "en-US",
+        "fallback_language": "en-US",
+        "country": "BE",
+        "timezone": "America/New_York"
+      },
+      "social_links": {
+        "facebook_id": "",
+        "instagram_id": "",
+        "tiktok_id": "",
+        "twitter_id": "",
+        "youtube_id": ""
+      },
       "username": "TMDbTestAccount"
     },
     "Headers": {

@@ -1,0 +1,969 @@
+{
+  "Guid": "4bc766c6-1967-4b45-bdc0-60e978cd4a53",
+  "Title": "Proxy Mapping for GET /3/movie/1232569/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1232569/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1232569/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1232569,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=AT",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 19
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 19
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=BE",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=CA",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=CH",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 71
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 71
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 105
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 105
+            },
+            {
+              "logo_path": "/iUGee0WhY5ZSBZZuCunNt0K7au2.png",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 127
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=DK",
+          "rent": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 46
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 46
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=EG",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=FI",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 52
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 52
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 82
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/uzTONLCUH92RRMSzs206OYtWVml.png",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 74
+            },
+            {
+              "logo_path": "/yERf5EH3GjWMB0ZSWPaov1kCKrR.png",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 76
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/uzTONLCUH92RRMSzs206OYtWVml.png",
+              "provider_id": 2286,
+              "provider_name": "VIVA by videofutur",
+              "display_priority": 74
+            },
+            {
+              "logo_path": "/yERf5EH3GjWMB0ZSWPaov1kCKrR.png",
+              "provider_id": 2307,
+              "provider_name": "Premiere Max",
+              "display_priority": 76
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 20
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 20
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=GG",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 70
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 39
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/r7avjeKxK7xrpVktl00Jo3aD1vQ.png",
+              "provider_id": 1897,
+              "provider_name": "MIDNIGHT FACTORY Amazon Channel",
+              "display_priority": 60
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/iGb7XGcCiCZyBgBqIdSEBiOxNc4.png",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 35
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/iGb7XGcCiCZyBgBqIdSEBiOxNc4.png",
+              "provider_id": 109,
+              "provider_name": "Timvision",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 35
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=NL",
+          "rent": [
+            {
+              "logo_path": "/oB7QrPnusUtIpKr8k0YQ12INLeP.png",
+              "provider_id": 71,
+              "provider_name": "Path\u00E9 Thuis",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 36
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/oB7QrPnusUtIpKr8k0YQ12INLeP.png",
+              "provider_id": 71,
+              "provider_name": "Path\u00E9 Thuis",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 36
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=NO",
+          "rent": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=SE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1232569-pinocchio-unstrung/watch?locale=US",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 25
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 25
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/a1UIdq5BrkcAxnxcUhFsNbXnxeu.png",
+              "provider_id": 386,
+              "provider_name": "Peacock Premium",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/yrEwyMzEKdqAoGhaWUARtIxByol.png",
+              "provider_id": 387,
+              "provider_name": "Peacock Premium Plus",
+              "display_priority": 214
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

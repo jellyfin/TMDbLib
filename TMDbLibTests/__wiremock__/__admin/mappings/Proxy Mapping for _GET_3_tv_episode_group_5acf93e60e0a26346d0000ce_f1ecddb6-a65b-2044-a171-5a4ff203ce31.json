@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -291,7 +278,7 @@
               "name": "Norm MacDonald: A Rusty Car in the Rain",
               "overview": "Jerry is taking funnyman Norm MacDonald for a coffee run in a 1958 Porsche Speedster. Destination: Jackson Hole Diner in Queens.",
               "production_code": "",
-              "runtime": null,
+              "runtime": 21,
               "season_number": 9,
               "show_id": 59717,
               "still_path": "/8IwTNDFfez3j4mkptYx5BN1G4lF.jpg",

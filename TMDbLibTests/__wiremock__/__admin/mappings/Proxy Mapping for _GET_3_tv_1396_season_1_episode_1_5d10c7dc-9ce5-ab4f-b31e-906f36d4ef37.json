@@ -16,39 +16,14 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
+      "id": 62085,
       "air_date": "2008-01-20",
       "crew": [
-        {
-          "department": "Writing",
-          "job": "Writer",
-          "credit_id": "52542275760ee313280006ce",
-          "adult": false,
-          "gender": 2,
-          "id": 66633,
-          "known_for_department": "Writing",
-          "name": "Vince Gilligan",
-          "original_name": "Vince Gilligan",
-          "popularity": 0.0,
-          "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
-        },
         {
           "department": "Directing",
           "job": "Director",
@@ -63,17 +38,17 @@
           "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
         },
         {
-          "job": "Director of Photography",
-          "department": "Camera",
-          "credit_id": "52b7029219c29533d00dd2c1",
+          "department": "Writing",
+          "job": "Writer",
+          "credit_id": "52542275760ee313280006ce",
           "adult": false,
           "gender": 2,
-          "id": 2483,
-          "known_for_department": "Camera",
-          "name": "John Toll",
-          "original_name": "John Toll",
+          "id": 66633,
+          "known_for_department": "Writing",
+          "name": "Vince Gilligan",
+          "original_name": "Vince Gilligan",
           "popularity": 0.0,
-          "profile_path": "/cfL9A6tC7L5Ps5fq1o3WpVKGMb1.jpg"
+          "profile_path": "/wJIxATESjzsjSgvRhVavOmdamXc.jpg"
         },
         {
           "job": "Editor",
@@ -87,6 +62,19 @@
           "original_name": "Lynne Willingham",
           "popularity": 0.0,
           "profile_path": null
+        },
+        {
+          "job": "Director of Photography",
+          "department": "Camera",
+          "credit_id": "52b7029219c29533d00dd2c1",
+          "adult": false,
+          "gender": 2,
+          "id": 2483,
+          "known_for_department": "Camera",
+          "name": "John Toll",
+          "original_name": "John Toll",
+          "popularity": 0.0,
+          "profile_path": "/cfL9A6tC7L5Ps5fq1o3WpVKGMb1.jpg"
         },
         {
           "job": "Art Direction",
@@ -355,7 +343,6 @@
       ],
       "name": "Pilot",
       "overview": "When an unassuming high school chemistry teacher discovers he has a rare form of lung cancer, he decides to team up with a former student and create a top of the line crystal meth in a used RV, to provide for his family once he is gone.",
-      "id": 62085,
       "production_code": "",
       "runtime": 59,
       "season_number": 1,

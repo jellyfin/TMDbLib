@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "append_to_response",
@@ -271,7 +258,7 @@
             "site": "YouTube",
             "size": 720,
             "type": "Opening Credits",
-            "official": false,
+            "official": true,
             "id": "6546bd3bfd4f80011ed0f350",
             "published_at": "2022-04-26T13:00:34.000Z"
           },
@@ -322,18 +309,6 @@
             "official": false,
             "id": "66f034d05ee61fbb738d8aea",
             "published_at": "2010-03-20T02:34:08.000Z"
-          },
-          {
-            "iso_639_1": "en",
-            "iso_3166_1": "US",
-            "name": "Friends: Season 10 Opening",
-            "key": "lGTOru7pwL8",
-            "site": "YouTube",
-            "size": 360,
-            "type": "Opening Credits",
-            "official": false,
-            "id": "552e1b53c3a3686c4e00207b",
-            "published_at": "2009-10-18T00:01:21.000Z"
           }
         ]
       }

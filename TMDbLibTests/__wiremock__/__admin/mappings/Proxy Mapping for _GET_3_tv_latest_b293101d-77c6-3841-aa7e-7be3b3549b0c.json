@@ -16,89 +16,57 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "adult": false,
-      "backdrop_path": "/8EASHfI8ch4FwHcMCB1jGN2xDMg.jpg",
+      "backdrop_path": null,
       "created_by": [],
       "episode_run_time": [],
-      "first_air_date": "2026-08-30",
-      "genres": [
-        {
-          "id": 10764,
-          "name": "Reality"
-        },
-        {
-          "id": 10767,
-          "name": "Talk"
-        }
-      ],
+      "first_air_date": "1999-09-18",
+      "genres": [],
       "homepage": "",
-      "id": 330998,
+      "id": 341702,
       "in_production": true,
-      "languages": [
-        "en",
-        "tl"
-      ],
-      "last_air_date": null,
-      "last_episode_to_air": null,
-      "name": "Philippine Selection Night",
-      "next_episode_to_air": {
-        "id": 7651853,
-        "name": "Episode 1",
-        "overview": "Unknown plot",
+      "languages": [],
+      "last_air_date": "1999-09-18",
+      "last_episode_to_air": {
+        "id": 8114014,
+        "name": "The Reformatting",
+        "overview": "After escaping from new foes, Optimus Primal, Rattrap, Cheetor and Blackarachnia are given strange new bodies by a mysterious supercomputer.",
         "vote_average": 0.0,
         "vote_count": 0,
-        "air_date": "2026-08-30",
+        "air_date": "1999-09-18",
         "episode_number": 1,
         "episode_type": "standard",
         "production_code": "",
         "runtime": null,
         "season_number": 1,
-        "show_id": 330998,
+        "show_id": 341702,
         "still_path": null
       },
-      "networks": [
-        {
-          "id": 20,
-          "logo_path": "/kdcvqvutGKUsIkeSVGl8pQMkc3k.png",
-          "name": "ABS-CBN",
-          "origin_country": "PH"
-        }
-      ],
+      "name": "Beast Machines: Transformers",
+      "next_episode_to_air": null,
+      "networks": [],
       "number_of_episodes": 1,
       "number_of_seasons": 1,
       "origin_country": [
-        "PH"
+        "US"
       ],
-      "original_language": "tl",
-      "original_name": "Philippine Selection Night",
-      "overview": "The Philippines is all set to select! Put a date in your diary for Phillippine Selection Night, where the country will pick its song for the inaugural edition of Eurovision Song Contest Asia. Don\u0027t miss out on the excitement; follow the whole show live.",
+      "original_language": "en",
+      "original_name": "Beast Machines: Transformers",
+      "overview": "Returning to find Cybertron populated only by Vehicon drone armies controlled by Megatron, the fugitive Maximals are given new technorganic bodies and begin a guerrilla war against Megatron and his dreams of a world ruled by a single mind.",
       "popularity": 0.0,
-      "poster_path": "/fGhV1TwOqPfSoYRsFSjqw6R5oLo.jpg",
+      "poster_path": null,
       "production_companies": [],
       "production_countries": [],
       "seasons": [
         {
-          "air_date": "2026-08-30",
+          "air_date": "1999-09-18",
           "episode_count": 1,
-          "id": 535035,
+          "id": 556564,
           "name": "Season 1",
           "overview": "",
           "poster_path": null,
@@ -107,21 +75,10 @@
         }
       ],
       "softcore": false,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "Tagalog",
-          "iso_639_1": "tl",
-          "name": ""
-        }
-      ],
+      "spoken_languages": [],
       "status": "Returning Series",
       "tagline": "",
-      "type": "Reality",
+      "type": "Scripted",
       "vote_average": 0.0,
       "vote_count": 0
     },

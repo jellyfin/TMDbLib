@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -39,7 +26,7 @@
         {
           "iso_639_1": "en",
           "iso_3166_1": "US",
-          "name": "Game of Thrones | Official Series Trailer",
+          "name": "Official Series Trailer",
           "key": "KPLWWIOCOOQ",
           "site": "YouTube",
           "size": 1080,

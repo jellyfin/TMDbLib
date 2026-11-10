@@ -1,0 +1,945 @@
+{
+  "Guid": "7873d298-0031-a148-a91b-4f7e4b453024",
+  "Title": "Proxy Mapping for GET /3/tv/1421/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/1421/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1421/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1421,
+      "results": {
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 15
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/hFTUerTxMwrM9RIo9z48qxCsi7z.png",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 32
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 14
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/gPo7UTwHFEWCT7RlRL1czQs6KPI.png",
+              "provider_id": 1928,
+              "provider_name": "Prima Plus",
+              "display_priority": 25
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 105
+            },
+            {
+              "logo_path": "/iUGee0WhY5ZSBZZuCunNt0K7au2.png",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 127
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 20
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/kMT8p43W3BsXBe9mqCIPDNepser.png",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 14
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 16
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 9
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/kMT8p43W3BsXBe9mqCIPDNepser.png",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 17
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/ledoS6EgdjTNq8F1e6wubUQer18.png",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/9SVVjJ89csOM0xoeVVK8BryUf9a.png",
+              "provider_id": 614,
+              "provider_name": "VI movies and tv",
+              "display_priority": 36
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=RU",
+          "buy": [
+            {
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 21
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/44uAnmSqvA4yBOdbPWN8YgQHjWm.png",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/a1UIdq5BrkcAxnxcUhFsNbXnxeu.png",
+              "provider_id": 386,
+              "provider_name": "Peacock Premium",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/48bVXEIyCLSL9pZUQ7gB9ToyWto.png",
+              "provider_id": 2528,
+              "provider_name": "YouTube TV",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/yrEwyMzEKdqAoGhaWUARtIxByol.png",
+              "provider_id": 387,
+              "provider_name": "Peacock Premium Plus",
+              "display_priority": 214
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/1421-modern-family/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

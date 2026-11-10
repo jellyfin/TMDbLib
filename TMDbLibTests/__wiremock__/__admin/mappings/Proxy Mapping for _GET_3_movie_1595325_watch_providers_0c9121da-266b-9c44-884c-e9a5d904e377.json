@@ -1,0 +1,694 @@
+{
+  "Guid": "0c9121da-266b-9c44-884c-e9a5d904e377",
+  "Title": "Proxy Mapping for GET /3/movie/1595325/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/1595325/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/1595325/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1595325,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 19
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/abSOA5NlQIXVBP91CmW1gAUuVKz.png",
+              "provider_id": 2783,
+              "provider_name": "The Asylum Channel Amazon Channel",
+              "display_priority": 162
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/dSa84VG4VTMh2drouWvgucRsLYV.png",
+              "provider_id": 1856,
+              "provider_name": "Magenta TV",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 19
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/hFTUerTxMwrM9RIo9z48qxCsi7z.png",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 32
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/hFTUerTxMwrM9RIo9z48qxCsi7z.png",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 32
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 64
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=BE",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=CA",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 9
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=CH",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 71
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 71
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 105
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/abSOA5NlQIXVBP91CmW1gAUuVKz.png",
+              "provider_id": 2783,
+              "provider_name": "The Asylum Channel Amazon Channel",
+              "display_priority": 239
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 105
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 82
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 98
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 180
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 20
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 20
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=GG",
+          "ads": [
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 31
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 98
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 10
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 10
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=JP",
+          "rent": [
+            {
+              "logo_path": "/m0tkTiV5TN7NWfazDEYc8NoVXSd.png",
+              "provider_id": 2683,
+              "provider_name": "FOD",
+              "display_priority": 79
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=NZ",
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 36
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/68KYULhVkHI6TVrmPSE0LlPXB1U.png",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=TW",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/1595325-the-anacondas/watch?locale=US",
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 40
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 202
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 25
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 25
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/b7uhrYJtAe7b1ieJGg705vTbwrX.png",
+              "provider_id": 207,
+              "provider_name": "The Roku Channel",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 127
+            },
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 142
+            },
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 346
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 379
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

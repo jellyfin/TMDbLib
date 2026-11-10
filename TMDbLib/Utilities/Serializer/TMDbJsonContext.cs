@@ -7,7 +7,6 @@ using TMDbLib.Objects.Changes;
 using TMDbLib.Objects.Collections;
 using TMDbLib.Objects.Companies;
 using TMDbLib.Objects.Configuration;
-using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.Credit;
 using TMDbLib.Objects.Exceptions;
 using TMDbLib.Objects.Find;

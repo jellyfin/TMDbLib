@@ -1,0 +1,392 @@
+{
+  "Guid": "355d61a6-e215-6542-a424-24219997bbfd",
+  "Title": "Proxy Mapping for GET /3/tv/2490/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/2490/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/2490/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 2490,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/mjkfHoWsOku18fGjmYF5O1VXUrm.png",
+              "provider_id": 421,
+              "provider_name": "Joyn Plus",
+              "display_priority": 69
+            },
+            {
+              "logo_path": "/krt5kSjG8y1xgZ1Usy9w8mUmaLq.png",
+              "provider_id": 2265,
+              "provider_name": "ProSieben Fun Amazon Channel",
+              "display_priority": 95
+            },
+            {
+              "logo_path": "/iI1WY8inWiaUinlobTBnTKTcShC.png",
+              "provider_id": 2293,
+              "provider_name": "Seven Entertainment Amazon Channel",
+              "display_priority": 124
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=AU",
+          "free": [
+            {
+              "logo_path": "/wy6HfNZHCKX2q9gTGk0Rgutd0VA.png",
+              "provider_id": 135,
+              "provider_name": "ABC iview",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/1Hzele1xJnA7xfQyWKNQnTnWAio.png",
+              "provider_id": 385,
+              "provider_name": "BINGE",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/qRZkZY5kgqXaLr4QFp7ON0wG5rB.png",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/ugQHaBlSt4vnebuw7PVAvlh7mId.png",
+              "provider_id": 2804,
+              "provider_name": "Binge Amazon Channel",
+              "display_priority": 110
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=CA",
+          "ads": [
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/dneArfNvYnCY0LQwDs6n0wVLpPh.png",
+              "provider_id": 197,
+              "provider_name": "BritBox Amazon Channel",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/eZeWGG6DDIi4Kmu1z9RfTeZtqZX.png",
+              "provider_id": 151,
+              "provider_name": "BritBox",
+              "display_priority": 43
+            },
+            {
+              "logo_path": "/r5LXOt96llVEmgwAQeheJuxUaMR.png",
+              "provider_id": 1852,
+              "provider_name": "Britbox Apple TV channel",
+              "display_priority": 94
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mjkfHoWsOku18fGjmYF5O1VXUrm.png",
+              "provider_id": 421,
+              "provider_name": "Joyn Plus",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/krt5kSjG8y1xgZ1Usy9w8mUmaLq.png",
+              "provider_id": 2265,
+              "provider_name": "ProSieben Fun Amazon Channel",
+              "display_priority": 154
+            },
+            {
+              "logo_path": "/iI1WY8inWiaUinlobTBnTKTcShC.png",
+              "provider_id": 2293,
+              "provider_name": "Seven Entertainment Amazon Channel",
+              "display_priority": 182
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 98
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/kMT8p43W3BsXBe9mqCIPDNepser.png",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 180
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 31
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 98
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 9
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/kMT8p43W3BsXBe9mqCIPDNepser.png",
+              "provider_id": 103,
+              "provider_name": "Channel 4",
+              "display_priority": 17
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/j5NFNAdVCTTRLL2fP2MvJcYZgKz.png",
+              "provider_id": 115,
+              "provider_name": "Okko",
+              "display_priority": 2
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/2490-the-it-crowd/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/r5LXOt96llVEmgwAQeheJuxUaMR.png",
+              "provider_id": 1852,
+              "provider_name": "Britbox Apple TV channel",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/eZeWGG6DDIi4Kmu1z9RfTeZtqZX.png",
+              "provider_id": 151,
+              "provider_name": "BritBox",
+              "display_priority": 62
+            },
+            {
+              "logo_path": "/dneArfNvYnCY0LQwDs6n0wVLpPh.png",
+              "provider_id": 197,
+              "provider_name": "BritBox Amazon Channel",
+              "display_priority": 91
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 202
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/b7uhrYJtAe7b1ieJGg705vTbwrX.png",
+              "provider_id": 207,
+              "provider_name": "The Roku Channel",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 76
+            },
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 142
+            },
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 346
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 379
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

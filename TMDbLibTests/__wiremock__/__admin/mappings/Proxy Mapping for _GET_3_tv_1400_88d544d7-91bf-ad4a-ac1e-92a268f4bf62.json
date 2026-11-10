@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "append_to_response",
@@ -91,7 +78,7 @@
         "episode_number": 24,
         "episode_type": "finale",
         "production_code": "924",
-        "runtime": 23,
+        "runtime": 28,
         "season_number": 9,
         "show_id": 1400,
         "still_path": "/vQ2tMUhbtc9ii1tkNw48HbFGH24.jpg"

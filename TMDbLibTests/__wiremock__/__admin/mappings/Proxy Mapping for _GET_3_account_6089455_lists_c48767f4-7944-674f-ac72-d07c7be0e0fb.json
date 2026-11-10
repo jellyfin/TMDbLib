@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": []
   },
   "Response": {
@@ -37,6 +24,66 @@
     "BodyAsJson": {
       "page": 1,
       "results": [
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8702362,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8699735,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8695846,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8694122,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8689097,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8688896,
+          "item_count": 0,
+          "iso_639_1": "en",
+          "list_type": "movie",
+          "name": "Test List 123",
+          "poster_path": null
+        },
         {
           "description": "",
           "favorite_count": 0,
@@ -89,7 +136,7 @@
         }
       ],
       "total_pages": 1,
-      "total_results": 5
+      "total_results": 11
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

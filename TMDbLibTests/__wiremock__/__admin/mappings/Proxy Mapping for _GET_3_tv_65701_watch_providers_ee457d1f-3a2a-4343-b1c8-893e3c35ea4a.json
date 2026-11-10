@@ -1,0 +1,896 @@
+{
+  "Guid": "ee457d1f-3a2a-4343-b1c8-893e3c35ea4a",
+  "Title": "Proxy Mapping for GET /3/tv/65701/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/65701/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/65701/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 65701,
+      "results": {
+        "AG": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 14
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 50
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 92
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 10
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 41
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 38
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 92
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 110
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 16
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CU": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=CU",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 85
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 12
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 52
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 9
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=FJ",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 49
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 86
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 28
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 7
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 20
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 21
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MW": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=MW",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 40
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 12
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 7
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PG": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=PG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "PH": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=PH",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 8
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 8
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 13
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/eWHpKZihdiY617s5LipWJWvN28U.png",
+              "provider_id": 188,
+              "provider_name": "YouTube Premium",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 152
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/65701-good-mythical-morning/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

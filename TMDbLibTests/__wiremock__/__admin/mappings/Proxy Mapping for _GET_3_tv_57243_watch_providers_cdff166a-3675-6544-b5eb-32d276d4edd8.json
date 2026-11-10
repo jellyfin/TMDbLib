@@ -1,0 +1,349 @@
+{
+  "Guid": "cdff166a-3675-6544-b5eb-32d276d4edd8",
+  "Title": "Proxy Mapping for GET /3/tv/57243/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/57243/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/57243/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 57243,
+      "results": {
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/eZeWGG6DDIi4Kmu1z9RfTeZtqZX.png",
+              "provider_id": 151,
+              "provider_name": "BritBox",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/r5LXOt96llVEmgwAQeheJuxUaMR.png",
+              "provider_id": 1852,
+              "provider_name": "Britbox Apple TV channel",
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/dneArfNvYnCY0LQwDs6n0wVLpPh.png",
+              "provider_id": 197,
+              "provider_name": "BritBox Amazon Channel",
+              "display_priority": 73
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/hFTUerTxMwrM9RIo9z48qxCsi7z.png",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 32
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 110
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 9
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 105
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=DK",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 32
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=FR",
+          "rent": [
+            {
+              "logo_path": "/51fX3l4yElitnfui0IkbMUmfmgF.png",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 16
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/73lu1dtE9uJLWK1laXpeaAFh48j.png",
+              "provider_id": 61,
+              "provider_name": "Orange VOD",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/51fX3l4yElitnfui0IkbMUmfmgF.png",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 16
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 16
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 20
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/vi6XJCpJ9GpAPD3rDSRzMC812Z.png",
+              "provider_id": 38,
+              "provider_name": "BBC iPlayer",
+              "display_priority": 18
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 9
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 10
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=JP",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/mh1vBeclG7Eq15TjRnmyustqp3v.png",
+              "provider_id": 356,
+              "provider_name": "wavve",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/ppQIS7UMtBwJSspSoGqDR8wO1Gr.png",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 7
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 21
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/57243-doctor-who/watch?locale=US",
+          "ads": [
+            {
+              "logo_path": "/b7uhrYJtAe7b1ieJGg705vTbwrX.png",
+              "provider_id": 207,
+              "provider_name": "The Roku Channel",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/mfbhzQwmQKjm7bLZPF5CTeu3Ilc.png",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/wLl5LRLVC6UOSaUlsmuzY0H9LS1.png",
+              "provider_id": 1854,
+              "provider_name": "AMC Plus Apple TV channel",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/tg5ufQ1GkYDCMxSSxemfeKWcvRe.png",
+              "provider_id": 528,
+              "provider_name": "AMC\u002B Amazon Channel",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/xMyod7PSWlER7Q8FLDqVckKeyyB.png",
+              "provider_id": 635,
+              "provider_name": "AMC\u002B Roku Premium Channel",
+              "display_priority": 34
+            },
+            {
+              "logo_path": "/cltb8XKan9ierp23ItPmCOcVLRa.png",
+              "provider_id": 191,
+              "provider_name": "Kanopy",
+              "display_priority": 39
+            },
+            {
+              "logo_path": "/6qPtM96UZkt3Bu4ZFPsDeHFWUZ2.png",
+              "provider_id": 486,
+              "provider_name": "Spectrum On Demand",
+              "display_priority": 122
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 40
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

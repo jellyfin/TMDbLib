@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Companies;
 using TMDbLibTests.Helpers;

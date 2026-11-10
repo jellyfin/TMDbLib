@@ -1,29 +1,71 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+#if !NET11_0_OR_GREATER
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+#endif
 
 namespace TMDbLib.Rest;
 
 /// <summary>
 /// Implements Happy Eyeballs (RFC 8305) connection algorithm for HttpClient.
 /// This attempts IPv6 connections first, then falls back to IPv4 if IPv6 fails or is slow.
-/// Based on https://slugcat.systems/post/24-06-16-ipv6-is-hard-happy-eyeballs-dotnet-httpclient/.
 /// </summary>
+/// <remarks>
+/// On .NET 11+ this delegates to the runtime's native implementation (<c>ConnectAlgorithm.Parallel</c>),
+/// which <see cref="SocketsHttpHandler"/> does not enable by default.
+/// Older targets use a managed implementation based on
+/// https://slugcat.systems/post/24-06-16-ipv6-is-hard-happy-eyeballs-dotnet-httpclient/.
+/// </remarks>
 internal static class HappyEyeballsCallback
 {
+#if NET11_0_OR_GREATER
+    /// <summary>
+    /// Connect callback that uses the runtime's native Happy Eyeballs algorithm.
+    /// </summary>
+    /// <param name="context">The connection context containing DNS endpoint information.</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+    /// <returns>A network stream for the established connection.</returns>
+    public static async ValueTask<Stream> ConnectAsync(
+        SocketsHttpConnectionContext context,
+        CancellationToken cancellationToken)
+    {
+        var completion = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        using var args = new SocketAsyncEventArgs { RemoteEndPoint = context.DnsEndPoint };
+        args.Completed += (_, _) => completion.TrySetResult();
+
+        using (cancellationToken.UnsafeRegister(static state => Socket.CancelConnectAsync((SocketAsyncEventArgs)state!), args))
+        {
+            if (Socket.ConnectAsync(SocketType.Stream, ProtocolType.Tcp, args, ConnectAlgorithm.Parallel))
+            {
+                await completion.Task.ConfigureAwait(false);
+            }
+        }
+
+        if (args.SocketError != SocketError.Success)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            throw args.ConnectByNameError ?? new SocketException((int)args.SocketError);
+        }
+
+        var socket = args.ConnectSocket!;
+        socket.NoDelay = true;
+        return new NetworkStream(socket, ownsSocket: true);
+    }
+#else
     /// <summary>
     /// Delay between connection attempts as recommended by RFC 8305.
     /// </summary>
     private const int ConnectionAttemptDelayMs = 250;
 
     /// <summary>
-    /// Connect callback that implements Happy Eyeballs algorithm.
+    /// Connect callback that implements Happy Eyeballs algorithm (managed fallback for runtimes before .NET 11).
     /// </summary>
     /// <param name="context">The connection context containing DNS endpoint information.</param>
     /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
@@ -176,13 +218,28 @@ internal static class HappyEyeballsCallback
             // Cancel remaining attempts
             await successCts.CancelAsync().ConfigureAwait(false);
 
-            // Dispose any successful sockets that weren't the winner
+            // Clean up every attempt that lost the race, including ones still in flight:
+            // dispose sockets that (eventually) connected, and observe failures so they don't
+            // surface as TaskScheduler.UnobservedTaskException (https://github.com/jellyfin/TMDbLib/issues/674).
             for (var i = 0; i < allTasks.Count; i++)
             {
-                var task = allTasks[i];
-                if (task.IsCompletedSuccessfully && i != successIndex)
+                if (i != successIndex)
                 {
-                    (await task.ConfigureAwait(false)).Dispose();
+                    _ = allTasks[i].ContinueWith(
+                        static t =>
+                        {
+                            if (t.IsCompletedSuccessfully)
+                            {
+                                t.Result.Dispose();
+                            }
+                            else
+                            {
+                                _ = t.Exception;
+                            }
+                        },
+                        CancellationToken.None,
+                        TaskContinuationOptions.ExecuteSynchronously,
+                        TaskScheduler.Default);
                 }
             }
         }
@@ -206,4 +263,5 @@ internal static class HappyEyeballsCallback
             throw;
         }
     }
+#endif
 }
